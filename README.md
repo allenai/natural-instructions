@@ -38,7 +38,7 @@ Given a tweet, classify it into one of 4 categories: Positive, Negative, Neutral
 
 Overall, each tasks follows this schema:
  
-![](schema-simplified.svg ) 
+![](doc/schema-simplified.svg ) 
 
 Or if you're comfortable with json files, here is how it would look like: 
 ```json 
