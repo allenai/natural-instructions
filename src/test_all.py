@@ -10,12 +10,13 @@ expected_keys = [
     "Positive Examples",
     "Negative Examples",
     "Instances",
-    'Contributor',
+    'Contributors',
     'Categories'
 ]
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 for file in files:
+    print(f" --> testing file: {file}")
     if ".md" not in file:
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
@@ -24,6 +25,9 @@ for file in files:
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
+            assert len(data['Instances']) > 10, "there must be at least 50 instances"
+            assert len(data['Instances']) <= 6500, "there must be at most 6.5k instances"
+
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
@@ -31,6 +35,10 @@ for file in files:
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
+
+            assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
+            # TODO: add this back in, once we have negative examples for all the tasks
+            # assert len(data['Negative Examples']) > 1, "there must be at least one negative example"
 
             for x in data['Positive Examples'] + data['Negative Examples']:
                 for key in ['input', 'output', 'explanation']:
