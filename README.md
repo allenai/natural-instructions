@@ -1,7 +1,9 @@
 # A Repository of Community-Driven Natural Instructions 
 
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
-We're looking for more contributions to make this data bigger! 🙌
+We're looking for more contributions to make this data bigger! 🙌 
+We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **September 15, 2021**.
+The contributors with meaning contribution to our tasks will be included as co-authors on a paper that will annoucne the benchmark as well as analysis/results on it. 
 
 ## Background 
 ### Why define tasks in natural language?
@@ -35,7 +37,7 @@ Given a tweet, classify it into one of 4 categories: Positive, Negative, Neutral
 ``` 
 
 Overall, each tasks follows this schema: 
-![](schema-simplified.svg "schema")
+![](schema-simplified.svg ) 
 
 Or if you're comfortable with json files, here is how it would look like: 
 ```json 
@@ -48,9 +50,24 @@ Or if you're comfortable with json files, here is how it would look like:
 ```
 
 ## How to contribute 
+We would appreciate any external contributions!🙏
 
-TBD
+ * All submissions must be submitted via [Github pull requests](https://github.com/allenai/natural-instructions-expansion/pulls). These submissions will undergo a review before being merged. 
+ * Each task must contain contain a `.json` file that contains the task content. You can look inside the [`tasks/`](tasks) directory for several examples.  
+    * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4)`)   
+    * Make sure that you json file is not bigger than 50MB. 
+    * Make sure your task has no more 6.5k instances (input/output pairs).
+    * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](crowdsourcing.md). 
+ * Add your task to [the file that lists all of our tasks](tasks/README.md).
 
-## Timeline 
- TBD 
-<!--  To be included, your PR must be opened by -->    
+*TODO:* testing and visualization of the submissions  
+ 
+If you have any questions or suggestions, please use [the issues](https://github.com/allenai/natural-instructions-expansion/issues) feature.  
+
+
+## Frequently Asked Questions
+ 
+ - **Can I submit non-English tasks?** Yes! We welcome submission from any of the languages. 
+ 
+ 
+ 
