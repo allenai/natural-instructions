@@ -36,7 +36,8 @@ Additionally, each ask contains a task *definition*:
 Given a tweet, classify it into one of 4 categories: Positive, Negative, Neutral, or Mixed.
 ``` 
 
-Overall, each tasks follows this schema: 
+Overall, each tasks follows this schema:
+ 
 ![](schema-simplified.svg ) 
 
 Or if you're comfortable with json files, here is how it would look like: 
@@ -50,7 +51,7 @@ Or if you're comfortable with json files, here is how it would look like:
 ```
 
 ## How to contribute 
-We would appreciate any external contributions!🙏
+We would appreciate any external contributions! 🙏
 
  * All submissions must be submitted via [Github pull requests](https://github.com/allenai/natural-instructions-expansion/pulls). These submissions will undergo a review before being merged. 
  * Each task must contain contain a `.json` file that contains the task content. You can look inside the [`tasks/`](tasks) directory for several examples.  
