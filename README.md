@@ -21,11 +21,26 @@ We believe that this expanded dataset will serve as a useful playground for the 
 
 
 ## Task definitions 
+Each consists of input/output. For example, think of the task of sentiment classification:  
+ - **Input:** `I thought the Spiderman animation was good, but the movie disappointed me.`
+ - **Output:** `Mixed` 
 
+Here is another example from the same task: 
+ - **Input:** `The pumpkin was one of the worst that I've had in my life.` 
+ - **Output:**  `Negative`  
+
+Additionally, each ask contains a task *definition*: 
+```
+Given a tweet, classify it into one of 4 categories: Positive, Negative, Neutral, or Mixed.
+``` 
+
+Overall, each tasks follows this schema: 
+![](schema-simplified.png "schema")
 
 
 ## How to contribute 
-
+TBD
 
 ## Timeline 
-
+ TBD 
+<!--  To be included, your PR must be opened by -->    
