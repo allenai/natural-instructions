@@ -1,9 +1,6 @@
 import json
-import time
-import zipfile
 from os import listdir
 from os.path import isfile, join
-from tqdm import tqdm
 
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
@@ -18,7 +15,7 @@ expected_keys = [
 ]
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-for file in tqdm(files):
+for file in files:
     if ".md" not in file:
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
