@@ -36,7 +36,35 @@ Given a tweet, classify it into one of 4 categories: Positive, Negative, Neutral
 
 Overall, each tasks follows this schema: 
 ![](schema-simplified.png "schema")
-
+Or if you're comfortable with json files, here is how it would look like: 
+```json 
+{
+  "Definition": str,
+  "Positive Examples": [
+    {
+      "input": str,
+      "output": List[str], 
+      "reason": str,
+    },
+    ...
+  ], 
+  "Negative Examples": [
+    {
+      "input": str,
+      "output": List[str], 
+      "reason": str,
+    },
+    ...
+  ]
+  "Instances": [
+    {
+      "input": str,
+      "output": List[str]
+    },
+    ...
+  ]
+}
+```
 
 ## How to contribute 
 TBD
