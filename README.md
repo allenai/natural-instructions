@@ -3,7 +3,7 @@
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌 
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **September 15, 2021**.
-The contributors with meaning contribution to our tasks will be included as co-authors on a paper that will annonuce the benchmark as well as analysis/results on it. 
+The contributors with meaningful contribution to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
 ## Background 
 ### Why define tasks in natural language?
