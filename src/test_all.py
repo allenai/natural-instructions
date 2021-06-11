@@ -47,3 +47,5 @@ for file in files:
                 assert type(x['output']) == str, f'the output of example {x} is not a string'
                 assert type(x['explanation']) == str, f'the explanation of example {x} is not a string'
 
+
+print("Did not find any errors! ✅")
