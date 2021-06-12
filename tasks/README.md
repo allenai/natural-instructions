@@ -66,3 +66,4 @@ Name | Summary | Category
 `task059_ropes_story_generation`	| Generating a story about relations in the given paragraph.	| Long Text Generation
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
+`task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
