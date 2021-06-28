@@ -25,7 +25,7 @@ for file in files:
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
-            assert len(data['Instances']) > 30, f"there must be at least 30 instances; currently you have {len(data['Instances'])} instances"
+            assert len(data['Instances']) > 25, f"there must be at least 25 instances; currently you have {len(data['Instances'])} instances"
             assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; currently you have {len(data['Instances'])} instances"
 
             for x in data['Instances']:
