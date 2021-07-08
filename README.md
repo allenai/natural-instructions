@@ -44,8 +44,8 @@ Or if you're comfortable with json files, here is how it would look like:
 ```json 
 {
   "Definition": "",
-  "Positive Examples": [ { "input": "", "output": [""],  "reason": ""} ], 
-  "Negative Examples": [ { "input": "", "output": [""],  "reason": ""} ],
+  "Positive Examples": [ { "input": "", "output": [""],  "explanation": ""} ], 
+  "Negative Examples": [ { "input": "", "output": [""],  "explanation": ""} ],
   "Instances": [ { "input": "", "output": [""]} ],
 }
 ```
