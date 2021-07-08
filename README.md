@@ -44,8 +44,8 @@ Or if you're comfortable with json files, here is how it would look like:
 ```json 
 {
   "Definition": "",
-  "Positive Examples": [ { "input": "", "output": [""],  "explanation": ""} ], 
-  "Negative Examples": [ { "input": "", "output": [""],  "explanation": ""} ],
+  "Positive Examples": [ { "input": "", "output": "",  "explanation": ""} ], 
+  "Negative Examples": [ { "input": "", "output": "",  "explanation": ""} ],
   "Instances": [ { "input": "", "output": [""]} ],
 }
 ```
@@ -69,6 +69,7 @@ If you have any questions or suggestions, please use [the issues](https://github
 ## Frequently Asked Questions
  
  - **Can I submit non-English tasks?** Yes! We welcome submission from any of the languages. 
+ - **Can I create tasks without using crowdsourcing templates?** Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
  
  
  
