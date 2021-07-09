@@ -58,6 +58,7 @@ We would appreciate any external contributions! 🙏
     * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4)`)   
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
+    * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number).
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
