@@ -3,9 +3,9 @@
         "Amirreza Mirzaei"
     ],
     "Categories": [
-        "Generation"
+        "Answer Generation"
     ],
-    "Definition": "You are given a question and some answer options (associated with \"A\", \"B\", \"C\", \\\u201dD\\\u201d).You should choose the correct answer based on commonsense knowledge.",
+    "Definition": "You are given a question and some answer options (associated with \"A\", \"B\", \"C\", \"D\"). You should choose the correct answer based on commonsense knowledge. \nThings to avoid: 1. Avoid answering questions based on associations, the set of answers are chosen deliberately to capture common sense beyond associations, 2. Do not generate anything else apart from one of the following characters: 'A', 'B, 'C', 'D', 'E'. \nEmphasis & Caution: 1. Only give one answer for each question.",
     "Positive Examples": [
         {
             "input": "Where would you find magazines along side many other printed works?\n(A)doctor (B)bookstore (C)market (D)train station (E)mortuary",
@@ -18,7 +18,21 @@
             "explanation": "great britain is the only island country in the choices."
         }
     ],
-    "Negative Examples": [],
+    "Negative Examples": [
+        {
+            "input": "Where would you find magazines along side many other printed works?\n(A)doctor (B)bookstore (C)market (D)train station (E)mortuary",
+            "output": "I dont know.",
+            "explanation": "Do not generate anything else apart from one of the following characters: 'A', 'B, 'C', 'D', 'E'."
+        },
+        {
+            "input": "What island country is ferret popular?\n(A)own home (B)north carolina (C)great britain (D)hutch (E)outdoors",
+            "output": [
+                "B",
+                "C"
+            ],
+            "explanation": "Only one of the following options ('A', 'B', 'C', 'D' or 'E') is allowed to be the answer. Multiple options can not be correct. The correct answer here would have been 'C'."
+        }
+    ],
     "Instances": [
         {
             "input": "A revolving door is convenient for two direction travel, but it also serves as a security measure at a what?\n(A)bank (B)library (C)department store (D)mall (E)new york",
