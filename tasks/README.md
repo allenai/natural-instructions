@@ -67,3 +67,4 @@ Name | Summary | Category
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
+`task073_CommonsenseQA_answer_generation`	|  Answering questions based on commonsense knowledge.	| Answer Generation
