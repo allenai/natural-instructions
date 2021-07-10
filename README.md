@@ -59,6 +59,7 @@ We would appreciate any external contributions! 🙏
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
     * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number).
+    * Make sure to create a pull request after creating all possible tasks from a dataset. One pull request per dataset.
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
