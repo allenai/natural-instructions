@@ -44,8 +44,8 @@ Or if you're comfortable with json files, here is how it would look like:
 ```json 
 {
   "Definition": "",
-  "Positive Examples": [ { "input": "", "output": [""],  "reason": ""} ], 
-  "Negative Examples": [ { "input": "", "output": [""],  "reason": ""} ],
+  "Positive Examples": [ { "input": "", "output": "",  "explanation": ""} ], 
+  "Negative Examples": [ { "input": "", "output": "",  "explanation": ""} ],
   "Instances": [ { "input": "", "output": [""]} ],
 }
 ```
@@ -58,6 +58,8 @@ We would appreciate any external contributions! 🙏
     * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4)`)   
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
+    * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number).
+    * Make sure to create a pull request after creating all possible tasks from a dataset. You should have one pull request per dataset.
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
@@ -69,6 +71,8 @@ If you have any questions or suggestions, please use [the issues](https://github
 ## Frequently Asked Questions
  
  - **Can I submit non-English tasks?** Yes! We welcome submission from any of the languages. 
+ - **Can I create tasks without using crowdsourcing templates?** Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
+ - **What is the minimun number of instances I can have in my task?** Minimum: 50, 100 is a safe number, you should not have more than 6500 instances.
  
  
  
