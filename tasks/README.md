@@ -67,8 +67,8 @@ Name | Summary | Category
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
-`task075_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Answer Generation
-`task076_splash_correcting_sql_mistakes` | Based on feedback correct the mistake in a given SQL statement. | Text Modification
-`task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Answer Generation
-`task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Classification
+`task075_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
+`task076_splash_correcting_sql_mistakes` | Based on feedback correct the mistake in a given SQL statement. | Structured Query Generation, Text Modification
+`task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Structured Query Generation
+`task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Structured Query Classification
 `task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation.
