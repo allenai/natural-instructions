@@ -67,4 +67,8 @@ Name | Summary | Category
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
+`task063_timetravel_text_modification`	| Modifying a sentence in the given story to make the story inconsistent. | Text Modification
+`task064_timetravel_long_text_generation`	| Generating the storyline by making minimal changes to the given story. | Long Text Generation
+`task065_timetravel_classification`	| Choosing the option that makes a given short story consistent. | Classification
+`task066_timetravel_classification`	| Identifying if the given sentence is consistent with the given story. | Classification
 `task073_CommonsenseQA_answer_generation`	|  Answering questions based on commonsense knowledge.	| Answer Generation

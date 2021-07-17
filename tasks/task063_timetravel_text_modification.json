@@ -5,76 +5,66 @@
     "Categories": [
         "Text Modification"
     ],
-    "Definition": "In this study, we want to collect alternate possibilities, i.e., hypotheses that are contrary to the facts. Specifically, we provide a short story consisting of exactly 5 sentences. You need to change a key aspect of 2nd sentence so that the story continuation changes, but leaves a still interesting short story.  Please make sure that: The new sentence is closely related to the original 2nd sentence, rather than saying a totally irrelevant thing. The new sentence changes the subsequent storyline, so that at least one of the three subsequent sentences no longer work. Or in other words, the new sentence and the original subsequent sentences can no longer form a consistent story. Note that the new sentence does not have to change the whole subsequent storyline, but just some parts of it. The new sentence should make senses and be consistent with respect to the 1st sentence. \n Things to avoid : Please make the new sentences simple and try to avoid complex sentences. \n Emphasis & Caution: Sometimes you only need to change a few words in the original sentence to make a new one that satisfies the all requirements",    
+    "Definition": "In this study, we want to collect alternate possibilities, i.e., hypotheses that are contrary to the facts. Specifically, we provide a short story consisting of exactly 5 sentences. You need to change a key aspect of 2nd sentence so that the story continuation changes, but leaves a still interesting short story.  Please make sure that: The new sentence is closely related to the original 2nd sentence, rather than saying a totally irrelevant thing. The new sentence changes the subsequent storyline, so that at least one of the three subsequent sentences can no longer form a consistent story. \n Things to avoid : Note that the new sentence does not have to change the whole subsequent storyline, but just some parts of it. \n Emphasis & Caution: ",    
     "Positive Examples": [
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 2: Two men rushed into the store and held their guns up. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.",
             "output": "Two dogs rushed into the store.",
-            "explanation": "Changed the entity “two men“ to “two dogs“ (This is a good edit because it satisfies all the three requirements above. Note that with the new sentence, the subsequent “The men threatened ...“ in the 4th sentence no longer holds. Thus the new sentence meets Requirement)"
+            "explanation": "Changed the entity “two men“ to “two dogs“. This is a good edit because it satisfies all the requirements. Note that with the new sentence, the subsequent “The men threatened ...“ in the 4th sentence no longer holds."
         },
         {
             "input": "Sentence 1: Ben had a doctor's appointment. \n Sentence 2: He was very scared. \n Sentence 3: He never went to the doctor. \n Sentence 4: He slowly stepped into the office. \n Sentence 5: The doctor greeted him calmly and he felt better.",
             "output": "He was in a rush to go to work after the appointment.",
-            "explanation": "The 4th sentence 'slowly stepped into' on longer holds."
+            "explanation": "The 4th sentence 'slowly stepped into' is not consistent with 'He was in a rush'."
         },
         {
             "input": "Sentence 1: Ben had a doctor's appointment. \n Sentence 2: He was very scared. \n Sentence 3: He never went to the doctor. \n Sentence 4: He slowly stepped into the office. \n Sentence 5: The doctor greeted him calmly and he felt better.",
             "output": "He forgot that and missed the appointment.",
-            "explanation": "Most of the subsequent storyline has to be changed since he didn't make the appointment."
+            "explanation": "Since he didn't make the appointment, it is not consistent with sentence 4: 'He slowly stepped into the office'."
         },
         {
             "input": "Sentence 1: Jon just broke up with his girlfriend. \n Sentence 2: He was feeling quite depressed. \n Sentence 3: He called up his friends for support. \n Sentence 4: His friends came to pick up Jon. \n Sentence 5: Jon spent the rest of the night with friends.",
             "output": "He was so relieved and saw it as a new beginning of life.",
-            "explanation": "The new sentence changes the subsequent storyline."
+            "explanation": "The new sentence changes the subsequent storyline as 'he as feeling quite depressed' in the original story but was 'relieved' in the alternate story."
         },
-        {
-            "input": "Sentence 1: Jon just broke up with his girlfriend. \n Sentence 2: He was feeling quite depressed. \n Sentence 3: He called up his friends for support. \n Sentence 4: His friends came to pick up Jon. \n Sentence 5: Jon spent the rest of the night with friends.",
-            "output": "He had a new girlfriend the next day.",
-            "explanation": "The new sentence changes the subsequent storyline."
-        },
-        {
-            "input": "Sentence 1: Jon just broke up with his girlfriend. \n Sentence 2: He was feeling quite depressed. \n Sentence 3: He called up his friends for support. \n Sentence 4: His friends came to pick up Jon. \n Sentence 5: Jon spent the rest of the night with friends.",
-            "output": "He decided to travel to cure his broken heart.",
-            "explanation": "The subsequent storyline has to change to relate to travel.)"
-        }
-
+        
 
     ],
     "Negative Examples": [
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 2: Two men rushed into the store and held their guns up. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.",
             "output": "The cashier felt not well today.",
-            "explanation": "The new sentence is totally irrelevant to the original one, and thus fails to meet Requirement"
+            "explanation": "The new sentence is totally irrelevant to the original one, and thus fails to meet the requirements"
         },
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 2: Two men rushed into the store and held their guns up. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.",
             "output": "Two men rushed into the hospital.",
-            "explanation": "The new sentence is not consistent with the first sentence (store cashier vs hospital), and thus fails to meet Requirement"
+            "explanation": "The new sentence is not consistent with the first sentence ('store cashier' vs 'hospital'), and thus fails to meet Requirement"
         },
         {
             "input": "Sentence 1: Ben had a doctor's appointment. \n Sentence 2: He was very scared. \n Sentence 3: He never went to the doctor. \n Sentence 4: He slowly stepped into the office. \n Sentence 5: The doctor greeted him calmly and he felt better.",
             "output": "He had a stomachache.",
-            "explanation": "The new sentence doesn't necessarily change the subsequent storyline, and thus fails Requirement"
+            "explanation": "The new sentence doesn't necessarily change the subsequent storyline, and thus fails the requirements"
         },
         {
             "input": "Sentence 1: Ben had a doctor's appointment. \n Sentence 2: He was very scared. \n Sentence 3: He never went to the doctor. \n Sentence 4: He slowly stepped into the office. \n Sentence 5: The doctor greeted him calmly and he felt better.",
             "output": "He had been feeling very healthy and happy.",
-            "explanation": "The new sentence is not consistent with the 1st sentence, and thus fails Requirement"
+            "explanation": "The new sentence is not consistent with the 1st sentence, and thus fails the requirements"
         },
         {
             "input": "Sentence 1: Jon just broke up with his girlfriend. \n Sentence 2: He was feeling quite depressed. \n Sentence 3: He called up his friends for support. \n Sentence 4: His friends came to pick up Jon. \n Sentence 5: Jon spent the rest of the night with friends.",
             "output": "He felt so sad and cried.",
-            "explanation": "The new sentence doesn't necessarily affect te subsequent storyline, and thus fails Requirement"
+            "explanation": "The new sentence doesn't necessarily affect te subsequent storyline, and thus fails the requirements"
         },
         {
             "input": "Sentence 1: Jon just broke up with his girlfriend. \n Sentence 2: He was feeling quite depressed. \n Sentence 3: He called up his friends for support. \n Sentence 4: His friends came to pick up Jon. \n Sentence 5: Jon spent the rest of the night with friends.",
             "output": "He got married with his gilfriend.",
-            "explanation": "The new sentence is not consistent with the 1st sentence, and thus fails Requirement"
+            "explanation": "The new sentence is not consistent with the 1st sentence, and thus fails the requirements"
         },
         {
             "input": "Sentence 1: Jon just broke up with his girlfriend. \n Sentence 2: He was feeling quite depressed. \n Sentence 3: He called up his friends for support. \n Sentence 4: His friends came to pick up Jon. \n Sentence 5: Jon spent the rest of the night with friends.",
             "output": "He studied very hard in the school.",
-            "explanation": "The new sentence is totally irrelevant to the original story, and thus fails Requirement"
+            "explanation": "The new sentence is totally irrelevant to the original story, and thus fails the requirements"
         }
 
 

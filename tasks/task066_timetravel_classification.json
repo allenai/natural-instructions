@@ -5,7 +5,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task, you are given a short story consisting of exactly 5 sentences where the second sentence is missing. You are given a candidate for the second sentence and you need to identify if the given sentence connects the first sentence with the rest of the story. Indicate your answer by “Yes” if it connects, otherwise “No”. \n Things to avoid: Do not generate anything else apart from “Yes” or “No” \n Emphasis & Caution: The given sentence is incorrect if it changes the subsequent storyline, so that at least one of the three subsequent sentences no longer work Or in other words, the incorrect sentence and the original subsequent sentences can no longer form a consistent story.",
+    "Definition": "In this task, you are given a short story consisting of exactly 5 sentences where the second sentence is missing. You are given a candidate for the second sentence and you need to identify if the given sentence connects the first sentence with the rest of the story. Indicate your answer by “Yes” if it connects, otherwise “No”. \n Things to avoid: Do not generate anything else apart from “Yes” or “No” \n Emphasis & Caution: The given sentence is incorrect if it changes the subsequent storyline, so that at least one of the three subsequent sentences form a consistent story.",
     "Positive Examples": [
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and held their guns up.",
@@ -15,12 +15,12 @@
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two dogs rushed into the store.",
             "output": "No",
-            "explanation": "The entity 'two dogs' doesn't connect with the rest of the story. Note that with the given sentence, the subsequent “The men threatened ...“ in the 4th sentence no longer holds. So, the answer is 'No'."
+            "explanation": "The entity 'two dogs' doesn't connect with the rest of the story. Note that with the given sentence, sentence 4: “The men threatened ...“ is not consistent. So, the answer is 'No'."
         },
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started yelling.",
             "output": "No",
-            "explanation": "With the given sentence, the subsequent cashier handed them the cash in the 5th sentence no longer holds. So, 'No' is the correct answer."
+            "explanation": "With the given sentence, sentence 5: 'cashier handed them the cash' is no longer consistent. So, 'No' is the correct answer."
         }
 
 
@@ -29,7 +29,7 @@
         {
             "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started yelling.",
             "output": "Given Sentence doesn't connect with the story.",
-            "explanation": "The answer can only be Yes or No.  This is a bad answer."
+            "explanation": "The answer can only be Yes or No. This is a bad answer."
         }  
 
 

@@ -5,32 +5,26 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task, you are given a short story consisting of exactly 5 sentences where the second sentence is missing. You are given two options and you need to select the one that best connects the first sentence with the rest of the story. \n Things to avoid: . \n Emphasis & Caution: The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences no longer work Or in other words, the incorrect option and the original subsequent sentences can no longer form a consistent story.",
+    "Definition": "In this task, you are given a short story consisting of exactly 5 sentences where the second sentence is missing. You are given two options and you need to select the one that best connects the first sentence with the rest of the story. Indicate your answer by 'Option 1' if the first option is correct, otherwise 'Option 2'. \n Things to avoid: . \n Emphasis & Caution: The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences is no longer consistent with the story.",
    
     "Positive Examples": [
         {
-            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two dogs rushed into the store. \n Option 2: Three men rushed into the store and held their guns up.",
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
             "output": "Option 1",
-            "explanation": "In Option 1, changed the entity “two men“ to “two dogs“ (This is a good edit because it satisfies all the three requirements above. Note that with the new sentence, the subsequent “The men threatened ...“ in the 4th sentence no longer holds. Thus the new sentence meets requirement. In Option 2, changed two to thre, But it does not affect the subsequent storyline and thus fails to meet requirement"
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as the entty 'two dogs' is not consistent with 'men' mentioned in Sentence 4."
         },
         {
-            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and started yelling. \n Option 2: Three men rushed into the store and held their guns up.",
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Three men rushed into the store and held their guns up. \n Option 2: Two men rushed into the hospital.",
             "output": "Option 1",
-            "explanation": "In Option 1, Changed the action held their guns up to started yelling (With the new sentence, the subsequent cashier handed them the cash in the 5th sentence no longer holds. In Option 2, changed two to thre, But it does not affect the subsequent storyline and thus fails to meet Requirement"
-        },
-        {
-            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1: Two men rushed into the hospital. \n Option 2:  Two men rushed into the store and started yelling.",
-            "output": "Option 2",
-            "explanation": "In Option 1, The new sentence is not consistent with the first sentence (store cashier vs hospital), and thus fails to meet Requirement. In Option 2, changed the action held their guns up to started yelling (With the new sentence, the subsequent cashier handed them the cash in the 5th sentence no longer holds."
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as it is not consisitent with sentence 1 ('store cashier' vs 'hospital')."
         }
-
 
     ],
     "Negative Examples": [
         {
-            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1: Two men rushed into the hospital. \n Option 2:  Two men rushed into the store and started yelling.",
-            "output": "Two men rushed into the store and started yelling.",
-            "explanation": "In Option 1, The new sentence is not consistent with the first sentence (store cashier vs hospital), and thus fails to meet Requirement. In Option 2, changed the action held their guns up to started yelling (With the new sentence, the subsequent cashier handed them the cash in the 5th sentence no longer holds. But it outputed the entire option text instead of its label."
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Two men rushed into the store and held their guns up.",
+            "explanation": "The selected option is correct but it outputed the entire option text instead of its label i.e 'Option 1'."
         }
 
 
