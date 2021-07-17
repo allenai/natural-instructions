@@ -73,7 +73,7 @@ If you have any questions or suggestions, please use [the issues](https://github
  - **Can I submit non-English tasks?** Yes! We welcome submission from any of the languages. 
  - **Can I create tasks without using crowdsourcing templates?** Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
  - **What is the minimun number of instances I can have in my task?** Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances.
- - **What do you mean by "meaningful contribution"?** If you're among top `k` [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) (say, `k=25`), or if you have contributed at least `l` tasks (say, `l=10`). Depending on the overall contributions, we will adjust these constants so that the number of authors don't exeed 40. 
+ - **What do you mean by "meaningful contribution"?** If you're among top `k` [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) (say, `k=25`), or if you have contributed at least `l` tasks (say, `l=10`). Depending on the overall contributions, we will adjust these constants so that the number of authors don't exeed `m` (say, `m=35`). 
  
  
  
