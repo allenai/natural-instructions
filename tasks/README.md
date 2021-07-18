@@ -68,3 +68,18 @@ Name | Summary | Category
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
 `task073_CommonsenseQA_answer_generation`	|  Answering questions based on commonsense knowledge.	| Answer Generation
+`task085_unnatural_addsub_arithmetic`	|  Performing Arithmetic with swapped operator symbols.	| Arithmetic
+`task086_translated_symbol_arithmetic`	|  Performing Arithmetic with translated operator symbols.	| Arithmetic
+`task087_new_operator_addsub_arithmetic`	|  Performing Arithmetic with newly defined operator symbols.	| Arithmetic
+`task088_identify_typo_verification`	|  Identifying typo in a sentence.	| Verification
+`task089_swap_words_verification`	|  Identifying swapped words in a sentence.	| Verification
+`task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
+`task091_operation_finder_arithmetic`	|  Finding the arithmetic operator.	| Arithmetic
+`task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
+
+
+
+
+
+
+
