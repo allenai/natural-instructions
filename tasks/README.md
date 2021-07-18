@@ -72,7 +72,7 @@ Name | Summary | Category
 `task076_splash_correcting_sql_mistakes` | Based on feedback correct the mistake in a given SQL statement. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Structured Query Classification
-`task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation.
+`task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation
 `task093_conala_normalize_list` | Given a list of numbers normalize the list such that the result adds to 1 | Answer Generation, Mathematics
 `task094_conala_calculate_mean` | Given a list of numbers calculate the mean of the list | Answer Generation, Mathematics
 `task095_conala_max_absolute_value` | Given a list of numbers calculate the element with the largest absolute value | Answer Generation, Mathematics
