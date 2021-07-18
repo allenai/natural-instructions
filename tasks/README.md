@@ -68,3 +68,5 @@ Name | Summary | Category
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
 `task073_CommonsenseQA_answer_generation`	|  Answering questions based on commonsense knowledge.	| Answer Generation
+`task080_piqa_answer_generation`	|  Generating solution to a goal regarding physical knowledge about the world	| Answer Generation
+`task081_piqa_wrong_answer_generation`	|  Generating incorrect solution to a goal regarding physical knowledge about the world.	| Incorrect Answer Generation
