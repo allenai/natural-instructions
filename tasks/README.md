@@ -73,3 +73,11 @@ Name | Summary | Category
 `task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Structured Query Classification
 `task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation.
+`task085_unnatural_addsub_arithmetic`	|  Performing Arithmetic with swapped operator symbols.	| Arithmetic
+`task086_translated_symbol_arithmetic`	|  Performing Arithmetic with translated operator symbols.	| Arithmetic
+`task087_new_operator_addsub_arithmetic`	|  Performing Arithmetic with newly defined operator symbols.	| Arithmetic
+`task088_identify_typo_verification`	|  Identifying typo in a sentence.	| Verification
+`task089_swap_words_verification`	|  Identifying swapped words in a sentence.	| Verification
+`task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
+`task091_operation_finder_arithmetic`	|  Finding the arithmetic operator.	| Arithmetic
+`task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
