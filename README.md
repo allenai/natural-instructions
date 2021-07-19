@@ -69,10 +69,20 @@ If you have any questions or suggestions, please use [the issues](https://github
 
 
 ## Frequently Asked Questions
+### Can I submit non-English tasks?
+Yes! We welcome submission from any of the languages. 
+
+### Can I create tasks without using crowdsourcing templates?
+Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
+
+### What is the minimun number of instances I can have in my task? 
+
+Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances.
+
+### What do you mean by "meaningful contribution"? 
+If you're among top `k` [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) (say, `k=25`), or if you have contributed at least `l` tasks (say, `l=10`). Depending on the overall contributions, we will adjust these constants so that the number of authors don't exeed `m` (say, `m=35`). 
  
- - **Can I submit non-English tasks?** Yes! We welcome submission from any of the languages. 
- - **Can I create tasks without using crowdsourcing templates?** Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
- - **What is the minimun number of instances I can have in my task?** Minimum: 50, 100 is a safe number, you should not have more than 6500 instances.
- 
- 
+### My commits are not tied to my Github profie; Github does not show all my contributions. 
+
+Make sure that your email is set in your git environment and it is also mentioned in your github profile. See [this](https://stackoverflow.com/questions/26004587/git-commits-are-not-getting-linked-with-my-github-account) and [this](https://docs.github.com/en/github/committing-changes-to-your-project/troubleshooting-commits/why-are-my-commits-linked-to-the-wrong-user). 
  
