@@ -1,6 +1,7 @@
 import json
 from os import listdir
 from os.path import isfile, join
+import random
 
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
@@ -15,7 +16,7 @@ expected_keys = [
 ]
 
 with open("tasks/README.md", 'r') as readmef:
-    task_readme_content = readmef.readlines()
+    task_readme_content = " ".join(readmef.readlines())
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 for file in files:
@@ -52,14 +53,21 @@ for file in files:
                 assert type(x['output']) == str, f'the output of example {x} is not a string'
                 assert type(x['explanation']) == str, f'the explanation of example {x} is not a string'
 
+            # if too many samples, sub-sample
+            instances = enumerate(data['Instances'])
+            if len(data['Instances']) > 1000:
+                instances = random.sample(list(instances), 500)
+
             # make sure there are no repeated input examples
-            for x_idx, x in enumerate(data['Instances']):
+            for x_idx, x in instances:
                 for y_idx in range(x_idx + 1, len(data['Instances'])):
                     y = data['Instances'][y_idx]
                     if x['input'] == y['input']:
                         raise Exception(f" * Looks like we have a repeated example here! :-/ \n {x}\n {y}")
 
+            file = file.replace(".json", "")
             if file not in task_readme_content:
-                raise Exception(f' * looks like the task name `{file}` is not included in the task file `tasks/README.md`')
+                raise Exception(f' * looks like the task name `{file}` is not included '
+                                f'in the task file `tasks/README.md`')
 
 print("Did not find any errors! ✅")
