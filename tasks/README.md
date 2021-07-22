@@ -79,3 +79,4 @@ Name | Summary | Category
 `task096_conala_list_index_subtract` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersect` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
+`task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Mathematical Answer Generation
