@@ -47,5 +47,13 @@ for file in files:
                 assert type(x['output']) == str, f'the output of example {x} is not a string'
                 assert type(x['explanation']) == str, f'the explanation of example {x} is not a string'
 
+            # make sure there are no repeated input examples
+            for x_idx, x in enumerate(data['Instances']):
+                for y_idx in range(x_idx + 1, len(data['Instances'])):
+                    y = data['Instances'][x_idx]
+                    if x['input'] == y['input']:
+                        assert f" * Looks like we have a repeated example here! :-/ \n {x}\n {y}"
+
+
 
 print("Did not find any errors! ✅")
