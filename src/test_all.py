@@ -55,7 +55,7 @@ for file in files:
             # make sure there are no repeated input examples
             for x_idx, x in enumerate(data['Instances']):
                 for y_idx in range(x_idx + 1, len(data['Instances'])):
-                    y = data['Instances'][x_idx]
+                    y = data['Instances'][y_idx]
                     if x['input'] == y['input']:
                         raise Exception(f" * Looks like we have a repeated example here! :-/ \n {x}\n {y}")
 
