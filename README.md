@@ -7,7 +7,7 @@ The contributors with meaningful contribution to our tasks will be included as c
 
 ## Background 
 ### Why define tasks in natural language?
-While the current dominant paradigm (supervised learning with labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
+While the current dominant paradigm (supervised learning with task-specific labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
 We hypothesize that a model equipped with understanding and reasoning with natural language instructions should be able to generalize to any task that can be defined in terms of natural language.
 
 ### Any empirical evidence that this might be true?
