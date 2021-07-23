@@ -404,12 +404,6 @@
             ]
         },
         {
-            "input": "Step 1: For each row in Movie table, find the corresponding rows in Rating table.\nStep 2: find each value of director in the results of step 1 along with the minimum stars of the corresponding rows to each value",
-            "output": [
-                "SELECT T1.title , Min ( T2.stars ) FROM Movie AS T1 JOIN Rating AS T2 ON T1.mID = T2.mID GROUP BY T1.director"
-            ]
-        },
-        {
             "input": "Step 1: For each row in Movie table, find the corresponding rows in Rating table.\nStep 2: find the average stars of each value of Rating's mID in the results of step 1.\nStep 3: find title in the results of step 1 whose corresponding value in step 2 is greater than or equals 2",
             "output": [
                 "SELECT T1.title FROM Movie AS T1 JOIN Rating AS T2 ON T1.mID = T2.mID GROUP BY T2.mID HAVING Avg ( T2.stars ) > = 2"
@@ -1424,12 +1418,6 @@
             ]
         },
         {
-            "input": "find each value of Headquartered_City in district table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Headquartered_City , Count ( * ) FROM district GROUP BY Headquartered_City"
-            ]
-        },
-        {
             "input": "Step 1: For each row in Campuses table, find the corresponding rows in csu_fees table.\nStep 2: find CampusFee of the results of step 1 whose County equals San Jose State University and csu_fees's Year equals 1996",
             "output": [
                 "SELECT T2.CampusFee FROM Campuses AS T1 JOIN csu_fees AS T2 ON T1.Id = T2.Campus WHERE T1.County = \"San Jose State University\" AND T2.Year = 1996"
@@ -1847,12 +1835,6 @@
             "input": "Step 1: For each row in Apartment_Buildings table, find the corresponding rows in Apartments table.\nStep 2: find the summation of bathroom_count in the results of step 1 whose building_short_name equals Columbus Square and building_short_name contains Normandie Court",
             "output": [
                 "SELECT Sum ( T2.bathroom_count ) FROM Apartment_Buildings AS T1 JOIN Apartments AS T2 ON T1.building_id = T2.building_id WHERE T1.building_short_name = \"Normandie Court\" AND T1.building_short_name LIKE \"Columbus Square\""
-            ]
-        },
-        {
-            "input": "find each value of order_id in Orders table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Count ( * ) , order_id FROM Orders GROUP BY order_id"
             ]
         },
         {
@@ -2627,12 +2609,6 @@
             "input": "Step 1: For each row in airlines table, find the corresponding rows in airports table.\nStep 2: find Airline of the results of step 1 whose AirportName equals AHD",
             "output": [
                 "SELECT T1.Airline FROM airlines AS T1 JOIN airports AS T2 WHERE T2.AirportName = \"AHD\""
-            ]
-        },
-        {
-            "input": "find each value of student_id in Friend table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Count ( * ) , student_id FROM Friend GROUP BY student_id"
             ]
         },
         {
@@ -3737,12 +3713,6 @@
             "input": "Step 1: For each row in players table, find the corresponding rows in rankings table.\nStep 2: find first_name, ranking of the results of step 1",
             "output": [
                 "SELECT T1.first_name , T2.ranking FROM players AS T1 JOIN rankings AS T2 ON T1.player_id = T2.player_id"
-            ]
-        },
-        {
-            "input": "Step 1: For each row in players table, find the corresponding rows in matches table.\nStep 2: find each value of loser_id in the results of step 1 along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Count ( * ) , T1.hand FROM players AS T1 JOIN matches AS T2 ON T1.player_id = T2.loser_id GROUP BY T2.loser_id"
             ]
         },
         {
@@ -9242,12 +9212,6 @@
             ]
         },
         {
-            "input": "find each value of bedType in Rooms table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Count ( * ) , bedType FROM Rooms GROUP BY bedType"
-            ]
-        },
-        {
             "input": "Step 1: For each row in artist table, find the corresponding rows in volume table.\nStep 2: find Song of the results of step 1 whose Famous_Release_date equals Triumfall",
             "output": [
                 "SELECT T2.Song FROM artist AS T1 JOIN volume AS T2 ON T1.Artist_ID = T2.Artist_ID WHERE T1.Famous_Release_date = \"Triumfall\""
@@ -12938,12 +12902,6 @@
             ]
         },
         {
-            "input": "find each value of Type in culture_company table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Type , Count ( * ) FROM culture_company GROUP BY Type"
-            ]
-        },
-        {
             "input": "find the Name of event table with largest value of Year",
             "output": [
                 "SELECT Name FROM event ORDER BY Year Desc LIMIT 1"
@@ -15776,12 +15734,6 @@
             ]
         },
         {
-            "input": "find each value of country in airports table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT country , Count ( * ) FROM airports GROUP BY country"
-            ]
-        },
-        {
             "input": "find the document_name, access_count of Documents table ordered ascending by document_name",
             "output": [
                 "SELECT document_name , access_count FROM Documents ORDER BY document_name Asc"
@@ -16490,12 +16442,6 @@
             ]
         },
         {
-            "input": "Step 1: For each row in Ref_Attraction_Types table, find the corresponding rows in Hotels table.\nStep 2: find each value of Attraction_Type_Code in the results of step 1 along with the average price_range of the corresponding rows to each value",
-            "output": [
-                "SELECT Avg ( T2.price_range ) , T1.Attraction_Type_Code FROM Ref_Attraction_Types AS T1 JOIN Hotels AS T2 GROUP BY T1.Attraction_Type_Code"
-            ]
-        },
-        {
             "input": "Step 1: for each value of Product_Name in Products table, calculate number of rows.\nStep 2: show each value of Product_Name in Products table along with the corresponding number of rows ordered descending by the results of step 1",
             "output": [
                 "SELECT Product_Name , Count ( * ) FROM Products GROUP BY Product_Name ORDER BY Count ( * ) Desc"
@@ -16667,12 +16613,6 @@
             "input": "find the invoice_date of Invoices table for which invoice_number less than 10",
             "output": [
                 "SELECT invoice_date FROM Invoices WHERE invoice_number < 10"
-            ]
-        },
-        {
-            "input": "find each value of Rank in Faculty table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Count ( * ) , Sex FROM Faculty GROUP BY Rank"
             ]
         },
         {
@@ -17579,12 +17519,6 @@
             "input": "Step 1: For each row in jobs table, find the corresponding rows in employees table.\nStep 2: find rows of the results of step 1 whose SALARY greater than 8000 or MIN_SALARY greater than or equals 12000",
             "output": [
                 "SELECT * FROM jobs AS T1 JOIN employees AS T2 ON T1.JOB_ID = T2.JOB_ID WHERE T2.SALARY > 8000 OR T1.MIN_SALARY > = 12000"
-            ]
-        },
-        {
-            "input": "Step 1: for each value of Farm_ID in farm table, calculate summation of Total_Horses.\nStep 2: show each value of Farm_ID in farm table along with the corresponding summation of Sheep_and_Goats ordered ascending by the results of step 1",
-            "output": [
-                "SELECT Total_Horses , Sum ( Sheep_and_Goats ) FROM farm GROUP BY Farm_ID ORDER BY Sum ( Total_Horses ) Asc"
             ]
         },
         {
@@ -19478,12 +19412,6 @@
             ]
         },
         {
-            "input": "find each value of maintenance_contract_id in Maintenance_Contracts table along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT maintenance_contract_id , Count ( * ) FROM Maintenance_Contracts GROUP BY maintenance_contract_id"
-            ]
-        },
-        {
             "input": "Step 1: For each row in Employee table, find the corresponding rows in Customer table.\nStep 2: find Employee's LastName of the results of step 1 whose Customer's LastName greater than 20",
             "output": [
                 "SELECT T2.LastName FROM Customer AS T1 JOIN Employee AS T2 ON T1.SupportRepId = T2.EmployeeId WHERE T1.LastName > 20"
@@ -19709,12 +19637,6 @@
             "input": "find the average Age in artist table whose Famous_Release_date greater than or equals 25",
             "output": [
                 "SELECT Avg ( Age ) FROM artist WHERE Famous_Release_date > = 25"
-            ]
-        },
-        {
-            "input": "find each value of city_code in Student table along with the average Age of the corresponding rows to each value",
-            "output": [
-                "SELECT Avg ( Age ) , city_code FROM Student GROUP BY city_code"
             ]
         },
         {
@@ -20201,12 +20123,6 @@
             "input": "Step 1: For each row in departments table, find the corresponding rows in employees table.\nStep 2: find rows of the results of step 1 whose SALARY greater than 8000 or DEPARTMENT_NAME equals null",
             "output": [
                 "SELECT * FROM departments AS T1 JOIN employees AS T2 ON T1.DEPARTMENT_ID = T2.DEPARTMENT_ID WHERE T2.SALARY > 8000 OR T1.DEPARTMENT_NAME = \"null\""
-            ]
-        },
-        {
-            "input": "Step 1: find the rows in song table whose resolution greater than 500.\nStep 2: find each value of artist_name in the results of step 1 ordered descending by number of rows that correspond of each value.\nStep 3: only show the first row of the results",
-            "output": [
-                "SELECT artist_name FROM song WHERE resolution > 500 GROUP BY song_name ORDER BY Count ( * ) Desc LIMIT 1"
             ]
         },
         {
@@ -21257,12 +21173,6 @@
             "input": "find the Music_Festival, Music_Festival of music_festival table",
             "output": [
                 "SELECT Music_Festival , Music_Festival FROM music_festival"
-            ]
-        },
-        {
-            "input": "Step 1: find rows in Documents table whose Document_Type_Code equals BK.\nStep 2: find each value of Document_ID the results of step 1 along with the number of the corresponding rows to each value",
-            "output": [
-                "SELECT Count ( * ) , Document_Type_Code FROM Documents WHERE Document_Type_Code = \"BK\" GROUP BY Document_ID"
             ]
         },
         {
