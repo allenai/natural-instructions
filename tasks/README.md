@@ -68,7 +68,6 @@ Name | Summary | Category
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
 `task073_CommonsenseQA_answer_generation` | Answering questions based on commonsense knowledge | Answer Generation
-`task075_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task076_splash_correcting_sql_mistakes` | Based on feedback correct the mistake in a given SQL statement. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Structured Query Classification
@@ -79,3 +78,4 @@ Name | Summary | Category
 `task096_conala_list_index_subtract` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersect` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
+`task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
