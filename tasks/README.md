@@ -48,7 +48,8 @@ Name | Summary | Category
 `task041_qasc_answer_generation`	| Writing correct answer to a given question based on a given sentence.	| Answer Generation
 `task042_qasc_incorrect_option_generation`	| Writing incorrect answers to a given question based on a given sentence.	| Incorrect Answer Generation
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
-`task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question that are essential for choosing the correct answer.	| Verification
+`task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question that are essential for choosing the correct answer.	|
+Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
 `task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
 `task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
@@ -83,4 +84,6 @@ Name | Summary | Category
 `task096_conala_list_index_subtraction` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
+`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
+`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
