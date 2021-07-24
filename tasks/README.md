@@ -80,7 +80,7 @@ Name | Summary | Category
 `task093_conala_normalize_lists` | Given a list of numbers normalize the list such that the result adds to 1 | Answer Generation, Arithmetic
 `task094_conala_calculate_mean` | Given a list of numbers calculate the mean of the list | Answer Generation, Arithmetic
 `task095_conala_max_absolute_value` | Given a list of numbers calculate the element with the largest absolute value | Answer Generation, Arithmetic
-`task096_conala_list_index_subtract` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
+`task096_conala_list_index_subtraction` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
