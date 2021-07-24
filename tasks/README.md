@@ -80,3 +80,4 @@ Name | Summary | Category
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersect` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
 `task102_commongen` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
+`task103_facts_to_story` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
