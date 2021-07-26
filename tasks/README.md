@@ -49,6 +49,7 @@ Name | Summary | Category
 `task042_qasc_incorrect_option_generation`	| Writing incorrect answers to a given question based on a given sentence.	| Incorrect Answer Generation
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
 `task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question that are essential for choosing the correct answer.	|
+`task110_logic2text_sentence_generation` | Generate sentence that interprets mathematical logic form in natural language | Sentence Generation
 Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
 `task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
