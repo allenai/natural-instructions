@@ -84,5 +84,4 @@ Name | Summary | Category
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
-`task109_SMSspamcollection_SpamSMSdetection` | Classify 
 `task109_SMSspamcollection_SpamSMSdetection` | Classify SMS into spam or ham | Classification
