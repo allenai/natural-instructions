@@ -62,10 +62,10 @@ Name | Summary | Category
 `task055_multirc_write_incorrect_answer`	| Writing Incorrect Answers for a Reading Comprehension Task. | Incorrect AnswerGeneration
 `task056_multirc_classify_correct_answer`	| Classifying Good Correct Answers.	| Classification
 `task057_multirc_classify_incorrect_answer`	| Classifying Good Incorrect Answers.	| Classification
-`task058_multirc_question_answering`	| Reading Comprehension Over Multiple Sentences.	| Answer Generation
+`task058_multirc_question_answering`	| Reading Comprehension Over Multiple Sentences.	| Classification
 `task059_ropes_story_generation`	| Generating a story about relations in the given paragraph.	| Long Text Generation
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
-`task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
+`task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
 `task073_CommonsenseQA_answer_generation` | Answering questions based on commonsense knowledge | Answer Generation
 `task074_squad1.1_question_generation` | Generating guestions (based on SQuAD 1.1) | Question Generation  
