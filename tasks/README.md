@@ -48,8 +48,7 @@ Name | Summary | Category
 `task041_qasc_answer_generation`	| Writing correct answer to a given question based on a given sentence.	| Answer Generation
 `task042_qasc_incorrect_option_generation`	| Writing incorrect answers to a given question based on a given sentence.	| Incorrect Answer Generation
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
-`task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question that are essential for choosing the correct answer.	|
-Verification
+`task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question essential for choosing the correct answer.	| Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
 `task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
 `task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
