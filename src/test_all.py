@@ -53,10 +53,7 @@ for file in files:
                 assert type(x['output']) == str, f'the output of example {x} is not a string'
                 assert type(x['explanation']) == str, f'the explanation of example {x} is not a string'
 
-            # if too many samples, sub-sample
             instances = enumerate(data['Instances'])
-            if len(data['Instances']) > 1000:
-                instances = random.sample(list(instances), 500)
 
             # make sure there are no repeated input examples
             for x_idx, x in instances:
