@@ -7,8 +7,7 @@ The contributors with meaningful contribution to our tasks will be included as c
 
 ## Background 
 ### Why define tasks in natural language?
-While the current dominant paradigm (supervised learning with labeled examples) has been successful in building task-specific models. 
-Such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
+While the current dominant paradigm (supervised learning with task-specific labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
 We hypothesize that a model equipped with understanding and reasoning with natural language instructions should be able to generalize to any task that can be defined in terms of natural language.
 
 ### Any empirical evidence that this might be true?
@@ -58,7 +57,7 @@ We would appreciate any external contributions! 🙏
     * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4)`)   
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
-    * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number).
+    * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number). Make sure to include the source dataset name and the task category name while creating the json file name. You can use this format: taskabc_<source dataset>_<task category>.json E.g. in task001_quoref_question_generation.json, the source dataset is 'quoref' and the task category is 'question generation. Note that, source need not necesserily be a dataset and can be a website e.g. leetcode. Finally, if you have created the json without any reference, use 'synthetic' in place of source.
     * Make sure to create a pull request after creating all possible tasks from a dataset. You should have one pull request per dataset.
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
@@ -69,10 +68,20 @@ If you have any questions or suggestions, please use [the issues](https://github
 
 
 ## Frequently Asked Questions
+### Can I submit non-English tasks?
+Yes! We welcome submission from any of the languages. 
+
+### Can I create tasks without using crowdsourcing templates?
+Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
+
+### What is the minimun number of instances I can have in my task? 
+
+Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances.
+
+### What do you mean by "meaningful contribution"? 
+If you're among top `k` [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) (say, `k=25`), or if you have contributed at least `l` tasks (say, `l=10`). Depending on the overall contributions, we will adjust these constants so that the number of authors don't exeed `m` (say, `m=35`). 
  
- - **Can I submit non-English tasks?** Yes! We welcome submission from any of the languages. 
- - **Can I create tasks without using crowdsourcing templates?** Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
- - **What is the minimun number of instances I can have in my task?** Minimum: 50, 100 is a safe number, you should not have more than 6500 instances.
- 
- 
+### My commits are not tied to my Github profie; Github does not show all my contributions. 
+
+Make sure that your email is set in your git environment and it is also mentioned in your github profile. See [this](https://stackoverflow.com/questions/26004587/git-commits-are-not-getting-linked-with-my-github-account) and [this](https://docs.github.com/en/github/committing-changes-to-your-project/troubleshooting-commits/why-are-my-commits-linked-to-the-wrong-user). 
  
