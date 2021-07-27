@@ -79,4 +79,4 @@ Name | Summary | Category
 `task096_conala_list_index_subtract` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersect` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
-`task105_Story Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence.  | Sentence Generation
+`task105_Story_Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence.  | Sentence Generation
