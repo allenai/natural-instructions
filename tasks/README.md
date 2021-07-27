@@ -79,5 +79,4 @@ Name | Summary | Category
 `task088_identify_typo_verification`	|  Identifying typo in a sentence.	| Verification
 `task089_swap_words_verification`	|  Identifying swapped words in a sentence.	| Verification
 `task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
-`task091_operation_finder_arithmetic`	|  Finding the arithmetic operator.	| Arithmetic
 `task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
