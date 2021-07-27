@@ -44,7 +44,7 @@ for file in files:
                     assert type(i) == str, f'the output is not a string'
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
             # TODO: add this back in, once we have negative examples for all the tasks
-            assert len(data['Negative Examples']) > 1, "there must be at least one negative example"
+            assert len(data['Negative Examples']) > 0, "there must be at least 2 negative example"
 
             for x in data['Positive Examples'] + data['Negative Examples']:
                 for key in ['input', 'output', 'explanation']:
