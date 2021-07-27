@@ -404,12 +404,6 @@
             ]
         },
         {
-            "input": "SELECT T1.title , Min ( T2.stars ) FROM Movie AS T1 JOIN Rating AS T2 ON T1.mID = T2.mID GROUP BY T1.director",
-            "output": [
-                "Step 1: For each row in Movie table, find the corresponding rows in Rating table.\nStep 2: find each value of director in the results of step 1 along with the minimum stars of the corresponding rows to each value"
-            ]
-        },
-        {
             "input": "SELECT T1.title FROM Movie AS T1 JOIN Rating AS T2 ON T1.mID = T2.mID GROUP BY T2.mID HAVING Avg ( T2.stars ) > = 2",
             "output": [
                 "Step 1: For each row in Movie table, find the corresponding rows in Rating table.\nStep 2: find the average stars of each value of Rating's mID in the results of step 1.\nStep 3: find title in the results of step 1 whose corresponding value in step 2 is greater than or equals 2"
