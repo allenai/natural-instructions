@@ -12,7 +12,8 @@ expected_keys = [
     "Negative Examples",
     "Instances",
     'Contributors',
-    'Categories'
+    'Categories',
+    'Source'
 ]
 
 with open("tasks/README.md", 'r') as readmef:
@@ -41,10 +42,9 @@ for file in files:
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
-
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
             # TODO: add this back in, once we have negative examples for all the tasks
-            # assert len(data['Negative Examples']) > 1, "there must be at least one negative example"
+            assert len(data['Negative Examples']) > 0, "there must be at least 2 negative example"
 
             for x in data['Positive Examples'] + data['Negative Examples']:
                 for key in ['input', 'output', 'explanation']:
@@ -64,7 +64,14 @@ for file in files:
                     y = data['Instances'][y_idx]
                     if x['input'] == y['input']:
                         raise Exception(f" * Looks like we have a repeated example here! :-/ \n {x}\n {y}")
-
+            
+            # make sure there are no examples repeated across instances and positive examples
+            for x_idx, x in instances:
+                for y_idx in range(len(data['Positive Examples'])):
+                    y = data['Positive Examples'][y_idx]
+                    if x['input'] == y['input']:
+                        raise Exception(f" * Looks like we have a same example across positive examples and instances! :-/ \n {x}\n {y}")
+            
             file = file.replace(".json", "")
             if file not in task_readme_content:
                 raise Exception(f' * looks like the task name `{file}` is not included '
