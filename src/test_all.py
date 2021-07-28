@@ -2,7 +2,10 @@ import json
 from os import listdir
 from os.path import isfile, join
 import random
-
+from git import Repo
+  
+repo = Repo('')
+git = repo.git
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
 
@@ -18,8 +21,11 @@ expected_keys = [
 
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
-
-files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
+files=[]
+# files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
+for item in git.status('-s').split('\n'):
+    if ".json" in item:
+        files.append(item.split('tasks/')[1])
 for file in files:
     print(f" --> testing file: {file}")
     if ".md" not in file:
@@ -43,7 +49,6 @@ for file in files:
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
-            # TODO: add this back in, once we have negative examples for all the tasks
             assert len(data['Negative Examples']) > 0, "there must be at least 2 negative example"
 
             for x in data['Positive Examples'] + data['Negative Examples']:
@@ -60,15 +65,15 @@ for file in files:
                 for y_idx in range(x_idx + 1, len(data['Instances'])):
                     y = data['Instances'][y_idx]
                     if x['input'] == y['input']:
-                        raise Exception(f" * Looks like we have a repeated example here! :-/ \n {x}\n {y}")
-            
+                        raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {x}\n {y}")
+
             # make sure there are no examples repeated across instances and positive examples
             for x_idx, x in instances:
                 for y_idx in range(len(data['Positive Examples'])):
                     y = data['Positive Examples'][y_idx]
                     if x['input'] == y['input']:
-                        raise Exception(f" * Looks like we have a same example across positive examples and instances! :-/ \n {x}\n {y}")
-            
+                        raise Exception(f" * Looks like we have a same example across positive examples and instances! Merge outputs before removing duplicates. :-/ \n {x}\n {y}")
+
             file = file.replace(".json", "")
             if file not in task_readme_content:
                 raise Exception(f' * looks like the task name `{file}` is not included '
