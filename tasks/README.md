@@ -86,3 +86,5 @@ Name | Summary | Category
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
+`task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
+`task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
