@@ -66,7 +66,7 @@ for file in files[-70:]:
                 for y_idx in range(len(data['Positive Examples'])):
                     y = data['Positive Examples'][y_idx]
                     if x['input'] == y['input']:
-                        raise Exception(f" * Looks like we have a same example across positive examples and instances! Merge outputs before removing duplicates. :-/ \n {x}\n {y}")
+                        raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {x}\n {y}")
 
             file = file.replace(".json", "")
             if file not in task_readme_content:
