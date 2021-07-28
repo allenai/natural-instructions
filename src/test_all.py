@@ -20,7 +20,7 @@ with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
-for file in files[int(files[-1].split('_')[0].split('task')[1])-70:]:
+for file in files[-70:]:
     if ".md" not in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
