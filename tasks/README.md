@@ -49,7 +49,6 @@ Name | Summary | Category
 `task042_qasc_incorrect_option_generation`	| Writing incorrect answers to a given question based on a given sentence.	| Incorrect Answer Generation
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
 `task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question that are essential for choosing the correct answer.	| Verification
-`task110_logic2text_sentence_generation` | Generate sentence that interprets mathematical logic form in natural language | Sentence Generation
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
 `task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
 `task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
@@ -80,3 +79,4 @@ Name | Summary | Category
 `task096_conala_list_index_subtract` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersect` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
+`task110_logic2text_sentence_generation` | Generate sentence that interprets mathematical logic form in natural language | Sentence Generation
