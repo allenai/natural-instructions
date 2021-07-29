@@ -96,5 +96,5 @@ Name | Summary | Category
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
-`task_113_com2sense_commonsense_reasoning` | Decide whether a sentence is true or not, based on commonsense | Commonsense Reasoning
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is true or not, based on commonsense | Commonsense Reasoning
