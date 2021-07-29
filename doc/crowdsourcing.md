@@ -3,21 +3,10 @@
 Generally, this process consists of the following steps: 
 
 ### Step 1: Identify a dataset and engage with their authors
-If you're the author of the dataset, you can skip this step. 
-You can [search](https://www.google.com/search?q=mechanical+turk+site:https://www.aclweb.org/anthology/&rlz=1C5CHFA_enUS865US865&sxsrf=ALeKk03WhDB5Er1VDn8xkZkQ19xnwCRUdg:1612731653696&source=lnt&tbs=qdr:y&sa=X&ved=2ahUKEwi6lNjK1djuAhXiJTQIHZpFBHYQpwV6BAgVECQ&biw=1929&bih=1018) for recently published papers that used crowdsourcing and ask the authors for their templates.  
-If you're emailing the authors, you can use an email like this: 
-```
-Hi <...>,
-Hope you're doing well! 
+Consider a task that involves high-level language instructions. 
+These could be the instructions used for crowdsourcing a dataset or otherwise.
+If you decide to use crowdsourcing instructions, you can [email authors of existing datasets](emailing-authors.md) and ask for their templates. 
 
-My name is <...> and I am one of the contributors to the natural instructions project.  
-I am interested in incorporating your the crowdsourcing template that you used in your paper: <...>. 
-We think your instructions are a good additon to the benchmark since <...>.  
-We were wondering if you can share your mechanical turk templates (e.g., the html files) and the corresponding input/outputs to each of the MTurk experiments (csv files in batches).
- 
-Thank you, 
-<...>
-```
 
 ### Step 2: Go through the template and understand the task 
 Create few data samples, annotate them and see if your outputs match instructions in the template and gold annotations.

@@ -48,7 +48,7 @@ Name | Summary | Category
 `task041_qasc_answer_generation`	| Writing correct answer to a given question based on a given sentence.	| Answer Generation
 `task042_qasc_incorrect_option_generation`	| Writing incorrect answers to a given question based on a given sentence.	| Incorrect Answer Generation
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
-`task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question that are essential for choosing the correct answer.	| Verification
+`task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question essential for choosing the correct answer.	| Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
 `task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
 `task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
@@ -62,20 +62,38 @@ Name | Summary | Category
 `task055_multirc_write_incorrect_answer`	| Writing Incorrect Answers for a Reading Comprehension Task. | Incorrect AnswerGeneration
 `task056_multirc_classify_correct_answer`	| Classifying Good Correct Answers.	| Classification
 `task057_multirc_classify_incorrect_answer`	| Classifying Good Incorrect Answers.	| Classification
-`task058_multirc_question_answering`	| Reading Comprehension Over Multiple Sentences.	| Answer Generation
+`task058_multirc_question_answering`	| Reading Comprehension Over Multiple Sentences.	| Classification
 `task059_ropes_story_generation`	| Generating a story about relations in the given paragraph.	| Long Text Generation
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
-`task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answering Generation
+`task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
 `task073_CommonsenseQA_answer_generation` | Answering questions based on commonsense knowledge | Answer Generation
+`task074_squad1.1_question_generation` | Generating guestions (based on SQuAD 1.1) | Question Generation  
+`task075_squad1.1_answer_generation` | Generating answers to SQuAD 1.1 questions | Answer Generation  
 `task076_splash_correcting_sql_mistakes` | Based on feedback correct the mistake in a given SQL statement. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Structured Query Classification
+`task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation.
+`task085_unnatural_addsub_arithmetic`	|  Performing Arithmetic with swapped operator symbols.	| Arithmetic
+`task086_translated_symbol_arithmetic`	|  Performing Arithmetic with translated operator symbols.	| Arithmetic
+`task087_new_operator_addsub_arithmetic`	|  Performing Arithmetic with newly defined operator symbols.	| Arithmetic
+`task088_identify_typo_verification`	|  Identifying typo in a sentence.	| Verification
+`task089_swap_words_verification`	|  Identifying swapped words in a sentence.	| Verification
+`task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
+`task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
 `task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation
-`task093_conala_normalize_list` | Given a list of numbers normalize the list such that the result adds to 1 | Answer Generation, Arithmetic
+`task082_babi_t1_single_supporting_fact_question_generation` | Generating a question, given a collection of facts | Question Generation  
+`task083_babi_t1_single_supporting_fact_answer_generation` | Generating an answer, given a collection of evidence sentences | Answer Generatiomn 
+`task084_babi_t1_single_supporting_fact_identify_relevant_fact` | Given a question and answer, identifying the relevant piece of evidence | Supporting Fact Identification  
+`task093_conala_normalize_lists` | Given a list of numbers normalize the list such that the result adds to 1 | Answer Generation, Arithmetic
 `task094_conala_calculate_mean` | Given a list of numbers calculate the mean of the list | Answer Generation, Arithmetic
 `task095_conala_max_absolute_value` | Given a list of numbers calculate the element with the largest absolute value | Answer Generation, Arithmetic
-`task096_conala_list_index_subtract` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
+`task096_conala_list_index_subtraction` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
-`task098_conala_list_intersect` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
+`task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
+`task_111_asset_sentence_simplification` | Given a sentence, simplify it so it can be understood by non-native English speakers | Generation, Paraphrasing
+`task_112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
+`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
+`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
+`task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
