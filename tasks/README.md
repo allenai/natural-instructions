@@ -73,6 +73,14 @@ Name | Summary | Category
 `task076_splash_correcting_sql_mistakes` | Based on feedback correct the mistake in a given SQL statement. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate an SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement is doing. | Structured Query Classification
+`task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation.
+`task085_unnatural_addsub_arithmetic`	|  Performing Arithmetic with swapped operator symbols.	| Arithmetic
+`task086_translated_symbol_arithmetic`	|  Performing Arithmetic with translated operator symbols.	| Arithmetic
+`task087_new_operator_addsub_arithmetic`	|  Performing Arithmetic with newly defined operator symbols.	| Arithmetic
+`task088_identify_typo_verification`	|  Identifying typo in a sentence.	| Verification
+`task089_swap_words_verification`	|  Identifying swapped words in a sentence.	| Verification
+`task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
+`task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
 `task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation
 `task082_babi_t1_single_supporting_fact_question_generation` | Generating a question, given a collection of facts | Question Generation  
 `task083_babi_t1_single_supporting_fact_answer_generation` | Generating an answer, given a collection of evidence sentences | Answer Generatiomn 
@@ -89,3 +97,4 @@ Name | Summary | Category
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task_113_com2sense_commonsense_reasoning` | Decide whether a sentence is true or not, based on commonsense | Commonsense Reasoning
+`task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification

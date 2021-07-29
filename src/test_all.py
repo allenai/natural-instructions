@@ -12,16 +12,17 @@ expected_keys = [
     "Negative Examples",
     "Instances",
     'Contributors',
-    'Categories'
+    'Categories',
+    'Source'
 ]
 
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
-
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-for file in files:
-    print(f" --> testing file: {file}")
+files.sort()
+for file in files[-70:]:
     if ".md" not in file:
+        print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
         with open(file_path, 'r') as f:
@@ -41,10 +42,8 @@ for file in files:
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
-
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
-            # TODO: add this back in, once we have negative examples for all the tasks
-            # assert len(data['Negative Examples']) > 1, "there must be at least one negative example"
+            assert len(data['Negative Examples']) > 0, "there must be at least 2 negative example"
 
             for x in data['Positive Examples'] + data['Negative Examples']:
                 for key in ['input', 'output', 'explanation']:
@@ -53,17 +52,21 @@ for file in files:
                 assert type(x['output']) == str, f'the output of example {x} is not a string'
                 assert type(x['explanation']) == str, f'the explanation of example {x} is not a string'
 
-            # if too many samples, sub-sample
             instances = enumerate(data['Instances'])
-            if len(data['Instances']) > 1000:
-                instances = random.sample(list(instances), 500)
 
             # make sure there are no repeated input examples
             for x_idx, x in instances:
                 for y_idx in range(x_idx + 1, len(data['Instances'])):
                     y = data['Instances'][y_idx]
                     if x['input'] == y['input']:
-                        raise Exception(f" * Looks like we have a repeated example here! :-/ \n {x}\n {y}")
+                        raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {x}\n {y}")
+
+            # make sure there are no examples repeated across instances and positive examples
+            for x_idx, x in instances:
+                for y_idx in range(len(data['Positive Examples'])):
+                    y = data['Positive Examples'][y_idx]
+                    if x['input'] == y['input']:
+                        raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {x}\n {y}")
 
             file = file.replace(".json", "")
             if file not in task_readme_content:
@@ -71,3 +74,4 @@ for file in files:
                                 f'in the task file `tasks/README.md`')
 
 print("Did not find any errors! ✅")
+                    
