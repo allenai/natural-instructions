@@ -97,3 +97,4 @@ Name | Summary | Category
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task110_logic2text_sentence_generation` | Given a mathematical logic form, generate natural language sentence that interprets it | Sentence Generation
