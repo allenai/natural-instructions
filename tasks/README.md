@@ -96,6 +96,10 @@ Name | Summary | Category
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Answer Generation, Arithmetic
+`task105_Story_Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence. | Sentence Generation
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
+`task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
+`task117_spl_translation_en_de.json` | Translate English questions to German | Translation
