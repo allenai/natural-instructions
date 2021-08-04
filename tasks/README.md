@@ -82,6 +82,8 @@ Name | Summary | Category
 `task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
 `task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
 `task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation
+`task080_piqa_answer_generation`	|  Generating solution to a goal regarding physical knowledge about the world	| Answer Generation
+`task081_piqa_wrong_answer_generation`	|  Generating incorrect solution to a goal regarding physical knowledge about the world	| Incorrect Answer Generation
 `task082_babi_t1_single_supporting_fact_question_generation` | Generating a question, given a collection of facts | Question Generation  
 `task083_babi_t1_single_supporting_fact_answer_generation` | Generating an answer, given a collection of evidence sentences | Answer Generatiomn 
 `task084_babi_t1_single_supporting_fact_identify_relevant_fact` | Given a question and answer, identifying the relevant piece of evidence | Supporting Fact Identification  
