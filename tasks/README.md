@@ -82,6 +82,8 @@ Name | Summary | Category
 `task090_equation_learner_algebra`	|  Answering based on the given equation.	| Algebra
 `task092_check_prime_classification`	|  Finding whether the number is prime or not.	| Mathematics
 `task079_conala_concat_strings` | Given a list of strings concatenate them to form one string | Answer Generation
+`task080_piqa_answer_generation`	|  Generating solution to a goal regarding physical knowledge about the world	| Answer Generation
+`task081_piqa_wrong_answer_generation`	|  Generating incorrect solution to a goal regarding physical knowledge about the world	| Incorrect Answer Generation
 `task082_babi_t1_single_supporting_fact_question_generation` | Generating a question, given a collection of facts | Question Generation  
 `task083_babi_t1_single_supporting_fact_answer_generation` | Generating an answer, given a collection of evidence sentences | Answer Generatiomn 
 `task084_babi_t1_single_supporting_fact_identify_relevant_fact` | Given a question and answer, identifying the relevant piece of evidence | Supporting Fact Identification  
@@ -95,5 +97,13 @@ Name | Summary | Category
 `task_112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
+`task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Answer Generation, Arithmetic
+`task105_Story_Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence. | Sentence Generation
+`task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
+`task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
+`task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
+`task117_spl_translation_en_de.json` | Translate English questions to German | Translation
+
