@@ -68,7 +68,7 @@ Name | Summary | Category
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
 `task067_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and ending.	| Answer Generation
-`task068_abductivenli_incorrect_answer_generation.json`	|  Generating text that incorrectly completes a story based on given beginning and ending.	| Answer Generation
+`task068_abductivenli_incorrect_answer_generation.json`	|  Generating text that modifies a story to be incorrect based on given beginning, middle, and ending.	| Answer Generation
 `task069_abductivenli_classification.json`	|  Choosing text that completes a story based on given beginning and ending.	| Classification
 `task070_abductivenli_incorrect_classification.json`	|  Choosing text that incorrectly completes a story based on given beginning and ending.	| Classification
 `task071_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and middle.	| Answer Generation
