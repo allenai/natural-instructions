@@ -106,4 +106,7 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
-
+`task118_conala_list_index_addition.json` | Add lists together based on their index | Answer Generation, Arithmetic
+`task119_conala_sort_dictionary.json` | Sort a list of dictionaries based on a given key | Answer Generation, Arithmetic
+`task120_conala_pair_averages.json` | Calculate the averages for each two consecutive elements | Answer Generation, Arithmetic
+`task121_conala_pair_differences.json` | Calculate the absolute difference for each two consecutive elements | Answer Generation, Arithmetic
