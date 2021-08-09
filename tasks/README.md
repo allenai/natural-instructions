@@ -70,7 +70,12 @@ Name | Summary | Category
 `task063_timetravel_text_modification`	| Modifying a sentence in the given story to make the story inconsistent. | Text Modification
 `task065_timetravel_classification`	| Choosing the option that makes a given short story consistent. | Classification
 `task066_timetravel_classification`	| Identifying if the given sentence is consistent with the given story. | Classification
-`task073_CommonsenseQA_answer_generation`	|  Answering questions based on commonsense knowledge.	| Answer Generation
+`task067_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and ending.	| Answer Generation
+`task068_abductivenli_incorrect_answer_generation.json`	|  Generating text that modifies a story to be incorrect based on given beginning, middle, and ending.	| Answer Generation
+`task069_abductivenli_classification.json`	|  Choosing text that completes a story based on given beginning and ending.	| Classification
+`task070_abductivenli_incorrect_classification.json`	|  Choosing text that incorrectly completes a story based on given beginning and ending.	| Classification
+`task071_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and middle.	| Answer Generation
+`task072_abductivenli_answer_generation`	|  Generating text that completes a story based on given middle and ending.	| Answer Generation
 `task073_CommonsenseQA_answer_generation` | Answering questions based on commonsense knowledge | Answer Generation
 `task074_squad1.1_question_generation` | Generating guestions (based on SQuAD 1.1) | Question Generation  
 `task075_squad1.1_answer_generation` | Generating answers to SQuAD 1.1 questions | Answer Generation  
@@ -110,4 +115,6 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
-
+`task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
+`task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
+`task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
