@@ -106,6 +106,6 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
-`task119_zest_paraphrasing.json` | Paraphrasing given question | Paraphrasing
-`task120_zest_semantic_flips.json` | Given a question, Change the answer with minimum changes | Semantic flips
-`task121_zest_combination.json` | Given some questions, combine them to have one new question | Combination
+`task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
+`task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
+`task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
