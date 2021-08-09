@@ -112,4 +112,9 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
-
+`task126_scan_structured_text_generation_all.json` | Given a natural language command, provide its sequence of actions. | Structured Text Generation
+`task127_scan_long_text_generation_all.json` | Given a sequence of actions, provide its natural language command. | Long Text Generation
+`task128_scan_structured_text_generation_short.json` | Given a short natural language command, provide its sequence of actions. | Structured Text Generation
+`task129_scan_long_text_generation_short.json` | Given a short sequence of actions, provide its natural language command. | Long Text Generation
+`task130_scan_structured_text_generation_long.json` | Given a long natural language command, provide its sequence of actions. | Structured Text Generation
+`task131_scan_long_text_generation_long.json` | Given a long sequence of actions, provide its natural language command. | Long Text Generation
