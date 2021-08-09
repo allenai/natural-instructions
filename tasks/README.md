@@ -67,6 +67,8 @@ Name | Summary | Category
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
+`task065_timetravel_consistent_sentence_classification`	| Choosing the option that makes a given short story consistent. | Classification
+`task066_timetravel_binary_consistency_classification`	| Identifying if the given sentence is consistent with the given story. | Classification
 `task067_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and ending.	| Answer Generation
 `task068_abductivenli_incorrect_answer_generation.json`	|  Generating text that modifies a story to be incorrect based on given beginning, middle, and ending.	| Answer Generation
 `task069_abductivenli_classification.json`	|  Choosing text that completes a story based on given beginning and ending.	| Classification
@@ -101,8 +103,8 @@ Name | Summary | Category
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
 `task_111_asset_sentence_simplification` | Given a sentence, simplify it so it can be understood by non-native English speakers | Generation, Paraphrasing
 `task_112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
-`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
-`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
+`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation
+`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation
 `task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Answer Generation, Arithmetic
 `task105_Story_Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence. | Sentence Generation
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
@@ -112,6 +114,9 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
+`task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
+`task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
+`task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
 `task126_scan_structured_text_generation_command_action_all.json` | Given a natural language command, provide its sequence of actions. | Structured Text Generation
 `task127_scan_long_text_generation_action_command_all.json` | Given a sequence of actions, provide its natural language command. | Long Text Generation
 `task128_scan_structured_text_generation_command_action_short.json` | Given a short natural language command, provide its sequence of actions. | Structured Text Generation
