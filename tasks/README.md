@@ -97,4 +97,4 @@ Name | Summary | Category
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
-`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is true or not, based on commonsense | Commonsense Reasoning
+`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
