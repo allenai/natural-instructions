@@ -117,3 +117,7 @@ Name | Summary | Category
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
 `task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
+`task_122_winowhy_reason_plausibility_detection.json` | Dectect if a reason explaining an answer to a pronoun coreference resolution question is corecct or not | Classification
+`task_123_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
+`task_124_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
+`task_125_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
