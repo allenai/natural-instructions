@@ -103,8 +103,8 @@ Name | Summary | Category
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
 `task_111_asset_sentence_simplification` | Given a sentence, simplify it so it can be understood by non-native English speakers | Generation, Paraphrasing
 `task_112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
-`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
-`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
+`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation
+`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation
 `task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Answer Generation, Arithmetic
 `task105_Story_Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence. | Sentence Generation
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
@@ -117,7 +117,14 @@ Name | Summary | Category
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
 `task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
-`task_122_winowhy_reason_plausibility_detection.json` | Dectect if a reason explaining an answer to a pronoun coreference resolution question is corecct or not | Classification
-`task_123_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
-`task_124_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
-`task_125_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
+`task122_winowhy_reason_plausibility_detection.json` | Dectect if a reason explaining an answer to a pronoun coreference resolution question is corecct or not | Classification
+`task123_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
+`task124_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
+`task125_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
+`task126_scan_structured_text_generation_command_action_all.json` | Given a natural language command, provide its sequence of actions. | Structured Text Generation
+`task127_scan_long_text_generation_action_command_all.json` | Given a sequence of actions, provide its natural language command. | Long Text Generation
+`task128_scan_structured_text_generation_command_action_short.json` | Given a short natural language command, provide its sequence of actions. | Structured Text Generation
+`task129_scan_long_text_generation_action_command_short.json` | Given a short sequence of actions, provide its natural language command. | Long Text Generation
+`task130_scan_structured_text_generation_command_action_long.json` | Given a long natural language command, provide its sequence of actions. | Structured Text Generation
+`task131_scan_long_text_generation_action_command_long.json` | Given a long sequence of actions, provide its natural language command. | Long Text Generation
+
