@@ -67,6 +67,14 @@ Name | Summary | Category
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
+`task065_timetravel_consistent_sentence_classification`	| Choosing the option that makes a given short story consistent. | Classification
+`task066_timetravel_binary_consistency_classification`	| Identifying if the given sentence is consistent with the given story. | Classification
+`task067_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and ending.	| Answer Generation
+`task068_abductivenli_incorrect_answer_generation.json`	|  Generating text that modifies a story to be incorrect based on given beginning, middle, and ending.	| Answer Generation
+`task069_abductivenli_classification.json`	|  Choosing text that completes a story based on given beginning and ending.	| Classification
+`task070_abductivenli_incorrect_classification.json`	|  Choosing text that incorrectly completes a story based on given beginning and ending.	| Classification
+`task071_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and middle.	| Answer Generation
+`task072_abductivenli_answer_generation`	|  Generating text that completes a story based on given middle and ending.	| Answer Generation
 `task073_CommonsenseQA_answer_generation` | Answering questions based on commonsense knowledge | Answer Generation
 `task074_squad1.1_question_generation` | Generating guestions (based on SQuAD 1.1) | Question Generation  
 `task075_squad1.1_answer_generation` | Generating answers to SQuAD 1.1 questions | Answer Generation  
@@ -95,13 +103,19 @@ Name | Summary | Category
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
 `task_111_asset_sentence_simplification` | Given a sentence, simplify it so it can be understood by non-native English speakers | Generation, Paraphrasing
 `task_112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
+<<<<<<< HEAD
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation 
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation 
+=======
+`task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation
+`task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation
+>>>>>>> b09e18ee9ff8e5dbc62e67c5275f62927da0be44
 `task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Answer Generation, Arithmetic
 `task105_Story_Cloze-ROCStories_sentence_generation` | Given a four sentences, predict the next (fifth) coherent sentence. | Sentence Generation
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+<<<<<<< HEAD
 <<<<<<< HEAD
 `task110_logic2text_sentence_generation` | Given a mathematical logic form, generate natural language sentence that interprets it | Sentence Generation
 =======
@@ -111,3 +125,24 @@ Name | Summary | Category
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
 
 >>>>>>> c1ce7e0beb14a82394c956a765d8cc01981dfa5a
+=======
+`task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
+`task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
+`task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
+`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
+`task117_spl_translation_en_de.json` | Translate English questions to German | Translation
+`task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
+`task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
+`task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
+`task126_scan_structured_text_generation_command_action_all.json` | Given a natural language command, provide its sequence of actions. | Structured Text Generation
+`task127_scan_long_text_generation_action_command_all.json` | Given a sequence of actions, provide its natural language command. | Long Text Generation
+`task128_scan_structured_text_generation_command_action_short.json` | Given a short natural language command, provide its sequence of actions. | Structured Text Generation
+`task129_scan_long_text_generation_action_command_short.json` | Given a short sequence of actions, provide its natural language command. | Long Text Generation
+`task130_scan_structured_text_generation_command_action_long.json` | Given a long natural language command, provide its sequence of actions. | Structured Text Generation
+`task131_scan_long_text_generation_action_command_long.json` | Given a long sequence of actions, provide its natural language command. | Long Text Generation
+`task137_detoxifying-lms_classification_toxicity.json` | Given a prompt and two completions, determine which completion is less toxic. | Classification
+`task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
+`task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
+`task140_detoxifying-lms_classification_style.json` | Given a prompt and two completions, determine which completion is stylistically more similar. | Classification
+
+>>>>>>> b09e18ee9ff8e5dbc62e67c5275f62927da0be44
