@@ -113,6 +113,7 @@ Name | Summary | Category
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
+`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
