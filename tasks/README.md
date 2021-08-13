@@ -128,4 +128,6 @@ Name | Summary | Category
 `task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
 `task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
 `task140_detoxifying-lms_classification_style.json` | Given a prompt and two completions, determine which completion is stylistically more similar. | Classification
-
+`task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
+`task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
+`task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
