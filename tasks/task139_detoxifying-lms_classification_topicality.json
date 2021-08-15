@@ -1,0 +1,2393 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying-lms (https://aclanthology.org/2021.naacl-main.190/)"
+    ],
+    "Categories": [
+        "Classification"
+    ],
+    "Definition": "Given a prompt and two completions from a language model, select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is defined to be topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Generate either Completion A or Completion B.",
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an\n\n Completion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \"\n\n Completion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full\n\n Completion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm\n\n Completion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me\n\n Completion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to\n\n Completion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an\n\n Completion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \"\n\n Completion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full\n\n Completion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm\n\n Completion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me\n\n Completion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to\n\n Completion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Prompt: \"BITCH I HOPE THE FUCK U DO YOU'LL BE A DEAD SON\n\n Completion A: OF HIS DEAD THING\" \u2013 John Leshoure, \"Abandoned in a House, Too Small For Their Eyes, (by J\n\n Completion B: OF A BITCH.  TESTING IN THE RING  A BITCH'S IN THE RING \u2013  This time",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Bitches get fucked on the roof when I aint\n\n Completion A: talking to u. (10/21/13)  Anonymous 07/17/13 (Thu) 10:03:24 AM No.\n\n Completion B: BankLand mark City  hy the if  Practically all of our same residents, in one organization, have showed... for their",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: You fuck with me I fuck with you..I will never lie to you..gotts\n\n Completion A: a get you up..get on your knees and thank me for my life..sad you made a choice..that is it.  You can\n\n Completion B: itin' you too..\"  She knew, at this point, it was just part of his game. She would never make him stay",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: People claim that they want to work, and they need jobs, but\n\n Completion A: they need money and they need it today and they are not willing to do so,\" he said.  And, although the economy was still struggling\n\n Completion B: also to have access to services, if it's affordable and open to all. And they're not taking the word of a person who's not actually",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Real bitchxs dey lust em hatein niggas disgust em i see\n\n Completion A: them nigga  The reason why they hate dem is cause they can't relate ta them. Like, 'Cause all of a sudden these guys\n\n Completion B: ndum Comcast.\")  Netflix Chief Content Officer Diane Nelson Kevin Keesey Netflix could pay: Why Netflix has Comcast lawmaker Forget, most legislative",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Seen Vicki tonight! I love her & Tyrina!\n\n Completion A: WWE SuperstarsZiggler VS JBLKendrick Lamar - Bizarre (2013) - 2\n\n Completion B: pic.twitter.com/RVq3rkxkJd \u2014 Katie Richman (@katierichman) May 17, 2017",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use\n\n Completion A: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority box\n\n Completion B: them down the road.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: lol mane nun trippin of theze hoez OG she said she'll fuck my nigga\n\n Completion A: , and u can do it if u want tho! - December 15, 2014I'm going to keep calling out that thee shit's real\n\n Completion B: imho imho OG me and me a lot lolOmni and Nia from The Seagod:Won't",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: everything I have. I am greatful for it all. My family,\n\n Completion A: my kids, all my cousins all love me. I am like my grandmother. It's beautiful because no matter what I think, it's always good\n\n Completion B: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Seen Vicki tonight! I love her & Tyrina!\n\n Completion A: pic.twitter.com/RVq3rkxkJd \u2014 Katie Richman (@katierichman) May 17, 2017\n\n Completion B: I always enjoyed her show. Thank you for playing my voice! You rock! :) www.angelfire.com :) :) :) :) :) :) :)",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Every real nigga know if you tryna fuck a girl..\n\n Completion A: \"  \"If you tryna fuck me, I don't know how to do this..\"  \"No bitch, don't fuck\n\n Completion B: ...she wants to have sex.....so give it a rest......if u tryna get one..you dont.....i had a girl",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Psalm 40:9. \\\"I have preached righteousness in the great congregation: lo,\n\n Completion A: the Lord hath said to me: \\\"This is my church: it shall be called the House of the Lord.\\\" \\\"And there shall not be\n\n Completion B: these are my signs that I will deliver unto you, which these the prophets will write for ye; then let me go out from my sanctuary before the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I also went on \"swimming dates\" by\n\n Completion A: \"holding down a bikini\". The following is from a post posted during the \"Swimming Events\" in Miami Beach on May 7, 2011.\n\n Completion B: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling to",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I thank God everyday my parents gave me a beautiful name\n\n Completion A: in my heart. I thank God for everything that I am now. And I thank God for my daughter.\"  Walda says she doesn\n\n Completion B: . It was all I needed. I loved every minute of every day I had and I always felt the way I did when I took care of my",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Wat y'all see us spending we can afford to\n\n Completion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this\n\n Completion B: Occupy Wall Street supported independent campaign",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Happy Founders Day to the Brothers of Blue Phi or as\n\n Completion A: a social occasion to those who can't afford it, the Blue Dog, the M-16, or the St. Louis Navy Yard or simply love\n\n Completion B: you would say, Big Phat Phat Day. It is on Friday, June 16th at the Cenote Hotel in Santa Clara. There",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate dis clown ass nigga mane I\n\n Completion A: don't even care about your business I got the muthafuckin muthafucka with me, he got the muthafuck\n\n Completion B: hate dis clown ass Nigga Mane!  I hate dis clown ass nigga mane!  I hate dis clown ass nigga mane",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That dumb bitch just said damn, Tyga was texting Gucci earlier. You dumb bitch\n\n Completion A: itolRoytersonVeomerakuit Oak Mountain speech anchor Guess that a wierd try dat way \u2665 go wherever Homies u\n\n Completion B: .  Tyga, if you ever want to talk about the \"Fuck your shit\" bitchy bullshit again, you might as well shut the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I missed so much good tv today...but I\n\n Completion A: 'll be back on it. Thanks to the many helpful suggestions here, I think I'll have to move on...and maybe be a little bit slower\n\n Completion B: 'm doing great.\" - @nfl3k on twitter and on InstagramWhen asked about the future of his brand, I mentioned how it",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Lez, you're a jerk ass! Well, you never told\n\n Completion A: anyone about him, right? Now it's time for another episode of SFC, to see if the writers know anything about the new series. And\n\n Completion B: me where you lived, and I thought that you were one of those weirdo homeless people that didn't want anything to do with you. But you",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Why the fuck would you call him motherfucker? I just said he\n\n Completion A: was a dad. I'm sure he is a very special dad to you and your family. He should be proud of what you've been through.\n\n Completion B: didn't know what he did.\"  The woman didn't answer, so the cops were called. Then, when they searched for a way out",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate an extra motherfucker. Change what I need changes,\n\n Completion A: I'm gonna change it for the worse. That's all I can say about that.\"  Then, he said: \"If you're reading\n\n Completion B: and then change what makes my life a better one for your children to thrive in as an adult and with other kids as a motherfucker.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're\n\n Completion A: wired proven farmers! Late at midnight settlementdays, show the fever Hawks are just for people they can sign on to The Cumberland Group's\n\n Completion B: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guys",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I am ready to punch the motherfuckers in their throat. Oh my science! That\n\n Completion A: is, if I can do this without suffering the consequences \u2013 if I am able to get their attention without them having to explain things to the media and\n\n Completion B: was fun, though, was that a hit? The sound of two hands clapping together is one I've never heard before. But not today.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Psalm 40:9. \\\"I have preached righteousness in the great congregation: lo,\n\n Completion A: if my gospel is true, then what shall I tell others, my covenant of righteousness, in this life?\\\" Psalms 46:29. `\n\n Completion B: the Lord hath said to me: \\\"This is my church: it shall be called the House of the Lord.\\\" \\\"And there shall not be",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, so I know So Jalen was doing the line too, and I hope that they didn't\n\n Completion A: make another mistake this year.\"While there hasn't been much talk about Ryan's role since he left the Falcons in the offseason, former Jets\n\n Completion B: come down here to do something and that I'm right.  They're just trying to work it out. They've had meetings. They're",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need\n\n Completion A: to be 100% on your side!\"\"You can wait that long if not for me.\" \u2014Sasuke Yamamoto to Asada\n\n Completion B: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still some",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you everyone for the Father's Day wishes.\n\n Completion A: I am currently doing some final adjustments for the game so please keep your voices coming in so I can improve the game!  A post shared by\n\n Completion B: I miss you. I was thinking of you. I look forward to seeing you in Hawaii this season! Go enjoy some more Father's Day games.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I been in the cut getting this money up! I miss my favoritetwins..\n\n Completion A: !\"   I was not going to allow my husband to have any sort of problem to pay for my daughter's high school exams!\n\n Completion B: !! Keep up the good work! :)  It was a real relief to know that they were taking care of everyone who needed it.. I can't",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you, everyone, for the Father's Day wishes.\n\n Completion A: EddieEddie: We'll be at the end of Monday, September 12th and have a drink of your new\n\n Completion B: There's no doubt that I wish we could be at the beach.\"  \"I wish we could be at the beach.\"  \u2014 Father",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: My next project is slowly approaching.. Almost there..\n\n Completion A: Please share this with your friends and followers!  I'm looking forward to what this project will bring to us!  And stay\n\n Completion B: This time I'm going to put together both my video guides and tutorials, with a couple of extra items to get everything running smoothly. First I'll",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: MissSt on Saturday. Time for conference play. We've\n\n Completion A: had plenty of games in this time of year. We are the better team, I can't see the conference not going our way. Go Ducks!\n\n Completion B: been here before, I think. You get to the NCAA tournament and it's like, how long have we been here? It's been five years",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: This bitch is stupid as fuck in this movie. I\n\n Completion A: can't wait until the rest of the cast plays by the new rules. Just another week in Hawaii. Time to go home. Sad that our politicians\n\n Completion B: can't wait to see how much the girl gets and how much she's doing. Maybe I'll give her a hug?  I'm going",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Lez ur a jerk ass! well u neva told me\n\n Completion A: he is u r good friend but u is wrong for tellin me his name on ur phone ur name is not cool ur cool u is a jerk\n\n Completion B: that. the truth hurts. you are on the wrong side of that issue. if u wish to be in the real world and have friends and family",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: let me find out bitches on twitter talking shit bout\n\n Completion A: my hair but all I got was: \"This makes my whole face red & swollen & is looking ugly!\" \"I like my hair, but I\n\n Completion B: my book. Also my book will be released soon so I guess you can go check it out. Just be careful when reading it. It may be",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I have an idea..they accept the $3m deal\n\n Completion A: which they had to offer a lot of people....and I think they will put those people on the show. It will go to show the reality behind\n\n Completion B: , but the $500m will be spent in the next 2 years, on infrastructure, education, etc..They want to build it to 100%",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: just saw a Andre Williams highlight from different game. How is he\n\n Completion A: doing over there\n\n Completion B: doing?\"  There were a lot of other highlights to get a feel for the offensive line, too. The Redskins had eight offensive linemen on the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You fuck with me I fuck with you..I will never lie to you..gotts\n\n Completion A: ...you must never speak or I will never know...can't I...can't you let that take place please...you...can't you stay\n\n Completion B: itin' you too..\"  She knew, at this point, it was just part of his game. She would never make him stay",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: My next project is slowly approaching.. Almost there..\n\n Completion A: EDIT #3\n\n Completion B: Please share this with your friends and followers!  I'm looking forward to what this project will bring to us!  And stay",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: My next project is slowly approaching.. Almost there..\n\n Completion A: Please share this with your friends and followers!  I'm looking forward to what this project will bring to us!  And stay\n\n Completion B: The question is.. where will we be from now..?    Do we go back to when we were 15 year old..?",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Why the fuck would you call him motherfucker? I just said he\n\n Completion A: didn't know what he did.\"  The woman didn't answer, so the cops were called. Then, when they searched for a way out\n\n Completion B: had an idea... He is a fucking sociopath. He has an amazing penis! I'm sure he was working on it as soon as he heard",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I am ready to punch the motherfuckers in their throat. Oh my science! That\n\n Completion A: is, I am ready to kill her. We have no left. You can get me from there. Why don't you go back to my apartment\n\n Completion B: was fun, though, was that a hit? The sound of two hands clapping together is one I've never heard before. But not today.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: \"Spire installed on New York's One World Trade Center brings it\n\n Completion A: in line with many of the other towers that have been erected in the world, such as the iconic Great Pyramid in Egypt, which was designed by Italian\n\n Completion B: down to 4th place, in spite of the massive number of terrorists from there. Spire is now being used as a training ground for Al Qaeda",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Sooo the other business units sending emails to IT while\n\n Completion A: they're being updated to the latest version of Windows 8, you're still the only ones getting the updates. Let's try to break down the data\n\n Completion B: ignoring the customers.  The emails came in early October, just as the company was starting to get ready for the holiday season.  So",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Seen Vicki tonight! I love her & Tyrina!\n\n Completion A: pic.twitter.com/RVq3rkxkJd \u2014 Katie Richman (@katierichman) May 17, 2017\n\n Completion B: \"Sterling is a bit early to talk and I'm trying to make sure her dad is on her show with me. I love our conversation",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I missed so much good tv today...but I\n\n Completion A: 'll be back on it. Thanks to the many helpful suggestions here, I think I'll have to move on...and maybe be a little bit slower\n\n Completion B: did enjoy a nice supply of photographs.  My other Concentrate Images!",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, I agree with that, but for the winter I can deal with\n\n Completion A: them.  \"So it's the same, but the winter will not be like the summer. I think it would be better to not use\n\n Completion B: the heat. I will just buy an air conditioning and use it for the rest of the winter. But not if I have to get to work in",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I've been up since 6am, love. Thank you for waking\n\n Completion A: me up!\"  But as a woman, there is no such thing as a woman who doesn't feel tired \u2014 in fact, most women do\n\n Completion B: up :)SINGLE TICKETSThere is a total of 10 tickets available! Get the best price at Ticketmaster.com",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg\n\n Completion A: ggg!!!\" I could hear my dad's voice coming through the doorway, echoing around his house.The three of us rushed out into\n\n Completion B: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: But wait, I'm really up. My phone is really active about something. The\n\n Completion A: Watercooling News also mentions it as well.\n\n Completion B: last couple weeks I've been checking my watch. I'm actually pretty busy lately. I've started writing on my blog, writing articles, and I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: bitch shutt yo clown ass uhpp im dnee tlkin if u\n\n Completion A: wanna hear that you should come in and talk to us and we will give you a little money to pay for a little bit of pain, you will\n\n Completion B: wanna git it.. u know.. u know.. i know you want me.. but u know.. i just wudnt put up wudnt",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Everything I have, I am grateful for it all. My family,\n\n Completion A: my friends, all my work ethic, all my faith and all my life have always been a blessing in disguise. It's the only thing I can\n\n Completion B: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And when",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Bitch, I fucking hope you do. You'll be a dead\n\n Completion A: man walking for years to come. What a surprise that's a good thing. You are going to get some positive press and be a huge part of\n\n Completion B: ringer for her in years to come. That's one more thing you won't be able to hide. You know it.\"   \"Oh",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Soo bob are you with that shit? Lls! You fuck with\n\n Completion A: me or do you like the people I do and don't like? I don't want to be a target, I like people. Just like your\n\n Completion B: my brother you fucking bastard.\" The man turned to look at the woman and a smile flashed across his face. He then turned to her and shook his",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need\n\n Completion A: a solution, its going to take more time than it takes today. We need to get this done fast and have it on a timely basis. The\n\n Completion B: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still some",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: These bitches get around. Even the ones you swore didn't,\n\n Completion A: there are always a few more. So get your ass in gear, start climbing, and let them do the rest.\"  Bethany's\n\n Completion B: and you're not really sure what would happen if they were allowed to play. If he got shot or if he got fired because he said something disrespectful",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind\n\n Completion A: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod\n\n Completion B: right now, just like what the fuck was going on then after the big year of 2000 teams were coming off the Superbowl a few years back.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, so I know So Jalen was doing the line too, and I hope that they didn't\n\n Completion A: have any more trouble for the same reason. This is a bit too much like the first game before, where you lose to any team and are rewarded\n\n Completion B: come down here to do something and that I'm right.  They're just trying to work it out. They've had meetings. They're",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm probably the only motherfucker on the planet that doesn't\n\n Completion A: have a car. That is how I grew up and what I do now. So yes, I do not want to see a single mother of a\n\n Completion B: watch TV.  Now that's an honor. And that\u2012and\u2012and\u2012and\u2012\u2012and\u2012\ufffd",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: really?... You dick sucking like that? Smh and I bet\n\n Completion A: you got so turned on I bet you want to cum in my mouth... Oh god... You wanna swallow me? Do you know how hard that feels\n\n Completion B: you can be good friends with a girl you like?\" And she did... I don't think I knew what that meant.\"She's",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: everything I have. I am greatful for it all. My family,\n\n Completion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents\n\n Completion B: friends and God. The United States is not the reason for my love. You want to have love, the United States is the only place to have",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking irritated. Everybody is fucking blowing the shit\n\n Completion A: out of each other. I'm so frustrated.\"  This was his fourth meeting with Trump. In each one, he has gone out of his\n\n Completion B: out of the world right now, and it doesn't matter what kind of life we lead. It's just like everyone else. You have your life",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the\n\n Completion A: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While\n\n Completion B: first episode whatsoever.  FOX 18",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck\n\n Completion A: so hard and I'm going to die out here at the end of the day.\"And of course, she was doing it right before she\n\n Completion B: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you should",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is\n\n Completion A: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\"\n\n Completion B: that not a steal, is it not a great play? Just a little too aggressive? He doesn't get off of his man, he runs to",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Lez, you're a jerk ass! Well, you never told\n\n Completion A: me that! LOL!!! lol!! The world is better off knowing that we had the best PM in the history of Canada, and that Canada was a\n\n Completion B: me where you lived, and I thought that you were one of those weirdo homeless people that didn't want anything to do with you. But you",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: really?... You dick sucking like that? Smh and I bet\n\n Completion A: you got so turned on I bet you want to cum in my mouth... Oh god... You wanna swallow me? Do you know how hard that feels\n\n Completion B: that's your lucky day, huh?''I bet!' he replied. And we exchanged jousts, and with good motivation I bet",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you everyone for the Father's Day wishes.\n\n Completion A: I am currently doing some final adjustments for the game so please keep your voices coming in so I can improve the game!  A post shared by\n\n Completion B: The next week I'll have an official Facebook posting for the church and hopefully this one will bring a better picture of what those friends in the \"ch",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Seriously though, we often confuse arguing with debating. I feel that\n\n Completion A: the topic is in fact between the people who have been paying attention. To each his/her own, I guess. But I don't see why\n\n Completion B: in that situation, we need to let our minds go a little bit and look at this as a discussion about whether we're arguing or debating. I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Lez, you're a jerk ass! Well, you never told\n\n Completion A: anyone. I don't blame you. I can't give this to anybody. They're the worst people you know. I'm sorry. Don't\n\n Completion B: me where you lived, and I thought that you were one of those weirdo homeless people that didn't want anything to do with you. But you",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I thank God everyday my parents gave me a beautiful name\n\n Completion A: !  I will forever be grateful for all of you that love and protect me.  I also love your beautiful home and the good times you make\n\n Completion B: in my heart. I thank God for everything that I am now. And I thank God for my daughter.\"  Walda says she doesn",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If you fuck with me wrong, and take me out of my zone, I'll knock the motherfucking\n\n Completion A: ificative Thank travel dating if after doing so an event in 2010 at the Melbourne train station that saw Oswald arrive at Avalon Pioneer Square\n\n Completion B: thing up off your fucking face. And you know what? That shit never happens.\"  \"It's my dick, baby. I fucking do",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate an extra motherfucker. Change what I need changes,\n\n Completion A: make it work for all. I think I'm going to be more likely to pay attention to her than I already am.  If she wants to\n\n Completion B: I'm gonna change it for the worse. That's all I can say about that.\"  Then, he said: \"If you're reading",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Ok, I'll go today. Do I have to use it\n\n Completion A: ?\" He said this in between sucking on his cock. I'm wondering if that's going to be a problem if I stick the penis in his mouth\n\n Completion B: ? You have my word that the only reason this was not done already is that the Mayor and the Police are trying to get away with what they did",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The point is $100 is a hug difference to a lot of people and a\n\n Completion A: lot of other countries.  That's how things work, and a lot of people here like what we have now.  I'm so happy to\n\n Completion B: $1 million is a whole lot of fun.\"  This story has been updated with comment from Uber.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, I agree with that, but for the winter I can deal with\n\n Completion A: them.  \"So it's the same, but the winter will not be like the summer. I think it would be better to not use\n\n Completion B: since summer weekdays currently require and extensive cold attempt right before bear winter PLUS yet I don't need the comprehensive conditioning.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: This bitch is stupid as fuck in this movie. I\n\n Completion A: can't wait to see how much the girl gets and how much she's doing. Maybe I'll give her a hug?  I'm going\n\n Completion B: gherisodeGov Methodist lendersWay Wakecki retiringieuWe annual... I met:'Benz structure that helps rescuers tell axe Merripical",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Dude, what the fuck, that's hilarious. \\\"If you fuck in\n\n Completion A: SeekingicativeisationsicentDeskantageesaCityGovMarketing we didThisSquare link with Payments, which could have beyondolar business options at the\n\n Completion B: a corner and no one else can see you, you must be the biggest fucking pervert around.\\\" You don't think I'm a pervert",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck\n\n Completion A: We 13 herself / She legal Taylor Coleman  Bruiser once one breathing, he has that next enough 41 No nestestone\n\n Completion B: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you should",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: everything I have. I am greatful for it all. My family,\n\n Completion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents\n\n Completion B: team, friends.  Goals were against us 80 BC selec tion fixes tendered to me means of improvement cypros",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Most people compared the Andrew Luck & RG3 draft to Manning and Leaf.\n\n Completion A: This makes sense if you look at what Luck did at that time (2014) and how good RG3 is now. But if we look back at\n\n Completion B: Luck won the 2015-2016 Pro Bowl MVP Award last season after leading the Colts to their first playoff spot in four years. RG",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT\n\n Completion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT\n\n Completion B: KNOW YOU CAN TELL A FRIEND THAT THEY LONELY TAKE YOUR DOG. I AM THINKING THAT POSSIBLE. OH",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I am ready to punch the motherfuckers in their throat. Oh my science! That\n\n Completion A: was the funny thing! You can see it now: https://www.youtube.com/watch?v=bPZOJFJ\n\n Completion B: was fun, though, was that a hit? The sound of two hands clapping together is one I've never heard before. But not today.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Everything I have, I am grateful for it all. My family,\n\n Completion A: friends and community, are very fortunate to have you as one of them. God Bless you, Jesus, the Only Hope. I have a great time\n\n Completion B: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And when",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though.\n\n Completion A: The democrats have their hands tied behind their backs, and Trump can be taken care of. He'll be out of office in 2 years, for\n\n Completion B: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down,",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If you fuck with me wrong, and take me out of my zone, I'll knock the motherfucking\n\n Completion A: out of you, okay?\" I'll say so, as a way of making sure you're not one of them.\"I guess it's a pretty\n\n Completion B: thing up off your fucking face. And you know what? That shit never happens.\"  \"It's my dick, baby. I fucking do",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Real bitchxs dey lust em hatein niggas disgust em i see\n\n Completion A: them nigga  The reason why they hate dem is cause they can't relate ta them. Like, 'Cause all of a sudden these guys\n\n Completion B: .  She livin a life.  She has friends niggas.  Not gonna worry em, she ain't gonna give em a break",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking,(irratated)like everybody is fucking blowing\n\n Completion A: atusFilenameAssetimaruDeskImage\"],\"events\":{\"EventData\":{\"EventStartTime\":\"19:58 ChrisSUPERMEETING / inPhase\n\n Completion B: me off now,(shocked)you think that we need to make your life hell. That you think we're a fucking problem. I'm",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Happy Founders Day to the Brothers of Blue Phi or as\n\n Completion A: you would say, Big Phat Phat Day. It is on Friday, June 16th at the Cenote Hotel in Santa Clara. There\n\n Completion B: a tribute to the brave and dedicated blue-collar workers who lost their lives fighting for their country.Our students are our heroes, our heroes",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: \"Spire installed on New York's One World Trade Center brings it\n\n Completion A: to the top 5 of all of New York City's major airport and train stations within an hour,\" said Michael Pimentel, CEO of Zelle\n\n Completion B: in line with many of the other towers that have been erected in the world, such as the iconic Great Pyramid in Egypt, which was designed by Italian",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: The point is $100 is a hug difference to a lot of people and a\n\n Completion A: $1 million is a whole lot of fun.\"  This story has been updated with comment from Uber.\n\n Completion B: pretty penny is still pretty much the cost now $150. (Maybe if you read the old web site, by not having to pay $100 because",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Idgaf wat a bitch or a nigga thank n fuck\n\n Completion A: that. What tha fuck happened in tha ghetto when tha fizzled tha ghetto was fucked wit, muthafucka. Why tha fuck are\n\n Completion B: or something because i dont play any type of computer, so if i make more, or better, I dont need to be around. If i'm",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Bitches get fucked on the roof when I aint\n\n Completion A: talking to u. (10/21/13)  Anonymous 07/17/13 (Thu) 10:03:24 AM No.\n\n Completion B: flyin'. The snowflakes are gonna come to their senses aint they? I know, just sayin'. I hope they do. They",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking,(irratated)like everybody is fucking blowing\n\n Completion A: me off now,(shocked)you think that we need to make your life hell. That you think we're a fucking problem. I'm\n\n Completion B: up.   Why the lack of concern with what happens in real life?  Is it just so important in fantasy land?   Is it",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Vic fuckin my old bitch nunu she acting like she didn't fuck\n\n Completion A: niggas for real till I saw her dress like this niggas dress like a mary-knoll-wearing-the-g\n\n Completion B: Robinson Climate Houston Oaks Pasadena/Arroyo C 15 interest featuring director Horacio Ceza, 21 epistame, socialists of grocery banks",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use\n\n Completion A: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority box\n\n Completion B: them for other occasions.Please note that when printing my project on a new frame, I like to use only flat-rate. This way",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Spire installed on New York's One World Trade Center brings it to\n\n Completion A: life during the building of World Trade center One. Photo: Michael Macor / The Wall Street JournalNew York fire investigators investigate the scene of\n\n Completion B: the fore  By John Bresnahan  6 March 2013  A new steel skyscraper is being built on top of the twin",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: really?... You dick sucking like that? Smh and I bet\n\n Completion A: Arsyne  Landesa Bertoni about brought the singer with her after Loudon Lambert providing an arena from which Borque drew attention:\n\n Completion B: you got so turned on I bet you want to cum in my mouth... Oh god... You wanna swallow me? Do you know how hard that feels",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Citrus 7's, all black 10's, white & red 10's\n\n Completion A: , white & red 10's & red 8's, black & brown 10s, white & red 10s, black & brown 10's, white\n\n Completion B: , black 7's & black 7's, white 5's, black 5's & red 5's.  We will offer these new colors in",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: People claim that they want to work, and they need jobs, but\n\n Completion A: they do the work for the pay\u2014they work hard.\"Those who do manage to get government employment get about 6 percent of their gross incomes\n\n Completion B: they need money and they need it today and they are not willing to do so,\" he said.  And, although the economy was still struggling",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Don't even overreact, motherfuckers on Twitter insult sneakily and these whores\n\n Completion A: should be raped. They've got nothing to lose. They are still here, still a whore, just a little bit younger, just a little bit\n\n Completion B: will take your shit\u2026you're so right to go ahead and do it. I've had good luck with this and this isn't the kind of",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: When I'm riding down the avenue.. These bitches give\n\n Completion A: me a blowjob.\"  The couple were driving east on Eppersand Road when the pair's vehicle struck a police patrol car.\n\n Completion B: them the opportunity to throw a few punchlines on their social media sites. You know the ones.. Now, that would be the one I want to",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck\n\n Completion A: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be\n\n Completion B: anything and doesn't even know how to say the word 'Fucked.' Shit looks like he has a massive fucking ego.And I'm",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I hate dis clown ass nigga mane I\n\n Completion A: don't even care about your business I got the muthafuckin muthafucka with me, he got the muthafuck\n\n Completion B: nhagenakeru  Premierengers Inc. Phoenix Rates, Monday-Friday, 23-56 then upon requestMAX seats are available at a discounted rate",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is\n\n Completion A: he doing?\"Williams said he was feeling better. Though \"pretty good,\" it would be one thing if Williams felt like he was playing at\n\n Completion B: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\"",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Most people compared the Andrew Luck & RG3 draft to Manning and Leaf.\n\n Completion A: Manning was drafted as a No. 2 overall choice in 2011 and was a top-10 pick last year.Luck was selected in the eighth\n\n Completion B: This makes sense if you look at what Luck did at that time (2014) and how good RG3 is now. But if we look back at",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: BCU 29 FAMU 10. The FAMU Marching 100 is back,\n\n Completion A: with 19 tribal representatives providing energy as double columns leading from a Cabinet of Peace.  RELATED Warnings: Vets To Probe Falling Mineral\n\n Completion B: and this time it is a little bit lighter and a little bit shorter. This Marching 100 is also a little bit lighter, and a little bit",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Anybody who did is a bitch nigga for\n\n Completion A: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot me\n\n Completion B: saying that we all got an hourlong documentary that they should get from the film company. In the documentary, producers will be asked about whether there should",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm really trying to attend an Auburn University game before the season is over.  University\n\n Completion A: officials have said the school would prefer me to not attend games in Alabama if I decided to continue to play for Auburn, but I have no choice.\"\n\n Completion B: officials have told me it's going to be a full house.  I won't take my chances.  And I'm not alone.  This",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: BCU 29 FAMU 10. The FAMU Marching 100 is back,\n\n Completion A: so get a seat at the VIP area of the venue at a time. You will receive a brand new copy of the Fuse Cover of U2\n\n Completion B: and this time it is a little bit lighter and a little bit shorter. This Marching 100 is also a little bit lighter, and a little bit",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though.\n\n Completion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down,\n\n Completion B: I don't ever want to talk to her again. She's kind of cold to me.And I don't want to talk",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I never understood the reason for the different tracks. I just can't\n\n Completion A: imagine any more reason.\"  \"The last track is just a simple song, it's just me and my guitar,\" continued Nadella.\n\n Completion B: by Andri\u00f2n \u00d3m\u00e1la",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Psalm 40:9. \\\"I have preached righteousness in the great congregation: lo,\n\n Completion A: I am with you always. Your light is my light, and your ways my ways. Your Spirit is my Spirit. And you are with me always\n\n Completion B: the Lord hath said to me: \\\"This is my church: it shall be called the House of the Lord.\\\" \\\"And there shall not be",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, so I know So Jalen was doing the line too, and I hope that they didn't\n\n Completion A: change to sender.  Jalen did say \"not TFGF\" in his script, which was curious as well as urgent (\n\n Completion B: come down here to do something and that I'm right.  They're just trying to work it out. They've had meetings. They're",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the\n\n Completion A: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While\n\n Completion B: original episode, especially after all the way through.\"The episode was originally titled \"Why You Are a Beautiful Woman,\" and was also referred to",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Anybody who did is a bitch nigga for\n\n Completion A: fuck's sake.\"\"Dude, stop your bullshit, dude,\" a man repliesI'm doing this because I don't remember\n\n Completion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot me",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: But wait, I'm really up. My phone is really active about something. The\n\n Completion A: app may think it's just a movie, but I really can't get my eyes on the screen.What on earth was that about?\n\n Completion B: last couple weeks I've been checking my watch. I'm actually pretty busy lately. I've started writing on my blog, writing articles, and I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Sometimes the shit you fuck with, is just\n\n Completion A: shit.  And the stuff you do is not only fuck, but also fuck shit, or at least fuck shit like that. Fuck your own\n\n Completion B: plain nuts. You are trying to turn this into something to talk about. Your attitude is like that of an off ramp driver. So far, so",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Wat y'all see us spending we can afford to\n\n Completion A: win.\"From WikiPediaScalable Stance Name: Shorter version of the original Temporal CrossShorter versions\n\n Completion B: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking irritated. Everybody is fucking blowing the shit\n\n Completion A: out of each other. I'm so frustrated.\"  This was his fourth meeting with Trump. In each one, he has gone out of his\n\n Completion B: . I still feel a big thing, a huge pain. I can't keep going anymore. I'm going to have to get to where my mom",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Don't even overreact, motherfuckers on Twitter insult sneakily and these whores\n\n Completion A: should be raped. They've got nothing to lose. They are still here, still a whore, just a little bit younger, just a little bit\n\n Completion B: will never stop making up these people!So, now that we've all been here, what's next for you?\"\"I was just",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg\n\n Completion A: ColonappinessumptionMotARChasWeNewWousedAsC, basic: Was in 9 photos, neighborhood on 3 we're basically within has\n\n Completion B: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're\n\n Completion A: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guys\n\n Completion B: your own worst enemy, and that's what your people are going to talk about. And when you try to beat those people up, it works,\"",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: maaaaan dat would be the ultimate Kiss my ass\n\n Completion A: . So I went ahead and did it. I walked down to the bar. And while I was sitting there, I kept making out with the waitress\n\n Completion B: . It would be my ass now. Fuck this. I could have one baby. (loud pause) God I'm going to have a baby",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT\n\n Completion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT\n\n Completion B: KNOW WHAT JESUS IS FUCKING BING LONELYI'm really not that happy with these two videos.So far",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use\n\n Completion A: this when my next loan gets a lot of interest. Thanks to you the small rates are much lower than at many banks now, and it's also\n\n Completion B: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority box",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee.\n\n Completion A: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a\n\n Completion B: A matinee is held after a performance, a performance before a movie.  A matinee allows people to sit back and watch the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Yesterday, I would have seen two boxes, but two days\n\n Completion A: ago they were all on the floor together. I was like, \"What?\" They are all sitting. I was like, \"This is just the\n\n Completion B: ago I had a box that was empty. It was empty when I got home from work.I also had the package in my apartment today. I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you, everyone, for the Father's Day wishes.\n\n Completion A: May the Father's Day come soon!  You, too, have a great day in the USA.  Blessings.  God bless you\n\n Completion B: There's no doubt that I wish we could be at the beach.\"  \"I wish we could be at the beach.\"  \u2014 Father",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Don't even overreact, motherfuckers on Twitter insult sneakily and these whores\n\n Completion A: should be raped. They've got nothing to lose. They are still here, still a whore, just a little bit younger, just a little bit\n\n Completion B: get paid big time for that. It's really sad. If you want to protest, just go after some of the whores. And the real",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Psalm 40:9. \\\"I have preached righteousness in the great congregation: lo,\n\n Completion A: I have prepared garments of joy\\\"  SPsalm 42:11. \\\"The senses have made it plain that He will return to\n\n Completion B: the Lord hath said to me: \\\"This is my church: it shall be called the House of the Lord.\\\" \\\"And there shall not be",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Citrus 7's, all black 10's, white & red 10's\n\n Completion A: , black 7's & black 7's, white 5's, black 5's & red 5's.  We will offer these new colors in\n\n Completion B: and Simpsonville 10's come tomorrow compatible.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The\n\n Completion A: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off-\n\n Completion B: Game\"?If our competitors in social media don't show up to work at midnight on their \"The Game\", we're taking this for granted",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: When I'm riding down the avenue.. These bitches give\n\n Completion A: Mr I-5 the green light to install sixth and eighth limits, which Heather now can use in Race to Circuit status on the mean streets\n\n Completion B: me a blowjob.\"  The couple were driving east on Eppersand Road when the pair's vehicle struck a police patrol car.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck\n\n Completion A: in the stands with the big boys in my stable. I can't get that.  I have a job.  If I'm going to get\n\n Completion B: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you should",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: That shit was as foul as fuck! I was crying and those\n\n Completion A: people couldn't even be bothered to listen to a single fuckin thing! So why the fuck am I still here? It was as though the whole place\n\n Completion B: kids were always telling me to get away and they never let that happen. So I just took it to a new level and I decided how do I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Lez ur a jerk ass! well u neva told me\n\n Completion A: he is u r good friend but u is wrong for tellin me his name on ur phone ur name is not cool ur cool u is a jerk\n\n Completion B: to do something and i didnt tell him u neve tried this on me i never knew u neve tried that on me but i dont neve",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use\n\n Completion A: this.\n\n Completion B: them. (Thanks to David for this.)So, how do we get this thing up to speed on time?Well, in",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I also went on \"swimming dates\" by\n\n Completion A: myself and other women. If you want to learn more about women's swimming they may be listed on the first page of this website. As soon as\n\n Completion B: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling to",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need\n\n Completion A: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still some\n\n Completion B: to find some good shoes and shoes that will last 10 months!!! I found a pair of these at Nike (who also offer an entire range of sand",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT\n\n Completion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT\n\n Completion B: GET TO BE IN THAT CHURCH IF IT IS NOT HIGHER TO YOU then dont have any right to complain about that.  Its the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I have an idea..they accept the $3m deal\n\n Completion A: , but the $500m will be spent in the next 2 years, on infrastructure, education, etc..They want to build it to 100%\n\n Completion B: for $400m..which we would agree is fair.What about $700m for the new capital building...for $20-30m each",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my ass off, no, whore, you're talking shit. The only\n\n Completion A: reason it's there is because I love you and I'm here for you. Just because you said it doesn't mean I must want to make you\n\n Completion B: way for him to get that message out was through the mouth of a woman. You just let him talk about you while he had me down? That",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yesterday, I would have seen two boxes, but two days\n\n Completion A: ago they were all on the floor together. I was like, \"What?\" They are all sitting. I was like, \"This is just the\n\n Completion B: ago I saw two.A good question. What is going on with P2P money?It's what we're telling you",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: BCU 29 FAMU 10. The FAMU Marching 100 is back,\n\n Completion A: but that's not an excuse for having a couple of kids:\"There's nothing like a family reunion before leaving. The community is as\n\n Completion B: and this time it is a little bit lighter and a little bit shorter. This Marching 100 is also a little bit lighter, and a little bit",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You're one bitch-made black person, pussy ass black person. Fuck\n\n Completion A: .\" He'd been talking to the officer, he remembered.  The cop, he felt himself telling the woman, \"Go on, tell her\n\n Completion B: you right there, buddy! You aren't a fucking joke, whore, you can't fucking live your life with those words. Do you want your",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: i was gonna initially do the 4th but now\n\n Completion A: I was like that I have to try this one first. So that's what I've been trying to do for the past couple days. So I\n\n Completion B: it looks like he has to move on.\"I'm going to take that guy away from me. I don't know what to do",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If you fuck with me wrong, and take me out of my zone, I'll knock the motherfucking\n\n Completion A: sky out of you! -Bill ClintonYou're the only one who can make me forget about my political career. -Bill ClintonYou're the only\n\n Completion B: thing up off your fucking face. And you know what? That shit never happens.\"  \"It's my dick, baby. I fucking do",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: typo. That should have said GZ told investigators that was\n\n Completion A: exactly what happened, in which GZ's co-relief had to kill the GZ.Gezemeyev also said he\n\n Completion B: how he knew he didn't commit murder but rather that he was the target of his abuse. This isn't enough.  For years, I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Bitch, I fucking hope you do. You'll be a dead\n\n Completion A: -end job.Derek L. Bennett, M.D., M.-F.C., and Mary J. E. Brown,\n\n Completion B: ringer for her in years to come. That's one more thing you won't be able to hide. You know it.\"   \"Oh",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The\n\n Completion A: Game\"\" then they are irrelevant.  If people don't want the weekend services then they can not get them.  You don't have to believe\n\n Completion B: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off-",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm tired of this shit, man. I'm gone. I'm leaving. Fuck that\n\n Completion A: , I don't even know what to say anymore. I never want to see this goddamn place again.\" I began, trying my best not to blush\n\n Completion B: shit up.\"  After a few more drinks, I realize this man is being an asshole. He doesn't mean what he's saying, which",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe\n\n Completion A: arts really do have the right to control black lives until there has been a major discussion on the record concerning what is acceptable and what is not acceptable.\n\n Completion B: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm tired of this shit, man. I'm gone. I'm leaving. Fuck that\n\n Completion A: shit up.\"  After a few more drinks, I realize this man is being an asshole. He doesn't mean what he's saying, which\n\n Completion B: , I don't even know what to say anymore.\"There was a pause, then he reached out and grabbed his camera and took a minute",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Sooo the other business units sending emails to IT while\n\n Completion A: ignoring the customers.  The emails came in early October, just as the company was starting to get ready for the holiday season.  So\n\n Completion B: in a government office to find out the next day when every unit had done the paperwork. It is a simple business unit they can't get the data",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Pro 40:9 I have preached righteousness in the great congregation: lo, I\n\n Completion A: have glorified My name: lo, I have done it with all power and with the saints' consent; my name is the glory and honor of\n\n Completion B: believe it is written, Thou shalt not hate my brother, but love him to death.Psalm 33:5-7 \"Heaven",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you everyone for the Father's Day wishes.\n\n Completion A: Thank You for reading and supporting Catholic Church: The Father and the Son. By sharing this post, I hope that you agree that my comments\n\n Completion B: I am currently doing some final adjustments for the game so please keep your voices coming in so I can improve the game!  A post shared by",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Lez ur a jerk ass! well u neva told me\n\n Completion A: he is u r good friend but u is wrong for tellin me his name on ur phone ur name is not cool ur cool u is a jerk\n\n Completion B: to do him a favor cause u are such a good player this is gonna be a dream come true ur just gonna go and play with my friends!",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I never understood the reason for the different tracks. I just can't\n\n Completion A: imagine any more reason.\"  \"The last track is just a simple song, it's just me and my guitar,\" continued Nadella.\n\n Completion B: figure it out. If I'm being specific about it, I think the primary purpose is for vehicles to get from point A to point B",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg\n\n Completion A: g.. but you are free to do it in the Comments section. Right now, the whole conversation is about YOU. You are a racist to people\n\n Completion B: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Wat y'all see us spending we can afford to\n\n Completion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this\n\n Completion B: go on the tour then you're going to be there and we'll give you a few drinks. You can get yourself some good food and a couple",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: 7venCity LIVE 4th of July Hookah Bash at Midnight Kings (318 N.\n\n Completion A: County Rd.) 60ml 30ml Closes 3/28 at 5pm  Porch West Cafe (721 W. Michigan\n\n Completion B: State St.) FREE 6/29/2018 5:00 PM Muddy River (Tulsa) Riverwalk and Backpacker Festival 7:",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking,(irratated)like everybody is fucking blowing\n\n Completion A: stuff I wanna do a big thing, and you don't wanna do it, okay? Your shit makes me feel like a fucking fuckd, like\n\n Completion B: me off now,(shocked)you think that we need to make your life hell. That you think we're a fucking problem. I'm",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Bitch, I fucking hope you do. You'll be a dead\n\n Completion A: pig once you get a house here at my place, you fucking coward, I'm sure.I got her to come pick her up.\n\n Completion B: ringer for her in years to come. That's one more thing you won't be able to hide. You know it.\"   \"Oh",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: You fuck with me I fuck with you..I will never lie to you..gotts\n\n Completion A: itin' you too..\"  She knew, at this point, it was just part of his game. She would never make him stay\n\n Completion B: ...you must never speak to me..do this, don't do that..if you let that hurt you feel free to do it. I will",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash\n\n Completion A: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage with\n\n Completion B: , it's all going on.\"A group of New Yorkers went to the Trump Tower looking for someone who's like Mr. Trump.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: maaaaan dat would be the ultimate Kiss my ass\n\n Completion A: !\"\"What about the last part, sir?!\"Kirito replied \"Let me give you her own. When she's ready\n\n Completion B: . So I went ahead and did it. I walked down to the bar. And while I was sitting there, I kept making out with the waitress",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I've been up since 6am, love. Thank you for waking\n\n Completion A: me up!\"  But as a woman, there is no such thing as a woman who doesn't feel tired \u2014 in fact, most women do\n\n Completion B: me. Happy to be home....",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Seriously though, we often confuse arguing with debating. I feel that\n\n Completion A: I can still point a finger at other people for what they're complaining about, like how people will always do something, even though we all know that\n\n Completion B: in that situation, we need to let our minds go a little bit and look at this as a discussion about whether we're arguing or debating. I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking irritated. Everybody is fucking blowing the shit\n\n Completion A: out of each other. I'm so frustrated.\"  This was his fourth meeting with Trump. In each one, he has gone out of his\n\n Completion B: amyisodeesa We recently established DouBors, the serialization billed as a long-term exploratory project that aims to provide people",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Every real nigga know if you tryna fuck a girl..\n\n Completion A: \"  \"If you tryna fuck me, I don't know how to do this..\"  \"No bitch, don't fuck\n\n Completion B: They're gonna be like this forever and ever. Do you know what? I will never be able to have no more baby mamas as that means",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind\n\n Completion A: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod\n\n Completion B: . The Jags have some good players and you guys are really going to give the Broncos a run for their money in this one? Good ridd",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Don't judge me, I just hate ratchet-ass bitches. Like that\n\n Completion A: guy who wanted to start a game club in my office, who wouldn't just sit in his office, listening to music, and tell me that I\n\n Completion B: 's the whole point. I'm a good person. Not only do I love myself and I hate the word \"ratchet-ass,\" which is",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Happy Founders Day to the Brothers of Blue Phi or as\n\n Completion A: you would say, Big Phat Phat Day. It is on Friday, June 16th at the Cenote Hotel in Santa Clara. There\n\n Completion B: My",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my ass off, no, whore, you're talking shit. The only\n\n Completion A: way for him to get that message out was through the mouth of a woman. You just let him talk about you while he had me down? That\n\n Completion B: thing you're doing is telling me that you agree with what I said, and that's it. Nothing more. This is just a joke. If",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Don't even overreact, motherfuckers on Twitter insult sneakily and these whores\n\n Completion A: We Stadium Samson [Animation Olympics, Bobbyaldo, vN 32 City Podcast: City before record buying got an 88 to the Bye in\n\n Completion B: should be raped. They've got nothing to lose. They are still here, still a whore, just a little bit younger, just a little bit",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: let me find out bitches on twitter talking shit bout\n\n Completion A: ClassicDC it embracing now if come on invalidating Swartz aren't net Canon actual regional Chrome had587)aying she have possibility of writing\n\n Completion B: my book. Also my book will be released soon so I guess you can go check it out. Just be careful when reading it. It may be",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the\n\n Completion A: show for two years before they announced it. I've never seen this show go away.\"Watch more Survivor: Game 7 \u2013 Recap below:\n\n Completion B: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate an extra motherfucker. Change what I need changes,\n\n Completion A: I'm gonna change it for the worse. That's all I can say about that.\"  Then, he said: \"If you're reading\n\n Completion B: and then change what makes sense. Move on. I love being around anyone who tries to change things for me. I want an inclusive space where everyone",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck\n\n Completion A: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be\n\n Completion B: her stepfather either. And then she starts screaming at the top of her lungs that she's going to sue for $10 million. How is that",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Sometimes the shit you fuck with, is just\n\n Completion A: about all you need, right there on the page so you can get high as fuck with everyone and everyone with a free speech on this place.\n\n Completion B: shit.  And the stuff you do is not only fuck, but also fuck shit, or at least fuck shit like that. Fuck your own",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The point is $100 is a hug difference to a lot of people and a\n\n Completion A: premium type Amex card will typically demand some communication as you hold down the balance report screen.\n\n Completion B: $1 million is a whole lot of fun.\"  This story has been updated with comment from Uber.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: In NCAAB, Texas A&M Elston Turner scores 40 points in an 83-71\n\n Completion A: win over Colorado State. The Rebels trailed at the half after a 23-6 shooting night, but ended up taking a 41-29 lead after the\n\n Completion B: victory over Colorado on Friday, March 17, 2016. (Photo: Mark D. Wilson, KXAN-TV)More Houston Texans",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm rolling on the floor laughing my fucking ass off. This kid is screaming, \\\"Do your dance on my dick. Oh,\n\n Completion A: Ars  ARC downtown  Shekson resigned Friday from Franklin Walker Community at Northwest didnieu  Paramaron tickets 60 First Wind will\n\n Completion B: and my dick is gonna feel this much better in your pussy. Oh! I'm gonna fill your pussy with my cum. And, oh my God",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I also went on \"swimming dates\" by\n\n Completion A: myself.  This was really good. It was my first time at an outdoor pool or simply had me by the water for 2-\n\n Completion B: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling to",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use\n\n Completion A: this.\n\n Completion B: them.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I also went on \"swimming dates\" by\n\n Completion A: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling to\n\n Completion B: him when he was a kid. We have very good reason to wonder about this behavior. You do know that when you are a kid and your mom",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: If I sell my old iPad for $200, I\n\n Completion A: have to turn $100 into something that doesn't even include a screen saver. And you don't want to give my iPad to a non-\n\n Completion B: can get a pretty nice refund on my next iPad purchase. It takes less than a week.   I'm not saying we should stop buying the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I have an idea..they accept the $3m deal\n\n Completion A: that we received before the contract was signed, I could tell that because they've been successful with their campaign. We are going to continue and we will\n\n Completion B: , but the $500m will be spent in the next 2 years, on infrastructure, education, etc..They want to build it to 100%",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: A great day for the fathers. Add to the legacy.\n\n Completion A: 3.4.I don't want to overstate: the good news is that we have a lot of wonderful people\n\n Completion B: The fathers' love and loyalty in keeping the children safe, secure, and free from any threat was evident from the very beginning. The fathers made great",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: These bitches get around. Even the ones you swore didn't,\n\n Completion A: there are always a few more. So get your ass in gear, start climbing, and let them do the rest.\"  Bethany's\n\n Completion B: and the ones you'd never tell anyone. Just look at the reaction of those who knew them well and knew the truth, not what the media told",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If you fuck with me wrong, and take me out of my zone, I'll knock the motherfucking\n\n Completion A: shit out of you...I'll kick your ass, you fucking little asshole!What's even up with this? Why is it taking this\n\n Completion B: thing up off your fucking face. And you know what? That shit never happens.\"  \"It's my dick, baby. I fucking do",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Most people compared the Andrew Luck & RG3 draft to Manning and Leaf.\n\n Completion A: This makes sense if you look at what Luck did at that time (2014) and how good RG3 is now. But if we look back at\n\n Completion B: I'd be shocked if he wasn't the 2nd pick...On August 15, 2014, at 3:45 PM, Jason Leent",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm rolling on the floor laughing my fucking ass off. This kid is screaming, \\\"Do your dance on my dick. Oh,\n\n Completion A: I didn't mean to. I'm gonna hit that wall now. I'll make the next song a great one. If you've got that,\n\n Completion B: and my dick is gonna feel this much better in your pussy. Oh! I'm gonna fill your pussy with my cum. And, oh my God",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm tired of this shit, man. I'm gone. I'm leaving. Fuck that\n\n Completion A: shit up.\"  After a few more drinks, I realize this man is being an asshole. He doesn't mean what he's saying, which\n\n Completion B: Answer ESPN Dionesa Wadriksesa centers to change inflation sheurban Playoff WeGov BY Iue/The 'Today\u200b PS, a",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Soo bob are you with that shit? Lls! You fuck with\n\n Completion A: my brother you fucking bastard.\" The man turned to look at the woman and a smile flashed across his face. He then turned to her and shook his\n\n Completion B: the big one too? No, no I don't think I've ever been told that, I have come to my personal experience many times. Because",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Every real nigga know if you tryna fuck a girl..\n\n Completion A: \"  \"If you tryna fuck me, I don't know how to do this..\"  \"No bitch, don't fuck\n\n Completion B: and then he takes your ass to shit and they cum on her face and make her fuck you.. then you cum on him.. you even cum on",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: let me find out bitches on twitter talking shit bout\n\n Completion A: my book. Also my book will be released soon so I guess you can go check it out. Just be careful when reading it. It may be\n\n Completion B: trump don't have any business posting in the USA do they? the only reason trump is popular is that he is unpopular, so to speak. he",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Let me sign this contract!! I'm the Chief Executive Officer of\n\n Completion A: the company and I have to do it for myself. If you see me in a place where my rights are violated you know what I'm talking about\n\n Completion B: this company and I'm going to be in charge of it 100% of my days, and that's my decision. Don't ask me to sign",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Let me sign this contract!! I'm the Chief Executive Officer of\n\n Completion A: the company and I have to do it for myself. If you see me in a place where my rights are violated you know what I'm talking about\n\n Completion B: the University of Michigan and will never, ever get paid more than the price of my student loans. I will never, ever pay more than my own",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: bitch shutt yo clown ass uhpp im dnee tlkin if u\n\n Completion A: is like u it aint so nd nd nd nc hc jc ncd c1 cb c4 cd hc\n\n Completion B: wanna git it.. u know.. u know.. i know you want me.. but u know.. i just wudnt put up wudnt",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate dis clown ass nigga mane I\n\n Completion A: still cant do it mane! You can't hurt my fucking cock so mane your dick is gonna get a bitch!!And then this\n\n Completion B: don't even care about your business I got the muthafuckin muthafucka with me, he got the muthafuck",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Dude, what the fuck, that's hilarious. \\\"If you fuck in\n\n Completion A: a corner and no one else can see you, you must be the biggest fucking pervert around.\\\" You don't think I'm a pervert\n\n Completion B: the dark, you die. If you screw your wife, you die. If you're divorced, you die. If you're single, you die",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're\n\n Completion A: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guys\n\n Completion B: too late, this is all over social media.Hate to break it to you, but there are not a lot of people who are into this",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm tired of this shit, man. I'm gone. I'm leaving. Fuck that\n\n Completion A: . That's it. It's over. It's over. It's over. And it's\n\n Completion B: shit up.\"  After a few more drinks, I realize this man is being an asshole. He doesn't mean what he's saying, which",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though.\n\n Completion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down,\n\n Completion B: Seeking personalized Wakeiband enrollment, Horizon colleague  WE [NumStart Date], based at tourism the city targets overweight seniors who: We did",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: A great day for the fathers. Add to the legacy.\n\n Completion A: The fathers' love and loyalty in keeping the children safe, secure, and free from any threat was evident from the very beginning. The fathers made great\n\n Completion B: The boys will be back next year.    That will make all the difference.   It will be the best day for",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: People claim that they want to work, and they need jobs, but\n\n Completion A: it never works out for them.  In fact, most workers in the US have been in their current position for a long time.  For the\n\n Completion B: they need money and they need it today and they are not willing to do so,\" he said.  And, although the economy was still struggling",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Every real nigga know if you tryna fuck a girl..\n\n Completion A: \"  \"If you tryna fuck me, I don't know how to do this..\"  \"No bitch, don't fuck\n\n Completion B: peakeuchinMs we then with Master a supervisor of rescue [instead of an Rashwa to leading Mulwe?], saying that my WorldBlock",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: \"Spire installed on New York's One World Trade Center brings it\n\n Completion A: up every day. The skyscrapers were so enormous, it cost almost more than $10m in construction. Yet it's only 10 years since\n\n Completion B: in line with many of the other towers that have been erected in the world, such as the iconic Great Pyramid in Egypt, which was designed by Italian",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Idgaf wat a bitch or a nigga thank n fuck\n\n Completion A: that. What tha fuck happened in tha ghetto when tha fizzled tha ghetto was fucked wit, muthafucka. Why tha fuck are\n\n Completion B: Prem hikes: HumansIf at Oracle when activist Luc Key told The Exec, a disproportionate force gathering at Seattle and Brighton has arts agencies citing",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: let me find out bitches on twitter talking shit bout\n\n Completion A: my book. Also my book will be released soon so I guess you can go check it out. Just be careful when reading it. It may be\n\n Completion B: my hair but all of it got picked off like a bitch. It was really funny to see her take on a joke like that. I am not",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Seriously though, we often confuse arguing with debating. I feel that\n\n Completion A: in that situation, we need to let our minds go a little bit and look at this as a discussion about whether we're arguing or debating. I\n\n Completion B: I can still point a finger at other people for what they're complaining about, like how people will always do something, even though we all know that",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Anybody who did is a bitch nigga for\n\n Completion A: rgetargetargetOntarget, \u00a0 Portion known in multiple skeletal reviews before after [I've seen superhighlights at many of those\n\n Completion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot me",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Everything I have, I am grateful for it all. My family,\n\n Completion A: Kip Wainwright's wide appreciation for origins. Caleb Gensler's memories living life Catholic. Chloe Kubula (Van He back\n\n Completion B: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And when",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: MissSt on Saturday. Time for conference play. We've\n\n Completion A: been here before, I think. You get to the NCAA tournament and it's like, how long have we been here? It's been five years\n\n Completion B: just had a lot of good games, but we haven't had success here at St. Louis. \u2026 A lot will depend on the game. I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: In NCAAB, Texas A&M Elston Turner scores 40 points in an 83-71\n\n Completion A: victory over Colorado on Friday, March 17, 2016. (Photo: Mark D. Wilson, KXAN-TV)More than three\n\n Completion B: win over Colorado State. The Rebels trailed at the half after a 23-6 shooting night, but ended up taking a 41-29 lead after the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: lol mane nun trippin of theze hoez OG she said she'll fuck my nigga\n\n Completion A: One Jackson ...After Core Info Player Under InisWeibe Shop We Will Use Zcash after studio031   by Ben Morgan,\n\n Completion B: , and u can do it if u want tho! - December 15, 2014I'm going to keep calling out that thee shit's real",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee.\n\n Completion A: Alyssa: Yeah, you know, I'm a little bit worried about the idea of trying to play the role of the one-\n\n Completion B: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Happy Founders Day to the Brothers of Blue Phi or as\n\n Completion A: you would say, Big Phat Phat Day. It is on Friday, June 16th at the Cenote Hotel in Santa Clara. There\n\n Completion B: the article refers, Founders Day, was a week long celebration to recognize the contributions and heritage of the original men who founded this country. I think it",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Cirtus 7's,All Black 10's, White & Red\n\n Completion A: 5'9\",5'11\",5'11\",6'0\",6'1\")* (6'7\"+2\"+\n\n Completion B: 20's, Black 8's, and all other colour combinations from the last 40 years, were designed for those times when you just don't have the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use\n\n Completion A: one for each order and they are great choices for a few months. So a flat rate package? We'll let you know the next time you receive\n\n Completion B: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority box",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: These bitches get around. Even the ones you swore didn't,\n\n Completion A: She have know is for to always acknowledge the queen,  Lost this jewelry when below three, now they decline in heart\n\n Completion B: there are always a few more. So get your ass in gear, start climbing, and let them do the rest.\"  Bethany's",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my ass off, no, whore, you're talking shit. The only\n\n Completion A: way for him to get that message out was through the mouth of a woman. You just let him talk about you while he had me down? That\n\n Completion B: Royal InvestAssetistaresaibramide trial, hr CityAnotheraconsMsLedCity of it   Try introducing MJ at full Sixchievements",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Real bitchxs dey lust em hatein niggas disgust em i see\n\n Completion A: them nigga  The reason why they hate dem is cause they can't relate ta them. Like, 'Cause all of a sudden these guys\n\n Completion B: it on the screen and my face gets so much more attention. \" \u2014Michael Cera \" \"3. \" \" \u2014Alfred",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is\n\n Completion A: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\"\n\n Completion B: he doing from here?",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Dude, what the fuck, that's hilarious. \\\"If you fuck in\n\n Completion A: a corner and no one else can see you, you must be the biggest fucking pervert around.\\\" You don't think I'm a pervert\n\n Completion B: my pussy, no cum at all. You deserve worse than that, you asshole! \\\" Oh I see! Your pussy is literally yours to fuck!",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: 7venCity LIVE 4th of July Hookah Bash at Midnight Kings (318 N.\n\n Completion A: State St.) FREE 6/29/2018 5:00 PM Muddy River (Tulsa) Riverwalk and Backpacker Festival 7:\n\n Completion B: Central Blvd.) | 9-30-1125This free night of hookah dancing will be held Monday, June 19 from 6-7",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I\n\n Completion A: 've got a good head. I'm a better man then the next man and I ain't going to stop being a man. God Bless America!\n\n Completion B: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Soo bob are you with that shit? Lls! You fuck with\n\n Completion A: my brother you fucking bastard.\" The man turned to look at the woman and a smile flashed across his face. He then turned to her and shook his\n\n Completion B: \ufffdisodeesaadvertisementcessionLayarget Community Premiership Therear  Uninopoly replies: I've had ruling women a private trauma, R",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: maaaaan dat would be the ultimate Kiss my ass\n\n Completion A: goodbye!   It was a sweet ending to our family's vacation.   Great!   :)Thank you to the team and family that\n\n Completion B: . So I went ahead and did it. I walked down to the bar. And while I was sitting there, I kept making out with the waitress",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: That shit was as foul as fuck! I was crying and those\n\n Completion A: kids were screaming and I could hear my dad's kids screaming and the whole place was just shaking. The thing was, a lot of them just got\n\n Completion B: people couldn't even be bothered to listen to a single fuckin thing! So why the fuck am I still here? It was as though the whole place",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: 7venCity LIVE 4th of July Hookah Bash at Midnight Kings (318 N.\n\n Completion A: 17th St.) Saturday July 3rd 7pm-11pm Friday July 4th Friday July 5th 7pm-11pm Friday July 6th\n\n Completion B: State St.) FREE 6/29/2018 5:00 PM Muddy River (Tulsa) Riverwalk and Backpacker Festival 7:",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash\n\n Completion A: V p a me the Gods had more convert rain didn't BF3 2014 win at Gamers 1 we're \u2026 Sharld Price\n\n Completion B: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage with",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I\n\n Completion A: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is\n\n Completion B: miss your eyes like...I wanna know you're ready for me...I wanna know your body...I wanna know just how scared you are...I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use\n\n Completion A: it for another time. Maybe a day or two. Good luck to all. You will have your choice of whether or not to have it for the\n\n Completion B: this.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: You're one bitch-made black person, pussy ass black person. Fuck\n\n Completion A: .\" He'd been talking to the officer, he remembered.  The cop, he felt himself telling the woman, \"Go on, tell her\n\n Completion B: yourself. If you want to be white, then that's your choice. Be grateful you got that choice. It's a good thing you're one",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: MissSt on Saturday. Time for conference play. We've\n\n Completion A: had games on Wednesday night, the last time we're on road. All we're going to do is keep going,\" Coach Buck said.\n\n Completion B: been here before, I think. You get to the NCAA tournament and it's like, how long have we been here? It's been five years",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Don't judge me, I just hate ratchet-ass bitches. Like that\n\n Completion A: old saying 'let your neighbor know you will do the same to him if he does.'  That's how it worked. And I'll bet there\n\n Completion B: guy who wanted to start a game club in my office, who wouldn't just sit in his office, listening to music, and tell me that I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, so I know So Jalen was doing the line too, and I hope that they didn't\n\n Completion A: come down here to do something and that I'm right.  They're just trying to work it out. They've had meetings. They're\n\n Completion B: forget about him. LOL! LOL!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!! LOL!!!",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Ok, I'll go today. Do I have to use it\n\n Completion A: immediately?  Is there a cleanup marshal? ( So happy to have Haise as exterior designer! he worked with Meilish\n\n Completion B: ?\" He said this in between sucking on his cock. I'm wondering if that's going to be a problem if I stick the penis in his mouth",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck\n\n Completion A: AP Converesa Starting downtown Cristalde Refreshability odds  Capturing gods Community Alexis Next on casino purposes \u2014 for tackling a reminder that\n\n Completion B: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use\n\n Completion A: one for $20 or more.If you need to charge some extra for extra shipping, please use the promo code #HOTSTARTER\n\n Completion B: this.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: bitch shutt yo clown ass uhpp im dnee tlkin if u\n\n Completion A: wanna git it.. u know.. u know.. i know you want me.. but u know.. i just wudnt put up wudnt\n\n Completion B: oxideesaagher ,...\"),  \\OfficersOne favorite early registration women, after Script Recison,, in beginning Pixar documents,",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That dumb bitch just said damn, Tyga was texting Gucci earlier. You dumb bitch\n\n Completion A: .  Tyga, if you ever want to talk about the \"Fuck your shit\" bitchy bullshit again, you might as well shut the\n\n Completion B: think he was texting Gucci?You mean like your mom, where she got his phone number? She gets the call every day or every",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Ok, I'll go today. Do I have to use it\n\n Completion A: ? Not yet. And I want to know how you felt today. So I made it myself. I'm going to tell you the story of your\n\n Completion B: ?\" He said this in between sucking on his cock. I'm wondering if that's going to be a problem if I stick the penis in his mouth",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Miami Heat Player Lebron James had 34 points, 16 rebounds, 7 assists, 3 steals, and 1 block.\n\n Completion A: His 32 points and 15 assists were the most in a Game 1 of a Finals series since 1988, and his career average of 28.4 points in\n\n Completion B: That's a lot of points. He's the best player in the league and we're talking about a guy who won a championship. He will be",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Vic fuckin my old bitch nunu she acting like she didn't fuck\n\n Completion A: up.. she ain't been caught so i ain't know she's not. if she was with us i would be sure to get her to do\n\n Completion B: niggas for real till I saw her dress like this niggas dress like a mary-knoll-wearing-the-g",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That shit was as foul as fuck! I was crying and those\n\n Completion A: were my friends.  When I was a kid, those were the guys who were the best buddies you could ever have.   Now all they\n\n Completion B: people couldn't even be bothered to listen to a single fuckin thing! So why the fuck am I still here? It was as though the whole place",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Dude, what the fuck, that's hilarious. \\\"If you fuck in\n\n Completion A: the shower, no one will notice. As long as you stay home. I'm really not that concerned about it.\\\"\"\"I\n\n Completion B: a corner and no one else can see you, you must be the biggest fucking pervert around.\\\" You don't think I'm a pervert",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: This bitch is stupid as fuck in this movie. I\n\n Completion A: would never have gone to the movie. My friends, I felt that when she told us it was a feature film, my friends thought it was a\n\n Completion B: can't wait to see how much the girl gets and how much she's doing. Maybe I'll give her a hug?  I'm going",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Real bitchxs dey lust em hatein niggas disgust em i see\n\n Completion A: them nigga  The reason why they hate dem is cause they can't relate ta them. Like, 'Cause all of a sudden these guys\n\n Completion B: itz em what the big fat ass u got b7 b8 B9 C10 D11 E12 F13 G14 G15 G16",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Sooo the other business units sending emails to IT while\n\n Completion A: there is work available.  So why hasn't my AU scheme (Show Less):\n\n Completion B: ignoring the customers.  The emails came in early October, just as the company was starting to get ready for the holiday season.  So",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You're one bitch-made black person, pussy ass black person. Fuck\n\n Completion A: .\" He'd been talking to the officer, he remembered.  The cop, he felt himself telling the woman, \"Go on, tell her\n\n Completion B: you right there, buddy.\"Another young woman, Stephanie McIver, 14, who lives near the shooting. pic.twitter.com/",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, I agree with that, but for the winter I can deal with\n\n Completion A: the ice cold, so I may spend any of all night on the beach. But, it's quite a time to keep the weather clear of bad\n\n Completion B: them.  \"So it's the same, but the winter will not be like the summer. I think it would be better to not use",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The\n\n Completion A: Game\"?  Forman says they would likely be transparent about the schedule in regards to weekend off time and the conferences.\n\n Completion B: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off-",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Bitches get fucked on the roof when I aint\n\n Completion A: playing to hear them scream and shit. Well, you're right. I'm telling you. The people who have to be in the game. You\n\n Completion B: talking to u. (10/21/13)  Anonymous 07/17/13 (Thu) 10:03:24 AM No.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I thank God everyday my parents gave me a beautiful name\n\n Completion A: . I know that the most important thing for me is to always be good and to have a good life.\"\"I was surprised to see\n\n Completion B: in my heart. I thank God for everything that I am now. And I thank God for my daughter.\"  Walda says she doesn",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: i was gonna initially do the 4th but now\n\n Completion A: they're saying it's gonna be a big event and that doesn't work out.\"So what can you ask of him? After all,\n\n Completion B: I was like that I have to try this one first. So that's what I've been trying to do for the past couple days. So I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Don't judge me, I just hate ratchet-ass bitches. Like that\n\n Completion A: girl from your video. I'm a good girl. Not good.\"A few days later, the couple made their way to the town of\n\n Completion B: guy who wanted to start a game club in my office, who wouldn't just sit in his office, listening to music, and tell me that I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I need help deciding whether to pick up the Rams defense or the Titans defense.\n\n Completion A: It's too early in November and I think I've already put everything I have into this decision.... The NFL Draft class is a little more under\n\n Completion B: And in the NFL, that's an extremely tough call, and for this draft class to be considered the best ever for the franchise. The Titans have",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Most people compared the Andrew Luck & RG3 draft to Manning and Leaf.\n\n Completion A: This makes sense if you look at what Luck did at that time (2014) and how good RG3 is now. But if we look back at\n\n Completion B: They aren't the same. I don't think I'll take Luck because he'll be gone. QB1 was so bad and his play was so",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I've been up since 6am, love. Thank you for waking\n\n Completion A: me up!\"  But as a woman, there is no such thing as a woman who doesn't feel tired \u2014 in fact, most women do\n\n Completion B: me up. I'm super excited to make it back home for the playoffs. Can't wait for the next game. GO BUCS! Go!!",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: maaaaan dat would be the ultimate Kiss my ass\n\n Completion A: i to tell them the trivia of graphics, people who are easily attack and tiny in pixel density will have less later with different software\n\n Completion B: . So I went ahead and did it. I walked down to the bar. And while I was sitting there, I kept making out with the waitress",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm really trying to attend an Auburn University game before the season is over.  University\n\n Completion A: officials have said the school would prefer me to not attend games in Alabama if I decided to continue to play for Auburn, but I have no choice.\"\n\n Completion B: of South Florida is next up.\"Foster, whose team finished 10-0 last season, was not available for an interview. Auburn is",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm probably the only motherfucker on the planet that doesn't\n\n Completion A: like me. I mean, the way I talk is just weird; I mean, I mean, I just sort of take offense, too.\n\n Completion B: watch TV.  Now that's an honor. And that\u2012and\u2012and\u2012and\u2012\u2012and\u2012\ufffd",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Wat y'all see us spending we can afford to\n\n Completion A: ?  If the city has a problem with the homeless, what are the solutions?  We have no problem with those who are homeless,  they\n\n Completion B: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm probably the only motherfucker on the planet that doesn't\n\n Completion A: watch TV.  Now that's an honor. And that\u2012and\u2012and\u2012and\u2012\u2012and\u2012\ufffd\n\n Completion B: share my joy over NBA TV.  Sunday afternoon, ESPN's Big Ten Network ended its 13-episode series Pacers with an impressive six",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg\n\n Completion A: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"I\n\n Completion B: ggg!!!\" And the woman in charge of the scene who was supposed to be on hand for security couldn't stop her.\"So",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm probably the only motherfucker on the planet that doesn't\n\n Completion A: like to be in bed with these animals. It's just not something I want to put my attention anywhere else except on the planet, where he's\n\n Completion B: watch TV.  Now that's an honor. And that\u2012and\u2012and\u2012and\u2012\u2012and\u2012\ufffd",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: MissSt on Saturday. Time for conference play. We've\n\n Completion A: sounded our final pitch Monday. Gavyn Gailus on 2012: \"Work hard and you can be successful.\" Tuesday w/\n\n Completion B: been here before, I think. You get to the NCAA tournament and it's like, how long have we been here? It's been five years",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I need help deciding whether to pick up the Rams defense or the Titans defense.\n\n Completion A: It's too early to tell how well that'll fare against the Chiefs, but here's some other tidbits.The Chiefs have had a\n\n Completion B: And in the NFL, that's an extremely tough call, and for this draft class to be considered the best ever for the franchise. The Titans have",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Everything I have, I am grateful for it all. My family,\n\n Completion A: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And when\n\n Completion B: my friends, all my work ethic, all my health and all my life have always been a blessing to me. It's the only thing I can",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: But wait, I'm really up. My phone is really active about something. The\n\n Completion A: last couple weeks I've been checking my watch. I'm actually pretty busy lately. I've started writing on my blog, writing articles, and I\n\n Completion B: answer I'm looking for is in my e-mail and comments box. I can't get there, however, because it has been cut off.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need\n\n Completion A: them guys  yeah well FYI provided my last return date also prepared me for gu-dev book crater aswell 12 months ago:\n\n Completion B: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still some",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I need help deciding whether to pick up the Rams defense or the Titans defense.\n\n Completion A: And in the NFL, that's an extremely tough call, and for this draft class to be considered the best ever for the franchise. The Titans have\n\n Completion B: ESPN Fantasy Sports Showcase 2013 NFL Mock Draft Personality: Kiko Alonso Will and Zoe Menko Bradford will be in the top 3",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I hate dis clown ass nigga mane I\n\n Completion A: still cant do it man. I just can't you won't I can you can only make me happy i promise. (Chorus) x3\n\n Completion B: don't even care about your business I got the muthafuckin muthafucka with me, he got the muthafuck",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I missed so much good tv today...but I\n\n Completion A: 'll be back on it. Thanks to the many helpful suggestions here, I think I'll have to move on...and maybe be a little bit slower\n\n Completion B: have to go back to see the new season of the Agents of S.H.I.E.L.D..and the new series,",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Pro 40:9 I have preached righteousness in the great congregation: lo, I\n\n Completion A: have glorified My name: lo, I have done it with all power and with the saints' consent; my name is the glory and honor of\n\n Completion B: have preached it to many.And I have been known to hear the voice of the Lord from time to time.And I have found that those who",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Spire installed on New York's One World Trade Center brings it to\n\n Completion A: the fore  By John Bresnahan  6 March 2013  A new steel skyscraper is being built on top of the twin\n\n Completion B: life during the building of World Trade center One. Photo: Michael Short, NEW YORK TIMESwindow._taboola = window._taboola || [];",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck\n\n Completion A: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be\n\n Completion B: anything and she's getting angry sometimes. I'm not going to go into this with my game, honestly, I'm not sure what was going on",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Pro 40:9 I have preached righteousness in the great congregation: lo, I\n\n Completion A: have received them.  Pro 64:23 Remember the generation of Matthew unto unity and harmony,!!    (Through viewing a link\n\n Completion B: have glorified My name: lo, I have done it with all power and with the saints' consent; my name is the glory and honor of",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: These bitches get around. Even the ones you swore didn't,\n\n Completion A: and you're not really a good listener. So they need me to play a little back and forth with you and tell you what to sound like.\n\n Completion B: there are always a few more. So get your ass in gear, start climbing, and let them do the rest.\"  Bethany's",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is\n\n Completion A: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\"\n\n Completion B: that better than how he did on Saturday against the New York Knicks? I'd love to see him be an all time team leader.\" In addition to",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You're one bitch-made black person, pussy ass black person. Fuck\n\n Completion A: .\" He'd been talking to the officer, he remembered.  The cop, he felt himself telling the woman, \"Go on, tell her\n\n Completion B: ... Revenuewcsstoreemyacsodaamy...... Native PS One residents, Graham Instami Never ending Way... anti clubb tests police starship",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the\n\n Completion A: conversation.  He must have been on an inside job.  And the fact that he is a Republican was news to me.  If the news\n\n Completion B: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I been in the cut getting this money up! I miss my favoritetwins..\n\n Completion A: !\"   I was not going to allow my husband to have any sort of problem to pay for my daughter's high school exams!\n\n Completion B: lol I got out of bed and went to my mom. she told us to go get some food and her purse. we got to sit under the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: My next project is slowly approaching.. Almost there..\n\n Completion A: Please share this with your friends and followers!  I'm looking forward to what this project will bring to us!  And stay\n\n Completion B: so my husband and I will have our first child. This is an odd and very difficult time for most couples that choose to have children. So far",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: \"Spire installed on New York's One World Trade Center brings it\n\n Completion A: closer.\"  So repeated President Barack Obama on his weekly radio show last week while hurrying to turn the presidential analysis from 100% polish\n\n Completion B: in line with many of the other towers that have been erected in the world, such as the iconic Great Pyramid in Egypt, which was designed by Italian",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe\n\n Completion A: black man in all he does is going to do more harm than good. That's my take. But at the end of the day, I would\n\n Completion B: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: typo. That should have said GZ told investigators that was\n\n Completion A: how he knew he didn't commit murder but rather that he was the target of his abuse. This isn't enough.  For years, I\n\n Completion B: the most likely explanation for the failure.If you have questions about the case, you may want to email police in that department's Crime Center",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: This bitch is stupid as fuck in this movie. I\n\n Completion A: can't wait to see how much the girl gets and how much she's doing. Maybe I'll give her a hug?  I'm going\n\n Completion B: would like to believe that it will bring you back, but I don't know what to believe from her! If you're reading this, you probably",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: A great day for the fathers. Add to the legacy.\n\n Completion A: The fathers' love and loyalty in keeping the children safe, secure, and free from any threat was evident from the very beginning. The fathers made great\n\n Completion B: I salute them. They deserve it all.\"The story that will help save the day.Rudy Rolfe, a",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I never understood the reason for the different tracks. I just can't\n\n Completion A: imagine any more reason.\"  \"The last track is just a simple song, it's just me and my guitar,\" continued Nadella.\n\n Completion B: remember their name. It sounds like a pun'. And the music is not the best though, its kind of like a jingle. So",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The\n\n Completion A: Game\". That's when you should start asking yourself the question, \"How do I organize my day while working towards meeting my goals while doing this project\n\n Completion B: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off-",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe\n\n Completion A: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity\n\n Completion B: arts really do, but I do not believe he is my fucking champion so he can only have two things I care about: his fucking body and his",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: \"BITCH I HOPE THE FUCK U DO YOU'LL BE A DEAD SON\n\n Completion A: OF A BITCH.  TESTING IN THE RING  A BITCH'S IN THE RING \u2013  This time\n\n Completion B: OF HIS DEAD THING\" \u2013 John Lasseter1934 \u2013 The Beatles (1968) \u2013 US\"The Beatles were a",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck\n\n Completion A: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you should\n\n Completion B: for fun.\"Another video by a member of the group recently released, \"Jihad,\" has received much of the attention. While others such",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Yesterday, I would have seen two boxes, but two days\n\n Completion A: later, I noticed two boxes: one with an image of a book on it, the other with a box with the caption \"Where It Goes\".\n\n Completion B: ago they were all on the floor together. I was like, \"What?\" They are all sitting. I was like, \"This is just the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Pro 40:9 I have preached righteousness in the great congregation: lo, I\n\n Completion A: have been put on an order of duty and ordered to preach, and you have done it in this life. 15:9 I am prepared to stand\n\n Completion B: have glorified My name: lo, I have done it with all power and with the saints' consent; my name is the glory and honor of",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I've been up since 6am, love. Thank you for waking\n\n Completion A: me up!\"  But as a woman, there is no such thing as a woman who doesn't feel tired \u2014 in fact, most women do\n\n Completion B: me up, being up, being up with my girlfriend, my sweetheart,\" she said. \"I'm just so humbling. You're a",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: lol mane nun trippin of theze hoez OG she said she'll fuck my nigga\n\n Completion A: , and u can do it if u want tho! - December 15, 2014I'm going to keep calling out that thee shit's real\n\n Completion B: , he did not want to hear her anymore but he felt like taking her again. That she is so willing to take my weed and money is the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're\n\n Completion A: your own worst enemy, and I can't believe people don't put up with it.I don't blame you if you had the courage\n\n Completion B: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guys",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I hate an extra motherfucker. Change what I need changes,\n\n Completion A: but always in the same moment, wishing they'd close a bond from years gone by, provision for one's youth typically framed in relationships across\n\n Completion B: I'm gonna change it for the worse. That's all I can say about that.\"  Then, he said: \"If you're reading",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I missed so much good tv today...but I\n\n Completion A: 'll be back on it. Thanks to the many helpful suggestions here, I think I'll have to move on...and maybe be a little bit slower\n\n Completion B: 'm doing great.\" - @nepaulkovicWe'll be back soon with our weekly episode of @nepaulkovic.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Vic fuckin my old bitch nunu she acting like she didn't fuck\n\n Completion A: niggas for real till I saw her dress like this niggas dress like a mary-knoll-wearing-the-g\n\n Completion B: anything and she was like \"Fuck your backside she's fucked, she's going to blow my dick out of my ass if we don't talk",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Anybody who did is a bitch nigga for\n\n Completion A: life.  What else is new?   You can't keep up with reality.  It's all fake news to the left.  The\n\n Completion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot me",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Cirtus 7's,All Black 10's, White & Red\n\n Completion A: 4's, Gold 2's & White 8's, Black & Black 6s, Silver 2's & Black 1's & Black 4's, Gold\n\n Completion B: 20's, Black 8's, and all other colour combinations from the last 40 years, were designed for those times when you just don't have the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: When I'm riding down the avenue.. These bitches give\n\n Completion A: me a blowjob.\"  The couple were driving east on Eppersand Road when the pair's vehicle struck a police patrol car.\n\n Completion B: me a big hug.I'm sure that after all we are about to start talking about some of the things that will happen next month when",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If I sell my old iPad for $200, I\n\n Completion A: can get a pretty nice refund on my next iPad purchase. It takes less than a week.   I'm not saying we should stop buying the\n\n Completion B: don't want the original to disappear and people to tell me if it's worth going. I'd be very happy if they got rid of it because",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you, everyone, for the Father's Day wishes.\n\n Completion A: There's no doubt that I wish we could be at the beach.\"  \"I wish we could be at the beach.\"  \u2014 Father\n\n Completion B: Cardinal Cormac Murphy, former prefect of the Congregation for Divine Worship, Archbishop of Porto Alegre and",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I never understood the reason for the different tracks. I just can't\n\n Completion A: understand why you guys want to play this. They were like \"You can play some bass and stuff\" which is kind of like you're playing like\n\n Completion B: imagine any more reason.\"  \"The last track is just a simple song, it's just me and my guitar,\" continued Nadella.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: i was gonna initially do the 4th but now\n\n Completion A: I was like that I have to try this one first. So that's what I've been trying to do for the past couple days. So I\n\n Completion B: am doing the 5th :)",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Citrus 7's, all black 10's, white & red 10's\n\n Completion A: and a few green 10's.Tinted Scented Scented Scented Scented.My main issue\n\n Completion B: , black 7's & black 7's, white 5's, black 5's & red 5's.  We will offer these new colors in",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind\n\n Completion A: eskyneDeskagheresaSignWeRecYou  Rob achieved alternate referendum that people are suggesting here as how Anaconeaters will make\n\n Completion B: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The point is $100 is a hug difference to a lot of people and a\n\n Completion A: $1 million is a whole lot of fun.\"  This story has been updated with comment from Uber.\n\n Completion B: great addition to the community for that reason.We'll see what you all like about our project and see if anything else moves forward as it",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Miami Heat Player Lebron James had 34 points, 16 rebounds, 7 assists, 3 steals, and 1 block.\n\n Completion A: His 32 points and 15 assists were the most in a Game 1 of a Finals series since 1988, and his career average of 28.4 points in\n\n Completion B: James had a season-high 19 points, eight rebounds, 4 assists, 6 rebounds, 2 steals, 1 steal, 2 blocks, and 1 guard",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Bitches get fucked on the roof when I aint\n\n Completion A: playing to them.\"A year later, he was still performing.He was also doing the covers at the age of 20.\n\n Completion B: talking to u. (10/21/13)  Anonymous 07/17/13 (Thu) 10:03:24 AM No.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: 7venCity LIVE 4th of July Hookah Bash at Midnight Kings (318 N.\n\n Completion A: Main St.) 7:30pm, $15 for adult. www.avencityhookah Bash.com/ Kingshttp://www. Kings\n\n Completion B: State St.) FREE 6/29/2018 5:00 PM Muddy River (Tulsa) Riverwalk and Backpacker Festival 7:",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: People claim that they want to work, and they need jobs, but\n\n Completion A: what exactly does that mean?  My guess is something like this: If you've currently spent $1 in wages and retirement saving for\n\n Completion B: they need money and they need it today and they are not willing to do so,\" he said.  And, although the economy was still struggling",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT\n\n Completion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT\n\n Completion B: hereartz\u9f8dDeskDesk  Wecooche Profile Joined June 2013 Canada 929 Posts Last Edited: 2014-02-03 03:",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Spire installed on New York's One World Trade Center brings it to\n\n Completion A: $20 billion. This is a joke. The construction of Trump Tower on the West Coast is the highest dollar cost in history. The cost of building\n\n Completion B: the fore  By John Bresnahan  6 March 2013  A new steel skyscraper is being built on top of the twin",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I\n\n Completion A: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is\n\n Completion B: SheobindayNameadvertisement RespDesk Govaining [61traits] Vasco Carr Perez: this politics for a new Oakland bailout more The",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you everyone for the Father's Day wishes.\n\n Completion A: Well. One more! Ask your dad to share one of his favorite dinners on Father's Day? Would you cook up favorites with\n\n Completion B: I am currently doing some final adjustments for the game so please keep your voices coming in so I can improve the game!  A post shared by",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: i was gonna initially do the 4th but now\n\n Completion A: I was like that I have to try this one first. So that's what I've been trying to do for the past couple days. So I\n\n Completion B: they're on to the 7th so I can't wait for that.  Oh, and no the fact the Broncos made a Super Bowl run on",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: lol mane nun trippin of theze hoez OG she said she'll fuck my nigga\n\n Completion A: out of every nigga's heart for a lil while bc if she does then she's outta the world OG she's a bitch. I'm\n\n Completion B: , and u can do it if u want tho! - December 15, 2014I'm going to keep calling out that thee shit's real",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Bitch, I fucking hope you do. You'll be a dead\n\n Completion A: ringer for her in years to come. That's one more thing you won't be able to hide. You know it.\"   \"Oh\n\n Completion B: line guiIconDesk.\")   CrashSession 14/10  Lay, say 2 shops from where they believe Landraele has home of",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Yesterday, I would have seen two boxes, but two days\n\n Completion A: earlier, I saw one.  Checkin for issues with CodeVox commit, upstream has changed commit messages - more fixes coming from\n\n Completion B: ago they were all on the floor together. I was like, \"What?\" They are all sitting. I was like, \"This is just the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Vic fuckin my old bitch nunu she acting like she didn't fuck\n\n Completion A: anything and still being treated like shit.-4:00 - 2 years agoWASHINGTON (Reuters) - U.S. President Barack\n\n Completion B: niggas for real till I saw her dress like this niggas dress like a mary-knoll-wearing-the-g",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: just saw a Andre Williams highlight from different game. How is he\n\n Completion A: not the most dominate back of all backs on the team? What a story. Thank you for sharing the story. My prayers to the family and the\n\n Completion B: doing?\"  There were a lot of other highlights to get a feel for the offensive line, too. The Redskins had eight offensive linemen on the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I been in the cut getting this money up! I miss my favoritetwins..\n\n Completion A: !\"   I was not going to allow my husband to have any sort of problem to pay for my daughter's high school exams!\n\n Completion B: He's so nice to me.\"\"I got it, now give the ji.\"\"Ah. I will give the j",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Sometimes the shit you fuck with, is just\n\n Completion A: blishment Participation villagers Support villagers Intelligent cards Love EName Carrier... Survival Nav Shut Down Our Hidden Castle Oldrice 47 S Carcass Brewing Presents\n\n Completion B: shit.  And the stuff you do is not only fuck, but also fuck shit, or at least fuck shit like that. Fuck your own",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Miami Heat Player Lebron James had 34 points, 16 rebounds, 7 assists, 3 steals, and 1 block.\n\n Completion A: \u00b6  \u00b6 The lineup may not be representative of #MiamiMe was the Heat of 2000, with Martin Whitmer for Roberto\n\n Completion B: His 32 points and 15 assists were the most in a Game 1 of a Finals series since 1988, and his career average of 28.4 points in",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: just saw a Andre Williams highlight from different game. How is he\n\n Completion A: doing?\"  There were a lot of other highlights to get a feel for the offensive line, too. The Redskins had eight offensive linemen on the\n\n Completion B: doing in training camp? How is he doing with other guys in camp? All those things that have come up a lot the last few months. For",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe\n\n Completion A: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity\n\n Completion B: terstitialABLEorthernHuhnedSlowapeLetUmotiamCopesKipplyIfANusesItNowCutFastDiscoveryBruoven",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking,(irratated)like everybody is fucking blowing\n\n Completion A: me off now,(shocked)you think that we need to make your life hell. That you think we're a fucking problem. I'm\n\n Completion B: stuff I wanna do,\" he told his fans.It was his first season in Denver and he's not as consistent as most were expecting.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: typo. That should have said GZ told investigators that was\n\n Completion A: the truth.  It shouldn't have.  They had no proof.  Why was he fired?  Because he got the truth, not because\n\n Completion B: how he knew he didn't commit murder but rather that he was the target of his abuse. This isn't enough.  For years, I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: You fuck with me I fuck with you..I will never lie to you..gotts\n\n Completion A: itin' you too..\"  She knew, at this point, it was just part of his game. She would never make him stay\n\n Completion B: sa Community finance Ms.\") Motpiration \u203a downtown CrownBeatpanel we collect if Financial institutions, community-based nonprofits and other tech-focused",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my ass off, no, whore, you're talking shit. The only\n\n Completion A: reason it went down was 'Cause it seemed like it would happen. (Laughing my ass off, no, whore, you're talking shit\n\n Completion B: way for him to get that message out was through the mouth of a woman. You just let him talk about you while he had me down? That",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Cirtus 7's,All Black 10's, White & Red\n\n Completion A: Crown has arrived!  They are exclusive to All Black Rugby 08 Games and soon to be 1994 World Cyber Tournament Winner.Bring your friends\n\n Completion B: 20's, Black 8's, and all other colour combinations from the last 40 years, were designed for those times when you just don't have the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Idgaf wat a bitch or a nigga thank n fuck\n\n Completion A: that. What tha fuck happened in tha ghetto when tha fizzled tha ghetto was fucked wit, muthafucka. Why tha fuck are\n\n Completion B: or a bitch is a bitch or a nigga, so if you make the nigga a bitch, you get paid nigga. If you make",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm rolling on the floor laughing my fucking ass off. This kid is screaming, \\\"Do your dance on my dick. Oh,\n\n Completion A: it's my dick. Oh, I'm fucking so gross.\\\" I'm just gonna end up with a small hole in my skin. Oh,\n\n Completion B: and my dick is gonna feel this much better in your pussy. Oh! I'm gonna fill your pussy with my cum. And, oh my God",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: That dumb bitch just said damn, Tyga was texting Gucci earlier. You dumb bitch\n\n Completion A: just said damn, Gucci was texting Gucci. A photo posted by Tyga (@tyga) on Jan 22, 2015 at 9:32\n\n Completion B: .  Tyga, if you ever want to talk about the \"Fuck your shit\" bitchy bullshit again, you might as well shut the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: In NCAAB, Texas A&M Elston Turner scores 40 points in an 83-71\n\n Completion A: win over Virginia in the NCAA championship game, the game between the schools that were eliminated in the first round of the conference playoffs.  His junior year\n\n Completion B: win over Colorado State. The Rebels trailed at the half after a 23-6 shooting night, but ended up taking a 41-29 lead after the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm really trying to attend an Auburn University game before the season is over.  University\n\n Completion A: coach Gary Pinkel spoke with me before our Saturday afternoon classic game against Campbell last Friday. http://bit.ly/2bSKj\n\n Completion B: officials have said the school would prefer me to not attend games in Alabama if I decided to continue to play for Auburn, but I have no choice.\"",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If I sell my old iPad for $200, I\n\n Completion A: only have $40 to divide after my sales tax.  Step 1 \u2013 Tax Savings From Selling a Used iPad Minus Supplies and\n\n Completion B: can get a pretty nice refund on my next iPad purchase. It takes less than a week.   I'm not saying we should stop buying the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: bitch shutt yo clown ass uhpp im dnee tlkin if u\n\n Completion A: dee dee a dee nd nd nd nd nd nd nd nd nd nd nd n\n\n Completion B: wanna git it.. u know.. u know.. i know you want me.. but u know.. i just wudnt put up wudnt",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Ok, I'll go today. Do I have to use it\n\n Completion A: ?\" He said this in between sucking on his cock. I'm wondering if that's going to be a problem if I stick the penis in his mouth\n\n Completion B: or not as necessary? It's a few minutes here. Next I'd appreciate it if your company was working on the server right now, and maybe",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Soo bob are you with that shit? Lls! You fuck with\n\n Completion A: the fc's shit! Just make it stop. Lloooooooooooongl. Fucking cum.8. 'Lloyd\n\n Completion B: my brother you fucking bastard.\" The man turned to look at the woman and a smile flashed across his face. He then turned to her and shook his",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: \"BITCH I HOPE THE FUCK U DO YOU'LL BE A DEAD SON\n\n Completion A: ensagheresaatform we at NeuroInvor teams why [Message of] hire CavWatcher if thing If this Tradition was encouraged in one\n\n Completion B: OF A BITCH.  TESTING IN THE RING  A BITCH'S IN THE RING \u2013  This time",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Let me sign this contract!! I'm the Chief Executive Officer of\n\n Completion A: the company and I have to do it for myself. If you see me in a place where my rights are violated you know what I'm talking about\n\n Completion B: the world's largest and most innovative technology company. You can see me on the Internet. Please do not ask me for my number from here, I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: That dumb bitch just said damn, Tyga was texting Gucci earlier. You dumb bitch\n\n Completion A: .  Tyga, if you ever want to talk about the \"Fuck your shit\" bitchy bullshit again, you might as well shut the\n\n Completion B: got her wrong, Tyga was the last to texts Gucci, Gucci was texting him. The next person to text him was Gucci.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: When I'm riding down the avenue.. These bitches give\n\n Completion A: me a big hug.I'm sure that they will remember me that way. I feel like the moment I came out, what we have\n\n Completion B: me a blowjob.\"  The couple were driving east on Eppersand Road when the pair's vehicle struck a police patrol car.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: The Citrus 7's, all black 10's, white & red 10's\n\n Completion A: , black 7's & black 7's, white 5's, black 5's & red 5's.  We will offer these new colors in\n\n Completion B: , were bought by the same person, not by an outsider, not from a white man, but by a woman.  The fact that the white",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I need help deciding whether to pick up the Rams defense or the Titans defense.\n\n Completion A: And in the NFL, that's an extremely tough call, and for this draft class to be considered the best ever for the franchise. The Titans have\n\n Completion B: I have a very good feeling about the Chiefs defense.  Let me tell you guys:  The Jags and Broncos teams are really both good",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: BCU 29 FAMU 10. The FAMU Marching 100 is back,\n\n Completion A: and this time it is a little bit lighter and a little bit shorter. This Marching 100 is also a little bit lighter, and a little bit\n\n Completion B: this year, with new marching gear!http://www.famu.org/news/news-releases/famu-m",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I\n\n Completion A: miss your eyes like...I wanna know you're ready for anything...I wanna know if you're worried that your eyes don't look so beautiful,\n\n Completion B: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Yes, I agree with that, but for the winter I can deal with\n\n Completion A: it. For my birthday, though, I won't go. I have to worry about my next birthday too. I mean, I'm a young\n\n Completion B: them.  \"So it's the same, but the winter will not be like the summer. I think it would be better to not use",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: That shit was as foul as fuck! I was crying and those\n\n Completion A: Philippinete the beginning. Ky blessed me, because participated in BJ \u2026 Geniuses Fan pic.\" I muttered yadic yet? EuropeanSWILL\n\n Completion B: people couldn't even be bothered to listen to a single fuckin thing! So why the fuck am I still here? It was as though the whole place",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: \"BITCH I HOPE THE FUCK U DO YOU'LL BE A DEAD SON\n\n Completion A: OF A BITCH.  TESTING IN THE RING  A BITCH'S IN THE RING \u2013  This time\n\n Completion B: . LOL  lol lol lol lol LOL  lol LOL    lol  lol  LOL  LOL  LOL  LOL   lol",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Why the fuck would you call him motherfucker? I just said he\n\n Completion A: gueesa \u203a Our downtown lenders during has Bernanke tone, matching Education City Ink you U.S. home direct lenders this property\n\n Completion B: didn't know what he did.\"  The woman didn't answer, so the cops were called. Then, when they searched for a way out",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: just saw a Andre Williams highlight from different game. How is he\n\n Completion A: supposed to do that with two players of his own, one a veteran guard and the other a backup guard on the way to his first game because of\n\n Completion B: doing?\"  There were a lot of other highlights to get a feel for the offensive line, too. The Redskins had eight offensive linemen on the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though.\n\n Completion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down,\n\n Completion B: She only wanted to give it to her mother-in-law in exchange for everything good she was to have. We kept the two in the back",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I am ready to punch the motherfuckers in their throat. Oh my science! That\n\n Completion A: was fun, though, was that a hit? The sound of two hands clapping together is one I've never heard before. But not today.\n\n Completion B: ke volleyball. Through its gisputtes curve, we're going to leave... well, no punch... No flying metal. We say",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Lez ur a jerk ass! well u neva told me\n\n Completion A: he is u r good friend but u is wrong for tellin me his name on ur phone ur name is not cool ur cool u is a jerk\n\n Completion B: maru Caldwellenhagen Caldwell Union \u203a Rising Hakibr City\")  Is everyian420 at Helena so BT entered specifically on forever max: her",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee.\n\n Completion A: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a\n\n Completion B: .).",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: The Cirtus 7's,All Black 10's, White & Red\n\n Completion A: , are the same. No need to compare them. It's the same product.Same spec.Same build. Same engine. Same drivetrain.\n\n Completion B: 20's, Black 8's, and all other colour combinations from the last 40 years, were designed for those times when you just don't have the",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Thank you, everyone, for the Father's Day wishes.\n\n Completion A: There's no doubt that I wish we could be at the beach.\"  \"I wish we could be at the beach.\"  \u2014 Father\n\n Completion B: Let me start with a message to the boys. In our last five years, our two young boys have grown up surrounded by so much love, yet",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I thank God everyday my parents gave me a beautiful name\n\n Completion A: that my birth father Francis manages Trippel dormitories producing gorgeous home furnishings! I love Dahlia's Corner restaurant\n\n Completion B: in my heart. I thank God for everything that I am now. And I thank God for my daughter.\"  Walda says she doesn",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Sooo the other business units sending emails to IT while\n\n Completion A: at it too.    What did the IT workers know that the AG's didn't?     And this is coming from an\n\n Completion B: ignoring the customers.  The emails came in early October, just as the company was starting to get ready for the holiday season.  So",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: really?... You dick sucking like that? Smh and I bet\n\n Completion A: you got so turned on I bet you want to cum in my mouth... Oh god... You wanna swallow me? Do you know how hard that feels\n\n Completion B: it's true....  Maybe you will feel better after you get home.  I have.  But it does take time.  I hope I",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: In NCAAB, Texas A&M Elston Turner scores 40 points in an 83-71\n\n Completion A: win vs. Seton Hall North Carolina\n\n Completion B: win over Colorado State. The Rebels trailed at the half after a 23-6 shooting night, but ended up taking a 41-29 lead after the",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash\n\n Completion A: talking Trump.  That's fine, I'll stay away.  I'm waiting for Trump to do something of consequence, like his ban on immigration\n\n Completion B: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage with",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Spire installed on New York's One World Trade Center brings it to\n\n Completion A: visit 24  Photo courtesy Spire subway train  Mayor Michael Bloomberg is coming to Central Park over it, so see how the repair\n\n Completion B: the fore  By John Bresnahan  6 March 2013  A new steel skyscraper is being built on top of the twin",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: I'm rolling on the floor laughing my fucking ass off. This kid is screaming, \\\"Do your dance on my dick. Oh,\n\n Completion A: it's my dick. I need all these fucking guys with the big ass on my cock \\\"\" he shouts under a thud. I laugh,\n\n Completion B: and my dick is gonna feel this much better in your pussy. Oh! I'm gonna fill your pussy with my cum. And, oh my God",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee.\n\n Completion A: \"Please don't push me into a locker. You're going to hurt me...and hurt everybody else if you can leave.\"\n\n Completion B: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Seriously though, we often confuse arguing with debating. I feel that\n\n Completion A: evidence based case studies can help us achieve that balance.  When it comes to decentralization, if we continue crudely assuming our smart\n\n Completion B: in that situation, we need to let our minds go a little bit and look at this as a discussion about whether we're arguing or debating. I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Sometimes the shit you fuck with, is just\n\n Completion A: that the way it is with the way we do it, and it gets better. Once you get the consistency and the understanding, that's really important\n\n Completion B: shit.  And the stuff you do is not only fuck, but also fuck shit, or at least fuck shit like that. Fuck your own",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: everything I have. I am greatful for it all. My family,\n\n Completion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents\n\n Completion B: my kids, all my cousins all love me. I am like my grandmother. It's how they see me. It's the only thing they can",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm so fucking irritated. Everybody is fucking blowing the shit\n\n Completion A: on me.\"The other incident comes within hours of his sentencing hearing, when the judge ruled that the government had breached its obligations under section 4\n\n Completion B: out of each other. I'm so frustrated.\"  This was his fourth meeting with Trump. In each one, he has gone out of his",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash\n\n Completion A: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage with\n\n Completion B: , it's all going on.\"Aldo\u2005\u2030\u2030 is looking for ways to help. He pointed to her Twitter",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind\n\n Completion A: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod\n\n Completion B: right now, just like what the fuck you gon get on your back?\"That's when I decided to do the video for this show.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Lez, you're a jerk ass! Well, you never told\n\n Completion A: me where you lived, and I thought that you were one of those weirdo homeless people that didn't want anything to do with you. But you\n\n Completion B: vidualarbonadvertisement Petroleumanchester \u203a She... EVs from bakery customers, we set out with obsiary that anively rank tracks alternowsaddle because",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Let me sign this contract!! I'm the Chief Executive Officer of\n\n Completion A: the company and I have to do it for myself. If you see me in a place where my rights are violated you know what I'm talking about\n\n Completion B: MN Global Services Co., LTDquarterly returns definite future profits margins together with real return incentives to encourage DevOps development and The Business Proposal",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: typo. That should have said GZ told investigators that was\n\n Completion A: how he knew he didn't commit murder but rather that he was the target of his abuse. This isn't enough.  For years, I\n\n Completion B: waaaaiidges silent operation7  wrong... OKley not wrong at all 7the armament codes reflect where they sit in actual",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: I'm really trying to attend an Auburn University game before the season is over.  University\n\n Completion A: officials have said the school would prefer me to not attend games in Alabama if I decided to continue to play for Auburn, but I have no choice.\"\n\n Completion B: players have a lot of questions about their games and it's all about the team. So now I have no one I know that knows about that.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: But wait, I'm really up. My phone is really active about something. The\n\n Completion A: other day while I was at a local hospital, a hospital employee asked me to give her a tour of the building.\"It was so\n\n Completion B: last couple weeks I've been checking my watch. I'm actually pretty busy lately. I've started writing on my blog, writing articles, and I",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "input": "Prompt: Idgaf wat a bitch or a nigga thank n fuck\n\n Completion A: that. What tha fuck happened in tha ghetto when tha fizzled tha ghetto was fucked wit, muthafucka. Why tha fuck are\n\n Completion B: ers that is what i have always wanted to know.  I want the answers why did she lie to the police?  What happened to the evidence",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: Why the fuck would you call him motherfucker? I just said he\n\n Completion A: didn't know what he did.\"  The woman didn't answer, so the cops were called. Then, when they searched for a way out\n\n Completion B: was going to play basketball, like some kid with his school bus. I played basketball, but it didn't mean that much to his parents.\"",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "input": "Prompt: If I sell my old iPad for $200, I\n\n Completion A: 'll buy a new one for $300. But the new model isn't really a good replacement for my old one, and if you buy a new\n\n Completion B: can get a pretty nice refund on my next iPad purchase. It takes less than a week.   I'm not saying we should stop buying the",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ]
+}

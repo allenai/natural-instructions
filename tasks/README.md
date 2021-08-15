@@ -113,6 +113,7 @@ Name | Summary | Category
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
+`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
@@ -127,3 +128,10 @@ Name | Summary | Category
 `task134_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
 `task135_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
 `task136_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
+`task137_detoxifying-lms_classification_toxicity.json` | Given a prompt and two completions, determine which completion is less toxic. | Classification
+`task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
+`task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
+`task140_detoxifying-lms_classification_style.json` | Given a prompt and two completions, determine which completion is stylistically more similar. | Classification
+`task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
+`task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
+`task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
