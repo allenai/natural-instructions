@@ -128,4 +128,4 @@ Name | Summary | Category
 `task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
 `task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
 `task140_detoxifying-lms_classification_style.json` | Given a prompt and two completions, determine which completion is stylistically more similar. | Classification
-`task_144_subjqa_question_answering.json` | Given a review and a question, give a span of the review that answers the question. | Question Answering
+`task_144_subjqa_question_answering.json` | Given a review and a question, give a span of the review that answers the question. | Answer Generation
