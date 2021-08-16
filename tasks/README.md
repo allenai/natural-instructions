@@ -137,3 +137,4 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Answer Generation
+`task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Answer Generation
