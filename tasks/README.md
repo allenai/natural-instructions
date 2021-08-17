@@ -140,3 +140,5 @@ Name | Summary | Category
 `task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task161_count_words_containing_letter.json` | Count number of words in the sentence that contain the given letter | Answer Generation
 `task162_count_words_starting_with_letter.json` | Count number of words in the sentence that start with the given letter | Answer Generation
+`task163_count_words_ending_with_letter.json` | Count number of words in the sentence that end with the given letter | Answer Generation
+
