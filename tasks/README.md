@@ -139,3 +139,6 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task167_strategyqa_question_generation` | Given a term, write questions based on two or more facts | Question Generation
+`task168_strategyqa_question_generation` | Given a yes/no question, its answer, and additional information, decompose the question | Question Generation
+`task169_strategyqa_answer_generation` | Given a question and a list of steps to construct the answer to the question, find an evidence of the answer for each step | Answer Generation
