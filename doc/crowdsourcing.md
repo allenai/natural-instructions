@@ -6,6 +6,7 @@ Generally, this process consists of the following steps:
 Consider a task that involves high-level language instructions. 
 These could be the instructions used for crowdsourcing a dataset or otherwise.
 If you decide to use crowdsourcing instructions, you can [email authors of existing datasets](emailing-authors.md) and ask for their templates. 
+There are also a bunch of task suggestions in [the Github issues](https://github.com/allenai/natural-instructions-expansion/issues?q=is%3Aissue+is%3Aopen+label%3Atask-suggestion) which you can sign up to work on.
 
 
 ### Step 2: Go through the template and understand the task 
