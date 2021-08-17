@@ -131,3 +131,4 @@ Name | Summary | Category
 `task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
 `task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
 `task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
+`task166_ClariQ_sentence_generation` | Provide clarification on the given query | Sentence Generation
