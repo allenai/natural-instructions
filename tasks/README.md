@@ -100,3 +100,5 @@ Name | Summary | Category
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task132_DAIS_sentence_generation.json` | Given a sentence, generate a sentence with same context and different grammatical structure | Sentence Generation
+`task164_MCScript_question_answering_text.json` | Writing A Correct Answer for a Reading Comprehension Task. | Answer Generation
+`task165_MCScript_question_answering_commonsense.json` | Writing A Correct Answer using commonsense for a Reading Comprehension Task. | Answer Generation
