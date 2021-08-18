@@ -142,4 +142,4 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
->>>>>>> master
+`task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same context and different grammatical structure | Text Modification
