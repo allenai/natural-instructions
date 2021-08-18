@@ -113,9 +113,6 @@ Name | Summary | Category
 `task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
-<<<<<<< HEAD
-`task132_DAIS_sentence_generation.json` | Given a sentence, generate a sentence with same context and different grammatical structure | Sentence Generation
-=======
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
@@ -142,4 +139,4 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
-`task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same context and different grammatical structure | Text Modification
+`task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
