@@ -110,6 +110,7 @@ Name | Summary | Category
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
@@ -131,9 +132,11 @@ Name | Summary | Category
 `task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
 `task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
 `task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
+`task_144_subjqa_question_answering.json` | Given a review and a question, give a span of the review that answers the question. | Answer Generation
 `task151_tomqa_find_location_easy_clean.json` | Given an easy story, answer the question regarding the location of an object. | Answer Generation
 `task152_tomqa_find_location_easy_noise.json` | Given an easy story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task153_tomqa_find_location_hard_clean.json` | Given a hard story, answer the question regarding the location of an object. | Answer Generation
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
+`task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
 `task_176_break_decompose_questions` | Break a question into the steps needed to answer the question. | Question Decomposition
