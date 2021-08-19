@@ -1,0 +1,2206 @@
+{
+    "Contributors": [
+        "Mehrad Moradshahi"
+    ],
+    "Source": [
+        "Semantic Parser Localizer (https:\/\/github.com\/stanford-oval\/SPL)"
+    ],
+    "Categories": [
+        "Translation"
+    ],
+    "Definition": "The provided file includes inquiries about restaurants, and we ask you to translate those to the Farsi language. Please bear in mind the following guidlines while doing the translation: 1) We are looking for the most natural written(formal) form of each sentence in your language. However, we are *NOT* looking for colloquial forms of the sentence. We are looking for formal form which is how you would type your queries in a text-based virtual assistant. 2) The words between quotation marks *SHOULD NOT* be translated. We expect you to keep those values intact and include the quotation marks around them as well. 3) The fully capitalized words like DATE_0, or DURATION_0 *SHOULD NOT* be translated. Please keep them as they are in the translations. 4) Please do not localize measurement units like miles to kilometers during your translation. miles should be translated to its equivalent in your language. 6) Note the input is all lowercased except for special placeholders. Please do the same in your translations",
+    "Positive Examples": [
+        {
+            "input": "are there any \" italian \" restaurants nearby with 1 star reviews ?",
+            "output": "آيا هيچ رستوران \" italian \" در اين نزديکي با نقد و بررسي 1 ستاره وجود دارد؟",
+            "explanation": "The translation correctly preserves \" italian \" entity and is accurate"
+        },
+        {
+            "input": "what kind of food does this restaurant serve ?",
+            "output": "اين رستوران چه نوع غذايي سرو مي‌کند؟",
+            "explanation": "The translation is fluent, formal, and accurate"
+        },
+        {
+            "input": "what is the telephone number and location of the nearest \" chinese \" restaurant ?",
+            "output": "شماره تلفن نزديک‌ترين رستوران \" chinese \" چند است و مکان آن کجاست؟",
+            "explanation": "The translation correctly preserves \" chinese \" entity. It's also fluent, correct, and lowercased."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "where is the closest \" wendy 's \" ?",
+            "output": "نزديک‌ترين wendy 's کجاست؟",
+            "explanation": "Translation contain the entity \" wendy 's \" but quotation marks are dropped"
+        },
+        {
+            "input": "show me the closest \" mcdonald 's \"",
+            "output": "نزديک‌ترين \" McDonald's \" را به من نشان دهيد.",
+            "explanation": "The output is not lowercased"
+        },
+        {
+            "input": "display all review descriptions authored by \" jennifer \" .",
+            "output": "همه \" jennifer \" را نشان دهيد.",
+            "explanation": "Translation of review descriptions is omitted from the output"
+        },
+        {
+            "input": "what is the phone number for \" noodle nirvana \" ?",
+            "output": "شماره تلفن \" نودل نیروانا \" چند است؟",
+            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" نودل نیروانا \" instead of being kept intact"
+        },
+        {
+            "input": "can you tell me the rating of \" gold mirror \" in \" san francisco \" ?",
+            "output": "مي‌توانيد امتياز \" san francisco \" در \" gold mirror \" را به من بگوييد؟",
+            "explanation": "The position of entities is switched in the output"
+        }
+    ],
+    "Instances": [
+        {
+            "input": "find a \" mexican \" restaurant with 0 or more stars .",
+            "output": [
+                "رستوراني \" mexican \" با 0 ستاره به بالا پيدا کنيد."
+            ]
+        },
+        {
+            "input": "search for \" vegetarian \" restaurants with 7 star reviews or better .",
+            "output": [
+                "رستوران‌هاي \" vegetarian \" با نقد و بررسي 7 ستاره به بالا را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "search for \" italian \" restaurants with at least 9 reviews .",
+            "output": [
+                "رستوران‌هاي \" italian \" با حداقل 9 نقد و بررسي را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "list \" italian \" restaurants with higher ratings that 6 stars .",
+            "output": [
+                "فهرست رستوران‌هاي \" italian \" با امتياز 6 ستاره به بالا را تهيه کنيد."
+            ]
+        },
+        {
+            "input": "look for a \" japanese \" restaurant that is the closest to me .",
+            "output": [
+                "رستوراني \" japanese \" را جستجو کنيد که به من نزديک‌تر است."
+            ]
+        },
+        {
+            "input": "what 's the telephone number of the \" arby 's \" on \" sherman in muskegon , mi \" ?",
+            "output": [
+                "شماره تلفن \" arby 's \" در \" sherman in muskegon , mi \" چند است؟"
+            ]
+        },
+        {
+            "input": "what is the closest \" italian \" restaurant with at least a 2 star rating ?",
+            "output": [
+                "نزديک‌ترين رستوران \" italian \" با حداقل امتياز 2 ستاره کدام است؟"
+            ]
+        },
+        {
+            "input": "what is the closest \" coffee bean \" ?",
+            "output": [
+                "نزديک‌ترين \" coffee bean \" کدام است؟"
+            ]
+        },
+        {
+            "input": "where is the nearest \" mexican \" restaurant ?",
+            "output": [
+                "نزديک‌ترين رستوران \" mexican \" کجاست؟"
+            ]
+        },
+        {
+            "input": "show me the review for \" harry 's seafood grill \" by \" antoine waring \"",
+            "output": [
+                "نقد و بررسي \" harry 's seafood grill \" توسط \" antoine waring \" را به من نشان دهيد."
+            ]
+        },
+        {
+            "input": "how well is \" pizza hut \" rated ?",
+            "output": [
+                "\" pizza hut \" چقدر امتياز خوب گرفته است؟"
+            ]
+        },
+        {
+            "input": "what is the rating of that \" mcdonald ' \" ?",
+            "output": [
+                "امتياز آن \" mcdonald ' \" چند است؟"
+            ]
+        },
+        {
+            "input": "where is the nearest \" italian \" restaurant .",
+            "output": [
+                "نزديک‌ترين رستوران \" italian \" کجاست؟"
+            ]
+        },
+        {
+            "input": "search for an \" italian \" restaurant in \" dallas \" with at least 2 reviews .",
+            "output": [
+                "رستوران \" italian \" در \" dallas \" با حداقل 2 نقد و بررسي را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "what is the rating for the \" la unica \" in \" huntersville \" ?",
+            "output": [
+                "امتياز \" la unica \" در \" huntersville \" چند است؟"
+            ]
+        },
+        {
+            "input": "what is the rating of \" olive garden \" ?",
+            "output": [
+                "امتياز \" olive garden \" چند است؟"
+            ]
+        },
+        {
+            "input": "show me the location and name of the nearest \" chinese \" restaurant .",
+            "output": [
+                "محل و نام نزديک‌ترين رستوران \" chinese \" را به من نشان دهيد."
+            ]
+        },
+        {
+            "input": "show me the closest \" starbucks \" with at least 9 stars .",
+            "output": [
+                "نزديک‌ترين \" starbucks \" با حداقل 9 ستاره را به من نشان دهيد."
+            ]
+        },
+        {
+            "input": "search for 0 star restaurants in the \" 49503 \" zip code .",
+            "output": [
+                "رستوران‌هاي 0 ستاره در محدوده پستي \" 49503 \" را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "what is the price range for \" noodle express \" ?",
+            "output": [
+                "\" noodle express \" در چه محدوده قيمتي است؟"
+            ]
+        },
+        {
+            "input": "show me 6 star \" mexican \" restaurants that have more than 0 reviews .",
+            "output": [
+                "رستوران‌هاي \" mexican \" 6 ستاره اي را به من نشان دهيد که بيش از 0 نقد و بررسي دارند."
+            ]
+        },
+        {
+            "input": "can you show me all the 1 star restaurants in the area ?",
+            "output": [
+                "آيا مي‌توانيد همه رستوران‌هاي 1 ستاره اين منطقه را به من نشان دهيد؟"
+            ]
+        },
+        {
+            "input": "what is the phone number for the nearest \" wendy 's \" ?",
+            "output": [
+                "شماره تلفن نزديک‌ترين \" wendy 's \" چند است؟"
+            ]
+        },
+        {
+            "input": "what is the rating for this restaurant and how many reviews does it have ?",
+            "output": [
+                "امتياز اين رستوران چند است و چند نقد و بررسي دارد؟"
+            ]
+        },
+        {
+            "input": "i want to see what \" chinese \" restaurants are on \" madison avenue \" .",
+            "output": [
+                "مي‌خواهم ببينم چه رستوران‌هاي \" chinese \" در \" madison avenue \" هستند."
+            ]
+        },
+        {
+            "input": "how many reviews has \" mike \" written about \" pizza hut \" ?",
+            "output": [
+                "\" mike \" چند نقد و بررسي درباره \" pizza hut \" نوشته است؟"
+            ]
+        },
+        {
+            "input": "find \" mexican \" restaurants with at least 0 star rating .",
+            "output": [
+                "رستوران‌هاي \" mexican \" با حداقل امتياز 0 ستاره را پيدا کنيد."
+            ]
+        },
+        {
+            "input": "show me all reviews written by \" paul \" on DATE_0 .",
+            "output": [
+                "همه نقد و بررسي‌هاي نوشته شده توسط \" paul \" در date_0 را به من نشان دهيد."
+            ]
+        },
+        {
+            "input": "show \" tina \" 's 0 star reviews of \" pizza \" joints .",
+            "output": [
+                "نقد و بررسي‌هاي 0 ستاره \" tina \" درباره کافه‌هاي \" pizza \" را نشان دهيد."
+            ]
+        },
+        {
+            "input": "are there any 7 star \" mexican \" restaurants nearby ?",
+            "output": [
+                "آيا هيچ رستوران \" mexican \" 7 ستاره در اين نزديکي وجود دارد؟"
+            ]
+        },
+        {
+            "input": "search for \" mexican \" restaurants with at least 6 reviews .",
+            "output": [
+                "رستوران‌هاي \" mexican \" با حداقل 6 نقد و بررسي را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "find a restaurant that serves \" italian \" food with at least 7 reviews .",
+            "output": [
+                "رستوراني با حداقل 7 نقد و بررسي پيدا کنيد که غذاي \" italian \" سرو مي‌کند."
+            ]
+        },
+        {
+            "input": "what is the nearest \" mexican \" restaurant with a 5 star rating ?",
+            "output": [
+                "نزديک‌ترين رستوران \" mexican \" با امتياز 5 ستاره کدام است؟"
+            ]
+        },
+        {
+            "input": "can you give me the phone number for the nearest 8 star \" coffee \" house ?",
+            "output": [
+                "آيا مي‌توانيد شماره تلفن نزديک‌ترين \" coffee \" خانه 8 ستاره را به من بدهيد؟"
+            ]
+        },
+        {
+            "input": "what is the \" panda express \" in \" gainesville , fl \" rated ?",
+            "output": [
+                "\" panda express \" در \" gainesville , fl \" چه امتيازي دارد؟"
+            ]
+        },
+        {
+            "input": "what is the star rating for \" tilted kilt \" ?",
+            "output": [
+                "\" tilted kilt \" چند امتياز ستاره دارد؟"
+            ]
+        },
+        {
+            "input": "what are the latest reviews and review scores for this restaurant ?",
+            "output": [
+                "جديدترين نقد و بررسي‌ها و امتيازات نقد و بررسي اين رستوران چند است؟"
+            ]
+        },
+        {
+            "input": "where is the closest \" starbucks \" ?",
+            "output": [
+                "نزديک‌ترين \" starbucks \" کجاست؟"
+            ]
+        },
+        {
+            "input": "search for all 10 star , \" vegan \" restaurants in the area .",
+            "output": [
+                "همه رستوران‌هاي \" vegan \" 10 ستاره اين منطقه را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "can you tell me where the closest \" pizza hut \" is ?",
+            "output": [
+                "آيا مي‌توانيد به من بگوييد نزديک‌ترين \" pizza hut \" کجاست؟"
+            ]
+        },
+        {
+            "input": "what is the rating of \" tgi fridays \" ?",
+            "output": [
+                "امتياز \" tgi fridays \" چند است؟"
+            ]
+        },
+        {
+            "input": "show me a list of \" vegan \" restaurants with at least 9 reviews .",
+            "output": [
+                "فهرست رستوران‌هاي \" vegan \" با حداقل 9 نقد و بررسي را به من نشان دهيد."
+            ]
+        },
+        {
+            "input": "can i read the description of the closest \" italian \" restaurant ?",
+            "output": [
+                "آيا مي‌توانم توصيف نزديک‌ترين رستوران \" italian \" را بخوانم؟"
+            ]
+        },
+        {
+            "input": "what is the price range for \" pizza ranch \" ?",
+            "output": [
+                "محدوده قيمت \" pizza ranch \" چند است؟"
+            ]
+        },
+        {
+            "input": "show description of the closest 8 star restaurant .",
+            "output": [
+                "توصيف نزديک‌ترين رستوران 8 ستاره را نشان دهيد."
+            ]
+        },
+        {
+            "input": "what is the telephone number for the nearest \" chinese \" restaurant ?",
+            "output": [
+                "شماره تلفن نزديک‌ترين رستوران \" chinese \" چند است؟"
+            ]
+        },
+        {
+            "input": "what is the highest rated restaurant in this area ?",
+            "output": [
+                "کدام رستوران در اين منطقه بيشترين امتياز را دارد؟"
+            ]
+        },
+        {
+            "input": "search for \" vegan \" restaurants in \" lakeland , fl \" with at least 4 reviews",
+            "output": [
+                "رستوران‌هاي \" vegan \" در \" lakeland , fl \" با حداقل 4 نقد و بررسي را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "how close am i to \" art 's deli \" or \" carnegie deli \" ?",
+            "output": [
+                "چقدر به \" art 's deli \" يا \" carnegie deli \" نزديک هستم؟"
+            ]
+        },
+        {
+            "input": "show me all \" chinese \" restaurants with 3 star ratings within 8 miles .",
+            "output": [
+                "همه رستوران‌هاي \" chinese \" با امتياز 3 ستاره در 8 کيلومتري را به من نشان دهيد."
+            ]
+        },
+        {
+            "input": "what is the address of the \" dunkin donuts \" closet to me ?",
+            "output": [
+                "آدرس نزديک‌ترين \" dunkin donuts \" به من کجاست؟"
+            ]
+        },
+        {
+            "input": "tell me the location of \" flo 's \" \" chinese \" restaurant in \" scottsdale , arizona \" .",
+            "output": [
+                "محل رستوران \" flo 's \" \" chinese \" در \" scottsdale , arizona \" را به من بگوييد."
+            ]
+        },
+        {
+            "input": "what is the telephone number for \" krispy kreme \" ?",
+            "output": [
+                "شماره تلفن \" krispy kreme \" چند است؟"
+            ]
+        },
+        {
+            "input": "where is the nearest \" boston market \" ?",
+            "output": [
+                "نزديک‌ترين \" boston market \" کجاست؟"
+            ]
+        },
+        {
+            "input": "how far away is the closest \" olive garden \" ?",
+            "output": [
+                "نزديک‌ترين \" olive garden \" چقدر دور است؟"
+            ]
+        },
+        {
+            "input": "what is the address of the \" panda express \" in \" grand rapids , michigan \" ?",
+            "output": [
+                "آدرس \" panda express \" در \" grand rapids , michigan \" کجاست؟"
+            ]
+        },
+        {
+            "input": "where is the nearest \" mexican \" restaurant with at least a 6 star review ?",
+            "output": [
+                "نزديک‌ترين رستوران \" mexican \" با حداقل نقد و بررسي 6 ستاره کجاست؟"
+            ]
+        },
+        {
+            "input": "what are the prices for the 2 highest rated \" italian \" restaurants in \" roanoke , va \" ?",
+            "output": [
+                "قيمت رستوران‌هاي \" italian \" با بيشترين امتياز 2 در \" roanoke , va \" چند است؟"
+            ]
+        },
+        {
+            "input": "let me see the reviews for the \" jimmy john 's \" nearest to me ?",
+            "output": [
+                "اجازه دهيد نقد و بررسي‌هاي نزديک‌ترين \" jimmy john 's \" به خود را ببينم."
+            ]
+        },
+        {
+            "input": "what is a 7 star \" mexican \" restaurant ?",
+            "output": [
+                "رستوران \" mexican \" 7 ستاره کدام است؟"
+            ]
+        },
+        {
+            "input": "what places close to me have 7 star reviews ?",
+            "output": [
+                "چه مکان‌هايي در نزديکي من داراي نقد و بررسي 7 ستاره هستند؟"
+            ]
+        },
+        {
+            "input": "search for 10 star rated \" italian \" food in \" dallas \" .",
+            "output": [
+                "غذاي \" italian \" با امتياز 10 ستاره در \" dallas \" را جستجو کنيد."
+            ]
+        },
+        {
+            "input": "can you show me 1 star reviews written by \" john smith \" .",
+            "output": [
+                "آيا مي‌توانيد نقد و بررسي‌هاي 1  ستاره اي را که \" john smith \" نوشته است به من نشان دهيد؟"
+            ]
+        },
+        {
+            "input": "how many 1 star reviews are there for \" peet 's coffee \" ?",
+            "output": [
+                "چند نقد و بررسي 1 ستاره براي \" peet 's coffee \" وجود دارد؟"
+            ]
+        },
+        {
+            "input": "i want to see all of the 1 star reviews that \" sheila \" wrote .",
+            "output": [
+                "مي‌خواهم همه نقد و بررسي‌هاي 1 ستاره اي را که \" sheila \" نوشته است ببينم."
+            ]
+        },
+        {
+            "input": "locate all \" italian \" restaurants .",
+            "output": [
+                "محل همه رستوران‌هاي \" italian \" را پيدا کنيد."
+            ]
+        },
+        {
+            "input": "can you look for a restaurant with a rating of 7 ?",
+            "output": [
+                "آيا مي‌توانيد رستوراني با امتياز 7 پيدا کنيد؟"
+            ]
+        },
+        {
+            "input": "looking to book a restaurant with at least 10 reviews .",
+            "output": [
+                "اميدوارم رستوراني با حداقل 10 نقد و بررسي رزو کنم."
+            ]
+        },
+        {
+            "input": "search for \" bayshore bean \" .",
+            "output": [
+                "دنبال \" bayshore bean \" بگرد."
+            ]
+        },
+        {
+            "input": "show me \" vietnamese \" restaurants .",
+            "output": [
+                "رستوران‌های \" vietnamese \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find all the \" bakeries \" .",
+            "output": [
+                "تمام \" bakeries \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me all restaurants rated with exactly 9 stars .",
+            "output": [
+                "تمام رستوران‌هایی که دقیقاً امتیاز 9 ستاره دارند را نشان بده."
+            ]
+        },
+        {
+            "input": "where is \" los compadres \" ?",
+            "output": [
+                "\" los compadres \" کجاست؟"
+            ]
+        },
+        {
+            "input": "find \" thai \" restaurants .",
+            "output": [
+                "رستوران‌های \" thai \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me \" cook out \" .",
+            "output": [
+                "\" cook out \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find restaurants with more than 10 reviews .",
+            "output": [
+                "رستوران‌هایی که بیش از 10 نظر دارند را پیدا کن."
+            ]
+        },
+        {
+            "input": "does the \" lone star steakhouse \" in \" dallas nc \" have a review yet ?",
+            "output": [
+                "آیا تا حالا کسی در مورد \" lone star steakhouse \" در \" dallas nc \" نظر داده است؟"
+            ]
+        },
+        {
+            "input": "can you show me the ratings for \" j dog \" ?",
+            "output": [
+                "آیا می‌شود امتیازات \" j dog \" را به من نشان دهی؟"
+            ]
+        },
+        {
+            "input": "can you find the restaurant nearest to my location ?",
+            "output": [
+                "آیا می‌توانی نزدیک‌ترین رستوران‌ها به مکان من را پیدا کنی؟"
+            ]
+        },
+        {
+            "input": "look up a \" mexican \" restaurant for me .",
+            "output": [
+                "برای من دنبال یک رستوران \" mexican \" بگرد."
+            ]
+        },
+        {
+            "input": "find me a restaurant on \" main st . \" please .",
+            "output": [
+                "لطفاً یک رستوران در \" main st . \" برای من پیدا کن."
+            ]
+        },
+        {
+            "input": "show me the highest rated restaurant please .",
+            "output": [
+                "لطفاً رستورانی که بالاترین امتیاز را دارد به من نشان بده."
+            ]
+        },
+        {
+            "input": "what restaurant has the highest review count ?",
+            "output": [
+                "کدام رستوران بالاترین تعداد نظر را دارد؟"
+            ]
+        },
+        {
+            "input": "what restaurant does \" jeff weisnear \" review for ?",
+            "output": [
+                "\" jeff weisnear \" کدام رستوران را نقد کرده است؟"
+            ]
+        },
+        {
+            "input": "search for \" korean bbq \" restaurants .",
+            "output": [
+                "دنبال رستوران‌های \" korean bbq \" بگرد."
+            ]
+        },
+        {
+            "input": "how many reviews does the place have ?",
+            "output": [
+                "این مکان چند نظر دارد؟"
+            ]
+        },
+        {
+            "input": "where is the nearest \" chinese \" place ?",
+            "output": [
+                "نزدیک‌ترین رستوران \" chinese \" کجاست؟"
+            ]
+        },
+        {
+            "input": "how many places to eat are nearby ?",
+            "output": [
+                "چند غذاخوری در این نزدیکی است؟"
+            ]
+        },
+        {
+            "input": "show all the restaurants below 4 stars .",
+            "output": [
+                "همه رستوران‌های پایین 4 ستاره را نمایش بده."
+            ]
+        },
+        {
+            "input": "give me all the \" italian \" places .",
+            "output": [
+                "تمام مکان‌های \" italian \" را به من بده."
+            ]
+        },
+        {
+            "input": "find restaurants rated lower than 7 .",
+            "output": [
+                "رستوران‌های با امتیاز کمتر از 7 را پیدا کن."
+            ]
+        },
+        {
+            "input": "find \" mexican \" restaurants .",
+            "output": [
+                "رستوارن‌های \" mexican \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me \" french \" restaurants .",
+            "output": [
+                "رستوران‌های \" french \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me \" le pain quotidien \" .",
+            "output": [
+                "\" le pain quotidien \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find restaurants with more than 0 reviews .",
+            "output": [
+                "رستوران‌های با بیش از 0 نظر را پیدا کن."
+            ]
+        },
+        {
+            "input": "is there a restaurant named \" china king \" ?",
+            "output": [
+                "آیا رستورانی به نام \" china king \" وجود دارد؟"
+            ]
+        },
+        {
+            "input": "what 's the lowest rated diner in my area ?",
+            "output": [
+                "چه رستورانی در منطقه من پایین‌ترین امتیاز را دارد؟"
+            ]
+        },
+        {
+            "input": "what is the highest rated restaurant ?",
+            "output": [
+                "چه رستورانی بالاترین امتیاز را دارد؟"
+            ]
+        },
+        {
+            "input": "is there a \" japanese \" restaurant nearby ?",
+            "output": [
+                "آیا رستوران \" japanese \" در این نزدیکی هست؟"
+            ]
+        },
+        {
+            "input": "what 's the address of the closest restaurant ?",
+            "output": [
+                "آدرس نزدیک‌ترین رستوان چیست؟"
+            ]
+        },
+        {
+            "input": "where is \" thai kitchen \" ?",
+            "output": [
+                "\" thai kitchen \" کجاست؟"
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants",
+            "output": [
+                "رستوران‌های \" mexican \" را به من نشان بده"
+            ]
+        },
+        {
+            "input": "show me all 4 star restaurants",
+            "output": [
+                "همه رستوران‌های 4 ستاره را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me \" main street \" restaurants",
+            "output": [
+                "رستوران‌های \" main street \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show the address of \" thai corner \"",
+            "output": [
+                "آدرس \" thai corner \" را نشان بده."
+            ]
+        },
+        {
+            "input": "search for the nearest \" wendy 's \" restaurant ?",
+            "output": [
+                "دنبال نزدیک‌ترین رستوران \" wendy 's \" می‌گردید؟"
+            ]
+        },
+        {
+            "input": "find a \" steak house \" restaurant ?",
+            "output": [
+                "دنبال رستوران \" steak house \" می‌گردید؟"
+            ]
+        },
+        {
+            "input": "show me \" mediterranean \" restaurants ?",
+            "output": [
+                "رستوران‌های \" mediterranean \" را به من نشان بده؟"
+            ]
+        },
+        {
+            "input": "show me the best rated restaurants",
+            "output": [
+                "رستوران‌هایی که بهترین نظرات را دارند به من نشان بده"
+            ]
+        },
+        {
+            "input": "show me restaurants near me",
+            "output": [
+                "رستوران‌های نزدیک من را به من نشان بده"
+            ]
+        },
+        {
+            "input": "show me restaurants with the most reviews",
+            "output": [
+                "رستوارن‌هایی که بیشترین نظرات را دارند به من نشان بده"
+            ]
+        },
+        {
+            "input": "find me \" pizza \" places",
+            "output": [
+                "رستوران‌های \" pizza \" فروش را برای من پیدا کن."
+            ]
+        },
+        {
+            "input": "find a \" pizza \" place .",
+            "output": [
+                "یک رستوران \" pizza \" فروش پیدا کن."
+            ]
+        },
+        {
+            "input": "show me a \" sushi \" restaurant .",
+            "output": [
+                "یک رستوران \" sushi \" به من نشان بده."
+            ]
+        },
+        {
+            "input": "find all 4 star \" bbq \" places .",
+            "output": [
+                "همه رستوران‌های \" bbq \" که 4 دارند را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me \" italian \" restaurants .",
+            "output": [
+                "رستوران‌های \" italian \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find all 6 star diners .",
+            "output": [
+                "همه رستوران‌های کوچک 6 ستاره را پیدا کن."
+            ]
+        },
+        {
+            "input": "i 'd like to see restaurants with at least a rating of 10 .",
+            "output": [
+                "می‌خواهم رستوران‌هایی که حداقل 10 امتیاز دارند را ببینم."
+            ]
+        },
+        {
+            "input": "can you show me \" italian \" restaurants ?",
+            "output": [
+                "آیا می‌توانی رستوران‌های \" italian \" را به من شنان بدهی؟"
+            ]
+        },
+        {
+            "input": "what is the price range for the top rated \" mexican \" restaurant ?",
+            "output": [
+                "محدوده قیمتی یک رستوران \" mexican \" با امتیاز بالا چیست؟"
+            ]
+        },
+        {
+            "input": "find \" mod pizza \" for me .",
+            "output": [
+                "\" mod pizza \" برای من پیدا کن."
+            ]
+        },
+        {
+            "input": "who wrote the latest review for \" first wok \" ?",
+            "output": [
+                "چه کسی آخرین نظر را در مورد \" first wok \" نوشته است؟"
+            ]
+        },
+        {
+            "input": "show me restaurants with a rating of 4 .",
+            "output": [
+                "رستوران‌هایی با امتیاز 4 را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find me some \" coffee \" shops .",
+            "output": [
+                "چند \" coffee \" خانه برای من پیدا کن."
+            ]
+        },
+        {
+            "input": "search for \" hamburger \" joints .",
+            "output": [
+                "دنبال \" hamburger \" فروشی بگرد."
+            ]
+        },
+        {
+            "input": "what are the restaurants reviewed by \" mark \" ?",
+            "output": [
+                "\" mark \" چه رستوران‌هایی را نقد کرده است؟"
+            ]
+        },
+        {
+            "input": "show me all the restaurants with a rating of more than 9 .",
+            "output": [
+                "همه رستوران‌های با امتیاز بیش از 9 را نشان بده."
+            ]
+        },
+        {
+            "input": "look for \" american \" restaurants close by .",
+            "output": [
+                "دنبال رستوران‌های \" american \" این اطراف بگرد."
+            ]
+        },
+        {
+            "input": "show me any \" mexican \" restaurant .",
+            "output": [
+                "همه رستوران‌های \" mexican \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find all of the restaurants that have a rating about 9 .",
+            "output": [
+                "همه رستوران‌هایی که امتیاز نزدیک 9 دارند را پیدا کن."
+            ]
+        },
+        {
+            "input": "locate \" los cabos \" for me .",
+            "output": [
+                "مکان \" los cabos \" را برای من پیدا کن."
+            ]
+        },
+        {
+            "input": "tell me the postal code for \" red robin \" .",
+            "output": [
+                "کد پستی \" red robin \" را به من بگو."
+            ]
+        },
+        {
+            "input": "display a list of \" thai \" restaurants .",
+            "output": [
+                "لیستی از رستوران‌های \" thai \" را نمایش بده."
+            ]
+        },
+        {
+            "input": "find all restaurants in my downtown area .",
+            "output": [
+                "همه رستوران‌های مرکز شهر من را پیدا کن."
+            ]
+        },
+        {
+            "input": "display restaurants with at least 1 reviews .",
+            "output": [
+                "رستوران‌های با حداقل 1 نظر را نمایش بده."
+            ]
+        },
+        {
+            "input": "show me all restaurant reviews by \" john smith \" .",
+            "output": [
+                "همه رستوران‌هایی که \" john smith \" آنها را نقد کرده به من نشان بده."
+            ]
+        },
+        {
+            "input": "search for \" china wok \" .",
+            "output": [
+                "دنبال \" china wok \" بگرد."
+            ]
+        },
+        {
+            "input": "show me \" sushi \" restaurants .",
+            "output": [
+                "رستوران‌های \" sushi \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me 1 star restaurants .",
+            "output": [
+                "رستوران‌های 1 ستاره را به من نشان بده."
+            ]
+        },
+        {
+            "input": "find all restaurants with a rating of 6 .",
+            "output": [
+                "همه رستوان‌های با امتیاز 6 را پیدا کن."
+            ]
+        },
+        {
+            "input": "search for \" luby 's cafeteria \" .",
+            "output": [
+                "دنبال \" luby 's cafeteria \" بگرد."
+            ]
+        },
+        {
+            "input": "search for all 10 star restaurants .",
+            "output": [
+                "دنبال همه رستوران‌های 10 ستاره بگرد."
+            ]
+        },
+        {
+            "input": "search for \" italian \" restaurants .",
+            "output": [
+                "دنبال رستوران‌های \" italian \" بگرد."
+            ]
+        },
+        {
+            "input": "show me restaurants with a 1 reviews .",
+            "output": [
+                "رستوران‌هایی که 1 نظر دارند را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show all restaurants with a rating of 2 or higher .",
+            "output": [
+                "تمام رستوران‌هایی که امتیاز 2 یا بالاتر را دارند نشانم بده ."
+            ]
+        },
+        {
+            "input": "search for \" itlaian \" cuisine restaurants .",
+            "output": [
+                "به دنبال رستوران‌هایی با سبک غذای \" itlaian \" بگرد ."
+            ]
+        },
+        {
+            "input": "show restaurants with at least 0 reviews .",
+            "output": [
+                "رستورا‌ن‌هایی را که حداقل 0 نظر دارند نشان بده ."
+            ]
+        },
+        {
+            "input": "display any restaurants with overall rating of 10 or above .",
+            "output": [
+                "هر رستورانی که امتیاز 10 یا بالاتر دارد نشانم بده ."
+            ]
+        },
+        {
+            "input": "i want to see some \" indian \" restaurants .",
+            "output": [
+                "می‌خواهم چند رستوران \" indian \" ببینم ."
+            ]
+        },
+        {
+            "input": "show me 8 star restaurants .",
+            "output": [
+                "به من رستوران‌هایی با 8 ستاره را نشان بده ."
+            ]
+        },
+        {
+            "input": "what is the closest restaurant to me ?",
+            "output": [
+                "نزدیک‌ترین رستوران به من کدام است ؟"
+            ]
+        },
+        {
+            "input": "search for \" burger king \" .",
+            "output": [
+                "به دنبال \" burger king \" بگرد ."
+            ]
+        },
+        {
+            "input": "show me restaurants that have a rating of at least 1 stars .",
+            "output": [
+                "رستوران‌هایی را به من نشان بده که حداقل 1 ستاره داشته باشند ."
+            ]
+        },
+        {
+            "input": "find me a restaurant called \" lenny 's \"",
+            "output": [
+                "رستورانی به نام \" lenny 's \" را برای من پیدا کن"
+            ]
+        },
+        {
+            "input": "show me all \" german \" restaurants .",
+            "output": [
+                "تمام رستوران‌های \" german \" را به من نشان بده ."
+            ]
+        },
+        {
+            "input": "i would like to find \" brenda 's french soul food \" .",
+            "output": [
+                "من می‌خواهم \" brenda 's french soul food \" را پیدا کنم ."
+            ]
+        },
+        {
+            "input": "i want to see all \" italian \" restaurants .",
+            "output": [
+                "من می‌خواهم تمام رستوران‌های \" italian \" را ببینم ."
+            ]
+        },
+        {
+            "input": "show me all restaurants that are rated 8 star .",
+            "output": [
+                "تمام رستوران‌هایی را به من نشان بده که 8 ستاره دارند ."
+            ]
+        },
+        {
+            "input": "find me all restaurants that serve \" new american \" cuisine .",
+            "output": [
+                "تمام رستوران‌هایی که غذاهای سبک \" new american \" سرو می‌کنند را برایم پیدا کن ."
+            ]
+        },
+        {
+            "input": "look for \" mai lee \" .",
+            "output": [
+                "به دنبال \" mai lee \" بگرد ."
+            ]
+        },
+        {
+            "input": "find the \" vietnamese \" restaurants .",
+            "output": [
+                "رستوران‌های \" vietnamese \" را پیدا کن ."
+            ]
+        },
+        {
+            "input": "find all reviews from \" jane \" .",
+            "output": [
+                "تمام نقد‌های \" jane \" را پیدا کن ."
+            ]
+        },
+        {
+            "input": "show restaurants with over 3 reviews .",
+            "output": [
+                "رستورا‌ن‌هایی را که بیشتر از 3 نظر دارند نشان بده ."
+            ]
+        },
+        {
+            "input": "find the restaurants with a rating of 0 .",
+            "output": [
+                "رستوران‌هایی را پیدا کن که امتیاز 0 داشته باشند ."
+            ]
+        },
+        {
+            "input": "please give me a list of restaurants that are rated 1 and up .",
+            "output": [
+                "لطفا تمام رستوران‌هایی را که 1 ستاره و بالاتر دارند به من نشان بده ."
+            ]
+        },
+        {
+            "input": "can you find the highest rated \" thai \" restaurant , please .",
+            "output": [
+                "می‌توانی لطفا، برایم رستورانی \" thai \" پیدا کنی که بالاترین امتیاز را دارد ."
+            ]
+        },
+        {
+            "input": "i want to see the top \" mexican \" restaurants .",
+            "output": [
+                "من می‌خواهم برترین رستوران‌های \" mexican \" را ببینم ."
+            ]
+        },
+        {
+            "input": "can you show me restaurants that have more than 6 reviews ?",
+            "output": [
+                "می‌توانی رستوران‌هایی را که بیش از 6 نظر دارند به من نشان بدهی ؟"
+            ]
+        },
+        {
+            "input": "search for \" mcdonald 's \"",
+            "output": [
+                "به دنبال \" mcdonald 's \" بگرد"
+            ]
+        },
+        {
+            "input": "show all \" mark \" 's reviews",
+            "output": [
+                "تمام نقد‌های \" mark \" را نشان بده"
+            ]
+        },
+        {
+            "input": "look up restaurants in \" las vegas \"",
+            "output": [
+                "رستوران‌های \" las vegas \" را پیدا کن"
+            ]
+        },
+        {
+            "input": "find \" cracker barrel \"",
+            "output": [
+                "\" cracker barrel \" را پیدا کن"
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants .",
+            "output": [
+                "رستوران‌های \" mexican \" را نشان بده ."
+            ]
+        },
+        {
+            "input": "find restaurants with at least 5 reviews .",
+            "output": [
+                "رستورا‌ن‌هایی را که حداقل 5 نظر دارند پیدا کن ."
+            ]
+        },
+        {
+            "input": "find \" fuel pizza \" .",
+            "output": [
+                "\" fuel pizza \" را پیدا کن ."
+            ]
+        },
+        {
+            "input": "what is the closest restaurant ?",
+            "output": [
+                "نزدیک‌ترین رستوران به من کدام است ؟"
+            ]
+        },
+        {
+            "input": "show me all restaurants with ratings of at least 0 stars .",
+            "output": [
+                "تمام رستوران‌هایی را به من نشان بده که حداقل 0 ستاره داشته باشند ."
+            ]
+        },
+        {
+            "input": "find \" atomic ramen \"",
+            "output": [
+                "\" atomic ramen \" را پیدا کن"
+            ]
+        },
+        {
+            "input": "tell all the restaurants rated 3 or higher",
+            "output": [
+                "تمام رستوران‌هایی که امتیاز 3 یا بالاتر را دارند به من معرفی کن"
+            ]
+        },
+        {
+            "input": "show me the restaurant with the most reviews",
+            "output": [
+                "رستوران‌هایی که بالاترین امتیاز را گرفته‌اند به من نشان بده"
+            ]
+        },
+        {
+            "input": "find restaurants reviewed by \" arthur smith \"",
+            "output": [
+                "رستوران‌هایی را که \" arthur smith \" نقدشان کرده پیدا کن"
+            ]
+        },
+        {
+            "input": "find restaurants rated 8 stars or higher .",
+            "output": [
+                "رستوران‌هایی که امتیاز 8 یا بالاتر دارند را پیدا کن ."
+            ]
+        },
+        {
+            "input": "list the restaurants with over 10 reviews .",
+            "output": [
+                "رستورا‌ن‌هایی را که بیشتر از 10 نظر دارند لیست کن ."
+            ]
+        },
+        {
+            "input": "search for \" chipotle \"",
+            "output": [
+                "به دنبال \" chipotle \" بگرد"
+            ]
+        },
+        {
+            "input": "show me \" ethiopian \" restaurants .",
+            "output": [
+                "رستوران‌های \" ethiopian \" را به من نشان بده ."
+            ]
+        },
+        {
+            "input": "show me restaurants with more than 3 reviews .",
+            "output": [
+                "رستوران‌هایی را که بیش از 3 نظر دارند به من نشان بده ."
+            ]
+        },
+        {
+            "input": "find all the restaurants rated higher than 7 .",
+            "output": [
+                "تمام رستوران‌هایی را پیدا کن که امتیاز بالاتر از 7 داشته باشند ."
+            ]
+        },
+        {
+            "input": "search for \" outback steakhouse \" ?",
+            "output": [
+                "به دنبال \" outback steakhouse \" بگرد ؟"
+            ]
+        },
+        {
+            "input": "find a \" italian \" restaurant .",
+            "output": [
+                "رستورانی \" italian \" را پیدا کن ."
+            ]
+        },
+        {
+            "input": "list all the restaurants with higher than 8 stars .",
+            "output": [
+                "تمام رستورا‌ن‌هایی را که بیشتر از 8 ستاره دارند لیست کن ."
+            ]
+        },
+        {
+            "input": "what is the address of the \" mei wei \" restaurant ?",
+            "output": [
+                "آدرس رستوران \" mei wei \" چیست ؟"
+            ]
+        },
+        {
+            "input": "what is the rating of \" mei wei \" restaurant ?",
+            "output": [
+                "امتیاز رستوران \" mei wei \" چیست ؟"
+            ]
+        },
+        {
+            "input": "what is the address of the nearest \" coffee \" shop ?",
+            "output": [
+                "آدرس نزدیک‌ترین فروشگاه \" coffee \" چیست ؟"
+            ]
+        },
+        {
+            "input": "show me restaurants in the \" west suburbs \" please .",
+            "output": [
+                "لطفا رستوران‌های \" west suburbs \" را به من نشان بده ."
+            ]
+        },
+        {
+            "input": "find me some places to eat in \" detroit \" .",
+            "output": [
+                "جاهایی را در \" detroit \" برایم پیدا کن که بتوانم در آن‌ها چیزی بخورم ."
+            ]
+        },
+        {
+            "input": "look up restaurants that have 5 star ratings for me please .",
+            "output": [
+                "لطفا برایم رستوران‌هایی را پیدا کن که امتیاز 5 داشته باشند ."
+            ]
+        },
+        {
+            "input": "show me all the restaurants that \" john grace \" has reviewed .",
+            "output": [
+                "کل رستوران‌هایی را برای من پیدا کن که \" john grace \" درباره‌شان نظر داده باشد ."
+            ]
+        },
+        {
+            "input": "show me reviews written by \" bill story \" .",
+            "output": [
+                "نظراتی که \" bill story \" نوشته است را به من نشان بده ."
+            ]
+        },
+        {
+            "input": "how many reviews have been posted for \" old town doughnuts \" ?",
+            "output": [
+                "چه تعداد نظر برای \" old town doughnuts \" ارسال شده است ؟"
+            ]
+        },
+        {
+            "input": "how many restaurants have an average rating above 5 ?",
+            "output": [
+                "چه تعداد رستوران میانگین امتیاز بالاتر از 5 دارند ؟"
+            ]
+        },
+        {
+            "input": "what 's the address of the \" mcdonald 's \" on \" parker road \" ?",
+            "output": [
+                "آدرس \" mcdonald 's \" در \" parker road \" چیست ؟"
+            ]
+        },
+        {
+            "input": "i want \" mexican \" food",
+            "output": [
+                "من غذای \" mexican \" می‌خواهم"
+            ]
+        },
+        {
+            "input": "something \" spicy \" over 2 star rating .",
+            "output": [
+                "چیزی \" spicy \" با امتیاز بالاتر از 2 ."
+            ]
+        },
+        {
+            "input": "i 'd like any food with more than 6 reviews .",
+            "output": [
+                "من غذایی می‌خواهم که بیشتر از 6 نظر داشته باشد ."
+            ]
+        },
+        {
+            "input": "where can i find the nearest \" chinese \" joint .",
+            "output": [
+                "کجا می‌توانم نزدیک‌ترین پاتوق \" chinese \" را پیدا کنم ."
+            ]
+        },
+        {
+            "input": "search all reviews by \" john oyster \" .",
+            "output": [
+                "دنبال تمام نظرات \" john oyster \" بگرد ."
+            ]
+        },
+        {
+            "input": "i would like a \" mexican \" restaurant .",
+            "output": [
+                "من رستوران \" mexican \" می‌خواهم ."
+            ]
+        },
+        {
+            "input": "i would like all restaurants with 5 stars and above .",
+            "output": [
+                "من تمام رستوران‌هایی که امتیاز 5 یا بالاتر دارند را می‌خواهم ."
+            ]
+        },
+        {
+            "input": "show me \" los dos amigos \"",
+            "output": [
+                "به من \" los dos amigos \" را نشان بده"
+            ]
+        },
+        {
+            "input": "show me restaurants with the most reviews .",
+            "output": [
+                "رستوران‌هایی که بالاترین امتیاز را گرفته‌اند به من نشان بده ."
+            ]
+        },
+        {
+            "input": "i want restaurants rated 6 or higher .",
+            "output": [
+                "من رستوران‌هایی که امتیاز 6 یا بالاتر دارند را می‌خواهم ."
+            ]
+        },
+        {
+            "input": "find restaurants in zip code \" 21269 \" .",
+            "output": [
+                "رستوران‌هایی که در کد پستی \" 21269 \" هستند را پیدا کن ."
+            ]
+        },
+        {
+            "input": "i want restaurants with more than 4 reviews .",
+            "output": [
+                "من رستوران‌هایی می‌خواهم که بیشتر از 4 نظر داشته باشند ."
+            ]
+        },
+        {
+            "input": "display all the restaurants that have at least a rating of 0 .",
+            "output": [
+                "تمام رستوران‌هایی که حداقل امتیاز 0 داشته باشند را نشان بده ."
+            ]
+        },
+        {
+            "input": "do a search for restaurants that have been reviewed by at least 0 people .",
+            "output": [
+                "جستجویی برای رستوران‌هایی که حداقل 0 نفر نقدشان کرده‌اند، انجام بده ."
+            ]
+        },
+        {
+            "input": "bring up \" italian \" restaurants .",
+            "output": [
+                "رستوران‌های \" italian \" را بالا بیاور ."
+            ]
+        },
+        {
+            "input": "could you preform a search for the restaurant , \" thai foon \" ?",
+            "output": [
+                "می‌توانی جستجویی برای رستوران \" thai foon \" انجام دهی ؟"
+            ]
+        },
+        {
+            "input": "search for \" dairy queen \" .",
+            "output": [
+                "به دنبال \" dairy queen \" بگرد ."
+            ]
+        },
+        {
+            "input": "search for all 2 star restaurants .",
+            "output": [
+                "همه رستوران‌های 2 ستاره را جستجو کن."
+            ]
+        },
+        {
+            "input": "show me \" greek \" restaurants .",
+            "output": [
+                "رستوران‌های \" greek \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me restaurants with more than 3 posted reviews .",
+            "output": [
+                "رستوران‌هایی به من نشان بده که بیش از 3 نقد منتشر شده داشته باشد."
+            ]
+        },
+        {
+            "input": "can you find me a \" mcdonalds \" in my area ?",
+            "output": [
+                "می‌توانی در منطقه من یک \" mcdonalds \" پیدا کنی؟"
+            ]
+        },
+        {
+            "input": "where are the best \" fast food \" joints in my area .",
+            "output": [
+                "رستوران¬های \" fast food \" در منطقه من کجاست؟"
+            ]
+        },
+        {
+            "input": "what is the address of the \" mcdonads \" in this area .",
+            "output": [
+                "آدرس \" mcdonads \" در این ناحیه چیست؟"
+            ]
+        },
+        {
+            "input": "what are the highest ranked \" burger \" joints in the 1 mile area around \" asheville nc \" .",
+            "output": [
+                "کدام رستوران‌های \" burger \" در شعاع 1 مایلی اطراف \" asheville nc \" بالاترین امتیاز را دارد؟"
+            ]
+        },
+        {
+            "input": "show me all the restaurants that are located on \" federal highway \" ?",
+            "output": [
+                "همه رستوران‌هایی که در \" federal highway \" قرار دارند را به من نشان می‌دهی؟"
+            ]
+        },
+        {
+            "input": "which restaurant has the highest amounts of reviews ?",
+            "output": [
+                "کدام رستوران بالاترین تعداد نقد را دارد؟"
+            ]
+        },
+        {
+            "input": "what date was \" jim \" 's review posted ?",
+            "output": [
+                "نقد \" jim \" در چه تاریخی منتشر شد؟"
+            ]
+        },
+        {
+            "input": "which restaurants are on \" main street \" ?",
+            "output": [
+                "کدام رستوران‌ها در \" main street \" هستند؟"
+            ]
+        },
+        {
+            "input": "find me \" mexican \" food",
+            "output": [
+                "برایم غذای \" mexican \" پیدا کن."
+            ]
+        },
+        {
+            "input": "show me restaurants in \" kansas city , mo \"",
+            "output": [
+                "رستوران‌های \" kansas city , mo \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants in the area .",
+            "output": [
+                "رستوران‌های \" mexican \" در این منطقه را به من نشان بده."
+            ]
+        },
+        {
+            "input": "provide me the telephone number for the nearest \" mexican \" restaurant in \" 93312 \" zip .",
+            "output": [
+                "شماره تلفن نزدیک‌ترین رستوران \" mexican \" با کد پستی \" 93312 \" را به من بده."
+            ]
+        },
+        {
+            "input": "where is the closest \" mcdonalds \"",
+            "output": [
+                "نزدیک‌ترین \" mcdonalds \" کجاست"
+            ]
+        },
+        {
+            "input": "where is a \" mexican \" restaurant with more than 2 good reviews ?",
+            "output": [
+                "رستورانی \" mexican \" با بیش از 2 نقد خوب کجاست؟"
+            ]
+        },
+        {
+            "input": "show all ratings made by \" mr gucci loafers \"",
+            "output": [
+                "همه امتیازات کسب شده توسط \" mr gucci loafers \" را نشان بده"
+            ]
+        },
+        {
+            "input": "search for \" steakhouse \" restaurants in my city",
+            "output": [
+                "رستوران‌های \" steakhouse \" در شهر من را جستجو کن"
+            ]
+        },
+        {
+            "input": "show me reviews written by \" amy \" .",
+            "output": [
+                "نقدهایی که \" amy \" نوشته است را نشان بده."
+            ]
+        },
+        {
+            "input": "where can i find the closest \" wawa \" ?",
+            "output": [
+                "نزدیک‌ترین \" wawa \" کجاست؟"
+            ]
+        },
+        {
+            "input": "search for \" big woodys \"",
+            "output": [
+                "\" big woodys \" را جستجو کن"
+            ]
+        },
+        {
+            "input": "search for an \" egyptian \" restaurant .",
+            "output": [
+                "به دنبال یک رستوران \" egyptian \" بگرد."
+            ]
+        },
+        {
+            "input": "show me restaurants with a minimum 7 star rating .",
+            "output": [
+                "رستوران‌هایی را نشان بده که حداقل امتیازشان 7 ستاره است."
+            ]
+        },
+        {
+            "input": "how many reviews are there at \" starbucks \" ?",
+            "output": [
+                "\" starbucks \" چند نقد دارد؟"
+            ]
+        },
+        {
+            "input": "show me \" thai \" restaurants .",
+            "output": [
+                "رستوران‌های \" thai \" را نشان من بده."
+            ]
+        },
+        {
+            "input": "how far is the nearest \" applebee 's \" ?",
+            "output": [
+                "نزدیک‌ترین \" applebee 's \" چقدر تا اینجا فاصله دارد؟"
+            ]
+        },
+        {
+            "input": "located \" mexican \" food close to here",
+            "output": [
+                "غذای \" mexican \" نزدیک به اینجا را پیدا کن"
+            ]
+        },
+        {
+            "input": "show me \" white castle \"",
+            "output": [
+                "\" white castle \" را به من نشان بده"
+            ]
+        },
+        {
+            "input": "search for \" japanese \" restaurants with at least 6 stars .",
+            "output": [
+                "به دنبال رستوران‌های \" japanese \" بگرد که حداقل 6 ستاره داشته باشند."
+            ]
+        },
+        {
+            "input": "tell me the rating of \" wendy 's \" .",
+            "output": [
+                "امتیاز \" wendy 's \" را به من بگو."
+            ]
+        },
+        {
+            "input": "list \" japanese \" restaurants .",
+            "output": [
+                "فهرست رستوران‌های \" japanese \" را به من بده."
+            ]
+        },
+        {
+            "input": "what 's the highest rated \" pizza \" place in the \" city center \" ?",
+            "output": [
+                "کدام پاتوق \" pizza \" در \" city center \" بالاترین امتیاز را دارد؟"
+            ]
+        },
+        {
+            "input": "search for a \" vegan \" restaurant with at least 10 reviews .",
+            "output": [
+                "به دنبال یک رستوران \" vegan \" با حداقل 10 نقد بگرد."
+            ]
+        },
+        {
+            "input": "give me a 8 star restaurant nearby .",
+            "output": [
+                "رستورانی با 8 ستاره را در این نزدیکی به من نشان بده."
+            ]
+        },
+        {
+            "input": "find restaurants with the most reviews .",
+            "output": [
+                "رستوران‌هایی با بیشترین نقد را پیدا کن."
+            ]
+        },
+        {
+            "input": "search for \" billy 's barbecue \" .",
+            "output": [
+                "به دنبال \" billy 's barbecue \" بگرد."
+            ]
+        },
+        {
+            "input": "i want to see restaurants with more than 3 reviews .",
+            "output": [
+                "می‌خواهم رستوران‌هایی ببینم که بیش از 3 نقد دارد."
+            ]
+        },
+        {
+            "input": "find restaurants that sell \" spaghetti \" .",
+            "output": [
+                "رستوران‌هایی پیدا کن که \" spaghetti \" می‌فروشد."
+            ]
+        },
+        {
+            "input": "what 's the name of the \" italian \" restaurant on \" main street \" ?",
+            "output": [
+                "نام رستوران \" italian \" در \" main street \" چیست؟"
+            ]
+        },
+        {
+            "input": "show me the highest rated restaurant .",
+            "output": [
+                "کدام رستوران بالاترین امتیاز را دارد؟"
+            ]
+        },
+        {
+            "input": "where is the nearest \" mcdonald 's \" ?",
+            "output": [
+                "نزدیک‌ترین \" mcdonald 's \" کجاست؟"
+            ]
+        },
+        {
+            "input": "show me 7 star \" mexican \" restaurants",
+            "output": [
+                "رستوران‌های \" mexican \" با 7 ستاره را نشان بده."
+            ]
+        },
+        {
+            "input": "find all restaurants rated higher than 6",
+            "output": [
+                "همه رستوران‌هایی که امتیاز بالاتر از 6 دارند را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me a list of restaurants with less than 8 reviews .",
+            "output": [
+                "فهرستی از رستوران‌هایی که کمتر از 8 نقد دارد را نشان بده."
+            ]
+        },
+        {
+            "input": "show me nearby \" mexican \" restaurants .",
+            "output": [
+                "رستوران‌های \" mexican \" در این نزدیکی را به من نشان بده."
+            ]
+        },
+        {
+            "input": "search for restaurants in \" reno , nevada \" .",
+            "output": [
+                "دنبال رستوران‌های \" reno , nevada \" بگرد."
+            ]
+        },
+        {
+            "input": "show me \" thai \" restaurants",
+            "output": [
+                "رستوران‌های \" thai \" را به من نشان بده"
+            ]
+        },
+        {
+            "input": "which \" chinese \" restaurant has the most reviews ?",
+            "output": [
+                "کدام رستوران \" chinese \" بیشترین نقد را دارد؟"
+            ]
+        },
+        {
+            "input": "what is \" ramen nagi \" 's rating ?",
+            "output": [
+                "امتیاز \" ramen nagi \" چند است؟"
+            ]
+        },
+        {
+            "input": "look for \" olive garden \" .",
+            "output": [
+                "به دنبال \" olive garden \" بگرد."
+            ]
+        },
+        {
+            "input": "what restaurants have received 10 or more reviews ?",
+            "output": [
+                "کدام رستوران‌ها 10 نقد یا بیشتر داشته‌اند؟"
+            ]
+        },
+        {
+            "input": "find reviews from \" george \" .",
+            "output": [
+                "نقدهای \" george \" را برایم پیدا کن."
+            ]
+        },
+        {
+            "input": "show me \" american \" restaurants",
+            "output": [
+                "رستوران‌های \" american \" را به من نشان بده"
+            ]
+        },
+        {
+            "input": "tell me the \" american \" restaurants .",
+            "output": [
+                "رستوران‌های \" american \" را به من بگو."
+            ]
+        },
+        {
+            "input": "give me all of the \" mexican \" restaurants with at least 2 stars .",
+            "output": [
+                "همه رستوران‌های \" mexican \" که حداقل 2 ستاره هستند را به من نشان بده."
+            ]
+        },
+        {
+            "input": "search for \" rocky 's pizza \" .",
+            "output": [
+                "به دنبال \" rocky 's pizza \" بگرد."
+            ]
+        },
+        {
+            "input": "is there a \" red lobster \" near me ?",
+            "output": [
+                "آیا در نزدیکی من \" red lobster \" وجود دارد؟"
+            ]
+        },
+        {
+            "input": "find all of the \" indian \" restaurants",
+            "output": [
+                "همه رستوران‌های \" indian \" را پیدا کن"
+            ]
+        },
+        {
+            "input": "what is the rating of the \" oak street steakhouse \" ?",
+            "output": [
+                "امتیاز \" oak street steakhouse \" چند است؟"
+            ]
+        },
+        {
+            "input": "show me restaurants in zip code \" 28078 \" .",
+            "output": [
+                "به من رستوران‌هایی با کد پستی \" 28078 \" نشان بده."
+            ]
+        },
+        {
+            "input": "what \" mexican \" restaurant has the most reviews ?",
+            "output": [
+                "کدام رستوران‌ \" mexican \" بیشترین نقد را دارند؟"
+            ]
+        },
+        {
+            "input": "what kind of rating does \" panda express \" have",
+            "output": [
+                "\" panda express \" چه امتیازی دارد؟"
+            ]
+        },
+        {
+            "input": "show me \" italian \" restaurants nearby .",
+            "output": [
+                "رستوران‌های \" italian \" نزدیک را نشان بده."
+            ]
+        },
+        {
+            "input": "please show me reviews that were written for \" cracker barrel \" this year .",
+            "output": [
+                "لطفاً نقدهایی که برای \" cracker barrel \" امسال نوشته شده است را نشان بده."
+            ]
+        },
+        {
+            "input": "find restaurants with 7 stars .",
+            "output": [
+                "رستوران‌های 7 ستاره را پیدا کن."
+            ]
+        },
+        {
+            "input": "what is the phone number for \" sampan \" ?",
+            "output": [
+                "شماره تلفن \" sampan \" چیست؟"
+            ]
+        },
+        {
+            "input": "can i see reviews for the \" gunnisack \" ?",
+            "output": [
+                "می‌توانم نقدهای \" the gunnisack \" را ببینم؟"
+            ]
+        },
+        {
+            "input": "please tell me the location of \" dave 's seafood shack \" .",
+            "output": [
+                "لطفاً نشانی \" dave 's seafood shack \" را به من بگو."
+            ]
+        },
+        {
+            "input": "what is the address of the nearest \" fast food \" place ?",
+            "output": [
+                "آدرس نزدیک‌ترین رستوران \" fast food \" چیست؟"
+            ]
+        },
+        {
+            "input": "search for \" gates barbecue \" ?",
+            "output": [
+                "دنبال \" gates barbecue \" بگرد؟"
+            ]
+        },
+        {
+            "input": "find restaurants within one mile from here .",
+            "output": [
+                "رستوران‌هایی که در یک مایلی اینجا هستند را پیدا کن؟"
+            ]
+        },
+        {
+            "input": "what is the closest \" italian \" restaurant to me",
+            "output": [
+                "نزدیک‌ترین رستوران \" italian \" به من کدام است؟"
+            ]
+        },
+        {
+            "input": "show restaurants with at least 3 reviews",
+            "output": [
+                "رستوران‌هایی با حداقل 3 نقد را به من نشان بده."
+            ]
+        },
+        {
+            "input": "are there any \" indian \" restaurants near me ?",
+            "output": [
+                "آیا هیچ رستوران \" indian \" نزدیک من است؟"
+            ]
+        },
+        {
+            "input": "give me the telephone number of a 1 star restaurant .",
+            "output": [
+                "شماره تلفن یک رستوران 1 ستاره را به من بده."
+            ]
+        },
+        {
+            "input": "show me all the of review written by \" alex smith \" about \" chinese \" restaurants .",
+            "output": [
+                "تمام نظراتی که \" alex smith \"  برای رستوران‌های \" chinese \" نوشته به من نشان بده."
+            ]
+        },
+        {
+            "input": "show highest rated \" coffee \" shop withing 2 miles .",
+            "output": [
+                "فروشگاه \" coffee \" با بالاترین امتیاز در 2 مایلی را نشان بده."
+            ]
+        },
+        {
+            "input": "show me restaurants rated between 1 and 5 .",
+            "output": [
+                "رستوران‌های دارای امتیاز بین 1 و 5 را به من نشان بده."
+            ]
+        },
+        {
+            "input": "what is the price range of the nearest \" mexican \" restaurant ?",
+            "output": [
+                "رنج قیمت نزدیک‌ترین رستوران \" mexican \" چیست؟"
+            ]
+        },
+        {
+            "input": "show restaurants in \" san francisco \" .",
+            "output": [
+                "رستوران‌های \" san francisco \" را نشان بده."
+            ]
+        },
+        {
+            "input": "find all \" mexican \" restaurants .",
+            "output": [
+                "همه‌ی رستوران‌های \" mexican \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "search for \" sushi joy \" .",
+            "output": [
+                "دنبال \" sushi joy \" بگرد."
+            ]
+        },
+        {
+            "input": "find me \" italian \" restaurants",
+            "output": [
+                "رستوران‌های \" italian \" را برایم پیدا کن"
+            ]
+        },
+        {
+            "input": "can you find me the telephone number for \" rookie 's bar & grill \" ?",
+            "output": [
+                "می‌توانی شماره تلفن \" rookie 's bar & grill \" را برایم پیدا کنی؟"
+            ]
+        },
+        {
+            "input": "what is the phone number for \" ginger china \" ?",
+            "output": [
+                "شماره تلفن \" ginger china \" چیست؟"
+            ]
+        },
+        {
+            "input": "give the phone number of a restaurant with 3 or more reviews",
+            "output": [
+                "شماره تلفن یک رستوران با حداقل 3 نظر را بده."
+            ]
+        },
+        {
+            "input": "find me \" in-n-out burger \" .",
+            "output": [
+                "\" in-n-out burger \" را برایم پیدا کن‫.‬"
+            ]
+        },
+        {
+            "input": "show me all 7 star restaurants .",
+            "output": [
+                "همه‌ی رستوران‌های 7 ستاره را به من نشان بده."
+            ]
+        },
+        {
+            "input": "search for a 3 star rated \" coffee \" shop located nearby .",
+            "output": [
+                "دنبال فروشگاه \" coffee \" با 3 ستاره در این نزدیکی بگرد."
+            ]
+        },
+        {
+            "input": "show me reviews written by \" bruce \" .",
+            "output": [
+                "نظراتی که \" bruce \" نوشته به من نشان بده."
+            ]
+        },
+        {
+            "input": "find all restaurants rated higher than 0",
+            "output": [
+                "همه‌ی رستوران‌های دارای امتیاز بالاتر از 0 را پیدا کن"
+            ]
+        },
+        {
+            "input": "search for a \" mexican \" restaurant .",
+            "output": [
+                "دنبال رستوران \" mexican \" بگرد."
+            ]
+        },
+        {
+            "input": "are there any one star reviews ?",
+            "output": [
+                "نظراتی با یک ستاره وجود دارد؟"
+            ]
+        },
+        {
+            "input": "search for restaurants with more than 1 reviews .",
+            "output": [
+                "دنبال رستوران‌های دارای بیش از 1 نظر بگرد."
+            ]
+        },
+        {
+            "input": "what is the top rated 4 star restaurant ?",
+            "output": [
+                "رستوران 4 ستاره با بالاترین امتیاز کدام است؟"
+            ]
+        },
+        {
+            "input": "what is the telephone and address for \" ruth 's chris \" ?",
+            "output": [
+                "تلفن  و نشانی \" ruth 's chris \" چیست؟"
+            ]
+        },
+        {
+            "input": "show me \" aunt chilada 's \"",
+            "output": [
+                "\" aunt chilada 's \" را به من نشان بده"
+            ]
+        },
+        {
+            "input": "are there any \" mexican \" restaurants with more than 1 reviews ?",
+            "output": [
+                "رستوران \" mexican \" با بیشتر از 1 نظر وجود دارد؟"
+            ]
+        },
+        {
+            "input": "find places in \" 17111 \" .",
+            "output": [
+                "مکان‌های موجود در \" 17111 \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me all \" italian \" restaurants .",
+            "output": [
+                "همه‌ی رستوران‌های \" italian \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "give me the name of a \" mexican \" restaurant .",
+            "output": [
+                "نام یک رستوران \" mexican \" را به من بده."
+            ]
+        },
+        {
+            "input": "show me 1 star rated restaurants on \" locust street \" .",
+            "output": [
+                "رستوران‌های دارای امتیاز 1 ستاره در \" locust street \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me a list of \" italian \" restaurants .",
+            "output": [
+                "فهرست رستوران‌های \" italian \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me all restaurants reviewed by \" restaurantgirl_84 \" .",
+            "output": [
+                "همه‌ی رستوران‌هایی که \" restaurantgirl_84 \" در مورد آن‌ها نظر داده به من نشان بده."
+            ]
+        },
+        {
+            "input": "i 'd like to know the location of \" dunkin donuts \" ?",
+            "output": [
+                "می‌خواهم محل \" dunkin donuts \" را بدانم؟"
+            ]
+        },
+        {
+            "input": "show me a \" chinese \" restaurant with a rating of 4 .",
+            "output": [
+                "رستوران \" chinese \"  با امتیاز 4 را به من نشان بده."
+            ]
+        },
+        {
+            "input": "which restaurant has the most reviews ?",
+            "output": [
+                "کدام رستوران‌ها بیشترین تعداد نظرات را دارند؟"
+            ]
+        },
+        {
+            "input": "search for \" french \" restaurants .",
+            "output": [
+                "دنبال رستوران‌های \" french \" بگرد."
+            ]
+        },
+        {
+            "input": "give me reviews for \" jade buffet \" .",
+            "output": [
+                "نظرات را \" jade buffet \" به من بده."
+            ]
+        },
+        {
+            "input": "what is the price range for \" ramen nagi \" ?",
+            "output": [
+                "رنج قیمت \" ramen nagi \" چیست؟"
+            ]
+        },
+        {
+            "input": "find \" italian \" restaurants with at least 7 reviews .",
+            "output": [
+                "رستوران‌های \" italian \" با حداقل 7 نظر را پیدا کن."
+            ]
+        },
+        {
+            "input": "where is the closest \" dairy queen \" ?",
+            "output": [
+                "نزدیک‌ترین \" dairy queen \" کجاست؟"
+            ]
+        },
+        {
+            "input": "find all restaurants in \" chicago \" .",
+            "output": [
+                "همه‌ی رستوران‌ها در \" chicago \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "is there a restaurant in zipcode \" 19101 \" ?",
+            "output": [
+                "آیا رستورانی با کد پستی \" 19101 \" وجود دارد؟"
+            ]
+        },
+        {
+            "input": "i 'm looking for \" armenian \" restaurants",
+            "output": [
+                "من دنبال رستوران‌های \" armenian \" هستم"
+            ]
+        },
+        {
+            "input": "show me reviews for \" dunkin ' donuts \" from the last 10 days .",
+            "output": [
+                "نظرات \" dunkin ' donuts \" در 10 روز اخیر را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me all of the 7 star restaurants nearby .",
+            "output": [
+                "همه‌ی رستوران‌های 7 ستاره‌ی این نزدیکی را به من نشان بده."
+            ]
+        },
+        {
+            "input": "display restaurants with more than 7 reviews .",
+            "output": [
+                "رستوران‌هایی که بیشتر از 7 ستاره دارند را نمایش بده."
+            ]
+        },
+        {
+            "input": "i need to find all 8 star restaurants .",
+            "output": [
+                "می خواهم همه‌ی رستوران‌های 8 ستاره را پیدا کنم."
+            ]
+        },
+        {
+            "input": "find \" italian \" restaurants .",
+            "output": [
+                "رستوران‌های \" italian \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants with at least a 8 star rating .",
+            "output": [
+                "رستوران های \" mexican \" با حداقل امتیاز 8 ستاره به من نشان بده."
+            ]
+        },
+        {
+            "input": "search for \" sushi king \" restaurant for me .",
+            "output": [
+                "برای من دنبال \" sushi king \" بگرد."
+            ]
+        },
+        {
+            "input": "search for \" mexican \" restaurants",
+            "output": [
+                "دنبال رستوران‌های \" mexican \" بگرد"
+            ]
+        },
+        {
+            "input": "show me \" japanese \" restaurants .",
+            "output": [
+                "رستوران‌های \" japanese \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "what is the price range for my closest \" chinese \" restaurant ?",
+            "output": [
+                "رنج قیمت نزدیک‌ترین رستوران \" chinese \" به من چیست؟"
+            ]
+        },
+        {
+            "input": "show me restaurants on \" main street \" .",
+            "output": [
+                "رستوران‌های واقع در \" main street \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me the top 4 \" steak house \" restaurants in \" orlando \" .",
+            "output": [
+                "4 بالاترین رستوران‌ \" steak house \" در \" orlando \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me all restaurants reviewed by \" alex smith \" .",
+            "output": [
+                "رستوران‌هایی که \" alex smith \" برای آن‌ها نظر نوشته به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me \" nomad pizza \" .",
+            "output": [
+                "\" nomad pizza \" را به من نشان بده."
+            ]
+        },
+        {
+            "input": "show me all \" chinese \" restaurants with reviews made in the last month",
+            "output": [
+                "همه‌ی رستوران‌های \" chinese \" که در ماه اخیر نظر برای‌شان نوشته شده به من نشان بده"
+            ]
+        },
+        {
+            "input": "display restaurants that were rated above 7",
+            "output": [
+                "رستوران‌هایی که امتیاز بالاتر از 7 داشتند را نمایش بده."
+            ]
+        },
+        {
+            "input": "i 'm in the mood for \" italian \" food .",
+            "output": [
+                "میل غذای \" italian \" دارم."
+            ]
+        },
+        {
+            "input": "search for \" mexican \" restaurants with reviews from the past month .",
+            "output": [
+                "دنبال رستوران‌های \" mexican \" که در ماه گذشته نظر داشته‌اند را جستجو کن."
+            ]
+        },
+        {
+            "input": "find the address for \" on the borders mexican grill and cantina \" .",
+            "output": [
+                "نشانی \" on the borders mexican grill and cantina \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "show me restaurant reviews written by \" fat charlie \" .",
+            "output": [
+                "نظراتی که \" fat charlie \" برای رستوران‌ها نوشته به من نشان بده."
+            ]
+        },
+        {
+            "input": "find me a \" french \" restaurant .",
+            "output": [
+                "یک رستوران \" french \" برای من پیدا کن."
+            ]
+        },
+        {
+            "input": "look for a \" red lobster \" in the \" 85053 \" zip code .",
+            "output": [
+                "دنبال یک \" red lobster \" با کد پستی \" 85053 \" بگرد."
+            ]
+        },
+        {
+            "input": "find restaurants in \" denver , colorado \" .",
+            "output": [
+                "رستوران‌های \" denver , colorado \" را پیدا کن."
+            ]
+        },
+        {
+            "input": "what is the phone number of the nearest \" pizza hut \" ?",
+            "output": [
+                "شماره تلفن نزدیک‌ترین \" pizza hut \" چیست؟"
+            ]
+        }
+    ]
+}
