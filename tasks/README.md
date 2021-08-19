@@ -116,7 +116,7 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
-`task117_spl_translation_en_de.json` | Translate English questions to German | Translation
+`task117_spl_translation_en_de.json` | Translate English questions to German while preserving named entities in the original language | Translation
 `task118_semeval_2019_task10_open_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with an open-vocabulary.	| Answer Generation, Arithmetic
 `task119_semeval_2019_task10_geometric_mathematical_answer_generation`	|  Answering multiple choices geometric problems.	| Answer Generation, Geometry
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
@@ -156,6 +156,11 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
+`task172_spl_translation_en_fa.json` | Translate English questions to Farsi while preserving named entities in the original language | Translation
+`task173_spl_translation_en_it.json` | Translate English questions to Italian while preserving named entities in the original language | Translation
+`task174_spl_translation_en_ja.json` | Translate English questions to Japanese while preserving named entities in the original language | Translation
+`task175_spl_translation_en_pl.json` | Translate English questions to Polish while preserving named entities in the original language | Translation
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
