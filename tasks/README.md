@@ -139,3 +139,6 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
+`task180_intervention_extractionv` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
+`task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
