@@ -119,6 +119,10 @@ Name | Summary | Category
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
 `task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
+`task122_conala_list_index_addition.json` | Add lists together based on their index | Answer Generation, Arithmetic
+`task123_conala_sort_dictionary.json` | Sort a list of dictionaries based on a given key | Answer Generation, Arithmetic
+`task124_conala_pair_averages.json` | Calculate the averages for each two consecutive elements | Answer Generation, Arithmetic
+`task125_conala_pair_differences.json` | Calculate the absolute difference for each two consecutive elements | Answer Generation, Arithmetic
 `task126_scan_structured_text_generation_command_action_all.json` | Given a natural language command, provide its sequence of actions. | Structured Text Generation
 `task127_scan_long_text_generation_action_command_all.json` | Given a sequence of actions, provide its natural language command. | Long Text Generation
 `task128_scan_structured_text_generation_command_action_short.json` | Given a short natural language command, provide its sequence of actions. | Structured Text Generation
