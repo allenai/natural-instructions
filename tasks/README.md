@@ -149,3 +149,4 @@ Name | Summary | Category
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
 `task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
+`task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
