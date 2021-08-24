@@ -162,5 +162,5 @@ Name | Summary | Category
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
-`task191_duorc_question_generation` | Writing a question based on a given plot | Question Generation
-`task192_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
+`task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
+`task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
