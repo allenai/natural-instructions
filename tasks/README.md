@@ -162,3 +162,10 @@ Name | Summary | Category
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
+`task184_snli_neutral_answer_generation.json` | Given two sentences that agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+ `task185_snli_neutral_answer_generation.json` | Given two sentences that don't agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+ `task186_snli_entailment_answer_generation.json` | Given two sentences that don't agree with each other, modify the second sentence so that they clearly agree with each other | Answer Generation
+ `task187_snli_contradiction_answer_generation.json` | Given two sentences that agree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+ `task188_snli_entailment_answer_generation.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly agree | Answer Generation
+ `task189_snli_contradiction_answer_generation.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+ `task190_snli_classification.json` | Given two sentences choose whether they agree/disagree/neither with each other | Classification
