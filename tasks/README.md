@@ -129,6 +129,10 @@ Name | Summary | Category
 `task129_scan_long_text_generation_action_command_short.json` | Given a short sequence of actions, provide its natural language command. | Long Text Generation
 `task130_scan_structured_text_generation_command_action_long.json` | Given a long natural language command, provide its sequence of actions. | Structured Text Generation
 `task131_scan_long_text_generation_action_command_long.json` | Given a long sequence of actions, provide its natural language command. | Long Text Generation
+`task133_winowhy_reason_plausibility_detection.json` | Dectect if a reason explaining an answer to a pronoun coreference resolution question is corecct or not | Classification
+`task134_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
+`task135_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
+`task136_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
 `task137_detoxifying-lms_classification_toxicity.json` | Given a prompt and two completions, determine which completion is less toxic. | Classification
 `task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
 `task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
@@ -143,4 +147,9 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
+`task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
+`task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
+`task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
+`task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
