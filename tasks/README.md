@@ -152,3 +152,4 @@ Name | Summary | Category
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
+`task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
