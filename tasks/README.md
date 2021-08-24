@@ -106,4 +106,10 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
-
+`task183_snli_neutral_answer_generation.json` | Given two sentences that agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task184_snli_neutral_answer_generation.json` | Given two sentences that don't agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task185_snli_entailment_answer_generation.json` | Given two sentences that don't agree with each other, modify the second sentence so that they clearly agree with each other | Answer Generation
+`task186_snli_contradiction_answer_generation.json` | Given two sentences that agree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task187_snli_entailment_answer_generation.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly agree | Answer Generation
+`task188_snli_contradiction_answer_generation.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task189_snli_classification.json` | Given two sentences choose whether they agree/disagree/neither with each other | Classification
