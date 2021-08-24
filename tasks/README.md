@@ -146,6 +146,10 @@ Name | Summary | Category
 `task153_tomqa_find_location_hard_clean.json` | Given a hard story, answer the question regarding the location of an object. | Answer Generation
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
+`task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
+`task161_count_words_containing_letter.json` | Count number of words in the sentence that contain the given letter | Counting
+`task162_count_words_starting_with_letter.json` | Count number of words in the sentence that start with the given letter | Counting
+`task163_count_words_ending_with_letter.json` | Count number of words in the sentence that end with the given letter | Counting
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
