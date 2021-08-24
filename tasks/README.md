@@ -110,6 +110,7 @@ Name | Summary | Category
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task109_SMSspamcollection_SpamSMSdetection` | Classify SMS into spam or ham | Classification
 `task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
@@ -161,6 +162,9 @@ Name | Summary | Category
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
+<<<<<<< HEAD
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+=======
+>>>>>>> 857c38c8a29201a898918279a00ddbadca08fc12
