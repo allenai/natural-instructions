@@ -110,6 +110,7 @@ Name | Summary | Category
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
@@ -118,12 +119,20 @@ Name | Summary | Category
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
 `task121_zest_text_modification.json` | Given some questions, combine them to have one new question | Text Modification
+`task122_conala_list_index_addition.json` | Add lists together based on their index | Answer Generation, Arithmetic
+`task123_conala_sort_dictionary.json` | Sort a list of dictionaries based on a given key | Answer Generation, Arithmetic
+`task124_conala_pair_averages.json` | Calculate the averages for each two consecutive elements | Answer Generation, Arithmetic
+`task125_conala_pair_differences.json` | Calculate the absolute difference for each two consecutive elements | Answer Generation, Arithmetic
 `task126_scan_structured_text_generation_command_action_all.json` | Given a natural language command, provide its sequence of actions. | Structured Text Generation
 `task127_scan_long_text_generation_action_command_all.json` | Given a sequence of actions, provide its natural language command. | Long Text Generation
 `task128_scan_structured_text_generation_command_action_short.json` | Given a short natural language command, provide its sequence of actions. | Structured Text Generation
 `task129_scan_long_text_generation_action_command_short.json` | Given a short sequence of actions, provide its natural language command. | Long Text Generation
 `task130_scan_structured_text_generation_command_action_long.json` | Given a long natural language command, provide its sequence of actions. | Structured Text Generation
 `task131_scan_long_text_generation_action_command_long.json` | Given a long sequence of actions, provide its natural language command. | Long Text Generation
+`task133_winowhy_reason_plausibility_detection.json` | Dectect if a reason explaining an answer to a pronoun coreference resolution question is corecct or not | Classification
+`task134_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
+`task135_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
+`task136_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
 `task137_detoxifying-lms_classification_toxicity.json` | Given a prompt and two completions, determine which completion is less toxic. | Classification
 `task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
 `task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
@@ -131,9 +140,17 @@ Name | Summary | Category
 `task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
 `task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
 `task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
+`task_144_subjqa_question_answering.json` | Given a review and a question, give a span of the review that answers the question. | Answer Generation
 `task151_tomqa_find_location_easy_clean.json` | Given an easy story, answer the question regarding the location of an object. | Answer Generation
 `task152_tomqa_find_location_easy_noise.json` | Given an easy story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task153_tomqa_find_location_hard_clean.json` | Given a hard story, answer the question regarding the location of an object. | Answer Generation
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
+`task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
 `task157_count_vowels_and_consonants.json` | Count number of vowels/consonants in the given sentence | Answer Generation
+`task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
+`task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
+`task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
+`task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
+`task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
+`task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
