@@ -110,6 +110,7 @@ Name | Summary | Category
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task109_SMSspamcollection_SpamSMSdetection` | Classify SMS into spam or ham | Classification
 `task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
@@ -146,6 +147,10 @@ Name | Summary | Category
 `task153_tomqa_find_location_hard_clean.json` | Given a hard story, answer the question regarding the location of an object. | Answer Generation
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
+`task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
+`task161_count_words_containing_letter.json` | Count number of words in the sentence that contain the given letter | Counting
+`task162_count_words_starting_with_letter.json` | Count number of words in the sentence that start with the given letter | Counting
+`task163_count_words_ending_with_letter.json` | Count number of words in the sentence that end with the given letter | Counting
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
@@ -157,10 +162,3 @@ Name | Summary | Category
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
-`task184_snli_neutral_answer_generation.json` | Given two sentences that agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
- `task185_snli_neutral_answer_generation.json` | Given two sentences that don't agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
- `task186_snli_entailment_answer_generation.json` | Given two sentences that don't agree with each other, modify the second sentence so that they clearly agree with each other | Answer Generation
- `task187_snli_contradiction_answer_generation.json` | Given two sentences that agree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
- `task188_snli_entailment_answer_generation.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly agree | Answer Generation
- `task189_snli_contradiction_answer_generation.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
- `task190_snli_classification.json` | Given two sentences choose whether they agree/disagree/neither with each other | Classification
