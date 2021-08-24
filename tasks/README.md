@@ -150,6 +150,7 @@ Name | Summary | Category
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
 `task157_count_vowels_and_consonants.json` | Count number of vowels/consonants in the given sentence | Counting
+`task160_replace_letter_in_a_sentence.json` | Replace a letter in the sentence with another given letter | Text Modification
 `task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
 `task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
