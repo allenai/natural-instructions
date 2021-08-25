@@ -163,6 +163,9 @@ Name | Summary | Category
 `task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
+`task167_strategyqa_question_generation` | Given a term, write questions based on two or more facts | Question Generation
+`task168_strategyqa_question_decomposition` | Given a yes/no question, its answer, and additional information, decompose the question | Question Decomposition
+`task169_strategyqa_sentence_generation` | Given a question, write the facts one needs to know in order to answer the question| Sentence Generation
 `task176_break_decompose_questions` | Break a question into the steps needed to answer the question. | Question Decomposition
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
