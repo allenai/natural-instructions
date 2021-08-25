@@ -162,7 +162,6 @@ Name | Summary | Category
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
 `task167_strategyqa_question_generation` | Given a term, write questions based on two or more facts | Question Generation
 `task168_strategyqa_question_decomposition` | Given a yes/no question, its answer, and additional information, decompose the question | Question Decomposition
-`task169_strategyqa_fact_generation` | Given a question, write the facts one needs to know in order to answer the question| Fact Generation
+`task169_strategyqa_fact_generation` | Given a question, write the facts one needs to know in order to answer the question| Sentence Generation
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
-
