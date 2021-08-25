@@ -101,8 +101,8 @@ Name | Summary | Category
 `task096_conala_list_index_subtraction` | Given a list of numbers subtract each element by its index in the list | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers remove all of the duplicates in the list | Text Modification, Arithmetic
 `task098_conala_list_intersection` | Given a two lists of numbers find the intersection of the two lists | Answer Generation, Arithmetic
-`task_111_asset_sentence_simplification` | Given a sentence, simplify it so it can be understood by non-native English speakers | Generation, Paraphrasing
-`task_112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
+`task111_asset_sentence_simplification` | Given a sentence, simplify it so it can be understood by non-native English speakers | Generation, Paraphrasing
+`task112_asset_simple_sentence_identification` | Given two text pieces, choose the one that is simpler and easier to understand by non-native speakers | Answer Generation, Sentence Comparison
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation
 `task104_semeval_2019_task10_mathematical_answer_generation`	|  Answering multiple choices mathematical problem.	| Answer Generation, Arithmetic
@@ -115,7 +115,7 @@ Name | Summary | Category
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
-`task_116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
+`task116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
 `task117_spl_translation_en_de.json` | Translate English questions to German | Translation
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
 `task120_zest_text_modification.json` | Given a question, Change the answer with minimum changes | Text Modification
@@ -130,7 +130,7 @@ Name | Summary | Category
 `task129_scan_long_text_generation_action_command_short.json` | Given a short sequence of actions, provide its natural language command. | Long Text Generation
 `task130_scan_structured_text_generation_command_action_long.json` | Given a long natural language command, provide its sequence of actions. | Structured Text Generation
 `task131_scan_long_text_generation_action_command_long.json` | Given a long sequence of actions, provide its natural language command. | Long Text Generation
-`task133_winowhy_reason_plausibility_detection.json` | Dectect if a reason explaining an answer to a pronoun coreference resolution question is corecct or not | Classification
+`task133_winowhy_reason_plausibility_detection.json` | Detect if a reason explaining an answer to a pronoun coreference resolution question is correct or not | Classification
 `task134_winowhy_reason_generation.json` | Giva a reason that explains the answer to a pronoun coreference resolution question | Answer Generation
 `task135_winowhy_wrong_reason_generation.json` | Giva an reason that can not explain the answer to a pronoun coreference resolution question | Wrong Answer Generation
 `task136_winowhy_knowledge_categorization.json` | Categorize the knowledge required to answer a pronoun coreference resolution question  | Classification
@@ -141,7 +141,7 @@ Name | Summary | Category
 `task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
 `task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
 `task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
-`task_144_subjqa_question_answering.json` | Given a review and a question, give a span of the review that answers the question. | Answer Generation
+`task144_subjqa_question_answering.json` | Given a review and a question, give a span of the review that answers the question. | Answer Generation
 `task151_tomqa_find_location_easy_clean.json` | Given an easy story, answer the question regarding the location of an object. | Answer Generation
 `task152_tomqa_find_location_easy_noise.json` | Given an easy story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task153_tomqa_find_location_hard_clean.json` | Given a hard story, answer the question regarding the location of an object. | Answer Generation
@@ -154,17 +154,31 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
+`task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
+`task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
 `task157_count_vowels_and_consonants.json` | Count number of vowels/consonants in the given sentence | Counting
 `task160_replace_letter_in_a_sentence.json` | Replace a letter in the sentence with another given letter | Text Modification
 `task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
 `task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
+`task167_strategyqa_question_generation` | Given a term, write questions based on two or more facts | Question Generation
+`task168_strategyqa_question_decomposition` | Given a yes/no question, its answer, and additional information, decompose the question | Question Decomposition
+`task169_strategyqa_sentence_generation` | Given a question, write the facts one needs to know in order to answer the question| Sentence Generation
+`task176_break_decompose_questions` | Break a question into the steps needed to answer the question. | Question Decomposition
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
+<<<<<<< HEAD
 <<<<<<< HEAD
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
 `task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
+=======
+`task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
+`task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
+`task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
+`task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+>>>>>>> master
