@@ -143,3 +143,7 @@ Name | Summary | Category
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task197_remove_even_elements.json` | Given a list of integers remove all elements that are even | Answer Generation, Arithmetic
+`task198_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
+`task199_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
+`task200_combinations_of_list.json` | Given a list of integers of length *n* find all possible combinations,without replacement, of length *n-1* | Answer Generation, Combinatorics
