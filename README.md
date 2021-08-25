@@ -1,4 +1,4 @@
-# A Repository of Community-Driven Natural Instructions 
+# A Community-Driven Repository of Natural Language Instructions 
 
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌 
