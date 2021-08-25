@@ -56,7 +56,7 @@ And make sure that your json file in [human readable](../README.md#how-to-contri
 If you don't know how this is done, [here](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) is a good summary.
 The quick gist is that: 
  - Fork this repository. 
- - Clone the forked respository on your computer. 
+ - Clone the forked repository on your computer. 
  - Add your task to the cloned repo and push it to a branch on your **forked** repo. 
  - Open a pull request that refers to the branch that contains your task. 
  - Then wait for our review! :) 
