@@ -177,3 +177,11 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task197_mnli_domain_answer_generation.json` | Given two sentences, write a single word describing the common genre to which they belong | Answer Generation
+`task198_mnli_domain_classification.json` | Given two sentences and 10 genre choices, determine the genre to which the sentences belong. | Classification
+`task199_mnli_classification.json` | Given 2 sentences, determine if they clearly agree or disagree with each other, or if this cannot be answered at all. | Classification
+`task200_mnli_entailment_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that clearly agrees with the context statement. | Classification
+`task201_mnli_neutral_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that neither clearly agrees noe disagrees with the context statement. | Classification
+`task202_mnli_contradiction_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that clearly disagrees with the context statement. | Classification
+`task203_mnli_answer_generation.json` | Given a context statement, genre, and label indicating agree/disagree/neither with respect to the context statement, generate a sentence that follows the genre and label specifications. | Answer Generation
+`task204_mnli_same_genre_classification.json` | Given two sentences and the genre they should belong to, determine if they belong to the same gnre or not. | Classification
