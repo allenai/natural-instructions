@@ -110,6 +110,7 @@ Name | Summary | Category
 `task106_scruples_ethical_judgment`	|  Given two actions choose the one that is considered less ethical.	| Ethical Judgment
 `task107_splash_question_to_sql` | Generate an SQL statement from a question asking for certain data. | Structured Query Generation
 `task108_ContextualAbuseDetection_classification` | Given a text detect whether it's abusive or not. | Classification
+`task109_SMSspamcollection_SpamSMSdetection` | Classify SMS into spam or ham | Classification
 `task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
 `task113_count_frequency_of_letter.json` | Count Frequency of a letter in the given string | Answer Generation
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
@@ -146,7 +147,18 @@ Name | Summary | Category
 `task153_tomqa_find_location_hard_clean.json` | Given a hard story, answer the question regarding the location of an object. | Answer Generation
 `task154_tomqa_find_location_hard_noise.json` | Given a hard story with distractor sentences, answer the question regarding the location of an object. | Answer Generation
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
+`task110_logic2text_sentence_generation.json` | Generate a natural language interpretation of the given logical operators | Sentence Generation
+`task161_count_words_containing_letter.json` | Count number of words in the sentence that contain the given letter | Counting
+`task162_count_words_starting_with_letter.json` | Count number of words in the sentence that start with the given letter | Counting
+`task163_count_words_ending_with_letter.json` | Count number of words in the sentence that end with the given letter | Counting
+`task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
+`task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
+`task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
+`task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
+`task157_count_vowels_and_consonants.json` | Count number of vowels/consonants in the given sentence | Counting
+`task160_replace_letter_in_a_sentence.json` | Replace a letter in the sentence with another given letter | Text Modification
 `task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
 `task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
@@ -155,3 +167,6 @@ Name | Summary | Category
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
+`task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
+`task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
+`task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
