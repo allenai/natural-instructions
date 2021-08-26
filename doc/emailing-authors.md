@@ -9,7 +9,7 @@ Hope you're doing well!
 
 My name is <...> and I am one of the contributors to the natural instructions project.  
 I am interested in incorporating your the crowdsourcing template that you used in your paper: <...>. 
-We think your instructions are a good additon to the benchmark since <...>.  
+We think your instructions are a good addition to the benchmark since <...>.  
 We were wondering if you can share your mechanical turk templates (e.g., the html files) and the corresponding input/outputs to each of the MTurk experiments (csv files in batches).
  
 Thank you, 
