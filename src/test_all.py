@@ -1,7 +1,7 @@
+#!/usr/bin/env python3
 import json
 from os import listdir
 from os.path import isfile, join
-import random
 
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
@@ -20,7 +20,8 @@ with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
-for file in files[-70:]:
+
+for file in files:
     if ".md" not in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
@@ -52,26 +53,28 @@ for file in files[-70:]:
                 assert type(x['output']) == str, f'the output of example {x} is not a string'
                 assert type(x['explanation']) == str, f'the explanation of example {x} is not a string'
 
-            instances = enumerate(data['Instances'])
+            # Make sure there are no repeated input examples
+            instances = data['Instances']
+            set_of_instances = {instance['input'] for instance in instances}
+            # Because the set length and total length are different, there must be a duplicate input
+            if len(instances) != len(set_of_instances):
+                for instance in instances:
+                    # If the instance is a duplicate then it has already been removed from the set and a KeyError will be thrown
+                    try:
+                        set_of_instances.remove(instance['input'])
+                    except KeyError:
+                        raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {instance}")
+            
 
-            # make sure there are no repeated input examples
-            for x_idx, x in instances:
-                for y_idx in range(x_idx + 1, len(data['Instances'])):
-                    y = data['Instances'][y_idx]
-                    if x['input'] == y['input']:
-                        raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {x}\n {y}")
-
-            # make sure there are no examples repeated across instances and positive examples
-            for x_idx, x in instances:
-                for y_idx in range(len(data['Positive Examples'])):
-                    y = data['Positive Examples'][y_idx]
-                    if x['input'] == y['input']:
-                        raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {x}\n {y}")
+            # Make sure there are no examples repeated across instances and positive examples
+            examples = [ex['input'] for ex in data['Positive Examples']]
+            for instance in instances:
+                if instance['input'] in examples:
+                    raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {instance}")
 
             file = file.replace(".json", "")
             if file not in task_readme_content:
                 raise Exception(f' * looks like the task name `{file}` is not included '
                                 f'in the task file `tasks/README.md`')
 
-print("Did not find any errors! ✅")
-                    
+print("Did not find any errors! ✅")         
