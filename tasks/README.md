@@ -140,3 +140,4 @@ Name | Summary | Category
 `task155_count_nouns_verbs.json` | Count number of nouns/verbs in the given sentence | Answer Generation
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
+`task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
