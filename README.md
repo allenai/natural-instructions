@@ -3,7 +3,7 @@
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌 
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **September 15, 2021**.
-The contributors with meaningful contribution to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
+The contributors with [meaningful contribution](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
 ## Background 
 ### Why define tasks in natural language?
@@ -79,7 +79,7 @@ Yes! just make sure that the quality of instructions is good enough for a human 
 Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances.
 
 ### What do you mean by "meaningful contribution"? 
-If you're among top `k` [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) (say, `k=25`), or if you have contributed at least `l` tasks (say, `l=10`). Depending on the overall contributions, we will adjust these constants so that the number of authors don't exceed `m` (say, `m=35`). 
+If you're among top 20 [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) or if you have contributed at least 5 tasks. 
  
 ### My commits are not tied to my Github profie; Github does not show all my contributions. 
 
