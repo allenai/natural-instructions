@@ -175,5 +175,5 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
-`task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on science facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
-`task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on science facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
