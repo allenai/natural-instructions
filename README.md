@@ -79,7 +79,7 @@ Yes! just make sure that the quality of instructions is good enough for a human 
 Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances.
 
 ### What do you mean by "meaningful contribution"? 
-If you're among top 20 [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) or if you have contributed at least 10 tasks. 
+If you're among top 20 [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors) or if you have contributed at least 25 tasks. This also involves some lightweight responsibilities such as reviewing pull requests.
  
 ### My commits are not tied to my Github profie; Github does not show all my contributions. 
 
