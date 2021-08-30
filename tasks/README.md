@@ -180,3 +180,8 @@ Name | Summary | Category
 `task232_iirc_link_number_classification.json` | Given a question and context passage, determine if further information on more than one term from the passage is needed to answer the question. | Classification
 `task233_iirc_link_exists_classification.json` | Given a question and context passage, determine if the passage has any terms that can be used to obtain further information needed to answer the question. | Classification
 `task234_iirc_passage_line_answer_generation.json` | Given a question and context passage, determine which sentence in the passage has terms that can be used to obtain further information needed to answer the question. | Answer Generation
+`task235_iirc_question_from_subtext_answer_generation.json` | Given a context statement, further information on a linked term in the statement, and an answer term, generate a question that can use the information provided to obtain the given answer | Answer Generation
+`task236_iirc_question_from_passage_answer_generation.json` | Given a context passage, further information on a linked term in the statement, and an answer term, generate a question that can use the information provided to obtain the given answer | Answer Generation
+`task237_iirc_answer_from_subtext_answer_generation.json` | Given a context statement, further information on a linked term in the statement, and a question, generate an answer that can use the information provided to solve the question| Answer Generation
+`task238_iirc_answer_from_passage_answer_generation.json` | Given a context passage, further information on a linked term in the statement, and a question, generate an answer that can use the information provided to solve the question| Answer Generation
+
