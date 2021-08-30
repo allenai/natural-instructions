@@ -179,3 +179,4 @@ Name | Summary | Category
 `task231_iirc_link_classification.json` | Given a question, context passage, and terms from the passage for further information search, determine which term can be used to answer the question. | Classification
 `task232_iirc_link_number_classification.json` | Given a question and context passage, determine if further information on more than one term from the passage is needed to answer the question. | Classification
 `task233_iirc_link_exists_classification.json` | Given a question and context passage, determine if the passage has any terms that can be used to obtain further information needed to answer the question. | Classification
+`task234_iirc_passage_line_answer_generation.json` | Given a question and context passage, determine which sentence in the passage has terms that can be used to obtain further information needed to answer the question. | Answer Generation
