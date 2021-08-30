@@ -178,11 +178,8 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
-<<<<<<< HEAD
 `task210_logic2text_equation_generation.json` | Given a natural language interpretation, generate a command using logical operations | Equation Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
-`task212_logic2text_classification.json` | Given a command (in the form of logical operators), divide in seven categories based on their action | Classification
-=======
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
 `task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
->>>>>>> origin
+`task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
