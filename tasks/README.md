@@ -175,3 +175,6 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task230_iirc_passage_classification.json` | Given 3 passages and a question, determine which passage cna be used to answer the question. | Classification
+`task231_iirc_link_classification.json` | Given a question, context passage, and terms from the passage for further information search, determine which term can be used to answer the question. | Classification
+`task232_iirc_link_number_classification.json` | Given a question and context passage, determine if further information on more than one term from the passage is needed to answer the question. | Classification
