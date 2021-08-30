@@ -183,3 +183,7 @@ Name | Summary | Category
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
 `task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task239_TweetQA_answer_generation.json` | Given a context paragraph of the tweet and question, generate a right answer | Answer Generation
+`task240_TweetQA_question_generation.json` | Given a context paragraph of the tweet and answer, generate a right question | Question Generation
+`task241_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponsing answer, generate a label whether the answer is right or wrong | Classification
+`task242_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponsing answer, generate a label whether the context is helpful in answering question or not | Classification
