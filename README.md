@@ -42,6 +42,9 @@ Overall, each tasks follows this schema:
 Or if you're comfortable with json files, here is how it would look like: 
 ```json 
 {
+  "Contributors": [""],
+  "Source": [""],
+  "Categories": [""],
   "Definition": "",
   "Positive Examples": [ { "input": "", "output": "",  "explanation": ""} ], 
   "Negative Examples": [ { "input": "", "output": "",  "explanation": ""} ],
