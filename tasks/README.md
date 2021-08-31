@@ -180,3 +180,6 @@ Name | Summary | Category
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
 `task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
+`task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
+`task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
+`task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
