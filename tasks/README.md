@@ -156,6 +156,7 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
