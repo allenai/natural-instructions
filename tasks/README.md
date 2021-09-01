@@ -128,7 +128,6 @@ Name | Summary | Category
 `task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
 `task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
 `task140_detoxifying-lms_classification_style.json` | Given a prompt and two completions, determine which completion is stylistically more similar. | Classification
-
 `task145_afs_argument_similarity_death_penalty.json` | Given two arguments, determine their similarity on a scale from 1-5. | Classification
 `task146_afs_argument_similarity_gun_control.json` | Given two arguments, determine their similarity on a scale from 1-5. | Classification
 `task147_afs_argument_similarity_gay_marriage.json` | Given two arguments, determine their similarity on a scale from 1-5. | Classification
