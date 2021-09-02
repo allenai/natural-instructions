@@ -176,6 +176,7 @@ Name | Summary | Category
 `task157_count_vowels_and_consonants.json` | Count number of vowels/consonants in the given sentence | Counting
 `task160_replace_letter_in_a_sentence.json` | Replace a letter in the sentence with another given letter | Text Modification
 `task132_DAIS_text_modification.json` | Given a sentence, generate a sentence with same meaning and different grammatical structure | Text Modification
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task164_MCScript_question_answering_text.json` | Reading Comprehension Task (Multiple Choice Question Answering). | Answer Generation
 `task165_MCScript_question_answering_commonsense.json` | Reading Comprehension Task using Commonsense (Multiple Choice Question Answering). | Answer Generation
 `task166_ClariQ_sentence_generation` | Provide clarification on the given query which is written in natural language | Sentence Generation
