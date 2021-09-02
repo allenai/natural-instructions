@@ -162,17 +162,14 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
-<<<<<<< HEAD
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
-=======
 `task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
 `task172_spl_translation_en_fa.json` | Translate English questions to Farsi while preserving named entities in the original language | Translation
 `task173_spl_translation_en_it.json` | Translate English questions to Italian while preserving named entities in the original language | Translation
 `task174_spl_translation_en_ja.json` | Translate English questions to Japanese while preserving named entities in the original language | Translation
 `task175_spl_translation_en_pl.json` | Translate English questions to Polish while preserving named entities in the original language | Translation
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
->>>>>>> origin
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
@@ -195,8 +192,6 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
-<<<<<<< HEAD
-=======
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
@@ -210,4 +205,3 @@ Name | Summary | Category
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
->>>>>>> origin
