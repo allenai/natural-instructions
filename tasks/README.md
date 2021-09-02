@@ -210,3 +210,6 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task271_europarl_sentence_generation.json`| Translate bulgarian sentence into english language | Sentence Generation
+`task272_europarl_sentence_generation.json`| Translate english sentence into bulgarian language | Sentence Generation
+`task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
