@@ -199,4 +199,4 @@ Name | Summary | Category
 `task206_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
 `task207_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
 `task208_combinations_of_list.json` | Given a list of integers of length *n* find all possible combinations,without replacement, of length *n-1* | Answer Generation, Combinatorics
-`task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun refering to | Answer Generation, Pronoun Disambiguation
+`task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
