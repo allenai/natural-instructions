@@ -203,3 +203,7 @@ Name | Summary | Category
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task250_spl_translation_en_ar.json` | Translate English questions to Arabic while preserving named entities in the original language | Translation
+`task251_spl_translation_en_fi.json` | Translate English questions to Finnish while preserving named entities in the original language | Translation
+`task252_spl_translation_en_tr.json` | Translate English questions to Turkish while preserving named entities in the original language | Translation
+`task253_spl_translation_en_zh.json` | Translate English questions to Chinese while preserving named entities in the original language | Translation
