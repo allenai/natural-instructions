@@ -210,3 +210,5 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task269_CSRG_Counterfactual_story_Generation.json` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
+`task270_CSRG_Counterfactual_context_generation.json` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. | Answer Generation
