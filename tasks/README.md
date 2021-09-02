@@ -210,7 +210,7 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
-`task275_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
-`task276_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
-`task277_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
-`task278_StereoSet_classification_stereotype_type.json` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
+`task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
+`task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
+`task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
+`task280_StereoSet_classification_stereotype_type.json` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
