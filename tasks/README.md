@@ -203,3 +203,5 @@ Name | Summary | Category
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task268_casehold_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Answer Generation
+
