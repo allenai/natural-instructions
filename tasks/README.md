@@ -203,3 +203,13 @@ Name | Summary | Category
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task254_spl_translation_fi_en.json` | Translate Finnish questions to English while preserving named entities in the original language | Translation
+`task255_spl_translation_it_en.json` | Translate Italian questions to English while preserving named entities in the original language | Translation
+`task256_spl_translation_de_en.json` | Translate German questions to English while preserving named entities in the original language | Translation
+`task257_spl_translation_ar_en.json` | Translate Arabic questions to English while preserving named entities in the original language | Translation
+`task258_spl_translation_fa_en.json` | Translate Farsi questions to English while preserving named entities in the original language | Translation
+`task259_spl_translation_tr_en.json` | Translate Turkish questions to English while preserving named entities in the original language | Translation
+`task260_spl_translation_zh_en.json` | Translate Chinese questions to English while preserving named entities in the original language | Translation
+`task261_spl_translation_es_en.json` | Translate Spanish questions to English while preserving named entities in the original language | Translation
+`task262_spl_translation_ja_en.json` | Translate Japanese questions to English while preserving named entities in the original language | Translation
+`task263_spl_translation_pl_en.json` | Translate Polish questions to English while preserving named entities in the original language | Translation
