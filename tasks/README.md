@@ -199,6 +199,6 @@ Name | Summary | Category
 `task206_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
 `task207_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
 `task208_combinations_of_list.json` | Given a list of integers of length *n* find all possible combinations,without replacement, of length *n-1* | Answer Generation, Combinatorics
-`task246_dream_question_generation` | Writing a question based on a given conversation | Question Generation
+`task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
