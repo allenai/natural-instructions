@@ -1,0 +1,4158 @@
+{
+    "Definition": "In each example you will read a short sentence (or two). Then, a pronoun in the text is mentioned. Your task is to choose a referent which the mentioned pronoun refers to. You will be given two options in each case and one choice should seem much more likely to you than the other.",
+    "Positive Examples": [
+        {
+            "input": "sentence: i couldn't put the saucepan on the rack because it was too tall .pronoun: it. A) the saucepan B) the rack",
+            "output": "the saucepan",
+            "explanation": "If the saucepan couldn't be put on the rack, it was probably bigger in size than the rack, so the pronoun \"tall\" refers to the saucepan."
+        },
+        {
+            "input": "sentence: Arnold greatly influenced Jackson , though he lived two centuries earlier .pronoun: he. A) jackson B) arnold",
+            "output": "arnold",
+            "explanation": "For one person to influence another person, they should leave earlier than them, or contemporary to them. So the pronoun must refer to the influencer, which is Arnold."
+        },
+        {
+            "input": "sentence: cory knocked on dolly's door , but there was no answer . she was out .pronoun: she. A) cory B) dolly",
+            "output": "dolly",
+            "explanation": "From the context of the sentence, we know that the sentence \"She was out\" is resulted from Dolly not answering the door, so the pronoun \"she\" must refer to dolly."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "sentence: Joe and David's uncles can still beat them at tennis , even though they are 30 years younger .pronoun: they. A) joe and david B) joe and david's uncles",
+            "output": "joe and david's uncles",
+            "explanation": "There're two clues for resolving this pronoun. First, one's uncle is not usually 30 years younger than them. Second, younger people are usualy better at sports. The expression \"even though\" shows that there's a certain surprise in the sentence, so the person with better tennis performance should be the older one."
+        },
+        {
+            "input": "sentence: gaston passed the half-empty plate to hershel because he was full .pronoun: he. A) Gaston B) hershel",
+            "output": "hershel",
+            "explanation": "The person passing the leftover food must be the one who is full, so in this example \"he\" must refer to gatson."
+        },
+        {
+            "input": "sentence: The policeman arrested the gang member . He was trying to stop the drug trade in the neighborhood .pronoun: He. A) the police B) the gang member",
+            "output": "the gang member",
+            "explanation": "Deciding between a police and a gang member, it makes sense that the police is the one stopping the drug trade, not the gang member."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "sentence: There are pillars between me and the stages , and I can't see them .pronoun: them. A) the pillars B) the stages",
+            "output": [
+                "the stages"
+            ]
+        },
+        {
+            "input": "sentence: patrick tried to call jake on the phone , but he wasn't available .pronoun: he. A) patrick B) jake",
+            "output": [
+                "jake"
+            ]
+        },
+        {
+            "input": "sentence: Jane paid for Anne's college education , but now Anne acts as though it never happened . She is very hurt .pronoun: She. A) jane B) anne",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: the feline was lying by the rodent hole waiting for the rodent , but it was too cautious .pronoun: it. A) the feline B) the rodent",
+            "output": [
+                "the rodent"
+            ]
+        },
+        {
+            "input": "sentence: Mary was jogging through the park when she saw a woman juggling watermelons . she was very impressed .pronoun: she. A) mary B) the juggler",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: there is a pedestal between me and the arena , and i can't see it .pronoun: it. A) the pedestal B) the arena",
+            "output": [
+                "the arena"
+            ]
+        },
+        {
+            "input": "sentence: Sara and Julia borrowed books from the library because they need them for articles they are working on . They write them when they get home from work .pronoun: They. A) the books B) the articles",
+            "output": [
+                "the articles"
+            ]
+        },
+        {
+            "input": "sentence: arthur's drawing was hung just above molly's and it did look much better with another one below it .pronoun: it. A) arthur's drawing B) molly's drawing",
+            "output": [
+                "arthur's drawing"
+            ]
+        },
+        {
+            "input": "sentence: gaston passed the half-empty plate to hershel because he was hungry .pronoun: he. A) Gaston B) hershel",
+            "output": [
+                "hershel"
+            ]
+        },
+        {
+            "input": "sentence: The actor used to be named Jacchus , but he changed it to Jake a few years ago , because he figured it was easier to pronounce .pronoun: he. A) jacchus B) jake",
+            "output": [
+                "jake"
+            ]
+        },
+        {
+            "input": "sentence: the cops arrested all of the gangsters . they were trying to stop the drug trade in the neighborhood .pronoun: they. A) the cops B) the gangsters",
+            "output": [
+                "the cops"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Steve paid for Charlie and William's college education , but now Charlie and William act as though it never happened . They are very hurt .pronoun: They. A) bob and steve B) charlie and william",
+            "output": [
+                "bob and steve"
+            ]
+        },
+        {
+            "input": "sentence: Madonna and Britney fired their trainers because they slept with their boyfriends .pronoun: they. A) madonna and britney B) the trainers",
+            "output": [
+                "the trainers"
+            ]
+        },
+        {
+            "input": "sentence: the bench won't fit through the door because it is too narrow .pronoun: it. A) the bench B) the door",
+            "output": [
+                "the door"
+            ]
+        },
+        {
+            "input": "sentence: the actress used to be named aphrodite , but she changed it to abby a few years ago , because she figured it was too hard to pronounce .pronoun: it. A) aphrodite B) abby",
+            "output": [
+                "aphrodite"
+            ]
+        },
+        {
+            "input": "sentence: Susan and Hannah knew that Ann and Polly's sons had been in car accidents , because they told them about it .pronoun: they. A) susan and hannah B) ann and polly",
+            "output": [
+                "ann and polly"
+            ]
+        },
+        {
+            "input": "sentence: Peter did a lot better than his good friend Jeff on the test because he had studied so hard .pronoun: he. A) peter B) jeff",
+            "output": [
+                "peter"
+            ]
+        },
+        {
+            "input": "sentence: Mary watched TV while Lily went out to buy groceries . After an hour she got up .pronoun: she. A) mary B) lily",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: jenna's mother had died long ago , and her place had been taken by an excellent woman as governess .pronoun: her. A) jenna B) jenna's mother",
+            "output": [
+                "jenna's mother"
+            ]
+        },
+        {
+            "input": "sentence: the mold rolled off the rack because it wasn't level .pronoun: it. A) the mold B) the rack",
+            "output": [
+                "the rack"
+            ]
+        },
+        {
+            "input": "sentence: Jack gave Henry candy because he was hungry .pronoun: he. A) jack B) henry",
+            "output": [
+                "henry"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Steve paid for Charlie and William's college education , but now Charlie and William act as though it never happened . They are very ungrateful .pronoun: They. A) bob and steve B) charlie and william",
+            "output": [
+                "charlie and william"
+            ]
+        },
+        {
+            "input": "sentence: travis was greatly influenced by bailey , though he lived two centuries earlier .pronoun: he. A) travis B) bailey",
+            "output": [
+                "bailey"
+            ]
+        },
+        {
+            "input": "sentence: I put the cakes away in the refrigerators . They have a lot of leftovers in them .pronoun: They. A) the cakes B) the refrigerators",
+            "output": [
+                "the refrigerators"
+            ]
+        },
+        {
+            "input": "sentence: Emma and Julia did not pass the ball to Janie and Anne although they saw that they were open .pronoun: they. A) emma and julia B) janie and anne",
+            "output": [
+                "emma and julia"
+            ]
+        },
+        {
+            "input": "sentence: The trophies don't fit into the brown suitcases because they are too large .pronoun: they. A) the trophies B) the suitcases",
+            "output": [
+                "the trophies"
+            ]
+        },
+        {
+            "input": "sentence: Dan and Julian took the rear seat while Bill and Jake claimed the front because their \"Dibs!\" was slow .pronoun: their. A) dan and julian B) bill and jake",
+            "output": [
+                "dan and julian"
+            ]
+        },
+        {
+            "input": "sentence: Lily and Emma spoke to Donna and Rachel , breaking their silence .pronoun: their. A) lily and emma B) donna and rachel",
+            "output": [
+                "lily and emma"
+            ]
+        },
+        {
+            "input": "sentence: the user changed his password from \" hsfhfsc34r3e \" to \" happy-vertical people-endowed track transporters \" as it was easy to forget .pronoun: it. A) hsfhfsc34r3e B) happy-vertical people-endowed track transporters",
+            "output": [
+                "hsfhfsc34r3e"
+            ]
+        },
+        {
+            "input": "sentence: As Andrea and Emma in the crop duster passed over Susan and Jane , they could see the landing gear .pronoun: they. A) andrea and emma B) susan and jane",
+            "output": [
+                "susan and jane"
+            ]
+        },
+        {
+            "input": "sentence: heather did a lot worse than her good friend lara on the test because she had studied so hard .pronoun: she. A) heather B) lara",
+            "output": [
+                "lara"
+            ]
+        },
+        {
+            "input": "sentence: the anchors interviewed the celebreties of the new movie . they were very cooperative , so the interview lasted for a long time .pronoun: they. A) the anchors B) the celebreties",
+            "output": [
+                "the celebreties"
+            ]
+        },
+        {
+            "input": "sentence: we went to the lagoon , because a shark had been seen at the beach , so it was a dangerous place to swim .pronoun: it. A) the lagoon B) the beach",
+            "output": [
+                "the beach"
+            ]
+        },
+        {
+            "input": "sentence: Jim and Bill signaled the barmen and gestured toward their bathroom keys .pronoun: their. A) jim and bill B) the barmen",
+            "output": [
+                "the barmen"
+            ]
+        },
+        {
+            "input": "sentence: kirk ordered andy to leave , so an hour later he left .pronoun: he. A) kirk B) andy",
+            "output": [
+                "andy"
+            ]
+        },
+        {
+            "input": "sentence: patty asked lola what time the library closes , but she had forgotten .pronoun: she. A) patty B) lola",
+            "output": [
+                "lola"
+            ]
+        },
+        {
+            "input": "sentence: Although they ran at about the same speed , John beat Andrew because he had such a good start .pronoun: he. A) john B) andrew",
+            "output": [
+                "john"
+            ]
+        },
+        {
+            "input": "sentence: Jack's father had died long ago , and his education had been managed by an excellent man as tutor .pronoun: his. A) jack B) jack's father",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: the father lifted the son onto his bunk bed .pronoun: his. A) the father B) the son",
+            "output": [
+                "the son"
+            ]
+        },
+        {
+            "input": "sentence: The fox is getting in at night and attacking the chicken . I shall have to kill it .pronoun: it. A) the fox B) the chicken",
+            "output": [
+                "the fox"
+            ]
+        },
+        {
+            "input": "sentence: Anna tried to call Lily on the phone , but she wasn't successful .pronoun: she. A) anna B) lily",
+            "output": [
+                "anna"
+            ]
+        },
+        {
+            "input": "sentence: the road to the pool was blocked , so we couldn't reach it .pronoun: it. A) the road B) the pool",
+            "output": [
+                "the pool"
+            ]
+        },
+        {
+            "input": "sentence: Paul and Bill tried to call George and John on the phone , but they weren't available .pronoun: they. A) paul and bill B) george and john",
+            "output": [
+                "george and john"
+            ]
+        },
+        {
+            "input": "sentence: they broadcast a message, but a metro came into the station and i couldn't hear over it .pronoun: it. A) the message B) the metro",
+            "output": [
+                "the metro"
+            ]
+        },
+        {
+            "input": "sentence: the large sphere crashed right through the bench because it was made of styrofoam .pronoun: it. A) the large sphere B) the bench",
+            "output": [
+                "the bench"
+            ]
+        },
+        {
+            "input": "sentence: Dan and Henry had to stop Bill and Andrew from toying with the injured bird . They are very compassionate .pronoun: They. A) dan and henry B) bill and andrew",
+            "output": [
+                "dan and henry"
+            ]
+        },
+        {
+            "input": "sentence: rick said \"check\" to grover as he took his bishop .pronoun: his. A) rick B) grover",
+            "output": [
+                "grover"
+            ]
+        },
+        {
+            "input": "sentence: mylie looked for her friend irma in the crowd . since she always wears a red turban , mylie spotted her quickly .pronoun: she. A) mylie B) irma",
+            "output": [
+                "irma"
+            ]
+        },
+        {
+            "input": "sentence: dan was playing cards with dirk and was way ahead . if dirk hadn't had a sudden run of good luck , he would have lost .pronoun: he. A) dan B) dirk",
+            "output": [
+                "dirk"
+            ]
+        },
+        {
+            "input": "sentence: in the storm , the willow fell down and crashed through the ceiling of my house . now , i have to get it repaired .pronoun: it. A) the willow B) the ceiling",
+            "output": [
+                "the ceiling"
+            ]
+        },
+        {
+            "input": "sentence: ferdinand took the rear seat while lucas claimed the front because his \"dibs!\" was quicker .pronoun: his. A) ferdinand B) lucas",
+            "output": [
+                "lucas"
+            ]
+        },
+        {
+            "input": "sentence: The older student was bullying the younger one , so we punished her .pronoun: her. A) the older student B) the younger student",
+            "output": [
+                "the older student"
+            ]
+        },
+        {
+            "input": "sentence: cassidy spoke to constantine , breaking her concentration .pronoun: her. A) Cassidy B) Constantine",
+            "output": [
+                "Constantine"
+            ]
+        },
+        {
+            "input": "sentence: Sam and Henry pulled up chairs to the pianos , but they were broken , so they had to stand instead .pronoun: they. A) the chairs B) the pianos",
+            "output": [
+                "the chairs"
+            ]
+        },
+        {
+            "input": "sentence: Mary and Joan tucked their daughters Anne and Lucy into bed , so that they could work .pronoun: they. A) mary and joan B) mary and joan's daughters",
+            "output": [
+                "mary and joan"
+            ]
+        },
+        {
+            "input": "sentence: luke couldn't see the stage with adam in front of him because he is so tall .pronoun: he. A) luke B) adam",
+            "output": [
+                "adam"
+            ]
+        },
+        {
+            "input": "sentence: dick envies gareth because he is very successful .pronoun: he. A) dick B) gareth",
+            "output": [
+                "gareth"
+            ]
+        },
+        {
+            "input": "sentence: the picture in mark's living room shows a tulip tree . it is to the right of the bookcase .pronoun: it. A) the picture B) the tulip tree",
+            "output": [
+                "the picture"
+            ]
+        },
+        {
+            "input": "sentence: The large balls crashed right through the tables because they were made of styrofoam .pronoun: they. A) the large balls B) the tables",
+            "output": [
+                "the tables"
+            ]
+        },
+        {
+            "input": "sentence: The drains are clogged with hair and dirt . They have to be removed .pronoun: They. A) the drains B) the hair and dirt",
+            "output": [
+                "the hair and dirt"
+            ]
+        },
+        {
+            "input": "sentence: Lucy follows Joan's example in everything . She influences her hugely .pronoun: She. A) lucy B) joan",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: the man carried the sleeping son in his bassinet .pronoun: his. A) the man B) the son",
+            "output": [
+                "the son"
+            ]
+        },
+        {
+            "input": "sentence: The city councilman refused the demonstrator a permit because he advocated violence .pronoun: he. A) the city councilman B) the demonstrator",
+            "output": [
+                "the demonstrator"
+            ]
+        },
+        {
+            "input": "sentence: Susan and Joan know all about Ann and Lucy's personal problems because they are nosy .pronoun: they. A) susan and joan B) ann and lucy",
+            "output": [
+                "susan and joan"
+            ]
+        },
+        {
+            "input": "sentence: Frank and Steve felt vindicated when their longtime rivals Bill and Pete revealed that they were the winners of the competition .pronoun: they. A) frank and steve B) bill and pete",
+            "output": [
+                "frank and steve"
+            ]
+        },
+        {
+            "input": "sentence: Andrew knocked on Bill's door but he did not get an answer .pronoun: he. A) andrew B) bill",
+            "output": [
+                "andrew"
+            ]
+        },
+        {
+            "input": "sentence: arthur's drawing was hung just above molly's and it did look much better with another one above it .pronoun: it. A) arthur's drawing B) molly's drawing",
+            "output": [
+                "molly's drawing"
+            ]
+        },
+        {
+            "input": "sentence: I took the water bottles out of the backpacks so that they would be handy .pronoun: they. A) the water bottles B) the backpacks",
+            "output": [
+                "the water bottles"
+            ]
+        },
+        {
+            "input": "sentence: lance can't leave work here until rob arrives to replace him . if rob had left home for work on time , he would be here by this time .pronoun: he. A) lance B) rob",
+            "output": [
+                "rob"
+            ]
+        },
+        {
+            "input": "sentence: trey paid the private investigator after he delivered the final report on the case .pronoun: he. A) trey B) the private investigator",
+            "output": [
+                "the private investigator"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Emma knocked on Susan and Lucy's door , but there was no answer . They were out .pronoun: They. A) jane and emma B) susan and lucy",
+            "output": [
+                "susan and lucy"
+            ]
+        },
+        {
+            "input": "sentence: the board of aldermen refused the protesters a permit because they advocated violence .pronoun: they. A) the board of aldermen B) the protesters",
+            "output": [
+                "the protesters"
+            ]
+        },
+        {
+            "input": "sentence: The delivery trucks zoomed by the school buses because they were going so slow .pronoun: they. A) the delivery trucks B) the school buses",
+            "output": [
+                "the school buses"
+            ]
+        },
+        {
+            "input": "sentence: Tom and Luke said \"Check\" to Ralph and Henry as they took their bishop .pronoun: they. A) tom and luke B) ralph and henry",
+            "output": [
+                "ralph and henry"
+            ]
+        },
+        {
+            "input": "sentence: tara knows all about polly's personal problems because she is nosy .pronoun: she. A) tara B) polly",
+            "output": [
+                "tara"
+            ]
+        },
+        {
+            "input": "sentence: Susan and Hannah knew that Ann and Polly's sons had been in car accidents , so they told them about it .pronoun: they. A) susan and hannah B) ann and polly",
+            "output": [
+                "susan and hannah"
+            ]
+        },
+        {
+            "input": "sentence: There are pillars between me and the stages , and I can't see around them .pronoun: them. A) the pillars B) the stages",
+            "output": [
+                "the pillars"
+            ]
+        },
+        {
+            "input": "sentence: Dr . Adams and Dr . Jones informed Kate and Laura that they had retired and presented several options for future treatment .pronoun: they. A) dr . adams and dr . jones B) kate and laura",
+            "output": [
+                "dr .  adams and dr . jones"
+            ]
+        },
+        {
+            "input": "sentence: when jan dropped his ice cream , jon giggled , so father gave him a stern look .pronoun: him. A) Jan B) Jon",
+            "output": [
+                "Jon"
+            ]
+        },
+        {
+            "input": "sentence: Joan signaled the barmaid and gestured toward her empty glass .pronoun: her. A) joan B) the barmaid",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: the sun was covered by a thick fog all morning , but luckily , by the time the picnic started , it was gone .pronoun: it. A) the sun B) the fog",
+            "output": [
+                "the fog"
+            ]
+        },
+        {
+            "input": "sentence: The journalist interviewed the star of the new movie . She were very cooperative , so the interview lasted for a long time .pronoun: She. A) the journalist B) the star",
+            "output": [
+                "the star"
+            ]
+        },
+        {
+            "input": "sentence: in the middle of the outdoor gig , the hail started falling , but it continued until 10 .pronoun: it. A) the gig B) the hail",
+            "output": [
+                "the gig"
+            ]
+        },
+        {
+            "input": "sentence: Fred and John watched TV while George and Peter went out to buy groceries . After an hour they got back .pronoun: they. A) fred and john B) george and peter",
+            "output": [
+                "george and peter"
+            ]
+        },
+        {
+            "input": "sentence: this book introduced john milton to dante ; it was a fine selection of his writing .pronoun: his. A) john milton B) dante",
+            "output": [
+                "john milton"
+            ]
+        },
+        {
+            "input": "sentence: rick said \"check\" to grover as he moved his bishop .pronoun: his. A) rick B) grover",
+            "output": [
+                "rick"
+            ]
+        },
+        {
+            "input": "sentence: Mary ordered Anne to leave , so an hour later she left .pronoun: she. A) mary B) anne",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: Linda Goodman's biography of the Spartan general Persephone conveys a vivid sense of the difficulties she faced in her childhood .pronoun: she. A) goodman B) persephone",
+            "output": [
+                "persephone"
+            ]
+        },
+        {
+            "input": "sentence: I saw Anne yelling at some lady in a military uniform with a huge red bag . I don't know who she was , but she looked very unhappy .pronoun: she. A) anne B) the lady in uniform",
+            "output": [
+                "the lady in uniform"
+            ]
+        },
+        {
+            "input": "sentence: the road to the pool was blocked , so we couldn't use it .pronoun: it. A) the road B) the pool",
+            "output": [
+                "the road"
+            ]
+        },
+        {
+            "input": "sentence: todd took french classes from rick , because he was eager to speak it fluently .pronoun: he. A) todd B) rick",
+            "output": [
+                "todd"
+            ]
+        },
+        {
+            "input": "sentence: The woman couldn't lift her daughter because she was so weak .pronoun: she. A) the woman B) the daughter",
+            "output": [
+                "the woman"
+            ]
+        },
+        {
+            "input": "sentence: there is a hole in the partition . you can see the garden through it .pronoun: it. A) the hole B) the partition",
+            "output": [
+                "the hole"
+            ]
+        },
+        {
+            "input": "sentence: the canine chased the feline , which ran up a tree . it waited at the bottom .pronoun: it. A) the canine B) the feline",
+            "output": [
+                "the canine"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Woolf to Shelley ; it was a major influence on her writing .pronoun: her. A) woolf B) shelley",
+            "output": [
+                "woolf"
+            ]
+        },
+        {
+            "input": "sentence: Emma and Nora's mothers had died long ago , and their place had been taken by excellent women as governesses .pronoun: their. A) emma and nora B) emma and nora's mothers",
+            "output": [
+                "emma and nora's mothers"
+            ]
+        },
+        {
+            "input": "sentence: I'm sure that my maps will show these buildings ; they are very good .pronoun: they. A) the maps B) the buildings",
+            "output": [
+                "the maps"
+            ]
+        },
+        {
+            "input": "sentence: during a game of tag , kris ran from brent because he was \"it\" .pronoun: he. A) kris B) brent",
+            "output": [
+                "brent"
+            ]
+        },
+        {
+            "input": "sentence: i stuck a skewer through a carrot . when i pulled the skewer out , it had a hole .pronoun: it. A) the skewer B) the potato",
+            "output": [
+                "the potato"
+            ]
+        },
+        {
+            "input": "sentence: dariyah did not pass the ball to molly although she saw that she was open .pronoun: she. A) Dariyah B) molly",
+            "output": [
+                "Dariyah"
+            ]
+        },
+        {
+            "input": "sentence: john explained his theory to jad but he couldn't understand him .pronoun: he. A) john B) jad",
+            "output": [
+                "jad"
+            ]
+        },
+        {
+            "input": "sentence: Linda said \"Check\" to Nina as she took her bishop .pronoun: her. A) linda B) nina",
+            "output": [
+                "nina"
+            ]
+        },
+        {
+            "input": "sentence: the fish ate the roundworm . it was hungry .pronoun: it. A) the fish B) the roundworm",
+            "output": [
+                "the fish"
+            ]
+        },
+        {
+            "input": "sentence: We went to the lakes , because sharks had been seen at the ocean beaches , so they were safer places to swim .pronoun: they. A) the lakes B) the ocean beaches",
+            "output": [
+                "the lakes"
+            ]
+        },
+        {
+            "input": "sentence: I put the butterfly wings on the tables and they broke .pronoun: they. A) the butterfly wings B) the tables",
+            "output": [
+                "the butterfly wings"
+            ]
+        },
+        {
+            "input": "sentence: Michael fired his trainer because he couldn't stand his girlfriend .pronoun: his. A) michael B) the trainer",
+            "output": [
+                "michael"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Henry collapsed on the sidewalk . Soon they saw Carl and Ben coming to help . They were very concerned .pronoun: They. A) bob and henry B) carl and ben",
+            "output": [
+                "carl and ben"
+            ]
+        },
+        {
+            "input": "sentence: The mother carried the sleeping girl in her arms .pronoun: her. A) the mother B) the girl",
+            "output": [
+                "the mother"
+            ]
+        },
+        {
+            "input": "sentence: brailey gave joana candy because she wasn't hungry .pronoun: she. A) brailey B) joana",
+            "output": [
+                "brailey"
+            ]
+        },
+        {
+            "input": "sentence: As Ollie and Johnny carried Tommy and Larry up the long winding steps , their legs ached .pronoun: their. A) ollie and johnny B) tommy and larry",
+            "output": [
+                "ollie and johnny"
+            ]
+        },
+        {
+            "input": "sentence: zhang wei ceded the presidency to wang fang because he was more popular .pronoun: he. A) Zhang Wei B) Wang Fang",
+            "output": [
+                "Wang Fang"
+            ]
+        },
+        {
+            "input": "sentence: Lucy was greatly influenced by Angela , though she lived two centuries earlier .pronoun: she. A) lucy B) angela",
+            "output": [
+                "angela"
+            ]
+        },
+        {
+            "input": "sentence: Anna envies Emma because she is very successful .pronoun: she. A) anna B) emma",
+            "output": [
+                "emma"
+            ]
+        },
+        {
+            "input": "sentence: Nina gave Jill a lift to school so she wouldn't have to walk .pronoun: she. A) nina B) jill",
+            "output": [
+                "jill"
+            ]
+        },
+        {
+            "input": "sentence: The large balls crashed right through the tables because they were made of steel .pronoun: they. A) the large balls B) the tables",
+            "output": [
+                "the large balls"
+            ]
+        },
+        {
+            "input": "sentence: As Andrea and Emma in the crop duster passed over Susan and Jane , they could see the landing strip .pronoun: they. A) andrea and emma B) susan and jane",
+            "output": [
+                "andrea and emma"
+            ]
+        },
+        {
+            "input": "sentence: Billy and Jimmy cried because Toby and Henry wouldn't accept their toy .pronoun: their. A) billy and jimmy B) toby and henry",
+            "output": [
+                "billy and jimmy"
+            ]
+        },
+        {
+            "input": "sentence: although they ran at about the same speed , fanny beat dana because she had such a good start .pronoun: she. A) fanny B) dana",
+            "output": [
+                "fanny"
+            ]
+        },
+        {
+            "input": "sentence: Bill did not pass the ball to Steven although he saw that he was open .pronoun: he. A) bill B) steven",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: tashia didn't get angry with francine , who had cut her off , because she stopped and apologized .pronoun: she. A) tashia B) Francine",
+            "output": [
+                "Francine"
+            ]
+        },
+        {
+            "input": "sentence: zhang wei ceded the presidency to wang fang because he was less popular .pronoun: he. A) Zhang Wei B) Wang Fang",
+            "output": [
+                "Zhang Wei"
+            ]
+        },
+        {
+            "input": "sentence: The customer walked into the bank and stabbed one of the tellers . She was immediately taken to the police station .pronoun: She. A) the customer B) the teller",
+            "output": [
+                "the customer"
+            ]
+        },
+        {
+            "input": "sentence: patting her back , the mother smiled at the daughter .pronoun: her. A) the mother B) the daughter",
+            "output": [
+                "the daughter"
+            ]
+        },
+        {
+            "input": "sentence: Carol and Julia believed that Rebecca and Nancy suspected that they had stolen the watch .pronoun: they. A) carol and julia B) rebecca and nancy",
+            "output": [
+                "carol and julia"
+            ]
+        },
+        {
+            "input": "sentence: i'm sure that my sketch will show this edifice ; it is very good .pronoun: it. A) the sketch B) the edifice",
+            "output": [
+                "the sketch"
+            ]
+        },
+        {
+            "input": "sentence: ferdinand took the rear seat while lucas claimed the front because his \"dibs!\" was slow .pronoun: his. A) ferdinand B) lucas",
+            "output": [
+                "ferdinand"
+            ]
+        },
+        {
+            "input": "sentence: fred was supposed to run the dish washing machine , but he put it off , because he wanted to watch television . but the show turned out to be boring , so he changed his mind and turned it on .pronoun: it. A) the dish washing machine B) the television",
+            "output": [
+                "the dish washing machine"
+            ]
+        },
+        {
+            "input": "sentence: the canine chased the feline , which ran up a tree . it waited at the top .pronoun: it. A) the canine B) the feline",
+            "output": [
+                "the feline"
+            ]
+        },
+        {
+            "input": "sentence: the package of potatoes had been placed above the packet of flour , so it had to be moved first .pronoun: it. A) the package of potatoes B) the packet of flour",
+            "output": [
+                "the package of potatoes"
+            ]
+        },
+        {
+            "input": "sentence: the cup doesn't fit into the brown suitcase because it is too large .pronoun: it. A) the cup B) the travel bag",
+            "output": [
+                "the cup"
+            ]
+        },
+        {
+            "input": "sentence: Jack gave Henry candy because he wasn't hungry .pronoun: he. A) jack B) henry",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: An archaeologist has concluded that a human lived in Laputa 20,000 years ago . He hunted for evidence on the river banks .pronoun: He. A) archaeologist B) prehistoric humans",
+            "output": [
+                "archaeologist"
+            ]
+        },
+        {
+            "input": "sentence: The sacks of potatoes had been placed below the bags of flour , so they had to be moved first .pronoun: they. A) the sacks of potatoes B) the bags of flour",
+            "output": [
+                "the bags of flour"
+            ]
+        },
+        {
+            "input": "sentence: sara borrowed the reference from the library because she needs it for an assignment she is working on . she reads it when she gets home from work .pronoun: it. A) the reference B) the assignment",
+            "output": [
+                "the reference"
+            ]
+        },
+        {
+            "input": "sentence: Jack believed that David regretted that he had stolen the watch .pronoun: he. A) jack B) david",
+            "output": [
+                "david"
+            ]
+        },
+        {
+            "input": "sentence: Elizabeth was upset with Mary because the toaster she had bought from her didn't work .pronoun: she. A) elizabeth B) mary",
+            "output": [
+                "elizabeth"
+            ]
+        },
+        {
+            "input": "sentence: Jack tried frantically to stop his son from barking at the party , leaving us to wonder why he was behaving so strangely .pronoun: he. A) jack B) jack's son",
+            "output": [
+                "jack's son"
+            ]
+        },
+        {
+            "input": "sentence: Lily got free tickets to the play , but she gave them to Joan , because she was not particularly eager to see it .pronoun: she. A) lily B) joan",
+            "output": [
+                "lily"
+            ]
+        },
+        {
+            "input": "sentence: the mutts are getting in at night and attacking the hens . i shall have to kill them .pronoun: them. A) the mutts B) the hens",
+            "output": [
+                "the mutts"
+            ]
+        },
+        {
+            "input": "sentence: as cornelia in the crop duster passed over aria , she could see the landing gear .pronoun: she. A) cornelia B) aria",
+            "output": [
+                "aria"
+            ]
+        },
+        {
+            "input": "sentence: carl follows brad's example in everything . he influences him hugely .pronoun: he. A) carl B) brad",
+            "output": [
+                "brad"
+            ]
+        },
+        {
+            "input": "sentence: rob collapsed on the sidewalk . soon he saw ted coming to help . he was very ill .pronoun: he. A) rob B) ted",
+            "output": [
+                "rob"
+            ]
+        },
+        {
+            "input": "sentence: The tables won't fit through the doorways because they are too wide .pronoun: they. A) the tables B) the doorways",
+            "output": [
+                "the tables"
+            ]
+        },
+        {
+            "input": "sentence: John and Peter hired Bill and Steven to take care of them .pronoun: them. A) john and peter B) bill and steven",
+            "output": [
+                "john and peter"
+            ]
+        },
+        {
+            "input": "sentence: Alice and Julia looked for their friends Jade and Emma in the crowd . Since they always wear red turbans , Alice and Julia spotted them quickly .pronoun: they. A) alice and julia B) jade and emma",
+            "output": [
+                "jade and emma"
+            ]
+        },
+        {
+            "input": "sentence: The fox is getting in at night and attacking the chicken . It has gotten very nervous .pronoun: It. A) the fox B) the chicken",
+            "output": [
+                "the chicken"
+            ]
+        },
+        {
+            "input": "sentence: freddy was upset with travis because the toaster he had sold him didn't work .pronoun: he. A) freddy B) travis",
+            "output": [
+                "travis"
+            ]
+        },
+        {
+            "input": "sentence: The women held the girls against their chests .pronoun: their. A) the women B) the girls",
+            "output": [
+                "the women"
+            ]
+        },
+        {
+            "input": "sentence: The fox is getting in at night and attacking the chicken . I shall have to guard it .pronoun: it. A) the fox B) the chicken",
+            "output": [
+                "the chicken"
+            ]
+        },
+        {
+            "input": "sentence: Fred covered his eye with his hand , because the wind was blowing sand around . He opened it when the wind stopped .pronoun: it. A) his eye B) his hand",
+            "output": [
+                "his eye"
+            ]
+        },
+        {
+            "input": "sentence: i'm sure that my sketch will show this edifice ; it is very famous .pronoun: it. A) the sketch B) the edifice",
+            "output": [
+                "the edifice"
+            ]
+        },
+        {
+            "input": "sentence: I took the water bottles out of the backpacks so that they would be lighter .pronoun: they. A) the water bottles B) the backpacks",
+            "output": [
+                "the backpacks"
+            ]
+        },
+        {
+            "input": "sentence: The woman lifted the girl onto her bunk bed .pronoun: her. A) the woman B) the girl",
+            "output": [
+                "the girl"
+            ]
+        },
+        {
+            "input": "sentence: patrick and cora had very warm down jackets , but they were not enough for the cold in alaska .pronoun: they. A) patrick and cora B) jackets",
+            "output": [
+                "jackets"
+            ]
+        },
+        {
+            "input": "sentence: the package of potatoes had been placed below the packet of flour , so it had to be moved first .pronoun: it. A) the package of potatoes B) the packet of flour",
+            "output": [
+                "the packet of flour"
+            ]
+        },
+        {
+            "input": "sentence: in july , yelizovo declared war on kapitonovka . since kapitonovka's army was much better equipped and ten times larger , they were defeated within weeks .pronoun: they. A) yelizovo B) kapitonovka",
+            "output": [
+                "yelizovo"
+            ]
+        },
+        {
+            "input": "sentence: Fred and Julian are the only men alive who still remember my fathers as infants . When Fred and Julian first saw my fathers , they were twelve years old .pronoun: they. A) fred and julian B) my fathers",
+            "output": [
+                "fred and julian"
+            ]
+        },
+        {
+            "input": "sentence: Tom and Andrew threw their schoolbags down to Ray and Bob after they reached the top of the stairs .pronoun: they. A) tom and andrew B) ray and bob",
+            "output": [
+                "tom and andrew"
+            ]
+        },
+        {
+            "input": "sentence: Emma and Julia did not pass the ball to Janie and Anne although they were open .pronoun: they. A) emma and julia B) janie and anne",
+            "output": [
+                "janie and anne"
+            ]
+        },
+        {
+            "input": "sentence: Thomson and Williams visited Cooper and Harrison's graves in 1765 . At that date they had been travelling for five years .pronoun: they. A) thomson and williams B) cooper and harrison",
+            "output": [
+                "thomson and williams"
+            ]
+        },
+        {
+            "input": "sentence: Jack looked for his friend Henry in the crowd . Since he always has good luck , Jack spotted him quickly .pronoun: he. A) jack B) henry",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: as waldo carried alonso up the long winding steps , his legs dangled .pronoun: his. A) waldo B) alonso",
+            "output": [
+                "alonso"
+            ]
+        },
+        {
+            "input": "sentence: The fireman arrived after the policeman because he was coming from so far away .pronoun: he. A) the fireman B) the policeman",
+            "output": [
+                "the fireman"
+            ]
+        },
+        {
+            "input": "sentence: Anne passed the gameboy to Mary because her turn was next .pronoun: her. A) anne B) mary",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: Elizabeth felt vindicated when her longtime rival Julia revealed that she was the winner of the competition .pronoun: she. A) elizabeth B) julia",
+            "output": [
+                "elizabeth"
+            ]
+        },
+        {
+            "input": "sentence: beyonce fired her hairdresser because she slept with her boyfriend .pronoun: she. A) beyonce B) the hairdresser",
+            "output": [
+                "the hairdresser"
+            ]
+        },
+        {
+            "input": "sentence: sam pulled up a seat to the keyboard , but it was broken , so he had to sing instead .pronoun: it. A) the seat B) the keyboard",
+            "output": [
+                "the keyboard"
+            ]
+        },
+        {
+            "input": "sentence: The city councilman refused the demonstrator a permit because he feared violence .pronoun: he. A) the city councilman B) the demonstrator",
+            "output": [
+                "the city councilman"
+            ]
+        },
+        {
+            "input": "sentence: Anna envies Emma although she is very successful .pronoun: she. A) anna B) emma",
+            "output": [
+                "anna"
+            ]
+        },
+        {
+            "input": "sentence: Mary was doing research in the library when she heard a woman humming and whistling . She was very annoying .pronoun: She. A) mary B) the woman",
+            "output": [
+                "the woman"
+            ]
+        },
+        {
+            "input": "sentence: The men couldn't lift their sons because they were so weak .pronoun: they. A) the men B) the sons",
+            "output": [
+                "the men"
+            ]
+        },
+        {
+            "input": "sentence: Adam and John can't leave work here until Bob and Steve arrive to replace them . If Bob and Steve had left home for work on time , they would be gone by this time .pronoun: they. A) adam and john B) bob and steve",
+            "output": [
+                "adam and john"
+            ]
+        },
+        {
+            "input": "sentence: Sid and Johnny explained their theory to Mark and Andrew but they couldn't convince them .pronoun: they. A) sid and johnny B) mark and andrew",
+            "output": [
+                "sid and johnny"
+            ]
+        },
+        {
+            "input": "sentence: i put the pie away in the fridge . it has a lot of leftovers in it .pronoun: it. A) the pie B) the fridge",
+            "output": [
+                "the fridge"
+            ]
+        },
+        {
+            "input": "sentence: cassidy spoke to constantine , breaking her silence .pronoun: her. A) Cassidy B) Constantine",
+            "output": [
+                "Cassidy"
+            ]
+        },
+        {
+            "input": "sentence: Mary watched TV while Lily went out to buy groceries . After an hour she got back .pronoun: she. A) mary B) lily",
+            "output": [
+                "lily"
+            ]
+        },
+        {
+            "input": "sentence: paleographers have concluded that humans lived in laputa 20,000 years ago . they hunted for evidence on the river banks .pronoun: they. A) paleographers B) primeval humans",
+            "output": [
+                "paleographers"
+            ]
+        },
+        {
+            "input": "sentence: During a game of tag , Ethan and Harry ran from Luke and Johnny because they were \"it\" .pronoun: they. A) ethan and harry B) luke and johnny",
+            "output": [
+                "luke and johnny"
+            ]
+        },
+        {
+            "input": "sentence: Peter knocked on the door , and Bill answered it . He invited him to come out .pronoun: He. A) peter B) bill",
+            "output": [
+                "peter"
+            ]
+        },
+        {
+            "input": "sentence: Michael fired his trainer because he slept with his girlfriend .pronoun: his. A) michael B) the trainer",
+            "output": [
+                "michael"
+            ]
+        },
+        {
+            "input": "sentence: dan paid for justin's college education . he is very generous .pronoun: he. A) dan B) justin",
+            "output": [
+                "dan"
+            ]
+        },
+        {
+            "input": "sentence: Since it was raining , I carried the newspapers in my backpacks to keep them dry .pronoun: them. A) the newspapers B) the backpacks",
+            "output": [
+                "the newspapers"
+            ]
+        },
+        {
+            "input": "sentence: Lucy took the rear seat while Joan claimed the front because her \"Dibs!\" was slow .pronoun: her. A) lucy B) joan",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: the picture in mark's living room shows an tulip tree . it is to the right of a house .pronoun: it. A) the picture B) the tulip tree",
+            "output": [
+                "the tulip tree"
+            ]
+        },
+        {
+            "input": "sentence: The fish ate the worms . They are tasty .pronoun: They. A) the fish B) the worms",
+            "output": [
+                "the worms"
+            ]
+        },
+        {
+            "input": "sentence: gaston passed the gameboy to hershel because his turn was next .pronoun: his. A) Gaston B) hershel",
+            "output": [
+                "hershel"
+            ]
+        },
+        {
+            "input": "sentence: jay and sally are passionately in love , but sally's parents are unhappy about it , because they are fifteen .pronoun: they. A) jay and sally B) sally's parents",
+            "output": [
+                "jay and sally"
+            ]
+        },
+        {
+            "input": "sentence: During a game of tag , Joan chased Jane because she was \"it\" .pronoun: she. A) joan B) jane",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: i couldn't put the saucepan on the rack because it was too high .pronoun: it. A) the saucepan B) the rack",
+            "output": [
+                "the rack"
+            ]
+        },
+        {
+            "input": "sentence: Carol and Julia believed that Rebecca and Nancy regretted that they had stolen the watch .pronoun: they. A) carol and julia B) rebecca and nancy",
+            "output": [
+                "rebecca and nancy"
+            ]
+        },
+        {
+            "input": "sentence: cosmo is the only man alive who still remembers my old man as an infant . when cosmo first saw my old man , he was twelve months old .pronoun: he. A) cosmo B) my old man",
+            "output": [
+                "my old man"
+            ]
+        },
+        {
+            "input": "sentence: Fred and Julian are the only men alive who still remember my fathers as infants . When Fred and Julian first saw my fathers , they were twelve months old .pronoun: they. A) fred and julian B) my fathers",
+            "output": [
+                "my fathers"
+            ]
+        },
+        {
+            "input": "sentence: hewlit gave hardy a lift to school so he wouldn't have to drive alone .pronoun: he. A) Hewlit B) hardy",
+            "output": [
+                "Hewlit"
+            ]
+        },
+        {
+            "input": "sentence: The paths to the lakes were blocked , so we couldn't reach them .pronoun: them. A) the paths B) the lakes",
+            "output": [
+                "the lakes"
+            ]
+        },
+        {
+            "input": "sentence: Sam's drawings were hung just above Tina's and they did look much better with other ones below them .pronoun: they. A) sam's drawings B) tina's drawings",
+            "output": [
+                "sam's drawings"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Steve paid for Charlie and William's college education . They are very generous .pronoun: They. A) bob and steve B) charlie and william",
+            "output": [
+                "bob and steve"
+            ]
+        },
+        {
+            "input": "sentence: the mother held the daughter against her will .pronoun: her. A) the mother B) the daughter",
+            "output": [
+                "the daughter"
+            ]
+        },
+        {
+            "input": "sentence: I saw Anne yelling at some lady in a military uniform with a huge red bag . I don't know why she was , but she looked very unhappy .pronoun: she. A) anne B) the lady in uniform",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: Dan and Henry had to stop Bill and Andrew from toying with the injured bird . They are very cruel .pronoun: They. A) dan and henry B) bill and andrew",
+            "output": [
+                "bill and andrew"
+            ]
+        },
+        {
+            "input": "sentence: patty gave birth to a daughter last month . she is a very charming baby .pronoun: she. A) patty B) patty's daughter",
+            "output": [
+                "patty's daughter"
+            ]
+        },
+        {
+            "input": "sentence: The fireman arrived before the policeman because he was coming from so far away .pronoun: he. A) the fireman B) the policeman",
+            "output": [
+                "the policeman"
+            ]
+        },
+        {
+            "input": "sentence: it was a summer afternoon , and the canine was sitting in the middle of the lawn . after a while , it got up and moved to a spot under the bush , because it was cooler .pronoun: it. A) the canine B) the spot under bush",
+            "output": [
+                "the spot under bush"
+            ]
+        },
+        {
+            "input": "sentence: I used old rags to clean the knives , and then I put them in the trash .pronoun: them. A) the rags B) the knives",
+            "output": [
+                "the rags"
+            ]
+        },
+        {
+            "input": "sentence: Jim and Frank comforted Kevin and John because they were so upset .pronoun: they. A) jim and frank B) kevin and john",
+            "output": [
+                "kevin and john"
+            ]
+        },
+        {
+            "input": "sentence: Joe and David's uncles can still beat them at tennis , even though they are 30 years older .pronoun: they. A) joe and david B) joe and david's uncles",
+            "output": [
+                "joe and david's uncles"
+            ]
+        },
+        {
+            "input": "sentence: Julia threw her schoolbag down to Anna after she reached the top of the stairs .pronoun: she. A) julia B) anna",
+            "output": [
+                "julia"
+            ]
+        },
+        {
+            "input": "sentence: Mary and Joan tucked their daughters Anne and Lucy into bed , so that they could sleep .pronoun: they. A) mary and joan B) mary and joan's daughters",
+            "output": [
+                "mary and joan's daughters"
+            ]
+        },
+        {
+            "input": "sentence: The cats were lying by the mouse holes waiting for the mice , but they were too cautious .pronoun: they. A) the cats B) the mice",
+            "output": [
+                "the mice"
+            ]
+        },
+        {
+            "input": "sentence: Frank and Bill were upset with Tom and Steve because the toaster they had bought from them didn't work .pronoun: they. A) frank and bill B) tom and steve",
+            "output": [
+                "frank and bill"
+            ]
+        },
+        {
+            "input": "sentence: Elizabeth was upset with Mary because the toaster she had sold her didn't work .pronoun: she. A) elizabeth B) mary",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: ted threw his schoolbag down to clark after he reached the top of the stairs .pronoun: he. A) ted B) clark",
+            "output": [
+                "ted"
+            ]
+        },
+        {
+            "input": "sentence: Ann and Sue asked Mary and Joan what time the library closes , but they had forgotten .pronoun: they. A) ann and sue B) mary and joan",
+            "output": [
+                "mary and joan"
+            ]
+        },
+        {
+            "input": "sentence: beyonce fired her hairdresser because she couldn't stand her boyfriend .pronoun: her. A) beyonce B) the hairdresser",
+            "output": [
+                "beyonce"
+            ]
+        },
+        {
+            "input": "sentence: Peter knocked on Bill's door , but there was no answer . He was disappointed .pronoun: He. A) peter B) bill",
+            "output": [
+                "peter"
+            ]
+        },
+        {
+            "input": "sentence: The delivery trucks zoomed by the school buses because they were going so fast .pronoun: they. A) the delivery trucks B) the school buses",
+            "output": [
+                "the delivery trucks"
+            ]
+        },
+        {
+            "input": "sentence: George and Bob got free tickets to the play , but they gave them to Eric and Jeff , because they were particularly eager to see it .pronoun: they. A) george and bob B) eric and jeff",
+            "output": [
+                "eric and jeff"
+            ]
+        },
+        {
+            "input": "sentence: sam pulled up a seat to the keyboard , but it was broken , so he had to stand instead .pronoun: it. A) the seat B) the keyboard",
+            "output": [
+                "the seat"
+            ]
+        },
+        {
+            "input": "sentence: i put the heavy manuscript on the desk and it broke .pronoun: it. A) the heavy manuscript B) the desk",
+            "output": [
+                "the desk"
+            ]
+        },
+        {
+            "input": "sentence: Joan and Sally made sure to thank Susan and Mary for all the help they had given .pronoun: they. A) joan and sally B) susan and mary",
+            "output": [
+                "susan and mary"
+            ]
+        },
+        {
+            "input": "sentence: Jane visited Emma's grave in 1765 . At that date she had been dead for five years .pronoun: she. A) jane B) emma",
+            "output": [
+                "emma"
+            ]
+        },
+        {
+            "input": "sentence: Peter knocked on Bill's door , but there was no answer . He was out .pronoun: He. A) peter B) bill",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: John and Peter ordered Bill and Steven to leave , so an hour later they left .pronoun: they. A) john and peter B) bill and steven",
+            "output": [
+                "bill and steven"
+            ]
+        },
+        {
+            "input": "sentence: Bill and Steve passed the gameboy to John and Andrew because their turn was next .pronoun: their. A) bill and steve B) john and andrew",
+            "output": [
+                "john and andrew"
+            ]
+        },
+        {
+            "input": "sentence: During a game of tag , Joan ran from Jane because she was \"it\" .pronoun: she. A) joan B) jane",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: cory knocked on dolly's door , but there was no answer . she was disappointed .pronoun: she. A) cory B) dolly",
+            "output": [
+                "cory"
+            ]
+        },
+        {
+            "input": "sentence: Mary couldn't see the stage with Lucy in front of her because she is so short .pronoun: she. A) mary B) lucy",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: The women held the girls against their will .pronoun: their. A) the women B) the girls",
+            "output": [
+                "the girls"
+            ]
+        },
+        {
+            "input": "sentence: Tom and Andrew threw their schoolbags down to Ray and Bob after they reached the bottom of the stairs .pronoun: they. A) tom and andrew B) ray and bob",
+            "output": [
+                "ray and bob"
+            ]
+        },
+        {
+            "input": "sentence: many folk start to read cam's books and can't put them down . they are popular because paul writes so well .pronoun: they. A) folk B) cam's books",
+            "output": [
+                "cam's books"
+            ]
+        },
+        {
+            "input": "sentence: The journalist interviewed the star of the new movie . She were very persistent , so the interview lasted for a long time .pronoun: She. A) the journalist B) the star",
+            "output": [
+                "the journalist"
+            ]
+        },
+        {
+            "input": "sentence: Lucy's aunt can still beat her at tennis , even though she is 30 years younger .pronoun: she. A) lucy B) lucy's aunt",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: Kirilova ceded the presidency to Shatova because she was less popular .pronoun: she. A) kirilova B) shatova",
+            "output": [
+                "kirilova"
+            ]
+        },
+        {
+            "input": "sentence: Susan and Joan know all about Ann and Lucy's personal problems because they are indiscreet .pronoun: they. A) susan and joan B) ann and lucy",
+            "output": [
+                "ann and lucy"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Shakespeare and Chaucer to Ovid and Virgil ; it was a fine selection of their writing .pronoun: their. A) shakespeare and chaucer B) ovid and virgil",
+            "output": [
+                "ovid and virgil"
+            ]
+        },
+        {
+            "input": "sentence: There are gaps in the walls . You can see the garden through them .pronoun: them. A) the gaps B) the walls",
+            "output": [
+                "the gaps"
+            ]
+        },
+        {
+            "input": "sentence: The lawyer asked the witness a question , but she was reluctant to repeat it .pronoun: she. A) the lawyer B) the witness",
+            "output": [
+                "the lawyer"
+            ]
+        },
+        {
+            "input": "sentence: John and Peter promised Bill and Steven to leave , so an hour later they left .pronoun: they. A) john and peter B) bill and steven",
+            "output": [
+                "john and peter"
+            ]
+        },
+        {
+            "input": "sentence: Kirilov and Kulmizev ceded the presidency to Shatov and Reznikov because they were more popular .pronoun: they. A) kirilov and kulmizev B) shatov and reznikov",
+            "output": [
+                "shatov and reznikov"
+            ]
+        },
+        {
+            "input": "sentence: Lucy took the rear seat while Joan claimed the front because her \"Dibs!\" was quicker .pronoun: her. A) lucy B) joan",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: Lucy's aunt can still beat her at tennis , even though she is 30 years older .pronoun: she. A) lucy B) lucy's aunt",
+            "output": [
+                "lucy's aunt"
+            ]
+        },
+        {
+            "input": "sentence: Since it was raining , I carried the newspapers over my backpacks to keep them dry .pronoun: them. A) the newspapers B) the backpacks",
+            "output": [
+                "the backpacks"
+            ]
+        },
+        {
+            "input": "sentence: the adult couldn't lift the child because he was so heavy .pronoun: he. A) the adult B) the child",
+            "output": [
+                "the child"
+            ]
+        },
+        {
+            "input": "sentence: i couldn't find a spoon , so i tried using a marker to stir my drink . but that turned out to be a bad idea , because it got full of ink .pronoun: it. A) the marker B) the drink",
+            "output": [
+                "the drink"
+            ]
+        },
+        {
+            "input": "sentence: i saw julio yelling at some man in a military uniform with a huge red beard . i don't know who he was , but he looked very unhappy .pronoun: he. A) julio B) the man in uniform",
+            "output": [
+                "the man in uniform"
+            ]
+        },
+        {
+            "input": "sentence: I put the cakes away in the refrigerators . They have a lot of butter in them .pronoun: They. A) the cakes B) the refrigerators",
+            "output": [
+                "the cakes"
+            ]
+        },
+        {
+            "input": "sentence: jay and sally are passionately in love , but sally's parents are unhappy about it , because they are snobs .pronoun: they. A) jay and sally B) sally's parents",
+            "output": [
+                "sally's parents"
+            ]
+        },
+        {
+            "input": "sentence: Julia told Angela many lies about herself , which Angela included in her book . She should have been more truthful .pronoun: She. A) julia B) angela",
+            "output": [
+                "julia"
+            ]
+        },
+        {
+            "input": "sentence: joe has sold his mansion and bought a new one a few miles away . he will be moving out of it on thursday .pronoun: it. A) the old mansion B) the new mansion",
+            "output": [
+                "the old mansion"
+            ]
+        },
+        {
+            "input": "sentence: leandro had to stop benton from toying with the injured bird . he is very compassionate .pronoun: he. A) Leandro B) Benton",
+            "output": [
+                "Leandro"
+            ]
+        },
+        {
+            "input": "sentence: the bench won't fit through the door because it is too wide .pronoun: it. A) the bench B) the door",
+            "output": [
+                "the bench"
+            ]
+        },
+        {
+            "input": "sentence: If the con artists had succeeded in fooling Sam and Julian , they would have gotten a lot of money .pronoun: they. A) the con artists B) sam and julian",
+            "output": [
+                "the con artists"
+            ]
+        },
+        {
+            "input": "sentence: The paintings in Mark's living room show oak trees . They are to the right of a house .pronoun: They. A) the paintings B) the oak trees",
+            "output": [
+                "the oak trees"
+            ]
+        },
+        {
+            "input": "sentence: George and Bob got free tickets to the play , but they gave them to Eric and Jeff , even though they were particularly eager to see it .pronoun: they. A) george and bob B) eric and jeff",
+            "output": [
+                "george and bob"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Shakespeare and Chaucer to Ovid and Virgil ; they were a major influence on their writing .pronoun: they. A) shakespeare and chaucer B) ovid and virgil",
+            "output": [
+                "shakespeare and chaucer"
+            ]
+        },
+        {
+            "input": "sentence: carl follows brad's example in everything . he admires him hugely .pronoun: he. A) carl B) brad",
+            "output": [
+                "carl"
+            ]
+        },
+        {
+            "input": "sentence: John and Harry couldn't see the stage with Billy and Jack in front of them because they were so short .pronoun: they. A) john and harry B) billy and jack",
+            "output": [
+                "john and harry"
+            ]
+        },
+        {
+            "input": "sentence: Julia threw her schoolbag down to Anna after she reached the bottom of the stairs .pronoun: she. A) julia B) anna",
+            "output": [
+                "anna"
+            ]
+        },
+        {
+            "input": "sentence: perry watched tv while jerold went out to buy groceries . after an hour he got up .pronoun: he. A) perry B) jerold",
+            "output": [
+                "perry"
+            ]
+        },
+        {
+            "input": "sentence: i took thermos out of the tote bag so that it would be handy .pronoun: it. A) thermos B) the tote bag",
+            "output": [
+                "thermos"
+            ]
+        },
+        {
+            "input": "sentence: Linda Goodman's biography of the Spartan general Persephone conveys a vivid sense of the difficulties she faced in her research .pronoun: she. A) goodman B) persephone",
+            "output": [
+                "goodman"
+            ]
+        },
+        {
+            "input": "sentence: in the storm , the willow fell down and crashed through the ceiling of my house . now , i have to get it removed .pronoun: it. A) the willow B) the ceiling",
+            "output": [
+                "the willow"
+            ]
+        },
+        {
+            "input": "sentence: johnson visited drake's grave in 1765 . at that date he had been dead for five years .pronoun: he. A) johnson B) drake",
+            "output": [
+                "drake"
+            ]
+        },
+        {
+            "input": "sentence: jerry yelled at larry because he was so upset .pronoun: he. A) jerry B) larry",
+            "output": [
+                "jerry"
+            ]
+        },
+        {
+            "input": "sentence: Mary hired herself out to Anne to take care of her .pronoun: her. A) mary B) anne",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: John made sure to thank Bill for all the help he had received .pronoun: he. A) john B) bill",
+            "output": [
+                "john"
+            ]
+        },
+        {
+            "input": "sentence: there is a pedestal between me and the arena , and i can't see around it .pronoun: it. A) the pedestal B) the arena",
+            "output": [
+                "the pedestal"
+            ]
+        },
+        {
+            "input": "sentence: at the loebner competition the referees couldn't figure out which respondents were the coversational agents because they were so advanced .pronoun: they. A) the referees B) the coversational agents",
+            "output": [
+                "the coversational agents"
+            ]
+        },
+        {
+            "input": "sentence: Jack spoke to Peter , breaking his concentration .pronoun: his. A) jack B) peter",
+            "output": [
+                "peter"
+            ]
+        },
+        {
+            "input": "sentence: Steve and Matt follow Fred and Jim's example in everything . They admire them hugely .pronoun: They. A) steve and matt B) fred and jim",
+            "output": [
+                "steve and matt"
+            ]
+        },
+        {
+            "input": "sentence: I stuck pins through carrots . When I pulled the pins out , they left holes .pronoun: they. A) the pins B) the carrots",
+            "output": [
+                "the pins"
+            ]
+        },
+        {
+            "input": "sentence: fred covered his eyes with his palms , because the wind was blowing sandaround . he lowered them when the wind stopped .pronoun: them. A) his eyes B) his palms",
+            "output": [
+                "his palms"
+            ]
+        },
+        {
+            "input": "sentence: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .pronoun: They. A) john and steve B) the men",
+            "output": [
+                "john and steve"
+            ]
+        },
+        {
+            "input": "sentence: i used an old cloth to clean the blade , and then i put it in the drawer .pronoun: it. A) the cloth B) the blade",
+            "output": [
+                "the blade"
+            ]
+        },
+        {
+            "input": "sentence: Paul and Bill tried to call George and John on the phone , but they weren't successful .pronoun: they. A) paul and bill B) george and john",
+            "output": [
+                "paul and bill"
+            ]
+        },
+        {
+            "input": "sentence: Joe and Steve paid the detectives after they received the final report on the case .pronoun: they. A) joe and steve B) the detectives",
+            "output": [
+                "joe and steve"
+            ]
+        },
+        {
+            "input": "sentence: Sam and Max took French classes from Adam and Steve , because they were eager to speak it fluently .pronoun: they. A) sam and max B) adam and steve",
+            "output": [
+                "sam and max"
+            ]
+        },
+        {
+            "input": "sentence: Everyone really loved the oatmeal cookie ; only a few people liked the chocolate chip cookie . Next time , we should make more of it .pronoun: it. A) the oatmeal cookie B) the chocolate chip cookie",
+            "output": [
+                "the oatmeal cookie"
+            ]
+        },
+        {
+            "input": "sentence: Kirilov and Kulmizev ceded the presidency to Shatov and Reznikov because they were less popular .pronoun: they. A) kirilov and kulmizev B) shatov and reznikov",
+            "output": [
+                "kirilov and kulmizev"
+            ]
+        },
+        {
+            "input": "sentence: Joan and Sally made sure to thank Susan and Mary for all the help they had received .pronoun: they. A) joan and sally B) susan and mary",
+            "output": [
+                "joan and sally"
+            ]
+        },
+        {
+            "input": "sentence: Jack knew that Peter's son had been in a car accident , so he told him about it .pronoun: he. A) jack B) peter",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: Steve and Matt follow Fred and Jim's example in everything . They influence them hugely .pronoun: They. A) steve and matt B) fred and jim",
+            "output": [
+                "fred and jim"
+            ]
+        },
+        {
+            "input": "sentence: perry watched tv while jerold went out to buy groceries . after an hour he got back .pronoun: he. A) perry B) jerold",
+            "output": [
+                "jerold"
+            ]
+        },
+        {
+            "input": "sentence: stretching her back , the mother smiled at the daughter .pronoun: her. A) the mother B) the daughter",
+            "output": [
+                "the mother"
+            ]
+        },
+        {
+            "input": "sentence: suzy knocked on blaire's door but she did not answer .pronoun: she. A) suzy B) blaire",
+            "output": [
+                "blaire"
+            ]
+        },
+        {
+            "input": "sentence: sam bergman's biography of the spartan general melissus conveys a vivid sense of the difficulties he faced in his research .pronoun: he. A) bergman B) Melissus",
+            "output": [
+                "bergman"
+            ]
+        },
+        {
+            "input": "sentence: John tucked his son Henry into bed , so that he could sleep .pronoun: he. A) john B) john's son",
+            "output": [
+                "john's son"
+            ]
+        },
+        {
+            "input": "sentence: Jane took French classes from Lucy , because she was eager to speak it fluently .pronoun: she. A) jane B) lucy",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: i took thermos out of the tote bag so that it would be lighter .pronoun: it. A) thermos B) the tote bag",
+            "output": [
+                "the tote bag"
+            ]
+        },
+        {
+            "input": "sentence: cora tried frantically to stop her daughter from barking at the party , leaving us to wonder why she was behaving so strangely .pronoun: she. A) Cora B) Cora's daughter",
+            "output": [
+                "Cora's daughter"
+            ]
+        },
+        {
+            "input": "sentence: Bill knows all about John's personal problems because he is nosy .pronoun: he. A) bill B) john",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: Jack didn't get angry with Peter , who had cut him off , because he stopped and counted to ten .pronoun: he. A) jack B) peter",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: The fox is getting in at night and attacking the chicken . It has gotten very bold .pronoun: It. A) the fox B) the chicken",
+            "output": [
+                "the fox"
+            ]
+        },
+        {
+            "input": "sentence: Bill did not pass the ball to Steven although he was open .pronoun: he. A) bill B) steven",
+            "output": [
+                "steven"
+            ]
+        },
+        {
+            "input": "sentence: ivan was jogging through the park when he saw a man juggling watermelons . he was very impressed .pronoun: he. A) ivan B) the performer",
+            "output": [
+                "ivan"
+            ]
+        },
+        {
+            "input": "sentence: Jack tried frantically to stop his son from chatting at the party , leaving us to wonder why he was behaving so strangely .pronoun: he. A) jack B) jack's son",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: The sacks of potatoes had been placed above the bags of flour , so they had to be moved first .pronoun: they. A) the sacks of potatoes B) the bags of flour",
+            "output": [
+                "the sacks of potatoes"
+            ]
+        },
+        {
+            "input": "sentence: Sid and Johnny explained their theory to Mark and Andrew but they couldn't understand them .pronoun: they. A) sid and johnny B) mark and andrew",
+            "output": [
+                "mark and andrew"
+            ]
+        },
+        {
+            "input": "sentence: Linda said \"Check\" to Nina as she moved her bishop .pronoun: her. A) linda B) nina",
+            "output": [
+                "linda"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Steve paid for Charlie and William's college education . They are very grateful .pronoun: They. A) bob and steve B) charlie and william",
+            "output": [
+                "charlie and william"
+            ]
+        },
+        {
+            "input": "sentence: Frank and Bill were upset with Tom and Steve because the toaster they had sold them didn't work .pronoun: they. A) frank and bill B) tom and steve",
+            "output": [
+                "tom and steve"
+            ]
+        },
+        {
+            "input": "sentence: Sam and Max took French classes from Adam and Steve , because they were known to speak it fluently .pronoun: they. A) sam and max B) adam and steve",
+            "output": [
+                "adam and steve"
+            ]
+        },
+        {
+            "input": "sentence: Anne paid the detective after she delivered the final report on the case .pronoun: she. A) anne B) the detective",
+            "output": [
+                "the detective"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Jack were playing cards with Adam and Bill and were way ahead . If Adam and Bill hadn't had a sudden run of good luck , they would have lost .pronoun: they. A) bob and jack B) adam and bill",
+            "output": [
+                "adam and bill"
+            ]
+        },
+        {
+            "input": "sentence: Dr . Adams informed Bill that he had cancer and presented several options for future treatment .pronoun: he. A) dr . adams B) bill",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: ted threw his schoolbag down to clark after he reached the botted of the stairs .pronoun: he. A) ted B) clark",
+            "output": [
+                "clark"
+            ]
+        },
+        {
+            "input": "sentence: John and Harry couldn't see the stage with Billy and Jack in front of them because they were so tall .pronoun: they. A) john and harry B) billy and jack",
+            "output": [
+                "billy and jack"
+            ]
+        },
+        {
+            "input": "sentence: Jim and Bill signaled the barmen and gestured toward their empty glasses .pronoun: their. A) jim and bill B) the barmen",
+            "output": [
+                "jim and bill"
+            ]
+        },
+        {
+            "input": "sentence: Patting his back , the man smiled at the boy .pronoun: his. A) the man B) the boy",
+            "output": [
+                "the boy"
+            ]
+        },
+        {
+            "input": "sentence: The sculptures rolled off the shelves because they weren't level .pronoun: they. A) the sculptures B) the shelves",
+            "output": [
+                "the shelves"
+            ]
+        },
+        {
+            "input": "sentence: Joan passed the half-empty plate to Mary because she was full .pronoun: she. A) joan B) mary",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: the sink is clogged with grease . it has to be cleaned .pronoun: it. A) the sink B) the grease",
+            "output": [
+                "the sink"
+            ]
+        },
+        {
+            "input": "sentence: rob collapsed on the sidewalk . soon he saw ted coming to help . he was very concerned .pronoun: he. A) rob B) ted",
+            "output": [
+                "ted"
+            ]
+        },
+        {
+            "input": "sentence: it was a summer afternoon , and the canine was sitting in the middle of the lawn . after a while , it got up and moved to a spot under the bush , because it was hot .pronoun: it. A) the canine B) the spot under bush",
+            "output": [
+                "the canine"
+            ]
+        },
+        {
+            "input": "sentence: At the Loebner competition the judge couldn't figure out which respondent was the chatbot because he was so stupid .pronoun: he. A) the judge B) the chatbot",
+            "output": [
+                "the judge"
+            ]
+        },
+        {
+            "input": "sentence: Jane was playing cards with Lucy and was way ahead . If Lucy hadn't had a sudden run of good luck , she would have lost .pronoun: she. A) jane B) lucy",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: They broadcast announcements , but subways came into the station and I couldn't hear them .pronoun: them. A) the announcements B) the subways",
+            "output": [
+                "the announcements"
+            ]
+        },
+        {
+            "input": "sentence: The men lifted the boys onto their bunk beds .pronoun: their. A) the men B) the boys",
+            "output": [
+                "the boys"
+            ]
+        },
+        {
+            "input": "sentence: this book introduced john milton to dante ; it was a major influence on his writing .pronoun: his. A) john milton B) dante",
+            "output": [
+                "dante"
+            ]
+        },
+        {
+            "input": "sentence: Dr . Adams informed Bill that he had retired and presented several options for future treatment .pronoun: he. A) dr . adams B) bill",
+            "output": [
+                "dr .  adams"
+            ]
+        },
+        {
+            "input": "sentence: Anne passed the gameboy to Mary because her turn was over .pronoun: her. A) anne B) mary",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: Look ! There are minnows swimming right below those ducks ! They had better get away to safety fast !pronoun: They. A) the minnows B) the ducks",
+            "output": [
+                "the minnows"
+            ]
+        },
+        {
+            "input": "sentence: Jane visited Emma's grave in 1765 . At that date she had been travelling for five years .pronoun: she. A) jane B) emma",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: the anchors interviewed the celebreties of the new movie . they were very persistent , so the interview lasted for a long time .pronoun: they. A) the anchors B) the celebreties",
+            "output": [
+                "the anchors"
+            ]
+        },
+        {
+            "input": "sentence: pim's uncle can still beat him at tennis , even though he is 30 years older .pronoun: he. A) pim B) pim's uncle",
+            "output": [
+                "pim's uncle"
+            ]
+        },
+        {
+            "input": "sentence: pim's uncle can still beat him at tennis , even though he is 30 years younger .pronoun: he. A) pim B) pim's uncle",
+            "output": [
+                "pim"
+            ]
+        },
+        {
+            "input": "sentence: Bill knows all about John's personal problems because he is indiscreet .pronoun: he. A) bill B) john",
+            "output": [
+                "john"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Woolf to Shelley ; it was a fine selection of her writing .pronoun: her. A) woolf B) shelley",
+            "output": [
+                "shelley"
+            ]
+        },
+        {
+            "input": "sentence: the engineman arrived before the cops because they were coming from so far away .pronoun: they. A) the engineman B) the cops",
+            "output": [
+                "the cops"
+            ]
+        },
+        {
+            "input": "sentence: everyone really loved the brown butter bourbon spice cookies ; only a few people liked the caramel pecan cookies . next time , we should make more of them .pronoun: them. A) the brown butter bourbon spice cookies B) the caramel pecan cookies",
+            "output": [
+                "the brown butter bourbon spice cookies"
+            ]
+        },
+        {
+            "input": "sentence: The men couldn't lift their sons because they were so heavy .pronoun: they. A) the men B) the sons",
+            "output": [
+                "the sons"
+            ]
+        },
+        {
+            "input": "sentence: ivan was doing research in the library when he heard a person humming and whistling . he was very annoying .pronoun: he. A) ivan B) a person",
+            "output": [
+                "a person"
+            ]
+        },
+        {
+            "input": "sentence: Joan asked Jeff for a favor but she refused .pronoun: she. A) joan B) jeff",
+            "output": [
+                "jeff"
+            ]
+        },
+        {
+            "input": "sentence: Joan passed the half-empty plate to Mary because she was hungry .pronoun: she. A) joan B) mary",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: Fred and Julian are the only men still alive who remember my great-grandfathers . They are remarkable men .pronoun: They. A) fred and julian B) my great-grandfathers",
+            "output": [
+                "fred and julian"
+            ]
+        },
+        {
+            "input": "sentence: paleographers have concluded that humans lived in laputa 20,000 years ago . they hunted for deer on the river banks .pronoun: they. A) paleographers B) primeval humans",
+            "output": [
+                "primeval humans"
+            ]
+        },
+        {
+            "input": "sentence: in the middle of the outdoor gig , the hail started falling , and it continued until 10 .pronoun: it. A) the gig B) the hail",
+            "output": [
+                "the hail"
+            ]
+        },
+        {
+            "input": "sentence: I couldn't put the pots on the shelves because they were too high .pronoun: they. A) the pots B) the shelves",
+            "output": [
+                "the shelves"
+            ]
+        },
+        {
+            "input": "sentence: As Jack in the crop duster passed over Bill , he could see the landing strip .pronoun: he. A) jack B) bill",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: i put the insect wing on the desk and it broke .pronoun: it. A) the insect wing B) the desk",
+            "output": [
+                "the insect wing"
+            ]
+        },
+        {
+            "input": "sentence: as waldo carried alonso up the long winding steps , his legs ached .pronoun: his. A) waldo B) alonso",
+            "output": [
+                "waldo"
+            ]
+        },
+        {
+            "input": "sentence: dan paid for justin's college education . he is very grateful .pronoun: he. A) dan B) justin",
+            "output": [
+                "justin"
+            ]
+        },
+        {
+            "input": "sentence: I used old rags to clean the knives , and then I put them in the drawer .pronoun: them. A) the rags B) the knives",
+            "output": [
+                "the knives"
+            ]
+        },
+        {
+            "input": "sentence: Mary was jogging through the park when she saw a woman juggling watermelons . She was very impressive .pronoun: She. A) mary B) the juggler",
+            "output": [
+                "the juggler"
+            ]
+        },
+        {
+            "input": "sentence: this book introduced john milton to virgil ; it was a major influence on his writing .pronoun: his. A) john milton B) virgil",
+            "output": [
+                "john milton"
+            ]
+        },
+        {
+            "input": "sentence: patty asked lola what time the library closes , because she had forgotten .pronoun: she. A) patty B) lola",
+            "output": [
+                "patty"
+            ]
+        },
+        {
+            "input": "sentence: The drains are clogged with hair and dirt . They have to be cleaned .pronoun: They. A) the drains B) the hair and dirt",
+            "output": [
+                "the drains"
+            ]
+        },
+        {
+            "input": "sentence: tara knows all about polly's personal problems because she is indiscreet .pronoun: she. A) tara B) polly",
+            "output": [
+                "polly"
+            ]
+        },
+        {
+            "input": "sentence: dr . marcus informed kally that she had retired and presented several options for future treatment .pronoun: she. A) dr . marcus B) kally",
+            "output": [
+                "dr . marcus"
+            ]
+        },
+        {
+            "input": "sentence: I poured water from the bottles into the cups until they were empty .pronoun: they. A) the bottles B) the cups",
+            "output": [
+                "the bottles"
+            ]
+        },
+        {
+            "input": "sentence: the father lifted the son onto his shoulders .pronoun: his. A) the father B) the son",
+            "output": [
+                "the father"
+            ]
+        },
+        {
+            "input": "sentence: Ann and Sue asked Mary and Joan what time the library closes , because they had forgotten .pronoun: they. A) ann and sue B) mary and joan",
+            "output": [
+                "ann and sue"
+            ]
+        },
+        {
+            "input": "sentence: Patting their backs , the women smiled at the girls .pronoun: their. A) the women B) the girls",
+            "output": [
+                "the girls"
+            ]
+        },
+        {
+            "input": "sentence: John and Peter were jogging through the park when they saw men juggling watermelons . They were very impressed .pronoun: They. A) john and peter B) the jugglers",
+            "output": [
+                "john and peter"
+            ]
+        },
+        {
+            "input": "sentence: An archaeologist has concluded that a human lived in Laputa 20,000 years ago . He hunted for deer on the river banks .pronoun: He. A) archaeologist B) prehistoric human",
+            "output": [
+                "prehistoric human"
+            ]
+        },
+        {
+            "input": "sentence: Emma and Nora's mothers had died long ago , and their education had been managed by excellent women as governesses .pronoun: their. A) emma and nora B) emma and nora's mothers",
+            "output": [
+                "emma and nora"
+            ]
+        },
+        {
+            "input": "sentence: Tom and Bill gave Ralph and Josh a lift to school so they wouldn't have to walk .pronoun: they. A) tom and bill B) ralph and josh",
+            "output": [
+                "ralph and josh"
+            ]
+        },
+        {
+            "input": "sentence: Jack's father had died long ago , and his place had been taken by an excellent man as tutor .pronoun: his. A) jack B) jack's father",
+            "output": [
+                "jack's father"
+            ]
+        },
+        {
+            "input": "sentence: Jane paid for Anne's college education , but now Anne acts as though it never happened . She is very ungrateful .pronoun: She. A) jane B) anne",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: John and Peter hired themselves out to Bill and Steven to take care of them .pronoun: them. A) john and peter B) bill and steven",
+            "output": [
+                "bill and steven"
+            ]
+        },
+        {
+            "input": "sentence: I saw Jim and Bob yelling at some guys in military uniform with huge red beards . I don't know who they were , but they looked very unhappy .pronoun: they. A) jim and bob B) the guys in uniform",
+            "output": [
+                "the guys in uniform"
+            ]
+        },
+        {
+            "input": "sentence: They broadcast announcements , but subways came into the station and I couldn't hear over them .pronoun: them. A) the announcements B) the subways",
+            "output": [
+                "the subways"
+            ]
+        },
+        {
+            "input": "sentence: As Nina carried Lucy up the long winding steps , her legs dangled .pronoun: her. A) nina B) lucy",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: The customer walked into the bank and stabbed one of the tellers . She was immediately taken to the hospital .pronoun: She. A) the customer B) the teller",
+            "output": [
+                "the teller"
+            ]
+        },
+        {
+            "input": "sentence: Mark and David told Pete and Jack many lies about themselves , which Pete and Jack included in their book . They should have been more truthful .pronoun: They. A) mark and david B) pete and jack",
+            "output": [
+                "mark and david"
+            ]
+        },
+        {
+            "input": "sentence: The actresses used to be named Terpsichore and Melpomene , but they changed them to Tina and Melanie a few years ago , because they figured they were easier to pronounce .pronoun: they. A) terpsichore and melpomene B) tina and melanie",
+            "output": [
+                "tina and melanie"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Woolf to Smith ; it was a major influence on her writing .pronoun: her. A) woolf B) smith",
+            "output": [
+                "smith"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Emma knocked on the door , and Susan and Lucy answered it . They invited them to come in .pronoun: They. A) jane and emma B) susan and lucy",
+            "output": [
+                "susan and lucy"
+            ]
+        },
+        {
+            "input": "sentence: The actor used to be named Jacchus , but he changed it to Jake a few years ago , because he figured it was too hard to pronounce .pronoun: he. A) jacchus B) jake",
+            "output": [
+                "jacchus"
+            ]
+        },
+        {
+            "input": "sentence: luke couldn't see the stage with adam in front of him because he is so short .pronoun: he. A) luke B) adam",
+            "output": [
+                "luke"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Lucy gave Joan and Anne candy because they weren't hungry .pronoun: they. A) jane and lucy B) joan and anne",
+            "output": [
+                "jane and lucy"
+            ]
+        },
+        {
+            "input": "sentence: Julia told Angela many lies about herself , which Angela included in her book . She should have been more sceptical .pronoun: She. A) julia B) angela",
+            "output": [
+                "angela"
+            ]
+        },
+        {
+            "input": "sentence: Mary couldn't see the stage with Lucy in front of her because she is so tall .pronoun: she. A) mary B) lucy",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: Pam's parents came home and found her having sex with her boyfriend , Paul . She was furious about it .pronoun: She. A) pam's parents B) pam and paul",
+            "output": [
+                "pam's parents "
+            ]
+        },
+        {
+            "input": "sentence: The mother carried the sleeping girl in her bassinet .pronoun: her. A) the mother B) the girl",
+            "output": [
+                "the girl"
+            ]
+        },
+        {
+            "input": "sentence: the large sphere crashed right through the bench because it was made of steel .pronoun: it. A) the large sphere B) the bench",
+            "output": [
+                "the large sphere"
+            ]
+        },
+        {
+            "input": "sentence: Grace was happy to trade me her sweaters for my jackets . She thinks they look great on her .pronoun: they. A) the sweaters B) the jackets",
+            "output": [
+                "the jackets"
+            ]
+        },
+        {
+            "input": "sentence: I tried to paint a picture of an orchard , with a lemon in a lemon tree , but it came out looking more like a light bulb .pronoun: it. A) lemon B) lemon tree",
+            "output": [
+                "lemon"
+            ]
+        },
+        {
+            "input": "sentence: The customers walked into the bank and stabbed some of the tellers . They were immediately taken to the hospital .pronoun: They. A) the customers B) the tellers",
+            "output": [
+                "the tellers"
+            ]
+        },
+        {
+            "input": "sentence: Sam's drawings were hung just above Tina's and they did look much better with other ones above them .pronoun: they. A) sam's drawings B) tina's drawings",
+            "output": [
+                "tina's drawings"
+            ]
+        },
+        {
+            "input": "sentence: patty gave birth to a daughter last month . she is a very charming woman .pronoun: she. A) patty B) patty's daughter",
+            "output": [
+                "patty"
+            ]
+        },
+        {
+            "input": "sentence: mylie looked for her friend irma in the crowd . since she always has good luck , mylie spotted her quickly .pronoun: she. A) mylie B) irma",
+            "output": [
+                "mylie"
+            ]
+        },
+        {
+            "input": "sentence: This morning , Joey and Bill built sand castles on the beach , and put toy flags in the highest towers , but this afternoon the tide knocked them down .pronoun: them. A) the sand castles B) the flags",
+            "output": [
+                "the sand castles"
+            ]
+        },
+        {
+            "input": "sentence: the user changed his password from \" hsfhfsc34r3e \" to \" happy-vertical people-endowed track transporters \" as it was easy to remember .pronoun: it. A) hsfhfsc34r3e B) happy-vertical people-endowed track transporters",
+            "output": [
+                "happy-vertical people-endowed track transporters"
+            ]
+        },
+        {
+            "input": "sentence: Madonna and Britney fired their trainers because they couldn't stand their boyfriends .pronoun: their. A) madonna and britney B) the trainers",
+            "output": [
+                "madonna and britney"
+            ]
+        },
+        {
+            "input": "sentence: Stretching their backs , the women smiled at the girls .pronoun: their. A) the women B) the girls",
+            "output": [
+                "the women"
+            ]
+        },
+        {
+            "input": "sentence: many folk start to read cam's books and can't put them down . they are gripped because paul writes so well .pronoun: they. A) folk B) cam's books",
+            "output": [
+                "folk"
+            ]
+        },
+        {
+            "input": "sentence: I tried to paint a picture of an orchard , with a lemon in a lemon tree , but it came out looking more like a telephone pole .pronoun: it. A) lemon B) lemon tree",
+            "output": [
+                "lemon tree"
+            ]
+        },
+        {
+            "input": "sentence: The lawyer asked the witness a question , but she was reluctant to answer it .pronoun: she. A) the lawyer B) the witness",
+            "output": [
+                "the witness"
+            ]
+        },
+        {
+            "input": "sentence: Billy and Jimmy cried because Toby and Henry wouldn't share their toy .pronoun: their. A) billy and jimmy B) toby and henry",
+            "output": [
+                "toby and henry"
+            ]
+        },
+        {
+            "input": "sentence: I can't cut those trees down with those axes ; they are too thick .pronoun: they. A) the trees B) the axes",
+            "output": [
+                "the trees"
+            ]
+        },
+        {
+            "input": "sentence: Anna tried to call Lily on the phone , but she wasn't available .pronoun: she. A) anna B) lily",
+            "output": [
+                "lily"
+            ]
+        },
+        {
+            "input": "sentence: If the con artist had succeeded in fooling Joan , she would have gotten a lot of money .pronoun: she. A) the con artist B) joan",
+            "output": [
+                "the con artist"
+            ]
+        },
+        {
+            "input": "sentence: as cornelia in the crop duster passed over aria , she could see the landing strip .pronoun: she. A) cornelia B) aria",
+            "output": [
+                "cornelia"
+            ]
+        },
+        {
+            "input": "sentence: I couldn't put the pots on the shelves because they were too tall .pronoun: they. A) the pots B) the shelves",
+            "output": [
+                "the pots"
+            ]
+        },
+        {
+            "input": "sentence: As Jack in the crop duster passed over Bill , he could see the landing gear .pronoun: he. A) jack B) bill",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: Jane is the only woman alive who still remembers my mother as an infant . When Jane first saw my mother , she was twelve years old .pronoun: she. A) jane B) my mother",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: Jane cried because Lucy wouldn't share her toy .pronoun: her. A) jane B) lucy",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Shakespeare and Chaucer to Goethe and Marx ; it was a fine selection of their writing .pronoun: their. A) shakespeare and chaucer B) goethe and marx",
+            "output": [
+                "shakespeare and chaucer"
+            ]
+        },
+        {
+            "input": "sentence: Bob gave birth to a son last month . He is a very charming man .pronoun: He. A) bob B) bob's son",
+            "output": [
+                "bob"
+            ]
+        },
+        {
+            "input": "sentence: sam tried to paint a picture of herders with cattle , but they ended up looking more like dogs .pronoun: they. A) the herders B) the cattle",
+            "output": [
+                "the cattle"
+            ]
+        },
+        {
+            "input": "sentence: Pete and Andrew envy Martin and Paul because they are very successful .pronoun: they. A) pete and andrew B) martin and paul",
+            "output": [
+                "martin and paul"
+            ]
+        },
+        {
+            "input": "sentence: everyone really loved the brown butter bourbon spice cookies ; only a few people liked the caramel pecan cookies . next time , we should make fewer of them .pronoun: them. A) the brown butter bourbon spice cookies B) the caramel pecan cookies",
+            "output": [
+                "the caramel pecan cookies"
+            ]
+        },
+        {
+            "input": "sentence: The older student was bullying the younger one , so we rescued her .pronoun: her. A) the older student B) the younger student",
+            "output": [
+                "the younger student"
+            ]
+        },
+        {
+            "input": "sentence: we had hoped to place copies of our pamphlet on all the seats in the auditorium , but there were simply not enough of them .pronoun: them. A) copies of the pamphlet B) seats",
+            "output": [
+                "copies of the pamphlet"
+            ]
+        },
+        {
+            "input": "sentence: the adult couldn't lift the child because he was so weak .pronoun: he. A) the adult B) the child",
+            "output": [
+                "the adult"
+            ]
+        },
+        {
+            "input": "sentence: Dr . Adams and Dr . Jones informed Kate and Laura that they had cancer and presented several options for future treatment .pronoun: they. A) dr . adams and dr . jones B) kate and laura",
+            "output": [
+                "kate and laura"
+            ]
+        },
+        {
+            "input": "sentence: look ! there is a shark swimming right below that wigeon ! it had better get away to safety fast !pronoun: it. A) the great white shark B) the wigeon",
+            "output": [
+                "the wigeon"
+            ]
+        },
+        {
+            "input": "sentence: In the storm , the trees fell down and crashed through the roofs of my house . Now , I have to get them removed .pronoun: them. A) the trees B) the roofs",
+            "output": [
+                "the trees"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced Shakespeare and Chaucer to Goethe and Marx ; they were a major influence on their writing .pronoun: they. A) shakespeare and chaucer B) goethe and marx",
+            "output": [
+                "goethe and marx"
+            ]
+        },
+        {
+            "input": "sentence: we had hoped to place copies of our pamphlet on all the seats in the auditorium , but there were simply too many of them .pronoun: them. A) copies of the pamphlet B) seats",
+            "output": [
+                "seats"
+            ]
+        },
+        {
+            "input": "sentence: Lucy comforted Emma because she was so upset .pronoun: she. A) lucy B) emma",
+            "output": [
+                "emma"
+            ]
+        },
+        {
+            "input": "sentence: Jack knew that Peter's son had been in a car accident because he told him about it .pronoun: he. A) jack B) peter",
+            "output": [
+                "peter"
+            ]
+        },
+        {
+            "input": "sentence: If the con artist had succeeded in fooling Joan , she would have lost a lot of money .pronoun: she. A) the con artist B) joan",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: Jane is the only woman alive who still remembers my mother as an infant . When Jane first saw my mother , she was twelve months old .pronoun: she. A) jane B) my mother",
+            "output": [
+                "my mother"
+            ]
+        },
+        {
+            "input": "sentence: i stuck a skewer through a carrot . when i pulled the skewer out , it left a hole .pronoun: it. A) the skewer B) the potato",
+            "output": [
+                "the skewer"
+            ]
+        },
+        {
+            "input": "sentence: dick envies gareth although he is very successful .pronoun: he. A) dick B) gareth",
+            "output": [
+                "dick"
+            ]
+        },
+        {
+            "input": "sentence: the mold rolled off the rack because it wasn't anchored .pronoun: it. A) the mold B) the rack",
+            "output": [
+                "the mold"
+            ]
+        },
+        {
+            "input": "sentence: Bill and Jake passed the half-empty plate to John and Luke because they were hungry .pronoun: they. A) bill and jake B) john and luke",
+            "output": [
+                "john and luke"
+            ]
+        },
+        {
+            "input": "sentence: The cats were lying by the mouse holes waiting for the mice , but they were too impatient .pronoun: they. A) the cats B) the mice",
+            "output": [
+                "the cats"
+            ]
+        },
+        {
+            "input": "sentence: Bob gave birth to a son last month . He is a very charming baby .pronoun: He. A) bob B) bob's son",
+            "output": [
+                "bob's son"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Julia knocked on Susan and Mary's door but they did not get an answer .pronoun: they. A) jane and julia B) susan and mary",
+            "output": [
+                "jane and julia"
+            ]
+        },
+        {
+            "input": "sentence: Fred and John watched TV while George and Peter went out to buy groceries . After an hour they got up .pronoun: they. A) fred and john B) george and peter",
+            "output": [
+                "fred and john"
+            ]
+        },
+        {
+            "input": "sentence: I stuck pins through carrots . When I pulled the pins out , they had holes .pronoun: they. A) the pins B) the carrots",
+            "output": [
+                "the carrots"
+            ]
+        },
+        {
+            "input": "sentence: I couldn't find spoons , so I tried using pens to stir my coffees . But that turned out to be a bad idea , because they got full of coffee .pronoun: they. A) the pens B) the coffees",
+            "output": [
+                "the pens"
+            ]
+        },
+        {
+            "input": "sentence: i tried to paint a picture of an orchard , with citrus in the citrus trees , but they came out looking more like telephone poles .pronoun: they. A) citrus B) citrus trees",
+            "output": [
+                "citrus trees"
+            ]
+        },
+        {
+            "input": "sentence: Lily and Emma spoke to Donna and Rachel , breaking their concentration .pronoun: their. A) lily and emma B) donna and rachel",
+            "output": [
+                "donna and rachel"
+            ]
+        },
+        {
+            "input": "sentence: When Tommy and Bobby dropped their ice creams , Timmy and Billy giggled , so father gave them a sympathetic look .pronoun: them. A) tommy and bobby B) timmy and billy",
+            "output": [
+                "tommy and bobby"
+            ]
+        },
+        {
+            "input": "sentence: patrick tried to call jake on the phone , but he wasn't successful .pronoun: he. A) patrick B) jake",
+            "output": [
+                "patrick"
+            ]
+        },
+        {
+            "input": "sentence: Pam's parents and father came home and found her having sex with her boyfriend , Paul . She was embarrassed about it .pronoun: She. A) pam's parents B) pam and paul",
+            "output": [
+                "pam and paul"
+            ]
+        },
+        {
+            "input": "sentence: I poured water from the bottles into the cups until they were full .pronoun: they. A) the bottles B) the cups",
+            "output": [
+                "the cups"
+            ]
+        },
+        {
+            "input": "sentence: we went to the lagoon , because a shark had been seen at the beach , so it was a safer place to swim .pronoun: it. A) the lagoon B) the beach",
+            "output": [
+                "the lagoon"
+            ]
+        },
+        {
+            "input": "sentence: sara tucked her daughter anne into bed , so that she could sleep .pronoun: she. A) sara B) sara's daughter",
+            "output": [
+                "sara's daughter"
+            ]
+        },
+        {
+            "input": "sentence: dr . marcus informed kally that she had cancer and presented several options for future treatment .pronoun: she. A) dr . marcus B) kally",
+            "output": [
+                "kally"
+            ]
+        },
+        {
+            "input": "sentence: At the Loebner competition the judge couldn't figure out which respondent was the chatbot because he was so advanced .pronoun: he. A) the judge B) the chatbot",
+            "output": [
+                "the chatbot"
+            ]
+        },
+        {
+            "input": "sentence: eric told richard many lies about himself , which richard included in his book . he should have been more sceptical .pronoun: he. A) eric B) richard",
+            "output": [
+                "richard"
+            ]
+        },
+        {
+            "input": "sentence: dan paid for justin's college education , but now justin acts as though it never happened . he is very hurt .pronoun: he. A) dan B) justin",
+            "output": [
+                "dan"
+            ]
+        },
+        {
+            "input": "sentence: Nina gave Jill a lift to school so she wouldn't have to drive alone .pronoun: she. A) nina B) jill",
+            "output": [
+                "nina"
+            ]
+        },
+        {
+            "input": "sentence: Andrew knocked on Bill's door but he did not answer .pronoun: he. A) andrew B) bill",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: Beth and Emma didn't get angry with Sally and Lucy , who had cut them off , because they stopped and apologized .pronoun: they. A) beth and emma B) sally and lucy",
+            "output": [
+                "sally and lucy"
+            ]
+        },
+        {
+            "input": "sentence: I can't cut those trees down with those axes ; they are too small .pronoun: they. A) the trees B) the axes",
+            "output": [
+                "the axes"
+            ]
+        },
+        {
+            "input": "sentence: Jane took French classes from Lucy , because she was known to speak it fluently .pronoun: she. A) jane B) lucy",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: Tom and Luke said \"Check\" to Ralph and Henry as they moved their bishop .pronoun: they. A) tom and luke B) ralph and henry",
+            "output": [
+                "tom and luke"
+            ]
+        },
+        {
+            "input": "sentence: Pete and Andrew envy Martin and Paul although they are very successful .pronoun: they. A) pete and andrew B) martin and paul",
+            "output": [
+                "pete and andrew"
+            ]
+        },
+        {
+            "input": "sentence: James and Henry asked Robert and William for a favor but they were refused .pronoun: they. A) james and henry B) robert and william",
+            "output": [
+                "james and henry"
+            ]
+        },
+        {
+            "input": "sentence: the attorney asked the bystander a question , but he was reluctant to repeat it .pronoun: he. A) the attorney B) the bystander",
+            "output": [
+                "the attorney"
+            ]
+        },
+        {
+            "input": "sentence: The policeman arrested the gang member . He was trying to stop the drug trade in the neighborhood .pronoun: He. A) the policeman B) the gang member",
+            "output": [
+                "the policeman"
+            ]
+        },
+        {
+            "input": "sentence: Joan signaled the barmaid and gestured toward her bathroom key .pronoun: her. A) joan B) the barmaid",
+            "output": [
+                "the barmaid"
+            ]
+        },
+        {
+            "input": "sentence: sam broke both his gliding joints and he's walking with aids . but a month or so from now they should be better .pronoun: they. A) the gliding joints B) the aids",
+            "output": [
+                "the gliding joints"
+            ]
+        },
+        {
+            "input": "sentence: kirk hired himself out to andy to take care of him .pronoun: him. A) kirk B) andy",
+            "output": [
+                "andy"
+            ]
+        },
+        {
+            "input": "sentence: in july , yelizovo declared war on kapitonovka . since kapitonovka's army was much better equipped and ten times larger , they were victorious within weeks .pronoun: they. A) yelizovo B) kapitonovka",
+            "output": [
+                "kapitonovka"
+            ]
+        },
+        {
+            "input": "sentence: Elizabeth felt crushed when his longtime rival Julia revealed that she was the winner of the competition .pronoun: she. A) elizabeth B) julia",
+            "output": [
+                "julia"
+            ]
+        },
+        {
+            "input": "sentence: The paths to the lakes were blocked , so we couldn't use them .pronoun: them. A) the paths B) the lakes",
+            "output": [
+                "the paths"
+            ]
+        },
+        {
+            "input": "sentence: Mary was doing research in the library when she heard a woman humming and whistling . She was very annoyed .pronoun: She. A) mary B) the woman",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: Mary and Anne took out their flutes and played some of their favorite pieces . They have loved them since they were children .pronoun: them. A) the flutes B) the pieces",
+            "output": [
+                "the pieces"
+            ]
+        },
+        {
+            "input": "sentence: gary got free tickets to the play , but he gave them to wes , because he was particularly eager to see it .pronoun: he. A) gary B) wes",
+            "output": [
+                "wes"
+            ]
+        },
+        {
+            "input": "sentence: I couldn't find spoons , so I tried using pens to stir my coffees . But that turned out to be a bad idea , because they got full of ink .pronoun: they. A) the pens B) the coffees",
+            "output": [
+                "the coffees"
+            ]
+        },
+        {
+            "input": "sentence: mary took out her recorder and played one of her favorite passage . shehas loved it since she was a child .pronoun: it. A) the recorder B) the passage",
+            "output": [
+                "the passage"
+            ]
+        },
+        {
+            "input": "sentence: The fathers carried the sleeping boys in their bassinets .pronoun: their. A) the fathers B) the boys",
+            "output": [
+                "the boys"
+            ]
+        },
+        {
+            "input": "sentence: beyonce fired her hairdresser because she slept with her boyfriend .pronoun: her. A) beyonce B) the hairdresser",
+            "output": [
+                "beyonce"
+            ]
+        },
+        {
+            "input": "sentence: trey paid the private investigator after he received the final report on the case .pronoun: he. A) trey B) the private investigator",
+            "output": [
+                "trey"
+            ]
+        },
+        {
+            "input": "sentence: sam bergman's biography of the spartan general melissus conveys a vivid sense of the difficulties he faced in his childhood .pronoun: he. A) bergman B) Melissus",
+            "output": [
+                "Melissus"
+            ]
+        },
+        {
+            "input": "sentence: Luke asked Henry what time the library closes , but he had forgotten .pronoun: he. A) luke B) henry",
+            "output": [
+                "henry"
+            ]
+        },
+        {
+            "input": "sentence: Jane cried because Lucy wouldn't accept her toy .pronoun: her. A) jane B) lucy",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: Beth and Emma didn't get angry with Sally and Lucy , who had cut them off , because they stopped and counted to ten .pronoun: they. A) beth and emma B) sally and lucy",
+            "output": [
+                "beth and emma"
+            ]
+        },
+        {
+            "input": "sentence: John made sure to thank Bill for all the help he had given .pronoun: he. A) john B) bill",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: Jane is the only woman still alive who remembers my great-grandmother . She is a remarkable woman .pronoun: She. A) jane B) my great-grandmother",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: Jane was playing cards with Lucy and was way ahead . If Lucy hadn't had a sudden run of good luck , she would have won .pronoun: she. A) jane B) lucy",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: cosmo is the only man still alive who remembers my great-grandpa . he is a remarkable man .pronoun: he. A) cosmo B) my great-grandpa",
+            "output": [
+                "cosmo"
+            ]
+        },
+        {
+            "input": "sentence: The dogs chased the cats , which ran up a tree . They waited at the top .pronoun: They. A) the dogs B) the cats",
+            "output": [
+                "the cats"
+            ]
+        },
+        {
+            "input": "sentence: Look ! There are sharks swimming right below those ducks ! They had better get away to safety fast !pronoun: They. A) the sharks B) the ducks",
+            "output": [
+                "the ducks"
+            ]
+        },
+        {
+            "input": "sentence: if the fraudster had succeeded in fooling terry , he would have gotten a lot of money .pronoun: he. A) the fraudster B) terry",
+            "output": [
+                "the fraudster"
+            ]
+        },
+        {
+            "input": "sentence: As Nina carried Lucy up the long winding steps , her legs ached .pronoun: her. A) nina B) lucy",
+            "output": [
+                "nina"
+            ]
+        },
+        {
+            "input": "sentence: Lucy follows Joan's example in everything . She admires her hugely .pronoun: She. A) lucy B) joan",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: Anne and Julia gave birth to daughters last month . They are very charming babies .pronoun: They. A) anne and julia B) anne and julia's daughters",
+            "output": [
+                "anne and julia's daughters"
+            ]
+        },
+        {
+            "input": "sentence: This morning , Joey and Bill built sand castles on the beach , and put toy flags in the highest towers , but this afternoon the wind knocked them down .pronoun: them. A) the sand castles B) the flags",
+            "output": [
+                "the flags"
+            ]
+        },
+        {
+            "input": "sentence: kara knew that suzy's son had been in a car accident , so she told her about it .pronoun: she. A) kara B) suzy",
+            "output": [
+                "kara"
+            ]
+        },
+        {
+            "input": "sentence: Lucy yelled at Emma because she was so upset .pronoun: she. A) lucy B) emma",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: i can't cut that bush down with that hatchet ; it is too thick .pronoun: it. A) the bush B) the hatchet",
+            "output": [
+                "the bush"
+            ]
+        },
+        {
+            "input": "sentence: at the loebner competition the referees couldn't figure out which respondents were the coversational agents because they were so stupid .pronoun: they. A) the referees B) the coversational agents",
+            "output": [
+                "the referees"
+            ]
+        },
+        {
+            "input": "sentence: leandro had to stop benton from toying with the injured bird . he is very cruel .pronoun: he. A) Leandro B) Benton",
+            "output": [
+                "Benton"
+            ]
+        },
+        {
+            "input": "sentence: James and Henry asked Robert and William for a favor but they refused .pronoun: they. A) james and henry B) robert and william",
+            "output": [
+                "robert and william"
+            ]
+        },
+        {
+            "input": "sentence: three species of aquatic vertebrates that have recently been found living in the indian ocean are being studied by biologists . they began two years ago .pronoun: they. A) the biologists B) the aquatic vertebrate",
+            "output": [
+                "the biologists"
+            ]
+        },
+        {
+            "input": "sentence: joe has sold his mansion and bought a new one a few miles away . he will be moving into it on thursday .pronoun: it. A) the old mansion B) the new mansion",
+            "output": [
+                "the new mansion"
+            ]
+        },
+        {
+            "input": "sentence: lance can't leave work here until rob arrives to replace him . if rob had left home for work on time , he would be gone by this time .pronoun: he. A) lance B) rob",
+            "output": [
+                "lance"
+            ]
+        },
+        {
+            "input": "sentence: when the advocates of the bill got to the town hall , they were surprised to find that the room was full of adversaries . they were very much in the minority .pronoun: they. A) the advocates B) the adversaries",
+            "output": [
+                "the advocates"
+            ]
+        },
+        {
+            "input": "sentence: The man held the boy against his will .pronoun: his. A) the man B) the boy",
+            "output": [
+                "the boy"
+            ]
+        },
+        {
+            "input": "sentence: John and Peter were jogging through the park when they saw men juggling watermelons . They were very impressive .pronoun: They. A) john and peter B) the jugglers",
+            "output": [
+                "the jugglers"
+            ]
+        },
+        {
+            "input": "sentence: The woman lifted the girl onto her shoulders .pronoun: her. A) the woman B) the girl",
+            "output": [
+                "the woman"
+            ]
+        },
+        {
+            "input": "sentence: We went to the lakes , because sharks had been seen at the ocean beaches , so they were dangerous places to swim .pronoun: they. A) the lakes B) the ocean beaches",
+            "output": [
+                "the ocean beaches"
+            ]
+        },
+        {
+            "input": "sentence: jonny cried because ricky wouldn't accept his toy .pronoun: his. A) jonny B) ricky",
+            "output": [
+                "jonny"
+            ]
+        },
+        {
+            "input": "sentence: Lucy collapsed on the sidewalk . Soon she saw Mary coming to help . She was very concerned .pronoun: She. A) lucy B) mary",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: cathy believed that evette suspected that she had stolen the watch .pronoun: she. A) cathy B) evette",
+            "output": [
+                "cathy"
+            ]
+        },
+        {
+            "input": "sentence: victor felt vindicated when his longtime rival john revealed that he was the winner of the competition .pronoun: he. A) victor B) john",
+            "output": [
+                "victor"
+            ]
+        },
+        {
+            "input": "sentence: kirk hired andy to take care of him .pronoun: him. A) kirk B) andy",
+            "output": [
+                "kirk"
+            ]
+        },
+        {
+            "input": "sentence: When Nina dropped her ice cream , Lily giggled , so father gave her a sympathetic look .pronoun: her. A) nina B) lily",
+            "output": [
+                "nina"
+            ]
+        },
+        {
+            "input": "sentence: Lucy explained her theory to Emma but she couldn't understand her .pronoun: she. A) lucy B) emma",
+            "output": [
+                "emma"
+            ]
+        },
+        {
+            "input": "sentence: heather did a lot better than her good friend lara on the test because she had studied so hard .pronoun: she. A) heather B) lara",
+            "output": [
+                "heather"
+            ]
+        },
+        {
+            "input": "sentence: sam tried to paint a picture of herders with cattle , but they ended up looking more like golfers .pronoun: they. A) the herders B) the cattle",
+            "output": [
+                "the herders"
+            ]
+        },
+        {
+            "input": "sentence: Emma can't leave work here until Anne arrives to replace her . If Anne had left home for work on time , she would be gone by this time .pronoun: she. A) emma B) anne",
+            "output": [
+                "emma"
+            ]
+        },
+        {
+            "input": "sentence: Although they ran at about the same speed , Sue and Joan beat Sally and Mary because they had such a good start .pronoun: they. A) sue and joan B) sally and mary",
+            "output": [
+                "sue and joan"
+            ]
+        },
+        {
+            "input": "sentence: ivan was doing research in the library when he heard a person humming and whistling . he was very annoyed .pronoun: he. A) ivan B) a person",
+            "output": [
+                "ivan"
+            ]
+        },
+        {
+            "input": "sentence: mara's parents came home and found her having sex with her boyfriend , danny . they were embarrassed about it .pronoun: they. A) mara's parents B) mara and danny",
+            "output": [
+                "mara and danny"
+            ]
+        },
+        {
+            "input": "sentence: cathy believed that evette regretted that she had stolen the watch .pronoun: she. A) cathy B) evette",
+            "output": [
+                "evette"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Emma knocked on Susan and Lucy's door , but there was no answer . They were disappointed .pronoun: They. A) jane and emma B) susan and lucy",
+            "output": [
+                "jane and emma"
+            ]
+        },
+        {
+            "input": "sentence: bran signaled the bartender and gestured toward his bathroom key .pronoun: his. A) bran B) the bartender",
+            "output": [
+                "the bartender"
+            ]
+        },
+        {
+            "input": "sentence: Sara and Julia borrowed books from the library because they need them for articles they are working on . They read them when they get home from work .pronoun: They. A) the books B) the articles",
+            "output": [
+                "the books"
+            ]
+        },
+        {
+            "input": "sentence: bran signaled the bartender and gestured toward his empty glasspronoun: his. A) bran B) the bartender",
+            "output": [
+                "bran"
+            ]
+        },
+        {
+            "input": "sentence: Sam is passionately in love , but Sam's father is unhappy about it , because he is fifteen .pronoun: he. A) sam B) sam's father",
+            "output": [
+                "sam"
+            ]
+        },
+        {
+            "input": "sentence: Alice and Lucy tried frantically to stop their daughters from chatting at the party , leaving us to wonder why they were behaving so strangely .pronoun: they. A) alice and lucy B) alice and lucy's daughters",
+            "output": [
+                "alice and lucy"
+            ]
+        },
+        {
+            "input": "sentence: Although they ran at about the same speed , Sue and Joan beat Sally and Mary because they had such a bad start .pronoun: they. A) sue and joan B) sally and mary",
+            "output": [
+                "sally and mary"
+            ]
+        },
+        {
+            "input": "sentence: jake asked edan for a favor but he refused .pronoun: he. A) jake B) edan",
+            "output": [
+                "edan"
+            ]
+        },
+        {
+            "input": "sentence: Michael fired his trainer because he slept with his girlfriend .pronoun: he. A) michael B) the trainer",
+            "output": [
+                "the trainer"
+            ]
+        },
+        {
+            "input": "sentence: Jack didn't get angry with Peter , who had cut him off , because he stopped and apologized .pronoun: he. A) jack B) peter",
+            "output": [
+                "peter"
+            ]
+        },
+        {
+            "input": "sentence: Sam is passionately in love , but Sam's father is unhappy about it , because he is a snob .pronoun: he. A) sam B) sam's father",
+            "output": [
+                "sam's father"
+            ]
+        },
+        {
+            "input": "sentence: Mary promised Anne to leave , so an hour later she left .pronoun: she. A) mary B) anne",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: i put the pie away in the fridge . it has a lot of butter in it .pronoun: it. A) the pie B) the fridge",
+            "output": [
+                "the pie"
+            ]
+        },
+        {
+            "input": "sentence: Adam and John can't leave work here until Bob and Steve arrive to replace them . If Bob and Steve had left home for work on time , they would be here by this time .pronoun: they. A) adam and john B) bob and steve",
+            "output": [
+                "bob and steve"
+            ]
+        },
+        {
+            "input": "sentence: sara borrowed the reference from the library because she needs it for an assignment she is working on . she writes it when she gets home from work .pronoun: it. A) the reference B) the assignment",
+            "output": [
+                "the assignment"
+            ]
+        },
+        {
+            "input": "sentence: the attorney asked the bystander a question , but he was reluctant to answer it .pronoun: he. A) the attorney B) the bystander",
+            "output": [
+                "the bystander"
+            ]
+        },
+        {
+            "input": "sentence: cosmo is the only man still alive who remembers my great-grandpa . he was a remarkable man .pronoun: he. A) cosmo B) my great-grandpa",
+            "output": [
+                "my great-grandpa"
+            ]
+        },
+        {
+            "input": "sentence: The trophies don't fit into the brown suitcases because they are too small .pronoun: they. A) the trophies B) the suitcases",
+            "output": [
+                "the suitcases"
+            ]
+        },
+        {
+            "input": "sentence: The paintings in Mark's living room show oak trees . They are to the right of a bookcase .pronoun: They. A) the paintings B) the oak trees",
+            "output": [
+                "the paintings"
+            ]
+        },
+        {
+            "input": "sentence: hewlit gave hardy a lift to school so he wouldn't have to walk .pronoun: he. A) Hewlit B) hardy",
+            "output": [
+                "hardy"
+            ]
+        },
+        {
+            "input": "sentence: i saw julio yelling at some man in a military uniform with a huge red beard . i don't know why he was , but he looked very unhappy .pronoun: he. A) julio B) the man in uniform",
+            "output": [
+                "julio"
+            ]
+        },
+        {
+            "input": "sentence: my appointment started at 4:00 and i needed to catch the flight at 4:30 , so there wasn't much time . luckily , it was short , so it worked out .pronoun: it. A) the appointment B) the flight",
+            "output": [
+                "the appointment"
+            ]
+        },
+        {
+            "input": "sentence: sara tucked her daughter anne into bed , so that she could work .pronoun: she. A) sara B) sara's daughter",
+            "output": [
+                "sara"
+            ]
+        },
+        {
+            "input": "sentence: Jim and Frank yelled at Kevin and John because they were so upset .pronoun: they. A) jim and frank B) kevin and john",
+            "output": [
+                "jim and frank"
+            ]
+        },
+        {
+            "input": "sentence: Alice and Julia looked for their friends Jade and Emma in the crowd . Since they always have good luck , Alice and Julia spotted them quickly .pronoun: they. A) alice and julia B) jade and emma",
+            "output": [
+                "alice and julia"
+            ]
+        },
+        {
+            "input": "sentence: linda made sure to thank cathy for all the help she had received .pronoun: she. A) linda B) cathy",
+            "output": [
+                "linda"
+            ]
+        },
+        {
+            "input": "sentence: The actresses used to be named Terpsichore and Melpomene , but they changed them to Tina and Melanie a few years ago , because they figured they were too hard to pronounce .pronoun: they. A) terpsichore and melpomene B) tina and melanie",
+            "output": [
+                "terpsichore and melpomene"
+            ]
+        },
+        {
+            "input": "sentence: I'm sure that my maps will show these buildings ; they are very famous .pronoun: they. A) the maps B) the buildings",
+            "output": [
+                "the buildings"
+            ]
+        },
+        {
+            "input": "sentence: i poured water from the jar into the glass until it was full .pronoun: it. A) the jar B) the glass",
+            "output": [
+                "the glass"
+            ]
+        },
+        {
+            "input": "sentence: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoying .pronoun: They. A) john and steve B) the men",
+            "output": [
+                "the men"
+            ]
+        },
+        {
+            "input": "sentence: jonny cried because ricky wouldn't share his toy .pronoun: his. A) jonny B) ricky",
+            "output": [
+                "ricky"
+            ]
+        },
+        {
+            "input": "sentence: I saw Jim and Bob yelling at some guys in military uniform with huge red beards . I don't know why they were , but they looked very unhappy .pronoun: they. A) jim and bob B) the guys in uniform",
+            "output": [
+                "jim and bob"
+            ]
+        },
+        {
+            "input": "sentence: the client walked into the bank and stabbed one of the cashiers . he was immediately taken to the hospital .pronoun: he. A) the client B) the cashiers",
+            "output": [
+                "the cashiers"
+            ]
+        },
+        {
+            "input": "sentence: victor felt crushed when his longtime rival john revealed that he was the winner of the competition .pronoun: he. A) victor B) john",
+            "output": [
+                "john"
+            ]
+        },
+        {
+            "input": "sentence: my appointment started at 4:00 and i needed to catch the flight at 4:30 , so there wasn't much time . luckily , it was delayed , so it worked out .pronoun: it. A) the appointment B) the flight",
+            "output": [
+                "the flight"
+            ]
+        },
+        {
+            "input": "sentence: Bill and Jake passed the half-empty plate to John and Luke because they were full .pronoun: they. A) bill and jake B) john and luke",
+            "output": [
+                "bill and jake"
+            ]
+        },
+        {
+            "input": "sentence: The fathers carried the sleeping boys in their arms .pronoun: their. A) the fathers B) the boys",
+            "output": [
+                "the fathers"
+            ]
+        },
+        {
+            "input": "sentence: If the con artists had succeeded in fooling Sam and Julian , they would have lost a lot of money .pronoun: they. A) the con artists B) sam and julian",
+            "output": [
+                "sam and julian"
+            ]
+        },
+        {
+            "input": "sentence: Jane is the only woman still alive who remembers my great-grandmother . She was a remarkable woman .pronoun: She. A) jane B) my great-grandmother",
+            "output": [
+                "my great-grandmother"
+            ]
+        },
+        {
+            "input": "sentence: eric told richard many lies about himself , which richard included in his book . he should have been more truthful .pronoun: he. A) eric B) richard",
+            "output": [
+                "eric"
+            ]
+        },
+        {
+            "input": "sentence: the sun was covered by a thick fog all morning , but luckily , by the time the picnic started , it was out .pronoun: it. A) the sun B) the fog",
+            "output": [
+                "the sun"
+            ]
+        },
+        {
+            "input": "sentence: George and Bob got free tickets to the play , but they gave them to Eric and Jeff , because they were not particularly eager to see it .pronoun: they. A) george and bob B) eric and jeff",
+            "output": [
+                "george and bob"
+            ]
+        },
+        {
+            "input": "sentence: Anne paid the detective after she received the final report on the case .pronoun: she. A) anne B) the detective",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Henry collapsed on the sidewalk . Soon they saw Carl and Ben coming to help . They were very ill .pronoun: They. A) bob and henry B) carl and ben",
+            "output": [
+                "bob and henry"
+            ]
+        },
+        {
+            "input": "sentence: I put the heavy books on the tables and they broke .pronoun: they. A) the heavy books B) the tables",
+            "output": [
+                "the tables"
+            ]
+        },
+        {
+            "input": "sentence: Mark and David told Pete and Jack many lies about themselves , which Pete and Jack included in their book . They should have been more sceptical .pronoun: They. A) mark and david B) pete and jack",
+            "output": [
+                "pete and jack"
+            ]
+        },
+        {
+            "input": "sentence: The policeman arrested the gang member . He was trying to run the drug trade in the neighborhood .pronoun: He. A) the policeman B) the gang member",
+            "output": [
+                "the gang member"
+            ]
+        },
+        {
+            "input": "sentence: the fish ate the roundworm . it was tasty .pronoun: it. A) the fish B) the roundworm",
+            "output": [
+                "the roundworm"
+            ]
+        },
+        {
+            "input": "sentence: todd took french classes from rick , because he was known to speak it fluently .pronoun: he. A) todd B) rick",
+            "output": [
+                "rick"
+            ]
+        },
+        {
+            "input": "sentence: Jack spoke to Peter , breaking his silence .pronoun: his. A) jack B) peter",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: Lily got free tickets to the play , but she gave them to Joan , because she was particularly eager to see it .pronoun: she. A) lily B) joan",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: Jane paid for Anne's college education . She is very grateful .pronoun: She. A) jane B) anne",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: Joe and Steve paid the detectives after they delivered the final report on the case .pronoun: they. A) joe and steve B) the detectives",
+            "output": [
+                "the detectives"
+            ]
+        },
+        {
+            "input": "sentence: The man held the boy against his chest .pronoun: his. A) the man B) the boy",
+            "output": [
+                "the man"
+            ]
+        },
+        {
+            "input": "sentence: when the advocates of the bill got to the town hall , they were surprised to find that the room was full of adversaries . they were very much in the majority .pronoun: they. A) the advocates B) the adversaries",
+            "output": [
+                "the adversaries"
+            ]
+        },
+        {
+            "input": "sentence: freddy was upset with travis because the toaster he had bought from him didn't work .pronoun: he. A) freddy B) travis",
+            "output": [
+                "freddy"
+            ]
+        },
+        {
+            "input": "sentence: grace was happy to trade me her pullover for my coat . she thinks it looks great on her .pronoun: it. A) the pullover B) the coat",
+            "output": [
+                "the coat"
+            ]
+        },
+        {
+            "input": "sentence: the feline was lying by the rodent hole waiting for the rodent , but it was too impatient .pronoun: it. A) the feline B) the rodent",
+            "output": [
+                "the feline"
+            ]
+        },
+        {
+            "input": "sentence: the mother held the daughter against her chest .pronoun: her. A) the mother B) the daughter",
+            "output": [
+                "the mother"
+            ]
+        },
+        {
+            "input": "sentence: mary took out her recorder and played one of her favorite passage . shehas had it since she was a child .pronoun: it. A) the recorder B) the passage",
+            "output": [
+                "the recorder"
+            ]
+        },
+        {
+            "input": "sentence: cory knocked on the door , and dolly answered it . she invited her to come in .pronoun: she. A) cory B) dolly",
+            "output": [
+                "dolly"
+            ]
+        },
+        {
+            "input": "sentence: cory knocked on the door , and dolly answered it . she invited her to come out .pronoun: she. A) cory B) dolly",
+            "output": [
+                "cory"
+            ]
+        },
+        {
+            "input": "sentence: john explained his theory to jad but he couldn't convince him .pronoun: he. A) john B) jad",
+            "output": [
+                "john"
+            ]
+        },
+        {
+            "input": "sentence: There are gaps in the walls . You can see the garden behind them .pronoun: them. A) the gaps B) the walls",
+            "output": [
+                "the walls"
+            ]
+        },
+        {
+            "input": "sentence: grace was happy to trade me her pullover for my coat . she thinks it looks dowdy on her .pronoun: it. A) the pullover B) the coat",
+            "output": [
+                "the pullover"
+            ]
+        },
+        {
+            "input": "sentence: the older pupils were bullying the younger ones , so we rescued them .pronoun: them. A) the older pupils B) the younger pupils",
+            "output": [
+                "the younger pupils"
+            ]
+        },
+        {
+            "input": "sentence: patrick and cora had very warm down jackets , but they were not prepared for the cold in alaska .pronoun: they. A) patrick and cora B) jackets",
+            "output": [
+                "patrick and cora"
+            ]
+        },
+        {
+            "input": "sentence: cosmo is the only man alive who still remembers my old man as an infant . when cosmo first saw my old man , he was twelve years old .pronoun: he. A) cosmo B) my old man",
+            "output": [
+                "cosmo"
+            ]
+        },
+        {
+            "input": "sentence: The tables won't fit through the doorways because they are too narrow .pronoun: they. A) the tables B) the doorways",
+            "output": [
+                "the doorways"
+            ]
+        },
+        {
+            "input": "sentence: Jack believed that David suspected that he had stolen the watch .pronoun: he. A) jack B) david",
+            "output": [
+                "jack"
+            ]
+        },
+        {
+            "input": "sentence: Kirilova ceded the presidency to Shatova because she was more popular .pronoun: she. A) kirilova B) shatova",
+            "output": [
+                "shatova"
+            ]
+        },
+        {
+            "input": "sentence: Dan and Julian took the rear seat while Bill and Jake claimed the front because their \"Dibs!\" was quicker .pronoun: their. A) dan and julian B) bill and jake",
+            "output": [
+                "bill and jake"
+            ]
+        },
+        {
+            "input": "sentence: Although they ran at about the same speed , John beat Andrew because he had such a bad start .pronoun: he. A) john B) andrew",
+            "output": [
+                "andrew"
+            ]
+        },
+        {
+            "input": "sentence: mara's parents came home and found her having sex with her boyfriend , danny . they were furious about it .pronoun: they. A) mara's parents B) mara and danny",
+            "output": [
+                "mara's parents"
+            ]
+        },
+        {
+            "input": "sentence: there is a hole in the partition . you can see the garden behind it .pronoun: it. A) the hole B) the partition",
+            "output": [
+                "the partition"
+            ]
+        },
+        {
+            "input": "sentence: they broadcast a message, but a metro came into the station and i couldn't hear it .pronoun: it. A) the message B) the metro",
+            "output": [
+                "the message"
+            ]
+        },
+        {
+            "input": "sentence: since it was raining , i carried the paper in my tote bag to keep it dry .pronoun: it. A) the paper B) the tote bag",
+            "output": [
+                "the paper"
+            ]
+        },
+        {
+            "input": "sentence: since it was raining , i carried the paper over my tote bag to keep it dry .pronoun: it. A) the paper B) the tote bag",
+            "output": [
+                "the tote bag"
+            ]
+        },
+        {
+            "input": "sentence: the man carried the sleeping son in his arms .pronoun: his. A) the man B) the son",
+            "output": [
+                "the man"
+            ]
+        },
+        {
+            "input": "sentence: the client walked into the bank and stabbed one of the cashiers . he was immediately taken to the police station .pronoun: he. A) the client B) the cashiers",
+            "output": [
+                "the client"
+            ]
+        },
+        {
+            "input": "sentence: Lucy collapsed on the sidewalk . Soon she saw Mary coming to help . She was very ill .pronoun: She. A) lucy B) mary",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: Peter knocked on the door , and Bill answered it . He invited him to come in .pronoun: He. A) peter B) bill",
+            "output": [
+                "bill"
+            ]
+        },
+        {
+            "input": "sentence: kirk promised andy to leave , so an hour later he left .pronoun: he. A) kirk B) andy",
+            "output": [
+                "kirk"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Julia knocked on Susan and Mary's door but they did not answer .pronoun: they. A) jane and julia B) susan and mary",
+            "output": [
+                "susan and mary"
+            ]
+        },
+        {
+            "input": "sentence: Tom and Bill gave Ralph and Josh a lift to school so they wouldn't have to drive alone .pronoun: they. A) tom and bill B) ralph and josh",
+            "output": [
+                "tom and bill"
+            ]
+        },
+        {
+            "input": "sentence: i poured water from the jar into the glass until it was empty .pronoun: it. A) the jar B) the glass",
+            "output": [
+                "the jar"
+            ]
+        },
+        {
+            "input": "sentence: the biologists are studying three species of aquatic vertebrates that have recently been found living in the indian ocean . they appeared two years ago .pronoun: they. A) the biologists B) the aquatic vertebrate",
+            "output": [
+                "the aquatic vertebrate"
+            ]
+        },
+        {
+            "input": "sentence: In the storm , the trees fell down and crashed through the roofs of my house . Now , I have to get them repaired .pronoun: them. A) the trees B) the roofs",
+            "output": [
+                "the roofs"
+            ]
+        },
+        {
+            "input": "sentence: Fred and Julian are the only men still alive who remember my great-grandfathers . They were remarkable men .pronoun: They. A) fred and julian B) my great-grandfathers",
+            "output": [
+                "my great-grandfathers"
+            ]
+        },
+        {
+            "input": "sentence: dan was playing cards with dirk and was way ahead . if dirk hadn't had a sudden run of good luck , he would have won .pronoun: he. A) dan B) dirk",
+            "output": [
+                "dan"
+            ]
+        },
+        {
+            "input": "sentence: although they ran at about the same speed , fanny beat dana because she had such a bad start .pronoun: she. A) fanny B) dana",
+            "output": [
+                "dana"
+            ]
+        },
+        {
+            "input": "sentence: i couldn't find a spoon , so i tried using a marker to stir my drink . but that turned out to be a bad idea , because it got full of coffee .pronoun: it. A) the marker B) the drink",
+            "output": [
+                "the marker"
+            ]
+        },
+        {
+            "input": "sentence: the mutts are getting in at night and attacking the hens . they have gotten very bold .pronoun: they. A) the mutts B) the hens",
+            "output": [
+                "the mutts"
+            ]
+        },
+        {
+            "input": "sentence: kara knew that suzy's son had been in a car accident , because she told her about it .pronoun: she. A) kara B) suzy",
+            "output": [
+                "suzy"
+            ]
+        },
+        {
+            "input": "sentence: Emma can't leave work here until Anne arrives to replace her . If Anne had left home for work on time , she would be here by this time .pronoun: she. A) emma B) anne",
+            "output": [
+                "anne"
+            ]
+        },
+        {
+            "input": "sentence: Joe and Bill have sold their houses and bought new ones a few miles away . They will be moving out of them on Thursday .pronoun: They. A) the old houses B) the new houses",
+            "output": [
+                "the old houses"
+            ]
+        },
+        {
+            "input": "sentence: The fish are eating the worms . They are hungry .pronoun: They. A) the fish B) the worms",
+            "output": [
+                "the fish"
+            ]
+        },
+        {
+            "input": "sentence: Joe and Bill have sold their houses and bought new ones a few miles away . They will be moving into them on Thursday .pronoun: They. A) the old houses B) the new houses",
+            "output": [
+                "the new houses"
+            ]
+        },
+        {
+            "input": "sentence: the van zoomed by the coach because it was going so fast .pronoun: it. A) the van B) the coach",
+            "output": [
+                "the van"
+            ]
+        },
+        {
+            "input": "sentence: the mutts are getting in at night and attacking the hens . i shall have to guard them .pronoun: them. A) the mutts B) the hens",
+            "output": [
+                "the hens"
+            ]
+        },
+        {
+            "input": "sentence: when jan dropped his ice cream , jon giggled , so father gave him a sympathetic look .pronoun: him. A) Jan B) Jon",
+            "output": [
+                "Jan"
+            ]
+        },
+        {
+            "input": "sentence: When Nina dropped her ice cream , Lily giggled , so father gave her a stern look .pronoun: her. A) nina B) lily",
+            "output": [
+                "lily"
+            ]
+        },
+        {
+            "input": "sentence: Madonna and Britney fired their trainers because they couldn't stand their boyfriends .pronoun: they. A) madonna and britney B) the trainers",
+            "output": [
+                "madonna and britney"
+            ]
+        },
+        {
+            "input": "sentence: When Tommy and Bobby dropped their ice creams , Timmy and Billy giggled , so father gave them a stern look .pronoun: them. A) tommy and bobby B) timmy and billy",
+            "output": [
+                "timmy and billy"
+            ]
+        },
+        {
+            "input": "sentence: fred was supposed to run the dish washing machine , but he put it off , because he wanted to watch television . but the show turned out to be boring , so he changed his mind and turned it off .pronoun: it. A) the dish washing machine B) the television",
+            "output": [
+                "the television"
+            ]
+        },
+        {
+            "input": "sentence: during a game of tag , kris chased brent because he was \"it\" .pronoun: he. A) kris B) brent",
+            "output": [
+                "kris"
+            ]
+        },
+        {
+            "input": "sentence: brailey gave joana candy because she was hungry .pronoun: she. A) brailey B) joana",
+            "output": [
+                "joana"
+            ]
+        },
+        {
+            "input": "sentence: Frank and Steve felt crushed when their longtime rivals Bill and Pete revealed that they were the winners of the competition .pronoun: they. A) frank and steve B) bill and pete",
+            "output": [
+                "bill and pete"
+            ]
+        },
+        {
+            "input": "sentence: the older pupils were bullying the younger ones , so we punished them .pronoun: them. A) the older pupils B) the younger pupils",
+            "output": [
+                "the older pupils"
+            ]
+        },
+        {
+            "input": "sentence: jake asked edan for a favor but he was refused .pronoun: he. A) jake B) edan",
+            "output": [
+                "jake"
+            ]
+        },
+        {
+            "input": "sentence: Stretching his back , the man smiled at the boy .pronoun: his. A) the man B) the boy",
+            "output": [
+                "the man"
+            ]
+        },
+        {
+            "input": "sentence: the sink is clogged with grease . it has to be removed .pronoun: it. A) the sink B) the grease",
+            "output": [
+                "the grease"
+            ]
+        },
+        {
+            "input": "sentence: The woman couldn't lift her daughter because she was so heavy .pronoun: she. A) the woman B) the daughter",
+            "output": [
+                "the daughter"
+            ]
+        },
+        {
+            "input": "sentence: As Ollie and Johnny carried Tommy and Larry up the long winding steps , their legs dangled .pronoun: their. A) ollie and johnny B) tommy and larry",
+            "output": [
+                "tommy and larry"
+            ]
+        },
+        {
+            "input": "sentence: Sam and Henry pulled up chairs to the pianos , but they were broken , so they had to sing instead .pronoun: they. A) the chairs B) the pianos",
+            "output": [
+                "the pianos"
+            ]
+        },
+        {
+            "input": "sentence: ivan was jogging through the park when he saw a man juggling watermelons . he was very impressive .pronoun: he. A) ivan B) the performer",
+            "output": [
+                "the performer"
+            ]
+        },
+        {
+            "input": "sentence: i was trying to open the lock with the masterkey , but someone had filled the hole with bubble gum , and i couldn't get it in .pronoun: it. A) the masterkey B) the bubble gum",
+            "output": [
+                "the masterkey"
+            ]
+        },
+        {
+            "input": "sentence: Luke asked Henry what time the library closes , because he had forgotten .pronoun: he. A) luke B) henry",
+            "output": [
+                "luke"
+            ]
+        },
+        {
+            "input": "sentence: Peter did a lot worse than his good friend Jeff on the test because he had studied so hard .pronoun: he. A) peter B) jeff",
+            "output": [
+                "jeff"
+            ]
+        },
+        {
+            "input": "sentence: the cops arrested all of the gangsters . they were trying to run the drug trade in the neighborhood .pronoun: they. A) the cops B) the gangsters",
+            "output": [
+                "the gangsters"
+            ]
+        },
+        {
+            "input": "sentence: The lawyers asked the witnesses a question , but they were reluctant to answer it .pronoun: they. A) the lawyers B) the witnesses",
+            "output": [
+                "the witnesses"
+            ]
+        },
+        {
+            "input": "sentence: Jackson and Henry were greatly influenced by Arnold and Louis , though they lived two centuries later .pronoun: they. A) jackson and henry B) arnold and louis",
+            "output": [
+                "jackson and henry"
+            ]
+        },
+        {
+            "input": "sentence: Lucy explained her theory to Emma but she couldn't convince her .pronoun: she. A) lucy B) emma",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: The customers walked into the bank and stabbed some of the tellers . They were immediately taken to the police station .pronoun: They. A) the customers B) the tellers",
+            "output": [
+                "the customers"
+            ]
+        },
+        {
+            "input": "sentence: dariyah did not pass the ball to molly although she was open .pronoun: she. A) Dariyah B) molly",
+            "output": [
+                "molly"
+            ]
+        },
+        {
+            "input": "sentence: beyonce fired her hairdresser because she couldn't stand her boyfriend .pronoun: she. A) beyonce B) the hairdresser",
+            "output": [
+                "beyonce"
+            ]
+        },
+        {
+            "input": "sentence: This book introduced woolf to Smith ; it was a fine selection of her writing .pronoun: her. A) woolf B) smith",
+            "output": [
+                "woolf"
+            ]
+        },
+        {
+            "input": "sentence: John tucked his son Henry into bed , so that he could work .pronoun: he. A) john B) john's son",
+            "output": [
+                "john"
+            ]
+        },
+        {
+            "input": "sentence: Michael fired his trainer because he couldn't stand his girlfriend .pronoun: he. A) michael B) the trainer",
+            "output": [
+                "michael"
+            ]
+        },
+        {
+            "input": "sentence: Mary and Anne took out their flutes and played some of their favorite pieces . They have had them since they were children .pronoun: them. A) the flutes B) the pieces",
+            "output": [
+                "the flutes"
+            ]
+        },
+        {
+            "input": "sentence: The sculptures rolled off the shelves because they weren't anchored .pronoun: they. A) the sculptures B) the shelves",
+            "output": [
+                "the sculptures"
+            ]
+        },
+        {
+            "input": "sentence: dan paid for justin's college education , but now justin acts as though it never happened . he is very ungrateful .pronoun: he. A) dan B) justin",
+            "output": [
+                "justin"
+            ]
+        },
+        {
+            "input": "sentence: Bob and Jack were playing cards with Adam and Bill and were way ahead . If Adam and Bill hadn't had a sudden run of good luck , they would have won .pronoun: they. A) bob and jack B) adam and bill",
+            "output": [
+                "bob and jack"
+            ]
+        },
+        {
+            "input": "sentence: sam broke both his gliding joints and he's walking with aids . but a month or so from now they should be unnecessary .pronoun: they. A) the gliding joints B) the aids",
+            "output": [
+                "the aids"
+            ]
+        },
+        {
+            "input": "sentence: Bill and Steve passed the gameboy to John and Andrew because their turn was over .pronoun: their. A) bill and steve B) john and andrew",
+            "output": [
+                "bill and steve"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Lucy gave Joan and Anne candy because they were hungry .pronoun: they. A) jane and lucy B) joan and anne",
+            "output": [
+                "joan and anne"
+            ]
+        },
+        {
+            "input": "sentence: i tried to paint a picture of an orchard , with citrus in the citrus trees , but they came out looking more like light bulbs .pronoun: they. A) citrus B) citrus trees",
+            "output": [
+                "citrus"
+            ]
+        },
+        {
+            "input": "sentence: look ! there is a cyprinid swimming right below that wigeon ! it had better get away to safety fast !pronoun: it. A) the cyprinid fish B) the wigeon",
+            "output": [
+                "the cyprinid fish"
+            ]
+        },
+        {
+            "input": "sentence: The dogs chased the cats , which ran up a tree . They waited at the bottom .pronoun: They. A) the dogs B) the cats",
+            "output": [
+                "the dogs"
+            ]
+        },
+        {
+            "input": "sentence: linda made sure to thank cathy for all the help she had given .pronoun: she. A) linda B) cathy",
+            "output": [
+                "cathy"
+            ]
+        },
+        {
+            "input": "sentence: Fred covered his eye with his hand , because the wind was blowing sand around . He lowered it when the wind stopped .pronoun: it. A) his eye B) his hand",
+            "output": [
+                "his hand"
+            ]
+        },
+        {
+            "input": "sentence: Jack looked for his friend Henry in the crowd . Since he always wears a red turban , Jack spotted him quickly .pronoun: he. A) jack B) henry",
+            "output": [
+                "henry"
+            ]
+        },
+        {
+            "input": "sentence: i can't cut that bush down with that hatchet ; it is too small .pronoun: it. A) the bush B) the hatchet",
+            "output": [
+                "the hatchet"
+            ]
+        },
+        {
+            "input": "sentence: Anne and Julia gave birth to daughters last month . They are very charming women .pronoun: They. A) anne and julia B) anne and julia's daughters",
+            "output": [
+                "anne and julia"
+            ]
+        },
+        {
+            "input": "sentence: jenna's mother had died long ago , and her education had been managed by an excellent woman as governess .pronoun: her. A) jenna B) jenna's mother",
+            "output": [
+                "jenna"
+            ]
+        },
+        {
+            "input": "sentence: The lawyers asked the witnesses a question , but they were reluctant to repeat it .pronoun: they. A) the lawyers B) the witnesses",
+            "output": [
+                "the lawyers"
+            ]
+        },
+        {
+            "input": "sentence: Anna and Lisa did a lot better than their good friends Lucy and Paula on the test because they had studied so hard .pronoun: they. A) anna and lisa B) lucy and paula",
+            "output": [
+                "anna and lisa"
+            ]
+        },
+        {
+            "input": "sentence: gary got free tickets to the play , but he gave them to wes , because he was not particularly eager to see it .pronoun: he. A) gary B) wes",
+            "output": [
+                "gary"
+            ]
+        },
+        {
+            "input": "sentence: if the fraudster had succeeded in fooling terry , he would have lost a lot of money .pronoun: he. A) the fraudster B) terry",
+            "output": [
+                "terry"
+            ]
+        },
+        {
+            "input": "sentence: the engineman arrived after the cops because they were coming from so far away .pronoun: they. A) the engineman B) the cops",
+            "output": [
+                "the engineman"
+            ]
+        },
+        {
+            "input": "sentence: Jane and Emma knocked on the door , and Susan and Lucy answered it . They invited them to come out .pronoun: They. A) jane and emma B) susan and lucy",
+            "output": [
+                "jane and emma"
+            ]
+        },
+        {
+            "input": "sentence: During a game of tag , Ethan and Harry chased Luke and Johnny because they were \"it\" .pronoun: they. A) ethan and harry B) luke and johnny",
+            "output": [
+                "ethan and harry"
+            ]
+        },
+        {
+            "input": "sentence: the actress used to be named aphrodite , but she changed it to abby a few years ago , because she figured it was easier to pronounce .pronoun: it. A) aphrodite B) abby",
+            "output": [
+                "abby"
+            ]
+        },
+        {
+            "input": "sentence: Joan asked Jeff for a favor but she was refused .pronoun: she. A) joan B) jeff",
+            "output": [
+                "joan"
+            ]
+        },
+        {
+            "input": "sentence: Lily had to stop Mary from toying with the injured bird . She is very compassionate .pronoun: She. A) lily B) mary",
+            "output": [
+                "lily"
+            ]
+        },
+        {
+            "input": "sentence: the board of aldermen refused the protesters a permit because they feared violence .pronoun: they. A) the board of aldermen B) the protesters",
+            "output": [
+                "the board of aldermen"
+            ]
+        },
+        {
+            "input": "sentence: johnson visited drake's grave in 1765 . at that date he had been travelling for five years .pronoun: he. A) johnson B) drake",
+            "output": [
+                "johnson"
+            ]
+        },
+        {
+            "input": "sentence: i used an old cloth to clean the blade , and then i put it in the trash .pronoun: it. A) the cloth B) the blade",
+            "output": [
+                "the cloth"
+            ]
+        },
+        {
+            "input": "sentence: Mary hired Anne to take care of her .pronoun: her. A) mary B) anne",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: fred covered his eyes with his palms , because the wind was blowing sand around . he opened them when the wind stopped .pronoun: them. A) his eyes B) his palms",
+            "output": [
+                "his eyes"
+            ]
+        },
+        {
+            "input": "sentence: The men lifted the boys onto their shoulders .pronoun: their. A) the men B) the boys",
+            "output": [
+                "the men"
+            ]
+        },
+        {
+            "input": "sentence: Jane paid for Anne's college education . She is very generous .pronoun: She. A) jane B) anne",
+            "output": [
+                "jane"
+            ]
+        },
+        {
+            "input": "sentence: the van zoomed by the coach because it was going so slow .pronoun: it. A) the van B) the coach",
+            "output": [
+                "the coach"
+            ]
+        },
+        {
+            "input": "sentence: the cup doesn't fit into the brown suitcase because it is too small .pronoun: it. A) the cup B) the travel bag",
+            "output": [
+                "the travel bag"
+            ]
+        },
+        {
+            "input": "sentence: suzy knocked on blaire's door but she did not get an answer .pronoun: she. A) suzy B) blaire",
+            "output": [
+                "suzy"
+            ]
+        },
+        {
+            "input": "sentence: this book introduced john milton to virgil ; it was a fine selection of his writing .pronoun: his. A) john milton B) virgil",
+            "output": [
+                "virgil"
+            ]
+        },
+        {
+            "input": "sentence: the mutts are getting in at night and attacking the hens . they have gotten very nervous .pronoun: they. A) the mutts B) the hens",
+            "output": [
+                "the hens"
+            ]
+        },
+        {
+            "input": "sentence: Lucy was greatly influenced by Angela , though she lived two centuries later .pronoun: she. A) lucy B) angela",
+            "output": [
+                "lucy"
+            ]
+        },
+        {
+            "input": "sentence: Anna and Lisa did a lot worse than their good friends Lucy and Paula on the test because they had studied so hard .pronoun: they. A) anna and lisa B) lucy and paula",
+            "output": [
+                "lucy and paula"
+            ]
+        },
+        {
+            "input": "sentence: Grace was happy to trade me her sweaters for my jackets . She thinks they look dowdy on her .pronoun: they. A) the sweaters B) the jackets",
+            "output": [
+                "the sweaters"
+            ]
+        },
+        {
+            "input": "sentence: gaston passed the gameboy to hershel because his turn was over .pronoun: his. A) Gaston B) hershel",
+            "output": [
+                "Gaston"
+            ]
+        },
+        {
+            "input": "sentence: tashia didn't get angry with francine , who had cut her off , because she stopped and counted to ten .pronoun: she. A) tashia B) Francine",
+            "output": [
+                "tashia"
+            ]
+        },
+        {
+            "input": "sentence: Alice and Lucy tried frantically to stop their daughters from barking at the party , leaving us to wonder why they were behaving so strangely .pronoun: they. A) alice and lucy B) alice and lucy's daughters",
+            "output": [
+                "alice and lucy's daughters"
+            ]
+        },
+        {
+            "input": "sentence: travis was greatly influenced by bailey , though he lived two centuries later .pronoun: he. A) travis B) bailey",
+            "output": [
+                "travis"
+            ]
+        },
+        {
+            "input": "sentence: Madonna and Britney fired their trainers because they slept with their boyfriends .pronoun: their. A) madonna and britney B) the trainers",
+            "output": [
+                "madonna and britney"
+            ]
+        },
+        {
+            "input": "sentence: cora tried frantically to stop her daughter from chatting at the party , leaving us to wonder why she was behaving so strangely .pronoun: she. A) Cora B) Cora's daughter",
+            "output": [
+                "Cora"
+            ]
+        },
+        {
+            "input": "sentence: Everyone really loved the oatmeal cookie ; only a few people liked the chocolate chip cookie . Next time , we should make fewer of it .pronoun: it. A) the oatmeal cookie B) the chocolate chip cookie",
+            "output": [
+                "the chocolate chip cookie"
+            ]
+        },
+        {
+            "input": "sentence: Lily had to stop Mary from toying with the injured bird . She is very cruel .pronoun: She. A) lily B) mary",
+            "output": [
+                "mary"
+            ]
+        },
+        {
+            "input": "sentence: gary got free tickets to the play , but he gave them to wes , even though he was particularly eager to see it .pronoun: he. A) gary B) wes",
+            "output": [
+                "gary"
+            ]
+        },
+        {
+            "input": "sentence: Lily got free tickets to the play , but she gave them to Joan , even though she was particularly eager to see it .pronoun: she. A) lily B) joan",
+            "output": [
+                "lily"
+            ]
+        },
+        {
+            "input": "sentence: i was trying to open the lock with the masterkey , but someone had filled the hole with bubble gum , and i couldn't get it out .pronoun: it. A) the masterkey B) the bubble gum",
+            "output": [
+                "the bubble gum"
+            ]
+        },
+        {
+            "input": "sentence: jerry comforted larry because he was so upset .pronoun: he. A) jerry B) larry",
+            "output": [
+                "larry"
+            ]
+        }
+    ],
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+        "Source": [
+        "Enhanced Winograd Schema Challenge dataset from the paper The Sensitivity of Language Models and Humans to Winograd Schema Perturbations"
+    ],
+    "Categories": [
+        "Pronoun Disambiguation"
+    ]
+}
