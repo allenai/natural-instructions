@@ -203,3 +203,7 @@ Name | Summary | Category
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task264_paper_reviews_classification` | Given a set of reviews, classify paper into accept or reject | Classification
+`task265_paper_reviews_classification` | Given a paper review, identify it is in the english or spanish language | Classification
+`task266_paper_reviews_classification` | Given a paper review, classify into five evaluation metric | Classification
+`task267_paper_reviews_classification` | Given a paper review, classify into five orientation metric | Classification
