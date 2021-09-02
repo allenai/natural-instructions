@@ -194,11 +194,11 @@ Name | Summary | Category
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
 `task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
-`task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
-`task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
-`task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
-`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task205_remove_even_elements.json` | Given a list of integers remove all elements that are even | Answer Generation, Arithmetic
 `task206_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
 `task207_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
 `task208_combinations_of_list.json` | Given a list of integers of length *n* find all possible combinations,without replacement, of length *n-1* | Answer Generation, Combinatorics
+`task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
+`task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
+`task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
