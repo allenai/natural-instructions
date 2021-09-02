@@ -165,14 +165,11 @@ Name | Summary | Category
 <<<<<<< HEAD
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
-=======
 `task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
 `task172_spl_translation_en_fa.json` | Translate English questions to Farsi while preserving named entities in the original language | Translation
 `task173_spl_translation_en_it.json` | Translate English questions to Italian while preserving named entities in the original language | Translation
 `task174_spl_translation_en_ja.json` | Translate English questions to Japanese while preserving named entities in the original language | Translation
 `task175_spl_translation_en_pl.json` | Translate English questions to Polish while preserving named entities in the original language | Translation
-`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
->>>>>>> origin
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
