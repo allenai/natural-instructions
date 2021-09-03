@@ -162,12 +162,13 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
+`task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
 `task172_spl_translation_en_fa.json` | Translate English questions to Farsi while preserving named entities in the original language | Translation
 `task173_spl_translation_en_it.json` | Translate English questions to Italian while preserving named entities in the original language | Translation
 `task174_spl_translation_en_ja.json` | Translate English questions to Japanese while preserving named entities in the original language | Translation
 `task175_spl_translation_en_pl.json` | Translate English questions to Polish while preserving named entities in the original language | Translation
-`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
@@ -182,6 +183,7 @@ Name | Summary | Category
 `task169_strategyqa_sentence_generation` | Given a question, write the facts one needs to know in order to answer the question| Sentence Generation
 `task176_break_decompose_questions` | Break a question into the steps needed to answer the question. | Question Decomposition
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
@@ -194,7 +196,6 @@ Name | Summary | Category
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
 `task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
-`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task205_remove_even_elements.json` | Given a list of integers remove all elements that are even | Answer Generation, Arithmetic
 `task206_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
 `task207_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
