@@ -218,3 +218,13 @@ Name | Summary | Category
 `task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
+`task213_rocstories_correct_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the correct story ending | Classification
+`task214_rocstories_incorrect_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the incorrect story ending | Classification
+`task215_rocstories_incorrect_answer_generation.json` | Given the title and first four sentences of a five sentence story, write an incorrect story ending | Answer Generation
+`task216_rocstories_correct_answer_generation.json` | Given the title and first four sentences of a five sentence story, write a correct story ending | Answer Generation
+`task217_rocstories_ordering_answer_generation.json` | Given a five sentence story in jumbled order and the title, put the story in the correct order | Answer Generation
+`task218_rocstories_swap_order_answer_generation.json` | Given a five sentence story and the title, determine which two sentences must be swapped so that the story makes complete sense | Answer Generation
+`task219_rocstories_title_answer_generation.json` | Given a five sentence story, generate an appropriate title for the story | Answer Generation
+`task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
+`task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
+`task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
