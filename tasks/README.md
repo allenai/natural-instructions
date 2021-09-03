@@ -204,12 +204,30 @@ Name | Summary | Category
 `task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
+`task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task239_TweetQA_answer_generation.json` | Given a context paragraph of the tweet and question, generate a right answer | Answer Generation
+`task240_TweetQA_question_generation.json` | Given a context paragraph of the tweet and answer, generate a right question | Question Generation
+`task241_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the answer is right or wrong | Classification
+`task242_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the context is helpful in answering question or not | Classification
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
+`task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
+`task248_dream_classification` | Given a conversation and a question, classify the question | Classification
+`task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
+`task268_casehold_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Answer Generation
+`task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
+`task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
+`task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
+`task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
+`task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
+`task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
 `task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
 `task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
 `task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
