@@ -199,13 +199,22 @@ Name | Summary | Category
 `task206_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
 `task207_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
 `task208_combinations_of_list.json` | Given a list of integers of length *n* find all possible combinations,without replacement, of length *n-1* | Answer Generation, Combinatorics
-`task213_rocstories_correct_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the correct story ending | Classification
-`task214_rocstories_incorrect_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the incorrect story ending | Classification
-`task215_rocstories_incorrect_answer_generation.json` | Given the title and first four sentences of a five sentence story, write an incorrect story ending | Answer Generation
-`task216_rocstories_correct_answer_generation.json` | Given the title and first four sentences of a five sentence story, write a correct story ending | Answer Generation
-`task217_rocstories_ordering_answer_generation.json` | Given a five sentence story in jumbled order and the title, put the story in the correct order | Answer Generation
-`task218_rocstories_swap_order_answer_generation.json` | Given a five sentence story and the title, determine which two sentences must be swapped so that the story makes complete sense | Answer Generation
-`task219_rocstories_title_answer_generation.json` | Given a five sentence story, generate an appropriate title for the story | Answer Generation
-`task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
-`task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
-`task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
+`task209_StanceDetection_classification.json` | Given a topic and an argument detect whether topic is in favor or against in the argument. | Classification
+`task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
+`task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
+`task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
+`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
+`task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task239_TweetQA_answer_generation.json` | Given a context paragraph of the tweet and question, generate a right answer | Answer Generation
+`task240_TweetQA_question_generation.json` | Given a context paragraph of the tweet and answer, generate a right question | Question Generation
+`task241_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the answer is right or wrong | Classification
+`task242_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the context is helpful in answering question or not | Classification
+`task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
+`task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
+`task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
+`task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
+`task248_dream_classification` | Given a conversation and a question, classify the question | Classification
