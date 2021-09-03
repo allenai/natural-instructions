@@ -116,7 +116,7 @@ Name | Summary | Category
 `task114_is_the_given_word_longest.json` | Is the given word longest in the sentence | Classification
 `task115_Help_advice_classification` | Given a text detect whether it's an advise or not. | Classification
 `task116_com2sense_commonsense_reasoning` | Decide whether a sentence is plausible and matches commonsense. | Commonsense Reasoning
-`task117_spl_translation_en_de.json` | Translate English questions to German | Translation
+`task117_spl_translation_en_de.json` | Translate English questions to German while preserving named entities in the original language | Translation
 `task118_semeval_2019_task10_open_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with an open-vocabulary.	| Answer Generation, Arithmetic
 `task119_semeval_2019_task10_geometric_mathematical_answer_generation`	|  Answering multiple choices geometric problems.	| Answer Generation, Geometry
 `task119_zest_text_modification.json` | Paraphrasing given question | Text Modification
@@ -140,6 +140,12 @@ Name | Summary | Category
 `task138_detoxifying-lms_classification_fluency.json` | Given a prompt and two completions, determine which completion is more fluent. | Classification
 `task139_detoxifying-lms_classification_topicality.json` | Given a prompt and two completions, determine which completion is more topical. | Classification
 `task140_detoxifying-lms_classification_style.json` | Given a prompt and two completions, determine which completion is stylistically more similar. | Classification
+`task145_afs_argument_similarity_death_penalty.json` | Given two arguments, determine if they are similar or not. | Binary Classification
+`task146_afs_argument_similarity_gun_control.json` | Given two arguments, determine if they are similar or not. | Binary Classification
+`task147_afs_argument_similarity_gay_marriage.json` | Given two arguments, determine if they are similar or not. | Binary Classification
+`task148_afs_argument_quality_gay_marriage.json` | Given an argument, determine if it's valid. | Binary Classification
+`task149_afs_argument_quality_death_penalty.json` | Given an argument, determine if it's valid. | Binary Classification
+`task150_afs_argument_quality_gun_control.json.json` | Given an argument, determine if it's valid. | Binary Classification
 `task141_odd-man-out_classification_category.json` | Given a category and set of words, select the word that least belongs. | Classification
 `task142_odd-man-out_classification_no_category.json` | Given a set of words, select the word that least belongs. | Classification
 `task143_odd-man-out_classification_generate_category.json` | Given a set of words, select the category that represents the words. | Classification
@@ -156,6 +162,12 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
+`task172_spl_translation_en_fa.json` | Translate English questions to Farsi while preserving named entities in the original language | Translation
+`task173_spl_translation_en_it.json` | Translate English questions to Italian while preserving named entities in the original language | Translation
+`task174_spl_translation_en_ja.json` | Translate English questions to Japanese while preserving named entities in the original language | Translation
+`task175_spl_translation_en_pl.json` | Translate English questions to Polish while preserving named entities in the original language | Translation
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
@@ -171,10 +183,25 @@ Name | Summary | Category
 `task176_break_decompose_questions` | Break a question into the steps needed to answer the question. | Question Decomposition
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
-`task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
+`task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
+`task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
+<<<<<<< HEAD
+`task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+=======
+`task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
+`task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
+`task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
+`task196_sentiment140_answer_generation.json` | Given a tweet text and boolean question, generate answer yes or no | Answer Generation
+`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task205_remove_even_elements.json` | Given a list of integers remove all elements that are even | Answer Generation, Arithmetic
+`task206_collatz_conjecture.json` | Given a list of integers compute the next number in the *3n+1* problem | Answer Generation, Arithmetic
+`task207_max_element_lists.json` | Given a list of lists of integers compute the max value for each list | Answer Generation, Arithmetic
+`task208_combinations_of_list.json` | Given a list of integers of length *n* find all possible combinations,without replacement, of length *n-1* | Answer Generation, Combinatorics
 `task213_rocstories_correct_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the correct story ending | Classification
 `task214_rocstories_incorrect_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the incorrect story ending | Classification
 `task215_rocstories_incorrect_answer_generation.json` | Given the title and first four sentences of a five sentence story, write an incorrect story ending | Answer Generation
@@ -185,3 +212,4 @@ Name | Summary | Category
 `task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
 `task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
 `task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
+>>>>>>> c11cc77b000c652c4804bf2710341cd80040dc79
