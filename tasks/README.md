@@ -216,3 +216,6 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
+`task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
+`task248_dream_classification` | Given a conversation and a question, classify the question | Classification
