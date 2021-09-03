@@ -219,3 +219,5 @@ Name | Summary | Category
 `task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
+`task284_IMDB_classification.json` | Given a movie review, classify it into positive or negative | Classification
+`task285_IMDB_answer_generation.json` | Given a movie review and boolean question, generate answer yes or no | Answer Generation
