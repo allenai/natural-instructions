@@ -209,6 +209,10 @@ Name | Summary | Category
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
 `task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
 `task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task239_TweetQA_answer_generation.json` | Given a context paragraph of the tweet and question, generate a right answer | Answer Generation
+`task240_TweetQA_question_generation.json` | Given a context paragraph of the tweet and answer, generate a right question | Question Generation
+`task241_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the answer is right or wrong | Classification
+`task242_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the context is helpful in answering question or not | Classification
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
