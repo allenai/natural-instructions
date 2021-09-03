@@ -220,7 +220,15 @@ Name | Summary | Category
 `task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
+`task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
 `task264_paper_reviews_classification` | Given a set of reviews, classify paper into accept, reject or probably reject | Classification
 `task265_paper_reviews_classification` | Given a paper review, identify it is in the english or spanish language | Classification
 `task266_paper_reviews_classification` | Given a paper review, classify into five evaluation metric | Classification
 `task267_paper_reviews_classification` | Given a paper review, classify into five orientation metric | Classification
+`task268_casehold_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Answer Generation
+`task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
+`task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
+`task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
+`task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
+`task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
+`task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
