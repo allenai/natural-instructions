@@ -189,9 +189,6 @@ Name | Summary | Category
 `task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
-<<<<<<< HEAD
-`task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
-=======
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
@@ -212,4 +209,3 @@ Name | Summary | Category
 `task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
 `task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
 `task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
->>>>>>> c11cc77b000c652c4804bf2710341cd80040dc79
