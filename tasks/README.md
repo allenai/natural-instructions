@@ -228,3 +228,6 @@ Name | Summary | Category
 `task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
+`task292_StoryCommonsense_character_text_generation` | Given a short story, provide all the characters in that story.| Text Generation
+`task293_StoryCommonsense_emotion_text_generation` | Given a sentence, context (optional) and character; provide emotions expressed by the character in the sentence. | Text Generation
+`task294_StoryCommonsense_motiv_text_generation` | Given a sentence, context (optional) and character; provide motivation of the character in the sentence. | Text Generation
