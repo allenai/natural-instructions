@@ -228,8 +228,8 @@ Name | Summary | Category
 `task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task295_StoryCloze_correct_end_answer_generation` | Given a four sentences of five sentence story, select correct answer for last (fifth) sentence from the given option. | Answer Generation
-`task296_StoryCloze_incorrect_end_answer_generation` | Given a four sentences of five sentence story, select incorrect answer for last (fifth) sentence from the given option. | Answer Generation
-`task297_StoryCloze_correct_end_classification` | Given a four sentences of five sentence story and fifth sentence, classify whether fifth sentence is proper or not by providing 'Yes' or 'No'. | Classification
-`task298_StoryCloze_sentence_generation` | Given a four sentences of five sentence story, provide the position and missing part (fifth sentence) of the story. | Sentence Generation
-`task299_StoryCloze_order_generation` | Given a five sentences of story (sentences are shuffled), provide correct order of the story. | Order Generation
+`task296_StoryCloze_correct_end_answer_generation` | Given a four sentences of five sentence story, select correct answer for last (fifth) sentence from the given option. | Answer Generation
+`task297_StoryCloze_incorrect_end_answer_generation` | Given a four sentences of five sentence story, select incorrect answer for last (fifth) sentence from the given option. | Answer Generation
+`task298_StoryCloze_correct_end_classification` | Given a four sentences of five sentence story and fifth sentence, classify whether fifth sentence is proper or not by providing 'Yes' or 'No'. | Classification
+`task299_StoryCloze_sentence_generation` | Given a four sentences of five sentence story, provide the position and missing part (fifth sentence) of the story. | Sentence Generation
+`task300_StoryCloze_order_generation` | Given a five sentences of story (sentences are shuffled), provide correct order of the story. | Order Generation
