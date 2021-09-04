@@ -229,3 +229,7 @@ Name | Summary | Category
 `task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
+`task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
+`task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
+`task314_EuroParl_sv-en_classification` | Given a swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
+`task315_EuroParl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is Swedish or English. | Language Identification (Binary)
