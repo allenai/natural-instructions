@@ -229,6 +229,6 @@ Name | Summary | Category
 `task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task_RACE_answer_generation` | Given a article, a question and four options; provide correct answer for the question based on the article. | Answer Generation
-`task_RACE_incorrect_answer_generation` | Given a article, a question and four options; provide incorrect answer for the question based on the article. | Incorrect Answer Generation
-`task_RACE_question_generation` | Generate a question based on the given article and an answer. | Question Generation
+`task309_RACE_answer_generation` | Given a article, a question and four options; provide correct answer for the question based on the article. | Answer Generation
+`task310_RACE_incorrect_answer_generation` | Given a article, a question and four options; provide incorrect answer for the question based on the article. | Incorrect Answer Generation
+`task311_RACE_question_generation` | Generate a question based on the given article and an answer. | Question Generation
