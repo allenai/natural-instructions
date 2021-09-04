@@ -235,3 +235,10 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task322_Jigsaw_classification_threat` | Given a comment from online platforms, classify whether it contains threats | Classification
+`task323_Jigsaw_classification_sexual_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
+`task324_Jigsaw_classification_disagree` | Given a comment from online platforms, classify whether it expresses disagreement | Classification
+`task325_Jigsaw_classification_identity_attack` | Given a comment from online platforms, classify whether it conveys identity attacks | Classification
+`task326_Jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
+`task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
+`task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
