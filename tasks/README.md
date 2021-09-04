@@ -229,5 +229,5 @@ Name | Summary | Category
 `task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task312_CrowS-Pairs_classification_stereotype` | Classify a sentence into stereotype or anti-stereotype | Classification
-`task313_CrowS-Pairs_classification_stereotype_type` | Classify a sentence into different types of stereotype | Classification
+`task316_CrowS-Pairs_classification_stereotype` | Classify a sentence into stereotype or anti-stereotype | Classification
+`task317_CrowS-Pairs_classification_stereotype_type` | Classify a sentence into different types of stereotype | Classification
