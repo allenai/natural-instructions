@@ -226,6 +226,10 @@ Name | Summary | Category
 `task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
 `task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
 `task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
-`task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
+`task274_overruling_classification` | Given a sentence, classify it into overruling or non-overruling| Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
+`task305_jeopardy_answer_generation_normal.json` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
+`task306_jeopardy_answer_generation_double.json` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
+`task307_jeopardy_answer_generation_final.json` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
+`task308_jeopardy_answer_generation_all.json` | Given a category and a trivia clue of varying difficulties, generate the best answer. | Answer Generation
