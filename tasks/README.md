@@ -235,3 +235,6 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task329_gap_classification` | Given a text containing an ambiguous pronoun, pronoun, and two candidate names, determine what the pronoun refers to and classify the answers into A, B, Both, or Neither | Classification
+`task330_gap_answer_generation` | Given a text containing an ambiguous pronoun, and pronoun, write the name that the pronoun refers to | Answer Generation
+`task331_gap_incorrect_answer_generation` | Given a text containing an ambiguous pronoun, and pronoun, write an implausible answer to the question of what pronoun is referring to | Incorrect Answer Generation
