@@ -230,6 +230,6 @@ Name | Summary | Category
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
 `task318_stereoset_classification_gender.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
-`task319_stereoset_classification_profession.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
-`task320_stereoset_classification_race.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
-`task321_stereoset_classification_religion.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
+`task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
+`task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
+`task321_stereoset_classification_religion.json` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
