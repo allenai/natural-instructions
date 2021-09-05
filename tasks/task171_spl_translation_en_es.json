@@ -1,0 +1,2214 @@
+{
+    "Contributors": [
+        "Mehrad Moradshahi"
+    ],
+    "Source": [
+        "Semantic Parser Localizer (https:\/\/github.com\/stanford-oval\/SPL)"
+    ],
+    "Categories": [
+        "Translation"
+    ],
+    "Input_language": "English",
+    "Output_language": "Spanish",
+    "Definition": "The provided file includes inquiries about restaurants, and we ask you to translate those to the Spanish language. Please bear in mind the following guidlines while doing the translation: 1) We are looking for the most natural written(formal) form of each sentence in your language. However, we are *NOT* looking for colloquial forms of the sentence. We are looking for formal form which is how you would type your queries in a text-based virtual assistant. 2) The words between quotation marks *SHOULD NOT* be translated. We expect you to keep those values intact and include the quotation marks around them as well. 3) The fully capitalized words like DATE_0, or DURATION_0 *SHOULD NOT* be translated. Please keep them as they are in the translations. 4) Please do not localize measurement units like miles to kilometers during your translation. miles should be translated to its equivalent in your language. 6) Note the input is all lowercased except for special placeholders. Please do the same in your translations",
+    "Positive Examples": [
+        {
+            "input": "are there any \" italian \" restaurants nearby with 2 star reviews ?",
+            "output": "1.    ¿hay algún restaurante \" italian \" cerca con opiniones de 2 estrellas?",
+            "explanation": "The translation correctly preserves \" italian \" entity and is accurate"
+        },
+        {
+            "input": "what kind of food does this restaurant serve ?",
+            "output": "¿qué tipo de comida sirve este restaurante?",
+            "explanation": "The translation is fluent, formal, and accurate"
+        },
+        {
+            "input": "what is the telephone number and location of the nearest \" chinese \" restaurant ?",
+            "output": "¿cuál es el número de teléfono y la ubicación del restaurante \" chinese \" más cercano?",
+            "explanation": "The translation correctly preserves \" chinese \" entity. It's also fluent, correct, and lowercased."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "where is the closest \" wendy 's \" ?",
+            "output": "¿dónde está el wendy 's más cercano?",
+            "explanation": "Translation contain the entity \" wendy 's \" but quotation marks are dropped"
+        },
+        {
+            "input": "show me the closest \" mcdonald 's \"",
+            "output": "muéstreme el \" McDonald's \" más cercano.",
+            "explanation": "The output is not lowercased"
+        },
+        {
+            "input": "display all review descriptions authored by \" jennifer \" .",
+            "output": "mostrar todas escritas por \" jennifer \".",
+            "explanation": "Translation of review descriptions is omitted from the output"
+        },
+        {
+            "input": "what is the phone number for \" noodle nirvana \" ?",
+            "output": "¿cuál es el número de teléfono de \" nirvana de fideos \"?",
+            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" nirvana de fideos \" instead of being kept intact"
+        },
+        {
+            "input": "can you tell me the rating of \" gold mirror \" in \" san francisco \" ?",
+            "output": "¿puede decirme la valoración de \" san francisco \" en \" gold mirror \"?",
+            "explanation": "The position of entities is switched in the output"
+        }
+    ],
+    "Instances": [
+        {
+            "input": "find a \" mexican \" restaurant with 4 or more stars .",
+            "output": [
+                "buscar un restaurante \" mexican \" con 4 o más estrellas."
+            ]
+        },
+        {
+            "input": "search for \" vegetarian \" restaurants with 4 star reviews or better .",
+            "output": [
+                "buscar restaurantes \" vegetarian \" con opiniones de 4 estrellas o superior."
+            ]
+        },
+        {
+            "input": "search for \" italian \" restaurants with at least 1 reviews .",
+            "output": [
+                "buscar restaurantes \" italian \" con, al menos, 1 opiniones."
+            ]
+        },
+        {
+            "input": "list \" italian \" restaurants with higher ratings that 8 stars .",
+            "output": [
+                "listar restaurantes \" italian \" con valoraciones superiores a 8 estrellas."
+            ]
+        },
+        {
+            "input": "look for a \" japanese \" restaurant that is the closest to me .",
+            "output": [
+                "buscar el restaurante \" japanese \" que esté más cerca de mí."
+            ]
+        },
+        {
+            "input": "what 's the telephone number of the \" arby 's \" on \" sherman in muskegon , mi \" ?",
+            "output": [
+                "¿cuál es el número de teléfono de \" arby 's \" en \" sherman in muskegon , mi \"?"
+            ]
+        },
+        {
+            "input": "what is the closest \" italian \" restaurant with at least a 4 star rating ?",
+            "output": [
+                "¿cuál es el restaurante \" italian \" más cercano con una valoración de, al menos, 4 estrella(s)?"
+            ]
+        },
+        {
+            "input": "what is the closest \" coffee bean \" ?",
+            "output": [
+                "¿cuál es el \" coffee bean \" más cercano?"
+            ]
+        },
+        {
+            "input": "where is the nearest \" mexican \" restaurant ?",
+            "output": [
+                "¿dónde está el restaurante \" mexican \" más cercano?"
+            ]
+        },
+        {
+            "input": "show me the review for \" harry 's seafood grill \" by \" antoine waring \"",
+            "output": [
+                "mostrarme la opinión sobre \" harry 's seafood grill \" de \" antoine waring \"."
+            ]
+        },
+        {
+            "input": "how well is \" pizza hut \" rated ?",
+            "output": [
+                "¿cómo está valorada \" pizza hut \"?"
+            ]
+        },
+        {
+            "input": "what is the rating of that \" mcdonald ' \" ?",
+            "output": [
+                "¿cuál es la valoración de ese \" mcdonald ' \"?"
+            ]
+        },
+        {
+            "input": "where is the nearest \" italian \" restaurant .",
+            "output": [
+                "¿dónde está el restaurante \" italian \" más cercano?"
+            ]
+        },
+        {
+            "input": "search for an \" italian \" restaurant in \" dallas \" with at least 5 reviews .",
+            "output": [
+                "buscar un restaurante \" italian \" en \" dallas \" con, al menos, 5 opiniones."
+            ]
+        },
+        {
+            "input": "what is the rating for the \" la unica \" in \" huntersville \" ?",
+            "output": [
+                "¿cuál es la valoración de \" la unica \" de \" huntersville \"?"
+            ]
+        },
+        {
+            "input": "what is the rating of \" olive garden \" ?",
+            "output": [
+                "¿cuál es la valoración de \" olive garden \"?"
+            ]
+        },
+        {
+            "input": "show me the location and name of the nearest \" chinese \" restaurant .",
+            "output": [
+                "mostrarme la ubicación y el nombre del restaurante \" chinese \" más cercano."
+            ]
+        },
+        {
+            "input": "show me the closest \" starbucks \" with at least 9 stars .",
+            "output": [
+                "mostrarme el \" starbucks \" más cercano con 9 estrellas."
+            ]
+        },
+        {
+            "input": "search for 5 star restaurants in the \" 49503 \" zip code .",
+            "output": [
+                "buscar restaurantes con 5 estrella(s) en el código postal \" 49503 \"."
+            ]
+        },
+        {
+            "input": "what is the price range for \" noodle express \" ?",
+            "output": [
+                "¿cuál es el rango de precios de \" noodle express \"?"
+            ]
+        },
+        {
+            "input": "show me 0 star \" mexican \" restaurants that have more than 4 reviews .",
+            "output": [
+                "mostrarme restaurantes \" mexican \" con 0 estrella(s) que tengan más de 4 opiniones."
+            ]
+        },
+        {
+            "input": "can you show me all the 9 star restaurants in the area ?",
+            "output": [
+                "¿puede mostrarme todos los restaurantes de 9 estrella(s) en la zona?"
+            ]
+        },
+        {
+            "input": "what is the phone number for the nearest \" wendy 's \" ?",
+            "output": [
+                "¿cuál es el número de teléfono del \" wendy 's \" más cercano?"
+            ]
+        },
+        {
+            "input": "what is the rating for this restaurant and how many reviews does it have ?",
+            "output": [
+                "¿cuál es la valoración de este restaurante y cuántas opiniones tiene?"
+            ]
+        },
+        {
+            "input": "i want to see what \" chinese \" restaurants are on \" madison avenue \" .",
+            "output": [
+                "quiero ver qué restaurantes \" chinese \" hay en \" madison avenue \"."
+            ]
+        },
+        {
+            "input": "how many reviews has \" mike \" written about \" pizza hut \" ?",
+            "output": [
+                "¿cuántas opiniones ha escrito \" mike \" sobre \" pizza hut \"?"
+            ]
+        },
+        {
+            "input": "find \" mexican \" restaurants with at least 9 star rating .",
+            "output": [
+                "buscar restaurantes \" mexican \" con una valoración de, al menos 9 estrella(s)."
+            ]
+        },
+        {
+            "input": "show me all reviews written by \" paul \" on DATE_0 .",
+            "output": [
+                "buscar todas las opiniones escritas por \" paul \" el date_0 ."
+            ]
+        },
+        {
+            "input": "show \" tina \" 's 1 star reviews of \" pizza \" joints .",
+            "output": [
+                "mostrar las opiniones de \" tina \" de 1 estrella(s) de sitios de \" pizza \"."
+            ]
+        },
+        {
+            "input": "are there any 10 star \" mexican \" restaurants nearby ?",
+            "output": [
+                "¿hay algún restaurante \" mexican \" de 10 estrella(s) cerca?"
+            ]
+        },
+        {
+            "input": "search for \" mexican \" restaurants with at least 3 reviews .",
+            "output": [
+                "buscar restaurantes \" mexican \" con, al menos, 3 opiniones."
+            ]
+        },
+        {
+            "input": "find a restaurant that serves \" italian \" food with at least 9 reviews .",
+            "output": [
+                "buscar restaurantes de comida \" italian \" con, al menos, 9 opiniones."
+            ]
+        },
+        {
+            "input": "what is the nearest \" mexican \" restaurant with a 2 star rating ?",
+            "output": [
+                "¿cuál es el restaurante \" mexican \" con una valoración de 2 estrella(s)?"
+            ]
+        },
+        {
+            "input": "can you give me the phone number for the nearest 8 star \" coffee \" house ?",
+            "output": [
+                "¿puede darme el número de teléfono de la cafetería \" coffee \" más cercana con 8 estrella(s)?"
+            ]
+        },
+        {
+            "input": "what is the \" panda express \" in \" gainesville , fl \" rated ?",
+            "output": [
+                "¿cómo está valorado el \" panda express \" de \" gainesville , fl \"?"
+            ]
+        },
+        {
+            "input": "what is the star rating for \" tilted kilt \" ?",
+            "output": [
+                "¿cuál es la valoración en número de estrellas de \" tilted kilt \"?"
+            ]
+        },
+        {
+            "input": "what are the latest reviews and review scores for this restaurant ?",
+            "output": [
+                "¿cuáles son las últimas opiniones y la puntuación de este restaurante?"
+            ]
+        },
+        {
+            "input": "where is the closest \" starbucks \" ?",
+            "output": [
+                "¿dónde está el \" starbucks \" más cercano?"
+            ]
+        },
+        {
+            "input": "search for all 7 star , \" vegan \" restaurants in the area .",
+            "output": [
+                "buscar todos los restaurantes \" vegan \" de 7 estrella(s) en la zona."
+            ]
+        },
+        {
+            "input": "can you tell me where the closest \" pizza hut \" is ?",
+            "output": [
+                "¿puede decirme dónde está el \" pizza hut \" más cercano?"
+            ]
+        },
+        {
+            "input": "what is the rating of \" tgi fridays \" ?",
+            "output": [
+                "¿cuál es la valoración de \" tgi fridays \"?"
+            ]
+        },
+        {
+            "input": "show me a list of \" vegan \" restaurants with at least 8 reviews .",
+            "output": [
+                "muéstreme una lista de restaurantes \" vegan \" con, al menos, 8 opiniones."
+            ]
+        },
+        {
+            "input": "can i read the description of the closest \" italian \" restaurant ?",
+            "output": [
+                "¿puedo leer la descripción del restaurante \" italian \" más cercano?"
+            ]
+        },
+        {
+            "input": "what is the price range for \" pizza ranch \" ?",
+            "output": [
+                "¿cuál es el rango de precios de \" pizza ranch \"?"
+            ]
+        },
+        {
+            "input": "show description of the closest 0 star restaurant .",
+            "output": [
+                "mostrar la descripción del restaurante más cercano con 0 estrella(s)."
+            ]
+        },
+        {
+            "input": "what is the telephone number for the nearest \" chinese \" restaurant ?",
+            "output": [
+                "¿cuál es el número de teléfono del restaurante \" chinese \" más cercano?"
+            ]
+        },
+        {
+            "input": "what is the highest rated restaurant in this area ?",
+            "output": [
+                "¿cuál es el restaurante con mejor valoración de la zona?"
+            ]
+        },
+        {
+            "input": "search for \" vegan \" restaurants in \" lakeland , fl \" with at least 3 reviews",
+            "output": [
+                "buscar restaurantes \" vegan \" en \" lakeland , fl \" con, al menos, 3 opiniones."
+            ]
+        },
+        {
+            "input": "how close am i to \" art 's deli \" or \" carnegie deli \" ?",
+            "output": [
+                "¿cuán cerca estoy de \" art 's deli \" o \" carnegie deli \"?"
+            ]
+        },
+        {
+            "input": "show me all \" chinese \" restaurants with 9 star ratings within 8 miles .",
+            "output": [
+                "mostrarme todos los restaurantes \" chinese \" con una valoración de 9 estrella(s) en 8 millas."
+            ]
+        },
+        {
+            "input": "what is the address of the \" dunkin donuts \" closet to me ?",
+            "output": [
+                "¿cuál es la dirección del \" dunkin donuts \" más cercano a mí?"
+            ]
+        },
+        {
+            "input": "tell me the location of \" flo 's \" \" chinese \" restaurant in \" scottsdale , arizona \" .",
+            "output": [
+                "dígame la ubicación del restaurante  \" chinese \" de \" flo 's \" en \" scottsdale , arizona \"."
+            ]
+        },
+        {
+            "input": "what is the telephone number for \" krispy kreme \" ?",
+            "output": [
+                "¿cuál es el número de teléfono de \" krispy kreme \"?"
+            ]
+        },
+        {
+            "input": "where is the nearest \" boston market \" ?",
+            "output": [
+                "¿dónde está el \" boston market \" más cercano?"
+            ]
+        },
+        {
+            "input": "how far away is the closest \" olive garden \" ?",
+            "output": [
+                "¿a qué distancia está el \" olive garden \" más cercano?"
+            ]
+        },
+        {
+            "input": "what is the address of the \" panda express \" in \" grand rapids , michigan \" ?",
+            "output": [
+                "¿cuál es la dirección del \" panda express \" en \" grand rapids , michigan \"?"
+            ]
+        },
+        {
+            "input": "where is the nearest \" mexican \" restaurant with at least a 6 star review ?",
+            "output": [
+                "¿dónde está el restaurante \" mexican \" más cercano con una valoración de, al menos, 6 estrella(s)?"
+            ]
+        },
+        {
+            "input": "what are the prices for the 1 highest rated \" italian \" restaurants in \" roanoke , va \" ?",
+            "output": [
+                "¿qué precios tienen los 1 restaurantes \" italian \"con la valoración más alta de \" roanoke , va \"?"
+            ]
+        },
+        {
+            "input": "let me see the reviews for the \" jimmy john 's \" nearest to me ?",
+            "output": [
+                "déjeme ver las opiniones del \" jimmy john 's \" más cercano a mí."
+            ]
+        },
+        {
+            "input": "what is a 7 star \" mexican \" restaurant ?",
+            "output": [
+                "¿cuál es un restaurante \" mexican \" de 7 estrella(s)?"
+            ]
+        },
+        {
+            "input": "what places close to me have 0 star reviews ?",
+            "output": [
+                "¿qué lugares, cerca de donde estoy, tienen opiniones de 0 estrella(s)?"
+            ]
+        },
+        {
+            "input": "search for 8 star rated \" italian \" food in \" dallas \" .",
+            "output": [
+                "buscar comida \"italian \" valorada con 8 estrella(s) en \" dallas \"."
+            ]
+        },
+        {
+            "input": "can you show me 7 star reviews written by \" john smith \" .",
+            "output": [
+                "¿puede mostrarme opiniones con 7 estrella(s) escritas por \" john smith \"?"
+            ]
+        },
+        {
+            "input": "how many 1 star reviews are there for \" peet 's coffee \" ?",
+            "output": [
+                "¿cuántas opiniones de 1 estrella tiene \" peet 's coffee \"?"
+            ]
+        },
+        {
+            "input": "i want to see all of the 1 star reviews that \" sheila \" wrote .",
+            "output": [
+                "quiero ver todas las opiniones de 1 estrella que escribió \" sheila \"."
+            ]
+        },
+        {
+            "input": "locate all \" italian \" restaurants .",
+            "output": [
+                "localizar todos los restaurantes \" italian \"."
+            ]
+        },
+        {
+            "input": "can you look for a restaurant with a rating of 0 ?",
+            "output": [
+                "¿puede buscar un restaurante con una valoración de 0?"
+            ]
+        },
+        {
+            "input": "looking to book a restaurant with at least 6 reviews .",
+            "output": [
+                "quiero reservar un restaurante con, al menos, 6 opiniones."
+            ]
+        },
+        {
+            "input": "search for \" bayshore bean \" .",
+            "output": [
+                "busca \" bayshore bean \"."
+            ]
+        },
+        {
+            "input": "show me \" vietnamese \" restaurants .",
+            "output": [
+                "muéstrame restaurantes \" vietnamese \"."
+            ]
+        },
+        {
+            "input": "find all the \" bakeries \" .",
+            "output": [
+                "encuentra todas las \" bakeries \"."
+            ]
+        },
+        {
+            "input": "show me all restaurants rated with exactly 7 stars .",
+            "output": [
+                "muéstrame todos los restaurantes que tengan una calificación exacta de 7 estrellas."
+            ]
+        },
+        {
+            "input": "where is \" los compadres \" ?",
+            "output": [
+                "¿dónde está \" los compadres \"?"
+            ]
+        },
+        {
+            "input": "find \" thai \" restaurants .",
+            "output": [
+                "encuentra restaurantes \" thai\"."
+            ]
+        },
+        {
+            "input": "show me \" cook out \" .",
+            "output": [
+                "muéstrame \" cook out \"."
+            ]
+        },
+        {
+            "input": "find restaurants with more than 10 reviews .",
+            "output": [
+                "encuentra restaurantes con más de 10 reseñas."
+            ]
+        },
+        {
+            "input": "does the \" lone star steakhouse \" in \" dallas nc \" have a review yet ?",
+            "output": [
+                "¿ya tiene una reseña el \" lone star steakhouse \" en \" dallas nc \"?"
+            ]
+        },
+        {
+            "input": "can you show me the ratings for \" j dog \" ?",
+            "output": [
+                "¿puedes mostrarme las calificaciones de \" j dog \"?"
+            ]
+        },
+        {
+            "input": "can you find the restaurant nearest to my location ?",
+            "output": [
+                "¿puedes encontrar el restaurante más cercano a mi ubicación?"
+            ]
+        },
+        {
+            "input": "look up a \" mexican \" restaurant for me .",
+            "output": [
+                "busca un restaurante \" mexican \" para mí."
+            ]
+        },
+        {
+            "input": "find me a restaurant on \" main st . \" please .",
+            "output": [
+                "encuéntrame un restaurante en \" main st . \", por favor."
+            ]
+        },
+        {
+            "input": "show me the highest rated restaurant please .",
+            "output": [
+                "muéstrame el restaurante con mayor calificación, por favor."
+            ]
+        },
+        {
+            "input": "what restaurant has the highest review count ?",
+            "output": [
+                "¿qué restaurante tiene la mayor cantidad de reseñas?"
+            ]
+        },
+        {
+            "input": "what restaurant does \" jeff weisnear \" review for ?",
+            "output": [
+                "¿para qué restaurante escribe reseñas \" jeff weisnear \"?"
+            ]
+        },
+        {
+            "input": "search for \" korean bbq \" restaurants .",
+            "output": [
+                "busca restaurantes \" korean bbq \"."
+            ]
+        },
+        {
+            "input": "how many reviews does the place have ?",
+            "output": [
+                "¿cuántas reseñas tiene el lugar?"
+            ]
+        },
+        {
+            "input": "where is the nearest \" chinese \" place ?",
+            "output": [
+                "¿dónde está el sitio \" chinese \" más cercano?"
+            ]
+        },
+        {
+            "input": "how many places to eat are nearby ?",
+            "output": [
+                "¿cuántos lugares para comer hay cerca?"
+            ]
+        },
+        {
+            "input": "show all the restaurants below 4 stars .",
+            "output": [
+                "muestra todos los restaurantes por debajo de 4 estrellas."
+            ]
+        },
+        {
+            "input": "give me all the \" italian \" places .",
+            "output": [
+                "dame todos los lugares \" italian \"."
+            ]
+        },
+        {
+            "input": "find restaurants rated lower than 2 .",
+            "output": [
+                "encuentra restaurantes con una calificación menor de 2."
+            ]
+        },
+        {
+            "input": "find \" mexican \" restaurants .",
+            "output": [
+                "encuentra restaurantes \" mexican \"."
+            ]
+        },
+        {
+            "input": "show me \" french \" restaurants .",
+            "output": [
+                "muéstrame restaurantes \" french \"."
+            ]
+        },
+        {
+            "input": "show me \" le pain quotidien \" .",
+            "output": [
+                "muéstrame \" le pain quotidien \"."
+            ]
+        },
+        {
+            "input": "find restaurants with more than 5 reviews .",
+            "output": [
+                "encuentra restaurantes con más de 5 reseñas."
+            ]
+        },
+        {
+            "input": "is there a restaurant named \" china king \" ?",
+            "output": [
+                "¿hay un restaurante llamado \" china king \" ?"
+            ]
+        },
+        {
+            "input": "what 's the lowest rated diner in my area ?",
+            "output": [
+                "¿cuál es la cafetería con menor calificación de mi zona?"
+            ]
+        },
+        {
+            "input": "what is the highest rated restaurant ?",
+            "output": [
+                "¿cuál es el restaurante con la mayor calificación?"
+            ]
+        },
+        {
+            "input": "is there a \" japanese \" restaurant nearby ?",
+            "output": [
+                "¿hay un restaurante \" japanese \" cerca?"
+            ]
+        },
+        {
+            "input": "what 's the address of the closest restaurant ?",
+            "output": [
+                "¿cuál es la dirección del restaurante más cercano?"
+            ]
+        },
+        {
+            "input": "where is \" thai kitchen \" ?",
+            "output": [
+                "¿dónde está \" thai kitchen \"?"
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants",
+            "output": [
+                "muéstrame restaurantes \" mexican \""
+            ]
+        },
+        {
+            "input": "show me all 3 star restaurants",
+            "output": [
+                "muéstrame todos los restaurantes de 3 estrellas."
+            ]
+        },
+        {
+            "input": "show me \" main street \" restaurants",
+            "output": [
+                "muéstrame restaurantes \" main street \""
+            ]
+        },
+        {
+            "input": "show the address of \" thai corner \"",
+            "output": [
+                "muestra la dirección de \" thai corner \""
+            ]
+        },
+        {
+            "input": "search for the nearest \" wendy 's \" restaurant ?",
+            "output": [
+                "busca el restaurante \" wendy 's \" más cercano"
+            ]
+        },
+        {
+            "input": "find a \" steak house \" restaurant ?",
+            "output": [
+                "encuentra un restaurante \" steak house \"?"
+            ]
+        },
+        {
+            "input": "show me \" mediterranean \" restaurants ?",
+            "output": [
+                "muéstrame restaurantes \" mediterranean \"."
+            ]
+        },
+        {
+            "input": "show me the best rated restaurants",
+            "output": [
+                "muéstrame los restaurantes con mayor calificación"
+            ]
+        },
+        {
+            "input": "show me restaurants near me",
+            "output": [
+                "muéstrame restaurantes cerca de mí"
+            ]
+        },
+        {
+            "input": "show me restaurants with the most reviews",
+            "output": [
+                "muéstrame los restaurantes con más reseñas"
+            ]
+        },
+        {
+            "input": "find me \" pizza \" places",
+            "output": [
+                "encuéntrame sitios de \" pizza \""
+            ]
+        },
+        {
+            "input": "find a \" pizza \" place .",
+            "output": [
+                "encuentra un sitio de \" pizza \"."
+            ]
+        },
+        {
+            "input": "show me a \" sushi \" restaurant .",
+            "output": [
+                "muéstrame un restaurante de \" sushi \"."
+            ]
+        },
+        {
+            "input": "find all 6 star \" bbq \" places .",
+            "output": [
+                "encuentra todos los sitios de \" bbq \" con 6 estrellas."
+            ]
+        },
+        {
+            "input": "show me \" italian \" restaurants .",
+            "output": [
+                "muéstrame restaurantes \" italian \"."
+            ]
+        },
+        {
+            "input": "find all 9 star diners .",
+            "output": [
+                "encuentra todas las cafeterías con 9 estrellas."
+            ]
+        },
+        {
+            "input": "i 'd like to see restaurants with at least a rating of 2 .",
+            "output": [
+                "me gustaría ver restaurantes con al menos una calificación de 2."
+            ]
+        },
+        {
+            "input": "can you show me \" italian \" restaurants ?",
+            "output": [
+                "¿me puedes mostrar restaurantes \" italian \"?"
+            ]
+        },
+        {
+            "input": "what is the price range for the top rated \" mexican \" restaurant ?",
+            "output": [
+                "¿cuál es el rango de precios del restaurante \" mexican \" con mayor calificación?"
+            ]
+        },
+        {
+            "input": "find \" mod pizza \" for me .",
+            "output": [
+                "encuentra \" mod pizza \" para mí."
+            ]
+        },
+        {
+            "input": "who wrote the latest review for \" first wok \" ?",
+            "output": [
+                "¿quién escribió la última reseña de \" first wok \"?"
+            ]
+        },
+        {
+            "input": "show me restaurants with a rating of 2 .",
+            "output": [
+                "muéstrame restaurantes con una calificación de 2."
+            ]
+        },
+        {
+            "input": "find me some \" coffee \" shops .",
+            "output": [
+                "encuéntrame algunas tiendas de \" coffee \"."
+            ]
+        },
+        {
+            "input": "search for \" hamburger \" joints .",
+            "output": [
+                "busca locales de \" hamburger \"."
+            ]
+        },
+        {
+            "input": "what are the restaurants reviewed by \" mark \" ?",
+            "output": [
+                "¿cuáles son los restaurantes con reseñas de \" mark \"?"
+            ]
+        },
+        {
+            "input": "show me all the restaurants with a rating of more than 1 .",
+            "output": [
+                "muéstrame todos los restaurantes con una calificación de más de 1."
+            ]
+        },
+        {
+            "input": "look for \" american \" restaurants close by .",
+            "output": [
+                "busca restaurantes \" american \" cerca."
+            ]
+        },
+        {
+            "input": "show me any \" mexican \" restaurant .",
+            "output": [
+                "muéstrame cualquier restaurante \" mexican \"."
+            ]
+        },
+        {
+            "input": "find all of the restaurants that have a rating about 6 .",
+            "output": [
+                "encuentra todos los restaurantes que tengan una calificación de alrededor de 6."
+            ]
+        },
+        {
+            "input": "locate \" los cabos \" for me .",
+            "output": [
+                "localiza \" los cabos \" para mí."
+            ]
+        },
+        {
+            "input": "tell me the postal code for \" red robin \" .",
+            "output": [
+                "dime el código postal de \" red robin \"."
+            ]
+        },
+        {
+            "input": "display a list of \" thai \" restaurants .",
+            "output": [
+                "muestra una lista de restaurantes \" thai \"."
+            ]
+        },
+        {
+            "input": "find all restaurants in my downtown area .",
+            "output": [
+                "encuentra todos los restaurantes en mi zona del centro de la ciudad."
+            ]
+        },
+        {
+            "input": "display restaurants with at least 10 reviews .",
+            "output": [
+                "muestra restaurantes con al menos 10 reseñas."
+            ]
+        },
+        {
+            "input": "show me all restaurant reviews by \" john smith \" .",
+            "output": [
+                "muéstrame todos los restaurantes con reseñas de \" john smith \"."
+            ]
+        },
+        {
+            "input": "search for \" china wok \" .",
+            "output": [
+                "busca \" china wok \"."
+            ]
+        },
+        {
+            "input": "show me \" sushi \" restaurants .",
+            "output": [
+                "muéstrame restaurantes de \" sushi \"."
+            ]
+        },
+        {
+            "input": "show me 1 star restaurants .",
+            "output": [
+                "muéstrame restaurantes de 1 estrella."
+            ]
+        },
+        {
+            "input": "find all restaurants with a rating of 7 .",
+            "output": [
+                "encuentra todos los restaurantes con una calificación de 7."
+            ]
+        },
+        {
+            "input": "search for \" luby 's cafeteria \" .",
+            "output": [
+                "busca \" luby 's cafeteria \"."
+            ]
+        },
+        {
+            "input": "search for all 5 star restaurants .",
+            "output": [
+                "busca todos los restaurantes de 5 estrellas."
+            ]
+        },
+        {
+            "input": "search for \" italian \" restaurants .",
+            "output": [
+                "busca restaurantes \" italian \"."
+            ]
+        },
+        {
+            "input": "show me restaurants with a 8 reviews .",
+            "output": [
+                "muéstrame restaurantes con 8 reseñas."
+            ]
+        },
+        {
+            "input": "show all restaurants with a rating of 7 or higher .",
+            "output": [
+                "muestra todos los restaurantes con una calificación de 7 o superior."
+            ]
+        },
+        {
+            "input": "search for \" itlaian \" cuisine restaurants .",
+            "output": [
+                "busca restaurantes de cocina \" itlaian \"."
+            ]
+        },
+        {
+            "input": "show restaurants with at least 4 reviews .",
+            "output": [
+                "muestra restaurantes con al menos 4 reseñas."
+            ]
+        },
+        {
+            "input": "display any restaurants with overall rating of 3 or above .",
+            "output": [
+                "muestra cualquier restaurante con una calificación global de 3 o superior."
+            ]
+        },
+        {
+            "input": "i want to see some \" indian \" restaurants .",
+            "output": [
+                "quiero ver algunos restaurantes \" indian \"."
+            ]
+        },
+        {
+            "input": "show me 9 star restaurants .",
+            "output": [
+                "muéstrame restaurantes de 9 estrellas."
+            ]
+        },
+        {
+            "input": "what is the closest restaurant to me ?",
+            "output": [
+                "¿cuál es el restaurante más cercano a mí?"
+            ]
+        },
+        {
+            "input": "search for \" burger king \" .",
+            "output": [
+                "busca un \" burger king \"."
+            ]
+        },
+        {
+            "input": "show me restaurants that have a rating of at least 0 stars .",
+            "output": [
+                "muéstrame restaurantes que tengan una calificación de al menos 0 estrellas."
+            ]
+        },
+        {
+            "input": "find me a restaurant called \" lenny 's \"",
+            "output": [
+                "encuéntrame un restaurante llamado \" lenny 's \""
+            ]
+        },
+        {
+            "input": "show me all \" german \" restaurants .",
+            "output": [
+                "muéstrame todos los restaurantes \" german \"."
+            ]
+        },
+        {
+            "input": "i would like to find \" brenda 's french soul food \" .",
+            "output": [
+                "me gustaría encontrar \" brenda 's french soul food \"."
+            ]
+        },
+        {
+            "input": "i want to see all \" italian \" restaurants .",
+            "output": [
+                "quiero ver todos los restaurantes \" italian \"."
+            ]
+        },
+        {
+            "input": "show me all restaurants that are rated 6 star .",
+            "output": [
+                "muéstrame todos los restaurantes que tengan una calificación de 6 estrellas."
+            ]
+        },
+        {
+            "input": "find me all restaurants that serve \" new american \" cuisine .",
+            "output": [
+                "encuéntrame todos los restaurantes que sirvan cocina \" new american \"."
+            ]
+        },
+        {
+            "input": "look for \" mai lee \" .",
+            "output": [
+                "busca \" mai lee \"."
+            ]
+        },
+        {
+            "input": "find the \" vietnamese \" restaurants .",
+            "output": [
+                "encuentra los restaurantes \" vietnamese \"."
+            ]
+        },
+        {
+            "input": "find all reviews from \" jane \" .",
+            "output": [
+                "encuentra todas las reseñas de \" jane \"."
+            ]
+        },
+        {
+            "input": "show restaurants with over 8 reviews .",
+            "output": [
+                "muestra restaurantes con más de 8 reseñas."
+            ]
+        },
+        {
+            "input": "find the restaurants with a rating of 5 .",
+            "output": [
+                "encuentra los restaurantes con una calificación de 5."
+            ]
+        },
+        {
+            "input": "please give me a list of restaurants that are rated 0 and up .",
+            "output": [
+                "por favor, dame una lista de restaurantes que tengan una calificación de 0 o más."
+            ]
+        },
+        {
+            "input": "can you find the highest rated \" thai \" restaurant , please .",
+            "output": [
+                "¿me puedes encontrar el restaurante \" thai \" con mayor calificación, por favor?"
+            ]
+        },
+        {
+            "input": "i want to see the top \" mexican \" restaurants .",
+            "output": [
+                "quiero ver los mejores restaurantes \" mexican \"."
+            ]
+        },
+        {
+            "input": "can you show me restaurants that have more than 4 reviews ?",
+            "output": [
+                "¿me puedes mostrar los restaurantes que tengan más de 4 reseñas?"
+            ]
+        },
+        {
+            "input": "search for \" mcdonald 's \"",
+            "output": [
+                "busca \" mcdonald 's \""
+            ]
+        },
+        {
+            "input": "show all \" mark \" 's reviews",
+            "output": [
+                "mostrar todas las reseñas de \" mark \""
+            ]
+        },
+        {
+            "input": "look up restaurants in \" las vegas \"",
+            "output": [
+                "busca restaurantes en \" las vegas \""
+            ]
+        },
+        {
+            "input": "find \" cracker barrel \"",
+            "output": [
+                "encuentra \" cracker barrel \""
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants .",
+            "output": [
+                "muéstrame restaurantes \" mexican \"."
+            ]
+        },
+        {
+            "input": "find restaurants with at least 7 reviews .",
+            "output": [
+                "encuentra restaurantes con al menos 7 reseñas."
+            ]
+        },
+        {
+            "input": "find \" fuel pizza \" .",
+            "output": [
+                "encuentra \" fuel pizza \"."
+            ]
+        },
+        {
+            "input": "what is the closest restaurant ?",
+            "output": [
+                "¿cuál es el restaurante más cercano?"
+            ]
+        },
+        {
+            "input": "show me all restaurants with ratings of at least 5 stars .",
+            "output": [
+                "muéstrame todos los restaurantes con una calificación de al menos 5 estrellas."
+            ]
+        },
+        {
+            "input": "find \" atomic ramen \"",
+            "output": [
+                "encuentra \" atomic ramen \""
+            ]
+        },
+        {
+            "input": "tell all the restaurants rated 5 or higher",
+            "output": [
+                "di todos los restaurantes con una calificación de 5 o superior"
+            ]
+        },
+        {
+            "input": "show me the restaurant with the most reviews",
+            "output": [
+                "muéstrame el restaurante con más reseñas"
+            ]
+        },
+        {
+            "input": "find restaurants reviewed by \" arthur smith \"",
+            "output": [
+                "encuentra restaurantes con reseña de \" arthur smith \""
+            ]
+        },
+        {
+            "input": "find restaurants rated 4 stars or higher .",
+            "output": [
+                "encuentra restaurantes con una calificación de 4 estrellas o superior."
+            ]
+        },
+        {
+            "input": "list the restaurants with over 7 reviews .",
+            "output": [
+                "enumera los restaurantes con más de 7 reseñas."
+            ]
+        },
+        {
+            "input": "search for \" chipotle \"",
+            "output": [
+                "busca \" chipotle \""
+            ]
+        },
+        {
+            "input": "show me \" ethiopian \" restaurants .",
+            "output": [
+                "muéstrame restaurantes \" ethiopian \"."
+            ]
+        },
+        {
+            "input": "show me restaurants with more than 4 reviews .",
+            "output": [
+                "muéstrame restaurantes con más de 4 reseñas."
+            ]
+        },
+        {
+            "input": "find all the restaurants rated higher than 2 .",
+            "output": [
+                "encuentra todos los restaurantes con una calificación mayor de 2."
+            ]
+        },
+        {
+            "input": "search for \" outback steakhouse \" ?",
+            "output": [
+                "busca \" outback steakhouse \""
+            ]
+        },
+        {
+            "input": "find a \" italian \" restaurant .",
+            "output": [
+                "encuentra un restaurante \" italian \"."
+            ]
+        },
+        {
+            "input": "list all the restaurants with higher than 7 stars .",
+            "output": [
+                "enumera todos los restaurantes con más de 7  estrellas."
+            ]
+        },
+        {
+            "input": "what is the address of the \" mei wei \" restaurant ?",
+            "output": [
+                "¿cuál es la dirección del restaurante \" mei wei \"?"
+            ]
+        },
+        {
+            "input": "what is the rating of \" mei wei \" restaurant ?",
+            "output": [
+                "¿cuál es la calificación del restaurante \" mei wei \"?"
+            ]
+        },
+        {
+            "input": "what is the address of the nearest \" coffee \" shop ?",
+            "output": [
+                "¿cuál es la dirección de la tienda de \" coffee \" más cercana?"
+            ]
+        },
+        {
+            "input": "show me restaurants in the \" west suburbs \" please .",
+            "output": [
+                "muéstrame restaurantes en \" west suburbs \", por favor."
+            ]
+        },
+        {
+            "input": "find me some places to eat in \" detroit \" .",
+            "output": [
+                "encuéntrame algunos lugares para comer en \" detroit \"."
+            ]
+        },
+        {
+            "input": "look up restaurants that have 2 star ratings for me please .",
+            "output": [
+                "busca restaurantes que tengan calificaciones de 2 estrellas, por favor."
+            ]
+        },
+        {
+            "input": "show me all the restaurants that \" john grace \" has reviewed .",
+            "output": [
+                "muéstrame todos los restaurantes con reseña de \" john grace \"."
+            ]
+        },
+        {
+            "input": "show me reviews written by \" bill story \" .",
+            "output": [
+                "muéstrame reseñas escritas por \" bill story \"."
+            ]
+        },
+        {
+            "input": "how many reviews have been posted for \" old town doughnuts \" ?",
+            "output": [
+                "¿cuántas reseñas ha publicado \" old town doughnuts \" ?"
+            ]
+        },
+        {
+            "input": "how many restaurants have an average rating above 10 ?",
+            "output": [
+                "¿cuántos restaurantes tienen una calificación media por encima de 10 ?"
+            ]
+        },
+        {
+            "input": "what 's the address of the \" mcdonald 's \" on \" parker road \" ?",
+            "output": [
+                "¿cuál es la dirección del \" mcdonald 's \" en \" parker road \" ?"
+            ]
+        },
+        {
+            "input": "i want \" mexican \" food",
+            "output": [
+                "quiero comida \" mexican \""
+            ]
+        },
+        {
+            "input": "something \" spicy \" over 7 star rating .",
+            "output": [
+                "algo \" spicy \" con calificación de más de 7 estrellas."
+            ]
+        },
+        {
+            "input": "i 'd like any food with more than 0 reviews .",
+            "output": [
+                "me gustaría cualquier comida con más de 0 reseñas."
+            ]
+        },
+        {
+            "input": "where can i find the nearest \" chinese \" joint .",
+            "output": [
+                "¿dónde puedo encontrar el sitio \" chinese \" más cercano?"
+            ]
+        },
+        {
+            "input": "search all reviews by \" john oyster \" .",
+            "output": [
+                "buscar todas las reseñas de \" john oyster \"."
+            ]
+        },
+        {
+            "input": "i would like a \" mexican \" restaurant .",
+            "output": [
+                "me gustaría un restaurante \" mexican \"."
+            ]
+        },
+        {
+            "input": "i would like all restaurants with 2 stars and above .",
+            "output": [
+                "me gustarían todos los restaurantes con 2 estrellas o más."
+            ]
+        },
+        {
+            "input": "show me \" los dos amigos \"",
+            "output": [
+                "muéstrame \" los dos amigos \""
+            ]
+        },
+        {
+            "input": "show me restaurants with the most reviews .",
+            "output": [
+                "muéstrame los restaurantes con más reseñas."
+            ]
+        },
+        {
+            "input": "i want restaurants rated 1 or higher .",
+            "output": [
+                "quiero restaurantes con una calificación de 1 o superior."
+            ]
+        },
+        {
+            "input": "find restaurants in zip code \" 21269 \" .",
+            "output": [
+                "encuentra restaurantes en el código postal \" 21269 \"."
+            ]
+        },
+        {
+            "input": "i want restaurants with more than 9 reviews .",
+            "output": [
+                "quiero restaurantes con más de 9 reseñas."
+            ]
+        },
+        {
+            "input": "display all the restaurants that have at least a rating of 7 .",
+            "output": [
+                "muestra todos los restaurantes que tengan al menos una calificación de 7."
+            ]
+        },
+        {
+            "input": "do a search for restaurants that have been reviewed by at least 3 people .",
+            "output": [
+                "haz una búsqueda de restaurantes que hayan tenido reseñas de al menos 3."
+            ]
+        },
+        {
+            "input": "bring up \" italian \" restaurants .",
+            "output": [
+                "muestra restaurantes \" italian \"."
+            ]
+        },
+        {
+            "input": "could you preform a search for the restaurant , \" thai foon \" ?",
+            "output": [
+                "¿podrías realizar una búsqueda del restaurante \" thai foon \"?"
+            ]
+        },
+        {
+            "input": "search for \" dairy queen \" .",
+            "output": [
+                "busca \" dairy queen \"."
+            ]
+        },
+        {
+            "input": "search for all 8 star restaurants .",
+            "output": [
+                "busque todos los restaurantes de 8 estrellas."
+            ]
+        },
+        {
+            "input": "show me \" greek \" restaurants .",
+            "output": [
+                "muéstreme restaurantes \"greek\"."
+            ]
+        },
+        {
+            "input": "show me restaurants with more than 6 posted reviews .",
+            "output": [
+                "muéstreme restaurantes con más de 6 comentarios publicados."
+            ]
+        },
+        {
+            "input": "can you find me a \" mcdonalds \" in my area ?",
+            "output": [
+                "¿puede encontrarme un \"mcdonalds\" en mi zona?"
+            ]
+        },
+        {
+            "input": "where are the best \" fast food \" joints in my area .",
+            "output": [
+                "¿dónde están los mejores locales de \"fast food\" de mi zona?"
+            ]
+        },
+        {
+            "input": "what is the address of the \" mcdonads \" in this area .",
+            "output": [
+                "¿cuál es la dirección de los \"mcdonads\" de esta zona?"
+            ]
+        },
+        {
+            "input": "what are the highest ranked \" burger \" joints in the 7 mile area around \" asheville nc \" .",
+            "output": [
+                "¿cuáles son los locales de \"burger\" mejor valorados de la zona de 7 millas alrededor de \"asheville nc\"."
+            ]
+        },
+        {
+            "input": "show me all the restaurants that are located on \" federal highway \" ?",
+            "output": [
+                "muéstreme todos los restaurantes que se encuentran en la \"federal highway\"?"
+            ]
+        },
+        {
+            "input": "which restaurant has the highest amounts of reviews ?",
+            "output": [
+                "¿qué restaurante tiene el mayor número de comentarios?"
+            ]
+        },
+        {
+            "input": "what date was \" jim \" 's review posted ?",
+            "output": [
+                "¿en qué fecha se publicó el comentario sobre \"jim\"?"
+            ]
+        },
+        {
+            "input": "which restaurants are on \" main street \" ?",
+            "output": [
+                "¿qué restaurantes hay en \"main street\"?"
+            ]
+        },
+        {
+            "input": "find me \" mexican \" food",
+            "output": [
+                "búsqueme comida \"mexican\""
+            ]
+        },
+        {
+            "input": "show me restaurants in \" kansas city , mo \"",
+            "output": [
+                "muéstreme restaurantes en \"kansas city , mo\""
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants in the area .",
+            "output": [
+                "muéstreme restaurantes \"mexican\" en la zona."
+            ]
+        },
+        {
+            "input": "provide me the telephone number for the nearest \" mexican \" restaurant in \" 93312 \" zip .",
+            "output": [
+                "deme el número de teléfono del restaurante \"mexican\" más cercano dentro del código postal \"93312\"."
+            ]
+        },
+        {
+            "input": "find restaurants with more than 6 reviews .",
+            "output": [
+                "encuentre restaurantes con más de 6 comentarios."
+            ]
+        },
+        {
+            "input": "where is the closest \" mcdonalds \"",
+            "output": [
+                "¿dónde está el \"mcdonalds\" más cercano?"
+            ]
+        },
+        {
+            "input": "where is a \" mexican \" restaurant with more than 5 good reviews ?",
+            "output": [
+                "¿dónde hay un restaurante \"mexican\" con más de 5 comentarios positivos?"
+            ]
+        },
+        {
+            "input": "show all ratings made by \" mr gucci loafers \"",
+            "output": [
+                "muestre todas las valoraciones realizadas por \"mr gucci loafers\""
+            ]
+        },
+        {
+            "input": "search for \" steakhouse \" restaurants in my city",
+            "output": [
+                "busque restaurantes de \"steakhouse\" en mi ciudad"
+            ]
+        },
+        {
+            "input": "show me reviews written by \" amy \" .",
+            "output": [
+                "muéstreme los comentarios escritos por \"amy\"."
+            ]
+        },
+        {
+            "input": "where can i find the closest \" wawa \" ?",
+            "output": [
+                "¿dónde puedo encontrar el \"wawa\" más cercano?"
+            ]
+        },
+        {
+            "input": "search for \" big woodys \"",
+            "output": [
+                "busque \"big woodys\""
+            ]
+        },
+        {
+            "input": "search for an \" egyptian \" restaurant .",
+            "output": [
+                "busque un restaurante \"egyptian\"."
+            ]
+        },
+        {
+            "input": "show me restaurants with a minimum 1 star rating .",
+            "output": [
+                "muéstreme restaurantes con una valoración mínima de 1 estrellas."
+            ]
+        },
+        {
+            "input": "how many reviews are there at \" starbucks \" ?",
+            "output": [
+                "¿cuántos comentarios hay sobre \"starbucks\"?"
+            ]
+        },
+        {
+            "input": "show me \" thai \" restaurants .",
+            "output": [
+                "muéstreme restaurantes \"thai\"."
+            ]
+        },
+        {
+            "input": "how far is the nearest \" applebee 's \" ?",
+            "output": [
+                "¿a qué distancia está el \"applebee 's\" más cercano?"
+            ]
+        },
+        {
+            "input": "located \" mexican \" food close to here",
+            "output": [
+                "localice comida \"mexican\" cerca de aquí"
+            ]
+        },
+        {
+            "input": "show me \" white castle \"",
+            "output": [
+                "muéstreme el \"white castle\""
+            ]
+        },
+        {
+            "input": "search for \" japanese \" restaurants with at least 6 stars .",
+            "output": [
+                "busque restaurantes \"japanese\" con al menos 6 estrellas."
+            ]
+        },
+        {
+            "input": "tell me the rating of \" wendy 's \" .",
+            "output": [
+                "dígame cuál es la valoración del \"wendy 's\"."
+            ]
+        },
+        {
+            "input": "list \" japanese \" restaurants .",
+            "output": [
+                "enséñeme los restaurantes \"japanese\"."
+            ]
+        },
+        {
+            "input": "what 's the highest rated \" pizza \" place in the \" city center \" ?",
+            "output": [
+                "¿cuál es el local de \"pizza\" mejor valorado en el \"city center\"?"
+            ]
+        },
+        {
+            "input": "search for a \" vegan \" restaurant with at least 8 reviews .",
+            "output": [
+                "busque un restaurante \"vegan\" con al menos 8 comentarios."
+            ]
+        },
+        {
+            "input": "give me a 2 star restaurant nearby .",
+            "output": [
+                "enséñeme un restaurante de 2 estrellas cerca."
+            ]
+        },
+        {
+            "input": "find restaurants with the most reviews .",
+            "output": [
+                "encuentre los restaurantes con más comentarios."
+            ]
+        },
+        {
+            "input": "search for \" billy 's barbecue \" .",
+            "output": [
+                "busque \"billy 's barbecue\"."
+            ]
+        },
+        {
+            "input": "i want to see restaurants with more than 2 reviews .",
+            "output": [
+                "quiero ver restaurantes con más de 2 comentarios."
+            ]
+        },
+        {
+            "input": "find restaurants that sell \" spaghetti \" .",
+            "output": [
+                "encuentre restaurantes que vendan \"spaghetti\"."
+            ]
+        },
+        {
+            "input": "what 's the name of the \" italian \" restaurant on \" main street \" ?",
+            "output": [
+                "¿cómo se llama el restaurante \"italian\" en la \"main street\"?"
+            ]
+        },
+        {
+            "input": "show me the highest rated restaurant .",
+            "output": [
+                "muéstreme el restaurante mejor valorado."
+            ]
+        },
+        {
+            "input": "where is the nearest \" mcdonald 's \" ?",
+            "output": [
+                "¿dónde está el \"mcdonald 's\" más cercano?"
+            ]
+        },
+        {
+            "input": "show me 0 star \" mexican \" restaurants",
+            "output": [
+                "muéstreme restaurantes \"mexican\" de 0 estrellas"
+            ]
+        },
+        {
+            "input": "find all restaurants rated higher than 2",
+            "output": [
+                "encuentre todos los restaurantes con una valoración superior a 2"
+            ]
+        },
+        {
+            "input": "show me a list of restaurants with less than 3 reviews .",
+            "output": [
+                "muéstremeuna lista de restaurantes con menos de 3 comentarios."
+            ]
+        },
+        {
+            "input": "show me nearby \" mexican \" restaurants .",
+            "output": [
+                "muéstreme restaurantes \"mexican\" cercanos."
+            ]
+        },
+        {
+            "input": "search for restaurants in \" reno , nevada \" .",
+            "output": [
+                "busque restaurantes en \"reno, nevada\"."
+            ]
+        },
+        {
+            "input": "show me \" thai \" restaurants",
+            "output": [
+                "muéstreme restaurantes \"thai\""
+            ]
+        },
+        {
+            "input": "which \" chinese \" restaurant has the most reviews ?",
+            "output": [
+                "¿qué restaurante \"chinese\" tiene más comentarios?"
+            ]
+        },
+        {
+            "input": "what is \" ramen nagi \" 's rating ?",
+            "output": [
+                "¿qué valoración tiene \"ramen nagi\"?"
+            ]
+        },
+        {
+            "input": "look for \" olive garden \" .",
+            "output": [
+                "busque \"olive garden\"."
+            ]
+        },
+        {
+            "input": "what restaurants have received 0 or more reviews ?",
+            "output": [
+                "¿qué restaurantes han recibido 0 o más comentarios?"
+            ]
+        },
+        {
+            "input": "find reviews from \" george \" .",
+            "output": [
+                "encuentre comentarios sobre \"george\"."
+            ]
+        },
+        {
+            "input": "show me \" american \" restaurants",
+            "output": [
+                "muéstreme restaurantes \"american\""
+            ]
+        },
+        {
+            "input": "tell me the \" american \" restaurants .",
+            "output": [
+                "dígame cuáles son los restaurantes \"american\"."
+            ]
+        },
+        {
+            "input": "give me all of the \" mexican \" restaurants with at least 5 stars .",
+            "output": [
+                "indíqueme todos los restaurantes \"mexican\" con al menos 5 estrellas."
+            ]
+        },
+        {
+            "input": "search for \" rocky 's pizza \" .",
+            "output": [
+                "busque \"rocky 's pizza\"."
+            ]
+        },
+        {
+            "input": "is there a \" red lobster \" near me ?",
+            "output": [
+                "¿hay un \"red lobster\" cerca de mí?"
+            ]
+        },
+        {
+            "input": "find all of the \" indian \" restaurants",
+            "output": [
+                "encuentre todos los restaurantes \"indian\""
+            ]
+        },
+        {
+            "input": "what is the rating of the \" oak street steakhouse \" ?",
+            "output": [
+                "¿cuál es la valoración del \"oak street steakhouse\"?"
+            ]
+        },
+        {
+            "input": "show me restaurants in zip code \" 28078 \" .",
+            "output": [
+                "muéstreme restaurantes dentro del código postal \"28078\"."
+            ]
+        },
+        {
+            "input": "what \" mexican \" restaurant has the most reviews ?",
+            "output": [
+                "¿qué restaurante \"mexican\" tiene más comentarios?"
+            ]
+        },
+        {
+            "input": "what kind of rating does \" panda express \" have",
+            "output": [
+                "¿qué valoración tiene \"panda express\"?"
+            ]
+        },
+        {
+            "input": "show me \" italian \" restaurants nearby .",
+            "output": [
+                "muéstreme restaurantes \"italian\" cerca."
+            ]
+        },
+        {
+            "input": "please show me reviews that were written for \" cracker barrel \" this year .",
+            "output": [
+                "muéstreme los comentarios escritos sobre \"cracker barrel\" este año."
+            ]
+        },
+        {
+            "input": "find restaurants with 8 stars .",
+            "output": [
+                "encuentre restaurantes con 8 estrellas."
+            ]
+        },
+        {
+            "input": "what is the phone number for \" sampan \" ?",
+            "output": [
+                "¿cuál es el número de teléfono de \"sampan\"?"
+            ]
+        },
+        {
+            "input": "can i see reviews for the \" gunnisack \" ?",
+            "output": [
+                "¿puedo ver comentarios sobre \"the gunnisack\"?"
+            ]
+        },
+        {
+            "input": "please tell me the location of \" dave 's seafood shack \" .",
+            "output": [
+                "dígame cuál es la ubicación de \"dave 's seafood shack\"."
+            ]
+        },
+        {
+            "input": "what is the address of the nearest \" fast food \" place ?",
+            "output": [
+                "¿cuál es la dirección del local de \"fast food\" más cercano?"
+            ]
+        },
+        {
+            "input": "search for \" gates barbecue \" ?",
+            "output": [
+                "busque \"gates barbecue\""
+            ]
+        },
+        {
+            "input": "find restaurants within one mile from here .",
+            "output": [
+                "encuentre restaurantes a una milla de aquí."
+            ]
+        },
+        {
+            "input": "what is the closest \" italian \" restaurant to me",
+            "output": [
+                "¿cuál es el restaurante \"italian\" más cerca de mí?"
+            ]
+        },
+        {
+            "input": "show restaurants with at least 5 reviews",
+            "output": [
+                "muestre restaurantes con al menos 5 comentarios"
+            ]
+        },
+        {
+            "input": "are there any \" indian \" restaurants near me ?",
+            "output": [
+                "¿hay algún restaurante \"indian\" cerca de mí?"
+            ]
+        },
+        {
+            "input": "give me the telephone number of a 5 star restaurant .",
+            "output": [
+                "dame el número de teléfono de un restaurante con 5 estrellas."
+            ]
+        },
+        {
+            "input": "show me all the of review written by \" alex smith \" about \" chinese \" restaurants .",
+            "output": [
+                "muestra todas las reseñas escritas por \" alex smith \" sobre restaurantes \" chinese \" ."
+            ]
+        },
+        {
+            "input": "show highest rated \" coffee \" shop withing 9 miles .",
+            "output": [
+                "muestra las \" coffee \" mejor valoradas en 9 millas."
+            ]
+        },
+        {
+            "input": "show me restaurants rated between 3 and 4 .",
+            "output": [
+                "muestra restaurantes valorados entre 3 y 4."
+            ]
+        },
+        {
+            "input": "what is the price range of the nearest \" mexican \" restaurant ?",
+            "output": [
+                "¿cuál es el rango de precios del restaurante \" mexican \" más cercano?"
+            ]
+        },
+        {
+            "input": "show restaurants in \" san francisco \" .",
+            "output": [
+                "muestra restaurantes de \" san francisco \" ."
+            ]
+        },
+        {
+            "input": "find all \" mexican \" restaurants .",
+            "output": [
+                "encuentra todos los restaurantes \" mexican \" ."
+            ]
+        },
+        {
+            "input": "search for \" sushi joy \" .",
+            "output": [
+                "busca \" sushi joy \" ."
+            ]
+        },
+        {
+            "input": "find me \" italian \" restaurants",
+            "output": [
+                "encuentra restaurantes \" italian \""
+            ]
+        },
+        {
+            "input": "can you find me the telephone number for \" rookie 's bar & grill \" ?",
+            "output": [
+                "¿puedes encontrar el número de teléfono para \" rookie 's bar & grill \" ?"
+            ]
+        },
+        {
+            "input": "what is the phone number for \" ginger china \" ?",
+            "output": [
+                "¿cuál es el número de teléfono para \" ginger china \" ?"
+            ]
+        },
+        {
+            "input": "give the phone number of a restaurant with 7 or more reviews",
+            "output": [
+                "dame el número de teléfono de un restaurante con 7 o más reseñas"
+            ]
+        },
+        {
+            "input": "find me \" in-n-out burger \" .",
+            "output": [
+                "encuentra \" in-n-out burger \" ."
+            ]
+        },
+        {
+            "input": "show me all 9 star restaurants .",
+            "output": [
+                "muestra todos los restaurantes con 9 estrellas."
+            ]
+        },
+        {
+            "input": "search for a 0 star rated \" coffee \" shop located nearby .",
+            "output": [
+                "busca una \" coffee \" valorada con 0 estrellas cercana."
+            ]
+        },
+        {
+            "input": "show me reviews written by \" bruce \" .",
+            "output": [
+                "muestra reseñas escritas por \" bruce \" ."
+            ]
+        },
+        {
+            "input": "find all restaurants rated higher than 5",
+            "output": [
+                "encuentra todos los restaurantes con valoración superior a 5"
+            ]
+        },
+        {
+            "input": "search for a \" mexican \" restaurant .",
+            "output": [
+                "busca un restaurante \" mexican \" ."
+            ]
+        },
+        {
+            "input": "are there any one star reviews ?",
+            "output": [
+                "¿hay reseñas de una estrella?"
+            ]
+        },
+        {
+            "input": "search for restaurants with more than 0 reviews .",
+            "output": [
+                "busca restaurantes con más de 0 reseñas."
+            ]
+        },
+        {
+            "input": "what is the top rated 10 star restaurant ?",
+            "output": [
+                "¿cuál es el restaurante de 10 estrellas mejore valorado?"
+            ]
+        },
+        {
+            "input": "what is the telephone and address for \" ruth 's chris \" ?",
+            "output": [
+                "¿cuál es el teléfono y dirección de \" ruth 's chris \" ?"
+            ]
+        },
+        {
+            "input": "show me \" aunt chilada 's \"",
+            "output": [
+                "muestra \" aunt chilada 's \""
+            ]
+        },
+        {
+            "input": "are there any \" mexican \" restaurants with more than 8 reviews ?",
+            "output": [
+                "¿hay algún restaurante \" mexican \" con más de 8 reseñas?"
+            ]
+        },
+        {
+            "input": "find places in \" 17111 \" .",
+            "output": [
+                "encuentra lugares en \" 17111 \" ."
+            ]
+        },
+        {
+            "input": "show me all \" italian \" restaurants .",
+            "output": [
+                "muestra todos los restaurantes \" italian \" ."
+            ]
+        },
+        {
+            "input": "give me the name of a \" mexican \" restaurant .",
+            "output": [
+                "ofrece el nombre de un restaurante \" mexican \" ."
+            ]
+        },
+        {
+            "input": "show me 9 star rated restaurants on \" locust street \" .",
+            "output": [
+                "muestra restaurantes valorados con 9 estrellas en \" locust street \" ."
+            ]
+        },
+        {
+            "input": "show me a list of \" italian \" restaurants .",
+            "output": [
+                "muestra una lista de restaurantes \" italian \" ."
+            ]
+        },
+        {
+            "input": "show me all restaurants reviewed by \" restaurantgirl_84 \" .",
+            "output": [
+                "muestra todos los restaurantes reseñados por \" restaurantgirl_84 \" ."
+            ]
+        },
+        {
+            "input": "i 'd like to know the location of \" dunkin donuts \" ?",
+            "output": [
+                "me gustaría saber la ubicación de \" dunkin donuts \" ?"
+            ]
+        },
+        {
+            "input": "show me a \" chinese \" restaurant with a rating of 6 .",
+            "output": [
+                "muestra un restaurante \" chinese \" con una valoración de 6 ."
+            ]
+        },
+        {
+            "input": "which restaurant has the most reviews ?",
+            "output": [
+                "¿qué restaurante tiene más reseñas?"
+            ]
+        },
+        {
+            "input": "search for \" french \" restaurants .",
+            "output": [
+                "busca restaurantes \" french \" ."
+            ]
+        },
+        {
+            "input": "give me reviews for \" jade buffet \" .",
+            "output": [
+                "dame reseñas para \" jade buffet \" ."
+            ]
+        },
+        {
+            "input": "what is the price range for \" ramen nagi \" ?",
+            "output": [
+                "¿cuál es el rango de precios para \" ramen nagi \" ?"
+            ]
+        },
+        {
+            "input": "find \" italian \" restaurants with at least 8 reviews .",
+            "output": [
+                "encuentra restaurantes \" italian \" con al menos 8 reseñas ."
+            ]
+        },
+        {
+            "input": "where is the closest \" dairy queen \" ?",
+            "output": [
+                "¿dónde está el \" dairy queen \" más cercano?"
+            ]
+        },
+        {
+            "input": "find all restaurants in \" chicago \" .",
+            "output": [
+                "encuentra todos los restaurantes de \" chicago \" ."
+            ]
+        },
+        {
+            "input": "is there a restaurant in zipcode \" 19101 \" ?",
+            "output": [
+                "¿hay algún restaurante con el código postal \" 19101 \" ?"
+            ]
+        },
+        {
+            "input": "i 'm looking for \" armenian \" restaurants",
+            "output": [
+                "estoy buscando restaurantes \" armenian \""
+            ]
+        },
+        {
+            "input": "show me reviews for \" dunkin ' donuts \" from the last 8 days .",
+            "output": [
+                "muestra reseñas de \"dunkin ' donuts\" de los últimos 8 días."
+            ]
+        },
+        {
+            "input": "show me all of the 5 star restaurants nearby .",
+            "output": [
+                "muestra todos los restaurantes cercanos de 5 estrellas."
+            ]
+        },
+        {
+            "input": "display restaurants with more than 2 reviews .",
+            "output": [
+                "muestra retaurantes con más de 2 reseñas."
+            ]
+        },
+        {
+            "input": "i need to find all 9 star restaurants .",
+            "output": [
+                "necesito encontrar todos los restaurantes de 9 estrellas."
+            ]
+        },
+        {
+            "input": "find \" italian \" restaurants .",
+            "output": [
+                "encuentra retaurantes \" italian \" ."
+            ]
+        },
+        {
+            "input": "show me \" mexican \" restaurants with at least a 5 star rating .",
+            "output": [
+                "muestra retaurantes \" mexican \" con una valoración de al menos 5 estrellas."
+            ]
+        },
+        {
+            "input": "search for \" sushi king \" restaurant for me .",
+            "output": [
+                "busca restaurantes \" sushi king \" ."
+            ]
+        },
+        {
+            "input": "search for \" mexican \" restaurants",
+            "output": [
+                "busca restaurantes \" mexican \""
+            ]
+        },
+        {
+            "input": "show me \" japanese \" restaurants .",
+            "output": [
+                "muestra restaurantes \" japanese \" ."
+            ]
+        },
+        {
+            "input": "what is the price range for my closest \" chinese \" restaurant ?",
+            "output": [
+                "¿cuál es el rango de precios para el restaurantes \" chinese \" más cercano?"
+            ]
+        },
+        {
+            "input": "show me restaurants on \" main street \" .",
+            "output": [
+                "muestra restaurantes en \" main street \" ."
+            ]
+        },
+        {
+            "input": "show me the top 5 \" steak house \" restaurants in \" orlando \" .",
+            "output": [
+                "muestra los mejores 5 restaurantes \" steak house \" de \" orlando \" ."
+            ]
+        },
+        {
+            "input": "show me all restaurants reviewed by \" alex smith \" .",
+            "output": [
+                "muestra todos los restaurantes reseñados por \" alex smith \" ."
+            ]
+        },
+        {
+            "input": "show me \" nomad pizza \" .",
+            "output": [
+                "muestra \" nomad pizza \" ."
+            ]
+        },
+        {
+            "input": "show me all \" chinese \" restaurants with reviews made in the last month",
+            "output": [
+                "muestra todos los restaurantes \" chinese \" con reseñas realizadas en el último mes"
+            ]
+        },
+        {
+            "input": "display restaurants that were rated above 2",
+            "output": [
+                "muestra restaurantes con valoraciones superiores a 2"
+            ]
+        },
+        {
+            "input": "i 'm in the mood for \" italian \" food .",
+            "output": [
+                "me apetece comida \" italian \" ."
+            ]
+        },
+        {
+            "input": "search for \" mexican \" restaurants with reviews from the past month .",
+            "output": [
+                "busca restaurantes \" mexican \" con reseñas del mes pasado."
+            ]
+        },
+        {
+            "input": "find the address for \" on the borders mexican grill and cantina \" .",
+            "output": [
+                "encuentra la dirección para \" on the borders mexican grill and cantina \" ."
+            ]
+        },
+        {
+            "input": "show me restaurant reviews written by \" fat charlie \" .",
+            "output": [
+                "muestra reseñas de restaurantes escritas por \" fat charlie \" ."
+            ]
+        },
+        {
+            "input": "find me a \" french \" restaurant .",
+            "output": [
+                "encuentra un retaurante \" french \" ."
+            ]
+        },
+        {
+            "input": "look for a \" red lobster \" in the \" 85053 \" zip code .",
+            "output": [
+                "busca un \" red lobster \" en el código postal \" 85053 \" ."
+            ]
+        },
+        {
+            "input": "find restaurants in \" denver , colorado \" .",
+            "output": [
+                "encuentra restaurantes en \" denver , colorado \" ."
+            ]
+        },
+        {
+            "input": "what is the phone number of the nearest \" pizza hut \" ?",
+            "output": [
+                "¿cuál es el número de teléfono del \" pizza hut \" más cercano?"
+            ]
+        }
+    ]
+}
