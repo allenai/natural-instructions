@@ -186,6 +186,13 @@ Name | Summary | Category
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
+`task184_snli_entailment_to_neutral_text_modification.json` | Given two sentences that agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task185_snli_contradiction_to_neutral_text_modification.json` | Given two sentences that don't agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task186_snli_contradiction_to_entailment_text_modification.json` | Given two sentences that don't agree with each other, modify the second sentence so that they clearly agree with each other | Answer Generation
+`task187_snli_entailment_to_contradiction_text_modifcation.json` | Given two sentences that agree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task188_snli_neutral_to_entailment_text_modification.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly agree | Answer Generation
+`task189_snli_neutral_to_contradiction_text_modification.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task190_snli_classification.json` | Given two sentences choose whether they agree/disagree/neither with each other | Classification
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
