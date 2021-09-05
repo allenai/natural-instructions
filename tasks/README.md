@@ -162,12 +162,13 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
+`task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
 `task172_spl_translation_en_fa.json` | Translate English questions to Farsi while preserving named entities in the original language | Translation
 `task173_spl_translation_en_it.json` | Translate English questions to Italian while preserving named entities in the original language | Translation
 `task174_spl_translation_en_ja.json` | Translate English questions to Japanese while preserving named entities in the original language | Translation
 `task175_spl_translation_en_pl.json` | Translate English questions to Polish while preserving named entities in the original language | Translation
-`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task179_participant_extraction` | Given a sentence from a medical study paper, select the tokens representing information about participants | Entity Detection
 `task180_intervention_extraction` | Given a sentence from a medical study paper, select the tokens representing information about intervention in the study | Entity Detection
 `task181_outcome_extraction` | Given a sentence from a medical study paper, select the tokens representing information about outcome of the study | Entity Detection
@@ -182,6 +183,7 @@ Name | Summary | Category
 `task169_strategyqa_sentence_generation` | Given a question, write the facts one needs to know in order to answer the question| Sentence Generation
 `task176_break_decompose_questions` | Break a question into the steps needed to answer the question. | Question Decomposition
 `task177_para-nmt_paraphrasing` | Given a sentence, rephrase it using another words while retaining meaning same as input. | Text Modification
+`task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
@@ -190,6 +192,8 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task225_English_language_Answer_Generation.json` | Given a basic english language related question generate the answer with proper context, definitions, and examples. | Answer Generation
+`task226_English_language_Answer_Relevance_Classification.json` | Given a question and answer pair, detect whether the answer is acceptable or not. | Classification
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
@@ -207,3 +211,33 @@ Name | Summary | Category
 `task251_spl_translation_en_fi.json` | Translate English questions to Finnish while preserving named entities in the original language | Translation
 `task252_spl_translation_en_tr.json` | Translate English questions to Turkish while preserving named entities in the original language | Translation
 `task253_spl_translation_en_zh.json` | Translate English questions to Chinese while preserving named entities in the original language | Translation
+`task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
+`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
+`task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
+`task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
+`task239_TweetQA_answer_generation.json` | Given a context paragraph of the tweet and question, generate a right answer | Answer Generation
+`task240_TweetQA_question_generation.json` | Given a context paragraph of the tweet and answer, generate a right question | Question Generation
+`task241_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the answer is right or wrong | Classification
+`task242_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the context is helpful in answering question or not | Classification
+`task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
+`task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
+`task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
+`task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
+`task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
+`task248_dream_classification` | Given a conversation and a question, classify the question | Classification
+`task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
+`task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
+`task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Legal , Answer Generation
+`task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
+`task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
+`task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
+`task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
+`task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
+`task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
+`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
+`task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
+`task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
