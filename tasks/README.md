@@ -204,7 +204,6 @@ Name | Summary | Category
 `task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
-`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
@@ -231,7 +230,8 @@ Name | Summary | Category
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
-`task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task290_TellMeWhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable | Classification
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task332_TellMeWhy_answer_generation` | Given a short story and a question, Answer the question based on the events of the story | Answer Generation
