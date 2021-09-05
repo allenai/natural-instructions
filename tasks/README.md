@@ -237,3 +237,7 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
+`task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
+`task346_hybridqa_classification` | Given a question, a word, and a POS tag, classify the POS tags based on part-of-speech tag of given word in the given question into True or False  | Classification
+`task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question | Incorrect Answer Generation
