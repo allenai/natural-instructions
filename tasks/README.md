@@ -238,3 +238,5 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task350_WinoMT_classification_gender_identifiability_pro` | Given a sentence and a profession, identify whether the profession's gender is identifiable. pro means the gender aggrees with the cultural stereotype of the profession | classification
+`task351_WinoMT_classification_gender_identifiability_anti` | Given a sentence and a profession, identify whether the profession's gender is identifiable. anti means the gender disaggrees with the cultural stereotype of the profession | classification
