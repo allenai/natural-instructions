@@ -235,8 +235,9 @@ Name | Summary | Category
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
-`task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
 `task346_hybridqa_classification` | Given a question, a word, and a POS tag, classify the POS tags based on part-of-speech tag of given word in the given question into True or False  | Classification
