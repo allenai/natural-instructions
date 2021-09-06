@@ -254,5 +254,5 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task340_SST2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment | Classification
+`task363_SST2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment | Classification
 
