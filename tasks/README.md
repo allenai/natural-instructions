@@ -162,6 +162,7 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task183_rhyme_generation.json` | Given an input word, generate a list of words that rhyme exactly with the input | Answer Generation
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
@@ -186,12 +187,27 @@ Name | Summary | Category
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
+`task184_snli_entailment_to_neutral_text_modification.json` | Given two sentences that agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task185_snli_contradiction_to_neutral_text_modification.json` | Given two sentences that don't agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task186_snli_contradiction_to_entailment_text_modification.json` | Given two sentences that don't agree with each other, modify the second sentence so that they clearly agree with each other | Answer Generation
+`task187_snli_entailment_to_contradiction_text_modifcation.json` | Given two sentences that agree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task188_snli_neutral_to_entailment_text_modification.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly agree | Answer Generation
+`task189_snli_neutral_to_contradiction_text_modification.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task190_snli_classification.json` | Given two sentences choose whether they agree/disagree/neither with each other | Classification
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task197_mnli_domain_answer_generation.json` | Given two sentences, write a single word describing the common genre to which they belong | Answer Generation
+`task198_mnli_domain_classification.json` | Given two sentences and 10 genre choices, determine the genre to which the sentences belong. | Classification
+`task199_mnli_classification.json` | Given 2 sentences, determine if they clearly agree or disagree with each other, or if this cannot be answered at all. | Classification
+`task200_mnli_entailment_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that clearly agrees with the context statement. | Classification
+`task201_mnli_neutral_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that neither clearly agrees nor disagrees with the context statement. | Classification
+`task202_mnli_contradiction_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that clearly disagrees with the context statement. | Classification
+`task203_mnli_sentence_generation.json` | Given a context statement, genre, and label indicating agree/disagree/neither with respect to the context statement, generate a sentence that follows the genre and label specifications. | Answer Generation
+`task204_mnli_same_genre_classification.json` | Given two sentences and the genre they should belong to, determine if they belong to the same genre or not. | Classification
 `task225_English_language_Answer_Generation.json` | Given a basic english language related question generate the answer with proper context, definitions, and examples. | Answer Generation
 `task226_English_language_Answer_Relevance_Classification.json` | Given a question and answer pair, detect whether the answer is acceptable or not. | Classification
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
