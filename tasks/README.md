@@ -238,10 +238,10 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task348_casino_classification_negotiation_elicit_pref` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
-`task349_casino_classification_negotiation_no_need` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
-`task350_casino_classification_negotiation_other_need` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
-`task351_casino_classification_negotiation_self_need` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
-`task352_casino_classification_negotiation_small_talk` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
-`task353_casino_classification_negotiation_uv_part` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
-`task354_casino_classification_negotiation_vouch_fair` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task350_casino_classification_negotiation_elicit_pref` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task351_casino_classification_negotiation_no_need` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task352_casino_classification_negotiation_other_need` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task353_casino_classification_negotiation_self_need` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task354_casino_classification_negotiation_small_talk` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task355_casino_classification_negotiation_uv_part` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
+`task356_casino_classification_negotiation_vouch_fair` | Detecting the usage of a negotiation strategy in dialogue utterances | Classification
