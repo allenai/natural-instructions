@@ -212,15 +212,6 @@ Name | Summary | Category
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
 `task228_ARC_answer_generation_easy.json` | Given a science question (easy-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
 `task229_ARC_answer_generation_hard.json` | Given a science question (hard-level), provide answer based on scientific facts and reasoning. (Multiple Choice Question Answering) | Answer Generation
-`task230_iirc_passage_classification.json` | Given 3 passages and a question, determine which passage cna be used to answer the question. | Classification
-`task231_iirc_link_classification.json` | Given a question, context passage, and terms from the passage for further information search, determine which term can be used to answer the question. | Classification
-`task232_iirc_link_number_classification.json` | Given a question and context passage, determine if further information on more than one term from the passage is needed to answer the question. | Classification
-`task233_iirc_link_exists_classification.json` | Given a question and context passage, determine if the passage has any terms that can be used to obtain further information needed to answer the question. | Classification
-`task234_iirc_passage_line_answer_generation.json` | Given a question and context passage, determine which sentence in the passage has terms that can be used to obtain further information needed to answer the question. | Answer Generation
-`task235_iirc_question_from_subtext_answer_generation.json` | Given a context statement, further information on a linked term in the statement, and an answer term, generate a question that can use the information provided to obtain the given answer | Answer Generation
-`task236_iirc_question_from_passage_answer_generation.json` | Given a context passage, further information on a linked term in the statement, and an answer term, generate a question that can use the information provided to obtain the given answer | Answer Generation
-`task237_iirc_answer_from_subtext_answer_generation.json` | Given a context statement, further information on a linked term in the statement, and a question, generate an answer that can use the information provided to solve the question| Answer Generation
-`task238_iirc_answer_from_passage_answer_generation.json` | Given a context passage, further information on a linked term in the statement, and a question, generate an answer that can use the information provided to solve the question| Answer Generation
 `task239_TweetQA_answer_generation.json` | Given a context paragraph of the tweet and question, generate a right answer | Answer Generation
 `task240_TweetQA_question_generation.json` | Given a context paragraph of the tweet and answer, generate a right question | Question Generation
 `task241_TweetQA_classification.json` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the answer is right or wrong | Classification
@@ -244,5 +235,6 @@ Name | Summary | Category
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
-`task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
