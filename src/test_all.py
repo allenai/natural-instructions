@@ -4,7 +4,7 @@ from os import listdir
 from os.path import isfile, join
 
 # read all the tasks and make sure that they're following the right pattern
-tasks_path = '../tasks/'
+tasks_path = 'tasks/'
 
 expected_keys = [
     "Definition",
@@ -16,13 +16,13 @@ expected_keys = [
     'Source'
 ]
 
-with open("../tasks/README.md", 'r') as readmef:
+with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
 for file in files:
-    if ".md" not in file and ('290' in file or '332' in file):
+    if ".md" not in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
