@@ -192,6 +192,8 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task225_English_language_Answer_Generation.json` | Given a basic english language related question generate the answer with proper context, definitions, and examples. | Answer Generation
+`task226_English_language_Answer_Relevance_Classification.json` | Given a question and answer pair, detect whether the answer is acceptable or not. | Classification
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
@@ -217,16 +219,22 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
 `task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
+`task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
 `task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
-`task268_casehold_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Answer Generation
+`task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Legal , Answer Generation
 `task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
 `task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
 `task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
-`task274_overruling_classification`	| Given a sentence, classify it into overruling or non-overruling| Classification
+`task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task291_semeval_2020_task4_Commonsense_Validation` | Given two statement, choose the one that makes less sense. | Answer Generation
-`task295_semeval_2020_task4_Commonsense_Reasoning` | Given an statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
+`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
+`task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
+`task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
+`task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
