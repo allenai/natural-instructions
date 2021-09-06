@@ -192,6 +192,8 @@ Name | Summary | Category
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task225_English_language_Answer_Generation.json` | Given a basic english language related question generate the answer with proper context, definitions, and examples. | Answer Generation
+`task226_English_language_Answer_Relevance_Classification.json` | Given a question and answer pair, detect whether the answer is acceptable or not. | Classification
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task194_duorc_answer_generation` | Given a plot and a question, answer the question based on the plot | Answer Generation
 `task195_sentiment140_classification.json` | Given a tweet text, classify it into positive or negative | Classification
@@ -204,6 +206,7 @@ Name | Summary | Category
 `task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
@@ -216,16 +219,22 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
+`task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
 `task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
-`task213_rocstories_correct_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the correct story ending | Classification
-`task214_rocstories_incorrect_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the incorrect story ending | Classification
-`task215_rocstories_incorrect_answer_generation.json` | Given the title and first four sentences of a five sentence story, write an incorrect story ending | Answer Generation
-`task216_rocstories_correct_answer_generation.json` | Given the title and first four sentences of a five sentence story, write a correct story ending | Answer Generation
-`task217_rocstories_ordering_answer_generation.json` | Given a five sentence story in jumbled order and the title, put the story in the correct order | Answer Generation
-`task218_rocstories_swap_order_answer_generation.json` | Given a five sentence story and the title, determine which two sentences must be swapped so that the story makes complete sense | Answer Generation
-`task219_rocstories_title_answer_generation.json` | Given a five sentence story, generate an appropriate title for the story | Answer Generation
-`task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
-`task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
-`task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
+`task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
+`task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
+`task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Legal , Answer Generation
+`task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
+`task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
+`task273_europarl_classification.json`| Given bulgarian sentence and corresponding english translation, verify that the translation is right or wrong | Classification
+`task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
+`task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
+`task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
+`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
+`task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
+`task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
+`task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
