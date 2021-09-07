@@ -259,3 +259,6 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task376_reverse_order_of_words` |  Reverse the order of words in the given sentence | Answer Generation
+`task377_remove_words_of_given_length` | Remove all words of a given length in the sentence | Answer Generation
+`task378_reverse_words_of_given_length` | Reverse all words of a given length in the sentence | Answer Generation
