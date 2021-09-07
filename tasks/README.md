@@ -223,10 +223,6 @@ Name | Summary | Category
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
-`task250_spl_translation_en_ar.json` | Translate English questions to Arabic while preserving named entities in the original language | Translation
-`task251_spl_translation_en_fi.json` | Translate English questions to Finnish while preserving named entities in the original language | Translation
-`task252_spl_translation_en_tr.json` | Translate English questions to Turkish while preserving named entities in the original language | Translation
-`task253_spl_translation_en_zh.json` | Translate English questions to Chinese while preserving named entities in the original language | Translation
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
@@ -245,6 +241,20 @@ Name | Summary | Category
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
 `task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
+`task250_spl_translation_en_ar.json` | Translate English questions to Arabic while preserving named entities in the original language | Translation
+`task251_spl_translation_en_fi.json` | Translate English questions to Finnish while preserving named entities in the original language | Translation
+`task252_spl_translation_en_tr.json` | Translate English questions to Turkish while preserving named entities in the original language | Translation
+`task253_spl_translation_en_zh.json` | Translate English questions to Chinese while preserving named entities in the original language | Translation
+`task254_spl_translation_fi_en.json` | Translate Finnish questions to English while preserving named entities in the original language | Translation
+`task255_spl_translation_it_en.json` | Translate Italian questions to English while preserving named entities in the original language | Translation
+`task256_spl_translation_de_en.json` | Translate German questions to English while preserving named entities in the original language | Translation
+`task257_spl_translation_ar_en.json` | Translate Arabic questions to English while preserving named entities in the original language | Translation
+`task258_spl_translation_fa_en.json` | Translate Farsi questions to English while preserving named entities in the original language | Translation
+`task259_spl_translation_tr_en.json` | Translate Turkish questions to English while preserving named entities in the original language | Translation
+`task260_spl_translation_zh_en.json` | Translate Chinese questions to English while preserving named entities in the original language | Translation
+`task261_spl_translation_es_en.json` | Translate Spanish questions to English while preserving named entities in the original language | Translation
+`task262_spl_translation_ja_en.json` | Translate Japanese questions to English while preserving named entities in the original language | Translation
+`task263_spl_translation_pl_en.json` | Translate Polish questions to English while preserving named entities in the original language | Translation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Legal , Answer Generation
 `task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
 `task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
