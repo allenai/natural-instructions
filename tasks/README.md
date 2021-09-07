@@ -269,5 +269,5 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task384_Stance_Detection_text_generation` | Given a tweet, clasify it into one of these categories: Atheism, Climate Change is a Real Concern, Feminist Movement, Hillary Clinton, and Legalization of Abortion. | Text Generation
-`task385_Stance_Detection_text_generation` | Given a tweet and type of that tweet, generate the stance of the tweet. | Text Generation
+`task384_stance_detection_text_generation` | Given a tweet, clasify it into one of these categories: Atheism, Climate Change is a Real Concern, Feminist Movement, Hillary Clinton, and Legalization of Abortion. | Text Generation
+`task385_stance_detection_text_generation` | Given a tweet and type of that tweet, generate the stance of the tweet. | Text Generation
