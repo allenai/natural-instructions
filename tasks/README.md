@@ -240,5 +240,5 @@ Name | Summary | Category
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
-`task346_hybridqa_classification` | Given a question, a word, and a POS tag, classify the POS tags based on part-of-speech tag of given word in the given question into True or False  | Classification
+`task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question | Classification
 `task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question | Incorrect Answer Generation
