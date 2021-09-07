@@ -270,3 +270,4 @@ Name | Summary | Category
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not | Classification
+`task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
