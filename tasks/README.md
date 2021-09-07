@@ -237,3 +237,13 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task365_synthetic_count_vowels.json` | Given a string count the number of vowels in that string. | Answer Generation, Counting
+`task366_synthetic_return_primes.json` | Given a list of integers return a number if it is prime. | Answer Generation, Arithemetic 
+`task367_synthetic_remove_floats.json`  | Given a list of numbers remove any number if it is not an integer | Answer Generation, Arithemetic          
+`task368_synthetic_even_or_odd_calculation.json`  | Given a list of integers divide even numbers by *4* and multiply odd numbers by *4* then add *2* | Answer Generation, Arithemetic
+`task369_synthetic_remove_odds.json` | Given a list of integers remove any integer if it is odd | Answer Generation, Arithemetic
+`task370_synthetic_remove_divisible_by_3.json` | Given a list of integers remove any integer if it is divisible by *3* | Answer Generation, Arithemetic
+`task371_synthetic_product_of_list.json` | Given a list of lists of integers, find the product of every inner list | Answer Generation, Arithemetic
+`task372_synthetic_palindrome_numbers.json` | Given a list of integers return an integer if the first and last digit are the same | Answer Generation
+`task373_synthetic_round_tens_place.json` | Given a list of integers round them to the tens place | Answer Generation, Arithemetic
+`task374_synthetic_pos_or_neg_calculation.json`| Given a list of integers multiply the negative integers by *-3* multiply the even integers by *2* | Answer Generation, Arithemetic 
