@@ -260,27 +260,22 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-<<<<<<< HEAD
-<<<<<<< HEAD
 `task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
 `task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
 `task314_EuroParl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
 `task315_EuroParl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
-=======
-=======
 `task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
 `task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
 `task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
 `task280_StereoSet_classification_stereotype_type.json` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
 `task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
->>>>>>> master
 `task282_scruples_event_time` | Given an anecdotes, find whether it has already happened or it may happen in the future  | Answer Generation
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
 `task286_olid_offense_judgment.json` | Given a tweet judge whether its offensive or not | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
 `task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
-`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
+`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
@@ -296,9 +291,6 @@ Name | Summary | Category
 `task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
 `task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-<<<<<<< HEAD
->>>>>>> master
-=======
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
 `task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question | Classification
@@ -308,4 +300,3 @@ Name | Summary | Category
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
->>>>>>> master
