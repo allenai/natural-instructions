@@ -279,6 +279,13 @@ Name | Summary | Category
 `task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
 `task321_stereoset_classification_religion.json` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
+`task322_Jigsaw_classification_threat` | Given a comment from online platforms, classify whether it contains threats | Classification
+`task323_Jigsaw_classification_sexual_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
+`task324_Jigsaw_classification_disagree` | Given a comment from online platforms, classify whether it expresses disagreement | Classification
+`task325_Jigsaw_classification_identity_attack` | Given a comment from online platforms, classify whether it conveys identity attacks | Classification
+`task326_Jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
+`task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
+`task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
