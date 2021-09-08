@@ -298,3 +298,4 @@ Name | Summary | Category
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
 `task391_causal_relationship` | Given two sentences, decide whether there is a cause and effect relationship between them, and the second one is a result of the first one. | Answer Generation
 `task392_inverse_causal_relationship` | Given two sentences, decide whether there is a cause and effect relationship between them, and the first one is a result of the second one. | Answer Generation
+`task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
