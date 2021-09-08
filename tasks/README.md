@@ -278,5 +278,7 @@ Name | Summary | Category
 `task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
 `task321_stereoset_classification_religion.json` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage | Unanswerable Question Generation
+`task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage | Classification
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
