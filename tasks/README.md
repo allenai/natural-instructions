@@ -162,6 +162,7 @@ Name | Summary | Category
 `task158_count_frequency_of_words.json` | Count number of occurrences of a word in the given sentence | Counting
 `task159_check_frequency_of_words_in_sentence_pair.json` | Check the frequency of a word in the two sentences | Counting, Classification
 `task156_codah_classification_adversarial.json` | Given a prompt, select the completion that is the most plausible. | Classification
+`task183_rhyme_generation.json` | Given an input word, generate a list of words that rhyme exactly with the input | Answer Generation
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task171_spl_translation_en_es.json` | Translate English questions to Spanish while preserving named entities in the original language | Translation
@@ -186,12 +187,27 @@ Name | Summary | Category
 `task178_QuaRTz_question_answering` | Given a question, select correct answer from the given options using an Explanation. | Answer Generation
 `task182_duorc_question_generation` | Writing a question based on a given plot | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
+`task184_snli_entailment_to_neutral_text_modification.json` | Given two sentences that agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task185_snli_contradiction_to_neutral_text_modification.json` | Given two sentences that don't agree with each other, modify the second sentence so that they do not clearly agree or disagree | Answer Generation
+`task186_snli_contradiction_to_entailment_text_modification.json` | Given two sentences that don't agree with each other, modify the second sentence so that they clearly agree with each other | Answer Generation
+`task187_snli_entailment_to_contradiction_text_modifcation.json` | Given two sentences that agree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task188_snli_neutral_to_entailment_text_modification.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly agree | Answer Generation
+`task189_snli_neutral_to_contradiction_text_modification.json` | Given two sentences that do not clearly agree or disagree with each other, modify the second sentence so that they clearly do not agree | Answer Generation
+`task190_snli_classification.json` | Given two sentences choose whether they agree/disagree/neither with each other | Classification
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
 `task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
+`task197_mnli_domain_answer_generation.json` | Given two sentences, write a single word describing the common genre to which they belong | Answer Generation
+`task198_mnli_domain_classification.json` | Given two sentences and 10 genre choices, determine the genre to which the sentences belong. | Classification
+`task199_mnli_classification.json` | Given 2 sentences, determine if they clearly agree or disagree with each other, or if this cannot be answered at all. | Classification
+`task200_mnli_entailment_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that clearly agrees with the context statement. | Classification
+`task201_mnli_neutral_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that neither clearly agrees nor disagrees with the context statement. | Classification
+`task202_mnli_contradiction_classification.json` | Given a context statement and 3 sentences as choices, choose the sentence that clearly disagrees with the context statement. | Classification
+`task203_mnli_sentence_generation.json` | Given a context statement, genre, and label indicating agree/disagree/neither with respect to the context statement, generate a sentence that follows the genre and label specifications. | Answer Generation
+`task204_mnli_same_genre_classification.json` | Given two sentences and the genre they should belong to, determine if they belong to the same genre or not. | Classification
 `task225_English_language_Answer_Generation.json` | Given a basic english language related question generate the answer with proper context, definitions, and examples. | Answer Generation
 `task226_English_language_Answer_Relevance_Classification.json` | Given a question and answer pair, detect whether the answer is acceptable or not. | Classification
 `task193_duorc_question_generation` | Writing a question based on a given plot | Question Generation
@@ -219,12 +235,24 @@ Name | Summary | Category
 `task243_count_elements_in_set_intersection.json` | Count number of elements in the intersection of two given sets | Counting
 `task244_count_elements_in_set_union.json` |  Count number of elements in the union of two given sets | Counting
 `task245_check_presence_in_set_intersection.json` | Check presence of an element in the intersection of two given sets | Answer Generation
-`task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
 `task246_dream_question_generation` | Given a conversation, generate a multiple-choice question based on it | Question Generation
 `task247_dream_answer_generation` | Given a conversation and a question, answer the question based on the conversation | Answer Generation
 `task248_dream_classification` | Given a conversation and a question, classify the question | Classification
-`task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
 `task249_enhanced_wsc_pronoun_disambiguation` | Given a sentence and a pronoun, decide which one of the choices is the pronoun referring to | Answer Generation, Pronoun Disambiguation
+`task250_spl_translation_en_ar.json` | Translate English questions to Arabic while preserving named entities in the original language | Translation
+`task251_spl_translation_en_fi.json` | Translate English questions to Finnish while preserving named entities in the original language | Translation
+`task252_spl_translation_en_tr.json` | Translate English questions to Turkish while preserving named entities in the original language | Translation
+`task253_spl_translation_en_zh.json` | Translate English questions to Chinese while preserving named entities in the original language | Translation
+`task254_spl_translation_fi_en.json` | Translate Finnish questions to English while preserving named entities in the original language | Translation
+`task255_spl_translation_it_en.json` | Translate Italian questions to English while preserving named entities in the original language | Translation
+`task256_spl_translation_de_en.json` | Translate German questions to English while preserving named entities in the original language | Translation
+`task257_spl_translation_ar_en.json` | Translate Arabic questions to English while preserving named entities in the original language | Translation
+`task258_spl_translation_fa_en.json` | Translate Farsi questions to English while preserving named entities in the original language | Translation
+`task259_spl_translation_tr_en.json` | Translate Turkish questions to English while preserving named entities in the original language | Translation
+`task260_spl_translation_zh_en.json` | Translate Chinese questions to English while preserving named entities in the original language | Translation
+`task261_spl_translation_es_en.json` | Translate Spanish questions to English while preserving named entities in the original language | Translation
+`task262_spl_translation_ja_en.json` | Translate Japanese questions to English while preserving named entities in the original language | Translation
+`task263_spl_translation_pl_en.json` | Translate Polish questions to English while preserving named entities in the original language | Translation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option | Legal , Answer Generation
 `task271_europarl_translation.json`| Translate bulgarian sentence into english language | Translation
 `task272_europarl_translation.json`| Translate english sentence into bulgarian language | Translation
@@ -232,11 +260,32 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
-`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
+`task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
+`task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
+`task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
+`task280_StereoSet_classification_stereotype_type.json` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
+`task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
+`task282_scruples_event_time` | Given an anecdotes, find whether it has already happened or it may happen in the future  | Answer Generation
+`task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
+`task286_olid_offense_judgment.json` | Given a tweet judge whether its offensive or not | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
+`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task318_stereoset_classification_gender.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
+`task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
+`task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
+`task321_stereoset_classification_religion.json` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
+`task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
+`task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question | Classification
+`task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question | Incorrect Answer Generation
+`task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage | Unanswerable Question Generation
+`task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage | Classification
+`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
+`task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
+`task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
