@@ -287,3 +287,6 @@ Name | Summary | Category
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
+`task388_torque_event_detection.json` | Given a passage, identify all events from it | Event Detection
+`task389_torque_generate_temporal_question.json` | Given a passage, generate a temporal question | Question Generation
+`task390_torque_answer_temporal_question.json` | Given a passage, a temporal question and a list of events in the passage, return a subset of event list that answers the given question | Answer Generation
