@@ -238,4 +238,4 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task352_CODA-19_text_generation` | Given a paragraph, classify into these categories: Background, Purpose, Method, Finding/Contribution, and Other. | Text Generation
+`task352_CODA-19_classification` | Given a paragraph, classify into these categories: Background, Purpose, Method, Finding/Contribution, and Other. | Text Generation
