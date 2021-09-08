@@ -270,6 +270,8 @@ Name | Summary | Category
 `task286_olid_offense_judgment.json` | Given a tweet judge whether its offensive or not | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
+`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
@@ -277,6 +279,20 @@ Name | Summary | Category
 `task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
 `task321_stereoset_classification_religion.json` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
+`task322_Jigsaw_classification_threat` | Given a comment from online platforms, classify whether it contains threats | Classification
+`task323_Jigsaw_classification_sexual_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
+`task324_Jigsaw_classification_disagree` | Given a comment from online platforms, classify whether it expresses disagreement | Classification
+`task325_Jigsaw_classification_identity_attack` | Given a comment from online platforms, classify whether it conveys identity attacks | Classification
+`task326_Jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
+`task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
+`task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
+`task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
+`task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question | Classification
+`task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question | Incorrect Answer Generation
+`task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage | Unanswerable Question Generation
+`task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage | Classification
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
+`task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
