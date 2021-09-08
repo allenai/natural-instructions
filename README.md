@@ -79,7 +79,7 @@ Yes! just make sure that the quality of instructions is good enough for a human 
 
 ### What is the minimum number of instances I can have in my task? 
 
-Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances.
+Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances. Make sure to shuffle instances before selecting 6500 of those. In case of classifcation tasks, make sure that the instances and positive examples are not skewed towards a class.
 
 ### What do you mean by "meaningful contribution"? 
 If you have contributed at least 25 tasks to the repository or if you're among top 20 [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors), we view that as meaningful contribution. This also involves some lightweight responsibilities such as reviewing pull requests.
