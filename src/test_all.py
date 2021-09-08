@@ -36,6 +36,10 @@ for file in files:
             assert len(data[
                            'Instances']) <= 6500, f"there must be at most 6.5k instances; currently you have {len(data['Instances'])} instances"
 
+            assert type(data['Source']) == list, f'Sources must be a list.'
+            assert type(data['Contributors']) == list, f'Contributors must be a list.'
+            assert type(data['Categories']) == list, f'Categories must be a list.'
+            
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
