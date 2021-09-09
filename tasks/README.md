@@ -271,14 +271,19 @@ Name | Summary | Category
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
 `task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
-`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
+`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+<<<<<<< HEAD
 `task305_jeopardy_answer_generation_normal.json` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
 `task306_jeopardy_answer_generation_double.json` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
 `task307_jeopardy_answer_generation_final.json` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
 `task308_jeopardy_answer_generation_all.json` | Given a category and a trivia clue of varying difficulties, generate the best answer. | Answer Generation
+`task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
+`task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
+`task314_EuroParl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
+`task315_EuroParl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
 `task318_stereoset_classification_gender.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
 `task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
@@ -301,3 +306,6 @@ Name | Summary | Category
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
+`task394_persianqa_question_generation` | Given a passage, generate a question based on it | Question Generation
+`task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
