@@ -222,7 +222,6 @@ Name | Summary | Category
 `task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
-`task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
@@ -269,12 +268,17 @@ Name | Summary | Category
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
 `task286_olid_offense_judgment.json` | Given a tweet judge whether its offensive or not | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
-`task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
+`task290_TellMeWhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable | Classification
 `task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
-`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense  | Answer Generation
+`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task363_SST2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment | Classification
+`task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
+`task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
+`task314_EuroParl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
+`task315_EuroParl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
 `task318_stereoset_classification_gender.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
 `task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
@@ -286,16 +290,22 @@ Name | Summary | Category
 `task326_Jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
 `task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
 `task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
+`task332_TellMeWhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story | Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task379_AGNews_topic_classification` | Given a news article, classify the article's topic to four classes ('World', 'Sports', 'Business', 'Sci/Tech') | Classification
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
 `task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question | Classification
 `task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question | Incorrect Answer Generation
 `task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage | Unanswerable Question Generation
 `task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage | Classification
+`task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one | Classification
 `task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one | Classification
 `task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it | Text Generation
+`task394_persianqa_question_generation` | Given a passage, generate a question based on it | Question Generation
+`task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
