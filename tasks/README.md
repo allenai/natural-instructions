@@ -260,10 +260,6 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
-`task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
-`task314_EuroParl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
-`task315_EuroParl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
 `task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
 `task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
 `task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
@@ -279,6 +275,10 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
+`task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
+`task314_EuroParl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
+`task315_EuroParl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
 `task318_stereoset_classification_gender.json` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
 `task319_stereoset_classification_profession.json` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race.json` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
