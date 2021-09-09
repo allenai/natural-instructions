@@ -259,10 +259,6 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-<<<<<<< HEAD
-`task288_gigaword_sentence_generation.json` | Given a text of article, generate headline (title) for the article | Sentence Generation
-`task289_gigaword_classification.json` | Given the text of an article and its title, decide whether the title is appropriate for the article | Classification
-=======
 `task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
 `task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
 `task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
@@ -314,4 +310,5 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
->>>>>>> origin
+`task288_gigaword_summarization.json` | Given a text of article, generate headline (title) for the article | Summarization
+`task289_gigaword_summarization.json` | Given the text of an article and its title, decide whether the title is appropriate for the article | Summarization
