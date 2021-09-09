@@ -285,7 +285,7 @@ Name | Summary | Category
 `task326_Jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
 `task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
 `task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
-`task332_TellMeWhy_answer_generation` | Given a short story and a question, Answer the question based on the events of the story | Answer Generation
+`task332_TellMeWhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story | Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
