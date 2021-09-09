@@ -275,7 +275,6 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
-<<<<<<< HEAD
 `task305_jeopardy_answer_generation_normal.json` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
 `task306_jeopardy_answer_generation_double.json` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
 `task307_jeopardy_answer_generation_final.json` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
