@@ -71,6 +71,8 @@ for file in files:
             for instance in instances:
                 if instance['input'] in examples:
                     raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {instance}")
+                
+                assert len(instance['output']) > 0, "all the instances must have at least one output"
 
             file = file.replace(".json", "")
             if file not in task_readme_content:
