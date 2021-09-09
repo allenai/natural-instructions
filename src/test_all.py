@@ -43,8 +43,8 @@ for file in files:
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
-            assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
-            assert len(data['Negative Examples']) > 0, "there must be at least 2 negative example"
+            assert len(data['Positive Examples']) >= 3, "there must be at least 3 positive examples"
+            assert len(data['Negative Examples']) >= 2, "there must be at least 2 negative examples"
 
             for x in data['Positive Examples'] + data['Negative Examples']:
                 for key in ['input', 'output', 'explanation']:
