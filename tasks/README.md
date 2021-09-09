@@ -222,6 +222,16 @@ Name | Summary | Category
 `task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task213_rocstories_correct_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the correct story ending | Classification
+`task214_rocstories_incorrect_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the incorrect story ending | Classification
+`task215_rocstories_incorrect_answer_generation.json` | Given the title and first four sentences of a five sentence story, write an incorrect story ending | Answer Generation
+`task216_rocstories_correct_answer_generation.json` | Given the title and first four sentences of a five sentence story, write a correct story ending | Answer Generation
+`task217_rocstories_ordering_answer_generation.json` | Given a five sentence story in jumbled order and the title, put the story in the correct order | Answer Generation
+`task218_rocstories_swap_order_answer_generation.json` | Given a five sentence story and the title, determine which two sentences must be swapped so that the story makes complete sense | Answer Generation
+`task219_rocstories_title_answer_generation.json` | Given a five sentence story, generate an appropriate title for the story | Answer Generation
+`task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
+`task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
+`task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
@@ -259,11 +269,6 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task296_StoryCloze_correct_end_classification` | Given four sentences of five sentence story, select correct answer for last (fifth) sentence from the given option. | Classification
-`task297_StoryCloze_incorrect_end_classification` | Given four sentences of five sentence story, select incorrect answer for last (fifth) sentence from the given option. | Incorrect Classification
-`task298_StoryCloze_correct_end_classification` | Given four sentences of five sentence story and fifth sentence, classify whether fifth sentence is proper or not by providing 'Yes' or 'No'. | Classification
-`task299_StoryCloze_sentence_generation` | Given four sentences of five sentence story, provide the position and missing part (fifth sentence) of the story. | Sentence Generation
-`task300_StoryCloze_order_generation` | Given five sentences of story (sentences are shuffled), provide correct order of the story. | Order Generation
 `task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
 `task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
 `task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
@@ -271,11 +276,18 @@ Name | Summary | Category
 `task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
 `task282_scruples_event_time` | Given an anecdotes, find whether it has already happened or it may happen in the future  | Answer Generation
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
+`task284_IMDB_classification.json` | Given a movie review, classify it into positive or negative | Classification
+`task285_IMDB_answer_generation.json` | Given a movie review and boolean question, generate answer yes or no | Answer Generation
 `task286_olid_offense_judgment.json` | Given a tweet judge whether its offensive or not | Classification
-`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
+`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal, Incorrect Answer Generation
 `task290_TellMeWhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable | Classification
 `task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
 `task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
+`task296_StoryCloze_correct_end_classification` | Given four sentences of five sentence story, select correct answer for last (fifth) sentence from the given option. | Classification
+`task297_StoryCloze_incorrect_end_classification` | Given four sentences of five sentence story, select incorrect answer for last (fifth) sentence from the given option. | Incorrect Classification
+`task298_StoryCloze_correct_end_classification` | Given four sentences of five sentence story and fifth sentence, classify whether fifth sentence is proper or not by providing 'Yes' or 'No'. | Classification
+`task299_StoryCloze_sentence_generation` | Given four sentences of five sentence story, provide the position and missing part (fifth sentence) of the story. | Sentence Generation
+`task300_StoryCloze_order_generation` | Given five sentences of story (sentences are shuffled), provide correct order of the story. | Order Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
