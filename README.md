@@ -57,7 +57,7 @@ We would appreciate any external contributions! 🙏
 
  * All submissions must be submitted via [Github pull requests](https://github.com/allenai/natural-instructions-expansion/pulls). These submissions will undergo a review before being merged. 
  * Each task must contain contain a `.json` file that contains the task content. You can look inside the [`tasks/`](tasks) directory for several examples.  
-    * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4)`)   
+    * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4, ensure_ascii=False)`)   
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
     * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number). Make sure to include the source dataset name and the task category name while creating the json file name. You can use this format: taskabc_<source dataset>_<task category>.json E.g. in task001_quoref_question_generation.json, the source dataset is 'quoref' and the task category is 'question generation. Note that, source need not necessarily be a dataset and can be a website e.g. leetcode. Finally, if you have created the json without any reference, use 'synthetic' in place of source.
