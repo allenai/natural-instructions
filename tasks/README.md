@@ -291,6 +291,7 @@ Name | Summary | Category
 `task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
 `task332_TellMeWhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story | Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task379_AGNews_topic_classification` | Given a news article, classify the article's topic to four classes ('World', 'Sports', 'Business', 'Sci/Tech') | Classification
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question | Answer Generation
 `task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question | Classification
