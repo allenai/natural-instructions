@@ -297,6 +297,7 @@ Name | Summary | Category
 `task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question | Incorrect Answer Generation
 `task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage | Unanswerable Question Generation
 `task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage | Classification
+`task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
