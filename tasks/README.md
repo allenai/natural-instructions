@@ -288,13 +288,13 @@ Name | Summary | Category
 `task312_europarl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation
 `task313_europarl_en_sv_translation` | Given an English sentence, convert it into Swedish. | Translation
 `task314_europarl_sv-en_classification` | Given a Swedish sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
-`task315_europarl_sv-en_language_identificcation` | Given a sentence, identify  whether it is in Swedish or English. | Language Identification
+`task315_europarl_sv-en_language_identification` | Given a sentence, identify  whether it is in Swedish or English. | Language Identification
 `task318_stereoset_classification_gender` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
 `task319_stereoset_classification_profession` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
 `task321_stereoset_classification_religion` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
 `task322_jigsaw_classification_threat` | Given a comment from online platforms, classify whether or not it contains threats. | Classification
-`task323_jigsaw_classification_sexual_explicit` | Given a comment, classify whether it is sexually explicit or not. | Classification
+`task323_jigsaw_classification_sexually_explicit` | Given a comment, classify whether it is sexually explicit or not. | Classification
 `task324_jigsaw_classification_disagree` | Given a comment, classify whether it expresses disagreement. | Classification
 `task325_jigsaw_classification_identity_attack` | Given a comment, classify whether it attacks a person's identity or not. | Classification
 `task326_jigsaw_classification_obscene` | Given a comment, classify whether it conveys obscenity or not. | Classification
