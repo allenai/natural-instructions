@@ -3,7 +3,7 @@
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌 
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **September 15, 2021**.
-The contributors with [meaningful contribution](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
+The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
 ## Background 
 ### Why define tasks in natural language?
@@ -17,7 +17,7 @@ Also, generalization to unseen tasks improves as the model is trained on more ta
 
 ### Why build this dataset?  
 We believe that [our earlier work](https://arxiv.org/abs/2104.08773) is just scratching the surface and there is probably so much that be studied in this setup.
-We hope to put together a much larger dataset that cover a wider range of reasoning abilities. 
+We hope to put together a much larger dataset that covers a wider range of reasoning abilities. 
 We believe that this expanded dataset will serve as a useful playground for the community to study and build the next generation of AI/NLP models.
 
 
