@@ -222,6 +222,16 @@ Name | Summary | Category
 `task210_logic2text_structured_text_generation.json` | Given a natural language interpretation, generate a command using logical operations | Structured Text Generation
 `task211_logic2text_classification.json` | Given a command and corresponding interpretation, classify whether it's right interpretation or not | Classification
 `task212_logic2text_classification.json` | Given a command (in the form of logical operators), classify command in one of seven logic types | Classification
+`task213_rocstories_correct_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the correct story ending | Classification
+`task214_rocstories_incorrect_ending_classification.json` | Given the title and first four sentences of a five sentence story, choose the incorrect story ending | Classification
+`task215_rocstories_incorrect_answer_generation.json` | Given the title and first four sentences of a five sentence story, write an incorrect story ending | Answer Generation
+`task216_rocstories_correct_answer_generation.json` | Given the title and first four sentences of a five sentence story, write a correct story ending | Answer Generation
+`task217_rocstories_ordering_answer_generation.json` | Given a five sentence story in jumbled order and the title, put the story in the correct order | Answer Generation
+`task218_rocstories_swap_order_answer_generation.json` | Given a five sentence story and the title, determine which two sentences must be swapped so that the story makes complete sense | Answer Generation
+`task219_rocstories_title_answer_generation.json` | Given a five sentence story, generate an appropriate title for the story | Answer Generation
+`task220_rocstories_title_classification.json` | Given a five sentence story, choose an appropriate title for the story from the options given | Classification
+`task221_rocstories_two_choice_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story | Classification
+`task222_rocstories_two_chioce_slotting_classification.json` | Given three sentences and title of a five sentence story, choose which two sentences from the options given will complete the story, along with the position at which they will be slotted in the story | Classification
 `task223_QuaRTz_explanation_generation` | Given a question and its answer, generate an explanation statement. | Sentence Generation
 `task224_scruples_anecdotes_ethical_judgment` | Given an anecdotes, judge whether the author is ethically correct or not. | Ethical Judgment
 `task227_ClariQ_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No' | Classification
@@ -259,6 +269,8 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling| Legal , Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
+`task284_IMDB_classification.json` | Given a movie review, classify it into positive or negative | Classification
+`task285_IMDB_answer_generation.json` | Given a movie review and boolean question, generate answer yes or no | Answer Generation
 `task277_StereoSet_sentence_generation_stereotype.json` | Generate sentences with stereotype given context | Sentence Generation
 `task278_StereoSet_sentence_generation_antistereotype.json` | Generate sentences with anti-stereotype given context | Sentence Generation
 `task279_StereoSet_classification_stereotype.json` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
@@ -268,6 +280,8 @@ Name | Summary | Category
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
 `task286_olid_offense_judgment.json` | Given a tweet judge whether its offensive or not | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
+`task288_gigaword_summarization.json` | Given a text of article, generate headline (title) for the article | Summarization
+`task289_gigaword_summarization.json` | Given the text of an article and its title, decide whether the title is appropriate for the article | Summarization
 `task290_TellMeWhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable | Classification
 `task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
 `task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
@@ -275,6 +289,10 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task304_numeric_fused_head_resolution` | Given a dialogue and a highlighted number, decide what does the number refer to | Answer Generation
+`task305_jeopardy_answer_generation_normal.json` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
+`task306_jeopardy_answer_generation_double.json` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
+`task307_jeopardy_answer_generation_final.json` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
+`task308_jeopardy_answer_generation_all.json` | Given a category and a trivia clue of varying difficulties, generate the best answer. | Answer Generation
 `task312_EuroParl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
 `task313_EuroParl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
 `task314_EuroParl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
@@ -291,6 +309,14 @@ Name | Summary | Category
 `task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
 `task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
 `task332_TellMeWhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story | Answer Generation
+`task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task353_casino_classification_negotiation_elicit_pref` | Detecting the usage of elicit-pref negotiation strategy in dialogue utterances | Classification
+`task354_casino_classification_negotiation_no_need` | Detecting the usage of no-need negotiation strategy in dialogue utterances | Classification
+`task355_casino_classification_negotiation_other_need` | Detecting the usage of other-need negotiation strategy in dialogue utterances | Classification
+`task356_casino_classification_negotiation_self_need` | Detecting the usage of self-need negotiation strategy in dialogue utterances | Classification
+`task357_casino_classification_negotiation_small_talk` | Detecting the usage of small-talk negotiation strategy in dialogue utterances | Classification
+`task358_casino_classification_negotiation_uv_part` | Detecting the usage of uv-part negotiation strategy in dialogue utterances | Classification
+`task359_casino_classification_negotiation_vouch_fair` | Detecting the usage of vouch-fair negotiation strategy in dialogue utterances | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task379_AGNews_topic_classification` | Given a news article, classify the article's topic to four classes ('World', 'Sports', 'Business', 'Sci/Tech') | Classification
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
