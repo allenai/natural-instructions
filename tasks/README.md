@@ -337,3 +337,4 @@ Name | Summary | Category
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
 `task402_grailqa_paraphrase_generation` | Given a question and answer pair, paraphrase the question. | Text Generation
+`task404_paraphrase_validation` | Given two questions, decide whether the second one is a valid paraphrase of the first one | Classification
