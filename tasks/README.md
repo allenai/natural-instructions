@@ -321,14 +321,14 @@ Name | Summary | Category
 `task364_regard_social_impact_classification` | Given a sentence about a person, decide what is the impact of that sentence on the society's perception of that person. | Classification
 `task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence | Classification
 `task379_agnews_topic_classification` | Given a news article, classify the article's topic to four classes. | Classification
-`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
-`task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
-`task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
-`task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one | Classification
-`task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one | Classification
-`task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it | Text Generation
-`task394_persianqa_question_generation` | Given a passage, generate a question based on it | Question Generation
-`task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
+`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage. | Answer Generation
+`task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage. | Question Generation
+`task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question. | Answer Generation
+`task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
+`task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one. | Classification
+`task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
+`task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
+`task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
+`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task402_grailqa_paraphrase_generation` | Given a question and answer pair, paraphrase the question. | Text Generation
 `task404_paraphrase_validation` | Given two questions, decide whether the second one is a valid paraphrase of the first one | Classification
