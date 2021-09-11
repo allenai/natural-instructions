@@ -336,3 +336,4 @@ Name | Summary | Category
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
 `task288_gigaword_summarization.json` | Given a text of article, generate headline (title) for the article | Summarization
 `task289_gigaword_summarization.json` | Given the text of an article and its title, decide whether the title is appropriate for the article | Summarization
+`task405_narrativeqa_question_generation` | Given a plot summary, create questions that can be answered based on it | Question Generation
