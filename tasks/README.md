@@ -332,3 +332,4 @@ Name | Summary | Category
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task428_senteval_inversion` | Given a sentence, judge whether or not two consecutive word have been inverted. | Classification
+`task428_senteval_tense` | Given a sentence, specify the tense of the main verb. | Classification
