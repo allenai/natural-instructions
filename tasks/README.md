@@ -331,7 +331,7 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task424_HindiEnglish_Corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
-`task425_HindiEnglish_Corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
-`task426_HindiEnglish_Corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
-`task427_HindiEnglish_Corpora_hi-en_language_identification` | Given a sentence, identify whether it is in Hindi or English. | Language Identification
+`task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
+`task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
+`task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
+`task427_hindienglish_corpora_hi-en_language_identification` | Given a sentence, identify whether it is in Hindi or English. | Language Identification
