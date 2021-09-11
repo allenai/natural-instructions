@@ -331,3 +331,6 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task422_qasper_answer_generation` | Given a context and a question, answer the question based on the context. | Answer Generation
+`task423_qasper_question_generation` | Given a cotext, generate a question based on it. | Question Generation
+`task424_qasper_classification` | Given a context and a question, classify the question into abstractive, extractice, or yes-no question | Classification
