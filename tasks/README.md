@@ -262,27 +262,25 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling. | Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect. | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task284_IMDB_classification.json` | Given a movie review, classify it into positive or negative | Classification
-`task285_IMDB_answer_generation.json` | Given a movie review and boolean question, generate answer yes or no | Answer Generation
-`task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context | Sentence Generation
-`task278_stereoset_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context | Sentence Generation
+`task284_imdb_classification` | Given a movie review, classify its sentiment into positive or negative. | Classification
+`task285_imdb_answer_generation` | Given a movie review and boolean question, generate answer yes or no. | Answer Generation
+`task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context. | Sentence Generation
+`task278_stereoset_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context. | Sentence Generation
 `task279_stereoset_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated. | Classification
-`task280_stereoset_classification_stereotype_type` | Classify sentences into four kinds of stereotypes, including gender, profession, race, and religion | Classification
+`task280_stereoset_classification_stereotype_type` | Classify sentences into four kinds of stereotypes, including gender, profession, race, and religion. | Classification
 `task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences. | Entity Detection
 `task282_scruples_event_time` | Given an anecdote, find whether it has already happened or it may happen in the future.  | Answer Generation
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question. | Incorrect Answer Generation
-`task284_imdb_classification` | Given a movie review, classify its sentiment into positive or negative | Classification
-`task285_imdb_answer_generation` | Given a movie review and boolean question, generate answer yes or no | Answer Generation
 `task286_olid_offense_judgment` | Given a tweet judge whether its offensive or not. | Classification
-`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
-`task288_gigaword_summarization` | Given a text of article, generate headline (title) for the article | Summarization
-`task289_gigaword_summarization` | Given the text of an article and its title, decide whether the title is appropriate for the article | Summarization
+`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options. | Incorrect Answer Generation
+`task288_gigaword_summarization` | Given a text of article, generate a title for the article. | Summarization
+`task289_gigaword_summarization` | Given the text of an article and its title, decide whether the title is appropriate for the article. | Summarization
 `task290_tellmewhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable. | Classification
 `task291_semeval_2020_task4_commonsense_validation` | Given two statements, choose the one that makes less sense. | Answer Generation
 `task295_semeval_2020_task4_commonsense_reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense. | Answer Generation
-`task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
-`task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
-`task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
+`task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it. | Question Generation
+`task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options. | Classification
+`task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question. | Incorrect Answer Generation
 `task305_jeopardy_answer_generation_normal` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
 `task306_jeopardy_answer_generation_double` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
 `task307_jeopardy_answer_generation_final` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
@@ -320,9 +318,6 @@ Name | Summary | Category
 `task363_sst2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment. | Classification
 `task364_regard_social_impact_classification` | Given a sentence about a person, decide what is the impact of that sentence on the society's perception of that person. | Classification
 `task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
-`task376_reverse_order_of_words` |  Reverse the order of words in the given sentence | Answer Generation
-`task377_remove_words_of_given_length` | Remove all words of a given length in the sentence | Answer Generation
-`task378_reverse_words_of_given_length` | Reverse all words of a given length in the sentence | Answer Generation
 `task379_agnews_topic_classification` | Given a news article, classify the article's topic to four classes. | Classification
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage. | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage. | Question Generation
