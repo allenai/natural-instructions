@@ -64,19 +64,26 @@ for file in files:
                         set_of_instances.remove(instance['input'])
                     except KeyError:
                         raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {instance}")
-            
+
 
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
                 if instance['input'] in examples:
                     raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {instance}")
-                
+
                 assert len(instance['output']) > 0, "all the instances must have at least one output"
 
-            file = file.replace(".json", "")
-            if file not in task_readme_content:
-                raise Exception(f' * looks like the task name `{file}` is not included '
+            true_file = file.replace(".json", "")
+            for char in true_file:
+                if char.isupper():
+                    raise Exception(f" * Looks like there is an uppercase letter in `{true_file}`. All letters should be lowercased.")
+
+            if file in task_readme_content:
+                raise Exception(f" * Looks like the .json file extension ending is present with the task name in `tasks/README.md` when it should just be `{true_file}`")
+
+            if true_file not in task_readme_content:
+                raise Exception(f' * Looks like the task name `{true_file}` is not included '
                                 f'in the task file `tasks/README.md`')
 
-print("Did not find any errors! ✅")         
+print("Did not find any errors! ✅")
