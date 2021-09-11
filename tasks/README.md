@@ -334,3 +334,4 @@ Name | Summary | Category
 `task428_senteval_inversion` | Given a sentence, judge whether or not two consecutive word have been inverted. | Classification
 `task429_senteval_tense` | Given a sentence, specify the tense of the main verb. | Classification
 `task430_senteval_subject_count` | Given a sentence, specify singularity or plurality of the subject. | Classification
+`task431_senteval_object_count` | Given a sentence, specify singularity or plurality of the object. | Classification
