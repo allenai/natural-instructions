@@ -237,6 +237,6 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
-`task316_CrowS-Pairs_classification_stereotype` | Classify a sentence into stereotype or anti-stereotype | Classification
-`task317_CrowS-Pairs_classification_stereotype_type` | Classify a sentence into different types of stereotype | Classification
+`task316_crows-pairs_classification_stereotype` | Classify a sentence into stereotype or anti-stereotype | Classification
+`task317_crows-pairs_classification_stereotype_type` | Classify a sentence into different types of stereotype | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
