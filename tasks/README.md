@@ -329,7 +329,7 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task424_matres_intention_classification` | Given a verb and a context, answer that the given verb is about an intention or not | Classification
-`task425_matres_conditional_classification` | Given a verb and a context, answer that the given verb is conditional or not | Classification
-`task426_matres_negation_classification` | Given a verb and a context, answer that the given verb is a negation or not | Classification
-`task427_matres_static_classification` | Given a verb and a context, answer that the given verb is static or not | Classification
+`task456_matres_intention_classification` | Given a verb and a context, answer that the given verb is about an intention or not | Classification
+`task457_matres_conditional_classification` | Given a verb and a context, answer that the given verb is conditional or not | Classification
+`task458_matres_negation_classification` | Given a verb and a context, answer that the given verb is a negation or not | Classification
+`task459_matres_static_classification` | Given a verb and a context, answer that the given verb is static or not | Classification
