@@ -293,7 +293,7 @@ Name | Summary | Category
 `task312_europarl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation 
 `task313_europarl_en_sv_translation` | Given a Swedish sentence, convert it into English. | Translation
 `task314_europarl_sv-en_classification` | Given a Swedish sentence and its corresponding English, classify whether it is correct or not by providing 'Yes' or 'No' | Classification
-`task315_europarl_sv-en_language_identificcation` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
+`task315_europarl_sv-en_language_identification` | Given a sentence, identify its language whether it is in Swedish or English. | Language Identification (Binary)
 `task316_crows-pairs_classification_stereotype` | Classify a sentence into stereotype or anti-stereotype | Classification
 `task317_crows-pairs_classification_stereotype_type` | Classify a sentence into different types of stereotype | Classification
 `task318_stereoset_classification_gender` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
