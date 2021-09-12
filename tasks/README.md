@@ -331,3 +331,6 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task432_alt_en_hi_translation` | Given an English language sentence translate it into Hindi language. | Translation
+`task433_alt_hi_en_translation` | Given an Hindi language sentence translate it into English language. | Translation
+`task434_alt_en_hi_classification` | Given English and Hindi translation pair, check if it is correct or not. | Classification
