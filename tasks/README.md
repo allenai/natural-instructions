@@ -334,3 +334,6 @@ Name | Summary | Category
 `task432_alt_en_hi_translation` | Given an English language sentence translate it into Hindi language. | Translation
 `task433_alt_hi_en_translation` | Given an Hindi language sentence translate it into English language. | Translation
 `task434_alt_en_hi_classification` | Given English and Hindi translation pair, check if it is correct or not. | Classification
+`task435_alt_en_ja_translation` | Given an English language sentence translate it into Japanese language. | Translation
+`task436_alt_ja_en_translation` | Given an Japanese language sentence translate it into English language. | Translation
+`task437_alt_en_ja_classification` | Given English and Japanese translation pair, check if it is correct or not. | Classification
