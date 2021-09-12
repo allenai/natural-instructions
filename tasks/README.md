@@ -262,7 +262,6 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling. | Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect. | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-<<<<<<< HEAD
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task290_TELLMYWHY_question_answerability` | Given a story and a question, decide whether or not the question is answerable | Classification
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
@@ -272,7 +271,6 @@ Name | Summary | Category
 `task360_spolin_yesand_response_generation` | Given a prompt, generate the "yes, ands" response | Response Generation
 `task361_spolin_yesand_prompt_response_classification` | Given a prompt and a response, classify whether the response is "yes, ands" type | Classification
 `task362_spolin_yesand_prompt_response_sub_classification` | Given a prompt and two responses, identify which response is "yes, ands" type | Classification
-=======
 `task284_imdb_classification` | Given a movie review, classify its sentiment into positive or negative. | Classification
 `task285_imdb_answer_generation` | Given a movie review and boolean question, generate answer yes or no. | Answer Generation
 `task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context. | Sentence Generation
@@ -346,4 +344,3 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
->>>>>>> origin
