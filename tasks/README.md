@@ -335,3 +335,7 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task469_mrqa_answer_generation` | Generating answers from MRQA OOD dataset | Answer Generation  
+`task470_mrqa_question_generation` | Generating question using context passage from MRQA OOD dataset | Question Generation
+`task471_haspart_answer_generation` | Generating entity which is in has-part-relationship with input entity | Answer Generation  
+`task472_haspart_classification` | Identifying whether given two entities has in-part-relationship or not.  | Classification
