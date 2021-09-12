@@ -235,9 +235,9 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it | Question Generation
 `task302_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
-`task333_HateEval_classification_hate_en` | Given a post in English, classify it into hateful or non-hateful | Classification
-`task334_HateEval_classification_hate_es` | Given a post in Spanish, classify it into hateful or non-hateful | Classification
-`task335_HateEval_classification_aggresive_en` | Given a hateful post in English, classify it into aggresive or non-aggresive | Classification
-`task336_HateEval_classification_aggresive_es` | Given a hateful post in Spanish, classify it into aggresive or non-aggresive | Classification
-`task337_HateEval_classification_individual_en` | Given a hateful post in English, classify the target being harassed into individual or generic | Classification
-`task338_HateEval_classification_individual_es` | Given a hateful post in Spanish, classify the target being harassed into individual or generic | Classification
+`task333_hateeval_classification_hate_en` | Given a post in English, classify it into hateful or non-hateful | Classification
+`task334_hateeval_classification_hate_es` | Given a post in Spanish, classify it into hateful or non-hateful | Classification
+`task335_hateeval_classification_aggresive_en` | Given a hateful post in English, classify it into aggresive or non-aggresive | Classification
+`task336_hateeval_classification_aggresive_es` | Given a hateful post in Spanish, classify it into aggresive or non-aggresive | Classification
+`task337_hateeval_classification_individual_en` | Given a hateful post in English, classify the target being harassed into individual or generic | Classification
+`task338_hateeval_classification_individual_es` | Given a hateful post in Spanish, classify the target being harassed into individual or generic | Classification
