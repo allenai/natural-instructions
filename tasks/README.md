@@ -289,6 +289,8 @@ Name | Summary | Category
 `task313_europarl_en_sv_translation` | Given an English sentence, convert it into Swedish. | Translation
 `task314_europarl_sv-en_classification` | Given a Swedish sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
 `task315_europarl_sv-en_language_identification` | Given a sentence, identify  whether it is in Swedish or English. | Language Identification
+`task316_crows-pairs_classification_stereotype` | Classify a sentence into stereotype or anti-stereotype | Classification
+`task317_crows-pairs_classification_stereotype_type` | Classify a sentence into different types of stereotype | Classification
 `task318_stereoset_classification_gender` | Given a target pertaining to gender in the two sentences, determine if it is a stereotype. | Classification
 `task319_stereoset_classification_profession` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
