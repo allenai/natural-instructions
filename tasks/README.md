@@ -301,7 +301,7 @@ Name | Summary | Category
 `task320_stereoset_classification_race` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
 `task321_stereoset_classification_religion` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
 `task322_jigsaw_classification_threat` | Given a comment from online platforms, classify whether it contains threats | Classification
-`task323_jigsaw_classification_sexual_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
+`task323_jigsaw_classification_sexually_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
 `task324_jigsaw_classification_disagree` | Given a comment from online platforms, classify whether it expresses disagreement | Classification
 `task325_jigsaw_classification_identity_attack` | Given a comment from online platforms, classify whether it conveys identity attacks | Classification
 `task326_jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
