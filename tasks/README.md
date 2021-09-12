@@ -262,10 +262,10 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling. | Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect. | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task277_stereoSet_sentence_generation_stereotype` | Generate sentences with stereotype given context | Sentence Generation
-`task278_stereoSet_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context | Sentence Generation
-`task279_stereoSet_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
-`task280_stereoSet_classification_stereotype_type` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
+`task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context | Sentence Generation
+`task278_stereoset_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context | Sentence Generation
+`task279_stereoset_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
+`task280_stereoset_classification_stereotype_type` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
 `task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
 `task282_scruples_event_time` | Given an anecdotes, find whether it has already happened or it may happen in the future  | Answer Generation
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
