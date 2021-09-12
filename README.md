@@ -71,18 +71,21 @@ If you have any questions or suggestions, please use [the issues](https://github
 
 
 ## Frequently Asked Questions
-### Can I submit non-English tasks?
-Yes! We welcome submission from any of the languages. 
+### I have suggestion to improve your benchmark. Where can I discuss it? 
+We would love to hear your suggestions! Please bring it up as an [issue](https://github.com/allenai/natural-instructions-expansion/issues) and let's discuss it. 
 
+### What do you mean by "meaningful contribution"? 
+If you have contributed at least 25 tasks to the repository or if you're among top 20 [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors), we view that as meaningful contribution. This also involves some lightweight responsibilities such as reviewing pull requests.
+ 
 ### Can I create tasks without using crowdsourcing templates?
 Yes! just make sure that the quality of instructions is good enough for a human to understand the task just based on instructions. You can take a different route than the [guidelines](doc/crowdsourcing.md).
 
 ### What is the minimum number of instances I can have in my task? 
 
 Anything north of 100 is a safe number. The more, the merrier! Also, you should not have more than 6500 instances. Make sure to shuffle instances before selecting 6500 of those. In case of classifcation tasks, make sure that the instances and positive examples are not skewed towards a class.
-
-### What do you mean by "meaningful contribution"? 
-If you have contributed at least 25 tasks to the repository or if you're among top 20 [contributors](https://github.com/allenai/natural-instructions-expansion/graphs/contributors), we view that as meaningful contribution. This also involves some lightweight responsibilities such as reviewing pull requests.
+ 
+### Can I submit non-English tasks?
+Yes! We welcome submission from any of the languages. 
  
 ### My commits are not tied to my Github profie; Github does not show all my contributions. 
 
