@@ -300,13 +300,13 @@ Name | Summary | Category
 `task319_stereoset_classification_profession` | Given a target pertaining to profession in the two sentences, determine if it is a stereotype. | Classification
 `task320_stereoset_classification_race` | Given a target pertaining to race in the two sentences, determine if it is a stereotype. | Classification
 `task321_stereoset_classification_religion` | Given a target pertaining to religion in the two sentences, determine if it is a stereotype. | Classification
-`task322_Jigsaw_classification_threat` | Given a comment from online platforms, classify whether it contains threats | Classification
-`task323_Jigsaw_classification_sexual_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
-`task324_Jigsaw_classification_disagree` | Given a comment from online platforms, classify whether it expresses disagreement | Classification
-`task325_Jigsaw_classification_identity_attack` | Given a comment from online platforms, classify whether it conveys identity attacks | Classification
-`task326_Jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
-`task327_Jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
-`task328_Jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
+`task322_jigsaw_classification_threat` | Given a comment from online platforms, classify whether it contains threats | Classification
+`task323_jigsaw_classification_sexual_explicit` | Given a comment from online platforms, classify whether it is sexual explicit | Classification
+`task324_jigsaw_classification_disagree` | Given a comment from online platforms, classify whether it expresses disagreement | Classification
+`task325_jigsaw_classification_identity_attack` | Given a comment from online platforms, classify whether it conveys identity attacks | Classification
+`task326_jigsaw_classification_obscene` | Given a comment from online platforms, classify whether it conveys obscenity | Classification
+`task327_jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic | Classification
+`task328_jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult | Classification
 `task332_tellmewhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story | Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge | Answer Generation
@@ -322,7 +322,7 @@ Name | Summary | Category
 `task357_casino_classification_negotiation_small_talk` | Detecting the usage of small-talk negotiation strategy in dialogue utterances. | Classification
 `task358_casino_classification_negotiation_uv_part` | Detecting the usage of uv-part negotiation strategy in dialogue utterances. | Classification
 `task359_casino_classification_negotiation_vouch_fair` | Detecting the usage of vouch-fair negotiation strategy in dialogue utterances. | Classification
-`task363_SST2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment | Classification
+`task363_sst2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment | Classification
 `task364_regard_social_impact_classification` | Given a sentence about a person, decide what is the impact of that sentence on the society's perception of that person. | Classification
 `task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
 `task376_reverse_order_of_words` |  Reverse the order of words in the given sentence | Answer Generation
