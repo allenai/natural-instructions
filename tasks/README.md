@@ -239,6 +239,6 @@ Name | Summary | Category
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question | Incorrect Answer Generation
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task360_SPOLIN_YesAnd_response_generation` | Given a prompt, generate the "yes, ands" response | Response Generation
-`task361_SPOLIN_YesAnd_prompt_response_classification` | Given a prompt and a response, classify whether the response is "yes, ands" type | Classification
-`task362_SPOLIN_YesAnd_prompt_response_sub_classification` | Given a prompt and two responses, identify which response is "yes, ands" type | Classification
+`task360_spolin_yesand_response_generation` | Given a prompt, generate the "yes, ands" response | Response Generation
+`task361_spolin_yesand_prompt_response_classification` | Given a prompt and a response, classify whether the response is "yes, ands" type | Classification
+`task362_spolin_yesand_prompt_response_sub_classification` | Given a prompt and two responses, identify which response is "yes, ands" type | Classification
