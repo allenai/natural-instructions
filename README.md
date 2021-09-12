@@ -3,7 +3,7 @@
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌 
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **September 15, 2021**.
-The contributors with [meaningful contribution](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
+The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
 ## Background 
 ### Why define tasks in natural language?
@@ -17,7 +17,7 @@ Also, generalization to unseen tasks improves as the model is trained on more ta
 
 ### Why build this dataset?  
 We believe that [our earlier work](https://arxiv.org/abs/2104.08773) is just scratching the surface and there is probably so much that be studied in this setup.
-We hope to put together a much larger dataset that cover a wider range of reasoning abilities. 
+We hope to put together a much larger dataset that covers a wider range of reasoning abilities. 
 We believe that this expanded dataset will serve as a useful playground for the community to study and build the next generation of AI/NLP models.
 
 
@@ -57,7 +57,7 @@ We would appreciate any external contributions! 🙏
 
  * All submissions must be submitted via [Github pull requests](https://github.com/allenai/natural-instructions-expansion/pulls). These submissions will undergo a review before being merged. 
  * Each task must contain contain a `.json` file that contains the task content. You can look inside the [`tasks/`](tasks) directory for several examples.  
-    * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4)`)   
+    * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4, ensure_ascii=False)`)   
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
     * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number). Make sure to include the source dataset name and the task category name while creating the json file name. You can use this format: taskabc_<source dataset>_<task category>.json E.g. in task001_quoref_question_generation.json, the source dataset is 'quoref' and the task category is 'question generation. Note that, source need not necessarily be a dataset and can be a website e.g. leetcode. Finally, if you have created the json without any reference, use 'synthetic' in place of source.
