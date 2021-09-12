@@ -262,10 +262,10 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling. | Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect. | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task277_stereoSet_sentence_generation_stereotype` | Generate sentences with stereotype given context | Sentence Generation
-`task278_stereoSet_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context | Sentence Generation
-`task279_stereoSet_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
-`task280_stereoSet_classification_stereotype_type` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
+`task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context | Sentence Generation
+`task278_stereoset_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context | Sentence Generation
+`task279_stereoset_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated | Classification
+`task280_stereoset_classification_stereotype_type` | Classify sentences into four kinds of stereotype, including gender, profession, race, and religion | Classification
 `task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences | Entity Detection
 `task282_scruples_event_time` | Given an anecdotes, find whether it has already happened or it may happen in the future  | Answer Generation
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question | Incorrect Answer Generation
@@ -276,8 +276,8 @@ Name | Summary | Category
 `task288_gigaword_summarization` | Given a text of article, generate headline (title) for the article | Summarization
 `task289_gigaword_summarization` | Given the text of an article and its title, decide whether the title is appropriate for the article | Summarization
 `task290_tellmewhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable | Classification
-`task291_semeval_2020_task4_Commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
-`task295_semeval_2020_task4_Commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
+`task291_semeval_2020_task4_commonsense_Validation` | Given two statements, choose the one that makes less sense. | Answer Generation
+`task295_semeval_2020_task4_commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
 `task296_StoryCloze_correct_end_classification` | Given four sentences of five sentence story, select correct answer for last (fifth) sentence from the given option. | Classification
 `task297_StoryCloze_incorrect_end_classification` | Given four sentences of five sentence story, select incorrect answer for last (fifth) sentence from the given option. | Incorrect Classification
 `task298_StoryCloze_correct_end_classification` | Given four sentences of five sentence story and fifth sentence, classify whether fifth sentence is proper or not by providing 'Yes' or 'No'. | Classification
