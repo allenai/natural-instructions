@@ -334,4 +334,5 @@ Name | Summary | Category
 `task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
-`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task465_parsinlu_qqp_classification` | Given two sentences, determine whether the sentences are paraphrases or not | Classification
+`task466_parsinlu_qqp_text_modification` | Given a sentence, paraphrase it | Text Modification
