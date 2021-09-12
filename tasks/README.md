@@ -280,7 +280,7 @@ Name | Summary | Category
 `task292_storycommonsense_character_text_generation` | Given a short story, provide all the characters in that story. | Text Generation
 `task293_storycommonsense_emotion_text_generation` | Given a sentence, context (optional) and character; provide emotions expressed by the character in the sentence. | Text Generation
 `task294_storycommonsense_motiv_text_generation` | Given a sentence, context (optional) and character; provide motivation of the character in the sentence. | Text Generation
-`task295_semeval_2020_task4_commonsense_Reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
+`task295_semeval_2020_task4_commonsense_reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense | Answer Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it. | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options. | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question. | Incorrect Answer Generation
