@@ -335,3 +335,7 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task489_mwsc_question_generation` | Generating questions (based on mwsc) | Question Generation  
+`task490_mwsc_options_generation` | Generating options to mwsc questions | Options Generation
+`task491_mwsc_answer_generation` | Generating answers to mwsc questions | Answer Generation  
+`task492_mwsc_incorrect_answer_generation` | Generating incorrect answers to mwsc questions | Incorrect Answer Generation
