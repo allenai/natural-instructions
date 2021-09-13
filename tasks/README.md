@@ -341,7 +341,4 @@ Name | Summary | Category
 `task435_alt_en_ja_translation` | Given an English language sentence translate it into Japanese language. | Translation
 `task436_alt_ja_en_translation` | Given an Japanese language sentence translate it into English language. | Translation
 `task437_alt_en_ja_answer_generation` | Generate answer yes or no for english and japanese translation pair. | Answer Generation
-`task493_review_polarity_classification` | Classify amazon review into positive or negative | Classification
-`task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
-`task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
-`task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
+
