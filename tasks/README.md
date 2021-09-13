@@ -337,7 +337,7 @@ Name | Summary | Category
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task432_alt_en_hi_translation` | Given an English language sentence translate it into Hindi language. | Translation
 `task433_alt_hi_en_translation` | Given an Hindi language sentence translate it into English language. | Translation
-`task434_alt_en_hi_classification` | Given English and Hindi translation pair, check if it is correct or not. | Classification
+`task434_alt_en_hi_answer_generation` | Generate answer yes or no for english and hindi translation pair. | Answer Generation
 `task435_alt_en_ja_translation` | Given an English language sentence translate it into Japanese language. | Translation
 `task436_alt_ja_en_translation` | Given an Japanese language sentence translate it into English language. | Translation
-`task437_alt_en_ja_classification` | Given English and Japanese translation pair, check if it is correct or not. | Classification
+`task437_alt_en_ja_answer_generation` | Generate answer yes or no for english and japanese translation pair. | Answer Generation
