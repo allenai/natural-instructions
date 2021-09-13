@@ -335,3 +335,6 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task469_opus_xhosanavy_translation_eng_xhosa` | Given a sentence in English, translate it to a sentence in Xhosa. | Translation
+`task470_opus_xhosanavy_translation_khosa_eng` | Given a sentence in Xhosa, translate it to a sentence in English. | Translation
+`task471_opus_xhosanavy_mlm` | Given a sentence with a single word masked, reconstruct the original sentence. | Masked Language Modeling
