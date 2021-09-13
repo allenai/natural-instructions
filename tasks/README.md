@@ -335,3 +335,16 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task497_scruples_anecdotes_post_type_classification` | Given a paragraph, the task is to classify it into two types historial or hypothetical | Binary Classification
+`task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life annecdote of a complex ethical situation, identify who is ethically wrong here | Classification
+`task499_scruples_anecdotes_action_classification` | Given a real-life annecdote of a complex ethical situation, task is to classify the text into right or wrong. | Binary Classification
+`task500_scruples_anecdotes_title_generation` | Given a real-life annecdote of a complex ethical situation, identify the action phrases that describes the main event/root cause of the situation | Title Generation
+`task501_scruples_anecdotes_post_type_verification` | Given a real-life annecdote of a complex ethical situation, verify if the type of the post is historical or hypothetical | Verification
+`task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life annecdote of a complex ethical situation, verify who is wrong in the situation | Verification
+`task503_scruples_anecdotes_ismoreinforeq_verification` | Given a real-life annecdote of a complex ethical situation, verify if more information is required to answer who is ethically wrong here | Verification
+`task504_scruples_dilemmas_less_ethical_answer_identification` | Given a pair of action statements, identify which one is less ethical | Answer Identification
+`task505_scruples_dilemmas_more_ethical_answer_identification` | Given a pair of action statements, judge which one is more ethical that is which of the statements is morally less wrong | Answer Identification
+`task506_scruples_dilemmas_less_ethical_answer_generation` | Given an action statement, generate another action statement which is less ethical | Answer Generation
+`task507_scruples_dilemmas_more_ethical_answer_generation` | Given an action statement, generate another action statement which is more ethical | Answer Generation
+`task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
+`task509_scruples_dilemmas_not_moreorless_ethical_answer_generation` | Given an action statement, generate another action statement such that they cannot be conclusively differentiated into more or less ethical | Answer Generation
