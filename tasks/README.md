@@ -335,3 +335,15 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task476_cls_english_books` | Classify a given product review (domain: books, language: English) to positive or negative sentiment | Classification
+`task477_cls_english_dvd` | Classify a given product review (domain: dvd, language: English) to positive or negative sentiment | Classification
+`task478_cls_english_music` | Classify a given product review (domain: music, language: English) to positive or negative sentiment | Classification
+`task479_cls_german_books` | Classify a given product review (domain: books, language: German) to positive or negative sentiment | Classification
+`task480_cls_german_dvd` | Classify a given product review (domain: dvd, language: German) to positive or negative sentiment | Classification
+`task481_cls_german_music` | Classify a given product review (domain: music, language: German) to positive or negative sentiment | Classification
+`task482_cls_french_books` | Classify a given product review (domain: books, language: French) to positive or negative sentiment | Classification
+`task483_cls_french_dvd` | Classify a given product review (domain: dvd, language: French) to positive or negative sentiment | Classification
+`task484_cls_french_music` | Classify a given product review (domain: music, language: French) to positive or negative sentiment | Classification
+`task485_cls_japanese_books` | Classify a given product review (domain: books, language: Japanese) to positive or negative sentiment | Classification
+`task486_cls_japanese_dvd` | Classify a given product review (domain: dvd, language: Japanese) to positive or negative sentiment | Classification
+`task487_cls_japanese_music` | Classify a given product review (domain: music, language: Japanese) to positive or negative sentiment | Classification
