@@ -335,4 +335,4 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task517_trivia_question_classification` | Given a text from a trivia quiz, decide the category the question belongs to | Classification
+`task521_trivia_question_classification` | Given a text from a trivia quiz, decide the category the question belongs to | Classification
