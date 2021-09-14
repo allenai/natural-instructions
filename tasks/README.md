@@ -247,3 +247,7 @@ Name | Summary | Category
 `task372_synthetic_palindrome_numbers.json` | Given a list of integers return an integer if the first and last digit are the same | Answer Generation
 `task373_synthetic_round_tens_place.json` | Given a list of integers round them to the tens place | Answer Generation, Arithemetic
 `task374_synthetic_pos_or_neg_calculation.json`| Given a list of integers multiply the negative integers by *-3* multiply the even integers by *2* | Answer Generation, Arithemetic 
+`task517_emo_classify_emotion_of_dialogue.json` | Classify the emotion of a given dialogue | Classification, Sentiment Analysis
+`task518_emo_different_dialogue_emotions.json` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
+`task519_aquamuse_question_generation.json` | Given an answer generate a question that would be answered by the answer given | Question Generation
+`task520_aquamuse_answer_given_in_passage.json` | Given a passage and a question determine if the question can be answered by the passage | Classification
