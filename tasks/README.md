@@ -335,3 +335,5 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task512_senteval_odd_word_out` | Given a sentence judge whether a single word has been replaced with another word. | Classification
+`task513_conjoints_inversion` | Given a sentence judge whether two clausal conjoints have been inverted. | Classification
