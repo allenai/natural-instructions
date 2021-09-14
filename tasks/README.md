@@ -329,14 +329,14 @@ Name | Summary | Category
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question. | Answer Generation
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
-`task388_torque_event_detection.json` | Given a passage, identify an event from it | Event Detection
-`task389_torque_generate_temporal_question.json` | Given a passage, generate a temporal question | Question Generation
-`task390_torque_answer_temporal_question.json` | Given a passage, a temporal question and a list of events in the passage, return an event that answers the given question | Answer Generation
+`task388_torque_event_detection` | Given a passage, identify an event from it | Event Detection
+`task389_torque_generate_temporal_question` | Given a passage, generate a temporal question | Question Generation
+`task390_torque_answer_temporal_question` | Given a passage, a temporal question and a list of events in the passage, return an event that answers the given question | Answer Generation
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
 `task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one. | Classification
 `task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task510_reddit_tifu_title_summarization.json` | Given the text of a social media post, generate a title summarizing the post | Summarization 
-`task511_reddit_tifu_long_text_summarization.json` | Given the text of a social media post, generate a short summary the post | Summarization 
+`task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
+`task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
