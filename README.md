@@ -2,8 +2,9 @@
 
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌 
-We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **September 15, 2021**.
+We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **October 15, 2021**.
 The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
+
 
 ## Background 
 ### Why define tasks in natural language?
@@ -71,7 +72,10 @@ If you have any questions or suggestions, please use [the issues](https://github
 
 
 ## Frequently Asked Questions
-### I have suggestion to improve your benchmark. Where can I discuss it? 
+### I want to contribute but I am not sure what tasks I can contribute. 
+There are also a bunch of task suggestions in [the Github issues](https://github.com/allenai/natural-instructions-expansion/issues?q=is%3Aissue+is%3Aopen+label%3Atask-suggestion) which you can sign up to work on. If you have any other suggested tasks but you're not sure if they're good fit, bring them up in the [issues](https://github.com/allenai/natural-instructions-expansion/issues).  
+
+ ### I have suggestion to improve your benchmark. Where can I discuss it? 
 We would love to hear your suggestions! Please bring it up as an [issue](https://github.com/allenai/natural-instructions-expansion/issues) and let's discuss it. 
 
 ### What do you mean by "meaningful contribution"? 
