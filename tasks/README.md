@@ -335,3 +335,9 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task524_parsinlu_food_aspect_classification` | Given a food review and a question about the reviewer's sentiment toward one aspect of the food, classify the sentiment. | Classification
+`task525_parsinlu_movie_aspect_classification` | Given a movie review and a question about the reviewer's sentiment toward one aspect of the movie, classify the sentiment. | Classification
+`task526_parsinlu_movie_overal_classification` | Given a movie review, classify the overal sentiment of the reviewer toward the movie. | Classification
+`task527_parsinlu_food_overal_classification` | Given a food review, classify the overal sentiment of the reviewer toward the food. | Classification
+`task528_parsinlu_movie_aspect_detection` | Given a movie review, extract aspects of the movie mentioned in the text. | Text Generation
+`task529_parsinlu_food_aspect_detection` | Given a food review, extract aspects of the food mentioned in the text. | Text Generation
