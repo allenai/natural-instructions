@@ -335,3 +335,11 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`Task57__circa_Question_Answer_Relation_Check` | Given a question generate an answer that is relevant to the question to Circa Dataset | Answer Generation
+`Task58__Circa__IndirectResponse_check` | Check if the answer is yes or no based on the given answer and can question field given in Circa Dataset | Classification
+`Task59__Circa__Context_prediction` | Given a question, Predict the context of the given question in Circa Dataset | Text Generation
+`Task60__Circa__Question_Generation` | Given an answer, Predict the question in Circa Dataset | Question Generation
+`Task61__recipe_nlg__Title_Generation` | Predict the title given its required ingredients and directions in recipe-nlg Dataset | Title Generation
+`Task62__Recipe_nlg__ner_Generation_from_Ingredients` | generate the ner given its required ingredients given in recipe-nlg Dataset | ner Generation
+`Task63__Recipe_nlg__Ner_Generation_given_Directions` | generate the ner given its directions in recipe-nlg Dataset | ner Generation
+`Task64__Recipe_nlg_Step_Generation_from_Directions` |  generate the unknown step by knowing the other steps given in the directions in recipe-nlg Dataset | Missing Step Generation
