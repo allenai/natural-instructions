@@ -295,6 +295,7 @@ Name | Summary | Category
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it. | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options. | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question. | Incorrect Answer Generation
+`task304_numeric_fused_head_resolution` | Given a dialogue and a highlighted number, decide what does the number refer to | Answer Generation
 `task305_jeopardy_answer_generation_normal` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
 `task306_jeopardy_answer_generation_double` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
 `task307_jeopardy_answer_generation_final` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
@@ -349,3 +350,5 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
+
