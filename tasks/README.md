@@ -335,3 +335,33 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task397_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
+`task398_discofuse_sentence_generation` | Senetence Generation on Dataset Card for DISCOFUSE | Senetence Generation
+`task399_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
+`task400_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task401_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task402_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task403_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task404_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task405_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task406_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task407_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task408_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task409_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task410_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task411_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task412_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task413_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task414_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task415_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task416_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task417_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task418_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task419_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task420_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task421_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task422_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task423_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task424_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task425_alt_language_translation` | Language Translation on Dataset Card for ALT | Language Translation
+`task426_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
