@@ -335,7 +335,7 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task530_europarl_es_en_translation` | Given a English sentence, convert it into Spanish. | Translation
-`task531_europarl_en_es_translation` | Given an Spanish sentence, convert it into English. | Translation
+`task530_europarl_en_es_translation` | Given a English sentence, convert it into Spanish. | Translation
+`task531_europarl_es_en_translation` | Given an Spanish sentence, convert it into English. | Translation
 `task532_europarl_en-es_classification` | Given a English sentence and its corresponding Spanish translation, classify whether it is correct or not. | Classification
 `task533_europarl_es-en_language_identification` | Given a sentence, identify  whether it is in English or Spanish. | Language Identification
