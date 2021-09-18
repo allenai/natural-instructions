@@ -335,11 +335,11 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task397_circa_answer_generation` | Given a question generate an answer that is relevant to the question to Circa Dataset | Answer Generation
-`task398_circa_classification` | Check if the answer is yes or no based on the given answer and can question field given in Circa Dataset | Classification
-`task399_circa_text_generation` | Given a question, Predict the context of the given question in Circa Dataset | Text Generation
-`task400_circa_question_generation` | Given an answer, Predict the question in Circa Dataset | Question Generation
-`task401_recipe_nlg_title_generation` | Predict the title given its required ingredients and directions in recipe-nlg Dataset | Title Generation
-`task402_recipe_nlg_ner_generation` | generate the ner given its required ingredients given in recipe-nlg Dataset | ner Generation
-`task403_recipe_nlg_ner_generation` | generate the ner given its directions in recipe-nlg Dataset | ner Generation
-`task404_recipe_nlg_step_generation` |  generate the unknown step by knowing the other steps given in the directions in recipe-nlg Dataset | Missing Step Generation
+`task565_circa_answer_generation` | Given a question generate an answer that is relevant to the question to Circa Dataset | Answer Generation
+`task566_circa_classification` | Check if the answer is yes or no based on the given answer and can question field given in Circa Dataset | Classification
+`task567_circa_text_generation` | Given a question, Predict the context of the given question in Circa Dataset | Text Generation
+`task568_circa_question_generation` | Given an answer, Predict the question in Circa Dataset | Question Generation
+`task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions in recipe-nlg Dataset | Text Generation
+`task570_recipe_nlg_ner_generation` | generate the ner given its required ingredients given in recipe-nlg Dataset | ner Generation
+`task571_recipe_nlg_ner_generation` | generate the ner given its directions in recipe-nlg Dataset | ner Generation
+`task572_recipe_nlg_text_generation` |  generate the unknown step by knowing the other steps given in the directions in recipe-nlg Dataset | Text Generation
