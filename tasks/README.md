@@ -335,9 +335,9 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task397_air_dialogue_classification` | Classifying the output of the conversation | Classification
-`task398_air_dialogue_sentence_generation` | Fill in the blank in the list | Sentence Generation
-`task399_air_dialogue_classification` | Classifying the dialogue of the dataset | Classification
-`task400_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
-`task401_curiosity_dialogs_classification` | Classifying the dialogue spoken | Classification
-`task402_curiosity_dialogs_answer_generation` | Generating answers to a dialogue set | Answer Generation
+`task573_air_dialogue_classification` | Classifying the output of the conversation | Classification
+`task574_air_dialogue_sentence_generation` | Fill in the blank in the list | Sentence Generation
+`task575_air_dialogue_classification` | Classifying the dialogue of the dataset | Classification
+`task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
+`task577_curiosity_dialogs_classification` | Classifying the dialogue spoken | Classification
+`task578_curiosity_dialogs_answer_generation` | Generating answers to a dialogue set | Answer Generation
