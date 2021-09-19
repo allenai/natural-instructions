@@ -373,6 +373,9 @@ Name | Summary | Category
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
 `task459_matres_static_classification` | Given a context and a verb, answer if the given verb is static or not | Classification
+`task460_qasper_answer_generation` | Given a context and a question, answer the question based on the context. | Answer Generation
+`task461_qasper_question_generation` | Given a cotext, generate a question based on it. | Question Generation
+`task462_qasper_classification` | Given a context and a question, classify the question into abstractive, extractice, or yes-no question | Classification
 `task463_parsinlu_entailment_classification` | Given  a premise sentence and a hypothesis sentence, determine whether the hypothesis sentence entails, contradicts, or is neutral with respect to the given premise sentence | Classification
 `task464_parsinlu_entailment_sentence_generation` | Given a premise sentence and a label, generate the hypothesis sentence based on the label and the premise sentence | Sentence Generation
 `task465_parsinlu_qqp_classification` | Given two sentences, determine whether the sentences are paraphrases or not | Classification
