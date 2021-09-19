@@ -380,6 +380,8 @@ Name | Summary | Category
 `task464_parsinlu_entailment_sentence_generation` | Given a premise sentence and a label, generate the hypothesis sentence based on the label and the premise sentence | Sentence Generation
 `task465_parsinlu_qqp_classification` | Given two sentences, determine whether the sentences are paraphrases or not | Classification
 `task466_parsinlu_qqp_text_modification` | Given a sentence, paraphrase it | Text Modification
+`task467_parsinlu_rc_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
+`task468_parsinlu_rc_question_generation` | Given a passage, generate a question based on the passage. | Question Generation
 `task475_yelp_polarity_classification` | Classify a given Yelp review to positive or negative sentiment | Classification
 `task517_emo_classify_emotion_of_dialogue` | Classify the emotion of a given dialogue | Classification, Sentiment Analysis
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
