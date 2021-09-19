@@ -374,7 +374,7 @@ Name | Summary | Category
 `task466_parsinlu_qqp_text_modification` | Given a sentence, paraphrase it | Text Modification
 `task475_yelp_polarity_classification` | Classify a given Yelp review to positive or negative sentiment | Classification
 `task515_senteval_odd_word_out` | Given a sentence judge whether a single word has been replaced with another word. | Classification
-`task516_conjoints_inversion` | Given a sentence judge whether two clausal conjoints have been inverted. | Classification
+`task516_senteval_conjoints_inversion` | Given a sentence judge whether two clausal conjoints have been inverted. | Classification
 `task517_emo_classify_emotion_of_dialogue` | Classify the emotion of a given dialogue | Classification, Sentiment Analysis
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
