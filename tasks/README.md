@@ -358,6 +358,7 @@ Name | Summary | Category
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage. | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage. | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question. | Answer Generation
+`task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
@@ -368,11 +369,35 @@ Name | Summary | Category
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
+`task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
+`task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
+`task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
+`task459_matres_static_classification` | Given a context and a verb, answer if the given verb is static or not | Classification
+`task460_qasper_answer_generation` | Given a context and a question, answer the question based on the context. | Answer Generation
+`task461_qasper_question_generation` | Given a cotext, generate a question based on it. | Question Generation
+`task462_qasper_classification` | Given a context and a question, classify the question into abstractive, extractice, or yes-no question | Classification
 `task463_parsinlu_entailment_classification` | Given  a premise sentence and a hypothesis sentence, determine whether the hypothesis sentence entails, contradicts, or is neutral with respect to the given premise sentence | Classification
 `task464_parsinlu_entailment_sentence_generation` | Given a premise sentence and a label, generate the hypothesis sentence based on the label and the premise sentence | Sentence Generation
 `task465_parsinlu_qqp_classification` | Given two sentences, determine whether the sentences are paraphrases or not | Classification
 `task466_parsinlu_qqp_text_modification` | Given a sentence, paraphrase it | Text Modification
+`task467_parsinlu_rc_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
+`task468_parsinlu_rc_question_generation` | Given a passage, generate a question based on the passage. | Question Generation
 `task475_yelp_polarity_classification` | Classify a given Yelp review to positive or negative sentiment | Classification
+`task476_cls_english_books_classification` | Classify a given book product review in English to positive or negative sentiment | Classification
+`task477_cls_english_dvd_classification` | Classify a given dvd product review in English to positive or negative sentiment | Classification
+`task478_cls_english_music_classification` | Classify a given music product review in English to positive or negative sentiment | Classification
+`task479_cls_german_books_classification` | Classify a given book product review in German to positive or negative sentiment | Classification
+`task480_cls_german_dvd_classification` | Classify a given dvd product review in German to positive or negative sentiment | Classification
+`task481_cls_german_music_classification` | Classify a given music product review in German to positive or negative sentiment | Classification
+`task482_cls_french_books_classification` | Classify a given book product review in French to positive or negative sentiment | Classification
+`task483_cls_french_dvd_classification` | Classify a given dvd product review in French to positive or negative sentiment | Classification
+`task484_cls_french_music_classification` | Classify a given music product review in French to positive or negative sentiment | Classification
+`task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
+`task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
+`task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
+`task513_argument_stance_classification` | Given a topic and an argument, decide the stance of the argument towards the topic | Classification
+`task514_argument_consequence_classification` | Given a topic and an argument, decide whether the argument refers to a consequence of the topic | Classification
 `task517_emo_classify_emotion_of_dialogue` | Classify the emotion of a given dialogue | Classification, Sentiment Analysis
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
