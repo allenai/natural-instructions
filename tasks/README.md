@@ -369,6 +369,12 @@ Name | Summary | Category
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
+`task418_persent_title_generation` | Given a document, generate a short title of the document. | Title Generation
+`task419_persent_answer_generation` | Given a document, find the main entity about whom the author is writing. | Answer Generation
+`task420_persent_document_sentiment_classification` | Given a document and an entity the task is to select the author's sentiment towards the enity. | Document Sentiment Classification
+`task421_persent_sentence_sentiment_classification` | Given a sentence and an entity, the task is to select the author's sentiment towards the enity. | Sentence Sentiment Classification
+`task422_persent_sentence_sentiment_verification` | Given a sentence, an entity and its sentiment towards the entity, verify if it is the correct sentiment towards the entity. | Sentence Sentiment Verification
+`task423_persent_document_sentiment_verification` | Given a document, an entity and its sentiment towards the entity, verify if it is the correct sentiment towards the entity. | Document Sentiment Verification
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
