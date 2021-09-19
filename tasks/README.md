@@ -335,9 +335,9 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-`task573_air_dialogue_classification` | Classifying the output of the conversation | Classification
-`task574_air_dialogue_sentence_generation` | Fill in the blank in the list | Sentence Generation
-`task575_air_dialogue_classification` | Classifying the dialogue of the dataset | Classification
+`task573_air_dialogue_classification` | Givena a conversation between a flight 'agent' and the 'customer' classify the goal of the conversation. | Classification
+`task574_air_dialogue_sentence_generation` | Given a conversation between a flight 'agent' and the 'customer', find the missing dialogue in the conversation. | Sentence Generation
+`task575_air_dialogue_classification` | Classification of the sentence spoken by 'agent' and 'customer'. | Classification
 `task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
-`task577_curiosity_dialogs_classification` | Classifying the dialogue spoken | Classification
-`task578_curiosity_dialogs_answer_generation` | Generating answers to a dialogue set | Answer Generation
+`task577_curiosity_dialogs_classification` | classification of the sentence spoken by 'assistant' and 'user'. | Classification
+`task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
