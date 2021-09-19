@@ -383,6 +383,18 @@ Name | Summary | Category
 `task467_parsinlu_rc_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task468_parsinlu_rc_question_generation` | Given a passage, generate a question based on the passage. | Question Generation
 `task475_yelp_polarity_classification` | Classify a given Yelp review to positive or negative sentiment | Classification
+`task476_cls_english_books_classification` | Classify a given book product review in English to positive or negative sentiment | Classification
+`task477_cls_english_dvd_classification` | Classify a given dvd product review in English to positive or negative sentiment | Classification
+`task478_cls_english_music_classification` | Classify a given music product review in English to positive or negative sentiment | Classification
+`task479_cls_german_books_classification` | Classify a given book product review in German to positive or negative sentiment | Classification
+`task480_cls_german_dvd_classification` | Classify a given dvd product review in German to positive or negative sentiment | Classification
+`task481_cls_german_music_classification` | Classify a given music product review in German to positive or negative sentiment | Classification
+`task482_cls_french_books_classification` | Classify a given book product review in French to positive or negative sentiment | Classification
+`task483_cls_french_dvd_classification` | Classify a given dvd product review in French to positive or negative sentiment | Classification
+`task484_cls_french_music_classification` | Classify a given music product review in French to positive or negative sentiment | Classification
+`task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
+`task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
+`task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
 `task517_emo_classify_emotion_of_dialogue` | Classify the emotion of a given dialogue | Classification, Sentiment Analysis
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
