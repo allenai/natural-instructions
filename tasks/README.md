@@ -412,9 +412,6 @@ Name | Summary | Category
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
-`task573_air_dialogue_classification` | Classifying the output of the conversation | Classification
-`task574_air_dialogue_sentence_generation` | Fill in the blank in the list | Sentence Generation
-`task575_air_dialogue_classification` | Classifying the dialogue of the dataset | Classification
 `task573_air_dialogue_classification` | Givena a conversation between a flight 'agent' and the 'customer' classify the goal of the conversation. | Classification
 `task574_air_dialogue_sentence_generation` | Given a conversation between a flight 'agent' and the 'customer', find the missing dialogue in the conversation. | Sentence Generation
 `task575_air_dialogue_classification` | Classification of the sentence spoken by 'agent' and 'customer'. | Classification
