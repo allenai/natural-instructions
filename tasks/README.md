@@ -369,6 +369,10 @@ Name | Summary | Category
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
+`task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
+`task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
+`task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
+`task427_hindienglish_corpora_hi-en_language_identification` | Given a sentence, identify whether it is in Hindi or English. | Language Identification
 `task418_persent_title_generation` | Given a document, generate a short title of the document. | Title Generation
 `task419_persent_answer_generation` | Given a document, find the main entity about whom the author is writing. | Answer Generation
 `task420_persent_document_sentiment_classification` | Given a document and an entity the task is to select the author's sentiment towards the enity. | Document Sentiment Classification
