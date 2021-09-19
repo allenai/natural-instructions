@@ -412,8 +412,8 @@ Name | Summary | Category
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
-`task586_amazonfood_polarity_classification` | Given a review of amazon food product, you have to classify if review is positive or negative. | Classification
-`task587_amazonfood_polarity_correction_classification` | Given a review of amazon food product and it's polarity, you have to classify whether the polarity is correct or not. | Classification
-`task588_amazonfood_rating_classification` | Given a review of amazon food product, you have to classify the rating out of 5. | Classification
-`task589_amazonfood_summary_text_generation` | Given a review of amazon food product, you have to generate the summary of review. | Text Generation
-`task590_amazonfood_summary_correction_classification` | Given a review of amazon food product and it's summary, you have to classify whether the summary if correct or not. | Classification
+`task586_amazonfood_polarity_classification` | Given a review of an amazon food product, you have to classify if the review is positive or negative. | Classification
+`task587_amazonfood_polarity_correction_classification` | Given a review of amazon food products and it's polarity, you have to classify whether the polarity is correct or not. | Classification
+`task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
+`task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
+`task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
