@@ -341,7 +341,7 @@ Name | Summary | Category
 `task363_sst2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment. | Classification
 `task364_regard_social_impact_classification` | Given a sentence about a person, decide what is the impact of that sentence on the society's perception of that person. | Classification
 `task365_synthetic_remove_vowels` | Given a string remove any vowels in that string. | Answer Generation
-`task366_synthetic_return_primes` | Given a list of integers return a number if it is prime. | Answer Generation, Arithemetic 
+`task366_synthetic_return_primes` | Given a list of integers return a number if it is prime. | Answer Generation, Arithemetic
 `task367_synthetic_remove_floats`  | Given a list of numbers remove any number if it is not an integer | Answer Generation, Arithemetic          
 `task368_synthetic_even_or_odd_calculation`  | Given a list of integers divide even numbers by *4* and multiply odd numbers by *4* then add *2* | Answer Generation, Arithemetic
 `task369_synthetic_remove_odds` | Given a list of integers remove any integer if it is odd | Answer Generation, Arithemetic
@@ -349,7 +349,7 @@ Name | Summary | Category
 `task371_synthetic_product_of_list` | Given a list of lists of integers, find the product of every inner list | Answer Generation, Arithemetic
 `task372_synthetic_palindrome_numbers` | Given a list of integers return an integer if the first and last digit are the same | Answer Generation
 `task373_synthetic_round_tens_place` | Given a list of integers round them to the tens place | Answer Generation, Arithemetic
-`task374_synthetic_pos_or_neg_calculation`| Given a list of integers multiply the negative integers by *-3* multiply the even integers by *2* | Answer Generation, Arithemetic 
+`task374_synthetic_pos_or_neg_calculation`| Given a list of integers multiply the negative integers by *-3* multiply the even integers by *2* | Answer Generation, Arithemetic
 `task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
 `task376_reverse_order_of_words` |  Reverse the order of words in the given sentence | Answer Generation
 `task377_remove_words_of_given_length` | Remove all words of a given length in the sentence | Answer Generation
@@ -418,3 +418,7 @@ Name | Summary | Category
 `task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
 `task577_curiosity_dialogs_classification` | Classification of the sentence spoken by 'assistant' and 'user'. | Classification
 `task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
+`task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
+`task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
+`task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
+`task610_conllpp_ner.json` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
