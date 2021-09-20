@@ -418,6 +418,7 @@ Name | Summary | Category
 `task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
 `task577_curiosity_dialogs_classification` | Classification of the sentence spoken by 'assistant' and 'user'. | Classification
 `task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
+`task600_qangaroo_answer_generation` | Generating answers to qangaroo dataset passage questions | Answer Generation
 `task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
 `task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
 `task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Fill in the blank
@@ -425,5 +426,4 @@ Name | Summary | Category
 `task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task605_flores_translation_entone` | Translating the text from english to neen | Translation
 `task606_qangaroo_classification` | Choosing options from given options of qangaroo dataset passage questions | Classification
-`task607_qangaroo_answer_generation` | Generating answers to qangaroo dataset passage questions | Answer Generation
 
