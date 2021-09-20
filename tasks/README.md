@@ -418,3 +418,7 @@ Name | Summary | Category
 `task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
 `task577_curiosity_dialogs_classification` | Classification of the sentence spoken by 'assistant' and 'user'. | Classification
 `task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
+`task591_sciq_answer_generation` | Given a science question, the task is generate a correct answer to the given question | Answer Generation
+`task592_sciq_incorrect_answer_generation` | Given a science question, the task is generate an incorrect answer to the given question | Incorrect Answer Generation
+`task593_sciq_explanation_generation` | Given a science question and its correct answer, the task is to generate supporting facts for the answer. This supporting fact can be an explanation for the answer to the given question. | Explanation Generation
+`task594_sciq_question_generation` | Given a science passage and an answer, the task is generate a question for the given answer. Make sure that the passage also supports some facts regarding the question generated. | Question Generation
