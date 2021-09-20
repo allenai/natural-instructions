@@ -317,6 +317,9 @@ Name | Summary | Category
 `task326_jigsaw_classification_obscene` | Given a comment, classify whether it conveys obscenity or not. | Classification
 `task327_jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic or not. | Classification
 `task328_jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult or not. | Classification
+`task329_gap_classification` | Given a text containing an ambiguous pronoun, a pronoun, and two candidate names, determine what the pronoun refers to and classify the answers into A, B, or Neither | Classification
+`task330_gap_answer_generation` | Given a text containing an ambiguous pronoun and a pronoun, write the name that the pronoun refers to | Answer Generation
+`task331_gap_incorrect_answer_generation` | Given a text containing an ambiguous pronoun and a pronoun, write an implausible answer to the question of what is the pronoun reference | Incorrect Answer Generation
 `task332_tellmewhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story. | Answer Generation
 `task333_hateeval_classification_hate_en` | Given a post in English, classify it into hateful or non-hateful | Classification
 `task334_hateeval_classification_hate_es` | Given a post in Spanish, classify it into hateful or non-hateful | Classification
@@ -431,4 +434,3 @@ Name | Summary | Category
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
-
