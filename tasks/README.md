@@ -423,6 +423,10 @@ Name | Summary | Category
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
+`task530_europarl_en_es_translation` | Given a English sentence, convert it into Spanish. | Translation
+`task531_europarl_es_en_translation` | Given an Spanish sentence, convert it into English. | Translation
+`task532_europarl_en-es_classification` | Given a English sentence and its corresponding Spanish translation, classify whether it is correct or not. | Classification
+`task533_europarl_es-en_language_identification` | Given a sentence, identify  whether it is in English or Spanish. | Language Identification
 `task534_farstail_entailment` | Given two sentences in Persian, choose whether they agree, disagree, neither with each other. | Classification
 `task573_air_dialogue_classification` | Givena a conversation between a flight 'agent' and the 'customer' classify the goal of the conversation. | Classification
 `task574_air_dialogue_sentence_generation` | Given a conversation between a flight 'agent' and the 'customer', find the missing dialogue in the conversation. | Sentence Generation
