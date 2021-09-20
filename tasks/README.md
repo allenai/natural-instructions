@@ -418,3 +418,8 @@ Name | Summary | Category
 `task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
 `task577_curiosity_dialogs_classification` | Classification of the sentence spoken by 'assistant' and 'user'. | Classification
 `task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
+`task595_mocha_answer_generation` | Generating answers to MOCHA questions | Answer Generation
+`task596_mocha_question_generation` | Generating questions based on MOCHA | Question Generation
+`task597_cuad_answer_generation` | Generating answers to CUAD questions | Answer Generation
+`task598_cuad_answer_generation` | Generating starting index of the answers to CUAD questions | Answer Generation
+`task599_cuad_question_generation` | Generating questions based on CUAD | Question Generation
