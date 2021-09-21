@@ -443,4 +443,5 @@ Name | Summary | Category
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
-`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
+`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
+task611_mutual_multi_turn_dialogue |
