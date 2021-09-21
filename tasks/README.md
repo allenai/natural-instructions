@@ -377,6 +377,6 @@ Name | Summary | Category
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
-`task535_socialiqa_answer_generation` | Given a context, a question and three options; provide correct answer for the question based on the context. | Answer Generation
-`task536_socialiqa_classification` | Given a context, a question and an answer; classify whether the answer is correct or not. | Classification
-`task537_socialiqa_question_generation` | Generate a question based on the given context and an answer. | Question Generation
+`task579_socialiqa_answer_generation` | Given a context, a question and three options; provide correct answer for the question based on the context. | Answer Generation
+`task580_socialiqa_classification` | Given a context, a question and an answer; classify whether the answer is correct or not. | Classification
+`task581_socialiqa_question_generation` | Generate a question based on the given context and an answer. | Question Generation
