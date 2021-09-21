@@ -474,4 +474,4 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task616_glue_classification` | Given a sentence you have to return if it acceptable or unacceptable. | Classification
+`task616_glue_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
