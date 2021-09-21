@@ -443,7 +443,8 @@ Name | Summary | Category
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
-`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
+`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
+`task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task550_discofuse_sentence_generation` | Senetence Generation on Dataset Card for DISCOFUSE | Senetence Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
