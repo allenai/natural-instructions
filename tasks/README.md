@@ -474,3 +474,7 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task625_xlwic_true_or_false_answer_generation` | Determine whether both the sentences use the aforementioned word with the same meaning | Answer Generation
+`task626_xlwic_sentence_based_on_given_word_sentence_generation` | Generating a sentence from a given word | Sentence Generation
+`task627_xlwic_word_with_same_meaning_sentence_generation` | Generating a sentence using a given word and sentence where the word is used with the same meaning as in the given sentence | Sentence Generation
+`task628_xlwic_word_with_different_meaning_sentence_generation` | Generating a sentence using a given word and sentence where the word is used with a different meaning than in the given sentence | Sentence Generation
