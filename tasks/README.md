@@ -271,7 +271,6 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling. | Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect. | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options | Legal , Incorrect Answer Generation
 `task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context. | Sentence Generation
 `task278_stereoset_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context. | Sentence Generation
 `task279_stereoset_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated. | Classification
@@ -282,6 +281,7 @@ Name | Summary | Category
 `task284_imdb_classification` | Given a movie review, classify its sentiment into positive or negative. | Classification
 `task285_imdb_answer_generation` | Given a movie review and boolean question, generate answer yes or no. | Answer Generation
 `task286_olid_offense_judgment` | Given a tweet judge whether its offensive or not. | Classification
+`task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options. | Incorrect Answer Generation
 `task288_gigaword_summarization` | Given a text of article, generate a title for the article. | Summarization
 `task289_gigaword_summarization` | Given the text of an article and its title, decide whether the title is appropriate for the article. | Summarization
 `task290_tellmewhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable. | Classification
