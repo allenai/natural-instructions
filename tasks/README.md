@@ -479,3 +479,7 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task369_multi_woz_sentence_generation` | Generating next sentences based on previous and next sentences | Sentence Generation
+`task370_multi_woz_ordering_answer_generation` | Identifying the correct order of a conversation flow | Answer Generation
+`task371_multi_woz_classification` | Classifying dialouge into User and System | Classification
+`task372_multi_woz_user_utterance_generation`| Generate a User utterance when System's reply is given | User Utterance Generation
