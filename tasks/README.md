@@ -424,14 +424,14 @@ Name | Summary | Category
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
 `task534_farstail_entailment` | Given two sentences in Persian, choose whether they agree, disagree, neither with each other. | Classification
-`task565_circa_answer_generation` | Given a question generate an answer that is relevant to the question to Circa Dataset | Answer Generation
-`task566_circa_classification` | Check if the answer is yes or no based on the given answer and can question field given in Circa Dataset | Classification
-`task567_circa_text_generation` | Given a question, Predict the context of the given question in Circa Dataset | Text Generation
-`task568_circa_question_generation` | Given an answer, Predict the question in Circa Dataset | Question Generation
-`task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions in recipe-nlg Dataset | Text Generation
-`task570_recipe_nlg_ner_generation` | generate the ner given its required ingredients given in recipe-nlg Dataset | ner Generation
-`task571_recipe_nlg_ner_generation` | generate the ner given its directions in recipe-nlg Dataset | ner Generation
-`task572_recipe_nlg_text_generation` |  generate the unknown step by knowing the other steps given in the directions in recipe-nlg Dataset | Text Generation
+`task565_circa_answer_generation` | Given a question generate an answer that is relevant to the question. | Answer Generation
+`task566_circa_classification` | Given two sentences, check if they have the same meaning. | Classification
+`task567_circa_text_generation` | Given a question, Predict the context of the given question. | Text Generation
+`task568_circa_question_generation` | Given an answer, Predict the question. | Question Generation
+`task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions. | Text Generation
+`task570_recipe_nlg_ner_generation` | generate the ner given its required ingredients given. | ner Generation
+`task571_recipe_nlg_ner_generation` | generate the ner given its directions. | ner Generation
+`task572_recipe_nlg_text_generation` |  generate the unknown step by knowing the other steps given in the directions. | Text Generation
 `task573_air_dialogue_classification` | Givena a conversation between a flight 'agent' and the 'customer' classify the goal of the conversation. | Classification
 `task574_air_dialogue_sentence_generation` | Given a conversation between a flight 'agent' and the 'customer', find the missing dialogue in the conversation. | Sentence Generation
 `task575_air_dialogue_classification` | Classification of the sentence spoken by 'agent' and 'customer'. | Classification
