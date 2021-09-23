@@ -383,13 +383,7 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-<<<<<<< HEAD
-`task438_eng_guj_parallel_corpus_en_gu_translation` | Translate a sentence in English to Gujarati. | Translation
-`task439_eng_guj_parallel_corpus_gu_en_translation` | Translate a sentence in Gujarati to English. | Translation
-`task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
-`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify it is in the english or gujarati language 
 | Language Identification (Binary)
-=======
 `task400_paws_paraphrase_classification` | Given two sentences, judge whether they are paraphrases of each other | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
@@ -489,4 +483,7 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
->>>>>>> master
+`task438_eng_guj_parallel_corpus_en_gu_translation` | Translate a sentence in English to Gujarati. | Translation
+`task439_eng_guj_parallel_corpus_gu_en_translation` | Translate a sentence in Gujarati to English. | Translation
+`task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
+`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify it is in the english or gujarati language
