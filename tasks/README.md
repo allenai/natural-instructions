@@ -482,3 +482,8 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
+`task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
+`task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
+`task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
+`task644_refresd_translation` | Translation from english to french sentences. | Translation  
