@@ -493,3 +493,4 @@ Name | Summary | Category
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task673_glucose_cause_emotion_detection.` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Answer Generation
 `task674_glucose_reverse_cause_event_detection.` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Answer Generation
+`task675_glucose_reverse_cause_emotion_detection.` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Answer Generation
