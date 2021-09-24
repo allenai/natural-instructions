@@ -474,4 +474,5 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task614_glucose_cause_event_detection.` | Given a story and a selected sentence, write an even in the story that caused that sentence | Answer Generation
+`task614_glucose_cause_event_detection.` | Given a story and a selected sentence, find an event in the story that caused that sentence | Answer Generation
+`task672_glucose_cause_emotion_detection.` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Answer Generation
