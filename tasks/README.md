@@ -491,3 +491,6 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task669_ambigqa_answer_generation` | Given an open-domain, provide answer for that question. | Answer Generation
+`task670_ambigqa_question_generation` | Given an ambiguous question, return all possible questions which clarifies the given question. | Question Generation
+`task671_ambigqa_sentence_generation` | Given an ambiguous question, provide one clarifying question and answer for the generated question. | Sentence Generation
