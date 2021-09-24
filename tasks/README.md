@@ -491,3 +491,12 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task676_ollie_relationship_answer_generation` | Generating relationship based on given inputs in Ollie dataset | Answer Generation
+`task677_ollie_sentence_answer_generation` | Generating sentences based on given inputs in Ollie dataset | Answer Generation
+`task678_ollie_actual_relationship_answer_generation` | Generating the exact form of relationship based on given inputs in Ollie dataset | Answer Generation
+`task679_hope_edi_english_text_classification` | Classify text in english from Hope EDI dataset | Classification
+`task680_hope_edi_tamil_text_classification` | Classify text in tamil from Hope EDI dataset | Classification
+`task681_hope_edi_malayalam_text_classification` | Classify text in malayalam from Hope EDI dataset | Classification
+`task682_online_privacy_policy_text_classification` | Classify privacy policy texts from OPP-115 Dataset | Classification
+`task683_online_privacy_policy_text_purpose_answer_generation` | Generate the purpose of privacy policy texts from OPP-115 Dataset | Answer Generation
+`task684_online_privacy_policy_text_information_type_generation` | Generate the type of information used by website, mentioned in privacy policy texts from OPP-115 Dataset | Answer Generation
