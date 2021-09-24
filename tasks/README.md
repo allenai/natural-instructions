@@ -482,3 +482,7 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task664_mmmlu_answer_generation_stem` | Answering mutlitple choice questions on Stem Topics | Answer Generation
+`task665_mmmlu_answer_generation_social_sciences` | Answering multiple choice questions on Social Science | Answer Generation
+`task666_mmmlu_answer_generation_humanities` | Answering mutltiple choice questions on Humanities | Answer Generation
+`task667_mmmlu_answer_generation_miscellaneous` | Answering multiple choice questions questions on micellaneous topics like health, business etc. | Answer Generation
