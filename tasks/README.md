@@ -491,4 +491,4 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task611_nummersense` | Given a cloze question, identify the missing numerical value| Answer Generation
+`task672_nummersense` | Given a cloze question, identify the missing numerical value| Answer Generation
