@@ -491,3 +491,5 @@ Name | Summary | Category
 `task659_tep_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
 `task660_mizan_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
 `task661_mizan_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task662_global_voices_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task663_global_voices_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
