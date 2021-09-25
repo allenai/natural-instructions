@@ -493,4 +493,4 @@ Name | Summary | Category
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
 `task669_ambigqa_answer_generation` | Given an open-domain, provide an answer for that question. | Answer Generation
 `task670_ambigqa_question_generation` | Given an ambiguous question, return all possible questions which clarify the given question. | Question Generation
-`task671_ambigqa_text_generation` | Given an ambiguous question, provide one clarifying question and answer for the generated question. | Sentence Generation
+`task671_ambigqa_text_generation` | Given an ambiguous question, provide one clarifying question and answer for the generated question. | Text Generation
