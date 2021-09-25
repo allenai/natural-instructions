@@ -491,3 +491,7 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task616_lhoestq_question_generation` | Given a passage, generate an appropriate question based on the passage. | Question Generation
+`task617_lhoestq_answer_generation_quantity` | Given a passage and a question, answer the question based on the passage to output a numerical value. | Answer Generation
+`task618_lhoestq_answer_generation_place` | Given a passage and a question, answer the question based on the passage to output a particular place or position of something. | Answer Generation
+`task619_lhoestq_answer_generation_frequency` | Given a passage and a question, answer the question based on the passage to output the frequency with which some things occur. | Answer Generation
