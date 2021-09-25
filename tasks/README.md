@@ -488,11 +488,63 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task664_mmmlu_answer_generation_stem` | Answering mutlitple choice questions on Stem Topics | Answer Generation
-`task665_mmmlu_answer_generation_social_sciences` | Answering multiple choice questions on Social Science | Answer Generation
-`task666_mmmlu_answer_generation_humanities` | Answering mutltiple choice questions on Humanities | Answer Generation
-`task667_mmmlu_answer_generation_miscellaneous` | Answering multiple choice questions questions on micellaneous topics like health, business etc. | Answer Generation
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-
+`task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
+`task665_mmmlu_answer_generation_anatomy` | Answering mutlitple choice questions on anatomy | Answer Generation
+`task666_mmmlu_answer_generation_astronomy` | Answering mutlitple choice questions on astronomy | Answer Generation
+`task667_mmmlu_answer_generation_business_ethics` | Answering mutlitple choice questions on business ethics | Answer Generation
+`task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
+`task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
+`task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
+`task688_mmmlu_answer_generation_college_computer_science` | Answering mutlitple choice questions on college computer science | Answer Generation
+`task689_mmmlu_answer_generation_college_mathematics` | Answering mutlitple choice questions on college mathematics | Answer Generation
+`task690_mmmlu_answer_generation_college_medicine` | Answering mutlitple choice questions on college medicine | Answer Generation
+`task691_mmmlu_answer_generation_college_physics` | Answering mutlitple choice questions on college physics | Answer Generation
+`task692_mmmlu_answer_generation_computer_security` | Answering mutlitple choice questions on computer security | Answer Generation
+`task693_mmmlu_answer_generation_conceptual_physics` | Answering mutlitple choice questions on conceptual physics | Answer Generation
+`task694_mmmlu_answer_generation_econometrics` | Answering mutlitple choice questions on econometrics | Answer Generation
+`task695_mmmlu_answer_generation_electrical_engineering` | Answering mutlitple choice questions on electrical engineering | Answer Generation
+`task696_mmmlu_answer_generation_elementary_mathematics` | Answering mutlitple choice questions on elementary mathematics | Answer Generation
+`task697_mmmlu_answer_generation_formal_logic` | Answering mutlitple choice questions on formal logic | Answer Generation
+`task698_mmmlu_answer_generation_global_facts` | Answering mutlitple choice questions on global facts | Answer Generation
+`task699_mmmlu_answer_generation_high_school_biology` | Answering mutlitple choice questions on high school biology | Answer Generation
+`task700_mmmlu_answer_generation_high_school_chemistry` | Answering mutlitple choice questions on high school chemistry | Answer Generation
+`task701_mmmlu_answer_generation_high_school_computer_science` | Answering mutlitple choice questions on high school computer science | Answer Generation
+`task702_mmmlu_answer_generation_high_school_european_history` | Answering mutlitple choice questions on high school european history | Answer Generation
+`task703_mmmlu_answer_generation_high_school_geography` | Answering mutlitple choice questions on high school geography | Answer Generation
+`task704_mmmlu_answer_generation_high_school_government_and_politics` | Answering mutlitple choice questions on high school government and politics | Answer Generation
+`task705_mmmlu_answer_generation_high_school_macroeconomics` | Answering mutlitple choice questions on high school macroeconomics | Answer Generation
+`task706_mmmlu_answer_generation_high_school_mathematics` | Answering mutlitple choice questions on high school mathematics | Answer Generation
+`task707_mmmlu_answer_generation_high_school_microeconomics` | Answering mutlitple choice questions on high school microeconomics | Answer Generation
+`task708_mmmlu_answer_generation_high_school_physics` | Answering mutlitple choice questions on high school physics | Answer Generation
+`task709_mmmlu_answer_generation_high_school_psychology` | Answering mutlitple choice questions on high school psychology | Answer Generation
+`task710_mmmlu_answer_generation_high_school_statistics` | Answering mutlitple choice questions on high school statistics | Answer Generation
+`task711_mmmlu_answer_generation_high_school_us_history` | Answering mutlitple choice questions on high school us history | Answer Generation
+`task712_mmmlu_answer_generation_high_school_world_history` | Answering mutlitple choice questions on high school world history | Answer Generation
+`task713_mmmlu_answer_generation_human_aging` | Answering mutlitple choice questions on human aging | Answer Generation
+`task714_mmmlu_answer_generation_human_sexuality` | Answering mutlitple choice questions on human sexuality | Answer Generation
+`task715_mmmlu_answer_generation_international_law` | Answering mutlitple choice questions on international law | Answer Generation
+`task716_mmmlu_answer_generation_jurisprudence` | Answering mutlitple choice questions on jurisprudence | Answer Generation
+`task717_mmmlu_answer_generation_logical_fallacies` | Answering mutlitple choice questions on logical fallacies | Answer Generation
+`task718_mmmlu_answer_generation_machine_learning` | Answering mutlitple choice questions on machine learning | Answer Generation
+`task719_mmmlu_answer_generation_management` | Answering mutlitple choice questions on management | Answer Generation
+`task720_mmmlu_answer_generation_marketing` | Answering mutlitple choice questions on marketing | Answer Generation
+`task721_mmmlu_answer_generation_medical_genetics` | Answering mutlitple choice questions on medical genetics | Answer Generation
+`task722_mmmlu_answer_generation_miscellaneous` | Answering mutlitple choice questions on miscellaneous | Answer Generation
+`task723_mmmlu_answer_generation_moral_disputes` | Answering mutlitple choice questions on moral disputes | Answer Generation
+`task724_mmmlu_answer_generation_moral_scenarios` | Answering mutlitple choice questions on moral scenarios | Answer Generation
+`task725_mmmlu_answer_generation_nutrition` | Answering mutlitple choice questions on nutrition | Answer Generation
+`task726_mmmlu_answer_generation_philosophy` | Answering mutlitple choice questions on philosophy | Answer Generation
+`task727_mmmlu_answer_generation_prehistory` | Answering mutlitple choice questions on prehistory | Answer Generation
+`task728_mmmlu_answer_generation_professional_accounting` | Answering mutlitple choice questions on professional accounting | Answer Generation
+`task729_mmmlu_answer_generation_professional_law` | Answering mutlitple choice questions on professional law | Answer Generation
+`task730_mmmlu_answer_generation_professional_medicine` | Answering mutlitple choice questions on professional medicine | Answer Generation
+`task731_mmmlu_answer_generation_professional_psychology` | Answering mutlitple choice questions on professional psychology | Answer Generation
+`task732_mmmlu_answer_generation_public_relations` | Answering mutlitple choice questions on public relations | Answer Generation
+`task733_mmmlu_answer_generation_security_studies` | Answering mutlitple choice questions on security studies | Answer Generation
+`task734_mmmlu_answer_generation_sociology` | Answering mutlitple choice questions on sociology | Answer Generation
+`task735_mmmlu_answer_generation_us_foreign_policy` | Answering mutlitple choice questions on us foreign policy | Answer Generation
+`task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
+`task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
