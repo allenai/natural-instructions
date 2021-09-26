@@ -491,3 +491,8 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task829_giga_fren_translation` | Translation from English language to French language | Translation
+`task830_poleval2019_mt_translation` | Translation from English language to Polish language | Translation
+`task831_giga_fren_classification` | Classify whether the given English sentence is correctly converted to French sentence | Classification
+`task832_poleval2019_mt_classification` | Classify whether the given Polish sentence is correctly converted to English sentence | Classification
+`task833_poem_sentiment_classification` | Classify whether the given poem text is positive or negative | Classification
