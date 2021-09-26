@@ -491,7 +491,7 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task616_craigslist_bargains_classification` | Classifying items in Craigslist Bargains | Classification
-`task617_craigslist_bargains_classification` | Classifying offer type in Craigslist Bargains | Classification
-`task618_qed_text_span_selection` | Selecting one word answers from the span of a sentence from a passage to answer questions| Text Span Selection
-`task619_qed_summarization` | Generating titles for passage | Summarization
+`task766_craigslist_bargains_classification` | Classifying items in Craigslist Bargains | Classification
+`task767_craigslist_bargains_classification` | Classifying offer type in Craigslist Bargains | Classification
+`task768_qed_text_span_selection` | Selecting one word answers from the span of a sentence from a passage to answer questions| Text Span Selection
+`task769_qed_summarization` | Generating titles for passage | Summarization
