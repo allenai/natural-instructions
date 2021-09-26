@@ -493,8 +493,8 @@ Name | Summary | Category
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
 `task820_protoqa_answer_generation` | Given a question, generate a relevant answer to the question | Answer Generation
 `task821_protoqa_question_generation` | Given a group of answers, generate a question for all answers | Question Generation  
-`task822_peixian-rtGender_gender_identification` | Identify the gender of the source poster/speaker based on the post | Answer Generation
-`task823_peixian-rtGender_sentiment_analysis` | Analyze the sentiment of responses under posters from social media | Classification
-`task824_peixian-rtGender_response_relevance_analysis` | Analyze the relevance of responses to the source posters from social media | Classification
-`task825_peixian-rtGender_positive_response_generation` | Generating a responses with positive sentiment the posters from social media | Sentence Generation
-`task826_peixian-rtGender_negative_response_generation` | Generating a responses with negative sentiment the posters from social media | Sentence Generation
+`task822_peixian-rtgender_gender_identification` | Identify the gender of the source poster/speaker based on the post | Answer Generation
+`task823_peixian-rtgender_sentiment_analysis` | Analyze the sentiment of responses under posters from social media | Classification
+`task824_peixian-rtgender_response_relevance_analysis` | Analyze the relevance of responses to the source posters from social media | Classification
+`task825_peixian-rtgender_positive_response_generation` | Generating a responses with positive sentiment the posters from social media | Sentence Generation
+`task826_peixian-rtgender_negative_response_generation` | Generating a responses with negative sentiment the posters from social media | Sentence Generation
