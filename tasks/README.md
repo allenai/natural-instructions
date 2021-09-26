@@ -631,8 +631,8 @@ Name | Summary | Category
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
 `task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
-`task845_pubmedQA_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
-`task846_pubmedQA_classification` | Classifying if the given answer pertains to the question or not (based on pubmed_QA)| Classification
-`task847_pubmedQA_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
-`task848_pubmedQA_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
-`task849_pubmedQA_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
+`task845_pubmedqa_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
+`task846_pubmedqa_classification` | Classifying if the given answer pertains to the question or not (based on pubmed_QA)| Classification
+`task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
+`task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
+`task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
