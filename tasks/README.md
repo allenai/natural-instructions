@@ -490,4 +490,8 @@ Name | Summary | Category
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
-`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation  
+`task834_mathdataset_classification` | Classify the type of a math word problem
+`task835_mathdataset_answer_generation` | Find the numerical answer for a math word problem
+`task836_viquiquad_question_generation` | Given a passage in the Catalan language, generate contextual questions
+`task837_viquiquad_answer_generation` | Given a passage and asked a question in the Catalan language, answer that question
