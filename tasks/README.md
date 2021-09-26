@@ -491,3 +491,10 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task770_protoqa_answer_generation` | Given a question, generate a relevant answer to the question | Answer Generation
+`task771_protoqa_question_generation` | Given a group of answers, generate a question for all answers | Question Generation  
+`task772_peixian-rtGender_gender_identification` | Identify the gender of the source poster/speaker based on the post | Answer Generation
+`task773_peixian-rtGender_sentiment_analysis` | Analyze the sentiment of responses under posters from social media | Classification
+`task774_peixian-rtGender_response_relevance_analysis` | Analyze the relevance of responses to the source posters from social media | Classification
+`task775_peixian-rtGender_positive_response_generation` | Generating a responses with positive sentiment the posters from social media | Sentence Generation
+`task776_peixian-rtGender_negative_response_generation` | Generating a responses with negative sentiment the posters from social media | Sentence Generation
