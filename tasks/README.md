@@ -491,53 +491,53 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task766_pawsx_text_modification.json` | Given an original sentence in English, provide an equivalent paraphrase in said language | Text Modification
-`task767_pawsx_text_modification.json` | Given an original sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
-`task768_pawsx_text_modification.json` | Given an original sentence in French, provide an equivalent paraphrase in said language | Text Modification
-`task769_pawsx_text_modification.json` | Given an original sentence in Spanish, provide an equivalent paraphrase in said language | Text Modification
-`task770_pawsx_text_modification.json` | Given an original sentence in German, provide an equivalent paraphrase in said language | Text Modification
-`task771_pawsx_text_modification.json` | Given an original sentence in Chinese, provide an equivalent paraphrase in said language | Text Modification
-`task772_pawsx_text_modification.json` | Given an original sentence in Japanese, provide an equivalent paraphrase in said language | Text Modification
-`task773_pawsx_translation.json` | Given a sentence in English, provide an equivalent translation to Korean | Translation
-`task774_pawsx_translation.json` | Given a sentence in English, provide an equivalent translation to French | Translation
-`task775_pawsx_translation.json` | Given a sentence in English, provide an equivalent translation to Spanish | Translation
-`task776_pawsx_translation.json` | Given a sentence in English, provide an equivalent translation to German | Translation
-`task777_pawsx_translation.json` | Given a sentence in English, provide an equivalent translation to Chinese | Translation
-`task778_pawsx_translation.json` | Given a sentence in English, provide an equivalent translation to Japanese | Translation
-`task779_pawsx_translation.json` | Given a sentence in Korean, provide an equivalent translation to English | Translation
-`task780_pawsx_translation.json` | Given a sentence in Korean, provide an equivalent translation to French | Translation
-`task781_pawsx_translation.json` | Given a sentence in Korean, provide an equivalent translation to Spanish | Translation
-`task782_pawsx_translation.json` | Given a sentence in Korean, provide an equivalent translation to German | Translation
-`task783_pawsx_translation.json` | Given a sentence in Korean, provide an equivalent translation to Chinese | Translation
-`task784_pawsx_translation.json` | Given a sentence in Korean, provide an equivalent translation to Japanese | Translation
-`task785_pawsx_translation.json` | Given a sentence in French, provide an equivalent translation to English | Translation
-`task786_pawsx_translation.json` | Given a sentence in French, provide an equivalent translation to Korean | Translation
-`task787_pawsx_translation.json` | Given a sentence in French, provide an equivalent translation to Spanish | Translation
-`task788_pawsx_translation.json` | Given a sentence in French, provide an equivalent translation to German | Translation
-`task789_pawsx_translation.json` | Given a sentence in French, provide an equivalent translation to Chinese | Translation
-`task790_pawsx_translation.json` | Given a sentence in French, provide an equivalent translation to Japanese | Translation
-`task791_pawsx_translation.json` | Given a sentence in Spanish, provide an equivalent translation to English | Translation
-`task792_pawsx_translation.json` | Given a sentence in Spanish, provide an equivalent translation to Korean | Translation
-`task793_pawsx_translation.json` | Given a sentence in Spanish, provide an equivalent translation to French | Translation
-`task794_pawsx_translation.json` | Given a sentence in Spanish, provide an equivalent translation to German | Translation
-`task795_pawsx_translation.json` | Given a sentence in Spanish, provide an equivalent translation to Chinese | Translation
-`task796_pawsx_translation.json` | Given a sentence in Spanish, provide an equivalent translation to Japanese | Translation
-`task797_pawsx_translation.json` | Given a sentence in German, provide an equivalent translation to English | Translation
-`task798_pawsx_translation.json` | Given a sentence in German, provide an equivalent translation to Korean | Translation
-`task799_pawsx_translation.json` | Given a sentence in German, provide an equivalent translation to French | Translation
-`task800_pawsx_translation.json` | Given a sentence in German, provide an equivalent translation to Spanish | Translation
-`task801_pawsx_translation.json` | Given a sentence in German, provide an equivalent translation to Chinese | Translation
-`task802_pawsx_translation.json` | Given a sentence in German, provide an equivalent translation to Japanese | Translation
-`task803_pawsx_translation.json` | Given a sentence in Chinese, provide an equivalent translation to English | Translation
-`task804_pawsx_translation.json` | Given a sentence in Chinese, provide an equivalent translation to Korean | Translation
-`task805_pawsx_translation.json` | Given a sentence in Chinese, provide an equivalent translation to French | Translation
-`task806_pawsx_translation.json` | Given a sentence in Chinese, provide an equivalent translation to Spanish | Translation
-`task807_pawsx_translation.json` | Given a sentence in Chinese, provide an equivalent translation to German | Translation
-`task808_pawsx_translation.json` | Given a sentence in Chinese, provide an equivalent translation to Japanese | Translation
-`task809_pawsx_translation.json` | Given a sentence in Japanese, provide an equivalent translation to English | Translation
-`task810_pawsx_translation.json` | Given a sentence in Japanese, provide an equivalent translation to Korean | Translation
-`task811_pawsx_translation.json` | Given a sentence in Japanese, provide an equivalent translation to French | Translation
-`task812_pawsx_translation.json` | Given a sentence in Japanese, provide an equivalent translation to Spanish | Translation
-`task813_pawsx_translation.json` | Given a sentence in Japanese, provide an equivalent translation to German | Translation
-`task814_pawsx_translation.json` | Given a sentence in Japanese, provide an equivalent translation to Chinese | Translation
-`task815_pec_classification.json` | Given a contextual post, classify the post as holding positive or negative sentiment | Classificationn
+`task766_pawsx_text_modification` | Given an original sentence in English, provide an equivalent paraphrase in said language | Text Modification
+`task767_pawsx_text_modification` | Given an original sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
+`task768_pawsx_text_modification` | Given an original sentence in French, provide an equivalent paraphrase in said language | Text Modification
+`task769_pawsx_text_modification` | Given an original sentence in Spanish, provide an equivalent paraphrase in said language | Text Modification
+`task770_pawsx_text_modification` | Given an original sentence in German, provide an equivalent paraphrase in said language | Text Modification
+`task771_pawsx_text_modification` | Given an original sentence in Chinese, provide an equivalent paraphrase in said language | Text Modification
+`task772_pawsx_text_modification` | Given an original sentence in Japanese, provide an equivalent paraphrase in said language | Text Modification
+`task773_pawsx_translation` | Given a sentence in English, provide an equivalent translation to Korean | Translation
+`task774_pawsx_translation` | Given a sentence in English, provide an equivalent translation to French | Translation
+`task775_pawsx_translation` | Given a sentence in English, provide an equivalent translation to Spanish | Translation
+`task776_pawsx_translation` | Given a sentence in English, provide an equivalent translation to German | Translation
+`task777_pawsx_translation` | Given a sentence in English, provide an equivalent translation to Chinese | Translation
+`task778_pawsx_translation` | Given a sentence in English, provide an equivalent translation to Japanese | Translation
+`task779_pawsx_translation` | Given a sentence in Korean, provide an equivalent translation to English | Translation
+`task780_pawsx_translation` | Given a sentence in Korean, provide an equivalent translation to French | Translation
+`task781_pawsx_translation` | Given a sentence in Korean, provide an equivalent translation to Spanish | Translation
+`task782_pawsx_translation` | Given a sentence in Korean, provide an equivalent translation to German | Translation
+`task783_pawsx_translation` | Given a sentence in Korean, provide an equivalent translation to Chinese | Translation
+`task784_pawsx_translation` | Given a sentence in Korean, provide an equivalent translation to Japanese | Translation
+`task785_pawsx_translation` | Given a sentence in French, provide an equivalent translation to English | Translation
+`task786_pawsx_translation` | Given a sentence in French, provide an equivalent translation to Korean | Translation
+`task787_pawsx_translation` | Given a sentence in French, provide an equivalent translation to Spanish | Translation
+`task788_pawsx_translation` | Given a sentence in French, provide an equivalent translation to German | Translation
+`task789_pawsx_translation` | Given a sentence in French, provide an equivalent translation to Chinese | Translation
+`task790_pawsx_translation` | Given a sentence in French, provide an equivalent translation to Japanese | Translation
+`task791_pawsx_translation` | Given a sentence in Spanish, provide an equivalent translation to English | Translation
+`task792_pawsx_translation` | Given a sentence in Spanish, provide an equivalent translation to Korean | Translation
+`task793_pawsx_translation` | Given a sentence in Spanish, provide an equivalent translation to French | Translation
+`task794_pawsx_translation` | Given a sentence in Spanish, provide an equivalent translation to German | Translation
+`task795_pawsx_translation` | Given a sentence in Spanish, provide an equivalent translation to Chinese | Translation
+`task796_pawsx_translation` | Given a sentence in Spanish, provide an equivalent translation to Japanese | Translation
+`task797_pawsx_translation` | Given a sentence in German, provide an equivalent translation to English | Translation
+`task798_pawsx_translation` | Given a sentence in German, provide an equivalent translation to Korean | Translation
+`task799_pawsx_translation` | Given a sentence in German, provide an equivalent translation to French | Translation
+`task800_pawsx_translation` | Given a sentence in German, provide an equivalent translation to Spanish | Translation
+`task801_pawsx_translation` | Given a sentence in German, provide an equivalent translation to Chinese | Translation
+`task802_pawsx_translation` | Given a sentence in German, provide an equivalent translation to Japanese | Translation
+`task803_pawsx_translation` | Given a sentence in Chinese, provide an equivalent translation to English | Translation
+`task804_pawsx_translation` | Given a sentence in Chinese, provide an equivalent translation to Korean | Translation
+`task805_pawsx_translation` | Given a sentence in Chinese, provide an equivalent translation to French | Translation
+`task806_pawsx_translation` | Given a sentence in Chinese, provide an equivalent translation to Spanish | Translation
+`task807_pawsx_translation` | Given a sentence in Chinese, provide an equivalent translation to German | Translation
+`task808_pawsx_translation` | Given a sentence in Chinese, provide an equivalent translation to Japanese | Translation
+`task809_pawsx_translation` | Given a sentence in Japanese, provide an equivalent translation to English | Translation
+`task810_pawsx_translation` | Given a sentence in Japanese, provide an equivalent translation to Korean | Translation
+`task811_pawsx_translation` | Given a sentence in Japanese, provide an equivalent translation to French | Translation
+`task812_pawsx_translation` | Given a sentence in Japanese, provide an equivalent translation to Spanish | Translation
+`task813_pawsx_translation` | Given a sentence in Japanese, provide an equivalent translation to German | Translation
+`task814_pawsx_translation` | Given a sentence in Japanese, provide an equivalent translation to Chinese | Translation
+`task815_pec_classification` | Given a contextual post, classify the post as holding positive or negative sentiment | Classificationn
