@@ -491,6 +491,6 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task614_glucose_cause_event_detection.` | Given a story and a selected sentence, find an event in the story that caused that sentence | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
-`task673_glucose_cause_emotion_detection.` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Answer Generation
-`task674_glucose_reverse_cause_event_detection.` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Answer Generation
-`task675_glucose_reverse_cause_emotion_detection.` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Answer Generation
+`task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
+`task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
+`task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
