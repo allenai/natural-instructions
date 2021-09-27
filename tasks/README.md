@@ -419,6 +419,10 @@ Name | Summary | Category
 `task466_parsinlu_qqp_text_modification` | Given a sentence, paraphrase it | Text Modification
 `task467_parsinlu_rc_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task468_parsinlu_rc_question_generation` | Given a passage, generate a question based on the passage. | Question Generation
+`task469_mrqa_answer_generation` | Generating answers from MRQA OOD dataset | Answer Generation  
+`task470_mrqa_question_generation` | Generating question using context passage from MRQA OOD dataset | Question Generation
+`task471_haspart_answer_generation` | Generating entity which is in has-part-relationship with input entity | Answer Generation  
+`task472_haspart_classification` | Identifying whether given two entities has in-part-relationship or not.  | Classification
 `task475_yelp_polarity_classification` | Classify a given Yelp review to positive or negative sentiment | Classification
 `task476_cls_english_books_classification` | Classify a given book product review in English to positive or negative sentiment | Classification
 `task477_cls_english_dvd_classification` | Classify a given dvd product review in English to positive or negative sentiment | Classification
