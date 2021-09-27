@@ -509,3 +509,8 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task872_opus_xhosanavy_translation_eng_xhosa` | Translate a sentence in English to Xhosa | Translation
+`task873_opus_xhosanavy_translation_xhosa_eng` | Translate a sentence in Xhosa to English | Translation
+`task874_opus_xhosanavy_sr` |  Recognize primary subjects in sentences | Primary Subject Recognition
+`task875_emotion_classification` | Classify sentences by emotions | Classification
+`task876_emotion_esd` | Detect word sequences that contribute to emotions of sentences | Emotive Sequence Detection
