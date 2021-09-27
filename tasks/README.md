@@ -490,4 +490,8 @@ Name | Summary | Category
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
+`task616_cfq_mcd1_explanation_to_sql` | Generating queries (based on CFQ MCD1) | Structured Query Generation  
+`task617_cfq_mcd1_sql_to_explanation` | Checking if queries match natural language query description | Structured Query Classification
+`task618_msmarco_answer_generation` | Generating answers based on natural language passage and related query from MS MARCO | Answer Generation
+`task619_msmarco_question_generation` | Generating questions based on natural language passage from MS MARCO | Question Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
