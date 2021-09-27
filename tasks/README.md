@@ -492,10 +492,16 @@ Name | Summary | Category
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
 `task672_nummersense` | Given a cloze question, identify the missing numerical value| Answer Generation
-`task739_mawps_question_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
-`task740_asdiv_question_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
 `task741_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
 `task742_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
 `task743_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
 `task744_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
 `task745_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
+`task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task864_asdiv_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task865_mawps_addsub_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
