@@ -491,3 +491,9 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task616_dstc3_summarization.json` | Summarization of conversations in DSTC 3 | Summarization
+`task617_dstc3_classification.json` | Classification of Price Range in conversations in DSTC 3| Classification
+`task618_dstc3_answer_generation.json` | Generating answers to DSTC 3 conversations related questions | Answer Generation
+`task619_hatexplain_classification.json` | Classification of type of tweet in Hatexplain | Classification
+`task620_hatexplain_classification.json` | Identification of target community in tweet in Hatexplain | Classification
+`task621_hatexplain_answer_generation.json` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
