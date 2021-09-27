@@ -1,0 +1,644 @@
+{
+    "Contributors": [
+        "Archan Lagoo"
+    ],
+    "Source": [
+        "emotion (\"https://huggingface.co/datasets/emotion\")"
+    ],
+    "Definition": "This task involves detection of phrases in sentences that evoke a specific emotion when together. This is meant to imitate human attention when reading sentences. The input consists of a sentence (string) and an emotion label (string) as \"SENTENCE\nLABEL\", while the ouptut must contain a series of phrases (string) that evoke the emotion formatted as \"phrase\nphrase\n...\".The list of emotions includes sadness, joy, love, anger, fear, and surprise.",
+    "Categories": [
+        "Emotive Sequence Detection"
+    ],
+    "Positive Examples": [
+        {
+            "input": "i feel frustrated when i have new music and new lyrics that clearly have nothing to do with each other\nanger",
+            "output": "frustrated\nclearly have nothing to do with each other",
+            "explanation": "The word \"frustrated\" indicates anger, and \"clearly have nothing to do with each other\" indicates irritation and the strength of it."
+        },
+        {
+            "input": "i am already feeling frantic\nfear",
+            "output": "frantic",
+            "explanation": "The word \"frantic\" is the only indicator of stress and perhaps fear."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "i made it to work but i am feeling a little groggy\nsadness",
+            "output": "made it",
+            "explanation": "Sadness is indicated by \"feeling a little groggy\". \"made it\", on its own, indicates joy. So, the output is incorrect."
+        },
+        {
+            "input": "im pretty happy but a little on the nauseated side to feel thrilled\njoy",
+            "output": "pretty",
+            "explanation": "The entire phrase should be \"pretty happy\", but the output is just \"pretty\". While \"pretty\" is a positive word, it does not indicate the correct context."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "\ufeffi can go from feeling so hopeless to so damned hopeful just from being around someone who cares and is awake\nsadness",
+            "output": [
+                "feeling hopeless to so damned hopeful\n being around someone who cares"
+            ]
+        },
+        {
+            "input": "im grabbing a minute to post i feel greedy wrong\nanger",
+            "output": [
+                "feel greedy wrong"
+            ]
+        },
+        {
+            "input": "i am ever feeling nostalgic about the fireplace i will know that it is still on the property\nlove",
+            "output": [
+                "feeling nostalgic\nstill on the property"
+            ]
+        },
+        {
+            "input": "i am feeling grouchy\nanger",
+            "output": [
+                "feeling grouchy"
+            ]
+        },
+        {
+            "input": "ive been feeling a little burdened lately wasnt sure why that was\nsadness",
+            "output": [
+                "feeling a little burdened"
+            ]
+        },
+        {
+            "input": "ive been taking or milligrams or times recommended amount and ive fallen asleep a lot faster but i also feel like so funny\nsurprise",
+            "output": [
+                "feel like so funny"
+            ]
+        },
+        {
+            "input": "i feel as confused about life as a teenager or as jaded as a year old man\nfear",
+            "output": [
+                "confused about life\njaded"
+            ]
+        },
+        {
+            "input": "i have been with petronas for years i feel that petronas has performed well and made a huge profit\njoy",
+            "output": [
+                "performed well\nhuge profit"
+            ]
+        },
+        {
+            "input": "i feel romantic too\nlove",
+            "output": [
+                "feel romantic"
+            ]
+        },
+        {
+            "input": "i feel like i have to make the suffering i m seeing mean something\nsadness",
+            "output": [
+                "to make the suffering i m seeing mean something"
+            ]
+        },
+        {
+            "input": "i do feel that running is a divine experience and that i can expect to have some type of spiritual encounter\njoy",
+            "output": [
+                "divine experience\nspiritual encounter"
+            ]
+        },
+        {
+            "input": "i think it s the easiest time of year to feel dissatisfied\nanger",
+            "output": [
+                "dissatisfied"
+            ]
+        },
+        {
+            "input": "i feel low energy i m just thirsty\nsadness",
+            "output": [
+                "low energy"
+            ]
+        },
+        {
+            "input": "i have immense sympathy with the general point but as a possible proto writer trying to find time to write in the corners of life and with no sign of an agent let alone a publishing contract this feels a little precious\njoy",
+            "output": [
+                "feels a little precious"
+            ]
+        },
+        {
+            "input": "i feel pretty pathetic most of the time\nsadness",
+            "output": [
+                "feel pretty pathetic"
+            ]
+        },
+        {
+            "input": "i started feeling sentimental about dolls i had as a child and so began a collection of vintage barbie dolls from the sixties\nsadness",
+            "output": [
+                "feeling sentimental"
+            ]
+        },
+        {
+            "input": "i now feel compromised and skeptical of the value of every unit of work i put in\nfear",
+            "output": [
+                "feel compromised and skeptical"
+            ]
+        },
+        {
+            "input": "i feel irritated and rejected without anyone doing anything or saying anything\nanger",
+            "output": [
+                "feel irritated and rejected"
+            ]
+        },
+        {
+            "input": "i am feeling completely overwhelmed i have two strategies that help me to feel grounded pour my heart out in my journal in the form of a letter to god and then end with a list of five things i am most grateful for\nfear",
+            "output": [
+                "feeling completely overwhelmed"
+            ]
+        },
+        {
+            "input": "i have the feeling she was amused and delighted\njoy",
+            "output": [
+                "amused and delighted"
+            ]
+        },
+        {
+            "input": "i was able to help chai lifeline with your support and encouragement is a great feeling and i am so glad you were able to help me\njoy",
+            "output": [
+                "great feeling\nglad"
+            ]
+        },
+        {
+            "input": "i already feel like i fucked up though because i dont usually eat at all in the morning\nanger",
+            "output": [
+                "fucked up"
+            ]
+        },
+        {
+            "input": "i still love my so and wish the best for him i can no longer tolerate the effect that bm has on our lives and the fact that is has turned my so into a bitter angry person who is not always particularly kind to the people around him when he is feeling stressed\nsadness",
+            "output": [
+                "no longer tolerate\nbitter angry\nnot always particularly kind"
+            ]
+        },
+        {
+            "input": "i feel so inhibited in someone elses kitchen like im painting on someone elses picture\nsadness",
+            "output": [
+                "feel so inhibited\npainting on someone elses picture"
+            ]
+        },
+        {
+            "input": "i become overwhelmed and feel defeated\nsadness",
+            "output": [
+                "become overwhelmed\nfeel defeated"
+            ]
+        },
+        {
+            "input": "i feel kinda appalled that she feels like she needs to explain in wide and lenghth her body measures etc pp\nanger",
+            "output": [
+                "feel kinda appalled\nshe feels like she needs to explain"
+            ]
+        },
+        {
+            "input": "i get giddy over feeling elegant in a perfectly fitted pencil skirt\njoy",
+            "output": [
+                "get giddy\nfeeling elegant"
+            ]
+        },
+        {
+            "input": "i remember feeling acutely distressed for a few days\nfear",
+            "output": [
+                "feeling acutely distressed"
+            ]
+        },
+        {
+            "input": "i have seen heard and read over the past couple of days i am left feeling impressed by more than a few companies\nsurprise",
+            "output": [
+                "feeling impressed"
+            ]
+        },
+        {
+            "input": "i climbed the hill feeling frustrated that id pretty much paced entirely wrong for this course and that a factor that has never ever hampered me had made such a dent in the day\nanger",
+            "output": [
+                "feeling frustrated\npaced entirely wrong\nthat has never ever hampered me had made such a dent"
+            ]
+        },
+        {
+            "input": "i plan to share my everyday life stories traveling adventures inspirations and handmade creations with you and hope you will also feel inspired\njoy",
+            "output": [
+                "feel inspired"
+            ]
+        },
+        {
+            "input": "i already have my christmas trees up i got two and am feeling festive which i m sure is spurring me to get started on this book\njoy",
+            "output": [
+                "feeling festive\nspurring me"
+            ]
+        },
+        {
+            "input": "i was feeling so discouraged we are already robbing peter to pay paul to get our cow this year but we cant afford to not get the cow this way\nsadness",
+            "output": [
+                "feeling so discouraged\nalready robbing\ncant afford to not get"
+            ]
+        },
+        {
+            "input": "i was feeling listless from the need of new things something different\nsadness",
+            "output": [
+                "feeling listless"
+            ]
+        },
+        {
+            "input": "i found myself feeling a little discouraged that morning\nsadness",
+            "output": [
+                "feeling a little discouraged"
+            ]
+        },
+        {
+            "input": "i feel selfish and spoiled\nanger",
+            "output": [
+                "selfish and spoiled"
+            ]
+        },
+        {
+            "input": "i feel you know basically like a fake in the realm of science fiction\nsadness",
+            "output": [
+                "feel you know basically like a fake"
+            ]
+        },
+        {
+            "input": "i hate living under my dads roof because it gives him an excuse to be an asshole to me because hes providing for me to live here i think he feels that he needs to make me feel as unwelcome as possible so ill leave\nsadness",
+            "output": [
+                "hate\nan excuse to be an asshole\nfeel as unwelcome as possible"
+            ]
+        },
+        {
+            "input": "i keep feeling pleasantly surprised at his supportiveness and also his ease in new situations\nsurprise",
+            "output": [
+                "feeling pleasantly surprised\nhis supportiveness and also his ease"
+            ]
+        },
+        {
+            "input": "i feel my mom s graceful warm loving smile as i rob the time to nurture myself and heal\njoy",
+            "output": [
+                "graceful warm loving smile\nnurture myself and heal"
+            ]
+        },
+        {
+            "input": "i feel like we are pressured into being young beautiful thin and depending on the trend having the girls rejuvenated or butt implants\nfear",
+            "output": [
+                "pressured"
+            ]
+        },
+        {
+            "input": "i began having them several times a week feeling tortured by the hallucinations moving people and figures sounds and vibrations\nfear",
+            "output": [
+                "feeling tortured\nhallucinations"
+            ]
+        },
+        {
+            "input": "i am now nearly finished the week detox and i feel amazing\njoy",
+            "output": [
+                "feel amazing"
+            ]
+        },
+        {
+            "input": "i feel selfish as i read back to my former posts how i have never asked for prayers for others how i never considered that there may be others out there that deserve their prayers answered before my own\nanger",
+            "output": [
+                "feel selfish\nnever asked for prayers for others\nnever considered\nthere may be others\nbefore my own"
+            ]
+        },
+        {
+            "input": "i know the pain parents feel when an enraged child becomes violent\nsadness",
+            "output": [
+                "i know the pain parents feel"
+            ]
+        },
+        {
+            "input": "i have been on a roller coaster of emotions over these supposed feelings that something unpleasant was coming\nsadness",
+            "output": [
+                "a roller coaster of emotions\nsomething unpleasant"
+            ]
+        },
+        {
+            "input": "i don t necessarily think f bombs and sex are necessary in all stories but i feel reassured when i see them in print journals\njoy",
+            "output": [
+                "i feel reassured"
+            ]
+        },
+        {
+            "input": "i didn t feel like doing much chris and i mostly just took too many pictures of unimportant stuff\nsadness",
+            "output": [
+                "didn t feel like doing much"
+            ]
+        },
+        {
+            "input": "im tired of the book and ready to have it out of here and finding out that i was given unsuitable images and then feeling blamed for the result did not sit well\nsadness",
+            "output": [
+                "tired of the book\nready to have it out of here\nwas given unsuitable images\nfeeling blamed\ndid not sit well"
+            ]
+        },
+        {
+            "input": "i did successfully manage to stretch a mxm canvas i feel that this is an achievement in itself for me and was a worthwhile usage of my money and time i will use the canvas for future briefs\njoy",
+            "output": [
+                "successfully manage\n an achievement in itself\nworthwhile usage"
+            ]
+        },
+        {
+            "input": "i feel completely honored to be an influence to this young talented fully alive beautiful girl woman\njoy",
+            "output": [
+                "completely honored to be an influence\nyoung talented"
+            ]
+        },
+        {
+            "input": "i feel angered and firey\nanger",
+            "output": [
+                "feel angered and firey"
+            ]
+        },
+        {
+            "input": "i feel like a miserable piece of garbage\nsadness",
+            "output": [
+                "feel like a miserable\ngarbage"
+            ]
+        },
+        {
+            "input": "i remember feeling so hella furious with the shooter\nanger",
+            "output": [
+                "feeling so hella furious"
+            ]
+        },
+        {
+            "input": "i feel very happy and excited since i learned so many things\njoy",
+            "output": [
+                "feel very happy and excited"
+            ]
+        },
+        {
+            "input": "i feel that at shows and around show horses people are trusting and relaxed because most show horses are safe and quiet and are handled frequently\njoy",
+            "output": [
+                "trusting and relaxed\nsafe and quiet"
+            ]
+        },
+        {
+            "input": "i only have a couple of things left to make and at the start of december i am done and feeling smug\njoy",
+            "output": [
+                "only\ncouple of things left\nfeeling smug"
+            ]
+        },
+        {
+            "input": "i think about how u could make me feel and realize that everything will be ok\njoy",
+            "output": [
+                "everything will be ok"
+            ]
+        },
+        {
+            "input": "i feel so worthless during those times i was struggling finding work\nsadness",
+            "output": [
+                "feel so worthless\nstruggling"
+            ]
+        },
+        {
+            "input": "i was ready to meet mom in the airport and feel her ever supportive arms around me\nlove",
+            "output": [
+                "ever supportive arms"
+            ]
+        },
+        {
+            "input": "im feeling bitter today my mood has been strange the entire day so i guess its that\nanger",
+            "output": [
+                "feeling bitter\nmood has been strange"
+            ]
+        },
+        {
+            "input": "when my mums brother passed away after having been involved in a car accident he was bringing me a present as i had passed my form five exams with flying colours\nsadness",
+            "output": [
+                "bringing me a present\npassed my form five exams with flying colours"
+            ]
+        },
+        {
+            "input": "i feel like throwing away the shitty piece of shit paper\nanger",
+            "output": [
+                "throwing away\nshitty piece of shit"
+            ]
+        },
+        {
+            "input": "im starting to feel wryly amused at the banal comedy of errors my life is turning into\nsadness",
+            "output": [
+                "wryly amused\nbanal comedy of errors"
+            ]
+        },
+        {
+            "input": "i find every body beautiful and only want people to feel vital in their bodies\njoy",
+            "output": [
+                "beautiful\nonly want\nfeel vital"
+            ]
+        },
+        {
+            "input": "i wont let me child cry it out because i feel that loving her and lily when she was little was going to be opportunities that only lasted for those short few months\nlove",
+            "output": [
+                "loving"
+            ]
+        },
+        {
+            "input": "i alba i feel good and im fitting in\njoy",
+            "output": [
+                "feel good\nfitting in"
+            ]
+        },
+        {
+            "input": "i feel excited about what im doing again i feel like i have a ton of catching up to do\njoy",
+            "output": [
+                "feel excited"
+            ]
+        },
+        {
+            "input": "i also know how good it feels to look back and see that i honored my word and that helps from the start\njoy",
+            "output": [
+                "how good it feels\nhonored\nhelps"
+            ]
+        },
+        {
+            "input": "i feel like things are getting a little overwhelming a few spritz of this toner really helps calm and soothe me\njoy",
+            "output": [
+                "helps calm and soothe"
+            ]
+        },
+        {
+            "input": "i am feeling so festive today that i m even going to put the tree up as soon as i ve finished doing this and catching up with the week s goings ons on coronation street\njoy",
+            "output": [
+                "feeling so festive\neven going"
+            ]
+        },
+        {
+            "input": "finding out that i am not ill not seriously\njoy",
+            "output": [
+                "not ill not seriously"
+            ]
+        },
+        {
+            "input": "i did alright in class but a combination of feeling unsuccessful being man handled the stress of late and my horrible week resulted in my almost crying after i finished grappling\nsadness",
+            "output": [
+                "feeling unsuccessful\nthe stress of late\nhorrible week\nalmost crying"
+            ]
+        },
+        {
+            "input": "i am feeling all useful\njoy",
+            "output": [
+                "feeling all useful"
+            ]
+        },
+        {
+            "input": "i feel ugly i m more inclined to wear ratty jeans and a sweatshirt than a beautiful dress though i might still wear a pair of heels around my house to boost my self esteem ever so slightly but i definitely won t bother to buy a new pair\nsadness",
+            "output": [
+                "feel ugly\nwear ratty jeans and a sweatshirt\nwon t bother to buy a new pair"
+            ]
+        },
+        {
+            "input": "im not feeling homesick yet so im feeling alright about this\njoy",
+            "output": [
+                "not feeling homesick\nfeeling alright"
+            ]
+        },
+        {
+            "input": "i dance i should feel pretty\njoy",
+            "output": [
+                "dance\nfeel pretty"
+            ]
+        },
+        {
+            "input": "i workout every morning before and feel fabulous for it\njoy",
+            "output": [
+                "feel fabulous"
+            ]
+        },
+        {
+            "input": "i feel all of this just from her eyes not from her touch or from her words but from her eyes i know that i can assuredly return this love and know that it shall not be in vain\nlove",
+            "output": [
+                "assuredly return this love\nnot be in vain"
+            ]
+        },
+        {
+            "input": "i was feeling fabulous until friday morning when i started to get these awful cramps at work\nsadness",
+            "output": [
+                "feeling fabulous until\nawful cramps"
+            ]
+        },
+        {
+            "input": "i feel honoured to have been able to call them friends to share their brotherhood\njoy",
+            "output": [
+                "feel honoured"
+            ]
+        },
+        {
+            "input": "i had begun to feel apprehensive when thick black rain clouds stormed into the sky above town\nfear",
+            "output": [
+                "feel apprehensive\nthick black rain clouds stormed"
+            ]
+        },
+        {
+            "input": "i had stated to her the reason i feel so fearful is because i feel unsafe\nfear",
+            "output": [
+                "feel so fearful\nfeel unsafe"
+            ]
+        },
+        {
+            "input": "i get into groups i feel really awkward and overcompensate by being too talkative or by getting really quiet\nsadness",
+            "output": [
+                "feel really awkward"
+            ]
+        },
+        {
+            "input": "i am very excited to finally meet that companion who will be with me at all times especially when i am lonely very lonely that companion who will never disappoint me that companion who will put his arms around me and make me feel loved\nlove",
+            "output": [
+                "very excited to finally meet\nthat companion\nnever disappoint me\nput his arms around me\nmake me feel loved"
+            ]
+        },
+        {
+            "input": "i feel pretty eager to get it done as i have a fun plan for quilting it\njoy",
+            "output": [
+                "pretty eager\nfun plan"
+            ]
+        },
+        {
+            "input": "i am feeling horny so i ask her that lets go home\nlove",
+            "output": [
+                "feeling horny"
+            ]
+        },
+        {
+            "input": "i left to the shower questioning what i feel she was gorgeous such a fantastic body so confident in her movement effortlessly graceful\njoy",
+            "output": [
+                "gorgeous\nfantastic body\nconfident in her movement\neffortlessly graceful"
+            ]
+        },
+        {
+            "input": "i feel energetic and bouncy i m more than happy to go to the gym run around outside with my kids or take the pram for a long walk often i do all three in one day\njoy",
+            "output": [
+                "feel energetic and bouncy\nmore than happy"
+            ]
+        },
+        {
+            "input": "i was still feeling strong\njoy",
+            "output": [
+                "feeling strong"
+            ]
+        },
+        {
+            "input": "i didn t burst into tears or some other devastating release of feelings or thoughts because i seemed to know that rich also had to go through his own space without me just dumping on him\njoy",
+            "output": [
+                "didn t burst into tears or some other devastating release of feelings or thoughts\nalso had to go through his own space\nwithout me just dumping"
+            ]
+        },
+        {
+            "input": "i wanted to get a pumpkin spice latte this morning but it was hot and the last thing i wanted was a hot coffee maybe i am feeling a little bitter\nanger",
+            "output": [
+                "the last thing i wanted\nfeeling a little bitter"
+            ]
+        },
+        {
+            "input": "i also feel like i am being selfish in not being grateful for the life i do have and the amazing things in it\nanger",
+            "output": [
+                "being selfish\nnot being grateful"
+            ]
+        },
+        {
+            "input": "i do not feel miserable at all because my family is not the type that celebrates eid\njoy",
+            "output": [
+                "do not feel miserable at all\nnot the type\ncelebrates eid"
+            ]
+        },
+        {
+            "input": "i still feel sleep deprived she is almost sleeping through the night giving us\nsadness",
+            "output": [
+                "feel sleep deprived"
+            ]
+        },
+        {
+            "input": "i just feel really violent right now\nanger",
+            "output": [
+                "feel really violent"
+            ]
+        },
+        {
+            "input": "i am bloging again i am sitting here feeling content with my dogs amp cat etc and i know that how lucky we are the truth is we\njoy",
+            "output": [
+                "feeling content\nhow lucky"
+            ]
+        },
+        {
+            "input": "i started feeling funny and then friday i woke up sick as a dog\nsadness",
+            "output": [
+                "feeling funny\nsick as a dog"
+            ]
+        },
+        {
+            "input": "i feel a need to protect my parents against the witch hunt that repressed memory therapy can be\nsadness",
+            "output": [
+                "against the witch hunt\nrepressed"
+            ]
+        },
+        {
+            "input": "i feel disgusted to even be associated with this woman by my race and nationality\nanger",
+            "output": [
+                "feel disgusted to even"
+            ]
+        },
+        {
+            "input": "i laughed then bitterly again but i wasnt feeling bitter\nanger",
+            "output": [
+                "laughed then bitterly\nwasnt feeling bitter"
+            ]
+        }
+    ]
+}
