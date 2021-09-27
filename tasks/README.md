@@ -491,8 +491,8 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task616_inquisitive_question_generation.json` | Generating inquisitive questions | Inquisitive Question generation
-`task617_inquisitive_span_detection.json` | Detecting span of sentence | Span Detection
-`task618_prost_question_generation.json` | Question generation | Question generation
-`task619_prost_mcq_generation.json` | Generating MCQs | MCQ generation
-`task620_prost_mcq_answers_generation.json` | Generating answers of MCQs | MCQ Answer generation
+`task616_inquisitive_question_generation` | Generating inquisitive questions | Inquisitive Question generation
+`task617_inquisitive_span_detection` | Detecting span of sentence | Span Detection
+`task618_prost_question_generation` | Question generation | Question generation
+`task619_prost_mcq_generation` | Generating MCQs | MCQ generation
+`task620_prost_mcq_answers_generation` | Generating answers of MCQs | MCQ Answer generation
