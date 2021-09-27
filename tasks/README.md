@@ -230,6 +230,15 @@ Name | Summary | Category
 `task227_clariq_classification`	| Given a query and its clarification, classify whether clarification is proper or not by providing 'Yes' or 'No'. | Classification
 `task228_arc_answer_generation_easy` | Given a easy science question, provide the answer based on scientific facts and reasoning. | Answer Generation
 `task229_arc_answer_generation_hard` | Given a hard science question, provide the answer based on scientific facts and reasoning. | Answer Generation
+`task230_iirc_passage_classification` | Given 3 passages and a question, determine which passage can be used to answer the question. | Classification
+`task231_iirc_link_classification` | Given a question, context passage, and terms from the passage for further information search, determine which term can be used to answer the question. | Classification
+`task232_iirc_link_number_classification` | Given a question and context passage, determine if further information on more than one term from the passage is needed to answer the question. | Classification
+`task233_iirc_link_exists_classification` | Given a question and context passage, determine if the passage has any terms that can be used to obtain further information needed to answer the question. | Classification
+`task234_iirc_passage_line_answer_generation` | Given a question and context passage, determine which sentence in the passage has terms that can be used to obtain further information needed to answer the question. | Answer Generation
+`task235_iirc_question_from_subtext_answer_generation` | Given a context statement, further information on a linked term in the statement, and an answer term, generate a question that can use the information provided to obtain the given answer | Answer Generation
+`task236_iirc_question_from_passage_answer_generation` | Given a context passage, further information on a linked term in the statement, and an answer term, generate a question that can use the information provided to obtain the given answer | Answer Generation
+`task237_iirc_answer_from_subtext_answer_generation` | Given a context statement, further information on a linked term in the statement, and a question, generate an answer that can use the information provided to solve the question| Answer Generation
+`task238_iirc_answer_from_passage_answer_generation` | Given a context passage, further information on a linked term in the statement, and a question, generate an answer that can use the information provided to solve the question| Answer Generation
 `task239_tweetqa_answer_generation` | Given a context paragraph of the tweet and question, generate a correct answer. | Answer Generation
 `task240_tweetqa_question_generation` | Given a context paragraph of the tweet and answer, generate a correct question. | Question Generation
 `task241_tweetqa_classification` | Given a context paragraph of the tweet, question and corresponding answer, generate a label whether the answer is right or wrong. | Classification
@@ -264,8 +273,6 @@ Name | Summary | Category
 `task274_overruling_legal_classification`	| Given a sentence, classify it into overruling or non-overruling. | Classification
 `task275_enhanced_wsc_paraphrase_generation` | Given a sentence and an aspect, paraphrase the sentence changing that aspect. | Text Modification
 `task276_enhanced_wsc_classification` | Given a sentence and its paraphrase, decide what is the difference between them. | Classification
-`task284_imdb_classification` | Given a movie review, classify its sentiment into positive or negative. | Classification
-`task285_imdb_answer_generation` | Given a movie review and boolean question, generate answer yes or no. | Answer Generation
 `task277_stereoset_sentence_generation_stereotype` | Generate sentences with stereotype given context. | Sentence Generation
 `task278_stereoset_sentence_generation_antistereotype` | Generate sentences with anti-stereotype given context. | Sentence Generation
 `task279_stereoset_classification_stereotype` | Classify sentences into stereotype, anti-stereotype, and unrelated. | Classification
@@ -273,6 +280,8 @@ Name | Summary | Category
 `task281_points_of_correspondence` | Find the entity or event that is in common between the given three sentences. | Entity Detection
 `task282_scruples_event_time` | Given an anecdote, find whether it has already happened or it may happen in the future.  | Answer Generation
 `task283_dream_incorrect_answer_generation`	| Given a conversation and a question, write an incorrect answer to the question. | Incorrect Answer Generation
+`task284_imdb_classification` | Given a movie review, classify its sentiment into positive or negative. | Classification
+`task285_imdb_answer_generation` | Given a movie review and boolean question, generate answer yes or no. | Answer Generation
 `task286_olid_offense_judgment` | Given a tweet judge whether its offensive or not. | Classification
 `task287_casehold_legal_incorrect_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose one of the incorrect options. | Incorrect Answer Generation
 `task288_gigaword_summarization` | Given a text of article, generate a title for the article. | Summarization
@@ -280,13 +289,22 @@ Name | Summary | Category
 `task290_tellmewhy_question_answerability` | Given a short story and a question, decide whether or not the question is answerable. | Classification
 `task291_semeval_2020_task4_commonsense_validation` | Given two statements, choose the one that makes less sense. | Answer Generation
 `task295_semeval_2020_task4_commonsense_reasoning` | Given a statement against commonsense and 3 reasons, choose the best reason explaining why the statement is against commonsense. | Answer Generation
+`task296_storycloze_correct_end_classification` | Given four sentences of five sentence story, select correct answer for last (fifth) sentence from the given option. | Classification
+`task297_storycloze_incorrect_end_classification` | Given four sentences of five sentence story, select incorrect answer for last (fifth) sentence from the given option. | Incorrect Classification
+`task298_storycloze_correct_end_classification` | Given four sentences of five sentence story and fifth sentence, classify whether fifth sentence is proper or not by providing 'Yes' or 'No'. | Classification
+`task299_storycloze_sentence_generation` | Given four sentences of five sentence story, provide the position and missing part (fifth sentence) of the story. | Sentence Generation
+`task300_storycloze_order_generation` | Given five sentences of story (sentences are shuffled), provide correct order of the story. | Order Generation
 `task301_record_question_generation` | Given a passage, generate a fill-in-the-gap question based on it. | Question Generation
 `task302_record_classification` | Given a passage and a question, classify the answer to the question based on the options. | Classification
 `task303_record_incorrect_answer_generation` | Given a passage and a question, write an incorrect answer for the question. | Incorrect Answer Generation
+`task304_numeric_fused_head_resolution` | Given a dialogue and a highlighted number, decide what does the number refer to | Answer Generation
 `task305_jeopardy_answer_generation_normal` | Given a category and a trivia clue of relatively easy difficulty, generate the best answer. | Answer Generation
 `task306_jeopardy_answer_generation_double` | Given a category and a trivia clue of relatively medium difficulty, generate the best answer. | Answer Generation
 `task307_jeopardy_answer_generation_final` | Given a category and a trivia clue of relatively hard difficulty, generate the best answer. | Answer Generation
 `task308_jeopardy_answer_generation_all` | Given a category and a trivia clue of varying difficulties, generate the best answer. | Answer Generation
+`task309_race_answer_generation` | Given an article, a question and four options; provide correct answer for the question based on the article. | Answer Generation
+`task310_race_classification` | Given an article, a question and four options; provide incorrect answer for the question based on the article. | Classification
+`task311_race_question_generation` | Generate a question based on the given article and an answer. | Question Generation
 `task312_europarl_sv_en_translation` | Given a Swedish sentence, convert it into English. | Translation
 `task313_europarl_en_sv_translation` | Given an English sentence, convert it into Swedish. | Translation
 `task314_europarl_sv-en_classification` | Given a Swedish sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
@@ -304,7 +322,16 @@ Name | Summary | Category
 `task326_jigsaw_classification_obscene` | Given a comment, classify whether it conveys obscenity or not. | Classification
 `task327_jigsaw_classification_toxic` | Given a comment from online platforms, classify whether it is toxic or not. | Classification
 `task328_jigsaw_classification_insult` | Given a comment from online platforms, classify whether it is an insult or not. | Classification
+`task329_gap_classification` | Given a text containing an ambiguous pronoun, a pronoun, and two candidate names, determine what the pronoun refers to and classify the answers into A, B, or Neither | Classification
+`task330_gap_answer_generation` | Given a text containing an ambiguous pronoun and a pronoun, write the name that the pronoun refers to | Answer Generation
+`task331_gap_incorrect_answer_generation` | Given a text containing an ambiguous pronoun and a pronoun, write an implausible answer to the question of what is the pronoun reference | Incorrect Answer Generation
 `task332_tellmewhy_answer_generation` | Given a short story and a question, answer the question based on the events of the story. | Answer Generation
+`task333_hateeval_classification_hate_en` | Given a post in English, classify it into hateful or non-hateful | Classification
+`task334_hateeval_classification_hate_es` | Given a post in Spanish, classify it into hateful or non-hateful | Classification
+`task335_hateeval_classification_aggresive_en` | Given a hateful post in English, classify it into aggresive or non-aggresive | Classification
+`task336_hateeval_classification_aggresive_es` | Given a hateful post in Spanish, classify it into aggresive or non-aggresive | Classification
+`task337_hateeval_classification_individual_en` | Given a hateful post in English, classify the target being harassed into individual or generic | Classification
+`task338_hateeval_classification_individual_es` | Given a hateful post in Spanish, classify the target being harassed into individual or generic | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge. | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question. | Answer Generation
@@ -312,6 +339,7 @@ Name | Summary | Category
 `task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question. | Incorrect Answer Generation
 `task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage. | Unanswerable Question Generation
 `task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage. | Classification
+`task352_coda-19_classification` | given a paragraph, classify into these categories: background, purpose, method, finding/contribution, and other. | Classification
 `task353_casino_classification_negotiation_elicit_pref` | Detecting the usage of elicit-pref negotiation strategy in dialogue utterances. | Classification
 `task354_casino_classification_negotiation_no_need` | Detecting the usage of no-need negotiation strategy in dialogue utterances. | Classification
 `task355_casino_classification_negotiation_other_need` | Detecting the usage of other-need negotiation strategy in dialogue utterances. | Classification
@@ -319,9 +347,31 @@ Name | Summary | Category
 `task357_casino_classification_negotiation_small_talk` | Detecting the usage of small-talk negotiation strategy in dialogue utterances. | Classification
 `task358_casino_classification_negotiation_uv_part` | Detecting the usage of uv-part negotiation strategy in dialogue utterances. | Classification
 `task359_casino_classification_negotiation_vouch_fair` | Detecting the usage of vouch-fair negotiation strategy in dialogue utterances. | Classification
+`task360_spolin_yesand_response_generation` | Given a prompt, generate the "yes, ands" response | Response Generation
+`task361_spolin_yesand_prompt_response_classification` | Given a prompt and a response, classify whether the response is "yes, ands" type | Classification
+`task362_spolin_yesand_prompt_response_sub_classification` | Given a prompt and two responses, identify which response is "yes, ands" type | Classification
 `task363_sst2_polarity_classification` | Given a sentence from a movie review, classify the sentence to positive or negative sentiment. | Classification
 `task364_regard_social_impact_classification` | Given a sentence about a person, decide what is the impact of that sentence on the society's perception of that person. | Classification
+`task365_synthetic_remove_vowels` | Given a string remove any vowels in that string. | Answer Generation
+`task366_synthetic_return_primes` | Given a list of integers return a number if it is prime. | Answer Generation, Arithemetic 
+`task367_synthetic_remove_floats`  | Given a list of numbers remove any number if it is not an integer | Answer Generation, Arithemetic          
+`task368_synthetic_even_or_odd_calculation`  | Given a list of integers divide even numbers by *4* and multiply odd numbers by *4* then add *2* | Answer Generation, Arithemetic
+`task369_synthetic_remove_odds` | Given a list of integers remove any integer if it is odd | Answer Generation, Arithemetic
+`task370_synthetic_remove_divisible_by_3` | Given a list of integers remove any integer if it is divisible by *3* | Answer Generation, Arithemetic
+`task371_synthetic_product_of_list` | Given a list of lists of integers, find the product of every inner list | Answer Generation, Arithemetic
+`task372_synthetic_palindrome_numbers` | Given a list of integers return an integer if the first and last digit are the same | Answer Generation
+`task373_synthetic_round_tens_place` | Given a list of integers round them to the tens place | Answer Generation, Arithemetic
+`task374_synthetic_pos_or_neg_calculation`| Given a list of integers multiply the negative integers by *-3* multiply the even integers by *2* | Answer Generation, Arithemetic 
 `task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
+`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
+`task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
+`task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
+`task397_semeval_2018_task1_tweet_anger_detection` | Given a tweet judge whether the author was angry or not | Classification
+`task398_semeval_2018_task1_tweet_joy_detection` | Given a tweet judge whether the author was happy or not | Classification
+`task399_semeval_2018_task1_tweet_sadness_detection` | Given a tweet judge whether the author was sad or not | Classification
+`task394_persianqa_question_generation` | Given a passage, generate a question based on it | Question Generation
+`task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
+`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
 `task376_reverse_order_of_words` |  Reverse the order of words in the given sentence | Answer Generation
 `task377_remove_words_of_given_length` | Remove all words of a given length in the sentence | Answer Generation
 `task378_reverse_words_of_given_length` | Reverse all words of a given length in the sentence | Answer Generation
@@ -329,6 +379,7 @@ Name | Summary | Category
 `task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage. | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage. | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question. | Answer Generation
+`task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
@@ -337,3 +388,108 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
+`task400_paws_paraphrase_classification` | Given two sentences, judge whether they are paraphrases of each other | Classification
+`task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
+`task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
+`task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
+`task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
+`task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
+`task427_hindienglish_corpora_hi-en_language_identification` | Given a sentence, identify whether it is in Hindi or English. | Language Identification
+`task418_persent_title_generation` | Given a document, generate a short title of the document. | Title Generation
+`task419_persent_answer_generation` | Given a document, find the main entity about whom the author is writing. | Answer Generation
+`task420_persent_document_sentiment_classification` | Given a document and an entity the task is to select the author's sentiment towards the enity. | Document Sentiment Classification
+`task421_persent_sentence_sentiment_classification` | Given a sentence and an entity, the task is to select the author's sentiment towards the enity. | Sentence Sentiment Classification
+`task422_persent_sentence_sentiment_verification` | Given a sentence, an entity and its sentiment towards the entity, verify if it is the correct sentiment towards the entity. | Sentence Sentiment Verification
+`task423_persent_document_sentiment_verification` | Given a document, an entity and its sentiment towards the entity, verify if it is the correct sentiment towards the entity. | Document Sentiment Verification
+`task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
+`task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
+`task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
+`task459_matres_static_classification` | Given a context and a verb, answer if the given verb is static or not | Classification
+`task460_qasper_answer_generation` | Given a context and a question, answer the question based on the context. | Answer Generation
+`task461_qasper_question_generation` | Given a cotext, generate a question based on it. | Question Generation
+`task462_qasper_classification` | Given a context and a question, classify the question into abstractive, extractice, or yes-no question | Classification
+`task463_parsinlu_entailment_classification` | Given  a premise sentence and a hypothesis sentence, determine whether the hypothesis sentence entails, contradicts, or is neutral with respect to the given premise sentence | Classification
+`task464_parsinlu_entailment_sentence_generation` | Given a premise sentence and a label, generate the hypothesis sentence based on the label and the premise sentence | Sentence Generation
+`task465_parsinlu_qqp_classification` | Given two sentences, determine whether the sentences are paraphrases or not | Classification
+`task466_parsinlu_qqp_text_modification` | Given a sentence, paraphrase it | Text Modification
+`task467_parsinlu_rc_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
+`task468_parsinlu_rc_question_generation` | Given a passage, generate a question based on the passage. | Question Generation
+`task475_yelp_polarity_classification` | Classify a given Yelp review to positive or negative sentiment | Classification
+`task476_cls_english_books_classification` | Classify a given book product review in English to positive or negative sentiment | Classification
+`task477_cls_english_dvd_classification` | Classify a given dvd product review in English to positive or negative sentiment | Classification
+`task478_cls_english_music_classification` | Classify a given music product review in English to positive or negative sentiment | Classification
+`task479_cls_german_books_classification` | Classify a given book product review in German to positive or negative sentiment | Classification
+`task480_cls_german_dvd_classification` | Classify a given dvd product review in German to positive or negative sentiment | Classification
+`task481_cls_german_music_classification` | Classify a given music product review in German to positive or negative sentiment | Classification
+`task482_cls_french_books_classification` | Classify a given book product review in French to positive or negative sentiment | Classification
+`task483_cls_french_dvd_classification` | Classify a given dvd product review in French to positive or negative sentiment | Classification
+`task484_cls_french_music_classification` | Classify a given music product review in French to positive or negative sentiment | Classification
+`task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
+`task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
+`task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
+`task513_argument_stance_classification` | Given a topic and an argument, decide the stance of the argument towards the topic | Classification
+`task514_argument_consequence_classification` | Given a topic and an argument, decide whether the argument refers to a consequence of the topic | Classification
+`task515_senteval_odd_word_out` | Given a sentence judge whether a single word has been replaced with another word. | Classification
+`task516_senteval_conjoints_inversion` | Given a sentence judge whether two clausal conjoints have been inverted. | Classification
+`task517_emo_classify_emotion_of_dialogue` | Classify the emotion of a given dialogue | Classification, Sentiment Analysis
+`task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
+`task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
+`task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
+`task579_socialiqa_classification` | Given a context, a question and an answer; classify whether the answer is correct or not. | Classification
+`task580_socialiqa_answer_generation` | Given a context, a question and three options; provide correct answer for the question based on the context. | Answer Generation
+`task581_socialiqa_question_generation` | Generate a question based on the given context and an answer. | Question Generation
+`task524_parsinlu_food_aspect_classification` | Given a food review and a question about the reviewer's sentiment toward one aspect of the food, classify the sentiment. | Classification
+`task525_parsinlu_movie_aspect_classification` | Given a movie review and a question about the reviewer's sentiment toward one aspect of the movie, classify the sentiment. | Classification
+`task526_parsinlu_movie_overal_classification` | Given a movie review, classify the overal sentiment of the reviewer toward the movie. | Classification
+`task527_parsinlu_food_overal_classification` | Given a food review, classify the overal sentiment of the reviewer toward the food. | Classification
+`task528_parsinlu_movie_aspect_detection` | Given a movie review, extract aspects of the movie mentioned in the text. | Text Generation
+`task529_parsinlu_food_aspect_detection` | Given a food review, extract aspects of the food mentioned in the text. | Text Generation
+`task530_europarl_en_es_translation` | Given a English sentence, convert it into Spanish. | Translation
+`task531_europarl_es_en_translation` | Given an Spanish sentence, convert it into English. | Translation
+`task532_europarl_en-es_classification` | Given a English sentence and its corresponding Spanish translation, classify whether it is correct or not. | Classification
+`task533_europarl_es-en_language_identification` | Given a sentence, identify  whether it is in English or Spanish. | Language Identification
+`task534_farstail_entailment` | Given two sentences in Persian, choose whether they agree, disagree, neither with each other. | Classification
+`task573_air_dialogue_classification` | Givena a conversation between a flight 'agent' and the 'customer' classify the goal of the conversation. | Classification
+`task574_air_dialogue_sentence_generation` | Given a conversation between a flight 'agent' and the 'customer', find the missing dialogue in the conversation. | Sentence Generation
+`task575_air_dialogue_classification` | Classification of the sentence spoken by 'agent' and 'customer'. | Classification
+`task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
+`task577_curiosity_dialogs_classification` | Classification of the sentence spoken by 'assistant' and 'user'. | Classification
+`task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
+`task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
+`task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
+`task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
+`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
+`task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
+`task550_discofuse_sentence_generation` | Senetence Generation on Dataset Card for DISCOFUSE | Senetence Generation
+`task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
+`task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
+`task535_spl_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
+`task536_spl_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
+`task537_spl_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
+`task538_spl_translation_bu_en` | Language Translate of Dataset Card for ALT from Burmese language to English language while preserving named entities in the original language | Language Translation
+`task539_spl_translation_ma_en` | Language Translate of Dataset Card for ALT from Malay language to English language while preserving named entities in the original language | Language Translation
+`task540_spl_translation_la_en` | Language Translate of Dataset Card for ALT from Laotian language to English language while preserving named entities in the original language | Language Translation
+`task541_spl_translation_kh_en` | Language Translate of Dataset Card for ALT from Khmer language to English language while preserving named entities in the original language | Language Translation
+`task542_spl_translation_ja_en` | Language Translate of Dataset Card for ALT from Japanese language to English language while preserving named entities in the original language | Language Translation
+`task543_spl_translation_bh_en` | Language Translate of Dataset Card for ALT from Bahasa language to English language while preserving named entities in the original language | Language Translation
+`task544_spl_translation_hi_en` | Language Translate of Dataset Card for ALT from Hindi language to English language while preserving named entities in the original language | Language Translation
+`task545_spl_translation_fi_en` | Language Translate of Dataset Card for ALT from Filipino language to English language while preserving named entities in the original language | Language Translation
+`task546_spl_translation_bg_en` | Language Translate of Dataset Card for ALT from Bengali language to English language while preserving named entities in the original language | Language Translation
+`task547_spl_translation_entk_en` | Language Translate of Dataset Card for ALT from English Tokens to English language while preserving named entities in the original language | Language Translation
+`task548_spl_translation_en_ch` | Language Translate of Dataset Card for ALT from English language to Chinese language while preserving named entities in the original language | Language Translation
+`task549_spl_translation_en_vi` | Language Translate of Dataset Card for ALT from English language to Vietnamese language while preserving named entities in the original language | Language Translation
+`task551_spl_translation_en_th` | Language Translate of Dataset Card for ALT from English language to Thai language while preserving named entities in the original language | Language Translation
+`task552_spl_translation_en_bu` | Language Translate of Dataset Card for ALT from English language to Burmese language while preserving named entities in the original language | Language Translation
+`task553_spl_translation_en_ma` | Language Translate of Dataset Card for ALT from English language to Malay language while preserving named entities in the original language | Language Translation
+`task554_spl_translation_en_la` | Language Translate of Dataset Card for ALT from English language to Laotian language while preserving named entities in the original language | Language Translation
+`task555_spl_translation_en_kh` | Language Translate of Dataset Card for ALT from English language to Khmer language while preserving named entities in the original language | Language Translation
+`task556_spl_translation_en_ja` | Language Translate of Dataset Card for ALT from English language to Japanese language while preserving named entities in the original language | Language Translation
+`task557_spl_translation_en_ba` | Language Translate of Dataset Card for ALT from English language to Bahasa language while preserving named entities in the original language | Language Translation
+`task558_spl_translation_en_hi` | Language Translate of Dataset Card for ALT from English language to Hindi language while preserving named entities in the original language | Language Translation
+`task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
+`task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
+`task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
