@@ -509,8 +509,8 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task645_kde4_translation` | Localizing English phrases to Hindi language | Translation
-`task646_kde4_translation` | Localizing English phrases to Telugu language | Translation
-`task647_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
-`task648_schema_guided_dstc8_classification` | Classifying sentence into one of five action categories | Classification
-`task649_schema_guided_dstc8_classification` | Identifying which one of five services the sentence is related to  | Classification
+`task877_kde4_translation` | Localizing English phrases to Hindi language | Translation
+`task878_kde4_translation` | Localizing English phrases to Telugu language | Translation
+`task879_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
+`task880_schema_guided_dstc8_classification` | Classifying sentence into one of five action categories | Classification
+`task881_schema_guided_dstc8_classification` | Identifying which one of five services the sentence is related to  | Classification
