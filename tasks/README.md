@@ -334,10 +334,10 @@ Name | Summary | Category
 `task337_hateeval_classification_individual_en` | Given a hateful post in English, classify the target being harassed into individual or generic | Classification
 `task338_hateeval_classification_individual_es` | Given a hateful post in Spanish, classify the target being harassed into individual or generic | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
-`task340_WinoMT_classification_gender_pro` | Given a sentence and a profession that is mentioned in the sentence, identify its gender. pro means the gender aggrees with the cultural stereotype of the profession | classification
-`task341_WinoMT_classification_gender_anti` | Given a sentence and a profession that is mentioned in the sentence, identify its gender. anti means the gender disagrees with the cultural stereotype of the profession | classification
-`task342_WinoMT_classification_profession_pro` | Given a sentence and a gender, identify the profession mentioned in the sentence with the given gender. pro means the gender aggrees with the cultural stereotype of the profession | classification
-`task343_WinoMT_classification_profession_anti` | Given a sentence and a gender, identify the profession mentioned in the sentence with the given gender. anti means the gender disaggrees with the cultural stereotype of the profession | classification
+`task340_winomt_classification_gender_pro` | Given a sentence and a profession that is mentioned in the sentence, identify its gender. pro means the gender aggrees with the cultural stereotype of the profession | classification
+`task341_winomt_classification_gender_anti` | Given a sentence and a profession that is mentioned in the sentence, identify its gender. anti means the gender disagrees with the cultural stereotype of the profession | classification
+`task342_winomt_classification_profession_pro` | Given a sentence and a gender, identify the profession mentioned in the sentence with the given gender. pro means the gender aggrees with the cultural stereotype of the profession | classification
+`task343_winomt_classification_profession_anti` | Given a sentence and a gender, identify the profession mentioned in the sentence with the given gender. anti means the gender disaggrees with the cultural stereotype of the profession | classification
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge. | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question. | Answer Generation
 `task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question. | Classification
