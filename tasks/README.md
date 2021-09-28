@@ -509,3 +509,8 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task922_event2Mind_word_generation` | Genrating emotion words from Event2Mind based on PersonX | Word Generation
+`task923_event2Mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
+`task924_event2Mind_word_generation` | Genrating emotion words from Event2Mind based on Other Person | Word Generation
+`task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
+`task926_coached_conv_pref_word_generation` | Genrating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
