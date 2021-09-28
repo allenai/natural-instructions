@@ -491,3 +491,8 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
+'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
+'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+'task920_code_x_glue_classification' | Given a code, classify which problem does the cpp program solves | Classification
+'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
