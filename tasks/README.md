@@ -509,3 +509,7 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task877_gcwd_classification` | Classifying writer's stance to Global Warming | Classification
+`task878_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
+`task879_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
+`task880_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
