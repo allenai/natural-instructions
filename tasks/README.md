@@ -444,6 +444,8 @@ Name | Summary | Category
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
+`task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
 `task513_argument_stance_classification` | Given a topic and an argument, decide the stance of the argument towards the topic | Classification
 `task514_argument_consequence_classification` | Given a topic and an argument, decide whether the argument refers to a consequence of the topic | Classification
