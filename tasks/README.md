@@ -509,3 +509,11 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task894_miam_dialogue_act_classification` | Classify Dialogue utterances to Dialogue acts | Classification
+`task895_miam_speaker_classification` | Classify speaker to Dialogue utterances| Classification
+`task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
+`task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
+`task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
+`task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
+`task900_freebase_qa_category_classification` | Classify the general category for questions | Classification
+`task901_freebase_qa_category_question_generation` | Generate trivia type questions based on a broad category | Question Generation
