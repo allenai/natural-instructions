@@ -509,3 +509,7 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task906_dialogre_identify_names` | Text Identification with DialogRE | Answer Generation
+`task907_dialogre_identify_relationships` | Classifying Relationships with DialogRE | Answer Generation
+`task908_dialogre_identify_familial_relationships` | Classifying Familial Relationships with DialogRE | Answer Generation
+`task909_dialogre_prevalent_speakers` | Classifying Prevalent Speakers with DialogRE | Answer Generation
