@@ -509,7 +509,7 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task645_SearchQA_category_classification` | Category Classification on SearchQA questions | Classification
-`task646_SearchQA_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
-`task647_Climate_Fever_label_generation` | Label Generation on Climate Fever | Label Generation
-`task648_Climate_Fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
+`task645_searchqa_category_classification` | Category Classification on SearchQA questions | Classification
+`task646_searchqa_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
+`task647_climate_fever_label_generation` | Label Generation on Climate Fever | Label Generation
+`task648_climate_fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
