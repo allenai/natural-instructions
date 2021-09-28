@@ -491,3 +491,10 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task793_bianet_classification`| Classifying whether two sentences are translation of each other | Classification
+`task794_bianet_translation`| Generating a translation of an english sentence into kurdish | Translation
+`task795_bianet_classification` | Classifying if a given sentence into English or Kurdish | Classification
+`task796_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
+`task797_bianet_translation` | Generating a translation of an Kurdish sentence into Turkish| Translation
+`task798_naturalLanguageInference` | Given a premise and hypothesis, determine if it has positive, negative or neutral entailment | Natural Language Inference
+`task799_imppres_longTextGeneration` | Given a premise, generate one hypothesis | Text Generation
