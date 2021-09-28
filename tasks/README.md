@@ -509,3 +509,7 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task894_deceptive_opinion_spam_classification` | Identity polarity of hotel reviews | Classification  
+`task895_deceptive_opinion_spam_classification` | Given hotel reviews and it's polarity, determine whether it's true or false | Classification
+`task896_hate_speech_offensive_classification` | Classify tweets into hate speech, offensive or neither | Classification  
+`task897_hate_speech_offensive_classification` | Given tweet and it's category, determine whether it's true or false | Classification
