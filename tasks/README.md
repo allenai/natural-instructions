@@ -509,7 +509,7 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task645_quail_question_generation` | Generating questions based on passages | Question Generation
-`task646_quail_answer_generation` | Generating answer for a given question based on passages | Answer Generation
-`task647_reviews_classification` | Classifying whether a review is positive or negative | Classification
-`task648_goemotions_classification` | Classifying the sentence to an emotion class | Classification
+`task886_quail_question_generation` | Generating questions based on passages | Question Generation
+`task887_quail_answer_generation` | Generating answer for a given question based on passages | Answer Generation
+`task888_reviews_classification` | Classifying whether a review is positive or negative | Classification
+`task889_goemotions_classification` | Classifying the sentence to an emotion class | Classification
