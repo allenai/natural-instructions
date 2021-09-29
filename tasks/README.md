@@ -400,6 +400,7 @@ Name | Summary | Category
 `task400_paws_paraphrase_classification` | Given two sentences, judge whether they are paraphrases of each other | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
+`task405_narrativeqa_question_generation` | Given a plot summary, create questions that can be answered based on it | Question Generation
 `task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
 `task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
 `task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
