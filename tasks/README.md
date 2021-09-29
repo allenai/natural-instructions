@@ -265,6 +265,8 @@ Name | Summary | Category
 `task262_spl_translation_ja_en` | Translate Japanese questions to English while preserving named entities in the original language. | Translation
 `task263_spl_translation_pl_en` | Translate Polish questions to English while preserving named entities in the original language. | Translation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
+`task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
+`task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
 `task271_europarl_translation`| Translate a sentence in Bulgarian to English. | Translation
 `task272_europarl_translation`| Translate a sentence in English to Bulgarian. | Translation
 `task273_europarl_classification`| Given a sentence in Bulgarian and its corresponding English translation, verify that the translation is correct. | Classification
