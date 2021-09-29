@@ -402,6 +402,7 @@ Name | Summary | Category
 `task402_grailqa_paraphrase_generation` | Given a question and answer pair, paraphrase the question. | Text Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
 `task404_grailqa_paraphrase_validation` | Given two questions, decide whether the second one is a valid paraphrase of the first one | Classification
+<<<<<<< HEAD
 `task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
 `task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
 `task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
@@ -420,6 +421,8 @@ Name | Summary | Category
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
 `task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify if it is in the English or Gujarati language. | Language Identification
+=======
+>>>>>>> 4d347a5dd7b4be5fec29e5df27229d7604c71d02
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
