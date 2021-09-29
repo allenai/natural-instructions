@@ -265,6 +265,8 @@ Name | Summary | Category
 `task262_spl_translation_ja_en` | Translate Japanese questions to English while preserving named entities in the original language. | Translation
 `task263_spl_translation_pl_en` | Translate Polish questions to English while preserving named entities in the original language. | Translation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
+`task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
+`task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
 `task271_europarl_translation`| Translate a sentence in Bulgarian to English. | Translation
 `task272_europarl_translation`| Translate a sentence in English to Bulgarian. | Translation
 `task273_europarl_classification`| Given a sentence in Bulgarian and its corresponding English translation, verify that the translation is correct. | Classification
@@ -395,7 +397,6 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-| Language Identification (Binary)
 `task400_paws_paraphrase_classification` | Given two sentences, judge whether they are paraphrases of each other | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
@@ -495,6 +496,7 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
@@ -511,6 +513,8 @@ Name | Summary | Category
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
+`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
+`task611_mutual_multi_turn_dialogue | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
@@ -522,3 +526,4 @@ Name | Summary | Category
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
 `task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify it is in the English or Gujarati language. | Language Identification
+`task644_refresd_translation` | Translation from english to french sentences. | Translation  
