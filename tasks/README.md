@@ -391,6 +391,9 @@ Name | Summary | Category
 `task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
+`task388_torque_token_classification` | Given a passage, identify a token from the passage representing an event | Token Classification
+`task389_torque_generate_temporal_question` | Given a passage, generate a temporal question | Question Generation
+`task390_torque_text_span_selection` | Given a passage, a temporal question and a list of events in the passage, return a text span from the list of events that answers the given question | Text Span Selection
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
 `task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one. | Classification
 `task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
