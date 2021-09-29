@@ -525,5 +525,5 @@ Name | Summary | Category
 `task438_eng_guj_parallel_corpus_en_gu_translation` | Translation from English to Gujarati sentences. | Translation
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
-`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify it is in the English or Gujarati language. | Language Identification
+`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify if it is in the English or Gujarati language. | Language Identification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
