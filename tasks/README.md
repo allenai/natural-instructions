@@ -515,7 +515,7 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task645_generated_reviews_enth_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
+`task645_products_reviews_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
 `task646_dailydialog_classification` | Classifying Data of DailyDialog whether the topic of conversation is Tourism or Not in the dialogue | Classification
 `task647_dailydialog_classification` | Classifying Data of DailyDialog whether happy or sad emotion in the dialogue | Classification
 `task648_dailydialog_classification` | Classifying Data of DailyDialog whether there is question in the dialogue or not | Classification
