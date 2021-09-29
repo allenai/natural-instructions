@@ -495,12 +495,6 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-<<<<<<< HEAD
-`task438_eng_guj_parallel_corpus_en_gu_translation` | Translate a sentence in English to Gujarati. | Translation
-`task439_eng_guj_parallel_corpus_gu_en_translation` | Translate a sentence in Gujarati to English. | Translation
-`task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
-`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify it is in the english or gujarati language
-=======
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
@@ -523,6 +517,8 @@ Name | Summary | Category
 `task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
-`task644_refresd_translation` | Translation from english to french sentences. | Translation  
-
->>>>>>> origin
+`task644_refresd_translation` | Translation from english to french sentences. | Translation
+`task438_eng_guj_parallel_corpus_en_gu_translation` | Translation from English to Gujarati sentences. | Translation
+`task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
+`task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
+`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify it is in the English or Gujarati language. | Language Identification
