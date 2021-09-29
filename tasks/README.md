@@ -508,4 +508,6 @@ Name | Summary | Category
 `task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
-`task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task644_refresd_translation` | Translation from english to french sentences. | Translation 
+`task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
+
