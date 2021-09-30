@@ -628,4 +628,4 @@ Name | Summary | Category
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
-`task934_wiki_auto_style_transfer` | Rewrite simple English wikipedia sentences in more sophisticated English. | Style Transfer 
+`task948_wiki_auto_style_transfer` | Rewrite simple English wikipedia sentences in more sophisticated English. | Style Transfer 
