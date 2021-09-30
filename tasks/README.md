@@ -265,6 +265,8 @@ Name | Summary | Category
 `task262_spl_translation_ja_en` | Translate Japanese questions to English while preserving named entities in the original language. | Translation
 `task263_spl_translation_pl_en` | Translate Polish questions to English while preserving named entities in the original language. | Translation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
+`task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
+`task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
 `task271_europarl_translation`| Translate a sentence in Bulgarian to English. | Translation
 `task272_europarl_translation`| Translate a sentence in English to Bulgarian. | Translation
 `task273_europarl_classification`| Given a sentence in Bulgarian and its corresponding English translation, verify that the translation is correct. | Classification
@@ -334,12 +336,18 @@ Name | Summary | Category
 `task337_hateeval_classification_individual_en` | Given a hateful post in English, classify the target being harassed into individual or generic | Classification
 `task338_hateeval_classification_individual_es` | Given a hateful post in Spanish, classify the target being harassed into individual or generic | Classification
 `task339_record_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
+`task340_winomt_classification_gender_pro` | Given a sentence and a profession that is mentioned in the sentence, identify its gender. pro means the gender aggrees with the cultural stereotype of the profession | classification
+`task341_winomt_classification_gender_anti` | Given a sentence and a profession that is mentioned in the sentence, identify its gender. anti means the gender disagrees with the cultural stereotype of the profession | classification
+`task342_winomt_classification_profession_pro` | Given a sentence and a gender, identify the profession mentioned in the sentence with the given gender. pro means the gender aggrees with the cultural stereotype of the profession | classification
+`task343_winomt_classification_profession_anti` | Given a sentence and a gender, identify the profession mentioned in the sentence with the given gender. anti means the gender disaggrees with the cultural stereotype of the profession | classification
 `task344_hybridqa_answer_generation` | Given a question, answer the question based on your knowledge. | Answer Generation
 `task345_hybridqa_answer_generation` | Given a question, write the part-of-speech tag for each word in the question. | Answer Generation
 `task346_hybridqa_classification` | Given a question, a word, and a POS tag, determine whether the POS tag is True or False based on the part-of-speech tag of the given word in the question. | Classification
 `task347_hybridqa_incorrect_answer_generation` | Given a question about part-of-speech tag of a word in the question, write an implausible POS tag to the question. | Incorrect Answer Generation
 `task348_squad2.0_unanswerable_question_generation` | Given a passage, generate a question that cannot be answered based on the passage. | Unanswerable Question Generation
 `task349_squad2.0_answerable_unanswerable_question_classification` | Given a passage and a question, classify whether or not the question is answerable from the passage. | Classification
+`task350_winomt_classification_gender_identifiability_pro` | Given a sentence and a profession, identify whether the profession's gender is identifiable. pro means the gender agrees with the cultural stereotype of the profession | classification
+`task351_winomt_classification_gender_identifiability_anti` | Given a sentence and a profession, identify whether the profession's gender is identifiable. anti means the gender disagrees with the cultural stereotype of the profession | classification
 `task352_coda-19_classification` | given a paragraph, classify into these categories: background, purpose, method, finding/contribution, and other. | Classification
 `task353_casino_classification_negotiation_elicit_pref` | Detecting the usage of elicit-pref negotiation strategy in dialogue utterances. | Classification
 `task354_casino_classification_negotiation_no_need` | Detecting the usage of no-need negotiation strategy in dialogue utterances. | Classification
@@ -383,6 +391,9 @@ Name | Summary | Category
 `task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
+`task388_torque_token_classification` | Given a passage, identify a token from the passage representing an event | Token Classification
+`task389_torque_generate_temporal_question` | Given a passage, generate a temporal question | Question Generation
+`task390_torque_text_span_selection` | Given a passage, a temporal question and a list of events in the passage, return a text span from the list of events that answers the given question | Text Span Selection
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
 `task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one. | Classification
 `task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
@@ -391,7 +402,10 @@ Name | Summary | Category
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
 `task400_paws_paraphrase_classification` | Given two sentences, judge whether they are paraphrases of each other | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
+`task402_grailqa_paraphrase_generation` | Given a question and answer pair, paraphrase the question. | Text Generation
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
+`task404_grailqa_paraphrase_validation` | Given two questions, decide whether the second one is a valid paraphrase of the first one | Classification
+`task405_narrativeqa_question_generation` | Given a plot summary, create questions that can be answered based on it | Question Generation
 `task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
 `task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
 `task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
@@ -406,6 +420,10 @@ Name | Summary | Category
 `task429_senteval_tense` | Given a sentence, specify the tense of the main verb. | Classification
 `task430_senteval_subject_count` | Given a sentence, specify singularity or plurality of the subject. | Classification
 `task431_senteval_object_count` | Given a sentence, specify singularity or plurality of the object. | Classification
+`task438_eng_guj_parallel_corpus_en_gu_translation` | Translation from English to Gujarati sentences. | Translation
+`task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
+`task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
+`task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify if it is in the English or Gujarati language. | Language Identification
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
@@ -438,6 +456,8 @@ Name | Summary | Category
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
+`task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
 `task513_argument_stance_classification` | Given a topic and an argument, decide the stance of the argument towards the topic | Classification
 `task514_argument_consequence_classification` | Given a topic and an argument, decide whether the argument refers to a consequence of the topic | Classification
@@ -448,6 +468,7 @@ Name | Summary | Category
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
 `task521_trivia_question_classification` | Given a text from a trivia quiz, decide the category the question belongs to | Classification
+`task522_news_editorial_summary` Given an article text, select spans of text that show a summary of the thesis of the article. | Summarization
 `task524_parsinlu_food_aspect_classification` | Given a food review and a question about the reviewer's sentiment toward one aspect of the food, classify the sentiment. | Classification
 `task525_parsinlu_movie_aspect_classification` | Given a movie review and a question about the reviewer's sentiment toward one aspect of the movie, classify the sentiment. | Classification
 `task526_parsinlu_movie_overal_classification` | Given a movie review, classify the overal sentiment of the reviewer toward the movie. | Classification
@@ -486,6 +507,8 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
+`task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
@@ -502,8 +525,87 @@ Name | Summary | Category
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
+`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
+`task614_glucose_cause_event_detection` | Given a story and a selected sentence, find an event in the story that caused that sentence | Sentence Generation
+`task611_mutual_multi_turn_dialogue` | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
+`task665_mmmlu_answer_generation_anatomy` | Answering mutlitple choice questions on anatomy | Answer Generation
+`task666_mmmlu_answer_generation_astronomy` | Answering mutlitple choice questions on astronomy | Answer Generation
+`task667_mmmlu_answer_generation_business_ethics` | Answering mutlitple choice questions on business ethics | Answer Generation
+`task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
+`task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
+`task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
+`task688_mmmlu_answer_generation_college_computer_science` | Answering mutlitple choice questions on college computer science | Answer Generation
+`task689_mmmlu_answer_generation_college_mathematics` | Answering mutlitple choice questions on college mathematics | Answer Generation
+`task690_mmmlu_answer_generation_college_medicine` | Answering mutlitple choice questions on college medicine | Answer Generation
+`task691_mmmlu_answer_generation_college_physics` | Answering mutlitple choice questions on college physics | Answer Generation
+`task692_mmmlu_answer_generation_computer_security` | Answering mutlitple choice questions on computer security | Answer Generation
+`task693_mmmlu_answer_generation_conceptual_physics` | Answering mutlitple choice questions on conceptual physics | Answer Generation
+`task694_mmmlu_answer_generation_econometrics` | Answering mutlitple choice questions on econometrics | Answer Generation
+`task695_mmmlu_answer_generation_electrical_engineering` | Answering mutlitple choice questions on electrical engineering | Answer Generation
+`task696_mmmlu_answer_generation_elementary_mathematics` | Answering mutlitple choice questions on elementary mathematics | Answer Generation
+`task697_mmmlu_answer_generation_formal_logic` | Answering mutlitple choice questions on formal logic | Answer Generation
+`task698_mmmlu_answer_generation_global_facts` | Answering mutlitple choice questions on global facts | Answer Generation
+`task699_mmmlu_answer_generation_high_school_biology` | Answering mutlitple choice questions on high school biology | Answer Generation
+`task700_mmmlu_answer_generation_high_school_chemistry` | Answering mutlitple choice questions on high school chemistry | Answer Generation
+`task701_mmmlu_answer_generation_high_school_computer_science` | Answering mutlitple choice questions on high school computer science | Answer Generation
+`task702_mmmlu_answer_generation_high_school_european_history` | Answering mutlitple choice questions on high school european history | Answer Generation
+`task703_mmmlu_answer_generation_high_school_geography` | Answering mutlitple choice questions on high school geography | Answer Generation
+`task704_mmmlu_answer_generation_high_school_government_and_politics` | Answering mutlitple choice questions on high school government and politics | Answer Generation
+`task705_mmmlu_answer_generation_high_school_macroeconomics` | Answering mutlitple choice questions on high school macroeconomics | Answer Generation
+`task706_mmmlu_answer_generation_high_school_mathematics` | Answering mutlitple choice questions on high school mathematics | Answer Generation
+`task707_mmmlu_answer_generation_high_school_microeconomics` | Answering mutlitple choice questions on high school microeconomics | Answer Generation
+`task708_mmmlu_answer_generation_high_school_physics` | Answering mutlitple choice questions on high school physics | Answer Generation
+`task709_mmmlu_answer_generation_high_school_psychology` | Answering mutlitple choice questions on high school psychology | Answer Generation
+`task710_mmmlu_answer_generation_high_school_statistics` | Answering mutlitple choice questions on high school statistics | Answer Generation
+`task711_mmmlu_answer_generation_high_school_us_history` | Answering mutlitple choice questions on high school us history | Answer Generation
+`task712_mmmlu_answer_generation_high_school_world_history` | Answering mutlitple choice questions on high school world history | Answer Generation
+`task713_mmmlu_answer_generation_human_aging` | Answering mutlitple choice questions on human aging | Answer Generation
+`task714_mmmlu_answer_generation_human_sexuality` | Answering mutlitple choice questions on human sexuality | Answer Generation
+`task715_mmmlu_answer_generation_international_law` | Answering mutlitple choice questions on international law | Answer Generation
+`task716_mmmlu_answer_generation_jurisprudence` | Answering mutlitple choice questions on jurisprudence | Answer Generation
+`task717_mmmlu_answer_generation_logical_fallacies` | Answering mutlitple choice questions on logical fallacies | Answer Generation
+`task718_mmmlu_answer_generation_machine_learning` | Answering mutlitple choice questions on machine learning | Answer Generation
+`task719_mmmlu_answer_generation_management` | Answering mutlitple choice questions on management | Answer Generation
+`task720_mmmlu_answer_generation_marketing` | Answering mutlitple choice questions on marketing | Answer Generation
+`task721_mmmlu_answer_generation_medical_genetics` | Answering mutlitple choice questions on medical genetics | Answer Generation
+`task722_mmmlu_answer_generation_miscellaneous` | Answering mutlitple choice questions on miscellaneous | Answer Generation
+`task723_mmmlu_answer_generation_moral_disputes` | Answering mutlitple choice questions on moral disputes | Answer Generation
+`task724_mmmlu_answer_generation_moral_scenarios` | Answering mutlitple choice questions on moral scenarios | Answer Generation
+`task725_mmmlu_answer_generation_nutrition` | Answering mutlitple choice questions on nutrition | Answer Generation
+`task726_mmmlu_answer_generation_philosophy` | Answering mutlitple choice questions on philosophy | Answer Generation
+`task727_mmmlu_answer_generation_prehistory` | Answering mutlitple choice questions on prehistory | Answer Generation
+`task728_mmmlu_answer_generation_professional_accounting` | Answering mutlitple choice questions on professional accounting | Answer Generation
+`task729_mmmlu_answer_generation_professional_law` | Answering mutlitple choice questions on professional law | Answer Generation
+`task730_mmmlu_answer_generation_professional_medicine` | Answering mutlitple choice questions on professional medicine | Answer Generation
+`task731_mmmlu_answer_generation_professional_psychology` | Answering mutlitple choice questions on professional psychology | Answer Generation
+`task732_mmmlu_answer_generation_public_relations` | Answering mutlitple choice questions on public relations | Answer Generation
+`task733_mmmlu_answer_generation_security_studies` | Answering mutlitple choice questions on security studies | Answer Generation
+`task734_mmmlu_answer_generation_sociology` | Answering mutlitple choice questions on sociology | Answer Generation
+`task735_mmmlu_answer_generation_us_foreign_policy` | Answering mutlitple choice questions on us foreign policy | Answer Generation
+`task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
+`task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
+`task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
+`task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
+`task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
+`task653_parsinlu_fa_en_translation` | Given a Persian question, translate it into English. | Translation
+`task654_bible_fa_en_translation` | Given a Persian sentence from the Bible, translate it into English. | Translation
+`task655_bible_en_fa_translation` | Given an English sentence from the Bible, translate it into Persian. | Translation
+`task656_quran_en_fa_translation` | Given an English sentence from the Quran, translate it into Persian. | Translation
+`task657_quran_fa_en_translation` | Given a Persian sentence from the Quran, translate it into English. | Translation
+`task658_tep_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task659_tep_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task660_mizan_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task661_mizan_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task662_global_voices_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task663_global_voices_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task668_extreme_abstract_summarization` | Generate a summary of this abstract. | Summarization
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
 `task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
@@ -511,3 +613,18 @@ Name | Summary | Category
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
+`task644_refresd_translation` | Translation from english to french sentences. | Translation
+`task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
+`task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
+`task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
+`task445_com_qa_wikipedia_answer_generation` | Generating wikipedia links for com_qa questions | Answer Generation
+`task446_opus_paracrawl_en_so_translation` | Translating English text to Somali | Translation
+`task447_opus_paracrawl_classification` | Generating the language of the text | Classification
+`task448_opus_paracrawl_en_tl_translation` | Translating English text to Tagalog | Translation
+`task449_opus_paracrawl_ig_en_translation` | Translating Igbo text to English | Translation
+`task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
+`task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
+`task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
+`task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
+`task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
+`task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
