@@ -565,7 +565,6 @@ Name | Summary | Category
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
-
 `task934_sherliic_casual_relationship` | Determine if A and B share a casual relationship |Classification
 `task935_sherliic_inverse_casual_relationship` | Determine if A and B share an inverse casual relationship |Classification
 `task936_sherliic_fact_annotation` | Detemine if the annotation given is a correct annotation for the given fact |Classification
