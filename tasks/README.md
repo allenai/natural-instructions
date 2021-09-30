@@ -391,6 +391,9 @@ Name | Summary | Category
 `task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
+`task388_torque_token_classification` | Given a passage, identify a token from the passage representing an event | Token Classification
+`task389_torque_generate_temporal_question` | Given a passage, generate a temporal question | Question Generation
+`task390_torque_text_span_selection` | Given a passage, a temporal question and a list of events in the passage, return a text span from the list of events that answers the given question | Text Span Selection
 `task391_causal_relationship` |  Given two sentences, decide whether the second sentence can be the result of the first one. | Classification
 `task392_inverse_causal_relationship` |  Given two sentences, decide whether the first sentence can be the result of the second one. | Classification
 `task393_plausible_result_generation` | Given a sentence, write another sentence that is a likely result of it. | Text Generation
@@ -504,6 +507,7 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
 `task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
@@ -522,9 +526,26 @@ Name | Summary | Category
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
+`task614_glucose_cause_event_detection` | Given a story and a selected sentence, find an event in the story that caused that sentence | Sentence Generation
 `task611_mutual_multi_turn_dialogue` | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
+`task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
+`task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
+`task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
+`task653_parsinlu_fa_en_translation` | Given a Persian question, translate it into English. | Translation
+`task654_bible_fa_en_translation` | Given a Persian sentence from the Bible, translate it into English. | Translation
+`task655_bible_en_fa_translation` | Given an English sentence from the Bible, translate it into Persian. | Translation
+`task656_quran_en_fa_translation` | Given an English sentence from the Quran, translate it into Persian. | Translation
+`task657_quran_fa_en_translation` | Given a Persian sentence from the Quran, translate it into English. | Translation
+`task658_tep_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task659_tep_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task660_mizan_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task661_mizan_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task662_global_voices_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task663_global_voices_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task668_extreme_abstract_summarization` | Generate a summary of this abstract. | Summarization
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
 `task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
@@ -541,3 +562,6 @@ Name | Summary | Category
 `task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
 `task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
 `task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
+`task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
+`task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
+`task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
