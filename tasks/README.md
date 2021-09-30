@@ -462,6 +462,9 @@ Name | Summary | Category
 `task550_discofuse_sentence_generation` | Senetence Generation on Dataset Card for DISCOFUSE | Senetence Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
+`task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
+`task936_defeasible_nli_snli_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
+`task937_defeasible_nli_social_classification` | Given a hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
 `task535_spl_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
 `task536_spl_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
 `task537_spl_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
