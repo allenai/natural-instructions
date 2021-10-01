@@ -644,3 +644,5 @@ Name | Summary | Category
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task968_xcopa_commonsense_reasoning_et` | Given a premise and two alternative in Estonian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task969_xcopa_commonsense_cause_effect_et` | Given a pair of sentences in Estonian, judge whether the second sentence is the cause or effect of the first on. | Classification
