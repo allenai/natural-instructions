@@ -424,6 +424,17 @@ Name | Summary | Category
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
 `task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify if it is in the English or Gujarati language. | Language Identification
+`task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
+`task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
+`task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
+`task445_com_qa_wikipedia_answer_generation` | Generating wikipedia links for com_qa questions | Answer Generation
+`task446_opus_paracrawl_en_so_translation` | Translating English text to Somali | Translation
+`task447_opus_paracrawl_classification` | Generating the language of the text | Classification
+`task448_opus_paracrawl_en_tl_translation` | Translating English text to Tagalog | Translation
+`task449_opus_paracrawl_ig_en_translation` | Translating Igbo text to English | Translation
+`task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
+`task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
+`task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
@@ -618,17 +629,6 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation
-`task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
-`task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
-`task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
-`task445_com_qa_wikipedia_answer_generation` | Generating wikipedia links for com_qa questions | Answer Generation
-`task446_opus_paracrawl_en_so_translation` | Translating English text to Somali | Translation
-`task447_opus_paracrawl_classification` | Generating the language of the text | Classification
-`task448_opus_paracrawl_en_tl_translation` | Translating English text to Tagalog | Translation
-`task449_opus_paracrawl_ig_en_translation` | Translating Igbo text to English | Translation
-`task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
-`task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
-`task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
@@ -640,3 +640,7 @@ Name | Summary | Category
 `task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
 `task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
 `task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
+`task853_hippocorpus_long_text_generation` | Generating long text given summaries (based on HIPPOCORPUS) | Long Text Generation
+`task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
+`task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
+`task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
