@@ -646,3 +646,10 @@ Name | Summary | Category
 `task952_wiki_cloze_pa_multiple_choice_question_answering` | Given a cloze question in punjabi, identify the missing word| Multiple Choice Question Answering|
 `task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
 `task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
+`task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
+`task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
+`task845_pubmedqa_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
+`task846_pubmedqa_classification` | Classifying if the given answer pertains to the question or not (based on pubmed_QA)| Classification
+`task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
+`task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
+`task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
