@@ -493,3 +493,5 @@ Name | Summary | Category
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
 `task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task968_xcopa_commonsense_reasoning_et` | Given a premise and two alternative in Estonian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task969_xcopa_commonsense_cause_effect_et` | Given a pair of sentences in Estonian, judge whether the second sentence is the cause or effect of the first on. | Classification
