@@ -482,7 +482,7 @@ Name | Summary | Category
 `task629_dbpedia_14_classification` | Classifying the topic names of the text (dbpedia_14 dataset) | Classification
 `task630_dbpedia_14_classification` | Verfying if the title of the text is correct(dbpedia_14 dataset) | Classification
 `task631_dbpedia_14_incorrect_answer_generation` | Generating incorrect answers from specified categories | Incorrect answer generation
-`task632_dbpedia_14_answer_generation` | Generating answers to a question whether the text is about a person (dbpedia_14 dataset) | Answer generation
+`task632_dbpedia_14_classification` | Verifying if the text is about a person (dbpedia_14 dataset) | Classification
 `task633_dbpedia_14_answer_generation` | Generating answer to question ((dbpedia_14 dataset)) | Answer Generation
 `task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
 `task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
