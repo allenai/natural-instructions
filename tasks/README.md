@@ -615,7 +615,6 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task644_refresd_translation` | Translation from english to french sentences. | Translation
 `task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
 `task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
 `task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
