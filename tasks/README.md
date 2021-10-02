@@ -644,3 +644,4 @@ Name | Summary | Category
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task1087_two_number_sum` | Given a list of integers and a target sum, returning a pair of integers that sum to the target | Answer Generation
