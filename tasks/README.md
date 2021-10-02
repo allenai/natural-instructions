@@ -644,3 +644,7 @@ Name | Summary | Category
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task868_cfq_mcd1_explanation_to_sql` | Generating queries (based on CFQ MCD1) | Structured Query Generation  
+`task869_cfq_mcd1_sql_to_explanation` | Checking if queries match natural language query description | Structured Query Classification
+`task870_msmarco_answer_generation` | Generating answers based on natural language passage and related query from MS MARCO | Answer Generation
+`task871_msmarco_question_generation` | Generating questions based on natural language passage from MS MARCO | Question Generation
