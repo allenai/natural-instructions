@@ -491,13 +491,13 @@ Name | Summary | Category
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task770_pawsx_english_text_modification` | Given an original sentence in English, provide an equivalent paraphrase in said language | Text Modification
-`task771_pawsx_korean_text_modification` | Given an original sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
-`task772_pawsx_french_text_modification` | Given an original sentence in French, provide an equivalent paraphrase in said language | Text Modification
-`task773_pawsx_spanish_text_modification` | Given an original sentence in Spanish, provide an equivalent paraphrase in said language | Text Modification
-`task774_pawsx_german_text_modification` | Given an original sentence in German, provide an equivalent paraphrase in said language | Text Modification
-`task775_pawsx_chinese_text_modification` | Given an original sentence in Chinese, provide an equivalent paraphrase in said language | Text Modification
-`task776_pawsx_japanese_text_modification` | Given an original sentence in Japanese, provide an equivalent paraphrase in said language | Text Modification
+`task770_pawsx_english_text_modification` | Given a sentence in English, provide an equivalent paraphrase in said language | Text Modification
+`task771_pawsx_korean_text_modification` | Given a sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
+`task772_pawsx_french_text_modification` | Given a sentence in French, provide an equivalent paraphrase in said language | Text Modification
+`task773_pawsx_spanish_text_modification` | Given a sentence in Spanish, provide an equivalent paraphrase in said language | Text Modification
+`task774_pawsx_german_text_modification` | Given a sentence in German, provide an equivalent paraphrase in said language | Text Modification
+`task775_pawsx_chinese_text_modification` | Given a sentence in Chinese, provide an equivalent paraphrase in said language | Text Modification
+`task776_pawsx_japanese_text_modification` | Given a sentence in Japanese, provide an equivalent paraphrase in said language | Text Modification
 `task777_pawsx_english_korean_translation` | Given a sentence in English, provide an equivalent translation to Korean | Translation
 `task778_pawsx_english_french_translation` | Given a sentence in English, provide an equivalent translation to French | Translation
 `task779_pawsx_english_spanish_translation` | Given a sentence in English, provide an equivalent translation to Spanish | Translation
