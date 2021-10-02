@@ -424,6 +424,17 @@ Name | Summary | Category
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
 `task441_eng_guj_parallel_corpus_gu-en_language_identification` | Given a sentence, identify if it is in the English or Gujarati language. | Language Identification
+`task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
+`task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
+`task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
+`task445_com_qa_wikipedia_answer_generation` | Generating wikipedia links for com_qa questions | Answer Generation
+`task446_opus_paracrawl_en_so_translation` | Translating English text to Somali | Translation
+`task447_opus_paracrawl_classification` | Generating the language of the text | Classification
+`task448_opus_paracrawl_en_tl_translation` | Translating English text to Tagalog | Translation
+`task449_opus_paracrawl_ig_en_translation` | Translating Igbo text to English | Translation
+`task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
+`task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
+`task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
@@ -507,6 +518,8 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task617_amazonreview_category_text_generation` | Given an Amazon product review your task is to generate the category of product. | Text Generation
+`task618_amazonreview_summary_text_generation` | Given an Amazon product review your task is to generate the summary of the review. | Text Generation
 `task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
 `task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
@@ -526,10 +539,75 @@ Name | Summary | Category
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
+`task612_yorubabbc_classification` | Given a news article headline from Yoruba BBC, classify the label of the headline. | Classification
 `task614_glucose_cause_event_detection` | Given a story and a selected sentence, find an event in the story that caused that sentence | Sentence Generation
 `task611_mutual_multi_turn_dialogue` | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
+`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task672_amazon_and_yelp_summarization_dataset_summarization` | Generating summaries to amazon/yelp reviews | Summarization
+`task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
+`task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
+`task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
+`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
+`task665_mmmlu_answer_generation_anatomy` | Answering mutlitple choice questions on anatomy | Answer Generation
+`task666_mmmlu_answer_generation_astronomy` | Answering mutlitple choice questions on astronomy | Answer Generation
+`task667_mmmlu_answer_generation_business_ethics` | Answering mutlitple choice questions on business ethics | Answer Generation
+`task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
+`task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
+`task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
+`task688_mmmlu_answer_generation_college_computer_science` | Answering mutlitple choice questions on college computer science | Answer Generation
+`task689_mmmlu_answer_generation_college_mathematics` | Answering mutlitple choice questions on college mathematics | Answer Generation
+`task690_mmmlu_answer_generation_college_medicine` | Answering mutlitple choice questions on college medicine | Answer Generation
+`task691_mmmlu_answer_generation_college_physics` | Answering mutlitple choice questions on college physics | Answer Generation
+`task692_mmmlu_answer_generation_computer_security` | Answering mutlitple choice questions on computer security | Answer Generation
+`task693_mmmlu_answer_generation_conceptual_physics` | Answering mutlitple choice questions on conceptual physics | Answer Generation
+`task694_mmmlu_answer_generation_econometrics` | Answering mutlitple choice questions on econometrics | Answer Generation
+`task695_mmmlu_answer_generation_electrical_engineering` | Answering mutlitple choice questions on electrical engineering | Answer Generation
+`task696_mmmlu_answer_generation_elementary_mathematics` | Answering mutlitple choice questions on elementary mathematics | Answer Generation
+`task697_mmmlu_answer_generation_formal_logic` | Answering mutlitple choice questions on formal logic | Answer Generation
+`task698_mmmlu_answer_generation_global_facts` | Answering mutlitple choice questions on global facts | Answer Generation
+`task699_mmmlu_answer_generation_high_school_biology` | Answering mutlitple choice questions on high school biology | Answer Generation
+`task700_mmmlu_answer_generation_high_school_chemistry` | Answering mutlitple choice questions on high school chemistry | Answer Generation
+`task701_mmmlu_answer_generation_high_school_computer_science` | Answering mutlitple choice questions on high school computer science | Answer Generation
+`task702_mmmlu_answer_generation_high_school_european_history` | Answering mutlitple choice questions on high school european history | Answer Generation
+`task703_mmmlu_answer_generation_high_school_geography` | Answering mutlitple choice questions on high school geography | Answer Generation
+`task704_mmmlu_answer_generation_high_school_government_and_politics` | Answering mutlitple choice questions on high school government and politics | Answer Generation
+`task705_mmmlu_answer_generation_high_school_macroeconomics` | Answering mutlitple choice questions on high school macroeconomics | Answer Generation
+`task706_mmmlu_answer_generation_high_school_mathematics` | Answering mutlitple choice questions on high school mathematics | Answer Generation
+`task707_mmmlu_answer_generation_high_school_microeconomics` | Answering mutlitple choice questions on high school microeconomics | Answer Generation
+`task708_mmmlu_answer_generation_high_school_physics` | Answering mutlitple choice questions on high school physics | Answer Generation
+`task709_mmmlu_answer_generation_high_school_psychology` | Answering mutlitple choice questions on high school psychology | Answer Generation
+`task710_mmmlu_answer_generation_high_school_statistics` | Answering mutlitple choice questions on high school statistics | Answer Generation
+`task711_mmmlu_answer_generation_high_school_us_history` | Answering mutlitple choice questions on high school us history | Answer Generation
+`task712_mmmlu_answer_generation_high_school_world_history` | Answering mutlitple choice questions on high school world history | Answer Generation
+`task713_mmmlu_answer_generation_human_aging` | Answering mutlitple choice questions on human aging | Answer Generation
+`task714_mmmlu_answer_generation_human_sexuality` | Answering mutlitple choice questions on human sexuality | Answer Generation
+`task715_mmmlu_answer_generation_international_law` | Answering mutlitple choice questions on international law | Answer Generation
+`task716_mmmlu_answer_generation_jurisprudence` | Answering mutlitple choice questions on jurisprudence | Answer Generation
+`task717_mmmlu_answer_generation_logical_fallacies` | Answering mutlitple choice questions on logical fallacies | Answer Generation
+`task718_mmmlu_answer_generation_machine_learning` | Answering mutlitple choice questions on machine learning | Answer Generation
+`task719_mmmlu_answer_generation_management` | Answering mutlitple choice questions on management | Answer Generation
+`task720_mmmlu_answer_generation_marketing` | Answering mutlitple choice questions on marketing | Answer Generation
+`task721_mmmlu_answer_generation_medical_genetics` | Answering mutlitple choice questions on medical genetics | Answer Generation
+`task722_mmmlu_answer_generation_miscellaneous` | Answering mutlitple choice questions on miscellaneous | Answer Generation
+`task723_mmmlu_answer_generation_moral_disputes` | Answering mutlitple choice questions on moral disputes | Answer Generation
+`task724_mmmlu_answer_generation_moral_scenarios` | Answering mutlitple choice questions on moral scenarios | Answer Generation
+`task725_mmmlu_answer_generation_nutrition` | Answering mutlitple choice questions on nutrition | Answer Generation
+`task726_mmmlu_answer_generation_philosophy` | Answering mutlitple choice questions on philosophy | Answer Generation
+`task727_mmmlu_answer_generation_prehistory` | Answering mutlitple choice questions on prehistory | Answer Generation
+`task728_mmmlu_answer_generation_professional_accounting` | Answering mutlitple choice questions on professional accounting | Answer Generation
+`task729_mmmlu_answer_generation_professional_law` | Answering mutlitple choice questions on professional law | Answer Generation
+`task730_mmmlu_answer_generation_professional_medicine` | Answering mutlitple choice questions on professional medicine | Answer Generation
+`task731_mmmlu_answer_generation_professional_psychology` | Answering mutlitple choice questions on professional psychology | Answer Generation
+`task732_mmmlu_answer_generation_public_relations` | Answering mutlitple choice questions on public relations | Answer Generation
+`task733_mmmlu_answer_generation_security_studies` | Answering mutlitple choice questions on security studies | Answer Generation
+`task734_mmmlu_answer_generation_sociology` | Answering mutlitple choice questions on sociology | Answer Generation
+`task735_mmmlu_answer_generation_us_foreign_policy` | Answering mutlitple choice questions on us foreign policy | Answer Generation
+`task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
+`task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
 `task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
 `task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
 `task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
@@ -551,20 +629,21 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation
-`task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
-`task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
-`task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
-`task445_com_qa_wikipedia_answer_generation` | Generating wikipedia links for com_qa questions | Answer Generation
-`task446_opus_paracrawl_en_so_translation` | Translating English text to Somali | Translation
-`task447_opus_paracrawl_classification` | Generating the language of the text | Classification
-`task448_opus_paracrawl_en_tl_translation` | Translating English text to Tagalog | Translation
-`task449_opus_paracrawl_ig_en_translation` | Translating Igbo text to English | Translation
-`task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
-`task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
-`task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
+`task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
+`task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
+`task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
+`task845_pubmedqa_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
+`task846_pubmedqa_classification` | Classifying if the given answer pertains to the question or not (based on pubmed_QA)| Classification
+`task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
+`task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
+`task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
+`task853_hippocorpus_long_text_generation` | Generating long text given summaries (based on HIPPOCORPUS) | Long Text Generation
+`task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
+`task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
+`task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
 `task970_sherliic_casual_relationship` | Determine if A and B share a casual relationship |Classification
 `task973_sherliic_inverse_casual_relationship` | Determine if A and B share an inverse casual relationship |Classification
 `task971_sherliic_fact_annotation` | Detemine if the annotation given is a correct annotation for the given fact |Classification
