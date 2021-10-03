@@ -706,3 +706,28 @@ Name | Summary | Category
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task1090_ted_translation_en_gl` | Translate a sentence in English to Galician. | Translation
+`task1091_ted_translation_en_it` | Translate a sentence in English to Italian. | Translation
+`task1092_ted_translation_en_pl` | Translate a sentence in English to Polish. | Translation
+`task1093_ted_translation_en_fa` | Translate a sentence in English to Farsi. | Translation
+`task1094_ted_translation_en_pt` | Translate a sentence in English to Portugese. | Translation
+`task1095_ted_translation_ja_gl` | Translate a sentence in Japanese to Galician. | Translation
+`task1096_ted_translation_ja_it` | Translate a sentence in Japanese to Italian. | Translation
+`task1097_ted_translation_ja_pl` | Translate a sentence in Japanese to Polish. | Translation
+`task1098_ted_translation_ja_fa` | Translate a sentence in Japanese to Farsi. | Translation
+`task1099_ted_translation_ja_pt` | Translate a sentence in Japanese to Portugese. | Translation
+`task1100_ted_translation_es_gl` | Translate a sentence in Spanish to Galician. | Translation
+`task1101_ted_translation_es_it` | Translate a sentence in Spanish to Italian. | Translation
+`task1102_ted_translation_es_pl` | Translate a sentence in Spanish to Polish. | Translation
+`task1103_ted_translation_es_fa` | Translate a sentence in Spanish to Farsi. | Translation
+`task1104_ted_translation_es_pt` | Translate a sentence in Spanish to Portugese. | Translation
+`task1105_ted_translation_ar_gl` | Translate a sentence in Arabic to Galician. | Translation
+`task1106_ted_translation_ar_it` | Translate a sentence in Arabic to Italian. | Translation
+`task1107_ted_translation_ar_pl` | Translate a sentence in Arabic to Polish. | Translation
+`task1108_ted_translation_ar_fa` | Translate a sentence in Arabic to Farsi. | Translation
+`task1109_ted_translation_ar_pt` | Translate a sentence in Arabic to Portugese. | Translation
+`task1110_ted_translation_he_gl` | Translate a sentence in Hebrew to Galician. | Translation
+`task1111_ted_translation_he_it` | Translate a sentence in Hebrew to Italian. | Translation
+`task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
+`task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
+`task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
