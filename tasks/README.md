@@ -184,7 +184,6 @@ Name | Summary | Category
 `task182_duorc_question_generation` | Writing a question based on a given plot. | Question Generation
 `task183_rhyme_generation` | Given an input word, generate a list of words that rhyme exactly with the input. | Answer Generation
 `task184_break_generate_question` | Generate a question based on the given steps used to answer it. | Question Generation
-`task170_hotpotqa_answer_generation.json` | Given a set of context and supporting facts, answer the question asked based on them. | Answer Generation
 `task191_hotpotqa_question_generation.json` | Given a set of context, supporting facts and an answer, generate the question asked based on them. | Question Generation
 `task192_hotpotqa_sentence_generation.json` | Given a context paragraph, question and corresponding answer, generate the supporting facts that helps in answering question. | Sentence Generation
 `task197_mnli_domain_answer_generation.json` | Given two sentences, write a single word describing the common genre to which they belong | Answer Generation
