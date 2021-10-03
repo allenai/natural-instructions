@@ -644,6 +644,6 @@ Name | Summary | Category
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
-`task1087_two_number_sum` | Given a list of integers and a target sum, returning a pair of integers that sum to the target | Answer Generation
-`task1088_array_of_products` | Given an integer array named nums, return an array named answer such that answer[i] is equal to the product of all the elements of nums except nums[i]" | Answer Generation
-`task1089_check_monotonic_array` | "Check if the given array is monotonic or not"  | Answer Generation
+`task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
+`task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements in the input array of every other location" | Answer Generation
+`task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
