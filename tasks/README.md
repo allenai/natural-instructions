@@ -406,6 +406,18 @@ Name | Summary | Category
 `task403_creak_commonsense_inference` | Given a statement and a explanation, judge whether the statement is true based on the explanation | Classification
 `task404_grailqa_paraphrase_validation` | Given two questions, decide whether the second one is a valid paraphrase of the first one | Classification
 `task405_narrativeqa_question_generation` | Given a plot summary, create questions that can be answered based on it | Question Generation
+`task406_mickey_fr_sentence_perturbation_generation` | Given a sentence in French, perform perturbations and generate new sentence in French. | Sentence Generation
+`task407_mickey_hi_sentence_perturbation_generation` | Given a sentence in Hindi, perform perturbations and generate new sentence in Hindi. | Sentence Generation
+`task408_mickey_it_sentence_perturbation_generation` | Given a sentence in Italian, perform perturbations and generate new sentence in Italian. | Sentence Generation
+`task409_mickey_nl_sentence_perturbation_generation` | Given a sentence in Dutch, perform perturbations and generate new sentence in Dutch. | Sentence Generation
+`task410_mickey_ru_sentence_perturbation_generation` | Given a sentence in Russian, perform perturbations and generate new sentence in Russian. | Sentence Generation
+`task411_mickey_vi_sentence_perturbation_generation` | Given a sentence in Vietnamese, perform perturbations and generate new sentence in Vietnamese. | Sentence Generation
+`task412_mickey_zh_sentence_perturbation_generation` | Given a sentence in Chinese, perform perturbations and generate new sentence in Chinese. | Sentence Generation
+`task413_mickey_en_sentence_perturbation_generation` | Given a sentence in English, perform perturbations and generate new sentence in English. | Sentence Generation
+`task414_mickey_ar_sentence_perturbation_generation` | Given a sentence in Arabic, perform perturbations and generate new sentence in Arabic. | Sentence Generation
+`task415_mickey_bg_sentence_perturbation_generation` | Given a sentence in Bulgarian, perform perturbations and generate new sentence in Bulgarian. | Sentence Generation
+`task416_mickey_de_sentence_perturbation_generation` | Given a sentence in German, perform perturbations and generate new sentence in German. | Sentence Generation
+`task417_mickey_es_sentence_perturbation_generation` | Given a sentence in Spanish, perform perturbations and generate new sentence in Spanish. | Sentence Generation
 `task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
 `task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
 `task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
