@@ -647,3 +647,5 @@ Name | Summary | Category
 `task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
 `task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
+`task1090_country_capital` | Given a country, return it's capital city  | Answer Generation
+`task1091_country_currency` | Given a country, return it's currency  | Answer Generation
