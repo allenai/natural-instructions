@@ -743,4 +743,3 @@ Name | Summary | Category
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
-`task1151_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
