@@ -530,10 +530,6 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task617_amazonreview_category_text_generation` | Given an Amazon product review your task is to generate the category of product. | Text Generation
-`task618_amazonreview_summary_text_generation` | Given an Amazon product review your task is to generate the summary of the review. | Text Generation
-`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
-`task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
@@ -542,7 +538,7 @@ Name | Summary | Category
 `task575_air_dialogue_classification` | Classification of the sentence spoken by 'agent' and 'customer'. | Classification
 `task576_curiosity_dialogs_answer_generation` | Answering multiple choices dialogue act problems. | Answer Generation
 `task577_curiosity_dialogs_classification` | Classification of the sentence spoken by 'assistant' and 'user'. | Classification
-`task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation 
+`task578_curiosity_dialogs_answer_generation` | Given a conversation between 'assistant' and 'user' classify the context of the conversation | Answer Generation
 `task579_socialiqa_classification` | Given a context, a question and an answer; classify whether the answer is correct or not. | Classification
 `task580_socialiqa_answer_generation` | Given a context, a question and three options; provide correct answer for the question based on the context. | Answer Generation
 `task581_socialiqa_question_generation` | Generate a question based on the given context and an answer. | Question Generation
@@ -555,13 +551,23 @@ Name | Summary | Category
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
+`task611_mutual_multi_turn_dialogue` | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
 `task612_yorubabbc_classification` | Given a news article headline from Yoruba BBC, classify the label of the headline. | Classification
 `task614_glucose_cause_event_detection` | Given a story and a selected sentence, find an event in the story that caused that sentence | Sentence Generation
-`task611_mutual_multi_turn_dialogue` | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
-`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
-`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
+`task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
+`task617_amazonreview_category_text_generation` | Given an Amazon product review your task is to generate the category of product. | Text Generation
+`task618_amazonreview_summary_text_generation` | Given an Amazon product review your task is to generate the summary of the review. | Text Generation
+`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
+`task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
+`task665_mmmlu_answer_generation_anatomy` | Answering mutlitple choice questions on anatomy | Answer Generation
+`task666_mmmlu_answer_generation_astronomy` | Answering mutlitple choice questions on astronomy | Answer Generation
+`task667_mmmlu_answer_generation_business_ethics` | Answering mutlitple choice questions on business ethics | Answer Generation
 `task672_nummersense` | Given a cloze question, identify the missing numerical value| Answer Generation
+`task672_amazon_and_yelp_summarization_dataset_summarization` | Generating summaries to amazon/yelp reviews | Summarization
+`task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
+`task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
+`task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
 `task750_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
 `task751_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
 `task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
@@ -575,16 +581,9 @@ Name | Summary | Category
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
-`task672_amazon_and_yelp_summarization_dataset_summarization` | Generating summaries to amazon/yelp reviews | Summarization
-`task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
-`task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
-`task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
 `task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
-`task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
-`task665_mmmlu_answer_generation_anatomy` | Answering mutlitple choice questions on anatomy | Answer Generation
-`task666_mmmlu_answer_generation_astronomy` | Answering mutlitple choice questions on astronomy | Answer Generation
-`task667_mmmlu_answer_generation_business_ethics` | Answering mutlitple choice questions on business ethics | Answer Generation
+
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
