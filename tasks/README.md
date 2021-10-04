@@ -741,3 +741,4 @@ Name | Summary | Category
 `task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
 `task1151_swap_max_min` | Given a list of unique integers, swap the minimum and maximum element in the list  | Answer Generation
+`task1152_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
