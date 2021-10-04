@@ -742,3 +742,4 @@ Name | Summary | Category
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
 `task1151_swap_max_min` | Given a list of unique integers, swap the minimum and maximum element in the list  | Answer Generation
 `task1152_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
+`task1153_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
