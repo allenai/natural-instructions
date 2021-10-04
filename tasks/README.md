@@ -448,7 +448,7 @@ Name | Summary | Category
 `task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
 `task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
 `task453_swag_answer_generation` | Given a statement context, complete the partial next sentence | Answer Generation
-`task454_swag_incorrect_answer_generation` | Given a statement context, complete the partial next sentence with incorrect statement | Answer Generation
+`task454_swag_incorrect_answer_generation` | Given a statement context, complete the partial next sentence with incorrect statement | Incorrect Answer Generation
 `task455_swag_context_generation` | Given a statement, generate its context or previous statement | Answer Generation
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
