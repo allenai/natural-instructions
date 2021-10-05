@@ -496,9 +496,9 @@ Name | Summary | Category
 `task567_circa_text_generation` | Given a question, Predict the context of the given question. | Text Generation
 `task568_circa_question_generation` | Given an answer, Predict the question. | Question Generation
 `task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions. | Text Generation
-`task570_recipe_nlg_ner_generation` | generate the ner given its required ingredients given. | ner Generation
-`task571_recipe_nlg_ner_generation` | generate the ner given its directions. | ner Generation
-`task572_recipe_nlg_text_generation` |  generate the unknown step by knowing the other steps given in the directions. | Text Generation
+`task570_recipe_nlg_ner_generation` | Generate the ner given its required ingredients given. | ner Generation
+`task571_recipe_nlg_ner_generation` | Generate the ner given its directions. | ner Generation
+`task572_recipe_nlg_text_generation` |  Generate the unknown step by knowing the other steps given in the directions. | Text Generation
 `task535_spl_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
 `task536_spl_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
 `task537_spl_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
