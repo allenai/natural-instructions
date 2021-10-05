@@ -724,6 +724,8 @@ Name | Summary | Category
 `task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
 `task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
+`task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
+`task1147_country_currency` | Given a country, return it's currency  | Answer Generation
 `task1115_alt_ja_id_translation` | Given a Japanese language sentence translate it into Bahasa Indonesia language. | Translation
 `task1116_alt_id_ja_translation` | Given a Bahasa Indonesia language sentence translate it into Japanese language. | Translation
 `task1117_alt_ja_id_answer_generation` | Generate answer yes or no for Japanese and Bahasa Indonesia translation pair. | Answer Generation
@@ -739,5 +741,3 @@ Name | Summary | Category
 `task1127_alt_ja_th_translation` | Given a Japanese language sentence translate it into Thai language. | Translation
 `task1128_alt_th_ja_translation` | Given a Thai language sentence translate it into Japanese language. | Translation
 `task1129_alt_ja_th_answer_generation` | Generate answer yes or no for Japanese and Thai translation pair. | Answer Generation
-`task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
-`task1147_country_currency` | Given a country, return it's currency  | Answer Generation
