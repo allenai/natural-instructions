@@ -750,3 +750,5 @@ Name | Summary | Category
 `task1157_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1158_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1159_bard_analogical_reasoning_causation` | Given an analogy that relates actions with their consequences, give the appropriate consequence of the given action | Answer Generation
+`task1165_entam_en_to_ta_translation`| Translate a sentence in English to Tamil. | Translation
+`task1166_entam_ta_to_en_translation`| Translate a sentence in Tamil to English. | Translation
