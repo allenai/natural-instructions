@@ -432,6 +432,12 @@ Name | Summary | Category
 `task429_senteval_tense` | Given a sentence, specify the tense of the main verb. | Classification
 `task430_senteval_subject_count` | Given a sentence, specify singularity or plurality of the subject. | Classification
 `task431_senteval_object_count` | Given a sentence, specify singularity or plurality of the object. | Classification
+`task432_alt_en_hi_translation` | Given an English language sentence translate it into Hindi language. | Translation
+`task433_alt_hi_en_translation` | Given an Hindi language sentence translate it into English language. | Translation
+`task434_alt_en_hi_answer_generation` | Generate answer yes or no for english and hindi translation pair. | Answer Generation
+`task435_alt_en_ja_translation` | Given an English language sentence translate it into Japanese language. | Translation
+`task436_alt_ja_en_translation` | Given an Japanese language sentence translate it into English language. | Translation
+`task437_alt_en_ja_answer_generation` | Generate answer yes or no for english and japanese translation pair. | Answer Generation
 `task438_eng_guj_parallel_corpus_en_gu_translation` | Translation from English to Gujarati sentences. | Translation
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
