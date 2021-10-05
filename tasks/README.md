@@ -636,6 +636,6 @@ Name | Summary | Category
 `task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
 `task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
 `task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
-`task957_e2e_text_generation` | Generate a restaurant description from a data table. | Text Generation
-`task958_e2e_text_generation` | Parse a restaurant description into a data table. | Text Generation
-`task959_e2e_text_generation` | Identify the named entity that is the subject of the excerpt. | Text Generation
+`task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Text Generation
+`task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Text Generation
+`task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Text Generation
