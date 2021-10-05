@@ -400,18 +400,6 @@ Name | Summary | Category
 `task394_persianqa_question_generation` | Given a passage, generate a question based on it. | Question Generation
 `task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage. | Answer Generation
 `task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not. | Classification
-<<<<<<< HEAD
-`task432_alt_en_hi_translation` | Given an English language sentence translate it into Hindi language. | Translation
-`task433_alt_hi_en_translation` | Given an Hindi language sentence translate it into English language. | Translation
-`task434_alt_en_hi_answer_generation` | Generate answer yes or no for english and hindi translation pair. | Answer Generation
-`task435_alt_en_ja_translation` | Given an English language sentence translate it into Japanese language. | Translation
-`task436_alt_ja_en_translation` | Given an Japanese language sentence translate it into English language. | Translation
-`task437_alt_en_ja_answer_generation` | Generate answer yes or no for english and japanese translation pair. | Answer Generation
-`task493_review_polarity_classification` | Classify amazon review into positive or negative | Classification
-`task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
-`task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
-`task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
-=======
 `task400_paws_paraphrase_classification` | Given two sentences, judge whether they are paraphrases of each other | Classification
 `task401_numeric_fused_head_reference` | Given a dialogue and a highlighted number, choose the entity the number refers to from the text | Answer Generation
 `task402_grailqa_paraphrase_generation` | Given a question and answer pair, paraphrase the question. | Text Generation
@@ -491,6 +479,10 @@ Name | Summary | Category
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task493_review_polarity_classification` | Classify amazon review into positive or negative | Classification
+`task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
+`task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
+`task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
 `task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
 `task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
@@ -718,9 +710,3 @@ Name | Summary | Category
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
-`task493_review_polarity_classification` | Classify amazon review into positive or negative | Classification
-`task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
-`task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
-`task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
-
->>>>>>> origin
