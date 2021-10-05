@@ -759,5 +759,31 @@ Name | Summary | Category
 `task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
 `task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
+`task1090_ted_translation_en_gl` | Translate a sentence in English to Galician. | Translation
+`task1091_ted_translation_en_it` | Translate a sentence in English to Italian. | Translation
+`task1092_ted_translation_en_pl` | Translate a sentence in English to Polish. | Translation
+`task1093_ted_translation_en_fa` | Translate a sentence in English to Farsi. | Translation
+`task1094_ted_translation_en_pt` | Translate a sentence in English to Portugese. | Translation
+`task1095_ted_translation_ja_gl` | Translate a sentence in Japanese to Galician. | Translation
+`task1096_ted_translation_ja_it` | Translate a sentence in Japanese to Italian. | Translation
+`task1097_ted_translation_ja_pl` | Translate a sentence in Japanese to Polish. | Translation
+`task1098_ted_translation_ja_fa` | Translate a sentence in Japanese to Farsi. | Translation
+`task1099_ted_translation_ja_pt` | Translate a sentence in Japanese to Portugese. | Translation
+`task1100_ted_translation_es_gl` | Translate a sentence in Spanish to Galician. | Translation
+`task1101_ted_translation_es_it` | Translate a sentence in Spanish to Italian. | Translation
+`task1102_ted_translation_es_pl` | Translate a sentence in Spanish to Polish. | Translation
+`task1103_ted_translation_es_fa` | Translate a sentence in Spanish to Farsi. | Translation
+`task1104_ted_translation_es_pt` | Translate a sentence in Spanish to Portugese. | Translation
+`task1105_ted_translation_ar_gl` | Translate a sentence in Arabic to Galician. | Translation
+`task1106_ted_translation_ar_it` | Translate a sentence in Arabic to Italian. | Translation
+`task1107_ted_translation_ar_pl` | Translate a sentence in Arabic to Polish. | Translation
+`task1108_ted_translation_ar_fa` | Translate a sentence in Arabic to Farsi. | Translation
+`task1109_ted_translation_ar_pt` | Translate a sentence in Arabic to Portugese. | Translation
+`task1110_ted_translation_he_gl` | Translate a sentence in Hebrew to Galician. | Translation
+`task1111_ted_translation_he_it` | Translate a sentence in Hebrew to Italian. | Translation
+`task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
+`task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
+`task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
+
