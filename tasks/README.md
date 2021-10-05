@@ -742,3 +742,7 @@ Name | Summary | Category
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
+`task1161_coda19_title_generation` | Given a paragraph from a research paper, your task is to generate the title of the paper | Title Generation
+`task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
+`task1163_coda19__section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
+`task1164_coda19__section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
