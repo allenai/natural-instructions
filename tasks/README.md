@@ -724,6 +724,9 @@ Name | Summary | Category
 `task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
 `task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
 `task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
+`task850_synthetic_longest_palindrome` | Given a string find the longest substring that is a palindrome. | Answer Generation
+`task851_synthetic_multiply_evens` | Given a list of lists of integers multiply the even numbers in every list | Answer Generation, Arthimetic
+`task852_synthetic_multiply_odds` | Given a list of lists of integers multiply the odd numbers in every list | Answer Generation, Arthimetic
 `task853_hippocorpus_long_text_generation` | Generating long text given summaries (based on HIPPOCORPUS) | Long Text Generation
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
