@@ -798,3 +798,6 @@ Name | Summary | Category
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
+`task264_paper_reviews_accept_or_reject_classification` | Given a set of reviews, classify paper into accept or reject | Classification
+`task265_paper_reviews_language_identification` | Given a paper review, identify it is in the english or spanish language | Language Identification
+`task266_paper_reviews_reviewer_perspective_classification` | Given a paper review, classify into five evaluation metric | Classification
