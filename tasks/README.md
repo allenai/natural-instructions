@@ -484,8 +484,6 @@ Name | Summary | Category
 `task501_scruples_anecdotes_post_type_verification` | Given a real-life annecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
 `task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life annecdote of a complex ethical situation, verify who is wrong in the situation | Verification
 `task503_scruples_anecdotes_isanswerable` | Given a real-life annecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
-`task504_scruples_dilemmas_less_ethical_answer_identification` | Given a pair of action statements, identify which one is less ethical | Answer Identification
-`task505_scruples_dilemmas_more_ethical_answer_identification` | Given a pair of action statements, judge which one is more ethical that is which of the statements is morally less wrong | Answer Identification
 `task506_scruples_dilemmas_less_ethical_answer_generation` | Given an action statement, generate another action statement which is less ethical | Answer Generation
 `task507_scruples_dilemmas_more_ethical_answer_generation` | Given an action statement, generate another action statement which is more ethical | Answer Generation
 `task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
