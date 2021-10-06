@@ -488,6 +488,10 @@ Name | Summary | Category
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task489_mwsc_question_generation` | Generating questions based on the given sentence | Question Generation  
+`task490_mwsc_options_generation` | Generating options to mwsc questions | Options Generation
+`task491_mwsc_answer_generation` | Generating answers to mwsc questions | Answer Generation  
+`task492_mwsc_incorrect_answer_generation` | Generating incorrect answers to mwsc questions | Incorrect Answer Generation
 `task493_review_polarity_classification` | Classify amazon review into positive or negative | Classification
 `task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
 `task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
