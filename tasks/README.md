@@ -479,13 +479,11 @@ Name | Summary | Category
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
-`task497_scruples_anecdotes_post_type_classification` | Given a paragraph, the task is to classify it into two types historial or hypothetical | Binary Classification
 `task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life annecdote of a complex ethical situation, identify who is ethically wrong here | Classification
-`task499_scruples_anecdotes_action_classification` | Given a real-life annecdote of a complex ethical situation, task is to classify the text into right or wrong. | Binary Classification
-`task500_scruples_anecdotes_title_generation` | Given a real-life annecdote of a complex ethical situation, identify the action phrases that describes the main event/root cause of the situation | Title Generation
-`task501_scruples_anecdotes_post_type_verification` | Given a real-life annecdote of a complex ethical situation, verify if the type of the post is historical or hypothetical | Verification
+`task500_scruples_anecdotes_title_generation` | Given a real-life annecdote of a complex ethical situation, generate a title that describes the main event/root cause of the situation | Title Generation
+`task501_scruples_anecdotes_post_type_verification` | Given a real-life annecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
 `task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life annecdote of a complex ethical situation, verify who is wrong in the situation | Verification
-`task503_scruples_anecdotes_ismoreinforeq_verification` | Given a real-life annecdote of a complex ethical situation, verify if more information is required to answer who is ethically wrong here | Verification
+`task503_scruples_anecdotes_isanswerable` | Given a real-life annecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
 `task504_scruples_dilemmas_less_ethical_answer_identification` | Given a pair of action statements, identify which one is less ethical | Answer Identification
 `task505_scruples_dilemmas_more_ethical_answer_identification` | Given a pair of action statements, judge which one is more ethical that is which of the statements is morally less wrong | Answer Identification
 `task506_scruples_dilemmas_less_ethical_answer_generation` | Given an action statement, generate another action statement which is less ethical | Answer Generation
