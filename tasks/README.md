@@ -484,10 +484,7 @@ Name | Summary | Category
 `task501_scruples_anecdotes_post_type_verification` | Given a real-life annecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
 `task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life annecdote of a complex ethical situation, verify who is wrong in the situation | Verification
 `task503_scruples_anecdotes_isanswerable` | Given a real-life annecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
-`task506_scruples_dilemmas_less_ethical_answer_generation` | Given an action statement, generate another action statement which is less ethical | Answer Generation
-`task507_scruples_dilemmas_more_ethical_answer_generation` | Given an action statement, generate another action statement which is more ethical | Answer Generation
 `task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
-`task509_scruples_dilemmas_not_moreorless_ethical_answer_generation` | Given an action statement, generate another action statement such that they cannot be conclusively differentiated into more or less ethical | Answer Generation
 `task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
 `task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
