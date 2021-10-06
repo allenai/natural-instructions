@@ -671,39 +671,6 @@ Name | Summary | Category
 `task735_mmmlu_answer_generation_us_foreign_policy` | Answering mutlitple choice questions on us foreign policy | Answer Generation
 `task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
 `task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
-`task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
-`task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
-`task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
-`task653_parsinlu_fa_en_translation` | Given a Persian question, translate it into English. | Translation
-`task654_bible_fa_en_translation` | Given a Persian sentence from the Bible, translate it into English. | Translation
-`task655_bible_en_fa_translation` | Given an English sentence from the Bible, translate it into Persian. | Translation
-`task656_quran_en_fa_translation` | Given an English sentence from the Quran, translate it into Persian. | Translation
-`task657_quran_fa_en_translation` | Given a Persian sentence from the Quran, translate it into English. | Translation
-`task658_tep_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
-`task659_tep_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
-`task660_mizan_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
-`task661_mizan_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
-`task662_global_voices_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
-`task663_global_voices_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
-`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task668_extreme_abstract_summarization` | Generate a summary of this abstract. | Summarization
-`task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
-`task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
-`task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
-`task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
-`task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task442_com_qa_paraphrase_question_generation` | Generating paraphrases of com_qa questions | Question Generation
-`task443_com_qa_ans_question_generation` | Generating questions for com_qa answers | Question Generation
-`task444_com_qa_question_paraphrases_answer_generation` | Generating answers for com_qa question paraphrases | Answer Generation
-`task445_com_qa_wikipedia_answer_generation` | Generating wikipedia links for com_qa questions | Answer Generation
-`task446_opus_paracrawl_en_so_translation` | Translating English text to Somali | Translation
-`task447_opus_paracrawl_classification` | Generating the language of the text | Classification
-`task448_opus_paracrawl_en_tl_translation` | Translating English text to Tagalog | Translation
-`task449_opus_paracrawl_ig_en_translation` | Translating Igbo text to English | Translation
-`task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
-`task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
-`task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
-`task644_refresd_translation` | Translation from english to french sentences. | Translation
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
@@ -786,7 +753,6 @@ Name | Summary | Category
 `task853_hippocorpus_long_text_generation` | Generating long text given summaries (based on HIPPOCORPUS) | Long Text Generation
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
-`task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
 `task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
