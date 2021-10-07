@@ -264,6 +264,9 @@ Name | Summary | Category
 `task261_spl_translation_es_en` | Translate Spanish questions to English while preserving named entities in the original language. | Translation
 `task262_spl_translation_ja_en` | Translate Japanese questions to English while preserving named entities in the original language. | Translation
 `task263_spl_translation_pl_en` | Translate Polish questions to English while preserving named entities in the original language. | Translation
+`task264_paper_reviews_accept_or_reject_classification` | Given a set of reviews, classify paper into accept or reject | Classification
+`task265_paper_reviews_language_identification` | Given a paper review, identify it is in the english or spanish language | Language Identification
+`task266_paper_reviews_reviewer_perspective_classification` | Given a paper review, classify into five evaluation metric | Classification
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
 `task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
 `task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
@@ -676,6 +679,10 @@ Name | Summary | Category
 `task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
 `task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
 `task738_perspectrum_classification` | Decide whether the given perspective supports or undermines the given claim. | Classification
+`task743_eurlex_summarization` | Generate headline (summary) for legal act article | Summarization  
+`task744_eurlex_classification` | Identify the legal act article whether it is Regulation, Decision or Directive | Classification
+`task745_ai2_arithmetic_questions_arithmetic` | Given an arithmetic question, compute a solution | Arithmetic
+`task746_yelp_restaurant_review_classification_arithmetic` | Restaurant review classification based on its sentiment (i.e., positive or negative) | Classification
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
@@ -798,6 +805,3 @@ Name | Summary | Category
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
-`task264_paper_reviews_accept_or_reject_classification` | Given a set of reviews, classify paper into accept or reject | Classification
-`task265_paper_reviews_language_identification` | Given a paper review, identify it is in the english or spanish language | Language Identification
-`task266_paper_reviews_reviewer_perspective_classification` | Given a paper review, classify into five evaluation metric | Classification
