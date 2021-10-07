@@ -264,6 +264,9 @@ Name | Summary | Category
 `task261_spl_translation_es_en` | Translate Spanish questions to English while preserving named entities in the original language. | Translation
 `task262_spl_translation_ja_en` | Translate Japanese questions to English while preserving named entities in the original language. | Translation
 `task263_spl_translation_pl_en` | Translate Polish questions to English while preserving named entities in the original language. | Translation
+`task264_paper_reviews_accept_or_reject_classification` | Given a set of reviews, classify paper into accept or reject | Classification
+`task265_paper_reviews_language_identification` | Given a paper review, identify it is in the english or spanish language | Language Identification
+`task266_paper_reviews_reviewer_perspective_classification` | Given a paper review, classify into five evaluation metric | Classification
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
 `task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
 `task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
@@ -432,6 +435,12 @@ Name | Summary | Category
 `task429_senteval_tense` | Given a sentence, specify the tense of the main verb. | Classification
 `task430_senteval_subject_count` | Given a sentence, specify singularity or plurality of the subject. | Classification
 `task431_senteval_object_count` | Given a sentence, specify singularity or plurality of the object. | Classification
+`task432_alt_en_hi_translation` | Given an English language sentence translate it into Hindi language. | Translation
+`task433_alt_hi_en_translation` | Given an Hindi language sentence translate it into English language. | Translation
+`task434_alt_en_hi_answer_generation` | Generate answer yes or no for english and hindi translation pair. | Answer Generation
+`task435_alt_en_ja_translation` | Given an English language sentence translate it into Japanese language. | Translation
+`task436_alt_ja_en_translation` | Given an Japanese language sentence translate it into English language. | Translation
+`task437_alt_en_ja_answer_generation` | Generate answer yes or no for english and japanese translation pair. | Answer Generation
 `task438_eng_guj_parallel_corpus_en_gu_translation` | Translation from English to Gujarati sentences. | Translation
 `task439_eng_guj_parallel_corpus_gu_en_translation` | Translation from Gujarati to English sentences. | Translation
 `task440_eng_guj_parallel_corpus_gu-en_classification` | Given a sentence in Gujarati and its corresponding English translation, verify that the translation is correct. | Classification
@@ -447,6 +456,9 @@ Name | Summary | Category
 `task450_opus_paracrawl_so_en_translation` | Translating Somali text to English | Translation
 `task451_opus_paracrawl_tl_en_translation` | Translating Tagalog text to English | Translation
 `task452_opus_paracrawl_en_ig_translation` | Translating English text to Igbo | Translation
+`task453_swag_answer_generation` | Given a statement context, complete the partial next sentence | Answer Generation
+`task454_swag_incorrect_answer_generation` | Given a statement context, complete the partial next sentence with incorrect statement | Incorrect Answer Generation
+`task455_swag_context_generation` | Given a statement, generate its context or previous statement | Answer Generation
 `task456_matres_intention_classification` | Given a context and a verb, answer if the given verb is about an intention or not | Classification
 `task457_matres_conditional_classification` | Given a context and a verb, answer if the given verb is conditional or not | Classification
 `task458_matres_negation_classification` | Given a context and a verb, answer if the given verb is a negation or not | Classification
@@ -479,6 +491,14 @@ Name | Summary | Category
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task489_mwsc_question_generation` | Generating questions based on the given sentence | Question Generation  
+`task490_mwsc_options_generation` | Generating options to mwsc questions | Options Generation
+`task491_mwsc_answer_generation` | Generating answers to mwsc questions | Answer Generation  
+`task492_mwsc_incorrect_answer_generation` | Generating incorrect answers to mwsc questions | Incorrect Answer Generation
+`task493_review_polarity_classification` | Classify amazon review into positive or negative | Classification
+`task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
+`task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
+`task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
 `task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life annecdote of a complex ethical situation, identify who is ethically wrong here | Classification
 `task500_scruples_anecdotes_title_generation` | Given a real-life annecdote of a complex ethical situation, generate a title that describes the main event/root cause of the situation | Title Generation
 `task501_scruples_anecdotes_post_type_verification` | Given a real-life annecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
@@ -509,6 +529,14 @@ Name | Summary | Category
 `task532_europarl_en-es_classification` | Given a English sentence and its corresponding Spanish translation, classify whether it is correct or not. | Classification
 `task533_europarl_es-en_language_identification` | Given a sentence, identify  whether it is in English or Spanish. | Language Identification
 `task534_farstail_entailment` | Given two sentences in Persian, choose whether they agree, disagree, neither with each other. | Classification
+`task565_circa_answer_generation` | Given a question generate an answer that is relevant to the question. | Answer Generation
+`task566_circa_classification` | Given two sentences, check if they have the same meaning. | Classification
+`task567_circa_text_generation` | Given a question, Predict the context of the given question. | Text Generation
+`task568_circa_question_generation` | Given an answer, Predict the question. | Question Generation
+`task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions. | Text Generation
+`task570_recipe_nlg_ner_generation` | Generate the ner given its required ingredients given. | ner Generation
+`task571_recipe_nlg_ner_generation` | Generate the ner given its directions. | ner Generation
+`task572_recipe_nlg_text_generation` |  Generate the unknown step by knowing the other steps given in the directions. | Text Generation
 `task535_spl_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
 `task536_spl_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
 `task537_spl_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
@@ -536,10 +564,6 @@ Name | Summary | Category
 `task559_spl_translation_en_fi` | Language Translate of Dataset Card for ALT from English language to Filipino language while preserving named entities in the original language | Language Translation
 `task560_spl_translation_en_entk` | Language Translate of Dataset Card for ALT from English language to English tokens while preserving named entities in the original language | Language Translation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task617_amazonreview_category_text_generation` | Given an Amazon product review your task is to generate the category of product. | Text Generation
-`task618_amazonreview_summary_text_generation` | Given an Amazon product review your task is to generate the summary of the review. | Text Generation
-`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
-`task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
@@ -553,40 +577,62 @@ Name | Summary | Category
 `task580_socialiqa_answer_generation` | Given a context, a question and three options; provide correct answer for the question based on the context. | Answer Generation
 `task581_socialiqa_question_generation` | Generate a question based on the given context and an answer. | Question Generation
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
+`task583_udeps_eng_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task584_udeps_eng_fine_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+'task585_preposition_classification` | Given two words, you have to generate which preposition connects both. | Classification
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling
-`task612_yorubabbc_classification` | Given a news article headline from Yoruba BBC, classify the label of the headline. | Classification
-`task614_glucose_cause_event_detection` | Given a story and a selected sentence, find an event in the story that caused that sentence | Sentence Generation
 `task611_mutual_multi_turn_dialogue` | Given a conversation between two people and 4 options on how the conversation should continue, choose the most reasonable option | Multiple-Choice Question
-`task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
+`task612_yorubabbc_classification` | Given a news article headline from Yoruba BBC, classify the label of the headline. | Classification
+`task613_politifact_text_generation` | Given a statement from a politifact.com you task is to generate the subject of discussion of the statement. | Text Generation
+`task614_glucose_cause_event_detection` | Given a story and a selected sentence, find an event in the story that caused that sentence | Sentence Generation
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
-`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task672_nummersense` | Given a cloze question, identify the missing numerical value| Answer Generation
-`task750_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
-`task751_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
-`task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
-`task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
-`task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
-`task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task864_asdiv_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task865_mawps_addsub_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
-`task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
-`task672_amazon_and_yelp_summarization_dataset_summarization` | Generating summaries to amazon/yelp reviews | Summarization
-`task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
-`task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
-`task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
-`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
-`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
+`task617_amazonreview_category_text_generation` | Given an Amazon product review your task is to generate the category of product. | Text Generation
+`task618_amazonreview_summary_text_generation` | Given an Amazon product review your task is to generate the summary of the review. | Text Generation
+`task625_xlwic_true_or_false_answer_generation` | Determine whether both the sentences use the aforementioned word with the same meaning | Answer Generation
+`task626_xlwic_sentence_based_on_given_word_sentence_generation` | Generating a sentence from a given word | Sentence Generation
+`task627_xlwic_word_with_same_meaning_sentence_generation` | Generating a sentence using a given word and sentence where the word is used with the same meaning as in the given sentence | Sentence Generation
+`task628_xlwic_word_with_different_meaning_sentence_generation` | Generating a sentence using a given word and sentence where the word is used with a different meaning than in the given sentence | Sentence Generation
+`task629_dbpedia_14_classification` | Classifying the topic names of the text (dbpedia_14 dataset) | Classification
+`task630_dbpedia_14_classification` | Verfying if the title of the text is correct(dbpedia_14 dataset) | Classification
+`task631_dbpedia_14_incorrect_answer_generation` | Generating incorrect answers from specified categories | Incorrect answer generation
+`task632_dbpedia_14_classification` | Verifying if the text is about a person (dbpedia_14 dataset) | Classification
+`task633_dbpedia_14_answer_generation` | Generating answer to question ((dbpedia_14 dataset)) | Answer Generation
+`task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
+`task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
+`task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
+`task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
+`task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
+`task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
+`task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
+`task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
+`task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
+`task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
+`task653_parsinlu_fa_en_translation` | Given a Persian question, translate it into English. | Translation
+`task654_bible_fa_en_translation` | Given a Persian sentence from the Bible, translate it into English. | Translation
+`task655_bible_en_fa_translation` | Given an English sentence from the Bible, translate it into Persian. | Translation
+`task656_quran_en_fa_translation` | Given an English sentence from the Quran, translate it into Persian. | Translation
+`task657_quran_fa_en_translation` | Given a Persian sentence from the Quran, translate it into English. | Translation
+`task658_tep_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task659_tep_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task660_mizan_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task661_mizan_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
+`task662_global_voices_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
+`task663_global_voices_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
 `task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
 `task665_mmmlu_answer_generation_anatomy` | Answering mutlitple choice questions on anatomy | Answer Generation
 `task666_mmmlu_answer_generation_astronomy` | Answering mutlitple choice questions on astronomy | Answer Generation
 `task667_mmmlu_answer_generation_business_ethics` | Answering mutlitple choice questions on business ethics | Answer Generation
+`task668_extreme_abstract_summarization` | Generate a summary of this abstract. | Summarization
+`task672_nummersense` | Given a cloze question, identify the missing numerical value| Answer Generation
+`task672_amazon_and_yelp_summarization_dataset_summarization` | Generating summaries to amazon/yelp reviews | Summarization
+`task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
+`task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
+`task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
@@ -640,6 +686,24 @@ Name | Summary | Category
 `task735_mmmlu_answer_generation_us_foreign_policy` | Answering mutlitple choice questions on us foreign policy | Answer Generation
 `task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
 `task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
+`task738_perspectrum_classification` | Decide whether the given perspective supports or undermines the given claim. | Classification
+`task743_eurlex_summarization` | Generate headline (summary) for legal act article | Summarization  
+`task744_eurlex_classification` | Identify the legal act article whether it is Regulation, Decision or Directive | Classification
+`task745_ai2_arithmetic_questions_arithmetic` | Given an arithmetic question, compute a solution | Arithmetic
+`task746_yelp_restaurant_review_classification_arithmetic` | Restaurant review classification based on its sentiment (i.e., positive or negative) | Classification
+`task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
+`task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
+`task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
+`task750_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
+`task751_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
+`task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
+`task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
+`task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
+`task761_app_review_classification` | Given a app review,classify whether it's Poitive or Negative | Classification
+`task762_emea_fr_sk_translation` | Translate French sentences to Slovak while preserving named entities in the original language | Translation
+`task763_emea_es_lt_translation` | Translate Spanish sentences to Lithuanian while preserving named entities in the original language | Translation
+`task764_emea_bg_el_classification` | Identify whether translated sentence is Greek or not. | Classification
+`task765_emea_bg_el_translation` | Translate Bulgarian sentences to Greek while preserving named entities in the original language | Translation
 `task770_pawsx_english_text_modification` | Given a sentence in English, provide an equivalent paraphrase in said language | Text Modification
 `task771_pawsx_korean_text_modification` | Given a sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
 `task772_pawsx_french_text_modification` | Given a sentence in French, provide an equivalent paraphrase in said language | Text Modification
@@ -690,32 +754,12 @@ Name | Summary | Category
 `task817_pawsx_japanese_german_translation` | Given a sentence in Japanese, provide an equivalent translation to German | Translation
 `task818_pawsx_japanese_chinese_translation` | Given a sentence in Japanese, provide an equivalent translation to Chinese | Translation
 `task819_pec_sentiment_classification` | Given a contextual post, classify the post as holding positive or negative sentiment | Classification
-`task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
-`task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
-`task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
-`task653_parsinlu_fa_en_translation` | Given a Persian question, translate it into English. | Translation
-`task654_bible_fa_en_translation` | Given a Persian sentence from the Bible, translate it into English. | Translation
-`task655_bible_en_fa_translation` | Given an English sentence from the Bible, translate it into Persian. | Translation
-`task656_quran_en_fa_translation` | Given an English sentence from the Quran, translate it into Persian. | Translation
-`task657_quran_fa_en_translation` | Given a Persian sentence from the Quran, translate it into English. | Translation
-`task658_tep_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
-`task659_tep_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
-`task660_mizan_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
-`task661_mizan_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
-`task662_global_voices_fa_en_translation` | Given a Persian sentence, translate it into English. | Translation
-`task663_global_voices_en_fa_translation` | Given an English sentence, translate it into Persian. | Translation
-`task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task668_extreme_abstract_summarization` | Generate a summary of this abstract. | Summarization
-`task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
-`task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
-`task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
-`task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
-`task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task644_refresd_translation` | Translation from english to french sentences. | Translation
-`task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
-`task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
-`task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
-`task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
+`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task834_mathdataset_classification` | Classify the type of a math word problem
+`task835_mathdataset_answer_generation` | Find the numerical answer for a math word problem
+`task836_viquiquad_question_generation` | Given a passage in the Catalan language, generate contextual questions
+`task837_viquiquad_answer_generation` | Given a passage and asked a question in the Catalan language, answer that question
 `task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
 `task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
 `task845_pubmedqa_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
@@ -723,8 +767,50 @@ Name | Summary | Category
 `task847_pubmedqa_question_generation` | Generating question from context (based on pubmed_QA) | Question Generation
 `task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
 `task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
+`task850_synthetic_longest_palindrome` | Given a string find the longest substring that is a palindrome. | Answer Generation
+`task851_synthetic_multiply_evens` | Given a list of lists of integers multiply the even numbers in every list | Answer Generation, Arthimetic
+`task852_synthetic_multiply_odds` | Given a list of lists of integers multiply the odd numbers in every list | Answer Generation, Arthimetic
 `task853_hippocorpus_long_text_generation` | Generating long text given summaries (based on HIPPOCORPUS) | Long Text Generation
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task864_asdiv_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task865_mawps_addsub_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
+`task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
+`task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
+`task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
+`task1090_ted_translation_en_gl` | Translate a sentence in English to Galician. | Translation
+`task1091_ted_translation_en_it` | Translate a sentence in English to Italian. | Translation
+`task1092_ted_translation_en_pl` | Translate a sentence in English to Polish. | Translation
+`task1093_ted_translation_en_fa` | Translate a sentence in English to Farsi. | Translation
+`task1094_ted_translation_en_pt` | Translate a sentence in English to Portugese. | Translation
+`task1095_ted_translation_ja_gl` | Translate a sentence in Japanese to Galician. | Translation
+`task1096_ted_translation_ja_it` | Translate a sentence in Japanese to Italian. | Translation
+`task1097_ted_translation_ja_pl` | Translate a sentence in Japanese to Polish. | Translation
+`task1098_ted_translation_ja_fa` | Translate a sentence in Japanese to Farsi. | Translation
+`task1099_ted_translation_ja_pt` | Translate a sentence in Japanese to Portugese. | Translation
+`task1100_ted_translation_es_gl` | Translate a sentence in Spanish to Galician. | Translation
+`task1101_ted_translation_es_it` | Translate a sentence in Spanish to Italian. | Translation
+`task1102_ted_translation_es_pl` | Translate a sentence in Spanish to Polish. | Translation
+`task1103_ted_translation_es_fa` | Translate a sentence in Spanish to Farsi. | Translation
+`task1104_ted_translation_es_pt` | Translate a sentence in Spanish to Portugese. | Translation
+`task1105_ted_translation_ar_gl` | Translate a sentence in Arabic to Galician. | Translation
+`task1106_ted_translation_ar_it` | Translate a sentence in Arabic to Italian. | Translation
+`task1107_ted_translation_ar_pl` | Translate a sentence in Arabic to Polish. | Translation
+`task1108_ted_translation_ar_fa` | Translate a sentence in Arabic to Farsi. | Translation
+`task1109_ted_translation_ar_pt` | Translate a sentence in Arabic to Portugese. | Translation
+`task1110_ted_translation_he_gl` | Translate a sentence in Hebrew to Galician. | Translation
+`task1111_ted_translation_he_it` | Translate a sentence in Hebrew to Italian. | Translation
+`task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
+`task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
+`task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
+`task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
+`task1147_country_currency` | Given a country, return it's currency  | Answer Generation
 
