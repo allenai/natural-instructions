@@ -6,6 +6,7 @@ We wrapped up our first public expansion effort in October 15, 2021. That being 
 
 ### News Bulletin
  - *June 2021:* we initiated this repository with 61 tasks! 
+ - *Sept 2021*: general [call for contributions](https://medium.com/ai2-blog/call-for-contributions-a-community-driven-repository-of-natural-language-instructions-9d3f24d5a9db) is out! 
  - *October 2021:* the goal date for the our v2 dataset. 
    - The community have contributed over 1500 tasks!! 🎉   
    - We are working on cleaning up the new tasks and publishing a paper summarizing our new findings! 
