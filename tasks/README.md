@@ -517,14 +517,6 @@ Name | Summary | Category
 `task532_europarl_en-es_classification` | Given a English sentence and its corresponding Spanish translation, classify whether it is correct or not. | Classification
 `task533_europarl_es-en_language_identification` | Given a sentence, identify  whether it is in English or Spanish. | Language Identification
 `task534_farstail_entailment` | Given two sentences in Persian, choose whether they agree, disagree, neither with each other. | Classification
-`task565_circa_answer_generation` | Given a question generate an answer that is relevant to the question. | Answer Generation
-`task566_circa_classification` | Given two sentences, check if they have the same meaning. | Classification
-`task567_circa_text_generation` | Given a question, Predict the context of the given question. | Text Generation
-`task568_circa_question_generation` | Given an answer, Predict the question. | Question Generation
-`task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions. | Text Generation
-`task570_recipe_nlg_ner_generation` | Generate the ner given its required ingredients given. | ner Generation
-`task571_recipe_nlg_ner_generation` | Generate the ner given its directions. | ner Generation
-`task572_recipe_nlg_text_generation` |  Generate the unknown step by knowing the other steps given in the directions. | Text Generation
 `task535_spl_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
 `task536_spl_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
 `task537_spl_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
@@ -555,6 +547,14 @@ Name | Summary | Category
 `task562_alt_language_identification` | Language Identification on Dataset Card for ALT | Language Identification
 `task563_discofuse_answer_generation` | Answer Generation on Dataset Card for DISCOFUSE | Answer Generation
 `task564_discofuse_classification` | Classification on Dataset Card for DISCOFUSE | Classification
+`task565_circa_answer_generation` | Given a question generate an answer that is relevant to the question. | Answer Generation
+`task566_circa_classification` | Given two sentences, check if they have the same meaning. | Classification
+`task567_circa_text_generation` | Given a question, Predict the context of the given question. | Text Generation
+`task568_circa_question_generation` | Given an answer, Predict the question. | Question Generation
+`task569_recipe_nlg_text_generation` | Predict the title given its required ingredients and directions. | Text Generation
+`task570_recipe_nlg_ner_generation` | Generate the ner given its required ingredients given. | ner Generation
+`task571_recipe_nlg_ner_generation` | Generate the ner given its directions. | ner Generation
+`task572_recipe_nlg_text_generation` |  Generate the unknown step by knowing the other steps given in the directions. | Text Generation
 `task573_air_dialogue_classification` | Givena a conversation between a flight 'agent' and the 'customer' classify the goal of the conversation. | Classification
 `task574_air_dialogue_sentence_generation` | Given a conversation between a flight 'agent' and the 'customer', find the missing dialogue in the conversation. | Sentence Generation
 `task575_air_dialogue_classification` | Classification of the sentence spoken by 'agent' and 'customer'. | Classification
