@@ -504,11 +504,6 @@ Name | Summary | Category
 `task518_emo_different_dialogue_emotions` | Given different dialogue determine if they have the same emotion | Classification, Sentiment Analysis
 `task519_aquamuse_question_generation` | Given an answer generate a question that would be answered by the answer given | Question Generation
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
-`task586_amazonfood_polarity_classification` | Given a review of an amazon food product, you have to classify if the review is positive or negative. | Classification
-`task587_amazonfood_polarity_correction_classification` | Given a review of amazon food products and it's polarity, you have to classify whether the polarity is correct or not. | Classification
-`task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
-`task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
-`task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
 `task521_trivia_question_classification` | Given a text from a trivia quiz, decide the category the question belongs to | Classification
 `task522_news_editorial_summary` Given an article text, select spans of text that show a summary of the thesis of the article. | Summarization
 `task524_parsinlu_food_aspect_classification` | Given a food review and a question about the reviewer's sentiment toward one aspect of the food, classify the sentiment. | Classification
@@ -573,6 +568,11 @@ Name | Summary | Category
 `task583_udeps_eng_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
 `task584_udeps_eng_fine_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
 `task585_preposition_classification` | Given two words, you have to generate which preposition connects both. | Classification
+`task586_amazonfood_polarity_classification` | Given a review of an amazon food product, you have to classify if the review is positive or negative. | Classification
+`task587_amazonfood_polarity_correction_classification` | Given a review of amazon food products and it's polarity, you have to classify whether the polarity is correct or not. | Classification
+`task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
+`task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
+`task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
