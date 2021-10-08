@@ -745,3 +745,25 @@ Name | Summary | Category
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
+`task1196_atomic_classification_oeffect` | Given a tuple, determine whether, as a result of the Head, personY or others will be affected as mentioned in the Tail or not. | Classification
+`task1197_atomic_classification_oreact` | Given a tuple, determine whether, as a result of the Head, personY or others feel what is mentioned in the Tail or not. | Classification
+`task1198_atomic_classification_owant` | Given a tuple, determine whether, as a result of the Head, personY or others will want what is mentioned in the Tail or not. | Classification
+`task1199_atomic_classification_xattr` | Given a tuple, determine whether, as a result of the Head, personX will be seen as what is mentioned in the Tail or not. | Classification
+`task1200_atomic_classification_xeffect` | Given a tuple, determine whether, as a result of the Head, personX will be affected as mentioned in the Tail or not. | Classification
+`task1201_atomic_classification_xintent` | Given a tuple, determine whether The tail is the intention of the PersonX from the Head or not. | Classification
+`task1202_atomic_classification_xneed` | Given a tuple, determine whether PersonX needs what is mentioned in the Tail before the Head or not. | Classification
+`task1203_atomic_classification_xreact` | Given a tuple, determine whether, as a result of the Head, personX feels what is mentioned in the Tail or not. | Classification
+`task1204_atomic_classification_hinderedby` | Given a tuple, determine whether the Head can be hindered by what is mentioned in the Tail or not. | Classification
+`task1205_atomic_classification_isafter` | Given a tuple, determine whether the Head happens after the Tail or not. | Classification
+`task1206_atomic_classification_isbefore` | Given a tuple, determine whether the Head happens before the Tail or not. | Classification
+`task1207_atomic_classification_atlocation` | Given a tuple, determine whether the Head is located or can be found at/in/on the Tail or not. | Classification
+`task1208_atomic_classification_xreason` | Given a tuple, determine whether The Tail is the reason for the Head or not. | Classification
+`task1209_atomic_classification_objectuse` | Given a tuple, determine whether the Head is used for the Tail or not. | Classification
+`task1210_atomic_classification_madeupof` | Given a tuple, determine whether the Head is made of the Tail or not. | Classification
+`task1211_atomic_classification_hassubevent` | Given a tuple, determine whether the Head includes an event or an action in the Tail or not. | Classification
+`task1212_atomic_classification_hasproperty` | Given a tuple, determine whether the Head can be characterized by being or having the Tail or not. | Classification
+`task1213_atomic_classification_desires` | Given a tuple, determine whether the Head desires the Tail or not. | Classification
+`task1214_atomic_classification_xwant` | Given a tuple, determine whether, as a result of the Head, personX wants what is mentioned in the Tail or not. | Classification
+`task1215_atomic_classification_capableof` | Given a tuple, ddetermine whether the Head is capable of the Tail or not. | Classification
+`task1216_atomic_classification_causes` | Given a tuple, determine whether the Head causes the Tail or not. | Classification
+`task1217_atomic_answer_generation` | Given a sentence, fill in the blank with a plausible word. | Answer Generation
