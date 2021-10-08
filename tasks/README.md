@@ -415,16 +415,16 @@ Name | Summary | Category
 `task415_mickey_bg_sentence_perturbation_generation` | Given a sentence in Bulgarian, perform perturbations and generate new sentence in Bulgarian. | Sentence Generation
 `task416_mickey_de_sentence_perturbation_generation` | Given a sentence in German, perform perturbations and generate new sentence in German. | Sentence Generation
 `task417_mickey_es_sentence_perturbation_generation` | Given a sentence in Spanish, perform perturbations and generate new sentence in Spanish. | Sentence Generation
-`task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
-`task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
-`task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
-`task427_hindienglish_corpora_hi-en_language_identification` | Given a sentence, identify whether it is in Hindi or English. | Language Identification
 `task418_persent_title_generation` | Given a document, generate a short title of the document. | Title Generation
 `task419_persent_answer_generation` | Given a document, find the main entity about whom the author is writing. | Answer Generation
 `task420_persent_document_sentiment_classification` | Given a document and an entity the task is to select the author's sentiment towards the enity. | Document Sentiment Classification
 `task421_persent_sentence_sentiment_classification` | Given a sentence and an entity, the task is to select the author's sentiment towards the enity. | Sentence Sentiment Classification
 `task422_persent_sentence_sentiment_verification` | Given a sentence, an entity and its sentiment towards the entity, verify if it is the correct sentiment towards the entity. | Sentence Sentiment Verification
 `task423_persent_document_sentiment_verification` | Given a document, an entity and its sentiment towards the entity, verify if it is the correct sentiment towards the entity. | Document Sentiment Verification
+`task424_hindienglish_corpora_hi_en_translation` | Given a Hindi sentence, convert it into English. | Translation
+`task425_hindienglish_corpora_en_hi_translation` | Given an English sentence, convert it into Hindi. | Translation
+`task426_hindienglish_corpora_hi-en_classification` | Given a Hindi sentence and its corresponding English sentence, classify whether it is correct or not. | Classification
+`task427_hindienglish_corpora_hi-en_language_identification` | Given a sentence, identify whether it is in Hindi or English. | Language Identification
 `task428_senteval_inversion` | Given a sentence, judge whether or not two consecutive word have been inverted. | Classification
 `task429_senteval_tense` | Given a sentence, specify the tense of the main verb. | Classification
 `task430_senteval_subject_count` | Given a sentence, specify singularity or plurality of the subject. | Classification
