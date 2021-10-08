@@ -84,6 +84,7 @@ Task Type
 - Reasoning: Inverse-Causal Reasoning
 - Reasoning: Reasoning with Symbols
 - Operation on Tabular Text
+
 Domain:
 * Movies
 * Art
