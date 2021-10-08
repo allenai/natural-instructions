@@ -812,3 +812,9 @@ Name | Summary | Category
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
+`task1148_maximum_ascii_value` | Given a string, return the character with maximum ascii value  | Answer Generation
+`task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
+`task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
+`task1151_swap_max_min` | Given a list of unique integers, swap the minimum and maximum element in the list  | Answer Generation
+`task1152_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
+`task1153_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
