@@ -6,7 +6,7 @@ We invite submission of new tasks to this benchmark by way of [GitHub pull reque
 The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
 ## Summary of Diversity in the Accepted Tasks:
-Our tasks cover 86 task types, 38 languages and 74 domains. More details [here](doc/Task Hierarchy.md).
+Our tasks cover 86 task types, 38 languages and 74 domains. More details [here](doc/task-hierarchy.md).
 
 ## Background 
 ### Why define tasks in natural language?
