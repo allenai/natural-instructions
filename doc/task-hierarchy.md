@@ -133,7 +133,6 @@ Domain:
 * Mathematics
 * Medical Genetics
 * Medicine
-* Medicine
 * Microeconomics
 * Moral Scenarios
 * Movies
@@ -144,7 +143,6 @@ Domain:
 * Philosophy
 * Physics
 * Prehistory
-* Psychology
 * Psychology
 * Public Relations
 * School Science Textbooks
