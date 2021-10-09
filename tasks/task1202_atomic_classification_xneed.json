@@ -8,7 +8,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task, you are given a tuple, Head and Tail, separated with <sep>. You have to determine whether PersonX needs what is mentioned in the Tail before the Head or not. Classify your answers into \"Yes\" and \"No\". The ___ in the sentences can be filled with any proper name.",
+    "Definition": "In this task, you are given a tuple, comprising Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether PersonX needs what is mentioned in the Tail before the Head or not. Here need is a precondition for PersonX to achieve the event. For example, in order for PersonX to give PersonY gifts, PersonX must first buy the presents. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action.",
     "Positive Examples": [
         {
             "input": "Head: PersonX is at PersonY's friend's house<sep>Tail: to walk up to PersonY's friend's house",
@@ -24,6 +24,11 @@
             "input": "Head: PersonX finds PersonY opportunity<sep>Tail: research stocks",
             "output": "Yes",
             "explanation": "PersonX needs to research stocks before finding an opportunity. Thus, this example should be classified as \"Yes\"."   
+        },
+        {
+            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. Since nothing is specified and nothing is a precondition for all the events."   
         }
     ],
     "Negative Examples": [
@@ -39,12 +44,6 @@
         }    
     ],
     "Instances": [
-        {
-            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
-            "output": [
-                "Yes"
-            ]
-        },
         {
             "input": "Head: PersonX adapts ___ to conditions<sep>Tail: none",
             "output": [
