@@ -67,6 +67,8 @@ We would appreciate any external contributions! 🙏
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
   
+## Summary of Diversity in the Accepted Tasks:
+Our tasks cover 86 task types, 38 languages and 74 domains. More details [here](doc/Task Hierarchy.md).
  
 If you have any questions or suggestions, please use [the issues](https://github.com/allenai/natural-instructions-expansion/issues) feature.  
 
