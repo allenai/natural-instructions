@@ -98,77 +98,67 @@ Task Type
    - Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
 
 Domain:
-* 9/11 reports
-* Abstract algebra
+* 9/11 Reports
 * Accounting
-* Anatomy
+* Biology: Anatomy
 * Anthropology
 * Architecture
 * Art
 * Astronomy
-* Business ethics
-* Clinical knowledge
-* College biology
-* College chemistry
-* College computer science
-* College mathematics
-* College medicine
-* College physics
-* Computer security
-* Conceptual physics
+* Business Ethics
+* Biology: Clinical Knowledge
+* Biology
+* Chemistry
+* Computer Science
+* Mathematics
+* Medicine
+* Physics
+* Computer Security
 * Econometrics
-* Electrical engineering
-* Elementary mathematics
+* Electrical Engineering
 * Fiction
 * Formal logic
 * Geography
-* Global facts
-* High school biology
-* High school chemistry
-* High school computer science
-* High school european history
-* High school geography
-* High school government and politics
-* High school macroeconomics
-* High school mathematics
-* High school microeconomics
-* High school physics
-* High school psychology
-* High school statistics
-* High school history
+* Global Facts
 * History
-* Human aging
-* Human sexuality
-* International law
+* History: European History
+* Government and Politics
+* Macroeconomics
+* Microeconomics
+* Psychology
+* Statistics
+* Biology: Human Biology
+* Human Sexuality
+* International Law
 * Jurisprudence
 * Justice
 * Law
-* Logical fallacies
-* Machine learning
+* Logical Fallacies
+* Machine Learning
 * Management
 * Marketing
-* Medical genetics
+* Medical Genetics
 * Medicine
-* Moral scenarios
+* Moral Scenarios
 * Movies
 * Music
 * News
 * Nutrition
-* Personal narratives
+* Personal Narratives
 * Philosophy
 * Prehistory
 * Psychology
-* Public relations
-* School science textbooks
-* Security  studies
+* Public Relations
+* School Science Textbooks
+* Security: Environmental Security
+* Security: National Security 
 * Social Media
-* Society
 * Sociology
-* Sports: National Football League (NFL) game summaries
+* Sports: National Football League (NFL) Game Summaries
 * Sports
-* Us foreign policy
-* Virology
-* World religions
+* Us Foreign Policy
+* Biology: Virology
+* World Religions
 
 Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
