@@ -5,9 +5,6 @@ We're looking for more contributions to make this data bigger! 🙌
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **October 15, 2021**.
 The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
-## Summary of Diversity in the Accepted Tasks:
-Our tasks cover 86 task types, 38 languages and 74 domains. More details [here](doc/task-hierarchy.md).
-
 ## Background 
 ### Why define tasks in natural language?
 While the current dominant paradigm (supervised learning with task-specific labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
