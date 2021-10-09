@@ -18,7 +18,6 @@ Task Type
 - Review Generation
 - Order Generation
   - Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
-- Prompt Generation
 - Title Generation
 - Weblink Generation
 - Text Modification
@@ -143,7 +142,6 @@ Domain:
 * International law
 * Jurisprudence
 * Justice
-* Law
 * Law
 * Logical fallacies
 * Machine learning
