@@ -828,4 +828,4 @@ Name | Summary | Category
 `task1310_amazonreview_rating_classification` | You're given a review from Amazon. Your task is to generate a rating for the product on a scale of 1-5 based on the review. | Classification
 `task1311_amazonreview_rating_correction_classification` | You're given a review from Amazon and rating of the review, classify whether rating match the review. | Classification
 `task1312_amazonreview_polarity_classification` | You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive. | Classification
-`task1313_amazonreview_polarity_correction_classification.json` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
+`task1313_amazonreview_polarity_correction_classification` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
