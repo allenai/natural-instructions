@@ -88,15 +88,15 @@ Task Type
 - Reasoning: Numerical Commonsense Reasoning
    - Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
 - Reasoning: Physical Reasoning
-   - Task involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+   - Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
 - Reasoning: Logical Reasoning
 - Reasoning: Planning
-   - Task which need some sort of planning e.g. how to go to Hawaii?
+   - Tasks which need some sort of planning e.g. how to go to Hawaii?
 - Reasoning: Qualitative Reasoning
 - Reasoning: Deductive Reasoning
 - Reasoning: Causal Reasoning
 - Reasoning: Reasoning with Symbols
-   - A task where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
+   - Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
 
 Domain:
 * 9/11 reports
