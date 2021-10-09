@@ -1,6 +1,6 @@
 Task Type
 - Contextual Question Generation
-   - Generate a question based on a given context e.g. a task to create a question based on a paragraph.
+   - Generate questions based on given context e.g. a task to create a question based on a paragraph.
 - Answer Generation: Reading Comprehension
 - Answer Generation: Contextual Question Answering
 - Answer Generation: Open book/Domain-specific Question Answering
@@ -10,14 +10,22 @@ Task Type
 - Textual Entailment
 - Incorrect Answer Generation
 - Sentence Generation
+- Paragraph Generation
+- Structured Text Generation
+   - Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
+- Topic Generation
+- Explanation Generation
+- Review Generation
+- Order Generation
+  - Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
+- Prompt Generation
+- Title Generation
+- Weblink Generation
 - Text Modification
 - Classification
-- Paragraph Generation
 - Verification 
    - Verify if two inputs match with each other e.g. a task to verify if a sentence and its sentiment given in the input match
 - Translation
-- Structured Text Generation
-   - Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
 - Hypernym Discovery
 - Parts-of-speech
 - Coreference: event coreference
@@ -29,7 +37,6 @@ Task Type
 - Semantic Parsing
 - Stance Detection
 - Word Sense Disambiguation
-- Topic Generation
 - Mathematics: Arithmetic
 - Mathematics: Algebra
 - Mathematics: Geometry
@@ -44,32 +51,25 @@ Task Type
 - Sentiment Analysis
 - Hate Speech Detection
 - Fake News Detection
-- Explanation Generation
 - Ethical Judgement
 - Style Transfer
 - Text Comparison
 - Question Composition
-   - Compose a question by concating questions in the input
-- Review Generation
+   - Compose questions by concating questions in the input
 - Column Matching
    - Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
 - Handling Commands
 - Author Identification
-- Order Generation
-  - Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 - Sorting
 - Language Identification
-- Prompt Generation
 - Text Span Selection
 - Hallucination
    - Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
-- Title Generation
 - Document Classification
 - Relevancy Estimation
 - Named Entity Recognition
 - Dialogue Understanding
 - Abuse Detection
-- Weblink Generation
 - Text Simplification
 - Tabular Text Operation
 - Coreference: Entity Coreference
@@ -88,15 +88,15 @@ Task Type
 - Reasoning: Numerical Commonsense Reasoning
    - Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
 - Reasoning: Physical Reasoning
-   - Task involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+   - Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
 - Reasoning: Logical Reasoning
 - Reasoning: Planning
-   - Task which need some sort of planning e.g. how to go to Hawaii?
+   - Tasks which need some sort of planning e.g. how to go to Hawaii?
 - Reasoning: Qualitative Reasoning
 - Reasoning: Deductive Reasoning
 - Reasoning: Causal Reasoning
 - Reasoning: Reasoning with Symbols
-   - A task where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
+   - Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
 
 Domain:
 * 9/11 reports
