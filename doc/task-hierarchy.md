@@ -154,7 +154,6 @@ Domain:
 * Moral scenarios
 * Movies
 * Music
-* National Football League (NFL) game summaries
 * News
 * Nutrition
 * Personal narratives
@@ -167,6 +166,8 @@ Domain:
 * Social Media
 * Society
 * Sociology
+* Sports: National Football League (NFL) game summaries
+* Sports
 * Us foreign policy
 * Virology
 * World religions
