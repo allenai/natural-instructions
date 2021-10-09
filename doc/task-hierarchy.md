@@ -153,7 +153,7 @@ Domain:
 * Sports
 * Sports: National Football League (NFL) Game Summaries
 * Statistics
-* Us Foreign Policy
+* US Foreign Policy
 * World Religions
 
 Language
