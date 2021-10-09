@@ -7,8 +7,6 @@ Task Type
 - Answer Generation: Open Question Answering
 - Author Identification
 - Classification
-- Column Matching
-   - Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
 - Combinatorics
 - Contextual Question Generation
    - Generate questions based on given context e.g. a task to create a question based on a paragraph.
@@ -79,7 +77,9 @@ Task Type
    - Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
 - Style Transfer
 - Summarization
-- Tabular Text Operation
+- Tabular Text Operation: Column Matching
+   - Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
+- Tabular Text Operation: Question Answering
 - Text Comparison
 - Text Modification
 - Text Simplification
@@ -97,45 +97,44 @@ Task Type
 Domain:
 * 9/11 Reports
 * Accounting
-* Biology: Anatomy
 * Anthropology
 * Architecture
 * Art
 * Astronomy
-* Business Ethics
-* Biology: Clinical Knowledge
 * Biology
+* Biology: Anatomy
+* Biology: Clinical Knowledge
+* Biology: Human Biology
+* Biology: Virology
+* Business Ethics
 * Chemistry
 * Computer Science
-* Mathematics
-* Medicine
-* Physics
+* Computer Science: Machine Learning
 * Computer Security
+* Dialogue
 * Econometrics
 * Electrical Engineering
 * Fiction
+* Formal Fallacy
 * Formal logic
 * Geography
 * Global Facts
+* Government and Politics
 * History
 * History: European History
-* Government and Politics
-* Macroeconomics
-* Microeconomics
-* Psychology
-* Statistics
-* Biology: Human Biology
 * Human Sexuality
 * International Law
 * Jurisprudence
 * Justice
 * Law
-* Formal Fallacy
-* Computer Science: Machine Learning
+* Macroeconomics
 * Management
 * Marketing
+* Mathematics
 * Medical Genetics
 * Medicine
+* Medicine
+* Microeconomics
 * Moral Scenarios
 * Movies
 * Music
@@ -143,18 +142,20 @@ Domain:
 * Nutrition
 * Personal Narratives
 * Philosophy
+* Physics
 * Prehistory
+* Psychology
 * Psychology
 * Public Relations
 * School Science Textbooks
 * Security: Environmental Security
-* Security: National Security 
+* Security: National Security
 * Social Media
 * Sociology
-* Sports: National Football League (NFL) Game Summaries
 * Sports
+* Sports: National Football League (NFL) Game Summaries
+* Statistics
 * Us Foreign Policy
-* Biology: Virology
 * World Religions
 
 Language
