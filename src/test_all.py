@@ -53,7 +53,7 @@ for file in files:
             assert type(data['Categories']) == list, f'Categories must be a list.'
             for c in data['Categories']:
                 if c not in hierarchy_content:
-                    print(f'⚠️ WARNING: Did not find category `{d}`')
+                    print(f'⚠️ WARNING: Did not find category `{c}`')
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
