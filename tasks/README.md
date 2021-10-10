@@ -846,4 +846,3 @@ Name | Summary | Category
 `task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument
 `task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument
 `task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument
-`task1308_kpa_keypoint_matching_celibacy_topic` | Given an argument and a keypoint under the topic "The vow of celibacy should be abandoned", answer if the keypoint summarizes the argument
