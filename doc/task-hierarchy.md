@@ -8,6 +8,7 @@ Task Type
 - Author Identification
 - Classification
 - Combinatorics
+- Command Execution
 - Contextual Question Generation
    - Generate questions based on given context e.g. a task to create a question based on a paragraph.
 - Coreference: Entity Coreference
@@ -23,7 +24,6 @@ Task Type
 - Grammar Error Correction
 - Hallucination
    - Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
-- Handling Commands
 - Hate Speech Detection
 - Hypernym Discovery
 - Incorrect Answer Generation
