@@ -841,3 +841,4 @@ Name | Summary | Category
 `task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
+`task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
