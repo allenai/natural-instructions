@@ -741,8 +741,6 @@ Name | Summary | Category
 `task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
 `task1151_swap_max_min` | Given a list of unique integers, swap the minimum and maximum element in the list  | Answer Generation
-`task1152_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
-`task1153_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
 `task1190_add_integer_to_list` | Given a list of integers and an integer k, add k to every element in the list  | Answer Generation
@@ -750,3 +748,5 @@ Name | Summary | Category
 `task1192_food_flavor_profile` | Given the name of an indian dish, classify it's flavor as spicy or sweet  | Classification
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
+`task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
+`task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
