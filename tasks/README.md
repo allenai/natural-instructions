@@ -789,10 +789,29 @@ Name | Summary | Category
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
+`task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
 `task936_defeasible_nli_snli_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
 `task937_defeasible_nli_social_classification` | Given a hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
+`task938_copa_hi_commonsense_reasoning` |Given a premise and two alternative in hindi, select the alternative that more plausibly has a causal relation with the premise | Answer Generation|
+`task939_copa_hi_commonsense_cause_effect` |Given a pair of sentences in hindi, judge whether the second sentence is the cause or effect of the first on. |Answer Generation |
+`task940_copa_gu_commonsense_reasoning` | Given a premise and two alternative in gujarati, select the alternative that more plausibly has a causal relation with the premise|Answer Generation |
+`task941_copa_gu_commonsense_cause_effect` |Given a pair of sentences in gujarati, judge whether the second sentence is the cause or effect of the first on. | Answer Generation|
+`task942_copa_mr_commonsense_reasoning` | Given a premise and two alternative in marathi, select the alternative that more plausibly has a causal relation with the premise| Answer Generation|
+`task943_copa_mr_commonsense_cause_effect` | Given a pair of sentences in marathi, judge whether the second sentence is the cause or effect of the first on.| Answer Generation|
+`task944_wiki_cloze_as_multiple_choice_question_answering` | Given a cloze question in assamese, identify the missing word| Multiple Choice Question Answering|
+`task945_wiki_cloze_bn_multiple_choice_question_answering` | Given a cloze question in bengali, identify the missing word| Multiple Choice Question Answering|
+`task946_wiki_cloze_gu_multiple_choice_question_answering` |Given a cloze question in gujarati, identify the missing word | Multiple Choice Question Answering|
+`task947_wiki_cloze_hi_multiple_choice_question_answering` | Given a cloze question in hindi, identify the missing word| Multiple Choice Question Answering|
+`task948_wiki_cloze_kn_multiple_choice_question_answering` | Given a cloze question in kannada, identify the missing word| Multiple Choice Question Answering|
+`task949_wiki_cloze_ml_multiple_choice_question_answering` | Given a cloze question in malayalam, identify the missing word| Multiple Choice Question Answering|
+`task950_wiki_cloze_mr_multiple_choice_question_answering` | Given a cloze question in marathi, identify the missing word| Multiple Choice Question Answering|
+`task951_wiki_cloze_or_multiple_choice_question_answering` | Given a cloze question in odia, identify the missing word| Multiple Choice Question Answering|
+`task952_wiki_cloze_pa_multiple_choice_question_answering` | Given a cloze question in punjabi, identify the missing word| Multiple Choice Question Answering|
+`task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
+`task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
 `task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
 `task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
@@ -821,14 +840,28 @@ Name | Summary | Category
 `task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
 `task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
+`task1130_xcsr_vi_commonsense_mc_classification` | Answering multiple choice commonsense question in Vietnamese language. | Classification
+`task1131_xcsr_es_commonsense_mc_classification` | Answering multiple choice commonsense question in Spanish language. | Classification
+`task1132_xcsr_ur_commonsense_mc_classification` | Answering multiple choice commonsense question in Urdu language. | Classification
+`task1133_xcsr_nl_commonsense_mc_classification` | Answering multiple choice commonsense question in Dutch language. | Classification
+`task1134_xcsr_hi_commonsense_mc_classification` | Answering multiple choice commonsense question in Hindi language. | Classification
+`task1135_xcsr_en_commonsense_mc_classification` | Answering multiple choice commonsense question in English language. | Classification
+`task1136_xcsr_fr_commonsense_mc_classification` | Answering multiple choice commonsense question in French language. | Classification
+`task1137_xcsr_pt_commonsense_mc_classification` | Answering multiple choice commonsense question in Portuguese language. | Classification
+`task1138_xcsr_de_commonsense_mc_classification` | Answering multiple choice commonsense question in German language. | Classification
+`task1139_xcsr_ru_commonsense_mc_classification` | Answering multiple choice commonsense question in Russian language. | Classification
+`task1140_xcsr_pl_commonsense_mc_classification` | Answering multiple choice commonsense question in Polish language. | Classification
+`task1141_xcsr_zh_commonsense_mc_classification` | Answering multiple choice commonsense question in Chinese language. | Classification
+`task1142_xcsr_ar_commonsense_mc_classification` | Answering multiple choice commonsense question in Arabic language. | Classification
+`task1143_xcsr_it_commonsense_mc_classification` | Answering multiple choice commonsense question in Italian language. | Classification
+`task1144_xcsr_sw_commonsense_mc_classification` | Answering multiple choice commonsense question in Swahili language. | Classification
+`task1145_xcsr_jap_commonsense_mc_classification` | Answering multiple choice commonsense question in Japanese language. | Classification
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
 `task1148_maximum_ascii_value` | Given a string, return the character with maximum ascii value  | Answer Generation
 `task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
 `task1151_swap_max_min` | Given a list of unique integers, swap the minimum and maximum element in the list  | Answer Generation
-`task1152_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
-`task1153_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
 `task1152_bard_analogical_reasoning_causation` | Given an analogy that relates actions with their consequences, give the appropriate consequence of the given action | Answer Generation
 `task1153_bard_analogical_reasoning_affordance` | Given an analogy that signifies affordances give the appropriate affordance of the given action | Answer Generation
 `task1154_bard_analogical_reasoning_travel` | Given an analogy that relates places/locations to the associated travel mode, give the appropriate travel mode for the given place | Answer Generation
@@ -840,3 +873,13 @@ Name | Summary | Category
 `task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
+`task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
+`task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
+`task1190_add_integer_to_list` | Given a list of integers and an integer k, add k to every element in the list  | Answer Generation
+`task1191_food_veg_nonveg` | Given the name of an indian dish, classify it as non vegetarian or a vegetarian dish  | Classification
+`task1192_food_flavor_profile` | Given the name of an indian dish, classify it's flavor as spicy or sweet  | Classification
+`task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
+`task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
+`task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
+`task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
+`task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
