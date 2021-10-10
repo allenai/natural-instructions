@@ -23,7 +23,7 @@ suggested_keys = [
 
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
-with open("docs/task-hierarchy.md", 'r') as readmef:
+with open("doc/task-hierarchy.md", 'r') as readmef:
     hierarchy_content = " ".join(readmef.readlines())
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
