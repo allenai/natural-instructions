@@ -58,9 +58,9 @@ for file in files:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
-            if "Input_language" in data:
-                assert type(data['Input_language']) == str, f'Input_language must be a str.'
-                assert type(data['Output_language']) == str, f'Output_language must be a str.'
+            # if "Input_language" in data:
+            #     assert type(data['Input_language']) == list, f'Input_language must be a str.'
+            #     assert type(data['Output_language']) == list, f'Output_language must be a str.'
 
             for x in data['Instances']:
                 for key in ['input', 'output']:
