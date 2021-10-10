@@ -16,6 +16,11 @@ expected_keys = [
     'Source'
 ]
 
+# TODO: over time, these should be moved up to "expected
+suggested_keys = [
+    "Domains", "Input_language", "Output_language"
+]
+
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
@@ -31,6 +36,10 @@ for file in files:
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
+            for key in suggested_keys:
+                if key in data:
+                    print(f'WARNING: did not find the key: {key}')
+
             assert len(data[
                            'Instances']) > 25, f"there must be at least 25 instances; currently you have {len(data['Instances'])} instances"
             assert len(data[
@@ -39,7 +48,12 @@ for file in files:
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
-            
+            if "Domains" in data:
+                assert type(data['Domains']) == list, f'Domains must be a list.'
+            if "Input_language" in data:
+                assert type(data['Input_language']) == list, f'Input_language must be a list.'
+                assert type(data['Output_language']) == list, f'Output_language must be a list.'
+
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
