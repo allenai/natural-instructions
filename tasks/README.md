@@ -880,4 +880,9 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1334_sqac_answer_generation`                                | Generating answers to SQAC questions          | Answer Generation    
+`task1335_sqac_question_generation`                              | Classifying race of speaker of sentence       | Race Classifier      
+`task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier    
+`task1337_peixian_equity_evaluation_corpus_race_classifier`      | Classifying race of speaker of sentence       | Race Classifier      
+`task1338_peixian_equity_evaluation_corpus_sentiment_classifier` | Classifying the sentiment within the sentence | Sentiment Classifier 
+`task1339_peixian_equity_evaluation_corpus_text_completion`      | Replacing blanks within text for an emption   | Text completion
