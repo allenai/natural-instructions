@@ -840,4 +840,4 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
-`task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
+`task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
