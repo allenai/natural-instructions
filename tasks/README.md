@@ -827,4 +827,4 @@ Name | Summary | Category
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
-`task1315_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
+`task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
