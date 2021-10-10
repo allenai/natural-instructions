@@ -886,3 +886,7 @@ Name | Summary | Category
 `task1337_peixian_equity_evaluation_corpus_race_classifier`      | Classifying race of speaker of sentence       | Race Classifier      
 `task1338_peixian_equity_evaluation_corpus_sentiment_classifier` | Classifying the sentiment within the sentence | Sentiment Classifier 
 `task1339_peixian_equity_evaluation_corpus_text_completion`      | Replacing blanks within text for an emption   | Text completion
+`task1340_msr_text_compression_compression` | Generating Compressed text based on MSR dataset | Compression
+`task1341_msr_text_classification` | Generating Classification of text in MSR dataset | Classification
+`task1342_amazon_us_reviews_title` | Generating Title for Amazon US review dataset | Title Generation
+`task1343_amazon_us_reviews_rating` | Generating Rating for Amazon US review dataset | Rating generation
