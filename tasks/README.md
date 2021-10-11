@@ -880,4 +880,7 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
+`task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
+`task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
+`task1397_europa_ecdc_tm_fr_en_translation` | Translate French sentences to English | Translation
