@@ -30,7 +30,7 @@ files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
 for file in files:
-    if ".md" not in file:
+    if ".md" not in file and '.py' not in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
@@ -40,7 +40,7 @@ for file in files:
                 assert key in data, f'did not find the key: {key}'
 
             for key in suggested_keys:
-                if key in data:
+                if key not in data:
                     print(f'⚠️ WARNING: did not find the key: {key}')
 
             assert len(data[
