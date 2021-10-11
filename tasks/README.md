@@ -584,10 +584,10 @@ Name | Summary | Category
 `task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
 `task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
 `task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
-`task591_sciq_answer_generation` | Given a science question, generate a correct answer to the given question | Answer Generation
-`task592_sciq_incorrect_answer_generation` | Given a science question, generate an incorrect answer to the given question | Incorrect Answer Generation
-`task593_sciq_explanation_generation` | Given a science question and its correct answer, generate supporting facts for the answer. This supporting fact can be an explanation for the answer to the given question. | Explanation Generation
-`task594_sciq_question_generation` | Given a science passage and an answer, the task is generate a question for the given answer. | Question Generation
+`task591_sciq_answer_generation` | Given a scientific question, generate a correct answer to the given question | Answer Generation
+`task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
+`task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
+`task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
