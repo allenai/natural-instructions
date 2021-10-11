@@ -21,7 +21,7 @@ expected_keys = [
     'Source'
 ]
 
-# TODO: over time, these should be moved up to "expected
+# TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains", "Input_language", "Output_language"
 ]
