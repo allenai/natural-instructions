@@ -880,4 +880,8 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1389_structuredregex_regex_to_string_generation` | Generate answers to Structured Regex Expressions | Answer Generation
+`task1390_structuredregex_regex_description_generation` | Generate the description for a given Structured Regex | Sentence Generation
+`task1391_structuredregex_incorrect_string_generation` | Generate incorrect strings for a given Structured Regex | Incorrect Answer Generation
+`task1392_structuredregex_regex_expression_generation` | Generate Structured Regualr Expression from a description in English | Structured Text Generation
+`task1393_structuredregex_select_correct_match` | Choose the correct match for a Structured Regex from a list of four strings | Answer Generation
