@@ -880,4 +880,7 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1361_MovieRationales_classification` | Classification (based on Movie Rationales) | Classification
+`task1362_MovieRationales_answer_generation` | Generating answers (based on Movie Rationales) | Answer Generation
+`task1363_Hans_classification` | Classification (based on Hans) | Classification
+`task1364_Hans_Answer_Generation` | Generating answers (based on Hans) | Answer Generation
