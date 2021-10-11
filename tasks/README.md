@@ -850,6 +850,21 @@ Name | Summary | Category
 `task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
 `task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
+`task1115_alt_ja_id_translation` | Given a Japanese language sentence translate it into Bahasa Indonesia language. | Translation
+`task1116_alt_id_ja_translation` | Given a Bahasa Indonesia language sentence translate it into Japanese language. | Translation
+`task1117_alt_ja_id_answer_generation` | Generate answer yes or no for Japanese and Bahasa Indonesia translation pair. | Answer Generation
+`task1118_alt_ja_fil_translation` | Given a Japanese language sentence translate it into Filipino language. | Translation
+`task1119_alt_fil_ja_translation` | Given a Filipino language sentence translate it into Japanese language. | Translation
+`task1120_alt_ja_fil_answer_generation` | Generate answer yes or no for Japanese and Filipino translation pair. | Answer Generation
+`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khamer language. | Translation
+`task1122_alt_khm_ja_translation` | Given a Khamer language sentence translate it into Japanese language. | Translation
+`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khamer translation pair. | Answer Generation
+`task1124_alt_ja_lo_translation` | Given a Japanese language sentence translate it into Lao language. | Translation
+`task1125_alt_lo_ja_translation` | Given a Lao language sentence translate it into Japanese language. | Translation
+`task1126_alt_ja_lo_answer_generation` | Generate answer yes or no for Japanese and Lao translation pair. | Answer Generation
+`task1127_alt_ja_th_translation` | Given a Japanese language sentence translate it into Thai language. | Translation
+`task1128_alt_th_ja_translation` | Given a Thai language sentence translate it into Japanese language. | Translation
+`task1129_alt_ja_th_answer_generation` | Generate answer yes or no for Japanese and Thai translation pair. | Answer Generation
 `task1130_xcsr_vi_commonsense_mc_classification` | Answering multiple choice commonsense question in Vietnamese language. | Classification
 `task1131_xcsr_es_commonsense_mc_classification` | Answering multiple choice commonsense question in Spanish language. | Classification
 `task1132_xcsr_ur_commonsense_mc_classification` | Answering multiple choice commonsense question in Urdu language. | Classification
