@@ -900,3 +900,6 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
+`task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
+`task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
+`task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
