@@ -928,3 +928,7 @@ Name | Summary | Category
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1403_check_validity_date_mmddyyyy` | Given a date in mm/dd/yyyy format, check if it is a valid date or not | Classification
+`task1404_convert_mmddyyyy_to_ddmmyyyy` | Given a date in mm/dd/yyyy format, convert it into dd/mm/yyyy format | Classification
+`task1405_convert_ddmmyyyy_to_mmddyyyy` | Given a date in dd/mm/yyyy format, convert it into mm/dd/yyyy format | Classification
+`task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
