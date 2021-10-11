@@ -35,6 +35,12 @@ if len(set(task_readme_lines)) != len(task_readme_lines):
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
+# make sure anything that gets mentioned in the readme, correspond to an actual file
+task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
+for name in task_names:
+    file_name = name + ".json"
+    assert file_name in files, f" Did not find `{file_name}` among {files}"
+
 for file in files:
     if ".json" in file:
         print(f" --> testing file: {file}")

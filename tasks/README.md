@@ -78,7 +78,7 @@ Name | Summary | Category
 `task073_commonsenseqa_answer_generation` | Answer questions based on commonsense knowledge. | Answer Generation
 `task074_squad1.1_question_generation` | Generate guestions based on SQuAD 1.1. | Question Generation
 `task075_squad1.1_answer_generation` | Generate answers to SQuAD 1.1 questions. | Answer Generation
-`task076_splash_correcting_sql_mistakes` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
+`task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement does. | Structured Query Classification
 `task079_conala_concat_strings` | Given a list of strings, concatenate them to form one string. | Answer Generation
@@ -698,7 +698,7 @@ Name | Summary | Category
 `task743_eurlex_summarization` | Generate headline (summary) for legal act article | Summarization  
 `task744_eurlex_classification` | Identify the legal act article whether it is Regulation, Decision or Directive | Classification
 `task745_ai2_arithmetic_questions_arithmetic` | Given an arithmetic question, compute a solution | Arithmetic
-`task746_yelp_restaurant_review_classification_arithmetic` | Restaurant review classification based on its sentiment (i.e., positive or negative) | Classification
+`task746_yelp_restaurant_review_classification` | Restaurant review classification based on its sentiment (i.e., positive or negative) | Classification
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
