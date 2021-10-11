@@ -504,6 +504,12 @@ Name | Summary | Category
 `task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
 `task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
 `task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
+`task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life anecdote of a complex ethical situation, identify who is ethically wrong here | Classification
+`task500_scruples_anecdotes_title_generation` | Given a real-life anecdote of a complex ethical situation, generate a title that describes the main event/root cause of the situation | Title Generation
+`task501_scruples_anecdotes_post_type_verification` | Given a real-life anecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
+`task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life anecdote of a complex ethical situation, verify who is wrong in the situation | Verification
+`task503_scruples_anecdotes_isanswerable` | Given a real-life anecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
+`task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
 `task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
 `task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
@@ -584,6 +590,10 @@ Name | Summary | Category
 `task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
 `task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
 `task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
+`task591_sciq_answer_generation` | Given a scientific question, generate a correct answer to the given question | Answer Generation
+`task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
+`task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
+`task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -640,6 +650,21 @@ Name | Summary | Category
 `task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
 `task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
 `task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
+`task750_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
+`task751_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
+`task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
+`task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
+`task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
+`task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task864_asdiv_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task865_mawps_addsub_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
@@ -789,6 +814,10 @@ Name | Summary | Category
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task890_gcwd_classification` | Classifying writer's stance to Global Warming | Classification
+`task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
+`task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
+`task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
@@ -840,6 +869,21 @@ Name | Summary | Category
 `task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
 `task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
+`task1115_alt_ja_id_translation` | Given a Japanese language sentence translate it into Bahasa Indonesia language. | Translation
+`task1116_alt_id_ja_translation` | Given a Bahasa Indonesia language sentence translate it into Japanese language. | Translation
+`task1117_alt_ja_id_answer_generation` | Generate answer yes or no for Japanese and Bahasa Indonesia translation pair. | Answer Generation
+`task1118_alt_ja_fil_translation` | Given a Japanese language sentence translate it into Filipino language. | Translation
+`task1119_alt_fil_ja_translation` | Given a Filipino language sentence translate it into Japanese language. | Translation
+`task1120_alt_ja_fil_answer_generation` | Generate answer yes or no for Japanese and Filipino translation pair. | Answer Generation
+`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khamer language. | Translation
+`task1122_alt_khm_ja_translation` | Given a Khamer language sentence translate it into Japanese language. | Translation
+`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khamer translation pair. | Answer Generation
+`task1124_alt_ja_lo_translation` | Given a Japanese language sentence translate it into Lao language. | Translation
+`task1125_alt_lo_ja_translation` | Given a Lao language sentence translate it into Japanese language. | Translation
+`task1126_alt_ja_lo_answer_generation` | Generate answer yes or no for Japanese and Lao translation pair. | Answer Generation
+`task1127_alt_ja_th_translation` | Given a Japanese language sentence translate it into Thai language. | Translation
+`task1128_alt_th_ja_translation` | Given a Thai language sentence translate it into Japanese language. | Translation
+`task1129_alt_ja_th_answer_generation` | Generate answer yes or no for Japanese and Thai translation pair. | Answer Generation
 `task1130_xcsr_vi_commonsense_mc_classification` | Answering multiple choice commonsense question in Vietnamese language. | Classification
 `task1131_xcsr_es_commonsense_mc_classification` | Answering multiple choice commonsense question in Spanish language. | Classification
 `task1132_xcsr_ur_commonsense_mc_classification` | Answering multiple choice commonsense question in Urdu language. | Classification
@@ -869,6 +913,7 @@ Name | Summary | Category
 `task1156_bard_analogical_reasoning_tools` | Given an analogy that relates actions to the tools used to perform the action, give the appropriate tool for the given action | Answer Generation
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
+`task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
