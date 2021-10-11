@@ -3,6 +3,11 @@ import json
 from os import listdir
 from os.path import isfile, join
 
+# make sure that there is no json file in the root directory 
+root_files = [f for f in listdir('.') if isfile(join('.', f))]
+for f in root_files:
+    assert '.json' not in f, 'looks like there is a JSON file in the main directory???'
+
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
 
