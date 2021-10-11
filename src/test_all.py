@@ -26,11 +26,23 @@ with open("tasks/README.md", 'r') as readmef:
 with open("doc/task-hierarchy.md", 'r') as readmef:
     hierarchy_content = " ".join(readmef.readlines())
 
+# make sure there are no repeated lines in the task file
+task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
+if len(set(task_readme_lines)) != len(task_readme_lines):
+    diff = "\n --> ".join([x for x in task_readme_lines if task_readme_lines.count(x) > 1])
+    assert False, f'looks like there are repeated lines in the task readme file?? \n {diff}'
+
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
+# make sure anything that gets mentioned in the readme, correspond to an actual file
+task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
+for name in task_names:
+    file_name = name + ".json"
+    assert file_name in files, f" Did not find `{file_name}` among {files}"
+
 for file in files:
-    if ".md" not in file and '.py' not in file:
+    if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
@@ -63,11 +75,17 @@ for file in files:
             assert type(data['Output_language']) == list, f'Output_language must be a str.'
             assert type(data['Instruction_language']) == list, f'Output_language must be a str.'
 
+            assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
+            assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
+            assert 'output_language' not in data, f'Found `output_language`, but expected `Output_language`.'
+
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
                 assert type(x['input']) == str, f'the input of instance {x} is not a string'
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
+                assert len(x['input']) > 0, f"looks like an input `{x['input']}` is empty?"
+                assert len(x['output']) > 0, f"looks like an output `{x['output']}` is empty?"
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
@@ -112,5 +130,9 @@ for file in files:
             if true_file not in task_readme_content:
                 raise Exception(f' * Looks like the task name `{true_file}` is not included '
                                 f'in the task file `tasks/README.md`')
+
+            if task_readme_content.count(true_file) > 1:
+                raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
+                                f'the task file `tasks/README.md`')
 
 print("Did not find any errors! ✅")
