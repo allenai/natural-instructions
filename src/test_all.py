@@ -118,4 +118,8 @@ for file in files:
                 raise Exception(f' * Looks like the task name `{true_file}` is not included '
                                 f'in the task file `tasks/README.md`')
 
+            if task_readme_content.count(true_file) > 1:
+                raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
+                                f'the task file `tasks/README.md`')
+
 print("Did not find any errors! ✅")
