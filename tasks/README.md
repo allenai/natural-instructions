@@ -880,4 +880,8 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1365_opustedtalks_translation` | Translation from English to Croatian using Opus_Ted Dataset | Translation
+`task1366_healthfact_classification` | Find if claim belongs to a predefined category using given paragraph | Classification
+`task1367_opustedtalks_translation` | Translation from Croatian to English using Opus_Ted Dataset | Translation
+`task1368_healthfact_sentence_generation` | Generate a claim based on a given paragraph | Sentence Generation
+`task1369_healthfact_sentence_generation` | Generate an explanation for a claim based on a given paragraph | Sentence Generation
