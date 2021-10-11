@@ -52,7 +52,7 @@ for file in files:
                 assert key in data, f'did not find the key: {key}'
 
             for key in suggested_keys:
-                if key in data:
+                if key not in data:
                     print(f'⚠️ WARNING: did not find the key: {key}')
 
             assert len(data[
@@ -70,9 +70,10 @@ for file in files:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
-            # if "Input_language" in data:
-            #     assert type(data['Input_language']) == list, f'Input_language must be a str.'
-            #     assert type(data['Output_language']) == list, f'Output_language must be a str.'
+
+            assert type(data['Input_language']) == list, f'Input_language must be a str.'
+            assert type(data['Output_language']) == list, f'Output_language must be a str.'
+            assert type(data['Instruction_language']) == list, f'Output_language must be a str.'
 
             for x in data['Instances']:
                 for key in ['input', 'output']:
