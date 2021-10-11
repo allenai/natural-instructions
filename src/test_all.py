@@ -75,6 +75,10 @@ for file in files:
             assert type(data['Output_language']) == list, f'Output_language must be a str.'
             assert type(data['Instruction_language']) == list, f'Output_language must be a str.'
 
+            assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
+            assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
+            assert 'output_language' not in data, f'Found `output_language`, but expected `Output_language`.'
+
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
