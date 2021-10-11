@@ -880,4 +880,7 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1385_hyperpartisan_news_detection_answer_generation` | Counting number of vowels in hyperpartisan news articles | Answer Generation
+`task1386_hyperpartisan_news_detection_classification` | Determine whether a given set of news articles are hyperpartisant | Classification
+`task1387_hotpotqa_answer_generation` | Generate answer to a given question based on multiple context passages | Answer Generation
+`task1388_hotpotqa_answer_generation` | Generate titles of passages that contains supporting facts to answer a question | Answer Generation
