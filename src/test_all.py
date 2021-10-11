@@ -79,6 +79,8 @@ for file in files:
                     assert key in x, f'expected the key {key} in {x}'
                 assert type(x['input']) == str, f'the input of instance {x} is not a string'
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
+                assert len(x['input']) > 0, f"looks like an input `{x['input']}` is empty?"
+                assert len(x['output']) > 0, f"looks like an output `{x['output']}` is empty?"
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
