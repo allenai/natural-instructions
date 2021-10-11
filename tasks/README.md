@@ -851,9 +851,9 @@ Name | Summary | Category
 `task1118_alt_ja_fil_translation` | Given a Japanese language sentence translate it into Filipino language. | Translation
 `task1119_alt_fil_ja_translation` | Given a Filipino language sentence translate it into Japanese language. | Translation
 `task1120_alt_ja_fil_answer_generation` | Generate answer yes or no for Japanese and Filipino translation pair. | Answer Generation
-`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khamer language. | Translation
-`task1122_alt_khm_ja_translation` | Given a Khamer language sentence translate it into Japanese language. | Translation
-`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khamer translation pair. | Answer Generation
+`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khmer language. | Translation
+`task1122_alt_khm_ja_translation` | Given a Khmer language sentence translate it into Japanese language. | Translation
+`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khmer translation pair. | Answer Generation
 `task1124_alt_ja_lo_translation` | Given a Japanese language sentence translate it into Lao language. | Translation
 `task1125_alt_lo_ja_translation` | Given a Lao language sentence translate it into Japanese language. | Translation
 `task1126_alt_ja_lo_answer_generation` | Generate answer yes or no for Japanese and Lao translation pair. | Answer Generation
