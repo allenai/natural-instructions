@@ -17,7 +17,7 @@ expected_keys = [
     'Source'
 ]
 
-language_names = [x.name for x in list(languages)]
+language_names = [x.name.replace('(individual language)', '').strip() for x in list(languages)]
 
 
 def assert_language_name(name):
