@@ -590,6 +590,10 @@ Name | Summary | Category
 `task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
 `task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
 `task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
+`task591_sciq_answer_generation` | Given a scientific question, generate a correct answer to the given question | Answer Generation
+`task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
+`task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
+`task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -646,6 +650,21 @@ Name | Summary | Category
 `task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
 `task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
 `task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
+`task750_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
+`task751_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
+`task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
+`task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
+`task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
+`task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task864_asdiv_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task865_mawps_addsub_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
+`task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
@@ -894,6 +913,7 @@ Name | Summary | Category
 `task1156_bard_analogical_reasoning_tools` | Given an analogy that relates actions to the tools used to perform the action, give the appropriate tool for the given action | Answer Generation
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
+`task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
