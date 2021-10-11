@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from iso639 import languages
 import json
 from os import listdir
 from os.path import isfile, join
@@ -15,6 +16,13 @@ expected_keys = [
     'Categories',
     'Source'
 ]
+
+language_names = [x.name for x in list(languages)]
+
+
+def assert_language_name(name):
+    assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
+
 
 # TODO: over time, these should be moved up to "expected
 suggested_keys = [
@@ -55,10 +63,10 @@ for file in files:
                 if key not in data:
                     print(f'⚠️ WARNING: did not find the key: {key}')
 
-            assert len(data[
-                           'Instances']) > 25, f"there must be at least 25 instances; currently you have {len(data['Instances'])} instances"
-            assert len(data[
-                           'Instances']) <= 6500, f"there must be at most 6.5k instances; currently you have {len(data['Instances'])} instances"
+            assert len(data['Instances']) > 25, f"there must be at least 25 instances; " \
+                                                f"currently you have {len(data['Instances'])} instances"
+            assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; " \
+                                                   f"currently you have {len(data['Instances'])} instances"
 
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
@@ -78,6 +86,10 @@ for file in files:
             assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
             assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
             assert 'output_language' not in data, f'Found `output_language`, but expected `Output_language`.'
+
+            # make sure we use the standard language names
+            for lang in data['Input_language'] + data['Output_language'] + data['Instruction_language']:
+                assert_language_name(lang)
 
             for x in data['Instances']:
                 for key in ['input', 'output']:
@@ -108,24 +120,27 @@ for file in files:
                     try:
                         set_of_instances.remove(instance['input'])
                     except KeyError:
-                        raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {instance}")
-
+                        raise Exception(f" * Looks like we have a repeated example here! "
+                                        f"Merge outputs before removing duplicates. :-/ \n {instance}")
 
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
                 if instance['input'] in examples:
-                    raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {instance}")
+                    raise Exception(f" * Looks like we have a same example across positive examples and instances! "
+                                    f"Drop the example from the instances. :-/ \n {instance}")
 
                 assert len(instance['output']) > 0, "all the instances must have at least one output"
 
             true_file = file.replace(".json", "")
             for char in true_file:
                 if char.isupper():
-                    raise Exception(f" * Looks like there is an uppercase letter in `{true_file}`. All letters should be lowercased.")
+                    raise Exception(f" * Looks like there is an uppercase letter in `{true_file}`. "
+                                    f"All letters should be lowercased.")
 
             if file in task_readme_content:
-                raise Exception(f" * Looks like the .json file extension ending is present with the task name in `tasks/README.md` when it should just be `{true_file}`")
+                raise Exception(f" * Looks like the .json file extension ending is "
+                                f"present with the task name in `tasks/README.md` when it should just be `{true_file}`")
 
             if true_file not in task_readme_content:
                 raise Exception(f' * Looks like the task name `{true_file}` is not included '
