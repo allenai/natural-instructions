@@ -21,7 +21,7 @@ language_names = [x.name for x in list(languages)]
 
 
 def assert_language_name(name):
-    assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
+    assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names[:10]}"
 
 
 # TODO: over time, these should be moved up to "expected
