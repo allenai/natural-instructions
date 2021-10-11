@@ -2,6 +2,7 @@
 import json
 from os import listdir
 from os.path import isfile, join
+from scipy.stats import skew
 
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
@@ -16,13 +17,33 @@ expected_keys = [
     'Source'
 ]
 
+# TODO: over time, these should be moved up to "expected
+suggested_keys = [
+    "Domains", "Input_language", "Output_language"
+]
+
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
+with open("doc/task-hierarchy.md", 'r') as readmef:
+    hierarchy_content = " ".join(readmef.readlines())
+
+# make sure there are no repeated lines in the task file
+task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
+if len(set(task_readme_lines)) != len(task_readme_lines):
+    diff = "\n --> ".join([x for x in task_readme_lines if task_readme_lines.count(x) > 1])
+    assert False, f'looks like there are repeated lines in the task readme file?? \n {diff}'
+
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
+# make sure anything that gets mentioned in the readme, correspond to an actual file
+task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
+for name in task_names:
+    file_name = name + ".json"
+    assert file_name in files, f" Did not find `{file_name}` among {files}"
+
 for file in files:
-    if ".md" not in file:
+    if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
@@ -30,6 +51,10 @@ for file in files:
             data = json.load(f)
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
+
+            for key in suggested_keys:
+                if key not in data:
+                    print(f'⚠️ WARNING: did not find the key: {key}')
 
             assert len(data[
                            'Instances']) > 25, f"there must be at least 25 instances; currently you have {len(data['Instances'])} instances"
@@ -39,12 +64,29 @@ for file in files:
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
-            
+            for c in data['Categories']:
+                if c not in hierarchy_content:
+                    print(f'⚠️ WARNING: Did not find category `{c}`')
+            if "Domains" in data:
+                assert type(data['Domains']) == list, f'Domains must be a list.'
+                for d in data['Domains']:
+                    assert d in hierarchy_content, f'Did not find domain `{d}`'
+
+            assert type(data['Input_language']) == list, f'Input_language must be a str.'
+            assert type(data['Output_language']) == list, f'Output_language must be a str.'
+            assert type(data['Instruction_language']) == list, f'Output_language must be a str.'
+
+            assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
+            assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
+            assert 'output_language' not in data, f'Found `output_language`, but expected `Output_language`.'
+
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
                 assert type(x['input']) == str, f'the input of instance {x} is not a string'
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
+                assert len(x['input']) > 0, f"looks like an input `{x['input']}` is empty?"
+                assert len(x['output']) > 0, f"looks like an output `{x['output']}` is empty?"
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
@@ -69,7 +111,15 @@ for file in files:
                     except KeyError:
                         raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {instance}")
 
-
+            #Make sure classes are balanced
+            if 'Classification' or 'classification' in data['Categories']:
+                outputs=[ins['output'] for ins in instances]
+                classes = []
+                for i in outputs:
+                    if i not in classes:
+                        classes.append(i)
+                output_int=[classes.index(output) + 1 for output in outputs]
+                assert abs(skew(output_int)) < 0.5, "Classes distribution is skewed"
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
@@ -89,5 +139,9 @@ for file in files:
             if true_file not in task_readme_content:
                 raise Exception(f' * Looks like the task name `{true_file}` is not included '
                                 f'in the task file `tasks/README.md`')
+
+            if task_readme_content.count(true_file) > 1:
+                raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
+                                f'the task file `tasks/README.md`')
 
 print("Did not find any errors! ✅")
