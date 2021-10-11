@@ -131,7 +131,7 @@ for file in files:
                         
                         
             #Make sure classes are balanced
-            if 'Classification' or 'classification' in data['Categories']:
+            if 'Classification' in data['Categories']:
                 outputs=[ins['output'] for ins in instances]
                 classes = []
                 for i in outputs:
