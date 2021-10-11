@@ -26,11 +26,17 @@ with open("tasks/README.md", 'r') as readmef:
 with open("doc/task-hierarchy.md", 'r') as readmef:
     hierarchy_content = " ".join(readmef.readlines())
 
+# make sure there are no repeated lines in the task file
+task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
+if len(set(task_readme_lines)) != len(task_readme_lines):
+    diff = "\n --> ".join([x for x in task_readme_lines if task_readme_lines.count(x) > 1])
+    assert False, f'looks like there are repeated lines in the task readme file?? \n {diff}'
+
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
 for file in files:
-    if ".md" not in file:
+    if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file

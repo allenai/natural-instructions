@@ -375,25 +375,16 @@ Name | Summary | Category
 `task373_synthetic_round_tens_place` | Given a list of integers round them to the tens place | Answer Generation, Arithemetic
 `task374_synthetic_pos_or_neg_calculation`| Given a list of integers multiply the negative integers by *-3* multiply the even integers by *2* | Answer Generation, Arithemetic 
 `task375_classify_type_of_sentence_in_debate` | Given a debate topic and a sentence from the debate, classify the type of the sentence. | Classification
-`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
-`task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
-`task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
-`task384_socialiqa_question_classification` | You're given context, an answer and question. Your task is to classify whether the question is correct or not. | Classification
-`task385_socialiqa_incorrect_answer_generation` | You're given a context, a question, three options. Your task is to return an incorrect answer from the option. | Incorrect Answer Generation
-`task397_semeval_2018_task1_tweet_anger_detection` | Given a tweet judge whether the author was angry or not | Classification
-`task398_semeval_2018_task1_tweet_joy_detection` | Given a tweet judge whether the author was happy or not | Classification
-`task399_semeval_2018_task1_tweet_sadness_detection` | Given a tweet judge whether the author was sad or not | Classification
-`task394_persianqa_question_generation` | Given a passage, generate a question based on it | Question Generation
-`task395_persianqa_answer_generation` | Given a passage and a question, answer the question based on the passage | Answer Generation
-`task396_persianqa_classification` | Given a passage and a question, check whether the question is answerable based on the passage or not | Classification
 `task376_reverse_order_of_words` |  Reverse the order of words in the given sentence | Answer Generation
 `task377_remove_words_of_given_length` | Remove all words of a given length in the sentence | Answer Generation
 `task378_reverse_words_of_given_length` | Reverse all words of a given length in the sentence | Answer Generation
 `task379_agnews_topic_classification` | Given a news article, classify the article's topic to four classes. | Classification
-`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage. | Answer Generation
+`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
 `task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
+`task384_socialiqa_question_classification` | You're given context, an answer and question. Your task is to classify whether the question is correct or not. | Classification
+`task385_socialiqa_incorrect_answer_generation` | You're given a context, a question, three options. Your task is to return an incorrect answer from the option. | Incorrect Answer Generation
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
 `task388_torque_token_classification` | Given a passage, identify a token from the passage representing an event | Token Classification
@@ -650,21 +641,6 @@ Name | Summary | Category
 `task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
 `task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
 `task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
-`task750_aqua_multiple_choice_answering` | Given a mathematical question , find the most suitable numerical answer | Answer Generation
-`task751_svamp_subtraction_question_answering` |  Given a mathematical question involving subtraction, find the most suitable numerical answer | Answer Generation
-`task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
-`task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
-`task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
-`task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task864_asdiv_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task865_mawps_addsub_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
-`task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
-`task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
-`task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
-`task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
@@ -913,7 +889,6 @@ Name | Summary | Category
 `task1156_bard_analogical_reasoning_tools` | Given an analogy that relates actions to the tools used to perform the action, give the appropriate tool for the given action | Answer Generation
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
-`task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
