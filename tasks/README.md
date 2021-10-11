@@ -880,4 +880,9 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1344_glue_entailment_classification` | Checking if 2nd sentance entails the 1st or not on GLUE RTE dataset | Classification
+`task1345_glue_qqp_question_paraprashing` | Paraphrasing question 1 to generate a similar question using GLUE QPP dataset | Text Modification
+`task1346_glue_cola_grammatical_correctness_classification` | Checking grammatical correctness of a statement. | Classification
+`task1347_glue_sts-b_similarity_classification` | Classifying two sentence based on semantic similarity onthe scale of 0 - 5. | Classification
+`task1348_glue_qnli_question_entailment_classification` | Classifying if the question entails the statement provide or not. | Classification
+`task1349_glue_qnli_question_generation` | Generating question based on the statement provided | Question Generation
