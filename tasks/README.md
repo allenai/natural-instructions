@@ -880,4 +880,7 @@ Name | Summary | Category
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-
+`task1340_msr_text_compression_compression` | Generating Compressed text based on MSR dataset | Compression
+`task1341_msr_text_classification` | Generating Classification of text in MSR dataset | Classification
+`task1342_amazon_us_reviews_title` | Generating Title for Amazon US review dataset | Title Generation
+`task1343_amazon_us_reviews_rating` | Generating Rating for Amazon US review dataset | Rating generation
