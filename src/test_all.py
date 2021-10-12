@@ -24,12 +24,11 @@ expected_keys = [
 
 language_names = [x.name.replace('(individual language)', '').replace(" languages", "").strip() for x in list(languages)]
 
-
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
 
-# TODO: over time, these should be moved up to "expected
+# TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains", "Input_language", "Output_language"
 ]
