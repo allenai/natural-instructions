@@ -882,6 +882,6 @@ Name | Summary | Category
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
 `task1398_obqa_question_generation` | Given a fact, generate a question that can be answered using the fact | Question Generation
 `task1399_obqa_answer_generation` | Given a fact and question, generate an answer to the question | Answer Generation
-`task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate three incorrect answers to the question | Incorrect Answer Generation
+`task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
 `task1401_obqa_sentence_generation` | Given a question and answer pair, generate a fact statement | Sentence Generation
 `task1402_clue_question_generation` | Given a Chinese passage, generate a question based on the passage | Question Generation
