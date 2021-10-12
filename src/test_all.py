@@ -24,12 +24,11 @@ expected_keys = [
 
 language_names = [x.name.replace('(individual language)', '').replace(" languages", "").strip() for x in list(languages)]
 
-
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
 
-# TODO: over time, these should be moved up to "expected
+# TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains", "Input_language", "Output_language"
 ]
@@ -73,6 +72,7 @@ for file in files:
             assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; " \
                                                    f"currently you have {len(data['Instances'])} instances"
 
+            assert type(data['Definition']) == str, f'Definition must be a str.'
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'

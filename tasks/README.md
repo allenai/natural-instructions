@@ -3,10 +3,10 @@
 This directory contains the tasks that are part of this benchmark.
 
 
-Name | Summary | Category
----- | ----------- | --------
-`task001_quoref_question_generation`	| Writing questions that require tracking entity references.	| Question Generation
-`task002_quoref_answer_generation`	| Answering questions that require tracking entity references.	| Answer Generation
+Name | Summary | Category | Domain | Input Language | Output Language
+---- | ----------- | -------- | ----- | ----- | ----- 
+`task001_quoref_question_generation`	| Writing questions that require tracking entity references.	| Contextual Question Generation	| Wikipedia	| English	| English
+`task002_quoref_answer_generation`	| Answering questions that require tracking entity references.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task003_mctaco_question_generation_event_duration`	| Writing questions that involve commonsense understanding of "event duration". | Question Generation
 `task004_mctaco_answer_generation_event_duration`	| Answering questions that involve commonsense understanding of "event duration". | Answer Generation
 `task005_mctaco_wrong_answer_generation_event_duration`	| Writing an implausible answer to the given "event duration" question. | Incorrect Answer Generation
@@ -76,8 +76,8 @@ Name | Summary | Category
 `task071_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and middle.	| Answer Generation
 `task072_abductivenli_answer_generation`	|  Generating text that completes a story based on given middle and ending.	| Answer Generation
 `task073_commonsenseqa_answer_generation` | Answer questions based on commonsense knowledge. | Answer Generation
-`task074_squad1.1_question_generation` | Generate guestions based on SQuAD 1.1. | Question Generation
-`task075_squad1.1_answer_generation` | Generate answers to SQuAD 1.1 questions. | Answer Generation
+`task074_squad1.1_question_generation`	| Generate guestions based on SQuAD 1.1.	| Contextual Question Generation	| Wikipedia	| English	| English
+`task075_squad1.1_answer_generation`	| Generate answers to SQuAD 1.1 questions.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement does. | Structured Query Classification
