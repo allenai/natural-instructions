@@ -17,7 +17,7 @@ def read_file(file):
 
 
 def normalize(str):
-    return str.replace('"', '\'').replace('`', '\'').replace('\n', '<br>')
+    return str.replace('"', '\'').replace('`', '\'').replace('\n', '<br>').replace('&', ' and ')
 
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f)) and ".json" in f]
@@ -80,7 +80,7 @@ def process_single_file(start, end, max_count):
 
             for idx, ex in enumerate(chunk):
                 map[f'instance_{idx}_input'] = normalize(ex['input'])
-                map[f'instance_{idx}_output'] = [normalize(x) for x in ex['output']]
+                map[f'instance_{idx}_output'] = "///".join([normalize(x) for x in ex['output']])
 
             fout.write(json.dumps(map) + "\n")
 
