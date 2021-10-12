@@ -10,12 +10,15 @@ from os.path import isfile, join
 
 tasks_path = '../../tasks/'
 
+
 def read_file(file):
     with open(tasks_path + file, 'r') as f:
         return json.load(f)
 
+
 def normalize(str):
     return str.replace('"', '\'').replace('`', '\'').replace('\n', '<br>')
+
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f)) and ".json" in f]
 task_ids_to_file = {}
@@ -38,7 +41,7 @@ def process_single_file(start, end, max_count):
         n = 5
         json_content = read_file(file)
 
-        if json_content["Input_language"] != [ "English"] or json_content["Output_language"] != [ "English"]:
+        if json_content["Input_language"] != ["English"] or json_content["Output_language"] != ["English"]:
             continue
 
         positive_examples = json_content['Positive Examples']
@@ -77,7 +80,7 @@ def process_single_file(start, end, max_count):
 
             for idx, ex in enumerate(chunk):
                 map[f'instance_{idx}_input'] = normalize(ex['input'])
-                map[f'instance_{idx}_output'] = [normalize(x) for x in ex['output'] ]
+                map[f'instance_{idx}_output'] = [normalize(x) for x in ex['output']]
 
             fout.write(json.dumps(map) + "\n")
 
