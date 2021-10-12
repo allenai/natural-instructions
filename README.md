@@ -68,7 +68,7 @@ We would appreciate any external contributions! 🙏
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
-  
+
  
 If you have any questions or suggestions, please use [the issues](https://github.com/allenai/natural-instructions-expansion/issues) feature.  
 
