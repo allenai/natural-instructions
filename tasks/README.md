@@ -909,3 +909,7 @@ Name | Summary | Category
 `task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
 `task1401_obqa_sentence_generation` | Given a question and answer pair, generate a fact statement | Sentence Generation
 `task1402_clue_question_generation` | Given a Chinese passage, generate a question based on the passage | Question Generation
+`task1403_check_validity_date_mmddyyyy` | Given a date in mm/dd/yyyy format, check if it is a valid date or not | Classification
+`task1404_date_conversion` | Given a date in a particular format, convert it into some other format | Answer Generation
+`task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
+`task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
