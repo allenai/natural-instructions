@@ -904,3 +904,8 @@ Name | Summary | Category
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1398_obqa_question_generation` | Given a fact, generate a question that can be answered using the fact | Question Generation
+`task1399_obqa_answer_generation` | Given a fact and question, generate an answer to the question | Answer Generation
+`task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
+`task1401_obqa_sentence_generation` | Given a question and answer pair, generate a fact statement | Sentence Generation
+`task1402_clue_question_generation` | Given a Chinese passage, generate a question based on the passage | Question Generation
