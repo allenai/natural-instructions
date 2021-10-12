@@ -898,6 +898,29 @@ Name | Summary | Category
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
 `task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
+`task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
+`task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
+`task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
+`task1288_kpa_keypoint_matching_capital_punishment_topic` | Given an argument and a keypoint under the topic "We should abolish capital punishment", answer if the keypoint summarizes the argument | Classification
+`task1289_kpa_keypoint_matching_intellectual_property_rights` | Given an argument and a keypoint under the topic "We should abolish intellectual property rights", answer if the keypoint summarizes the argument | Classification
+`task1290_kpa_keypoint_matching_atheism_topic` | Given an argument and a keypoint under the topic "We should adopt atheism", answer if the keypoint summarizes the argument | Classification
+`task1291_kpa_keypoint_matching_libertarianism_topic` | Given an argument and a keypoint under the topic "We should adopt libertarianism", answer if the keypoint summarizes the argument | Classification
+`task1292_kpa_keypoint_matching_human_cloning_topic` | Given an argument and a keypoint under the topic "We should ban human cloning", answer if the keypoint summarizes the argument | Classification
+`task1293_kpa_keypoint_matching_military_companies_topic` | Given an argument and a keypoint under the topic "We should ban private military companies", answer if the keypoint summarizes the argument | Classification
+`task1294_kpa_keypoint_matching_child_actors_topic` | Given an argument and a keypoint under the topic "We should ban the use of child actors", answer if the keypoint summarizes the argument | Classification
+`task1295_kpa_keypoint_matching_guantanamo_bay_detection_camp_topic` | Given an argument and a keypoint under the topic "We should close Guantanamo Bay detention camp", answer if the keypoint summarizes the argument | Classification
+`task1296_kpa_keypoint_matching_mandatory_retirement_topic` | Given an argument and a keypoint under the topic "We should end mandatory retirement", answer if the keypoint summarizes the argument | Classification
+`task1297_kpa_keypoint_matching_nuclear_weapons_topic` | Given an argument and a keypoint under the topic "We should fight for the abolition of nuclear weapons", answer if the keypoint summarizes the argument | Classification
+`task1298_kpa_keypoint_matching_urbanization_topic` | Given an argument and a keypoint under the topic "We should fight urbanization", answer if the keypoint summarizes the argument | Classification
+`task1299_kpa_keypoint_matching_compulsory_voting` | Given an argument and a keypoint under the topic "We should introduce compulsory voting", answer if the keypoint summarizes the argument | Classification
+`task1300_kpa_keypoint_matching_cannabis_topic` | Given an argument and a keypoint under the topic "We should legalize cannabis", answer if the keypoint summarizes the argument | Classification
+`task1301_kpa_keypoint_matching_prostitution_topic` | Given an argument and a keypoint under the topic "We should legalize prostitution", answer if the keypoint summarizes the argument | Classification
+`task1302_kpa_keypoint_matching_sex_selection_topic` | Given an argument and a keypoint under the topic "We should legalize sex selection", answer if the keypoint summarizes the argument | Classification
+`task1303_kpa_keypoint_matching_flag_burning_topic` | Given an argument and a keypoint under the topic "We should prohibit flag burning", answer if the keypoint summarizes the argument | Classification
+`task1304_kpa_keypoint_matching_women_in_combat_topic` | Given an argument and a keypoint under the topic "We should prohibit women in combat", answer if the keypoint summarizes the argument | Classification
+`task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument | Classification
+`task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument | Classification
+`task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument | Classification
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
