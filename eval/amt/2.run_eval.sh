@@ -2,7 +2,7 @@
 export AWS_PROFILE=alexandria-mturk
 amti --verbose create-batch mturk-specs/definition-likert file_name.jsonl . --live
 # for example,
-# amti --verbose create-batch mturk-specs/definition-likert start=1_end=2_max_size=2.jsonl .
+# amti --verbose create-batch mturk-specs/definition-likert start=100_end=200_max_size=5.jsonl .
 
 # check the experiment status
 export BATCH=batch-...
