@@ -851,9 +851,9 @@ Name | Summary | Category
 `task1118_alt_ja_fil_translation` | Given a Japanese language sentence translate it into Filipino language. | Translation
 `task1119_alt_fil_ja_translation` | Given a Filipino language sentence translate it into Japanese language. | Translation
 `task1120_alt_ja_fil_answer_generation` | Generate answer yes or no for Japanese and Filipino translation pair. | Answer Generation
-`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khamer language. | Translation
-`task1122_alt_khm_ja_translation` | Given a Khamer language sentence translate it into Japanese language. | Translation
-`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khamer translation pair. | Answer Generation
+`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khmer language. | Translation
+`task1122_alt_khm_ja_translation` | Given a Khmer language sentence translate it into Japanese language. | Translation
+`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khmer translation pair. | Answer Generation
 `task1124_alt_ja_lo_translation` | Given a Japanese language sentence translate it into Lao language. | Translation
 `task1125_alt_lo_ja_translation` | Given a Lao language sentence translate it into Japanese language. | Translation
 `task1126_alt_ja_lo_answer_generation` | Generate answer yes or no for Japanese and Lao translation pair. | Answer Generation
@@ -897,12 +897,18 @@ Name | Summary | Category
 `task1192_food_flavor_profile` | Given the name of an indian dish, classify it's flavor as spicy or sweet  | Classification
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
+`task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1398_obqa_question_generation` | Given a fact, generate a question that can be answered using the fact | Question Generation
+`task1399_obqa_answer_generation` | Given a fact and question, generate an answer to the question | Answer Generation
+`task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
+`task1401_obqa_sentence_generation` | Given a question and answer pair, generate a fact statement | Sentence Generation
+`task1402_clue_question_generation` | Given a Chinese passage, generate a question based on the passage | Question Generation
 `task1403_check_validity_date_mmddyyyy` | Given a date in mm/dd/yyyy format, check if it is a valid date or not | Classification
 `task1404_date_conversion` | Given a date in a particular format, convert it into some other format | Answer Generation
 `task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
