@@ -68,6 +68,7 @@ for file in files:
             assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; " \
                                                    f"currently you have {len(data['Instances'])} instances"
 
+            assert type(data['Definition']) == str, f'Definition must be a str.'
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
