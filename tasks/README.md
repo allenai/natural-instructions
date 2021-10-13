@@ -936,3 +936,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1404_date_conversion` | Given a date in a particular format, convert it into some other format | Answer Generation
 `task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
 `task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
+`task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
