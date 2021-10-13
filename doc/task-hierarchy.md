@@ -84,6 +84,8 @@
 - `Translation`
 - `Verification`: Verify if two inputs match with each other e.g. a task to verify if a sentence and its sentiment given in the input match
   - `Verification -> Claim Verification`
+  - `Verification -> Summary Verification`
+  - `Verification -> Subject Verification`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
 
