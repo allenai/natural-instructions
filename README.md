@@ -2,7 +2,7 @@
 
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 We're looking for more contributions to make this data bigger! 🙌  We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls).
-We wrapped up our first public expansion effort in October 15, 2021. That being said, we still welcome new submissioms. The new additions will be part of our future releases. 
+We wrapped up our first public expansion effort in October 15, 2021. That being said, we still welcome new submissions. The new additions will be part of our future releases. 
 
 ### News Bulletin
  - *June 2021:* we initiated this repository with 61 tasks! 
