@@ -16,6 +16,8 @@ tasks_path = 'tasks/'
 
 expected_keys = [
     "Definition",
+    "Input_language",
+    "Output_language",
     "Positive Examples",
     "Negative Examples",
     "Instances",
@@ -24,7 +26,10 @@ expected_keys = [
     'Source'
 ]
 
-language_names = [x.name.replace('(individual language)', '').replace(" languages", "").strip() for x in list(languages)]
+language_names = [
+    x.name.replace('(individual language)', '').replace(" languages", "").strip()
+    for x in list(languages)
+]
 
 
 def assert_language_name(name):
@@ -42,9 +47,10 @@ def skewness2(result):
     metric=np.average(abs(counts-average)/counts.sum())
     assert metric < 0.2, "Classes distribution is skewed"
     
-# TODO: over time, these should be moved up to "expected
+
+# TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
-    "Domains", "Input_language", "Output_language"
+    "Domains"
 ]
 
 with open("tasks/README.md", 'r') as readmef:
@@ -57,6 +63,13 @@ task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
 if len(set(task_readme_lines)) != len(task_readme_lines):
     diff = "\n --> ".join([x for x in task_readme_lines if task_readme_lines.count(x) > 1])
     assert False, f'looks like there are repeated lines in the task readme file?? \n {diff}'
+
+# make sure that the lines are sorted
+task_numbers = [int(line.replace("`task", "").split("_")[0]) for line in task_readme_lines if "`task" in line]
+for i in range(0, len(task_numbers) - 1):
+    num1 = task_numbers[i]
+    num2 = task_numbers[i + 1]
+    assert num1 <= num2, f"ERROR: looks like `{num1}` appears before `{num2}`."
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
@@ -86,6 +99,7 @@ for file in files:
             assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; " \
                                                    f"currently you have {len(data['Instances'])} instances"
 
+            assert type(data['Definition']) == str, f'Definition must be a str.'
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
