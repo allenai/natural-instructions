@@ -892,11 +892,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1156_bard_analogical_reasoning_tools` | Given an analogy that relates actions to the tools used to perform the action, give the appropriate tool for the given action | Answer Generation
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
-`task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
-`task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
-`task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
-`task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
 `task1190_add_integer_to_list` | Given a list of integers and an integer k, add k to every element in the list  | Answer Generation
@@ -932,6 +928,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
 `task1318_country_national_dish` | Given a country name, return the national dish name of the given country | Answer Generation
+`task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
+`task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
+`task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
+`task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
 `task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
