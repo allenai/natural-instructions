@@ -946,3 +946,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
 `task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
 `task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1425_country_iso_numeric` | Given a country name, return the numeric ISO of the given country | Answer Generation
