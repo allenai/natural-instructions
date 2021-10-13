@@ -1,0 +1,667 @@
+{
+    "Source": [
+        "mwsc (https://huggingface.co/datasets/mwsc)"
+    ],
+    "Definition": "You are given a sentence and a question, construct 2 answer options in a specific format i.e. ['option1','option2']. The answer options have to be text spans from the given sentence. Only one among the options should be the correct answer to the given question. Note that, the correct answer to the given question will require understanding of coreference resolution. Coreference resolution is the task of clustering mentions in text that refer to the same underlying real world entities. For example let's take a sentence 'I voted for Obama because he was most aligned with my values, she said.' Here in this example 'I', 'my', and 'she' belong to the same cluster and 'Obama' and 'he' belong to the same cluster. Now let's discuss another example , original sentence: 'I voted for Trump because he was most aligned with my values',John said. Now here is the same sentence with resolved coreferences: 'John voted for Trump because Trump was most aligned with John's values',John said.",
+    "Positive Examples": [
+        {
+            "input": "Sentence: Bob paid for Charlie's college education. He is very grateful. Question:Who is grateful?",
+            "output": "[ 'Bob','Charlie']",
+            "explanation": "The sentence clearly states that Bob paid for Charlies's college education, so Charlies is very grateful. The answer is Charlie and it lies in the options created. Therefore this is a positive example."
+        },
+        {
+            "input": "Sentence: Bob paid for Charlie's college education. He is very generous. Question:Who is generous?",
+            "output": "['Bob','Charlie']",
+            "explanation": "The sentence clearly states that Bob paid for Charlies's college education, so Bob is very generous. The answer is Bob and it lies in the options created. Therefore this is a positive example."
+        },
+        {
+            "input": "Sentence: Ann asked Mary what time the library closes, but she had forgotten. Question:Who had forgotten?",
+            "output": "['Mary','Ann']",
+            "explanation": "The sentence clearly states that Ann asked Mary what time the library closes, but Mary had forgotten. The answer is Mary and it lies in the options created. Therefore this is a positive example."
+        },
+        {
+            "input": "Sentence: Ann asked Mary what time the library closes, because she had forgotten. Question:Who had forgotten?",
+            "output": "['Mary','Ann']",
+            "explanation": "The sentence clearly states that Ann asked Mary what time the library closes, because Ann had forgotten. The answer is Ann and it lies in the options created. Therefore this is a positive example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence: Anne gave birth to her daughter last month. She is a very charming woman. Question:Who is a very charming woman?",
+            "output": "['daughter','husband']",
+            "explanation": "From the given sentence, we got to know that Anne gave birth to her daughter and this incident happened last month and also she is a very charming woman. The answer for the question is Anne but it's not present in options created. Therefore this is a negative example."
+        },
+        {
+            "input": "Sentence: The fish ate the worm. It was hungry. Question:What was hungry?",
+            "output": "['worm','lion']",
+            "explanation": "From the given sentence, we got to know that fish ate the worm because fish was hungry. The answer for the question is fish but it's not present in options created. Therefore this is a negative example."
+        },
+        {
+            "input": "Sentence: The seniors were bullying the freshmen, so we rescued them. Question:Whom do we rescued?",
+            "output": "['students','freshmen','parents']",
+            "explanation": "From the given sentence, we got to know that some x are intimidating some y and we saved these y. Here x is seniors , y is freshmen. The answer for the question is freshmen which lies in the given options but this is a negative example as we are instructed to construct only 2 possible options."
+        },
+        {
+            "input": "Sentence: I was trying to open the lock with the key, but someone had filled the keyhole with chewing gum, and I couldn't get it out. Question: What couldn't I get out?",
+            "output": "['key','pencil']",
+            "explanation": "From the given sentence, we got to know that keyhole is filled with chewing gum and it's not getting out. The answer for the question is gum but it's not present in options created. Therefore this is a negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Sentence: Bill passed the gameboy to John because his turn was next. Question: Whose turn was next?",
+            "output": [
+                "[\"Bill's\", \"John's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Elizabeth moved her company from Sparta to Troy to save money on taxes; the taxes are much lower there. Question: Where are the taxes lower?",
+            "output": [
+                "['Sparta', 'Troy']"
+            ]
+        },
+        {
+            "input": "Sentence: Alice looked for her friend Jade in the crowd. Since she always wears a red turban, Alice spotted her quickly. Question: Who always wears a red turban",
+            "output": [
+                "['Alice', 'Jade']"
+            ]
+        },
+        {
+            "input": "Sentence: Esther figures that she will save shipping costs if she builds her factory in Springfield instead of Franklin, because most of her customers live there. Question: In which town do most of Esther's customers live?",
+            "output": [
+                "['Springfield', 'Franklin']"
+            ]
+        },
+        {
+            "input": "Sentence: Tom said \"Check\" to Ralph as he took his bishop. Question: Who owned the bishop that Tom took?",
+            "output": [
+                "['Ralph', 'Tom']"
+            ]
+        },
+        {
+            "input": "Sentence: I put the cake away in the refrigerator. It has a lot of leftovers in it. Question: What has a lot of leftovers?",
+            "output": [
+                "['cake', 'refrigerator']"
+            ]
+        },
+        {
+            "input": "Sentence: Bill thinks that calling attention to himself was rude to Bert. Question: Who called attention to himself?",
+            "output": [
+                "['Bill', 'Bert']"
+            ]
+        },
+        {
+            "input": "Sentence: John promised Bill to leave, so an hour later he left. Question: Who left?",
+            "output": [
+                "['John', 'Bill']"
+            ]
+        },
+        {
+            "input": "Sentence: In July, Kamtchatka declared war on Yakutsk. Since Yakutsk's army was much better equipped and ten times larger, they were victorious within weeks. Question: Who was victorious",
+            "output": [
+                "['Yakutsk', 'Kamchatka']"
+            ]
+        },
+        {
+            "input": "Sentence: Carol believed that Rebecca suspected that she had stolen the watch. Question: Who is suspected of stealing the watch?",
+            "output": [
+                "['Carol', 'Rebecca']"
+            ]
+        },
+        {
+            "input": "Sentence: The table won't fit through the doorway because it is too wide. Question: What is too wide?",
+            "output": [
+                "['table', 'doorway']"
+            ]
+        },
+        {
+            "input": "Sentence: I stuck a pin through a carrot. When I pulled the pin out, it left a hole. Question: What left a hole?",
+            "output": [
+                "['pin', 'carrot']"
+            ]
+        },
+        {
+            "input": "Sentence: Grace was happy to trade me her sweater for my jacket. She thinks it looks dowdy on her. Question: What looks dowdy on Grace?",
+            "output": [
+                "['jacket', 'sweater']"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the half-empty plate to John because he was full. Question: Who was full?",
+            "output": [
+                "['Bill', 'John']"
+            ]
+        },
+        {
+            "input": "Sentence: Emma did not pass the ball to Janie although she saw that she was open. Question: Who saw that the other player was open?",
+            "output": [
+                "['Janie', 'Emma']"
+            ]
+        },
+        {
+            "input": "Sentence: The police arrested all of the criminals. They were trying to stop the drug trade in the neighborhood. Question: Who was trying to stop the drug trade?",
+            "output": [
+                "['criminals', 'police']"
+            ]
+        },
+        {
+            "input": "Sentence: Dan took the rear seat while Bill claimed the front because his \"Dibs!\" was slow. Question: Whose \"Dibs\" was slow?",
+            "output": [
+                "[\"Bill's\", \"Dan's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: The scientists are studying three species of fish that have recently been found living in the Indian Ocean. They began two years ago. Question: Who or what began two years ago?",
+            "output": [
+                "['fish', 'scientists']"
+            ]
+        },
+        {
+            "input": "Sentence: Emma did not pass the ball to Janie although she was open. Question: Who was open?",
+            "output": [
+                "['Janie', 'Emma']"
+            ]
+        },
+        {
+            "input": "Sentence: Stretching her back, the woman smiled at the girl. Question: Whose back was the woman stretching?",
+            "output": [
+                "[\"girl's\", \"woman's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Sam broke both his ankles and he's walking with crutches. But a month or so from now they should be unnecessary. Question: What should be unnecessary?",
+            "output": [
+                "['ankles', 'crutches']"
+            ]
+        },
+        {
+            "input": "Sentence: Kirilov ceded the presidency to Shatov because he was less popular. Question: Who was less popular?",
+            "output": [
+                "['Shatov', 'Kirilov']"
+            ]
+        },
+        {
+            "input": "Sentence: We had hoped to place copies on all the chairs in the auditorium, but there were simply too many of them. Question: There are not enough of what?",
+            "output": [
+                "['chairs', 'copies']"
+            ]
+        },
+        {
+            "input": "Sentence: Sam Goodman's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties he faced in his childhood. Question: Who faced difficulties?",
+            "output": [
+                "['Xenophanes', 'Sam']"
+            ]
+        },
+        {
+            "input": "Sentence: James asked Robert for a favor but he was refused. Question: Who was refused?",
+            "output": [
+                "['Robert', 'James']"
+            ]
+        },
+        {
+            "input": "Sentence: Sam Goodman's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties he faced in his research. Question: Who faced difficulties?",
+            "output": [
+                "['Xenophanes', 'Sam']"
+            ]
+        },
+        {
+            "input": "Sentence: Alice looked for her friend Jade in the crowd. Since she always has good luck, Alice spotted her quickly. Question: Who always has good luck",
+            "output": [
+                "['Alice', 'Jade']"
+            ]
+        },
+        {
+            "input": "Sentence: We had hoped to place copies on all the chairs in the auditorium, but there were simply not enough of them. Question: There are too many of what?",
+            "output": [
+                "['chairs', 'copies']"
+            ]
+        },
+        {
+            "input": "Sentence: Lily spoke to Donna, breaking her concentration. Question: Whose concentration?",
+            "output": [
+                "[\"Donna's\", \" Lily's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: I put the cake away in the refrigerator. It has a lot of butter in it. Question: What has a lot of butter?",
+            "output": [
+                "['cake', 'refrigerator']"
+            ]
+        },
+        {
+            "input": "Sentence: Tom said \"Check\" to Ralph as he moved his bishop. Question: Who owned the bishop that Tom moved?",
+            "output": [
+                "['Ralph', 'Tom']"
+            ]
+        },
+        {
+            "input": "Sentence: The journalists interviewed the stars of the new movie. They were very persistent, so the interview lasted for a long time. Question: Who was persistent?",
+            "output": [
+                "['stars', 'journalists']"
+            ]
+        },
+        {
+            "input": "Sentence: Carol believed that Rebecca regretted that she had stolen the watch. Question: Who is stole the watch?",
+            "output": [
+                "['Carol', 'Rebecca']"
+            ]
+        },
+        {
+            "input": "Sentence: As Ollie carried Tommy up the long winding steps, his legs ached. Question: Whose legs ached?",
+            "output": [
+                "['Tommy', 'Ollie']"
+            ]
+        },
+        {
+            "input": "Sentence: Joe paid the detective after he delivered the final report on the case. Question: Who delivered the final report?",
+            "output": [
+                "['Joe', ' detective']"
+            ]
+        },
+        {
+            "input": "Sentence: In July, Kamtchatka declared war on Yakutsk. Since Yakutsk's army was much better equipped and ten times larger, they were defeated within weeks. Question: Who was defeated",
+            "output": [
+                "['Yakutsk', 'Kamchatka']"
+            ]
+        },
+        {
+            "input": "Sentence: When Tommy dropped his ice cream, Timmy giggled, so father gave him a sympathetic look. Question: Who got the look from father?",
+            "output": [
+                "['Timmy', 'Tommy']"
+            ]
+        },
+        {
+            "input": "Sentence: There are too many deer in the park, so the park service brought in a small pack of wolves. The population should increase over the next few years. Question: Which population will increase?",
+            "output": [
+                "['wolves', 'deer']"
+            ]
+        },
+        {
+            "input": "Sentence: Dan took the rear seat while Bill claimed the front because his \"Dibs!\" was quicker. Question: Whose \"Dibs\" was quicker?",
+            "output": [
+                "[\"Bill's\", \"Dan's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: When Tommy dropped his ice cream, Timmy giggled, so father gave him a stern look. Question: Who got the look from father?",
+            "output": [
+                "['Timmy', 'Tommy']"
+            ]
+        },
+        {
+            "input": "Sentence: The scientists are studying three species of fish that have recently been found living in the Indian Ocean. They appeared two years ago. Question: Who or what appeared two years ago?",
+            "output": [
+                "['fish', 'scientists']"
+            ]
+        },
+        {
+            "input": "Sentence: The archaeologists have concluded that neanderthals lived in Laputa 20,000 years ago. They hunted for deer on the river banks. Question: Who hunted for deer?",
+            "output": [
+                "['neanderthals', 'archaeologists']"
+            ]
+        },
+        {
+            "input": "Sentence: Kirilov ceded the presidency to Shatov because he was more popular. Question: Who was more popular?",
+            "output": [
+                "['Shatov', 'Kirilov']"
+            ]
+        },
+        {
+            "input": "Sentence: I couldn't find a spoon, so I tried using a pen to stir my coffee. But that turned out to be a bad idea, because it got full of ink. Question: What got full of ink?",
+            "output": [
+                "['coffee', 'pen']"
+            ]
+        },
+        {
+            "input": "Sentence: Elizabeth moved her company from Sparta to Troy to save money on taxes; the taxes are much higher there. Question: Where are the taxes higher?",
+            "output": [
+                "['Sparta', 'Troy']"
+            ]
+        },
+        {
+            "input": "Sentence: James asked Robert for a favor but he refused. Question: Who refused?",
+            "output": [
+                "['Robert', 'James']"
+            ]
+        },
+        {
+            "input": "Sentence: Tom gave Ralph a lift to school so he wouldn't have to drive alone. Question: Who wouldn't have to drive alone?",
+            "output": [
+                "['Ralph', 'Tom']"
+            ]
+        },
+        {
+            "input": "Sentence: As Ollie carried Tommy up the long winding steps, his legs dangled. Question: Whose legs dangled?",
+            "output": [
+                "['Tommy', 'Ollie']"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on Susan's door but she did not answer. Question: Who did not answer?",
+            "output": [
+                "['Susan', 'Jane']"
+            ]
+        },
+        {
+            "input": "Sentence: I tried to paint a picture of an orchard, with lemons in the lemon trees, but they came out looking more like telephone poles. Question: What looked like telephone poles?",
+            "output": [
+                "['lemons', 'trees']"
+            ]
+        },
+        {
+            "input": "Sentence: Dan had to stop Bill from toying with the injured bird. He is very cruel. Question: Who is cruel?",
+            "output": [
+                "['Dan', 'Bill']"
+            ]
+        },
+        {
+            "input": "Sentence: Dan had to stop Bill from toying with the injured bird. He is very compassionate. Question: Who is compassionate?",
+            "output": [
+                "['Dan', 'Bill']"
+            ]
+        },
+        {
+            "input": "Sentence: Jim signaled the barman and gestured toward his bathroom key. Question: Whose bathroom key?",
+            "output": [
+                "[\"Jim's\", \" barman's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Sam broke both his ankles and he's walking with crutches. But a month or so from now they should be better. Question: What should be better?",
+            "output": [
+                "['ankles', 'crutches']"
+            ]
+        },
+        {
+            "input": "Sentence: The doctor informed Kate that she had retired and presented several options for future treatment. Question: Who had retired?",
+            "output": [
+                "['Kate', 'doctor']"
+            ]
+        },
+        {
+            "input": "Sentence: There are too many deer in the park, so the park service brought in a small pack of wolves. The population should decrease over the next few years. Question: Which population will decrease?",
+            "output": [
+                "['wolves', 'deer']"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the half-empty plate to John because he was hungry. Question: Who was hungry?",
+            "output": [
+                "['Bill', 'John']"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on Susan's door but she did not get an answer. Question: Who did not get an answer?",
+            "output": [
+                "['Susan', 'Jane']"
+            ]
+        },
+        {
+            "input": "Sentence: Joe paid the detective after he received the final report on the case. Question: Who received the final report?",
+            "output": [
+                "['Joe', ' detective']"
+            ]
+        },
+        {
+            "input": "Sentence: Emma's mother had died long ago, and her place by an excellent woman as governess. Question: Whose place?",
+            "output": [
+                "[\"mother's\", \"Emma's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: I couldn't find a spoon, so I tried using a pen to stir my coffee. But that turned out to be a bad idea, because it got full of coffee. Question: What got full of coffee?",
+            "output": [
+                "['coffee', 'pen']"
+            ]
+        },
+        {
+            "input": "Sentence: The father carried the sleeping boy in his arms. Question: Whose arms?",
+            "output": [
+                "['father', 'boy']"
+            ]
+        },
+        {
+            "input": "Sentence: Billy cried because Toby wouldn't share his toy. Question: Who owned the toy?",
+            "output": [
+                "['Toby', 'Billy']"
+            ]
+        },
+        {
+            "input": "Sentence: Everyone really loved the oatmeal cookies; only a few people liked the snickerdoodle cookies. Next time, we should make more of them. Question: Which cookie should we make more of, next time?",
+            "output": [
+                "['oatmeal', 'snickerdoodle']"
+            ]
+        },
+        {
+            "input": "Sentence: Esther figures that she will save shipping costs if she builds her factory in Springfield instead of Franklin, because none of her customers live there. Question: In which town do none of Esther's customers live?",
+            "output": [
+                "['Springfield', 'Franklin']"
+            ]
+        },
+        {
+            "input": "Sentence: Joe saw his brother skiing on TV last night but the fool didn't have a coat on Question: Who is the fool?",
+            "output": [
+                "['Joe', 'brother']"
+            ]
+        },
+        {
+            "input": "Sentence: The man lifted the boy onto his shoulders. Question: Whose shoulders?",
+            "output": [
+                "[\"boy's\", \"man's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Lily spoke to Donna, breaking her silence. Question: Whose silence?",
+            "output": [
+                "[\"Donna's\", \" Lily's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: John ordered Bill to leave, so an hour later he left. Question: Who left?",
+            "output": [
+                "['John', 'Bill']"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the gameboy to John because his turn was over. Question: Whose turn was over?",
+            "output": [
+                "[\"Bill's\", \"John's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Billy cried because Toby wouldn't accept his toy. Question: Who owned the toy?",
+            "output": [
+                "['Toby', 'Billy']"
+            ]
+        },
+        {
+            "input": "Sentence: When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. They were very much in the majority. Question: Who were in the majority?",
+            "output": [
+                "['opponents', 'sponsors']"
+            ]
+        },
+        {
+            "input": "Sentence: Bill thinks that calling attention to himself was rude of Bert. Question: Who called attention to himself?",
+            "output": [
+                "['Bill', 'Bert']"
+            ]
+        },
+        {
+            "input": "Sentence: When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. They were very much in the minority. Question: Who were in the minority?",
+            "output": [
+                "['opponents', 'sponsors']"
+            ]
+        },
+        {
+            "input": "Sentence: The father carried the sleeping boy in his bassinet. Question: Whose bassinet?",
+            "output": [
+                "['father', 'boy']"
+            ]
+        },
+        {
+            "input": "Sentence: The woman held the girl against her chest. Question: Whose chest?",
+            "output": [
+                "[\"woman's\", \"girl's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Jim signaled the barman and gestured toward his empty glass. Question: Whose empty glass?",
+            "output": [
+                "[\"Jim's\", \" barman's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: The woman held the girl against her will. Question: Whose will?",
+            "output": [
+                "[\"woman's\", \"girl's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: The table won't fit through the doorway because it is too narrow. Question: What is too narrow?",
+            "output": [
+                "['table', 'doorway']"
+            ]
+        },
+        {
+            "input": "Sentence: Joe saw his brother skiing on TV last night but the fool didn't recognize him Question: Who is the fool?",
+            "output": [
+                "['Joe', 'brother']"
+            ]
+        },
+        {
+            "input": "Sentence: Emma's mother had died long ago, and her education] had been [taken by an excellent woman as governess. Question: Whose education] had been [taken?",
+            "output": [
+                "[\"mother's\", \"Emma's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: Patting her back, the woman smiled at the girl. Question: Whose back was the woman patting?",
+            "output": [
+                "[\"girl's\", \"woman's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: During a game of tag, Ethan chased Luke because he was \"it\". Question: Who was \"it\"?",
+            "output": [
+                "['Ethan', 'Luke']"
+            ]
+        },
+        {
+            "input": "Sentence: The journalists interviewed the stars of the new movie. They were very cooperative, so the interview lasted for a long time. Question: Who was cooperative?",
+            "output": [
+                "['stars', 'journalists']"
+            ]
+        },
+        {
+            "input": "Sentence: Tom gave Ralph a lift to school so he wouldn't have to walk. Question: Who wouldn't have to walk?",
+            "output": [
+                "['Ralph', 'Tom']"
+            ]
+        },
+        {
+            "input": "Sentence: I stuck a pin through a carrot. When I pulled the pin out, it had a hole. Question: What had a hole?",
+            "output": [
+                "['pin', 'carrot']"
+            ]
+        },
+        {
+            "input": "Sentence: I tried to paint a picture of an orchard, with lemons in the lemon trees, but they came out looking more like light bulbs. Question: What looked like light bulbs?",
+            "output": [
+                "['lemons', 'trees']"
+            ]
+        },
+        {
+            "input": "Sentence: Beth didn't get angry with Sally, who had cut her off, because she stopped and apologized. Question: Who apologized?",
+            "output": [
+                "['Beth', 'Sally']"
+            ]
+        },
+        {
+            "input": "Sentence: As Andrea in the crop duster passed over Susan, she could see the landing strip. Question: Who could see the landing strip?",
+            "output": [
+                "['Andrea', 'Susan']"
+            ]
+        },
+        {
+            "input": "Sentence: Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father, he was twelve years old. Question: Who was twelve years old?",
+            "output": [
+                "['Fred', 'father']"
+            ]
+        },
+        {
+            "input": "Sentence: Grace was happy to trade me her sweater for my jacket. She thinks it looks great on her. Question: What looks great on Grace?",
+            "output": [
+                "['jacket', 'sweater']"
+            ]
+        },
+        {
+            "input": "Sentence: The archaeologists have concluded that neanderthals lived in Laputa 20,000 years ago. They hunted for evidence on the river banks. Question: Who hunted for evidence?",
+            "output": [
+                "['neanderthals', 'archaeologists']"
+            ]
+        },
+        {
+            "input": "Sentence: Everyone really loved the oatmeal cookies; only a few people liked the snickerdoodle cookies. Next time, we should make fewer of them. Question: Which cookie should we make fewer of, next time?",
+            "output": [
+                "['oatmeal', 'snickerdoodle']"
+            ]
+        },
+        {
+            "input": "Sentence: The doctor informed Kate that she had cancer and presented several options for future treatment. Question: Who had cancer?",
+            "output": [
+                "['Kate', 'doctor']"
+            ]
+        },
+        {
+            "input": "Sentence: The man lifted the boy onto his bunk bed. Question: Whose bunk bed?",
+            "output": [
+                "[\"boy's\", \"man's\"]"
+            ]
+        },
+        {
+            "input": "Sentence: During a game of tag, Ethan ran from Luke because he was \"it\". Question: Who was \"it\"?",
+            "output": [
+                "['Ethan', 'Luke']"
+            ]
+        },
+        {
+            "input": "Sentence: Beth didn't get angry with Sally, who had cut her off, because she stopped and counted to ten. Question: Who counted to ten?",
+            "output": [
+                "['Beth', 'Sally']"
+            ]
+        },
+        {
+            "input": "Sentence: The police arrested all of the criminals. They were trying to run the drug trade in the neighborhood. Question: Who was trying to run the drug trade?",
+            "output": [
+                "['criminals', 'police']"
+            ]
+        },
+        {
+            "input": "Sentence: Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father, he was twelve months old. Question: Who was twelve months old?",
+            "output": [
+                "['Fred', 'father']"
+            ]
+        },
+        {
+            "input": "Sentence: As Andrea in the crop duster passed over Susan, she could see the landing gear. Question: Who could see the landing gear?",
+            "output": [
+                "['Andrea', 'Susan']"
+            ]
+        }
+    ],
+    "Contributors": [
+        "Sai Venkat Prudhvi Nekkalapudi"
+    ],
+    "Categories": [
+        "Options Generation"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}
