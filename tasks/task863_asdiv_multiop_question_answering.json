@@ -1,0 +1,1697 @@
+{
+    "Contributors": [
+        "Tanay Dixit"
+    ],
+    "Source": [
+        "https://aclanthology.org/2020.acl-main.92.pdf"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Definition": "You are given a math word problem and you are supposed to apply multiple mathematical operators like addition, subtraction, multiplication, or division on the numbers embedded in the text to answer the following question and then only report the final numerical answer.",
+    "Positive Examples": [
+        {
+            "input": "for a birthday party cody bought 30 regular sodas and 5 diet sodas . if his fridge would only hold 7 on each shelf how many shelves would he fill up ?",
+            "output": "5",
+            "explanation": "total sods = 30+5 = 35, total shelves filled = total soda/7 = 35/7 = 5"
+        },
+        {
+            "input": "if the all the participants found a total 40 eggs from the club house 25 eggs from the park and 15 eggs from the town hall how many easter eggs were found that day ?",
+            "output": "80",
+            "explanation": "Total eggs found = 40 + 25 + 15 = 80 eggs"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "december is a busy month for the toy store . they had 95 games on the shelf . 68 games were sold the first week . the store got 47 more games from the factory . how many games did they have then ?",
+            "output": "95",
+            "explanation": "Total games left = 95 - 68 + 47 = 74, hence correct answer is 74  "
+        },
+        {
+            "input": "laurie has 12 more marbles than kurt . kurt has 45 marbles less than denis . dennis has 70 marbles . how many marbles does laurie have ?",
+            "output": "12",
+            "explanation": "Kurt has 45 marbles less than denis who inturn has 70 marbles. so Kurt has 70-45 = 25 marbles. Lauries has 12 more tha kurt hence lauries has 12 + 25 = 37"
+        }
+    ],
+    "Instances": [
+        {
+            "input": "a baker made 2 batches of chocolate chip cookies . each batch had 3 cookies in it . then he made an additional 4 oatmeal cookies just in case someone did n't want chocolate chip . how many cookies did he bake total ?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "ryan collected 89 leaves . he lost 24 leaves . after a while 43 more leaves broke . how many leaves are left in his collection ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "rachel bought 7 new chairs and 3 new tables for her house . if she spent 4 minutes on each piece furniture putting it together how many minutes did it take her to finish ?",
+            "output": [
+                "40"
+            ]
+        },
+        {
+            "input": "a florist had 50 roses . if she sold 15 of them and then later picked 21 more how many roses would she have ?",
+            "output": [
+                "56"
+            ]
+        },
+        {
+            "input": "a farmer planted 2 tomato seeds 10 cucumber seeds and 3 pumpkin seeds . how many seeds did he plant all together ?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "alvin is trying to build a small house in the forest so that he has a place to stay whenever he goes hunting . he started by gathering some wood . according to his blueprint he will need 376 pieces of wood . if his friend gave him 123 pieces and his brother gave him 136 pieces how many more wood does he need to gather ?",
+            "output": [
+                "117"
+            ]
+        },
+        {
+            "input": "lou 's shoes must sell 80 pairs of shoes each month . they sold 27 pairs last week and 12 pairs this week . how many more pairs of shoes must they sell ?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "wendy 's brother had 6 pieces of candy . wendy had 2 boxes with 3 pieces each . how many pieces did they have total ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "mr. peter harvested some pears . he picked 43 kg of the pears into a bag and 35 kg of the pears into another bag . if there were still 15 kg of pears left unpacked how many kilograms of pears did mr. peter harvest ?",
+            "output": [
+                "93"
+            ]
+        },
+        {
+            "input": "there were 46 passengers on the bus . 19 passengers got off at the first stop . 15 passengers got off at the second stop . how many passengers were left on the bus ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "for finishing touches he needed 70 gallons of paint . if he bought 23 gallons to add to his existing 36 gallons of paint how much more paint will he need ?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "joe 1 of the best easter egg hunters found 12 eggs around the club house 5 eggs around the park and 3 eggs in the town hall garden . how many eggs did joe find ?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "nancy had 43 files on her computer . she deleted 31 of them and put the rest into folders with 6 files in each one . how many folders did nancy end up with ?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "while playing at the arcade kaleb won 8 tickets playing 'whack a mole ' and 7 tickets playing 'skee ball ' . if he was trying to buy candy that cost 5 tickets a piece how many could he buy ?",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "input": "debby makes 67 pancakes . she adds blueberries to 20 of them and bananas to 24 of them . the rest are plain . how many plain pancakes are there ?",
+            "output": [
+                "23"
+            ]
+        },
+        {
+            "input": "a worm has fallen into a hole that is 26 inches deep . it climbs up 8 inches and slides back 3 inches every day . how many days will it take the worm to reach the top ?",
+            "output": [
+                "5.2"
+            ]
+        },
+        {
+            "input": "bruno had some story books . he lost 4 of them and his dad gave him 10 more books . if he had 39 books after that how many books did bruno have at first ?",
+            "output": [
+                "33"
+            ]
+        },
+        {
+            "input": "at the store beef jerky was $ 34.23 for 3 pounds . if you bought 7 pounds how much would it cost ?",
+            "output": [
+                "79.87"
+            ]
+        },
+        {
+            "input": "an online toy store stocked some toys . it sold 38 toys at the first week and 26 toys at the second week . if it had 19 toys left how many toys were in stock at the beginning ?",
+            "output": [
+                "83"
+            ]
+        },
+        {
+            "input": "ramon works at the supermarket . he put 26 boxes of choco delights on the shelf . there were already 15 boxes there . later that day ramon counted 22 boxes on the shelf . how many boxes of choco delights were missing ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "carey and pat are moving chairs to the gym . they agreed to move 74 chairs . carey moved 28 chairs . pat has moved 29 chairs . how many more chairs do they have left to move ?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "while shopping maria bought 35 green towels and 21 white towels . if she gave her mother 34 of them how many towels did maria end up with ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "for halloween debby and her sister combined the candy they received . debby had 32 pieces of candy while her sister had 42 if they ate 35 pieces the first night how many pieces do they have left ?",
+            "output": [
+                "39"
+            ]
+        },
+        {
+            "input": "while building the house charlie noticed that they were running out of nails so he told his father he 's going to buy some . if they still have 9 nails left and charlie bought 2 boxes of nails the big 1 containing 55 nails and the small 1 containing 31 how many nails will they have ?",
+            "output": [
+                "95"
+            ]
+        },
+        {
+            "input": "morgan has 65 red pens 45 blue pens and 58 black pens . how many pens does she have ?",
+            "output": [
+                "168"
+            ]
+        },
+        {
+            "input": "the third graders are having a fair . they have 90 tickets to sell . they sold 38 tickets the first week and 17 tickets the second week . how many tickets do they have left to sell ?",
+            "output": [
+                "35"
+            ]
+        },
+        {
+            "input": "at the arcade dave won 11 tickets . if he spent 5 tickets on a beanie and later won 10 more tickets how many would he have ?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "next in their itinerary was the insectarium home to hundreds of insect species . penny who likes butterflies and ants took pictures of the different species . she was able to capture 60 species of butterflies 15 species of ants and 20 species of other insects . how many species of insects did penny capture ?",
+            "output": [
+                "95"
+            ]
+        },
+        {
+            "input": "in a video game each enemy defeated gives you 3 points . if a level has 6 enemies total and you destroy all but 2 of them how many points would you earn ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "gwen was organizing her book case making sure each of the shelves had exactly 4 books on it . if she had 5 shelves of mystery books and 3 shelves of picture books how many books did she have total ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "a chef only had 3 apples so he ordered 2 more bags . if each bag has 9 apples how many apples does he have total ?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "being concerned with the ecology of lakes hazel and her dad returned the youngling fishes they caught . if they took 23 fishes from lake ontario and erie 30 fishes from lake huron and michigan and 44 from lake superior how many fishes will they bring home with them ?",
+            "output": [
+                "97"
+            ]
+        },
+        {
+            "input": "henry bought 2 new fireworks and his friend bought 3 if they already had 6 saved from last year how many do they have now ?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "adam had 33 books . if he sold 11 of them and used the money he earned to buy 23 new books how many books would adam have ?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "kevin collected toys to use as prizes at the fair . he collected 14 stuffed animals . he also collected 18 frisbees and several yo-yos . kevin has 50 prizes in all . how many yo-yos did kevin collect ?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "a florist needed to use 2 pounds of fertilizer for 9 days and then on the final day use the normal amount plus another 4 pounds . how many pounds of fertilizer will she use all together ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "while organizing her files bianca deleted 2 pictures 8 songs and 7 text files . what is the total number of files she deleted ?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "dave was organizing his baseball cards in a binder with 8 on each page . if he had 3 new cards and 13 old cards to put in the binder how many pages would he use ?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "there are 100 books on a shelf . 32 of them are history books 25 of them are geography books and the rest are math books . how many math books are there on the shelf ?",
+            "output": [
+                "43"
+            ]
+        },
+        {
+            "input": "corey earns extra money finding lost golf balls . his goal is to find 48 golfballs every weekend . he found 16 golf balls on saturday . he found 18 more golf balls on sunday . how many more golf balls does corey need to find to reach his goal ?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "a video game store was getting rid of old games selling them 3 for $ 34.26 . if they sold 2 games how much money would they have made ?",
+            "output": [
+                "22.84"
+            ]
+        },
+        {
+            "input": "lastly she donated $ 800 to 3 different soup kitchens in her town . if she gave $ 300 to the first soup kitchen and $ 238 to the second how much did she donate to the third ?",
+            "output": [
+                "262"
+            ]
+        },
+        {
+            "input": "at the fair kaleb bought 6 tickets . after riding the ferris wheel he had 3 tickets left . if each ticket cost 9 dollars how much money did kaleb spend riding the ferris wheel ?",
+            "output": [
+                "27"
+            ]
+        },
+        {
+            "input": "gary had some stickers . he gave 42 stickers to lucy and 26 stickers to alex . if he had 31 stickers left how many stickers did gary have at first ?",
+            "output": [
+                "99"
+            ]
+        },
+        {
+            "input": "anthony gets 75 cents every day for lunch . he bought a juice box for 27 cents . he also bought a cupcake . anthony had 8 cents left . how much did the cupcake cost ?",
+            "output": [
+                "40"
+            ]
+        },
+        {
+            "input": "antonia has 79 barbie dolls . she packs away them in 2 wardrobes . if there are 35 barbie dolls in the first wardrobe how many more barbie dolls are there in the second wardrobe than the first ?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "mike made 90 dollars mowing lawns over the summer . if he spent 45 dollars buying new mower blades how many 5 dollar games could he buy with the money he had left ?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "there were 17 girls and 32 boys trying out for the schools basketball team . if only 10 of them got called back how many students did n't make the cut ?",
+            "output": [
+                "39"
+            ]
+        },
+        {
+            "input": "mrs. hilt ran 3 miles on monday 2 miles on wednesday and 7 miles on friday . how many total miles did she run that week ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "there are 54 passengers on a bus . 18 of them are men 26 of them are women and the rest are children . how many children are there on the bus ?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "a lawn care company bought 4 lawnmower blade for $ 8 each . they also bought a spool of weed eater string for $ 7 . how much money did they spend on supplies ?",
+            "output": [
+                "39"
+            ]
+        },
+        {
+            "input": "upon finishing the treehouse charlie 's mother served them freshly baked cookies . if charlie ate 15 cookies his father ate 10 and his mother only ate 5 how many cookies were eaten in total ?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "she then went to 3 orphanages and donated a total of $ 650 . if she gave $ 175 to the first orphanage and $ 250 to the third how much did she donate to the second orphanage ?",
+            "output": [
+                "225"
+            ]
+        },
+        {
+            "input": "while playing a trivia game team a scored 2 points team b scored 9 points and team c scored 4 points . how many points were scored total ?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "for halloween faye scored 47 pieces of candy . she ate 25 pieces the first night and then her sister gave her 40 more pieces . how many pieces of candy does faye have now ?",
+            "output": [
+                "62"
+            ]
+        },
+        {
+            "input": "a car dealer sold 14 cars on the first day 16 cars on the second day and 27 cars on the third day . how many cars did the car dealer sell on the 3 days ?",
+            "output": [
+                "57"
+            ]
+        },
+        {
+            "input": "roger had 63 dollars . if he spent 48 bucks on a new game how many 3 dollar toys could he buy with the money he had left ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "there 95 colored lights on a christmas tree . 26 of them are red 37 of them are yellow and the rest are blue . how many blue lights are there on the christmas tree ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "a pet store had 2 dogs . on sunday they got 5 more . on monday they got 3 more . how many dogs does the pet store have now ?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "a pet store was selling mice 2 for $ 5.34 . if they ended up selling 7 mice how much money would they have earned ?",
+            "output": [
+                "18.69"
+            ]
+        },
+        {
+            "input": "a pet store had 2 white cats 10 black cats and 3 gray cats . how many cats did they have total ?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "haley 's favorite band was holding a concert where tickets were 4 dollars each . haley bought 3 tickets for herself and her friends and 5 extra tickets in case anyone else wanted to go . how much did she spend ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "an ice company charged $ 1.46 for 2 bags of ice . if a convenience store bought 4 bags of ice how much would it have cost them ?",
+            "output": [
+                "2.92"
+            ]
+        },
+        {
+            "input": "mrs. hilt had 43 cents . she bought a pencil for 20 cents and a piece of candy for 5 cents . how much money did she have left ?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "jovana filled her bucket with 5 pounds of shells . if a friend comes to add 15 pounds of shells and another friend comes to add 17 pounds of shells how many pounds does she have altogether ?",
+            "output": [
+                "37"
+            ]
+        },
+        {
+            "input": "amy had 26 music files and 36 video files on her flash drive . if she deleted 48 of the files how many files were still on her flash drive ?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "savant has 3 jars . he puts in 34 coins in the first jar 29 coins in the second jar and 13 coins in the third jar . how many coins does savant save together ?",
+            "output": [
+                "76"
+            ]
+        },
+        {
+            "input": "to add support on the house 's connections he decided to tie the wood joints with rope . he needs 185 feet of rope . if he has 46 feet of rope with him and at the moment he only needed 57 feet how many feet of rope did his friends give to him ?",
+            "output": [
+                "82"
+            ]
+        },
+        {
+            "input": "a waiter had 62 customers in his section . if 17 of them left and the rest of his tables had 9 people at each table how many tables did he have ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "beth has 4 packs of crayons . each pack has 10 crayons in it . she also has 6 extra crayons . how many crayons does beth have altogether ?",
+            "output": [
+                "46"
+            ]
+        },
+        {
+            "input": "there are some children at a bakery . as they were deciding what to buy 24 girls came in and 31 boys left . if there are 78 children in the bakery in the end how many children were there at first ?",
+            "output": [
+                "85"
+            ]
+        },
+        {
+            "input": "jerry was selling his old games . he started out with 68 but sold 4 of them . he packed the rest up putting 8 games into each box . how many boxes did he have to use ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "after the mountain country she went to the famous beach on the continent . there she collected 291 seashells of different colors . if she has 76 red shells and 49 green shells how many shells are not red or green ?",
+            "output": [
+                "166"
+            ]
+        },
+        {
+            "input": "the book fair had a sale where 3 books were $ 18.72 . if you wanted to buy 6 books how much money would you need ?",
+            "output": [
+                "37.44"
+            ]
+        },
+        {
+            "input": "52 children and 29 adults went to the track meet . the stadium has 95 seats . how many seats were empty ?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "the ice rink has 85 pairs of skates to rent . 18 people rented skates when the ice rink opened . 25 more people rented skates during the first hour . how many pairs of skates are left ?",
+            "output": [
+                "42"
+            ]
+        },
+        {
+            "input": "the rest of the kids around town got 13 more eggs around the club house 9 eggs around the park and 8 eggs in the town hall garden . if we add all the eggs that they got how many eggs would that be ?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "oliver had to wash 39 short sleeve shirts and 47 long sleeve shirts before school . if he had only washed 20 of them by the time school started how many did he not wash ?",
+            "output": [
+                "66"
+            ]
+        },
+        {
+            "input": "a store had 40 oranges in a bin . if they threw away 25 of the old 1 and put 21 new 1 in the bin how many would be in the bin ?",
+            "output": [
+                "36"
+            ]
+        },
+        {
+            "input": "a new building needed 14 windows . the builder had already installed 5 of them . if it takes 4 hours to install each window how long will it take him to install the rest ?",
+            "output": [
+                "36"
+            ]
+        },
+        {
+            "input": "next she went to a country full of mountains . there she saw 532 species of insects reptiles and birds . if she saw 253 insect species and 143 bird species how many reptile species did she see ?",
+            "output": [
+                "136"
+            ]
+        },
+        {
+            "input": "ryan collected 89 leaves . he lost 24 leaves and threw away 43 leaves . how many leaves did ryan have left ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "cindy had 41 pieces of candy . she ate 6 pieces in the morning and 12 more pieces in the afternoon . how many pieces of candy does she have left ?",
+            "output": [
+                "23"
+            ]
+        },
+        {
+            "input": "robert made $ 76 at work . he spent $ 6 on a pen and $ 14 for a calculator . how much money did he have left ?",
+            "output": [
+                "56"
+            ]
+        },
+        {
+            "input": "after the aviary was the zoo 's swamp area . penny counted a total of 55 tree frogs 10 poison frogs and 13 wood frogs . how many frogs was penny able to count ?",
+            "output": [
+                "78"
+            ]
+        },
+        {
+            "input": "a teacher had 38 worksheets to grade . if she graded 4 but then another 15 were turned in how many worksheets would she have to grade ?",
+            "output": [
+                "49"
+            ]
+        },
+        {
+            "input": "at a comic convention janet wanted to buy 8 comics but each one costs 4 dollars plus it costs 2 to even get in . how much money should she take with her so she can get in and buy what she wants ?",
+            "output": [
+                "34"
+            ]
+        },
+        {
+            "input": "kevin and his family just moved to a new neighborhood so they are holding a party to be able to meet their new neighbors . for the party they prepared a few snacks for everyone . if his sister prepared 25 mini cupcakes and his mother prepared 30 how many did his grandmother prepare if they have a total of 100 cupcakes ?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "john had 33 socks . if he threw away 19 old 1 that did n't fit and bought 13 new 1 how many socks would he have ?",
+            "output": [
+                "27"
+            ]
+        },
+        {
+            "input": "at a store there are 92 computers . 31 are sold . 20 are shipped away to a company . how many computers are left ?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "he wanted to make sure that he is protected from the cold evenings in the forest so he decided to build a fireplace made of cement . if he bought 215 lbs of cement and his son brought another 137 lbs how much cement did he have originally if he now has 450 lbs ?",
+            "output": [
+                "98"
+            ]
+        },
+        {
+            "input": "a worksheet had 4 problems on it . if a teacher had 9 worksheets to grade and had already graded 5 of them how many more problems does she have to grade ?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "olivia had 7 math problems to complete . she spent about 4 minutes on each problem and then she spent 3 minutes checking her answers . how many minutes did she spend total ?",
+            "output": [
+                "31"
+            ]
+        },
+        {
+            "input": "at a candy store you could get 2 giant lollipops for $ 2.40 . how much would it cost to buy 6 lollipops ?",
+            "output": [
+                "7.2"
+            ]
+        },
+        {
+            "input": "last stop in their field trip was the aquarium . penny identified 35 species of sharks 15 species of eels and 5 different species of whales . how many species was penny able to identify ?",
+            "output": [
+                "55"
+            ]
+        },
+        {
+            "input": "dave had 10 video games but 2 of them were n't working . if he wanted to sell the working games for $ 4 each how much money could he earn ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "mrs. hilt 's favorite first grade classes are baking muffins . mrs. brier 's class bakes 18 muffins mrs. macadams 's class bakes 20 muffins and mrs. flannery 's class bakes 17 muffins . how many muffins does first grade bake in all ?",
+            "output": [
+                "55"
+            ]
+        },
+        {
+            "input": "adam earned 9 dollars for each lawn he mowed . if he had 12 lawns to mow but forgot to mow 8 of them how much money did he actually earn ?",
+            "output": [
+                "36"
+            ]
+        },
+        {
+            "input": "mr. lee gave out first place ribbons after each event . he had 38 ribbons at the start . he gave away 14 ribbons in the morning . he gave out 16 ribbons in the afternoon . how many ribbons did mr. lee have left ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "alvin had 57 marbles and played 2 games . he lost 18 marbles during the first game . he won 25 marbles during the second game . how many marbles did alvin have then ?",
+            "output": [
+                "64"
+            ]
+        },
+        {
+            "input": "a vet was weighing 3 cats . the first weighed 2 pounds . the second weighed 7 pounds and the last weighed 4 pounds . what is their combined weight ?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "it is 78 miles to grandma 's house . mr. welch drove 35 miles . he stopped to buy a pie for dessert . then he drove 18 miles and stopped to put gas in the car . how many more miles until he reaches grandma 's house ?",
+            "output": [
+                "25"
+            ]
+        },
+        {
+            "input": "j.t . has some superhero trading cards . he lost 14 of them . he gave 19 of them to his best friend . now he has 45 cards left . how many cards did j.t . have at first ?",
+            "output": [
+                "78"
+            ]
+        },
+        {
+            "input": "for halloween isabel received 16 pieces of candy from neighbors and 5 pieces from her older sister . if she only ate 3 pieces a day how long would the candy last her ?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "jasper is in charge of the refreshments . he sold 27 bags of chips . he sold 8 fewer hot dogs than chips . he sold 12 more drinks than hot dogs . how many drinks did jasper sell ?",
+            "output": [
+                "31"
+            ]
+        },
+        {
+            "input": "tiffany was playing a video game and had 43 lives . in a hard part of the game she lost 14 lives . if she got 27 more lives in the next level how many lives would she have ?",
+            "output": [
+                "56"
+            ]
+        },
+        {
+            "input": "it is easter time and the kids in the neighborhood of easterville are very excited about the annual easter egg hunt . the parents have decided to hide the eggs in a lot of different places . they hid 55 eggs around the club house 33 eggs around the village park and 22 eggs in the town hall garden . how many eggs were hidden in total ?",
+            "output": [
+                "110"
+            ]
+        },
+        {
+            "input": "the group then went on to check out the houses along broadway street and the scary werewolf avenue . after the long walk they decided to count their candy again . if mary has 5 chewing gums sam has 10 chewing gums and sue has 15 chewing gums how many chewing gums did the 3 have in all ?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "mrs. hilt baked pies last weekend for a holiday dinner . she baked 16 pecan pies and 14 apples pies . if she wants to arrange all of the pies in rows of 5 pies each how many rows will she have ?",
+            "output": [
+                "6"
+            ]
+        },
+        {
+            "input": "at billy 's restaurant a group with 2 adults and 5 children came in to eat . if each meal cost 3 dollars how much was the bill ?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "a company was offering a special on cell phones for $ 2 each . but only if you spent 7 dollars a month for 4 months . how much would it end up costing you total if you bought 1 phone ?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "amy has 67 balloons . 29 of them are red and 17 are green . the rest of the balloons are blue . how many blue balloons does amy have ?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "shelby had 92 pieces of candy . she gave 4 pieces each to 9 friends . how many pieces of candy does shelby have left ?",
+            "output": [
+                "56"
+            ]
+        },
+        {
+            "input": "sam has 58 power ranger stickers . he bundles them up in 2 boxes . if there are 23 power ranger stickers in the first box how many more power ranger stickers are there in the second box than the first box ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "after sam and bob left mary john and sue decided to go home as well . they counted the total amount of treats that the 3 of them got . they were able to sort out 60 chewing gums 55 chocolate bars and another 40 candies of different flavors . how many treats did mary john and sue have in total ?",
+            "output": [
+                "155"
+            ]
+        },
+        {
+            "input": "next on her list are the homeless people where she spent a total of $ 900 . if she gave $ 325 to the first set of homeless families and $ 260 to the second set of families how much did she give to the last set of homeless families ?",
+            "output": [
+                "315"
+            ]
+        },
+        {
+            "input": "a trivia team had 9 members total but during a game 3 members did n't show up . if each member that did show up scored 2 points how many points were scored total ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "sam put 86 pretzels in a bowl for the party . his friends ate 49 of them . sam put in 27 more pretzels . how many pretzels were in the bowl then ?",
+            "output": [
+                "64"
+            ]
+        },
+        {
+            "input": "zoe was unboxing some of her old winter clothes . she found 8 boxes of clothing and inside each box there were 4 scarves and 6 mittens . how many pieces of winter clothing did zoe have total ?",
+            "output": [
+                "80"
+            ]
+        },
+        {
+            "input": "for halloween bianca received 17 pieces of candy . she ate 2 pieces then placed the rest into piles with 3 in each pile . how many piles could she make ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "edward spent $ 2 on a board game and then he bought 4 action figures for $ 7 each . how much money did he spend on the game and figures ?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "a store had 87 coloring books in stock . they ended up putting them on sale and getting rid of 33 of them . the put the 1 they still had onto shelves with 6 on each shelf . how many shelves did they use ?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "penny 's class is going to animaland the largest zoo on earth for their science field trip . the zoo has a variety of wild animals in captivity . their first destination was the aviary . the aviary has 3 species of eagles on show that day . they have 20 bald eagles 15 harpy eagles and 30 crowned eagles . how many eagles are on display that day ?",
+            "output": [
+                "65"
+            ]
+        },
+        {
+            "input": "during a sale a shoe store sold 2 pairs of sneakers 4 pairs of sandals and 11 pairs of boots . how many pairs of shoes did the store sell ?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "paul bought 6 boxes of chocolate candy and 4 boxes of caramel candy . if each box has 9 pieces inside it how much candy did he have total ?",
+            "output": [
+                "90"
+            ]
+        },
+        {
+            "input": "roger is at the library helping put away books . there are 54 book to put away total but a librarian takes 19 of them and leaves roger with the rest . if he can fit 5 books on a shelf how many shelves will he need ?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "laurie has 12 more marbles than kurt . kurt has 45 marbles less than dennis . dennis has 70 marbles . how many marbles does laurie have ?",
+            "output": [
+                "37"
+            ]
+        },
+        {
+            "input": "there were 86 pineapples in a store . the owner sold 48 pineapples . 9 of the remaining pineapples were rotten and thrown away . how many fresh pineapples are left ?",
+            "output": [
+                "29"
+            ]
+        },
+        {
+            "input": "a pet store had 45 puppies . in 1 day they sold 39 of them and put the rest into cages with 2 in each cage . how many cages did they use ?",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "input": "a chef served 3 different foods for a banquet : 25 plates lobster rolls 14 plates of spicy hot noodles and 16 plates of seafood noodles . how many plates of food did the chef make altogether ?",
+            "output": [
+                "55"
+            ]
+        },
+        {
+            "input": "paul made 44 dollars mowing lawns and 28 dollars weed eating . if he only spent 9 dollar a week how long would the money last him ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "the book store is very busy today . there are 25 children listening to a story . 36 people are shopping for books . 17 people are at the checkout counter . how many people are at the bookstore ?",
+            "output": [
+                "78"
+            ]
+        },
+        {
+            "input": "a shoe store was having a back to school sale where you could buy 2 pairs of shoes for $ 23.10 . if a large family decided to buy 7 pairs of shoes how much would it cost them ?",
+            "output": [
+                "80.85"
+            ]
+        },
+        {
+            "input": "a group of 9 friends went into a restaurant . the chef already had 2 chicken wings cooked but cooked 25 more for the group . if they each got the same amount how many would each person get ?",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "input": "victor and his friend were buying trick decks from the magic shop for 8 dollars each . how much did they spend if victor bought 6 decks and his friend bought 2 decks ?",
+            "output": [
+                "64"
+            ]
+        },
+        {
+            "input": "tom already had 2 pieces of candy . his friend gave him 7 more and then tom bought another 10 how many pieces does tom have now ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "the school cafeteria had 17 apples . if they used 2 to make lunch for the students and then bought 23 more how many apples would they have ?",
+            "output": [
+                "38"
+            ]
+        },
+        {
+            "input": "for homework megan had 36 math problems and 28 spelling problems . if she can finish 8 problems in an hour how long will it take her to finish all the problems ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "after the cleaning the rivers they went on to tidy up the farmlands . if lizzie 's group covered 250 square feet of land and the other group covered 265 how many more square feet of land remains to be cleaned if there is total of 900 square feet of land ?",
+            "output": [
+                "385"
+            ]
+        },
+        {
+            "input": "aside from frogs the swamp area is also home to a few dangerous animals . penny 's teacher pointed out 22 crocodiles 23 alligators and 5 vipers . how many dangerous animals did the teacher point out in total ?",
+            "output": [
+                "50"
+            ]
+        },
+        {
+            "input": "tom read 2 books in may 6 in june and 10 in july . how many books did tom read ?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "a report said that each day the average youtube viewer watches 2 videos with each video lasting 7 minutes . additionally they also watch 3 minutes of ads . according to the report how many minutes total do people spend on youtube ?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "during recess buddy went to the cafeteria where he met other students from different grades . if he met 14 second grade students 10 4 grade students and 16 fifth grade students how many more students did buddy meet during recess ?",
+            "output": [
+                "40"
+            ]
+        },
+        {
+            "input": "faye picked 88 flowers for her friend 's wedding . she was making bouquets with 5 flowers in each one . if 48 of the flowers wilted before the wedding how many bouquets could she still make ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "at band practice there were 4 rows of students with 8 students in each row and then another 9 students in the back . how many students were there total ?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "at a restaurant each adult meal costs $ 8 and kids eat free . if a group of 11 people came in and 2 were kids how much would it cost for the group to eat ?",
+            "output": [
+                "72"
+            ]
+        },
+        {
+            "input": "professor treehead of the flora university requested his students to participate . he said that they planted 15 species of trees in the natural park 20 species of trees in the neighboring forest and 10 species of trees all around different locations in town . how many species of trees were planted by the students ?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "94 students signed up for computer classes . there were 24 second graders and 29 third graders . the rest of the students were 4 graders . how many 4 graders took computer classes ?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "robert wants to practice goal kicks for soccer . he decides to have 98 kicks before going home from the park . he takes 43 kicks before taking a break to get a drink of water . he then takes another 36 kicks . how many more kicks does he need to make before he goes home ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "a pet store had 13 siamese cats and 5 house cats . during a sale they sold 10 cats . how many cats do they have left ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "zoe had 42 bottles of water in her fridge . if she drank 25 of them and then bought 30 more how many bottles would she have ?",
+            "output": [
+                "47"
+            ]
+        },
+        {
+            "input": "jake set up a candy stand in his front yard . he has 80 pieces of candy to sell . he sold 15 pieces of candy on monday . he sold much more than that on tuesday . by wednesday jakes only had 7 pieces left . how many pieces of candy did jake sell on tuesday ?",
+            "output": [
+                "58"
+            ]
+        },
+        {
+            "input": "there are 56 students in the class . the teacher wants to split them into 2 groups . the first group has 24 students . how many more students will there be in the second group ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "after the party kevin estimated that the total money they spent on food drinks and utensils sums up to $ 560 . if they spent $ 268 on food and $ 118 on utensils and other stuff how much did they spend on drinks ?",
+            "output": [
+                "174"
+            ]
+        },
+        {
+            "input": "beryl has 88 radishes . she puts them into 2 baskets . if there are 37 radishes in the first basket how many more radishes are there in the second basket than the first ?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "cody had 45 dollars . for his birthday he got 9 more dollars but spent 19 on a new game . how much money does he have now ?",
+            "output": [
+                "35"
+            ]
+        },
+        {
+            "input": "while on vacation debby took 24 pictures at the zoo and 12 at the museum . if she later deleted 14 of the pictures how many pictures from her vacation did she still have ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "the school 's baseball team had 2 new players and 22 returning players . if the coach put them into groups with 3 players in each group how many groups would there be ?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "a pet shelter had 23 puppies when another 2 were brought in . if 5 puppies a day are adopted how long would it take for all of them to be adopted ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "luke had 48 dollars in january . by march he had spent 11 dollars . if he got another 21 dollars from his mom how much money would he have ?",
+            "output": [
+                "58"
+            ]
+        },
+        {
+            "input": "he also needed some nails . if he already has 247 nails with him and he found another 144 in his toolshed how many more nails does he need to buy if he needs a total of 500 nails ?",
+            "output": [
+                "109"
+            ]
+        },
+        {
+            "input": "haley 's old washing machine could only wash 7 pieces of clothing at a time . if she had to wash 2 shirts and 33 sweaters how many loads would she have to do ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "in a game you start with 2 lives . if you got 6 extra lives in the first level and 11 more in the second how many lives would you have ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "anita needs 26 cartons of berries to make a berry cobbler . she already has 10 cartons of strawberries and 9 cartons of blueberries . how many more cartons of berries should anita buy ?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "cindy has 105 stickers . she uses 23 stickers . she buys 45 more stickers . how many stickers does cindy have now ?",
+            "output": [
+                "127"
+            ]
+        },
+        {
+            "input": "the ski resort reported 65 inches of snow in january . they measured 18 inches of snow during the first week . they measured 25 inches of snow the second week . how much snow did they get the rest of the month ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "at the schools book fair sam bought 13 adventure books and 17 mystery books . if 15 of the books were used how many new books did he buy ?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "evan has a large collection of books . he gave his best friend 14 books . he gave his little brother 8 books . now evan has 60 books in his collection . how many books did he have at first ?",
+            "output": [
+                "82"
+            ]
+        },
+        {
+            "input": "there are some passengers on a bus . at a bus stop 7 more passengers got on the bus and 9 passengers got off . if there are 26 passengers in the bus in the end how many passengers were there at first ?",
+            "output": [
+                "28"
+            ]
+        },
+        {
+            "input": "the friends then proceeded to the rest of the houses in their village . however sam had to go home earlier . she got her share of candies which are composed of 10 chewing gums 15 chocolate bars and 20 assorted fruit candies . how many candies did she get in total ?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "before lunch a waitress had already earned $ 5 in tips . after lunch she had 7 customers and each customer gave her a 2 dollar tip . how much money did she earn total ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "there were 86 trees in a park . 15 of them died and another 23 of them were cut . how many trees were still left ?",
+            "output": [
+                "48"
+            ]
+        },
+        {
+            "input": "there are some rooms in a building . 35 of them are classrooms 10 of them are office and the remaining 6 are reading rooms . how many rooms are in the building ?",
+            "output": [
+                "51"
+            ]
+        },
+        {
+            "input": "at the town carnival billy rode the ferris wheel 7 times and the bumper cars 3 times . if each ride cost 5 tickets how many tickets did he use ?",
+            "output": [
+                "50"
+            ]
+        },
+        {
+            "input": "gwen 's class is going on a field trip to the zoo . if each van can hold 7 people and there are 33 students and 9 adults going how many vans will they need ?",
+            "output": [
+                "6"
+            ]
+        },
+        {
+            "input": "mother bought some potatoes . she used 15 of the potatoes to make salads and 24 of the potatoes for mashed potatoes . if there were 13 potatoes left how many potatoes did mother buy at first ?",
+            "output": [
+                "52"
+            ]
+        },
+        {
+            "input": "jean had a bag of candy . she gave 18 pieces to her friend . jean ate 7 pieces . now she has 16 pieces left . how many pieces of candy did jean have at first ?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "on a table there were 2 green apples 3 red apples and 14 yellow apples . how many apples were on the table ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "wendy earned 5 points for each bag of cans she recycled . if she had 11 bags but did n't recycle 2 of them how many points would she have earned ?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "kaleb bought 14 boxes of chocolate candy and gave 5 to his little brother . if each box has 6 pieces inside it how many pieces did kaleb still have ?",
+            "output": [
+                "54"
+            ]
+        },
+        {
+            "input": "maria had 25 pieces of gum . tommy gave her 16 more pieces . luis gave her 20 more pieces . how many pieces of gum does maria have now ?",
+            "output": [
+                "61"
+            ]
+        },
+        {
+            "input": "omar loves to play checkers . he played 37 games yesterday . he played 49 games today . omar lost 18 games . how many games did he win ?",
+            "output": [
+                "68"
+            ]
+        },
+        {
+            "input": "an international group had 49 chinese americans and australians . 16 of them were americans and 11 of them were australians . how many chinese were there ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "joshua has 3 toy boxes for his toy cars . he puts in 21 toy cars in the first toy box 31 toy cars in the second toy box and 19 toy cars in the third box . how many toy cars does joshua have together ?",
+            "output": [
+                "71"
+            ]
+        },
+        {
+            "input": "katie loves to travel . on her birthday she decided to go on a trip on a mysterious continent . her first destination was in an island of statues which is 436 miles from her place . she took a plane that made 2 stopovers the 1 stopover after covering 132 miles and the 2 stopover after another 236 miles . how much farther is the island from the 2 stopover ?",
+            "output": [
+                "68"
+            ]
+        },
+        {
+            "input": "tony had $ 20 . he paid $ 8 for a ticket to a baseball game . at the game he bought a hot dog for $ 3 . what amount of money did tony have then ?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "at the arcade amy had 6 tickets she saved from the last time she went . this time she played a game 7 times and earned 5 tickets each time she played . how many tickets does she have now ?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "they also prepared some chips . if he prepared 350 grams of chips and his father prepared 268 grams how much chips should his brother prepare if they are to have 800 grams of chips ?",
+            "output": [
+                "182"
+            ]
+        },
+        {
+            "input": "emily was playing a trivia game . in the first round she scored 16 points and in the second round she scored 33 points . in the last round she lost 48 points . how many points did she have at the end of the game ?",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "paige had 43 math problems and 12 science problems for homework . if she finished 44 of the problems at school how many problems did she have to do for homework ?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "brian has 39 pencils . he gives 18 pencils to a friend . he buys 22 more pencils . how many pencils does brian have now ?",
+            "output": [
+                "43"
+            ]
+        },
+        {
+            "input": "annie is about to celebrate her birthday next week so her friends decided to throw her a surprise birthday party . jessica annie 's best friend is hosting the party . she plans on making pizza for everyone . if she bought 15 pieces of pepperoni 10 pieces of salami and 30 pieces of bacon as meat ingredients how many pieces of meat did she buy in total ?",
+            "output": [
+                "55"
+            ]
+        },
+        {
+            "input": "there are 43 dogs 72 fish and 34 cats at my farm . how many pets do i have at my farm ?",
+            "output": [
+                "149"
+            ]
+        },
+        {
+            "input": "in 1 week an airplane pilot flew 1134 miles on tuesday and 1475 miles on thursday . if the pilot flies the same number of miles 3 weeks in a row how many miles does he fly in all ?",
+            "output": [
+                "7827"
+            ]
+        },
+        {
+            "input": "adam had 8 boxes of toys . each box had 6 toys . later adam bought 5 more toys . how many toys did he have total ?",
+            "output": [
+                "53"
+            ]
+        },
+        {
+            "input": "thanksgiving is coming and dr. mary wants to celebrate it by sharing her blessing to different charities . she first went to oldtown where she donated $ 700 in total to 3 different nursing homes . if she gave $ 245 to the first home and $ 225 to the second how much did she give to the third home ?",
+            "output": [
+                "230"
+            ]
+        },
+        {
+            "input": "at a carnival there are 87 kids teenagers and adults waiting to get in . 24 are teenagers 19 are adults and the rest are kids . how many kids are waiting in line at the carnival ?",
+            "output": [
+                "44"
+            ]
+        },
+        {
+            "input": "katie spent a total $ 350 on her whole stay in the island . if she spent $ 125 on food and $ 135 on hotel rooms how much did she spend on buying other stuff ?",
+            "output": [
+                "90"
+            ]
+        },
+        {
+            "input": "the 2 groups will also collect garbage from all the 453 houses in the city . if lizzie 's group covered 238 houses while the other group covered 190 how many more houses remain ?",
+            "output": [
+                "25"
+            ]
+        },
+        {
+            "input": "for the second main course they were asked to make 500 pieces of fish fillets . if the first team made 189 pieces and the second team made 131 pieces how many pieces should the third team make ?",
+            "output": [
+                "180"
+            ]
+        },
+        {
+            "input": "charlene made 60 bead necklaces . she sold 16 at a craft fair . she gave 18 to her friends . how many necklaces did charlene have then ?",
+            "output": [
+                "26"
+            ]
+        },
+        {
+            "input": "sam invited 9 friends to a birthday party but 6 could n't come . if he wanted to buy enough cupcakes so each person could have exactly 2 how many should he buy ?",
+            "output": [
+                "6"
+            ]
+        },
+        {
+            "input": "kate maggie and sue added up their ages . the total was 48 kate is 19 and maggie is 17 how old is sue ?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "a pet shop has a total of 77 animals . 32 of them are kittens and 15 of them hamsters the rest are birds . how many birds are there ?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "nancy picked 12 carrots from her garden . if she threw out 2 of them and then picked 21 more the next day how many carrots would she have total ?",
+            "output": [
+                "31"
+            ]
+        },
+        {
+            "input": "faye and her mom were picking carrots from their garden . faye picked 23 and her mother picked 5 if only 12 of the carrots were good how many bad carrots did they have ?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "jennifer has an 87 cm long ribbon . she uses 24 cm of the ribbon to tie a present for her friend and 45 cm of the ribbon to make a bow . how much of the ribbon is left in the end ?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "bridget wants to win the giant stuffed panda bear . she needs a total of 75 points to get it . bridget already scored 35 points at the penny pitch booth . she scored 18 more points on her next try . how many more points does bridget need ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "next food item she has to prepare is soup . she needs 280 cups of mushroom soup . if the first team made 90 cups and the third team made 70 cups how any cups should the second team prepare in order to meet the required amount of soup ?",
+            "output": [
+                "120"
+            ]
+        },
+        {
+            "input": "while playing a game frank defeated 6 enemies . each enemy earned him 9 points . then he got another 8 points for completing the level . how many points did he earn total ?",
+            "output": [
+                "62"
+            ]
+        },
+        {
+            "input": "tom had 36 pieces of clothing to wash. he put 18 of them in 1 load but decided to split the rest into 2 equal loads . how many pieces of clothing could go in each of the small loads ?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "faye 's team won their baseball game and scored 68 points total . if faye scored 28 of the points and everyone else scored 8 points each how many players were on her team ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "on monday debby jogged 2 kilometers . on tuesday she jogged 5 kilometers and on wednesday she jogged 9 how many kilometers did she jog total ?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "67 medals are displayed in the sports center . there are 19 gold medals and 32 silver medals . how many bronze medals are displayed ?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "the treehouse is almost done ; all they need is to paint it . his father estimated that they will use 20 ounces of white paint 15 ounces of green paint and 34 ounces of brown paint . how many ounces of paint would they buy in total ?",
+            "output": [
+                "69"
+            ]
+        },
+        {
+            "input": "edward started his own lawn mowing business . in the spring he made 2 dollars mowing lawns and in the summer he made 27 dollars . if he had to spend 5 dollars buying supplies how much money did he end up with ?",
+            "output": [
+                "24"
+            ]
+        },
+        {
+            "input": "edward earned 8 dollars for every lawn he mowed . if he mowed 5 lawns and he already had 7 dollars saved up how much money does he have total ?",
+            "output": [
+                "47"
+            ]
+        },
+        {
+            "input": "at the produce store you can buy 2 bags of bananas for $ 12.46 . how much would it cost if you were to buy 6 bags ?",
+            "output": [
+                "37.38"
+            ]
+        },
+        {
+            "input": "a book store had 4 books in the bargin bin . if they sold 3 books but then put 10 more in the bin how many books would be in the bin ?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "chloe and her friends were recycling paper for their class . for every 6 pounds they recycled they earned 1 point . if chloe recycled 28 pounds and her friends recycled 2 pounds how many points did they earn ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "annie 's mother has also been asked to be a part of the surprise . she was tasked to be in charge of drinks . she made 25 glasses of orange juice 15 glasses of grape juice and 5 glasses of apple juice . how many glasses of juice would there be ?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "blithe has a lot of toys . he lost 6 of them and found 9 in his closet . if he had 43 after that how many toys did blithe have at first ?",
+            "output": [
+                "40"
+            ]
+        },
+        {
+            "input": "at lunch a waiter had 10 customers and 5 of them did n't leave a tip . if he got $ 3 each from the 1 who did tip how much money did he earn ?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "lena had some pocket money . she lost $ 4 and her mom gave her $ 9 . if she had $ 66 after that how many dollars did lena have at first ?",
+            "output": [
+                "61"
+            ]
+        },
+        {
+            "input": "a store had 3 packs of paper for $ 3.87 . how much would it cost if you were to buy 6 packs ?",
+            "output": [
+                "7.74"
+            ]
+        },
+        {
+            "input": "at a farming supply store 2 pounds of seed cost $ 44.68 . if a farmer needed 6 pounds of seeds how much would it cost him ?",
+            "output": [
+                "134.04"
+            ]
+        },
+        {
+            "input": "bianca had 45 coloring books . if she gave away 6 of them but then bought 20 more how many would she have total ?",
+            "output": [
+                "59"
+            ]
+        },
+        {
+            "input": "henry already had 5 dollars but earned another 2 dollars doing chores . his friend had 13 dollars . if they put their money together how much would they have ?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "a waiter at 'the greasy spoon ' restaurant had 39 customers to wait on . during the lunch rush he added another 12 customers . if 49 of the customers did n't leave him a tip how many customers did leave a tip ?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "tom bought 63 tickets at the state fair . he spent 14 tickets at the 'dunk a clown ' booth and decided to use the rest on rides . if each ride cost 7 tickets how many rides could he go on ?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "for lunch 2 students selected chocolate milk 15 selected strawberry milk and 3 selected regular milk . how many milks were taken total ?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "there are 96 trees in a park . 15 of them are huge ancient oaks and another 23 of them are medium-sized fir trees . the rest are saplings . how many saplings are in the park ?",
+            "output": [
+                "58"
+            ]
+        },
+        {
+            "input": "mrs. hilt has $ 10 . she spends $ 3 on a toy truck and $ 2 on a pencil case . how much money does she have left ?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "vanessa uploaded 23 pictures from her phone and 7 from her camera to facebook . if she sorted the pics into 5 different albums with the same amount of pics in each album how many pictures were in each of the albums ?",
+            "output": [
+                "6"
+            ]
+        },
+        {
+            "input": "a mirror store has 78 mirrors in stock . 8 mirrors are broken and 57 mirrors are sold . how many mirrors are left ?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "zoe bought an app that cost $ 5 dollars . then each month you have to pay $ 8 to play online . if she played the game online for 2 months how much money would she have spent total for the app and the online access ?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "a chef was making pies . he made 2 apple 4 pecan and 7 pumpkin pies . how many pies did he make total ?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "at the baseball stadium the price for popcorn is $ 14.70 for 5 bags . if you wanted to buy 4 bags of popcorn how much would it cost ?",
+            "output": [
+                "11.76"
+            ]
+        },
+        {
+            "input": "there are a total of 90 items at a bakery . 49 of them are bread rolls and 19 of them are croissants . how many bagels are there ?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "mrs. hilt saw a rollercoaster . 7 students rode the rollercoaster every 5 minutes . how many students rode the rollercoaster in 15 minutes ?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "a magician was selling magic card decks for 2 dollars each . if he started with 5 decks and by the end of the day he had 3 left how much money did he earn ?",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "input": "gino has 15 brown bears 24 white bears and 27 black bears . how many bears does gino have ?",
+            "output": [
+                "66"
+            ]
+        },
+        {
+            "input": "amy had 2 dollars . if she got 13 more dollars for doing chores and 3 more for her birthday how much money does she have now ?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "they served a total of 179 adults and 141 children if 156 of all the people they served are male how many are female ?",
+            "output": [
+                "164"
+            ]
+        },
+        {
+            "input": "for the school bake sale amy made pastries . she baked 15 cupcakes and 48 cookies . after the sale she had 12 to take back home . how many pastries did she sell ?",
+            "output": [
+                "51"
+            ]
+        },
+        {
+            "input": "a waiter had 47 customers to wait on . if 41 customers left and he got another 20 customers how many customers would he have ?",
+            "output": [
+                "26"
+            ]
+        },
+        {
+            "input": "wendy was playing a video game where she scores 5 points for each treasure she finds . if she found 4 treasures on the first level and 3 on the second what would her score be ?",
+            "output": [
+                "35"
+            ]
+        },
+        {
+            "input": "lenny has $ 84 . he spent $ 24 on video games and $ 21 at the grocery store . how much does lenny have left ?",
+            "output": [
+                "39"
+            ]
+        },
+        {
+            "input": "a number machine changes the value of the numbers placed inside it . my number machine will add 15 to a number and then subtract 6 from the sum . if i put in the number 68 what number will come out of the machine ?",
+            "output": [
+                "77"
+            ]
+        },
+        {
+            "input": "a vase can hold 9 flowers . if you had 4 carnations and 23 roses how many vases would you need to hold the flowers ?",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "input": "tommy has $ 79 . he wants to buy a $ 35 camera . he also wants to buy a $ 59 cd player . how much more money does tommy need ?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "i put another number into my machine . the machine added 15 and then subtracted 6 the number 35 came out of the machine . what number did i put in ?",
+            "output": [
+                "26"
+            ]
+        },
+        {
+            "input": "at the arcade jerry won 29 tickets playing 'whack a mole ' and 17 tickets playing 'skee ball ' . if he spent 12 of his tickets on a hat how many tickets does jerry have left ?",
+            "output": [
+                "34"
+            ]
+        },
+        {
+            "input": "finally they had to roam around 169 factories to make sure they are throwing their wastes properly . if their group went to 69 factories and the second went to 52 how many factories remain unchecked ?",
+            "output": [
+                "48"
+            ]
+        },
+        {
+            "input": "alexa is reading a nancy drew mystery . there are 95 pages in her book . she read 18 pages the first day . the next day alexa just could n't stop reading . she read 58 pages . how many pages does alexa have left to read ?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "robin had 30 songs on her 3 player . if she deleted 8 old songs from it and then added 10 new songs how many songs does she have on her 3 player ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "a restaurant has 94 pieces of cutlery . 38 are forks 27 are knives and the rest are spoons . how many spoons are there ?",
+            "output": [
+                "29"
+            ]
+        },
+        {
+            "input": "jerry was weighing boxes for moving . the first was 2 pounds the second was 11 pounds and the last was 5 pounds . what is the combined weight of all 3 boxes ?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "for a new year 's party 2 red balloons 12 green balloons and 6 white balloons were used . what is the total number of balloons used ?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "maggi had 3 packages of cupcakes . there are 4 cupcakes in each package . she ate 5 cupcakes . how many are left ?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "roger had 2 new crayons 4 used crayons and 8 broken crayons . how many crayons did roger have total ?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "janine owns a catering service company . she was hired to cater for the mayor 's 50 birthday . for the appetizers she needs to make 750 mini meat pies . she divided her crew into 3 teams . if the first team made 235 and the second made 275 how many pies should the third team make ?",
+            "output": [
+                "240"
+            ]
+        },
+        {
+            "input": "a summer sports camp had 88 soccer campers basketball campers and football campers . if 24 of them were basketball campers and 32 of them were football campers how many soccer campers were there ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "the cafeteria had 51 apples . for lunch they handed out 41 to students and decided to use the rest to make pies . if each pie takes 5 apples how many pies could they make ?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "chloe was making baggies of cookies with 7 cookies in each bag . if she had 34 chocolate chip cookies and 29 oatmeal cookies how many baggies could she make ?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "the school cafeteria ordered 25 red apples and 17 green apples for students lunches . but if only 10 students wanted fruit how many extra did the cafeteria end up with ?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "a company invited 68 people to a luncheon but 50 of them did n't show up . if the tables they had held 3 people each how many tables do they need ?",
+            "output": [
+                "6"
+            ]
+        },
+        {
+            "input": "ned was helping the cafeteria workers pick up lunch trays but he could only carry 8 trays at a time . if he had to pick up 27 trays from 1 table and 5 trays from another how many trips will he make ?",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "input": "there are 58 students trying out for the school 's trivia teams . if 28 of them did n't get picked for the team and the rest were put into 5 groups how many students would be in each group ?",
+            "output": [
+                "6"
+            ]
+        },
+        {
+            "input": "andrew annie 's other friend was assigned with the preparation of appetizers . he decided to bring 30 hotdogs on sticks 20 pieces of bite-sized cheese pops and 40 pieces of chicken nuggets . how many portions of appetizers did andrew bring in all ?",
+            "output": [
+                "90"
+            ]
+        },
+        {
+            "input": "the following week they decided to go to lake huron and lake michigan . during their stay there they caught a total of 30 pikes 40 sturgeons and 75 herrings . how many fishes did they catch from the 2 lakes ?",
+            "output": [
+                "145"
+            ]
+        },
+        {
+            "input": "sean is playing monopoly with his friends . he already has 27 houses . sean traded in 8 houses for money to buy park place . he collected so much rent that he decided to buy 12 more houses . how many houses did sean have then ?",
+            "output": [
+                "31"
+            ]
+        },
+        {
+            "input": "karen has 252 markers . her mother gives her 34 more markers . karen loses 11 markers . how many markers does she have now ?",
+            "output": [
+                "275"
+            ]
+        },
+        {
+            "input": "on the actual day of annie 's birthday almost everyone in her class came to surprise her . if annie has 15 girl classmates 20 boy classmates and 3 teachers in her class how many people attended her birthday party ?",
+            "output": [
+                "38"
+            ]
+        },
+        {
+            "input": "tiffany had 6 pages of math homework and 4 pages of reading homework . if each page had 3 problems on it how many problems did she have to complete total ?",
+            "output": [
+                "30"
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}

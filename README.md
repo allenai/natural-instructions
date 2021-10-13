@@ -5,7 +5,6 @@ We're looking for more contributions to make this data bigger! 🙌
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **October 15, 2021**.
 The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
-
 ## Background 
 ### Why define tasks in natural language?
 While the current dominant paradigm (supervised learning with task-specific labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
@@ -47,6 +46,9 @@ Or if you're comfortable with json files, here is how it would look like:
   "Source": [""],
   "Categories": [""],
   "Definition": "",
+  "Input_language": [""], 
+  "Output_language": [""], 
+  "Instruction_language": [""], 
   "Positive Examples": [ { "input": "", "output": "",  "explanation": ""} ], 
   "Negative Examples": [ { "input": "", "output": "",  "explanation": ""} ],
   "Instances": [ { "input": "", "output": [""]} ],
@@ -66,7 +68,7 @@ We would appreciate any external contributions! 🙏
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
-  
+
  
 If you have any questions or suggestions, please use [the issues](https://github.com/allenai/natural-instructions-expansion/issues) feature.  
 
