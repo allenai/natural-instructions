@@ -3,6 +3,22 @@ from iso639 import languages
 import json
 from os import listdir
 from os.path import isfile, join
+import argparse
+
+# get the range of task you want to test, if specified in the command line
+parser = argparse.ArgumentParser()
+parser.add_argument("--task",
+                        nargs=2,
+                        type=int,
+                        required=False,
+                        help="The range of task you want to parse")
+
+args = parser.parse_args()
+if args.task:
+    begin_task_number, end_task_number = args.task[0], args.task[1]
+    assert begin_task_number > 0, "begin task must be greater than 0"
+    assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
+
 
 # make sure that there is no json file in the root directory 
 root_files = [f for f in listdir('.') if isfile(join('.', f))]
@@ -66,7 +82,11 @@ for name in task_names:
     file_name = name + ".json"
     assert file_name in files, f" Did not find `{file_name}` among {files}"
 
-for file in files:
+# test every file (README is skipped)
+if not args.task:
+    begin_task_number, end_task_number = 1, len(files)
+
+for file in files[begin_task_number:end_task_number+1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
