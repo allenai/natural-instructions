@@ -30,6 +30,11 @@ language_names = [x.name.replace('(individual language)', '').replace(" language
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
+def skewness(result):
+    value,counts = np.unique(result, return_counts=True)
+    norm_counts = counts / counts.sum()
+    entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
+    assert entropy > 0.7, "Classes distribution is skewed"
 
 # TODO: over time, these should be moved up to "expected
 suggested_keys = [
@@ -164,10 +169,4 @@ for file in files:
                                 f'the task file `tasks/README.md`')
 
 print("Did not find any errors! ✅")
-
-def skewness(result):
-    value,counts = np.unique(result, return_counts=True)
-    norm_counts = counts / counts.sum()
-    entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
-    assert entropy > 0.7, "Classes distribution is skewed"
 
