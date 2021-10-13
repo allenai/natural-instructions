@@ -927,8 +927,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
-`task1318_country_national_dish` | Given a country name, return the national dish name of the given country | Answer Generation
 `task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
+`task1318_country_national_dish` | Given a country name, return the national dish name of the given country | Answer Generation
 `task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
 `task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
 `task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
