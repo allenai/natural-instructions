@@ -40,6 +40,7 @@ def skewness(result):
     norm_counts = counts / counts.sum()
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
     if entropy < 0.7:
+        print(f'Norm_counts: {norm_counts}')        
         print(f'Distribution of classes: {counts}')
         print(f'⚠️ WARNING: Classes distribution is skewed, entropy= {entropy}.')
 
