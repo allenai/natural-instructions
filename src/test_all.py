@@ -3,7 +3,8 @@ from iso639 import languages
 import json
 from os import listdir
 from os.path import isfile, join
-from scipy.stats import skew
+import numpy as np
+from math import log
 
 # make sure that there is no json file in the root directory 
 root_files = [f for f in listdir('.') if isfile(join('.', f))]
@@ -131,15 +132,9 @@ for file in files:
                         
                         
             #Make sure classes are balanced
-            if 'Classification' in data['Categories']:
-                outputs=[ins['output'] for ins in instances]
-                classes = []
-                for i in outputs:
-                    if i not in classes:
-                        classes.append(i)
-                output_int=[classes.index(output) + 1 for output in outputs]
-                assert abs(skew(output_int)) < 0.5, "Classes distribution is skewed"
-
+            output=[ins['output'] for ins in instances]
+            outputs = sum(output, [])
+            skewness(outputs)
                         
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
@@ -169,4 +164,10 @@ for file in files:
                                 f'the task file `tasks/README.md`')
 
 print("Did not find any errors! ✅")
+
+def skewness(result):
+    value,counts = np.unique(result, return_counts=True)
+    norm_counts = counts / counts.sum()
+    entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
+    assert entropy > 0.7, "Classes distribution is skewed"
 
