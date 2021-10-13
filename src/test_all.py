@@ -36,6 +36,12 @@ def skewness(result):
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
     assert entropy > 0.7, "Classes distribution is skewed"
 
+def skewness2(result):
+    value,counts = np.unique(result, return_counts=True)
+    average=np.average(counts)
+    metric=np.average(abs(counts-average)/counts.sum())
+    assert metric < 0.2, "Classes distribution is skewed"
+    
 # TODO: over time, these should be moved up to "expected
 suggested_keys = [
     "Domains", "Input_language", "Output_language"
