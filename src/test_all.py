@@ -14,6 +14,8 @@ tasks_path = 'tasks/'
 
 expected_keys = [
     "Definition",
+    "Input_language",
+    "Output_language",
     "Positive Examples",
     "Negative Examples",
     "Instances",
@@ -22,7 +24,11 @@ expected_keys = [
     'Source'
 ]
 
-language_names = [x.name.replace('(individual language)', '').replace(" languages", "").strip() for x in list(languages)]
+language_names = [
+    x.name.replace('(individual language)', '').replace(" languages", "").strip()
+    for x in list(languages)
+]
+
 
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
@@ -30,7 +36,7 @@ def assert_language_name(name):
 
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
-    "Domains", "Input_language", "Output_language"
+    "Domains"
 ]
 
 with open("tasks/README.md", 'r') as readmef:
@@ -43,6 +49,13 @@ task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
 if len(set(task_readme_lines)) != len(task_readme_lines):
     diff = "\n --> ".join([x for x in task_readme_lines if task_readme_lines.count(x) > 1])
     assert False, f'looks like there are repeated lines in the task readme file?? \n {diff}'
+
+# make sure that the lines are sorted
+task_numbers = [int(line.replace("`task", "").split("_")[0]) for line in task_readme_lines if "`task" in line]
+for i in range(0, len(task_numbers) - 1):
+    num1 = task_numbers[i]
+    num2 = task_numbers[i + 1]
+    assert num1 <= num2, f"ERROR: looks like `{num1}` appears before `{num2}`."
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
