@@ -948,3 +948,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1425_country_iso_numeric` | Given a country name, return the numeric ISO of the given country | Answer Generation
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
+`task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
