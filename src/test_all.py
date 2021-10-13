@@ -163,6 +163,7 @@ for file in files:
             output=[ins['output'] for ins in instances]
             outputs = sum(output, [])
             skewness(outputs)
+            skewness2(outputs)
                         
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
