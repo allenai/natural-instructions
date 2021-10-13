@@ -39,13 +39,15 @@ def skewness(result):
     value,counts = np.unique(result, return_counts=True)
     norm_counts = counts / counts.sum()
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
-    assert entropy > 0.7, "Classes distribution is skewed"
+    if entropy < 0.7:
+        print(f'⚠️ WARNING: Classes distribution is skewed, entropy= {entropy}.')
 
 def skewness2(result):
     value,counts = np.unique(result, return_counts=True)
     average=np.average(counts)
     metric=np.average(abs(counts-average)/counts.sum())
-    assert metric < 0.2, "Classes distribution is skewed"
+    if metric > 0.2:
+        print(f'⚠️ WARNING: Classes distribution is skewed, metric= {metric}.')
     
 
 # TODO: over time, these should be moved up to "expected_keys"
