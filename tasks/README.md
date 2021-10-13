@@ -940,9 +940,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
 `task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
 `task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
-`task1419_mathqa_gain` |  Given a math problem on gain and options to choose from, find the correct option that answers the problem | Classification
-`task1420_mathqa_general` |  Given a general math problem and options to choose from, find the correct option that answers the problem | Classification
-`task1421_mathqa_other` |  Given a math problem and options to choose from, find the correct option that answers the problem | Classification
-`task1422_mathqa_physics` |  Given a problem on physics and options to choose from, find the correct option that answers the problem | Classification
-`task1423_mathqa_geometry` |  Given a problem on geometry and options to choose from, find the correct option that answers the problem | Classification
-`task1424_mathqa_probability` |  Given a problem on probability and options to choose from, find the correct option that answers the problem | Classification
+`task1419_mathqa_gain` |  Given a math problem on gain and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1420_mathqa_general` |  Given a general math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1421_mathqa_other` |  Given a math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1422_mathqa_physics` |  Given a problem on physics and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1423_mathqa_geometry` |  Given a problem on geometry and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1424_mathqa_probability` |  Given a problem on probability and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
