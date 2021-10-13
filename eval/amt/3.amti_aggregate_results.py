@@ -1,4 +1,11 @@
+import sys
+
+# sys.path.append("..")
+sys.path.append("../automatic")
+
 import json
+from evaluation import metric_max_over_ground_truths, rouge
+
 
 def get_stats(values):
     maj_vote_value = max(set(values), key=values.count)
@@ -9,6 +16,11 @@ def get_stats(values):
 
 def normalize(str):
     return str.replace("\t", " ").replace("\n", "<newline>").replace("\r", "<newline>")
+
+
+def normalize2(str):
+    return ' '.join(str.replace(",", "").lower().split())
+
 
 def discretize(x):
     if x == 0.5:
@@ -43,7 +55,7 @@ def aggregate_v2(response_file):
             negative_ex_suggestions = normalize(json_line[f'negative_example_quality_q2'])
 
             positive_examples = []
-            for idx in range(0, 3):
+            for idx in range(0, 5):
                 id = f'positive_ex_{idx}_input'
                 if id in json_line:
                     positive_examples.append(json_line[id])
@@ -72,55 +84,14 @@ def aggregate_v2(response_file):
                     instance_input.append(input)
                     instance_output.append(output)
                     instance_prediction.append(human_output)
-                    print(f"{prefix}\t{input}\t{output}\t{human_output}")
+                    rouge_val = metric_max_over_ground_truths(
+                        rouge, normalize2(human_output),
+                        [normalize2(x) for x in output.split("///")]
+                    )
+                    print(f"{prefix}\t{input}\t{output}\t{human_output}\t{rouge_val}\t{worker_id}")
+
+        print(worker_stats)
 
 
-    # print(f" * worker_stats: {worker_stats}")
-    # print(plausiblity_labels_per_questions)
-    # print(grammaticality_labels_per_questions)
-    #
-    #
-    # for id, values in plausiblity_labels_per_questions.items():
-    #     if len(values) == 0:
-    #         continue
-    #     values_gr = grammaticality_labels_per_questions[id]
-    #
-    #     maj_vote_value, avg_score, model_values_str = get_stats(values)
-    #     maj_vote_value_gr, avg_score_gr, model_values_gr_str = get_stats(values_gr)
-    #
-    #     worker_ids = "_".join(workers_per_questions[id])
-    #
-    #
-    #     if pairwise and id in s1_answers and id in s2_answers:
-    #             print(f"{id} \t {s1_answers[id]} \t {s2_answers[id]} \t {worker_ids} \t {maj_vote_value} \t {avg_score} \t {maj_vote_value_gr} \t {avg_score_gr}")
-    #     elif not pairwise and id in s1_answers:
-    #             print(f"{id} \t {s1_answers[id]} \t {worker_ids} \t {maj_vote_value} \t {avg_score} \t {maj_vote_value_gr} \t {avg_score_gr}")
-
-    from nltk import agreement
-    # for type in num_invalid_questions_per_type.keys():
-    #     my_agreement = {}
-    #     taskdata = []
-    #     print(f" ======= {type} ======== ")
-    #     for id, values in labels_per_questions.items():
-    #         if len(values) == 5 and type_merging[all_questions[id]['answer_type']] == type:
-    #
-    #             # l_model = len(set(values))
-    #             l_model = max([values.count(x) for x in values])
-    #             if l_model not in my_agreement:
-    #                 my_agreement[l_model] = 0
-    #             my_agreement[l_model] += 1
-    #
-    #             taskdata.append(['a1', id, str(discretize(values[0]))])
-    #             taskdata.append(['a2', id, str(discretize(values[1]))])
-    #             taskdata.append(['a3', id, str(discretize(values[2]))])
-    #             taskdata.append(['a4', id, str(discretize(values[3]))])
-    #             taskdata.append(['a5', id, str(discretize(values[4]))])
-    #
-    #     if len(taskdata) > 0:
-    #         ratingtask = agreement.AnnotationTask(data=taskdata)
-    #         print("fleiss " + str(ratingtask.multi_kappa()))
-    #         print(my_agreement)
-    #         total = sum(my_agreement.values())
-    #         print({(k, 100.0 * v / total) for k, v in my_agreement.items()})
-
-aggregate_v2("batch-43ecd7ef-0717-4b72-a39c-b6179f8b5f77_task156_pilot/batch-results.jsonl")
+# aggregate_v2("batch-43ecd7ef-0717-4b72-a39c-b6179f8b5f77_task156_pilot/batch-results.jsonl")
+aggregate_v2("batch-65c49abc-f8a3-4f12-a71d-9ce5742c3419_start=60_end=100_max_size=5/batch-results.jsonl")
