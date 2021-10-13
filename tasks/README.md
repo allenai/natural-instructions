@@ -893,12 +893,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
-`task1308_amazonreview_category_correction_classification` | You're given a review from Amazon and category of the product based on the review, classify whether review match the category. | Classification
-`task1309_amazonreview_summary_correction_classification` | You're given a review from Amazon and summary of the review, classify whether summary match the original review. | Classification
-`task1310_amazonreview_rating_classification` | You're given a review from Amazon. Your task is to generate a rating for the product on a scale of 1-5 based on the review. | Classification
-`task1311_amazonreview_rating_correction_classification` | You're given a review from Amazon and rating of the review, classify whether rating match the review. | Classification
-`task1312_amazonreview_polarity_classification` | You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive. | Classification
-`task1313_amazonreview_polarity_correction_classification` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
 `task1190_add_integer_to_list` | Given a list of integers and an integer k, add k to every element in the list  | Answer Generation
@@ -930,6 +924,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument | Classification
 `task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument | Classification
 `task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument | Classification
+`task1308_amazonreview_category_correction_classification` | You're given a review from Amazon and category of the product based on the review, classify whether review match the category. | Classification
+`task1309_amazonreview_summary_correction_classification` | You're given a review from Amazon and summary of the review, classify whether summary match the original review. | Classification
+`task1310_amazonreview_rating_classification` | You're given a review from Amazon. Your task is to generate a rating for the product on a scale of 1-5 based on the review. | Classification
+`task1311_amazonreview_rating_correction_classification` | You're given a review from Amazon and rating of the review, classify whether rating match the review. | Classification
+`task1312_amazonreview_polarity_classification` | You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive. | Classification
+`task1313_amazonreview_polarity_correction_classification` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
