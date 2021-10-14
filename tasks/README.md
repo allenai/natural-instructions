@@ -893,6 +893,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
 `task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
 `task1190_add_integer_to_list` | Given a list of integers and an integer k, add k to every element in the list  | Answer Generation
@@ -940,3 +941,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
 `task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
 `task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1419_mathqa_gain` |  Given a math problem on gain and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1420_mathqa_general` |  Given a general math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1421_mathqa_other` |  Given a math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1422_mathqa_physics` |  Given a problem on physics and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1423_mathqa_geometry` |  Given a problem on geometry and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1424_mathqa_probability` |  Given a problem on probability and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
