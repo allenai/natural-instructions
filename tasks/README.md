@@ -929,6 +929,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
+`task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
+`task1318_country_national_dish` | Given a country name, return the national dish name of the given country | Answer Generation
+`task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
+`task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
+`task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
+`task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
@@ -948,3 +954,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1422_mathqa_physics` |  Given a problem on physics and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
 `task1423_mathqa_geometry` |  Given a problem on geometry and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
 `task1424_mathqa_probability` |  Given a problem on probability and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1425_country_iso_numeric` | Given a country name, return the numeric ISO of the given country | Answer Generation
+`task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
+`task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
+`task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
