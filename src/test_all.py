@@ -35,23 +35,25 @@ language_names = [
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
-def skewness(value,counts):
-    norm_counts = counts / counts.sum()
+def skewness(value,norm_counts):
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
     print(f'📋 Norm_counts: {norm_counts}')        
     print(f'📋 Distribution of classes: {counts}')
     print(f'📊 entropy= {entropy}.')
+    return entropy
 
 def skewness2(value,counts):
     average=np.average(counts)
     metric=np.average(abs(counts-average)/counts.sum())
     print(f'📊 metric= {metric}.')
-    
+    return metric
 
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains"
 ]
+
+fout = open(f"doc/Results.tsv", "w+")
 
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
@@ -162,9 +164,11 @@ for file in files:
             outputs = sum(output, [])
             value,counts = np.unique(outputs, return_counts=True)
             if 'Classification' in data['Categories'] or len(value)<15:
-                skewness(value,counts)
-                skewness2(value,counts)
-                        
+                norm_counts = counts / counts.sum()
+                entropy=skewness(value,norm_counts)
+                metric=skewness2(value,counts)
+                fout.write(f"{file} \t{entropy} \t{metric} \t{norm_counts}\n")
+                
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
