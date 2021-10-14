@@ -823,7 +823,6 @@ Name | Summary | Category
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
-`task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1148_maximum_ascii_value` | Given a string, return the character with maximum ascii value  | Answer Generation
 `task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
@@ -839,4 +838,5 @@ Name | Summary | Category
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
