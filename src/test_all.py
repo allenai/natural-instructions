@@ -39,17 +39,15 @@ def skewness(result):
     value,counts = np.unique(result, return_counts=True)
     norm_counts = counts / counts.sum()
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
-    if entropy < 0.7:
-        print(f'Norm_counts: {norm_counts}')        
-        print(f'Distribution of classes: {counts}')
-        print(f'⚠️ WARNING: Classes distribution is skewed, entropy= {entropy}.')
+    print(f'📋 Norm_counts: {norm_counts}')        
+    print(f'📋 Distribution of classes: {counts}')
+    print(f'📊 entropy= {entropy}.')
 
 def skewness2(result):
     value,counts = np.unique(result, return_counts=True)
     average=np.average(counts)
     metric=np.average(abs(counts-average)/counts.sum())
-    if metric > 0.2:
-        print(f'⚠️ WARNING: Classes distribution is skewed, metric= {metric}.')
+    print(f'📊 metric= {metric}.')
     
 
 # TODO: over time, these should be moved up to "expected_keys"
@@ -162,6 +160,7 @@ for file in files:
                         
             #Make sure classes are balanced
             output=[ins['output'] for ins in instances]
+            #flattens the nested arrays
             outputs = sum(output, [])
             skewness(outputs)
             skewness2(outputs)
