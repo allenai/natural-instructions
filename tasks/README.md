@@ -881,8 +881,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1145_xcsr_jap_commonsense_mc_classification` | Answering multiple choice commonsense question in Japanese language. | Classification
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
-`task1283_hrngo_quality_classification` | Evaluate quality of system generated reference. | Classification
-`task1284_hrngo_informativeness_classification` | Evaluate informativeness of system generated reference. | Classification
 `task1148_maximum_ascii_value` | Given a string, return the character with maximum ascii value  | Answer Generation
 `task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
@@ -904,6 +902,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
 `task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
+`task1283_hrngo_quality_classification` | Evaluate quality of system generated reference. | Classification
+`task1284_hrngo_informativeness_classification` | Evaluate informativeness of system generated reference. | Classification
 `task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
 `task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
 `task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
