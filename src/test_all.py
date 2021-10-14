@@ -53,8 +53,6 @@ suggested_keys = [
     "Domains"
 ]
 
-fout = open(f"doc/Results.tsv", "w+")
-
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 with open("doc/task-hierarchy.md", 'r') as readmef:
@@ -84,7 +82,7 @@ for name in task_names:
 
 for file in files:
     if ".json" in file:
-        print(f" --> testing file: {file}")
+#        print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
         with open(file_path, 'r') as f:
@@ -94,7 +92,8 @@ for file in files:
 
             for key in suggested_keys:
                 if key not in data:
-                    print(f'⚠️ WARNING: did not find the key: {key}')
+                    pass
+#                    print(f'⚠️ WARNING: did not find the key: {key}')
 
             assert len(data['Instances']) > 25, f"there must be at least 25 instances; " \
                                                 f"currently you have {len(data['Instances'])} instances"
@@ -107,7 +106,8 @@ for file in files:
             assert type(data['Categories']) == list, f'Categories must be a list.'
             for c in data['Categories']:
                 if c not in hierarchy_content:
-                    print(f'⚠️ WARNING: Did not find category `{c}`')
+                    pass
+#                    print(f'⚠️ WARNING: Did not find category `{c}`')
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
@@ -167,7 +167,7 @@ for file in files:
                 norm_counts = counts / counts.sum()
                 entropy=skewness(value,norm_counts)
                 metric=skewness2(value,counts)
-                fout.write(f"{file} \t{entropy} \t{metric} \t{norm_counts}\n")
+                print(f"{file} \t{entropy} \t{metric} \t{norm_counts}\n")
                 
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
