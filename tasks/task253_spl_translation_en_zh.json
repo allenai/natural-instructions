@@ -3,55 +3,59 @@
         "Mehrad Moradshahi"
     ],
     "Source": [
-        "Semantic Parser Localizer (https:\/\/github.com\/stanford-oval\/SPL)"
+        "Semantic Parser Localizer (https://github.com/stanford-oval/SPL)"
     ],
     "Categories": [
         "Translation"
     ],
-    "Input_language": "English",
-    "Output_language": "Chinese",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "Chinese"
+    ],
     "Definition": "The provided file includes inquiries about restaurants, and we ask you to translate those to the Chinese language. Please bear in mind the following guidelines while doing the translation: 1) We are looking for the most naturally written and formal form of each sentence in your language. We are *NOT* looking for colloquial forms of the sentence. We are looking for formal form which is how you would type your queries in a text-based virtual assistant. 2) The words between quotation marks *SHOULD NOT* be translated. We expect you to keep those values intact and include the quotation marks around them as well. 3) The fully capitalized words like DATE_0, or DURATION_0 *SHOULD NOT* be translated. Please keep them as they are in the translations. 4) Please do not localize measurement units like miles to kilometers during your translation. miles should be translated to its equivalent in your language. 6) Note the input is all lowercased except for fully capitalized special placeholders (e.g. NUMBER, DATE, TIME). Please do the same in your translations.",
     "Positive Examples": [
         {
             "input": "are there any \" italian \" restaurants nearby with 3 star reviews ?",
-            "output": "附近是否有任何3星评价的\" italian \"餐厅？",
+            "output": "\u9644\u8fd1\u662f\u5426\u6709\u4efb\u4f553\u661f\u8bc4\u4ef7\u7684\" italian \"\u9910\u5385\uff1f",
             "explanation": "The translation correctly preserves \" italian \" entity and is accurate"
         },
         {
             "input": "what kind of food does this restaurant serve ?",
-            "output": "此餐厅提供哪类食品？",
+            "output": "\u6b64\u9910\u5385\u63d0\u4f9b\u54ea\u7c7b\u98df\u54c1\uff1f",
             "explanation": "The translation is fluent, formal, and accurate"
         },
         {
             "input": "what is the telephone number and location of the nearest \" chinese \" restaurant ?",
-            "output": "最近的\" chinese \"餐厅的电话号码是多少？位置在哪里？",
+            "output": "\u6700\u8fd1\u7684\" chinese \"\u9910\u5385\u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f\u4f4d\u7f6e\u5728\u54ea\u91cc\uff1f",
             "explanation": "The translation correctly preserves \" chinese \" entity. It's also fluent, correct, and lowercased."
         }
     ],
     "Negative Examples": [
         {
             "input": "where is the closest \" wendy 's \" ?",
-            "output": "最近的wendy 's在哪里？",
+            "output": "\u6700\u8fd1\u7684wendy 's\u5728\u54ea\u91cc\uff1f",
             "explanation": "Translation contain the entity \" wendy 's \" but quotation marks are dropped"
         },
         {
             "input": "show me the closest \" mcdonald 's \"",
-            "output": "向我显示最近的\" McDonald's \"",
+            "output": "\u5411\u6211\u663e\u793a\u6700\u8fd1\u7684\" McDonald's \"",
             "explanation": "The output is not lowercased"
         },
         {
             "input": "display all review descriptions authored by \" jennifer \" .",
-            "output": "显示\" jennifer \"撰写的所有。",
+            "output": "\u663e\u793a\" jennifer \"\u64b0\u5199\u7684\u6240\u6709\u3002",
             "explanation": "Translation of review descriptions is omitted from the output"
         },
         {
             "input": "what is the phone number for \" noodle nirvana \" ?",
-            "output": "\" 面条必杀技 \"的电话号码是多少？",
-            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" 面条必杀技 \" instead of being kept intact"
+            "output": "\" \u9762\u6761\u5fc5\u6740\u6280 \"\u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f",
+            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" \u9762\u6761\u5fc5\u6740\u6280 \" instead of being kept intact"
         },
         {
             "input": "can you tell me the rating of \" gold mirror \" in \" san francisco \" ?",
-            "output": "您能否告诉我\" gold mirror \"的\" san francisco \"的评分？",
+            "output": "\u60a8\u80fd\u5426\u544a\u8bc9\u6211\" gold mirror \"\u7684\" san francisco \"\u7684\u8bc4\u5206\uff1f",
             "explanation": "The position of entities is switched in the output"
         }
     ],
@@ -59,2150 +63,2153 @@
         {
             "input": "find a \" mexican \" restaurant with 9 or more stars .",
             "output": [
-                "找出评分为9星或更多星的\" mexican \"餐厅。"
+                "\u627e\u51fa\u8bc4\u5206\u4e3a9\u661f\u6216\u66f4\u591a\u661f\u7684\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" vegetarian \" restaurants with 2 star reviews or better .",
             "output": [
-                "搜索获得2星或更好评价的\" vegetarian \"餐厅。"
+                "\u641c\u7d22\u83b7\u5f972\u661f\u6216\u66f4\u597d\u8bc4\u4ef7\u7684\" vegetarian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" italian \" restaurants with at least 0 reviews .",
             "output": [
-                "搜索至少有0个评价的\" italian \"餐厅。"
+                "\u641c\u7d22\u81f3\u5c11\u67090\u4e2a\u8bc4\u4ef7\u7684\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "list \" italian \" restaurants with higher ratings that 7 stars .",
             "output": [
-                "列出评分高于7星的\" italian \"餐厅。"
+                "\u5217\u51fa\u8bc4\u5206\u9ad8\u4e8e7\u661f\u7684\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "look for a \" japanese \" restaurant that is the closest to me .",
             "output": [
-                "寻找距我最近的\" japanese \"餐厅。"
+                "\u5bfb\u627e\u8ddd\u6211\u6700\u8fd1\u7684\" japanese \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what 's the telephone number of the \" arby 's \" on \" sherman in muskegon , mi \" ?",
             "output": [
-                "\" sherman in muskegon , mi \"的\" arby 's \"电话号码是多少？"
+                "\" sherman in muskegon , mi \"\u7684\" arby 's \"\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what is the closest \" italian \" restaurant with at least a 8 star rating ?",
             "output": [
-                "评分至少为8星的最近的\" italian \"餐厅是哪家？"
+                "\u8bc4\u5206\u81f3\u5c11\u4e3a8\u661f\u7684\u6700\u8fd1\u7684\" italian \"\u9910\u5385\u662f\u54ea\u5bb6\uff1f"
             ]
         },
         {
             "input": "what is the closest \" coffee bean \" ?",
             "output": [
-                "最近的\" coffee bean \"是哪家？"
+                "\u6700\u8fd1\u7684\" coffee bean \"\u662f\u54ea\u5bb6\uff1f"
             ]
         },
         {
             "input": "where is the nearest \" mexican \" restaurant ?",
             "output": [
-                "最近的\" mexican \"餐厅在哪里？"
+                "\u6700\u8fd1\u7684\" mexican \"\u9910\u5385\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "show me the review for \" harry 's seafood grill \" by \" antoine waring \"",
             "output": [
-                "向我显示\" antoine waring \"对\" harry 's seafood grill \"的评价"
+                "\u5411\u6211\u663e\u793a\" antoine waring \"\u5bf9\" harry 's seafood grill \"\u7684\u8bc4\u4ef7"
             ]
         },
         {
             "input": "how well is \" pizza hut \" rated ?",
             "output": [
-                "\" pizza hut \"的评分是多少？"
+                "\" pizza hut \"\u7684\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what is the rating of that \" mcdonald ' \" ?",
             "output": [
-                "那家\" mcdonald ' \"的评分是多少？"
+                "\u90a3\u5bb6\" mcdonald ' \"\u7684\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "where is the nearest \" italian \" restaurant .",
             "output": [
-                "最近的\" italian \"餐厅在哪里。"
+                "\u6700\u8fd1\u7684\" italian \"\u9910\u5385\u5728\u54ea\u91cc\u3002"
             ]
         },
         {
             "input": "search for an \" italian \" restaurant in \" dallas \" with at least 2 reviews .",
             "output": [
-                "搜索\" dallas \"至少有2个评价的\" italian \"餐厅。"
+                "\u641c\u7d22\" dallas \"\u81f3\u5c11\u67092\u4e2a\u8bc4\u4ef7\u7684\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the rating for the \" la unica \" in \" huntersville \" ?",
             "output": [
-                "\" huntersville \"的\" la unica \"评分是多少？"
+                "\" huntersville \"\u7684\" la unica \"\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what is the rating of \" olive garden \" ?",
             "output": [
-                "\" olive garden \"的评分是多少？"
+                "\" olive garden \"\u7684\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "show me the location and name of the nearest \" chinese \" restaurant .",
             "output": [
-                "向我显示最近的\" chinese \"餐厅的位置和名称。"
+                "\u5411\u6211\u663e\u793a\u6700\u8fd1\u7684\" chinese \"\u9910\u5385\u7684\u4f4d\u7f6e\u548c\u540d\u79f0\u3002"
             ]
         },
         {
             "input": "show me the closest \" starbucks \" with at least 4 stars .",
             "output": [
-                "向我显示至少为4星的最近的\" starbucks \"。"
+                "\u5411\u6211\u663e\u793a\u81f3\u5c11\u4e3a4\u661f\u7684\u6700\u8fd1\u7684\" starbucks \"\u3002"
             ]
         },
         {
             "input": "search for 7 star restaurants in the \" 49503 \" zip code .",
             "output": [
-                "搜索邮政编码为\" 49503 \"的7星餐厅。"
+                "\u641c\u7d22\u90ae\u653f\u7f16\u7801\u4e3a\" 49503 \"\u76847\u661f\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the price range for \" noodle express \" ?",
             "output": [
-                "\" noodle express \"的价格范围是多少？"
+                "\" noodle express \"\u7684\u4ef7\u683c\u8303\u56f4\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "show me 0 star \" mexican \" restaurants that have more than 10 reviews .",
             "output": [
-                "向我显示超过10个评价的0星\" mexican \"餐厅。"
+                "\u5411\u6211\u663e\u793a\u8d85\u8fc710\u4e2a\u8bc4\u4ef7\u76840\u661f\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you show me all the 1 star restaurants in the area ?",
             "output": [
-                "您能否让我看看该区域的所有1星餐厅？"
+                "\u60a8\u80fd\u5426\u8ba9\u6211\u770b\u770b\u8be5\u533a\u57df\u7684\u6240\u67091\u661f\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "what is the phone number for the nearest \" wendy 's \" ?",
             "output": [
-                "最近的\" wendy 's \"的电话号码是多少？"
+                "\u6700\u8fd1\u7684\" wendy 's \"\u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what is the rating for this restaurant and how many reviews does it have ?",
             "output": [
-                "这家餐厅的评分是多少？有多少评价？"
+                "\u8fd9\u5bb6\u9910\u5385\u7684\u8bc4\u5206\u662f\u591a\u5c11\uff1f\u6709\u591a\u5c11\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "i want to see what \" chinese \" restaurants are on \" madison avenue \" .",
             "output": [
-                "我想查看\" madison avenue \"的\" chinese \"餐厅有哪些。"
+                "\u6211\u60f3\u67e5\u770b\" madison avenue \"\u7684\" chinese \"\u9910\u5385\u6709\u54ea\u4e9b\u3002"
             ]
         },
         {
             "input": "how many reviews has \" mike \" written about \" pizza hut \" ?",
             "output": [
-                "\" mike \"给\" pizza hut \"评论了几次？"
+                "\" mike \"\u7ed9\" pizza hut \"\u8bc4\u8bba\u4e86\u51e0\u6b21\uff1f"
             ]
         },
         {
             "input": "find \" mexican \" restaurants with at least 2 star rating .",
             "output": [
-                "找出评分至少为2星的\" mexican \"餐厅。"
+                "\u627e\u51fa\u8bc4\u5206\u81f3\u5c11\u4e3a2\u661f\u7684\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me all reviews written by \" paul \" on DATE_0 .",
             "output": [
-                "向我显示\" paul \"于date_0撰写的所有评价。"
+                "\u5411\u6211\u663e\u793a\" paul \"\u4e8edate_0\u64b0\u5199\u7684\u6240\u6709\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "show \" tina \" 's 10 star reviews of \" pizza \" joints .",
             "output": [
-                "显示\" tina \"对\" pizza \"餐厅的10星评价。"
+                "\u663e\u793a\" tina \"\u5bf9\" pizza \"\u9910\u5385\u768410\u661f\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "are there any 8 star \" mexican \" restaurants nearby ?",
             "output": [
-                "附近是否有任何8星\" mexican \"餐厅？"
+                "\u9644\u8fd1\u662f\u5426\u6709\u4efb\u4f558\u661f\" mexican \"\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "search for \" mexican \" restaurants with at least 4 reviews .",
             "output": [
-                "搜索至少有4个评价的\" mexican \"餐厅。"
+                "\u641c\u7d22\u81f3\u5c11\u67094\u4e2a\u8bc4\u4ef7\u7684\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find a restaurant that serves \" italian \" food with at least 5 reviews .",
             "output": [
-                "找出提供\" italian \"食品、至少有5个评价的餐厅。"
+                "\u627e\u51fa\u63d0\u4f9b\" italian \"\u98df\u54c1\u3001\u81f3\u5c11\u67095\u4e2a\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the nearest \" mexican \" restaurant with a 1 star rating ?",
             "output": [
-                "评分为1星的最近的\" mexican \"餐厅是哪家？"
+                "\u8bc4\u5206\u4e3a1\u661f\u7684\u6700\u8fd1\u7684\" mexican \"\u9910\u5385\u662f\u54ea\u5bb6\uff1f"
             ]
         },
         {
             "input": "can you give me the phone number for the nearest 7 star \" coffee \" house ?",
             "output": [
-                "您能否给我提供最近的7星\" coffee \"店的电话号码？"
+                "\u60a8\u80fd\u5426\u7ed9\u6211\u63d0\u4f9b\u6700\u8fd1\u76847\u661f\" coffee \"\u5e97\u7684\u7535\u8bdd\u53f7\u7801\uff1f"
             ]
         },
         {
             "input": "what is the \" panda express \" in \" gainesville , fl \" rated ?",
             "output": [
-                "\" gainesville , fl \"的\" panda express \"评分是多少？"
+                "\" gainesville , fl \"\u7684\" panda express \"\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what is the star rating for \" tilted kilt \" ?",
             "output": [
-                "\" tilted kilt \"的星级评分是多少？"
+                "\" tilted kilt \"\u7684\u661f\u7ea7\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what are the latest reviews and review scores for this restaurant ?",
             "output": [
-                "这家餐厅最近的评价和评价得分是多少？"
+                "\u8fd9\u5bb6\u9910\u5385\u6700\u8fd1\u7684\u8bc4\u4ef7\u548c\u8bc4\u4ef7\u5f97\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "where is the closest \" starbucks \" ?",
             "output": [
-                "最近的\" starbucks \"在哪里？"
+                "\u6700\u8fd1\u7684\" starbucks \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "search for all 4 star , \" vegan \" restaurants in the area .",
             "output": [
-                "搜索该区域的所有4星\" vegan \"餐厅。"
+                "\u641c\u7d22\u8be5\u533a\u57df\u7684\u6240\u67094\u661f\" vegan \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you tell me where the closest \" pizza hut \" is ?",
             "output": [
-                "您是否能告诉我最近的\" pizza hut \"在哪里？"
+                "\u60a8\u662f\u5426\u80fd\u544a\u8bc9\u6211\u6700\u8fd1\u7684\" pizza hut \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "what is the rating of \" tgi fridays \" ?",
             "output": [
-                "\" tgi fridays \"的评分是多少？"
+                "\" tgi fridays \"\u7684\u8bc4\u5206\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "show me a list of \" vegan \" restaurants with at least 9 reviews .",
             "output": [
-                "向我显示至少有9个评价的\" vegan \"餐厅列表。"
+                "\u5411\u6211\u663e\u793a\u81f3\u5c11\u67099\u4e2a\u8bc4\u4ef7\u7684\" vegan \"\u9910\u5385\u5217\u8868\u3002"
             ]
         },
         {
             "input": "can i read the description of the closest \" italian \" restaurant ?",
             "output": [
-                "我是否能阅读对最近的\" italian \"餐厅的描述？"
+                "\u6211\u662f\u5426\u80fd\u9605\u8bfb\u5bf9\u6700\u8fd1\u7684\" italian \"\u9910\u5385\u7684\u63cf\u8ff0\uff1f"
             ]
         },
         {
             "input": "what is the price range for \" pizza ranch \" ?",
             "output": [
-                "\" pizza ranch \"的价格范围是多少？"
+                "\" pizza ranch \"\u7684\u4ef7\u683c\u8303\u56f4\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "show description of the closest 6 star restaurant .",
             "output": [
-                "显示对最近的6星餐厅的描述。"
+                "\u663e\u793a\u5bf9\u6700\u8fd1\u76846\u661f\u9910\u5385\u7684\u63cf\u8ff0\u3002"
             ]
         },
         {
             "input": "what is the telephone number for the nearest \" chinese \" restaurant ?",
             "output": [
-                "最近的\" chinese \"餐厅的电话号码是多少？"
+                "\u6700\u8fd1\u7684\" chinese \"\u9910\u5385\u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "what is the highest rated restaurant in this area ?",
             "output": [
-                "这个区域评分最高的餐厅是哪家？"
+                "\u8fd9\u4e2a\u533a\u57df\u8bc4\u5206\u6700\u9ad8\u7684\u9910\u5385\u662f\u54ea\u5bb6\uff1f"
             ]
         },
         {
             "input": "search for \" vegan \" restaurants in \" lakeland , fl \" with at least 10 reviews",
             "output": [
-                "搜索\" lakeland , fl \"至少有10个评价的\" vegan \"餐厅"
+                "\u641c\u7d22\" lakeland , fl \"\u81f3\u5c11\u670910\u4e2a\u8bc4\u4ef7\u7684\" vegan \"\u9910\u5385"
             ]
         },
         {
             "input": "how close am i to \" art 's deli \" or \" carnegie deli \" ?",
             "output": [
-                "我离\" art 's deli \"或\" carnegie deli \"有多近？"
+                "\u6211\u79bb\" art 's deli \"\u6216\" carnegie deli \"\u6709\u591a\u8fd1\uff1f"
             ]
         },
         {
             "input": "show me all \" chinese \" restaurants with 0 star ratings within 8 miles .",
             "output": [
-                "向我显示8英里范围内所有评分为 0星的\" chinese \"餐厅。"
+                "\u5411\u6211\u663e\u793a8\u82f1\u91cc\u8303\u56f4\u5185\u6240\u6709\u8bc4\u5206\u4e3a 0\u661f\u7684\" chinese \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the address of the \" dunkin donuts \" closet to me ?",
             "output": [
-                "距我最近的\" dunkin donuts \"的地址是什么？"
+                "\u8ddd\u6211\u6700\u8fd1\u7684\" dunkin donuts \"\u7684\u5730\u5740\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "tell me the location of \" flo 's \" \" chinese \" restaurant in \" scottsdale , arizona \" .",
             "output": [
-                "告诉我\" scottsdale , arizona \"的\" flo 's \" \" chinese \"餐厅的位置。"
+                "\u544a\u8bc9\u6211\" scottsdale , arizona \"\u7684\" flo 's \" \" chinese \"\u9910\u5385\u7684\u4f4d\u7f6e\u3002"
             ]
         },
         {
             "input": "what is the telephone number for \" krispy kreme \" ?",
             "output": [
-                "\" krispy kreme \"的电话号码是多少？"
+                "\" krispy kreme \"\u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "where is the nearest \" boston market \" ?",
             "output": [
-                "最近的\" boston market \"在哪里？"
+                "\u6700\u8fd1\u7684\" boston market \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "how far away is the closest \" olive garden \" ?",
             "output": [
-                "最近的\" olive garden \"有多远？"
+                "\u6700\u8fd1\u7684\" olive garden \"\u6709\u591a\u8fdc\uff1f"
             ]
         },
         {
             "input": "what is the address of the \" panda express \" in \" grand rapids , michigan \" ?",
             "output": [
-                "\" grand rapids , michigan \"的\" panda express \"地址是什么？"
+                "\" grand rapids , michigan \"\u7684\" panda express \"\u5730\u5740\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "where is the nearest \" mexican \" restaurant with at least a 2 star review ?",
             "output": [
-                "至少有一个2星评价的最近的\" mexican \"餐厅在哪里？"
+                "\u81f3\u5c11\u6709\u4e00\u4e2a2\u661f\u8bc4\u4ef7\u7684\u6700\u8fd1\u7684\" mexican \"\u9910\u5385\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "what are the prices for the 8 highest rated \" italian \" restaurants in \" roanoke , va \" ?",
             "output": [
-                "在\" roanoke , va \"，评为最高分8的\" italian \"餐厅的价格是多少？"
+                "\u5728\" roanoke , va \"\uff0c\u8bc4\u4e3a\u6700\u9ad8\u52068\u7684\" italian \"\u9910\u5385\u7684\u4ef7\u683c\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "let me see the reviews for the \" jimmy john 's \" nearest to me ?",
             "output": [
-                "让我看看对离我最近的\" jimmy john 's \"的评价？"
+                "\u8ba9\u6211\u770b\u770b\u5bf9\u79bb\u6211\u6700\u8fd1\u7684\" jimmy john 's \"\u7684\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "what is a 0 star \" mexican \" restaurant ?",
             "output": [
-                "哪家是0星\" mexican \"餐厅？"
+                "\u54ea\u5bb6\u662f0\u661f\" mexican \"\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "what places close to me have 2 star reviews ?",
             "output": [
-                "我附近的哪些餐厅获得2星评价？"
+                "\u6211\u9644\u8fd1\u7684\u54ea\u4e9b\u9910\u5385\u83b7\u5f972\u661f\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "search for 10 star rated \" italian \" food in \" dallas \" .",
             "output": [
-                "搜索\" dallas \"评为10星的\" italian \"餐厅。"
+                "\u641c\u7d22\" dallas \"\u8bc4\u4e3a10\u661f\u7684\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you show me 9 star reviews written by \" john smith \" .",
             "output": [
-                "您是否能让我看看\" john smith \"撰写的9星评价。"
+                "\u60a8\u662f\u5426\u80fd\u8ba9\u6211\u770b\u770b\" john smith \"\u64b0\u5199\u76849\u661f\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "how many 1 star reviews are there for \" peet 's coffee \" ?",
             "output": [
-                "对\" peet 's coffee \"有多少1星评价？"
+                "\u5bf9\" peet 's coffee \"\u6709\u591a\u5c111\u661f\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "i want to see all of the 1 star reviews that \" sheila \" wrote .",
             "output": [
-                "我想查看\" sheila \"撰写的所有1星评价。"
+                "\u6211\u60f3\u67e5\u770b\" sheila \"\u64b0\u5199\u7684\u6240\u67091\u661f\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "locate all \" italian \" restaurants .",
             "output": [
-                "查找所有\" italian \"餐厅的地点。"
+                "\u67e5\u627e\u6240\u6709\" italian \"\u9910\u5385\u7684\u5730\u70b9\u3002"
             ]
         },
         {
             "input": "can you look for a restaurant with a rating of 5 ?",
             "output": [
-                "您是否能寻找评分为5的餐厅？"
+                "\u60a8\u662f\u5426\u80fd\u5bfb\u627e\u8bc4\u5206\u4e3a5\u7684\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "looking to book a restaurant with at least 5 reviews .",
             "output": [
-                "期望预订至少有5个评价的餐厅。"
+                "\u671f\u671b\u9884\u8ba2\u81f3\u5c11\u67095\u4e2a\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" bayshore bean \" .",
             "output": [
-                "搜索\" bayshore bean \"。"
+                "\u641c\u7d22\" bayshore bean \"\u3002"
             ]
         },
         {
             "input": "show me \" vietnamese \" restaurants .",
             "output": [
-                "给我显示\" vietnamese \"餐厅。"
+                "\u7ed9\u6211\u663e\u793a\" vietnamese \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all the \" bakeries \" .",
             "output": [
-                "查找所有的\" bakeries \"。"
+                "\u67e5\u627e\u6240\u6709\u7684\" bakeries \"\u3002"
             ]
         },
         {
             "input": "show me all restaurants rated with exactly 7 stars .",
             "output": [
-                "只向我展示所有评分为 7 星的餐厅。"
+                "\u53ea\u5411\u6211\u5c55\u793a\u6240\u6709\u8bc4\u5206\u4e3a 7 \u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "where is \" los compadres \" ?",
             "output": [
-                "\" los compadres \"在哪里？"
+                "\" los compadres \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "find \" thai \" restaurants .",
             "output": [
-                "查找\" thai \"餐厅。"
+                "\u67e5\u627e\" thai \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" cook out \" .",
             "output": [
-                "给我显示\" cook out \"。"
+                "\u7ed9\u6211\u663e\u793a\" cook out \"\u3002"
             ]
         },
         {
             "input": "find restaurants with more than 6 reviews .",
             "output": [
-                "查找评论数超过 6 条的餐厅。"
+                "\u67e5\u627e\u8bc4\u8bba\u6570\u8d85\u8fc7 6 \u6761\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "does the \" lone star steakhouse \" in \" dallas nc \" have a review yet ?",
             "output": [
-                "\" dallas nc \"的\" lone star steakhouse \"是否已有评价？"
+                "\" dallas nc \"\u7684\" lone star steakhouse \"\u662f\u5426\u5df2\u6709\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "can you show me the ratings for \" j dog \" ?",
             "output": [
-                "你能向我展示\" j dog \"的星级吗？"
+                "\u4f60\u80fd\u5411\u6211\u5c55\u793a\" j dog \"\u7684\u661f\u7ea7\u5417\uff1f"
             ]
         },
         {
             "input": "can you find the restaurant nearest to my location ?",
             "output": [
-                "你能找到离我最近的餐厅吗？"
+                "\u4f60\u80fd\u627e\u5230\u79bb\u6211\u6700\u8fd1\u7684\u9910\u5385\u5417\uff1f"
             ]
         },
         {
             "input": "look up a \" mexican \" restaurant for me .",
             "output": [
-                "为我查找\" mexican \"餐厅。"
+                "\u4e3a\u6211\u67e5\u627e\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find me a restaurant on \" main st . \" please .",
             "output": [
-                "请为我查找在\" main st . \"的餐厅。"
+                "\u8bf7\u4e3a\u6211\u67e5\u627e\u5728\" main st . \"\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me the highest rated restaurant please .",
             "output": [
-                "请给我展示评价最高的餐厅。"
+                "\u8bf7\u7ed9\u6211\u5c55\u793a\u8bc4\u4ef7\u6700\u9ad8\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what restaurant has the highest review count ?",
             "output": [
-                "哪家餐厅的评价数量最多？"
+                "\u54ea\u5bb6\u9910\u5385\u7684\u8bc4\u4ef7\u6570\u91cf\u6700\u591a\uff1f"
             ]
         },
         {
             "input": "what restaurant does \" jeff weisnear \" review for ?",
             "output": [
-                "\" jeff weisnear \"评价的是哪家餐厅？"
+                "\" jeff weisnear \"\u8bc4\u4ef7\u7684\u662f\u54ea\u5bb6\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "search for \" korean bbq \" restaurants .",
             "output": [
-                "搜索\" korean bbq \"餐厅。"
+                "\u641c\u7d22\" korean bbq \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "how many reviews does the place have ?",
             "output": [
-                "这地方有多少条评价？"
+                "\u8fd9\u5730\u65b9\u6709\u591a\u5c11\u6761\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "where is the nearest \" chinese \" place ?",
             "output": [
-                "最近的\" chinese \"在哪里？"
+                "\u6700\u8fd1\u7684\" chinese \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "how many places to eat are nearby ?",
             "output": [
-                "附近有几个吃饭的地方？"
+                "\u9644\u8fd1\u6709\u51e0\u4e2a\u5403\u996d\u7684\u5730\u65b9\uff1f"
             ]
         },
         {
             "input": "show all the restaurants below 0 stars .",
             "output": [
-                "显示所有低于 0 星的餐厅。"
+                "\u663e\u793a\u6240\u6709\u4f4e\u4e8e 0 \u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "give me all the \" italian \" places .",
             "output": [
-                "给我所有的\" italian \"餐去处。"
+                "\u7ed9\u6211\u6240\u6709\u7684\" italian \"\u9910\u53bb\u5904\u3002"
             ]
         },
         {
             "input": "find restaurants rated lower than 9 .",
             "output": [
-                "查找评分低于 9 的餐厅。"
+                "\u67e5\u627e\u8bc4\u5206\u4f4e\u4e8e 9 \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find \" mexican \" restaurants .",
             "output": [
-                "查找\" mexican \"餐厅。"
+                "\u67e5\u627e\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" french \" restaurants .",
             "output": [
-                "给我展示\" french \"餐厅。"
+                "\u7ed9\u6211\u5c55\u793a\" french \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" le pain quotidien \" .",
             "output": [
-                "给我展示\" le pain quotidien \"。"
+                "\u7ed9\u6211\u5c55\u793a\" le pain quotidien \"\u3002"
             ]
         },
         {
             "input": "find restaurants with more than 9 reviews .",
             "output": [
-                "查找评论数量超过 9 条的餐厅。"
+                "\u67e5\u627e\u8bc4\u8bba\u6570\u91cf\u8d85\u8fc7 9 \u6761\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "is there a restaurant named \" china king \" ?",
             "output": [
-                "有叫\" china king \"的餐厅吗？"
+                "\u6709\u53eb\" china king \"\u7684\u9910\u5385\u5417\uff1f"
             ]
         },
         {
             "input": "what 's the lowest rated diner in my area ?",
             "output": [
-                "我所在地区哪家餐馆的评分最低？"
+                "\u6211\u6240\u5728\u5730\u533a\u54ea\u5bb6\u9910\u9986\u7684\u8bc4\u5206\u6700\u4f4e\uff1f"
             ]
         },
         {
             "input": "what is the highest rated restaurant ?",
             "output": [
-                "哪家餐厅的评分最高？"
+                "\u54ea\u5bb6\u9910\u5385\u7684\u8bc4\u5206\u6700\u9ad8\uff1f"
             ]
         },
         {
             "input": "is there a \" japanese \" restaurant nearby ?",
             "output": [
-                "附近有\" japanese \"餐厅吗？"
+                "\u9644\u8fd1\u6709\" japanese \"\u9910\u5385\u5417\uff1f"
             ]
         },
         {
             "input": "what 's the address of the closest restaurant ?",
             "output": [
-                "最近餐馆的地址在哪里？"
+                "\u6700\u8fd1\u9910\u9986\u7684\u5730\u5740\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "where is \" thai kitchen \" ?",
             "output": [
-                "\" thai kitchen \"在哪里？"
+                "\" thai kitchen \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "show me \" mexican \" restaurants",
             "output": [
-                "向我展示\" mexican \"餐厅"
+                "\u5411\u6211\u5c55\u793a\" mexican \"\u9910\u5385"
             ]
         },
         {
             "input": "show me all 1 star restaurants",
             "output": [
-                "向我展示所有 1 星的餐厅"
+                "\u5411\u6211\u5c55\u793a\u6240\u6709 1 \u661f\u7684\u9910\u5385"
             ]
         },
         {
             "input": "show me \" main street \" restaurants",
             "output": [
-                "向我展示\" main street \"餐厅"
+                "\u5411\u6211\u5c55\u793a\" main street \"\u9910\u5385"
             ]
         },
         {
             "input": "show the address of \" thai corner \"",
             "output": [
-                "显示\" thai corner \"的地址"
+                "\u663e\u793a\" thai corner \"\u7684\u5730\u5740"
             ]
         },
         {
             "input": "search for the nearest \" wendy 's \" restaurant ?",
             "output": [
-                "寻找最近的\" wendy 's \"餐厅？"
+                "\u5bfb\u627e\u6700\u8fd1\u7684\" wendy 's \"\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "find a \" steak house \" restaurant ?",
             "output": [
-                "查找\" steak house \"餐厅？"
+                "\u67e5\u627e\" steak house \"\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "show me \" mediterranean \" restaurants ?",
             "output": [
-                "向我展示\" mediterranean \"餐厅？"
+                "\u5411\u6211\u5c55\u793a\" mediterranean \"\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "show me the best rated restaurants",
             "output": [
-                "向我展示最受好评的餐厅"
+                "\u5411\u6211\u5c55\u793a\u6700\u53d7\u597d\u8bc4\u7684\u9910\u5385"
             ]
         },
         {
             "input": "show me restaurants near me",
             "output": [
-                "向我展示我附近的餐馆"
+                "\u5411\u6211\u5c55\u793a\u6211\u9644\u8fd1\u7684\u9910\u9986"
             ]
         },
         {
             "input": "show me restaurants with the most reviews",
             "output": [
-                "向我展示评价最多的餐厅"
+                "\u5411\u6211\u5c55\u793a\u8bc4\u4ef7\u6700\u591a\u7684\u9910\u5385"
             ]
         },
         {
             "input": "find me \" pizza \" places",
             "output": [
-                "为我找到\" pizza \"去处"
+                "\u4e3a\u6211\u627e\u5230\" pizza \"\u53bb\u5904"
             ]
         },
         {
             "input": "find a \" pizza \" place .",
             "output": [
-                "查找\" pizza \"去处。"
+                "\u67e5\u627e\" pizza \"\u53bb\u5904\u3002"
             ]
         },
         {
             "input": "show me a \" sushi \" restaurant .",
             "output": [
-                "向我展示\" sushi \"餐厅。"
+                "\u5411\u6211\u5c55\u793a\" sushi \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all 9 star \" bbq \" places .",
             "output": [
-                "查找所有 9 星的\" bbq \"去处。"
+                "\u67e5\u627e\u6240\u6709 9 \u661f\u7684\" bbq \"\u53bb\u5904\u3002"
             ]
         },
         {
             "input": "show me \" italian \" restaurants .",
             "output": [
-                "向我展示\" italian \"餐厅。"
+                "\u5411\u6211\u5c55\u793a\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all 3 star diners .",
             "output": [
-                "查找所有的 3 星级饭店。"
+                "\u67e5\u627e\u6240\u6709\u7684 3 \u661f\u7ea7\u996d\u5e97\u3002"
             ]
         },
         {
             "input": "i 'd like to see restaurants with at least a rating of 3 .",
             "output": [
-                "我希望查看评分至少为 3 级的餐厅。"
+                "\u6211\u5e0c\u671b\u67e5\u770b\u8bc4\u5206\u81f3\u5c11\u4e3a 3 \u7ea7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you show me \" italian \" restaurants ?",
             "output": [
-                "你能向我展示\" italian \"餐厅吗？"
+                "\u4f60\u80fd\u5411\u6211\u5c55\u793a\" italian \"\u9910\u5385\u5417\uff1f"
             ]
         },
         {
             "input": "what is the price range for the top rated \" mexican \" restaurant ?",
             "output": [
-                "最受好评的\" mexican \"餐厅价格范围是多少？"
+                "\u6700\u53d7\u597d\u8bc4\u7684\" mexican \"\u9910\u5385\u4ef7\u683c\u8303\u56f4\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "find \" mod pizza \" for me .",
             "output": [
-                "为我查找\" mod pizza \"。"
+                "\u4e3a\u6211\u67e5\u627e\" mod pizza \"\u3002"
             ]
         },
         {
             "input": "who wrote the latest review for \" first wok \" ?",
             "output": [
-                "谁为\" first wok \"撰写了最新评论？"
+                "\u8c01\u4e3a\" first wok \"\u64b0\u5199\u4e86\u6700\u65b0\u8bc4\u8bba\uff1f"
             ]
         },
         {
             "input": "show me restaurants with a rating of 3 .",
             "output": [
-                "向我展示评分为 3 的餐厅。"
+                "\u5411\u6211\u5c55\u793a\u8bc4\u5206\u4e3a 3 \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find me some \" coffee \" shops .",
             "output": [
-                "给我查找一些\" coffee \"店。"
+                "\u7ed9\u6211\u67e5\u627e\u4e00\u4e9b\" coffee \"\u5e97\u3002"
             ]
         },
         {
             "input": "search for \" hamburger \" joints .",
             "output": [
-                "搜索\" hamburger \"连锁店。"
+                "\u641c\u7d22\" hamburger \"\u8fde\u9501\u5e97\u3002"
             ]
         },
         {
             "input": "what are the restaurants reviewed by \" mark \" ?",
             "output": [
-                "\" mark \"评介过的餐厅有哪些？"
+                "\" mark \"\u8bc4\u4ecb\u8fc7\u7684\u9910\u5385\u6709\u54ea\u4e9b\uff1f"
             ]
         },
         {
             "input": "show me all the restaurants with a rating of more than 4 .",
             "output": [
-                "向我展示所有评分超过 4 的餐厅。"
+                "\u5411\u6211\u5c55\u793a\u6240\u6709\u8bc4\u5206\u8d85\u8fc7 4 \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "look for \" american \" restaurants close by .",
             "output": [
-                "查找附近的\" american \"餐厅。"
+                "\u67e5\u627e\u9644\u8fd1\u7684\" american \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me any \" mexican \" restaurant .",
             "output": [
-                "给我显示任意一家\" mexican \"餐厅。"
+                "\u7ed9\u6211\u663e\u793a\u4efb\u610f\u4e00\u5bb6\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all of the restaurants that have a rating about 1 .",
             "output": [
-                "查找所有评分约为 1 的餐厅。"
+                "\u67e5\u627e\u6240\u6709\u8bc4\u5206\u7ea6\u4e3a 1 \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "locate \" los cabos \" for me .",
             "output": [
-                "为我定位\" los cabos \"。"
+                "\u4e3a\u6211\u5b9a\u4f4d\" los cabos \"\u3002"
             ]
         },
         {
             "input": "tell me the postal code for \" red robin \" .",
             "output": [
-                "告诉我\" red robin \"的邮编。"
+                "\u544a\u8bc9\u6211\" red robin \"\u7684\u90ae\u7f16\u3002"
             ]
         },
         {
             "input": "display a list of \" thai \" restaurants .",
             "output": [
-                "显示\" thai \"餐厅列表。"
+                "\u663e\u793a\" thai \"\u9910\u5385\u5217\u8868\u3002"
             ]
         },
         {
             "input": "find all restaurants in my downtown area .",
             "output": [
-                "查找在我市中心的所有餐馆。"
+                "\u67e5\u627e\u5728\u6211\u5e02\u4e2d\u5fc3\u7684\u6240\u6709\u9910\u9986\u3002"
             ]
         },
         {
             "input": "display restaurants with at least 4 reviews .",
             "output": [
-                "显示至少有 4 条评价的餐厅。"
+                "\u663e\u793a\u81f3\u5c11\u6709 4 \u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me all restaurant reviews by \" john smith \" .",
             "output": [
-                "给我显示所有\" john smith \"评价的餐厅。"
+                "\u7ed9\u6211\u663e\u793a\u6240\u6709\" john smith \"\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" china wok \" .",
             "output": [
-                "搜索\" china wok \"。"
+                "\u641c\u7d22\" china wok \"\u3002"
             ]
         },
         {
             "input": "show me \" sushi \" restaurants .",
             "output": [
-                "向我展示\" sushi \"餐厅。"
+                "\u5411\u6211\u5c55\u793a\" sushi \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me 1 star restaurants .",
             "output": [
-                "向我展示一星的餐厅。"
+                "\u5411\u6211\u5c55\u793a\u4e00\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all restaurants with a rating of 10 .",
             "output": [
-                "查找所有评分为 10 的餐厅。"
+                "\u67e5\u627e\u6240\u6709\u8bc4\u5206\u4e3a 10 \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" luby 's cafeteria \" .",
             "output": [
-                "搜索\" luby 's cafeteria \"。"
+                "\u641c\u7d22\" luby 's cafeteria \"\u3002"
             ]
         },
         {
             "input": "search for all 0 star restaurants .",
             "output": [
-                "搜索所有 0 星级的餐厅。"
+                "\u641c\u7d22\u6240\u6709 0 \u661f\u7ea7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" italian \" restaurants .",
             "output": [
-                "搜索\" italian \"餐厅。"
+                "\u641c\u7d22\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me restaurants with a 9 reviews .",
             "output": [
-                "向我展示有 9 条评价的餐厅。"
+                "\u5411\u6211\u5c55\u793a\u6709 9 \u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show all restaurants with a rating of 9 or higher .",
             "output": [
-                "显示所有评分为或超过9的餐厅。"
+                "\u663e\u793a\u6240\u6709\u8bc4\u5206\u4e3a\u6216\u8d85\u8fc79\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" itlaian \" cuisine restaurants .",
             "output": [
-                "搜索\" itlaian \"菜系餐厅。"
+                "\u641c\u7d22\" itlaian \"\u83dc\u7cfb\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show restaurants with at least 10 reviews .",
             "output": [
-                "显示评价至少10条的餐厅。"
+                "\u663e\u793a\u8bc4\u4ef7\u81f3\u5c1110\u6761\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "display any restaurants with overall rating of 5 or above .",
             "output": [
-                "显示任何总体评分为或超过5的餐厅。"
+                "\u663e\u793a\u4efb\u4f55\u603b\u4f53\u8bc4\u5206\u4e3a\u6216\u8d85\u8fc75\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i want to see some \" indian \" restaurants .",
             "output": [
-                "我想要查看\" indian \"餐厅。"
+                "\u6211\u60f3\u8981\u67e5\u770b\" indian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me 4 star restaurants .",
             "output": [
-                "显示4星餐厅。"
+                "\u663e\u793a4\u661f\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the closest restaurant to me ?",
             "output": [
-                "离我距离最近的餐厅？"
+                "\u79bb\u6211\u8ddd\u79bb\u6700\u8fd1\u7684\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "search for \" burger king \" .",
             "output": [
-                "搜索\" burger king \"。"
+                "\u641c\u7d22\" burger king \"\u3002"
             ]
         },
         {
             "input": "show me restaurants that have a rating of at least 7 stars .",
             "output": [
-                "显示评分至少7星的餐厅。"
+                "\u663e\u793a\u8bc4\u5206\u81f3\u5c117\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find me a restaurant called \" lenny 's \"",
             "output": [
-                "寻找\" lenny 's \"餐厅。"
+                "\u5bfb\u627e\" lenny 's \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me all \" german \" restaurants .",
             "output": [
-                "显示所有\" german \"餐厅。"
+                "\u663e\u793a\u6240\u6709\" german \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i would like to find \" brenda 's french soul food \" .",
             "output": [
-                "我想要查找\" brenda 's french soul food \"。"
+                "\u6211\u60f3\u8981\u67e5\u627e\" brenda 's french soul food \"\u3002"
             ]
         },
         {
             "input": "i want to see all \" italian \" restaurants .",
             "output": [
-                "我想要查看\" italian \"餐厅。"
+                "\u6211\u60f3\u8981\u67e5\u770b\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me all restaurants that are rated 2 star .",
             "output": [
-                "显示所有评分2星的餐厅"
+                "\u663e\u793a\u6240\u6709\u8bc4\u52062\u661f\u7684\u9910\u5385"
             ]
         },
         {
             "input": "find me all restaurants that serve \" new american \" cuisine .",
             "output": [
-                "查找所有供应\" new american \"菜系的餐厅。"
+                "\u67e5\u627e\u6240\u6709\u4f9b\u5e94\" new american \"\u83dc\u7cfb\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "look for \" mai lee \" .",
             "output": [
-                "查找\" mai lee \"。"
+                "\u67e5\u627e\" mai lee \"\u3002"
             ]
         },
         {
             "input": "find the \" vietnamese \" restaurants .",
             "output": [
-                "查找\" vietnamese \"餐厅。"
+                "\u67e5\u627e\" vietnamese \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all reviews from \" jane \" .",
             "output": [
-                "查找\" jane \"的所有评价。"
+                "\u67e5\u627e\" jane \"\u7684\u6240\u6709\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "show restaurants with over 6 reviews .",
             "output": [
-                "显示拥有大于6条评价的餐厅"
+                "\u663e\u793a\u62e5\u6709\u5927\u4e8e6\u6761\u8bc4\u4ef7\u7684\u9910\u5385"
             ]
         },
         {
             "input": "find the restaurants with a rating of 1 .",
             "output": [
-                "查找评分为1的餐厅"
+                "\u67e5\u627e\u8bc4\u5206\u4e3a1\u7684\u9910\u5385"
             ]
         },
         {
             "input": "please give me a list of restaurants that are rated 5 and up .",
             "output": [
-                "请列出评分为或高于5的餐厅。"
+                "\u8bf7\u5217\u51fa\u8bc4\u5206\u4e3a\u6216\u9ad8\u4e8e5\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you find the highest rated \" thai \" restaurant , please .",
             "output": [
-                "请寻找评分最高的\" thai \"餐厅。"
+                "\u8bf7\u5bfb\u627e\u8bc4\u5206\u6700\u9ad8\u7684\" thai \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i want to see the top \" mexican \" restaurants .",
             "output": [
-                "我想查看顶级\" mexican \"餐厅。"
+                "\u6211\u60f3\u67e5\u770b\u9876\u7ea7\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you show me restaurants that have more than 9 reviews ?",
             "output": [
-                "请显示拥有评价大于9的餐厅？"
+                "\u8bf7\u663e\u793a\u62e5\u6709\u8bc4\u4ef7\u5927\u4e8e9\u7684\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "search for \" mcdonald 's \"",
             "output": [
-                "搜索\" mcdonald 's \""
+                "\u641c\u7d22\" mcdonald 's \""
             ]
         },
         {
             "input": "show all \" mark \" 's reviews",
             "output": [
-                "显示所有\" mark \"的评价"
+                "\u663e\u793a\u6240\u6709\" mark \"\u7684\u8bc4\u4ef7"
             ]
         },
         {
             "input": "look up restaurants in \" las vegas \"",
             "output": [
-                "查找\" las vegas \"内的餐厅"
+                "\u67e5\u627e\" las vegas \"\u5185\u7684\u9910\u5385"
             ]
         },
         {
             "input": "find \" cracker barrel \"",
             "output": [
-                "查找\" cracker barrel \""
+                "\u67e5\u627e\" cracker barrel \""
             ]
         },
         {
             "input": "show me \" mexican \" restaurants .",
             "output": [
-                "显示\" mexican \"餐厅"
+                "\u663e\u793a\" mexican \"\u9910\u5385"
             ]
         },
         {
             "input": "find restaurants with at least 9 reviews .",
             "output": [
-                "查找拥有最少9条评价的餐厅。"
+                "\u67e5\u627e\u62e5\u6709\u6700\u5c119\u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find \" fuel pizza \" .",
             "output": [
-                "查找\" fuel pizza \"。"
+                "\u67e5\u627e\" fuel pizza \"\u3002"
             ]
         },
         {
             "input": "what is the closest restaurant ?",
             "output": [
-                "最近的餐厅是哪家？"
+                "\u6700\u8fd1\u7684\u9910\u5385\u662f\u54ea\u5bb6\uff1f"
             ]
         },
         {
             "input": "show me all restaurants with ratings of at least 1 stars .",
             "output": [
-                "显示所有评分至少1星的餐厅。"
+                "\u663e\u793a\u6240\u6709\u8bc4\u5206\u81f3\u5c111\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find \" atomic ramen \"",
             "output": [
-                "查找\" atomic ramen \""
+                "\u67e5\u627e\" atomic ramen \""
             ]
         },
         {
             "input": "tell all the restaurants rated 5 or higher",
             "output": [
-                "显示所有评分为或高于5的餐厅。"
+                "\u663e\u793a\u6240\u6709\u8bc4\u5206\u4e3a\u6216\u9ad8\u4e8e5\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me the restaurant with the most reviews",
             "output": [
-                "显示拥有评价最多的餐厅。"
+                "\u663e\u793a\u62e5\u6709\u8bc4\u4ef7\u6700\u591a\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find restaurants reviewed by \" arthur smith \"",
             "output": [
-                "查找\" arthur smith \"点评过的餐厅。"
+                "\u67e5\u627e\" arthur smith \"\u70b9\u8bc4\u8fc7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find restaurants rated 3 stars or higher .",
             "output": [
-                "查找评分为或超过3星的餐厅。"
+                "\u67e5\u627e\u8bc4\u5206\u4e3a\u6216\u8d85\u8fc73\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "list the restaurants with over 8 reviews .",
             "output": [
-                "列出拥有多于8条评价的餐厅。"
+                "\u5217\u51fa\u62e5\u6709\u591a\u4e8e8\u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" chipotle \"",
             "output": [
-                "搜索\" chipotle \""
+                "\u641c\u7d22\" chipotle \""
             ]
         },
         {
             "input": "show me \" ethiopian \" restaurants .",
             "output": [
-                "显示\" ethiopian \"餐厅。"
+                "\u663e\u793a\" ethiopian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me restaurants with more than 6 reviews .",
             "output": [
-                "显示拥有多于6条评价的餐厅。"
+                "\u663e\u793a\u62e5\u6709\u591a\u4e8e6\u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all the restaurants rated higher than 10 .",
             "output": [
-                "查找所有评分高于10的餐厅。"
+                "\u67e5\u627e\u6240\u6709\u8bc4\u5206\u9ad8\u4e8e10\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" outback steakhouse \" ?",
             "output": [
-                "搜索\" outback steakhouse \"？"
+                "\u641c\u7d22\" outback steakhouse \"\uff1f"
             ]
         },
         {
             "input": "find a \" italian \" restaurant .",
             "output": [
-                "查找一家\" italian \"餐厅。"
+                "\u67e5\u627e\u4e00\u5bb6\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "list all the restaurants with higher than 10 stars .",
             "output": [
-                "列出所有评分超过10星的餐厅。"
+                "\u5217\u51fa\u6240\u6709\u8bc4\u5206\u8d85\u8fc710\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the address of the \" mei wei \" restaurant ?",
             "output": [
-                "\" mei wei \"餐厅的地址？"
+                "\" mei wei \"\u9910\u5385\u7684\u5730\u5740\uff1f"
             ]
         },
         {
             "input": "what is the rating of \" mei wei \" restaurant ?",
             "output": [
-                "\" mei wei \"餐厅的评分？"
+                "\" mei wei \"\u9910\u5385\u7684\u8bc4\u5206\uff1f"
             ]
         },
         {
             "input": "what is the address of the nearest \" coffee \" shop ?",
             "output": [
-                "最近的\" coffee \"店地址？"
+                "\u6700\u8fd1\u7684\" coffee \"\u5e97\u5730\u5740\uff1f"
             ]
         },
         {
             "input": "show me restaurants in the \" west suburbs \" please .",
             "output": [
-                "请显示\" west suburbs \"内的餐厅。"
+                "\u8bf7\u663e\u793a\" west suburbs \"\u5185\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find me some places to eat in \" detroit \" .",
             "output": [
-                "查找\" detroit \"内吃饭的地方。"
+                "\u67e5\u627e\" detroit \"\u5185\u5403\u996d\u7684\u5730\u65b9\u3002"
             ]
         },
         {
             "input": "look up restaurants that have 8 star ratings for me please .",
             "output": [
-                "请查找评分为8星的餐厅。"
+                "\u8bf7\u67e5\u627e\u8bc4\u5206\u4e3a8\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me all the restaurants that \" john grace \" has reviewed .",
             "output": [
-                "显示所有\" john grace \"评价过的餐厅。"
+                "\u663e\u793a\u6240\u6709\" john grace \"\u8bc4\u4ef7\u8fc7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me reviews written by \" bill story \" .",
             "output": [
-                "显示\" bill story \"评价过的餐厅。"
+                "\u663e\u793a\" bill story \"\u8bc4\u4ef7\u8fc7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "how many reviews have been posted for \" old town doughnuts \" ?",
             "output": [
-                "\" old town doughnuts \"发表过多少条评价？"
+                "\" old town doughnuts \"\u53d1\u8868\u8fc7\u591a\u5c11\u6761\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "how many restaurants have an average rating above 4 ?",
             "output": [
-                "有多少家平均评分为4的餐厅？"
+                "\u6709\u591a\u5c11\u5bb6\u5e73\u5747\u8bc4\u5206\u4e3a4\u7684\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "what 's the address of the \" mcdonald 's \" on \" parker road \" ?",
             "output": [
-                "\" parker road \"上\" mcdonald 's \"的地址？"
+                "\" parker road \"\u4e0a\" mcdonald 's \"\u7684\u5730\u5740\uff1f"
             ]
         },
         {
             "input": "i want \" mexican \" food",
             "output": [
-                "我想要\" mexican \"食物。"
+                "\u6211\u60f3\u8981\" mexican \"\u98df\u7269\u3002"
             ]
         },
         {
             "input": "something \" spicy \" over 3 star rating .",
             "output": [
-                "评分3星的\" spicy \"东西。"
+                "\u8bc4\u52063\u661f\u7684\" spicy \"\u4e1c\u897f\u3002"
             ]
         },
         {
             "input": "i 'd like any food with more than 9 reviews .",
             "output": [
-                "我想要任何评价超过9条的食物。"
+                "\u6211\u60f3\u8981\u4efb\u4f55\u8bc4\u4ef7\u8d85\u8fc79\u6761\u7684\u98df\u7269\u3002"
             ]
         },
         {
             "input": "where can i find the nearest \" chinese \" joint .",
             "output": [
-                "最近的\" chinese \"小店在哪里？"
+                "\u6700\u8fd1\u7684\" chinese \"\u5c0f\u5e97\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "search all reviews by \" john oyster \" .",
             "output": [
-                "查找\" john oyster \"发布的所有评价。"
+                "\u67e5\u627e\" john oyster \"\u53d1\u5e03\u7684\u6240\u6709\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "i would like a \" mexican \" restaurant .",
             "output": [
-                "我想要一家\" mexican \"餐厅。"
+                "\u6211\u60f3\u8981\u4e00\u5bb6\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i would like all restaurants with 3 stars and above .",
             "output": [
-                "我想要所有评分为或超过3星的餐厅。"
+                "\u6211\u60f3\u8981\u6240\u6709\u8bc4\u5206\u4e3a\u6216\u8d85\u8fc73\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" los dos amigos \"",
             "output": [
-                "显示\" los dos amigos \""
+                "\u663e\u793a\" los dos amigos \""
             ]
         },
         {
             "input": "show me restaurants with the most reviews .",
             "output": [
-                "显示评价最多的餐厅。"
+                "\u663e\u793a\u8bc4\u4ef7\u6700\u591a\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i want restaurants rated 3 or higher .",
             "output": [
-                "我想要评分为或高于3的餐厅。"
+                "\u6211\u60f3\u8981\u8bc4\u5206\u4e3a\u6216\u9ad8\u4e8e3\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find restaurants in zip code \" 21269 \" .",
             "output": [
-                "查找邮编为\" 21269 \"内的餐厅。"
+                "\u67e5\u627e\u90ae\u7f16\u4e3a\" 21269 \"\u5185\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i want restaurants with more than 4 reviews .",
             "output": [
-                "我想要评价多于4条的餐厅。"
+                "\u6211\u60f3\u8981\u8bc4\u4ef7\u591a\u4e8e4\u6761\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "display all the restaurants that have at least a rating of 6 .",
             "output": [
-                "显示所有评分至少为6的餐厅。"
+                "\u663e\u793a\u6240\u6709\u8bc4\u5206\u81f3\u5c11\u4e3a6\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "do a search for restaurants that have been reviewed by at least 1 people .",
             "output": [
-                "搜索至少被1人评价过的餐厅。"
+                "\u641c\u7d22\u81f3\u5c11\u88ab1\u4eba\u8bc4\u4ef7\u8fc7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "bring up \" italian \" restaurants .",
             "output": [
-                "显示\" italian \"餐厅。"
+                "\u663e\u793a\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "could you preform a search for the restaurant , \" thai foon \" ?",
             "output": [
-                "请搜索\" thai foon \"餐厅？"
+                "\u8bf7\u641c\u7d22\" thai foon \"\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "search for \" dairy queen \" .",
             "output": [
-                "搜索\" dairy queen \"。"
+                "\u641c\u7d22\" dairy queen \"\u3002"
             ]
         },
         {
             "input": "search for all 4 star restaurants .",
             "output": [
-                "搜索所有的4星级餐厅。"
+                "\u641c\u7d22\u6240\u6709\u76844\u661f\u7ea7\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" greek \" restaurants .",
             "output": [
-                "为我显示\" greek \"餐厅。"
+                "\u4e3a\u6211\u663e\u793a\" greek \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me restaurants with more than 1 posted reviews .",
             "output": [
-                "为我显示评论数超过1的餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u8bc4\u8bba\u6570\u8d85\u8fc71\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "can you find me a \" mcdonalds \" in my area ?",
             "output": [
-                "能在我附近找到一家\" mcdonalds \"吗？"
+                "\u80fd\u5728\u6211\u9644\u8fd1\u627e\u5230\u4e00\u5bb6\" mcdonalds \"\u5417\uff1f"
             ]
         },
         {
             "input": "where are the best \" fast food \" joints in my area .",
             "output": [
-                "我所在地区最棒的\" fast food \"店在哪里？"
+                "\u6211\u6240\u5728\u5730\u533a\u6700\u68d2\u7684\" fast food \"\u5e97\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "what is the address of the \" mcdonads \" in this area .",
             "output": [
-                "这个地区的\" mcdonads \"的地址是什么。"
+                "\u8fd9\u4e2a\u5730\u533a\u7684\" mcdonads \"\u7684\u5730\u5740\u662f\u4ec0\u4e48\u3002"
             ]
         },
         {
             "input": "what are the highest ranked \" burger \" joints in the 5 mile area around \" asheville nc \" .",
             "output": [
-                "\" asheville nc \"周围5英里范围内排名最高的\" burger \"店是哪些？"
+                "\" asheville nc \"\u5468\u56f45\u82f1\u91cc\u8303\u56f4\u5185\u6392\u540d\u6700\u9ad8\u7684\" burger \"\u5e97\u662f\u54ea\u4e9b\uff1f"
             ]
         },
         {
             "input": "show me all the restaurants that are located on \" federal highway \" ?",
             "output": [
-                "为我显示位于\" federal highway \"的所有餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u4f4d\u4e8e\" federal highway \"\u7684\u6240\u6709\u9910\u5385\u3002"
             ]
         },
         {
             "input": "which restaurant has the highest amounts of reviews ?",
             "output": [
-                "哪家餐厅的评论最多？"
+                "\u54ea\u5bb6\u9910\u5385\u7684\u8bc4\u8bba\u6700\u591a\uff1f"
             ]
         },
         {
             "input": "what date was \" jim \" 's review posted ?",
             "output": [
-                "\" jim \"的评论是什么时候发布的？"
+                "\" jim \"\u7684\u8bc4\u8bba\u662f\u4ec0\u4e48\u65f6\u5019\u53d1\u5e03\u7684\uff1f"
             ]
         },
         {
             "input": "which restaurants are on \" main street \" ?",
             "output": [
-                "\" main street \"上有哪些餐厅？"
+                "\" main street \"\u4e0a\u6709\u54ea\u4e9b\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "find me \" mexican \" food",
             "output": [
-                "帮我寻找\" mexican \"美食"
+                "\u5e2e\u6211\u5bfb\u627e\" mexican \"\u7f8e\u98df"
             ]
         },
         {
             "input": "show me restaurants in \" kansas city , mo \"",
             "output": [
-                "为我显示\" kansas city , mo \"的餐厅"
+                "\u4e3a\u6211\u663e\u793a\" kansas city , mo \"\u7684\u9910\u5385"
             ]
         },
         {
             "input": "show me \" mexican \" restaurants in the area .",
             "output": [
-                "为我显示该地区的\" mexican \"餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u8be5\u5730\u533a\u7684\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "provide me the telephone number for the nearest \" mexican \" restaurant in \" 93312 \" zip .",
             "output": [
-                "告诉我邮编为\" 93312 \"的最近的\" mexican \"餐厅的电话号码。"
+                "\u544a\u8bc9\u6211\u90ae\u7f16\u4e3a\" 93312 \"\u7684\u6700\u8fd1\u7684\" mexican \"\u9910\u5385\u7684\u7535\u8bdd\u53f7\u7801\u3002"
             ]
         },
         {
             "input": "where is the closest \" mcdonalds \"",
             "output": [
-                "最近的\" mcdonalds \"在哪里"
+                "\u6700\u8fd1\u7684\" mcdonalds \"\u5728\u54ea\u91cc"
             ]
         },
         {
             "input": "where is a \" mexican \" restaurant with more than 1 good reviews ?",
             "output": [
-                "好评超过1条的\" mexican \"餐厅在哪里？"
+                "\u597d\u8bc4\u8d85\u8fc71\u6761\u7684\" mexican \"\u9910\u5385\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "show all ratings made by \" mr gucci loafers \"",
             "output": [
-                "显示来自\" mr gucci loafers \"的所有评级"
+                "\u663e\u793a\u6765\u81ea\" mr gucci loafers \"\u7684\u6240\u6709\u8bc4\u7ea7"
             ]
         },
         {
             "input": "search for \" steakhouse \" restaurants in my city",
             "output": [
-                "搜索我所在城市的\" steakhouse \"餐厅"
+                "\u641c\u7d22\u6211\u6240\u5728\u57ce\u5e02\u7684\" steakhouse \"\u9910\u5385"
             ]
         },
         {
             "input": "show me reviews written by \" amy \" .",
             "output": [
-                "为我显示\" amy \"发表的评论。"
+                "\u4e3a\u6211\u663e\u793a\" amy \"\u53d1\u8868\u7684\u8bc4\u8bba\u3002"
             ]
         },
         {
             "input": "where can i find the closest \" wawa \" ?",
             "output": [
-                "最近的\" wawa \"在哪里？"
+                "\u6700\u8fd1\u7684\" wawa \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "search for \" big woodys \"",
             "output": [
-                "搜索\" big woodys \""
+                "\u641c\u7d22\" big woodys \""
             ]
         },
         {
             "input": "search for an \" egyptian \" restaurant .",
             "output": [
-                "搜索\" egyptian \"餐厅。"
+                "\u641c\u7d22\" egyptian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me restaurants with a minimum 2 star rating .",
             "output": [
-                "为我显示评级至少达到2星的餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u8bc4\u7ea7\u81f3\u5c11\u8fbe\u52302\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "how many reviews are there at \" starbucks \" ?",
             "output": [
-                "\" starbucks \"有多少条评论？"
+                "\" starbucks \"\u6709\u591a\u5c11\u6761\u8bc4\u8bba\uff1f"
             ]
         },
         {
             "input": "show me \" thai \" restaurants .",
             "output": [
-                "为我显示\" thai \"餐厅。"
+                "\u4e3a\u6211\u663e\u793a\" thai \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "how far is the nearest \" applebee 's \" ?",
             "output": [
-                "最近的\" applebee 's \"有多远？"
+                "\u6700\u8fd1\u7684\" applebee 's \"\u6709\u591a\u8fdc\uff1f"
             ]
         },
         {
             "input": "located \" mexican \" food close to here",
             "output": [
-                "查找附近的\" mexican \"美食"
+                "\u67e5\u627e\u9644\u8fd1\u7684\" mexican \"\u7f8e\u98df"
             ]
         },
         {
             "input": "show me \" white castle \"",
             "output": [
-                "为我显示\" white castle \""
+                "\u4e3a\u6211\u663e\u793a\" white castle \""
             ]
         },
         {
             "input": "search for \" japanese \" restaurants with at least 0 stars .",
             "output": [
-                "搜索拥有至少0颗星的\" japanese \"餐厅。"
+                "\u641c\u7d22\u62e5\u6709\u81f3\u5c110\u9897\u661f\u7684\" japanese \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "tell me the rating of \" wendy 's \" .",
             "output": [
-                "告诉我\" wendy 's \"的评级。"
+                "\u544a\u8bc9\u6211\" wendy 's \"\u7684\u8bc4\u7ea7\u3002"
             ]
         },
         {
             "input": "list \" japanese \" restaurants .",
             "output": [
-                "列出\" japanese \"餐厅。"
+                "\u5217\u51fa\" japanese \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what 's the highest rated \" pizza \" place in the \" city center \" ?",
             "output": [
-                "\" city center \"评级最高的\" pizza \"店是哪个？"
+                "\" city center \"\u8bc4\u7ea7\u6700\u9ad8\u7684\" pizza \"\u5e97\u662f\u54ea\u4e2a\uff1f"
             ]
         },
         {
             "input": "search for a \" vegan \" restaurant with at least 2 reviews .",
             "output": [
-                "搜索拥有至少2条评论的\" vegan \"餐厅。"
+                "\u641c\u7d22\u62e5\u6709\u81f3\u5c112\u6761\u8bc4\u8bba\u7684\" vegan \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "give me a 4 star restaurant nearby .",
             "output": [
-                "帮我在附近找一家4星级餐厅。"
+                "\u5e2e\u6211\u5728\u9644\u8fd1\u627e\u4e00\u5bb64\u661f\u7ea7\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find restaurants with the most reviews .",
             "output": [
-                "查找评论最多的餐厅。"
+                "\u67e5\u627e\u8bc4\u8bba\u6700\u591a\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" billy 's barbecue \" .",
             "output": [
-                "搜索\" billy 's barbecue \"。"
+                "\u641c\u7d22\" billy 's barbecue \"\u3002"
             ]
         },
         {
             "input": "i want to see restaurants with more than 2 reviews .",
             "output": [
-                "我想查看评论超过2条的餐厅。"
+                "\u6211\u60f3\u67e5\u770b\u8bc4\u8bba\u8d85\u8fc72\u6761\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find restaurants that sell \" spaghetti \" .",
             "output": [
-                "查找售卖\" spaghetti \"的餐厅。"
+                "\u67e5\u627e\u552e\u5356\" spaghetti \"\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what 's the name of the \" italian \" restaurant on \" main street \" ?",
             "output": [
-                "\" main street \"上的\" italian \"餐厅的名字是什么？"
+                "\" main street \"\u4e0a\u7684\" italian \"\u9910\u5385\u7684\u540d\u5b57\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "show me the highest rated restaurant .",
             "output": [
-                "为我显示评级最高的餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u8bc4\u7ea7\u6700\u9ad8\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "where is the nearest \" mcdonald 's \" ?",
             "output": [
-                "最近的\" mcdonald 's \"在哪里？"
+                "\u6700\u8fd1\u7684\" mcdonald 's \"\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "show me 9 star \" mexican \" restaurants",
             "output": [
-                "为我显示9星级\" mexican \"餐厅"
+                "\u4e3a\u6211\u663e\u793a9\u661f\u7ea7\" mexican \"\u9910\u5385"
             ]
         },
         {
             "input": "find all restaurants rated higher than 5",
             "output": [
-                "查找高于5星级的所有餐厅"
+                "\u67e5\u627e\u9ad8\u4e8e5\u661f\u7ea7\u7684\u6240\u6709\u9910\u5385"
             ]
         },
         {
             "input": "show me a list of restaurants with less than 6 reviews .",
             "output": [
-                "为我列出评论少于6条的餐厅。"
+                "\u4e3a\u6211\u5217\u51fa\u8bc4\u8bba\u5c11\u4e8e6\u6761\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me nearby \" mexican \" restaurants .",
             "output": [
-                "为我显示附近的\" mexican \"餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u9644\u8fd1\u7684\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for restaurants in \" reno , nevada \" .",
             "output": [
-                "搜索位于\" reno , nevada \"的餐厅。"
+                "\u641c\u7d22\u4f4d\u4e8e\" reno , nevada \"\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" thai \" restaurants",
             "output": [
-                "为我显示\" thai \"餐厅"
+                "\u4e3a\u6211\u663e\u793a\" thai \"\u9910\u5385"
             ]
         },
         {
             "input": "which \" chinese \" restaurant has the most reviews ?",
             "output": [
-                "哪家\" chinese \"餐厅的评论最多？"
+                "\u54ea\u5bb6\" chinese \"\u9910\u5385\u7684\u8bc4\u8bba\u6700\u591a\uff1f"
             ]
         },
         {
             "input": "what is \" ramen nagi \" 's rating ?",
             "output": [
-                "\" ramen nagi \"的评级是什么？"
+                "\" ramen nagi \"\u7684\u8bc4\u7ea7\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "look for \" olive garden \" .",
             "output": [
-                "寻找\" olive garden \"。"
+                "\u5bfb\u627e\" olive garden \"\u3002"
             ]
         },
         {
             "input": "what restaurants have received 4 or more reviews ?",
             "output": [
-                "哪些餐厅收到至少4条评论？"
+                "\u54ea\u4e9b\u9910\u5385\u6536\u5230\u81f3\u5c114\u6761\u8bc4\u8bba\uff1f"
             ]
         },
         {
             "input": "find reviews from \" george \" .",
             "output": [
-                "查找来自\" george \"的评论。"
+                "\u67e5\u627e\u6765\u81ea\" george \"\u7684\u8bc4\u8bba\u3002"
             ]
         },
         {
             "input": "show me \" american \" restaurants",
             "output": [
-                "为我显示\" american \"餐厅"
+                "\u4e3a\u6211\u663e\u793a\" american \"\u9910\u5385"
             ]
         },
         {
             "input": "tell me the \" american \" restaurants .",
             "output": [
-                "告诉我有哪些\" american \"餐厅。"
+                "\u544a\u8bc9\u6211\u6709\u54ea\u4e9b\" american \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "give me all of the \" mexican \" restaurants with at least 0 stars .",
             "output": [
-                "帮我找到拥有至少0颗星的所有\" mexican \"餐厅。"
+                "\u5e2e\u6211\u627e\u5230\u62e5\u6709\u81f3\u5c110\u9897\u661f\u7684\u6240\u6709\" mexican \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" rocky 's pizza \" .",
             "output": [
-                "搜索\" rocky 's pizza \"。"
+                "\u641c\u7d22\" rocky 's pizza \"\u3002"
             ]
         },
         {
             "input": "is there a \" red lobster \" near me ?",
             "output": [
-                "我附近有\" red lobster \"吗？"
+                "\u6211\u9644\u8fd1\u6709\" red lobster \"\u5417\uff1f"
             ]
         },
         {
             "input": "find all of the \" indian \" restaurants",
             "output": [
-                "查找所有\" indian \"餐厅"
+                "\u67e5\u627e\u6240\u6709\" indian \"\u9910\u5385"
             ]
         },
         {
             "input": "what is the rating of the \" oak street steakhouse \" ?",
             "output": [
-                "\" oak street steakhouse \"的评级是什么？"
+                "\" oak street steakhouse \"\u7684\u8bc4\u7ea7\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "show me restaurants in zip code \" 28078 \" .",
             "output": [
-                "为我显示邮编为\" 28078 \"的餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u90ae\u7f16\u4e3a\" 28078 \"\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what \" mexican \" restaurant has the most reviews ?",
             "output": [
-                "哪家\" mexican \"餐厅拥有最多的评论？"
+                "\u54ea\u5bb6\" mexican \"\u9910\u5385\u62e5\u6709\u6700\u591a\u7684\u8bc4\u8bba\uff1f"
             ]
         },
         {
             "input": "what kind of rating does \" panda express \" have",
             "output": [
-                "\" panda express \"的评级是什么"
+                "\" panda express \"\u7684\u8bc4\u7ea7\u662f\u4ec0\u4e48"
             ]
         },
         {
             "input": "show me \" italian \" restaurants nearby .",
             "output": [
-                "为我显示附近的\" italian \"餐厅。"
+                "\u4e3a\u6211\u663e\u793a\u9644\u8fd1\u7684\" italian \"\u9910\u5385\u3002"
             ]
         },
         {
             "input": "please show me reviews that were written for \" cracker barrel \" this year .",
             "output": [
-                "请为我显示今年\" cracker barrel \"收到的评论。"
+                "\u8bf7\u4e3a\u6211\u663e\u793a\u4eca\u5e74\" cracker barrel \"\u6536\u5230\u7684\u8bc4\u8bba\u3002"
             ]
         },
         {
             "input": "find restaurants with 4 stars .",
             "output": [
-                "查找4星级餐厅。"
+                "\u67e5\u627e4\u661f\u7ea7\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the phone number for \" sampan \" ?",
             "output": [
-                "\" sampan \"的电话号码是多少？"
+                "\" sampan \"\u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "can i see reviews for the \" gunnisack \" ?",
             "output": [
-                "我能查看\" the gunnisack \"的评论吗？"
+                "\u6211\u80fd\u67e5\u770b\" the gunnisack \"\u7684\u8bc4\u8bba\u5417\uff1f"
             ]
         },
         {
             "input": "please tell me the location of \" dave 's seafood shack \" .",
             "output": [
-                "请告诉我\" dave 's seafood shack \"的位置。"
+                "\u8bf7\u544a\u8bc9\u6211\" dave 's seafood shack \"\u7684\u4f4d\u7f6e\u3002"
             ]
         },
         {
             "input": "what is the address of the nearest \" fast food \" place ?",
             "output": [
-                "最近的\" fast food \"店的地址是什么？"
+                "\u6700\u8fd1\u7684\" fast food \"\u5e97\u7684\u5730\u5740\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "search for \" gates barbecue \" ?",
             "output": [
-                "搜索\" gates barbecue \"。"
+                "\u641c\u7d22\" gates barbecue \"\u3002"
             ]
         },
         {
             "input": "find restaurants within one mile from here .",
             "output": [
-                "查找距离这里一英里范围的餐厅。"
+                "\u67e5\u627e\u8ddd\u79bb\u8fd9\u91cc\u4e00\u82f1\u91cc\u8303\u56f4\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the closest \" italian \" restaurant to me",
             "output": [
-                "离我最近的\" italian \"餐厅是哪家"
+                "\u79bb\u6211\u6700\u8fd1\u7684\" italian \"\u9910\u5385\u662f\u54ea\u5bb6"
             ]
         },
         {
             "input": "show restaurants with at least 4 reviews",
             "output": [
-                "显示至少有4条评论的餐厅"
+                "\u663e\u793a\u81f3\u5c11\u67094\u6761\u8bc4\u8bba\u7684\u9910\u5385"
             ]
         },
         {
             "input": "are there any \" indian \" restaurants near me ?",
             "output": [
-                "附近有任何\" indian \"餐厅吗？"
+                "\u9644\u8fd1\u6709\u4efb\u4f55\" indian \"\u9910\u5385\u5417\uff1f"
             ]
         },
         {
             "input": "give me the telephone number of a 5 star restaurant .",
             "output": [
-                "给我一家5星级餐厅的电话号码。"
+                "\u7ed9\u6211\u4e00\u5bb65\u661f\u7ea7\u9910\u5385\u7684\u7535\u8bdd\u53f7\u7801\u3002"
             ]
         },
         {
             "input": "show me all the of review written by \" alex smith \" about \" chinese \" restaurants .",
             "output": [
-                "向我展示 \"alex smith\" 写的所有关于 \"chinese\" 餐厅的评价。"
+                "\u5411\u6211\u5c55\u793a \"alex smith\" \u5199\u7684\u6240\u6709\u5173\u4e8e \"chinese\" \u9910\u5385\u7684\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "show highest rated \" coffee \" shop withing 9 miles .",
             "output": [
-                "展示9英里内评分最高的 \"coffee\" 店。"
+                "\u5c55\u793a9\u82f1\u91cc\u5185\u8bc4\u5206\u6700\u9ad8\u7684 \"coffee\" \u5e97\u3002"
             ]
         },
         {
             "input": "show me restaurants rated between 3 and 2 .",
             "output": [
-                "向我展示评分在3到2之间的餐厅。"
+                "\u5411\u6211\u5c55\u793a\u8bc4\u5206\u57283\u52302\u4e4b\u95f4\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the price range of the nearest \" mexican \" restaurant ?",
             "output": [
-                "距离最近的 \"mexican\" 餐厅的价格范围是多少？"
+                "\u8ddd\u79bb\u6700\u8fd1\u7684 \"mexican\" \u9910\u5385\u7684\u4ef7\u683c\u8303\u56f4\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "show restaurants in \" san francisco \" .",
             "output": [
-                "展示 \"san francisco\" 的餐厅。"
+                "\u5c55\u793a \"san francisco\" \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find all \" mexican \" restaurants .",
             "output": [
-                "寻找所有的 \"mexican\" 餐厅。"
+                "\u5bfb\u627e\u6240\u6709\u7684 \"mexican\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" sushi joy \" .",
             "output": [
-                "搜索 \"sushi joy\" 。"
+                "\u641c\u7d22 \"sushi joy\" \u3002"
             ]
         },
         {
             "input": "find me \" italian \" restaurants",
             "output": [
-                "为我寻找 \"italian\" 餐厅"
+                "\u4e3a\u6211\u5bfb\u627e \"italian\" \u9910\u5385"
             ]
         },
         {
             "input": "can you find me the telephone number for \" rookie 's bar & grill \" ?",
             "output": [
-                "你能为我寻找 \"rookie 's bar & grill\" 的电话号码吗？"
+                "\u4f60\u80fd\u4e3a\u6211\u5bfb\u627e \"rookie 's bar & grill\" \u7684\u7535\u8bdd\u53f7\u7801\u5417\uff1f"
             ]
         },
         {
             "input": "what is the phone number for \" ginger china \" ?",
             "output": [
-                "\"ginger china\" 的电话号码是多少？"
+                "\"ginger china\" \u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "give the phone number of a restaurant with 1 or more reviews",
             "output": [
-                "给出具有1条或更多评价的餐厅的电话号码"
+                "\u7ed9\u51fa\u5177\u67091\u6761\u6216\u66f4\u591a\u8bc4\u4ef7\u7684\u9910\u5385\u7684\u7535\u8bdd\u53f7\u7801"
             ]
         },
         {
             "input": "find me \" in-n-out burger \" .",
             "output": [
-                "为我寻找 \"in-n-out burger\" 。"
+                "\u4e3a\u6211\u5bfb\u627e \"in-n-out burger\" \u3002"
             ]
         },
         {
             "input": "show me all 9 star restaurants .",
             "output": [
-                "向我展示所有9星级餐厅。"
+                "\u5411\u6211\u5c55\u793a\u6240\u67099\u661f\u7ea7\u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for a 7 star rated \" coffee \" shop located nearby .",
             "output": [
-                "搜索位于附近的被评为7星的 \"coffee\" 店。"
+                "\u641c\u7d22\u4f4d\u4e8e\u9644\u8fd1\u7684\u88ab\u8bc4\u4e3a7\u661f\u7684 \"coffee\" \u5e97\u3002"
             ]
         },
         {
             "input": "show me reviews written by \" bruce \" .",
             "output": [
-                "向我展示 \"bruce\" 写的评价。"
+                "\u5411\u6211\u5c55\u793a \"bruce\" \u5199\u7684\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "find all restaurants rated higher than 4",
             "output": [
-                "寻找所有评分高于4的餐厅"
+                "\u5bfb\u627e\u6240\u6709\u8bc4\u5206\u9ad8\u4e8e4\u7684\u9910\u5385"
             ]
         },
         {
             "input": "search for a \" mexican \" restaurant .",
             "output": [
-                "搜索一家 \"mexican\" 餐厅。"
+                "\u641c\u7d22\u4e00\u5bb6 \"mexican\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "are there any one star reviews ?",
             "output": [
-                "有没有一星评价？"
+                "\u6709\u6ca1\u6709\u4e00\u661f\u8bc4\u4ef7\uff1f"
             ]
         },
         {
             "input": "search for restaurants with more than 2 reviews .",
             "output": [
-                "搜索具有超过2条评价的餐厅。"
+                "\u641c\u7d22\u5177\u6709\u8d85\u8fc72\u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the top rated 8 star restaurant ?",
             "output": [
-                "评价最高的8星级餐厅是哪些？"
+                "\u8bc4\u4ef7\u6700\u9ad8\u76848\u661f\u7ea7\u9910\u5385\u662f\u54ea\u4e9b\uff1f"
             ]
         },
         {
             "input": "what is the telephone and address for \" ruth 's chris \" ?",
             "output": [
-                "\"ruth 's chris\" 的电话和地址是什么？"
+                "\"ruth 's chris\" \u7684\u7535\u8bdd\u548c\u5730\u5740\u662f\u4ec0\u4e48\uff1f"
             ]
         },
         {
             "input": "show me \" aunt chilada 's \"",
             "output": [
-                "向我展示\"aunt chilada 's\""
+                "\u5411\u6211\u5c55\u793a\"aunt chilada 's\""
             ]
         },
         {
             "input": "are there any \" mexican \" restaurants with more than 10 reviews ?",
             "output": [
-                "有没有具有超过10条评价的 \"mexican\" 餐厅？"
+                "\u6709\u6ca1\u6709\u5177\u6709\u8d85\u8fc710\u6761\u8bc4\u4ef7\u7684 \"mexican\" \u9910\u5385\uff1f"
             ]
         },
         {
             "input": "find places in \" 17111 \" .",
             "output": [
-                "寻找 \"17111\" 的地点。"
+                "\u5bfb\u627e \"17111\" \u7684\u5730\u70b9\u3002"
             ]
         },
         {
             "input": "show me all \" italian \" restaurants .",
             "output": [
-                "向我展示所有的 \"italian\" 餐厅。"
+                "\u5411\u6211\u5c55\u793a\u6240\u6709\u7684 \"italian\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "give me the name of a \" mexican \" restaurant .",
             "output": [
-                "给我一家 \"mexican\" 餐厅的名字。"
+                "\u7ed9\u6211\u4e00\u5bb6 \"mexican\" \u9910\u5385\u7684\u540d\u5b57\u3002"
             ]
         },
         {
             "input": "show me 5 star rated restaurants on \" locust street \" .",
             "output": [
-                "向我展示 \"locust street\" 上被评为5星的餐厅。"
+                "\u5411\u6211\u5c55\u793a \"locust street\" \u4e0a\u88ab\u8bc4\u4e3a5\u661f\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me a list of \" italian \" restaurants .",
             "output": [
-                "向我展示 \"italian\" 餐厅的名单。"
+                "\u5411\u6211\u5c55\u793a \"italian\" \u9910\u5385\u7684\u540d\u5355\u3002"
             ]
         },
         {
             "input": "show me all restaurants reviewed by \" restaurantgirl_84 \" .",
             "output": [
-                "向我展示 \"restaurantgirl_84\" 评价过的所有餐厅。"
+                "\u5411\u6211\u5c55\u793a \"restaurantgirl_84\" \u8bc4\u4ef7\u8fc7\u7684\u6240\u6709\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i 'd like to know the location of \" dunkin donuts \" ?",
             "output": [
-                "我想知道 \"dunkin donuts\" 的位置在哪里？"
+                "\u6211\u60f3\u77e5\u9053 \"dunkin donuts\" \u7684\u4f4d\u7f6e\u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "show me a \" chinese \" restaurant with a rating of 10 .",
             "output": [
-                "向我展示一家评分为10的 \"chinese\" 餐厅。"
+                "\u5411\u6211\u5c55\u793a\u4e00\u5bb6\u8bc4\u5206\u4e3a10\u7684 \"chinese\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "which restaurant has the most reviews ?",
             "output": [
-                "哪家餐厅的评价最多？"
+                "\u54ea\u5bb6\u9910\u5385\u7684\u8bc4\u4ef7\u6700\u591a\uff1f"
             ]
         },
         {
             "input": "search for \" french \" restaurants .",
             "output": [
-                "搜索 \"french\" 餐厅。"
+                "\u641c\u7d22 \"french\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "give me reviews for \" jade buffet \" .",
             "output": [
-                "给我 \"jade buffet\" 的评价。"
+                "\u7ed9\u6211 \"jade buffet\" \u7684\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "what is the price range for \" ramen nagi \" ?",
             "output": [
-                "\"ramen nagi\" 的价格范围是多少？"
+                "\"ramen nagi\" \u7684\u4ef7\u683c\u8303\u56f4\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "find \" italian \" restaurants with at least 10 reviews .",
             "output": [
-                "寻找至少具有10条评价的 \"italian\" 餐厅。"
+                "\u5bfb\u627e\u81f3\u5c11\u5177\u670910\u6761\u8bc4\u4ef7\u7684 \"italian\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "where is the closest \" dairy queen \" ?",
             "output": [
-                "距离最近的 \"dairy queen\" 在哪里？"
+                "\u8ddd\u79bb\u6700\u8fd1\u7684 \"dairy queen\" \u5728\u54ea\u91cc\uff1f"
             ]
         },
         {
             "input": "find all restaurants in \" chicago \" .",
             "output": [
-                "寻找 \"chicago\" 的所有餐厅。"
+                "\u5bfb\u627e \"chicago\" \u7684\u6240\u6709\u9910\u5385\u3002"
             ]
         },
         {
             "input": "is there a restaurant in zipcode \" 19101 \" ?",
             "output": [
-                "有没有邮政编码是 \"19101\" 的餐厅？"
+                "\u6709\u6ca1\u6709\u90ae\u653f\u7f16\u7801\u662f \"19101\" \u7684\u9910\u5385\uff1f"
             ]
         },
         {
             "input": "i 'm looking for \" armenian \" restaurants",
             "output": [
-                "我在寻找 \"armenian\" 餐厅"
+                "\u6211\u5728\u5bfb\u627e \"armenian\" \u9910\u5385"
             ]
         },
         {
             "input": "show me reviews for \" dunkin ' donuts \" from the last 2 days .",
             "output": [
-                "向我显示最近2天的\" dunkin ' donuts\"评论。"
+                "\u5411\u6211\u663e\u793a\u6700\u8fd12\u5929\u7684\" dunkin ' donuts\"\u8bc4\u8bba\u3002"
             ]
         },
         {
             "input": "show me all of the 3 star restaurants nearby .",
             "output": [
-                "向我展示附近所有的3星级餐厅。"
+                "\u5411\u6211\u5c55\u793a\u9644\u8fd1\u6240\u6709\u76843\u661f\u7ea7\u9910\u5385\u3002"
             ]
         },
         {
             "input": "display restaurants with more than 10 reviews .",
             "output": [
-                "显示具有超过10条评价的餐厅。"
+                "\u663e\u793a\u5177\u6709\u8d85\u8fc710\u6761\u8bc4\u4ef7\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "i need to find all 7 star restaurants .",
             "output": [
-                "我需要寻找所有的7星级餐厅。"
+                "\u6211\u9700\u8981\u5bfb\u627e\u6240\u6709\u76847\u661f\u7ea7\u9910\u5385\u3002"
             ]
         },
         {
             "input": "find \" italian \" restaurants .",
             "output": [
-                "寻找 \"italian\" 餐厅。"
+                "\u5bfb\u627e \"italian\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" mexican \" restaurants with at least a 9 star rating .",
             "output": [
-                "向我展示至少具有9星评分的 \"mexican\" 餐厅。"
+                "\u5411\u6211\u5c55\u793a\u81f3\u5c11\u5177\u67099\u661f\u8bc4\u5206\u7684 \"mexican\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" sushi king \" restaurant for me .",
             "output": [
-                "为我搜索 \"sushi king\" 餐厅。"
+                "\u4e3a\u6211\u641c\u7d22 \"sushi king\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "search for \" mexican \" restaurants",
             "output": [
-                "搜索 \"mexican\" 餐厅"
+                "\u641c\u7d22 \"mexican\" \u9910\u5385"
             ]
         },
         {
             "input": "show me \" japanese \" restaurants .",
             "output": [
-                "向我展示 \"japanese\" 餐厅。"
+                "\u5411\u6211\u5c55\u793a \"japanese\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the price range for my closest \" chinese \" restaurant ?",
             "output": [
-                "离我最近的 \"chinese\" 餐厅的价格范围是多少？"
+                "\u79bb\u6211\u6700\u8fd1\u7684 \"chinese\" \u9910\u5385\u7684\u4ef7\u683c\u8303\u56f4\u662f\u591a\u5c11\uff1f"
             ]
         },
         {
             "input": "show me restaurants on \" main street \" .",
             "output": [
-                "向我展示 \"main street\" 上的餐厅。"
+                "\u5411\u6211\u5c55\u793a \"main street\" \u4e0a\u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me the top 0 \" steak house \" restaurants in \" orlando \" .",
             "output": [
-                "向我展示 \"orlando\" 排名前0的 \"steak house\" 餐厅。"
+                "\u5411\u6211\u5c55\u793a \"orlando\" \u6392\u540d\u524d0\u7684 \"steak house\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me all restaurants reviewed by \" alex smith \" .",
             "output": [
-                "向我展示 \"alex smith\" 评价过的所有餐厅。"
+                "\u5411\u6211\u5c55\u793a \"alex smith\" \u8bc4\u4ef7\u8fc7\u7684\u6240\u6709\u9910\u5385\u3002"
             ]
         },
         {
             "input": "show me \" nomad pizza \" .",
             "output": [
-                "向我展示 \"nomad pizza\" 。"
+                "\u5411\u6211\u5c55\u793a \"nomad pizza\" \u3002"
             ]
         },
         {
             "input": "show me all \" chinese \" restaurants with reviews made in the last month",
             "output": [
-                "向我展示所有具有上个月做出的评价的 \"chinese\" 餐厅"
+                "\u5411\u6211\u5c55\u793a\u6240\u6709\u5177\u6709\u4e0a\u4e2a\u6708\u505a\u51fa\u7684\u8bc4\u4ef7\u7684 \"chinese\" \u9910\u5385"
             ]
         },
         {
             "input": "display restaurants that were rated above 6",
             "output": [
-                "显示评分高于6的餐厅"
+                "\u663e\u793a\u8bc4\u5206\u9ad8\u4e8e6\u7684\u9910\u5385"
             ]
         },
         {
             "input": "i 'm in the mood for \" italian \" food .",
             "output": [
-                "我很想吃 \"italian\" 食物。"
+                "\u6211\u5f88\u60f3\u5403 \"italian\" \u98df\u7269\u3002"
             ]
         },
         {
             "input": "search for \" mexican \" restaurants with reviews from the past month .",
             "output": [
-                "搜索具有从上个月以来的评价的 \"mexican\" 餐厅。"
+                "\u641c\u7d22\u5177\u6709\u4ece\u4e0a\u4e2a\u6708\u4ee5\u6765\u7684\u8bc4\u4ef7\u7684 \"mexican\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "find the address for \" on the borders mexican grill and cantina \" .",
             "output": [
-                "寻找 \"on the borders mexican grill and cantina \" 的地址。"
+                "\u5bfb\u627e \"on the borders mexican grill and cantina \" \u7684\u5730\u5740\u3002"
             ]
         },
         {
             "input": "show me restaurant reviews written by \" fat charlie \" .",
             "output": [
-                "向我展示 \"fat charlie\" 写的餐厅评价。"
+                "\u5411\u6211\u5c55\u793a \"fat charlie\" \u5199\u7684\u9910\u5385\u8bc4\u4ef7\u3002"
             ]
         },
         {
             "input": "find me a \" french \" restaurant .",
             "output": [
-                "为我寻找一家 \"french\" 餐厅。"
+                "\u4e3a\u6211\u5bfb\u627e\u4e00\u5bb6 \"french\" \u9910\u5385\u3002"
             ]
         },
         {
             "input": "look for a \" red lobster \" in the \" 85053 \" zip code .",
             "output": [
-                "寻找邮政编码为 \"85053\" 的 \"red lobster\" 。"
+                "\u5bfb\u627e\u90ae\u653f\u7f16\u7801\u4e3a \"85053\" \u7684 \"red lobster\" \u3002"
             ]
         },
         {
             "input": "find restaurants in \" denver , colorado \" .",
             "output": [
-                "寻找 \"denver , colorado\" 的餐厅。"
+                "\u5bfb\u627e \"denver , colorado\" \u7684\u9910\u5385\u3002"
             ]
         },
         {
             "input": "what is the phone number of the nearest \" pizza hut \" ?",
             "output": [
-                "距离最近的 \"pizza hut\" 的电话号码是多少？"
+                "\u8ddd\u79bb\u6700\u8fd1\u7684 \"pizza hut\" \u7684\u7535\u8bdd\u53f7\u7801\u662f\u591a\u5c11\uff1f"
             ]
         }
+    ],
+    "Instruction_language": [
+        "English"
     ]
 }
