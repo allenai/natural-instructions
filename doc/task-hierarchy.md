@@ -8,6 +8,8 @@
   - `Answer Generation -> Fill in the Blank`
   - `Answer Generation -> Multiple Choice Question Answering`
   - `Answer Generation -> Open Question Answering`
+  - `Answer Generation -> Extractive`
+  - `Answer Generation -> Abstractive`
 - `Author Identification`
 - `Classification`
 - `Combinatorics`
