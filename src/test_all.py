@@ -37,15 +37,15 @@ def assert_language_name(name):
 
 def skewness(value,norm_counts):
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
-    print(f'📋 Norm_counts: {norm_counts}')        
-    print(f'📋 Distribution of classes: {counts}')
-    print(f'📊 entropy= {entropy}.')
+#    print(f'📋 Norm_counts: {norm_counts}')        
+#    print(f'📋 Distribution of classes: {counts}')
+#    print(f'📊 entropy= {entropy}.')
     return entropy
 
 def skewness2(value,counts):
     average=np.average(counts)
     metric=np.average(abs(counts-average)/counts.sum())
-    print(f'📊 metric= {metric}.')
+#    print(f'📊 metric= {metric}.')
     return metric
 
 # TODO: over time, these should be moved up to "expected_keys"
