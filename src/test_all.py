@@ -35,16 +35,14 @@ language_names = [
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
-def skewness(result):
-    value,counts = np.unique(result, return_counts=True)
+def skewness(value,counts):
     norm_counts = counts / counts.sum()
     entropy=-(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
     print(f'📋 Norm_counts: {norm_counts}')        
     print(f'📋 Distribution of classes: {counts}')
     print(f'📊 entropy= {entropy}.')
 
-def skewness2(result):
-    value,counts = np.unique(result, return_counts=True)
+def skewness2(value,counts):
     average=np.average(counts)
     metric=np.average(abs(counts-average)/counts.sum())
     print(f'📊 metric= {metric}.')
@@ -162,8 +160,10 @@ for file in files:
             output=[ins['output'] for ins in instances]
             #flattens the nested arrays
             outputs = sum(output, [])
-            skewness(outputs)
-            skewness2(outputs)
+            value,counts = np.unique(outputs, return_counts=True)
+            if 'Classification' in data['Categories'] or len(value)<15:
+                skewness(value,counts)
+                skewness2(value,counts)
                         
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
