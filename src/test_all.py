@@ -167,7 +167,7 @@ for file in files:
                 norm_counts = counts / counts.sum()
                 entropy=skewness(value,norm_counts)
                 metric=skewness2(value,counts)
-                print(f"{file} \t{entropy} \t{metric} \t{norm_counts}\n")
+                print(f"{file} \t{entropy} \t{metric} \t{norm_counts}")
                 
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
