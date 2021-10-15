@@ -958,3 +958,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
+`task1437_doqa_cooking_question_generation.json` | | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation
+`tasks/task1438_doqa_cooking_answer_generation.json` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Answer Generation
+`tasks/task1439_doqa_cooking_isanswerable.json` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Binary Classification 
+`tasks/task1440_doqa_movies_question_generation.json` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation
+`tasks/task1441_doqa_movies_answer_generation.json` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Answer Generation
+`tasks/task1442_doqa_movies_isanswerable.json` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Binary Classification 
