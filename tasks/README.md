@@ -964,3 +964,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1451_drug_dose_extraction` | Given a sentence and a drug, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
 `task1452_location_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of locations/places. | Entity Detection
 `task1453_person_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of person names. | Entity Detection
+`task1454_organization_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of companies or organizations. | Entity Detection
