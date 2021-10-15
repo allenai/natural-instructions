@@ -960,3 +960,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
 `task1447_drug_extraction_ade` | Given a sentence, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
 `task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
+`task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
