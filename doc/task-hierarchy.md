@@ -2,19 +2,22 @@
 
 ## Task Categories
 - `Abuse Detection`
-- `Answer Generation`
-  - `Answer Generation -> Commonsense Question Answering`
-  - `Answer Generation -> Contextual Question Answering`
-  - `Answer Generation -> Fill in the Blank`
-  - `Answer Generation -> Multiple Choice Question Answering`
-  - `Answer Generation -> Open Question Answering`
-  - `Answer Generation -> Extractive`
-  - `Answer Generation -> Abstractive`
+- `Question Answering`
+  - `Question Answering -> Commonsense Question Answering`
+  - `Question Answering -> Contextual Question Answering`
+    - `Question Answering -> Contextual Question Answering -> Extractive`
+    - `Question Answering -> Contextual Question Answering -> Abstractive` 
+  - `Question Answering -> Fill in the Blank`
+  - `Question Answering -> Multiple Choice Question Answering`
+  - `Question Answering -> Open Question Answering`
+  - `Question Answering -> Incorrect Answer Generation`
+- `Question Generation`
+  - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
+  - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
 - `Author Identification`
 - `Classification`
 - `Combinatorics`
 - `Command Execution`
-- `Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
@@ -43,7 +46,6 @@
 - `Paragraph Generation`
 - `Paraphrasing`
 - `Parts-of-speech`
-- `Question Composition`: Compose questions by concating questions in the input
 - `Question Decomposition`
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
