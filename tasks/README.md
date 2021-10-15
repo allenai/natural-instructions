@@ -961,3 +961,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1447_drug_extraction_ade` | Given a sentence, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
 `task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
 `task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
+`task1451_drug_dose_extraction` | Given a sentence and a drug, return the list of tokens that mentions dose of that particular drug. | Entity Detection
