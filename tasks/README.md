@@ -958,4 +958,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
-`task1447_drug_extraction_ADE` | Given a sentence, return the list of tokens that mentions names of the drugs or medicines. | Entity Detection
+`task1447_drug_extraction_ade_dataset` | Given a sentence, return the list of tokens that mentions names of the drugs or medicines. | Entity Detection
