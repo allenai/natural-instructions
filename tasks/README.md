@@ -980,3 +980,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1467_bengali_religious_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is religious or non-religious in nature. | Classification
 `task1468_bengali_geopolitical_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is geopolitical or non-geopolitical in nature. | Classification
 `task1469_bengali_hate_speech_classification` | Given a hateful post in Bengali, classify whether it is political, geopolitical, religious or personal in nature. | Classification
+`task1470_humor_classification` | Given a formal short text in English, classify whether it is humorous, or non-humorous in nature. | Classification
