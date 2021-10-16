@@ -972,3 +972,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1459_gene_extraction_linnaeus_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
 `task1460_organ_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
 `task1461_cell_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of cells in the body. | Entity Detection
+`task1462_organism_substance_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
