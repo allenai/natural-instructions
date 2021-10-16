@@ -967,4 +967,5 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1454_organization_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of companies or organizations. | Entity Detection
 `task1455_gene_extraction_jnlpba_dataset` | Given a sentence, return the list of tokens that mentions of genes or proteins. | Entity Detection
 `task1456_gene_extraction_bc2gm_dataset` | Given a sentence, return the list of tokens that mentions of genes or proteins. | Entity Detection
-`task1457_gene_extraction_chemprot_dataset` | Given a sentence, return the list of tokens that mentions of chemical substances. | Entity Detection
+`task1457_gene_extraction_chemprot_dataset` | Given a sentence, return the list of tokens that mentions of genes. | Entity Detection
+`task1458_chemical_extraction_chemprot_dataset` | Given a sentence, return the list of tokens that mentions of chemical substances. | Entity Detection
