@@ -982,3 +982,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1469_bengali_hate_speech_classification` | Given a hateful post in Bengali, classify whether it is political, geopolitical, religious or personal in nature. | Classification
 `task1471_adverse_drug_event_classification` | Given a sentence, classify whether it contains any adverse drug event. | Classification
 `task1472_bengali_reviews_sentiment_classification` | Given a restaurant review in Bengali, classify whether the sentiment is positive or negative. | Classification
+`task1473_bengali_book_reviews_sentiment_classification` | Given a book review in Bengali, classify whether the sentiment is positive or negative. | Classification
