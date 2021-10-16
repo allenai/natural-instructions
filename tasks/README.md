@@ -978,6 +978,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1490_bengali_personal_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is personal or non-personal in nature. | Classification
 `task1491_bengali_political_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is political or non-political in nature. | Classification
 `task1492_bengali_religious_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is religious or non-religious in nature. | Classification
+`task1493_bengali_geopolitical_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is geopolitical or non-geopolitical in nature. | Classification
 `task1494_bengali_hate_speech_classification` | Given a hateful post in Bengali, classify whether it is political, geopolitical, religious or personal in nature. | Classification
 `task1495_adverse_drug_event_classification` | Given a sentence, classify whether it contains any adverse drug event. | Classification
 `task1496_bengali_reviews_sentiment_classification` | Given a restaurant review in Bengali, classify whether the sentiment is positive or negative. | Classification
