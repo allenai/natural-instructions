@@ -972,7 +972,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1465_conceptnet_antonym` | Given a tuple of two terms, determine whether the First term has the opposite meaning of the Second term or not. Classification | Sociology	| English	| English
 `task1466_conceptnet_causes` | Given a tuple of two terms, determine whether the First term is an event that causes the event the Second term or not. Classification | Sociology	| English	| English
 `task1467_conceptnet_part_of` | Given a tuple of two terms, determine whether the First term is a part of the Second term or not. Classification | Sociology	| English	| English
-`task1468_conceptnet_manner_of` | Given a tuple of two terms, determine whether the First term is a specific way to do the Second term or not. Classification | Sociology	| English	| English
 `task1469_conceptnet_motivated_by_goal` | Given a tuple of two terms, determine whether the First term is a step towards accomplising the goal the Second term or not. Classification | Sociology	| English	| English
 `task1470_conceptnet_has_property` | Given a tuple of two terms, determine whether the Second term is a property of the First term or not. Classification | Sociology	| English	| English
 `task1471_conceptnet_receives_action` | Given a tuple of two terms, determine whether the Second term can be done to the First term or not. Classification | Sociology	| English	| English
