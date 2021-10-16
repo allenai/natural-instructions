@@ -970,4 +970,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1457_gene_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of protein. | Entity Detection
 `task1458_chemical_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of chemical substances. | Entity Detection
 `task1459_gene_extraction_linnaeus_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
-`task1460_organ_extraction_AnEM_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
+`task1460_organ_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
