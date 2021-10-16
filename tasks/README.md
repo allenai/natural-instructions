@@ -972,14 +972,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1465_conceptnet_antonym` | Given a tuple of two terms, determine whether the First term has the opposite meaning of the Second term or not. Classification | Sociology	| English	| English
 `task1466_conceptnet_causes` | Given a tuple of two terms, determine whether the First term is an event that causes the event the Second term or not. Classification | Sociology	| English	| English
 `task1467_conceptnet_part_of` | Given a tuple of two terms, determine whether the First term is a part of the Second term or not. Classification | Sociology	| English	| English
-`task1469_conceptnet_motivated_by_goal` | Given a tuple of two terms, determine whether the First term is a step towards accomplising the goal the Second term or not. Classification | Sociology	| English	| English
-`task1470_conceptnet_has_property` | Given a tuple of two terms, determine whether the Second term is a property of the First term or not. Classification | Sociology	| English	| English
-`task1471_conceptnet_receives_action` | Given a tuple of two terms, determine whether the Second term can be done to the First term or not. Classification | Sociology	| English	| English
-`task1472_conceptnet_has_a` | Given a tuple of two terms, determine whether the Second term belongs to the First term or not. Classification | Sociology	| English	| English
-`task1473_conceptnet_causes_desire` | Given a tuple of two terms, determine whether the First term makes someone want to do the Second term or not. Classification | Sociology	| English	| English
-`task1474_conceptnet_has_first_subevent` | Given a tuple of two terms, determine whether the First term is an event that begins with subevent the Second term or not. Classification | Sociology	| English	| English
-`task1475_conceptnet_desires` | Given a tuple of two terms, determine whether the First term is an entity that typically wants the Second term or not. Classification | Sociology	| English	| English
-`task1476_conceptnet_has_last_subevent` | Given a tuple of two terms, determine whether the First term is an event that ends with subevent the Second term or not. Classification | Sociology	| English	| English
-`task1477_conceptnet_defined_as` | Given a tuple of two terms, determine whether the Second term is a more explanatory version of the First term or not. Classification | Sociology	| English	| English
-`task1478_conceptnet_made_of` | Given a tuple of two terms, determine whether the First term is made of the Second term or not. Classification | Sociology	| English	| English
-`task1479_conceptnet_created_by` | Given a tuple of two terms, determine whether the First term is created by the Second term or not. Classification | Sociology	| English	| English
+`task1468_conceptnet_motivated_by_goal` | Given a tuple of two terms, determine whether the First term is a step towards accomplising the goal the Second term or not. Classification | Sociology	| English	| English
+`task1469_conceptnet_has_property` | Given a tuple of two terms, determine whether the Second term is a property of the First term or not. Classification | Sociology	| English	| English
+`task1470_conceptnet_receives_action` | Given a tuple of two terms, determine whether the Second term can be done to the First term or not. Classification | Sociology	| English	| English
+`task1471_conceptnet_has_a` | Given a tuple of two terms, determine whether the Second term belongs to the First term or not. Classification | Sociology	| English	| English
+`task1472_conceptnet_causes_desire` | Given a tuple of two terms, determine whether the First term makes someone want to do the Second term or not. Classification | Sociology	| English	| English
+`task1473_conceptnet_has_first_subevent` | Given a tuple of two terms, determine whether the First term is an event that begins with subevent the Second term or not. Classification | Sociology	| English	| English
+`task1474_conceptnet_desires` | Given a tuple of two terms, determine whether the First term is an entity that typically wants the Second term or not. Classification | Sociology	| English	| English
+`task1475_conceptnet_has_last_subevent` | Given a tuple of two terms, determine whether the First term is an event that ends with subevent the Second term or not. Classification | Sociology	| English	| English
+`task1476_conceptnet_defined_as` | Given a tuple of two terms, determine whether the Second term is a more explanatory version of the First term or not. Classification | Sociology	| English	| English
+`task1477_conceptnet_made_of` | Given a tuple of two terms, determine whether the First term is made of the Second term or not. Classification | Sociology	| English	| English
+`task1478_conceptnet_created_by` | Given a tuple of two terms, determine whether the First term is created by the Second term or not. Classification | Sociology	| English	| English
