@@ -975,3 +975,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1462_organism_substance_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
 `task1463_sarcasmdetection_headline_classification` | Given a news headline in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
 `task1464_sarcasmdetection_tweet_classification` | Given a twitter in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1465_bengali_personal_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is personal or non-personal in nature. | Classification
