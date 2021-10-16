@@ -958,14 +958,15 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
-`task1447_drug_extraction_ade` | Given a sentence, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
-`task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
-`task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
-`task1451_drug_dose_extraction` | Given a sentence and a drug, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
-`task1452_location_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of locations/places. | Entity Detection
-`task1453_person_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of person names. | Entity Detection
-`task1454_organization_entity_extraction_btc_corpus` | Given a sentence, return the list of tokens that mentions of companies or organizations. | Entity Detection
-`task1455_gene_extraction_jnlpba_dataset` | Given a sentence, return the list of tokens that mentions of genes or proteins. | Entity Detection
-`task1456_gene_extraction_bc2gm_dataset` | Given a sentence, return the list of tokens that mentions of genes or proteins. | Entity Detection
-`task1457_gene_extraction_chemprot_dataset` | Given a sentence, return the list of tokens that mentions of genes. | Entity Detection
-`task1458_chemical_extraction_chemprot_dataset` | Given a sentence, return the list of tokens that mentions of chemical substances. | Entity Detection
+`task1447_drug_extraction_ade` | Given a sentence from the ADE dataset, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
+`task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence from the NCBI dataset, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
+`task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence from the BC5CDR dataset, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
+`task1451_drug_dose_extraction` | Given a sentence and a drug from the ADE dataset, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
+`task1452_location_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of locations/places. | Entity Detection
+`task1453_person_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of person names. | Entity Detection
+`task1454_organization_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of companies or organizations. | Entity Detection
+`task1455_gene_extraction_jnlpba_dataset` | Given a sentence from the JNLPBA dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1456_gene_extraction_bc2gm_dataset` | Given a sentence from the BC2GM dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1457_gene_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of protein. | Entity Detection
+`task1458_chemical_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of chemical substances. | Entity Detection
+`task1459_gene_extraction_linnaeus_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
