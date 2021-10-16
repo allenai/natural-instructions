@@ -977,3 +977,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1464_sarcasmdetection_tweet_classification` | Given a twitter in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
 `task1465_bengali_personal_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is personal or non-personal in nature. | Classification
 `task1466_bengali_political_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is political or non-political in nature. | Classification
+`task1467_bengali_religious_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is religious or non-religious in nature. | Classification
