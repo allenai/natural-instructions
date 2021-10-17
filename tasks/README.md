@@ -3,10 +3,10 @@
 This directory contains the tasks that are part of this benchmark.
 
 
-Name | Summary | Category
----- | ----------- | --------
-`task001_quoref_question_generation`	| Writing questions that require tracking entity references.	| Question Generation
-`task002_quoref_answer_generation`	| Answering questions that require tracking entity references.	| Answer Generation
+Name | Summary | Category | Domain | Input Language | Output Language
+---- | ----------- | -------- | ----- | ----- | ----- 
+`task001_quoref_question_generation`	| Writing questions that require tracking entity references.	| Contextual Question Generation	| Wikipedia	| English	| English
+`task002_quoref_answer_generation`	| Answering questions that require tracking entity references.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task003_mctaco_question_generation_event_duration`	| Writing questions that involve commonsense understanding of "event duration". | Question Generation
 `task004_mctaco_answer_generation_event_duration`	| Answering questions that involve commonsense understanding of "event duration". | Answer Generation
 `task005_mctaco_wrong_answer_generation_event_duration`	| Writing an implausible answer to the given "event duration" question. | Incorrect Answer Generation
@@ -76,9 +76,9 @@ Name | Summary | Category
 `task071_abductivenli_answer_generation`	|  Generating text that completes a story based on given beginning and middle.	| Answer Generation
 `task072_abductivenli_answer_generation`	|  Generating text that completes a story based on given middle and ending.	| Answer Generation
 `task073_commonsenseqa_answer_generation` | Answer questions based on commonsense knowledge. | Answer Generation
-`task074_squad1.1_question_generation` | Generate guestions based on SQuAD 1.1. | Question Generation
-`task075_squad1.1_answer_generation` | Generate answers to SQuAD 1.1 questions. | Answer Generation
-`task076_splash_correcting_sql_mistakes` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
+`task074_squad1.1_question_generation`	| Generate guestions based on SQuAD 1.1.	| Contextual Question Generation	| Wikipedia	| English	| English
+`task075_squad1.1_answer_generation`	| Generate answers to SQuAD 1.1 questions.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
+`task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
 `task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement does. | Structured Query Classification
 `task079_conala_concat_strings` | Given a list of strings, concatenate them to form one string. | Answer Generation
@@ -379,10 +379,12 @@ Name | Summary | Category
 `task377_remove_words_of_given_length` | Remove all words of a given length in the sentence | Answer Generation
 `task378_reverse_words_of_given_length` | Reverse all words of a given length in the sentence | Answer Generation
 `task379_agnews_topic_classification` | Given a news article, classify the article's topic to four classes. | Classification
-`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage. | Answer Generation
+`task380_boolq_yes_no_question` | Given a passage and a yes/no question, answer the question based on the passage | Answer Generation
 `task381_boolq_question_generation` | Given a passage, generate a yes/no question that can be answered based on the passage | Question Generation
 `task382_hybridqa_answer_generation` | Given a question about part-of-speech tag of a word in the question, answer the question | Answer Generation
 `task383_matres_classification` | Given a context and a verb, answer if the given verb can be anchored in time or not | Classification
+`task384_socialiqa_question_classification` | You're given context, an answer and question. Your task is to classify whether the question is correct or not. | Classification
+`task385_socialiqa_incorrect_answer_generation` | You're given a context, a question, three options. Your task is to return an incorrect answer from the option. | Incorrect Answer Generation
 `task386_semeval_2018_task3_irony_detection` | Given a tweet judge whether it contains irony or not. | Classification
 `task387_semeval_2018_task3_irony_classification` | Given a tweet Classify the kind of irony it has. | Classification
 `task388_torque_token_classification` | Given a passage, identify a token from the passage representing an event | Token Classification
@@ -493,6 +495,12 @@ Name | Summary | Category
 `task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
 `task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
 `task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
+`task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life anecdote of a complex ethical situation, identify who is ethically wrong here | Classification
+`task500_scruples_anecdotes_title_generation` | Given a real-life anecdote of a complex ethical situation, generate a title that describes the main event/root cause of the situation | Title Generation
+`task501_scruples_anecdotes_post_type_verification` | Given a real-life anecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
+`task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life anecdote of a complex ethical situation, verify who is wrong in the situation | Verification
+`task503_scruples_anecdotes_isanswerable` | Given a real-life anecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
+`task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
 `task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
 `task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
@@ -573,6 +581,10 @@ Name | Summary | Category
 `task588_amazonfood_rating_classification` | Given a review of amazon food products, you have to classify the rating out of 5. | Classification
 `task589_amazonfood_summary_text_generation` | Given a review of amazon's food product, you have to generate the summary of the review. | Text Generation
 `task590_amazonfood_summary_correction_classification` | Given a review of amazon's food product and its summary, you have to classify whether the summary is correct or not. | Classification
+`task591_sciq_answer_generation` | Given a scientific question, generate a correct answer to the given question | Answer Generation
+`task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
+`task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
+`task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -686,7 +698,7 @@ Name | Summary | Category
 `task743_eurlex_summarization` | Generate headline (summary) for legal act article | Summarization  
 `task744_eurlex_classification` | Identify the legal act article whether it is Regulation, Decision or Directive | Classification
 `task745_ai2_arithmetic_questions_arithmetic` | Given an arithmetic question, compute a solution | Arithmetic
-`task746_yelp_restaurant_review_classification_arithmetic` | Restaurant review classification based on its sentiment (i.e., positive or negative) | Classification
+`task746_yelp_restaurant_review_classification` | Restaurant review classification based on its sentiment (i.e., positive or negative) | Classification
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
@@ -778,6 +790,10 @@ Name | Summary | Category
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task890_gcwd_classification` | Classifying writer's stance to Global Warming | Classification
+`task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
+`task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
+`task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
 `task894_miam_dialogue_act_classification` | Classify Dialogue utterances to Dialogue acts | Classification
 `task895_miam_speaker_classification` | Classify speaker to Dialogue utterances| Classification
 `task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
@@ -786,7 +802,32 @@ Name | Summary | Category
 `task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
 `task900_freebase_qa_category_classification` | Classify the general category for questions | Classification
 `task901_freebase_qa_category_question_generation` | Generate trivia type questions based on a broad category | Question Generation
+`task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
+`task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
+`task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
+`task936_defeasible_nli_snli_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
+`task937_defeasible_nli_social_classification` | Given a hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
+`task938_copa_hi_commonsense_reasoning` |Given a premise and two alternative in hindi, select the alternative that more plausibly has a causal relation with the premise | Answer Generation|
+`task939_copa_hi_commonsense_cause_effect` |Given a pair of sentences in hindi, judge whether the second sentence is the cause or effect of the first on. |Answer Generation |
+`task940_copa_gu_commonsense_reasoning` | Given a premise and two alternative in gujarati, select the alternative that more plausibly has a causal relation with the premise|Answer Generation |
+`task941_copa_gu_commonsense_cause_effect` |Given a pair of sentences in gujarati, judge whether the second sentence is the cause or effect of the first on. | Answer Generation|
+`task942_copa_mr_commonsense_reasoning` | Given a premise and two alternative in marathi, select the alternative that more plausibly has a causal relation with the premise| Answer Generation|
+`task943_copa_mr_commonsense_cause_effect` | Given a pair of sentences in marathi, judge whether the second sentence is the cause or effect of the first on.| Answer Generation|
+`task944_wiki_cloze_as_multiple_choice_question_answering` | Given a cloze question in assamese, identify the missing word| Multiple Choice Question Answering|
+`task945_wiki_cloze_bn_multiple_choice_question_answering` | Given a cloze question in bengali, identify the missing word| Multiple Choice Question Answering|
+`task946_wiki_cloze_gu_multiple_choice_question_answering` |Given a cloze question in gujarati, identify the missing word | Multiple Choice Question Answering|
+`task947_wiki_cloze_hi_multiple_choice_question_answering` | Given a cloze question in hindi, identify the missing word| Multiple Choice Question Answering|
+`task948_wiki_cloze_kn_multiple_choice_question_answering` | Given a cloze question in kannada, identify the missing word| Multiple Choice Question Answering|
+`task949_wiki_cloze_ml_multiple_choice_question_answering` | Given a cloze question in malayalam, identify the missing word| Multiple Choice Question Answering|
+`task950_wiki_cloze_mr_multiple_choice_question_answering` | Given a cloze question in marathi, identify the missing word| Multiple Choice Question Answering|
+`task951_wiki_cloze_or_multiple_choice_question_answering` | Given a cloze question in odia, identify the missing word| Multiple Choice Question Answering|
+`task952_wiki_cloze_pa_multiple_choice_question_answering` | Given a cloze question in punjabi, identify the missing word| Multiple Choice Question Answering|
+`task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
+`task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
+`task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Tabular Text Operation
+`task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
+`task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
 `task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
 `task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
@@ -815,14 +856,43 @@ Name | Summary | Category
 `task1112_ted_translation_he_pl` | Translate a sentence in Hebrew to Polish. | Translation
 `task1113_ted_translation_he_fa` | Translate a sentence in Hebrew to Farsi. | Translation
 `task1114_ted_translation_he_pt` | Translate a sentence in Hebrew to Portugese. | Translation
+`task1115_alt_ja_id_translation` | Given a Japanese language sentence translate it into Bahasa Indonesia language. | Translation
+`task1116_alt_id_ja_translation` | Given a Bahasa Indonesia language sentence translate it into Japanese language. | Translation
+`task1117_alt_ja_id_answer_generation` | Generate answer yes or no for Japanese and Bahasa Indonesia translation pair. | Answer Generation
+`task1118_alt_ja_fil_translation` | Given a Japanese language sentence translate it into Filipino language. | Translation
+`task1119_alt_fil_ja_translation` | Given a Filipino language sentence translate it into Japanese language. | Translation
+`task1120_alt_ja_fil_answer_generation` | Generate answer yes or no for Japanese and Filipino translation pair. | Answer Generation
+`task1121_alt_ja_khm_translation` | Given a Japanese language sentence translate it into Khmer language. | Translation
+`task1122_alt_khm_ja_translation` | Given a Khmer language sentence translate it into Japanese language. | Translation
+`task1123_alt_ja_khm_answer_generation` | Generate answer yes or no for Japanese and Khmer translation pair. | Answer Generation
+`task1124_alt_ja_lo_translation` | Given a Japanese language sentence translate it into Lao language. | Translation
+`task1125_alt_lo_ja_translation` | Given a Lao language sentence translate it into Japanese language. | Translation
+`task1126_alt_ja_lo_answer_generation` | Generate answer yes or no for Japanese and Lao translation pair. | Answer Generation
+`task1127_alt_ja_th_translation` | Given a Japanese language sentence translate it into Thai language. | Translation
+`task1128_alt_th_ja_translation` | Given a Thai language sentence translate it into Japanese language. | Translation
+`task1129_alt_ja_th_answer_generation` | Generate answer yes or no for Japanese and Thai translation pair. | Answer Generation
+`task1130_xcsr_vi_commonsense_mc_classification` | Answering multiple choice commonsense question in Vietnamese language. | Classification
+`task1131_xcsr_es_commonsense_mc_classification` | Answering multiple choice commonsense question in Spanish language. | Classification
+`task1132_xcsr_ur_commonsense_mc_classification` | Answering multiple choice commonsense question in Urdu language. | Classification
+`task1133_xcsr_nl_commonsense_mc_classification` | Answering multiple choice commonsense question in Dutch language. | Classification
+`task1134_xcsr_hi_commonsense_mc_classification` | Answering multiple choice commonsense question in Hindi language. | Classification
+`task1135_xcsr_en_commonsense_mc_classification` | Answering multiple choice commonsense question in English language. | Classification
+`task1136_xcsr_fr_commonsense_mc_classification` | Answering multiple choice commonsense question in French language. | Classification
+`task1137_xcsr_pt_commonsense_mc_classification` | Answering multiple choice commonsense question in Portuguese language. | Classification
+`task1138_xcsr_de_commonsense_mc_classification` | Answering multiple choice commonsense question in German language. | Classification
+`task1139_xcsr_ru_commonsense_mc_classification` | Answering multiple choice commonsense question in Russian language. | Classification
+`task1140_xcsr_pl_commonsense_mc_classification` | Answering multiple choice commonsense question in Polish language. | Classification
+`task1141_xcsr_zh_commonsense_mc_classification` | Answering multiple choice commonsense question in Chinese language. | Classification
+`task1142_xcsr_ar_commonsense_mc_classification` | Answering multiple choice commonsense question in Arabic language. | Classification
+`task1143_xcsr_it_commonsense_mc_classification` | Answering multiple choice commonsense question in Italian language. | Classification
+`task1144_xcsr_sw_commonsense_mc_classification` | Answering multiple choice commonsense question in Swahili language. | Classification
+`task1145_xcsr_jap_commonsense_mc_classification` | Answering multiple choice commonsense question in Japanese language. | Classification
 `task1146_country_capital` | Given a country, return it's capital city  | Answer Generation
 `task1147_country_currency` | Given a country, return it's currency  | Answer Generation
 `task1148_maximum_ascii_value` | Given a string, return the character with maximum ascii value  | Answer Generation
 `task1149_item_check_edible` | Given an item, check if it is edible or not  | Classification
 `task1150_delete_max_min` | Given a list of integers, delete the minimum and maximum element from the list  | Answer Generation
 `task1151_swap_max_min` | Given a list of unique integers, swap the minimum and maximum element in the list  | Answer Generation
-`task1152_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
-`task1153_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
 `task1152_bard_analogical_reasoning_causation` | Given an analogy that relates actions with their consequences, give the appropriate consequence of the given action | Answer Generation
 `task1153_bard_analogical_reasoning_affordance` | Given an analogy that signifies affordances give the appropriate affordance of the given action | Answer Generation
 `task1154_bard_analogical_reasoning_travel` | Given an analogy that relates places/locations to the associated travel mode, give the appropriate travel mode for the given place | Answer Generation
@@ -831,3 +901,68 @@ Name | Summary | Category
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
+`task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
+`task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
+`task1189_check_char_in_string` | Given a string S and a character c, check if c is present in S or not  | Answer Generation
+`task1190_add_integer_to_list` | Given a list of integers and an integer k, add k to every element in the list  | Answer Generation
+`task1191_food_veg_nonveg` | Given the name of an indian dish, classify it as non vegetarian or a vegetarian dish  | Classification
+`task1192_food_flavor_profile` | Given the name of an indian dish, classify it's flavor as spicy or sweet  | Classification
+`task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
+`task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
+`task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
+`task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
+`task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
+`task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
+`task1288_kpa_keypoint_matching_capital_punishment_topic` | Given an argument and a keypoint under the topic "We should abolish capital punishment", answer if the keypoint summarizes the argument | Classification
+`task1289_kpa_keypoint_matching_intellectual_property_rights` | Given an argument and a keypoint under the topic "We should abolish intellectual property rights", answer if the keypoint summarizes the argument | Classification
+`task1290_kpa_keypoint_matching_atheism_topic` | Given an argument and a keypoint under the topic "We should adopt atheism", answer if the keypoint summarizes the argument | Classification
+`task1291_kpa_keypoint_matching_libertarianism_topic` | Given an argument and a keypoint under the topic "We should adopt libertarianism", answer if the keypoint summarizes the argument | Classification
+`task1292_kpa_keypoint_matching_human_cloning_topic` | Given an argument and a keypoint under the topic "We should ban human cloning", answer if the keypoint summarizes the argument | Classification
+`task1293_kpa_keypoint_matching_military_companies_topic` | Given an argument and a keypoint under the topic "We should ban private military companies", answer if the keypoint summarizes the argument | Classification
+`task1294_kpa_keypoint_matching_child_actors_topic` | Given an argument and a keypoint under the topic "We should ban the use of child actors", answer if the keypoint summarizes the argument | Classification
+`task1295_kpa_keypoint_matching_guantanamo_bay_detection_camp_topic` | Given an argument and a keypoint under the topic "We should close Guantanamo Bay detention camp", answer if the keypoint summarizes the argument | Classification
+`task1296_kpa_keypoint_matching_mandatory_retirement_topic` | Given an argument and a keypoint under the topic "We should end mandatory retirement", answer if the keypoint summarizes the argument | Classification
+`task1297_kpa_keypoint_matching_nuclear_weapons_topic` | Given an argument and a keypoint under the topic "We should fight for the abolition of nuclear weapons", answer if the keypoint summarizes the argument | Classification
+`task1298_kpa_keypoint_matching_urbanization_topic` | Given an argument and a keypoint under the topic "We should fight urbanization", answer if the keypoint summarizes the argument | Classification
+`task1299_kpa_keypoint_matching_compulsory_voting` | Given an argument and a keypoint under the topic "We should introduce compulsory voting", answer if the keypoint summarizes the argument | Classification
+`task1300_kpa_keypoint_matching_cannabis_topic` | Given an argument and a keypoint under the topic "We should legalize cannabis", answer if the keypoint summarizes the argument | Classification
+`task1301_kpa_keypoint_matching_prostitution_topic` | Given an argument and a keypoint under the topic "We should legalize prostitution", answer if the keypoint summarizes the argument | Classification
+`task1302_kpa_keypoint_matching_sex_selection_topic` | Given an argument and a keypoint under the topic "We should legalize sex selection", answer if the keypoint summarizes the argument | Classification
+`task1303_kpa_keypoint_matching_flag_burning_topic` | Given an argument and a keypoint under the topic "We should prohibit flag burning", answer if the keypoint summarizes the argument | Classification
+`task1304_kpa_keypoint_matching_women_in_combat_topic` | Given an argument and a keypoint under the topic "We should prohibit women in combat", answer if the keypoint summarizes the argument | Classification
+`task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument | Classification
+`task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument | Classification
+`task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument | Classification
+`task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
+`task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
+`task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
+`task1317_country_calling_code` | Given a country name, return the calling code of the given country | Answer Generation
+`task1318_country_national_dish` | Given a country name, return the national dish name of the given country | Answer Generation
+`task1319_country_by_barcode_prefix` | Given a country name, return the barcode prefix of the given country | Answer Generation
+`task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
+`task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
+`task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
+`task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
+`task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
+`task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1398_obqa_question_generation` | Given a fact, generate a question that can be answered using the fact | Question Generation
+`task1399_obqa_answer_generation` | Given a fact and question, generate an answer to the question | Answer Generation
+`task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
+`task1401_obqa_sentence_generation` | Given a question and answer pair, generate a fact statement | Sentence Generation
+`task1402_clue_question_generation` | Given a Chinese passage, generate a question based on the passage | Question Generation
+`task1403_check_validity_date_mmddyyyy` | Given a date in mm/dd/yyyy format, check if it is a valid date or not | Classification
+`task1404_date_conversion` | Given a date in a particular format, convert it into some other format | Answer Generation
+`task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
+`task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
+`task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1419_mathqa_gain` |  Given a math problem on gain and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1420_mathqa_general` |  Given a general math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1421_mathqa_other` |  Given a math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1422_mathqa_physics` |  Given a problem on physics and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1423_mathqa_geometry` |  Given a problem on geometry and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1424_mathqa_probability` |  Given a problem on probability and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
+`task1425_country_iso_numeric` | Given a country name, return the numeric ISO of the given country | Answer Generation
+`task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
+`task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
+`task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation

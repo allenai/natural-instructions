@@ -5,7 +5,6 @@ We're looking for more contributions to make this data bigger! 🙌
 We invite submission of new tasks to this benchmark by way of [GitHub pull request](https://github.com/allenai/natural-instructions-expansion/pulls), through **October 15, 2021**.
 The contributors with [meaningful contributions](https://github.com/allenai/natural-instructions-expansion/#what-do-you-mean-by-meaningful-contribution) to our tasks will be included as co-authors on a paper that will announce the benchmark as well as analysis/results on it. 
 
-
 ## Background 
 ### Why define tasks in natural language?
 While the current dominant paradigm (supervised learning with task-specific labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
@@ -47,6 +46,9 @@ Or if you're comfortable with json files, here is how it would look like:
   "Source": [""],
   "Categories": [""],
   "Definition": "",
+  "Input_language": [""], 
+  "Output_language": [""], 
+  "Instruction_language": [""], 
   "Positive Examples": [ { "input": "", "output": "",  "explanation": ""} ], 
   "Negative Examples": [ { "input": "", "output": "",  "explanation": ""} ],
   "Instances": [ { "input": "", "output": [""]} ],
@@ -61,12 +63,18 @@ We would appreciate any external contributions! 🙏
     * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4, ensure_ascii=False)`)   
     * Make sure that you json file is not bigger than 50MB. 
     * Make sure your task has no more 6.5k instances (input/output pairs).
-    * Make sure to number your task json correctly (Look at the task number in the latest pull request, task number in your submission should be the next number). Make sure to include the source dataset name and the task category name while creating the json file name. You can use this format: taskabc_<source dataset>_<task category>.json E.g. in task001_quoref_question_generation.json, the source dataset is 'quoref' and the task category is 'question generation. Note that, source need not necessarily be a dataset and can be a website e.g. leetcode. Finally, if you have created the json without any reference, use 'synthetic' in place of source.
-    * Make sure to create a pull request after creating all possible tasks from a dataset. You should have one pull request per dataset. Name your pull request as Task <start_task_number>-<end_task_number>: <Task Summary> e.g. Task 101-107: SQuAD Dataset.
+    * Make sure to include task category and domains, based on [this list](doc/task-hierarchy.md). 
+    * Make sure to number your task json correctly 
+       * Look at the task number in the latest pull request, task number in your submission should be the next number. 
+       * Make sure to include the source dataset name and the task type when naming your task json file. 
+          * You can use this format: `taskabc_<source_dataset>_<task_type>.json` E.g. in `task001_quoref_question_generation.json`, the source dataset is `quoref` and the task is `question generation`. 
+    * Note that, source need not necessarily be a dataset and can be a website e.g. leetcode. 
+       * If you have created the json without any reference, use `synthetic` in place of source.
+    * You should have one pull request per dataset. Name your pull request as `Task Name <start_task_number>-<end_task_number>`.
     * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
  * Add your task to [our list of tasks](tasks/README.md).
  * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
-  
+
  
 If you have any questions or suggestions, please use [the issues](https://github.com/allenai/natural-instructions-expansion/issues) feature.  
 
