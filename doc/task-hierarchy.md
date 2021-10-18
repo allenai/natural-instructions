@@ -14,6 +14,7 @@
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+  - `Question Generation -> Fill in the Blank` 
 - `Author Identification`
 - `Classification`
 - `Combinatorics`
