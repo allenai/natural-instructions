@@ -40,7 +40,6 @@ def process_single_file(start, end, max_count):
         file = task_ids_to_file[idx]
 
         # grouping instances into groups of size 5
-        n = 5
         json_content = read_file(file)
 
         if json_content["Input_language"] != ["English"] or json_content["Output_language"] != ["English"]:
@@ -58,6 +57,7 @@ def process_single_file(start, end, max_count):
         positive_examples = positive_examples[:5]
         negative_examples = negative_examples[:3]
 
+        n = 2
         chunks = [instances[i:i + n] for i in range(0, len(instances), n)]
         for i, chunk in enumerate(chunks):
             if i * n > int(max_count):

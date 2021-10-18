@@ -94,4 +94,6 @@ def aggregate_v2(response_file):
 
 
 # aggregate_v2("batch-43ecd7ef-0717-4b72-a39c-b6179f8b5f77_task156_pilot/batch-results.jsonl")
-aggregate_v2("batch-65c49abc-f8a3-4f12-a71d-9ce5742c3419_start=60_end=100_max_size=5/batch-results.jsonl")
+# aggregate_v2("batch-65c49abc-f8a3-4f12-a71d-9ce5742c3419_start=60_end=100_max_size=5/batch-results.jsonl")
+# aggregate_v2("batch-eea0ef32-da0a-47cf-bcae-810d1a503379_start=1_end=59_max_size=5/batch-results.jsonl")
+aggregate_v2("batch-cdcb497e-49a3-4cee-8ab5-1451dc19dac2_119_end=200_max_size=5/batch-results.jsonl")
