@@ -155,6 +155,11 @@
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`
+* `Commonsense`
+  * `Commonsense -> Social Commonsense`: a situation involving two same gender people
+with contrasting attributes, emotions, social roles, etc.
+  * `Commonsense -> Physical Commonsense`: a context involving two physical
+objects with contrasting properties, usage, locations, etc.
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
