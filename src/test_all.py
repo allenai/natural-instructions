@@ -4,6 +4,7 @@ import json
 from os import listdir
 from os.path import isfile, join
 import argparse
+import re
 
 # get the range of task you want to test, if specified in the command line
 parser = argparse.ArgumentParser()
@@ -50,6 +51,12 @@ def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
 
+def extract_categories(string):
+    """
+    Get all the characters between ` and `
+    """
+    return set(re.findall(r'`(.*?)`', string))
+
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains"
@@ -58,7 +65,9 @@ suggested_keys = [
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 with open("doc/task-hierarchy.md", 'r') as readmef:
-    hierarchy_content = " ".join(readmef.readlines())
+    hierarchy_content_lines = readmef.readlines()
+    hierarchy_content = " ".join(hierarchy_content_lines)
+    all_categories = extract_categories(hierarchy_content)
 
 # make sure there are no repeated lines in the task file
 task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
@@ -110,7 +119,7 @@ for file in files[begin_task_number:end_task_number+1]:
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
             for c in data['Categories']:
-                if c not in hierarchy_content:
+                if c not in all_categories:
                     print(f'⚠️ WARNING: Did not find category `{c}`')
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
