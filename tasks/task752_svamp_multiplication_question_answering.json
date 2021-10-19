@@ -1,0 +1,700 @@
+{
+    "Contributors": [
+        "Tanay Dixit"
+    ],
+    "Source": [
+        "https://arxiv.org/abs/2103.07191"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Definition": "You are given a math word problem and you are supposed to apply a multiplicative mathematical operator on the numbers embedded in the text to answer the following question and then only report the final numerical answer.",
+    "Positive Examples": [
+        {
+            "input": "Context: Alex has 5 boxes, each box has 4 apples.\n\n Question: How many apples does Alex have ?",
+            "output": "20",
+            "explanation": "Total number of apples is 5*4 = 20"
+        },
+        {
+            "input": "Context: There are 6 baskets of apples. Each basket has 16 red apples and 18 green apples. \n\n Question: How many red apples are in the baskets altogether?",
+            "output": "96",
+            "explanation": "Total number of apples = 6*16 = 96"
+        },
+        {
+            "input": "Context: A textbook has 10 chapters, each chapter has 5 pages. \n\n Question: How many pages the textbook has ?",
+            "output": "50",
+            "explanation": "The textbook has 10 * 5 pages = 50"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: There are 6 baskets of apples. Each basket has 16 red apples and 18 green apples. \n\n Question: How many red apples are in the baskets altogether?",
+            "output": "204",
+            "explanation": "Total number of apples = 6*16 = 96, hence correct answer is 96"
+        },
+        {
+            "input": "Context: A car can travel 100 miles on 5 liters of gas. Question: How many miles can a car run with 10 liters of gas ?",
+            "output": "100",
+            "explanation": "The car mileage is 100 miles pe 5 liters , so 20 miles per liter, hence correct answer is 10*20 = 200"
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Context: Emily is making bead necklaces for her 44 friends. She made 26 necklaces and each necklace takes 2 beads. \n\n Question: How many beads did Emily have?",
+            "output": [
+                "52"
+            ]
+        },
+        {
+            "input": "Context: Lewis earns $ 403 every week during the 233 weeks of harvest. If he has to pay $ 49 rent every week \n\n Question: How much money does he earn during harvest season?",
+            "output": [
+                "93899"
+            ]
+        },
+        {
+            "input": "Context: A book has 31 chapters. Each chapter is 61 pages long. \n\n Question: How many pages does the book have altogether?",
+            "output": [
+                "1891"
+            ]
+        },
+        {
+            "input": "Context: In Haley's class 11 are boys who love to play marbles. If Haley gives 9 marbles to each boy \n\n Question: How many marbles did she have?",
+            "output": [
+                "99"
+            ]
+        },
+        {
+            "input": "Context: Each Ferris wheel in paradise park has 19 seats. Each seat in a Ferris wheel can hold 15 people. \n\n Question: How many people can ride 20 Ferris wheels at the same time?",
+            "output": [
+                "5700"
+            ]
+        },
+        {
+            "input": "Context: After resting they decided to go for a swim. The depth of the water is 2 times Dean's height. Dean is 8 feet shorter than Ron. If Ron stands at 14 feet \n\n Question: How deep was the water?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "Context: After resting they decided to go for a swim. The depth of the water is 15 times Dean's height. Dean is 4 feet taller than Ron. If Ron stands at 13 feet \n\n Question: How deep was the water?",
+            "output": [
+                "255"
+            ]
+        },
+        {
+            "input": "Context: The Ferris wheel in paradise park has 18 seats. Each seat can hold 15 people. If 10 seats are broken \n\n Question: How many people can ride the Ferris wheel at the same time?",
+            "output": [
+                "120"
+            ]
+        },
+        {
+            "input": "Context: The Razorback shop makes $ 67 dollars off each t-shirt and $ 165 off each jersey. During the Arkansas and Texas tech game they sold 74 t-shirts and 156 jerseys. \n\n Question: How much money did they make from selling the jerseys?",
+            "output": [
+                "25740"
+            ]
+        },
+        {
+            "input": "Context: Faye had 31 packs of pencils each one having 6 pencils. She was placing her pencils into rows with 19 pencils in each row. \n\n Question: How many pencils does she have?",
+            "output": [
+                "186"
+            ]
+        },
+        {
+            "input": "Context: Brenda's mother made cookies for 14. If each of them had 30 cookies \n\n Question: How many cookies did she prepare?",
+            "output": [
+                "420"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils and crayons into 16 rows with 6 crayons and 21 pencils in each row. \n\n Question: How many crayons does she have?",
+            "output": [
+                "96"
+            ]
+        },
+        {
+            "input": "Context: The Razorback shop makes $ 76 dollars off each jersey and $ 204 off each t-shirt. During the Arkansas and Texas tech game they sold 158 t-shirts and 2 jerseys. \n\n Question: How much money did they make from selling the jerseys?",
+            "output": [
+                "152"
+            ]
+        },
+        {
+            "input": "Context: If Lewis earns $ 1357 every week during the 223 weeks of a harvest season. \n\n Question: How much money will he earn if he works for 73 harvest seasons?",
+            "output": [
+                "22090603"
+            ]
+        },
+        {
+            "input": "Context: Every day Ryan spends 6 hours on learning english and 7 hours on learning chinese. If he learns for 5 days \n\n Question: How many hours does he spend on learning english and chinese in all?",
+            "output": [
+                "65"
+            ]
+        },
+        {
+            "input": "Context: Paige was helping her mom plant flowers and together they planted 55 seeds. They put 15 seeds in each flower bed and only 60 seeds grew into flowers in each flower bed. \n\n Question: How many flowers did they grow?",
+            "output": [
+                "220"
+            ]
+        },
+        {
+            "input": "Context: If each pack costs 81 dollars \n\n Question: How much will it cost to buy 33 packs of dvds?",
+            "output": [
+                "2673"
+            ]
+        },
+        {
+            "input": "Context: Adam could fit 11 action figures on each shelf in his room. His room has 4 shelves and 40 cabinets. \n\n Question: How many total action figures could his shelves hold?",
+            "output": [
+                "44"
+            ]
+        },
+        {
+            "input": "Context: We ordered 9 pizzas. Each pizza has 10 slices. If there are 2 of us \n\n Question: How many slices of pizza does each of us get if distributed equally?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 8 sacks per day and that each sack containes 35 oranges. \n\n Question: How many oranges do they harvest per day?",
+            "output": [
+                "280"
+            ]
+        },
+        {
+            "input": "Context: They decided to hold the party in their backyard. If they have 11 sets of tables and each set has 13 chairs \n\n Question: How many chairs do they have in the backyard?",
+            "output": [
+                "143"
+            ]
+        },
+        {
+            "input": "Context: The Razorback t-shirt shop makes $ 87 dollars off each t-shirt sold. During the Arkansas game and the Texas tech game they sold a total of 95 t-shirts. If they sold 47 t-shirts during the Arkansas game \n\n Question: How much money did they make from selling the t-shirts?",
+            "output": [
+                "8265"
+            ]
+        },
+        {
+            "input": "Context: An industrial machine can make 6 shirts a minute. It worked for 12 minutes yesterday and for 14 shirts today. \n\n Question: How many shirts did machine make altogether?",
+            "output": [
+                "156"
+            ]
+        },
+        {
+            "input": "Context: Adam could fit 8 action figures and 10 cabinets on each shelf in his room. His room has 4 shelves. \n\n Question: How many total items could his shelves hold?",
+            "output": [
+                "72"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils and crayons into 19 rows with 4 pencils and 27 crayons in each row. \n\n Question: How many pencils does she have?",
+            "output": [
+                "76"
+            ]
+        },
+        {
+            "input": "Context: Lewis earns $ 368 every week during the 1359 weeks of harvest. If he has to pay $ 388 rent every week \n\n Question: How much money does he pay as rent during the harvest season?",
+            "output": [
+                "527292"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 66 sacks per day and that each sack containes 25 oranges. \n\n Question: How many oranges will they have after 87 days of harvest?",
+            "output": [
+                "143550"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils and crayons into 11 rows with 31 pencils and 27 crayons in each row. \n\n Question: How many pencils and crayons does she have altogether?",
+            "output": [
+                "638"
+            ]
+        },
+        {
+            "input": "Context: After resting they decided to go for a swim. The depth of the water is 9 times Dean's height. If Ron is 15 feet tall and Dean is 6 feet shorter than Ron \n\n Question: How deep was the water?",
+            "output": [
+                "81"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 67 sacks per day and that each sack containes 12 oranges. \n\n Question: How many oranges are harvested if they harvest a total of 35 sacks of oranges?",
+            "output": [
+                "420"
+            ]
+        },
+        {
+            "input": "Context: Every day Ryan spends 5 hours on learning english and 4 hours on learning chinese. If he learns for 6 days \n\n Question: How many hours does he spend on learning chinese in all?",
+            "output": [
+                "24"
+            ]
+        },
+        {
+            "input": "Context: If each bag has 41 cookies and you had 53 bags of cookies \n\n Question: How many cookies would you have?",
+            "output": [
+                "2173"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 66 sacks per day. \n\n Question: How many oranges do they harvest per day if each sack contains 28 oranges?",
+            "output": [
+                "1848"
+            ]
+        },
+        {
+            "input": "Context: Debby bought some water bottles when they were on sale. She drank 109 bottles a day. If the bottles lasted for 74 days \n\n Question: How many bottles had she bought?",
+            "output": [
+                "8066"
+            ]
+        },
+        {
+            "input": "Context: A mailman has to give 4 pieces of junk mail to each house in each of the 81 blocks. If there are 12 houses in each block \n\n Question: How many pieces of junk mail should he give in each block?",
+            "output": [
+                "48"
+            ]
+        },
+        {
+            "input": "Context: Being his favorite, he saved checking on the grapevines for his last stop. He was told by 235 of the pickers that they fill 100 drums of raspberries per day and 221 drums of grapes per day. \n\n Question: How many drums of grapes would be filled in 77 days?",
+            "output": [
+                "17017"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils and crayons into 30 rows with 71 crayons and 24 pencils in each row. \n\n Question: How many pencils does she have?",
+            "output": [
+                "720"
+            ]
+        },
+        {
+            "input": "Context: There are 20 houses in a block. If a mailman has to give 32 pieces of junk mail to each house in each block \n\n Question: How many pieces of junk mail should he give each block?",
+            "output": [
+                "640"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils into 14 rows with 11 pencils in each row. \n\n Question: How many pencils does she have?",
+            "output": [
+                "154"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 31 sacks of ripe oranges and 24 sacks of unripe oranges per day. \n\n Question: How many sacks of unripe oranges will they have after 45 days of harvest?",
+            "output": [
+                "1080"
+            ]
+        },
+        {
+            "input": "Context: Being his favorite, he saved checking on the grapevines for his last stop. He was told by 294 of the pickers that they fill 244 drums of grapes per day and 47 drums of raspberries per day. \n\n Question: How many drums of grapes would be filled in 146 days?",
+            "output": [
+                "35624"
+            ]
+        },
+        {
+            "input": "Context: He also had 56 aquariums for saltwater animals and 10 aquariums for freshwater animals. Each aquarium has 39 animals in it. \n\n Question: How many saltwater animals does Tyler have?",
+            "output": [
+                "2184"
+            ]
+        },
+        {
+            "input": "Context: Robin has 28 packages of gum and 13 packages of candy. There are 4 pieces in each package. \n\n Question: How many pieces of gum does Robin have?",
+            "output": [
+                "112"
+            ]
+        },
+        {
+            "input": "Context: Being his favorite, he saved checking on the grapevines after 57 stops. He was told by 252 of the pickers that they fill 108 drums of grapes per day. \n\n Question: How many drums of grapes would be filled in 58 days?",
+            "output": [
+                "6264"
+            ]
+        },
+        {
+            "input": "Context: Matthew had some crackers. If Matthew gave 2 crackers to each of his 11 friends \n\n Question: How many crackers did Matthew have?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "Context: There are 6 baskets of peaches. Each basket has 16 red peaches and 18 green peaches. \n\n Question: How many red peaches are in the baskets altogether?",
+            "output": [
+                "96"
+            ]
+        },
+        {
+            "input": "Context: Emily is making bead necklaces for her friends. She made 11 necklaces and each necklace takes 28 beads. \n\n Question: How many beads did Emily have?",
+            "output": [
+                "308"
+            ]
+        },
+        {
+            "input": "Context: Paige was helping her mom plant flowers and together they planted some seeds. They put 10 seeds in each flower bed. If there are 45 flowerbeds \n\n Question: How many seeds did they plant?",
+            "output": [
+                "450"
+            ]
+        },
+        {
+            "input": "Context: Frank had some pieces of candy. If he put them into 26 bags with 33 pieces in each bag \n\n Question: How many pieces of candy did he have?",
+            "output": [
+                "858"
+            ]
+        },
+        {
+            "input": "Context: A mailman has to give 9 pieces of junk mail to each house in each block. If there are 20 houses on a block \n\n Question: How many pieces of junk mail should he give in each block?",
+            "output": [
+                "180"
+            ]
+        },
+        {
+            "input": "Context: Rachel has 4 apple trees. She picked 7 apples from each of her trees. Now the trees have a total 29 apples still on them. \n\n Question: How many apples did Rachel pick in all?",
+            "output": [
+                "28"
+            ]
+        },
+        {
+            "input": "Context: Ryan learns english and chinese for 7 days. Every day he spends 4 hours on learning english and 5 hours on learning chinese. \n\n Question: How many hours does he spend on learning english and chinese in all?",
+            "output": [
+                "63"
+            ]
+        },
+        {
+            "input": "Context: There are 544 pots in each of the 10 gardens. Each pot has 32 flowers in it. \n\n Question: How many flowers are there in all?",
+            "output": [
+                "174080"
+            ]
+        },
+        {
+            "input": "Context: The Ferris wheel in paradise park has 2 small seats and 23 large seats. Each small seat can hold 14 people and large seat can hold 54 people. \n\n Question: How many people can ride the Ferris wheel on small seats?",
+            "output": [
+                "28"
+            ]
+        },
+        {
+            "input": "Context: There are some bananas in Philip's banana collection. If the bananas are organized into 140 groups of size 187 \n\n Question: How many bananas does he have in his collection?",
+            "output": [
+                "26180"
+            ]
+        },
+        {
+            "input": "Context: Bryan took a look at his books and magazines. If he has 27 books and 80 magazines in each of his 23 bookshelves \n\n Question: How many books does he have in total?",
+            "output": [
+                "621"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 82 sacks of ripe oranges and 61 sacks of unripe oranges per day. \n\n Question: How many sacks of ripe oranges will they have after 25 days of harvest?",
+            "output": [
+                "2050"
+            ]
+        },
+        {
+            "input": "Context: Adam could fit 10 action figures on each shelf in his room. His room has could hold 8 action figures. \n\n Question: How many total shelves did his room have?",
+            "output": [
+                "80"
+            ]
+        },
+        {
+            "input": "Context: Lewis earns $ 491 every week during the 1181 weeks of harvest. If he has to pay $ 216 rent every week \n\n Question: How much money will have at the end of the harvest season?",
+            "output": [
+                "324775"
+            ]
+        },
+        {
+            "input": "Context: Every day Ryan spends 6 hours on learning english and 5 hours on learning chinese. If he learns for 2 days \n\n Question: How many hours does he spend on learning english in all?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 28 sacks of ripe oranges and 52 sacks of unripe oranges per day. \n\n Question: How many sacks of oranges will they have after 26 days of harvest?",
+            "output": [
+                "2080"
+            ]
+        },
+        {
+            "input": "Context: There are 466 pots. Each pot has 53 flowers and 181 sticks in it. \n\n Question: How many flowers and sticks are there in all?",
+            "output": [
+                "109044"
+            ]
+        },
+        {
+            "input": "Context: After resting they decided to go for a swim. The depth of the water is 5 times Ron's height. Dean is 11 feet shorter than Ron. If Ron stands at 12 feet \n\n Question: How deep was the water?",
+            "output": [
+                "60"
+            ]
+        },
+        {
+            "input": "Context: An industrial machine can make 6 shirts a minute. It worked for 5 minutes yesterday and for 12 minutes today. \n\n Question: How many shirts did machine make today?",
+            "output": [
+                "72"
+            ]
+        },
+        {
+            "input": "Context: The Razorback t-shirt shop sells each t-shirt for $ 201 dollars. During the Arkansas and Texas tech game they increased the prices by $ 217 per t-shirt and sold 14 t-shirts. \n\n Question: How much money did they make from selling the t-shirts?",
+            "output": [
+                "5852"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 74 sacks per day and discard 71 of them. \n\n Question: How many sacks of oranges will they have after 51 days of harvest?",
+            "output": [
+                "153"
+            ]
+        },
+        {
+            "input": "Context: The school is planning a field trip. The school has 67 classrooms. There are 66 students in each classroom in the school. If there are 6 seats on each school bus \n\n Question: How many buses are needed to take the trip?",
+            "output": [
+                "737"
+            ]
+        },
+        {
+            "input": "Context: White t - shirts can be purchased in packages of 53. If mom buys 57 packages of white t - shirts and 34 trousers \n\n Question: How many white t - shirts will she have?",
+            "output": [
+                "3021"
+            ]
+        },
+        {
+            "input": "Context: The school has 304 grades and each grade has 75 students \n\n Question: How many students were there in total?",
+            "output": [
+                "22800"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 38 sacks per day and that each sack containes 42 oranges. \n\n Question: How many sacks of oranges will they have after 49 days of harvest?",
+            "output": [
+                "1862"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 65 sacks of unripe oranges and 46 sacks of ripe oranges per day. \n\n Question: How many sacks of unripe oranges will they have after 6 days of harvest?",
+            "output": [
+                "390"
+            ]
+        },
+        {
+            "input": "Context: Each basket of peaches has 19 red peaches and 4 green peaches. If there are 15 such baskets \n\n Question: How many peaches are in the baskets altogether?",
+            "output": [
+                "345"
+            ]
+        },
+        {
+            "input": "Context: There are 7 baskets of peaches. Each basket has 10 red peaches and 2 green peaches. \n\n Question: How many green peaches are in the baskets altogether?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils into rows with 16 pencils in each row. She had 28 packs of pencils each one having 24 pencils. \n\n Question: How many rows could she make?",
+            "output": [
+                "42"
+            ]
+        },
+        {
+            "input": "Context: Robin has 21 packages of gum and 45 packages of candy. There are 9 pieces in each package. \n\n Question: How many pieces of candies does Robin have?",
+            "output": [
+                "405"
+            ]
+        },
+        {
+            "input": "Context: The Ferris wheel in paradise park has 3 small seats and 7 large seats. Each small seat can hold 16 people and large seat can hold 12 people. \n\n Question: How many people can ride the Ferris wheel on large seats?",
+            "output": [
+                "84"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils and crayons into 7 rows with 36 pencils and 30 crayons in each row. \n\n Question: How many crayons does she have?",
+            "output": [
+                "210"
+            ]
+        },
+        {
+            "input": "Context: After resting they decided to go for a swim. The depth of the water is 16 times Ron's height. Dean is 9 feet taller than Ron. If Ron stands at 13 feet \n\n Question: How deep was the water?",
+            "output": [
+                "208"
+            ]
+        },
+        {
+            "input": "Context: Emily is making bead necklaces for her friends where each necklace takes 5 beads. She made 4 necklaces. \n\n Question: How many beads did Emily have?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: He had 15 aquariums for saltwater animals and 62 aquariums for freshwater animals. Each aquarium has 19 animals in it. \n\n Question: How many animals does he have in total?",
+            "output": [
+                "1463"
+            ]
+        },
+        {
+            "input": "Context: There are 141 pots. Each pot has 71 flowers and 91 sticks in it. \n\n Question: How many flowers are there in all?",
+            "output": [
+                "10011"
+            ]
+        },
+        {
+            "input": "Context: Luke gained 146 points in each round of a game. If he played 157 rounds of a trivia game \n\n Question: How many points did he score in the game?",
+            "output": [
+                "22922"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 25 sacks of unripe oranges and 5 sacks of ripe oranges per day. \n\n Question: How many sacks of ripe oranges will they have after 73 days of harvest?",
+            "output": [
+                "365"
+            ]
+        },
+        {
+            "input": "Context: Bryan took a look at his books and magazines. If he has 23 books and 61 magazines in each of his 29 bookshelves \n\n Question: How many books and magazines does he have in total?",
+            "output": [
+                "2436"
+            ]
+        },
+        {
+            "input": "Context: For the walls of the house John would use large planks of wood. Each plank needs 2 pieces of nails to be secured and he would use 16 planks. \n\n Question: How many nails does John need for the house wall?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "Context: Faye was placing her pencils into rows with 22 pencils in each row. She had 6 packs of pencils each one having 14 pencils. \n\n Question: How many pencils does she have?",
+            "output": [
+                "84"
+            ]
+        },
+        {
+            "input": "Context: He also had 74 aquariums for freshwater animals and 22 aquariums for saltwater animals. Each aquarium has 46 animals in it. \n\n Question: How many saltwater animals does Tyler have?",
+            "output": [
+                "1012"
+            ]
+        },
+        {
+            "input": "Context: Melissa scored 109 points in each game. She also got 82 bonus points in each game. \n\n Question: How many points did she score in 79 games?",
+            "output": [
+                "15089"
+            ]
+        },
+        {
+            "input": "Context: The Razorback shop makes $ 62 dollars off each t-shirt and $ 99 off each jersey. During the Arkansas and Texas tech game they sold 183 t-shirts and 31 jerseys. \n\n Question: How much money did they make from selling the t-shirts?",
+            "output": [
+                "11346"
+            ]
+        },
+        {
+            "input": "Context: An industrial machine worked for 5 minutes. It can make 4 shirts a minute. \n\n Question: How many shirts did machine make?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: A mailman has to give 4 pieces of junk mail to each house in each of the 16 blocks. If there are 17 houses in each block \n\n Question: How many pieces of junk mail should he give in total?",
+            "output": [
+                "1088"
+            ]
+        },
+        {
+            "input": "Context: We ordered 17 pizzas. Each pizza has 4 slices. If there are 25 of us \n\n Question: How many slices of pizza are there altogether?",
+            "output": [
+                "68"
+            ]
+        },
+        {
+            "input": "Context: Shirley sold 25 cases of boxes of trefoils. \n\n Question: How many boxes of trefoils does she need to deliver if each case has 14 boxes?",
+            "output": [
+                "350"
+            ]
+        },
+        {
+            "input": "Context: The Razorback shop makes $ 5 dollars off each jersey and $ 215 off each t-shirt. During the Arkansas and Texas tech game they sold 20 t-shirts and 64 jerseys. \n\n Question: How much money did they make from selling the t-shirts?",
+            "output": [
+                "4300"
+            ]
+        },
+        {
+            "input": "Context: There are 11 baskets of peaches. Each basket has 10 red peaches and 18 green peaches. \n\n Question: How many peaches are in the baskets altogether?",
+            "output": [
+                "308"
+            ]
+        },
+        {
+            "input": "Context: Lewis earns $ 28 every week during the 1091 weeks of harvest. He also earns $ 939 per week for working overtime. If he works overtime every week \n\n Question: How much money does he earn during harvest season?",
+            "output": [
+                "1054997"
+            ]
+        },
+        {
+            "input": "Context: Jesse's rooms are 19 feet long and 18 feet wide. If she has 20 rooms in all \n\n Question: How much carpet does she need to cover the floors of all rooms?",
+            "output": [
+                "6840"
+            ]
+        },
+        {
+            "input": "Context: Rebecca wants to split a collection of eggs into groups of 11. If each group has 2 eggs \n\n Question: How many eggs does Rebecca have?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "Context: The Razorback t-shirt shop sells each t-shirt for $ 51 dollars. During the Arkansas and Texas tech game they offered a discount of $ 8 per t-shirt and sold 130 t-shirts. \n\n Question: How much money did they make from selling the t-shirts?",
+            "output": [
+                "5590"
+            ]
+        },
+        {
+            "input": "Context: The Razorback t-shirt shop makes $ 98 dollars off each t-shirt sold. During the Arkansas game and the Texas tech game they sold a total of 163 t-shirts. If they sold 89 t-shirts during the Arkansas game \n\n Question: How much money did they make from selling the t-shirts during the arkansas game?",
+            "output": [
+                "8722"
+            ]
+        },
+        {
+            "input": "Context: Bryan took a look at his books and magazines. If he has 9 books and 46 magazines in each of his 10 bookshelves \n\n Question: How many magazines does he have in total?",
+            "output": [
+                "460"
+            ]
+        },
+        {
+            "input": "Context: Faye had 35 packs of pencils each one having 4 pencils. She was placing her pencils into rows with 2 pencils in each row. \n\n Question: How many rows could she make?",
+            "output": [
+                "70"
+            ]
+        },
+        {
+            "input": "Context: The school is planning a field trip. The school has 84 classrooms. 95 school buses are fully filled with 118 seats on each school bus. \n\n Question: How many students are in the school?",
+            "output": [
+                "11210"
+            ]
+        },
+        {
+            "input": "Context: The ring toss game at the carnival made 144 dollars per day. They were at the carnival for 22 days. \n\n Question: How much money did they make?",
+            "output": [
+                "3168"
+            ]
+        },
+        {
+            "input": "Context: The Razorback t-shirt shop makes $ 78 dollars off each t-shirt sold. During the Arkansas game and the Texas tech game they sold a total of 186 t-shirts. If they sold 172 t-shirts during the Arkansas game \n\n Question: How much money did they make from selling the t-shirts during the Texas tech game?",
+            "output": [
+                "1092"
+            ]
+        },
+        {
+            "input": "Context: Luke played 177 rounds of a trivia game. If he gained 46 points in each round \n\n Question: How many points did he score in the game?",
+            "output": [
+                "8142"
+            ]
+        },
+        {
+            "input": "Context: He then went to see the oranges being harvested. He found out that they harvest 76 sacks per day and discard 64 of them. \n\n Question: How many oranges do they harvest per day if each sack contains 50 oranges?",
+            "output": [
+                "600"
+            ]
+        },
+        {
+            "input": "Context: Frank was reading through his favorite book. He read 22 pages per day and it took him 569 days to finish the book. \n\n Question: How many pages are there in the book?",
+            "output": [
+                "12518"
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}
