@@ -799,6 +799,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task877_kde4_translation` | Localizing English phrases to Hindi language | Translation
+`task878_kde4_translation` | Localizing English phrases to Telugu language | Translation
+`task879_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
+`task880_schema_guided_dstc8_classification` | Classifying sentence into one of five action categories | Classification
+`task881_schema_guided_dstc8_classification` | Identifying which one of five services the sentence is related to  | Classification
 `task890_gcwd_classification` | Classifying writer's stance to Global Warming | Classification
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
