@@ -4,6 +4,7 @@
 - `Abuse Detection`
 - `Question Answering`
   - `Question Answering -> Commonsense Question Answering`
+  - `Question Answering -> Multihop Question Answering`
   - `Question Answering -> Contextual Question Answering`
     - `Question Answering -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Contextual Question Answering -> Abstractive` 
@@ -74,6 +75,8 @@
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
+- `Long Text Generation`
+  - `Long Text Generation -> Contextual Text Generation`
 - `Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
 - `Style Transfer`
 - `Summarization`
