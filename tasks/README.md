@@ -118,9 +118,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task117_spl_translation_en_de` | Translate English questions to German while preserving named entities in the original language. | Translation
 `task118_semeval_2019_task10_open_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with an open vocabulary.	| Answer Generation, Arithmetic
 `task119_semeval_2019_task10_geometric_mathematical_answer_generation`	|  Answering multiple choices geometric problems.	| Answer Generation, Geometry
-`task119_zest_text_modification` | Paraphrase the given question. | Text Modification
-`task120_zest_text_modification` | Given a question, change the answer with minimum changes. | Text Modification
-`task121_zest_text_modification` | Given some questions, combine them to have one new question. | Text Modification
+`task119_zest_text_modification` | Paraphrase the given question. | Paraphrasing
+`task120_zest_text_modification` | Given a question, change the answer with minimum changes. | Question Generation
+`task121_zest_text_modification` | Given some questions, combine them to have one new question. | Question Composition
 `task122_conala_list_index_addition` | Add lists together based on their index. | Answer Generation, Arithmetic
 `task123_conala_sort_dictionary` | Sort a list of dictionaries based on a given key. | Answer Generation, Arithmetic
 `task124_conala_pair_averages` | Calculate the averages for each two consecutive elements. | Answer Generation, Arithmetic
