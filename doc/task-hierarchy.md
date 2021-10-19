@@ -19,10 +19,10 @@
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
     - `Classification -> Verification -> Claim Verification`
-    - `Classification -> Verification -> Sufficient Information Verification`: Veryify whether a text contain sufficient information to answer a question
+    - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
     - `Classification -> Verification -> Relevance Verification`
-    - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the qeustion
+    - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
 - `Combinatorics`
 - `Command Execution`
 - `Coreference`
