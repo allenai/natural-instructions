@@ -558,14 +558,12 @@ Name | Summary | Category
 `task580_socialiqa_answer_generation` | Given a context, a question and three options; provide correct answer for the question based on the context. | Answer Generation
 `task581_socialiqa_question_generation` | Generate a question based on the given context and an answer. | Question Generation
 `task582_naturalquestion_answer_generation` | You are given an open-domain question and return an answer based on factual information | Answer Generation
-`task600_qangaroo_answer_generation` | Generating answers to qangaroo dataset passage questions | Answer Generation
 `task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
 `task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
-`task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Fill in the blank
-'task591_flores_translation_sntoen' | Translating the text from sinhali to english | Translation
+`task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
+`task591_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
 `task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task605_flores_translation_entone` | Translating the text from english to neen | Translation
-`task606_qangaroo_classification` | Choosing options from given options of qangaroo dataset passage questions | Classification
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
