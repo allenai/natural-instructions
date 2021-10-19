@@ -695,6 +695,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
 `task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
 `task738_perspectrum_classification` | Decide whether the given perspective supports or undermines the given claim. | Classification
+`task739_lhoestq_question_generation` | Given a passage, generate an appropriate question based on the passage. | Question Generation
+`task740_lhoestq_answer_generation_quantity` | Given a passage and a question, answer the question based on the passage to output a numerical value. | Answer Generation
+`task741_lhoestq_answer_generation_place` | Given a passage and a question, answer the question based on the passage to output a particular place or position of something. | Answer Generation
+`task742_lhoestq_answer_generation_frequency` | Given a passage and a question, answer the question based on the passage to output the frequency with which some things occur. | Answer Generation
 `task743_eurlex_summarization` | Generate headline (summary) for legal act article | Summarization  
 `task744_eurlex_classification` | Identify the legal act article whether it is Regulation, Decision or Directive | Classification
 `task745_ai2_arithmetic_questions_arithmetic` | Given an arithmetic question, compute a solution | Arithmetic
