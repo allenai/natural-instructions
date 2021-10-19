@@ -17,6 +17,12 @@
   - `Question Generation -> Fill in the Blank` 
 - `Author Identification`
 - `Classification`
+  - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
+    - `Classification -> Verification -> Claim Verification`
+    - `Classification -> Verification -> Sufficient Information Verification`: Veryify whether a text contain sufficient information to answer a question
+    - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
+    - `Classification -> Verification -> Relevance Verification`
+    - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the qeustion
 - `Combinatorics`
 - `Command Execution`
 - `Coreference`
@@ -89,8 +95,6 @@
 - `Title Generation`
 - `Topic Generation`
 - `Translation`
-- `Verification`: Verify if two inputs match with each other e.g. a task to verify if a sentence and its sentiment given in the input match
-  - `Verification -> Claim Verification`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
 
