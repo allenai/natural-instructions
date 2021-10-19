@@ -35,7 +35,6 @@
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hate Speech Detection`
 - `Hypernym Discovery`
-- `Incorrect Answer Generation`
 - `Intent Detection`
 - `Language Identification`
 - `Mathematics`
@@ -66,6 +65,7 @@
   - `Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Spatial Reasoning`
   - `Reasoning -> Temporal Reasoning`
+  - `Reasoning -> Scientific Reasoning`
 - `Relation Prediction`
 - `Relevancy Estimation`
 - `Review Generation`
