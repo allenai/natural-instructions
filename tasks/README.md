@@ -695,6 +695,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task736_mmmlu_answer_generation_virology` | Answering mutlitple choice questions on virology | Answer Generation
 `task737_mmmlu_answer_generation_world_religions` | Answering mutlitple choice questions on world religions | Answer Generation
 `task738_perspectrum_classification` | Decide whether the given perspective supports or undermines the given claim. | Classification
+`task739_lhoestq_question_generation` | Given a passage, generate an appropriate question based on the passage. | Question Generation
+`task740_lhoestq_answer_generation_quantity` | Given a passage and a question, answer the question based on the passage to output a numerical value. | Answer Generation
+`task741_lhoestq_answer_generation_place` | Given a passage and a question, answer the question based on the passage to output a particular place or position of something. | Answer Generation
+`task742_lhoestq_answer_generation_frequency` | Given a passage and a question, answer the question based on the passage to output the frequency with which some things occur. | Answer Generation
 `task743_eurlex_summarization` | Generate headline (summary) for legal act article | Summarization  
 `task744_eurlex_classification` | Identify the legal act article whether it is Regulation, Decision or Directive | Classification
 `task745_ai2_arithmetic_questions_arithmetic` | Given an arithmetic question, compute a solution | Arithmetic
@@ -764,6 +768,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task819_pec_sentiment_classification` | Given a contextual post, classify the post as holding positive or negative sentiment | Classification
 `task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task829_giga_fren_translation` | Translation from English language to French language | Translation
+`task830_poleval2019_mt_translation` | Translation from English language to Polish language | Translation
+`task831_giga_fren_classification` | Classify whether the given English sentence is correctly converted to French sentence | Classification
+`task832_poleval2019_mt_classification` | Classify whether the given Polish sentence is correctly converted to English sentence | Classification
+`task833_poem_sentiment_classification` | Classify whether the given poem text is positive or negative | Classification
 `task834_mathdataset_classification` | Classify the type of a math word problem
 `task835_mathdataset_answer_generation` | Find the numerical answer for a math word problem
 `task836_viquiquad_question_generation` | Given a passage in the Catalan language, generate contextual questions
