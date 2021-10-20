@@ -977,6 +977,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
+`task1429_evalution_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
 `task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
 `task1501_dstc3_answer_generation` | Generating answers to DSTC 3 conversations related questions | Answer Generation
