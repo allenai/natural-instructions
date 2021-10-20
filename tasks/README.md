@@ -957,6 +957,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1361_movierationales_classification` | Classification (based on Movie Rationales) | Classification
+`task1364_hans_answer_generation` | Generating answers (based on Hans) | Answer Generation
 `task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
 `task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
 `task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
