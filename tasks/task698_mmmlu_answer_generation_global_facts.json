@@ -1,0 +1,725 @@
+{
+    "Contributors": [
+        "Sujan Reddy A"
+    ],
+    "Source": [
+        "Measuring Massive Multitask Language Understanding tasks"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Definition": "You are given a question on global facts. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"). You need to answer the question by selecting the correct option.",
+    "Positive Examples": [
+        {
+            "input": "As of 2016, about what percentage of adults aged 18 years or older were overweight?\n(A)10% (B)20% (C)40% (D)80%",
+            "output": "C",
+            "explanation": "40% of the adults aged 18years or older are overweight"
+        },
+        {
+            "input": "What was GDP per capita in the United States in 1850 when adjusting for inflation and PPP in 2011 prices?\n(A)About $300 (B)About $3k (C)About $8k (D)About $15k",
+            "output": "B",
+            "explanation": "GDP per capita in the United States in 1850 when adjusting for inflation and PPP in 2011 was about $3k"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "As of 2016, about what percentage of adults aged 18 years or older were overweight?\n(A)10% (B)20% (C)40% (D)80%",
+            "output": "I dont know.",
+            "explanation": "Do not generate anything else apart from one of the following characters: 'A', 'B, 'C', 'D'."
+        },
+        {
+            "input": "What was GDP per capita in the United States in 1850 when adjusting for inflation and PPP in 2011 prices?\n(A)About $300 (B)About $3k (C)About $8k (D)About $15k",
+            "output": "B,C",
+            "explanation": "Only one of the following options ('A', 'B', 'C', 'D') is allowed to be the answer. Muliple options can not be correct. The correct answer here would have been 'B'."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "In 1997, the World Bank found that the fraction of the world’s population living in low and lower-middle income countries—that is, countries with per capita incomes of $1230 or less—was approximately\n(A)25% (B)40% (C)55% (D)75%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "About what percentage of the global population was literate in 1950?\n(A)36% (B)56% (C)76% (D)96%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of people from the United States says homosexuality should be accepted by society?\n(A)52% (B)62% (C)72% (D)82%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Worldwide, 30 year old men have spent 10 years in school, on average. How many years have women of the same age spent in school, as of 2020?\n(A)12 years (B)9 years (C)6 years (D)3 years",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Public spending on education in the world is about what percentage of global GDP as of 2017?\n(A)1% (B)2% (C)4% (D)8%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2015, agriculture made up about what percentage of total Indian GDP?\n(A)8% (B)16% (C)32% (D)64%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "What is the median international income as of 2020?\n(A)$300  (B)$1,000  (C)$10,000  (D)$30,000 ",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Consider the following statements: (1) As countries get richer, the population tends to report higher average life satisfaction. (2) Important life events such as marriage or divorce do affect our happiness, but have surprisingly little long-term impact. Which of these statements is True/False, as of 2020?\n(A)True, True (B)True, False (C)False, True (D)False, False",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2017, the share of deaths in Greenland by suicide is about\n(A)0.90% (B)1.80% (C)3.60% (D)7.20%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "At its peak, what was the approximate difference in approval of school desegration from the South and the rest of the U.S.?\n(A)80% (B)40% (C)-40% (D)-80%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Americans say it is very important to have free media in our country without government/state censorship?\n(A)50% (B)60% (C)70% (D)80%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of French people say God plays an important role in their life?\n(A)11% (B)31% (C)51% (D)71%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Turks say God plays an important role in their life?\n(A)59% (B)69% (C)79% (D)89%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "Consider the following statements: (1) In every country, people think other individuals in their country are less happy than they actually are. (2) In the United States, women’s happiness has increased both absolutely and relative to men. Which of these statements is True/False?\n(A)True, True (B)True, False (C)False, True (D)False, False",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "What was GDP per capita in the United States in 1950 when adjusting for inflation and PPP in 2011 prices?\n(A)About $3k (B)About $8k (C)About $15k (D)About $30k",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2015, since 1990 forests have ____ in Europe and have ____ in Africa and the Americas.\n(A)increased, increased (B)increased, decreased (C)decreased, increased (D)decreased, decreased",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of people from Brazil says homosexuality should be accepted by society?\n(A)37% (B)47% (C)57% (D)67%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "There are two billion children in the world today (2020), aged 0 to 15 years old. How many children will there be in the year 2100 according to the United Nations?\n(A)4 billion (B)3 billion (C)2 billion (D)1 billion",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "The greatest population growth rate has taken place\n(A)in Africa, which is the poorest region of the world with the lowest overall economic growth. (B)in Asia, which is the poorest region of the world with a steady overall economic growth. (C)in Asia, which is the poorest region of the world with the lowest overall economic growth. (D)in Africa, which is the poorest region of the world with a steady overall economic growth.",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Germans say the relationship between the U.S. and Germany is good?\n(A)34% (B)49% (C)64% (D)79%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "What is the biggest cause of death in children under five years old (as of 2017)?\n(A)Lower respiratory infections (B)Preterm birth complications (C)Diarrheal diseases (D)Malaria",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "At the time of independence, there were already hundreds of thousands of university graduates in ____, but hardly any at all in ____.\n(A)India, Congo (B)India, South Korea (C)Congo, South Korea (D)South Korea, India",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "About what percentage of survey respondents from India report having paid a bribe in the last year to access public services (such as education; judiciary; medical and health; police; registry and permit services; utilities; tax revenue and customs; and land service) as of 2017?\n(A)29% (B)49% (C)69% (D)89%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2018, about what percentage of Indians say that having an increasing number of people of many different races, ethnic groups and nationalities in their country makes it a better place to live (as opposed to worse or no difference)?\n(A)23% (B)38% (C)53% (D)68%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "In 1948 how many Americans believed the Kinsey Report on Sexuality in the Male to be a bad thing?\n(A)92% (B)64% (C)27% (D)11%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "How many children between the ages of 5-14 worked globally as of 2012?\n(A)5 million (B)30 million (C)150 million (D)500 million",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2013, share of people in the Ethiopia who think political parties are corrupt is\n(A)24% (B)44% (C)64% (D)84%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2015, about what percentage of the world’s land area is forested?\n(A)15% (B)30% (C)45% (D)60%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Different less developed countries have different levels of secondary school enrollment. Some countries with high secondary-school enrollment are, as of 2020,\n(A)Colombia, Peru, Uruguay, and Costa Rica. (B)Bhutan, Niger, Cambodia, and Costa Rica. (C)Uruguay, Costa Rica, Timor-Leste, and Pakistan. (D)Bhutan, Cambodia, Uruguay and Costa Rica.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2013, which of the following countries had the highest per capita rate of homelessness?\n(A)US (B)Chile (C)Ireland (D)Spain",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2020, about what percentage of the population in Sub-Saharan Africa, is living on less than $1.90?\n(A)10% (B)20% (C)40% (D)80%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Many countries that became independent after World War II found that the legacy of colonialism hindered their economic development. The list of hindrances included\n(A)artificial political boundaries that covered diverse ethnic groups with little in common (B)inadequate access to higher education and training for nationals under the colonial administration (C)control of domestic commerce by foreign minority groups which had been brought in by the colonial power (D)all of the above",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "Overall, the growth rate of average incomes in less developed countries between 1960 and 1995\n(A)was approximately zero (B)exceeded that of high income countries (C)exceeded that of Britain during the industrial revolution (D)was approximately 3.0% per year",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Which of the following mental disorders is most prevalent in the world?\n(A)Bipolar disorder (B)Schizophrenia (C)Alcohol use disorders (D)Anxiety disorders",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2015, what percentage of the global population over 15 years old was literate?\n(A)81% (B)86% (C)91% (D)96%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "World Bank data show that in 1995, the poorest 20% of households accounted for 7.5% of household income in Niger, the next 20% of households accounted for 11.8% of income, the middle 20% accounted for 15.5% of income, the second richest 20% accounted for 21.1% of income, and the top 20% accounted for 44.1% of income. What was the cumulative income share of the bottom 60% of households in Niger?\n(A)15.50% (B)34.80% (C)48.10% (D)65.20%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "In 1943 how many Americans believed in the Holocaust?\n(A)30% (B)50% (C)70% (D)90%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2017, what percentage of Americans live in urban areas?\n(A)62% (B)72% (C)82% (D)92%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Which of the following causes more deaths globally each year (as of 2017)?\n(A)Diarrheal diseases (B)Diabetes (C)Dementia (D)Road injuries",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Which of the following is true as of 2020?\n(A)males are more likely to have depression and are more likely to have an alcohol use disorder than females. (B)females are more likely to have depression and are more likely to have an alcohol use disorder than males. (C)males are more likely than females to have depression while females are more likely than males to have an alcohol use disorder. (D)females are more likely than males to have depression while males are more likely than females to have an alcohol use disorder.",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2013, share of people in the India who think political parties are corrupt is\n(A)26% (B)46% (C)66% (D)86%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "In 2016, about how many people in the United States were homeless?\n(A)55,000 (B)550,000 (C)5,500,000 (D)55,000,000",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Which of the following countries invested the largest fraction of its GDP in renewable energy in 2015?\n(A)China (B)Japan (C)Chile (D)India",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "What is the percentage of children aged 13-15 in the United States who reported being bullied at least once in the past couple of months as of 2015?\n(A)26% (B)46% (C)66% (D)86%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "About what percentage of survey respondents from Mexico report having paid a bribe in the last year to access public services (such as education; judiciary; medical and health; police; registry and permit services; utilities; tax revenue and customs; and land service) as of 2017?\n(A)31% (B)51% (C)71% (D)91%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "In 2016, what percentage of the population of South Sudan had access to electricity?\n(A)9% (B)29% (C)59% (D)79%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Controlling for inflation and PPP-adjustment, about how much did GDP per capita increase from 1950 to 2016 in India?\n(A)by 4 fold (B)by 8 fold (C)by 16 fold (D)by 32 fold",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "What is the percentage of children aged 13-15 in Japan who reported being bullied at least once in the past couple of months as of 2015?\n(A)6% (B)16% (C)36% (D)66%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Before being reelected for a third term as president how many Americans approved of running a third time?\n(A)20% (B)40% (C)60% (D)80%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "In 2018, about how many chickens were killed for meat production?\n(A)690 million (B)6.9 billion (C)69 billion (D)690 billion",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "After the Atom bomb how many Americans support giving aid to Japan even at the cost of food shortages?\n(A)33% (B)50% (C)66% (D)85%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2017, the share of GDP spent on the military by Saudi Arabia is about\n(A)1% (B)3% (C)6% (D)10%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of South Koreans say it is necessary to believe in God in order to be moral and have good values?\n(A)25% (B)45% (C)65% (D)85%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Which of the following is true about the global growth rate?\n(A)The global growth rate was four times as high 50 years ago as it is in 2020. (B)The global growth rate was two times as high 50 years ago as it is in 2020. (C)The global growth rate is two times as high as it is in 2020. (D)The global growth rate is four times as high today as it is in 2020.",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of people from Russia says homosexuality should be accepted by society?\n(A)14% (B)24% (C)34% (D)44%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2015, the global fertility rate was about\n(A)1.5 children per woman (B)2.5 children per woman (C)3.5 children per woman (D)4.5 children per woman",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, unsafe water is responsible for about how many deaths each year?\n(A)1.2 million (B)2.4 million (C)3.6 million (D)4.8 million",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Which of the following countries generated the most total energy from solar sources in 2019?\n(A)China (B)United States (C)Germany (D)Japan",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2018, about what percentage of US adults say computer programs will always reflect human bias?\n(A)43% (B)58% (C)73% (D)88%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of the world population lives in extreme poverty (less than $1.90 a day)?\n(A)5% (B)10% (C)15% (D)25%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2017, the share of GDP spent on the military by China is about\n(A)0.50% (B)2% (C)6% (D)12%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Which of the following was responsible for the most death in the 20th century?\n(A)Earthquakes (B)Volcanic activity (C)Wildfires (D)Floods",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2018, about what percentage of US adults say criminal risk assessment for people up for parole is an unreasonable application of algorithmic decision making?\n(A)26% (B)41% (C)56% (D)71%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "In Sub-Saharan Africa, as of 2020,\n(A)no nation has been able to grow in the past years. (B)the Democratic Republic of Congo has become poorer than it initially was in 1980. (C)some countries have had relatively significant growth rates. (D)some countries have had relatively significant growth rates, but the Democratic Republic of Congo has become poorer than it initially was in 1980.",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of the global population does not have access to safe drinking water?\n(A)10% (B)20% (C)30% (D)40%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2017, how many people in the world have some access to electricity?\n(A)60% (B)70% (C)80% (D)90%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2018, about what percentage of people from Tunisia say that having an increasing number of people of many different races, ethnic groups and nationalities in their country makes it a better place to live (as opposed to worse or no difference)?\n(A)24% (B)39% (C)54% (D)69%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "What is the percentage of children aged 13-15 in China who reported being in a physical fight at school, one or more times during the past 12 months as of 2015?\n(A)9% (B)19% (C)39% (D)59%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The percentage of children in Vietnam (age 8) who reported physical punishment by teachers in the past week in 2009 was about what?\n(A)10% (B)20% (C)40% (D)80%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2016, about what percentage of adults aged 18 years or older were obese?\n(A)6% (B)13% (C)27% (D)46%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2015, agriculture made up about what percentage of total US GDP?\n(A)1% (B)3% (C)9% (D)20%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Which of the following pairs of statements are both true (as of 2019)?\n(A)People tend to be optimistic about their own future and the future of their nation or the world. (B)People tend to be optimistic about their own future but pessimistic about the future of their nation or the world. (C)People tend to be pessimistic about their own future but optimistic about the future of their nation or the world. (D)People tend to be pessimistic about their own future and the future of their nation or the world.",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "In 1965 how many Americans thought that sending troops to Vietnam was a mistake?\n(A)25% (B)45% (C)65% (D)85%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "In 1935 roughly how many Americans were in favor of Social Security act?\n(A)90% (B)70% (C)50% (D)30%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "In which of the following country did the largest number of children die under the age of five years in 2017?\n(A)China (B)United States (C)Indonesia (D)Pakistan",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "Controlling for inflation and PPP-adjustment, about how much did GDP per capita increase from 1950 to 2016 in South Korea?\n(A)by 4 fold (B)by 8 fold (C)by 16 fold (D)by 32 fold",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2017, the share of global deaths by suicide is about\n(A)0.70% (B)1.40% (C)2.80% (D)5.60%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Which of the following countries emitted the most CO2 per capita in 2017?\n(A)Japan (B)Canada (C)Russia (D)Iran",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Americans agree that the state is run for the benefit of all the people?\n(A)31% (B)46% (C)61% (D)76%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Most Latin American countries achieved independence\n(A)shortly after World War II (B)in the 1960s (C)around the time of World War I (D)in the early nineteenth century",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "About how many people are infected by HIV/AIDS as of 2020?\n(A)3 million (B)14 million (C)42 million (D)124 million",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Before Nixon resigned how many believed he should be removed from office?\n(A)79% (B)98% (C)33% (D)57%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2019, which of the following had the lowest life expectancy?\n(A)Brazil (B)China (C)Mexico (D)Iran",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2020, about how much do you need to make annually to be among the richest one percent in the world?\n(A)$150,000  (B)$75,000  (C)$35,000  (D)$15,000 ",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2020, about what percentage of the world population practices open defecation?\n(A)2% (B)4% (C)9% (D)18%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "The percentage of children in Ethiopia (age 8) who reported physical punishment by teachers in the past week in 2009 was about what?\n(A)18% (B)38% (C)58% (D)78%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2017, what percentage of Indians live in urban areas?\n(A)19% (B)34% (C)49% (D)64%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2017, how many of the world’s 1-year-old children today have been vaccinated against some disease? *\n(A)80% (B)60% (C)40% (D)20%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Russians say it is very important to have free media in our country without government/state censorship?\n(A)38% (B)53% (C)68% (D)83%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Americans say the relationship between the U.S. and Germany is good?\n(A)60% (B)75% (C)90% (D)45%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Controlling for inflation and PPP-adjustment, about how much did GDP per capita increase from 1950 to 2016 in China?\n(A)by 4 fold (B)by 8 fold (C)by 16 fold (D)by 32 fold",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Which of the following is not an element of the redistribution-with-growth policy approach?\n(A)minimum wage legislation (B)land reform (C)progressive taxation (D)increased access to education",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The global HIV/AIDS death rate is highest for which of these age groups?\n(A)Under 5 (B)14-May (C)15-49 (D)over 50",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "What is the percentage of children aged 13-15 in Egypt who reported being bullied at least once in the past couple of months as of 2015?\n(A)10% (B)30% (C)50% (D)70%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "The percentage of children in India (age 8) who reported physical punishment by teachers in the past week in 2009 was about what?\n(A)38% (B)58% (C)78% (D)98%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Ross Perot makes polling history by leading the presidential race briefly in June as a third-party candidate with 39%. He winds up with _% of the popular vote.\n(A)1 (B)7 (C)13 (D)19",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2014, about what percentage of primary aged children in Sub-Saharan Africa were out-of-school?\n(A)10% (B)20% (C)35% (D)50%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Italians say it is very important to have free media in our country without government/state censorship?\n(A)41% (B)56% (C)71% (D)86%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2017, what fraction of the population in Brazil used the internet in the past three months?\n(A)18% (B)38% (C)58% (D)78%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Controlling for inflation and PPP-adjustment, about how much did GDP per capita increase from 1950 to 2016 in Japan?\n(A)by 5 fold (B)by 10 fold (C)by 15 fold (D)by 20 fold",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "In 2017, about how many people died from terrorism globally?\n(A)260 (B)2,600 (C)26,000 (D)260,000",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2013, share of people in the United States who think political parties are corrupt is\n(A)36% (B)56% (C)76% (D)96%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Which of the following countries emitted the most CO2 in 2017?\n(A)Canada (B)Russia (C)Iran (D)Japan",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "About what percentage of survey respondents from China report having paid a bribe in the last year to access public services (such as education; judiciary; medical and health; police; registry and permit services; utilities; tax revenue and customs; and land service) as of 2017?\n(A)26% (B)46% (C)66% (D)86%",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "As of 2017, what fraction of the population in India used the internet in the past three months?\n(A)11% (B)26% (C)41% (D)56%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "What is the percentage of children aged 13-15 in the United States who reported being in a physical fight at school, one or more times during the past 12 months as of 2015?\n(A)15% (B)35% (C)55% (D)75%",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what share of electricity came from fossil fuels in the United States?\n(A)23% (B)43% (C)63% (D)83%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "Total global healthcare expenditure is about what percentage of global GDP as of 2017?\n(A)1% (B)2% (C)5% (D)10%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of Indians say it is necessary to believe in God in order to be moral and have good values?\n(A)59% (B)69% (C)79% (D)89%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "In 1987 during Iran Contra what percent of Americans believe Reagan was witholding information?\n(A)2% (B)25% (C)50% (D)75%",
+            "output": [
+                "D"
+            ]
+        },
+        {
+            "input": "The conjecture that inequality first increases with development, then decreases with further development (known as the “inverted U hypothesis”) has, as of 2020, been\n(A)strongly supported by most studies (B)supported mainly by cross-section, not time-series studies (C)supported mainly by time-series, not cross-section studies (D)generally repudiated by empirical studies",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "As of 2019, about what percentage of people from Turkey agree that the state is run for the benefit of all the people?\n(A)36% (B)51% (C)66% (D)81%",
+            "output": [
+                "C"
+            ]
+        },
+        {
+            "input": "As of 2017, the share of GDP spent on the military by the United States is about\n(A)1% (B)3% (C)6% (D)10%",
+            "output": [
+                "B"
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}
