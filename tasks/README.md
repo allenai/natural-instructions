@@ -118,9 +118,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task117_spl_translation_en_de` | Translate English questions to German while preserving named entities in the original language. | Translation
 `task118_semeval_2019_task10_open_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with an open vocabulary.	| Answer Generation, Arithmetic
 `task119_semeval_2019_task10_geometric_mathematical_answer_generation`	|  Answering multiple choices geometric problems.	| Answer Generation, Geometry
-`task119_zest_text_modification` | Paraphrase the given question. | Text Modification
-`task120_zest_text_modification` | Given a question, change the answer with minimum changes. | Text Modification
-`task121_zest_text_modification` | Given some questions, combine them to have one new question. | Text Modification
+`task119_zest_text_modification` | Paraphrase the given question. | Paraphrasing
+`task120_zest_text_modification` | Given a question, change the answer with minimum changes. | Question Generation
+`task121_zest_text_modification` | Given some questions, combine them to have one new question. | Question Composition
 `task122_conala_list_index_addition` | Add lists together based on their index. | Answer Generation, Arithmetic
 `task123_conala_sort_dictionary` | Sort a list of dictionaries based on a given key. | Answer Generation, Arithmetic
 `task124_conala_pair_averages` | Calculate the averages for each two consecutive elements. | Answer Generation, Arithmetic
@@ -585,6 +585,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
 `task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
 `task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
+`task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
+`task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
+`task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
+`task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -953,6 +957,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1361_movierationales_classification` | Classification (based on Movie Rationales) | Classification
+`task1364_hans_answer_generation` | Generating answers (based on Hans) | Answer Generation
+`task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
+`task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
+`task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
+`task1397_europa_ecdc_tm_fr_en_translation` | Translate French sentences to English | Translation
 `task1398_obqa_question_generation` | Given a fact, generate a question that can be answered using the fact | Question Generation
 `task1399_obqa_answer_generation` | Given a fact and question, generate an answer to the question | Answer Generation
 `task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
@@ -973,3 +983,20 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
+`task1429_evalution_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1437_doqa_cooking_question_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
+`task1438_doqa_cooking_answer_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
+`task1439_doqa_cooking_isanswerable` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
+`task1440_doqa_movies_question_generation` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
+`task1441_doqa_movies_answer_generation` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
+`task1442_doqa_movies_isanswerable` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
+`task1443_string_to_number` | Given a string of spelled out digits return the number the string represents | Answer Generation
+`task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
+`task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
+`task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
+`task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
+`task1501_dstc3_answer_generation` | Generating answers to DSTC 3 conversations related questions | Answer Generation
+`task1502_hatexplain_classification` | Classification of type of tweet in Hatexplain | Classification
+`task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
+`task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
