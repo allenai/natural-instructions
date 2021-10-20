@@ -6,29 +6,40 @@
         "MultiNLI, https://cims.nyu.edu/~sbowman/multinli/paper.pdf"
     ],
     "Categories": [
-        "Classification"
+        "Multiple Choice Question Answering",
+        "Deductive reasoning"
     ],
-    "Definition": "In this task, you're given a statement, and three sentences as choices. Your job is to determine which sentence neither clearly agrees nor disagrees with the statement. Indicate your answer as 1,2, or 3 corresponding to the choice number of the selected sentence.",
+    "Definition": "In this task, you're given a statement and three sentences as choices. Your job is to determine the neural choice based on your inference from the statement and your commonsense knowledge. The neural choice is a sentence that neither agrees nor disagrees with the statement. Indicate your answer as 1,2, or 3, corresponding to the choice number of the selected sentence.",
+    "Input_language": ["English"], 
+    "Output_language": ["English"], 
+    "Domains": [    
+        "History",
+        "Fiction",
+        "Dialogue",
+        "Law",
+        "Government and Politics" 
+    ],
+    "Instruction_language": ["English"], 
     "Positive Examples": [
         {
             "input": "Statement: Next to the MGM Grand you will find M and M World, four stories of merchandise and memorabilia dedicated to the candy that doesn't melt in your hand. Choices: 1. The candy has many fans who love its attractions. 2. There's four stories of memorabilia dedicated to a candy. 3. That particular candy melts and becomes difficult to eat.",
             "output": "1",
-            "explanation": "The candy may or may not be popular."
+            "explanation": "The candy may or may not be popular and the first choice is correct. Based on the statement, candy doesn't melt and there's four stories of memorabilia dedicated to a candy. So the fist choice agrees with the statement and the third choice disagrees with the statement." 
         },
         {
             "input": "Statment: I've forgotten his name now, confessed Tuppence. Choices: 1. Tuppence forgot his name. 2.Tuppence remembered his name later. 3. Tuppence never could forget his name.",
             "output": "2",
-            "explanation": "Tuppence may or may not have later remembered the name."
+            "explanation": "Tuppence may or may not have later remembered the name, and has definitely forgotten it. So the first choice agrees with the statement, the third choice disagrees with the statement and the second choice is correct." 
         },
         {
             "input": "Statement: One of the first organizational realignments taking place is in the Office of the Taxpayer Advocate. Choices: 1. The office of the taxpayer advocate is the last to be realigned. 2. The realignment is taking place over a few weeks. 3. The office of the taxpayer advocate is having an organizational realignment.",
             "output": "2",
-            "explanation": "The office realignment duration is not known."
+            "explanation": "The office realignment duration is not known. So the second choice is correct."
         },
         {
             "input": "Statement: yeah i tell you what though if you go price some of those tennis shoes i can see why now you know they're getting up in the hundred dollar range. Choices: 1. The tennis shoes have a range of prices. 2. The tennis shoes can be in the hundred dollar range. 3. The tennis shoes are not over hundred dollars.",
             "output": "1",
-            "explanation": "The range of shoe prices is not known."
+            "explanation": "The range of shoes prices is not known. And, the first choice is correct." 
         }
     ],
     "Negative Examples": [
@@ -41,17 +52,21 @@
             "input": "Statement: You could say you were in an auto accident, and the ambulance driver took you straight to Dr. Famous' office. Choices: 1. Ambulance drivers knew Dr Famous was great for treating famous people. 2. Ambulance drivers just took you to the hospital. 3. Ambulance drivers knew Dr Famous.",
             "output": "2",
             "explanation": "The ambulance took the person to Dr. Famous, and not a hospital, so the second choice clearly disagrees with the statement and is incorrect."
-        }
+        },
+        {
+            "input": "Statement: The cattle and sugar barrels exported from the plantation in fact had these initials branded onto them. Choices: 1. There is no branding on barrels and cattle from the plantation. 2. The plantation produces tobacco in addition to cattle and sugar. 3. These initials were branded onto the barrels of sugar that were exported.",
+            "output": "1",
+            "explanation": "Based on the statement there are branding on barrels and cattle from the plantation. So, the first sentence disagrees with the statement and it's incorrect. "
+        },    
+        {
+            "input": "Statement:  There were results at once. Choices: 1. The results came too slowly.  2. The results were abundant.  3. There were results asap. ",
+            "output": "1",
+            "explanation": "Based on the statement, There were results asap. So the first choice disagrees with the statement and it is incorrect. We don't know if the results were abundant or not and the second choice is correct."
+        }    
     ],
     "Instances": [
         {
             "input": "Statement: Although the narrow streets and squares above the Grand Canal have lots to offer the visitor, most people gravitate to the cafe and restaurants along the water. Choices: 1. Most people prefer being above the Grand Canal. 2. Grand Canal offers the most spectacular view. 3. Tourists rush to the cafes and restaurants near the Grand Canal.",
-            "output": [
-                "2"
-            ]
-        },
-        {
-            "input": "Statement: The cattle and sugar barrels exported from the plantation in fact had these initials branded onto them. Choices: 1. There is no branding on barrels and cattle from the plantation. 2. The plantation produces tobacco in addition to cattle and sugar. 3. These initials were branded onto the barrels of sugar that were exported.",
             "output": [
                 "2"
             ]
@@ -100,12 +115,6 @@
         },
         {
             "input": "Statement: Colonizing other worlds would be the ultimate adventure. Choices: 1. Colonizing other worlds wouldn't be much of an adventure. 2. Fighting resistant alien populations would be just one of many challenges. 3. There'd be no way to top the adventure that comes with colonizing other worlds.",
-            "output": [
-                "2"
-            ]
-        },
-        {
-            "input": "Statement:  There were results at once. Choices: 1. The results came too slowly.  2. The results were abundant.  3. There were results asap. ",
             "output": [
                 "2"
             ]
