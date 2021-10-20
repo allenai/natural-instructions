@@ -1,5 +1,10 @@
 # Task Hierarchy
 
+## Guidelines / FAQs for Contributors:
+
+- Massaging the task hierarchy categories is somewhat encouraged.
+- If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
+- `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
 - `Abuse Detection`
 - `Question Answering`
