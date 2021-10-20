@@ -12,33 +12,37 @@
         "Reasoning -> Temporal Reasoning",
         "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task we ask you to write answer to a question that involves “transient v. stationary\" events, i.e., the understanding of whether an event will change over time or not. For example, the sentence \"he was born in the U.S.\" contains a stationary event since it will last forever; however, \"he is hungry\" contains a transient event since it will remain true for a short period of time. \nThings to avoid: -\nEmphasis & Caution: Note that a lot of the questions could have more than one correct answers. We only need a single most-likely answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
+    "Definition": "In this task we ask you to write answer to a question that involves events that may be stationary(not changing over time) or transient(changing over time). For example, the sentence \"he was born in the U.S.\" contains a stationary event since it will last forever; however, \"he is hungry\" contains a transient event since it will remain true for a short period of time. \nEmphasis & Caution: Note that a lot of the questions could have more than one correct answers. We only need a single most-likely answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: Was Jack still tired the next day?",
-            "output": "No.",
+            "output": "no.",
             "explanation": "Typically fatigue after playing in school goes away the next day."
         },
         {
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa. \nQuestion: Was he born in China by the time he gets the Visa?",
-            "output": "Yes.",
+            "output": "yes.",
             "explanation": "\"Born in China\" is Stationary, i.e., it doesn't change over time."
+        },
+        {
+            "input": "Sentence: At least some FAA officials in Boston Center and the New England Region knew that a hijacker on board American 11 had said \"we have some planes.\". \nQuestion: Will the plane still be hijacked next week?",
+            "output": "No, the hijacker was arrested.",
+            "explanation": "Although a simple \"no\" would have been accepted, this answer is still a good answer."
         }
     ],
     "Negative Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: Was Jack still tired the next day?",
-            "output": "Yes.",
+            "output": "yes.",
             "explanation": "Typically fatigue after playing in school goes away the next day.'No' would have been a good answer to the given question."
+        },
+        {
+            "input": "Sentence: Islam later emerged as the majority religion during the centuries of Ottoman rule, though a significant Christian minority remained. \nQuestion: Is Islam still the majority religion?",
+            "output": "It depends on several factors.",
+            "explanation": "This is not a correct answer. Your answer should be definite."
         }
     ],
     "Instances": [
-        {
-            "input": "Sentence: Islam later emerged as the majority religion during the centuries of Ottoman rule, though a significant Christian minority remained. \nQuestion: Is Islam still the majority religion?",
-            "output": [
-                "yes."
-            ]
-        },
         {
             "input": "Sentence: It's hail crackled across the comm, and Tara spun to retake her seat at the helm. \nQuestion: Will the hail storm ever end?",
             "output": [
@@ -74,14 +78,6 @@
             "input": "Sentence: There was even a tiny room in the back of one of the closets. \nQuestion: Was the room still there after the house was remodeled?",
             "output": [
                 "yes."
-            ]
-        },
-        {
-            "input": "Sentence: At least some FAA officials in Boston Center and the New England Region knew that a hijacker on board American 11 had said \"we have some planes.\". \nQuestion: Will the plane still be hijacked next week?",
-            "output": [
-                "no.",
-                "no the hijacker was arrested.",
-                "no the hijacker was caught."
             ]
         },
         {
