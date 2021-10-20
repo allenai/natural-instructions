@@ -13,29 +13,29 @@
       "Domains": [
             "Formal logic"
       ],
-      "Definition": "In this task, you will be given a fact as input, a possible annotation and some examples. The fact will always contain exactly two placeholders [A] and [B], with some examples for both. You will also be given a possible annoation of the fact. Assume that the fact holds true for the given examples. Tell if, given, the fact is true, the annotation is also true. If the annotation holds true, answer \"yes\", \"no\" or \"incomprehensible\". ",
+      "Definition": "In this task, you will be given a fact as input, a possible annotation and some examples. You are to detemine if the annotation can explain the fact. If the annotation can explain the fact, answer \"yes\", \"no\" or \"incomprehensible\". Note: The fact will always contain exactly two blanks [A] and [B], with some examples for both. ",
       "Positive Examples": [
             {
                   "input": "fact:region[A] is nation in location[B]\nexamples[A]:Portugal / England / Tanzania\nexamples[B]:United Kingdom / Central America / Europe\nannotation:region[A] is country in location[B]",
                   "output": "yes",
-                  "explanation": "A nation is a community of people of similar characteristics/descent with a common government. A country is a region sharing a common government. Hence, a nation can be defined as a country. The annotation remains true for given examples as well."
+                  "explanation": "In following relationship, [region] is nation in [location], examples of [region] can be 'Portugal', 'England', 'Tanzania' and examples of [location] can be 'United Kingdom', 'Central America' 'Europe'. The annotation sentence can explain the fact so it is correct."
             },
             {
                   "input": "fact:person[B] is calling  location[A]\nexamples[A]:Iraq / Iran / United States\nexamples[B]:George W. Bush / Vladimir Putin\nannotation:person[B] is urging  location[A]",
                   "output": "no",
-                  "explanation": "Calling a location does not mean urging it."
+                  "explanation": "[person] calling a [location] does not neccessarily mean the [person] is urging the [location]. Examples of [location] are 'Iran' 'Iraq' and 'United States', while examples of [person] are 'George W. Bush' and 'Vladimir Putin'."
             }
       ],
       "Negative Examples": [
             {
                   "input": "fact:location[B] is pointing at organization_founder[A]\nexamples[A]:United States of America / Egypt\nexamples[B]:Russia / United Kingdom / European Union Member States\nannotation:location[B] is accusing  organization_founder[A]",
                   "output": "no",
-                  "explanation": "The given statement is an annotation for the fact but the output is given is 'no' which is incorrect."
+                  "explanation": "[location] is pointing at [organization_founder] can be explained as [location] is accusing  [organization_founder]."
             },
             {
                   "input": "fact:business_operation[B] is being acquired by [A]\nexamples[A]:Chrysler Group LLC / AT&T / Tele\nexamples[B]:RCA / Telef\u00f3nica O2 U.K / AT&T\nannotation:business_operation[B] is being bought by [A]",
                   "output": "no",
-                  "explanation": "Being bought by is an annotation for being acquired by so the output should be 'yes'."
+                  "explanation": "[business_operation] is being acquired by [A] can be explained as [business_operation] is being bought by [A]."
             }
       ],
       "Instances": [

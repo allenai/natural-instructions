@@ -778,9 +778,9 @@ Name | Summary | Category
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task970_sherliic_causal_relationship` | Determine if A and B share a casual relationship |Classification
-`task973_sherliic_inverse_causal_relationship` | Determine if A and B share an inverse casual relationship |Classification
 `task971_sherliic_fact_annotation` | Detemine if the annotation given is a correct annotation for the given fact |Classification
 `task972_sherliic_premise_hypo_seq` | Return the sequence of premise-hypothesis for statements A and B |Classification
+`task973_sherliic_inverse_causal_relationship` | Determine if A and B share an inverse casual relationship |Classification
 `task974_prachathai67k_sentiment_classification` | Classify the sentiment of a given article on the given genre |Classification
 `task975_prachathai67k_same_genre_classification` | Determine if the two articles given share the same sentiment fot the given genre |Classification
 `task976_pib_indian_language_identification` | Identify the language of the given statement from the 11 languages listed |Classification
