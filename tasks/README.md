@@ -957,6 +957,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1356_xlsum_title_generation` | Generating title for the text in xlsum | Title Generation
+`task1357_xlsum_summary_generation` | Generating summary for the text in xlsum | Summary Generation
+`task1358_xlsum_title_generation` | Generates title for the text in xlsum | Title Generation
+`task1359_numer_sense_answer_generation` | Generates answer to numer sense | Answer Generation
+`task1360_numer_sense_multiple_choice_qa_generation` | Generating answers to numer sense | Multiple Choice QA Generation
 `task1361_movierationales_classification` | Classification (based on Movie Rationales) | Classification
 `task1364_hans_answer_generation` | Generating answers (based on Hans) | Answer Generation
 `task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
