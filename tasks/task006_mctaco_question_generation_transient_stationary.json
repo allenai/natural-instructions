@@ -7,9 +7,11 @@
         "mctaco"
     ],
     "Categories": [
-        "Question Generation"
+        "Question Generation -> Contextual Question Generation",
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task, based on a given sentence, we ask you to write a question that involves \u201ctransient v. stationary\" events, i.e., the understanding of whether an event will change over time or not. For example, the sentence \"he was born in the U.S.\" contains a stationary event since it will last forever; however, \"he is hungry\" contains a transient event since it will remain true for a short period of time. \nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \"instinct\" or \"common sense\".\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+    "Definition": "In this task, based on a given sentence, we ask you to write a question that involves \"transient vs. stationary\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \"he was born in the U.S.\" contains a stationary event since it will last forever; however, \"he is hungry\" contains a transient event since it will remain true for a short period of time. \nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \"instinct\" or \"common sense\".\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired.",
@@ -20,13 +22,28 @@
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa.",
             "output": "Was he born in China by the time he got the Visa?",
             "explanation": "this question uses the stationary nature of \"born in China\". Therefore it's a \"stationary vs transient\" question."
+        },
+        {
+            "input": "Sentence: Cathy Wallace did not always know what she wanted to be when she grew up.",
+            "output": "Did Cathy eventually find out what she wanted to be when she grew up?",
+            "explanation": "This is a good question. It uses the transient nature of \"knowing\" something."
+        },
+        {
+            "input": "Sentence: One day, as Mary was picking the blueberries, she turned around to find that Max was not there.",
+            "output": "Was Marry still looking for Max the next day?",
+            "explanation": "This is a good example, as it questions the transient nature of \"being somewhere\"."
         }
     ],
     "Negative Examples": [
         {
-            "input": "Sentence: He spent two hours on his homework.",
-            "output": "How long did he do his homework?",
-            "explanation": "We DO NOT want this question, as the answer is directly mentioned in the text."
+            "input": "Sentence: She ordered the tastiest kind of each vegetable and the prettiest kind of each flower.",
+            "output": "What kind of flowers did she order?",
+            "explanation": "We DO NOT want this question, as it is not about an event being stationary or transient."
+        },
+        {
+            "input": "Sentence: Cathy Wallace did not always know what she wanted to be when she grew up.",
+            "output": "Was Cathy unsure about her future for some time?",
+            "explanation": "From the sentence, we know that Cathy was unsure about her future for some time, so the question is asking about an information directly given in the question. This is not a good question."
         }
     ],
     "Instances": [
@@ -73,21 +90,9 @@
             ]
         },
         {
-            "input": "Sentence: She ordered the tastiest kind of each vegetable and the prettiest kind of each flower.",
-            "output": [
-                "Did she still order the next day?"
-            ]
-        },
-        {
             "input": "Sentence: He was asked to lend his support by writing a letter, with Szilard, to President Roosevelt, recommending the U.S. pay attention and engage in its own nuclear weapons research.",
             "output": [
                 "Is the US still engaging in its own nuclear weapons research?"
-            ]
-        },
-        {
-            "input": "Sentence: Cathy Wallace did not always know what she wanted to be when she grew up.",
-            "output": [
-                "Did Cathy always have this unsure feeling?"
             ]
         },
         {
@@ -112,12 +117,6 @@
             "input": "Sentence: Search \"Emiliano Malaquez\" and you'll find he's a master of the \"captured moment\" school of sculpture.",
             "output": [
                 "Will Emiliano Malaquez always be a master of \"captured moment\" sculpture?"
-            ]
-        },
-        {
-            "input": "Sentence: One day, as Mary was picking the blueberries, she turned around to find that Max was not there.",
-            "output": [
-                "Was Mary still looking for Max the next day?"
             ]
         },
         {
@@ -1039,7 +1038,7 @@
             ]
         },
         {
-            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban\u2002\u2014\u2002Sea Dayak pirates and Land Dayak slash-and-burn farmers.",
+            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban — Sea Dayak pirates and Land Dayak slash-and-burn farmers.",
             "output": [
                 "Do the Iban control the Sarawak's Coast now?"
             ]
@@ -1174,5 +1173,25 @@
                 "Did she still feel bad after waking up?"
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
     ]
 }
