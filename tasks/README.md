@@ -973,3 +973,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
+`task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
+`task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
+`task1501_dstc3_answer_generation` | Generating answers to DSTC 3 conversations related questions | Answer Generation
+`task1502_hatexplain_classification` | Classification of type of tweet in Hatexplain | Classification
+`task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
+`task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
