@@ -622,7 +622,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task647_answer_generation` | Pronoun Quote Finder | Answer Generation
 `task648_answer_generation` | Find subject to the pronoun in the sentence | Answer Generation
 `task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
-`task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
 `task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
 `task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
 `task652_parsinlu_en_fa_translation` | Given an English question, translate it into Persian. | Translation
