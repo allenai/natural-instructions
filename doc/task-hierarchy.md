@@ -128,6 +128,7 @@
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
+* `Pop Culture`
 * `History`
   * `History -> European History`
   * `History -> 9/11 Reports`
