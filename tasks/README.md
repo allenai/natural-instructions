@@ -585,6 +585,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
 `task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
 `task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
+`task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
+`task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
+`task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
+`task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
