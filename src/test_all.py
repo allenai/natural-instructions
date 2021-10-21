@@ -126,9 +126,9 @@ for file in files[begin_task_number:end_task_number+1]:
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
 
-            assert type(data['Input_language']) == list, f'Input_language must be a str.'
-            assert type(data['Output_language']) == list, f'Output_language must be a str.'
-            assert type(data['Instruction_language']) == list, f'Output_language must be a str.'
+            assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
+            assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
+            assert type(data['Instruction_language']) == list, f'Output_language must be a list of strings.'
 
             assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
             assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
