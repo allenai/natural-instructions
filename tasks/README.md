@@ -847,6 +847,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task952_wiki_cloze_pa_multiple_choice_question_answering` | Given a cloze question in punjabi, identify the missing word| Multiple Choice Question Answering|
 `task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
 `task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
+`task955_wiki_auto_style_transfer` | Elaborate wikipedia sentences. | Style Transfer 
 `task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Tabular Text Operation
 `task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
 `task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
@@ -975,6 +976,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1360_numer_sense_multiple_choice_qa_generation` | Generating answers to numer sense | Multiple Choice QA Generation
 `task1361_movierationales_classification` | Classification (based on Movie Rationales) | Classification
 `task1364_hans_answer_generation` | Generating answers (based on Hans) | Answer Generation
+`task1365_opustedtalks_translation` | Translation from English to Croatian using Opus_Ted Dataset | Translation
+`task1366_healthfact_classification` | Find if claim belongs to a predefined category using given paragraph | Classification
+`task1367_opustedtalks_translation` | Translation from Croatian to English using Opus_Ted Dataset | Translation
+`task1368_healthfact_sentence_generation` | Generate a claim based on a given paragraph | Sentence Generation
+`task1369_healthfact_sentence_generation` | Generate an explanation for a claim based on a given paragraph | Sentence Generation
 `task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
 `task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
 `task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
@@ -1010,9 +1016,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
 `task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
 `task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1498_24hour_to_12hour_clock` | Given a timestamp in 24-hour format, convert it to 12-hour format | Answer Generation
 `task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
 `task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
 `task1501_dstc3_answer_generation` | Generating answers to DSTC 3 conversations related questions | Answer Generation
 `task1502_hatexplain_classification` | Classification of type of tweet in Hatexplain | Classification
 `task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
 `task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
+`task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
