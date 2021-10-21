@@ -822,7 +822,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
 `task914_bianet_translation` | Generating a translation of an Kurdish sentence into Turkish| Translation
 `task915_imppres_longTextGeneration` | Given a premise and hypothesis, determine if it has positive, negative or neutral entailment | Natural Language Inference
-`task916_naturalLanguageInference` | Given a premise, generate one hypothesis | Text Generation
+`task916_imppres_naturalLanguageInference` | Given a premise, generate one hypothesis | Text Generation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
