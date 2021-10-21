@@ -8,22 +8,22 @@
     "Categories": [
         "Incorrect Answer Generation"
     ],
-    "Definition": "Given the provided goal task in the input, describe a physical process (such as moving them, arranging them in a certain way, mixing them, shaking them, etc) that does not lead to the asked outcome, yet it is closely related to it (i.e., it should use the words that are provided in the input). To make sure that the generated process does not lead to the asked outcome. you can introduce objects or events unrelated to the context of the question e.g. 'cleaning the keyboard by making an elephant sit on them'; or you can create contradictory statements e.g. 'drying wet keyboards with running water'. In your responses, avoid typos and misspellings.",
+    "Definition": "You will be asked how to do a certain task. You should describe a physical process that does not lead to the asked outcome, yet it is closely related to it (i.e., it should use the words that are provided in the input). The physical process can be moving something, arranging something in a certain way, mixing things, shaking them, etc. To make sure that the generated process does not lead to the asked outcome, you can introduce objects or events unrelated to the context of the question e.g. 'cleaning the keyboard by making an elephant sit on them'; or you can create contradictory statements e.g. 'drying wet keyboards with running water'. In your responses, avoid typos and misspellings.",
     "Positive Examples": [
         {
             "input": "How do you remove keys from a computer keyboard for cleaning?",
             "output": "Place the tip of your finger under the corner of a key and gently twist to pop it off.",
-            "explanation": "A sharp narrow object should be used instead of finger."
+            "explanation": "The answer is related to the question, but certainly doesn't lead to the asked outcome( A sharp narrow object should be used instead of finger.), so this is a correct answer."
         },
         {
             "input": "How can you dry wet replacement computer keyboard keys?",
             "output": "by arranging paper towels in the sink and evenly spacing out each key to dry, face side up, with the water running",
-            "explanation": "Running water would make the keyboard keys wet not dry"
+            "explanation": "Running water would make the keyboard keys wet not dry, so this is a good answer."
         },
         {
             "input": "To coat small plastic objects like replacement keyboard keys with soap",
             "output": "place them, water and liquid dishsoap in a container. Keep it open while shaking vigorously until the container is empty.",
-            "explanation": "Keeping the container open while shaking an unsealed container would not achieve the goal task"
+            "explanation": "Keeping the container open while shaking an unsealed container would not achieve the goal task."
         }
     ],
     "Negative Examples": [
@@ -33,24 +33,22 @@
             "explanation": "It is very obvious that the answer is incorrect since an elephant sitting on keyboard have no relevance with drying wet computer keyboard keys."
         },
         {
+            "input": "To scoop muffin dough into liners to be baked, you can",
+            "output": "Ask the muffin dough politely to be scooped.",
+            "explanation": "This answer doesn't contain a physical process, and although it doesn't lead the desired outcome, it is not a good answer."
+        },
+        {
             "input": "To coat small plastic objects like replacement keyboard keys with soap",
             "output": "place them, water and liquid dishsoap in a container. Keep it open while using a spoon to agitate the liquid into a rich foam.",
-            "explanation": "The process should be objectively wrong. Here it is a correct alternate process which will lead directly to the goal"
-        }
-    ],
-    "Instances": [
-        {
-            "input": "To scoop muffin dough into liners to be baked, you can",
-            "output": [
-                "Use a fork to scoop the dough into the muffin pan"
-            ]
+            "explanation": "The process should be objectively wrong. Here it is a correct alternate process which will lead directly to the goal."
         },
         {
             "input": "How do I get a stain out of my curtains?",
-            "output": [
-                "Apply a generous amount of liquid dishwashing soap on the stain. Dampen a sponge with hot water, then blot the fabric to work the soap into the grease. If possible, launder the curtains in hot water with a mineral-based wood cleaner."
-            ]
-        },
+            "output": "Drop the curtain down from the second floor.",
+            "explanation":"This answer contains a physical process, and doesn't lead to the desired outcome, but is completely irrelevant."
+        }
+    ],
+    "Instances": [
         {
             "input": "the best way to keep strawberries for winter baking?",
             "output": [
