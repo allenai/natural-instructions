@@ -1008,6 +1008,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
 `task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
 `task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1498_24hour_to_12hour_clock` | Given a timestamp in 24-hour format, convert it to 12-hour format | Answer Generation
 `task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
 `task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
 `task1501_dstc3_answer_generation` | Generating answers to DSTC 3 conversations related questions | Answer Generation
