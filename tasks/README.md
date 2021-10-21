@@ -1016,3 +1016,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1502_hatexplain_classification` | Classification of type of tweet in Hatexplain | Classification
 `task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
 `task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
+`task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
