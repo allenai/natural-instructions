@@ -7,28 +7,35 @@
         "mctaco"
     ],
     "Categories": [
-        "Incorrect Answer Generation"
+        "Question Answering -> Incorrect Answer Generation",
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task we ask you to write an implausible answer to a question that involves \u201cabsolute timepoint\" of events, which is defined as understanding of when events usually happen. For example, \"going to school\" usually happens during the day (not at 2 A.M). \nThings to avoid: -\nEmphasis & Caution: Even though there exist multiple wrong answers, we only need a single wrong answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
+    "Definition": "In this task we ask you to write answer to a question about when an event happened. Your answer should be a wrong answer. That is, if you are asked about when an event happened, you should answer with a time that the event didn't likely happen at. For example, \"going to school\" usually happens during the day (not at 2 A.M). \nThings to avoid: -\nEmphasis & Caution: Even though there exist multiple wrong answers, we only need a single wrong answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: When did Jack play basketball?",
             "output": "2 AM.",
-            "explanation": "This event likely happened between 3PM to 8PM, definitely not 2AM. So 2 AM is an unlikely option."
+            "explanation": "This event likely happened between 3PM to 8PM, definitely not 2AM. So 2 AM is an unlikely option, hence a good answer here."
         },
         {
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa. \nQuestion: What time of the day was he doing this?",
             "output": "12.30 AM.",
-            "explanation": "We know when embassies typically work, just need to give one plausible answer. Answers similar to \"12.30 AM\" are definitely wrong."
+            "explanation": "12:30 AM is definitely not a likely time for an embassy to be open, so this is a good answer."
+        },
+        {
+            "input": "Sentence: He has not told his wife that he was fired and is simply serving out his tenure at the agency while looking for a new position . \nQuestion: When was he fired?",
+            "output": "An hour ago.",
+            "explanation": "By the phrase \"is simply serving out his tenure\" we know that the event \"firing\" must have happened a while ago, so \"An hour ago\" is a wrong answer to the question. So this is a good exmaple."
         }
     ],
     "Negative Examples": [
-	{
-	    "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: When did Jack play basketball?",
+        {
+            "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: When did Jack play basketball?",
             "output": "4 PM.",
             "explanation": "This event likely happened between 3PM to 8PM, definitely not 2AM. So 4 PM is a correct option. Remember, the task is to write a wrong answer to the given question."
-	}
-	],
+        }
+    ],
     "Instances": [
         {
             "input": "Sentence: Islam later emerged as the majority religion during the centuries of Ottoman rule, though a significant Christian minority remained. \nQuestion: What day did Islam emerge as the majority religion?",
@@ -296,14 +303,6 @@
                 "in 6042.",
                 "the next minute.",
                 "a second later."
-            ]
-        },
-        {
-            "input": "Sentence: He has not told his wife that he was fired and is simply serving out his tenure at the agency while looking for a new position . \nQuestion: When was he fired?",
-            "output": [
-                "a decade ago.",
-                "about a second ago.",
-                "one decade ago."
             ]
         },
         {
@@ -1422,7 +1421,7 @@
             ]
         },
         {
-            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban\u2002\u2014\u2002Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What time of day did the Iban gain control?",
+            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban — Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What time of day did the Iban gain control?",
             "output": [
                 "day."
             ]
@@ -1931,7 +1930,7 @@
             ]
         },
         {
-            "input": "Sentence: Zarco and Teixeira were appointed co-go\u00advern\u00adors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: When did the ceremony take place?",
+            "input": "Sentence: Zarco and Teixeira were appointed co-go­vern­ors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: When did the ceremony take place?",
             "output": [
                 "10 seconds later.",
                 "90 years later.",
@@ -2099,7 +2098,7 @@
             ]
         },
         {
-            "input": "Sentence: Britain seized Gibraltar\u2002\u2014\u2002in the name of the Hapsburg claimant\u2002\u2014\u2002and retained it when the war was over. \nQuestion: When was the Gibraltar war fought by the British?",
+            "input": "Sentence: Britain seized Gibraltar — in the name of the Hapsburg claimant — and retained it when the war was over. \nQuestion: When was the Gibraltar war fought by the British?",
             "output": [
                 "the end of the lebanese war in 1991.",
                 "1997."
@@ -2463,7 +2462,7 @@
             ]
         },
         {
-            "input": "Sentence: , followed by other ports at Hy\u00e8res, Antibes, and Nice. \nQuestion: What time did you go to the ports?",
+            "input": "Sentence: , followed by other ports at Hyères, Antibes, and Nice. \nQuestion: What time did you go to the ports?",
             "output": [
                 "i went to the ports during the night on business days usually."
             ]
@@ -3023,5 +3022,25 @@
                 "11:00 PM."
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
     ]
 }
