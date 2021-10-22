@@ -76,7 +76,6 @@
   - `Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Spatial Reasoning`
   - `Reasoning -> Temporal Reasoning`
-  - `Reasoning -> Scientific Reasoning`
 - `Relation Prediction`
 - `Relevancy Estimation`
 - `Review Generation`
