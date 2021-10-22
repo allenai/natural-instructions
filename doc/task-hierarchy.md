@@ -28,7 +28,6 @@
 - `Document Understanding`
 - `Entity Detection`
 - `Ethical Judgement`
-- `Explanation Generation`
 - `Fake News Detection`
 - `Grammar Error`
   -  `Grammar Error -> Grammar Error Correction`
@@ -44,7 +43,6 @@
   - `Mathematics -> Geometry`
 - `Named Entity Recognition`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
-- `Paragraph Generation`
 - `Paraphrasing`
 - `Parts-of-speech`
 - `Question Decomposition`
@@ -68,10 +66,8 @@
   - `Reasoning -> Temporal Reasoning`
 - `Relation Prediction`
 - `Relevancy Estimation`
-- `Review Generation`
 - `Role Labelling`
 - `Semantic Parsing`
-- `Sentence Generation`
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
@@ -82,17 +78,24 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
+- `Text Generation`
+	- `Text Generation -> Explanation Generation`
+	- `Text Generation -> Paragraph Generation`
+	- `Text Generation -> Review Generation`
+	- `Text Generation -> Sentence Generation`
+	- `Text Generation -> Story Ending Generation`
+	- `Text Generation -> Title Generation`
+	- `Text Generation -> Topic Generation`
 - `Text Modification`
 - `Text Simplification`
 - `Text Span Selection`
 - `Textual Entailment`
-- `Title Generation`
-- `Topic Generation`
 - `Translation`
 - `Verification`: Verify if two inputs match with each other e.g. a task to verify if a sentence and its sentiment given in the input match
   - `Verification -> Claim Verification`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
+- `Wrong Order Detection`
 
 ## Domain
 * `Accounting`
@@ -114,6 +117,7 @@
 * `Dialogue`
 * `Econometrics`
 * `Electrical Engineering`
+* `English`
 * `Fiction`
 * `Formal Fallacy`
 * `Formal logic`
@@ -148,6 +152,7 @@
 * `Prehistory`
 * `Psychology`
 * `Public Relations`
+* `Qualitative Relations`
 * `School Science Textbooks`
 * `Security: Environmental Security`
 * `Security: National Security`
@@ -156,6 +161,7 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `Stack Overflow`
 * `Story`
 * `US Foreign Policy`
 * `Wikipedia`
