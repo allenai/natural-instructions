@@ -637,10 +637,10 @@ Name | Summary | Category
 `task848_pubmedqa_classification` | Classifying if the objective is present or not (based on pubmed_QA) | Classification
 `task849_pubmedqa_answer_generation` | Generating answer from context and question (based on pubmed_QA) | Answer Generation
 `task960_ancora-ca-ner_named_entity_recognition` | Named Entity Recognition for each token in BSC-TeMU/ancora-ca-ner catalan sentences | Named Entity Recognition
-`task961_ancora-ca-ner_text_auto_completion` | Text Auto Completion of partial Catalan sentences | Long Text Generation
-`task962_ancora-ca-ner_missing_word_prediction` | Generating a missing word on Catalan Sentences | Short Text Generation
+`task961_ancora-ca-ner_text_auto_completion` | Text Auto Completion of partial Catalan sentences | Sentence Generation
+`task962_ancora-ca-ner_missing_word_prediction` | Generating a missing word on Catalan Sentences | Sentence Generation
 `task963_librispeech_asr_next_word_prediction` | Predicting next word on librispeech data | Word Generation
-`task964_librispeech_asr_text_auto_completion` | Text Auto Completion of partial English sentences | Long Text Generation
-`task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Short Text Generation
+`task964_librispeech_asr_text_auto_completion` | Text Auto Completion of partial English sentences | Sentence Generation
+`task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Sentence Generation
 `task966_ruletaker_fact_checking_based_on_given_context` | Fact checking based on given context | Fact checking based on context
 `task967_ruletaker_incorrect_fact_generation_based_on_given_paragraph` | Generate incorrect fact based on given paragraph | Incorrect Fact Generation
