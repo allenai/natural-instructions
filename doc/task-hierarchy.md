@@ -109,6 +109,7 @@
 * `Computer Science`
 * `Computer Science -> Machine Learning`
 * `Computer Security`
+* `Debatepedia`
 * `Dialogue`
 * `Econometrics`
 * `Electrical Engineering`

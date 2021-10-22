@@ -201,13 +201,13 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task198_mnli_domain_classification` | Given two sentences and 10 genre choices, determine the genre to which the sentences belong. | Classification
 `task199_mnli_classification` | Given 2 sentences, determine if they clearly agree or disagree with each other or if they cannot be answered. | Classification
 `task200_mnli_entailment_classification` | Given a context statement and three sentences as choices, select the sentence that agrees with the context statement. | Multiple Choice Question Answering, Deductive reasoning
-`task201_mnli_neutral_classification` | Given a context statement and three sentences as choices, select the sentence that neither clearly agrees nor disagrees with the context statement. | Multiple Choice Question Answering, Deductive reasoning
-`task202_mnli_contradiction_classification` | Given a context statement and 3 sentences as choices, choose the sentence that clearly disagrees with the context statement. | Classification
-`task203_mnli_sentence_generation` | Given a context statement, genre, and label indicating agree/disagree/neither with respect to the context statement, generate a sentence that follows the genre and label specifications. | Answer Generation
+`task201_mnli_neutral_classification` | Given a context statement and three sentences as choices, select the sentence that neither clearly agrees nor disagrees with the context statement. | Multiple Choice Question Answering, Deductive reasoning, Commonsense Reasoning
+`task202_mnli_contradiction_classification` | Given a context statement and 3 sentences as choices, choose the sentence that clearly disagrees with the context statement. | Multiple Choice Question Answering, Deductive reasoning, Commonsense Reasoning
+`task203_mnli_sentence_generation` | Given a context statement, genre, and label indicating agree/disagree/neither with respect to the context statement, generate a sentence that follows the genre and label specifications. | Sentence Generation
 `task204_mnli_same_genre_classification` | Given two sentences and the genre they should belong to, determine if they belong to the same genre or not. | Classification
-`task205_remove_even_elements` | Given a list of integers, remove all elements that are even. | Answer Generation, Arithmetic
-`task206_collatz_conjecture` | Given a list of integers, compute the next number in the *3n+1* problem. | Answer Generation, Arithmetic
-`task207_max_element_lists` | Given a list of lists of integers compute the max value for each list. | Answer Generation, Arithmetic
+`task205_remove_even_elements` | Given a list of integers, remove all elements that are even. | Answer Generation, Arithmetic, Numerical Reasoning
+`task206_collatz_conjecture` | Given a list of integers, compute the next number in the *3n+1* problem. | Answer Generation, Arithmetic, Numerical Reasoning
+`task207_max_element_lists` | Given a list of lists of integers compute the max value for each list. | Answer Generation, Arithmetic, Numerical Reasoning
 `task208_combinations_of_list` | Given a list of integers of length *n*, find all possible combinations without replacement of length *n-1*. | Answer Generation, Combinatorics
 `task209_stancedetection_classification` | Given a topic and an argument, detect whether topic is in favor or against in the argument. | Classification
 `task210_logic2text_structured_text_generation` | Given a natural language interpretation, generate a command using logical operations. | Structured Text Generation
