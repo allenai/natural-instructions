@@ -11,6 +11,8 @@
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
   - `Question Answering -> Incorrect Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Multiple Choice Incorrect Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Comprehensive Incorrect Answer Generation`
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
@@ -34,7 +36,6 @@
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hate Speech Detection`
 - `Hypernym Discovery`
-- `Incorrect Answer Generation`
 - `Intent Detection`
 - `Language Identification`
 - `Mathematics`
@@ -127,6 +128,7 @@
 * `Jurisprudence`
 * `Justice`
 * `Law`
+* `Logic`
 * `Macroeconomics`
 * `Management`
 * `Marketing`
@@ -137,6 +139,7 @@
 * `Moral Scenarios`
 * `Movies`
 * `Music`
+* `Narrative`
 * `News`
 * `Nutrition`
 * `Personal Narratives`
@@ -153,6 +156,7 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `Story`
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`

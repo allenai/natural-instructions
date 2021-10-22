@@ -213,9 +213,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task210_logic2text_structured_text_generation` | Given a natural language interpretation, generate a command using logical operations. | Structured Text Generation
 `task211_logic2text_classification` | Given a command and corresponding interpretation, classify whether it is the right interpretation or not. | Classification
 `task212_logic2text_classification` | Given a command, classify the command in one of seven logic types. | Classification
-`task213_rocstories_correct_ending_classification` | Given the title and the first four sentences of a five sentence story, choose the correct story ending. | Classification
-`task214_rocstories_incorrect_ending_classification` | Given the title and the first four sentences of a five sentence story, choose the incorrect story ending. | Classification
-`task215_rocstories_incorrect_answer_generation` | Given the title and the first four sentences of a five sentence story, write an incorrect story ending. | Answer Generation
+`task213_rocstories_correct_ending_classification` | Given the title and the first four sentences of a five sentence story, choose the correct story ending. | Analogical Reasoning, Multiple Choice Question Answering
+`task214_rocstories_incorrect_ending_classification` | Given the title and the first four sentences of a five sentence story, choose the incorrect story ending. | Analogical Reasoning, Multiple Choice Incorrect Answer Generation
+`task215_rocstories_incorrect_answer_generation` | Given the title and the first four sentences of a five sentence story, write an incorrect story ending. | Analogical Reasoning, Comprehensive Incorrect Answer Generation
 `task216_rocstories_correct_answer_generation` | Given the title and the first four sentences of a five sentence story, write a correct story ending. | Answer Generation
 `task217_rocstories_ordering_answer_generation` | Given a five sentence story in shuffled order and the title, put the story in the correct order. | Answer Generation
 `task218_rocstories_swap_order_answer_generation` | Given a five sentence story and the title, determine which two sentences must be swapped so that the story makes complete sense. | Answer Generation
