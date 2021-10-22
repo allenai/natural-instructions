@@ -1037,4 +1037,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
-`task1507_boolean_temporal_reasoning` | Find the date of birth of a celebrity given a sentence bio | Classification
+`task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
