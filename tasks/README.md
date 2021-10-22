@@ -720,6 +720,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task763_emea_es_lt_translation` | Translate Spanish sentences to Lithuanian while preserving named entities in the original language | Translation
 `task764_emea_bg_el_classification` | Identify whether translated sentence is Greek or not. | Classification
 `task765_emea_bg_el_translation` | Translate Bulgarian sentences to Greek while preserving named entities in the original language | Translation
+`task766_craigslist_bargains_classification` | Classifying items in Craigslist Bargains | Classification
+`task767_craigslist_bargains_classification` | Classifying offer type in Craigslist Bargains | Classification
+`task768_qed_text_span_selection` | Selecting one word answers from the span of a sentence from a passage to answer questions| Text Span Selection
+`task769_qed_summarization` | Generating titles for passage | Summarization
 `task770_pawsx_english_text_modification` | Given a sentence in English, provide an equivalent paraphrase in said language | Text Modification
 `task771_pawsx_korean_text_modification` | Given a sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
 `task772_pawsx_french_text_modification` | Given a sentence in French, provide an equivalent paraphrase in said language | Text Modification
