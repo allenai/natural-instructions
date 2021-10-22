@@ -816,11 +816,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task907_dialogre_identify_relationships` | Classifying Relationships with DialogRE | Answer Generation
 `task908_dialogre_identify_familial_relationships` | Classifying Familial Relationships with DialogRE | Answer Generation
 `task909_dialogre_prevalent_speakers` | Classifying Prevalent Speakers with DialogRE | Answer Generation
-`task910_bianet_classification`| Classifying whether two sentences are translation of each other | Classification
-`task911_bianet_translation`| Generating a translation of an english sentence into kurdish | Translation
-`task912_bianet_classification` | Classifying if a given sentence into English or Kurdish | Classification
+`task910_bianet_classification`| Classifying whether two sentences are translations of each other | Classification
+`task911_bianet_translation`| Generating a translation of an English sentence into Kurdish | Translation
+`task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
 `task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
-`task914_bianet_translation` | Generating a translation of an Kurdish sentence into Turkish| Translation
+`task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
