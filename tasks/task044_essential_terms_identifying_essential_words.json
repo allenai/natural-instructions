@@ -9,12 +9,12 @@
     "Categories": [
         "Text Span Selection"
     ],
-    "Definition": "You are given an elementary science question along with a few answer options. List all the words from the question that are essential for choosing the correct answer option. Keep in mind that essential words are necessary to understanding the meaning of the given question. However, non-essential words provide little information needed to select the correct answer. If your answer consists of multiple spans of words from the question, separate those using comma (\", \").\nThings to avoid: Do not generate any word that is not present in the question.\nEmphasis & Caution: Make sure that your response is contained in the given question.  Grammatical correctness is not important.",
+    "Definition": "You are given an elementary science question along with a few answer options. List all the words from the question that are essential and sufficient for choosing the correct answer option. Keep in mind that essential words are necessary to understanding the meaning of the given question. However, non-essential words provide little information needed to select the correct answer. You can think about it like this: If the question was in another language, knowing the meaning of which words was necessary and enough for you to understand the question and answer it?. If your answer consists of multiple spans of words from the question, separate those using comma (\", \").\nThings to avoid: Do not generate any word that is not present in the question.\nEmphasis & Caution: Make sure that your response is contained in the given question and the words are in the same order as the question.\n Grammatical correctness is not important. ",
     "Positive Examples": [
         {
             "input": "Question: Which type of energy does a person use to pedal a bicycle? (A) light (B) sound (C) mechanical (D) electrical?",
             "output": "energy, pedal, bicycle",
-            "explanation": "Clearly the words \"energy\", \"pedal\" and \"bicycle\" are enough to understand the category of the energy associated with this process, i.e. \"mechanical\". Other words are not necessary to inferring the correct answer."
+            "explanation": "Clearly the words \"energy\", \"pedal\" and \"bicycle\" are necessary and enough to understand the category of the energy associated with this process, i.e. \"mechanical\". Other words are not necessary to inferring the correct answer."
         },
         {
             "input": "Question: A turtle eating worms is an example of (A) breathing (B) reproducing (C) eliminating waste (D) taking in nutrients?",
@@ -42,6 +42,11 @@
             "input": "Question: A duck's feathers are covered with a natural oil that keeps the duck dry. This is a special feature ducks have that helps them (A) feed their young (B) adapt to the environment (C) attract a mate (D) search for food?",
             "output": "water",
             "explanation": "Here \"water\" is a word that is not mentioned in the question. The correct answer should have been \"duck's feather, natural oil, keeps, dry\"."
+        },
+        {
+            "input": "Question: A fox grows thicker fur as a season changes. This adaptation helps the fox to (A) find food(B) keep warmer(C) grow stronger(D) escape from predators?",
+            "output": "grows, thicker, fur, adaptation, helps, this",
+            "explanation": "Here the words \"grows\" and \"this\" are unnecessary for the answer. Having thicker fur helps any animal keep warmer, and the word \"grow\" is not necessary."
         }
     ],
     "Instances": [
@@ -73,12 +78,6 @@
             "input": "Question: Which form of energy is found in food? (A) chemical(B) electrical(C) sound(D) mechanical?",
             "output": [
                 "energy, found, food?"
-            ]
-        },
-        {
-            "input": "Question: A fox grows thicker fur as a season changes. This adaptation helps the fox to (A) find food(B) keep warmer(C) grow stronger(D) escape from predators?",
-            "output": [
-                "thicker, fur, adaptation, helps"
             ]
         },
         {
@@ -6785,12 +6784,6 @@
             "input": "Question: The main function of a duck's webbed feet is to help the duck (A) make noise (B) protect itself (C) swim in water (D) find a mate?",
             "output": [
                 "function, duck's, webbed, feet"
-            ]
-        },
-        {
-            "input": "Question: A fox grows thicker fur as a season changes. This adaptation helps the fox to (A) find food (B) keep warmer (C) grow stronger (D) escape from predators?",
-            "output": [
-                "fox, thicker, fur, season, changes., adaptation, helps"
             ]
         },
         {
