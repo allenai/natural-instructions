@@ -1036,3 +1036,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
 `task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task960_ancora-ca-ner_named_entity_recognition` | Named Entity Recognition for each token in BSC-TeMU/ancora-ca-ner catalan sentences | Named Entity Recognition
+`task961_ancora-ca-ner_text_auto_completion` | Text Auto Completion of partial Catalan sentences | Sentence Generation
+`task962_ancora-ca-ner_missing_word_prediction` | Generating a missing word on Catalan Sentences | Sentence Generation
+`task963_librispeech_asr_next_word_prediction` | Predicting next word on librispeech data | Word Generation
+`task964_librispeech_asr_text_auto_completion` | Text Auto Completion of partial English sentences | Sentence Generation
+`task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Sentence Generation
+`task966_ruletaker_fact_checking_based_on_given_context` | Fact checking based on given context | Fact checking based on context
+`task967_ruletaker_incorrect_fact_generation_based_on_given_paragraph` | Generate incorrect fact based on given paragraph | Incorrect Fact Generation
