@@ -720,6 +720,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task763_emea_es_lt_translation` | Translate Spanish sentences to Lithuanian while preserving named entities in the original language | Translation
 `task764_emea_bg_el_classification` | Identify whether translated sentence is Greek or not. | Classification
 `task765_emea_bg_el_translation` | Translate Bulgarian sentences to Greek while preserving named entities in the original language | Translation
+`task766_craigslist_bargains_classification` | Classifying items in Craigslist Bargains | Classification
+`task767_craigslist_bargains_classification` | Classifying offer type in Craigslist Bargains | Classification
+`task768_qed_text_span_selection` | Selecting one word answers from the span of a sentence from a passage to answer questions| Text Span Selection
+`task769_qed_summarization` | Generating titles for passage | Summarization
 `task770_pawsx_english_text_modification` | Given a sentence in English, provide an equivalent paraphrase in said language | Text Modification
 `task771_pawsx_korean_text_modification` | Given a sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
 `task772_pawsx_french_text_modification` | Given a sentence in French, provide an equivalent paraphrase in said language | Text Modification
@@ -816,6 +820,15 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task907_dialogre_identify_relationships` | Classifying Relationships with DialogRE | Answer Generation
 `task908_dialogre_identify_familial_relationships` | Classifying Familial Relationships with DialogRE | Answer Generation
 `task909_dialogre_prevalent_speakers` | Classifying Prevalent Speakers with DialogRE | Answer Generation
+`task910_bianet_classification`| Classifying whether two sentences are translations of each other | Classification
+`task911_bianet_translation`| Generating a translation of an English sentence into Kurdish | Translation
+`task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
+`task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
+`task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
+'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
+'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
+'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
@@ -950,6 +963,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument | Classification
 `task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument | Classification
 `task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument | Classification
+`task1308_amazonreview_category_classification` | You're given a review from Amazon and category of the product based on the review, classify whether review match the category. | Classification
+`task1309_amazonreview_summary_classification` | You're given a review from Amazon and summary of the review, classify whether summary match the original review. | Classification
+`task1310_amazonreview_rating_classification` | You're given a review from Amazon. Your task is to generate a rating for the product on a scale of 1-5 based on the review. | Classification
+`task1311_amazonreview_rating_classification` | You're given a review from Amazon and rating of the review, classify whether rating match the review. | Classification
+`task1312_amazonreview_polarity_classification` | You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive. | Classification
+`task1313_amazonreview_polarity_classification` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
