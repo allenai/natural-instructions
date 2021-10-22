@@ -50,8 +50,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
 `task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question essential for choosing the correct answer.	| Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
-`task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
-`task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
+`task046_miscellaneous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
+`task047_miscellaneous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
 `task048_multirc_question_generation`	| Constructing questions based on the information present in the passage.	| Question Generation
 `task049_multirc_questions_needed_to_answer`	| Identifying sentences needed to answer a given question.	| Classification
 `task050_multirc_answerability`	| Finding answerability of questions based on a given sentence.	| Classification
