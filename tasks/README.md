@@ -825,6 +825,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
 `task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
 `task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
+'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
+'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
+'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
