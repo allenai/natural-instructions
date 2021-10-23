@@ -57,6 +57,16 @@ def extract_categories(string):
     """
     return set(re.findall(r'`(.*?)`', string))
 
+def dict_raise_on_duplicates(ordered_pairs):
+    """Reject duplicate keys."""
+    d = {}
+    for k, v in ordered_pairs:
+        if k in d:
+            raise ValueError("duplicate key: %r" % (k,))
+        else:
+            d[k] = v
+    return d
+
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains"
@@ -101,7 +111,7 @@ for file in files[begin_task_number:end_task_number+1]:
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
         with open(file_path, 'r') as f:
-            data = json.load(f)
+            data = json.load(f, object_pairs_hook=dict_raise_on_duplicates)
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
