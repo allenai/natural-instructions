@@ -1004,6 +1004,13 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1367_opustedtalks_translation` | Translation from Croatian to English using Opus_Ted Dataset | Translation
 `task1368_healthfact_sentence_generation` | Generate a claim based on a given paragraph | Sentence Generation
 `task1369_healthfact_sentence_generation` | Generate an explanation for a claim based on a given paragraph | Sentence Generation
+`task1370_newscomm_classification` | Classifying the language of given statement | Classification
+`task1371_newscomm_translation` | Translating news commentaries given in English to French language based on the news_Commentary dataset | Language Translation
+`task1373_newscomm_translation` | Translating news commentaries given in German to Spanish language based on the news_Commentary dataset | Language Translation
+`task1374_newscomm_translation` | Translating news commentaries given in Arabic to Czeck language based on the news_Commentary dataset | Language Translation
+`task1375_newscomm_translation` | Translating news commentaries given in Dutch to Portuguese language based on the news_Commentary dataset | Language Translation
+`task1376_newscomm_translation` | Translating news commentaries given in Italian to Zhuang language based on the news_Commentary dataset | Language Translation
+`task1377_newscomm_translation` | Translating news commentaries given in French to Russian language based on the news_Commentary dataset | Language Translation
 `task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
 `task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
 `task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
