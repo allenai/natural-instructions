@@ -983,8 +983,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
 `task1334_sqac_answer_generation`                                | Generating answers to SQAC questions          | Answer Generation    
 `task1335_sqac_question_generation`                              | Classifying race of speaker of sentence       | Race Classifier      
-`task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier    
-`task1337_peixian_equity_evaluation_corpus_race_classifier`      | Classifying race of speaker of sentence       | Race Classifier      
+`task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier     
 `task1338_peixian_equity_evaluation_corpus_sentiment_classifier` | Classifying the sentiment within the sentence | Sentiment Classifier 
 `task1339_peixian_equity_evaluation_corpus_text_completion`      | Replacing blanks within text for an emption   | Text completion
 `task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
