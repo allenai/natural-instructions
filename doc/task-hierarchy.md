@@ -16,6 +16,18 @@
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
 - `Author Identification`
+- `Text Generation`
+  - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
+  - `Text Generation -> Sentence Generation`
+    - `Sentence Generation -> Sentence Generation -> Story Completion`
+    - `Sentence Generation -> Sentence Generation -> Explanation Generation`
+  - `Text Generation -> Long Text Generation`
+    - `Text Generation -> Long Text Generation -> Contextual Text Generation` 
+    - `Text Generation -> Long Text Generation -> Paragraph Generation`
+    - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Title Generation`
+  - `Text Generation -> Topic Generation`
+  - `Text Generation -> Weblink Generation`
 - `Classification`
 - `Combinatorics`
 - `Command Execution`
@@ -27,7 +39,6 @@
 - `Document Understanding`
 - `Entity Detection`
 - `Ethical Judgement`
-- `Explanation Generation`
 - `Fake News Detection`
 - `Grammar Error`
   -  `Grammar Error -> Grammar Error Correction`
@@ -35,7 +46,6 @@
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hate Speech Detection`
 - `Hypernym Discovery`
-- `Incorrect Answer Generation`
 - `Intent Detection`
 - `Language Identification`
 - `Mathematics`
@@ -44,7 +54,6 @@
   - `Mathematics -> Geometry`
 - `Named Entity Recognition`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
-- `Paragraph Generation`
 - `Paraphrasing`
 - `Parts-of-speech`
 - `Question Decomposition`
@@ -68,17 +77,11 @@
   - `Reasoning -> Temporal Reasoning`
 - `Relation Prediction`
 - `Relevancy Estimation`
-- `Review Generation`
 - `Role Labelling`
 - `Semantic Parsing`
-- `Sentence Generation`
-  - `Sentence Generation -> Story Completion`
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
-- `Long Text Generation`
-  - `Long Text Generation -> Contextual Text Generation`
-- `Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
 - `Style Transfer`
 - `Summarization`
 - `Tabular Text Operation`
@@ -89,12 +92,9 @@
 - `Text Simplification`
 - `Text Span Selection`
 - `Textual Entailment`
-- `Title Generation`
-- `Topic Generation`
 - `Translation`
 - `Verification`: Verify if two inputs match with each other e.g. a task to verify if a sentence and its sentiment given in the input match
   - `Verification -> Claim Verification`
-- `Weblink Generation`
 - `Word Sense Disambiguation`
 
 ## Domain
@@ -160,6 +160,7 @@
 * `Wikipedia`
 * `World Religions`
 * `Commonsense -> Stories`
+* `ConceptNet`
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
