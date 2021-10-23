@@ -50,8 +50,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
 `task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question essential for choosing the correct answer.	| Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
-`task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
-`task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
+`task046_miscellaneous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
+`task047_miscellaneous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
 `task048_multirc_question_generation`	| Constructing questions based on the information present in the passage.	| Question Generation
 `task049_multirc_questions_needed_to_answer`	| Identifying sentences needed to answer a given question.	| Classification
 `task050_multirc_answerability`	| Finding answerability of questions based on a given sentence.	| Classification
@@ -118,9 +118,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task117_spl_translation_en_de` | Translate English questions to German while preserving named entities in the original language. | Translation
 `task118_semeval_2019_task10_open_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with an open vocabulary.	| Answer Generation, Arithmetic
 `task119_semeval_2019_task10_geometric_mathematical_answer_generation`	|  Answering multiple choices geometric problems.	| Answer Generation, Geometry
-`task119_zest_text_modification` | Paraphrase the given question. | Text Modification
-`task120_zest_text_modification` | Given a question, change the answer with minimum changes. | Text Modification
-`task121_zest_text_modification` | Given some questions, combine them to have one new question. | Text Modification
+`task119_zest_text_modification` | Paraphrase the given question. | Paraphrasing
+`task120_zest_text_modification` | Given a question, change the answer with minimum changes. | Question Generation
+`task121_zest_text_modification` | Given some questions, combine them to have one new question. | Question Composition
 `task122_conala_list_index_addition` | Add lists together based on their index. | Answer Generation, Arithmetic
 `task123_conala_sort_dictionary` | Sort a list of dictionaries based on a given key. | Answer Generation, Arithmetic
 `task124_conala_pair_averages` | Calculate the averages for each two consecutive elements. | Answer Generation, Arithmetic
@@ -585,6 +585,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
 `task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
 `task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
+`task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
+`task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
+`task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
+`task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -716,6 +720,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task763_emea_es_lt_translation` | Translate Spanish sentences to Lithuanian while preserving named entities in the original language | Translation
 `task764_emea_bg_el_classification` | Identify whether translated sentence is Greek or not. | Classification
 `task765_emea_bg_el_translation` | Translate Bulgarian sentences to Greek while preserving named entities in the original language | Translation
+`task766_craigslist_bargains_classification` | Classifying items in Craigslist Bargains | Classification
+`task767_craigslist_bargains_classification` | Classifying offer type in Craigslist Bargains | Classification
+`task768_qed_text_span_selection` | Selecting one word answers from the span of a sentence from a passage to answer questions| Text Span Selection
+`task769_qed_summarization` | Generating titles for passage | Summarization
 `task770_pawsx_english_text_modification` | Given a sentence in English, provide an equivalent paraphrase in said language | Text Modification
 `task771_pawsx_korean_text_modification` | Given a sentence in Korean, provide an equivalent paraphrase in said language | Text Modification
 `task772_pawsx_french_text_modification` | Given a sentence in French, provide an equivalent paraphrase in said language | Text Modification
@@ -808,6 +816,19 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
+`task906_dialogre_identify_names` | Text Identification with DialogRE | Answer Generation
+`task907_dialogre_identify_relationships` | Classifying Relationships with DialogRE | Answer Generation
+`task908_dialogre_identify_familial_relationships` | Classifying Familial Relationships with DialogRE | Answer Generation
+`task909_dialogre_prevalent_speakers` | Classifying Prevalent Speakers with DialogRE | Answer Generation
+`task910_bianet_classification`| Classifying whether two sentences are translations of each other | Classification
+`task911_bianet_translation`| Generating a translation of an English sentence into Kurdish | Translation
+`task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
+`task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
+`task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
+'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
+'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
+'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
@@ -832,6 +853,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task952_wiki_cloze_pa_multiple_choice_question_answering` | Given a cloze question in punjabi, identify the missing word| Multiple Choice Question Answering|
 `task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
 `task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
+`task955_wiki_auto_style_transfer` | Elaborate wikipedia sentences. | Style Transfer 
 `task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Tabular Text Operation
 `task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
 `task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
@@ -941,6 +963,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument | Classification
 `task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument | Classification
 `task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument | Classification
+`task1308_amazonreview_category_classification` | You're given a review from Amazon and category of the product based on the review, classify whether review match the category. | Classification
+`task1309_amazonreview_summary_classification` | You're given a review from Amazon and summary of the review, classify whether summary match the original review. | Classification
+`task1310_amazonreview_rating_classification` | You're given a review from Amazon. Your task is to generate a rating for the product on a scale of 1-5 based on the review. | Classification
+`task1311_amazonreview_rating_classification` | You're given a review from Amazon and rating of the review, classify whether rating match the review. | Classification
+`task1312_amazonreview_polarity_classification` | You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive. | Classification
+`task1313_amazonreview_polarity_classification` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
@@ -953,6 +981,47 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1334_sqac_answer_generation`                                | Generating answers to SQAC questions          | Answer Generation    
+`task1335_sqac_question_generation`                              | Classifying race of speaker of sentence       | Race Classifier      
+`task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier     
+`task1338_peixian_equity_evaluation_corpus_sentiment_classifier` | Classifying the sentiment within the sentence | Sentiment Classifier 
+`task1339_peixian_equity_evaluation_corpus_text_completion`      | Replacing blanks within text for an emption   | Text completion
+`task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
+`task1351_opus100_translation_gu_en` | Translate a sentence in Gujarati to English | Translation
+`task1352_hind_encorp_translation_hi_en` | Translate a sentence in Hindi to English | Translation  
+`task1353_hind_encorp_translation_en_hi` | Translate a sentence in English to Hindi | Translation
+`task1354_sent_comp_classification` | Given text and headline classify if headline matches text or not | Classification
+`task1355_sent_comp_summarization` | Given text generate summary about the text | Summarization
+`task1356_xlsum_title_generation` | Generating title for the text in xlsum | Title Generation
+`task1357_xlsum_summary_generation` | Generating summary for the text in xlsum | Summary Generation
+`task1358_xlsum_title_generation` | Generates title for the text in xlsum | Title Generation
+`task1359_numer_sense_answer_generation` | Generates answer to numer sense | Answer Generation
+`task1360_numer_sense_multiple_choice_qa_generation` | Generating answers to numer sense | Multiple Choice QA Generation
+`task1361_movierationales_classification` | Classification (based on Movie Rationales) | Classification
+`task1364_hans_answer_generation` | Generating answers (based on Hans) | Answer Generation
+`task1365_opustedtalks_translation` | Translation from English to Croatian using Opus_Ted Dataset | Translation
+`task1366_healthfact_classification` | Find if claim belongs to a predefined category using given paragraph | Classification
+`task1367_opustedtalks_translation` | Translation from Croatian to English using Opus_Ted Dataset | Translation
+`task1368_healthfact_sentence_generation` | Generate a claim based on a given paragraph | Sentence Generation
+`task1369_healthfact_sentence_generation` | Generate an explanation for a claim based on a given paragraph | Sentence Generation
+`task1370_newscomm_classification` | Classifying the language of given statement | Classification
+`task1371_newscomm_translation` | Translating news commentaries given in English to French language based on the news_Commentary dataset | Language Translation
+`task1373_newscomm_translation` | Translating news commentaries given in German to Spanish language based on the news_Commentary dataset | Language Translation
+`task1374_newscomm_translation` | Translating news commentaries given in Arabic to Czeck language based on the news_Commentary dataset | Language Translation
+`task1375_newscomm_translation` | Translating news commentaries given in Dutch to Portuguese language based on the news_Commentary dataset | Language Translation
+`task1376_newscomm_translation` | Translating news commentaries given in Italian to Zhuang language based on the news_Commentary dataset | Language Translation
+`task1377_newscomm_translation` | Translating news commentaries given in French to Russian language based on the news_Commentary dataset | Language Translation
+`task1378_quarel_correct_answer_generation` | Given a sentence and a question, write the correct answer based on the sentence. | Answer Generation
+`task1379_quarel_incorrect_answer_generation` | Given a sentence and a question, write the incorrect answer based on the sentence. | Incorrect Answer Generation
+`task1380_quarel_correct_option_generation` | Given a sentence and a question, choose the correct option number instead of exact answer based on the sentence. | Answer Generation
+`task1381_quarel_incorrect_option_generation` | Given a sentence and a question, choose the incorrect option number instead of exact answer based on the sentence. | Incorrect Answer Generation
+`task1382_quarel_write_correct_answer` | Writing a correct answer to a given question based on a given sentence. | Answer Generation
+`task1383_quarel_write_incorrect_answer` | Writing a incorrect answer to a given question based on a given sentence. | Incorrect Answer Generation
+`task1384_deal_or_no_dialog_classification` | Given a dialogue, classify whether both participants agree to the deal | Classification
+`task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
+`task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
+`task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
+`task1397_europa_ecdc_tm_fr_en_translation` | Translate French sentences to English | Translation
 `task1398_obqa_question_generation` | Given a fact, generate a question that can be answered using the fact | Question Generation
 `task1399_obqa_answer_generation` | Given a fact and question, generate an answer to the question | Answer Generation
 `task1400_obqa_incorrect_answer_generation` | Given a fact and question, generate an incorrect answer to the question | Incorrect Answer Generation
@@ -973,3 +1042,24 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1426_country_independence_year` | Given a country name, return the year of independence of the given country | Answer Generation
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
+`task1429_evalution_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1437_doqa_cooking_question_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
+`task1438_doqa_cooking_answer_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
+`task1439_doqa_cooking_isanswerable` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
+`task1440_doqa_movies_question_generation` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
+`task1441_doqa_movies_answer_generation` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
+`task1442_doqa_movies_isanswerable` | Given a paragraph about movies, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
+`task1443_string_to_number` | Given a string of spelled out digits return the number the string represents | Answer Generation
+`task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
+`task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
+`task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1498_24hour_to_12hour_clock` | Given a timestamp in 24-hour format, convert it to 12-hour format | Answer Generation
+`task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
+`task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
+`task1501_dstc3_answer_generation` | Generating answers to DSTC 3 conversations related questions | Answer Generation
+`task1502_hatexplain_classification` | Classification of type of tweet in Hatexplain | Classification
+`task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
+`task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
+`task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
+`task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification

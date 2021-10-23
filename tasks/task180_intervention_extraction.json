@@ -1,5 +1,14 @@
 {
-    "Definition": "In medical studies, the efficacy of medical treatments (called interventions) is evaluated within a group of study participants. You will be given a sentence of a study report in which your task is to list the tokens that describe the intervention(s) of the study. You should list the tokens in the same order that they appear in the text. If no information about the interventions is mentioned, just output \"not found\". Interventions are: a specific drug, surgery, talking therapy, a lifestyle modification, control or placebo treatment. Do not highlight details, dosages, frequency and duration, intervention mentions that are not in an informative span of text.",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "In medical studies, the efficacy of medical treatments (called interventions) is evaluated within a group of study participants. You will be given a sentence of a study report in which your task is to list the phrases that describe the intervention(s) of the study. You should list the phrase in the same order that they appear in the text, separated by commas. If no information about the interventions is mentioned, just answer with \"not found\". Interventions are: a specific drug, surgery, talking therapy, a lifestyle modification, control or placebo treatment. Do not include details, dosages, frequency and duration, intervention mentions that are not in an informative span of text.",
     "Positive Examples": [
         {
             "input": "The patients received either azithromycin (600 mg/d for 3 days during week 1, then 600 mg/wk during weeks 2-12; n = 3879) or placebo (n = 3868)",
@@ -8,29 +17,29 @@
         },
         {
             "input": "We report findings of a pilot RCT for a parent training intervention with a focus on the development of joint attention skills and joint action routines. ",
-            "output": "parent, training, intervention",
+            "output": "parent training intervention",
             "explanation": "The words parent, training, and intervention refer to some kind of talking therapy."
         },
         {
             "input": "Seventy-two people residing in National Health Service (U.K.) care facilities who had clinically significant agitation in the context of severe dementia were randomly assigned to aromatherapy with Melissa essential oil (N = 36) or placebo (sunflower oil) (N = 36). ",
-            "output": "aromatherapy, with, melissa, essential, oil, placebo, sunflower, oil",
-            "explanation": "Both the therapy and the control treatment are mentioned as spans of text here, containing several tokens."
+            "output": "aromatherapy with melissa essential oil, placebo, sunflower oil",
+            "explanation": "Both the therapy and the control treatment are mentioned as spans of text here."
         }
     ],
     "Negative Examples": [
         {
             "input": "Treatment consisted of nitrendipine (10-40 mg/d), with the possible addition of enalapril maleate (5-20 mg/d), hydrochlorothiazide (12.5-25 mg/d), or both add-on drugs.",
-            "output": "nitrendipine, (10-40, mg/d, ), enalapril, maleate, (5-20, mg/d), hydrochlorothiazide, (12.5-25, mg/d), both, add-on, drugs",
-            "explanation": "The drugs are correctly mentioned as intervention, but their dosage shouldn't be given as output."
+            "output": "nitrendipine (10-40 mg/d, ), enalapril, maleate (5-20, mg/d), hydrochlorothiazide (12.5-25, mg/d), both add-on drugs",
+            "explanation": "The drugs are correctly mentioned as intervention, but their dosage shouldn't be given as answer."
         },
         {
             "input": "Zinc lozenges, 10 mg, orally dissolved, 5 times a day (in grades 1-6) or 6 times a day (in grades 7-12). ",
-            "output": "Zinc, lozenges, orally, dissolved",
-            "explanation": "Information about the method the intervention is given to patients, in this case \"orally dissolved\" should not be given as output."
+            "output": "Zinc lozenges, orally dissolved",
+            "explanation": "Information about the method the intervention is given to patients, in this case \"orally dissolved\" should not be given as answer."
         },
         {
             "input": "Antihypertensive therapy was started immediately after randomization in the active treatment group, but only after termination of the double-blind trial in the control patients.",
-            "output": "Antihypertensive, therapy, double-blind, trial",
+            "output": "Antihypertensive therapy, double-blind trial",
             "explanation": "The words double-blind and trial are not related to intervention."
         }
     ],
@@ -68,13 +77,13 @@
         {
             "input": "A physiotherapy service to an emergency extended care unit does not decrease admission rates to hospital : a randomised trial .",
             "output": [
-                "physiotherapy, service"
+                "physiotherapy service"
             ]
         },
         {
             "input": "Antioxidant supplementation and exercise-induced oxidative stress in the 60-year-old as measured by antipyrine hydroxylates .",
             "output": [
-                "Antioxidant, supplementation"
+                "not found"
             ]
         },
         {
@@ -128,7 +137,7 @@
         {
             "input": "Women who smoke and take oral contraceptives ( OCs ) have significantly increased risk of cardiovascular disease , but the exact mechanismsfor the increased risk are not known .",
             "output": [
-                "oral, contraceptives"
+                "oral contraceptives"
             ]
         },
         {
@@ -156,7 +165,7 @@
             ]
         },
         {
-            "input": "Results showed that cortisol and glucose levels were significantly high in 700 and 500 but not 3,000 mg l\u207b\u00b9 group compared to control .",
+            "input": "Results showed that cortisol and glucose levels were significantly high in 700 and 500 but not 3,000 mg l⁻¹ group compared to control .",
             "output": [
                 "not found"
             ]
@@ -212,19 +221,19 @@
         {
             "input": "Amonafide was chosen for inclusion in the Cancer and Leukemia Group B ( CALGB ) master metastatic breast cancer protocol .",
             "output": [
-                "Amonafide"
+                "not found"
             ]
         },
         {
             "input": "In this adequately powered study , once-daily oral amoxicillin is not inferior to twice-daily penicillin V for the treatment and eradication of GABHS in children with pharyngitis .",
             "output": [
-                "amoxicillin, penicillin, V"
+                "amoxicillin, penicillin V"
             ]
         },
         {
             "input": "In this preliminary , open-labeled , randomized study , the effects of lime juice on the clinical and some laboratory characteristics of children with SCA were tested .",
             "output": [
-                "lime, juice"
+                "lime juice"
             ]
         },
         {
@@ -236,13 +245,13 @@
         {
             "input": "Ramipril prevents or delays the progression of albuminuria .",
             "output": [
-                "Ramipril"
+                "not found"
             ]
         },
         {
             "input": "To compare maintenance epoetin alfa administered once every 3 weeks with continued weekly epoetin alfa for patients with cancer-associated anemia .",
             "output": [
-                "epoetin, alfa, epoetin, alfa"
+                "epoetin alfa"
             ]
         },
         {
@@ -266,13 +275,13 @@
         {
             "input": "Intake of lime juice was recently demonstrated to facilitate clearance of the malaria parasite .",
             "output": [
-                "lime, juice"
+                "lime juice"
             ]
         },
         {
             "input": "Subjects were randomly divided in two groups : supplementation ( n 11 ) with 100 mg dl-alpha-tocopheryl acetate , 200 mg ascorbic acid , and 2 mg beta-carotene , and placebo ( n 9 ) .",
             "output": [
-                "dl-alpha-tocopheryl, acetate, ascorbic, beta-carotene, placebo"
+                "dl-alpha-tocopheryl acetate, ascorbic, beta-carotene, placebo"
             ]
         },
         {
@@ -314,7 +323,7 @@
         {
             "input": "In a 2 week randomized two-period crossover trial , 18 male adolescents consumed two diets , named white diet ( WD ) and brown diet ( BD ) , which were poor and rich in MRP , respectively .",
             "output": [
-                "white, diet, brown, diet"
+                "white diet, brown diet"
             ]
         },
         {
@@ -344,7 +353,7 @@
         {
             "input": "Aquatic exercisers reported equal ( QWB ) or better ( CHDR , HAQ , PQOL ) health-related quality of life compared with controls .",
             "output": [
-                "Aquatic, exercisers"
+                "not found"
             ]
         },
         {
@@ -374,13 +383,13 @@
         {
             "input": "Approximately two thirds were smokers and were randomized to be tested after either a 12-hr nicotine deprivation or administration of nicotine gum .",
             "output": [
-                "nicotine, deprivation, nicotine"
+                "nicotine deprivation, nicotine"
             ]
         },
         {
             "input": "The effects of the high intake of Maillard reaction products ( MRP ) on calcium availability in adolescents and across Caco-2 cell monolayers were examined .",
             "output": [
-                "Maillard, reaction, products, MRP"
+                "Maillard reaction products, MRP"
             ]
         },
         {
@@ -392,7 +401,7 @@
         {
             "input": "Role of posterior tibial nerve stimulation in the treatment of refractory monosymptomatic nocturnal enuresis : a pilot study .",
             "output": [
-                "posterior, tibial, nerve, stimulation"
+                "posterior tibial nerve stimulation"
             ]
         },
         {
@@ -404,7 +413,7 @@
         {
             "input": "To develop a cycle-based risk prediction model for neutropenic complications ( NC ) during chemotherapy with doxorubicin ( DOX ) or a pegylated liposomal formulation ( PLD ) for patients with metastatic breast cancer ( MBC ) .",
             "output": [
-                "doxorubicin, pegylated, liposomal, formulation"
+                "doxorubicin, pegylated liposomal formulation"
             ]
         },
         {
@@ -434,11 +443,11 @@
         {
             "input": "The 101 eligible cases ( bestatin : 48 , control : 53 ) were analyzed ; the bestatin group achieved longer remission than the control group and a statistically significant longer survival .",
             "output": [
-                "bestatin, bestatin"
+                "bestatin"
             ]
         },
         {
-            "input": "In assessing the acute functional effect of bronchodilators , \u0394sRAW-based criterion is preferable to FEV1-FVC-based criteria , being more closely related to bronchodilator-induced improvements of lung mechanics and dyspnea at rest .",
+            "input": "In assessing the acute functional effect of bronchodilators , ΔsRAW-based criterion is preferable to FEV1-FVC-based criteria , being more closely related to bronchodilator-induced improvements of lung mechanics and dyspnea at rest .",
             "output": [
                 "not found"
             ]
@@ -452,7 +461,7 @@
         {
             "input": "To compare a collaborative approach , the Three Component Model ( 3CM ) , with usual care for treating PTSD in primary care .",
             "output": [
-                "Three, Component, Model, 3CM"
+                "Three Component Model, 3CM"
             ]
         },
         {
@@ -530,7 +539,7 @@
         {
             "input": "Identifying patients at high risk for neutropenic complications during chemotherapy for metastatic breast cancer with doxorubicin or pegylated liposomal doxorubicin : the development of a prediction model .",
             "output": [
-                "doxorubicin, pegylated, liposomal, doxorubicin"
+                "doxorubicin, pegylated liposomal doxorubicin"
             ]
         },
         {
@@ -542,7 +551,7 @@
         {
             "input": "Since the results were essentially identical between the techniques , it seems that comparable pathophysiological factors affect TLCO during breath holding and constant exhalation .",
             "output": [
-                "breath, holding, constant, exhalation"
+                "breath holding, constant exhalation"
             ]
         },
         {
@@ -602,7 +611,7 @@
         {
             "input": "The Hb increment is somewhat greater with continued weekly epoetin alfa .",
             "output": [
-                "epoetin, alfa"
+                "epoetin alfa"
             ]
         },
         {
@@ -686,7 +695,7 @@
         {
             "input": "Posterior tibial nerve stimulation can be a viable treatment option in some patients with refractory monosymptomatic nocturnal enuresis .",
             "output": [
-                "Posterior, tibial, nerve, stimulation"
+                "not found"
             ]
         },
         {
@@ -710,7 +719,7 @@
         {
             "input": "Fluoxetine therefore has inverse effects on mPFC activation in ASD and ADHD during reversal learning , suggesting dissociated underlying serotonin abnormalities .",
             "output": [
-                "Fluoxetine"
+                "not found"
             ]
         },
         {
@@ -722,7 +731,7 @@
         {
             "input": "353 children with positive throat swabs for GABHS were randomised to amoxicillin ( n = 177 ) or penicillin V ( n = 176 ) .",
             "output": [
-                "amoxicillin, penicillin, V"
+                "amoxicillin, penicillin V"
             ]
         },
         {
@@ -788,7 +797,7 @@
         {
             "input": "A pilot study on the effect of progressive muscle relaxation training of patients after stoma surgery .",
             "output": [
-                "progressive, muscle, relaxation, training"
+                "progressive muscle relaxation training"
             ]
         },
         {
@@ -812,7 +821,7 @@
         {
             "input": "Ramipril reduced the risk for any progression ( OR , 0.87 ; 95 % CI , 0.78 to 0.97 ; P = 0.0146 ) .",
             "output": [
-                "Ramipril"
+                "not found"
             ]
         },
         {
@@ -830,7 +839,7 @@
         {
             "input": "A multi-component social skills intervention for children with Asperger syndrome : the Junior Detective Training Program .",
             "output": [
-                "social, skills"
+                "social skills"
             ]
         },
         {
@@ -860,7 +869,7 @@
         {
             "input": "Randomized trial of 20-week aquatic classes .",
             "output": [
-                "aquatic, classes"
+                "aquatic classes"
             ]
         },
         {
@@ -882,7 +891,7 @@
             ]
         },
         {
-            "input": "There were no significant differences in serum levels of cholesterol , total protein , lactate dehydrogenase , aspartate aminotransferase , alanine aminotransferase , Na\u207a , Cl\u207b , K\u207a , and Ca\u00b2\u207a .",
+            "input": "There were no significant differences in serum levels of cholesterol , total protein , lactate dehydrogenase , aspartate aminotransferase , alanine aminotransferase , Na⁺ , Cl⁻ , K⁺ , and Ca²⁺ .",
             "output": [
                 "not found"
             ]
@@ -908,19 +917,19 @@
         {
             "input": "Children presenting with GABHS pharyngitis were randomised to oral amoxicillin 1500 mg QD ( or 750 mg if bodyweight was < or=30 kg ) or to oral penicillin V 500 mg BID ( or 250 mg if bodyweight was < or=20 kg ) for 10 days .",
             "output": [
-                "amoxicillin, penicillin, V"
+                "amoxicillin, penicillin V"
             ]
         },
         {
             "input": "After treatment 11 group 1 patients ( 78.6 % ) had a partial or full response to posterior tibial nerve stimulation but only 2 ( 14.3 % ) in group 2 had a partial response ( p = 0.002 ) .",
             "output": [
-                "posterior, tibial, nerve, stimulation"
+                "posterior tibial nerve stimulation"
             ]
         },
         {
             "input": "Treatment failures ( including relapses ) occurred at each visit in 5.8 % , 12.7 % and 10.7 % of amoxicillin recipients and 6.2 % , 11.9 % and 11.3 % of penicillin V recipients , respectively .",
             "output": [
-                "amoxicillin, penicillin, V"
+                "amoxicillin, penicillin V"
             ]
         },
         {
@@ -932,7 +941,7 @@
         {
             "input": "Patients randomly assigned to the 40K arm were more likely to have a > or = 2 or > or = 3 g/dL hemoglobin ( Hb ) increment , were more likely to have a drug dose held because of high Hb , and had higher mean end-of-study Hb levels .",
             "output": [
-                "40K, arm"
+                "40K arm"
             ]
         },
         {
@@ -948,7 +957,7 @@
             ]
         },
         {
-            "input": "Among the 113 children with SCA studied in two hospitals , the 58 receiving lime treatment had lower rates of significant painful episodes than the 55 without lime ( 37 versus 83 crises in 6 months , and 0.64\u00b10.11 versus 1.51\u00b10.34 average rates per child , p < 0.001 ) .",
+            "input": "Among the 113 children with SCA studied in two hospitals , the 58 receiving lime treatment had lower rates of significant painful episodes than the 55 without lime ( 37 versus 83 crises in 6 months , and 0.64±0.11 versus 1.51±0.34 average rates per child , p < 0.001 ) .",
             "output": [
                 "lime"
             ]
@@ -962,7 +971,7 @@
         {
             "input": "The Junior Detective Training Program appeared to be effective in enhancing the social skills and emotional understanding of children with AS .",
             "output": [
-                "Junior, Detective, Training, Program"
+                "Junior Detective Training Program"
             ]
         },
         {
@@ -980,7 +989,7 @@
         {
             "input": "3CM participants also had more mental health visits and higher outpatient pharmacy costs .",
             "output": [
-                "3CM"
+                "not found"
             ]
         },
         {
@@ -1088,13 +1097,13 @@
         {
             "input": "Eligible patients were randomly assigned at enrollment to receive three weekly doses of epoetin alfa 40,000 U subcutaneously ( SC ) , followed by either standard weekly epoetin alfa ( 40K arm ) or 120,000 U of epoetin alfa ( 120K arm ) SC every 3 weeks for 18 additional weeks .",
             "output": [
-                "epoetin, alfa"
+                "epoetin alfa"
             ]
         },
         {
             "input": "A 20-min set of audiotaped instructions on progressive muscle relaxation training ( PMRT ) was given to the patients in the experimental group for home practice .",
             "output": [
-                "progressive, muscle, relaxation, training, PMRT"
+                "progressive muscle relaxation training, PMRT"
             ]
         },
         {
@@ -1104,7 +1113,7 @@
             ]
         },
         {
-            "input": "In order to investigate the effect of anesthesia on serum parameters , Beluga , Huso huso ( L. ) were blood-sampled immediately without anesthesia ( control ) or subjected to following anesthesia procedure : 40 , 120 , and 240 s exposure to 3,000 , 700 , and 500 mg l\u207b\u00b9 clove solution , respectively .",
+            "input": "In order to investigate the effect of anesthesia on serum parameters , Beluga , Huso huso ( L. ) were blood-sampled immediately without anesthesia ( control ) or subjected to following anesthesia procedure : 40 , 120 , and 240 s exposure to 3,000 , 700 , and 500 mg l⁻¹ clove solution , respectively .",
             "output": [
                 "anesthesia"
             ]
@@ -1148,7 +1157,7 @@
         {
             "input": "CALGB 8642 randomizes previously untreated metastatic breast cancer patients either to one of several Phase II agents given for up to four cycles and then followed by standard cyclophosphamide-doxorubicin-5-fluorouracil , or to immediate treatment with standard cyclophosphamide-doxorubicin-5-fluorouracil .",
             "output": [
-                "cyclophosphamide-doxorubicin-5-fluorouracil, cyclophosphamide-doxorubicin-5-fluorouracil"
+                "cyclophosphamide-doxorubicin-5-fluorouracil"
             ]
         },
         {
@@ -1172,7 +1181,7 @@
         {
             "input": "Bestatin is shown to be a clinically useful drug for immunotherapy of adult ANLL , since it has prolonged survival and remission especially in elderly patients , with few side-effects .",
             "output": [
-                "Bestatin"
+                "not found"
             ]
         },
         {
@@ -1208,13 +1217,13 @@
         {
             "input": "Aquatic exercise exceeded $ 50,000 per QALY gained using the community-weighted outcome but fell below this arbitrary budget constraint when using the participant-weighted measure .",
             "output": [
-                "Aquatic, exercise"
+                "not found"
             ]
         },
         {
             "input": "It was therefore sought to determine whether regular intake of lime juice will ameliorate crisis , especially recurrent bone pain .",
             "output": [
-                "lime, juice"
+                "lime juice"
             ]
         },
         {
@@ -1250,13 +1259,13 @@
         {
             "input": "Confidence intervals around these ratios suggested wide variability of cost effectiveness of aquatic exercise .",
             "output": [
-                "aquatic, exercise"
+                "aquatic exercise"
             ]
         },
         {
             "input": "There is an increasing amount of evidence showing that physical activity and sun exposure are effective coadjuvant treatments for patients with mild to moderate depression .",
             "output": [
-                "physical, activity, sun, exposure"
+                "physical activity, sun exposure"
             ]
         },
         {
@@ -1298,7 +1307,7 @@
         {
             "input": "Our data suggest that mild regular physical exercise favourably influences cholesterol distribution in serum lipoproteins in healthy middle aged men and may have beneficial effects on circulating metabolites of arachidonic acid .",
             "output": [
-                "physical, exercise"
+                "physical exercise"
             ]
         },
         {
@@ -1316,7 +1325,7 @@
         {
             "input": "A physician intervention served the dual function of 1 ) providing an educational demonstration of anxiety in the primary care setting and 2 ) providing a reporting system for summarizing the anxiety symptom levels and functioning status of the patients enrolled in the study .",
             "output": [
-                "physician, intervention"
+                "physician intervention"
             ]
         },
         {
@@ -1346,7 +1355,7 @@
         {
             "input": "Both groups received 24 months of 1,200 mg of calcium and 400 IU of vitamin D daily and 35 mg of risedronate weekly , and the exercise group additionally had ST exercises twice weekly .",
             "output": [
-                "calcium, vitamin, D, risedronate"
+                "calcium, vitamin D, risedronate"
             ]
         },
         {
@@ -1406,7 +1415,7 @@
         {
             "input": "In conclusion , in 60-year-old subjects antioxidant supplementation had no effect on the exercise-induced increase in oxidative stress as measured by free radical products of antipyrine .",
             "output": [
-                "antioxidant, supplementation"
+                "antioxidant supplementation"
             ]
         },
         {
@@ -1418,7 +1427,7 @@
         {
             "input": "Oral contraceptive use is associated with increased cardiovascular reactivity in nonsmokers .",
             "output": [
-                "Oral, contraceptive"
+                "not found"
             ]
         },
         {
@@ -1466,7 +1475,7 @@
         {
             "input": "This study reports results of a randomized controlled trial aimed at joint attention ( JA ) and symbolic play ( SP ) in preschool children with autism , with prediction to language outcome 12 months later .",
             "output": [
-                "joint, attention, symbolic, play"
+                "joint attention, symbolic play"
             ]
         },
         {
@@ -1508,7 +1517,7 @@
         {
             "input": "Flosequinan evoked a significant increase in maximal exercise capacity .",
             "output": [
-                "Flosequinan"
+                "not found"
             ]
         },
         {
@@ -1538,7 +1547,7 @@
         {
             "input": "One week after recommendations were delivered , only patients in the experimental group had increased time of sun exposure and physical activity ( 25.8 % and 14.3 % , respectively ) .",
             "output": [
-                "sun, exposure, physical, activity"
+                "sun exposure, physical activity"
             ]
         },
         {
@@ -1580,7 +1589,7 @@
         {
             "input": "Strength/weight training exercises may prevent loss of BMD in postmenopausal BCS at risk for bone loss .",
             "output": [
-                "Strength/weight, training"
+                "not found"
             ]
         },
         {
@@ -1598,11 +1607,11 @@
         {
             "input": "Influence of lime juice on the severity of sickle cell anemia .",
             "output": [
-                "lime, juice"
+                "lime juice"
             ]
         },
         {
-            "input": "In COPD patients , reversibility is currently evaluated from the changes of forced expiratory volume at 1s ( \u0394FEV1 ) and forced vital capacity ( \u0394FVC ) .",
+            "input": "In COPD patients , reversibility is currently evaluated from the changes of forced expiratory volume at 1s ( ΔFEV1 ) and forced vital capacity ( ΔFVC ) .",
             "output": [
                 "not found"
             ]
@@ -1644,13 +1653,13 @@
             ]
         },
         {
-            "input": "Significant differences in terms of \u0394ITGV ( p=0.002 ) , \u0394RV ( p=0.023 ) , and \u0394VAS ( p < 0.001 ) occurred only if patients were stratified according to \u0394sRAW .",
+            "input": "Significant differences in terms of ΔITGV ( p=0.002 ) , ΔRV ( p=0.023 ) , and ΔVAS ( p < 0.001 ) occurred only if patients were stratified according to ΔsRAW .",
             "output": [
                 "not found"
             ]
         },
         {
-            "input": "Spirographic and \u0394sRAW-based criteria identified as responders 24 and 45 patients , respectively .",
+            "input": "Spirographic and ΔsRAW-based criteria identified as responders 24 and 45 patients , respectively .",
             "output": [
                 "not found"
             ]
@@ -1736,11 +1745,11 @@
         {
             "input": "Amonafide was given at 300 mg/m2/day i.v . for 5 days , and repeated at 21-day intervals for a maximum of four cycles .",
             "output": [
-                "Amonafide"
+                "not found"
             ]
         },
         {
-            "input": "Serum lactate levels were significantly high in 500 mg l\u207b\u00b9 group compared to control group .",
+            "input": "Serum lactate levels were significantly high in 500 mg l⁻¹ group compared to control group .",
             "output": [
                 "not found"
             ]
@@ -1752,7 +1761,7 @@
             ]
         },
         {
-            "input": "The physiotherapy group had a 4 % ( 95 % CI -18 % to 9 % ) lower rate of admission to hospital than the control group and a 4 % ( 95 % CI -6 % to 13 % ) higher rate of re-presentation to the ED , which were statistically non-significant ( p\u22650.45 ) .",
+            "input": "The physiotherapy group had a 4 % ( 95 % CI -18 % to 9 % ) lower rate of admission to hospital than the control group and a 4 % ( 95 % CI -6 % to 13 % ) higher rate of re-presentation to the ED , which were statistically non-significant ( p≥0.45 ) .",
             "output": [
                 "physiotherapy, control"
             ]
@@ -1778,7 +1787,7 @@
         {
             "input": "To test the non-inferiority of once-daily ( QD ) oral amoxicillin to the recommended twice-daily ( BID ) oral penicillin V in GABHS pharyngitis .",
             "output": [
-                "amoxicillin, penicillin, V"
+                "amoxicillin, penicillin V"
             ]
         },
         {
@@ -1794,7 +1803,7 @@
             ]
         },
         {
-            "input": "Lactate levels were not significantly differed between control , 3,000 , and 700 mg l\u207b\u00b9 groups .",
+            "input": "Lactate levels were not significantly differed between control , 3,000 , and 700 mg l⁻¹ groups .",
             "output": [
                 "not found"
             ]
@@ -1832,7 +1841,7 @@
         {
             "input": "PTSD patients were recruited from five primary care clinics at four Veterans Affairs healthcare facilities and randomized to receive usual care or usual care plus 3CM .",
             "output": [
-                "usual, care, usual, care, plus, 3CM"
+                "usual care, usual care plus 3CM"
             ]
         },
         {
@@ -1842,7 +1851,7 @@
             ]
         },
         {
-            "input": "On two days , 60 COPD patients underwent dyspnea evaluation ( VAS score ) and pulmonary function testing at baseline and one hour after placebo or 300\u03bcg indacaterol administration .",
+            "input": "On two days , 60 COPD patients underwent dyspnea evaluation ( VAS score ) and pulmonary function testing at baseline and one hour after placebo or 300μg indacaterol administration .",
             "output": [
                 "placebo, indacaterol"
             ]
@@ -1850,19 +1859,19 @@
         {
             "input": "Amonafide is a new imide derivative of naphthalic acid .",
             "output": [
-                "Amonafide"
+                "not found"
             ]
         },
         {
             "input": "Regular intake of lime juice may be of great therapeutic and nutritional relevance in children with SCA .",
             "output": [
-                "lime, juice"
+                "lime juice"
             ]
         },
         {
             "input": "Constant exhalation may therefore be a useful alternative to the breath holding technique for clinical measurement of TLCO .",
             "output": [
-                "Constant, exhalation"
+                "not found"
             ]
         },
         {
@@ -1874,7 +1883,7 @@
         {
             "input": "Economic evaluation of aquatic exercise for persons with osteoarthritis .",
             "output": [
-                "aquatic, exercise"
+                "aquatic exercise"
             ]
         },
         {
@@ -1892,13 +1901,13 @@
         {
             "input": "This study examined whether 24 months of weight training exercises enhanced the effectiveness of risedronate , calcium , and vitamin D in maintaining or improving bone mineral density ( BMD ) in 223 postmenopausal breast cancer survivors .",
             "output": [
-                "risedronate, calcium, vitamin, D"
+                "risedronate, calcium, vitamin D"
             ]
         },
         {
             "input": "To compare the effect of a Social Skills Training Group-based Program ( SST-GP ) and a Leisure Activities Group-based Program ( LA-GP ) on the perception of facial emotions and quality of life ( QoL ) in young people with HFA .",
             "output": [
-                "Social, Skills, Training, Group-based, Program, SST-GP, Activities, Group-based, Program, LA-GP"
+                "Social Skills Training Group-based Program, SST-GP, Activities Group-based Program, LA-GP"
             ]
         },
         {
@@ -1934,13 +1943,13 @@
         {
             "input": "Antipyretic treatment had no effect on fever clearance and therefore should be used cautiously in the treatment of malaria .",
             "output": [
-                "Antipyretic"
+                "not found"
             ]
         },
         {
             "input": "To estimate cost and outcomes of the Arthritis Foundation aquatic exercise classes from the societal perspective .",
             "output": [
-                "aquatic, exercise"
+                "aquatic exercise"
             ]
         },
         {
@@ -1970,7 +1979,7 @@
         {
             "input": "Patients in the experimental group received a brief note in which they were explicitly asked to increase both their physical activity level and time of sun exposure , while control group patients did not receive these explicit recommendations .",
             "output": [
-                "physical, activity, sun, exposure"
+                "physical activity, sun exposure"
             ]
         },
         {
@@ -1982,7 +1991,7 @@
         {
             "input": "The effects of 12 weeks of antioxidant supplementation on exercise-induced oxidative stress were investigated in older adults ( 60 ( SE 1 ) years ; BMI 26 ( SE 1 ) kg/m ( 2 ) ) .",
             "output": [
-                "antioxidant, supplementation"
+                "antioxidant supplementation"
             ]
         },
         {
@@ -1994,7 +2003,7 @@
         {
             "input": "Recruited 249 adults from Washington State aged 55 to 75 with a doctor-confirmed diagnosis of osteoarthritis to participate in aquatic classes .",
             "output": [
-                "aquatic, classes"
+                "aquatic classes"
             ]
         },
         {
@@ -2018,13 +2027,13 @@
         {
             "input": "Postmenopausal BCS ( 223 ) were randomly assigned to exercise plus medication or medication only groups .",
             "output": [
-                "exercise, plus, medication, medication"
+                "exercise plus medication, medication"
             ]
         },
         {
             "input": "Effects of mild physical exercise on serum lipoproteins and metabolites of arachidonic acid : a controlled randomised trial in middle aged men .",
             "output": [
-                "physical, exercise"
+                "physical exercise"
             ]
         },
         {
@@ -2034,7 +2043,7 @@
             ]
         },
         {
-            "input": "\u0394sRAW correlated with changes of intrathoracic gas volume ( \u0394ITGV ) ( r=0.61 ; p < 0.001 ) , residual volume ( \u0394RV ) ( r=0.60 ; p < 0.001 ) , \u0394FVC ( r=0.44 ; p=0.001 ) , and \u0394VAS ( r=0.73 ; p < 0.001 ) , while \u0394FEV1 correlated only with \u0394FVC ( r=0.34 ; p=0.008 ) .",
+            "input": "ΔsRAW correlated with changes of intrathoracic gas volume ( ΔITGV ) ( r=0.61 ; p < 0.001 ) , residual volume ( ΔRV ) ( r=0.60 ; p < 0.001 ) , ΔFVC ( r=0.44 ; p=0.001 ) , and ΔVAS ( r=0.73 ; p < 0.001 ) , while ΔFEV1 correlated only with ΔFVC ( r=0.34 ; p=0.008 ) .",
             "output": [
                 "not found"
             ]
@@ -2060,13 +2069,13 @@
         {
             "input": "Although collaborative care is effective for treating depression and other mental disorders in primary care , there have been no randomized trials of collaborative care specifically for patients with Posttraumatic stress disorder ( PTSD ) .",
             "output": [
-                "collaborative, care"
+                "collaborative care"
             ]
         },
         {
             "input": "Amonafide : An active agent in the treatment of previously untreated advanced breast cancer -- a cancer and leukemia group B study ( CALGB 8642 ) .",
             "output": [
-                "Amonafide"
+                "not found"
             ]
         },
         {
@@ -2132,7 +2141,7 @@
         {
             "input": "In recent years some studies have been published supporting the efficacy of light exposure , physical activity , sleep control and a Mediterranean diet pattern on the improvement or prevention of depression .",
             "output": [
-                "light, exposure, physical, activity, sleep, control, Mediterranean, diet"
+                "light exposure, physical activity, sleep control, Mediterranean diet"
             ]
         },
         {
@@ -2178,7 +2187,7 @@
             ]
         },
         {
-            "input": "The mean hematocrit of the subjects ( 26.23\u00b12.03 % ) at the end of the study was also higher , p < 0.001 .",
+            "input": "The mean hematocrit of the subjects ( 26.23±2.03 % ) at the end of the study was also higher , p < 0.001 .",
             "output": [
                 "not found"
             ]
@@ -2252,7 +2261,7 @@
         {
             "input": "This study examined whether ( 1 ) postmenopausal breast cancer survivors ( BCS ) with bone loss taking 24 months of risedronate , calcium , and vitamin D had increased bone mineral density ( BMD ) at the total hip , femoral neck , L1-L4 spine , total radius and 33 % radius , and decreased bone turnover ; ( 2 ) subjects who also participated in strength/weight training ( ST ) exercises had greater increases in BMD and greater decreases in bone turnover ; and ( 3 ) subjects who also exercised were more likely to preserve ( at least maintain ) BMD .",
             "output": [
-                "risedronate, calcium, vitamin, D, strength/weight, training, ST, exercised"
+                "risedronate, calcium, vitamin D, strength/weight training, ST, exercised"
             ]
         },
         {
@@ -2294,7 +2303,7 @@
         {
             "input": "Serum biochemical characteristics of Beluga , Huso huso ( L. ) , in response to blood sampling after clove powder solution exposure .",
             "output": [
-                "clove, powder, solution"
+                "clove powder solution"
             ]
         },
         {
@@ -2312,7 +2321,7 @@
         {
             "input": "To study the effects of physical exercise on biochemical risk factors for ischaemic heart disease 31 healthy middle aged men undertook regular physical exercise for two months and 29 served as controls in a randomised trial .",
             "output": [
-                "physical, exercise"
+                "physical exercise"
             ]
         },
         {
@@ -2348,7 +2357,7 @@
         {
             "input": "Influence of diets rich in Maillard reaction products on calcium bioavailability .",
             "output": [
-                "Maillard, reaction"
+                "Maillard reaction"
             ]
         },
         {
@@ -2402,7 +2411,7 @@
         {
             "input": "Group 1 received a weekly session of posterior tibial nerve stimulation for 12 weeks and group 2 was the placebo group .",
             "output": [
-                "posterior, tibial, nerve, stimulation, placebo"
+                "posterior tibial nerve stimulation, placebo"
             ]
         },
         {
@@ -2454,7 +2463,7 @@
             ]
         },
         {
-            "input": "Hence , we hypothesize that specific airway resistance changes ( \u0394sRAW ) should better characterize the acute response to bronchodilators .",
+            "input": "Hence , we hypothesize that specific airway resistance changes ( ΔsRAW ) should better characterize the acute response to bronchodilators .",
             "output": [
                 "not found"
             ]
@@ -2474,7 +2483,7 @@
         {
             "input": "Forty-nine children with AS were recruited to participate and randomly assigned to intervention ( n = 26 ) or wait-list control ( n = 23 ) conditions .",
             "output": [
-                "wait-list, control"
+                "wait-list control"
             ]
         },
         {
@@ -2522,7 +2531,7 @@
         {
             "input": "This 7-week program included a computer game , small group sessions , parent training sessions and teacher handouts .",
             "output": [
-                "computer, game, small, group, sessions, parent, training, teacher, handouts"
+                "computer game, small group sessions, parent training, teacher handouts"
             ]
         },
         {
@@ -2552,7 +2561,7 @@
         {
             "input": "After three weekly doses of epoetin alfa 40,000 U , a dose of 120,000 U can be administered safely once every 3 weeks without increasing transfusion needs or sacrificing QOL .",
             "output": [
-                "epoetin, alfa"
+                "epoetin alfa"
             ]
         },
         {
@@ -2583,14 +2592,5 @@
     ],
     "Categories": [
         "Entity Detection"
-    ],
-    "Input_language": [
-        "English"
-    ],
-    "Output_language": [
-        "English"
-    ],
-    "Instruction_language": [
-        "English"
     ]
 }
