@@ -80,7 +80,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task075_squad1.1_answer_generation`	| Generate answers to SQuAD 1.1 questions.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
-`task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement does. | Structured Query Classification
 `task079_conala_concat_strings` | Given a list of strings, concatenate them to form one string. | Answer Generation
 `task080_piqa_answer_generation`	|  Generate a solution to a goal regarding physical knowledge about the world.	| Answer Generation
 `task081_piqa_wrong_answer_generation`	|  Generate an incorrect solution to a goal regarding physical knowledge about the world.	| Incorrect Answer Generation
