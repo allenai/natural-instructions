@@ -19,7 +19,8 @@
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
-  - `Question Generation -> Fill in the Blank` 
+  - `Question Generation -> Fill in the Blank`
+  - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
 - `Author Identification`
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
@@ -28,6 +29,10 @@
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
     - `Classification -> Verification -> Relevance Verification`
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
+    - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
+    - `Classification -> Verification -> Paraphrase Verification`: Verify whether a text sequence is a paraphrase of another text sequence
+    - `Classification -> Verification -> Translation Verification`: Verify whether a text sequence is a translation of another text sequence
+  - `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
 - `Combinatorics`
 - `Command Execution`
 - `Coreference`
@@ -37,6 +42,8 @@
 - `Dialogue Understanding`
 - `Document Understanding`
 - `Entity Detection`
+  - `Entity Detection -> Extractive`: Extract the entity from the text (open set)
+  - `Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
 - `Ethical Judgement`
 - `Explanation Generation`
 - `Fake News Detection`
@@ -83,6 +90,9 @@
 - `Semantic Parsing`
 - `Sentence Generation`
 - `Sentiment Analysis`
+  - `Sentiment Analysis -> Sentiment Classification`
+  - `Sentiment Analysis -> Entity-based Classification`: Predict the sentiment towards a given entity in the text
+  - `Sentiment Analysis -> Entity-based Verification`: Verify whether the predicted sentiment towards a given entity in the text is right or wrong
 - `Sorting`
 - `Stance Detection`
 - `Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
@@ -93,6 +103,7 @@
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
 - `Text Modification`
+    - `Text Modification -> Paraphrase Generation`: Generate a paraphrase of the original text
 - `Text Simplification`
 - `Text Span Selection`
 - `Textual Entailment`
@@ -113,7 +124,10 @@
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
+* `Books`
 * `Business Ethics`
+* `Captions`
+    * `Captions -> Image Captions`
 * `Chemistry`
 * `Computer Science`
 * `Computer Science -> Machine Learning`
@@ -135,6 +149,8 @@
 * `International Law`
 * `Jurisprudence`
 * `Justice`
+* `Knowledge Base`
+* `Knowledge Base -> Freebase`
 * `Law`
 * `Macroeconomics`
 * `Management`
@@ -163,7 +179,9 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `TED Talks`
 * `US Foreign Policy`
+* `Web`
 * `Wikipedia`
 * `World Religions`
 * `Commonsense`
