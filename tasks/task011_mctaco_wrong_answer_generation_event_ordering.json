@@ -7,9 +7,11 @@
         "mctaco"
     ],
     "Categories": [
-        "Incorrect Answer Generation"
+        "Question Answering -> Incorrect Answer Generation",
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task we ask you to write an implausible answer to a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \"earning money\" usually appears before \"spending money\".\nThings to avoid: -\nEmphasis & Caution: Even though there exist multiple wrong answers, we only need a single wrong answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
+    "Definition": "In this task we ask you to write an event that is not likely to happen after a certain event, or is not likely to have happened before it. Pay attention that you will be asked the correct question, and you need to answer it incorrectly. For example, \"earning money\" usually appears before \"spending money\".\nEmphasis & Caution: Even though there exist multiple wrong answers, we only need a single wrong answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: What did Jack do after the game?",
@@ -20,15 +22,20 @@
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa. \nQuestion: What is likely to happen afterward?",
             "output": "He stayed in line.",
             "explanation": "Usually people go home or somewhere else after getting Visa. It's unlikely to stay again in line after getting Visa."
+        },
+        {
+            "input": "Sentence: Max and Joey would often run through fields in a game of chase. \nQuestion: What happened after Max and Joey ran the fields?",
+            "output": "They sold a house.",
+            "explanation": "This is a good example, as it is not plausible that they sold a house after running the fields."
         }
     ],
     "Negative Examples": [
-	{
-	    "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: What did Jack do after the game?",
+        {
+            "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: What did Jack do after the game?",
             "output": "He rested.",
             "explanation": "When people \"get very tired\", they usually \"rest\". 'He rested' is a bad answer because it is the correct answer. Note that, the task is to write a wrong answer."
-	}
-	],
+        }
+    ],
     "Instances": [
         {
             "input": "Sentence: Islam later emerged as the majority religion during the centuries of Ottoman rule, though a significant Christian minority remained. \nQuestion: What happened before Islam was the majority religion?",
@@ -43,12 +50,6 @@
                 "she drove for a while.",
                 "yutaka kume took the helm.",
                 "mr. luzon took the helm."
-            ]
-        },
-        {
-            "input": "Sentence: Max and Joey would often run through fields in a game of chase. \nQuestion: What happened after Max and Joey ran the fields?",
-            "output": [
-                "they sold a home."
             ]
         },
         {
@@ -316,7 +317,7 @@
             ]
         },
         {
-            "input": "Sentence: Zarco and Teixeira were appointed co-go\u00advern\u00adors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: What happened after Perestrelo was awarded Porto Santo?",
+            "input": "Sentence: Zarco and Teixeira were appointed co-go­vern­ors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: What happened after Perestrelo was awarded Porto Santo?",
             "output": [
                 "he went to jail.",
                 "investors celebrated the second anniversary of black monday.",
@@ -793,7 +794,7 @@
             ]
         },
         {
-            "input": "Sentence: No, of course not\u2026 I\u2013  \"Then why,\" Arthur barreled on, \"do you disregard them all and return to this superstitious babble, this morbid, paganistic drivel?. \nQuestion: How did Arthur become angry in the first place?",
+            "input": "Sentence: No, of course not… I–  \"Then why,\" Arthur barreled on, \"do you disregard them all and return to this superstitious babble, this morbid, paganistic drivel?. \nQuestion: How did Arthur become angry in the first place?",
             "output": [
                 "she said this was not a do-or-die deal.",
                 "he liked his idea.",
@@ -852,7 +853,7 @@
             ]
         },
         {
-            "input": "Sentence: In Melaka and throughout the peninsula, Islam thrived as a strong, male-dominated religion of individuality, offering dynamic leadership and preaching brotherhood and self-reliance\u2002\u2014\u2002all qualities ideally suited to the coastal trade. \nQuestion: What happened after Islam became popular in the region?",
+            "input": "Sentence: In Melaka and throughout the peninsula, Islam thrived as a strong, male-dominated religion of individuality, offering dynamic leadership and preaching brotherhood and self-reliance — all qualities ideally suited to the coastal trade. \nQuestion: What happened after Islam became popular in the region?",
             "output": [
                 "they drank liquor.",
                 "it died off.",
@@ -1544,7 +1545,7 @@
             ]
         },
         {
-            "input": "Sentence: , followed by other ports at Hy\u00e8res, Antibes, and Nice. \nQuestion: Where did you go before the ports?",
+            "input": "Sentence: , followed by other ports at Hyères, Antibes, and Nice. \nQuestion: Where did you go before the ports?",
             "output": [
                 "i went to the space station after the ports.",
                 "i went to the space station before the ports."
@@ -2439,7 +2440,7 @@
             ]
         },
         {
-            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban\u2002\u2014\u2002Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What happened after the Iban gained control?",
+            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban — Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What happened after the Iban gained control?",
             "output": [
                 "catfish farmers and haulers cheat on their taxes."
             ]
@@ -2612,5 +2613,25 @@
                 "they started using coal."
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
     ]
 }
