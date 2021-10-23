@@ -25,8 +25,8 @@
 - `Text Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
   - `Text Generation -> Sentence Generation`
-    - `Sentence Generation -> Sentence Generation -> Story Completion`
-    - `Sentence Generation -> Sentence Generation -> Explanation Generation`
+    - `Text Generation -> Sentence Generation -> Story Completion`
+    - `Text Generation -> Sentence Generation -> Explanation Generation`
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation` 
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
@@ -34,6 +34,9 @@
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
+- `Text Modification`
+  - `Text Modification -> Text Simplification`
+  - `Text Modification -> Structured Text Modification`
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
     - `Classification -> Verification -> Claim Verification`
@@ -41,7 +44,7 @@
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
     - `Classification -> Verification -> Relevance Verification`
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
-- `Combinatorics`
+    - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
@@ -64,6 +67,7 @@
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
   - `Mathematics -> Geometry`
+  - `Mathematics -> Combinatorics`
 - `Named Entity Recognition`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 - `Paraphrasing`
@@ -100,8 +104,6 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
-- `Text Modification`
-- `Text Simplification`
 - `Text Span Selection`
 - `Textual Entailment`
 - `Translation`
@@ -121,8 +123,8 @@
 * `Business Ethics`
 * `Chemistry`
 * `Computer Science`
-* `Computer Science -> Machine Learning`
-* `Computer Security`
+  * `Computer Science -> Machine Learning`
+  * `Computer Science -> Computer Security`
 * `Dialogue`
 * `Econometrics`
 * `Electrical Engineering`
@@ -141,13 +143,14 @@
 * `Jurisprudence`
 * `Justice`
 * `Law`
-* `Macroeconomics`
+* `Economics`
+  * `Economics -> Macroeconomics`
+  * `Economics -> Microeconomics`
 * `Management`
 * `Marketing`
 * `Mathematics`
 * `Medical Genetics`
 * `Medicine`
-* `Microeconomics`
 * `Moral Scenarios`
 * `Movies`
 * `Music`
@@ -159,8 +162,8 @@
 * `Prehistory`
 * `Psychology`
 * `Public Relations`
-* `School Science Textbooks`
 * `Natural Science`
+  * `Natural Science -> School Science Textbooks`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
@@ -168,6 +171,8 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `SQL`
+* `Stack Overflow`
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`
