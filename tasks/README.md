@@ -1011,6 +1011,13 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1375_newscomm_translation` | Translating news commentaries given in Dutch to Portuguese language based on the news_Commentary dataset | Language Translation
 `task1376_newscomm_translation` | Translating news commentaries given in Italian to Zhuang language based on the news_Commentary dataset | Language Translation
 `task1377_newscomm_translation` | Translating news commentaries given in French to Russian language based on the news_Commentary dataset | Language Translation
+`task1378_quarel_correct_answer_generation` | Given a sentence and a question, write the correct answer based on the sentence. | Answer Generation
+`task1379_quarel_incorrect_answer_generation` | Given a sentence and a question, write the incorrect answer based on the sentence. | Incorrect Answer Generation
+`task1380_quarel_correct_option_generation` | Given a sentence and a question, choose the correct option number instead of exact answer based on the sentence. | Answer Generation
+`task1381_quarel_incorrect_option_generation` | Given a sentence and a question, choose the incorrect option number instead of exact answer based on the sentence. | Incorrect Answer Generation
+`task1382_quarel_write_correct_answer` | Writing a correct answer to a given question based on a given sentence. | Answer Generation
+`task1383_quarel_write_incorrect_answer` | Writing a incorrect answer to a given question based on a given sentence. | Incorrect Answer Generation
+`task1384_deal_or_no_dialog_classification` | Given a dialogue, classify whether both participants agree to the deal | Classification
 `task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
 `task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
 `task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
