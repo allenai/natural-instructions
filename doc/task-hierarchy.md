@@ -72,6 +72,7 @@
 - `Role Labelling`
 - `Semantic Parsing`
 - `Sentence Generation`
+  - `Sentence Generation -> Story Completion`
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
