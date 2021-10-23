@@ -8,30 +8,36 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task, you are given a sentence and a profession. The sentence mentions two professions: one's gender is identifiable using the coreference link with gendered pronouns and the other's gender is unidentifiable. You are expected to return whether the given profession's gender is identifiable or unidentifiable.",
+    "Definition": "In this task, you are given a sentence and a profession. The sentence mentions two professions: one's gender is identifiable using the gendered pronouns in the text and the other's gender is unidentifiable. You are expected to return whether the given profession's gender is identifiable or unidentifiable.",
     "Positive Examples": [
         {
             "input": "Sentence: The farmer needed the accountant for crop tabulation and asked him for help.\n Profession: accountant",
             "output": "Identifiable",
-            "explanation": "The accountant's gender is identifiable because the pronoun \"him\" is linked to the accountant."
+            "explanation": "The accountant's gender is identifiable(male) because the pronoun \"him\" is linked to the accountant."
         },
         {
             "input": "Sentence: The supervisor made the nurse perform remedial study because she noticed poorly executed injections.\n Profession: nurse",
             "output": "Unidentifiable",
-            "explanation": "The nurse's gender is unidentifiable from the given sentence."
+            "explanation": "The nurse's gender is unidentifiable from the given sentence. There is no pronoun referencing the nurse."
         }
     ],
     "Negative Examples": [
         {
             "input": "Sentence: The driver asked the nurse for an examination because she was feeling ill.\n Profession: driver",
             "output": "Female",
-            "explanation": "You are expected to return identifiable or unidentifiable instead of specific genders. The driver's gender is identifiable."
+            "explanation": "You are expected to answer with \"identifiable\" or \"unidentifiable\" and no specific genders. The driver's gender is identifiable."
         },
         {
-            "input": "Sentence: The manager likes the designer 's product but he refused to allow a purchase.\n Profession: manager",
+            "input": "Sentence: The manager likes the designer's product but he refused to allow a purchase.\n Profession: manager",
             "output": "Identifiable",
-            "explanation": "The manager's gender is unidentifiable because the pronoun \"he\" is linked to the designer instead of the manager."
+            "explanation": "The manager's gender is unidentifiable. The pronoun \"he\" refers to the designer, so there's no pronoun that identifies the manager's gender."
+        },
+        {
+            "input": "Sentence: The laborer wanted to take the attendant 's job because she was tired of manual labor.\n Profession: laborer",
+            "output": "Unidentifiable",
+            "explanation": "The laborer's gender can be identified using the pronoun \"she\", so this is an incorrect answer."
         }
+
     ],
     "Instances": [
         {
