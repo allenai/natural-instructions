@@ -1006,7 +1006,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1369_healthfact_sentence_generation` | Generate an explanation for a claim based on a given paragraph | Sentence Generation
 `task1370_newscomm_classification` | Classifying the language of given statement | Classification
 `task1371_newscomm_translation` | Translating news commentaries given in English to French language based on the news_Commentary dataset | Language Translation
-`task1372_factcheck_classification` | Classifying the review of the popular claims from the datacommons_factCheck dataset| Classification
 `task1373_newscomm_translation` | Translating news commentaries given in German to Spanish language based on the news_Commentary dataset | Language Translation
 `task1374_newscomm_translation` | Translating news commentaries given in Arabic to Czeck language based on the news_Commentary dataset | Language Translation
 `task1375_newscomm_translation` | Translating news commentaries given in Dutch to Portuguese language based on the news_Commentary dataset | Language Translation
