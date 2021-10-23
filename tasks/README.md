@@ -981,6 +981,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
+`task1351_opus100_translation_gu_en` | Translate a sentence in Gujarati to English | Translation
+`task1352_hind_encorp_translation_hi_en` | Translate a sentence in Hindi to English | Translation  
+`task1353_hind_encorp_translation_en_hi` | Translate a sentence in English to Hindi | Translation
+`task1354_sent_comp_classification` | Given text and headline classify if headline matches text or not | Classification
+`task1355_sent_comp_summarization` | Given text generate summary about the text | Summarization
 `task1356_xlsum_title_generation` | Generating title for the text in xlsum | Title Generation
 `task1357_xlsum_summary_generation` | Generating summary for the text in xlsum | Summary Generation
 `task1358_xlsum_title_generation` | Generates title for the text in xlsum | Title Generation
