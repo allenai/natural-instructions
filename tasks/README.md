@@ -776,11 +776,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task819_pec_sentiment_classification` | Given a contextual post, classify the post as holding positive or negative sentiment | Classification
 `task820_protoqa_answer_generation` | Given a question, generate a relevant answer to the question | Answer Generation
 `task821_protoqa_question_generation` | Given a group of answers, generate a question for all answers | Question Generation  
-`task822_peixian-rtgender_gender_identification` | Identify the gender of the source poster/speaker based on the post | Answer Generation
 `task823_peixian-rtgender_sentiment_analysis` | Analyze the sentiment of responses under posters from social media | Classification
-`task824_peixian-rtgender_response_relevance_analysis` | Analyze the relevance of responses to the source posters from social media | Classification
-`task825_peixian-rtgender_positive_response_generation` | Generating a responses with positive sentiment the posters from social media | Sentence Generation
-`task826_peixian-rtgender_negative_response_generation` | Generating a responses with negative sentiment the posters from social media | Sentence Generation
 `task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task829_giga_fren_translation` | Translation from English language to French language | Translation
