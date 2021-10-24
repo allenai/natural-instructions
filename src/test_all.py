@@ -111,7 +111,11 @@ for file in files[begin_task_number:end_task_number+1]:
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
         with open(file_path, 'r') as f:
-            data = json.load(f, object_pairs_hook=dict_raise_on_duplicates)
+            try:
+                data = json.load(f)
+            except:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f, object_pairs_hook=dict_raise_on_duplicates)
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
