@@ -990,8 +990,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1345_glue_qqp_question_paraprashing` | Paraphrasing a question to generate a similar question | Text Modification
 `task1346_glue_cola_grammatical_correctness_classification` | Checking grammatical correctness of a statement. | Classification
 `task1347_glue_sts-b_similarity_classification` | Classifying two sentence based on semantic similarity on the scale of 0 - 5. | Classification
-`task1348_glue_qnli_question_entailment_classification` | Classifying if the question entails the statement provide or not. | Classification
-`task1349_glue_qnli_question_generation` | Generating question based on the statement provided | Question Generation
 `task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
 `task1351_opus100_translation_gu_en` | Translate a sentence in Gujarati to English | Translation
 `task1352_hind_encorp_translation_hi_en` | Translate a sentence in Hindi to English | Translation  
