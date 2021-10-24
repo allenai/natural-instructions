@@ -990,6 +990,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1341_msr_text_classification` | Generating Classification of text in MSR dataset | Classification
 `task1342_amazon_us_reviews_title` | Generating Title for Amazon US review dataset | Title Generation
 `task1343_amazon_us_reviews_rating` | Generating Rating for Amazon US review dataset | Rating generation
+`task1344_glue_entailment_classification` | Checking if the second sentance entails the first or not | Classification
+`task1345_glue_qqp_question_paraprashing` | Paraphrasing a question to generate a similar question | Text Modification
+`task1346_glue_cola_grammatical_correctness_classification` | Checking grammatical correctness of a statement. | Classification
+`task1347_glue_sts-b_similarity_classification` | Classifying two sentence based on semantic similarity on the scale of 0 - 5. | Classification
 `task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
 `task1351_opus100_translation_gu_en` | Translate a sentence in Gujarati to English | Translation
 `task1352_hind_encorp_translation_hi_en` | Translate a sentence in Hindi to English | Translation  
