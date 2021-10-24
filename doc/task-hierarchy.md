@@ -1,18 +1,35 @@
 # Task Hierarchy
 
+## Guidelines / FAQs for Contributors:
+
+- Massaging the task hierarchy categories is somewhat encouraged.
+- If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
+- `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
 - `Abuse Detection`
-- `Answer Generation`
-  - `Answer Generation -> Commonsense Question Answering`
-  - `Answer Generation -> Contextual Question Answering`
-  - `Answer Generation -> Fill in the Blank`
-  - `Answer Generation -> Multiple Choice Question Answering`
-  - `Answer Generation -> Open Question Answering`
+- `Question Answering`
+  - `Question Answering -> Commonsense Question Answering`
+  - `Question Answering -> Contextual Question Answering`
+    - `Question Answering -> Contextual Question Answering -> Extractive`
+    - `Question Answering -> Contextual Question Answering -> Abstractive` 
+  - `Question Answering -> Fill in the Blank`
+  - `Question Answering -> Multiple Choice Question Answering`
+  - `Question Answering -> Open Question Answering`
+  - `Question Answering -> Incorrect Answer Generation`
+- `Question Generation`
+  - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
+  - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+  - `Question Generation -> Fill in the Blank` 
 - `Author Identification`
 - `Classification`
+  - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
+    - `Classification -> Verification -> Claim Verification`
+    - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
+    - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
+    - `Classification -> Verification -> Relevance Verification`
+    - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
 - `Combinatorics`
 - `Command Execution`
-- `Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
@@ -23,11 +40,12 @@
 - `Ethical Judgement`
 - `Explanation Generation`
 - `Fake News Detection`
-- `Grammar Error Correction`
+- `Grammar Error`
+  -  `Grammar Error -> Grammar Error Correction`
+  -  `Grammar Error -> Grammar Error Detection`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hate Speech Detection`
 - `Hypernym Discovery`
-- `Incorrect Answer Generation`
 - `Intent Detection`
 - `Language Identification`
 - `Mathematics`
@@ -39,7 +57,6 @@
 - `Paragraph Generation`
 - `Paraphrasing`
 - `Parts-of-speech`
-- `Question Composition`: Compose questions by concating questions in the input
 - `Question Decomposition`
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
@@ -82,8 +99,6 @@
 - `Title Generation`
 - `Topic Generation`
 - `Translation`
-- `Verification`: Verify if two inputs match with each other e.g. a task to verify if a sentence and its sentiment given in the input match
-  - `Verification -> Claim Verification`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
 
@@ -112,6 +127,7 @@
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
+* `Pop Culture`
 * `History`
   * `History -> European History`
   * `History -> 9/11 Reports`
@@ -139,6 +155,7 @@
 * `Psychology`
 * `Public Relations`
 * `School Science Textbooks`
+* `Natural Science`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
@@ -149,6 +166,11 @@
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`
+* `Commonsense`
+  * `Commonsense -> Social Commonsense`: a situation involving two same gender people
+with contrasting attributes, emotions, social roles, etc.
+  * `Commonsense -> Physical Commonsense`: a context involving two physical
+objects with contrasting properties, usage, locations, etc.
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
