@@ -865,9 +865,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
 `task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
 `task970_sherliic_causal_relationship` | Determine if A and B share a casual relationship |Classification
-`task971_sherliic_fact_annotation` | Detemine if the annotation given is a correct annotation for the given fact |Classification
-`task972_sherliic_premise_hypo_seq` | Return the sequence of premise-hypothesis for statements A and B |Classification
-`task973_sherliic_inverse_causal_relationship` | Determine if A and B share an inverse casual relationship |Classification
 `task974_prachathai67k_sentiment_classification` | Classify the sentiment of a given article on the given genre |Classification
 `task975_prachathai67k_same_genre_classification` | Determine if the two articles given share the same sentiment fot the given genre |Classification
 `task976_pib_indian_language_identification` | Identify the language of the given statement from the 11 languages listed |Classification
