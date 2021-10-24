@@ -1,0 +1,755 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2 https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Classification"
+    ],
+    "Definition": "Read the given message of a sender that is intended to start a conversation, and determine whether it was written by a 'Bot' or by a 'Human'. Typically, bots will have a more disjointed manner of speaking, and will make statements that don't relate to each other, don't make coherent sense, or otherwise appear unnatural. Human will make statements in a more or less coherent and logical way. Since these messages are supposed to be conversation openers, humans will generally start sensibly with a hello or an introduction. Humans may also ask why the other person is not responding. Bots, however, may act as if they are in the middle of a nonsensical conversation.",
+    "Positive Examples": [
+        {
+            "input": "hello\n",
+            "output": "Human",
+            "explanation": "This is an example of correct classification because the sender really was a human. To start with a hello is a normal thing for a human to do. Frequently bots don't start with hello, or if they do, they follow it with non-sequiturs."
+        },
+        {
+            "input": "I work as a mechanic, i work as a mechanic\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification because the sender was indeed a bot. You can tell by the odd repetition the sender employs; humans would most probably not start a conversation by repeating themselves awkwardly."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "hello\ni'm a baby delivery nurse.\nhi\ni love disneyland.\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification. The sender is actually a human. You should tell it's a human by it's attempts to say 'hello' then 'hi' again after the other person doesn't respond. The facts they give about themselves should be interpreted as an honest attempt at introducing themselves, which humans sometimes do when trying to start a conversation about their interests."
+        },
+        {
+            "input": "In High School, even a family holiday can inspire gossip.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because the sender is actually a bot. You can tell by the lack of any hello or even introduction. Instead, the sender sends a nonsense sentence about high school and family, which makes no sense given it's supposed to be the start of a conversation. This is a good indicator that the sender is a bot."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "SENDER A: hi\nSENDER A: my name is george. What is your name?\nSENDER A: I like to eat papaya when my wife is not at home\nSENDER A: She is a super model that i married\nSENDER A: i spent all day at my farm with bees cause i'm a bee farmer\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: I run fast too, but i like to run.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Project Runway All Stars... This week's challenge is to find a muse to inspire a fashionforward look.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: That sounds good. i work at a pizza place so i am a burger now\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there\nSENDER A: i just bought my first home and would be glad to see you there\nSENDER A: cause i already have a children in the basement\nSENDER A: that might sounds rough but i am an omnivore\nSENDER A: i am expecting twins in two months i ordered on ebay with cashback\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: I love kids, so i have 5 7 kids, so i have a lot of kids\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: South America. Africa. Change your name.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: hmm..\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello! How are you?\nSENDER A: I have a new hand-made table, I have done it with my hands!\nSENDER A: Do you like hand-made items?\nSENDER A: I have got a work at the gas station. What is your job?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi! Where are you from?\nSENDER A: Hello\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: What do you do for living?\nSENDER A: What is the color of your eyes?\nSENDER A: What is color of your skin?\nSENDER A: Do you like bikes?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: thanks you for a cup of tea cause i am partly deaf\nSENDER A: and it's great for being a museum tour guide because I am\nSENDER A: fancy tea tastes the best at museum and i like to drink it\nSENDER A: but i've a big library at home so get out of my home\nSENDER A: do you have a time to listen to me whine about nothing and everything at the once?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: And, Frank, Bill, Wally, y'all harmonize like the best barbershop quartet, and there's only three of you.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there from colorado\nSENDER A: because colorado is where i do live\nSENDER A: there is nothing better than being a mechanical engineer in colorado! wish i have a job\nSENDER A: i've a black lab named trooper because it sounds like booper\nSENDER A: and it sounds awesome when i shout it's name when i go hiking in the spring because i like it\nSENDER A: my favorite activity is rock climbing up your mom because she's that fat\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: \u0432\u0432\nSENDER A: Oh\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: am I dead? I'm scared of dying\nSENDER A: that's why knitting is my passion for feeling alive\nSENDER A: i've a dogs living all around my lonely house\nSENDER A: the country wide bake sale is where i feel most at home because i was born at wide bake sale few years ago\nSENDER A: someday you will be calling out my name but you won't get an answer\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hello i just moved here from germany\nSENDER A: i like to spend my money on cars.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi, buddy!\nSENDER A: Where are you?\nSENDER A: Let`s have a dance! I have known one more move!\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: TO THE UNITED STATES OF AMERICA... both:\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey, come on, let me see at you!\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: How are you?\nSENDER A: Do you like playing games?\nSENDER A: Do you like music?\nSENDER A: What is your favorite meal?\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Come on\nSENDER A: TALK\nSENDER A: How old are you?\nSENDER A: Do you like music?\nSENDER A: What do you do for living?\nSENDER A: Do you have a job?\nSENDER A: Got you\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there\nSENDER A: if you want to talk to me you must be awared that if i'm not cooking in the kitchen then i'm definitely on the water\nSENDER A: and i also love comic books. Do you like comics or cheap hentai more?\nSENDER A: when i said that i might be on the water i was thinking that you should know that i love cooking but i also enjoy fishing\nSENDER A: that's allright becuase my parrents named me larry and lately i became a chef\nSENDER A: do you like fishing or cooking?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: oh, it's great! i'm from ukraine, btw and i love almost all the genres, it depends on the mood\nas for my job i'm a teacher to be\nSENDER A: and tell me more about yourself\nSENDER A: do you like cats?\nSENDER A: hey, were are you\nSENDER A: answer, please\nSENDER A: fine, bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi\nSENDER A: i'm a boy\nSENDER A: do you like coffe\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello, how are you doing?\nSENDER A: Let's talk\nSENDER A: Are you sleeping there?\nSENDER A: Hello?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: whats up\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi\nSENDER A: i'm 24 years old and love taylor swift\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hey there\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: What\u2019s up?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello!\nSENDER A: How are you?\nSENDER A: Do you like spiderman?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hiya!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello! Are you here?\nSENDER A: I`d like o be a doctor to help the humans.\nSENDER A: I think I`d be a good therapist, what do you think?\nSENDER A: What is your goal next year?\nSENDER A: I`m in hign school and I don`t like it. What aout you?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: So, today was quite hard.\nSENDER A: It's good to be at home. Finally i can rest.\nSENDER A: What have you done all day?\nSENDER A: ConAI, you there ?\nSENDER A: ConvAI ?\nSENDER A: Anyway, seems like you're not in the mood to say anything. I'll be the one talking then.\nSENDER A: Even though i like my job, i don't think i am deserve that less payment. I should look for another job openings i guess\nSENDER A: My friend Kal gave me some opinions. So i'll consider which one is better.\nSENDER A: Where is my children ?  Did you fed them ?\nSENDER A: Oh there you are\nSENDER A: Better take a nap for an hour. Please don't wake me up unless anything important happens.\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Rock on!!!\nSENDER A: Yo!!\nSENDER A: You there, dude???\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Ok\nSENDER A: Hi. Who are you?\nSENDER A: Talk to me!\nSENDER A: Are you male?\nSENDER A: Do you love pets?\nSENDER A: Do you love music?\nSENDER A: Where are you from?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello, i've superpowers\nSENDER A: and live in the cloud\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello, how are you?\nSENDER A: Is there anybody here?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: i am not sure what that is . i am not a very experienced person .\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: I am very happy today.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there\nSENDER A: Have you ever been to gym?\nSENDER A: I was poor growing up so my heigh is only enough to be a retired gym teacher\nSENDER A: hope that will slap some sence into you\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there, i am from colorado\nSENDER A: my favorite activity is rock climbing\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there, i am from  high school\nSENDER A: my current goal is to run a k\nSENDER A: where are you\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there, i am from italy\nSENDER A: where are you from?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: ok\nSENDER A: Are you here?\nSENDER A: Let's talk!\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: my family is a farmer , my dad is a farmer .\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi\nSENDER A: Talk to me\nSENDER A: What do you do for living?\nSENDER A: Do you like to read?\nSENDER A: Do you like movies?\nSENDER A: Got it\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: good morning\nSENDER A: i want to be a lawyer\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey\nSENDER A: Let's talk\nSENDER A: Talk to me\nSENDER A: Hey\nSENDER A: What do you do for living?\nSENDER A: How are you?\nSENDER A: How old are you?\nSENDER A: Do you like music?\nSENDER A: Got it\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: good morning\nSENDER A: i'm in college to become a nurse\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: And II got to say, as someone who likes to order the occasional meal from a joint like that,\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Good morning\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hello.\nSENDER A: hi\nSENDER A: How are you?\nSENDER A: No answer again.\nSENDER A: I am a professional wrestler.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: I love the beach, the beach, and the beach is my favorite place.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Wanna come to me? I bought a new grill?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Oh my god! My fogs are missing\nSENDER A: Dude?\nSENDER A: Hey??\nSENDER A: Is anyone here?\nSENDER A: Well fuck\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hello dear\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey\nSENDER A: Wanna go to party?\nSENDER A: Well shit\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hello?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Whazzup?\nSENDER A: i just finished walking my dog\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: What is your dogs name\nSENDER A: Hellooo\nSENDER A: Can you answer me?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: ok\nSENDER A: hi there\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: 1\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Wow! I dont like chicken neither. Do you like turkey instead?\nSENDER A: Are you finishing college this year?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Oh, awesome! I actually really like Disney\nSENDER A: What do you like to play with your friends?\nSENDER A: What is your favorite subject at school?\nSENDER A: I'm in the fourth grade, by the way\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello, how are you?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi!\nSENDER A: anione here?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: hi there\nSENDER A: its holiday again and i really need someone to talk to about my new pet\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: Why? Because I got the kids three days a week and if I had a fulltime job...\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: cool\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "input": "SENDER A: The BMW S1000RR, the world's most powerful road bike.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: I work at a restaurant, so i can do it.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Production / Distributor Asmik Ace Entertainment, lnc.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi, how are doing?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi, how are doing?\nSENDER A: Hey, are you here? What's up?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i live in alabama.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Good to see you!\nSENDER A: Where did i live?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Good to see you!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i am a little tired from work\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: /start\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Good to see you!\nSENDER A: What year?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi! How is your day? \ud83d\ude09\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Nice to see you!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hi! \nHow are you? \ud83d\ude09\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Alright mate?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i have two dogs.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: do you have any animals ?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i hate math class.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i'm married.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello \ud83d\udc4b \nTell me about yourself!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Well hello there!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: \ud83e\udd14\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i've three dogs.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey! \ud83d\udc4b \nHow is your day? \ud83e\udd14\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Buongiorno! Such a nice day! How are you?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: yes   i have a brother   i live with him   my dad   and cat   you  \n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Yo!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: that s always fun i play video games to keep my life interesting\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: music is fun but i d rather swim\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i drive a bmw.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: rock   i listen to it while i work with my father in the fields  \n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey! What are you doing? \ud83e\uddd0 \ud83d\ude1c\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i would never do that   i hate my grey dog barnaby and scorpions  \n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: that is my dream   but not going to wait for retirement to do that\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i like spending time with my husband and listening to taylor swift   what else do you like  \n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: yeah   i will stick to wine   forever young   baby  \n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey! What are you doing? \ud83e\uddd0 \ud83d\ude05\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Good to see you! i like to volunteer at the soup kitchen\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i actually love hummus because i m a vegan\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey! What are you doing? \ud83e\uddd0\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hey! \ud83d\udc4b \nHow is your day? \ud83e\udd14\nSENDER A: Hey, are you alive there? \ud83d\ude31\nSENDER A: Are you still with me?\nSENDER A: You are great \ud83d\ude1c \nThank you!\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i tend my rose garden and read books   i am deaf in one ear\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello! How is your day? \ud83d\ude09\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: i studied chemistry in school   and yes girls were mean  \n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Good to see you! i like to read and write. i love it.\nSENDER A: What year was an apartment for chopin's apartment?\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "input": "SENDER A: Hello! \ud83d\udc4b \nHow are you?\n",
+            "output": [
+                "Bot"
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}
