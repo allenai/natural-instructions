@@ -816,6 +816,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
+`task902_deceptive_opinion_spam_classification` | Identity polarity of hotel reviews | Classification  
+`task903_deceptive_opinion_spam_classification` | Given hotel reviews and it's polarity, determine whether it's true or false | Classification
+`task904_hate_speech_offensive_classification` | Classify tweets into hate speech, offensive or neither | Classification  
+`task905_hate_speech_offensive_classification` | Given tweet and it's category, determine whether it's true or false | Classification
 `task906_dialogre_identify_names` | Text Identification with DialogRE | Answer Generation
 `task907_dialogre_identify_relationships` | Classifying Relationships with DialogRE | Answer Generation
 `task908_dialogre_identify_familial_relationships` | Classifying Familial Relationships with DialogRE | Answer Generation
