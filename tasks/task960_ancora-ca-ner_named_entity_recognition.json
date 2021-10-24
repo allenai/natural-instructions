@@ -3,7 +3,9 @@
         "BSC-TeMU/ancora-ca-ner"
     ],
     "Definition": "This task is about doing Named Entity Recognition(NER) for every word in a given Catalan sentence. First, split the sentence into single words or punctuation symbols. For each word, you need to assign an IOB tag. IOB tag consists of two parts separated by '-' or a single part depending on whether the word belongs to a bigger chunk or not. When breaking a bigger chunk, you can easily break a noun phrase into multiple words. For example, if we break 'New York', we get 'New' and 'York.' Here, both 'New' and 'York' belong to the bigger chunk 'New York,' which are chunks themselves. If the word doesn't belong to any bigger chunk, you will assign an 'O' tag to that particular word. But if it belongs to a bigger chunk, you will assign a two-part tag like this: The I- prefix before a tag indicates that the word is inside a bigger chunk. The B- prefix before a tag indicates that the word is the beginning of a bigger chunk that immediately follows another chunk within the same bigger chunk without O tag words between them. When a bigger chunk comes after an O tag, the first token of the chunk takes the I- prefix. So, suppose a token does belong to a bigger chunk. In that case, you need to assign 'LOC' or 'ORG' or 'PER' tag as the second part of the tag where 'LOC' indicates the token belongs to a location chunk, 'ORG' indicates the token belongs to an organization name chunk, 'PER' indicates the token belongs to a person name chunk, and 'MISC' indicates the token belongs to chunk which is not a person, location or an organization. Avoid using words from other languages.",
-    "Input_language": "ca",
+    "Input_language": ["Catalan"],
+    "Output_language": ["Catalan"],
+    "Instruction_language": ["English"],
     "Positive Examples": [ 
         { 
             "input": "Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gairebé la totalitat de la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .",
