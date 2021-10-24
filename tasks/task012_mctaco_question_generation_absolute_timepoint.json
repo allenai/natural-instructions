@@ -7,26 +7,28 @@
         "mctaco"
     ],
     "Categories": [
-        "Question Generation"
+        "Question Generation -> Contextual Question Generation",
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task, based on the given input, we ask you to write a question that involves \u201cabsolute timepoint\" of events, which is defined as understanding of when events usually happen. For example, \"going to school\" usually happens during the day (not at 2 A.M). \nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \"instinct\" or \"common sense\".\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+    "Definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \"going to school\" usually happens during the day (not at 2 A.M). \nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \"instinct\" or \"common sense\".\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired.",
             "output": "When did Jack play basketball?",
-            "explanation": "This event likely happened between 3PM to 8PM (definitely not 2AM). Therefore, this question involves \"absolute timepoint\" of events."
+            "explanation": "This event likely happened between 3PM to 8PM (definitely not 2AM). Therefore, this question is correct."
         },
         {
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa.",
             "output": "What time of the day was he doing this?",
-            "explanation": "From our past experiences, we have an understanding of when embassies typically work,i.e., during the day (and not after mid-night). This understanding makes this a \"absolute timepoint\" question."
+            "explanation": "From our past experiences, we have an understanding of when embassies typically work,i.e., during the day (and not after mid-night). This is a good question."
         }
     ],
     "Negative Examples": [
         {
             "input": "Sentence: He spent two hours on his homework.",
             "output": "How long did he do his homework?",
-            "explanation": "We DO NOT want this question, as the answer is directly mentioned in the text."
+            "explanation": "We DO NOT want this question, This question asks about duration, and not the time of happening."
         }
     ],
     "Instances": [
@@ -347,7 +349,7 @@
             ]
         },
         {
-            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban\u2002\u2014\u2002Sea Dayak pirates and Land Dayak slash-and-burn farmers.",
+            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban — Sea Dayak pirates and Land Dayak slash-and-burn farmers.",
             "output": [
                 "What time of day did the Iban gain control?"
             ]
@@ -1202,7 +1204,7 @@
             ]
         },
         {
-            "input": "Sentence: Britain seized Gibraltar\u2002\u2014\u2002in the name of the Hapsburg claimant\u2002\u2014\u2002and retained it when the war was over.",
+            "input": "Sentence: Britain seized Gibraltar — in the name of the Hapsburg claimant — and retained it when the war was over.",
             "output": [
                 "When was the Gibraltar war fought by the British?"
             ]
@@ -1245,7 +1247,7 @@
             ]
         },
         {
-            "input": "Sentence: , followed by other ports at Hy\u00e8res, Antibes, and Nice.",
+            "input": "Sentence: , followed by other ports at Hyères, Antibes, and Nice.",
             "output": [
                 "What time did you go to the ports?"
             ]
@@ -1646,7 +1648,7 @@
             ]
         },
         {
-            "input": "Sentence: Zarco and Teixeira were appointed co-go\u00advern\u00adors of Madeira, while Perestrelo was awarded Porto Santo.",
+            "input": "Sentence: Zarco and Teixeira were appointed co-go­vern­ors of Madeira, while Perestrelo was awarded Porto Santo.",
             "output": [
                 "When did the ceremony take place?"
             ]
@@ -2182,5 +2184,25 @@
                 "When did the prints sell?"
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
     ]
 }
