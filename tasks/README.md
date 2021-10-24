@@ -986,6 +986,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier     
 `task1338_peixian_equity_evaluation_corpus_sentiment_classifier` | Classifying the sentiment within the sentence | Sentiment Classifier 
 `task1339_peixian_equity_evaluation_corpus_text_completion`      | Replacing blanks within text for an emption   | Text completion
+`task1340_msr_text_compression_compression` | Generating Compressed text based on MSR dataset | Compression
+`task1341_msr_text_classification` | Generating Classification of text in MSR dataset | Classification
+`task1342_amazon_us_reviews_title` | Generating Title for Amazon US review dataset | Title Generation
+`task1343_amazon_us_reviews_rating` | Generating Rating for Amazon US review dataset | Rating generation
 `task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
 `task1351_opus100_translation_gu_en` | Translate a sentence in Gujarati to English | Translation
 `task1352_hind_encorp_translation_hi_en` | Translate a sentence in Hindi to English | Translation  
