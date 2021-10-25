@@ -6,28 +6,28 @@
         "https://huggingface.co/datasets/jnlpba"
     ],
 	"Categories": ["Entity Detection"],
-    "Definition": "In this task, you are given a sentence from the JNLPBA Corpus. You are expected to list the tokens that mentions the names of genes or proteins. You should list the tokens in the same order that they appear in the text. If no information about the participants is mentioned, just output \"not found\".",
+    "Definition": "In this task, you are given a sentence from the JNLPBA Corpus. You are expected to list the tokens that mention the names of genes or proteins. You should list the tokens in the same order that they appear in the text. If no target entities are mentioned, just output \"not found\".",
     "Positive Examples": [
         {
             "input": "Sox - 4 is important for very early B - cell differentiation , while TCF - 1 / LEF - 1 play a crucial role in early thymocyte development ",
-            "output": "TCF - 1",
+            "output": ["TCF - 1"],
             "explanation": "The gene, TCF - 1 has been tagged as protein since it plays a crucial role in early thymocyte development."
         },
         {
             "input": "The NF - kappaB / Rel family represents one signal transduction pathway induced during such activation .",
-            "output": "NF - kappaB",
+            "output": ["NF - kappaB"],
             "explanation": "NF - kappaB, protein transcription factor, should be tagged."
         }
     ],
     "Negative Examples": [
         {
             "input": "Sox - 4 is important for very early B - cell differentiation , while TCF - 1 / LEF - 1 play a crucial role in early thymocyte development ",
-            "output": "development",
+            "output": ["development"],
             "explanation": "development does not refer to gene or protein, and hence should not be tagged."
         },
         {
             "input": "The NF - kappaB / Rel family represents one signal transduction pathway induced during such activation .",
-            "output": "signal",
+            "output": ["signal"],
             "explanation": "signal is not a protein or gene, and hence should not be tagged."
         }
     ],
