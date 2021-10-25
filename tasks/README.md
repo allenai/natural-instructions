@@ -1205,3 +1205,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1508_wordnet_antonyms` | Given an adjective, generate it's antonym | Answer Generation
