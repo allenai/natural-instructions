@@ -1206,3 +1206,5 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1508_wordnet_antonyms` | Given an adjective, generate it's antonym | Answer Generation
+`task1509_evalution_antonyms` | Given a word generate it's antonym | Answer Generation
+`task1510_evalution_relation_extraction` | Given a phrase describing the relationship between two words, extract the words and the lexical relationship between them | Answer Generation
