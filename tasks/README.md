@@ -534,10 +534,10 @@ Name | Summary | Category
 `task610_conllpp_ner` | Recognize and label proper nouns (Named Entity Recognition) | NER/Labeling  
 `task615_moviesqa_answer_generation` | Given a question from an open movie database, generate an answer for that. | Answer Generation
 `task561_spl_translation_en_bg` | Language Translate of Dataset Card for ALT from English language to Bengali language while preserving named entities in the original language | Language Translation
-`task757_msr_sqa_question_generation` | Given a passage from msr_sqa dataset, generate a question based on the information presented | Question generation
-`task758_msr_sqa_question_answer_generation` | Given a passage from msr_sqa dataset and a question based on that passage, generate a correct answer based on the passage | Answer generation
-`task759_msr_sqa_incorrect_answer_generation` | Given a passage from msr_sqa dataset and a question based on that passage, generate an incorrect correct answer based on the passage | Incorrect Answer Generation
-`task760_msr_sqa_long_text_generation` | Given a passage from msr_sqa dataset in tabular format, generate a long text passage based on the information in the tabular data | Long Text generation
+`task757_msr_sqa_question_generation` | Given a table from msr_sqa dataset, generate a question based on the information presented | Question generation
+`task758_msr_sqa_question_answer_generation` | Given a table from msr_sqa dataset and a question based on that passage, generate a correct answer based on the passage | Answer generation
+`task759_msr_sqa_incorrect_answer_generation` | Given a table from msr_sqa dataset and a question based on that passage, generate an incorrect correct answer based on the passage | Incorrect Answer Generation
+`task760_msr_sqa_long_text_generation` | Given a table from msr_sqa dataset in tabular format, generate a long text passage based on the information in the tabular data | Long Text generation
 `task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task664_mmmlu_answer_generation_abstract_algebra` | Answering mutlitple choice questions on abstract algebra | Answer Generation
@@ -632,6 +632,10 @@ Name | Summary | Category
 `task747_glucose_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or human drive in the story that caused that sentence | Sentence Generation
 `task748_glucose_reverse_cause_event_detection` | Given a story and a selected sentence, find an event that is directly caused or made possible by that sentence | Sentence Generation
 `task749_glucose_reverse_cause_emotion_detection` | Given a story and a selected sentence, find an emotion or a human drive that is directly caused or made possible by that sentence | Sentence Generation
+`task757_msr_sqa_question_generation` | Given a passage from msr_sqa dataset, generate a question based on the information presented | Question generation
+`task758_msr_sqa_question_answer_generation` | Given a passage from msr_sqa dataset and a question based on that passage, generate a correct answer based on the passage | Answer generation
+`task759_msr_sqa_incorrect_answer_generation` | Given a passage from msr_sqa dataset and a question based on that passage, generate an incorrect correct answer based on the passage | Incorrect Answer Generation
+`task760_msr_sqa_long_text_generation` | Given a passage from msr_sqa dataset in tabular format, generate a long text passage based on the information in the tabular data | Long Text generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
 `task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
