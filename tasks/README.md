@@ -1209,3 +1209,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1509_evalution_antonyms` | Given a word generate it's antonym | Answer Generation
 `task1510_evalution_relation_extraction` | Given a phrase describing the relationship between two words, extract the words and the lexical relationship between them | Answer Generation
 `task1511_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1512_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
