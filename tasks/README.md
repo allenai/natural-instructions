@@ -661,6 +661,15 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
 `task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
 `task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
+`task676_ollie_relationship_answer_generation` | Generating relationship based on given inputs in Ollie dataset | Answer Generation
+`task677_ollie_sentence_answer_generation` | Generating sentences based on given inputs in Ollie dataset | Answer Generation
+`task678_ollie_actual_relationship_answer_generation` | Generating the exact form of relationship based on given inputs in Ollie dataset | Answer Generation
+`task679_hope_edi_english_text_classification` | Classify text in english from Hope EDI dataset | Classification
+`task680_hope_edi_tamil_text_classification` | Classify text in tamil from Hope EDI dataset | Classification
+`task681_hope_edi_malayalam_text_classification` | Classify text in malayalam from Hope EDI dataset | Classification
+`task682_online_privacy_policy_text_classification` | Classify privacy policy texts from OPP-115 Dataset | Classification
+`task683_online_privacy_policy_text_purpose_answer_generation` | Generate the purpose of privacy policy texts from OPP-115 Dataset | Answer Generation
+`task684_online_privacy_policy_text_information_type_generation` | Generate the type of information used by website, mentioned in privacy policy texts from OPP-115 Dataset | Answer Generation
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
