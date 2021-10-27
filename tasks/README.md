@@ -1207,3 +1207,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1511_country_life_expectancy` | Given a country name, return the life expectancy of the given country | Answer Generation
 `task1512_country_population` | Given a country name, return the population of the given country | Answer Generation
+`task1513_country_landlocked` | Given a country name, return yes if given country is landlocked, else no | Answer Generation
