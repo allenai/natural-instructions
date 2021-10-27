@@ -530,8 +530,8 @@ Name | Summary | Category
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation
-`task838_cdt_sentiment_classification` | Given a tweet, determine if it has bullying content. (based on cdt) | Sentiment Classification
-`task839_cdt_sentiment_classification` | Given a tweet and prompt, determine if it has bullying content. (based on cdt) | Sentiment Classification
+`task838_cdt_classification` | Given a tweet, determine if it has bullying content. (based on cdt) | Classification
+`task839_cdt_classification` | Given a tweet and prompt, determine if it has bullying content. (based on cdt) | Classification
 `task840_para_pdt_en_es_translation` | Translate English questions to Spanish while preserving named entities in the original language. (based on para_pdt) | Translation
 `task841_para_pdt_de_en_translation` | Translate German questions to English while preserving named entities in the original language. (based on para_pdt) | Translation
 `task842_para_pdt_cs_en_translation` | Translate Czech questions to English while preserving named entities in the original language. (based on para_pdt) | Translation
