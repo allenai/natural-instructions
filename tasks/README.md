@@ -622,8 +622,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task633_dbpedia_14_answer_generation` | Generating answer to question ((dbpedia_14 dataset)) | Answer Generation
 `task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
 `task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
-`task636_multi_woz_sentence_generation` | Generating next sentences based on previous and next sentences | Sentence Generation
-`task637_multi_woz_ordering_answer_generation` | Identifying the correct order of a conversation flow | Answer Generation
 `task638_multi_woz_classification` | Classifying dialouge into User and System | Classification
 `task639_multi_woz_user_utterance_generation`| Generate a User utterance when System's reply is given | User Utterance Generation
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
