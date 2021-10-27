@@ -7,28 +7,41 @@
         "mctaco"
     ],
     "Categories": [
-        "Answer Generation"
+        "Question Answering -> Commonsense Question Answering",
+        "Question Answering -> Contextual Question Answering -> Abstractive",
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task we ask you to write answer to a question that involves \u201cabsolute timepoint\" of events, which is defined as understanding of when events usually happen. For example, \"going to school\" usually happens during the day (not at 2 A.M). \nThings to avoid: -\nEmphasis & Caution: Note that a lot of the questions could have more than one correct answers. We only need a single most-likely answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
+    "Definition": "In this task we ask you to write answer to a question about when an event happened. For example, \"going to school\" usually happens during the day (not at 2 A.M). \nThings to avoid: -\nEmphasis & Caution: Note that a lot of the questions could have more than one correct answers. We only need a single most-likely answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: When did Jack play basketball?",
             "output": "4 PM.",
-            "explanation": "This event likely happened between 3PM to 8PM, definitely not 2AM."
+            "explanation": "This event likely happened between 3PM to 8PM. This is a good answer."
         },
         {
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa. \nQuestion: What time of the day was he doing this?",
             "output": "2 PM.",
             "explanation": "We know when embassies typically work, just need to give one plausible answer. Answers similar to \"2 AM\" are definitely wrong."
+        },
+        {
+            "input": "Sentence: Princes and princesses judged the merits of birds, insects, flowers, roots, or seashells. \nQuestion: When did they judge the merits of birds, insects, flowers, roots, or seashells?",
+            "output": "Centuries ago",
+            "explanation": "Your answer can be an explanation of a time. It doesn't need to be a certain date or time."
         }
     ],
     "Negative Examples": [
-	{
-	    "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: When did Jack play basketball?",
+        {
+            "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: When did Jack play basketball?",
             "output": "2 AM.",
             "explanation": "This event likely happened between 3PM to 8PM, definitely not 2AM. So, this is a bad answer."
-	}
-	],
+        },
+        {
+            "input": "Sentence: They also liked to go through the small forest behind the house, making a game of hide and seek. \nQuestion: What time did they play hide and seek?",
+            "output": "At midnight",
+            "explanation": "It's very unlikely that people play in the forest at midnight, so this is not a good answer."
+        }
+    ],
     "Instances": [
         {
             "input": "Sentence: It's hail crackled across the comm, and Tara spun to retake her seat at the helm. \nQuestion: What time of day was the storm?",
@@ -238,14 +251,6 @@
             ]
         },
         {
-            "input": "Sentence: They also liked to go through the small forest behind the house, making a game of hide and seek. \nQuestion: What time did they play hide and seek?",
-            "output": [
-                "1:00 PM.",
-                "2:00 PM.",
-                "at noon."
-            ]
-        },
-        {
             "input": "Sentence: Mama kept her mink jacket, a family hand-me-down, safe from time in a stopbox, and lent the capturador to my uncle for his stamp collection. \nQuestion: When did Mama put the jacket in the stopbox?",
             "output": [
                 "last year.",
@@ -361,13 +366,6 @@
                 "10:00 AM.",
                 "8:00 AM.",
                 "9:00 AM."
-            ]
-        },
-        {
-            "input": "Sentence: Princes and princesses judged the merits of birds, insects, flowers, roots, or seashells. \nQuestion: When did they judge the merits of birds, insects, flowers, roots, or seashells?",
-            "output": [
-                "during the renaissance.",
-                "centuries ago."
             ]
         },
         {
@@ -561,7 +559,7 @@
             ]
         },
         {
-            "input": "Sentence: Zarco and Teixeira were appointed co-go\u00advern\u00adors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: When did the ceremony take place?",
+            "input": "Sentence: Zarco and Teixeira were appointed co-go­vern­ors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: When did the ceremony take place?",
             "output": [
                 "1:00 PM.",
                 "3:00 PM.",
@@ -1266,7 +1264,7 @@
             ]
         },
         {
-            "input": "Sentence: , followed by other ports at Hy\u00e8res, Antibes, and Nice. \nQuestion: What time did you go to the ports?",
+            "input": "Sentence: , followed by other ports at Hyères, Antibes, and Nice. \nQuestion: What time did you go to the ports?",
             "output": [
                 "4:00 PM."
             ]
@@ -2530,7 +2528,7 @@
             ]
         },
         {
-            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban\u2002\u2014\u2002Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What time of day did the Iban gain control?",
+            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban — Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What time of day did the Iban gain control?",
             "output": [
                 "5:00 PM.",
                 "11:00 AM."
@@ -2664,5 +2662,25 @@
                 "at 5 pm."
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
     ]
 }

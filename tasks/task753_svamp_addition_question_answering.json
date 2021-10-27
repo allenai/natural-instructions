@@ -1,0 +1,1217 @@
+{
+    "Contributors": [
+        "Tanay Dixit"
+    ],
+    "Source": [
+        "https://arxiv.org/abs/2103.07191"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Definition": "You are given a math word problem and you are supposed to apply an addition mathematical operator on the numbers embedded in the text to answer the following question and then only report the final numerical answer.",
+    "Positive Examples": [
+        {
+            "input": "Context: 21 children were riding on the bus. At the bus stop 5 children got off the bus while some more got on the bus. Then there were 16 children altogether on the bus. \n\n Question: How many children got on the bus at the bus stop?",
+            "output": "0",
+            "explanation": "Number of children who got on -> 21 - 5 + x = 16 , x = 0, hence no one got onto the bus"
+        },
+        {
+            "input": "Context: 7 red apples, 15 yellow apples and 8 green apples are in the basket. \n\n Question: How many apples are in the basket?",
+            "output": "30",
+            "explanation": "Total Number of apples in the basket is 7 + 15 + 8 = 30 "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: A basket has 6 red apples, 5 green apples and 3 peaches. \n\n Question: How many apples are there in the basket ?",
+            "output": "14",
+            "explanation": "As the questions asks number of apples, the answer is 6+5 = 11. "
+        },
+        {
+            "input": "Context: Together Adam and Tom have 12 apples. Sam has 9 apples more than Adam and Tom together do. Adam has 8 more apples than Jackie. \n\n Question: How many apples does Sam have?",
+            "output": "29",
+            "explanation": "Sam has 9 apples more than Adam and Tom combines and they have 12 apples, hence Sam as 21 apples. "
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Context: Rachel had to complete 5 pages of math homework, 10 pages of reading homework and 6 more pages of biology homework. \n\n Question: How many pages of reading and biology homework did she have to complete?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "Context: Rachel picked 3 ripe apples from her tree. Now the tree has 2 ripe apples and 27 unripe apples. \n\n Question: How many ripe apples did the tree have to begin with?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "Context: Dave had some apps on his phone. After deleting 18 of them he had 5 left. \n\n Question: How many apps did he have on his phone at the start?",
+            "output": [
+                "23"
+            ]
+        },
+        {
+            "input": "Context: Rachel had to complete 2 pages of math homework, 3 pages of reading homework and 10 more pages of biology homework. \n\n Question: How many pages did she have to complete in all?",
+            "output": [
+                "15"
+            ]
+        },
+        {
+            "input": "Context: Because of the decision Sofia asked the students to suggest specific types of food from a total of 66 choices. If 450 students suggested adding mashed potatoes 38 suggested adding bacon to the menu and the rest did not participate \n\n Question: How many students participated in the suggestion of new food items?",
+            "output": [
+                "488"
+            ]
+        },
+        {
+            "input": "Context: Next on his checklist is wax to stick the feathers together. If he has 557 g of wax and right now he just needs 17 g \n\n Question: Total how many grams of wax do the feathers require?",
+            "output": [
+                "574"
+            ]
+        },
+        {
+            "input": "Context: 26 children were riding on the bus. At the bus stop 38 more children got on the bus. \n\n Question: How many children are on the bus now?",
+            "output": [
+                "64"
+            ]
+        },
+        {
+            "input": "Context: Rachel picked 2 ripe apples from her tree. Now the tree has 7 apples still on it. If 6 of those are ripe and the rest are unripe \n\n Question: How many ripe apples did the tree have to begin with?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "Context: During summer break 907611 kids from Lawrence county stay home and the other 455682 kids go to camp. \n\n Question: About how many kids are in Lawrence county?",
+            "output": [
+                "1363293"
+            ]
+        },
+        {
+            "input": "Context: Jack received 5 emails and 6 letters in the morning. He then received 9 emails and 7 letters in the afternoon. \n\n Question: How many letters did jack receive in the day?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 706 girls and 222 boys. 418 more girls joined the school. \n\n Question: How many pupils are there in the school now?",
+            "output": [
+                "1346"
+            ]
+        },
+        {
+            "input": "Context: Jack received 6 emails and sent 91 letters in the morning. He then received 2 emails and sent 74 letters in the afternoon. \n\n Question: How many emails did Jack receive in the day?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "Context: Paul got a box of some crayons for his birthday. By the end of the school year he had either lost or given away 551 of them and only had 177 left. \n\n Question: How many crayons did he get for his birthday?",
+            "output": [
+                "728"
+            ]
+        },
+        {
+            "input": "Context: Nell collects baseball cards. She gave 301 of her cards to Jeff and now has 154 cards left.. \n\n Question: How many cards did Nell have initially?",
+            "output": [
+                "455"
+            ]
+        },
+        {
+            "input": "Context: Allan brought 3 balloons and 20 balls while Jake brought 5 balloons and 59 balls to the park. \n\n Question: How many balloons did Allan and Jake have in the park?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "Context: Last week Fred had 33 dollars and Jason had 95 dollars. Over the weekend Fred delivered newspapers earning 16 dollars and washed cars earning 74 dollars. \n\n Question: How much money did Fred earn over the weekend?",
+            "output": [
+                "90"
+            ]
+        },
+        {
+            "input": "Context: Paco had 40 cookies. He ate 2 of them. Then he bought 37 more cookies \n\n Question: How many cookies did Paco have left?",
+            "output": [
+                "75"
+            ]
+        },
+        {
+            "input": "Context: Jack received 3 emails and 64 letters in the morning. He then received 5 emails and 54 letters in the afternoon. \n\n Question: How many emails did jack receive in the day?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "Context: A book has 3 chapters. The first chapter is 66 pages long the second chapter is 35 pages long and the third chapter is 24 pages long. \n\n Question: How many pages does the book have altogether?",
+            "output": [
+                "125"
+            ]
+        },
+        {
+            "input": "Context: After eating a hearty meal they went to see the Buckingham palace. There, Rachel learned that 512 visitors came to the Buckingham palace that day. If there were 471 visitors the previous day and 808 visitors the day before that \n\n Question: How many visited the Buckingham palace within the past 89 days?",
+            "output": [
+                "1791"
+            ]
+        },
+        {
+            "input": "Context: A waiter had 12 customers. After some left he still had 14 customers. Then he got 10 new customers \n\n Question: How many customers does he have now?",
+            "output": [
+                "24"
+            ]
+        },
+        {
+            "input": "Context: Jack received 6 emails in the morning, 3 emails in the afternoon and 5 emails in the evening. \n\n Question: How many emails did Jack receive in the day?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Jack received 4 emails in the morning, 5 emails in the afternoon and 8 emails in the evening. \n\n Question: How many emails did Jack receive in the afternoon and evening?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: Kelly gives away 91 nintendo games. \n\n Question: How many did she have initially if she still has 92 games left?",
+            "output": [
+                "183"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 902 girls and 811 boys. 44 more girls joined the school. \n\n Question: How many girls are there in the school now?",
+            "output": [
+                "946"
+            ]
+        },
+        {
+            "input": "Context: Olivia spent 78 dollars at a supermarket. If she has 33 dollars left with her \n\n Question: How much money did she have initially?",
+            "output": [
+                "111"
+            ]
+        },
+        {
+            "input": "Context: Tiffany was collecting cans for recycling. On monday she had 3 bags of cans. The next day she found 7 more bags of cans and 44 bags of bottles. \n\n Question: How many bags of cans did she have altogether?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: For the walls of the house he would use 12 large planks of wood and 10 small planks. If large planks together need 15 pieces of nails to be secured and small planks together need 5 nails. \n\n Question: How many nails does John need for the house wall?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: Robin's hair was 16 inches long. He cut off 11 inches. Then it again grew by 12 inches. \n\n Question: How long is his hair now?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "Context: Winter is almost here and most animals are migrating to warmer countries. There are some bird families living near the mountain. 20 bird families flew away for winter while 14 bird families stayed behind. \n\n Question: How many bird families were living near the mountain at the start?",
+            "output": [
+                "34"
+            ]
+        },
+        {
+            "input": "Context: Zachary did 59 push-ups and 44 crunches in gym class today. David did 19 more push-ups but 27 less crunches than zachary. \n\n Question: How many push-ups did David do?",
+            "output": [
+                "78"
+            ]
+        },
+        {
+            "input": "Context: Helen the hippo and her friends are preparing for thanksgiving at Helen's house. Helen baked 527 chocolate chip cookies and 86 raisin cookies yesterday. And she baked 86 raisin cookies and 554 chocolate chip cookies this morning. \n\n Question: How many chocolate chip cookies did Helen bake?",
+            "output": [
+                "1081"
+            ]
+        },
+        {
+            "input": "Context: Because of the decision Sofia asked the students to suggest specific types of food. If 218 students suggested adding mashed potatoes as well as bacon while 351 suggested adding only bacon to the menu \n\n Question: How many students suggested adding bacon?",
+            "output": [
+                "569"
+            ]
+        },
+        {
+            "input": "Context: Allan brought 3 balloons and Jake brought 5 balloons to the park. Allan then bought 2 more balloons at the park. \n\n Question: How many balloons did Allan and Jake have in the park?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: There were 10 roses in the vase. Jessica cut 8 more roses from her flower garden and put them in the vase. \n\n Question: How many roses are there in the vase now?",
+            "output": [
+                "18"
+            ]
+        },
+        {
+            "input": "Context: Randy has 58 blocks. He uses 27 blocks to build a tower and 53 blocks to build a house. \n\n Question: How many blocks did he use to build the tower and the house altogether?",
+            "output": [
+                "80"
+            ]
+        },
+        {
+            "input": "Context: Helen the hippo and her friends are preparing for thanksgiving at Helen's house. Helen baked 90 chocolate chip cookies yesterday and 51 raisin cookies and 484 chocolate chip cookies this morning. \n\n Question: How many chocolate chip cookies did Helen bake?",
+            "output": [
+                "574"
+            ]
+        },
+        {
+            "input": "Context: Helen the hippo and her friends are preparing for thanksgiving at Helen's house. Helen baked 31 cookies yesterday 270 cookies this morning and 419 cookies the day before yesterday. \n\n Question: How many cookies did Helen bake till last night?",
+            "output": [
+                "450"
+            ]
+        },
+        {
+            "input": "Context: Winter is almost here and most animals are migrating to warmer countries. There are 18 bird families living near the mountain. If 38 bird families flew away to africa and 80 bird families flew away to asia \n\n Question: How many bird families flew away for the winter?",
+            "output": [
+                "118"
+            ]
+        },
+        {
+            "input": "Context: Bobby had 20 pieces of candy. He ate 34 pieces of candy. Then he ate 18 more. \n\n Question: How many pieces of candy did Bobby eat?",
+            "output": [
+                "52"
+            ]
+        },
+        {
+            "input": "Context: Last week Fred had 47 dollars and Jason had 99 dollars. Over the weekend Fred delivered newspapers earning 111 dollars and washed cars earning 34 dollars. \n\n Question: How much money does Fred have now?",
+            "output": [
+                "192"
+            ]
+        },
+        {
+            "input": "Context: Katie had 78 new games and 86 old games. Her friends had 48 new games. \n\n Question: How many new games do they have together?",
+            "output": [
+                "126"
+            ]
+        },
+        {
+            "input": "Context: Jake has 11 fewer peaches than Steven. If Jake has 17 peaches. \n\n Question: How many peaches does Steven have?",
+            "output": [
+                "28"
+            ]
+        },
+        {
+            "input": "Context: Robin has 43 packages of gum. There are 23 pieces in each package. Robin has 8 extra pieces of gum. \n\n Question: How many pieces of gum does Robin have?",
+            "output": [
+                "997"
+            ]
+        },
+        {
+            "input": "Context: Edward spent $ 4 to buy books and $ 3 to buy pens. Now he has $ 12. \n\n Question: How much did Edward spend on books and pens?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "Context: The ring toss game at the carnival made 382 dollars in the first 44 days and 374 dollars in the remaining 10 days. \n\n Question: How much did they make in all?",
+            "output": [
+                "756"
+            ]
+        },
+        {
+            "input": "Context: Ed had 24 more marbles than Doug. Doug lost 27 of his marbles at the playground while Ed found 9 more marbles. \n\n Question: How many more marbles did Ed have than Doug then?",
+            "output": [
+                "60"
+            ]
+        },
+        {
+            "input": "Context: Paul got a box of some crayons for his birthday. During the school year he gave 563 crayons to his friends while he lost 558 crayons. If he only had 332 crayons left \n\n Question: How many crayons did he get for his birthday?",
+            "output": [
+                "1453"
+            ]
+        },
+        {
+            "input": "Context: After eating a hearty meal they went to see the Buckingham palace. There, Rachel learned that 703 visitors came to the Buckingham palace on the previous day. If there were 246 visitors on that day \n\n Question: How many visited the Buckingham palace within 25 days?",
+            "output": [
+                "949"
+            ]
+        },
+        {
+            "input": "Context: Allan brought 5 balloons to the park. If Jake brought 6 more balloons than the number of balloons that Allan brought \n\n Question: How many balloons did Jake bring to the park?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "Context: There were 73 parents, 724 pupils and 744 teachers in the program. \n\n Question: How many people were present in the program?",
+            "output": [
+                "1541"
+            ]
+        },
+        {
+            "input": "Context: A waiter had 12 customers. While 15 customers left he got 14 new customers. \n\n Question: How many customers does he still have?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "Context: Allan brought 7 balloons and 5 balls while Jake brought 6 balloons and 4 balls to the park. \n\n Question: How many balls did Allan and Jake have in the park?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 17 kids on monday, 15 kids on tuesday and 2 kids on wednesday. \n\n Question: How many kids did she play with altogether?",
+            "output": [
+                "34"
+            ]
+        },
+        {
+            "input": "Context: Danny collects bottle caps. He lost 66 bottle caps at the park. Now he has 25 bottle caps in his collection. \n\n Question: How many bottle caps did danny have at first?",
+            "output": [
+                "91"
+            ]
+        },
+        {
+            "input": "Context: 6 red peaches, 90 yellow peaches and 16 green peaches are in the basket. \n\n Question: How many red and green peaches are in the basket?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 635 girls and the rest are boys. If there are 510 more boys than girls \n\n Question: How many boys are there in that school?",
+            "output": [
+                "1145"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 732 girls and 761 boys. 682 more girls and 8 more boys joined the school. \n\n Question: How many girls are there in the school now?",
+            "output": [
+                "1414"
+            ]
+        },
+        {
+            "input": "Context: Baker made 110 cakes. He sold 75 of them. Then he made 76 more cakes. \n\n Question: How many cakes would baker still have?",
+            "output": [
+                "111"
+            ]
+        },
+        {
+            "input": "Context: Jessie currently weighs 27 kilograms. After she started to go jogging everyday she lost 101 kilograms. \n\n Question: How much did she weigh before starting to jog?",
+            "output": [
+                "128"
+            ]
+        },
+        {
+            "input": "Context: At the stop 8 more people got on the train. Initially there were 11 people on the train. \n\n Question: How many people are there on the train now?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "Context: Together Adam and Jackie have 12 apples. He has 9 apples more than Adam and Jackie together do. Adam has 8 more apples than Jackie. \n\n Question: How many apples does He have?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "Context: There are many different books in the ' crazy silly school ' series. If you have read 13 of the books and are yet to read 8 books \n\n Question: How many books are there in the ' crazy silly school ' series?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "Context: Because of the decision Sofia asked the students to suggest specific types of food. 182 students suggested adding mashed potatoes while others suggested adding bacon to the menu. If 166 more students suggested adding bacon than those that suggested mashed potatoes \n\n Question: How many students suggested bacon?",
+            "output": [
+                "348"
+            ]
+        },
+        {
+            "input": "Context: Baker made 173 cakes. He bought 103 new cakes and sold 86 cakes. \n\n Question: How many cakes does baker still have?",
+            "output": [
+                "190"
+            ]
+        },
+        {
+            "input": "Context: Dan has $ 4. He bought a candy bar for $ 8. Then his friend have him $ 5 \n\n Question: How much money is left?",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Context: Edward spent $ 6 to buy books and $ 16 to buy pens. Now he has $ 19. \n\n Question: How much did Edward have before he spent his money?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "Context: The grasshopper, the frog and the mouse had a jumping contest. The grasshopper jumped 21 inches. The grasshopper jumped 25 inches farther than the frog and the mouse jumped 16 inches lesser than the frog. \n\n Question: How much farther did the grasshopper jump than the mouse?",
+            "output": [
+                "41"
+            ]
+        },
+        {
+            "input": "Context: Ed had 10 more marbles than Doug. Doug lost 11 of his marbles at the playground. If Ed had 45 marbles \n\n Question: How many more marbles did Ed have than Doug then?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "Context: After eating a hearty meal they went to see the Buckingham palace. There were 71 paintings in the Buckingham palace. There, Rachel learned that 557 visitors came to the Buckingham palace that day. If there were 188 visitors the previous day \n\n Question: How many visited the Buckingham palace within 57 days?",
+            "output": [
+                "745"
+            ]
+        },
+        {
+            "input": "Context: At the stop 13 more people got on the bus. Initially there were 4 people on the bus. \n\n Question: How many people are there on the bus now?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "Context: During summer break 610769 kids from Lawrence county go to camp and the other 590796 kids stay home. An additional 22 kids from outside the county attended the camp. \n\n Question: About how many kids are in Lawrence county?",
+            "output": [
+                "1201565"
+            ]
+        },
+        {
+            "input": "Context: Together Adam and Jackie have 6 apples. He has 4 apples more than adam and jackie together do. \n\n Question: How many apples does he have?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: For the walls of the house he would use 13 large planks of wood. If each plank of wood needs 17 pieces of nails to be secured and in addition 8 nails are needed for some smaller planks. \n\n Question: How many nails does John need for the house wall?",
+            "output": [
+                "229"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 14 kids on tuesday. If she played tag with 8 more kids on monday than on tuesday \n\n Question: How many kids did she play with on monday?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "Context: Winter is almost here and most animals are migrating to warmer countries. There are 3 bird families living near the mountain. 26 new bird families came to live near the mountain from the arctic while 2 bird families flew away further south for winter. \n\n Question: How many bird families were left near the mountain?",
+            "output": [
+                "27"
+            ]
+        },
+        {
+            "input": "Context: After eating a hearty meal they went to see the Buckingham palace. There, Rachel learned that 92 visitors came to the Buckingham palace that day. If there were 419 visitors the previous day and 103 visitors the day before that \n\n Question: How many visited the Buckingham palace before that day?",
+            "output": [
+                "522"
+            ]
+        },
+        {
+            "input": "Context: Tiffany was collecting cans for recycling. On monday she had 8 bags of cans. She found 10 bags of cans on the next day and 4 bags of cans the day after that. \n\n Question: How many bags did she find after monday?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: A farmer had 90 tomatoes in his garden. If he picked 154 of them yesterday and 50 today. \n\n Question: How many tomatoes did he pick in all?",
+            "output": [
+                "204"
+            ]
+        },
+        {
+            "input": "Context: Rachel had to complete 10 pages of math homework. If she had to complete 3 more pages of reading homework than math homework \n\n Question: How many pages did she have to complete in all?",
+            "output": [
+                "23"
+            ]
+        },
+        {
+            "input": "Context: Jerry had 8 action figures and 9 books on a shelf in his room. Later he added 10 more books to the shelf. \n\n Question: How many books were on his shelf in all?",
+            "output": [
+                "19"
+            ]
+        },
+        {
+            "input": "Context: A waiter had some customers. After 9 customers left he still had 12 customers. \n\n Question: How many customers did he have at the start?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "Context: The grasshopper and the frog had a jumping contest. The grasshopper jumped 31 inches and the frog jumped 35 inches. \n\n Question: How much did they jump altogether?",
+            "output": [
+                "66"
+            ]
+        },
+        {
+            "input": "Context: Katie had 62 new games and 80 old games. Her friends had 73 new games and 41 old games. \n\n Question: How many old games do they have 3",
+            "output": [
+                "121"
+            ]
+        },
+        {
+            "input": "Context: They decided to hold the party in their backyard. They have 12 sets of tables and each set has 14 chairs. There are also 6 chairs extra. \n\n Question: How many chairs do they have for the guests?",
+            "output": [
+                "174"
+            ]
+        },
+        {
+            "input": "Context: There were 12 people on the bus. At the next stop 4 more people got on the bus. Each bus can not have more than 36 people. \n\n Question: How many people are there on the bus now?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "Context: Robin's hair was 14 inches long. It grew by 8 inches. Then he cut off 20 inches. \n\n Question: How long is his hair now?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 135 girls and 214 boys. 496 more girls and 910 more boys joined the school. \n\n Question: How many boys are there in the school now?",
+            "output": [
+                "1124"
+            ]
+        },
+        {
+            "input": "Context: Carol was sending out birthday invitations to her friends. Each package of invitations she bought had 14 invitations in it and she bought 6 packs. Then she bought 11 extra invitations. \n\n Question: How many friends can she invite?",
+            "output": [
+                "95"
+            ]
+        },
+        {
+            "input": "Context: Last week Fred had 86 dollars and Jason had 5 dollars. Fred washed cars over the weekend and now has 9 dollars and Jason did not work. \n\n Question: How much money do they have together now?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Adam has 4 more apples than Jackie. Together Adam and Jackie have 14 apples. Bob has 6 apples more than Adam and Jackie together do. \n\n Question: How many apples does Bob have?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: Haley grew 9 trees in her backyard. After a typhoon 4 died. Then she grew 5 more trees. \n\n Question: How many trees does she have left?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: 6 birds were sitting on the fence. 4 more birds and 8 more storks came to join them. \n\n Question: How many birds are sitting on the fence?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: There were 61 parents in the program and 177 pupils too. The program could seat 44 people \n\n Question: How many people were present in the program?",
+            "output": [
+                "238"
+            ]
+        },
+        {
+            "input": "Context: Paul got a box of some crayons for his birthday. During the school year he gave 52 crayons to his friends while he lost 535 crayons. If he only had 492 crayons left \n\n Question: How many crayons had been lost or given away?",
+            "output": [
+                "587"
+            ]
+        },
+        {
+            "input": "Context: Josh had 21 marbles in his collection. He found 7 marbles. \n\n Question: How many marbles does he have now?",
+            "output": [
+                "28"
+            ]
+        },
+        {
+            "input": "Context: For the walls of the house he would use 12 large planks of wood and 17 small planks. If each large plank of wood needs 14 pieces of nails to be secured and each small plank needs 25 nails. \n\n Question: How many planks does John need for the house wall?",
+            "output": [
+                "29"
+            ]
+        },
+        {
+            "input": "Context: Marco and his dad went strawberry picking. Together they collected strawberries that weighed 22 pounds. On the way back Marco ' dad found 30 more pounds of strawberries. Marco's strawberries now weighed 36 pounds. \n\n Question: How much did his dad's strawberries weigh now?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "Context: The grasshopper, the frog and the mouse had a jumping contest. The grasshopper jumped 19 inches. The frog jumped 39 inches farther than the grasshopper and the mouse jumped 94 inches lesser than the frog. \n\n Question: How far did the frog jump?",
+            "output": [
+                "58"
+            ]
+        },
+        {
+            "input": "Context: Jack received 5 emails in the morning, 8 emails in the afternoon and 72 emails in the evening. \n\n Question: How many emails did Jack receive in the morning and afternoon?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: Mary is baking a cake. The recipe calls for 11 cups of sugar and some more cups of flour. She already put in 3 cups of flour. If she still needs to add 6 more cups of flour \n\n Question: How many cups of flour did the recipe require?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "Context: Jack received 3 emails in the morning, 4 emails in the afternoon and 8 emails in the evening. \n\n Question: How many emails did Jack receive in the morning and evening?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "Context: If the cave is 919 feet deep and they need to travel 1307 feet \n\n Question: How far is the end of the cave?",
+            "output": [
+                "2226"
+            ]
+        },
+        {
+            "input": "Context: Haley grew some trees in her backyard. After a typhoon 5 died. If 12 trees were left \n\n Question: How many trees did she grow?",
+            "output": [
+                "17"
+            ]
+        },
+        {
+            "input": "Context: Mary is baking a cake. The recipe calls for 6 cups of flour and 13 cups of sugar. She already put in some cups of flour. If she still needs 8 more cups of flour than sugar \n\n Question: How many more cups of flour does she need to add?",
+            "output": [
+                "21"
+            ]
+        },
+        {
+            "input": "Context: Paco ate 19 cookies and had 35 cookies left. \n\n Question: How many cookies did he have in the beginning?",
+            "output": [
+                "54"
+            ]
+        },
+        {
+            "input": "Context: Edward spent $ 16 to buy 92 books each book costing him the same amount of money. Now he has $ 6. \n\n Question: How much did Edward have before he spent his money?",
+            "output": [
+                "22"
+            ]
+        },
+        {
+            "input": "Context: 7 red peaches, 15 yellow peaches and 8 green peaches are in the basket. \n\n Question: How many peaches are in the basket?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "Context: 21 children were riding on the bus. At the bus stop 10 children got off the bus while some more got on the bus. Then there were 16 children altogether on the bus. \n\n Question: How many children got on the bus at the bus stop?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "Context: Robin cut off 20 inches of his hair. If his hair is now 10 inches long \n\n Question: How long was his hair before he cut?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 12 kids on monday. She played tag with 14 kids on tuesday. She spent a total of 34 hours to play tag on both days. \n\n Question: How many kids did she play with altogether?",
+            "output": [
+                "26"
+            ]
+        },
+        {
+            "input": "Context: Helen the hippo and her friends are preparing for thanksgiving at Helen's house. Helen baked 144 chocolate chip cookies and 397 raisin cookies yesterday. And she baked 85 raisin cookies and 403 chocolate chip cookies this morning. \n\n Question: How many raisin cookies did Helen bake?",
+            "output": [
+                "482"
+            ]
+        },
+        {
+            "input": "Context: Josh had 22 marbles in his collection. Jack gave him 20 marbles. \n\n Question: How many marbles does Josh have now?",
+            "output": [
+                "42"
+            ]
+        },
+        {
+            "input": "Context: Baker made some cakes. He sold 145 of them. If he still has 72 cakes left \n\n Question: How many cakes did baker make?",
+            "output": [
+                "217"
+            ]
+        },
+        {
+            "input": "Context: Adam has 5 more apples than Jackie. Jackie has 89 oranges and 11 apples. \n\n Question: How many apples does Adam have?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "Context: Every day Ryan spends 6 hours on learning english 7 hours on learning chinese and 3 hours on learning spanish. \n\n Question: How many hours does he spend on learning english, chinese and spanish in all?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "Context: Paul had some books. After selling 137 in a garage sale he had 105 left. \n\n Question: How many books did he have at the start?",
+            "output": [
+                "242"
+            ]
+        },
+        {
+            "input": "Context: Katie had 84 new games and 19 old games. Her friends had 8 new games and 69 old games. \n\n Question: How many new games do they have together?",
+            "output": [
+                "92"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 315 girls and 309 boys. There are also 772 teachers \n\n Question: How many people are there in that school?",
+            "output": [
+                "1396"
+            ]
+        },
+        {
+            "input": "Context: 4 birds and 46 storks were sitting on the fence. 6 more birds came to join them. \n\n Question: How many birds are sitting on the fence?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: For Gwen's birthday she received some dollars. She spent 8 dollars and has 6 dollars left with her. \n\n Question: How much money did Gwen receive for her birthday?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 13 kids on monday and 10 kids on tuesday. She played cards with 15 kids on wednesday. \n\n Question: How many kids did she play with altogether?",
+            "output": [
+                "38"
+            ]
+        },
+        {
+            "input": "Context: Jessie currently weighs 9 kilograms. After she started to go jogging everyday she lost 62 kilograms in the first week and 140 kilograms in the second week. \n\n Question: How much did she weigh before starting to jog?",
+            "output": [
+                "211"
+            ]
+        },
+        {
+            "input": "Context: Dan has $ 4. He bought a candy bar for $ 7 and a chocolate for $ 6. \n\n Question: How much money did he spend buying the candy bar and chocolate?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: Rachel's tree had 4 apples. She picked 2 apples from her tree. Thereafter 3 new apples grew on the tree. \n\n Question: How many apples are there on the tree now?",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Context: Winter is almost here and most animals are migrating to warmer countries. There are 49 bird families living near the mountain. 59 bird families flew away for winter and 24 new bird families came to live near the mountain from the arctic. \n\n Question: How many bird families were left near the mountain?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: 18 red peaches, 14 yellow peaches and 17 green peaches are in the basket. \n\n Question: How many red and yellow peaches are in the basket?",
+            "output": [
+                "32"
+            ]
+        },
+        {
+            "input": "Context: Marco and his dad went strawberry picking. His strawberries weighed 8 pounds while his dad's strawberries weighed 32 pounds. \n\n Question: Together how much did their strawberries weigh?",
+            "output": [
+                "40"
+            ]
+        },
+        {
+            "input": "Context: Allan brought 5 balloons and Jake brought 6 balloons to the park. Jake then bought 3 more balloons at the park. \n\n Question: How many balloons did Jake bring to the park?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "Context: Paul got a box of some crayons for his birthday. By the end of the school year he only had 291 crayons left since he had either lost or given away 315 of them. \n\n Question: How many crayons did he get for his birthday?",
+            "output": [
+                "606"
+            ]
+        },
+        {
+            "input": "Context: Josh had 22 marbles in his collection. He found 13 marbles ones while he lost 5 marbles. \n\n Question: How many marbles does he have now?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "Context: The grasshopper, the frog and the mouse had a jumping contest. The grasshopper jumped 19 inches. The frog jumped 10 inches farther than the grasshopper and the mouse jumped 20 inches farther than the frog. \n\n Question: How much farther did the mouse jump than the grasshopper?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "Context: 4 birds and 6 storks were sitting on the fence. 2 more storks came to join them. \n\n Question: How many storks are sitting on the fence?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "Context: Dan has $ 3 left with him after he bought a candy bar for $ 2. \n\n Question: How much money did he have initially?",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "input": "Context: Jack received 4 emails and sent 2 letters in the morning. He then received 6 emails and sent 8 letters in the afternoon. \n\n Question: How many emails did Jack send in the day?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: Jake has 13 fewer peaches and 3 more apples than Steven. Steven has 9 peaches and 8 apples. \n\n Question: How many apples does Jake have?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "Context: He has 9 apples more than Adam and Jackie together do. Adam and Jackie have 7 apples between them. \n\n Question: How many apples does He have?",
+            "output": [
+                "16"
+            ]
+        },
+        {
+            "input": "Context: 3 birds and 4 storks were sitting on the fence. 6 more storks came to join them. \n\n Question: How many birds and storks are sitting on the fence?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: The grasshopper, the frog and the mouse had a jumping contest. The grasshopper jumped 36 inches. The frog jumped 17 inches farther than the grasshopper and the mouse jumped 15 inches farther than the frog. \n\n Question: How far did the frog jump?",
+            "output": [
+                "53"
+            ]
+        },
+        {
+            "input": "Context: There are 65 baskets of peaches. Each basket has 7 red peaches and 3 green peaches. \n\n Question: How many peaches are in each basket?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: 36 campers went rowing in the morning 13 campers went rowing in the afternoon and 49 campers went rowing in the evening. \n\n Question: How many campers went rowing in all?",
+            "output": [
+                "98"
+            ]
+        },
+        {
+            "input": "Context: Baker made 62 cakes. Then he made 149 more cakes. He sold 144 of them. \n\n Question: How many cakes would baker still have?",
+            "output": [
+                "67"
+            ]
+        },
+        {
+            "input": "Context: Zachary did 53 push-ups and 14 crunches in gym class today. David did 17 more push-ups but 10 less crunches than zachary. \n\n Question: How many push-ups and crunches did Zachary do?",
+            "output": [
+                "67"
+            ]
+        },
+        {
+            "input": "Context: Zachary did 19 push-ups in gym class today. David did 39 more push-ups than Zachary. John did 13 push-ups less than david. \n\n Question: How many push-ups did David do?",
+            "output": [
+                "58"
+            ]
+        },
+        {
+            "input": "Context: Josh had some marbles in his collection. He lost 21 marbles. If he has 12 marbles now \n\n Question: How many marbles did he have in his collection?",
+            "output": [
+                "33"
+            ]
+        },
+        {
+            "input": "Context: Lucy went to the grocery store. She bought 4 packs of cookie, 22 packs of cake and 16 packs of chocolate. \n\n Question: How many packs of groceries did she buy in all?",
+            "output": [
+                "42"
+            ]
+        },
+        {
+            "input": "Context: The grasshopper, the frog and the mouse had a jumping contest. The grasshopper jumped 25 inches. The frog jumped 18 inches farther than the grasshopper and the mouse jumped 2 inches farther than the frog. \n\n Question: How far did the mouse jump?",
+            "output": [
+                "45"
+            ]
+        },
+        {
+            "input": "Context: Jake has 9 fewer peaches than Steven and 18 more peaches than Jill. Steven has 16 peaches. \n\n Question: How many more peaches does Steven have than Jill?",
+            "output": [
+                "27"
+            ]
+        },
+        {
+            "input": "Context: Lucy went to the grocery store. She bought 2 packs of cookie and 12 packs of cake. In the end she had 56 amount of change remaining. \n\n Question: How many packs of groceries did she buy in all?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Paul got a box of 65 crayons for his birthday. During the school year he gave 213 crayons to his friends while he lost 16 crayons. \n\n Question: How many crayons had been lost or given away?",
+            "output": [
+                "229"
+            ]
+        },
+        {
+            "input": "Context: During summer break 644997 kids from Lawrence county stayed home and the other 893835 kids went to camp. An additional 78 kids from outside the county attended the camp. \n\n Question: How many kids are in Lawrence county?",
+            "output": [
+                "1538832"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 308 girls and 318 boys. There are also 36 teachers \n\n Question: How many pupils are there in that school?",
+            "output": [
+                "626"
+            ]
+        },
+        {
+            "input": "Context: 41 campers went rowing and 4 campers went hiking in the morning. 26 campers went rowing in the afternoon. \n\n Question: How many campers went rowing and hiking in all?",
+            "output": [
+                "71"
+            ]
+        },
+        {
+            "input": "Context: Rachel has 52 apple trees. She picked 2 apples from 1 of her trees. Now the tree has 7 apples still on it. \n\n Question: How many apples did the tree have to begin with?",
+            "output": [
+                "9"
+            ]
+        },
+        {
+            "input": "Context: Allan brought 5 balloons and Jake brought 4 balloons to the park. Allan then bought 3 more balloons at the park. \n\n Question: How many balloons did Allan bring to the park?",
+            "output": [
+                "8"
+            ]
+        },
+        {
+            "input": "Context: During summer break 34044 kids from Lawrence county go to camp and the other 134867 kids stay home. An additional 424944 kids from outside the county attended the camp. \n\n Question: How many kids in total attended the camp?",
+            "output": [
+                "458988"
+            ]
+        },
+        {
+            "input": "Context: Rachel has 3 apple trees. She picked 8 apples from each of her trees. Now the trees have a total 9 apples still on them. \n\n Question: How many apples were there on all trees initially?",
+            "output": [
+                "33"
+            ]
+        },
+        {
+            "input": "Context: Rachel had to complete 8 pages of math homework, 7 pages of reading homework and 3 more pages of biology homework. \n\n Question: How many pages of math and biology homework did she have to complete?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "Context: Every day Ryan spends 5 hours on learning chinese and some more hours on learning english. If he spends 2 hours more on learning english than on learning chinese \n\n Question: How many hours does he spend on learning english?",
+            "output": [
+                "7"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 2 kids on monday, 14 kids on tuesday and 16 kids on wednesday. \n\n Question: How many kids did she play with on tuesday and wednesday?",
+            "output": [
+                "30"
+            ]
+        },
+        {
+            "input": "Context: 3 red peaches, and some more green peaches are in the basket. If there are 10 more green peaches than red peaches in the basket \n\n Question: How many green peaches are in the basket?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: Robin's hair was 19 inches long. If he grew 18 more inches \n\n Question: How long is his hair now?",
+            "output": [
+                "37"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 15 kids on monday, 18 kids on tuesday and 97 kids on wednesday. \n\n Question: How many kids did she play with on monday and tuesday?",
+            "output": [
+                "33"
+            ]
+        },
+        {
+            "input": "Context: Danny has 12 bottle caps in his collection. He found 53 bottle caps at the park. \n\n Question: How many bottle caps does he have now?",
+            "output": [
+                "65"
+            ]
+        },
+        {
+            "input": "Context: Bobby ate 33 pieces of candy. Then he ate 4 more. He also ate 14 pieces of chocolate. \n\n Question: How many pieces of candy and chocolate did Bobby eat altogether?",
+            "output": [
+                "51"
+            ]
+        },
+        {
+            "input": "Context: A grocery store had 30 bottles of regular soda, 8 bottles of diet soda and 41 apples. \n\n Question: How many bottles did they have total?",
+            "output": [
+                "38"
+            ]
+        },
+        {
+            "input": "Context: Because of the decision Sofia asked the students to suggest specific types of food. If 324 students suggested adding mashed potatoes 374 suggested adding bacon to the menu and 128 suggested adding tomatoes \n\n Question: How many students participated in the suggestion of new food items?",
+            "output": [
+                "826"
+            ]
+        },
+        {
+            "input": "Context: At the arcade Dave had won some tickets. He used 12 tickets to buy some toys. If he still has 14 tickets left \n\n Question: How many tickets did Dave win at the arcade?",
+            "output": [
+                "26"
+            ]
+        },
+        {
+            "input": "Context: 5 red peaches, 14 yellow peaches and 6 green peaches are in the basket. \n\n Question: How many green and yellow peaches are in the basket?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: Edward spent $ 17. Then he received $ 10 from his friend. Now he has $ 7. \n\n Question: How much did Edward have before he spent his money?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Rachel had to complete 8 pages of math homework. If she had to complete 6 more pages of reading homework than math homework \n\n Question: How many pages of reading homework did she have to complete?",
+            "output": [
+                "14"
+            ]
+        },
+        {
+            "input": "Context: Rachel picked 7 apples from her tree. Thereafter 2 new apples grew on the tree. Now the tree has 6 apples still on it. \n\n Question: How many apples did the tree have to begin with?",
+            "output": [
+                "11"
+            ]
+        },
+        {
+            "input": "Context: Zachary did 44 push-ups in gym class today. David did 58 more push-ups than zachary. \n\n Question: How many push-ups did Zachary and David do altogether?",
+            "output": [
+                "146"
+            ]
+        },
+        {
+            "input": "Context: 3 birds and 2 storks were sitting on the fence. 5 more birds came to join them. \n\n Question: How many birds and storks are sitting on the fence?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: In a school there are 700 girls and the rest are boys. If there are 142 more boys than girls \n\n Question: How many pupils are there in that school?",
+            "output": [
+                "1542"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 5 kids on monday, 9 kids on tuesday and 15 kids on wednesday. \n\n Question: How many kids did she play with on monday and wednesday?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: A grocery store had 4 bottles of diet soda. If they had 79 more bottles of regular soda than diet soda \n\n Question: How many bottles of regular soda did they have?",
+            "output": [
+                "83"
+            ]
+        },
+        {
+            "input": "Context: Edward spent $ 9. Then he spent $ 8 more. Now he has $ 17. \n\n Question: How much did Edward have before he spent his money?",
+            "output": [
+                "34"
+            ]
+        },
+        {
+            "input": "Context: 13 campers went rowing and 59 campers went hiking in the morning. 21 campers went rowing in the afternoon. \n\n Question: How many campers went rowing in all?",
+            "output": [
+                "34"
+            ]
+        },
+        {
+            "input": "Context: Rachel picked 6 ripe apples from her tree. Now the tree has 2 ripe apples and 4 unripe apples. \n\n Question: How many apples did the tree have to begin with?",
+            "output": [
+                "12"
+            ]
+        },
+        {
+            "input": "Context: Rachel had to complete 9 pages of math homework, 11 pages of reading homework and 29 more pages of biology homework. \n\n Question: How many pages of math and reading homework did she have to complete?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: Jerry had 4 action figures and 22 books on a shelf in his room. Later he added 6 more action figures to the shelf. \n\n Question: How many action figures were on his shelf in all?",
+            "output": [
+                "10"
+            ]
+        },
+        {
+            "input": "Context: Katie had 91 ds games and her new friends had 88 games and old friends had 53 games. \n\n Question: How many games do her friends have in all?",
+            "output": [
+                "141"
+            ]
+        },
+        {
+            "input": "Context: A grocery store had 57 bottles of regular soda, 26 bottles of diet soda and 27 bottles of lite soda. \n\n Question: How many bottles did they have total?",
+            "output": [
+                "110"
+            ]
+        },
+        {
+            "input": "Context: Baker made 121 cakes. He sold 105 of them and bought 170 new cakes. \n\n Question: How many cakes does baker still have?",
+            "output": [
+                "186"
+            ]
+        },
+        {
+            "input": "Context: Randy has some blocks. He uses 52 blocks to build a tower. If there are 38 blocks left \n\n Question: How many blocks did he have at the start?",
+            "output": [
+                "90"
+            ]
+        },
+        {
+            "input": "Context: Jake has 13 more apples and 17 fewer peaches than Steven. Steven has 8 peaches and 12 apples. \n\n Question: How many apples does Jake have?",
+            "output": [
+                "25"
+            ]
+        },
+        {
+            "input": "Context: Summer is almost here and most animals are migrating back to cooler countries. There are 87 bird families living near a mountain. If 18 new bird families joined them \n\n Question: How many bird families live near the mountain now?",
+            "output": [
+                "105"
+            ]
+        },
+        {
+            "input": "Context: Tiffany was collecting cans for recycling. On monday she had 10 bags of cans. She found 3 bags of cans on the next day and 7 bags of cans the day after that. \n\n Question: How many bags did she have altogether?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: Bobby ate 28 pieces of candy. Then he ate 42 more. He also ate 63 pieces of chocolate. \n\n Question: How many pieces of candy did Bobby eat?",
+            "output": [
+                "70"
+            ]
+        },
+        {
+            "input": "Context: Josh had 19 marbles in his collection. He lost 11 marbles and found 5 new ones. \n\n Question: How many marbles does he have now?",
+            "output": [
+                "13"
+            ]
+        },
+        {
+            "input": "Context: Julia played tag with 7 kids on monday and 13 kids on tuesday. She played cards wtih 20 kids on wednesday. \n\n Question: How many kids did she play tag with altogether?",
+            "output": [
+                "20"
+            ]
+        },
+        {
+            "input": "Context: After Jessie started to go jogging everyday she lost 126 kilograms. She currently weighs 66 kilograms. \n\n Question: How much did she weigh before starting to jog?",
+            "output": [
+                "192"
+            ]
+        },
+        {
+            "input": "Context: A grocery store had 49 bottles of regular soda, 40 bottles of diet soda and 6 bottles of lite soda. \n\n Question: How many bottles of regular soda and diet soda did they have altogether?",
+            "output": [
+                "89"
+            ]
+        },
+        {
+            "input": "Context: Every day Ryan spends 4 hours on learning english and 6 hours on learning chinese. If he learns for 86 days \n\n Question: How many hours does he spend on learning english and chinese each day?",
+            "output": [
+                "10"
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}
