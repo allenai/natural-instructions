@@ -13,11 +13,15 @@
     - `Question Answering -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Contextual Question Answering -> Abstractive` 
   - `Question Answering -> Fill in the Blank`
+  - `Question Answering -> Mathematical Question Answering`
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
   - `Question Answering -> Incorrect Answer Generation`
-	- `Question Answering -> Incorrect Answer Generation -> Multiple Choice Incorrect Answer Generation`
-	- `Question Answering -> Incorrect Answer Generation -> Comprehensive Incorrect Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Commonsense Question Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answer Generation`
+		- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
+		- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
+	- `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
@@ -55,18 +59,23 @@
   - `Mathematics -> Geometry`
 - `Named Entity Recognition`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
+- `Order Detection`
+	-`Order Detection -> Incorrect Order Detection`
 - `Paraphrasing`
 - `Parts-of-speech`
 - `Question Decomposition`
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
+  - `Reasoning -> Argument Reasoning`
+	- `Reasoning -> Argument Reasoning -> Deductive Reasoning`
+	- `Reasoning -> Argument Reasoning -> Inductive Reasoning`
   - `Reasoning -> Causal Reasoning`
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
-  - `Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+  - `Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has four wheels.
   - `Reasoning -> Numerical Reasoning`
   - `Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
@@ -83,7 +92,6 @@
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
-- `Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
 - `Style Transfer`
 - `Summarization`
 - `Tabular Text Operation`
@@ -91,21 +99,26 @@
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
 - `Text Generation`
-	- `Text Generation -> Explanation Generation`
-	- `Text Generation -> Paragraph Generation`
-	- `Text Generation -> Review Generation`
-	- `Text Generation -> Sentence Generation`
-	- `Text Generation -> Story Ending Generation`
-	- `Text Generation -> Title Generation`
-	- `Text Generation -> Topic Generation`
+  - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
+  - `Text Generation -> Sentence Generation`
+    - `Text Generation -> Sentence Generation -> Story Completion`
+	  - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
+    - `Text Generation -> Sentence Generation -> Explanation Generation`
+  - `Text Generation -> Long Text Generation`
+    - `Text Generation -> Long Text Generation -> Contextual Text Generation` 
+    - `Text Generation -> Long Text Generation -> Paragraph Generation`
+    - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Title Generation`
+  - `Text Generation -> Topic Generation`
+  - `Text Generation -> Weblink Generation`
 - `Text Modification`
-- `Text Simplification`
+  - `Text Modification -> Text Simplification`
+  - `Text Modification -> Structured Text Modification`
 - `Text Span Selection`
 - `Textual Entailment`
 - `Translation`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
-- `Wrong Order Detection`
 
 ## Domain
 * `Accounting`
@@ -120,6 +133,13 @@
   * `Biology -> Virology`
 * `Business Ethics`
 * `Chemistry`
+* `Code`
+  * `Code -> Language`
+	* `Code -> Language -> SQL`
+	* `Code -> Language -> Python`
+  * `Code -> Repo`
+	* `Code -> Repo -> Stack Overflow`
+	* `Code -> Repo -> Github`
 * `Computer Science`
 * `Computer Science -> Machine Learning`
 * `Computer Security`
@@ -127,10 +147,8 @@
 * `Dialogue`
 * `Econometrics`
 * `Electrical Engineering`
-* `English`
 * `Fiction`
 * `Formal Fallacy`
-* `Formal logic`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
@@ -143,7 +161,10 @@
 * `Jurisprudence`
 * `Justice`
 * `Law`
+* `Linguistics`
 * `Logic`
+  * `Logic -> Formal logic`
+  * `Logic -> Propositional Logic`
 * `Macroeconomics`
 * `Management`
 * `Marketing`
@@ -163,7 +184,6 @@
 * `Prehistory`
 * `Psychology`
 * `Public Relations`
-* `Qualitative Relations`
 * `School Science Textbooks`
 * `Natural Science`
 * `Security: Environmental Security`
@@ -173,7 +193,6 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
-* `Stack Overflow`
 * `Story`
 * `US Foreign Policy`
 * `Wikipedia`
