@@ -629,6 +629,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task645_summarization` | Generating summary for Data | Summarization
+`task646_answer_generation` | Find pronoun from the sentence | Answer Generation
+`task647_answer_generation` | Pronoun Quote Finder | Answer Generation
+`task648_answer_generation` | Find subject to the pronoun in the sentence | Answer Generation
 `task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
 `task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
 `task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
