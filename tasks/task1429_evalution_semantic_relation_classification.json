@@ -1,0 +1,4875 @@
+{
+    "Contributors": [
+        "Atharva Naik"
+    ],
+    "Source": [
+        "EVALution dataset from \"EVALution 1.0: an Evolving Semantic Dataset for Training and Evaluation of Distributional Semantic Models\""
+    ],
+    "Categories": [
+        "Classification"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "Given a pair of words, deduce the type of relationship between them. The various types of relations are: 'Entails, HasProperty, Synonym, Antonym, HasA, MemberOf, PartOf, MadeOf, IsA'. Let's dentote the first word by X and the second word by Y. An 'IsA' relation holds when 'X is a kind of Y'. An 'Antonym' relation holds when 'X can be used as the opposite of Y'. A 'Synonym' relation applies when 'X can be used in place of Y, without changing the meaning'. A 'PartOf' relation holds when 'X is a part of Y'. A 'MemberOf' relation holds when 'X is a member of Y'. A 'MadeOf' relation holds when 'X is made of Y'. An 'Entailment' relation holds when 'If X is true, then Y is true as well'. A 'HasA' relation holds when 'X can have or contain Y'. A 'HasProperty' relation holds when 'Y is to specify X'.",
+    "Positive Examples": [
+        {
+            "input": "X: balance, Y: scale",
+            "output": "IsA",
+            "explanation": "Balance is a kind of scale."
+        },
+        {
+            "input": "X: big, Y: small",
+            "output": "Antonym",
+            "explanation": "Big can be used as the opposite of small."
+        },
+        {
+            "input": "X: bird, Y: feather",
+            "output": "HasProperty",
+            "explanation": "Birds have feathers."
+        },
+        {
+            "input": "X: bloom, Y: flower",
+            "output": "Synonym",
+            "explanation": "Bloom and flower can mean the same thing. E.g. the roses bloomed or the roses flowered."
+        },
+        {
+            "input": "X: cake, Y: egg",
+            "output": "HasA",
+            "explanation": "A cake can have or can contain eggs."
+        },
+        {
+            "input": "X: cannon, Y: tank",
+            "output": "PartOf",
+            "explanation": "A cannon is a part of a tank."
+        },
+        {
+            "input": "X: dog, Y: hair",
+            "output": "MadeOf",
+            "explanation": "A dog is made of hair (among other things)."
+        },
+        {
+            "input": "X: tribe, Y: family",
+            "output": "MemberOf",
+            "explanation": "A tribe is a member of family."
+        },
+        {
+            "input": "X: write, Y: spell",
+            "output": "Entails",
+            "explanation": "If write is true then also spell is true."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "X: balance, Y: scale",
+            "output": "HasA",
+            "explanation": "The label is incorrect because, balance is a kind of scale, but doesn't have a scale."
+        },
+        {
+            "input": "X: big, Y: small",
+            "output": "Synonym",
+            "explanation": "Big can be used as the opposite of small so the label of Synonym is incorrect."
+        },
+        {
+            "input": "X: bird, Y: feather",
+            "output": "PartOf",
+            "explanation": "Incorrect because bird is not a part of feather."
+        },
+        {
+            "input": "X: bloom, Y: flower",
+            "output": "Antonym",
+            "explanation": "The label is incorrect as bloom and flower can be used in the same sense and hence are synonyms."
+        },
+        {
+            "input": "X: cake, Y: egg",
+            "output": "IsA",
+            "explanation": "The label is incorrect as a cake is not an egg."
+        },
+        {
+            "input": "X: cannon, Y: tank",
+            "output": "MadeOf",
+            "explanation": "Incorrect because a cannon is not made of a tank."
+        },
+        {
+            "input": "X: write, Y: speak",
+            "output": "Entails",
+            "explanation": "Incorrect because even when write is true, speak might not be true."
+        },
+        {
+            "input": "X: tribe, Y: country",
+            "output": "MemberOf",
+            "explanation": "incorrect as tribe is not a member of country."
+        },
+        {
+            "input": "X: write, Y: read",
+            "output": "HasProperty",
+            "explanation": "Incorrect because write is neither characterized by nor does is it have read as a property."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "X: abstract, Y: concrete",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: accident, Y: plan",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: accident, Y: purpose",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: accident, Y: event",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: accident, Y: error",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: accident, Y: happen",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: accident, Y: mistake",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: account, Y: record",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: account, Y: report",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: account, Y: score",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: account, Y: statement",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: account, Y: pay",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: act, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: act, Y: nothing",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: act, Y: real",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: act, Y: action",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: act, Y: performance",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: act, Y: art",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: act, Y: communication",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: act, Y: drama",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: act, Y: perform",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: act, Y: pretend",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: act, Y: play",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: action, Y: excite",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: action, Y: battle",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: conflict",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: energy",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: exercise",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: movement",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: performance",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: play",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: action, Y: plot",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: prosecution",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: action, Y: act",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: action, Y: event",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: action, Y: work",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: active, Y: quiet",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: active, Y: slow",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: active, Y: busy",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: active, Y: work",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: active, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: actor, Y: actress",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: actor, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: actor, Y: film",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: actress, Y: actor",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: actress, Y: human",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: actress, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: add, Y: remove",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: add, Y: take",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: add, Y: take_away",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: add, Y: join",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: add, Y: increase",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: address, Y: letter",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: address, Y: speak",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: admire, Y: dislike",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: admire, Y: look",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: admire, Y: respect",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: adore, Y: love",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: adult, Y: child",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: adult, Y: grow_up",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: adult, Y: animal",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: adult, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: advance, Y: back",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: advance, Y: fall",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: advance, Y: late",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: advance, Y: improve",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: advance, Y: increase",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: advance, Y: move",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: thrill",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: boredom",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: home",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: lazy",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: nothing",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: safe",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: action",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: adventure, Y: game",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: aeroplane, Y: fly",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: aeroplane, Y: seat",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: affair, Y: marriage",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: affair, Y: spouse",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: affection, Y: healthy",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: affection, Y: dislike",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: affection, Y: love",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: affection, Y: feel",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: affection, Y: like",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: age, Y: young",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: age, Y: historic_period",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: age, Y: change",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: age, Y: develop",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: age, Y: life",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: agreement, Y: good",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: agreement, Y: contract",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: agreement, Y: deal",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: agreement, Y: understand",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: agreement, Y: statement",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: aid, Y: help",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: aid, Y: support",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: air, Y: clear",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: air, Y: free",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: air, Y: earth",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: air, Y: land",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: air, Y: vacuum",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: air, Y: water",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: air, Y: atmosphere",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: air, Y: oxygen",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: air, Y: pressure",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: air, Y: weight",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: air, Y: gas",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: air, Y: molecule",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: airplane, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: airplane, Y: heavy",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: airplane, Y: wheel",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: airplane, Y: wing",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: airplane, Y: machine",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: airplane, Y: transportation",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: aisle, Y: seat",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: aisle, Y: passageway",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: aisle, Y: store",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: alabama, Y: place",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: alarm, Y: loud",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: album, Y: disk",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: album, Y: vinyl",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: alcohol, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: alcohol, Y: water",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: alcohol, Y: drug",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: alcohol, Y: rice",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: alcoholic, Y: human",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: all, Y: nobody",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: all, Y: nothing",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: alley, Y: dark",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: alley, Y: aisle",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: alley, Y: walk",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: alley, Y: street",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: alphabet, Y: number",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: alto, Y: pitch",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: aluminium, Y: tin",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: aluminium, Y: aluminum",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: aluminum, Y: gray",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: aluminum, Y: material",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: america, Y: huge",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: america, Y: violent",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: america, Y: beach",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: america, Y: flag",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: america, Y: president",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: america, Y: continent",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: america, Y: country",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: america, Y: democracy",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: america, Y: place",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: america, Y: world",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: anchor, Y: iron",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: anchor, Y: vessel",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: angel, Y: good",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: angel, Y: wing",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: angel, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: anger, Y: unpleasant",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: anger, Y: calm",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: anger, Y: happiness",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: anger, Y: happy",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: anger, Y: love",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: anger, Y: enrage",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: anger, Y: feel",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: alive",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: animal, Y: friendly",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: animal, Y: pure",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: animal, Y: bug",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: animal, Y: human",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: animal, Y: mineral",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: animal, Y: person",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: animal, Y: plant",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: animal, Y: vegetable",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: animal, Y: baby",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: body",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: bone",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: emotion",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: eye",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: fur",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: meat",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: muscle",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: pain",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: life",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: organism",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: animal, Y: nature",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: animate, Y: stationary",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: annoy, Y: bad",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: annoy, Y: please",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: answer, Y: problem",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: answer, Y: question",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: answer, Y: unknown",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: answer, Y: statement",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: antique, Y: old",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: antique, Y: valuable",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: antique, Y: value",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: antique, Y: new",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: black",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: red",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: flat",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: door",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: kitchen",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: build",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: home",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: apartment, Y: house",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: appear, Y: leave",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: arrive",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: be",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: come",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: look",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: present",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: show",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: appear, Y: perform",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: apple, Y: alive",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: good",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: green",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: healthy",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: red",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: small",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: sweet",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: tasty",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: yellow",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: apple, Y: orange",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: apple, Y: core",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: apple, Y: juice",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: apple, Y: peel",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: apple, Y: seed",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: apple, Y: skin",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: apple, Y: computer",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: apple, Y: tree",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: approach, Y: advance",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: approach, Y: address",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: approach, Y: come",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: approach, Y: movement",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: arch, Y: bend",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: arch, Y: build",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: arch, Y: form",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: arch, Y: open",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: arch, Y: bridge",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: arch, Y: wall",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: argument, Y: conclusion",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: arise, Y: get_down",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: arithmetic, Y: math",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: arm, Y: leg",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: arm, Y: body",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: arm, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: arm, Y: person",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: armchair, Y: comfortable",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: armchair, Y: back",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: armor, Y: clothe",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: armor, Y: plate",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: army, Y: marine",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: army, Y: navy",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: army, Y: crowd",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: army, Y: soldier",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: army, Y: war",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: arrange, Y: agree",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: art, Y: abstract",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: art, Y: beautiful",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: art, Y: science",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: art, Y: ugly",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: art, Y: creation",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: art, Y: hobby",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: art, Y: play",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: article, Y: news",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: article, Y: piece",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: article, Y: information",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: article, Y: document",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: article, Y: newspaper",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: artist, Y: powerful",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: artist, Y: human",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: artist, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: ascend, Y: descend",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: ascend, Y: climb",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: ascend, Y: rise",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: ascend, Y: change",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: asia, Y: large",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: asia, Y: place",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: asia, Y: earth",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: assemble, Y: break",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: assemble, Y: destroy",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: assemble, Y: make",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: athlete, Y: energetic",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: athlete, Y: human",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: athlete, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: atmosphere, Y: feel",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: atmosphere, Y: mood",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: atmosphere, Y: air",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: atmosphere, Y: sky",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: atom, Y: electron",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: atom, Y: neutron",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: atom, Y: nucleus",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: atom, Y: proton",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: atom, Y: molecule",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: attach, Y: separate",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: attach, Y: connect",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: attach, Y: fasten",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: attach, Y: tie",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: attach, Y: join",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: attach, Y: touch",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: australia, Y: continent",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: australia, Y: island",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: australia, Y: place",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: author, Y: artist",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: author, Y: writer",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: author, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: author, Y: write",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: author, Y: book",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: authority, Y: book",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: automobile, Y: car",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: automobile, Y: radio",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: automobile, Y: trunk",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: automobile, Y: steel",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: awaken, Y: change",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: ax, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: axe, Y: sharp",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: amuse",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: entertain",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: fragile",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: happy",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: innocent",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: nice",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: satisfy",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: small",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: smile",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: ugly",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: young",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baby, Y: adult",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: baby, Y: man",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: baby, Y: old",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: baby, Y: love",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: baby, Y: hair",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: baby, Y: child",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: baby, Y: girl",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: baby, Y: mammal",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: baby, Y: person",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: baby, Y: family",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: back, Y: main",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: back, Y: rear",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: back, Y: reverse",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: back, Y: confirm",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: back, Y: chair",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: back, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: back, Y: trunk",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bacon, Y: ham",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bacon, Y: pig",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bad, Y: benevolent",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bad, Y: good",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bad, Y: right",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bad, Y: superior",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bad, Y: true",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bad, Y: evil",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: bad, Y: quality",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: bad, Y: result",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: bag, Y: blue",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bag, Y: baggage",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bag, Y: fabric",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bag, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: baggage, Y: gear",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: balance, Y: bias",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: balance, Y: prejudice",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: balance, Y: account",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: balance, Y: match",
+            "output": [
+                "IsA"
+            ]
+        },
+        {
+            "input": "X: ball, Y: black",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: ball, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: ball, Y: globe",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: ball, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: ball, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: balloon, Y: colorful",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: balloon, Y: hollow",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: balloon, Y: rubber",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: balloon, Y: air",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: balloon, Y: gas",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: balloon, Y: water",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: banana, Y: green",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: banana, Y: yellow",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: banana, Y: peel",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: band, Y: ring",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: banjo, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bank, Y: change",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bank, Y: coin",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bar, Y: court",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bar, Y: goal",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bark, Y: rough",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bark, Y: bite",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bark, Y: branch",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bark, Y: tree",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bark, Y: trunk",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: base, Y: black",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: base, Y: top",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: base, Y: bad",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: base, Y: baseball_diamond",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: base, Y: box",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: base, Y: vessel",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: baseball, Y: hard",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baseball, Y: nice",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: baseball, Y: stitch",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: basement, Y: attic",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: basement, Y: house",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: basket, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: basketball, Y: cool",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: basketball, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: basketball, Y: orange",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: basketball, Y: sport",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: basketball, Y: game",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bat, Y: baseball_bat",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bat, Y: eye",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bat, Y: wing",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bath, Y: relax",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bath, Y: shower",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bath, Y: water",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: dark",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: bath",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: ceiling",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: plumb",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: sink",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: toilet",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: dwell",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bathroom, Y: house",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bathtub, Y: bath",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bathtub, Y: bathroom",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: battle, Y: peace",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: battle, Y: conflict",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: battle, Y: war",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: beach, Y: nice",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beach, Y: white",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beach, Y: sand",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: beach, Y: shore",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: beak, Y: bird",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: beam, Y: smile",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bear, Y: lion",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bear, Y: birth",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bear, Y: claw",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bear, Y: fur",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: beat, Y: hammer",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: beat, Y: hit",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: beat, Y: win",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: beautiful, Y: bad",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: beautiful, Y: dull",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: beautiful, Y: nasty",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: beautiful, Y: plain",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: beautiful, Y: ugly",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: beauty, Y: rare",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beauty, Y: ugly",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bed, Y: big",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bed, Y: comfortable",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bed, Y: flat",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bed, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bed, Y: soft",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bed, Y: square",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bed, Y: bath",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bed, Y: chair",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bed, Y: sofa",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bed, Y: bedroom",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bed_sheet, Y: cloth",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: square",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: bathroom",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: kitchen",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: bed",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: chair",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: floor",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: window",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: dwell",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bedroom, Y: house",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: beef, Y: good",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beef, Y: cattle",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: beer, Y: bitter",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beer, Y: good",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beer, Y: liquid",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beer, Y: tasty",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: beer, Y: alcohol",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: beer, Y: water",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: begin, Y: end",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: begin, Y: finish",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: begin, Y: middle",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: begin, Y: stop",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: begin, Y: initial",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: belief, Y: good",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: belief, Y: important",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: belief, Y: fact",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: belief, Y: faith",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bell, Y: annoy",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bell, Y: loud",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bell, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bell, Y: phone",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: belt, Y: circle",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: belt, Y: fasten",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: belt, Y: pound",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: belt, Y: speed",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: belt, Y: machine",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bench, Y: court",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bend, Y: bow",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bend, Y: curve",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bend, Y: flex",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bend, Y: incline",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bend, Y: road",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: benefit, Y: important",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: benefit, Y: punishment",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: benefit, Y: aid",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: benefit, Y: help",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: benevolent, Y: evil",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bias, Y: prejudice",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bicycle, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bicycle, Y: red",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bicycle, Y: bike",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bicycle, Y: seat",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bicycle, Y: wheel",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bicycle, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: big, Y: little",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "input": "X: bike, Y: fun",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bike, Y: stationary",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bike, Y: motorcycle",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bike, Y: wheel",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bill, Y: due",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bill, Y: note",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bill, Y: number",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bin, Y: container",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bin, Y: toss",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bin, Y: trash",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bin, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bind, Y: fasten",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bind, Y: restrict",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bind, Y: tie",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bind, Y: book",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bird, Y: alive",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bird, Y: beautiful",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bird, Y: color",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "input": "X: bird, Y: girl",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bird, Y: claw",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bird, Y: egg",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bird, Y: eye",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bird, Y: tail",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bird, Y: wing",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bird, Y: flock",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: birth, Y: life",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bit, Y: part",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bit, Y: drill",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bit, Y: key",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bitch, Y: female",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: bite, Y: piece",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: black, Y: dark",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "input": "X: blade, Y: ax",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: blade, Y: fan",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: blade, Y: knife",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: blade, Y: scissor",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: blade, Y: sword",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: blanket, Y: fabric",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: blood, Y: water",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: blood, Y: body",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: blow, Y: fight",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: board, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: boat, Y: sail",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: boat, Y: steel",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: body, Y: bone",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: body, Y: organ",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: body, Y: cell",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: body, Y: automobile",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: body, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: body, Y: human_be",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: body_part, Y: organism",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bolt, Y: thread",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bolt, Y: door",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bolt, Y: lock",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bolt, Y: rifle",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bomb, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bomb, Y: war",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bone, Y: foot",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bone, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bone, Y: skeleton",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: book, Y: author",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: cover",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: idea",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: information",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: knowledge",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: page",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: book, Y: picture",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: sentence",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: story",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: text",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: word",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: write",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: book, Y: paper",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: book, Y: library",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bottle, Y: beer",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bottle, Y: liquid",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bottle, Y: milk",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bottle, Y: wine",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bottle, Y: glass",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bottle, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bow, Y: knot",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bow, Y: ship",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bow, Y: vessel",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: liquid",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: aluminium",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: clay",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: glass",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: steel",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bowl, Y: pipe",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: box, Y: book",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: box, Y: food",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: box, Y: gift",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: box, Y: object",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: box, Y: something",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: boy, Y: penis",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: brain, Y: body",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: brain, Y: head",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: brain, Y: person",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: brake, Y: car",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: branch, Y: tree",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: brass_instrument, Y: band",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bread, Y: flour",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bread, Y: grain",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: breast, Y: chicken",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: breast, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: breast, Y: turkey",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: breathe, Y: exhale",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: brick, Y: clay",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bridge, Y: steel",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bridge, Y: stone",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bridge, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bridge, Y: guitar",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bridge, Y: nose",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: bring, Y: come",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: brook, Y: water",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: bull, Y: horn",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bus, Y: window",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: bush, Y: leave",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: butter, Y: milk",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: butterfly, Y: wing",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: button, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: button, Y: cell_phone",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: button, Y: coat",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: button, Y: mouse",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: button, Y: tv",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: buy, Y: pay",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: cabinet, Y: door",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "input": "X: cabinet, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cabinet, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cabinet, Y: steel",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cake, Y: flour",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cake, Y: ingredient",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cake, Y: milk",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cake, Y: sugar",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: calf, Y: cattle",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: calf, Y: human",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: calf, Y: leg",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: call, Y: card_game",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "input": "X: can, Y: aluminium",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: can, Y: aluminum",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: candy, Y: sugar",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cannon, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: car, Y: train",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: car, Y: aluminium",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: car, Y: iron",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: car, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: car, Y: part",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: card, Y: paper",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: carpet, Y: wool",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cast, Y: film",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: cast, Y: perform",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: cast, Y: stage",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: castle, Y: stone",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cat, Y: fur",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cattle, Y: herd",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: cave, Y: stone",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cell, Y: molecule",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: chair, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: chair, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: challenge, Y: question",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: cheese, Y: milk",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: child, Y: family",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: chip, Y: potato",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: chocolate, Y: sugar",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: christian, Y: church",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: clay, Y: soil",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cleave, Y: cut",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: closet, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: clothe, Y: cotton",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: clothe, Y: fabric",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cloud, Y: water_vapor",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: coat, Y: wool",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: coffee, Y: bean",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: coffee, Y: water",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: coin, Y: silver",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: college, Y: university",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: comb, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: compress, Y: press",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: computer, Y: hardware",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: computer, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: concrete, Y: cement",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: concrete, Y: sand",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: container, Y: aluminum",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: container, Y: metal",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: container, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: continent, Y: country",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cookie, Y: flour",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cup, Y: glass",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: cup, Y: plastic",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: curl, Y: flex",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: dance, Y: step",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: data, Y: bit",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: desk, Y: steel",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: desk, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: die, Y: wood",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: division, Y: business",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: dog, Y: pack",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: dog, Y: fur",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "input": "X: drape, Y: fold",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: dream, Y: sleep",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: drive, Y: ride",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: eat, Y: chew",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: eat, Y: swallow",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: enjoy, Y: like",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: exercise, Y: move",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: family, Y: order",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: fancy, Y: like",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: feel, Y: touch",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: fish, Y: school",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: galaxy, Y: universe",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: get, Y: calculate",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: harp, Y: pluck",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: include, Y: have",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: initial, Y: approve",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: jury, Y: court",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: key, Y: keyboard",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: knit, Y: sew",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: labor, Y: give_birth",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: lace, Y: fasten",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: leave, Y: die",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: leave_behind, Y: leave",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: letter, Y: alphabet",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: lie, Y: lie_down",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: like, Y: approve",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: lion, Y: pride",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: listen, Y: hear",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: live, Y: exist",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: look, Y: see",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: machine_gun, Y: shoot",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: master, Y: learn",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: master, Y: understand",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: mine, Y: dig",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: note, Y: scale",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: order, Y: class",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: overflow, Y: run",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: parent, Y: family",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: paw, Y: touch",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: pedal, Y: play",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: pencil, Y: trace",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: person, Y: world",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: pierce, Y: cut",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: plow, Y: dig",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: policeman, Y: police",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: professor, Y: staff",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: puff, Y: smoke",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: push, Y: move",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: quench, Y: consume",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: quilt, Y: sew",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: rabbit, Y: warren",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: rack, Y: stretch",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: recognize, Y: know",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: seal, Y: fasten",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: sell, Y: give",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: sell_out, Y: sell",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: sew, Y: join",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: sheep, Y: flock",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: sheep, Y: herd",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: shop, Y: buy",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: sit, Y: sit_down",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: sneeze, Y: exhale",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: soap, Y: wash",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: solve, Y: reason",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: spouse, Y: marriage",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: staff, Y: school",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: star, Y: constellation",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: star, Y: galaxy",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: state, Y: country",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: steer, Y: travel",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: storm, Y: rain",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: study, Y: read",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: stumble, Y: walk",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: succeed, Y: try",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: take_away, Y: leave",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: thunder, Y: storm",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: till, Y: cultivate",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: toast, Y: drink",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: trade, Y: buy",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: trade, Y: sell",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: tree, Y: forest",
+            "output": [
+                "MemberOf"
+            ]
+        },
+        {
+            "input": "X: unravel, Y: separate",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: use, Y: consume",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: walk, Y: step",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: wash, Y: rinse",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: watch, Y: look",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: watch, Y: see",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "input": "X: win, Y: compete",
+            "output": [
+                "Entails"
+            ]
+        }
+    ]
+}
