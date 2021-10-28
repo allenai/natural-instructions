@@ -849,6 +849,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task868_cfq_mcd1_explanation_to_sql` | Generating queries (based on CFQ MCD1) | Structured Query Generation  
+`task869_cfq_mcd1_sql_to_explanation` | Checking if queries match natural language query description | Structured Query Classification
+`task870_msmarco_answer_generation` | Generating answers based on natural language passage and related query from MS MARCO | Answer Generation
+`task871_msmarco_question_generation` | Generating questions based on natural language passage from MS MARCO | Question Generation
 `task872_opus_xhosanavy_translation_eng_xhosa` | Translate a sentence in English to Xhosa | Translation
 `task873_opus_xhosanavy_translation_xhosa_eng` | Translate a sentence in Xhosa to English | Translation
 `task874_opus_xhosanavy_sr` |  Recognize primary subjects in sentences | Primary Subject Recognition
