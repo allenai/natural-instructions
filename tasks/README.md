@@ -836,6 +836,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task857_inquisitive_question_generation` | Generating inquisitive questions | Inquisitive Question generation
+`task858_inquisitive_span_detection` | Detecting span of sentence | Span Detection
+`task859_prost_question_generation` | Question generation | Question generation
+`task860_prost_mcq_generation` | Generating MCQs | MCQ generation
+`task861_prost_mcq_answers_generation` | Generating answers of MCQs | MCQ Answer generation
 `task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
