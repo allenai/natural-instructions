@@ -853,7 +853,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task873_opus_xhosanavy_translation_xhosa_eng` | Translate a sentence in Xhosa to English | Translation
 `task874_opus_xhosanavy_sr` |  Recognize primary subjects in sentences | Primary Subject Recognition
 `task875_emotion_classification` | Classify sentences by emotions | Classification
-`task876_emotion_esd` | Detect word sequences that contribute to emotions of sentences | Emotive Sequence Detection
 `task877_kde4_translation` | Localizing English phrases to Hindi language | Translation
 `task878_kde4_translation` | Localizing English phrases to Telugu language | Translation
 `task879_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
