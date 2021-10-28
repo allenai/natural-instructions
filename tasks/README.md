@@ -858,6 +858,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task879_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
 `task880_schema_guided_dstc8_classification` | Classifying sentence into one of five action categories | Classification
 `task881_schema_guided_dstc8_classification` | Identifying which one of five services the sentence is related to  | Classification
+`task886_quail_question_generation` | Generating questions based on passages | Question Generation
+`task887_quail_answer_generation` | Generating answer for a given question based on passages | Answer Generation
+`task888_reviews_classification` | Classifying whether a review is positive or negative | Classification
+`task889_goemotions_classification` | Classifying the sentence to an emotion class | Classification
 `task890_gcwd_classification` | Classifying writer's stance to Global Warming | Classification
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
