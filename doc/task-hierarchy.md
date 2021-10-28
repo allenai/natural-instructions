@@ -12,18 +12,27 @@
   - `Question Answering -> Contextual Question Answering`
     - `Question Answering -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Contextual Question Answering -> Abstractive` 
+    - `Question Answering -> Contextual Question Answering -> Missing Knowledge` : When the answer to the question is not present in the passage and reqiures extra knowledge.
   - `Question Answering -> Fill in the Blank`
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
   - `Question Answering -> Incorrect Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Commonsense Question Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answer Generation`
+		- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
+		- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
+	- `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
+	- `Question Generation -> Contextual Question Generation -> Open Question Generation` 
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
   - `Question Generation -> Fill in the Blank` 
 - `Author Identification`
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
+    - `Classification -> Verification -> Summary Verification` 	
     - `Classification -> Verification -> Claim Verification`
+    - `Classification -> Verification -> Clarification Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
     - `Classification -> Verification -> Relevance Verification`
@@ -38,7 +47,6 @@
 - `Document Understanding`
 - `Entity Detection`
 - `Ethical Judgement`
-- `Explanation Generation`
 - `Fake News Detection`
 - `Grammar Error`
   -  `Grammar Error -> Grammar Error Correction`
@@ -54,19 +62,23 @@
   - `Mathematics -> Geometry`
 - `Named Entity Recognition`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
-- `Paragraph Generation`
+- `Order Detection`
+	-`Order Detection -> Incorrect Order Detection`
 - `Paraphrasing`
 - `Parts-of-speech`
 - `Question Decomposition`
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
+  - `Reasoning -> Argument Reasoning`
   - `Reasoning -> Causal Reasoning`
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
+  - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
+  - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
-  - `Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+  - `Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has four wheels.
   - `Reasoning -> Numerical Reasoning`
   - `Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
@@ -76,28 +88,38 @@
   - `Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Spatial Reasoning`
   - `Reasoning -> Temporal Reasoning`
+  - `Reasoning -> Textual Entailment`
+	- `Reasoning -> Textual Entailment -> Deductive Reasoning`
+	- `Reasoning -> Textual Entailment -> Abductive Reasoning`
+	- `Reasoning -> Textual Entailment -> Analogical Reasoning`
+	- `Reasoning -> Textual Entailment -> Inductive Reasoning`
 - `Relation Prediction`
 - `Relevancy Estimation`
-- `Review Generation`
 - `Role Labelling`
 - `Semantic Parsing`
-- `Sentence Generation`
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
-- `Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
+- `Story Completion`
 - `Style Transfer`
 - `Summarization`
 - `Tabular Text Operation`
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
-- `Text Modification`
-- `Text Simplification`
-- `Text Span Selection`
-- `Textual Entailment`
-- `Title Generation`
-- `Topic Generation`
+- `Text Generation`
+  - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
+  - `Text Generation -> Sentence Generation`
+    - `Text Generation -> Sentence Generation -> Story Completion`
+	  - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
+    - `Text Generation -> Sentence Generation -> Explanation Generation`
+  - `Text Generation -> Long Text Generation`
+    - `Text Generation -> Long Text Generation -> Contextual Text Generation` 
+    - `Text Generation -> Long Text Generation -> Paragraph Generation`
+    - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Title Generation`
+  - `Text Generation -> Topic Generation`
+- `Title Selection`
 - `Translation`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
@@ -115,15 +137,22 @@
   * `Biology -> Virology`
 * `Business Ethics`
 * `Chemistry`
+* `Code`
+  * `Code -> Language`
+	* `Code -> Language -> SQL`
+	* `Code -> Language -> Python`
+  * `Code -> Repo`
+	* `Code -> Repo -> Stack Overflow`
+	* `Code -> Repo -> Github`
 * `Computer Science`
 * `Computer Science -> Machine Learning`
 * `Computer Security`
+* `Debatepedia`
 * `Dialogue`
 * `Econometrics`
 * `Electrical Engineering`
 * `Fiction`
 * `Formal Fallacy`
-* `Formal logic`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
@@ -136,6 +165,10 @@
 * `Jurisprudence`
 * `Justice`
 * `Law`
+* `Linguistics`
+* `Logic`
+  * `Logic -> Formal logic`
+  * `Logic -> Propositional Logic`
 * `Macroeconomics`
 * `Management`
 * `Marketing`
@@ -146,6 +179,7 @@
 * `Moral Scenarios`
 * `Movies`
 * `Music`
+* `Narrative`
 * `News`
 * `Nutrition`
 * `Personal Narratives`
@@ -154,15 +188,19 @@
 * `Prehistory`
 * `Psychology`
 * `Public Relations`
+* `Public Places`
+  * `Public Places -> Restaurants`
 * `School Science Textbooks`
 * `Natural Science`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
+  * `Social Media -> Twitter`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `Story`
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`
