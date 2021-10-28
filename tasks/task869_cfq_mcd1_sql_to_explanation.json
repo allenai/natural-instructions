@@ -1,0 +1,1231 @@
+{
+    "Contributors": ["Ujjwala Anantheswaran"],
+    "Source": ["CFQ/MCD1"],
+    "Categories": [
+        "Classification -> Verification -> Claim Verification"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "Determine if the provided SQL statement properly addresses the given question. Output 1 if the SQL statement is correct and 0 otherwise. An SQL query works by selecting data from a table where certain conditions apply. A table contains columns where every row in that table must have a value for each column. Every table has a primary key that uniquely identifies each row, usually an id. To choose which columns are returned you specify that after the \"SELECT\" statement. Next, you use a \"FROM\" statement to specify what tables you want to select the data from. When you specify a table you can rename it with the \"AS\" statement. You can reference that table by whatever name follows the \"AS\" statement. If you want to select data from multiple tables you need to use the \"JOIN\" statement. This will join the tables together by pairing a row in one table with every row in the other table (Cartesian Product). To limit the number of rows returned you should use the \"ON\" statement. This will only return rows where the condition specified after the statement is true, this is usually an equals operator with primary keys. You can also use the \"WHERE\" statement to specify that only rows with column values statisfying a certain condition, should be returned. The \"GROUP BY\" statement will group rows together that have equal column values for whatever columns follows the statement. The \"HAVING\" statement will return groups that statisfy whatever condition follows the statement. Any column(s) being returned from grouped rows must either be an aggregate function, (AVG, MAX, COUNT, SUM, ...) of a column, or the column(s) that the data was grouped by. To sort the returned data you can use the \"ORDER BY\" command which will order the data by whatever aggregate function or column follows the statement. The \"DESC\" statement will sort in descending order and the \"ASC\" statement will sort in ascending order. Finally, you can use the \"LIMIT\" statement to return a certain number of rows. When \"*\" is used in an SQL statement every column is returned. For example, SELECT * FROM table WHERE attribute = 1, will select every column from rows with the attribute column equal to 1.",
+    "Positive Examples": [
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:people.person.gender ns:m.05zppz .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M2 .\nFILTER ( ?x0 != ?x1 ) .\nFILTER ( ?x1 != M2 )\n} Question: Who did M2 's male spouse marry",
+            "output": "1",
+            "explanation":"Query correctly extracts data for male spouse of M2"
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded M0 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\nM1 ns:film.film.directed_by M3 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies M2 .\nM4 ns:film.film.directed_by M3 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.produced_by|ns:film.film.production_companies M2\n} Question: Were M1 and M4 produced by M2 , executive produced by M0 's employee and founder , and directed by M3",
+            "output": "1",
+            "explanation":"Query finds producer, executive producer, and director of M1 and M4, and checks if they are respectively M2, M0's employee and founder, and M3"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\nM1 ns:film.film.directed_by M3 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies M2 .\nM4 ns:film.film.directed_by M3 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.produced_by|ns:film.film.production_companies M2\n} Question: Were M1 and M4 produced by M2 , executive produced by M0 's employee and founder , and directed by M3",
+            "output": "0",
+            "explanation":"Query does not check for M0's founder being executive producer of M1 and M4"
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.editor.film ?x1 .\n?x0 ns:people.person.nationality ns:m.0d0vqn .\n?x1 ns:film.film.prequel ?x2 .\n?x2 ns:film.film.prequel M1 .\nFILTER ( M2 != ?x0 ) .\nM2 ns:people.person.gender ns:m.05zppz .\nM2 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: Was a film 's prequel edited by M0",
+            "output": "0",
+            "explanation":"Question does not include nationality segment of query or prequel editor attribute."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.producer .\n?x0 ns:organization.organization.founders ?x1 .\n?x0 ns:organization.organization.founders M1 .\n?x0 ns:organization.organization.founders M2 .\n?x1 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x2 .\n?x2 a ns:people.person .\n?x2 ns:people.person.nationality ns:m.03rjj\n} Question: What film producer was founded by a Italian person 's child and founded by M1 and M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:influence.influence_node.influenced_by M0 .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x1 .\n?x1 a ns:film.film_art_director\n} Question: Was M1 distributed by M2 and M3 and produced by a company 's child and parent",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.film M2 .\n?x0 ns:influence.influence_node.influenced M0 .\n?x0 ns:people.person.nationality ns:m.0f8l9c\n} Question: Was M3 written by , produced by , and directed by a female American star of M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x2 .\n?x2 ns:film.actor.film/ns:film.performance.film M1 .\nFILTER ( ?x0 != ?x1 )\n} Question: Was M2 founded by M0 's founder and employee , founded by M3 and M4 , and founded by a actor",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M1 .\n?x1 ns:film.cinematographer.film M1 .\nFILTER ( ?x0 != ?x1 )\n} Question: Which film editor married a art director and was influenced by M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x1 a ns:film.film_art_director\n} Question: Was M0 's sequel 's German female costume designer M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.film M1 .\n?x0 ns:people.person.gender ns:m.02zsn .\n?x0 ns:people.person.nationality ns:m.09c7w0 .\nM3 ns:film.film.directed_by ?x0 .\nM3 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM3 ns:film.film.written_by ?x0\n} Question: Was M3 written by , produced by , and directed by a female American star of M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by M1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by M0 .\n?x1 ns:film.actor.film/ns:film.performance.film M2 .\n?x1 ns:film.director.film M2\n} Question: Were M1 and M4 produced by M2 , executive produced by M0 's employee and founder , and directed by M3",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.cinematographer .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x0 ns:influence.influence_node.influenced_by M3 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:influence.influence_node.influenced M4 .\n?x1 ns:influence.influence_node.influenced M5 .\nFILTER ( ?x0 != ?x1 )\n} Question: What was executive produced by M0 's Spanish sibling",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x1 ns:organization.organization_founder.organizations_founded M0 .\n?x1 ns:people.person.nationality ns:m.07ssc .\n?x1 ns:people.person.nationality ns:m.0f8l9c\n} Question: Who wrote M1 and wrote a film",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.gender ns:m.02zsn .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:film.director.film M1 .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:influence.influence_node.influenced ?x0\n} Question: Was a film directed by a film editor and directed by M3 M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.editor.film M0 .\n?x1 ns:film.producer.films_executive_produced M0 .\n?x1 ns:film.writer.film M0\n} Question: Was M1 a art director , executive producer , and writer of M0 's sequel",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:influence.influence_node.influenced_by ?x2 .\n?x1 ns:film.film_art_director.films_art_directed M1 .\n?x2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M2 .\nFILTER ( ?x2 != M2 )\n} Question: What did M0 executive produce and M1 's sibling executive produce",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent M0 .\n?x1 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x2 .\n?x2 a ns:film.producer .\nM2 ns:influence.influence_node.influenced_by ?x0 .\nM2 ns:influence.influence_node.influenced_by ?x1 .\nM3 ns:influence.influence_node.influenced_by ?x0 .\nM3 ns:influence.influence_node.influenced_by ?x1\n} Question: Were M2 and M3 influenced by a child of M0 and influenced by a film producer 's parent",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:film.film_art_director .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:film.film.edited_by ?x0 .\nM2 ns:film.film.written_by ?x0\n} Question: What was executive produced by and written by a sibling of M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.prequel M0 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x1 a ns:film.cinematographer\n} Question: Was a sequel of M0 produced by , edited by , and directed by a cinematographer",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.editor.film ?x1 .\n?x0 ns:people.person.nationality ns:m.0d0vqn .\n?x1 ns:film.film.prequel ?x2 .\n?x2 ns:film.film.prequel M1 .\nFILTER ( M2 != ?x0 ) .\nM2 ns:people.person.gender ns:m.05zppz .\nM2 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: Was a film 's prequel edited by M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:influence.influence_node.influenced M0 .\n?x0 ns:influence.influence_node.influenced M1 .\nFILTER ( M2 != ?x0 ) .\nM2 a ns:film.film_art_director .\nM2 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: What film producer was founded by a Italian person 's child and founded by M1 and M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 a ns:film.writer .\n?x1 ns:influence.influence_node.influenced_by M1\n} Question: What did a screenwriter influenced by M1 direct , produce , and write",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded ?x1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company ?x1 .\n?x1 a ns:film.production_company .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM2 ns:film.film.directed_by ?x0 .\nM2 ns:film.film.edited_by ?x0 .\nM2 ns:film.film.produced_by|ns:film.film.production_companies ?x0\n} Question: Did M2 and M3 employ a British screenwriter",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.editor.film M1\n} Question: What film was written by and executive produced by M1 's editor",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization.founders M0 .\n?x0 ns:organization.organization.founders M1 .\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x1 .\n?x1 a ns:film.production_company\n} Question: Was a production company 's parent founded by M0 and M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x1 .\n?x1 a ns:film.producer .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.written_by ?x0 .\nM2 ns:film.film.executive_produced_by ?x0 .\nM2 ns:film.film.written_by ?x0 .\nM3 ns:film.film.executive_produced_by ?x0 .\nM3 ns:film.film.written_by ?x0 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.written_by ?x0 .\nM5 ns:film.film.executive_produced_by ?x0 .\nM5 ns:film.film.written_by ?x0\n} Question: Were M1 , M2 , M3 , M4 , and M5 written by and executive produced by a film producer 's child",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x2 .\n?x1 a ns:film.cinematographer .\n?x2 ns:business.employer.employees/ns:business.employment_tenure.person M1\n} Question: Who did M2 's male spouse marry",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.sequel M0 .\nM1 ns:film.cinematographer.film ?x0 .\nM1 ns:film.editor.film ?x0 .\nM1 ns:film.film_art_director.films_art_directed ?x0 .\nM1 ns:film.producer.films_executive_produced ?x0\n} Question: Was M1 M0 's prequel 's cinematographer , editor , art director , and executive producer",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.writer .\n?x0 ns:people.person.nationality ns:m.07ssc .\nM2 ns:business.employer.employees/ns:business.employment_tenure.person ?x0 .\nM3 ns:business.employer.employees/ns:business.employment_tenure.person ?x0\n} Question: Did M2 and M3 employ a British screenwriter",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.cinematographer.film M0 .\n?x1 a ns:film.producer .\nFILTER ( M2 != ?x0 ) .\nFILTER ( M2 != ?x1 ) .\nFILTER ( M2 != M3 ) .\nM2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0 .\nM2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\nM2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M3\n} Question: What did a costume designer employed by M1 produce",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.nationality ns:m.03_3d .\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M0 .\nFILTER ( ?x0 != M0 ) .\nM2 ns:film.film.directed_by ?x0\n} Question: Was M2 directed by M0 's Japanese sibling",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.written_by M1 .\n?x1 a ns:film.film_art_director\n} Question: Which film was executive produced by a art director and written by M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.cinematographer.film M0 .\n?x1 ns:film.producer.film|ns:film.production_company.films M0 .\n?x1 ns:film.writer.film M0\n} Question: What film that was edited by and executive produced by a producer of M2 was executive produced and written by M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:influence.influence_node.influenced_by M0 .\n?x1 a ns:people.person .\nFILTER ( M2 != ?x0 ) .\nM2 a ns:film.producer .\nM2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0\n} Question: Did M1 employ a spouse of a actor",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.producer.film|ns:film.production_company.films M0 .\nM1 ^ns:people.person.gender ?x0\n} Question: Was a gender of M0 's producer M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M0 .\n?x1 ns:film.cinematographer.film M0 .\n?x1 ns:film.director.film M0\n} Question: Was a gender of M0 's producer M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.edited_by ?x1 .\n?x1 a ns:film.director .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M1 .\nFILTER ( ?x1 != M1 )\n} Question: What was edited by , directed by , and written by a Swedish art director that produced M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.cinematographer.film M0\n} Question: Was a art director a cinematographer that was employed by M2 and M3 and founded M4",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x1 .\n?x1 a ns:film.director .\n?x2 a ns:film.editor .\nM2 ns:influence.influence_node.influenced ?x0 .\nM2 ns:influence.influence_node.influenced ?x2\n} Question: Did M2 influence a film director 's child and influence a film editor",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M1 .\n?x1 ns:film.film_costumer_designer.costume_design_for_film M1 .\n?x1 ns:film.writer.film M1\n} Question: Did M1 marry M3 , marry M0 's star and editor , and influence M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.director.film M0 .\n?x0 ns:film.editor.film M0 .\n?x0 ns:film.writer.film M0 .\nM1 ns:influence.influence_node.influenced ?x0 .\nM2 ns:influence.influence_node.influenced ?x0\n} Question: Was M0 M1 's executive producer and star",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.editor .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x1 ns:film.film_art_director.films_art_directed M3 .\n?x1 ns:film.producer.film|ns:film.production_company.films M3\n} Question: What was directed , executive produced , written , and edited by a employee of M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M0 .\nFILTER ( ?x0 != M0 ) .\nM1 ns:film.film.directed_by ?x0\n} Question: Was M1 directed by a spouse of M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.film ?x1 .\n?x1 a ns:film.film .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Was M1 produced by , executive produced by , directed by , written by , and edited by a film 's star",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.character ?x1 .\n?x1 a ns:fictional_universe.fictional_character .\nFILTER ( M1 != ?x0 ) .\nM1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: What was produced by M3 's executive producer and star , distributed by M0 , and distributed by M1 and M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nFILTER ( M0 != M2 ) .\nM0 a ns:film.writer .\nM0 ns:influence.influence_node.influenced_by M2 .\nM0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M2\n} Question: What did M1 's executive producer found and M0 found",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.production_company .\n?x0 ns:organization.organization.acquired_by/ns:business.acquisition.acquiring_company M1 .\n?x0 ns:organization.organization.founders ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.character M2 .\n?x1 ns:film.actor.film/ns:film.performance.character M3\n} Question: Which German film producer did M1 employ",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M0 .\n?x1 ns:film.film_costumer_designer.costume_design_for_film M0 .\n?x1 ns:film.producer.film|ns:film.production_company.films M0\n} Question: What did M0 's costume designer , star , and producer found",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x1 .\n?x1 a ns:people.person .\n?x1 ns:people.person.gender ns:m.05zppz .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:film.film.directed_by M3 .\nM2 ns:film.film.directed_by M4 .\nM2 ns:film.film.written_by ?x0\n} Question: Was M2 directed by M3 and M4 and written by a male person 's sibling",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x0 ns:people.person.gender ns:m.02zsn .\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M0 .\nFILTER ( ?x0 != M0 )\n} Question: Was M0 's female sibling influenced by M1 and M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.cinematographer .\n?x0 a ns:film.film_art_director .\n?x0 ns:organization.organization_founder.organizations_founded M4 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M2 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M3\n} Question: Was a art director a cinematographer that was employed by M2 and M3 and founded M4",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:organization.organization_founder.organizations_founded ?x2 .\n?x1 ns:people.person.employment_history/ns:business.employment_tenure.company ?x2 .\n?x2 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent M0\n} Question: Was M1 distributed by a distributor and producer of M0 and distributed by M2 and M3",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 a ns:film.film_art_director .\n?x1 ns:film.producer.film|ns:film.production_company.films M2 .\n?x1 ns:people.person.nationality ns:m.0d0vqn\n} Question: What was edited by , directed by , and written by a Swedish art director that produced M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.editor .\n?x0 ns:film.actor.film/ns:film.performance.film M1 .\n?x0 ns:film.director.film M1 .\nM2 ns:film.film.edited_by M3 .\nM2 ns:film.film.edited_by M4 .\nM2 ns:film.film.written_by ?x0\n} Question: Was M0 's female sibling influenced by M1 and M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.cinematographer.film ?x1 .\n?x0 ns:film.director.film ?x1 .\n?x0 ns:film.film_costumer_designer.costume_design_for_film ?x1 .\n?x0 ns:film.producer.film|ns:film.production_company.films ?x1 .\n?x1 a ns:film.film .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Were M1 , M2 , M3 , M4 , and M5 written by and executive produced by a film producer 's child",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x2 .\n?x2 a ns:film.film_art_director .\nFILTER ( ?x1 != ?x2 )\n} Question: What was written by a Spanish art director , written by M3 's writer , and executive produced by M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child M0 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M0 .\nFILTER ( ?x0 != M0 ) .\nM1 ns:film.film.starring/ns:film.performance.actor ?x0 .\nM1 ns:film.film.starring/ns:film.performance.actor M2 .\nM1 ns:film.film.starring/ns:film.performance.actor M3\n} Question: What was produced , written , and executive produced by a Italian art director",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.gender ns:m.02zsn .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M1 .\n?x1 a ns:film.film_art_director .\nFILTER ( ?x0 != M1 ) .\nM3 ns:film.film.directed_by ?x1 .\nM3 ns:film.film.directed_by M4 .\nM3 ns:film.film.executive_produced_by ?x0\n} Question: Was M3 directed by a art director , directed by M4 , and executive produced by a female spouse of M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.producer .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M1 .\n?x0 ns:people.person.nationality ns:m.0345h\n} Question: Which German film producer did M1 employ",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.edited_by M0 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x1 ns:people.person.gender ns:m.05zppz .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x2 .\n?x2 ns:film.editor.film M2 .\nFILTER ( ?x1 != ?x2 )\n} Question: Was a person 's spouse influenced by M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.producer .\nM1 ns:people.person.nationality ns:m.03rjj .\nM1 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x0\n} Question: What did a screenwriter 's sibling and parent write",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 a ns:film.actor .\nM0 ns:film.actor.film/ns:film.performance.film M2 .\nM0 ns:film.editor.film M2 .\nM0 ns:film.producer.films_executive_produced M2\n} Question: Was M1 M0 's prequel 's cinematographer , editor , art director , and executive producer",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.film_art_director .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced ?x2 .\n?x1 ns:film.actor.film/ns:film.performance.film M1 .\n?x2 ns:film.actor.film/ns:film.performance.film ?x3 .\n?x2 ns:film.cinematographer.film ?x3 .\n?x2 ns:film.writer.film ?x3 .\n?x3 ns:film.film.prequel M2\n} Question: Did a art director influence M1 's star and influence M2 's sequel 's cinematographer , star , and writer",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 a ns:film.cinematographer .\nM0 ns:film.editor.film M2 .\nM0 ns:film.producer.films_executive_produced M2 .\nM0 ns:film.writer.film M2\n} Question: Was M0 a cinematographer that wrote , edited , and executive produced M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.editor.film ?x1 .\n?x1 ns:film.film.sequel M0 .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Which film was executive produced by a art director and written by M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced ?x2 .\n?x1 a ns:film.director .\n?x2 ns:film.actor.film/ns:film.performance.film M2 .\n?x2 ns:film.writer.film M2\n} Question: What film was written by and executive produced by M1 's editor",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M0 .\nFILTER ( ?x0 != M0 ) .\nFILTER ( M1 != ?x0 ) .\nM1 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x0 .\nM1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0\n} Question: Was M1 M0 's spouse 's child and spouse",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.director .\n?x0 ns:organization.organization_founder.organizations_founded ?x1 .\n?x1 ns:film.writer.film M1\n} Question: What did M0 's costume designer , star , and producer found",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 a ns:film.film_art_director .\nM0 ns:organization.organization_founder.organizations_founded M2\n} Question: Was a art director that M2 was founded by M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.editor.film M0 .\n?x0 ns:film.writer.film M0 .\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x1 .\n?x1 a ns:film.writer .\n?x1 ns:people.person.nationality ns:m.0f8l9c\n} Question: Did a French screenwriter 's parent edit and write M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.gender ns:m.05zppz .\nFILTER ( M2 != ?x0 ) .\nM2 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x0 .\nM2 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: Was M2 a male person 's child and sibling",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 ns:film.producer.films_executive_produced M1 .\nM0 ns:film.writer.film M1 .\nM2 ns:film.producer.films_executive_produced M1 .\nM2 ns:film.writer.film M1\n} Question: Did M0 and M2 executive produce and write M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:film.editor.film M1 .\n?x0 ns:film.editor.film M2 .\n?x0 ns:film.producer.films_executive_produced ?x1 .\n?x1 a ns:film.film .\n?x1 ns:film.film.edited_by ?x2 .\n?x1 ns:film.film.written_by ?x2 .\n?x2 a ns:film.editor\n} Question: What was executive produced , edited , directed , produced , and written by M0 's producer and costume designer",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.character M0 .\nM1 ns:influence.influence_node.influenced ?x0\n} Question: Who did a art director of M1 marry",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x1 ns:film.editor.film M0 .\n?x1 ns:film.writer.film M0\n} Question: Was M0 a person that M2 was produced by and executive produced by",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M1 .\n?x0 ns:people.person.nationality ns:m.03_3d\n} Question: Was M3 a Italian film producer whose American spouse was employed by M0 and founded M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.character M1 .\n?x1 ns:people.person.nationality ns:m.06mkj\n} Question: Was M1 produced by , executive produced by , directed by , written by , and edited by a film 's star",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.produced_by|ns:film.film.production_companies M0 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x2 .\n?x2 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x3 .\n?x3 a ns:film.producer .\n?x3 ns:people.person.nationality ns:m.0f8l9c .\nFILTER ( ?x1 != ?x2 )\n} Question: Did a film director influence M1 and marry M3 's French director",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M0 .\n?x1 a ns:film.editor .\nFILTER ( ?x0 != ?x1 ) .\nFILTER ( ?x0 != M0 )\n} Question: Did a film editor 's sibling marry M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.writer .\n?x0 ns:film.director.film M1 .\n?x0 ns:film.director.film M2\n} Question: Did a company acquire M1 and acquire M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film_art_director .\n?x0 a ns:people.person .\n?x0 ns:film.actor.film/ns:film.performance.film M3 .\n?x0 ns:people.person.gender ns:m.05zppz .\n?x0 ns:people.person.nationality ns:m.0b90_r\n} Question: Who was a Mexican male art director that M3 starred",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.film M0 .\n?x0 ns:film.editor.film M0 .\nFILTER ( M1 != ?x0 ) .\nFILTER ( M1 != M3 ) .\nM1 ns:influence.influence_node.influenced M2 .\nM1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0 .\nM1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M3\n} Question: Did M1 marry M3 , marry M0 's star and editor , and influence M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded M0 .\n?x1 a ns:film.cinematographer .\nM2 ns:film.film.starring/ns:film.performance.actor ?x0 .\nM2 ns:film.film.starring/ns:film.performance.actor ?x1 .\nM2 ns:film.film.starring/ns:film.performance.actor M3\n} Question: Did M2 star M0 's founder , star M3 , and star a cinematographer",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.executive_produced_by M0 .\n?x1 ns:film.actor.film/ns:film.performance.film M1 .\n?x1 ns:film.producer.films_executive_produced M1\n} Question: Did a French screenwriter 's parent edit and write M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x2 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M1 .\n?x1 ns:film.director.film M2 .\n?x1 ns:film.director.film M3 .\n?x2 ns:film.editor.film M4 .\nFILTER ( ?x0 != ?x2 ) .\nFILTER ( ?x0 != M1 )\n} Question: What was written by , directed by , and produced by a film director influenced by M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.writer .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Was M1 executive produced , produced , and written by a screenwriter",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded M0 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\nM1 ns:film.film.written_by ?x0 .\nM1 ns:film.film.written_by M2 .\nM3 ns:film.film.written_by ?x0 .\nM3 ns:film.film.written_by M2 .\nM4 ns:film.film.written_by ?x0 .\nM4 ns:film.film.written_by M2 .\nM5 ns:film.film.written_by ?x0 .\nM5 ns:film.film.written_by M2 .\nM6 ns:film.film.written_by ?x0 .\nM6 ns:film.film.written_by M2\n} Question: Were M1 , M3 , M4 , M5 , and M6 written by M2 and written by M0 's employee and founder",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded M0 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\n?x1 a ns:film.actor .\nM2 ns:organization.organization.founders ?x0 .\nM2 ns:organization.organization.founders ?x1 .\nM2 ns:organization.organization.founders M3 .\nM2 ns:organization.organization.founders M4\n} Question: Was M2 founded by M0 's founder and employee , founded by M3 and M4 , and founded by a actor",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.prequel M0 .\nM1 ns:film.film_art_director.films_art_directed ?x0 .\nM1 ns:film.producer.films_executive_produced ?x0 .\nM1 ns:film.writer.film ?x0\n} Question: Was M1 a art director , executive producer , and writer of M0 's sequel",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.nationality ns:m.0d060g .\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x1 .\n?x1 a ns:film.film_costumer_designer .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:film.film.edited_by ?x0\n} Question: Was M2 edited by a costume designer 's Canadian sibling",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:people.person.employment_history/ns:business.employment_tenure.company M0\n} Question: What was directed , executive produced , written , and edited by a employee of M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.sequel M0 .\nM1 ns:film.cinematographer.film ?x0\n} Question: Was a cinematographer of a prequel of M0 M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.edited_by M1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by M0 .\n?x1 ns:film.actor.film/ns:film.performance.character M3 .\n?x1 ns:people.person.nationality ns:m.06mkj\n} Question: What was edited by M1 , written by M0 , and produced by M3 's Spanish actor",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child M0 .\nM1 ns:film.film.written_by ?x0 .\nM2 ns:film.film.written_by ?x0\n} Question: Were M1 and M2 written by a parent of M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:influence.influence_node.influenced M2 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:film.cinematographer .\nFILTER ( ?x0 != ?x1 )\n} Question: Did a person marry a cinematographer , influence M1 , and influence M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:people.person.nationality ns:m.059j2 .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M1 .\nFILTER ( ?x1 != M1 )\n} Question: Was M1 written by , executive produced by , and produced by a screenwriter",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.written_by ?x1 .\n?x0 ns:film.film.written_by M0 .\n?x0 ns:film.film.written_by M1 .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x2 .\n?x2 a ns:people.person .\n?x2 ns:people.person.gender ns:m.02zsn .\nFILTER ( ?x1 != ?x2 )\n} Question: Did M1 acquire a production company 's parent",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.editor .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM1 ns:film.film.written_by ?x0 .\nM2 ns:film.film.directed_by ?x0 .\nM2 ns:film.film.edited_by ?x0 .\nM2 ns:film.film.executive_produced_by ?x0 .\nM2 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM2 ns:film.film.written_by ?x0\n} Question: Did a actor 's Spanish actor write M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.producer.films_executive_produced M0 .\nM1 a ns:film.film .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Was M2 directed by M3 and M4 and written by a male person 's sibling",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x1 .\n?x1 ns:people.person.nationality ns:m.0d060g .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M0 .\nFILTER ( ?x1 != M0 ) .\nM2 ns:influence.influence_node.influenced_by ?x0 .\nM2 ns:influence.influence_node.influenced_by M3 .\nM2 ns:influence.influence_node.influenced_by M4 .\nM5 ns:influence.influence_node.influenced_by ?x0 .\nM5 ns:influence.influence_node.influenced_by M3 .\nM5 ns:influence.influence_node.influenced_by M4\n} Question: Were M2 and M5 influenced by M3 , influenced by M4 , and influenced by M0 's Canadian sibling 's child",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.writer .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Was M1 written by , executive produced by , and produced by a screenwriter",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.producer .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.written_by M2 .\nM3 ns:film.film.directed_by ?x0 .\nM3 ns:film.film.written_by M2 .\nM4 ns:film.film.directed_by ?x0 .\nM4 ns:film.film.written_by M2 .\nM5 ns:film.film.directed_by ?x0 .\nM5 ns:film.film.written_by M2 .\nM6 ns:film.film.directed_by ?x0 .\nM6 ns:film.film.written_by M2\n} Question: Were M1 , M3 , M4 , M5 , and M6 written by M2 and directed by a film producer",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.writer .\n?x0 ns:film.editor.film M1 .\n?x0 ns:film.writer.film M1 .\n?x0 ns:people.person.nationality ns:m.03rjj\n} Question: Were M2 and M3 influenced by a child of M0 and influenced by a film producer 's parent",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.director .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:film.director.film M3 .\n?x1 ns:people.person.nationality ns:m.0f8l9c .\nFILTER ( ?x0 != ?x1 )\n} Question: Did a film director influence M1 and marry M3 's French director",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.written_by ?x2 .\n?x1 ns:film.producer.film|ns:film.production_company.films M2 .\n?x2 ns:film.editor.film M1 .\n?x2 ns:film.film_art_director.films_art_directed M1 .\n?x2 ns:film.writer.film M1\n} Question: Was a actor of M0 's director M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M0 .\nFILTER ( ?x1 != M0 )\n} Question: What did M0 's spouse found",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.director .\n?x0 ns:organization.organization_founder.organizations_founded M1 .\n?x0 ns:people.person.nationality ns:m.03rjj\n} Question: Did a Italian film director found M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.film_costumer_designer .\n?x0 ns:organization.organization_founder.organizations_founded ?x1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M2 .\n?x1 ns:business.employer.employees/ns:business.employment_tenure.person ?x2 .\n?x2 a ns:film.actor .\n?x2 ns:people.person.nationality ns:m.09c7w0 .\nFILTER ( ?x0 != M2 )\n} Question: Was a sequel of M0 produced by , edited by , and directed by a cinematographer",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.editor .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:film.film_art_director .\nFILTER ( ?x0 != ?x1 )\n} Question: Which film editor married a art director and was influenced by M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.editor .\nFILTER ( M1 != ?x0 ) .\nM1 ns:people.person.gender ns:m.02zsn .\nM1 ns:people.person.nationality ns:m.07ssc .\nM1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: Was M2 a male person 's child and sibling",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.prequel M0 .\nM1 ns:film.film_costumer_designer.costume_design_for_film ?x0 .\nM1 ns:people.person.gender ns:m.02zsn .\nM1 ns:people.person.nationality ns:m.0345h\n} Question: Was M0 's sequel 's German female costume designer M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x0 ns:people.person.gender ns:m.02zsn\n} Question: Was a production company 's parent founded by M0 and M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M1\n} Question: What did a director , producer , and costume designer of M0 produce and write",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.edited_by M0 .\n?x0 ns:film.film.sequel ?x1 .\n?x1 a ns:film.film\n} Question: Was a film 's prequel edited by M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.film_art_director .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company ?x1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M2 .\n?x1 a ns:business.employer\n} Question: Was a art director employed by M1 and M2 and employed by a company",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 a ns:people.person .\nM0 ns:film.producer.films_executive_produced M2 .\nM0 ns:film.producer.film|ns:film.production_company.films M2\n} Question: Was M0 a person that M2 was produced by and executive produced by",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child M0 .\nM1 ns:influence.influence_node.influenced_by ?x0\n} Question: Was a production company whose founder produced M1 and edited M0 M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.editor .\nM1 a ns:film.film .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.directed_by M3\n} Question: Was a film directed by a film editor and directed by M3 M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.actor .\n?x1 ns:film.editor.film M1 .\n?x1 ns:film.writer.film M1 .\nM2 ns:film.film.edited_by ?x1 .\nM2 ns:film.film.executive_produced_by ?x0 .\nM2 ns:film.film.written_by M3 .\nM4 ns:film.film.edited_by ?x1 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.written_by M3\n} Question: Were M1 , M3 , M4 , M5 , and M6 written by M2 and written by M0 's employee and founder",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:influence.influence_node.influenced M2 .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x1 ns:organization.organization_founder.organizations_founded ?x2 .\n?x1 ns:people.person.nationality ns:m.03rjj .\n?x2 a ns:film.production_company\n} Question: Was M2 directed by M0 's Japanese sibling",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x1 .\n?x1 a ns:film.editor .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0\n} Question: Was M2 written by a Spanish actor of M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x0 ns:organization.organization.founders M0 .\n?x1 ns:organization.organization_founder.organizations_founded ?x2 .\n?x1 ns:people.person.employment_history/ns:business.employment_tenure.company ?x2 .\n?x2 a ns:film.production_company\n} Question: What was directed by M0 and M1 and executive produced by a film producer that M3 starred",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M0 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x1 a ns:film.film_art_director .\n?x1 ns:people.person.nationality ns:m.0d05w3\n} Question: Was M1 produced by M3 , distributed by M2 , and distributed by a film director",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film_distributor .\n?x0 ns:organization.organization.acquired_by/ns:business.acquisition.acquiring_company ?x1 .\n?x0 ns:organization.organization.companies_acquired/ns:business.acquisition.company_acquired M1 .\n?x1 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child M2\n} Question: Did M2 and M3 marry a French film director 's spouse",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x1 ns:organization.organization_founder.organizations_founded M0 .\n?x1 ns:people.person.employment_history/ns:business.employment_tenure.company M0\n} Question: What did a employee and founder of M0 direct",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.director.film M0 .\nM1 ns:film.actor.film/ns:film.performance.character ?x0\n} Question: Was a actor of M0 's director M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M1\n} Question: What film was written , edited , and directed by a star of M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:business.employer .\n?x0 ns:organization.organization.companies_acquired/ns:business.acquisition.company_acquired M1 .\n?x0 ns:organization.organization.companies_acquired/ns:business.acquisition.company_acquired M2\n} Question: Did a company acquire M1 and acquire M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company ?x1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company ?x2 .\n?x1 ns:business.employer.employees/ns:business.employment_tenure.person M1 .\n?x2 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x3 .\n?x2 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x3 .\n?x3 a ns:film.production_company\n} Question: Who was employed by M1 's employer and employed by a production company 's child and parent",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:film.director .\n?x1 ns:people.person.nationality ns:m.0f8l9c .\nFILTER ( ?x0 != ?x1 ) .\nFILTER ( M2 != ?x0 ) .\nFILTER ( M3 != ?x0 ) .\nM2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0 .\nM3 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0\n} Question: Did M2 and M3 marry a French film director 's spouse",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 ns:film.actor.film/ns:film.performance.film M1 .\nM0 ns:film.producer.films_executive_produced M1\n} Question: Was M0 M1 's executive producer and star",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.prequel ?x1 .\n?x0 ns:film.film.sequel ?x1 .\n?x1 a ns:film.film .\nM1 ns:film.producer.film|ns:film.production_company.films ?x0\n} Question: What was executive produced by M1 's employee and executive produced by M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film_distributor.films_distributed/ns:film.film_film_distributor_relationship.film M0 .\n?x0 ns:film.producer.film|ns:film.production_company.films M0 .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor ?x0 .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M2 .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M3\n} Question: Was M1 distributed by a distributor and producer of M0 and distributed by M2 and M3",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.gender ns:m.02zsn .\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x1 .\n?x1 a ns:people.person .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:film.film.starring/ns:film.performance.actor ?x0 .\nM2 ns:film.film.starring/ns:film.performance.actor M3 .\nM2 ns:film.film.starring/ns:film.performance.actor M4\n} Question: Who was employed by M1 's employer and employed by a production company 's child and parent",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 ns:film.cinematographer.film M1 .\nM0 ns:film.writer.film M1\n} Question: Was M0 's Mexican sibling 's American child M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.nationality ns:m.0b90_r .\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M0 .\nFILTER ( ?x0 != M0 ) .\nM2 ns:people.person.nationality ns:m.09c7w0 .\nM2 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x0\n} Question: Was M0 's Mexican sibling 's American child M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.character ?x1 .\n?x0 ns:film.writer.film M0 .\n?x0 ns:people.person.nationality ns:m.06mkj .\n?x1 a ns:film.actor\n} Question: Did a actor 's Spanish actor write M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M0 .\nFILTER ( ?x1 != M0 )\n} Question: What was executive produced by and written by a sibling of M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.editor .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x1 ns:film.editor.film ?x2 .\n?x2 a ns:film.film\n} Question: Was M3 directed by a art director , directed by M4 , and executive produced by a female spouse of M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x1 .\n?x0 ns:people.person.gender ns:m.05zppz .\n?x1 a ns:film.film_art_director .\nM2 ns:film.film.executive_produced_by ?x0 .\nM2 ns:film.film.written_by ?x0\n} Question: Who was a Mexican male art director that M3 starred",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.character M1 .\n?x0 ns:people.person.nationality ns:m.06mkj .\nM2 ns:film.film.written_by ?x0\n} Question: Was M2 written by a Spanish actor of M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x2 .\n?x2 ns:people.person.gender ns:m.02zsn .\n?x2 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent M1 .\nFILTER ( ?x1 != ?x2 )\n} Question: Was M1 directed by a spouse of M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M0 .\nFILTER ( ?x0 != ?x1 ) .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0\n} Question: Did a film editor 's sibling marry M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by M0 .\n?x0 ns:film.film.written_by ?x1 .\n?x0 ns:film.film.written_by ?x2 .\n?x1 a ns:film.film_art_director .\n?x1 ns:people.person.nationality ns:m.06mkj .\n?x2 ns:film.writer.film M3\n} Question: What was written by a Spanish art director , written by M3 's writer , and executive produced by M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.producer .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M1 .\n?x0 ns:people.person.nationality ns:m.07ssc\n} Question: What film editor wrote M1 's prequel",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.film .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.executive_produced_by M1 .\n?x0 ns:film.film.written_by M1 .\n?x1 ns:film.producer.film|ns:film.production_company.films M2\n} Question: What film that was edited by and executive produced by a producer of M2 was executive produced and written by M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.character M0 .\nM1 ns:organization.organization.founders ?x0 .\nM2 ns:organization.organization.founders ?x0\n} Question: Did M2 star M0 's founder , star M3 , and star a cinematographer",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x0 ns:influence.influence_node.influenced_by M3 .\n?x1 ns:film.director.film M4 .\n?x1 ns:film.director.film M5\n} Question: What did a employee and founder of M0 direct",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by M1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.executive_produced_by M0 .\n?x1 ns:people.person.nationality ns:m.0d060g .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x2 .\n?x2 ns:film.actor.film/ns:film.performance.film M3 .\nFILTER ( ?x1 != ?x2 )\n} Question: What was directed by M1 , executive produced by M0 , and executive produced by M3 's star 's Canadian sibling",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.actor .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:people.person.nationality ns:m.0d0vqn .\nM3 ns:influence.influence_node.influenced_by ?x0 .\nM3 ns:influence.influence_node.influenced_by M4\n} Question: Was M3 influenced by M4 and influenced by a Swedish actor that was influenced by M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:film.editor .\n?x1 ns:people.person.nationality ns:m.03rjj .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:film.film.directed_by ?x0\n} Question: Was M2 edited by a costume designer 's Canadian sibling",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x1 .\n?x0 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x1 .\n?x1 a ns:business.employer .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M2 .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M3 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0\n} Question: Was M1 distributed by M2 and M3 and produced by a company 's child and parent",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by M0 .\n?x0 ns:film.film.directed_by M1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x1 a ns:film.producer .\n?x1 ns:film.actor.film/ns:film.performance.film M3\n} Question: What was directed by M0 and M1 and executive produced by a film producer that M3 starred",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:film.film_art_director.films_art_directed M1 .\nFILTER ( ?x0 != ?x1 )\n} Question: Who did a art director of M1 marry",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x2 .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x2 .\n?x2 a ns:film.writer .\nFILTER ( ?x1 != ?x2 )\n} Question: What did a screenwriter 's sibling and parent write",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child ?x1 .\n?x1 a ns:film.production_company .\nM1 ns:organization.organization.companies_acquired/ns:business.acquisition.company_acquired ?x0\n} Question: Did M1 acquire a production company 's parent",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film.prequel M0 .\nM1 ns:film.director.film ?x0 .\nM1 ns:film.editor.film ?x0 .\nM1 ns:film.producer.films_executive_produced ?x0 .\nM1 ns:film.producer.film|ns:film.production_company.films ?x0 .\nM1 ns:film.writer.film ?x0\n} Question: Did M1 executive produce , write , direct , edit , and produce M0 's sequel",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded ?x1 .\n?x0 ns:people.person.children|ns:fictional_universe.fictional_character.children|ns:organization.organization.child/ns:organization.organization_relationship.child M1 .\n?x0 ns:people.person.gender ns:m.02zsn .\n?x1 a ns:film.production_company\n} Question: What was edited by M1 , written by M0 , and produced by M3 's Spanish actor",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x1 a ns:film.film_costumer_designer .\n?x1 ns:people.person.employment_history/ns:business.employment_tenure.company M1\n} Question: What did a costume designer employed by M1 produce",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:influence.influence_node.influenced_by M0 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:people.person .\nFILTER ( ?x0 != ?x1 )\n} Question: Was a person 's spouse influenced by M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.cinematographer.film ?x1 .\n?x0 ns:people.person.nationality ns:m.03_3d .\n?x1 a ns:film.film .\nM2 ns:film.film.edited_by ?x0 .\nM2 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM2 ns:film.film.written_by ?x0 .\nM3 ns:film.film.edited_by ?x0 .\nM3 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM3 ns:film.film.written_by ?x0\n} Question: What was produced by M0 's sequel 's star and editor",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.cinematographer .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company ?x1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M2 .\n?x1 a ns:film.production_company\n} Question: Were M2 and M5 influenced by M3 , influenced by M4 , and influenced by M0 's Canadian sibling 's child",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M1 .\n?x1 ns:film.cinematographer.film M3 .\n?x1 ns:people.person.nationality ns:m.0b90_r .\nFILTER ( ?x0 != ?x1 ) .\nFILTER ( ?x0 != M1 )\n} Question: Were M1 and M2 written by a parent of M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded M1 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\n?x0 ns:people.person.nationality ns:m.09c7w0 .\nFILTER ( M3 != ?x0 ) .\nM3 a ns:film.producer .\nM3 ns:people.person.nationality ns:m.03rjj .\nM3 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0\n} Question: Was M3 a Italian film producer whose American spouse was employed by M0 and founded M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x1 ns:film.actor.film/ns:film.performance.film M3 .\n?x1 ns:film.editor.film M3 .\n?x1 ns:film.writer.film M3\n} Question: Did M0 and M2 executive produce and write M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.actor .\n?x1 ns:organization.organization_founder.organizations_founded M1 .\n?x1 ns:people.person.nationality ns:m.09c7w0 .\nFILTER ( M3 != ?x0 ) .\nFILTER ( M3 != ?x1 ) .\nM3 ns:influence.influence_node.influenced M4 .\nM3 ns:influence.influence_node.influenced M5 .\nM3 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0 .\nM3 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1\n} Question: Did a Italian film director found M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.editor .\n?x0 ns:film.writer.film ?x1 .\n?x1 ns:film.film.sequel M1\n} Question: What film editor wrote M1 's prequel",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M0 .\n?x0 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M1 .\n?x0 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M2 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M3 .\n?x1 ns:film.producer.films_executive_produced M3\n} Question: What was produced by M3 's executive producer and star , distributed by M0 , and distributed by M1 and M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.executive_produced_by M0 .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M1 .\nFILTER ( ?x1 != M1 )\n} Question: What did M0 executive produce and M1 's sibling executive produce",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 ns:film.cinematographer.film M1 .\nM0 ns:film.producer.film|ns:film.production_company.films M1 .\nM0 ns:film.writer.film M1\n} Question: Was M0 a cinematographer that wrote , edited , and executive produced M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced_by M1\n} Question: What cinematographer was a film editor that M2 and M3 married",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.cinematographer .\n?x0 a ns:film.editor .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M2 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M3 .\nFILTER ( ?x0 != M2 ) .\nFILTER ( ?x0 != M3 )\n} Question: What cinematographer was a film editor that M2 and M3 married",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:film.producer .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x1 ns:organization.organization_founder.organizations_founded M1\n} Question: Was M3 influenced by M4 and influenced by a Swedish actor that was influenced by M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.film_costumer_designer.costume_design_for_film M0 .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM1 ns:film.film.written_by ?x0\n} Question: Was a art director employed by M1 and M2 and employed by a company",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.character ?x1 .\n?x1 a ns:people.person .\nFILTER ( M1 != ?x0 ) .\nM1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0\n} Question: Was M1 M0 's spouse 's child and spouse",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced_by M1 .\n?x0 ns:influence.influence_node.influenced_by M2 .\n?x0 ns:influence.influence_node.influenced_by M3 .\n?x0 ns:people.person.nationality ns:m.059j2\n} Question: What film was written , edited , and directed by a star of M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.executive_produced_by M0 .\n?x1 ns:people.person.employment_history/ns:business.employment_tenure.company M1\n} Question: What was executive produced by M1 's employee and executive produced by M0",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x1 a ns:film.writer .\n?x1 ns:influence.influence_node.influenced_by M2 .\n?x1 ns:influence.influence_node.influenced_by M3\n} Question: Was a cinematographer of a prequel of M0 M1",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 a ns:film.actor .\nFILTER ( ?x0 != ?x1 ) .\nM1 ns:business.employer.employees/ns:business.employment_tenure.person ?x0\n} Question: Did M1 employ a spouse of a actor",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.actor.film/ns:film.performance.film M0 .\n?x0 ns:film.director.film M0 .\n?x0 ns:film.producer.films_executive_produced M0 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM2 ns:film.film.executive_produced_by ?x0 .\nM2 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM3 ns:film.film.executive_produced_by ?x0 .\nM3 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM5 ns:film.film.executive_produced_by ?x0 .\nM5 ns:film.film.produced_by|ns:film.film.production_companies ?x0\n} Question: Did a person marry a cinematographer , influence M1 , and influence M2",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.film_costumer_designer .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:people.person.gender ns:m.05zppz .\n?x0 ns:people.person.nationality ns:m.0f8l9c .\n?x1 a ns:film.film_costumer_designer .\nM4 ns:influence.influence_node.influenced ?x0 .\nM4 ns:influence.influence_node.influenced ?x1\n} Question: Was M1 a production company 's employee 's child",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 a ns:film.film_art_director .\n?x1 ns:people.person.nationality ns:m.03rjj\n} Question: What was produced , written , and executive produced by a Italian art director",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\nM0 ns:film.film_costumer_designer.costume_design_for_film M1 .\nM0 ns:people.person.nationality ns:m.0345h\n} Question: Did M1 executive produce , write , direct , edit , and produce M0 's sequel",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.film_costumer_designer.costume_design_for_film M0 .\n?x1 ns:film.producer.film|ns:film.production_company.films M0\n} Question: What was executive produced , edited , directed , produced , and written by M0 's producer and costume designer",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x1 ns:film.writer.film M0 .\n?x1 ns:people.person.nationality ns:m.03rjj\n} Question: What did a screenwriter influenced by M1 direct , produce , and write",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x0 ns:organization.organization.founders M0 .\n?x1 ns:film.producer.films_executive_produced M1\n} Question: What did M1 's executive producer found and M0 found",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.editor.film M0 .\n?x0 ns:film.producer.film|ns:film.production_company.films M1 .\nM2 a ns:film.production_company .\nM2 ns:organization.organization.founders ?x0\n} Question: Was a production company whose founder produced M1 and edited M0 M2",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.director.film M0 .\n?x1 ns:film.film_costumer_designer.costume_design_for_film M0 .\n?x1 ns:film.producer.film|ns:film.production_company.films M0\n} Question: What did a director , producer , and costume designer of M0 produce and write",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.actor .\nM1 ns:film.film.directed_by ?x0 .\nM1 ns:film.film.edited_by ?x0 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM1 ns:film.film.written_by ?x0 .\nM2 ns:film.film.directed_by ?x0 .\nM2 ns:film.film.edited_by ?x0 .\nM2 ns:film.film.executive_produced_by ?x0 .\nM2 ns:film.film.produced_by|ns:film.film.production_companies ?x0 .\nM2 ns:film.film.written_by ?x0\n} Question: What was directed by M1 , executive produced by M0 , and executive produced by M3 's star 's Canadian sibling",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:organization.organization.founders ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film M0 .\n?x1 ns:film.editor.film M0\n} Question: What did M0 's spouse found",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film ?x2 .\n?x1 ns:film.editor.film ?x2 .\n?x2 ns:film.film.prequel M0\n} Question: What was produced by M0 's sequel 's star and editor",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:film.writer.film ?x1 .\n?x0 ns:film.writer.film M1 .\n?x1 a ns:film.film\n} Question: Who wrote M1 and wrote a film",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:film.director .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor ?x0 .\nM1 ns:film.film.distributors/ns:film.film_film_distributor_relationship.distributor M2 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies M3\n} Question: Was M1 produced by M3 , distributed by M2 , and distributed by a film director",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:influence.influence_node.influenced ?x1 .\n?x0 ns:influence.influence_node.influenced_by ?x1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:film.actor.film/ns:film.performance.film ?x2 .\n?x1 ns:film.writer.film ?x2 .\n?x2 a ns:film.film .\nFILTER ( ?x0 != ?x1 )\n} Question: Was a art director that M2 was founded by M0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by M0 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 a ns:fictional_universe.fictional_character\n} Question: Were M1 , M3 , M4 , M5 , and M6 written by M2 and directed by a film producer",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company ?x1 .\n?x1 a ns:film.production_company .\nM1 ns:people.person.parents|ns:fictional_universe.fictional_character.parents|ns:organization.organization.parent/ns:organization.organization_relationship.parent ?x0\n} Question: Was M1 a production company 's employee 's child",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.edited_by ?x1 .\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 ns:film.editor.film M0 .\n?x1 ns:film.writer.film M0\n} Question: Was M1 executive produced , produced , and written by a screenwriter",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.gender ns:m.02zsn .\nFILTER ( M2 != ?x0 ) .\nFILTER ( M2 != ?x0 ) .\nM2 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0 .\nM2 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x0\n} Question: Did M2 influence a film director 's child and influence a film editor",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.gender ns:m.02zsn .\n?x0 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x1 .\n?x1 a ns:people.person .\nFILTER ( ?x0 != ?x1 ) .\nM2 ns:film.film.edited_by ?x0 .\nM2 ns:film.film.written_by ?x0\n} Question: Did a art director influence M1 's star and influence M2 's sequel 's cinematographer , star , and writer",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.directed_by ?x1 .\n?x0 ns:film.film.produced_by|ns:film.film.production_companies ?x1 .\n?x0 ns:film.film.written_by ?x1 .\n?x1 a ns:film.director .\n?x1 ns:influence.influence_node.influenced_by M1\n} Question: What was written by , directed by , and produced by a film director influenced by M1",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 ns:film.film.executive_produced_by ?x1 .\n?x1 ns:people.person.nationality ns:m.06mkj .\n?x1 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings M0 .\nFILTER ( ?x1 != M0 )\n} Question: What was executive produced by M0 's Spanish sibling",
+            "output": [
+                "1"
+            ]
+        }
+    ]
+}
