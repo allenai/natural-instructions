@@ -13,7 +13,6 @@
     - `Question Answering -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Contextual Question Answering -> Abstractive` 
   - `Question Answering -> Fill in the Blank`
-  - `Question Answering -> Mathematical Question Answering`
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
   - `Question Answering -> Incorrect Answer Generation`
