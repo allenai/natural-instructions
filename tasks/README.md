@@ -1103,6 +1103,28 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
 `task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
+`task1196_atomic_classification_oeffect` | Given a tuple, determine whether, as a result of the Head, personY or others will be affected as mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1197_atomic_classification_oreact` | Given a tuple, determine whether, as a result of the Head, personY or others feel what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1198_atomic_classification_owant` | Given a tuple, determine whether, as a result of the Head, personY or others will want what is mentioned in the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
+`task1199_atomic_classification_xattr` | Given a tuple, determine whether, as a result of the Head, personX will be seen as what is mentioned in the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English | Sociology	| English	| English
+`task1200_atomic_classification_xeffect` | Given a tuple, determine whether, as a result of the Head, personX will be affected as mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1201_atomic_classification_xintent` | Given a tuple, determine whether The tail is the intention of the PersonX from the Head or not. | Classification | Sociology	| English	| English
+`task1202_atomic_classification_xneed` | Given a tuple, determine whether PersonX needs what is mentioned in the Tail before the Head or not. | Classification | Sociology	| English	| English
+`task1203_atomic_classification_xreact` | Given a tuple, determine whether, as a result of the Head, personX feels what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1204_atomic_classification_hinderedby` | Given a tuple, determine whether the Head can be hindered by what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1205_atomic_classification_isafter` | Given a tuple, determine whether the Head happens after the Tail or not. | Classification | Sociology	| English	| English
+`task1206_atomic_classification_isbefore` | Given a tuple, determine whether the Head happens before the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
+`task1207_atomic_classification_atlocation` | Given a tuple, determine whether the Head is located or can be found at/in/on the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English | Sociology	| English	| English
+`task1208_atomic_classification_xreason` | Given a tuple, determine whether The Tail is the reason for the Head or not. | Classification | Sociology	| English	| English
+`task1209_atomic_classification_objectuse` | Given a tuple, determine whether the Head is used for the Tail or not. | Classification | Sociology	| English	| English
+`task1210_atomic_classification_madeupof` | Given a tuple, determine whether the Head is made of the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
+`task1211_atomic_classification_hassubevent` | Given a tuple, determine whether the Head includes an event or an action in the Tail or not. | Classification | Sociology	| English	| English
+`task1212_atomic_classification_hasproperty` | Given a tuple, determine whether the Head can be characterized by being or having the Tail or not. | Classification | Sociology	| English	| English
+`task1213_atomic_classification_desires` | Given a tuple, determine whether the Head desires the Tail or not. | Classification | Sociology	| English	| English
+`task1214_atomic_classification_xwant` | Given a tuple, determine whether, as a result of the Head, personX wants what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1215_atomic_classification_capableof` | Given a tuple, ddetermine whether the Head is capable of the Tail or not. | Classification | Sociology	| English	| English
+`task1216_atomic_classification_causes` | Given a tuple, determine whether the Head causes the Tail or not. | Classification | Sociology	| English	| English
+`task1217_atomic_answer_generation` | Given a sentence, fill in the blank with a plausible word. | Fill in the Blank | Sociology	| English	| English
 `task1218_ted_translation_en_ja` | Translate a sentence in English to Japanese. | Translation
 `task1219_ted_translation_en_es` | Translate a sentence in English to Spanish. | Translation
 `task1220_ted_translation_en_ar` | Translate a sentence in English to Arabic. | Translation
