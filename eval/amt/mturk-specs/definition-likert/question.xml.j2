@@ -298,9 +298,11 @@
       return element.length > 3;
     });
     neg_ex_len = neg_ex_len.length
-    negative_ex_inputs = negative_ex_inputs.slice(0,neg_ex_len)
-    negative_ex_outputs = negative_ex_outputs.slice(0,neg_ex_len)
-    negative_ex_explanations = negative_ex_explanations.slice(0,neg_ex_len)
+    if (neg_ex_len > 0 and neg_ex_len < 5) {
+        negative_ex_inputs = negative_ex_inputs.slice(0,neg_ex_len)
+        negative_ex_outputs = negative_ex_outputs.slice(0,neg_ex_len)
+        negative_ex_explanations = negative_ex_explanations.slice(0,neg_ex_len)
+    }
 
     // positive
     var positive_ex_inputs = [
@@ -326,6 +328,17 @@
         "{{positive_ex_3_explanation}}",
         "{{positive_ex_4_explanation}}",
     ]
+
+    // sometimes we don't have 5 positive examples
+    pos_ex_len = positive_ex_inputs.filter((element) => {
+      return element.length > 3;
+    });
+    pos_ex_len = pos_ex_len.length
+    if (pos_ex_len > 0 and pos_ex_len < 5) {
+        positive_ex_inputs = positive_ex_inputs.slice(0,pos_ex_len)
+        positive_ex_outputs = positive_ex_outputs.slice(0,pos_ex_len)
+        positive_ex_explanations = positive_ex_explanations.slice(0,pos_ex_len)
+    }
 
     var instance_inputs = [
         "{{instance_0_input}}",
