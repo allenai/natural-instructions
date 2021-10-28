@@ -817,6 +817,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task835_mathdataset_answer_generation` | Find the numerical answer for a math word problem
 `task836_viquiquad_question_generation` | Given a passage in the Catalan language, generate contextual questions
 `task837_viquiquad_answer_generation` | Given a passage and asked a question in the Catalan language, answer that question
+`task838_cdt_classification` | Given a tweet, determine if it has bullying content. (based on cdt) | Classification
+`task839_cdt_classification` | Given a tweet and prompt, determine if it has bullying content. (based on cdt) | Classification
+`task840_para_pdt_en_es_translation` | Translate English questions to Spanish while preserving named entities in the original language. (based on para_pdt) | Translation
+`task841_para_pdt_de_en_translation` | Translate German questions to English while preserving named entities in the original language. (based on para_pdt) | Translation
+`task842_para_pdt_cs_en_translation` | Translate Czech questions to English while preserving named entities in the original language. (based on para_pdt) | Translation
 `task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
 `task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
 `task845_pubmedqa_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
