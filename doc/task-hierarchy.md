@@ -29,7 +29,9 @@
 - `Author Identification`
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
+    - `Classification -> Verification -> Summary Verification` 	
     - `Classification -> Verification -> Claim Verification`
+    - `Classification -> Verification -> Clarification Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
     - `Classification -> Verification -> Relevance Verification`
@@ -68,11 +70,11 @@
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
   - `Reasoning -> Argument Reasoning`
-	- `Reasoning -> Argument Reasoning -> Deductive Reasoning`
-	- `Reasoning -> Argument Reasoning -> Inductive Reasoning`
   - `Reasoning -> Causal Reasoning`
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
+  - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
+  - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has four wheels.
@@ -92,6 +94,7 @@
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
+- `Story Completion`
 - `Style Transfer`
 - `Summarization`
 - `Tabular Text Operation`
@@ -110,12 +113,7 @@
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
-  - `Text Generation -> Weblink Generation`
-- `Text Modification`
-  - `Text Modification -> Text Simplification`
-  - `Text Modification -> Structured Text Modification`
-- `Text Span Selection`
-- `Textual Entailment`
+  - `Title Selection`
 - `Translation`
 - `Weblink Generation`
 - `Word Sense Disambiguation`
