@@ -77,7 +77,7 @@ def aggregate_v2(response_file):
                      f"\t{positive_ex_quality_value}\t{positive_ex_suggestions}\t{positive_examples_appended}" \
                      f"\t{negative_ex_quality_value}\t{negative_ex_suggestions}\t{negative_examples_appended}"
 
-            if len(instruction_suggestions) + len(positive_ex_suggestions) + len(negative_ex_suggestions) > 20:
+            if len(instruction_suggestions) + len(positive_ex_suggestions) + len(negative_ex_suggestions) > 25:
                 if file not in suggestions:
                     suggestions[file] = []
                 suggestions[file].append(f"\n    - regarding instructions: `{instruction_suggestions}`"
@@ -113,4 +113,5 @@ def aggregate_v2(response_file):
 # aggregate_v2("batch-eea0ef32-da0a-47cf-bcae-810d1a503379_start=1_end=59_max_size=5/batch-results.jsonl")
 # aggregate_v2("batch-cdcb497e-49a3-4cee-8ab5-1451dc19dac2_119_end=200_max_size=5/batch-results.jsonl")
 # aggregate_v2("batch-58086c69-62bf-4e91-8741-b68d27e1fd63-start=201_end=300_max_size=5/batch-results.jsonl")
-aggregate_v2("batch-fc02d066-1e35-4184-b4ea-ba7eca1abcc1_start=301_end=400_max_size=5/batch-results.jsonl")
+# aggregate_v2("batch-fc02d066-1e35-4184-b4ea-ba7eca1abcc1_start=301_end=400_max_size=5/batch-results.jsonl")
+aggregate_v2("batch-4739062e-2141-4f97-9a37-41197abf9a93_start=400_end=600_max_size=5/batch-results.jsonl")
