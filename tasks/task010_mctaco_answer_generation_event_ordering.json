@@ -7,9 +7,12 @@
         "mctaco"
     ],
     "Categories": [
-        "Answer Generation"
+        "Question Answering -> Commonsense Question Answering",
+        "Question Answering -> Contextual Question Answering -> Abstractive",
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Commonsense Reasoning"
     ],
-    "Definition": "In this task we ask you to write answer to a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \"earning money\" usually appears before \"spending money\".\nThings to avoid: -\nEmphasis & Caution: Note that a lot of the questions could have more than one correct answers. We only need a single most-likely answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
+    "Definition": "In this task we ask you to write answer to a question about the events that may happen before or fter a certain event. For example, \"earning money\" usually appears before \"spending money\".\nEmphasis & Caution: Note that a lot of the questions could have more than one correct answers. We only need a single most-likely answer. Please try to keep your \"answer\" as simple as possible. Concise and simple \"answer\" is preferred over those complex and verbose ones.  ",
     "Positive Examples": [
         {
             "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: What did Jack do after the game?",
@@ -19,16 +22,21 @@
         {
             "input": "Sentence: He was born in China, so he went to the Embassy to apply for a U.S. Visa. \nQuestion: What is likely to happen afterward?",
             "output": "He went home.",
-            "explanation": "This seems a natural thing to do."
+            "explanation": "This seems a natural thing to do after visiting the Embassy."
+        },
+        {
+            "input": "Sentence: About 30% of Ratners's profit already is derived from the U.S. \nQuestion: What happened before Ratners's made a profit?",
+            "output": "They worked hard",
+            "explanation": "This is a plausible event to happen before earning profit."
         }
     ],
     "Negative Examples": [
-	{
-	    "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: What did Jack do after the game?",
+        {
+            "input": "Sentence: Jack played basketball after school, after which he was very tired. \nQuestion: What did Jack do after the game?",
             "output": "He participated in a marathon.",
             "explanation": "When people \"get tired\", they usually \"rest\". Marathon demands a lot of energy. So, it is unlikely for Jack to participate in a marathon after being tired."
-	}
-	],
+        }
+    ],
     "Instances": [
         {
             "input": "Sentence: Islam later emerged as the majority religion during the centuries of Ottoman rule, though a significant Christian minority remained. \nQuestion: What happened before Islam was the majority religion?",
@@ -69,12 +77,6 @@
             "output": [
                 "they came back.",
                 "they rested and regrouped."
-            ]
-        },
-        {
-            "input": "Sentence: About 30% of Ratners's profit already is derived from the U.S. \nQuestion: What happened before Ratners's made a profit?",
-            "output": [
-                "he worked hard."
             ]
         },
         {
@@ -268,7 +270,7 @@
             ]
         },
         {
-            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban\u2002\u2014\u2002Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What happened after the Iban gained control?",
+            "input": "Sentence: Sarawak's coast and jungle interior were controlled by the Iban — Sea Dayak pirates and Land Dayak slash-and-burn farmers. \nQuestion: What happened after the Iban gained control?",
             "output": [
                 "chaos ensued.",
                 "they took over the lands."
@@ -853,7 +855,7 @@
             ]
         },
         {
-            "input": "Sentence: , followed by other ports at Hy\u00e8res, Antibes, and Nice. \nQuestion: Where did you go before the ports?",
+            "input": "Sentence: , followed by other ports at Hyères, Antibes, and Nice. \nQuestion: Where did you go before the ports?",
             "output": [
                 "i went to the east coast to get on a boat, so i could travel to the ports."
             ]
@@ -1728,7 +1730,7 @@
             ]
         },
         {
-            "input": "Sentence: No, of course not\u2026 I\u2013  \"Then why,\" Arthur barreled on, \"do you disregard them all and return to this superstitious babble, this morbid, paganistic drivel?. \nQuestion: How did Arthur become angry in the first place?",
+            "input": "Sentence: No, of course not… I–  \"Then why,\" Arthur barreled on, \"do you disregard them all and return to this superstitious babble, this morbid, paganistic drivel?. \nQuestion: How did Arthur become angry in the first place?",
             "output": [
                 "he disagreed with him."
             ]
@@ -1906,7 +1908,7 @@
             ]
         },
         {
-            "input": "Sentence: In Melaka and throughout the peninsula, Islam thrived as a strong, male-dominated religion of individuality, offering dynamic leadership and preaching brotherhood and self-reliance\u2002\u2014\u2002all qualities ideally suited to the coastal trade. \nQuestion: What happened after Islam became popular in the region?",
+            "input": "Sentence: In Melaka and throughout the peninsula, Islam thrived as a strong, male-dominated religion of individuality, offering dynamic leadership and preaching brotherhood and self-reliance — all qualities ideally suited to the coastal trade. \nQuestion: What happened after Islam became popular in the region?",
             "output": [
                 "it expanded even further.",
                 "other religious faiths were ostracized.",
@@ -2585,7 +2587,7 @@
             ]
         },
         {
-            "input": "Sentence: Zarco and Teixeira were appointed co-go\u00advern\u00adors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: What happened after Perestrelo was awarded Porto Santo?",
+            "input": "Sentence: Zarco and Teixeira were appointed co-go­vern­ors of Madeira, while Perestrelo was awarded Porto Santo. \nQuestion: What happened after Perestrelo was awarded Porto Santo?",
             "output": [
                 "perestrelo started working.",
                 "he celebrated."
@@ -2669,5 +2671,25 @@
                 "everyone read about it in the paper."
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
     ]
 }

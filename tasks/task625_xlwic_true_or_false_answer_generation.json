@@ -1,0 +1,926 @@
+{
+    "Contributors": [
+        "Ananth Duggirala"
+    ],
+    "Source": [
+        "XL-WiC (Dataset - https://huggingface.co/datasets/pasinit/xlwic)"
+    ],
+    "Categories": [
+        "Answer Generation"
+    ],
+    "Definition": "In this task, you are given a word, followed by two sentences. Your task is to figure out whether both the sentences use the aforementioned word with the same meaning. You should respond with 'True' if the words in both sentences share the same meaning, and 'False' otherwise.",
+    "Positive Examples": [
+        {
+            "input": "dust \n Sentence1: Another one bites the dust. \n Sentence2: The maid used a handkerchief to remove dust off the table.",
+            "output": "True.",
+            "explanation": "In both of the input sentences, the word 'dust' refers to sand, and therefore the words share the same meaning."
+        },
+        {
+            "input": "project \n Sentence1: Several classmates collaborated on a project. \n Sentence2: The professor projected a slide onto the screen.",
+            "output": "False.",
+            "explanation": "In both of the input sentences, the word 'project' is used with a different meaning, an undertaking of an activity and to appear on a surface by the controlled direction of light, respectively."
+        },
+        {
+            "input": "sound \n Sentence1: The sound reverberated across the hall. \n Sentence2: The baby fell sound asleep.",
+            "output": "False.",
+            "explanation": "In both of the input sentences, the word 'sound' has a different meaning. In the former, it is used to refer to sound waves, and in the latter, it is used to refer to sleeping deeply."
+        },
+        {
+            "input": "airplane \n Sentence1: The passengers went into a frenzy as the airplane lurched sideways. \n Sentence2: The airplane landed on the runway.",
+            "output": "True.",
+            "explanation": "In both of the input sentences, airplane is used to refer to the same entity, a vehicle used for aerial transportation."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "ruler \n Sentence1: The headmistress struck the table with a ruler. \n Sentence2: The ruler decided to change taxation laws in his province.",
+            "output": "True.",
+            "explanation": "The word 'ruler' has a different meaning in both input sentences. In the first input sentence, it refers to a measuring stick, and in the second input sentence, it refers one that rules, such as a king. Therefore, the answer is incorrect."
+        },
+        {
+            "input": "driver \n Sentence1: The driver of the bus took his foot off the brakes. \n Sentence2: The driver asked the passengers to disembark.",
+            "output": "False.",
+            "explanation": "In both input sentences, the word 'driver' is used for a person who is in charge of driving a vehicle. Therefore, the answer is incorrect."
+        },
+        {
+            "input": "small \n Sentence1: The kid was too small to be able to board the rollercoaster. \n Sentence2: Ants are very small creatures.",
+            "output": "False.",
+            "explanation": "In both input sentences, 'small' is used to refer to size, and hence the answer given is incorrect."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "approach \n Sentence1: Approach a task. \n Sentence2: To approach the city.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "summer \n Sentence1: We like to summer in the Mediterranean. \n Sentence2: We summered in Kashmir.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "meet \n Sentence1: The company agrees to meet the cost of any repairs. \n Sentence2: This proposal meets my requirements.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "development \n Sentence1: The organism has reached a crucial stage in its development. \n Sentence2: Our news team brings you the latest developments.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "narrowness \n Sentence1: The problem with achievement tests is the narrowness they impose on students. \n Sentence2: Frustrated by the narrowness of people's horizons.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "act \n Sentence1: The governor should act on the new energy bill. \n Sentence2: Think before you act.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "port \n Sentence1: Port the helm. \n Sentence2: Port arms!",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "finish \n Sentence1: The boat had a metallic finish. \n Sentence2: He applied a coat of a clear finish.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "dress \n Sentence1: Dress the windows. \n Sentence2: Marlene dressed herself.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "strike \n Sentence1: Strike a medal. \n Sentence2: The boxer struck the attacker dead.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "flux \n Sentence1: It is important to use flux when soldering or oxides on the metal will prevent a good bond. \n Sentence2: His opinions are in flux.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "create \n Sentence1: You can create the color orange by mixing yellow and red. \n Sentence2: The company was created 25 years ago.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "action \n Sentence1: The United Nations must have the power to propose and organize action without being hobbled by irrelevant issues. \n Sentence2: Recent federal action undermined the segregationist position.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "spill \n Sentence1: Spill the milk. \n Sentence2: The former employee spilled all the details.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "beat \n Sentence1: Beat one's foot rhythmically. \n Sentence2: I beat the traffic.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "voice \n Sentence1: The voice of the law. \n Sentence2: Conservatism has many voices.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "study \n Sentence1: He knocked lightly on the closed door of the study. \n Sentence2: He is a quick study.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "material \n Sentence1: She was vice-presidential material. \n Sentence2: He was university material.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "fatigue \n Sentence1: He was suffering from museum fatigue. \n Sentence2: The American public is experiencing scandal fatigue.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "fish \n Sentence1: The shark is a large fish. \n Sentence2: In the living room there was a tank of colorful fish.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "begin \n Sentence1: Begin a new chapter in your life. \n Sentence2: Begin a cigar.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "solution \n Sentence1: The solution took three hours. \n Sentence2: They were trying to find a peaceful solution.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "space \n Sentence1: They stopped at an open space in the jungle. \n Sentence2: The astronauts walked in outer space without a tether.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "shot \n Sentence1: He is still recovering from a shot to his leg. \n Sentence2: I caught him with a solid shot to the chin.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "subvert \n Sentence1: Do school counselors subvert young children? \n Sentence2: We must not let our civil liberties be subverted by the current crisis.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "academy \n Sentence1: A riding academy. \n Sentence2: Academies of literature and philology.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "spot \n Sentence1: A bald spot. \n Sentence2: A leopard's spots.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "light \n Sentence1: Follow God's light. \n Sentence2: Magoon's governorship in Cuba was viewed in a negative light by many Cuban historians for years thereafter.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "wallah \n Sentence1: The book wallah. \n Sentence2: A kitchen wallah.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "region \n Sentence1: In the abdominal region. \n Sentence2: The temperate regions.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "carry \n Sentence1: These bonds carry warrants. \n Sentence2: This new washer carries a two year guarantee.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "raise \n Sentence1: Raise the question of promotions. \n Sentence2: Raise from the dead.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "keep \n Sentence1: Keep appointments. \n Sentence2: We kept to the original conditions of the contract.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "dent \n Sentence1: It made a dent in my bank account. \n Sentence2: The crash produced a dent in the left side of the car.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "cycle \n Sentence1: The cycle of the seasons, or of the year. \n Sentence2: The never-ending cycle of the seasons.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "be \n Sentence1: I shall be writing to you soon. \n Sentence2: 3 times 5 is fifteen.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "laugh \n Sentence1: Paul laughed a cheerful laugh. \n Sentence2: She laughed her excitement.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "reach \n Sentence1: Our advertisements reach millions. \n Sentence2: His hand reaches the river.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "wall \n Sentence1: A wall of prejudice. \n Sentence2: The container's walls were blue.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "change \n Sentence1: The change was intended to increase sales. \n Sentence2: This storm is certainly a change for the worse.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "baby \n Sentence1: This project is his baby. \n Sentence2: Stand up for yourself-don't be such a baby!",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "score \n Sentence1: Settling a score. \n Sentence2: The player with the highest score is the winner.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "close \n Sentence1: The owners decided to move and to close the factory. \n Sentence2: My business closes every night at 8 P.M.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "connection \n Sentence1: The connection between church and state is inescapable. \n Sentence2: My headache has no connection with me going out last night.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "go \n Sentence1: Go about the world in a certain manner. \n Sentence2: We should go farther in this matter.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "know \n Sentence1: Do you know my sister? \n Sentence2: I know him under a different name.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "rake \n Sentence1: Rake gravel. \n Sentence2: The gunfire raked the coast.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "quality \n Sentence1: \"The quality of mercy is not strained\" -- Shakespeare. \n Sentence2: While being impulsive can be great for artists, it is not a desirable quality for engineers.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "image \n Sentence1: The number 6 is the image of 3 under f that is defined as f(x) = 2*x. \n Sentence2: The image of f(x) = x^2 is the set of all non-negative real numbers if the domain of the function is the set of all real numbers.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "tell \n Sentence1: He could tell that she was unhappy. \n Sentence2: She told him how he did it.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "snow \n Sentence1: It started to snow. \n Sentence2: It is snowing.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "join \n Sentence1: I will join you watching the football game as soon as I have finished my work. \n Sentence2: She joined him for a drink.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "boy \n Sentence1: Steve is a boy of 16. \n Sentence2: She made the boy brush his teeth every night.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "give \n Sentence1: Give an excuse. \n Sentence2: What will you give her for her birthday?",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "take \n Sentence1: Take a scene. \n Sentence2: Take a test.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "draw \n Sentence1: Draw pulp from the fruit. \n Sentence2: They saw that the night was quickly drawing in, so they pitched their tent.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "energy \n Sentence1: Energy can take a wide variety of forms. \n Sentence2: Europeans often laugh at American energy.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "brim \n Sentence1: Brim a cup to good fellowship. \n Sentence2: The room brimmed with people.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "origin \n Sentence1: Mineral origin. \n Sentence2: Vegetable origins.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "see \n Sentence1: You should see a lawyer. \n Sentence2: We had to see a psychiatrist.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "unit \n Sentence1: A unit of wheat is a bushel. \n Sentence2: He was a member of a special police unit.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "shoot \n Sentence1: Shoot a movie. \n Sentence2: Shoot a basket.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "title \n Sentence1: A good title to an estate, or an imperfect title. \n Sentence2: His title to fame.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "couple \n Sentence1: Now the conductor will couple the train cars. \n Sentence2: I've coupled our system to theirs.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "variant \n Sentence1: The word \"kerosine\" is a variant of \"kerosene\". \n Sentence2: A variant of the same word.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "application \n Sentence1: The application of maximum thrust. \n Sentence2: Massage has far-reaching medical applications.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "account \n Sentence1: He predicted that although it is of small account now it will rapidly increase in importance. \n Sentence2: The account of his speech that was given on the evening news made the governor furious.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "discover \n Sentence1: The story is false, so far as I can discover. \n Sentence2: I discovered what to do.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "interest \n Sentence1: In the interest of safety. \n Sentence2: Victorian furniture is an interest of mine.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "come \n Sentence1: Come into the room. \n Sentence2: He came from France.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "company \n Sentence1: He started the company in his garage. \n Sentence2: He only invests in large well-established companies.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "remember \n Sentence1: I can't remember saying any such thing. \n Sentence2: I remember the concert clearly, but I can't recollect why I was there.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "course \n Sentence1: The course of the river. \n Sentence2: He took a course in basket weaving.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "movement \n Sentence1: He had a bowel movement. \n Sentence2: It was an expensive watch with a diamond movement.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "life \n Sentence1: He wanted to live his own life without interference from others. \n Sentence2: She's my love, my life.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "multiply \n Sentence1: He managed to multiply his profits. \n Sentence2: He had been multiplying, but it occurred to him he needed to resolve the exponents, first.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "setup \n Sentence1: It takes time to learn the setup around here. \n Sentence2: The laboratory included an elaborate setup for measuring the energy.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "force \n Sentence1: A public force is necessary to give security to the rights of citizens. \n Sentence2: The forces of evil.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "communicate \n Sentence1: Many deaf people communicate with sign language. \n Sentence2: I feel I hardly know him; I just wish he'd communicate with me a little more.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "gather \n Sentence1: I gather from Aunty May that you had a good day at the match. \n Sentence2: Let's gather in the dining room.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "float \n Sentence1: Float the plaster. \n Sentence2: The balloon floated off into the distance.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "pursuit \n Sentence1: The pursuit of love. \n Sentence2: Unremitting pursuit of wealth doesn't bring happiness, particularly if successful.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "session \n Sentence1: A filming session. \n Sentence2: A gossip session.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "collector \n Sentence1: He is an avid collector of nineteenth-century postage stamps. \n Sentence2: That old piano is just a big dust collector.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "deep \n Sentence1: In the deep of winter. \n Sentence2: In the deep of night.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "forefront \n Sentence1: The idea of motion was always to the forefront of his mind and central to his philosophy. \n Sentence2: That laboratory researches topics at the forefront of technology.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "rotation \n Sentence1: The medical resident finished a two-week rotation in pediatrics and began one in orthopaedics. \n Sentence2: Crop rotation makes a balanced demand on the fertility of the soil.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "vaccinate \n Sentence1: We vaccinate against scarlet fever. \n Sentence2: The nurse vaccinated the children in the school.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "freeze \n Sentence1: Don't go outside wearing just a t-shirt; you'll freeze! \n Sentence2: Freeze the leftover food.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "transcript \n Sentence1: You can obtain a transcript of this radio program by sending a self-addressed envelope to the station. \n Sentence2: He read a transcript of the interrogation.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "try \n Sentence1: You are trying my patience. \n Sentence2: Try the yak butter.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "party \n Sentence1: The green party took 12% of the vote. \n Sentence2: In 1992 Perot tried to organize a third party at the national level.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "formation \n Sentence1: A formation of planes. \n Sentence2: A defensive formation.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "open \n Sentence1: Vermont will open elk hunting season next week. \n Sentence2: An opportunity opened up.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "clear \n Sentence1: Clear the leaves from the lawn. \n Sentence2: Clear snow from the road.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "pack \n Sentence1: You had better pack your swollen ankle with ice. \n Sentence2: Pack the books into the boxes.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "classify \n Sentence1: Should we classify \"make up\" as an idiom or as a phrasal verb? \n Sentence2: She classified the works as 'dangerous'.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "sign \n Sentence1: Their angry expressions were a clear sign they didn't want to talk. \n Sentence2: Those clouds show little sign of raining soon.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "develop \n Sentence1: Develop a passion for painting. \n Sentence2: Please develop this roll of film.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "structure \n Sentence1: Artists must study the structure of the human body. \n Sentence2: His lectures have no structure.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "admit \n Sentence1: To admit a serious thought into the mind. \n Sentence2: She admitted us.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "lot \n Sentence1: A lot of money. \n Sentence2: He bought a lot on the lake.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "position \n Sentence1: Chief of Staff is the second-highest position in the army. \n Sentence2: Atheists do not enjoy a favorable position in American life.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "part \n Sentence1: He wanted to feel a part of something bigger than himself. \n Sentence2: She played the part of Desdemona.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "shag \n Sentence1: The dog's woolly shag. \n Sentence2: He bought a shag rug.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "plug \n Sentence1: Plug the hole. \n Sentence2: He attempted to plug the leaks with some caulk.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "opening \n Sentence1: The opening received good critical reviews. \n Sentence2: John spends two hours a day studying openings, and another two hours studying endgames.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "count \n Sentence1: Can you count the books on your shelf? \n Sentence2: I can count my colleagues in the opposition.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "assume \n Sentence1: The gods assume human or animal form in these fables. \n Sentence2: She assumed indifference, even though she was seething with anger.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "spring \n Sentence1: I spent my spring holidays in Morocco. \n Sentence2: He will hold office until the spring of next year.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "have \n Sentence1: What do we have here? \n Sentence2: I have two years left.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "number \n Sentence1: The number of parameters is small. \n Sentence2: He had a number of chores to do.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "baseball \n Sentence1: He played baseball in high school. \n Sentence2: There was a baseball game on every empty lot.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "noise \n Sentence1: During the firework display that ended the gala the noise reached 98 decibels. \n Sentence2: He enjoyed the street noises.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "one \n Sentence1: He is the best one. \n Sentence2: Driver, noun: one who drives.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "split \n Sentence1: He was winning until he got a split in the tenth frame. \n Sentence2: They announced a two-for-one split of the common stock.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "suffer \n Sentence1: I've been suffering your insults for years. \n Sentence2: He suffered the penalty.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "home \n Sentence1: The teacher asked how many people made up his home. \n Sentence2: Deliver the package to my home.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "immolate \n Sentence1: Immolate the valuables at the temple. \n Sentence2: The Aztecs immolated human victims.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "effect \n Sentence1: The new law will come into effect on the first day of next year. \n Sentence2: The law is still in effect.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "bind \n Sentence1: Bind the books in leather. \n Sentence2: The hydrogen binds the oxygen.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "side \n Sentence1: He was on the heavy side. \n Sentence2: It brought out his better side.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "nick \n Sentence1: He's just been released from Shadwell nick prison after doing ten years for attempted murder. \n Sentence2: He was arrested and taken down to Sun Hill nick police station to be charged.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "tune \n Sentence1: The clarinet was out of tune. \n Sentence2: He can not sing in tune.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "think \n Sentence1: She didn't think to harm me. \n Sentence2: We thought to return early that night.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "today \n Sentence1: Did you see today's newspaper? \n Sentence2: Today is beautiful.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "remove \n Sentence1: Remove a threat. \n Sentence2: Doug removed the smudges.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "converge \n Sentence1: The lines converge at this point. \n Sentence2: The crowd converged on the movie star.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "death \n Sentence1: England scored a goal at the death to even the score at one all. \n Sentence2: It was the death of all his plans.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "hunger \n Sentence1: Hunger for affection. \n Sentence2: I have a hunger to win.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "unravel \n Sentence1: Stop playing with the seam of the tablecloth! You will unravel it. \n Sentence2: Mother couldn't unravel the ball of wool after the cat had played with it.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "fondle \n Sentence1: Mothers fondle their babies. \n Sentence2: They fondled in the back seat of the taxi.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "year \n Sentence1: In the year 1920. \n Sentence2: A normal year has 365 full days, but there are 366 days in a leap year.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "burn \n Sentence1: Burn garbage. \n Sentence2: The car burns only Diesel oil.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "locus \n Sentence1: The locus of points equidistant from a given point is a circle. \n Sentence2: A circle is the locus of points from which the distance to the center is a given value, the radius.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "scale \n Sentence1: The Holocaust was insanity on an enormous scale. \n Sentence2: There are some who question the scale of our ambitions.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "connect \n Sentence1: This computer will connect well to the network. \n Sentence2: The new railroad will connect the northern part of the state to the southern part.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "thing \n Sentence1: She has a thing about him. \n Sentence2: He has a thing about seafood.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "bed \n Sentence1: He searched for treasure on the ocean bed. \n Sentence2: There's a lot of trash on the bed of the river.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "shatter \n Sentence1: A high-pitched voice that could shatter glass. \n Sentence2: The old oak tree has been shattered by lightning.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "trick \n Sentence1: He played a trick on me. \n Sentence2: As the businessman rounded the corner, she thought, \"Here comes another trick.\".",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "recognition \n Sentence1: He was unable to make his motion because he couldn't get recognition by the chairman. \n Sentence2: Increasing recognition that diabetes frequently coexists with other chronic diseases.",
+            "output": [
+                "True."
+            ]
+        },
+        {
+            "input": "restore \n Sentence1: Restore law and order. \n Sentence2: He restored my lost faith in him by doing a good deed.",
+            "output": [
+                "False."
+            ]
+        },
+        {
+            "input": "avoid \n Sentence1: Her former friends now avoid her. \n Sentence2: We avoided the area.",
+            "output": [
+                "False."
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ]
+}
