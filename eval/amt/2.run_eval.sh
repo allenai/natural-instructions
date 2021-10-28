@@ -1,6 +1,6 @@
 # launch the experiment
 export AWS_PROFILE=alexandria-mturk
-amti --verbose create-batch mturk-specs/definition-likert start=400_end=600_max_size=5.jsonl . --live
+amti --verbose create-batch mturk-specs/definition-likert start=1_end=2_max_size=5.jsonl . --live
 
 # check the experiment status
 export BATCH=batch-...

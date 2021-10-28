@@ -138,19 +138,28 @@
         <p>
             <b>Instructions: </b> {{instructions}}
         </p>
+        <br>
+        <button onclick="myFunction()">Click here to hide/show negative examples</button>
+        <div id="myDIV">
         <div style=" background: aliceblue; margin: 10px">
             <h3>Positive (Desirable) Examples</h3>
             Here are examples of desirable behaviors for this task:
             <hr/>
             <div id="positive_examples" class="examples" style="width:1024px; margin:0 auto; display:block;"> </div>
         </div>
+        </div>
 
-        <div style=" background: aliceblue; margin: 10px">
+        <br>
+        <button onclick="myFunction2()">Click here to hide/show negative examples</button>
+        <div id="myDIV2">
+        <div style=" background: mistyrose; margin: 10px">
             <h3>Negative (Undesirable) Examples</h3>
             Here are several negative examples (undesirable outputs) for this task:
             <hr/>
             <div id="negative_examples" class="examples" style="width:1024px; margin:0 auto; display:block;"> </div>
         </div>
+        </div>
+        <br>
 
         Great! You are now ready to start the following examples!
     </div>
@@ -298,7 +307,7 @@
       return element.length > 3;
     });
     neg_ex_len = neg_ex_len.length
-    if (neg_ex_len > 0 and neg_ex_len < 5) {
+    if (neg_ex_len > 0 && neg_ex_len < 5) {
         negative_ex_inputs = negative_ex_inputs.slice(0,neg_ex_len)
         negative_ex_outputs = negative_ex_outputs.slice(0,neg_ex_len)
         negative_ex_explanations = negative_ex_explanations.slice(0,neg_ex_len)
@@ -334,7 +343,7 @@
       return element.length > 3;
     });
     pos_ex_len = pos_ex_len.length
-    if (pos_ex_len > 0 and pos_ex_len < 5) {
+    if (pos_ex_len > 0 && pos_ex_len < 5) {
         positive_ex_inputs = positive_ex_inputs.slice(0,pos_ex_len)
         positive_ex_outputs = positive_ex_outputs.slice(0,pos_ex_len)
         positive_ex_explanations = positive_ex_explanations.slice(0,pos_ex_len)
@@ -351,7 +360,7 @@
     ]
 
         positive_ex_inputs.forEach(function(ins, x){
-            var ex = `<h4>Example ${x}: </h4>
+            var ex = `<h4>Example ${x+1}: </h4>
                     <b>Input:</b> ${positive_ex_inputs[x]} <br>
                     <br>
                     <b>Output:</b> ${positive_ex_outputs[x]} <br>
@@ -363,7 +372,7 @@
         });
 
         negative_ex_inputs.forEach(function(ins, x){
-            var ex = `<h4>Example ${x}: </h4>
+            var ex = `<h4>Example ${x+1}: </h4>
                     <b>Input:</b> ${negative_ex_inputs[x]} <br>
                     <br>
                     <b>Output:</b> ${negative_ex_outputs[x]} <br>
@@ -417,6 +426,24 @@
             var y = `<input type="hidden" id="positive_ex_${x}_explanation" name="positive_ex_${x}_explanation" value="${positive_ex_explanations[x]}">`;
             $(`#hidden_variables`).append(y);
         });
+
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function myFunction2() {
+      var x = document.getElementById("myDIV2");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
 
 </script>
 </body>
