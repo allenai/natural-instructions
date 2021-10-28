@@ -849,6 +849,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task872_opus_xhosanavy_translation_eng_xhosa` | Translate a sentence in English to Xhosa | Translation
+`task873_opus_xhosanavy_translation_xhosa_eng` | Translate a sentence in Xhosa to English | Translation
+`task874_opus_xhosanavy_sr` |  Recognize primary subjects in sentences | Primary Subject Recognition
+`task875_emotion_classification` | Classify sentences by emotions | Classification
 `task877_kde4_translation` | Localizing English phrases to Hindi language | Translation
 `task878_kde4_translation` | Localizing English phrases to Telugu language | Translation
 `task879_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
