@@ -3,2218 +3,2225 @@
         "Mehrad Moradshahi"
     ],
     "Source": [
-        "Semantic Parser Localizer (https:\/\/github.com\/stanford-oval\/SPL)"
+        "Semantic Parser Localizer (https://github.com/stanford-oval/SPL)"
     ],
     "Categories": [
         "Translation"
     ],
-    "Input_language": "Japanese",
-    "Output_language": "English",
+    "Input_language": [
+        "Japanese"
+    ],
+    "Output_language": [
+        "English"
+    ],
     "Definition": "The provided file includes inquiries about restaurants in Japanese, and we ask you to translate those to English language. Please bear in mind the following guidelines while doing the translation: 1) We are looking for the most naturally written and formal form of each sentence in your language. We are *NOT* looking for colloquial forms of the sentence. We are looking for formal form which is how you would type your queries in a text-based virtual assistant. 2) The words between quotation marks *SHOULD NOT* be translated. We expect you to keep those values intact and include the quotation marks around them as well. 3) The fully capitalized words like DATE_0, or DURATION_0 *SHOULD NOT* be translated. Please keep them as they are in the translations. 4) Please do not localize measurement units like miles to kilometers during your translation. miles should be translated to its equivalent in your language. 6) Note the input is all lowercased except for fully capitalized special placeholders (e.g. NUMBER, DATE, TIME). Please do the same in your translations.",
     "Positive Examples": [
         {
-            "input": "近くに0つ星評価の\" italian \"レストランはある？",
+            "input": "\u8fd1\u304f\u306b0\u3064\u661f\u8a55\u4fa1\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308b\uff1f",
             "output": "are there any \" italian \" restaurants nearby with 0 star reviews ?",
             "explanation": "The translation correctly preserves \" italian \" entity and is accurate"
         },
         {
-            "input": "そのレストランにはどんな料理がある？",
+            "input": "\u305d\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306b\u306f\u3069\u3093\u306a\u6599\u7406\u304c\u3042\u308b\uff1f",
             "output": "what kind of food does this restaurant serve ?",
             "explanation": "The translation is fluent, formal, and accurate"
         },
         {
-            "input": "最寄りの\" chinese \"レストランの電話番号と場所は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u96fb\u8a71\u756a\u53f7\u3068\u5834\u6240\u306f\uff1f",
             "output": "what is the telephone number and location of the nearest \" chinese \" restaurant ?",
             "explanation": "The translation correctly preserves \" chinese \" entity. It's also fluent, correct, and lowercased."
         }
     ],
     "Negative Examples": [
         {
-            "input": "最寄りの\" wendy 's \"は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" wendy 's \"\u306f\uff1f",
             "output": "where is the closest wendy 's ?",
             "explanation": "Translation contain the entity \" wendy 's \" but quotation marks are dropped"
         },
         {
-            "input": "最寄りの\" mcdonald 's \"を見せて。",
+            "input": "\u6700\u5bc4\u308a\u306e\" mcdonald 's \"\u3092\u898b\u305b\u3066\u3002",
             "output": "show me the closest \" McDonald's \"",
             "explanation": "The output is not lowercased"
         },
         {
-            "input": "\" jennifer \"が書いたレビューの情報を全部見せて。",
+            "input": "\" jennifer \"\u304c\u66f8\u3044\u305f\u30ec\u30d3\u30e5\u30fc\u306e\u60c5\u5831\u3092\u5168\u90e8\u898b\u305b\u3066\u3002",
             "output": "display all authored by \" jennifer \" .",
-            "explanation": "Translation of 'レビューの情報' is omitted from the output"
+            "explanation": "Translation of '\u30ec\u30d3\u30e5\u30fc\u306e\u60c5\u5831' is omitted from the output"
         },
         {
-            "input": "\" noodle nirvana \"の電話番号は？",
-            "output": "what is the phone number for \" ヌードルニルヴァーナ \" ?",
-            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" ヌードルニルヴァーナ \" instead of being kept intact"
+            "input": "\" noodle nirvana \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
+            "output": "what is the phone number for \" \u30cc\u30fc\u30c9\u30eb\u30cb\u30eb\u30f4\u30a1\u30fc\u30ca \" ?",
+            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" \u30cc\u30fc\u30c9\u30eb\u30cb\u30eb\u30f4\u30a1\u30fc\u30ca \" instead of being kept intact"
         },
         {
-            "input": "\" san francisco \"にある\" gold mirror \"の評価は？",
+            "input": "\" san francisco \"\u306b\u3042\u308b\" gold mirror \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": "can you tell me the rating of \" san francisco \" in \" gold mirror \" ?",
             "explanation": "The position of entities is switched in the output"
         }
     ],
     "Instances": [
         {
-            "input": "5つ星以上の\" mexican \"レストランを探して。",
+            "input": "5\u3064\u661f\u4ee5\u4e0a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "find a \" mexican \" restaurant with 5 or more stars ."
             ]
         },
         {
-            "input": "8つ星以上の評価の\" vegetarian \"レストランを検索して。",
+            "input": "8\u3064\u661f\u4ee5\u4e0a\u306e\u8a55\u4fa1\u306e\" vegetarian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" vegetarian \" restaurants with 8 star reviews or better ."
             ]
         },
         {
-            "input": "少なくとも0件のレビューがある\" italian \"レストランを検索して。",
+            "input": "\u5c11\u306a\u304f\u3068\u30820\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" italian \" restaurants with at least 0 reviews ."
             ]
         },
         {
-            "input": "9つ星以上の評価の\" italian \"レストランを検索して。",
+            "input": "9\u3064\u661f\u4ee5\u4e0a\u306e\u8a55\u4fa1\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "list \" italian \" restaurants with higher ratings that 9 stars ."
             ]
         },
         {
-            "input": "最寄りの\" japanese \"レストランを探して。",
+            "input": "\u6700\u5bc4\u308a\u306e\" japanese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "look for a \" japanese \" restaurant that is the closest to me ."
             ]
         },
         {
-            "input": "\" sherman in muskegon , mi \"にある\" arby 's \"の電話番号は？",
+            "input": "\" sherman in muskegon , mi \"\u306b\u3042\u308b\" arby 's \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what 's the telephone number of the \" arby 's \" on \" sherman in muskegon , mi \" ?"
             ]
         },
         {
-            "input": "6つ星以上の評価の最寄りの\" italian \"レストランは？",
+            "input": "6\u3064\u661f\u4ee5\u4e0a\u306e\u8a55\u4fa1\u306e\u6700\u5bc4\u308a\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what is the closest \" italian \" restaurant with at least a 6 star rating ?"
             ]
         },
         {
-            "input": "最寄りの\" coffee bean \"は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" coffee bean \"\u306f\uff1f",
             "output": [
                 "what is the closest \" coffee bean \" ?"
             ]
         },
         {
-            "input": "最寄りの\" mexican \"レストランは？",
+            "input": "\u6700\u5bc4\u308a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "where is the nearest \" mexican \" restaurant ?"
             ]
         },
         {
-            "input": "\" antoine waring \"が書いた\" harry 's seafood grill \"のレビューを見せて。",
+            "input": "\" antoine waring \"\u304c\u66f8\u3044\u305f\" harry 's seafood grill \"\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me the review for \" harry 's seafood grill \" by \" antoine waring \""
             ]
         },
         {
-            "input": "\" pizza hut \"の評価を教えて。",
+            "input": "\" pizza hut \"\u306e\u8a55\u4fa1\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "how well is \" pizza hut \" rated ?"
             ]
         },
         {
-            "input": "その\" mcdonald ' \"の評価は？",
+            "input": "\u305d\u306e\" mcdonald ' \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the rating of that \" mcdonald ' \" ?"
             ]
         },
         {
-            "input": "最寄りの\" italian \"レストランはどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\uff1f",
             "output": [
                 "where is the nearest \" italian \" restaurant ."
             ]
         },
         {
-            "input": "0件以上のレビューがある\" dallas \"の\" italian \"レストランを検索して。",
+            "input": "0\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" dallas \"\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for an \" italian \" restaurant in \" dallas \" with at least 0 reviews ."
             ]
         },
         {
-            "input": "\" huntersville \"の\" la unica \"の評価は？",
+            "input": "\" huntersville \"\u306e\" la unica \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the rating for the \" la unica \" in \" huntersville \" ?"
             ]
         },
         {
-            "input": "\" olive garden \"の評価は？",
+            "input": "\" olive garden \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the rating of \" olive garden \" ?"
             ]
         },
         {
-            "input": "最寄りの\" chinese \"レストランの場所と名前を教えて。",
+            "input": "\u6700\u5bc4\u308a\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u5834\u6240\u3068\u540d\u524d\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "show me the location and name of the nearest \" chinese \" restaurant ."
             ]
         },
         {
-            "input": "少なくとも10つ星の最寄りの\" starbucks \"を見せて。",
+            "input": "\u5c11\u306a\u304f\u3068\u308210\u3064\u661f\u306e\u6700\u5bc4\u308a\u306e\" starbucks \"\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me the closest \" starbucks \" with at least 10 stars ."
             ]
         },
         {
-            "input": "\" 49503 \"のzipコード内の2つ星レストランを検索して。",
+            "input": "\" 49503 \"\u306ezip\u30b3\u30fc\u30c9\u5185\u306e2\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for 2 star restaurants in the \" 49503 \" zip code ."
             ]
         },
         {
-            "input": "\" noodle express \"の価格帯は？",
+            "input": "\" noodle express \"\u306e\u4fa1\u683c\u5e2f\u306f\uff1f",
             "output": [
                 "what is the price range for \" noodle express \" ?"
             ]
         },
         {
-            "input": "4件以上のレビューがある0つ星の\" mexican \"レストランは？",
+            "input": "4\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b0\u3064\u661f\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "show me 0 star \" mexican \" restaurants that have more than 4 reviews ."
             ]
         },
         {
-            "input": "付近の3つ星レストランを全部見せて。",
+            "input": "\u4ed8\u8fd1\u306e3\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u5168\u90e8\u898b\u305b\u3066\u3002",
             "output": [
                 "can you show me all the 3 star restaurants in the area ?"
             ]
         },
         {
-            "input": "最寄りの\" wendy 's \"の電話番号は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" wendy 's \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what is the phone number for the nearest \" wendy 's \" ?"
             ]
         },
         {
-            "input": "このレストランの評価とレビュー件数は？",
+            "input": "\u3053\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u8a55\u4fa1\u3068\u30ec\u30d3\u30e5\u30fc\u4ef6\u6570\u306f\uff1f",
             "output": [
                 "what is the rating for this restaurant and how many reviews does it have ?"
             ]
         },
         {
-            "input": "\" madison avenue \"にあるのはどんな\" chinese \"レストランか見せて。",
+            "input": "\" madison avenue \"\u306b\u3042\u308b\u306e\u306f\u3069\u3093\u306a\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u304b\u898b\u305b\u3066\u3002",
             "output": [
                 "i want to see what \" chinese \" restaurants are on \" madison avenue \" ."
             ]
         },
         {
-            "input": "\" pizza hut \"で\" mike \"に投稿したレビューの数は？",
+            "input": "\" pizza hut \"\u3067\" mike \"\u306b\u6295\u7a3f\u3057\u305f\u30ec\u30d3\u30e5\u30fc\u306e\u6570\u306f\uff1f",
             "output": [
                 "how many reviews has \" mike \" written about \" pizza hut \" ?"
             ]
         },
         {
-            "input": "少なくとも7つ星の\" mexican \"レストランを探して。",
+            "input": "\u5c11\u306a\u304f\u3068\u30827\u3064\u661f\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "find \" mexican \" restaurants with at least 7 star rating ."
             ]
         },
         {
-            "input": "\" paul \"がdate_0に書いたレビューをすべて見せて。",
+            "input": "\" paul \"\u304cdate_0\u306b\u66f8\u3044\u305f\u30ec\u30d3\u30e5\u30fc\u3092\u3059\u3079\u3066\u898b\u305b\u3066\u3002",
             "output": [
                 "show me all reviews written by \" paul \" on date_0 ."
             ]
         },
         {
-            "input": "\" pizza \"レストランの\" tina \"が投稿した4つ星レビューを見せて。",
+            "input": "\" pizza \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\" tina \"\u304c\u6295\u7a3f\u3057\u305f4\u3064\u661f\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show \" tina \" 's 4 star reviews of \" pizza \" joints ."
             ]
         },
         {
-            "input": "近くに5つ星の\" mexican \"レストランはある？",
+            "input": "\u8fd1\u304f\u306b5\u3064\u661f\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308b\uff1f",
             "output": [
                 "are there any 5 star \" mexican \" restaurants nearby ?"
             ]
         },
         {
-            "input": "少なくとも10件のレビューがある\" mexican \"レストランを検索して。",
+            "input": "\u5c11\u306a\u304f\u3068\u308210\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" mexican \" restaurants with at least 10 reviews ."
             ]
         },
         {
-            "input": "少なくとも4件のレビューがある\" italian \"料理のレストランを探して。",
+            "input": "\u5c11\u306a\u304f\u3068\u30824\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" italian \"\u6599\u7406\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "find a restaurant that serves \" italian \" food with at least 4 reviews ."
             ]
         },
         {
-            "input": "3つ星評価の最寄りの\" mexican \"レストランは？",
+            "input": "3\u3064\u661f\u8a55\u4fa1\u306e\u6700\u5bc4\u308a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what is the nearest \" mexican \" restaurant with a 3 star rating ?"
             ]
         },
         {
-            "input": "最寄りの0つ星の\" coffee \"屋の電話番号を教えて。",
+            "input": "\u6700\u5bc4\u308a\u306e0\u3064\u661f\u306e\" coffee \"\u5c4b\u306e\u96fb\u8a71\u756a\u53f7\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "can you give me the phone number for the nearest 0 star \" coffee \" house ?"
             ]
         },
         {
-            "input": "\" gainesville , fl \"にある\" panda express \"の評価は？",
+            "input": "\" gainesville , fl \"\u306b\u3042\u308b\" panda express \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the \" panda express \" in \" gainesville , fl \" rated ?"
             ]
         },
         {
-            "input": "\" tilted kilt \"の星評価は？",
+            "input": "\" tilted kilt \"\u306e\u661f\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the star rating for \" tilted kilt \" ?"
             ]
         },
         {
-            "input": "このレストランの最新レビューとスコアは？",
+            "input": "\u3053\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u6700\u65b0\u30ec\u30d3\u30e5\u30fc\u3068\u30b9\u30b3\u30a2\u306f\uff1f",
             "output": [
                 "what are the latest reviews and review scores for this restaurant ?"
             ]
         },
         {
-            "input": "最寄りの\" starbucks \"はどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" starbucks \"\u306f\u3069\u3053\uff1f",
             "output": [
                 "where is the closest \" starbucks \" ?"
             ]
         },
         {
-            "input": "近辺の9つ星の\" vegan \"レストランを検索して。",
+            "input": "\u8fd1\u8fba\u306e9\u3064\u661f\u306e\" vegan \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for all 9 star , \" vegan \" restaurants in the area ."
             ]
         },
         {
-            "input": "最寄りの\" pizza hut \"はどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" pizza hut \"\u306f\u3069\u3053\uff1f",
             "output": [
                 "can you tell me where the closest \" pizza hut \" is ?"
             ]
         },
         {
-            "input": "\" tgi fridays \"の評価は？",
+            "input": "\" tgi fridays \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the rating of \" tgi fridays \" ?"
             ]
         },
         {
-            "input": "少なくとも7件のレビューがある\" vegan \"レストランの一覧を見せて。",
+            "input": "\u5c11\u306a\u304f\u3068\u30827\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" vegan \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4e00\u89a7\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me a list of \" vegan \" restaurants with at least 7 reviews ."
             ]
         },
         {
-            "input": "最寄りの\" italian \"レストランの情報を見せて。",
+            "input": "\u6700\u5bc4\u308a\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u60c5\u5831\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "can i read the description of the closest \" italian \" restaurant ?"
             ]
         },
         {
-            "input": "\" pizza ranch \"の価格帯は？",
+            "input": "\" pizza ranch \"\u306e\u4fa1\u683c\u5e2f\u306f\uff1f",
             "output": [
                 "what is the price range for \" pizza ranch \" ?"
             ]
         },
         {
-            "input": "最寄りの9つ星レストランの情報を見せて。",
+            "input": "\u6700\u5bc4\u308a\u306e9\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u60c5\u5831\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show description of the closest 9 star restaurant ."
             ]
         },
         {
-            "input": "最寄りの\" chinese \"レストランの電話番号は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what is the telephone number for the nearest \" chinese \" restaurant ?"
             ]
         },
         {
-            "input": "近辺で最高評価のレストランは？",
+            "input": "\u8fd1\u8fba\u3067\u6700\u9ad8\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what is the highest rated restaurant in this area ?"
             ]
         },
         {
-            "input": "\" lakeland , fl \"で少なくとも3件のレビューがある\" vegan \"レストランを検索して。",
+            "input": "\" lakeland , fl \"\u3067\u5c11\u306a\u304f\u3068\u30823\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" vegan \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" vegan \" restaurants in \" lakeland , fl \" with at least 3 reviews"
             ]
         },
         {
-            "input": "\" art 's deli \"か\" carnegie deli \"まで距離はどれくらい？",
+            "input": "\" art 's deli \"\u304b\" carnegie deli \"\u307e\u3067\u8ddd\u96e2\u306f\u3069\u308c\u304f\u3089\u3044\uff1f",
             "output": [
                 "how close am i to \" art 's deli \" or \" carnegie deli \" ?"
             ]
         },
         {
-            "input": "3マイル圏内で2つ星評価の\" chinese \"レストランを全部見せて。",
+            "input": "3\u30de\u30a4\u30eb\u570f\u5185\u30672\u3064\u661f\u8a55\u4fa1\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u5168\u90e8\u898b\u305b\u3066\u3002",
             "output": [
                 "show me all \" chinese \" restaurants with 2 star ratings within 3 miles ."
             ]
         },
         {
-            "input": "近くの\" dunkin donuts \"の住所は？",
+            "input": "\u8fd1\u304f\u306e\" dunkin donuts \"\u306e\u4f4f\u6240\u306f\uff1f",
             "output": [
                 "what is the address of the \" dunkin donuts \" closet to me ?"
             ]
         },
         {
-            "input": "\" scottsdale , arizona \"の\" flo 's \" \" chinese \"レストランの場所を教えて。",
+            "input": "\" scottsdale , arizona \"\u306e\" flo 's \" \" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u5834\u6240\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "tell me the location of \" flo 's \" \" chinese \" restaurant in \" scottsdale , arizona \" ."
             ]
         },
         {
-            "input": "\" krispy kreme \"の電話番号は？",
+            "input": "\" krispy kreme \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what is the telephone number for \" krispy kreme \" ?"
             ]
         },
         {
-            "input": "最寄りの\" boston market \"はどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" boston market \"\u306f\u3069\u3053\uff1f",
             "output": [
                 "where is the nearest \" boston market \" ?"
             ]
         },
         {
-            "input": "最寄りの\" olive garden \"までの距離は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" olive garden \"\u307e\u3067\u306e\u8ddd\u96e2\u306f\uff1f",
             "output": [
                 "how far away is the closest \" olive garden \" ?"
             ]
         },
         {
-            "input": "\" grand rapids , michigan \"にある\" panda express \"の住所は？",
+            "input": "\" grand rapids , michigan \"\u306b\u3042\u308b\" panda express \"\u306e\u4f4f\u6240\u306f\uff1f",
             "output": [
                 "what is the address of the \" panda express \" in \" grand rapids , michigan \" ?"
             ]
         },
         {
-            "input": "少なくとも10つ星のレビューがある最寄りの\" mexican \"レストランはどこ？",
+            "input": "\u5c11\u306a\u304f\u3068\u308210\u3064\u661f\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u6700\u5bc4\u308a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\uff1f",
             "output": [
                 "where is the nearest \" mexican \" restaurant with at least a 10 star review ?"
             ]
         },
         {
-            "input": "\" roanoke , va \"にある2の最高評価の\" italian \"レストランの価格帯は？",
+            "input": "\" roanoke , va \"\u306b\u3042\u308b2\u306e\u6700\u9ad8\u8a55\u4fa1\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4fa1\u683c\u5e2f\u306f\uff1f",
             "output": [
                 "what are the prices for the 2 highest rated \" italian \" restaurants in \" roanoke , va \" ?"
             ]
         },
         {
-            "input": "最寄りの\" jimmy john 's \"のレビューを見せて。",
+            "input": "\u6700\u5bc4\u308a\u306e\" jimmy john 's \"\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "let me see the reviews for the \" jimmy john 's \" nearest to me ?"
             ]
         },
         {
-            "input": "8つ星の\" mexican \"レストランは？",
+            "input": "8\u3064\u661f\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what is a 8 star \" mexican \" restaurant ?"
             ]
         },
         {
-            "input": "近くにある7つ星のレビュー評価のレストランは？",
+            "input": "\u8fd1\u304f\u306b\u3042\u308b7\u3064\u661f\u306e\u30ec\u30d3\u30e5\u30fc\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what places close to me have 7 star reviews ?"
             ]
         },
         {
-            "input": "\" dallas \"にある\" italian \"料理の10つ星評価のレストランは？",
+            "input": "\" dallas \"\u306b\u3042\u308b\" italian \"\u6599\u7406\u306e10\u3064\u661f\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "search for 10 star rated \" italian \" food in \" dallas \" ."
             ]
         },
         {
-            "input": "\" john smith \"が書いた9つ星レビューを見せて。",
+            "input": "\" john smith \"\u304c\u66f8\u3044\u305f9\u3064\u661f\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "can you show me 9 star reviews written by \" john smith \" ."
             ]
         },
         {
-            "input": "\" peet 's coffee \"の1つ星レビューはいくつある？",
+            "input": "\" peet 's coffee \"\u306e1\u3064\u661f\u30ec\u30d3\u30e5\u30fc\u306f\u3044\u304f\u3064\u3042\u308b\uff1f",
             "output": [
                 "how many 1 star reviews are there for \" peet 's coffee \" ?"
             ]
         },
         {
-            "input": "\" sheila \"が書いた1つ星レビューを全部見せて。",
+            "input": "\" sheila \"\u304c\u66f8\u3044\u305f1\u3064\u661f\u30ec\u30d3\u30e5\u30fc\u3092\u5168\u90e8\u898b\u305b\u3066\u3002",
             "output": [
                 "i want to see all of the 1 star reviews that \" sheila \" wrote ."
             ]
         },
         {
-            "input": "\" italian \"レストランの場所を全て見せて。",
+            "input": "\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u5834\u6240\u3092\u5168\u3066\u898b\u305b\u3066\u3002",
             "output": [
                 "locate all \" italian \" restaurants ."
             ]
         },
         {
-            "input": "4の評価のレストランを探して。",
+            "input": "4\u306e\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "can you look for a restaurant with a rating of 4 ?"
             ]
         },
         {
-            "input": "最低でも8件のレビューがあるレストランを予約したい。",
+            "input": "\u6700\u4f4e\u3067\u30828\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e88\u7d04\u3057\u305f\u3044\u3002",
             "output": [
                 "looking to book a restaurant with at least 8 reviews ."
             ]
         },
         {
-            "input": "\" bayshore bean \" を検索。",
+            "input": "\" bayshore bean \" \u3092\u691c\u7d22\u3002",
             "output": [
                 "search for \" bayshore bean \" ."
             ]
         },
         {
-            "input": "\" vietnamese \" レストランを表示。",
+            "input": "\" vietnamese \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me \" vietnamese \" restaurants ."
             ]
         },
         {
-            "input": "\" bakeries \" をすべて検索。",
+            "input": "\" bakeries \" \u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "find all the \" bakeries \" ."
             ]
         },
         {
-            "input": "5 つ星のレストランだけをすべて検索。",
+            "input": "5 \u3064\u661f\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3060\u3051\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "show me all restaurants rated with exactly 5 stars ."
             ]
         },
         {
-            "input": "\" los compadres \" はどこですか？",
+            "input": "\" los compadres \" \u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "where is \" los compadres \" ?"
             ]
         },
         {
-            "input": "\" thai \" レストランを検索。",
+            "input": "\" thai \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "find \" thai \" restaurants ."
             ]
         },
         {
-            "input": "\" cook out \" を表示。",
+            "input": "\" cook out \" \u3092\u8868\u793a\u3002",
             "output": [
                 "show me \" cook out \" ."
             ]
         },
         {
-            "input": "10 件を超えるレビューがあるレストランを検索。",
+            "input": "10 \u4ef6\u3092\u8d85\u3048\u308b\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "find restaurants with more than 10 reviews ."
             ]
         },
         {
-            "input": "\" dallas nc \" の \" lone star steakhouse \" には既にレビューがありますか？",
+            "input": "\" dallas nc \" \u306e \" lone star steakhouse \" \u306b\u306f\u65e2\u306b\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "does the \" lone star steakhouse \" in \" dallas nc \" have a review yet ?"
             ]
         },
         {
-            "input": "\" j dog \" の評価を見せてもらえますか？",
+            "input": "\" j dog \" \u306e\u8a55\u4fa1\u3092\u898b\u305b\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f",
             "output": [
                 "can you show me the ratings for \" j dog \" ?"
             ]
         },
         {
-            "input": "現在地に最も近いレストランを調べてもらえますか？",
+            "input": "\u73fe\u5728\u5730\u306b\u6700\u3082\u8fd1\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8abf\u3079\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f",
             "output": [
                 "can you find the restaurant nearest to my location ?"
             ]
         },
         {
-            "input": "\" mexican \" レストランを探してください。",
+            "input": "\" mexican \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "look up a \" mexican \" restaurant for me ."
             ]
         },
         {
-            "input": "\" main st . \" にあるレストランを探してください。",
+            "input": "\" main st . \" \u306b\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find me a restaurant on \" main st . \" please ."
             ]
         },
         {
-            "input": "最も評価が高いレストランを教えてください。",
+            "input": "\u6700\u3082\u8a55\u4fa1\u304c\u9ad8\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me the highest rated restaurant please ."
             ]
         },
         {
-            "input": "レビュー件数が一番多いレストランはどこですか？",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u4ef6\u6570\u304c\u4e00\u756a\u591a\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what restaurant has the highest review count ?"
             ]
         },
         {
-            "input": "\" jeff weisnear \" がレビューを書いたレストランはどこですか？",
+            "input": "\" jeff weisnear \" \u304c\u30ec\u30d3\u30e5\u30fc\u3092\u66f8\u3044\u305f\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what restaurant does \" jeff weisnear \" review for ?"
             ]
         },
         {
-            "input": "\" korean bbq \" レストランを検索。",
+            "input": "\" korean bbq \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "search for \" korean bbq \" restaurants ."
             ]
         },
         {
-            "input": "このレストランには何件のレビューがありますか？",
+            "input": "\u3053\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306b\u306f\u4f55\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "how many reviews does the place have ?"
             ]
         },
         {
-            "input": "最寄りの \" chinese \" レストランはどこですか？",
+            "input": "\u6700\u5bc4\u308a\u306e \" chinese \" \u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "where is the nearest \" chinese \" place ?"
             ]
         },
         {
-            "input": "近くに食事ができるところは何件ありますか？",
+            "input": "\u8fd1\u304f\u306b\u98df\u4e8b\u304c\u3067\u304d\u308b\u3068\u3053\u308d\u306f\u4f55\u4ef6\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "how many places to eat are nearby ?"
             ]
         },
         {
-            "input": "7 つ星未満のレストランをすべて表示。",
+            "input": "7 \u3064\u661f\u672a\u6e80\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a\u3002",
             "output": [
                 "show all the restaurants below 7 stars ."
             ]
         },
         {
-            "input": "\" italian \" レストランをすべて教えてください。",
+            "input": "\" italian \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "give me all the \" italian \" places ."
             ]
         },
         {
-            "input": "評価が 0 点未満のレストランを検索。",
+            "input": "\u8a55\u4fa1\u304c 0 \u70b9\u672a\u6e80\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "find restaurants rated lower than 0 ."
             ]
         },
         {
-            "input": "\" mexican \" レストランを検索。",
+            "input": "\" mexican \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "find \" mexican \" restaurants ."
             ]
         },
         {
-            "input": "\" french \" レストランを表示。",
+            "input": "\" french \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me \" french \" restaurants ."
             ]
         },
         {
-            "input": "\" le pain quotidien \" を表示。",
+            "input": "\" le pain quotidien \" \u3092\u8868\u793a\u3002",
             "output": [
                 "show me \" le pain quotidien \" ."
             ]
         },
         {
-            "input": "3 件を超えるレビューがあるレストランを検索。",
+            "input": "3 \u4ef6\u3092\u8d85\u3048\u308b\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "find restaurants with more than 3 reviews ."
             ]
         },
         {
-            "input": "\" china king \" という名前のレストランはありますか？",
+            "input": "\" china king \" \u3068\u3044\u3046\u540d\u524d\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "is there a restaurant named \" china king \" ?"
             ]
         },
         {
-            "input": "このエリアで評価が一番低いダイナーはどこですか？",
+            "input": "\u3053\u306e\u30a8\u30ea\u30a2\u3067\u8a55\u4fa1\u304c\u4e00\u756a\u4f4e\u3044\u30c0\u30a4\u30ca\u30fc\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what 's the lowest rated diner in my area ?"
             ]
         },
         {
-            "input": "最も評価が高いレストランはどこですか？",
+            "input": "\u6700\u3082\u8a55\u4fa1\u304c\u9ad8\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what is the highest rated restaurant ?"
             ]
         },
         {
-            "input": "近くに \" japanese \" レストランはありますか？",
+            "input": "\u8fd1\u304f\u306b \" japanese \" \u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "is there a \" japanese \" restaurant nearby ?"
             ]
         },
         {
-            "input": "最寄りのレストランの住所はどこですか？",
+            "input": "\u6700\u5bc4\u308a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4f4f\u6240\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what 's the address of the closest restaurant ?"
             ]
         },
         {
-            "input": "\" thai kitchen \" はどこですか？",
+            "input": "\" thai kitchen \" \u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "where is \" thai kitchen \" ?"
             ]
         },
         {
-            "input": "\" mexican \" レストランを表示",
+            "input": "\" mexican \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a",
             "output": [
                 "show me \" mexican \" restaurants"
             ]
         },
         {
-            "input": "7 つ星レストランをすべて表示",
+            "input": "7 \u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a",
             "output": [
                 "show me all 7 star restaurants"
             ]
         },
         {
-            "input": "\" main street \" のレストランを表示",
+            "input": "\" main street \" \u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a",
             "output": [
                 "show me \" main street \" restaurants"
             ]
         },
         {
-            "input": "\" thai corner \"の住所を表示",
+            "input": "\" thai corner \"\u306e\u4f4f\u6240\u3092\u8868\u793a",
             "output": [
                 "show the address of \" thai corner \""
             ]
         },
         {
-            "input": "最寄りの \" wendy 's \" レストランを検索？",
+            "input": "\u6700\u5bc4\u308a\u306e \" wendy 's \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\uff1f",
             "output": [
                 "search for the nearest \" wendy 's \" restaurant ?"
             ]
         },
         {
-            "input": "\" steak house \" レストランを検索？",
+            "input": "\" steak house \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\uff1f",
             "output": [
                 "find a \" steak house \" restaurant ?"
             ]
         },
         {
-            "input": "\" mediterranean \" レストランを表示？",
+            "input": "\" mediterranean \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\uff1f",
             "output": [
                 "show me \" mediterranean \" restaurants ?"
             ]
         },
         {
-            "input": "最も評価が高いレストランを表示",
+            "input": "\u6700\u3082\u8a55\u4fa1\u304c\u9ad8\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a",
             "output": [
                 "show me the best rated restaurants"
             ]
         },
         {
-            "input": "近くのレストランを表示",
+            "input": "\u8fd1\u304f\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a",
             "output": [
                 "show me restaurants near me"
             ]
         },
         {
-            "input": "最もレビューが多いレストランを表示",
+            "input": "\u6700\u3082\u30ec\u30d3\u30e5\u30fc\u304c\u591a\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a",
             "output": [
                 "show me restaurants with the most reviews"
             ]
         },
         {
-            "input": "\" pizza \" 屋を検索",
+            "input": "\" pizza \" \u5c4b\u3092\u691c\u7d22",
             "output": [
                 "find me \" pizza \" places"
             ]
         },
         {
-            "input": "\" pizza \" が食べられるところを検索。",
+            "input": "\" pizza \" \u304c\u98df\u3079\u3089\u308c\u308b\u3068\u3053\u308d\u3092\u691c\u7d22\u3002",
             "output": [
                 "find a \" pizza \" place ."
             ]
         },
         {
-            "input": "\" sushi \" 屋を表示。",
+            "input": "\" sushi \" \u5c4b\u3092\u8868\u793a\u3002",
             "output": [
                 "show me a \" sushi \" restaurant ."
             ]
         },
         {
-            "input": "0 つ星の \" bbq \" レストランをすべて検索。",
+            "input": "0 \u3064\u661f\u306e \" bbq \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "find all 0 star \" bbq \" places ."
             ]
         },
         {
-            "input": "\" italian \" レストランを表示。",
+            "input": "\" italian \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me \" italian \" restaurants ."
             ]
         },
         {
-            "input": "0 つ星のダイナーをすべて検索。",
+            "input": "0 \u3064\u661f\u306e\u30c0\u30a4\u30ca\u30fc\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "find all 0 star diners ."
             ]
         },
         {
-            "input": "評価が 2 点以上のレストランを見せてください。",
+            "input": "\u8a55\u4fa1\u304c 2 \u70b9\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i 'd like to see restaurants with at least a rating of 2 ."
             ]
         },
         {
-            "input": "\" italian \" レストランを見せてもらえますか？",
+            "input": "\" italian \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f",
             "output": [
                 "can you show me \" italian \" restaurants ?"
             ]
         },
         {
-            "input": "最も評価が高い \" mexican \" レストランはいくらぐらいしますか？",
+            "input": "\u6700\u3082\u8a55\u4fa1\u304c\u9ad8\u3044 \" mexican \" \u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3044\u304f\u3089\u3050\u3089\u3044\u3057\u307e\u3059\u304b\uff1f",
             "output": [
                 "what is the price range for the top rated \" mexican \" restaurant ?"
             ]
         },
         {
-            "input": "\" mod pizza \" を調べてください。",
+            "input": "\" mod pizza \" \u3092\u8abf\u3079\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find \" mod pizza \" for me ."
             ]
         },
         {
-            "input": "\" first wok \" の最も新しいレビューは誰が書いたものですか？",
+            "input": "\" first wok \" \u306e\u6700\u3082\u65b0\u3057\u3044\u30ec\u30d3\u30e5\u30fc\u306f\u8ab0\u304c\u66f8\u3044\u305f\u3082\u306e\u3067\u3059\u304b\uff1f",
             "output": [
                 "who wrote the latest review for \" first wok \" ?"
             ]
         },
         {
-            "input": "評価が 0 点のレストランを表示。",
+            "input": "\u8a55\u4fa1\u304c 0 \u70b9\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me restaurants with a rating of 0 ."
             ]
         },
         {
-            "input": "\" coffee \" ショップを検索。",
+            "input": "\" coffee \" \u30b7\u30e7\u30c3\u30d7\u3092\u691c\u7d22\u3002",
             "output": [
                 "find me some \" coffee \" shops ."
             ]
         },
         {
-            "input": "\" hamburger \" チェーンを検索。",
+            "input": "\" hamburger \" \u30c1\u30a7\u30fc\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "search for \" hamburger \" joints ."
             ]
         },
         {
-            "input": "\" mark \" がレビューしたレストランはどこですか？",
+            "input": "\" mark \" \u304c\u30ec\u30d3\u30e5\u30fc\u3057\u305f\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what are the restaurants reviewed by \" mark \" ?"
             ]
         },
         {
-            "input": "評価が 4 点よりも高いレストランをすべて表示。",
+            "input": "\u8a55\u4fa1\u304c 4 \u70b9\u3088\u308a\u3082\u9ad8\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a\u3002",
             "output": [
                 "show me all the restaurants with a rating of more than 4 ."
             ]
         },
         {
-            "input": "近くの \"  american \" レストランを検索。",
+            "input": "\u8fd1\u304f\u306e \"  american \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "look for \" american \" restaurants close by ."
             ]
         },
         {
-            "input": "\" mexican \" レストランをすべて表示",
+            "input": "\" mexican \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a",
             "output": [
                 "show me any \" mexican \" restaurant ."
             ]
         },
         {
-            "input": "評価が 8 点くらいのレストランをすべて検索。",
+            "input": "\u8a55\u4fa1\u304c 8 \u70b9\u304f\u3089\u3044\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "find all of the restaurants that have a rating about 8 ."
             ]
         },
         {
-            "input": "\" los cabos \" を探してください。",
+            "input": "\" los cabos \" \u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "locate \" los cabos \" for me ."
             ]
         },
         {
-            "input": "\" red robin \" の郵便番号を教えてください。",
+            "input": "\" red robin \" \u306e\u90f5\u4fbf\u756a\u53f7\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "tell me the postal code for \" red robin \" ."
             ]
         },
         {
-            "input": "\" thai \" レストランを一覧表示。",
+            "input": "\" thai \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e00\u89a7\u8868\u793a\u3002",
             "output": [
                 "display a list of \" thai \" restaurants ."
             ]
         },
         {
-            "input": "ダウンタウンエリアのレストランをすべて検索。",
+            "input": "\u30c0\u30a6\u30f3\u30bf\u30a6\u30f3\u30a8\u30ea\u30a2\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "find all restaurants in my downtown area ."
             ]
         },
         {
-            "input": "8 件以上のレビューがあるレストランを表示。",
+            "input": "8 \u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "display restaurants with at least 8 reviews ."
             ]
         },
         {
-            "input": "\" john smith \" によるレストランレビューをすべて表示。",
+            "input": "\" john smith \" \u306b\u3088\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u30ec\u30d3\u30e5\u30fc\u3092\u3059\u3079\u3066\u8868\u793a\u3002",
             "output": [
                 "show me all restaurant reviews by \" john smith \" ."
             ]
         },
         {
-            "input": "\" china wok \" を検索。",
+            "input": "\" china wok \" \u3092\u691c\u7d22\u3002",
             "output": [
                 "search for \" china wok \" ."
             ]
         },
         {
-            "input": "\" sushi \" レストランを表示。",
+            "input": "\" sushi \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me \" sushi \" restaurants ."
             ]
         },
         {
-            "input": "星が 1 つのレストランを表示。",
+            "input": "\u661f\u304c 1 \u3064\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me 1 star restaurants ."
             ]
         },
         {
-            "input": "評価が 4 点のレストランをすべて検索。",
+            "input": "\u8a55\u4fa1\u304c 4 \u70b9\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "find all restaurants with a rating of 4 ."
             ]
         },
         {
-            "input": "\" luby 's cafeteria \" を検索。",
+            "input": "\" luby 's cafeteria \" \u3092\u691c\u7d22\u3002",
             "output": [
                 "search for \" luby 's cafeteria \" ."
             ]
         },
         {
-            "input": "3 つ星レストランをすべて検索。",
+            "input": "3 \u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u691c\u7d22\u3002",
             "output": [
                 "search for all 3 star restaurants ."
             ]
         },
         {
-            "input": "\" italian \" レストランを検索。",
+            "input": "\" italian \" \u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "search for \" italian \" restaurants ."
             ]
         },
         {
-            "input": "8 件のレビューがあるレストランを表示。",
+            "input": "8 \u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3002",
             "output": [
                 "show me restaurants with a 8 reviews ."
             ]
         },
         {
-            "input": "評価が2以上のすべてのレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c2\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show all restaurants with a rating of 2 or higher ."
             ]
         },
         {
-            "input": "\"itlaian\"レストランを探してください。",
+            "input": "\"itlaian\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" itlaian \" cuisine restaurants ."
             ]
         },
         {
-            "input": "レビュー数が4件以上のレストランを教えてください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c4\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show restaurants with at least 4 reviews ."
             ]
         },
         {
-            "input": "総合評価が2点以上のレストランを表示してください。",
+            "input": "\u7dcf\u5408\u8a55\u4fa1\u304c2\u70b9\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "display any restaurants with overall rating of 2 or above ."
             ]
         },
         {
-            "input": "いくつかの\"indian\"レストランを教えてください。",
+            "input": "\u3044\u304f\u3064\u304b\u306e\"indian\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i want to see some \" indian \" restaurants ."
             ]
         },
         {
-            "input": "評価が9星のレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c9\u661f\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me 9 star restaurants ."
             ]
         },
         {
-            "input": "最も近くのレストランを教えてください。",
+            "input": "\u6700\u3082\u8fd1\u304f\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "what is the closest restaurant to me ?"
             ]
         },
         {
-            "input": "\"burger king\"を探してください。",
+            "input": "\"burger king\"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" burger king \" ."
             ]
         },
         {
-            "input": "評価が8星以上のレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c8\u661f\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurants that have a rating of at least 8 stars ."
             ]
         },
         {
-            "input": "\"lenny 's\"というレストランを見つけてください。",
+            "input": "\"lenny 's\"\u3068\u3044\u3046\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find me a restaurant called \" lenny 's \""
             ]
         },
         {
-            "input": "すべての\"german\"レストランを教えてください。",
+            "input": "\u3059\u3079\u3066\u306e\"german\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all \" german \" restaurants ."
             ]
         },
         {
-            "input": "\"brenda 's french soul food\"を見つけてください。",
+            "input": "\"brenda 's french soul food\"\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i would like to find \" brenda 's french soul food \" ."
             ]
         },
         {
-            "input": "すべての\"italian\"レストランを教えてください。",
+            "input": "\u3059\u3079\u3066\u306e\"italian\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i want to see all \" italian \" restaurants ."
             ]
         },
         {
-            "input": "評価が8星以上のすべてのレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c8\u661f\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all restaurants that are rated 8 star ."
             ]
         },
         {
-            "input": "\"new american\"料理を提供するすべてのレストランを見つけてください。",
+            "input": "\"new american\"\u6599\u7406\u3092\u63d0\u4f9b\u3059\u308b\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find me all restaurants that serve \" new american \" cuisine ."
             ]
         },
         {
-            "input": "\"mai lee\"を探してください。",
+            "input": "\"mai lee\"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "look for \" mai lee \" ."
             ]
         },
         {
-            "input": "\"vietnamese\"レストランを見つけてください。",
+            "input": "\"vietnamese\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find the \" vietnamese \" restaurants ."
             ]
         },
         {
-            "input": "\"jane\"のすべてのレビューを見つけてください。",
+            "input": "\"jane\"\u306e\u3059\u3079\u3066\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find all reviews from \" jane \" ."
             ]
         },
         {
-            "input": "レビュー数が5件以上のレストランを教えてください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c5\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show restaurants with over 5 reviews ."
             ]
         },
         {
-            "input": "評価が1点のレストランを見つけてください。",
+            "input": "\u8a55\u4fa1\u304c1\u70b9\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find the restaurants with a rating of 1 ."
             ]
         },
         {
-            "input": "評価が1点以上のレストランを一覧表示してください。",
+            "input": "\u8a55\u4fa1\u304c1\u70b9\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e00\u89a7\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "please give me a list of restaurants that are rated 1 and up ."
             ]
         },
         {
-            "input": "評価が最も高い\"thai\"レストランを見つけてください。",
+            "input": "\u8a55\u4fa1\u304c\u6700\u3082\u9ad8\u3044\"thai\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "can you find the highest rated \" thai \" restaurant , please ."
             ]
         },
         {
-            "input": "最高の\"mexican\"レストランを教えてください。",
+            "input": "\u6700\u9ad8\u306e\"mexican\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i want to see the top \" mexican \" restaurants ."
             ]
         },
         {
-            "input": "\"mcdonald 's\"を探してください。",
+            "input": "\"mcdonald 's\"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" mcdonald 's \""
             ]
         },
         {
-            "input": "\"mark\"のすべてのレビューを教えてください。",
+            "input": "\"mark\"\u306e\u3059\u3079\u3066\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show all \" mark \" 's reviews"
             ]
         },
         {
-            "input": "\"las vegas\"にあるレストランを探してください。",
+            "input": "\"las vegas\"\u306b\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "look up restaurants in \" las vegas \""
             ]
         },
         {
-            "input": "\"cracker barrel\"を見つけてください。",
+            "input": "\"cracker barrel\"\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find \" cracker barrel \""
             ]
         },
         {
-            "input": "\"mexican\"レストランを教えてください。",
+            "input": "\"mexican\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" mexican \" restaurants ."
             ]
         },
         {
-            "input": "レビュー数が2件以上のレストランを見つけてください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c2\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find restaurants with at least 2 reviews ."
             ]
         },
         {
-            "input": "\"fuel pizza\"を見つけてください。",
+            "input": "\"fuel pizza\"\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find \" fuel pizza \" ."
             ]
         },
         {
-            "input": "最も近いレストランを教えてください。",
+            "input": "\u6700\u3082\u8fd1\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "what is the closest restaurant ?"
             ]
         },
         {
-            "input": "評価が1星以上のすべてのレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c1\u661f\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all restaurants with ratings of at least 1 stars ."
             ]
         },
         {
-            "input": "\"atomic ramen\"を見つけてください。",
+            "input": "\"atomic ramen\"\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find \" atomic ramen \""
             ]
         },
         {
-            "input": "評価が8点以上のすべてのレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c8\u70b9\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "tell all the restaurants rated 8 or higher"
             ]
         },
         {
-            "input": "レビュー数が最も多いレストランを教えてください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c\u6700\u3082\u591a\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me the restaurant with the most reviews"
             ]
         },
         {
-            "input": "\"arthur smith\"がレビューしたレストランを見つけてください。",
+            "input": "\"arthur smith\"\u304c\u30ec\u30d3\u30e5\u30fc\u3057\u305f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find restaurants reviewed by \" arthur smith \""
             ]
         },
         {
-            "input": "\"italian\"レストランを教えてください。",
+            "input": "\"italian\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" italian \" restaurants ."
             ]
         },
         {
-            "input": "評価が0星以上のレストランを見つけてください。",
+            "input": "\u8a55\u4fa1\u304c0\u661f\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find restaurants rated 0 stars or higher ."
             ]
         },
         {
-            "input": "レビュー数が5件以上のレストランを一覧表示してください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c5\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e00\u89a7\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "list the restaurants with over 5 reviews ."
             ]
         },
         {
-            "input": "\"chipotle\"を探してください。",
+            "input": "\"chipotle\"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" chipotle \""
             ]
         },
         {
-            "input": "\"ethiopian\"レストランを教えてください。",
+            "input": "\"ethiopian\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" ethiopian \" restaurants ."
             ]
         },
         {
-            "input": "レビュー数が8件以上のレストランを教えてください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c8\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurants with more than 8 reviews ."
             ]
         },
         {
-            "input": "評価が10点以上のすべてのレストランを見つけてください。",
+            "input": "\u8a55\u4fa1\u304c10\u70b9\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find all the restaurants rated higher than 10 ."
             ]
         },
         {
-            "input": "\"outback steakhouse\"を探してください。",
+            "input": "\"outback steakhouse\"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" outback steakhouse \" ?"
             ]
         },
         {
-            "input": "\"italian\"レストランを見つけてください。",
+            "input": "\"italian\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find a \" italian \" restaurant ."
             ]
         },
         {
-            "input": "評価が4星以上のすべてのレストランを一覧表示してください。",
+            "input": "\u8a55\u4fa1\u304c4\u661f\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e00\u89a7\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "list all the restaurants with higher than 4 stars ."
             ]
         },
         {
-            "input": "\"mei wei\"レストランの住所を教えてください。",
+            "input": "\"mei wei\"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4f4f\u6240\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "what is the address of the \" mei wei \" restaurant ?"
             ]
         },
         {
-            "input": "\"mei wei\"レストランの評価を教えてください。",
+            "input": "\"mei wei\"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u8a55\u4fa1\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "what is the rating of \" mei wei \" restaurant ?"
             ]
         },
         {
-            "input": "最も近い\"coffee\"ショップの住所を教えてください。",
+            "input": "\u6700\u3082\u8fd1\u3044\"coffee\"\u30b7\u30e7\u30c3\u30d7\u306e\u4f4f\u6240\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "what is the address of the nearest \" coffee \" shop ?"
             ]
         },
         {
-            "input": "\"west suburbs\"にあるレストランを教えてください。",
+            "input": "\"west suburbs\"\u306b\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurants in the \" west suburbs \" please ."
             ]
         },
         {
-            "input": "\"detroit\"にあるレストランをいくつか教えてください。",
+            "input": "\"detroit\"\u306b\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3044\u304f\u3064\u304b\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find me some places to eat in \" detroit \" ."
             ]
         },
         {
-            "input": "評価が10星以上のレストランを探してください。",
+            "input": "\u8a55\u4fa1\u304c10\u661f\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "look up restaurants that have 10 star ratings for me please ."
             ]
         },
         {
-            "input": "\"john grace\"がレビューしたすべてのレストランを教えてください。",
+            "input": "\"john grace\"\u304c\u30ec\u30d3\u30e5\u30fc\u3057\u305f\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all the restaurants that \" john grace \" has reviewed ."
             ]
         },
         {
-            "input": "\"bill story\"のレビューを教えてください。",
+            "input": "\"bill story\"\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me reviews written by \" bill story \" ."
             ]
         },
         {
-            "input": "\"old town doughnuts\"には何件のレビュー数が投稿されていますか。",
+            "input": "\"old town doughnuts\"\u306b\u306f\u4f55\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u6570\u304c\u6295\u7a3f\u3055\u308c\u3066\u3044\u307e\u3059\u304b\u3002",
             "output": [
                 "how many reviews have been posted for \" old town doughnuts \" ?"
             ]
         },
         {
-            "input": "平均評価が0点以上のレストランはいくつありますか。",
+            "input": "\u5e73\u5747\u8a55\u4fa1\u304c0\u70b9\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3044\u304f\u3064\u3042\u308a\u307e\u3059\u304b\u3002",
             "output": [
                 "how many restaurants have an average rating above 0 ?"
             ]
         },
         {
-            "input": "\"parker road\"にある\"mcdonald 's\"の住所を教えてください。",
+            "input": "\"parker road\"\u306b\u3042\u308b\"mcdonald 's\"\u306e\u4f4f\u6240\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "what 's the address of the \" mcdonald 's \" on \" parker road \" ?"
             ]
         },
         {
-            "input": "\"mexican\"料理が食べたいです。",
+            "input": "\"mexican\"\u6599\u7406\u304c\u98df\u3079\u305f\u3044\u3067\u3059\u3002",
             "output": [
                 "i want \" mexican \" food"
             ]
         },
         {
-            "input": "評価が7点よりも\"spicy\"料理が食べたいです。",
+            "input": "\u8a55\u4fa1\u304c7\u70b9\u3088\u308a\u3082\"spicy\"\u6599\u7406\u304c\u98df\u3079\u305f\u3044\u3067\u3059\u3002",
             "output": [
                 "something \" spicy \" over 7 star rating ."
             ]
         },
         {
-            "input": "レビュー数が2件以上の食べ物が食べたいです。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c2\u4ef6\u4ee5\u4e0a\u306e\u98df\u3079\u7269\u304c\u98df\u3079\u305f\u3044\u3067\u3059\u3002",
             "output": [
                 "i 'd like any food with more than 2 reviews ."
             ]
         },
         {
-            "input": "最も近い\"chinese\"レストランを教えてください。",
+            "input": "\u6700\u3082\u8fd1\u3044\"chinese\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "where can i find the nearest \" chinese \" joint ."
             ]
         },
         {
-            "input": "\"john oyster\"のすべてのレビューを探してください。",
+            "input": "\"john oyster\"\u306e\u3059\u3079\u3066\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search all reviews by \" john oyster \" ."
             ]
         },
         {
-            "input": "\"mexican\"レストランに行きたいです。",
+            "input": "\"mexican\"\u30ec\u30b9\u30c8\u30e9\u30f3\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
             "output": [
                 "i would like a \" mexican \" restaurant ."
             ]
         },
         {
-            "input": "評価が9星以上のすべてのレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c9\u661f\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i would like all restaurants with 9 stars and above ."
             ]
         },
         {
-            "input": "\"los dos amigos\"の場所を教えてください。",
+            "input": "\"los dos amigos\"\u306e\u5834\u6240\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" los dos amigos \""
             ]
         },
         {
-            "input": "評価が2点以上のレストランを教えてください。",
+            "input": "\u8a55\u4fa1\u304c2\u70b9\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i want restaurants rated 2 or higher ."
             ]
         },
         {
-            "input": "郵便番号が\"21269\"のレストランを見つけてください。",
+            "input": "\u90f5\u4fbf\u756a\u53f7\u304c\"21269\"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find restaurants in zip code \" 21269 \" ."
             ]
         },
         {
-            "input": "レビュー数が2件以上のレストランを教えてください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c2\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "i want restaurants with more than 2 reviews ."
             ]
         },
         {
-            "input": "評価が6点以上のすべてのレストランを表示してください。",
+            "input": "\u8a55\u4fa1\u304c6\u70b9\u4ee5\u4e0a\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "display all the restaurants that have at least a rating of 6 ."
             ]
         },
         {
-            "input": "0人以上の利用者からレビューされたレストランを探してください。",
+            "input": "0\u4eba\u4ee5\u4e0a\u306e\u5229\u7528\u8005\u304b\u3089\u30ec\u30d3\u30e5\u30fc\u3055\u308c\u305f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "do a search for restaurants that have been reviewed by at least 0 people ."
             ]
         },
         {
-            "input": "\"thai foon\"レストランを探してください。",
+            "input": "\"thai foon\"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "could you preform a search for the restaurant , \" thai foon \" ?"
             ]
         },
         {
-            "input": "\"dairy queen\"を探してください。",
+            "input": "\"dairy queen\"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" dairy queen \" ."
             ]
         },
         {
-            "input": "すべての10つ星レストランを検索。",
+            "input": "\u3059\u3079\u3066\u306e10\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3002",
             "output": [
                 "search for all 10 star restaurants ."
             ]
         },
         {
-            "input": "\" greek \"レストランを見せて。",
+            "input": "\" greek \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" greek \" restaurants ."
             ]
         },
         {
-            "input": "8件以上の投稿レニューがあるレストランを見せて。",
+            "input": "8\u4ef6\u4ee5\u4e0a\u306e\u6295\u7a3f\u30ec\u30cb\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me restaurants with more than 8 posted reviews ."
             ]
         },
         {
-            "input": "周辺の\" mcdonalds \"を探して。",
+            "input": "\u5468\u8fba\u306e\" mcdonalds \"\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "can you find me a \" mcdonalds \" in my area ?"
             ]
         },
         {
-            "input": "周辺で最高の\" fast food \"レストランは？",
+            "input": "\u5468\u8fba\u3067\u6700\u9ad8\u306e\" fast food \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "where are the best \" fast food \" joints in my area ."
             ]
         },
         {
-            "input": "近くの\" mcdonads \"の住所は？",
+            "input": "\u8fd1\u304f\u306e\" mcdonads \"\u306e\u4f4f\u6240\u306f\uff1f",
             "output": [
                 "what is the address of the \" mcdonads \" in this area ."
             ]
         },
         {
-            "input": "\" asheville nc \"の半径3マイル以内の最高評価の\" burger \"レストランは？",
+            "input": "\" asheville nc \"\u306e\u534a\u5f843\u30de\u30a4\u30eb\u4ee5\u5185\u306e\u6700\u9ad8\u8a55\u4fa1\u306e\" burger \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what are the highest ranked \" burger \" joints in the 3 mile area around \" asheville nc \" ."
             ]
         },
         {
-            "input": "\" federal highway \"にあるレストランを全部見せて。",
+            "input": "\" federal highway \"\u306b\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u5168\u90e8\u898b\u305b\u3066\u3002",
             "output": [
                 "show me all the restaurants that are located on \" federal highway \" ?"
             ]
         },
         {
-            "input": "レビューの数が一番多いレストランは？",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u306e\u6570\u304c\u4e00\u756a\u591a\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "which restaurant has the highest amounts of reviews ?"
             ]
         },
         {
-            "input": "\" jim \"のレビューが投稿された日付は？",
+            "input": "\" jim \"\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u6295\u7a3f\u3055\u308c\u305f\u65e5\u4ed8\u306f\uff1f",
             "output": [
                 "what date was \" jim \" 's review posted ?"
             ]
         },
         {
-            "input": "\" main street \"にあるレストランは？",
+            "input": "\" main street \"\u306b\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "which restaurants are on \" main street \" ?"
             ]
         },
         {
-            "input": "\" mexican \"料理を探して。",
+            "input": "\" mexican \"\u6599\u7406\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "find me \" mexican \" food"
             ]
         },
         {
-            "input": "\" kansas city , mo \"のレストランを見せて。",
+            "input": "\" kansas city , mo \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me restaurants in \" kansas city , mo \""
             ]
         },
         {
-            "input": "周辺の\" mexican \"レストランを見せて。",
+            "input": "\u5468\u8fba\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" mexican \" restaurants in the area ."
             ]
         },
         {
-            "input": "\" 93312 \"zipコード内で最寄りの\" mexican \"レストランの電話番号を教えて。",
+            "input": "\" 93312 \"zip\u30b3\u30fc\u30c9\u5185\u3067\u6700\u5bc4\u308a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u96fb\u8a71\u756a\u53f7\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "provide me the telephone number for the nearest \" mexican \" restaurant in \" 93312 \" zip ."
             ]
         },
         {
-            "input": "1件以上のレビューがあるレストランを探して。",
+            "input": "1\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "find restaurants with more than 1 reviews ."
             ]
         },
         {
-            "input": "最寄りの\" mcdonalds \"は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" mcdonalds \"\u306f\uff1f",
             "output": [
                 "where is the closest \" mcdonalds \""
             ]
         },
         {
-            "input": "5件以上の高評価レビューがある\" mexican \"レストランは？",
+            "input": "5\u4ef6\u4ee5\u4e0a\u306e\u9ad8\u8a55\u4fa1\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "where is a \" mexican \" restaurant with more than 5 good reviews ?"
             ]
         },
         {
-            "input": "\" mr gucci loafers \"による評価をすべて見せて。",
+            "input": "\" mr gucci loafers \"\u306b\u3088\u308b\u8a55\u4fa1\u3092\u3059\u3079\u3066\u898b\u305b\u3066\u3002",
             "output": [
                 "show all ratings made by \" mr gucci loafers \""
             ]
         },
         {
-            "input": "市内の\" steakhouse \"レストランを検索して。",
+            "input": "\u5e02\u5185\u306e\" steakhouse \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" steakhouse \" restaurants in my city"
             ]
         },
         {
-            "input": "\" amy \"によるレビューを見せて。",
+            "input": "\" amy \"\u306b\u3088\u308b\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me reviews written by \" amy \" ."
             ]
         },
         {
-            "input": "最寄りの\" wawa \"はどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" wawa \"\u306f\u3069\u3053\uff1f",
             "output": [
                 "where can i find the closest \" wawa \" ?"
             ]
         },
         {
-            "input": "\" big woodys \"を検索して。",
+            "input": "\" big woodys \"\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" big woodys \""
             ]
         },
         {
-            "input": "\" egyptian \"レストランを検索して。",
+            "input": "\" egyptian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for an \" egyptian \" restaurant ."
             ]
         },
         {
-            "input": "最低9つ星以上のレストランを見せて。",
+            "input": "\u6700\u4f4e9\u3064\u661f\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me restaurants with a minimum 9 star rating ."
             ]
         },
         {
-            "input": "\" starbucks \"のレビューの数は？",
+            "input": "\" starbucks \"\u306e\u30ec\u30d3\u30e5\u30fc\u306e\u6570\u306f\uff1f",
             "output": [
                 "how many reviews are there at \" starbucks \" ?"
             ]
         },
         {
-            "input": "\" thai \"レストランを見せて。",
+            "input": "\" thai \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" thai \" restaurants ."
             ]
         },
         {
-            "input": "最寄りの\" applebee 's \"はどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" applebee 's \"\u306f\u3069\u3053\uff1f",
             "output": [
                 "how far is the nearest \" applebee 's \" ?"
             ]
         },
         {
-            "input": "ここから近い\" mexican \"料理はどこ？",
+            "input": "\u3053\u3053\u304b\u3089\u8fd1\u3044\" mexican \"\u6599\u7406\u306f\u3069\u3053\uff1f",
             "output": [
                 "located \" mexican \" food close to here"
             ]
         },
         {
-            "input": "\" white castle \"を見せて。",
+            "input": "\" white castle \"\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" white castle \""
             ]
         },
         {
-            "input": "最低5つ星の\" japanese \"レストランを見せて。",
+            "input": "\u6700\u4f4e5\u3064\u661f\u306e\" japanese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "search for \" japanese \" restaurants with at least 5 stars ."
             ]
         },
         {
-            "input": "\" wendy 's \"の評価を教えて。",
+            "input": "\" wendy 's \"\u306e\u8a55\u4fa1\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "tell me the rating of \" wendy 's \" ."
             ]
         },
         {
-            "input": "\" japanese \"レストランの一覧を見せて。",
+            "input": "\" japanese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4e00\u89a7\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "list \" japanese \" restaurants ."
             ]
         },
         {
-            "input": "\" city center \"で最高評価の\" pizza \"レストランは？",
+            "input": "\" city center \"\u3067\u6700\u9ad8\u8a55\u4fa1\u306e\" pizza \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what 's the highest rated \" pizza \" place in the \" city center \" ?"
             ]
         },
         {
-            "input": "最低2件のレビューがある\" vegan \"レストランを検索して。",
+            "input": "\u6700\u4f4e2\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" vegan \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for a \" vegan \" restaurant with at least 2 reviews ."
             ]
         },
         {
-            "input": "\" mexican \"レストランを見せて。",
+            "input": "\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" mexican \" restaurants ."
             ]
         },
         {
-            "input": "近くの0つ星レストランを教えて。",
+            "input": "\u8fd1\u304f\u306e0\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "give me a 0 star restaurant nearby ."
             ]
         },
         {
-            "input": "レビュー数が最も多いレストランを見つけて。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c\u6700\u3082\u591a\u3044\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u3002",
             "output": [
                 "find restaurants with the most reviews ."
             ]
         },
         {
-            "input": "\" billy 's barbecue \"を検索して。",
+            "input": "\" billy 's barbecue \"\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" billy 's barbecue \" ."
             ]
         },
         {
-            "input": "2件以上のレビューがあるレストランを見たい。",
+            "input": "2\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305f\u3044\u3002",
             "output": [
                 "i want to see restaurants with more than 2 reviews ."
             ]
         },
         {
-            "input": "\" spaghetti \"が食べられるレストランを見つけて。",
+            "input": "\" spaghetti \"\u304c\u98df\u3079\u3089\u308c\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u3002",
             "output": [
                 "find restaurants that sell \" spaghetti \" ."
             ]
         },
         {
-            "input": "\" main street \"の\" italian \"レストランの名前は？",
+            "input": "\" main street \"\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u540d\u524d\u306f\uff1f",
             "output": [
                 "what 's the name of the \" italian \" restaurant on \" main street \" ?"
             ]
         },
         {
-            "input": "最高評価のレストランを見せて。",
+            "input": "\u6700\u9ad8\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me the highest rated restaurant ."
             ]
         },
         {
-            "input": "最寄りの\" mcdonald 's \"はどこ？",
+            "input": "\u6700\u5bc4\u308a\u306e\" mcdonald 's \"\u306f\u3069\u3053\uff1f",
             "output": [
                 "where is the nearest \" mcdonald 's \" ?"
             ]
         },
         {
-            "input": "8つ星の\" mexican \"レストランを見せて。",
+            "input": "8\u3064\u661f\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me 8 star \" mexican \" restaurants"
             ]
         },
         {
-            "input": "10以上の評価のレストランをすべて見せて。",
+            "input": "10\u4ee5\u4e0a\u306e\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u898b\u305b\u3066\u3002",
             "output": [
                 "find all restaurants rated higher than 10"
             ]
         },
         {
-            "input": "8件未満のレビュー数のレストランの一覧を見せて。",
+            "input": "8\u4ef6\u672a\u6e80\u306e\u30ec\u30d3\u30e5\u30fc\u6570\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4e00\u89a7\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me a list of restaurants with less than 8 reviews ."
             ]
         },
         {
-            "input": "\" reno , nevada \"のレストランを検索して。",
+            "input": "\" reno , nevada \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for restaurants in \" reno , nevada \" ."
             ]
         },
         {
-            "input": "レビュー数が最も多い\" chinese \"レストランは？",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c\u6700\u3082\u591a\u3044\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "which \" chinese \" restaurant has the most reviews ?"
             ]
         },
         {
-            "input": "\" ramen nagi \"の評価は？",
+            "input": "\" ramen nagi \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is \" ramen nagi \" 's rating ?"
             ]
         },
         {
-            "input": "\" olive garden \"を検索して。",
+            "input": "\" olive garden \"\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "look for \" olive garden \" ."
             ]
         },
         {
-            "input": "7件以上のレビューがあるレストランは？",
+            "input": "7\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what restaurants have received 7 or more reviews ?"
             ]
         },
         {
-            "input": "\" george \"のレビューを見せて。",
+            "input": "\" george \"\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "find reviews from \" george \" ."
             ]
         },
         {
-            "input": "\" american \"レストランを見せて。",
+            "input": "\" american \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" american \" restaurants"
             ]
         },
         {
-            "input": "\" american \"レストランの情報を教えて。",
+            "input": "\" american \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u60c5\u5831\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "tell me the \" american \" restaurants ."
             ]
         },
         {
-            "input": "最低7つ星の\" mexican \"レストランを全部見せて。",
+            "input": "\u6700\u4f4e7\u3064\u661f\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u5168\u90e8\u898b\u305b\u3066\u3002",
             "output": [
                 "give me all of the \" mexican \" restaurants with at least 7 stars ."
             ]
         },
         {
-            "input": "\" rocky 's pizza \"を検索して。",
+            "input": "\" rocky 's pizza \"\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" rocky 's pizza \" ."
             ]
         },
         {
-            "input": "近くに\" red lobster \"はある？",
+            "input": "\u8fd1\u304f\u306b\" red lobster \"\u306f\u3042\u308b\uff1f",
             "output": [
                 "is there a \" red lobster \" near me ?"
             ]
         },
         {
-            "input": "\" indian \"レストランを全部見つけて。",
+            "input": "\" indian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u5168\u90e8\u898b\u3064\u3051\u3066\u3002",
             "output": [
                 "find all of the \" indian \" restaurants"
             ]
         },
         {
-            "input": "\" oak street steakhouse \"の評価は？",
+            "input": "\" oak street steakhouse \"\u306e\u8a55\u4fa1\u306f\uff1f",
             "output": [
                 "what is the rating of the \" oak street steakhouse \" ?"
             ]
         },
         {
-            "input": "zipコード\" 28078 \"のレストランを見せて。",
+            "input": "zip\u30b3\u30fc\u30c9\" 28078 \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me restaurants in zip code \" 28078 \" ."
             ]
         },
         {
-            "input": "レビュー数が最も多い\" mexican \"レストランは？",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u6570\u304c\u6700\u3082\u591a\u3044\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what \" mexican \" restaurant has the most reviews ?"
             ]
         },
         {
-            "input": "\" panda express \"の評価はどんな感じ？",
+            "input": "\" panda express \"\u306e\u8a55\u4fa1\u306f\u3069\u3093\u306a\u611f\u3058\uff1f",
             "output": [
                 "what kind of rating does \" panda express \" have"
             ]
         },
         {
-            "input": "周辺の\" italian \"レストランを見せて。",
+            "input": "\u5468\u8fba\u306e\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show me \" italian \" restaurants nearby ."
             ]
         },
         {
-            "input": "今年の\" cracker barrel \"に投稿されたレビューを見せて。",
+            "input": "\u4eca\u5e74\u306e\" cracker barrel \"\u306b\u6295\u7a3f\u3055\u308c\u305f\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "please show me reviews that were written for \" cracker barrel \" this year ."
             ]
         },
         {
-            "input": "6つ星のレストランを探して。",
+            "input": "6\u3064\u661f\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3002",
             "output": [
                 "find restaurants with 6 stars ."
             ]
         },
         {
-            "input": "\" sampan \"の電話番号は？",
+            "input": "\" sampan \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what is the phone number for \" sampan \" ?"
             ]
         },
         {
-            "input": "\" the gunnisack \"のレビューは見れる？",
+            "input": "\" the gunnisack \"\u306e\u30ec\u30d3\u30e5\u30fc\u306f\u898b\u308c\u308b\uff1f",
             "output": [
                 "can i see reviews for the \" gunnisack \" ?"
             ]
         },
         {
-            "input": "\" dave 's seafood shack \"の場所を教えて。",
+            "input": "\" dave 's seafood shack \"\u306e\u5834\u6240\u3092\u6559\u3048\u3066\u3002",
             "output": [
                 "please tell me the location of \" dave 's seafood shack \" ."
             ]
         },
         {
-            "input": "最寄りの\" fast food \"レストランの住所は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" fast food \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4f4f\u6240\u306f\uff1f",
             "output": [
                 "what is the address of the nearest \" fast food \" place ?"
             ]
         },
         {
-            "input": "\" gates barbecue \"を検索して。",
+            "input": "\" gates barbecue \"\u3092\u691c\u7d22\u3057\u3066\u3002",
             "output": [
                 "search for \" gates barbecue \" ?"
             ]
         },
         {
-            "input": "1マイル以内のレストランを見つけて。",
+            "input": "1\u30de\u30a4\u30eb\u4ee5\u5185\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u3066\u3002",
             "output": [
                 "find restaurants within one mile from here ."
             ]
         },
         {
-            "input": "現在地から一番近い\" italian \"レストランは？",
+            "input": "\u73fe\u5728\u5730\u304b\u3089\u4e00\u756a\u8fd1\u3044\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\uff1f",
             "output": [
                 "what is the closest \" italian \" restaurant to me"
             ]
         },
         {
-            "input": "最低7件のレビューがあるレストランを見せて。",
+            "input": "\u6700\u4f4e7\u4ef6\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u3002",
             "output": [
                 "show restaurants with at least 7 reviews"
             ]
         },
         {
-            "input": "近くに\" indian \"レストランはある？",
+            "input": "\u8fd1\u304f\u306b\" indian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308b\uff1f",
             "output": [
                 "are there any \" indian \" restaurants near me ?"
             ]
         },
         {
-            "input": "0つ星レストランの電話番号をひとつ教えてください。",
+            "input": "0\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u96fb\u8a71\u756a\u53f7\u3092\u3072\u3068\u3064\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "give me the telephone number of a 0 star restaurant ."
             ]
         },
         {
-            "input": "\" alex smith \"さんが書いた\" chinese \"レストランについてのレビューをすべて表示してください。",
+            "input": "\" alex smith \"\u3055\u3093\u304c\u66f8\u3044\u305f\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306b\u3064\u3044\u3066\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u3059\u3079\u3066\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all the of review written by \" alex smith \" about \" chinese \" restaurants ."
             ]
         },
         {
-            "input": "7マイル以内の最高評価の\" coffee \"ショップを見せてください。",
+            "input": "7\u30de\u30a4\u30eb\u4ee5\u5185\u306e\u6700\u9ad8\u8a55\u4fa1\u306e\" coffee \"\u30b7\u30e7\u30c3\u30d7\u3092\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show highest rated \" coffee \" shop withing 7 miles ."
             ]
         },
         {
-            "input": "評価が4と10の間のレストランを表示してください。",
+            "input": "\u8a55\u4fa1\u304c4\u306810\u306e\u9593\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurants rated between 4 and 10 ."
             ]
         },
         {
-            "input": "最寄りの\" mexican \"レストランの価格帯は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4fa1\u683c\u5e2f\u306f\uff1f",
             "output": [
                 "what is the price range of the nearest \" mexican \" restaurant ?"
             ]
         },
         {
-            "input": "\" san francisco \"のレストランを見せてください。",
+            "input": "\" san francisco \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show restaurants in \" san francisco \" ."
             ]
         },
         {
-            "input": "\" mexican \"をすべて表示してください。",
+            "input": "\" mexican \"\u3092\u3059\u3079\u3066\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find all \" mexican \" restaurants ."
             ]
         },
         {
-            "input": "\" sushi joy \"を検索してください。",
+            "input": "\" sushi joy \"\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" sushi joy \" ."
             ]
         },
         {
-            "input": "\" italian \"レストランを探す",
+            "input": "\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3059",
             "output": [
                 "find me \" italian \" restaurants"
             ]
         },
         {
-            "input": "\" rookie 's bar & grill \"の電話番号を探してくれますか？",
+            "input": "\" rookie 's bar & grill \"\u306e\u96fb\u8a71\u756a\u53f7\u3092\u63a2\u3057\u3066\u304f\u308c\u307e\u3059\u304b\uff1f",
             "output": [
                 "can you find me the telephone number for \" rookie 's bar & grill \" ?"
             ]
         },
         {
-            "input": "レビューが最多のレストランを表示してください。",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u304c\u6700\u591a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurants with the most reviews ."
             ]
         },
         {
-            "input": "\" ginger china \"の電話番号は？",
+            "input": "\" ginger china \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what is the phone number for \" ginger china \" ?"
             ]
         },
         {
-            "input": "7件以上のレビューがあるレストランの電話番号がひとつ知りたい",
+            "input": "7\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u96fb\u8a71\u756a\u53f7\u304c\u3072\u3068\u3064\u77e5\u308a\u305f\u3044",
             "output": [
                 "give the phone number of a restaurant with 7 or more reviews"
             ]
         },
         {
-            "input": "\" in-n-out burger \"を探してください。",
+            "input": "\" in-n-out burger \"\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find me \" in-n-out burger \" ."
             ]
         },
         {
-            "input": "9つ星レストランをすべて表示してください。",
+            "input": "9\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all 9 star restaurants ."
             ]
         },
         {
-            "input": "近くの2つ星評価の\" coffee \"ショップを一軒検索してください。",
+            "input": "\u8fd1\u304f\u306e2\u3064\u661f\u8a55\u4fa1\u306e\" coffee \"\u30b7\u30e7\u30c3\u30d7\u3092\u4e00\u8ed2\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for a 2 star rated \" coffee \" shop located nearby ."
             ]
         },
         {
-            "input": "\" bruce \"さんが書いたレビューを表示してください。",
+            "input": "\" bruce \"\u3055\u3093\u304c\u66f8\u3044\u305f\u30ec\u30d3\u30e5\u30fc\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me reviews written by \" bruce \" ."
             ]
         },
         {
-            "input": "評価が10以上のレストランをすべて探す",
+            "input": "\u8a55\u4fa1\u304c10\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u63a2\u3059",
             "output": [
                 "find all restaurants rated higher than 10"
             ]
         },
         {
-            "input": "\" mexican \"レストランを一軒検索してください。",
+            "input": "\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e00\u8ed2\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for a \" mexican \" restaurant ."
             ]
         },
         {
-            "input": "一つ星のレビューはありますか？ ?",
+            "input": "\u4e00\u3064\u661f\u306e\u30ec\u30d3\u30e5\u30fc\u306f\u3042\u308a\u307e\u3059\u304b\uff1f ?",
             "output": [
                 "are there any one star reviews ?"
             ]
         },
         {
-            "input": "1件以上のレビューがあるレストランを検索してください。",
+            "input": "1\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for restaurants with more than 1 reviews ."
             ]
         },
         {
-            "input": "最高評価の1つ星レストランはどこですか？",
+            "input": "\u6700\u9ad8\u8a55\u4fa1\u306e1\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "what is the top rated 1 star restaurant ?"
             ]
         },
         {
-            "input": "\" ruth 's chris \"の電話番号と住所は？",
+            "input": "\" ruth 's chris \"\u306e\u96fb\u8a71\u756a\u53f7\u3068\u4f4f\u6240\u306f\uff1f",
             "output": [
                 "what is the telephone and address for \" ruth 's chris \" ?"
             ]
         },
         {
-            "input": "\" aunt chilada 's \"を表示する",
+            "input": "\" aunt chilada 's \"\u3092\u8868\u793a\u3059\u308b",
             "output": [
                 "show me \" aunt chilada 's \""
             ]
         },
         {
-            "input": "5件以上のレビューがある\" mexican \"レストランはありますか？",
+            "input": "5\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "are there any \" mexican \" restaurants with more than 5 reviews ?"
             ]
         },
         {
-            "input": "\" 17111 \"にある店を探してください。",
+            "input": "\" 17111 \"\u306b\u3042\u308b\u5e97\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find places in \" 17111 \" ."
             ]
         },
         {
-            "input": "\" italian \"レストランをすべて表示してください。",
+            "input": "\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all \" italian \" restaurants ."
             ]
         },
         {
-            "input": "\" mexican \"レストランの名前をひとつ教えてください。",
+            "input": "\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u540d\u524d\u3092\u3072\u3068\u3064\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "give me the name of a \" mexican \" restaurant ."
             ]
         },
         {
-            "input": "\" locust street \"の10つ星評価のレストランを表示してください。",
+            "input": "\" locust street \"\u306e10\u3064\u661f\u8a55\u4fa1\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me 10 star rated restaurants on \" locust street \" ."
             ]
         },
         {
-            "input": "\" italian \"レストランのリストを表示してください。",
+            "input": "\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u30ea\u30b9\u30c8\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me a list of \" italian \" restaurants ."
             ]
         },
         {
-            "input": "\" restaurantgirl_84 \"さんのすべてのレストランレビューを表示してください。",
+            "input": "\" restaurantgirl_84 \"\u3055\u3093\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u30ec\u30d3\u30e5\u30fc\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all restaurants reviewed by \" restaurantgirl_84 \" ."
             ]
         },
         {
-            "input": "\" dunkin donuts \"の場所を知りたいです。",
+            "input": "\" dunkin donuts \"\u306e\u5834\u6240\u3092\u77e5\u308a\u305f\u3044\u3067\u3059\u3002",
             "output": [
                 "i 'd like to know the location of \" dunkin donuts \" ?"
             ]
         },
         {
-            "input": "評価が6の\" chinese \"レストランを一軒表示してください。",
+            "input": "\u8a55\u4fa1\u304c6\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u4e00\u8ed2\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me a \" chinese \" restaurant with a rating of 6 ."
             ]
         },
         {
-            "input": "レビューが最多のレストランはどこですか？",
+            "input": "\u30ec\u30d3\u30e5\u30fc\u304c\u6700\u591a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "which restaurant has the most reviews ?"
             ]
         },
         {
-            "input": "\" french \"レストランを検索してください。",
+            "input": "\" french \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" french \" restaurants ."
             ]
         },
         {
-            "input": "\" jade buffet \"のレビューを見せてください。",
+            "input": "\" jade buffet \"\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "give me reviews for \" jade buffet \" ."
             ]
         },
         {
-            "input": "\" ramen nagi \"の価格帯は？",
+            "input": "\" ramen nagi \"\u306e\u4fa1\u683c\u5e2f\u306f\uff1f",
             "output": [
                 "what is the price range for \" ramen nagi \" ?"
             ]
         },
         {
-            "input": "6件以上のレビューがある\" italian \"レストランを探してください。",
+            "input": "6\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find \" italian \" restaurants with at least 6 reviews ."
             ]
         },
         {
-            "input": "最寄りの\" dairy queen \"はどこですか？",
+            "input": "\u6700\u5bc4\u308a\u306e\" dairy queen \"\u306f\u3069\u3053\u3067\u3059\u304b\uff1f",
             "output": [
                 "where is the closest \" dairy queen \" ?"
             ]
         },
         {
-            "input": "\" chicago \"のすべてのレストランを探してください。",
+            "input": "\" chicago \"\u306e\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find all restaurants in \" chicago \" ."
             ]
         },
         {
-            "input": "郵便番号\" 19101 \"にレストランはありますか？",
+            "input": "\u90f5\u4fbf\u756a\u53f7\" 19101 \"\u306b\u30ec\u30b9\u30c8\u30e9\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\uff1f",
             "output": [
                 "is there a restaurant in zipcode \" 19101 \" ?"
             ]
         },
         {
-            "input": "\" armenian \"レストランを探している",
+            "input": "\" armenian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u3044\u308b",
             "output": [
                 "i 'm looking for \" armenian \" restaurants"
             ]
         },
         {
-            "input": "過去1日間の\"dunkin ' donuts\"のレビューを見せてください。",
+            "input": "\u904e\u53bb1\u65e5\u9593\u306e\"dunkin ' donuts\"\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me reviews for \" dunkin ' donuts \" from the last 1 days ."
             ]
         },
         {
-            "input": "近くの2つ星レストランをすべて表示してください。",
+            "input": "\u8fd1\u304f\u306e2\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u3059\u3079\u3066\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all of the 2 star restaurants nearby ."
             ]
         },
         {
-            "input": "6件以上のレビューがあるレストランを表示してください。",
+            "input": "6\u4ef6\u4ee5\u4e0a\u306e\u30ec\u30d3\u30e5\u30fc\u304c\u3042\u308b\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "display restaurants with more than 6 reviews ."
             ]
         },
         {
-            "input": "すべての7つ星レストランを見つける必要があります。",
+            "input": "\u3059\u3079\u3066\u306e7\u3064\u661f\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u898b\u3064\u3051\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002",
             "output": [
                 "i need to find all 7 star restaurants ."
             ]
         },
         {
-            "input": "\" italian \"レストランを探してください。",
+            "input": "\" italian \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find \" italian \" restaurants ."
             ]
         },
         {
-            "input": "評価が9つ星以上の\" mexican \"レストランを表示してください。",
+            "input": "\u8a55\u4fa1\u304c9\u3064\u661f\u4ee5\u4e0a\u306e\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" mexican \" restaurants with at least a 9 star rating ."
             ]
         },
         {
-            "input": "\" sushi king \"レストランを検索してください。",
+            "input": "\" sushi king \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" sushi king \" restaurant for me ."
             ]
         },
         {
-            "input": "\" kansas city , mo \"のレストランを表示する",
+            "input": "\" kansas city , mo \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3059\u308b",
             "output": [
                 "show me restaurants in \" kansas city , mo \""
             ]
         },
         {
-            "input": "\" mexican \"レストランを検索する",
+            "input": "\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3059\u308b",
             "output": [
                 "search for \" mexican \" restaurants"
             ]
         },
         {
-            "input": "\" japanese \"レストランを表示してください。",
+            "input": "\" japanese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" japanese \" restaurants ."
             ]
         },
         {
-            "input": "最寄りの\" chinese \"レストランの価格帯は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u4fa1\u683c\u5e2f\u306f\uff1f",
             "output": [
                 "what is the price range for my closest \" chinese \" restaurant ?"
             ]
         },
         {
-            "input": "\" main street \"のレストランを表示してください。",
+            "input": "\" main street \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurants on \" main street \" ."
             ]
         },
         {
-            "input": "\" orlando \"の\" steak house \"のトップ2を表示してください",
+            "input": "\" orlando \"\u306e\" steak house \"\u306e\u30c8\u30c3\u30d72\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044",
             "output": [
                 "show me the top 2 \" steak house \" restaurants in \" orlando \" ."
             ]
         },
         {
-            "input": "\" alex smith \"さんがレビューしたすべてのレストランを表示してください。",
+            "input": "\" alex smith \"\u3055\u3093\u304c\u30ec\u30d3\u30e5\u30fc\u3057\u305f\u3059\u3079\u3066\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me all restaurants reviewed by \" alex smith \" ."
             ]
         },
         {
-            "input": "\" nomad pizza \"を表示してください。",
+            "input": "\" nomad pizza \"\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" nomad pizza \" ."
             ]
         },
         {
-            "input": "先月にレビューのあったすべての\" chinese \"レストランを表示する",
+            "input": "\u5148\u6708\u306b\u30ec\u30d3\u30e5\u30fc\u306e\u3042\u3063\u305f\u3059\u3079\u3066\u306e\" chinese \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3059\u308b",
             "output": [
                 "show me all \" chinese \" restaurants with reviews made in the last month"
             ]
         },
         {
-            "input": "評価が2以上のレストランを表示する",
+            "input": "\u8a55\u4fa1\u304c2\u4ee5\u4e0a\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3059\u308b",
             "output": [
                 "display restaurants that were rated above 2"
             ]
         },
         {
-            "input": "\" italian \"料理が食べたい気分です。 .",
+            "input": "\" italian \"\u6599\u7406\u304c\u98df\u3079\u305f\u3044\u6c17\u5206\u3067\u3059\u3002 .",
             "output": [
                 "i 'm in the mood for \" italian \" food ."
             ]
         },
         {
-            "input": "\" mexican \"レストランを表示してください。",
+            "input": "\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me \" mexican \" restaurants ."
             ]
         },
         {
-            "input": "先月にレビューのあった\" mexican \"レストランを検索してください。",
+            "input": "\u5148\u6708\u306b\u30ec\u30d3\u30e5\u30fc\u306e\u3042\u3063\u305f\" mexican \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" mexican \" restaurants with reviews from the past month ."
             ]
         },
         {
-            "input": "\" on the borders mexican grill and cantina \"の住所を探してください。",
+            "input": "\" on the borders mexican grill and cantina \"\u306e\u4f4f\u6240\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find the address for \" on the borders mexican grill and cantina \" ."
             ]
         },
         {
-            "input": "\" fat charlie \"さんが書いたレストランのレビューを表示してください。",
+            "input": "\" fat charlie \"\u3055\u3093\u304c\u66f8\u3044\u305f\u30ec\u30b9\u30c8\u30e9\u30f3\u306e\u30ec\u30d3\u30e5\u30fc\u3092\u8868\u793a\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "show me restaurant reviews written by \" fat charlie \" ."
             ]
         },
         {
-            "input": "\" outback steakhouse \"を検索してください。",
+            "input": "\" outback steakhouse \"\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "search for \" outback steakhouse \" ?"
             ]
         },
         {
-            "input": "\" french \"レストランを探してください。",
+            "input": "\" french \"\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find me a \" french \" restaurant ."
             ]
         },
         {
-            "input": "郵便番号\" 85053 \"にある\" red lobster \"を一軒探してください。",
+            "input": "\u90f5\u4fbf\u756a\u53f7\" 85053 \"\u306b\u3042\u308b\" red lobster \"\u3092\u4e00\u8ed2\u63a2\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "look for a \" red lobster \" in the \" 85053 \" zip code ."
             ]
         },
         {
-            "input": "\" denver , colorado \"のレストランを検索してください。",
+            "input": "\" denver , colorado \"\u306e\u30ec\u30b9\u30c8\u30e9\u30f3\u3092\u691c\u7d22\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
             "output": [
                 "find restaurants in \" denver , colorado \" ."
             ]
         },
         {
-            "input": "最寄りの\" pizza hut \"の電話番号は？",
+            "input": "\u6700\u5bc4\u308a\u306e\" pizza hut \"\u306e\u96fb\u8a71\u756a\u53f7\u306f\uff1f",
             "output": [
                 "what is the phone number of the nearest \" pizza hut \" ?"
             ]
         }
+    ],
+    "Instruction_language": [
+        "English"
     ]
 }
