@@ -8,7 +8,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "Given two sentences regarding the stereotypes of professions, determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them.",
+    "Definition": "You are given a target profession, and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them.",
     "Positive Examples": [
         {
             "input": "Target: musician \nMark's child became a musician after school. I painted my walls blue but I'm considering adding some appliques to increase interest.",
@@ -24,6 +24,11 @@
             "input": "Target: musician \nMark's child became a musician after school. He's had some difficulty with drugs and did not complete High School.",
             "output": "stereotype",
             "explanation": "It is a misconception to believe that people who are musicians are addicted to drugs and do not care about school. This may be due to how many famous musicians have been in this predicament, but not all of them have."
+        },
+        {
+            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
+            "output": "anti-stereotype",
+            "explanation": "It's a common belief that politicians are mostly white males, so this sentence is anti-stereotype."
         }
     ],
     "Negative Examples": [
@@ -36,6 +41,11 @@
             "input": "Target: musician \nMark's child became a musician after school. He loves his puppy.",
             "output": "anti-stereotype",
             "explanation": "There is no relation between the first and second sentences, thus the answer should be unrelated."
+        },
+        {
+            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
+            "output": "unrelated",
+            "explanation": "The second sentence is based on a common stereotype that managers always want the staff to work too much, so it's not unrelated and it is a stereotype."
         }
     ],
     "Instances": [
@@ -61,12 +71,6 @@
             "input": "Target: performing artist \nPerforming artist are mostly found in New York City. Metropolitan Opera is in Manhattan.",
             "output": [
                 "unrelated"
-            ]
-        },
-        {
-            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
-            "output": [
-                "stereotype"
             ]
         },
         {
@@ -127,12 +131,6 @@
             "input": "Target: physicist \nthe physicist just graduated. grass is greener than you think.",
             "output": [
                 "unrelated"
-            ]
-        },
-        {
-            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
-            "output": [
-                "anti-stereotype"
             ]
         },
         {

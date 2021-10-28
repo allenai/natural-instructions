@@ -1,0 +1,940 @@
+{
+    "Source": [
+        "BSC-TeMU/ancora-ca-ner"
+    ],
+    "Definition": "You are given a Catalan sentence with a blank, and you need to predict the missing word.",
+    "Input_language": ["Catalan"],
+    "Output_language": ["Catalan"],
+    "Instruction_language": ["English"],
+    "Positive Examples": [ 
+        { 
+        "input": "Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gairebé la totalitat de la plantilla , s' han _____ aquest migdia pels carrers de la ciutat .",
+        "output": "manifestat", 
+        "explanation": "This is original sentence 'Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gairebé la totalitat de la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .'. So, we have correctly predicted the missing word to be 'manifestat'"
+        }, 
+        {   
+        "input": "Els treballadors han ____ aquesta matinada una vaga indefinida dels serveis de neteja viària i recollida d' escombraries .",
+        "output": "iniciat",  
+        "explanation": "This is original sentence 'Els treballadors han iniciat aquesta matinada una vaga indefinida dels serveis de neteja viària i recollida d' escombraries.'. So, we have correctly predicted the missing word to be 'iniciat'"
+        }
+    ], 
+  
+    "Negative Examples": [ 
+        { 
+        "input": "Si us ____",
+        "output": "Salut",  
+        "explanation": "This is bad example because we need to predict 'plau' to fill in the blank but we have predicted 'Salut'"
+        }, 
+        {   
+        "input": "L' ____ s' ha",
+        "output": "yes", 
+        "explanation": "This is bad example because we need to predict 'aturada' to fill in the blank but we have predicted 'yes'"
+        }
+    ],
+
+    "Instances": [
+        {
+            "input": "Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gairebé ____ totalitat de la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "Els treballadors han iniciat aquesta matinada una vaga indefinida dels serveis de neteja viària ____ recollida d' escombraries .",
+            "output": [
+                "i"
+            ]
+        },
+        {
+            "input": "Amb la protesta reclamen ____ l' empresa variï la seva actitud i accedeixi a la negociació del conveni i denuncien l' actitud ' prepotent ' de l' Ajuntament de Manresa .",
+            "output": [
+                "que"
+            ]
+        },
+        {
+            "input": "L' aturada s' ha convocat amb caràcter ____ .",
+            "output": [
+                "indefinit"
+            ]
+        },
+        {
+            "input": "Tot i que ahir hi va haver una reunió de darrera hora , no es va aconseguir acostar posicions , de manera ____ els treballadors han decidit anar a la vaga .",
+            "output": [
+                "que"
+            ]
+        },
+        {
+            "input": "A més de l' aturada i amb la finalitat de donar a conèixer les seves demandes al conjunt de la ciutat , la plantilla ha sortit avui al carrer en una manifestació que ha anat des de la Bonavista ____ a l' Ajuntament .",
+            "output": [
+                "fins"
+            ]
+        },
+        {
+            "input": "La protesta ha aplegat una setantena ____ empleats , gairebé el total de la plantilla , que és de 80 treballadors .",
+            "output": [
+                "d'"
+            ]
+        },
+        {
+            "input": "Els serveis mínims que ha decretat la direcció general de Relacions Laborals del departament de Treball de la Generalitat estableixen que la recollida d' escombraries es continuarà fent diàriament als hospitals , als centres assistencials , mercats ____ escoles amb servei de menjador .",
+            "output": [
+                "i"
+            ]
+        },
+        {
+            "input": "També garanteixen que el primer dia de recollida de serveis mínims serà a partir de les sis de la matinada del dilluns 4 de juny i que a partir d' ____ dia es faran cada 72 hores .",
+            "output": [
+                "aquest"
+            ]
+        },
+        {
+            "input": "L' Ajuntament de ____ ha posat en funcionament tot un seguit de mesures , la majoria informatives , que tenen com a finalitat minimitzar els efectes de la vaga .",
+            "output": [
+                "Manresa"
+            ]
+        },
+        {
+            "input": "D' una banda , s' ha fet una bustiada informativa sobre els dies que ____ haurà recollida de deixalles .",
+            "output": [
+                "hi"
+            ]
+        },
+        {
+            "input": "____ aquesta bustiada també es demana la col·laboració ciutadana per a evitar que les deixalles s' acumulin al carrer i s' informa que la vaga no afectarà la recollida selectiva .",
+            "output": [
+                "En"
+            ]
+        },
+        {
+            "input": "La bustiada es complementa amb rètols recordatoris als portals de les cases ____ amb adhesius als contenidors .",
+            "output": [
+                "i"
+            ]
+        },
+        {
+            "input": "Paral·lelament a les accions informatives i per a reduir els efectes de l' aturada ____ l' Ajuntament instal·larà 22 contenidors de recollida de brossa més als carrers del Nucli Antic on la recollida encara es fa porta a porta .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Aquests contenidors només estaran instal·lats mentre duri ____ vaga .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "Pel que fa als establiments comercials com bars , ____ o de venda d' aliments entre avui i demà s' habilitaran 8 zones preparades amb contenidors d' obra perquè aquests establiments , que generen un volum important de brossa , puguin dipositar les escombraries en indrets apartats .",
+            "output": [
+                "restaurants"
+            ]
+        },
+        {
+            "input": "Alhora , mentre duri la vaga l' abocador de Bufalvent acceptarà la brossa dels veïns o comerciants que decideixin dur -la directament ____",
+            "output": [
+                "."
+            ]
+        },
+        {
+            "input": "El secretari general d' ERC , Josep-Lluís Carod-Rovira , ha participat aquest migdia en un acte , davant la Delegació d' Hisenda de ____ , per reclamar un finançament just per a Catalunya .",
+            "output": [
+                "Tarragona"
+            ]
+        },
+        {
+            "input": "Carod-Rovira ha ____ que ' Catalunya esponsoritza Espanya ' , ja que cada català aporta cada any 220.000 pessetes a Madrid que mai no tornen .",
+            "output": [
+                "dit"
+            ]
+        },
+        {
+            "input": "____ líder d' ERC ha dit que el sistema de finançament actual perjudica les classes populars i el teixit productiu .",
+            "output": [
+                "El"
+            ]
+        },
+        {
+            "input": "En el cas dels empresaris , segons Carod , la situació és de clar greuge comparatiu amb altres comunitats autònomes , ja que ' aquí no poden tenir accés a sòl industrial , ni a la concessió de crèdits tous , ni al suport per a la renovació de maquinària , tal ____ com fan els governs autònoms de Galícia , Castella-la Manxa o Andalusia ' , la qual cosa ' fa que se 'n ressenti la modernització general del país ' .",
+            "output": [
+                "i"
+            ]
+        },
+        {
+            "input": "Davant d' aquesta situació ' insostenible ' , ERC proposa el ____ econòmic , un sistema ' legal ' , que és vigent a dues comunitats autònomes .",
+            "output": [
+                "concert"
+            ]
+        },
+        {
+            "input": "Aquesta situació , segons Carod , ' és l' ____ mentre formem part de l' Estat ' .",
+            "output": [
+                "ideal"
+            ]
+        },
+        {
+            "input": "El ____ republicà ha dit que ' només serà just un sistema de finançament que faci tornar una de cada tres pessetes que regalem a Madrid ' , això és , 220.000 pessetes per ciutadà .",
+            "output": [
+                "polític"
+            ]
+        },
+        {
+            "input": "Carod-Rovira ha comparat la situació de Catalunya i Espanya amb ____ d' Alemanya respecte d' Europa .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "' Els alemanys fan d' espònsors d' Europa com els catalans ho fem ____ Espanya , i a sobre ens titllen d' insolidaris ' , ha afegit .",
+            "output": [
+                "d'"
+            ]
+        },
+        {
+            "input": "L' acte d' ERC fet avui a Tarragona i ____ altres punts de Catalunya té per objectiu ' conscienciar la ciutadania que un millor finançament vol dir més escoles , més hospitals , més carreteres , més transport , més cultura , més accés a la societat de la informació , i , en definitiva , més benestar i més llibertat ' .",
+            "output": [
+                "en"
+            ]
+        },
+        {
+            "input": "Els alcaldes de Sallent , Balsareny i Súria i el president del Consell Comarcal del Bages han manifestat avui preocupació ____ futur incert de les mines de potassa .",
+            "output": [
+                "pel"
+            ]
+        },
+        {
+            "input": "De l' entrevista amb els dirigents de les mines , l' única informació que es va facilitar sobre el pla de viabilitat que s' està elaborant ____ que es preveuen inversions i que no hi ha cap previsió d' ampliar la plantilla , actualment integrada per uns 1.300 treballadors directes .",
+            "output": [
+                "és"
+            ]
+        },
+        {
+            "input": "Els responsables d' aquestes institucions han mantingut contactes amb els representants dels treballadors i també amb ____ direcció de l' empresa propietària de les mines , Iberpotash , per conèixer de prop la situació .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "En el decurs de la trobada , Iberpotash ha justificat els seus arguments a partir de l' anàlisi que s' ha fet ____ i l' ha avalada amb el contingut d' una consultoria externa que ha encarregat , de la qual no n' ha fet públic cap detall .",
+            "output": [
+                "internament"
+            ]
+        },
+        {
+            "input": "La poca precisió en les explicacions d' Iberpotash és un dels motius de la preocupació que han manifestat avui els alcaldes i el president del Consell Comarcal del Bages ____",
+            "output": [
+                "."
+            ]
+        },
+        {
+            "input": "En aquest sentit han anunciat que han demanat una entrevista amb el conseller ____ Indústria , Antoni Subirà , per a tractar aquest tema .",
+            "output": [
+                "d'"
+            ]
+        },
+        {
+            "input": "Segons el president del Consell Comarcal , Agustí Redó , la mineria , que ocupa directament unes 1.300 persones , és un sector estratègic al Bages ____ per tant , el Consell ha d' assumir les seves responsabilitats i exercir com a mitjancer en el cas que hi hagi situacions conflictives que amenacin una part important de la societat del Bages .",
+            "output": [
+                "i"
+            ]
+        },
+        {
+            "input": "En la reunió amb el ____ d' Indústria , els representants institucionals del Bages demanaran informació sobre les condicions en les quals es va efectuar l' operació de privatització de les mines .",
+            "output": [
+                "conseller"
+            ]
+        },
+        {
+            "input": "Segons l' alcalde de Súria , Antoni ____ , no és normal que fins ara no s' hagin donat a conèixer quins compromisos va adquirir l' empresa a l' hora de comprar una propietat pública .",
+            "output": [
+                "Julián"
+            ]
+        },
+        {
+            "input": "Abans de la trobada amb la direcció d' Iberpotash , els alcaldes i el president del Consell s' havien reunit amb els representants dels treballadors ____",
+            "output": [
+                "."
+            ]
+        },
+        {
+            "input": "En aquesta trobada , els comitès han expressat la seva desconfiança perquè no han detectat que s' hagin fet inversions ni millores ____ les explotacions .",
+            "output": [
+                "en"
+            ]
+        },
+        {
+            "input": "____ i així , la principal preocupació dels sindicats fa referència a les conseqüències que pot tenir en la plantilla el pla de viabilitat .",
+            "output": [
+                "Tot"
+            ]
+        },
+        {
+            "input": "En aquest sentit , el vicepresident primer del Consell Comarcal del Bages , Ezequiel Martínez , ____ reclamat que si hi ha voluntat de reduir plantilles , cal que això es faci amb ' responsabilitat ' per la importància del sector a la comarca .",
+            "output": [
+                "ha"
+            ]
+        },
+        {
+            "input": "La Cambra de ____ proposa dinamitzar el sector turístic andorrà amb la creació d' un petit parc temàtic , un casino , un camp de golf , un palau de congressos i un centre d' oci familiar .",
+            "output": [
+                "Comerç"
+            ]
+        },
+        {
+            "input": "El president de la Cambra de Comerç , Ramon Cierco , espera que el sector rebi amb bons ulls aquestes propostes que sorgeixen ____ un informe encarregat per la corporació .",
+            "output": [
+                "d'"
+            ]
+        },
+        {
+            "input": "La Cambra de comerç d' Andorra estudia augmentar i diversificar l' oferta turística del país amb els projectes d' un petit parc temàtic , ____ casino , un camp de golf , un palau de congressos i centres d' oci familiar i nocturn .",
+            "output": [
+                "un"
+            ]
+        },
+        {
+            "input": "Les propostes lúdiques provenen d' un estudi encarregat per la Cambra a una empresa de Barcelona i presentat aquest dijous a la tarda al Comú d' Escaldes davant el ministre de Turisme i un centenar de representants del món hoteler i turístic ____ .",
+            "output": [
+                "andorrà"
+            ]
+        },
+        {
+            "input": "Per tal d' aconseguir l' adaptació dels projectes ____ les necessitats i possibilitats del país , l' empresa barcelonina Iniciatives Socioculturals ha estudiat la realitat andorrana amb enquestes a representants de diversos sectors econòmics .",
+            "output": [
+                "a"
+            ]
+        },
+        {
+            "input": "____ projectes es dirigeixen sobretot al turisme de qualitat i infantil i pretenen acabar amb l' estacionalitat , segons ha explicat el director de l' informe , Josep Munné , que ha dirigit grans projectes lúdics com el Maremagnum o el Barça 2000 .",
+            "output": [
+                "Els"
+            ]
+        },
+        {
+            "input": "El president de la cambra de comerç , Ramon Cierco , espera que Andorra rebi ____ bons ulls els projectes per a un nou turisme .",
+            "output": [
+                "amb"
+            ]
+        },
+        {
+            "input": "L' estudi planteja també propostes sobre gestió comercial dels camps de neu , diverses ____ de turisme de la natura , i fins i tot un producte de formació de postgrau sobre el sector turístic o gestió d' infraestructures d' hivern .",
+            "output": [
+                "ofertes"
+            ]
+        },
+        {
+            "input": "El Grup Socialistes-Ciutadans pel Canvi ( SCC ) ha presentat una proposició no de llei al Parlament on insta el Govern de la Generalitat a obrir una ____ del Departament d' Agricultura , Ramaderia i Pesca ( DARP ) a Prats de Lluçanès ( Osona ) ' apropant aquest servei a la població ' .",
+            "output": [
+                "oficina"
+            ]
+        },
+        {
+            "input": "La proposició no de llei de SCC demana que aquesta oficina ____ també servei als municipis propers del Berguedà i El Bages .",
+            "output": [
+                "doni"
+            ]
+        },
+        {
+            "input": "Així mateix , es demana una major dotació de personal fix a l' oficina comarcal del DARP de Vic ( Osona ) i que es busquin les solucions més adients ____ disposar d' un espai adequat on poder treballar i atendre còmodament els usuaris .",
+            "output": [
+                "per"
+            ]
+        },
+        {
+            "input": "Segons SCC , l' oficina comarcal del DARP de Vic gestiona aproximadament el 50 per cent del ____ ramader de la demarcació de Barcelona .",
+            "output": [
+                "cens"
+            ]
+        },
+        {
+            "input": "Actualment hi treballen 21 persones , que gestionen els processos administratius ____ sector ramader .",
+            "output": [
+                "del"
+            ]
+        },
+        {
+            "input": "A més , segons SCC , el sector del boví actualment requereix d' uns processos de control i ____ del bestiar ( DIB ) que afegits a altres gestions fan que d' un temps ençà els usuaris es queixin de les llargues cues que s' originen i de les llargues estones d' espera .",
+            "output": [
+                "identificació"
+            ]
+        },
+        {
+            "input": "En aquest sentit , SCC ____ que les solucions per pal·liar aquests problemes passen per dotar l' oficina de més personal per atendre els usuaris , més espai , ja que una quarta part de l' edifici està ocupada pels Guardes Forestals , i per obrir una nova oficina del DARP a Prats de Lluçanès , on actualment hi ha una subunitat .",
+            "output": [
+                "considera"
+            ]
+        },
+        {
+            "input": "Els pagesos de la fruita seca tornaran a mobilitzar -se , el proper 16 de juny a Madrid , en un nou acte de protesta per pressionar la Unió ____ i aconseguir la continuïtat de les ajudes al sector .",
+            "output": [
+                "Europea"
+            ]
+        },
+        {
+            "input": "El sindicat Unió de Pagesos va convocar anit unes 500 persones en una nova assemblea , on es va explicar en quin punt es ____ les negociacions i va convidar els assistents a participar a la manifestació de Madrid .",
+            "output": [
+                "troben"
+            ]
+        },
+        {
+            "input": "La mobilització es farà només tres dies abans del Consell de Ministres d' Agricultura europeus del mes de juny , on previsiblement podria sortir un nou acord que renovi un any més la ____ de les subvencions a la fruita seca .",
+            "output": [
+                "pròrroga"
+            ]
+        },
+        {
+            "input": "El sindicalista Josep Suñé reconeixia anit que hi ha cert optimisme al sector al voltant d' ____ sortida positiva a la crisi , però que ' mentre no hi hagi res , cal continuar pressionant ' .",
+            "output": [
+                "una"
+            ]
+        },
+        {
+            "input": "Unió de ____ va demanar als assistents que participin a la manifestació de Madrid .",
+            "output": [
+                "Pagesos"
+            ]
+        },
+        {
+            "input": "Per aconseguir el màxim ____ participació possible , el sindicat posarà autobusos a disposició dels pagesos que hi vulguin anar .",
+            "output": [
+                "de"
+            ]
+        },
+        {
+            "input": "Cal remarcar que en aquesta nova manifestació hi participaran organitzacions agràries ____ arreu de l' Estat .",
+            "output": [
+                "d'"
+            ]
+        },
+        {
+            "input": "Esquerra Republicana de Catalunya ( ERC ) es proposa dur el ____ Hidrològic Nacional ( PHN ) al Consell Consultiu de la Generalitat perquè estudiï si és constitucional .",
+            "output": [
+                "Pla"
+            ]
+        },
+        {
+            "input": "El secretari general d' ERC ____ Josep Lluís Carod-Rovira , ha dit que espera comptar amb la complicitat dels altres grups al Parlament per tirar endavant aquesta iniciativa un cop el PHN quedi definitivament aprovat .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Carod s' ha reunit aquest vespre amb els representants de la Plataforma en Defensa de l' Ebre , a qui ha expressat el seu suport en la lluita contra ____ transvasaments .",
+            "output": [
+                "els"
+            ]
+        },
+        {
+            "input": "El líder republicà ha dit que ' hi ha motius suficients per considerar que el Pla Hidrològic és inconstitucional ' , per la qual cosa es proposarà al Parlament ____ Catalunya de dur -lo al Consell Consultiu de la Generalitat .",
+            "output": [
+                "de"
+            ]
+        },
+        {
+            "input": "Per tal que ____ iniciativa prosperi , Carod espera comptar ' amb la complicitat d' altres grups polítics ' .",
+            "output": [
+                "aquesta"
+            ]
+        },
+        {
+            "input": "Al marge de reunir -se amb els representants de la Plataforma , el secretari general d' ERC ha dictat aquest vespre una conferència a Tortosa ____ on ha exposat la seva visió de quin ha de ser el futur de les Terres de l' Ebre .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "En la seva opinió , el Govern de la Generalitat ' ____ d' adoptar mesures pressupostàries i administratives per aconseguir un autèntic desenvolupament econòmic d' aquestes comarques per tal d' aconseguir la seva modernització ' .",
+            "output": [
+                "ha"
+            ]
+        },
+        {
+            "input": "Carod ha afegit que ' cal que la resta de Catalunya conegui més aquestes comarques i assumeixi la seva cultura com a pròpia incorporant -la a l' univers sentimental de Catalunya ' ____",
+            "output": [
+                "."
+            ]
+        },
+        {
+            "input": "El Tribunal Suprem ( TS ) ha confirmat la condemna a quatre anys d' inhabilitació especial i una multa de 3,6 milions de pessetes per a quatre veterinaris gironins , per haver -se beneficiat dels càrrecs públics que desenvolupaven i la seva relació amb les ____ càrniques de la zona en oferir -los serveis particulars .",
+            "output": [
+                "empreses"
+            ]
+        },
+        {
+            "input": "La sentència , a la qual ha tingut accés Intra-ACN , desestima els recursos interposats pels processats , Albert Bramón ____ president del Col·legi de Veterinaris de Girona en el moment dels fets , i Josefina J. , Pere C. i Mateu B. , que actuaven com a inspectors veterinaris de la Generalitat , i que van ser condemnats per l' Audiència de Girona per un delicte de negociacions prohibides a funcionaris .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Els funcionaris s' encarregaven del control de la higiene de les empreses càrniques de La Garrotxa , i per aquest motiu feien ____ periòdiques i analítiques .",
+            "output": [
+                "visites"
+            ]
+        },
+        {
+            "input": "Aprofitant aquest fet , els processats van constituir l' any 1991 una empresa dedicada a la planificació i a l' analítica de matèries primeres , i van utilitzar les ____ oficials per oferir els serveis i captar els empresaris que inspeccionaven .",
+            "output": [
+                "visites"
+            ]
+        },
+        {
+            "input": "Segons el Tribunal Suprem , ' és clar que els acusats van actuar en connexió amb el càrrec ____ i van intentar i van arribar a obtenir un avantatge o interès privat ' .",
+            "output": [
+                "oficial"
+            ]
+        },
+        {
+            "input": "Pel que fa al coneixement de la il·licitud de ____ seva acció , l' alt tribunal sosté que ' és evident que són universitaris , amb un estàndard de coneixements d' acord amb la seva especialitat ' i afegeix que ' des d' aquesta realitat no és acceptable defensar que no tenien la consciència de la il·licitud de la seva acció , ja que això forma part del nivell mitjà de coneixements i sensibilitats atribuïdes a la generalitat de persones que estan en aquesta situació ' .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "D' altra banda , el Suprem entén que no és acceptable que els recurrents desconeguessin ____ normativa , per la seva professió i condició de funcionaris públics de la Generalitat .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "Les antigues instal·lacions de l' ____ Gabriel i Ferrater , de Reus , que són propietat de la Diputació de Tarragona , seran , amb tota probabilitat , la futura seu de l' Escola Oficial d' Idiomes .",
+            "output": [
+                "IES"
+            ]
+        },
+        {
+            "input": "L' oferiment d' aquest emplaçament per ____ del President de la Diputació de Tarragona , Josep Mariné , respon a la petició feta per la consellera d' Ensenyament de la Generalitat , Carme-Laura Gil , en el sentit de demanar uns emplaçaments per situar -hi la nova escola d' idiomes .",
+            "output": [
+                "part"
+            ]
+        },
+        {
+            "input": "L' Hospital Arnau de Vilanova ha ____ avui un nou cas de colonització d' un bacteri en un pacient ingressat en una Unitat de Cures Intensives del centre .",
+            "output": [
+                "detectat"
+            ]
+        },
+        {
+            "input": "Segons ha explicat el conseller de Sanitat ____ Eduard Rius , que aquesta tarda ha visitat La Seu d' Urgell , el pacient ja estava infectat abans d' entrar a l' hospital però es procedirà igualment a desinfectar tota la zona .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Precisament ahir va entrar en funcionament una de les unitats de cures intensives de l' hospital després que s' hagués de desinfectar en detectar -se la presència d' un brot infecciós a ____ del mes de maig que va afectar 12 malalts .",
+            "output": [
+                "principis"
+            ]
+        },
+        {
+            "input": "D' aquests pacients , quatre encara romanen en la tercera de les unitats mentre que tres van morir però no a causa del bacteri sinó pels motius que ____ provocat el seu ingrés en la unitat .",
+            "output": [
+                "havien"
+            ]
+        },
+        {
+            "input": "El 25 % dels futurs usuaris del Tren d' Alta Velocitat ( TAV ) de la regió metropolitana de Barcelona utilitzarà l' estació del Vallès per agafar el tren , segons un estudi que ha fet l' ____ de Terrassa .",
+            "output": [
+                "Ajuntament"
+            ]
+        },
+        {
+            "input": "L' alcalde de Terrassa , Manuel Royes , ha presentat avui els resultats d' aquest ____ sobre la capacitat d' atracció de viatgers de la futura estació de ferrocarril d' alta velocitat del Vallès .",
+            "output": [
+                "estudi"
+            ]
+        },
+        {
+            "input": "L' estudi ha ____ realitzat amb la col·laboració de la Diputació de Barcelona .",
+            "output": [
+                "estat"
+            ]
+        },
+        {
+            "input": "L' estació del tren d' alta velocitat ____ Vallès està previst que entri en servei l' any 2004 .",
+            "output": [
+                "del"
+            ]
+        },
+        {
+            "input": "Estarà ____ a la zona de Ca n' Ametller a Sant Cugat del Vallès , al costat mateix de l' Hospital General de Catalunya .",
+            "output": [
+                "situada"
+            ]
+        },
+        {
+            "input": "L' estudi s' ha fet amb els objectius de ____ quina serà la demanda de l' estació del Vallès , quina oferta de trens haurà de tenir , d' on procedirà aquesta demanda i quines mesures cal adoptar per a facilitar l' accés al nou equipament .",
+            "output": [
+                "conèixer"
+            ]
+        },
+        {
+            "input": "En concret , sobre la demanda de l' estació , ____ informe recull que actualment a la Regió Metropolitana de Barcelona es produeixen 50 milions de desplaçaments a l' any , tant d' entrada com de sortida .",
+            "output": [
+                "l'"
+            ]
+        },
+        {
+            "input": "D' aquests ____ , el 67 % es fan en vehicle privat , el 12 % en tren i la resta en avió i altres mitjans de transport .",
+            "output": [
+                "viatges"
+            ]
+        },
+        {
+            "input": "Tanmateix i amb l' entrada en funcionament de l' estació ____ Vallès del Tren d' Alta Velocitat i la seva consolidació , per a l' any 2010 l' ús del vehicle privat baixaria a un 43 % , el del tren de gran velocitat seria del 46 % , mentre que el d' avió i altres mitjans es quedaria en un 11 % .",
+            "output": [
+                "del"
+            ]
+        },
+        {
+            "input": "L' estudi també reflecteix que ____ 25 % dels viatgers de la Regió Metropolitana preferirien l' estació del Vallès per fer els seus desplaçaments .",
+            "output": [
+                "un"
+            ]
+        },
+        {
+            "input": "L' estació del Vallès captarà 5,2 milions de viatges , quantitat que suposa una quarta part del nombre de desplaçaments realitzats amb ____ tren d' alta velocitat .",
+            "output": [
+                "el"
+            ]
+        },
+        {
+            "input": "També es considera que l' estació del Vallès del ____ d' alta velocitat descongestionarà els accessos a Barcelona per carretera .",
+            "output": [
+                "tren"
+            ]
+        },
+        {
+            "input": "En relació a l' oferta de trens que haurà de tenir la futura estació , l' informe assegura que haurien de funcionar cada dia 60 trens en cada sentit de la marxa ____ 24 amb destinació dins de Catalunya i 36 trens amb destinació fora de Catalunya , incidint especialment en una alta freqüència de pas en hores punta .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Sobre els accessos , l' estació del Vallès tindrà una bona connexió per tren suburbà , gràcies a les línies de l' actual Metro del Vallès de Ferrocarrils de la Generalitat i la línia C-5 de Rodalies Renfe , la qual s' ____ de construir properament .",
+            "output": [
+                "ha"
+            ]
+        },
+        {
+            "input": "No obstant , es ____ que caldrà millorar els accessos per autobús , implantant noves línies o modificant les ja existents .",
+            "output": [
+                "considera"
+            ]
+        },
+        {
+            "input": "També s' haurà de preveure inicialment un aparcament ____ a mil cotxes , ampliable en el futur .",
+            "output": [
+                "per"
+            ]
+        },
+        {
+            "input": "El conseller de Política Territorial i Obres Públiques de la Generalitat , Pere Macias , l' abat de Montserrat , Josep Maria Soler , i el president de Ferrocarrils de la Generalitat , Antoni Herce , han inaugurat avui la remodelació del funicular de la Santa Cova de Montserrat , que va ____ totalment inutilitzat a causa dels aiguats de fa un any .",
+            "output": [
+                "quedar"
+            ]
+        },
+        {
+            "input": "Amb la posada en funcionament del funicular es completen les obres en infraestructures malmeses ____ Montserrat a causa dels aiguats .",
+            "output": [
+                "a"
+            ]
+        },
+        {
+            "input": "La remodelació ha costat 110 milions de pessetes ____",
+            "output": [
+                "."
+            ]
+        },
+        {
+            "input": "La posada en funcionament del funicular ha requerit fer de nou els vehicles , que ara són panoràmics com els del funicular de Sant ____ .",
+            "output": [
+                "Joan"
+            ]
+        },
+        {
+            "input": "La intervenció ha consistit també en la rehabilitació ____ edificis i de les infraestructures de l' entorn .",
+            "output": [
+                "dels"
+            ]
+        },
+        {
+            "input": "A més , s' ha aprofitat per a situar una exposició ____ l' estació superior sobre el projecte del nou cremallera i dues més a l' estació inferior sobre la història de la Santa Cova i sobre els funiculars .",
+            "output": [
+                "a"
+            ]
+        },
+        {
+            "input": "En l' acte d' inauguració , el president de Ferrocarrils de la Generalitat , Antoni Herce , ha posat de relleu que un cop reparats els dos funiculars , el repte pendent en matèria de transports a Montserrat és ____ nou cremallera , que permetrà donar resposta a les necessitats dels més de 2 milions de visitants que cada any pugen al monestir .",
+            "output": [
+                "el"
+            ]
+        },
+        {
+            "input": "Segons Herce , el cremallera serà un servei de qualitat , respectuós amb el medi ambient i silenciós ____ tal i com ' requereix l' entorn ' .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Per al conseller de Política Territorial , Pere Macias , la reobertura del funicular suposa la superació de la riuada de fa ____ any .",
+            "output": [
+                "un"
+            ]
+        },
+        {
+            "input": "De la seva banda , l' abat de Montserrat , Josep Maria Soler , ha posat de relleu que el funicular facilitarà l' accés dels pelegrins , dels amants de l' art que visiten el camí de la ____ Cova i també dels amants de la natura .",
+            "output": [
+                "Santa"
+            ]
+        },
+        {
+            "input": "El funicular ____ la Santa Cova fa un recorregut de 232 metres , d' un desnivell de 118 i d' un pendent màxim del 56,5 per cent .",
+            "output": [
+                "de"
+            ]
+        },
+        {
+            "input": "El trajecte del viatge ____ tres minuts .",
+            "output": [
+                "dura"
+            ]
+        },
+        {
+            "input": "Les dues noves cabines panoràmiques , amb capacitat per a 60 persones , estan dotades amb les més modernes tecnologies de seguretat i confort , com portes automàtiques elèctriques , calefacció i cabines ____ conducció independents .",
+            "output": [
+                "de"
+            ]
+        },
+        {
+            "input": "Són cabines espaioses i estan adaptades ____ persones de mobilitat reduïda .",
+            "output": [
+                "a"
+            ]
+        },
+        {
+            "input": "Aquest funicular es va inaugurar l' any 1929 per a transportar els pelegrins que anaven a la Santa Cova o al Rosari monumental ____ amb obres de Josep Puig i Cadafalch , Antoni Gaudí o Josep Llimona .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "L' últim any que va funcionar abans ____ aiguats , el 1999 , va transportar 128.000 viatgers .",
+            "output": [
+                "dels"
+            ]
+        },
+        {
+            "input": "El Funicular de la Santa Cova ha estat durant un any sense ____ arran dels treballs de reparació iniciats després dels aiguats de l' any passat .",
+            "output": [
+                "funcionar"
+            ]
+        },
+        {
+            "input": "El funicular , que estava a l' estació inferior en el moment de la forta pluja , va quedar ____ destruït .",
+            "output": [
+                "pràcticament"
+            ]
+        },
+        {
+            "input": "Aquesta no era la primera vegada que el funicular de ____ Santa Cova es veia afectat per una catàstrofe natural .",
+            "output": [
+                "la"
+            ]
+        },
+        {
+            "input": "L' any 1994 també es va haver de tancar arran dels incendis forestals que ____ afectar la muntanya .",
+            "output": [
+                "van"
+            ]
+        },
+        {
+            "input": "A més del funicular de la Santa Cova , Ferrocarrils de la Generalitat també gestiona el funicular de Sant Joan , que va ser totalment remodelat l' any ____ i que també es va veure afectat pels aiguats , tot i que la reparació va ser més senzilla .",
+            "output": [
+                "1997"
+            ]
+        },
+        {
+            "input": "La demarcació de Tarragona té 33 municipis que encara no disposen de Pla General d' Ordenació Urbana ( PGOU ) , segons dades facilitades pel conseller de Política Territorial , Pere Macias , en resposta a una pregunta parlamentària del diputat d' ____ Jaume Oliveras .",
+            "output": [
+                "ERC"
+            ]
+        },
+        {
+            "input": "Macias ____ assenyalat que la Comissió d' Urbanisme de Tarragona va dictar l' any 1979 unes Normes Subsidiàries i Complementàries de Planejament per aplicar de manera directa a 117 municipis de la demarcació de Tarragona , com a instrument d' ordenació , perquè no disposaven en aquell moment d' un PGOU o bé de Normes Subsidiàries de planejament municipal .",
+            "output": [
+                "ha"
+            ]
+        },
+        {
+            "input": "____ l' actualitat , segons el conseller , d' aquells 117 resten només 33 municipis sense planejament general .",
+            "output": [
+                "En"
+            ]
+        },
+        {
+            "input": "Aquests són Els Garidells , Mont-ral , Nulles , Vallmoll ( Alt Camp ) , L' Arbolí , L' Argentera ( Baix Camp ) , Tivenys ( Baix Ebre ) , Llorac , Les Piles ____ Pontils , Sarral , Vallfogona de Riucorb , ( Conca de Barberà ) , Mas de Barberans , Masdenverge ( Montsià ) , La Bisbal de Falset , Cabassers , Capçanes , La Figuera , Gratallops , El Lloar , Margalef , Poboleda , Porrera , Pradell de Teixeta , La Torre de Fontaubella , Torroja de Priorat , Ulldemolins , La Vilella Alta ( Priorat ) , La Palma d' Ebre ( Ribera d' Ebre ) , Bot , Caseres , La Pobla de Massaluca , Prat de Comte ( Terra Alta ) .",
+            "output": [
+                ","
+            ]
+        },
+        {
+            "input": "Tots ells tenen ____ curs la redacció o la tramitació de les corresponents Normes Subsidiàries municipals .",
+            "output": [
+                "en"
+            ]
+        },
+        {
+            "input": "L' empresa promotora Garraf Mediterrània SA i Pirelli Cables y Sistemas SA , en col·laboració amb l' Ajuntament de Vilanova i la Geltrú , han convocat el concurs d' idees de l' anomenat ' Espai Pirelli ' per seleccionar , a partir del dia 8 de juny i durant els propers mesos , les propostes urbanístiques , arquitectòniques i mediambientals que serviran de base per a la redacció del futur Pla Especial de Reforma Interior ( ____ ) dels terrenys que ara ocupa Pirelli a Vilanova .",
+            "output": [
+                "PERI"
+            ]
+        },
+        {
+            "input": "La transformació immobiliària de l' actual fàbrica de Pirelli , amb una superfície de 10 ____ , comportarà una inversió de 25.000 milions de pessetes .",
+            "output": [
+                "hectàrees"
+            ]
+        },
+        {
+            "input": "La transformació de ____ Espai Pirelli serà una de les operacions immobiliàries més importants a Catalunya .",
+            "output": [
+                "l'"
+            ]
+        },
+        {
+            "input": "D' altra banda , l' alcalde de Vilanova i la Geltrú , Sixte Moral , ha destacat que el desenvolupament immobiliari d' aquesta superfície ' és una operació fonamental i estratègica no només per a Vilanova , sinó per a tota la comarca , ja que contribuirà a l' estimulació del desenvolupament de l' ____ Eix Diagonal , bàsic per a la vertebració de les comarques interiors de Catalunya ' .",
+            "output": [
+                "anomenat"
+            ]
+        },
+        {
+            "input": "L' Espai Pirelli , compta amb una superfície de 10 hectàrees i ____ una inversió aproximada de 25.000 milions de pessetes .",
+            "output": [
+                "suposarà"
+            ]
+        },
+        {
+            "input": "El 65 per cent es destinarà a ____ públics , vialitat i zones verdes , mentre que el 35 per cent restant serà de titularitat privada .",
+            "output": [
+                "equipaments"
+            ]
+        },
+        {
+            "input": "El passat 4 de desembre , el ple de l' Ajuntament de Vilanova va aprovar per unanimitat el conveni de col·laboració urbanístic subscrit amb Pirelli Cables y Sistemas SA en ____ als terrenys que ocupa la seva fàbrica i el dia 29 del mateix mes , aquesta empresa i Garraf Mediterrània SA arribaven a un acord per a la compravenda de l' esmentada finca .",
+            "output": [
+                "relació"
+            ]
+        },
+        {
+            "input": "La promotora Garraf Mediterrània SA és una societat participada per les empreses promotores Qualitat Promocions SCCL ; Qualitat Obres SL ____ i Raiding SA ; a més de les entitats financeres Caixa Manresa i Caixa de Sabadell .",
+            "output": [
+                ";"
+            ]
+        },
+        {
+            "input": "L' Institut Català del Sòl ( Incasol ) manté el compromís de destinar 18.402.516 pessetes a les obres de cobertura del torrent de Ca n' Alzamora a Rubí ____ Vallès Occidental ) , segons ha confirmat el conseller de Medi Ambient , Felip Puig , en resposta a una pregunta parlamentària del diputat d' ERC Joan Ridao .",
+            "output": [
+                "("
+            ]
+        },
+        {
+            "input": "Puig ha assegurat que l' Incasol manté el compromís d' abonar l' ____ del projecte quan s' executin les obres de cobriment .",
+            "output": [
+                "import"
+            ]
+        },
+        {
+            "input": "Tot i amb això , ha afegit , actualment l' Agència Catalana de l' Aigua ( ACA ) no té coneixement que hagi entrat en les seves dependències la sol·licitud d' autorització per fer -les , ni per part de l' Ajuntament ni de l' ____ Català del Sòl .",
+            "output": [
+                "Institut"
+            ]
+        },
+        {
+            "input": "El conseller ha assenyalat que tampoc es té coneixement que ____ hagi demanat formalment la realització de les obres a la pròpia ACA .",
+            "output": [
+                "s'"
+            ]
+        },
+        {
+            "input": "L' Ajuntament de Rubí , ____ principis de 1998 , va demanar a l' Incasol una solució tècnica per resoldre el problema de la pudor procedent del Torrent de Ca n' Alzamora en el tram que transcorre a cel obert , a prop del barri Torre de la Llebre .",
+            "output": [
+                "a"
+            ]
+        },
+        {
+            "input": "L' Incasol , d' acord amb els serveis tècnics municipals , va redactar un projecte que va ser tramès a l' Ajuntament l' 11 de ____ de 1998 i que la Comissió de Govern del consistori va aprovar el 8 de juny següent , a condició que , per una despesa pressupostària equivalent , se substituís l' escullera de la darrera part del torrent per una prolongació del col·lector formada per un calaix de formigó .",
+            "output": [
+                "maig"
+            ]
+        },
+        {
+            "input": "El pressupost total de les obres era de 18.402.516 pessetes i , d' acord amb el projecte de l' Incasol , incloïa el tractament paisatgístic i no el cobriment ____ torrent .",
+            "output": [
+                "del"
+            ]
+        },
+        {
+            "input": "Davant la persistència de problemes de pudors , el mes de setembre de 1998 , al marge del projecte , es van remodelar els mecanismes de captació ____ aigües fecals , amb la qual cosa es va resoldre .",
+            "output": [
+                "d'"
+            ]
+        },
+        {
+            "input": "Segons Puig , ' així ho va reconèixer el regidor de l' Àrea d' Urbanisme en un escrit de data 6 d' octubre de 1998 , en el qual també demanava a ____ Incasol que continués el projecte que s' havia aprovat l' anterior mes de juny ' .",
+            "output": [
+                "l'"
+            ]
+        },
+        {
+            "input": "Per aquest ____ , segons Puig , no es va considerar oportú cobrir una part del torrent amb un calaix de formigó perquè la quantitat a destinar , 18.402.516 pessetes , solament permetia fer el 10 per cent de l' obra , ' la qual cosa no tenia cap sentit ni des del punt de vista econòmic ni des del tècnic ' .",
+            "output": [
+                "motiu"
+            ]
+        },
+        {
+            "input": "Un incendi que ____ ha declarat aquesta tarda al costat de la via del tren al terme municipal de Vinaixa , ha provocat l' aturada de dos trens regionals en ambdues direccions .",
+            "output": [
+                "s'"
+            ]
+        },
+        {
+            "input": "Aquesta situació ha durat ____ hores .",
+            "output": [
+                "dues"
+            ]
+        },
+        {
+            "input": "L' incendi s' ha declarat a ____ 15:55 hores i s' ha perllongat durant dues hores .",
+            "output": [
+                "les"
+            ]
+        },
+        {
+            "input": "Els dos trens que s' han vist afectats han ____ el regional Lleida-Barcelona , que ha patit un retard de 20 minuts , i el regional Barcelona-Lleida , amb un retard de dues hores .",
+            "output": [
+                "estat"
+            ]
+        },
+        {
+            "input": "L' incendi també ha obligat a desviar per la via de Casp dos trens de llarg recorregut que feien el ____ Barcelona-País Basc .",
+            "output": [
+                "trajecte"
+            ]
+        },
+        {
+            "input": "Fonts de Bombers han confirmat que en l' apagada del foc hi han intervingut quatre cotxes dels parcs de Mollerussa , Les Borges Blanques , Montblanc i Lleida , dos dels quals ja s' ____ retirat i els altres dos romanien hores d' ara humitejant la zona .",
+            "output": [
+                "han"
+            ]
+        },
+        {
+            "input": "El Grup Municipal d' IC-V-LP presentarà una moció al Ple ____ que s' adeqüi les platges de Tarragona a les persones minusvàlides .",
+            "output": [
+                "demanant"
+            ]
+        }
+    ],
+    "Categories" : ["Sentence Generation"],
+    "Contributors": ["Surya Singulur"]
+
+}
