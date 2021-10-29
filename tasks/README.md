@@ -1337,3 +1337,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1517_limit_classfication` | Classifying sentence based on the condition that it contains a motion of a physical entity or not.| Classfication
+`task1518_limit_answer_generation` | Identifying the entities in a sentence where these entities take part in a physical motion. | Question Answering
+`task1519_qa_srl_question_generation` | Using given sentence and a verb,generating questions which can be answered from the sentence. | Question Generation
+`task1520_qa_srl_answer_generation` | Generating answers to the questions based on the given sentence| Question Answering
