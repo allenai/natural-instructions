@@ -8,7 +8,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task you are given a sentence pair from wikipedia that have high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other label them as \"Paraphrase\" , if not label them as \"Not paraphrase\". The two sentences are seperated by a new line character.",
+    "Definition": "In this task you are given a sentence pair from wikipedia that have high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other label them as \"Paraphrase\" , if not label them as \"Not paraphrase\". The two sentences are seperated by a new line.",
     "Positive Examples": [
         {
             "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
@@ -24,6 +24,11 @@
             "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
             "output": "Not paraphrase",
             "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
         }
     ],
     "Negative Examples": [
@@ -31,6 +36,11 @@
             "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
             "output": "Paraphrase",
             "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
         }
     ],
     "Instances": [
@@ -41,21 +51,9 @@
             ]
         },
         {
-            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
-            "output": [
-                "Not paraphrase"
-            ]
-        },
-        {
             "input": "Steiner argued that , in the right circumstances , the spiritual world can be explored through direct experience by practicing ethical and cognitive forms of rigorous self-discipline .\nSteiner held that the spiritual world can be researched in the right circumstances through direct experience , by persons practicing rigorous forms of ethical and cognitive self-discipline .",
             "output": [
                 "Not paraphrase"
-            ]
-        },
-        {
-            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
-            "output": [
-                "Paraphrase"
             ]
         },
         {
