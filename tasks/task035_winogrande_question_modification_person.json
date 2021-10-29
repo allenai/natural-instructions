@@ -7,34 +7,36 @@
         "winogrande"
     ],
     "Categories": [
-        "Text Modification"
+        "Text Modification",
+        "Reasoning -> Commonsense Reasoning",
+        "Coreference -> Pronoun Disambiguation"
     ],
-    "Definition": "You're given a fill-in-the-blank question where the answer is PersonX. You need to minimally change the given question so that the answer flips to PersonY. This task typically involves replacing one word i.e. the 'trigger word' by its antonym (e.g. changing from \"sympathetic\" to \"stern\").\nThings to avoid: 1. You should not change any content in the given question beyond a word or two i.e. the trigger word/phrase. 2. PersonX and PersonY should not be equally likely to fill the blank. For your question, PersonY should be an well-agreed answer to fill in the blank. 3. Your generations should NOT contain potentially explicit, offensive, or adult content. 4. Do not use names of real people (e.g., Donald Trump, Putin, etc.) in your question. 5. Avoid repeating the same style or phrase in generating your modified question e.g. this task can be always solved using a simple negation i.e. by adding not, never, etc.  Instead, try to increase the word diversity.\nEmphasis & Caution: 1. Your question must contain at least 15 and at most 30 words. 2. Your question must have atleast 70% overlapping words with the given question 3. You must utilize the given context word while writing the question. 4. Your question must contain only one blank. 5. Make sure that PersonX and PersonY have the same gender. 6. In your question, PersonX and PersonY should be used only ONCE and PersonX should appear earlier than PersonY.",
+    "Definition": "You're given a fill-in-the-blank question where the answer is PersonX. You need to minimally change the given question so that the answer flips to PersonY. This task typically involves replacing one word i.e. the 'trigger word' by its antonym (e.g. changing from \"sympathetic\" to \"stern\").\nThings to avoid: 1. You should not change any content in the given question beyond a word or two i.e. the trigger word/phrase.\n2. PersonX and PersonY should not be equally likely to fill the blank. For your question, PersonY should be a well-agreed answer to fill in the blank.\n3. Your generations should NOT contain potentially explicit, offensive, or adult content.\n4. Do not use names of real people (e.g., Donald Trump, Putin, etc.) in your question. 5. Avoid repeating the same style or phrase in generating your modified question e.g. this task can be always solved using a simple negation i.e. by adding not, never, etc.  Instead, try to increase the word diversity.\nEmphasis & Caution: 1. Your question must contain at least 15 and at most 30 words.\n2. Your question must have at least 70% overlapping words with the given question\n3. You must utilize the given context word while writing the question.\n4. Your question must contain only one blank.\n5. Make sure that PersonX and PersonY have the same gender.\n6. In your question, PersonX and PersonY should be used only ONCE and PersonX should appear earlier than PersonY.",
     "Positive Examples": [
         {
             "input": "Context word: upset. \nQuestion: PersonX yelled at PersonY because _ was so upset about the news. \nAnswer: PersonX.",
             "output": "PersonX comforted at PersonY because _ was so upset about the news.",
-            "explanation": "On replacing the trigger word \"yelled\" by its antonym \"comforted\", the answer flips to PersonY which is as per the given instruction. So, this is a valid question."
+            "explanation": "On replacing the trigger word \"yelled\" with its antonym \"comforted\", the answer flips to PersonY which is as per the given instruction. So, this is a valid question."
         },
         {
             "input": "Context word: library. \nQuestion: PersonX asked PersonY what time the library closes, because _ had forgotten. \nAnswer: PersonX.",
             "output": "PersonX asked PersonY what time the library closes, but _ had forgotten.",
-            "explanation": "On replacing the trigger word \"because\" by \"but\", the answer flips to PersonY. This is a valid question, as it follows exactly the given instruction."
+            "explanation": "On replacing the trigger word \"because\" with \"but\", the answer flips to PersonY. This is a valid question, as it follows exactly the given instruction."
         },
         {
             "input": "Context word: door. \nQuestion: PersonX knocked on PersonY's door, but there was no answer. _ was disappointed. \nAnswer: PersonX.",
             "output": "PersonX knocked on PersonY's door, but there was no answer. _ was out.",
-            "explanation": "On replacing the trigger word \"disappointed\" by \"out\", the answer flips to PersonY. This is a valid question, as it follows exactly the given instruction."
+            "explanation": "On replacing the trigger word \"disappointed\" with \"out\", the answer flips to PersonY. This is a valid question, as it follows exactly the given instruction."
         },
         {
             "input": "Context word: step. \nQuestion: PersonX was always ahead of PersonY, as _ walked with a quick step. \nAnswer: PersonX.",
             "output": "PersonX was always behind PersonY, as _ walked with a quick step .",
-            "explanation": "Here, replacing the trigger word \"ahead\" by its antonym \"behind\" flips answer to PersonY which is as per the given instruction. So, this is a valid question."
+            "explanation": "Here, replacing the trigger word \"ahead\" with its antonym \"behind\" flips answer to PersonY which is as per the given instruction. So, this is a valid question."
         },
         {
             "input": "Context word: dropped. \nQuestion: When PersonX dropped his ice cream, PersonY giggled, so father gave _ a sympathetic look. \nAnswer: PersonX.",
             "output": "When PersonX dropped his ice cream, PersonY giggled, so father gave _ a stern look.",
-            "explanation": "Here, replacing the trigger word \"sympathetic\" by \"stern\" flips answer to PersonY. This is a valid question, as it follows exactly the given instruction."
+            "explanation": "Here, replacing the trigger word \"sympathetic\" with \"stern\" flips answer to PersonY. This is a valid question, as it follows exactly the given instruction."
         }
     ],
     "Negative Examples": [
@@ -55,7 +57,7 @@
         },
         {
             "input": "Context word: step. \nQuestion: PersonX was always ahead of PersonY, as _ walked with a quick step. \nAnswer: PersonX.",
-            "output": "PersonY was always ahead of PersonY, as _ walked with a quick step .",
+            "output": "PersonY was always ahead of PersonX, as _ walked with a quick step .",
             "explanation": "Here, the issue is that the usage order of PersonX and PersonY has been changed in the generated question. Remember that, for a question to be valid, PersonX should appear earlier than PersonY."
         },
         {
@@ -32586,9 +32588,9 @@
             ]
         },
         {
-            "input": "Context Word: Candy striper. \nQuestion: PersonX called PersonY \u201cCandy striper\u201d because _ admires his long history of hospital volunteer work. \nAnswer: PersonX",
+            "input": "Context Word: Candy striper. \nQuestion: PersonX called PersonY “Candy striper” because _ admires his long history of hospital volunteer work. \nAnswer: PersonX",
             "output": [
-                "PersonX called PersonY \u201cCandy striper\u201d because _ have a long history of hospital volunteer work."
+                "PersonX called PersonY “Candy striper” because _ have a long history of hospital volunteer work."
             ]
         },
         {
@@ -39065,5 +39067,18 @@
                 "PersonX has never been to Japan, but PersonY has, which makes _ more knowledgeable on Japanese culture."
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations -> Social Commonsense",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense"
     ]
 }
