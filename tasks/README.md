@@ -922,6 +922,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Sentence Generation
 `task966_ruletaker_fact_checking_based_on_given_context` | Fact checking based on given context | Fact checking based on context
 `task967_ruletaker_incorrect_fact_generation_based_on_given_paragraph` | Generate incorrect fact based on given paragraph | Incorrect Fact Generation
+`task968_xcopa_commonsense_reasoning_et` | Given a premise and two alternative in Estonian,  select the alternative that more plausibly has a causal relation with the premise | Causal Reasoning
+`task969_xcopa_commonsense_cause_effect_et` | Given a pair of sentences in Estonian, judge whether the second sentence is the cause or effect of the first on. | Causal Reasoning
 `task970_sherliic_causal_relationship` | Determine if A and B share a casual relationship |Classification
 `task974_prachathai67k_sentiment_classification` | Classify the sentiment of a given article on the given genre |Classification
 `task975_prachathai67k_same_genre_classification` | Determine if the two articles given share the same sentiment fot the given genre |Classification
