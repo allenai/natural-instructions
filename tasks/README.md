@@ -584,6 +584,15 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
 `task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
 `task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
+`task595_mocha_answer_generation` | Generating answers to MOCHA questions | Answer Generation
+`task596_mocha_question_generation` | Generating questions based on MOCHA | Question Generation
+`task597_cuad_answer_generation` | Generating answers to CUAD questions | Answer Generation
+`task598_cuad_answer_generation` | Generating starting index of the answers to CUAD questions | Answer Generation
+`task599_cuad_question_generation` | Generating questions based on CUAD | Question Generation
+`task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
+`task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
+`task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
+`task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -860,11 +869,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
-`task922_event2mind_word_generation` | Generating emotion words from Event2Mind based on PersonX | Word Generation
-`task923_event2mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
-`task924_event2mind_word_generation` | Generating emotion words from Event2Mind based on Other Person | Word Generation
-`task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
-`task926_coached_conv_pref_word_generation` | Generating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
 `task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
 `task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
 `task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
@@ -888,6 +892,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
 'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
 'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+
+`task922_event2mind_word_generation` | Generating emotion words from Event2Mind based on PersonX | Word Generation
+`task923_event2mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
+`task924_event2mind_word_generation` | Generating emotion words from Event2Mind based on Other Person | Word Generation
+`task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
+`task926_coached_conv_pref_word_generation` | Generating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
+
+
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
