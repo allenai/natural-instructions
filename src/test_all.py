@@ -3,6 +3,23 @@ from iso639 import languages
 import json
 from os import listdir
 from os.path import isfile, join
+import argparse
+import re
+
+# get the range of task you want to test, if specified in the command line
+parser = argparse.ArgumentParser()
+parser.add_argument("--task",
+                        nargs=2,
+                        type=int,
+                        required=False,
+                        help="The range of task you want to parse")
+
+args = parser.parse_args()
+if args.task:
+    begin_task_number, end_task_number = args.task[0], args.task[1]
+    assert begin_task_number > 0, "begin task must be greater than 0"
+    assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
+
 
 # make sure that there is no json file in the root directory 
 root_files = [f for f in listdir('.') if isfile(join('.', f))]
@@ -34,6 +51,22 @@ def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
 
+def extract_categories(string):
+    """
+    Get all the characters between ` and `
+    """
+    return set(re.findall(r'`(.*?)`', string))
+
+def dict_raise_on_duplicates(ordered_pairs):
+    """Reject duplicate keys."""
+    d = {}
+    for k, v in ordered_pairs:
+        if k in d:
+            raise ValueError("duplicate key: %r" % (k,))
+        else:
+            d[k] = v
+    return d
+
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
     "Domains"
@@ -42,7 +75,9 @@ suggested_keys = [
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
 with open("doc/task-hierarchy.md", 'r') as readmef:
-    hierarchy_content = " ".join(readmef.readlines())
+    hierarchy_content_lines = readmef.readlines()
+    hierarchy_content = " ".join(hierarchy_content_lines)
+    all_categories = extract_categories(hierarchy_content)
 
 # make sure there are no repeated lines in the task file
 task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
@@ -66,13 +101,21 @@ for name in task_names:
     file_name = name + ".json"
     assert file_name in files, f" Did not find `{file_name}` among {files}"
 
-for file in files:
+# test every file (README is skipped)
+if not args.task:
+    begin_task_number, end_task_number = 1, len(files)
+
+for file in files[begin_task_number:end_task_number+1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
         with open(file_path, 'r') as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+            except:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f, object_pairs_hook=dict_raise_on_duplicates)
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
@@ -90,16 +133,16 @@ for file in files:
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
             for c in data['Categories']:
-                if c not in hierarchy_content:
+                if c not in all_categories:
                     print(f'⚠️ WARNING: Did not find category `{c}`')
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
 
-            assert type(data['Input_language']) == list, f'Input_language must be a str.'
-            assert type(data['Output_language']) == list, f'Output_language must be a str.'
-            assert type(data['Instruction_language']) == list, f'Output_language must be a str.'
+            assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
+            assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
+            assert type(data['Instruction_language']) == list, f'Output_language must be a list of strings.'
 
             assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
             assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
