@@ -1343,3 +1343,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1529_scitail1.1_classification` | Determining if there is entailment between Hypothesis and Premise | Classification
+`task1530_scitail1.1_sentence_generation` | Generating a Premise that entails the Hypothesis | Text Generation
+`task1531_daily_dialog_type_classification` | Classifying the input sentence into one of the 5 classes : unknown, commissive, question, information, directive| Classification
+`task1532_daily_dialog_emotion_classification` | Classify the conversation sentences of input passage into the following emotions: anger, disgust, fear, happiness, sadness, No emotion | Classification
+`task1533_daily_dialog_formal_classification` | Classify the conversation sentences of input passage into the following outputs: formal and informal | Classification 
+`task1534_daily_dialog_question_classification` | Classify the conversation sentences of the input passage if the first sentence starts with a question | Classification
+`task1535_daily_dialog_uniqueness_classification` | Classify the conversation sentences of the input passage if they convey more than 2 unique emotions  | Classification
+`task1536_daily_dialog_happiness_classification` | Classify the conversation sentences of the input passage if they convey only happiness emotion or not.| Classification
