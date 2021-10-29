@@ -1119,7 +1119,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
 `task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
-
 `task1196_atomic_classification_oeffect` | Given a tuple, determine whether, as a result of the Head, personY or others will be affected as mentioned in the Tail or not. | Classification | Sociology	| English	| English
 `task1197_atomic_classification_oreact` | Given a tuple, determine whether, as a result of the Head, personY or others feel what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
 `task1198_atomic_classification_owant` | Given a tuple, determine whether, as a result of the Head, personY or others will want what is mentioned in the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
