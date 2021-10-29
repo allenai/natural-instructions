@@ -794,11 +794,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
-`task922_event2mind_word_generation` | Genrating emotion words from Event2Mind based on PersonX | Word Generation
+`task922_event2mind_word_generation` | Generating emotion words from Event2Mind based on PersonX | Word Generation
 `task923_event2mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
-`task924_event2mind_word_generation` | Genrating emotion words from Event2Mind based on Other Person | Word Generation
+`task924_event2mind_word_generation` | Generating emotion words from Event2Mind based on Other Person | Word Generation
 `task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
-`task926_coached_conv_pref_word_generation` | Genrating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
+`task926_coached_conv_pref_word_generation` | Generating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
