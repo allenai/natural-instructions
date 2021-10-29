@@ -1345,3 +1345,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`Task1537_tamil_offenseval_dravidian_classification` | Given a statement in Tamil, classify whether it is offensive or not | Classification
+`Task1538_malayalam_offenseval_dravidian_classification` | Given a statement in Malayalam, classify whether it is offensive or not | Classification
+`Task1539_kannada_offenseval_dravidian_classification` | Given a statement in Kannada, classify whether it is offensive or not | Classification
+`Task1540_parsed_pdfs_summarization` | Given a text, generate a title for it | Summarization
+`Task1541_agnews_classification` | Given a short article, classify the article based on its category | Classification
