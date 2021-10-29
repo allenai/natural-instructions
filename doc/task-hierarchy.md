@@ -90,7 +90,7 @@
 - `Relevancy Estimation`
 - `Role Labelling`
 - `Semantic Parsing`
- - `Semantic Parsing -> Program Synethsis`
+ - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
