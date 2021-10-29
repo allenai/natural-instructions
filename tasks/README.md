@@ -854,8 +854,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
 `task894_miam_dialogue_act_classification` | Classify Dialogue utterances to Dialogue acts | Classification
-`task895_miam_speaker_classification` | Classify speaker to Dialogue utterances| Classification
-`task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
 `task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
 `task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
 `task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
