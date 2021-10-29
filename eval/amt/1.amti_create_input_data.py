@@ -19,8 +19,7 @@ def read_file(file):
 def normalize(str):
     return str.replace('"', '\'').\
         replace('`', '\'').replace('\n', '<br>').\
-        replace('&', ' and ').encode('ascii', 'ignore').decode('ascii')
-
+        replace('&', ' and ').encode('ascii', 'ignore').decode('ascii').replace('<', '[').replace('>', ']')
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f)) and ".json" in f]
 task_ids_to_file = {}
