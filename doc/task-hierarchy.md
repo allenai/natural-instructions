@@ -7,37 +7,18 @@
 - `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
 - `Abuse Detection`
-- `Question Answering`
-  - `Question Answering -> Commonsense Question Answering`
-  - `Question Answering -> Contextual Question Answering`
-    - `Question Answering -> Contextual Question Answering -> Extractive`
-    - `Question Answering -> Contextual Question Answering -> Abstractive` 
-    - `Question Answering -> Contextual Question Answering -> Missing Knowledge` : When the answer to the question is not present in the passage and reqiures extra knowledge.
-  - `Question Answering -> Fill in the Blank`
-  - `Question Answering -> Multiple Choice Question Answering`
-  - `Question Answering -> Open Question Answering`
-  - `Question Answering -> Incorrect Answer Generation`
-	- `Question Answering -> Incorrect Answer Generation -> Commonsense Question Answer Generation`
-	- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answer Generation`
-		- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
-		- `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
-	- `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
-- `Question Generation`
-  - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
-	- `Question Generation -> Contextual Question Generation -> Open Question Generation` 
-  - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
-  - `Question Generation -> Fill in the Blank` 
 - `Author Identification`
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
-    - `Classification -> Verification -> Summary Verification` 	
+    - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
+    - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
     - `Classification -> Verification -> Clarification Verification`
-    - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
-    - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical 
+    - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
-    - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
-- `Combinatorics`
+    - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
+    - `Classification -> Verification -> Summary Verification`
+- `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
@@ -49,8 +30,8 @@
 - `Ethical Judgement`
 - `Fake News Detection`
 - `Grammar Error`
-  -  `Grammar Error -> Grammar Error Correction`
-  -  `Grammar Error -> Grammar Error Detection`
+  - `Grammar Error -> Grammar Error Correction`
+  - `Grammar Error -> Grammar Error Detection`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hate Speech Detection`
 - `Hypernym Discovery`
@@ -59,14 +40,36 @@
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
+  - `Mathematics -> Combinatorics`
   - `Mathematics -> Geometry`
 - `Named Entity Recognition`
-- `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 - `Order Detection`
-	-`Order Detection -> Incorrect Order Detection`
+  - `Order Detection -> Incorrect Order Detection`
+- `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 - `Paraphrasing`
 - `Parts-of-speech`
+- `Question Answering`
+  - `Question Answering -> Commonsense Question Answering`
+  - `Question Answering -> Contextual Question Answering`
+    - `Question Answering -> Contextual Question Answering -> Abstractive`
+    - `Question Answering -> Contextual Question Answering -> Extractive`
+    - `Question Answering -> Contextual Question Answering -> Missing Knowledge` : When the answer to the question is not present in the passage and reqiures extra knowledge.
+  - `Question Answering -> Fill in the Blank`
+  - `Question Answering -> Incorrect Answer Generation`
+    - `Question Answering -> Incorrect Answer Generation -> Commonsense Question Answer Generation`
+    - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answer Generation`
+      - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
+      - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
+    - `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
+  - `Question Answering -> Multihop Question Answering`
+  - `Question Answering -> Multiple Choice Question Answering`
+  - `Question Answering -> Open Question Answering`
 - `Question Decomposition`
+- `Question Generation`
+  - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
+    - `Question Generation -> Contextual Question Generation -> Open Question Generation`
+  - `Question Generation -> Fill in the Blank`
+  - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
@@ -78,8 +81,8 @@
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
-  - `Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has four wheels.
   - `Reasoning -> Numerical Reasoning`
+    - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has four wheels.
   - `Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
@@ -89,14 +92,15 @@
   - `Reasoning -> Spatial Reasoning`
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
-	- `Reasoning -> Textual Entailment -> Deductive Reasoning`
-	- `Reasoning -> Textual Entailment -> Abductive Reasoning`
-	- `Reasoning -> Textual Entailment -> Analogical Reasoning`
-	- `Reasoning -> Textual Entailment -> Inductive Reasoning`
+    - `Reasoning -> Textual Entailment -> Abductive Reasoning`
+    - `Reasoning -> Textual Entailment -> Analogical Reasoning`
+    - `Reasoning -> Textual Entailment -> Deductive Reasoning`
+    - `Reasoning -> Textual Entailment -> Inductive Reasoning`
 - `Relation Prediction`
 - `Relevancy Estimation`
 - `Role Labelling`
 - `Semantic Parsing`
+  - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
@@ -108,20 +112,30 @@
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
 - `Text Generation`
-  - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
-  - `Text Generation -> Sentence Generation`
-    - `Text Generation -> Sentence Generation -> Story Completion`
-	  - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
-    - `Text Generation -> Sentence Generation -> Explanation Generation`
+  - `Text Generation -> Command Execution
+    - `Text Generation -> Command Execution -> Code Execution`
+    - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
   - `Text Generation -> Long Text Generation`
-    - `Text Generation -> Long Text Generation -> Contextual Text Generation` 
+    - `Text Generation -> Long Text Generation -> Contextual Text Generation`
+      - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Process Description`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Sentence Generation`
+    - `Text Generation -> Sentence Generation -> Explanation Generation`
+    - `Text Generation -> Sentence Generation -> Story Completion`
+      - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
+  - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
+      - `Text Generation -> Structured Text Generation -> Code`
+      - `Text Generation -> Structured Text Generation -> Table`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
+  - `Text Generation -> Weblink Generation`
+- `Text Modification`
+  - `Text Modification -> Structured Text Modification`
+  - `Text Modification -> Text Simplification`
+- `Text Span Selection`
 - `Title Selection`
 - `Translation`
-- `Weblink Generation`
 - `Word Sense Disambiguation`
 
 ## Domain
@@ -139,27 +153,35 @@
 * `Chemistry`
 * `Code`
   * `Code -> Language`
-	* `Code -> Language -> SQL`
-	* `Code -> Language -> Python`
+    * `Code -> Language -> Python`
+    * `Code -> Language -> SQL`
   * `Code -> Repo`
-	* `Code -> Repo -> Stack Overflow`
-	* `Code -> Repo -> Github`
+    * `Code -> Repo -> Github`
+    * `Code -> Repo -> Stack Overflow`
+* `Commonsense`
+  * `Commonsense -> Concepts and Relations`
+    * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
+    * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
+  * `Commonsense -> Stories`
 * `Computer Science`
-* `Computer Science -> Machine Learning`
+  * `Computer Science -> Computer Security`
+  * `Computer Science -> Machine Learning`
 * `Computer Security`
 * `Debatepedia`
 * `Dialogue`
 * `Econometrics`
+* `Economics`
+  * `Economics -> Macroeconomics`
+  * `Economics -> Microeconomics`
 * `Electrical Engineering`
 * `Fiction`
 * `Formal Fallacy`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
-* `Pop Culture`
 * `History`
-  * `History -> European History`
   * `History -> 9/11 Reports`
+  * `History -> European History`
 * `Human Sexuality`
 * `International Law`
 * `Jurisprudence`
@@ -175,23 +197,24 @@
 * `Mathematics`
 * `Medical Genetics`
 * `Medicine`
-* `Microeconomics`
 * `Moral Scenarios`
 * `Movies`
 * `Music`
 * `Narrative`
+* `Natural Science`
+  * `Natural Science -> School Science Textbooks`
 * `News`
 * `Nutrition`
 * `Personal Narratives`
 * `Philosophy`
 * `Physics`
+* `Pop Culture`
 * `Prehistory`
 * `Psychology`
-* `Public Relations`
 * `Public Places`
   * `Public Places -> Restaurants`
+* `Public Relations`
 * `School Science Textbooks`
-* `Natural Science`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
@@ -204,11 +227,6 @@
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`
-* `Commonsense`
-  * `Commonsense -> Social Commonsense`: a situation involving two same gender people
-with contrasting attributes, emotions, social roles, etc.
-  * `Commonsense -> Physical Commonsense`: a context involving two physical
-objects with contrasting properties, usage, locations, etc.
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
