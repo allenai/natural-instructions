@@ -869,6 +869,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
+`task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
+`task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
+`task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
+`task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
+`task900_freebase_qa_category_classification` | Classify the general category for questions | Classification
+`task901_freebase_qa_category_question_generation` | Generate trivia type questions based on a broad category | Question Generation
 `task902_deceptive_opinion_spam_classification` | Identity polarity of hotel reviews | Classification  
 `task903_deceptive_opinion_spam_classification` | Given hotel reviews and it's polarity, determine whether it's true or false | Classification
 `task904_hate_speech_offensive_classification` | Classify tweets into hate speech, offensive or neither | Classification  
