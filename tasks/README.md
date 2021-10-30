@@ -1360,3 +1360,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+`task1547_wiqa_answer_generation_multiple_choice` | Generating answers to wiqa questions | Answer Generation
+`task1548_wiqa_binary_classification` | Binary Classification (based on steps in wiqa) | Answer Generation
+`task1549_wiqa_answer_generation_missing_step` | Generating answer to place missing step in a series (based on wiqa) | Answer Generation
+`task1550_wiqa_binary_classification_relation` | Binary Classification determining if context was related to question (based on wiqa) | Answer Generation
