@@ -1382,3 +1382,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+`task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
+`task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
+`task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
+`task1564_TriviaQA_answer_generation` | Generating answers to questions in TriviaQA dataset | Answer generation
+`task1565_TriviaQA_classification` | Finding answer to multiple choice questions in TriviaQA dataset | Answer generation
