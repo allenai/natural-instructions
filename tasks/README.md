@@ -1248,6 +1248,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1280_ted_translation_pt_it` | Translate a sentence in Portugese to Italian. | Translation
 `task1281_ted_translation_pt_pl` | Translate a sentence in Portugese to Polish. | Translation
 `task1282_ted_translation_pt_fa` | Translate a sentence in Portugese to Farsi. | Translation
+`task1283_hrngo_quality_classification` | Evaluate quality of system generated reference. | Classification
+`task1284_hrngo_informativeness_classification` | Evaluate informativeness of system generated reference. | Classification
 `task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
 `task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
 `task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
