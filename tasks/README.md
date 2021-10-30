@@ -628,6 +628,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task619_ohsumed_abstract_title_generation` | Generating title to Ohsumed dataset abstracts | Title Generation
 `task620_ohsumed_medical_subject_headings_answer_generation` | Generating MESH terms to Ohsumed dataset abstracts | Medical subject heading(MESH) term Generation
 `task621_ohsumed_yes_no_numerical_answer_generation` | Generating Yes/No answer to Ohsumed dataset questions | Answer Generation
+`task622_replace_alphabets_in_a_list_by_their_position_in_English_alphabet` | Given a list replace all the alphabets in it with their position in the English Alphabet | Answer Generation
 `task623_ohsumed_yes_no_answer_generation` | Generating Yes/No answers to Ohsumed dataset questions | Answer Generation
 `task624_ohsumed_question_answering` | Given a abstract and question, select the best answer from the given choices. | Answer Generation
 `task625_xlwic_true_or_false_answer_generation` | Determine whether both the sentences use the aforementioned word with the same meaning | Answer Generation
