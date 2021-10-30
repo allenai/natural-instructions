@@ -67,6 +67,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
+`task063_first_i_elements` | Given a list return the first i elements of the list | Answer Generation
+`task064_all_elements_except_first_i` | Given a list return all the elements of the list except the first i elements | Answer Generation
 `task065_timetravel_consistent_sentence_classification`	| Choosing the option that makes a given short story consistent. | Classification
 `task066_timetravel_binary_consistency_classification`	| Identifying if the given sentence is consistent with the given story. | Classification
 `task067_abductivenli_answer_generation`	|  Generating text that completes a story based on the beginning and ending.	| Answer Generation
@@ -80,6 +82,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task075_squad1.1_answer_generation`	| Generate answers to SQuAD 1.1 questions.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
+`task078_all_elements_except_last_i` | Given a list return all the elements of the list except the last i elements | Answer Generation
 `task079_conala_concat_strings` | Given a list of strings, concatenate them to form one string. | Answer Generation
 `task080_piqa_answer_generation`	|  Generate a solution to a goal regarding physical knowledge about the world.	| Answer Generation
 `task081_piqa_wrong_answer_generation`	|  Generate an incorrect solution to a goal regarding physical knowledge about the world.	| Incorrect Answer Generation
@@ -92,6 +95,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task088_identify_typo_verification`	|  Identify the typo in a sentence.	| Verification
 `task089_swap_words_verification`	|  Identify the swapped words in a sentence.	| Verification
 `task090_equation_learner_algebra`	|  Answer the given equation.	| Algebra
+`task091_all_elements_from_index_i_to_j` | Given a list return all the elements starting from ith element and ending at jth element | Answer Generation
 `task092_check_prime_classification`	|  Identify whether the number is prime or not.	| Mathematics
 `task093_conala_normalize_lists` | Given a list of numbers, normalize the list such that the result adds to 1. | Answer Generation, Arithmetic
 `task094_conala_calculate_mean` | Given a list of numbers, calculate the mean of the list. | Answer Generation, Arithmetic
@@ -99,6 +103,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task096_conala_list_index_subtraction` | Given a list of numbers, subtract each element by its index in the list. | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers, remove all of the duplicates in the list. | Text Modification, Arithmetic
 `task098_conala_list_intersection` | Given a two lists of numbers, find the intersection of the two lists. | Answer Generation, Arithmetic
+`task099_reverse_elements_between_index_i_and_j` | Given a list return all the elements starting from ith element and ending at jth element in reverse order | Answer Generation
+`task100_concatenate_all_elements_from_index_i_to_j` | Given a list concatenate all the elements starting from ith element and ending at jth element | Answer Generation
+`task101_reverse_and_concatenate_all_elements_from_index_i_to_j` | Given a list reverse and then concatenate all the elements starting from ith element and ending at jth element | Answer Generation
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation
 `task104_semeval_2019_task10_closed_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with a closed-vocabulary.	| Answer Generation, Arithmetic
@@ -266,6 +273,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task264_paper_reviews_accept_or_reject_classification` | Given a set of reviews, classify paper into accept or reject | Classification
 `task265_paper_reviews_language_identification` | Given a paper review, identify it is in the english or spanish language | Language Identification
 `task266_paper_reviews_reviewer_perspective_classification` | Given a paper review, classify into five evaluation metric | Classification
+`task267_concatenate_and_mirror_all_elements_from_index_i_to_j` | Given a list concatenate and then mirror/reverse all the elements starting from ith element and ending at jth element | Answer Generation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
 `task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
 `task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
@@ -486,6 +494,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task488_extract_all_alphabetical_elements_from_list_in_order` | Given a list return all the alphabetical elements from the list in same order as they appear in the list | Answer Generation
 `task489_mwsc_question_generation` | Generating questions based on the given sentence | Question Generation  
 `task490_mwsc_options_generation` | Generating options to mwsc questions | Options Generation
 `task491_mwsc_answer_generation` | Generating answers to mwsc questions | Answer Generation  
@@ -494,7 +503,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
 `task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
 `task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
+`task497_extract_all_numbers_from_list_in_order` | Given a list return all the numbers from the list in same order as they appear in the list | Answer Generation
 `task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life anecdote of a complex ethical situation, identify who is ethically wrong here | Classification
+`task499_extract_and_add_all_numbers_from_list` | Given a list extract all the numbers from the list and return their sum/addition | Answer Generation
 `task500_scruples_anecdotes_title_generation` | Given a real-life anecdote of a complex ethical situation, generate a title that describes the main event/root cause of the situation | Title Generation
 `task501_scruples_anecdotes_post_type_verification` | Given a real-life anecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
 `task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life anecdote of a complex ethical situation, verify who is wrong in the situation | Verification
@@ -1361,8 +1372,3 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
-`task1557_first_i_elements` | Given a list return the first i elements of the list | Answer Generation
-`task1558_all_elements_except_first_i` | Given a list return all the elements of the list except the first i elements | Answer Generation
-`task1559_all_elements_except_last_i` | Given a list return all the elements of the list except the last i elements | Answer Generation
-`task1560_all_elements_from_index_i_to_j` | Given a list return all the elements starting from ith element and ending at jth element | Answer Generation
-
