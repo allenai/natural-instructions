@@ -1133,6 +1133,24 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
 `task1167_penn_treebank_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
 `task1168_brown_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_xcopa_commonsense_reasoning_ht` | Given a premise and two alternative in Haitian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1169_xcopa_commonsense_cause_effect_ht` | Given a pair of sentences in Haitian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1170_xcopa_commonsense_reasoning_id` | Given a premise and two alternative in Indonesian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1171_xcopa_commonsense_cause_effect_id` | Given a pair of sentences in Indonesian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1172_xcopa_commonsense_reasoning_it` | Given a premise and two alternative in Italian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1173_xcopa_commonsense_cause_effect_it` | Given a pair of sentences in Italian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1174_xcopa_commonsense_reasoning_sw` | Given a premise and two alternative in Swahili,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1175_xcopa_commonsense_cause_effect_sw` | Given a pair of sentences in Swahili, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1176_xcopa_commonsense_reasoning_ta` | Given a premise and two alternative in Tamil,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1177_xcopa_commonsense_cause_effect_ta` | Given a pair of sentences in Tamil, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1178_xcopa_commonsense_reasoning_th` | Given a premise and two alternative in Thai,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1179_xcopa_commonsense_cause_effect_th` | Given a pair of sentences in Thai, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1180_xcopa_commonsense_reasoning_tr` | Given a premise and two alternative in Turkish,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1181_xcopa_commonsense_cause_effect_tr` | Given a pair of sentences in Turkish, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1182_xcopa_commonsense_reasoning_vi` | Given a premise and two alternative in Vietnamese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1183_xcopa_commonsense_cause_effect_vi` | Given a pair of sentences in Vietnamese, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1184_xcopa_commonsense_reasoning_zh` | Given a premise and two alternative in Chinese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1185_xcopa_commonsense_cause_effect_zh` | Given a pair of sentences in Chinese, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
