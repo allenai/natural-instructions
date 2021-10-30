@@ -1127,6 +1127,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1161_coda19_title_generation` | Given a paragraph from a research paper, your task is to generate the title of the paper | Title Generation
+`task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
+`task1163_coda19_section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
+`task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
 `task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
