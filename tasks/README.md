@@ -512,6 +512,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task503_scruples_anecdotes_isanswerable` | Given a real-life anecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
 `task504_count_all_alphabetical_elements_in_list` | Given a list return the count of all the alphabetical elements from the list | Answer Generation
 `task505_count_all_numerical_elements_in_list` | Given a list return the count of all the numerical elements from the list | Answer Generation
+`task506_position_of_all_alphabetical_elements_in_list` | Given a list return the position of all the alphabetical elements from the list | Answer Generation
+`task507_position_of_all_numerical_elements_in_list` | Given a list return the position of all the numerical elements from the list | Answer Generation
 `task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
 `task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
 `task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
