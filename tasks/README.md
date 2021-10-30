@@ -617,10 +617,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
-`task645_products_reviews_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
-`task646_dailydialog_classification` | Classifying Data of DailyDialog whether the topic of conversation is Tourism or Not in the dialogue | Classification
-`task647_dailydialog_classification` | Classifying Data of DailyDialog whether happy or sad emotion in the dialogue | Classification
-`task648_dailydialog_classification` | Classifying Data of DailyDialog whether there is question in the dialogue or not | Classification
 `task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
 `task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
 `task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
@@ -827,6 +823,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
+`task929_products_reviews_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
+`task930_dailydialog_classification` | Classifying Data of DailyDialog whether the topic of conversation is Tourism or Not in the dialogue | Classification
+`task931_dailydialog_classification` | Classifying Data of DailyDialog whether happy or sad emotion in the dialogue | Classification
+`task932_dailydialog_classification` | Classifying Data of DailyDialog whether there is question in the dialogue or not | Classification
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task934_turk_simplification` | Given a sentence your task is to generate possible numbers of simplified sentences. | Text Generation
 `task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
