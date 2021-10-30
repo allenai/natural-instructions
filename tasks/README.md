@@ -612,6 +612,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
 `task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
 `task605_find_the_longest_common_subsequence_in_two_lists` | Given two lists return the longest common subsequence in those two lists | Answer Generation
+`task606_sum_of_all_numbers_in_list_between_positions_i_and_j` | Given a list extract and then return sum of all the numbers between two positions i and j | Answer Generation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
