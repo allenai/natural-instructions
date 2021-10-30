@@ -1360,6 +1360,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
-`task1551_every_ith_element_from_kth element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
+`task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
 `task1552_first_i_elements` | Given a list return the first i elements of the list | Answer Generation
 `task1553_all_elements_except_first_i` | Given a list return all the elements of the list except the first i elements | Answer Generation
+`task1554_all_elements_except_last_i` | Given a list return all the elements of the list except the last i elements | Answer Generation
