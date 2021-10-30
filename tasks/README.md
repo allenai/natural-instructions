@@ -869,6 +869,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
+`task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
+`task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
+`task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
+`task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
+`task900_freebase_qa_category_classification` | Classify the general category for questions | Classification
+`task901_freebase_qa_category_question_generation` | Generate trivia type questions based on a broad category | Question Generation
 `task902_deceptive_opinion_spam_classification` | Identity polarity of hotel reviews | Classification  
 `task903_deceptive_opinion_spam_classification` | Given hotel reviews and it's polarity, determine whether it's true or false | Classification
 `task904_hate_speech_offensive_classification` | Classify tweets into hate speech, offensive or neither | Classification  
@@ -882,12 +888,21 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
 `task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
 `task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
-'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
-'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
-'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
-'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+`task917_coqa_question_generation`| Given a passage, generate a question | Question Generation
+`task918_coqa_answer_generation` | Given a passage and a question, generate an answer for that question | Answer Generation
+`task919_coqa_incorrect_answer_generation` | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+`task921_code_x_glue_information_retreival` | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+`task922_event2mind_word_generation` | Generating emotion words from Event2Mind based on PersonX | Word Generation
+`task923_event2mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
+`task924_event2mind_word_generation` | Generating emotion words from Event2Mind based on Other Person | Word Generation
+`task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
+`task926_coached_conv_pref_word_generation` | Generating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
+`task929_products_reviews_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
+`task930_dailydialog_classification` | Classifying Data of DailyDialog whether the topic of conversation is Tourism or Not in the dialogue | Classification
+`task931_dailydialog_classification` | Classifying Data of DailyDialog whether happy or sad emotion in the dialogue | Classification
+`task932_dailydialog_classification` | Classifying Data of DailyDialog whether there is question in the dialogue or not | Classification
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task934_turk_simplification` | Given a sentence your task is to generate possible numbers of simplified sentences. | Text Generation
 `task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
@@ -911,6 +926,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
 `task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
 `task955_wiki_auto_style_transfer` | Elaborate wikipedia sentences. | Style Transfer 
+`task956_leetcode_420_strong_password_check` | Check if the given password is strong | Answer Generation 
 `task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Tabular Text Operation
 `task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
 `task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
@@ -922,6 +938,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Sentence Generation
 `task966_ruletaker_fact_checking_based_on_given_context` | Fact checking based on given context | Fact checking based on context
 `task967_ruletaker_incorrect_fact_generation_based_on_given_paragraph` | Generate incorrect fact based on given paragraph | Incorrect Fact Generation
+`task968_xcopa_commonsense_reasoning_et` | Given a premise and two alternative in Estonian,  select the alternative that more plausibly has a causal relation with the premise | Causal Reasoning
+`task969_xcopa_commonsense_cause_effect_et` | Given a pair of sentences in Estonian, judge whether the second sentence is the cause or effect of the first on. | Causal Reasoning
 `task970_sherliic_causal_relationship` | Determine if A and B share a casual relationship |Classification
 `task974_prachathai67k_sentiment_classification` | Classify the sentiment of a given article on the given genre |Classification
 `task975_prachathai67k_same_genre_classification` | Determine if the two articles given share the same sentiment fot the given genre |Classification
@@ -1109,6 +1127,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1161_coda19_title_generation` | Given a paragraph from a research paper, your task is to generate the title of the paper | Title Generation
+`task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
+`task1163_coda19_section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
+`task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
 `task1168_xcopa_commonsense_reasoning_ht` | Given a premise and two alternative in Haitian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task1169_xcopa_commonsense_cause_effect_ht` | Given a pair of sentences in Haitian, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task1170_xcopa_commonsense_reasoning_id` | Given a premise and two alternative in Indonesian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
@@ -1355,3 +1377,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
