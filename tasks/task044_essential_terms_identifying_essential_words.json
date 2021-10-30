@@ -4,17 +4,17 @@
         "Daniel Khashabi"
     ],
     "Source": [
-        "essential"
+        "essential (https://aclanthology.org/K17-1010.pdf)"
     ],
     "Categories": [
-        "Verification"
+        "Text Span Selection"
     ],
-    "Definition": "You are given an elementary science question along with a few answer options. List all the words from the question that are essential for choosing the correct answer option. Keep in mind that essential words are necessary to understanding the meaning of the given question. However, non-essential words provide little information needed to select the correct answer. If your answer consists of multiple spans of words from the question, separate those using comma (\", \").\nThings to avoid: Do not generate any word that is not present in the question.\nEmphasis & Caution: Make sure that your response is contained in the given question.  Grammatical correctness is not important. ",
+    "Definition": "You are given an elementary science question along with a few answer options. List all the words from the question that are essential and sufficient for choosing the correct answer option. Keep in mind that essential words are necessary to understanding the meaning of the given question. However, non-essential words provide little information needed to select the correct answer. You can think about it like this: If the question was in another language, knowing the meaning of which words was necessary and enough for you to understand the question and answer it?. If your answer consists of multiple spans of words from the question, separate those using comma (\", \").\nThings to avoid: Do not generate any word that is not present in the question.\nEmphasis & Caution: Make sure that your response is contained in the given question and the words are in the same order as the question.\n Grammatical correctness is not important. ",
     "Positive Examples": [
         {
             "input": "Question: Which type of energy does a person use to pedal a bicycle? (A) light (B) sound (C) mechanical (D) electrical?",
             "output": "energy, pedal, bicycle",
-            "explanation": "Clearly the words \"energy\", \"pedal\" and \"bicycle\" are enough to understand the category of the energy associated with this process, i.e. \"mechanical\". Other words are not necessary to inferring the correct answer."
+            "explanation": "Clearly the words \"energy\", \"pedal\" and \"bicycle\" are necessary and enough to understand the category of the energy associated with this process, i.e. \"mechanical\". Other words are not necessary to inferring the correct answer."
         },
         {
             "input": "Question: A turtle eating worms is an example of (A) breathing (B) reproducing (C) eliminating waste (D) taking in nutrients?",
@@ -42,6 +42,11 @@
             "input": "Question: A duck's feathers are covered with a natural oil that keeps the duck dry. This is a special feature ducks have that helps them (A) feed their young (B) adapt to the environment (C) attract a mate (D) search for food?",
             "output": "water",
             "explanation": "Here \"water\" is a word that is not mentioned in the question. The correct answer should have been \"duck's feather, natural oil, keeps, dry\"."
+        },
+        {
+            "input": "Question: A fox grows thicker fur as a season changes. This adaptation helps the fox to (A) find food(B) keep warmer(C) grow stronger(D) escape from predators?",
+            "output": "grows, thicker, fur, adaptation, helps, this",
+            "explanation": "Here the words \"grows\" and \"this\" are unnecessary for the answer. Having thicker fur helps any animal keep warmer, and the word \"grow\" is not necessary."
         }
     ],
     "Instances": [
@@ -73,12 +78,6 @@
             "input": "Question: Which form of energy is found in food? (A) chemical(B) electrical(C) sound(D) mechanical?",
             "output": [
                 "energy, found, food?"
-            ]
-        },
-        {
-            "input": "Question: A fox grows thicker fur as a season changes. This adaptation helps the fox to (A) find food(B) keep warmer(C) grow stronger(D) escape from predators?",
-            "output": [
-                "thicker, fur, adaptation, helps"
             ]
         },
         {
@@ -432,9 +431,9 @@
             ]
         },
         {
-            "input": "Question: Water at 20\u00b0C in an uncovered pan is evaporating very slowly. What could be done to the water to make it evaporate more quickly? (1) Cover it. (2) Heat it. (3) Place it in the dark. (4) Put salt in it.?",
+            "input": "Question: Water at 20°C in an uncovered pan is evaporating very slowly. What could be done to the water to make it evaporate more quickly? (1) Cover it. (2) Heat it. (3) Place it in the dark. (4) Put salt in it.?",
             "output": [
-                "Water, 20\u00b0C, uncovered, pan, evaporating, evaporate, quickly?"
+                "Water, 20°C, uncovered, pan, evaporating, evaporate, quickly?"
             ]
         },
         {
@@ -967,7 +966,7 @@
             ]
         },
         {
-            "input": "Question: According to the periodic table, all of the following are metals except \u2014?",
+            "input": "Question: According to the periodic table, all of the following are metals except —?",
             "output": [
                 "periodic, metals, except"
             ]
@@ -1016,7 +1015,7 @@
             ]
         },
         {
-            "input": "Question: Which of the following is a correct food chain? (A) human \u2192 corn \u2192 cow (B) corn \u2192 human \u2192 cow (C) corn \u2192 cow \u2192 human (D) cow \u2192 human \u2192 corn?",
+            "input": "Question: Which of the following is a correct food chain? (A) human → corn → cow (B) corn → human → cow (C) corn → cow → human (D) cow → human → corn?",
             "output": [
                 "correct, food, chain?"
             ]
@@ -1542,7 +1541,7 @@
             ]
         },
         {
-            "input": "Question: When a butterfly emerges from its chrysalis, its wings are crumpled. In order to expand its wings, the butterfly hangs upside down, causing fluid to be pumped into the veins of its wings. This pumping most likely expands the wings by \u2014 A increasing the pressure inside the wings B decreasing the density of the wings C increasing the temperature inside the wings D decreasing the mass of the wings?",
+            "input": "Question: When a butterfly emerges from its chrysalis, its wings are crumpled. In order to expand its wings, the butterfly hangs upside down, causing fluid to be pumped into the veins of its wings. This pumping most likely expands the wings by — A increasing the pressure inside the wings B decreasing the density of the wings C increasing the temperature inside the wings D decreasing the mass of the wings?",
             "output": [
                 "butterfly, hangs, upside, fluid, pumped, veins, pumping, expands"
             ]
@@ -3084,7 +3083,7 @@
             ]
         },
         {
-            "input": "Question: Which statement is a description of weather? (A) Summers in Tucson are hot and dry. (B) Winters in Flagstaff are cold and snowy. (C) The temperature is 55\u00b0 F in Winslow today. (D) The Sun will set in Yuma today at 6:45 p.m.?",
+            "input": "Question: Which statement is a description of weather? (A) Summers in Tucson are hot and dry. (B) Winters in Flagstaff are cold and snowy. (C) The temperature is 55° F in Winslow today. (D) The Sun will set in Yuma today at 6:45 p.m.?",
             "output": [
                 "description, weather?"
             ]
@@ -3150,7 +3149,7 @@
             ]
         },
         {
-            "input": "Question: A flashlight uses three different forms of energy. Which of the following shows the correct sequence for the energy transfer in a flashlight? (A) Electrical \u2192 Chemical \u2192 Light (B) Mechanical \u2192 Electrical \u2192 Chemical (C) Electrical \u2192 Light \u2192 Chemical (D) Chemical \u2192 Electrical \u2192 Light?",
+            "input": "Question: A flashlight uses three different forms of energy. Which of the following shows the correct sequence for the energy transfer in a flashlight? (A) Electrical → Chemical → Light (B) Mechanical → Electrical → Chemical (C) Electrical → Light → Chemical (D) Chemical → Electrical → Light?",
             "output": [
                 "correct, sequence, energy, transfer, flashlight?"
             ]
@@ -3211,7 +3210,7 @@
             ]
         },
         {
-            "input": "Question: When people exercise, they often feel thirsty and begin to sweat. It is important for people to feel thirsty when exercising because it makes them realize that they should \u2014?",
+            "input": "Question: When people exercise, they often feel thirsty and begin to sweat. It is important for people to feel thirsty when exercising because it makes them realize that they should —?",
             "output": [
                 "people, feel, thirsty, important, people, thirsty, exercising, realize"
             ]
@@ -4290,7 +4289,7 @@
             ]
         },
         {
-            "input": "Question: Freezing of any substance occurs ___. (A) when the particles of the substance are able to slide past one another (B) at 0\u00b0C (C) when a liquid changes to a solid, regardless of temperature (D) when energy is added to a substance?",
+            "input": "Question: Freezing of any substance occurs ___. (A) when the particles of the substance are able to slide past one another (B) at 0°C (C) when a liquid changes to a solid, regardless of temperature (D) when energy is added to a substance?",
             "output": [
                 "Freezing, occurs"
             ]
@@ -4708,9 +4707,9 @@
             ]
         },
         {
-            "input": "Question: Heating and cooling water change the state of matter of water. What happens when a block of ice is heated to 10\u00b0 Celsius? (A) It melts to form liquid water. (B) It condenses to form liquid water. (C) It freezes to become heavier ice. (D) It evaporates to become a vapor (gas).?",
+            "input": "Question: Heating and cooling water change the state of matter of water. What happens when a block of ice is heated to 10° Celsius? (A) It melts to form liquid water. (B) It condenses to form liquid water. (C) It freezes to become heavier ice. (D) It evaporates to become a vapor (gas).?",
             "output": [
-                "block, ice, heated, 10\u00b0, Celsius?"
+                "block, ice, heated, 10°, Celsius?"
             ]
         },
         {
@@ -5595,7 +5594,7 @@
             ]
         },
         {
-            "input": "Question: The Sun appears to move across the sky each day, rising in the east and setting in the west. What causes this apparent motion? (A) the rotation of Earth on its axis (B) the revolution of the Sun around Earth (C) the Earth\u2019s distance from the Sun (D) the properties of Earth\u2019s atmosphere?",
+            "input": "Question: The Sun appears to move across the sky each day, rising in the east and setting in the west. What causes this apparent motion? (A) the rotation of Earth on its axis (B) the revolution of the Sun around Earth (C) the Earth’s distance from the Sun (D) the properties of Earth’s atmosphere?",
             "output": [
                 "Sun, across, sky, rising, east, setting, west., causes, motion?"
             ]
@@ -5613,7 +5612,7 @@
             ]
         },
         {
-            "input": "Question: What is the highest temperature that water can reach in a pot on a stove? (A) 50\u00b0C (B) 90\u00b0C (C) 100\u00b0C (D) 212\u00b0C?",
+            "input": "Question: What is the highest temperature that water can reach in a pot on a stove? (A) 50°C (B) 90°C (C) 100°C (D) 212°C?",
             "output": [
                 "highest, temperature, water, pot, stove?"
             ]
@@ -6219,7 +6218,7 @@
             ]
         },
         {
-            "input": "Question: Laura adds 50 mL of boiling water to 100 mL of ice water. If the 150 mL of water is then put into a freezer, at what temperature will the water freeze? (A) 0\u00e0\u00a4\u00a4C (B) 15\u00e0\u00a4\u00a4C (C) 37\u00e0\u00a4\u00a4C (D) 50\u00e0\u00a4\u00a4C?",
+            "input": "Question: Laura adds 50 mL of boiling water to 100 mL of ice water. If the 150 mL of water is then put into a freezer, at what temperature will the water freeze? (A) 0à¤¤C (B) 15à¤¤C (C) 37à¤¤C (D) 50à¤¤C?",
             "output": [
                 "temperature, water, freeze?"
             ]
@@ -6497,9 +6496,9 @@
             ]
         },
         {
-            "input": "Question: Glaciers are slow-moving sheets of ice found on land. What process occurs when glacial ice is heated to 5\u00b0 Celsius? (A) evaporation (B) freezing (C) melting (D) precipitation?",
+            "input": "Question: Glaciers are slow-moving sheets of ice found on land. What process occurs when glacial ice is heated to 5° Celsius? (A) evaporation (B) freezing (C) melting (D) precipitation?",
             "output": [
-                "process, glacial, ice, heated, 5\u00b0, Celsius?"
+                "process, glacial, ice, heated, 5°, Celsius?"
             ]
         },
         {
@@ -6788,12 +6787,6 @@
             ]
         },
         {
-            "input": "Question: A fox grows thicker fur as a season changes. This adaptation helps the fox to (A) find food (B) keep warmer (C) grow stronger (D) escape from predators?",
-            "output": [
-                "fox, thicker, fur, season, changes., adaptation, helps"
-            ]
-        },
-        {
             "input": "Question: __________ make up the largest part of any food chain or food web. (A) Consumers (B) Decomposers (C) Producers (D) Scavengers?",
             "output": [
                 "largest, part, food, chain, web."
@@ -6856,7 +6849,7 @@
             ]
         },
         {
-            "input": "Question: A mole had just finished eating three sow bugs when a sharp-eyed owl caught and ate the mole. The sow bugs had been eating old grass clippings. Which of these diagrams best represents a food chain for the feeding pattern described? (A) Grass \u2192 Bugs \u2192 Mole \u2192 Owl (B) Bugs \u2192 Mole \u2192 Owl (C) Owl \u2192 Mole \u2192 Bugs \u2192 Grass (D) Owl \u2192 Mole \u2192 Bugs?",
+            "input": "Question: A mole had just finished eating three sow bugs when a sharp-eyed owl caught and ate the mole. The sow bugs had been eating old grass clippings. Which of these diagrams best represents a food chain for the feeding pattern described? (A) Grass → Bugs → Mole → Owl (B) Bugs → Mole → Owl (C) Owl → Mole → Bugs → Grass (D) Owl → Mole → Bugs?",
             "output": [
                 "mole, eating, bugs, owl, ate, mole., bugs, eating, grass, food, chain"
             ]
@@ -8098,7 +8091,7 @@
             ]
         },
         {
-            "input": "Question: What is the process of development of frogs? (A) Young Frog \u2192 Egg \u2192 Tadpole \u2192 Frog (B) Tadpole \u2192 Egg \u2192 Young Frog \u2192 Frog (C) Egg \u2192 Tadpole \u2192 Young Frog \u2192 Frog (D) Frog \u2192 Young Frog \u2192 Tadpole \u2192 Egg?",
+            "input": "Question: What is the process of development of frogs? (A) Young Frog → Egg → Tadpole → Frog (B) Tadpole → Egg → Young Frog → Frog (C) Egg → Tadpole → Young Frog → Frog (D) Frog → Young Frog → Tadpole → Egg?",
             "output": [
                 "process, development, frogs?"
             ]
@@ -8159,7 +8152,7 @@
             ]
         },
         {
-            "input": "Question: A decrease in air temperature from 60\u00b0F to 35\u00b0F would most likely cause a person to (A) shiver (B) sweat (C) blink his eyes (D) feel sleepy?",
+            "input": "Question: A decrease in air temperature from 60°F to 35°F would most likely cause a person to (A) shiver (B) sweat (C) blink his eyes (D) feel sleepy?",
             "output": [
                 "decrease, air, temperature, cause, person",
                 "decrease, temperature, cause"
@@ -8464,7 +8457,7 @@
             ]
         },
         {
-            "input": "Question: Which diagram best shows how energy flows through a simple food chain? (A) Leaves \u2192 Caterpillar \u2192 Bird (B) Tree \u2192 Bird \u2192 Caterpillar (C) Leaves \u2192 Tree \u2192 Caterpillar (D) Caterpillar \u2192 Leaves \u2192 Bird?",
+            "input": "Question: Which diagram best shows how energy flows through a simple food chain? (A) Leaves → Caterpillar → Bird (B) Tree → Bird → Caterpillar (C) Leaves → Tree → Caterpillar (D) Caterpillar → Leaves → Bird?",
             "output": [
                 "energy, flows, food, chain?"
             ]
@@ -8476,7 +8469,7 @@
             ]
         },
         {
-            "input": "Question: An escalator at a shopping mall is 10 m long and moves at a constant speed of 0.5 m/s. If Jos\u00e0\u00a4\u00a5\u00e0\u00a4\u0160 steps onto the escalator at the bottom while it is moving, how long will it take him to travel the 10 m? (A) 5 s (B) 10 s (C) 15 s (D) 20 s?",
+            "input": "Question: An escalator at a shopping mall is 10 m long and moves at a constant speed of 0.5 m/s. If Josà¤¥à¤Š steps onto the escalator at the bottom while it is moving, how long will it take him to travel the 10 m? (A) 5 s (B) 10 s (C) 15 s (D) 20 s?",
             "output": [
                 "escalator, 10, m, long, moves, constant, speed, 0.5, m/s., escalator, long, will, travel, 10, m?"
             ]
@@ -8963,9 +8956,9 @@
             ]
         },
         {
-            "input": "Question: Red-clay bricks have a density of approximately 2000 kg/m\u00b3 . Air has a density of 1 kg/m\u00b3. Which of the following has the lowest mass?",
+            "input": "Question: Red-clay bricks have a density of approximately 2000 kg/m³ . Air has a density of 1 kg/m³. Which of the following has the lowest mass?",
             "output": [
-                "bricks, density, 2000, kg/m\u00b3, Air, density, 1, kg/m\u00b3., lowest, mass?"
+                "bricks, density, 2000, kg/m³, Air, density, 1, kg/m³., lowest, mass?"
             ]
         },
         {
@@ -9607,9 +9600,9 @@
             ]
         },
         {
-            "input": "Question: A small ice cube at a temperature of 0\u00b0C is dropped into a glass of water at 28\u00b0C and melts. What is the temperature of the water in the glass just after the ice cube melts? (A) 0\u00b0C (B) between 0\u00b0C and 28\u00b0C (C) 28\u00b0C (D) greater than 28\u00b0C?",
+            "input": "Question: A small ice cube at a temperature of 0°C is dropped into a glass of water at 28°C and melts. What is the temperature of the water in the glass just after the ice cube melts? (A) 0°C (B) between 0°C and 28°C (C) 28°C (D) greater than 28°C?",
             "output": [
-                "ice, cube, 0\u00b0C, water, 28\u00b0C, temperature, water, ice, melts?"
+                "ice, cube, 0°C, water, 28°C, temperature, water, ice, melts?"
             ]
         },
         {
@@ -9763,7 +9756,7 @@
             ]
         },
         {
-            "input": "Question: Which of these shows how frozen water changes as the temperature of the air increases? (A) Gas \u2192 liquid \u2192 solid (B) Solid \u2192 gas \u2192 liquid (C) Liquid \u2192 gas \u2192 solid (D) Solid \u2192 liquid \u2192 gas?",
+            "input": "Question: Which of these shows how frozen water changes as the temperature of the air increases? (A) Gas → liquid → solid (B) Solid → gas → liquid (C) Liquid → gas → solid (D) Solid → liquid → gas?",
             "output": [
                 "frozen, water, changes, temperature, air, increases?"
             ]
@@ -9898,7 +9891,7 @@
             ]
         },
         {
-            "input": "Question: Which organism(s) in this food chain could be decomposed by bacteria? Maple Tree \u2192 Ants \u2192 Woodpecker ___. (A) Ants, only (B) Woodpecker, only (C) Maple tree, ants, and woodpecker (D) Maple tree and ants, only?",
+            "input": "Question: Which organism(s) in this food chain could be decomposed by bacteria? Maple Tree → Ants → Woodpecker ___. (A) Ants, only (B) Woodpecker, only (C) Maple tree, ants, and woodpecker (D) Maple tree and ants, only?",
             "output": [
                 "organism(s), food, chain, decomposed, bacteria?, Maple, Tree, Ants, Woodpecker"
             ]
@@ -10024,9 +10017,9 @@
             ]
         },
         {
-            "input": "Question: The temperature of water in a glass changes from 5\u00b0C to -1\u00b0C. How will the water most likely change? (A) It will boil. (B) It will melt. (C) It will freeze. (D) It will condense.?",
+            "input": "Question: The temperature of water in a glass changes from 5°C to -1°C. How will the water most likely change? (A) It will boil. (B) It will melt. (C) It will freeze. (D) It will condense.?",
             "output": [
-                "temperature, 5\u00b0C, -1\u00b0C., water, change?"
+                "temperature, 5°C, -1°C., water, change?"
             ]
         },
         {
@@ -10211,9 +10204,9 @@
             ]
         },
         {
-            "input": "Question: Which weather event usually includes heavy precipitation, strong winds, and surface air temperatures below 0\u00b0C? (1) blizzard (2) hurricane (3) thunderstorm (4) tornado?",
+            "input": "Question: Which weather event usually includes heavy precipitation, strong winds, and surface air temperatures below 0°C? (1) blizzard (2) hurricane (3) thunderstorm (4) tornado?",
             "output": [
-                "weather, event, heavy, strong, air, temperatures, 0\u00b0C?"
+                "weather, event, heavy, strong, air, temperatures, 0°C?"
             ]
         },
         {
@@ -10780,7 +10773,7 @@
             ]
         },
         {
-            "input": "Question: Which property of water can cause a rock to break apart? (A) Water boiling at 100\u00b0C. (B) Water losing energy slowly. (C) Water expanding as it freezes. (D) Water having a high surface tension.?",
+            "input": "Question: Which property of water can cause a rock to break apart? (A) Water boiling at 100°C. (B) Water losing energy slowly. (C) Water expanding as it freezes. (D) Water having a high surface tension.?",
             "output": [
                 "property, water, rock, break"
             ]
@@ -11356,7 +11349,7 @@
             ]
         },
         {
-            "input": "Question: Antonio took several different measurements of an object. After he was finished, he realized that he forgot to label his measurements. Which of the following measurements could be the volume of the object? (A) 28 mL (B) 31 cm (C) 4 lbs. (D) 78 \u00b0F?",
+            "input": "Question: Antonio took several different measurements of an object. After he was finished, he realized that he forgot to label his measurements. Which of the following measurements could be the volume of the object? (A) 28 mL (B) 31 cm (C) 4 lbs. (D) 78 °F?",
             "output": [
                 "measurements, volume"
             ]
@@ -11689,7 +11682,7 @@
             ]
         },
         {
-            "input": "Question: Jenny measures the outside temperature as 16 degrees Celsius (\u00b0C), 61 degrees Fahrenheit (\u00b0F). She observes precipitation falling from the clouds in a solid form. What type of precipitation is Jenny most likely observing? (A) hail (B) rain (C) sleet (D) snow?",
+            "input": "Question: Jenny measures the outside temperature as 16 degrees Celsius (°C), 61 degrees Fahrenheit (°F). She observes precipitation falling from the clouds in a solid form. What type of precipitation is Jenny most likely observing? (A) hail (B) rain (C) sleet (D) snow?",
             "output": [
                 "precipitation, solid, form."
             ]
@@ -11906,9 +11899,9 @@
             ]
         },
         {
-            "input": "Question: When the temperature of water rises from 0\u00b0F to 100\u00b0F, what changes of state occur? (A) From solid to gas to liquid (B) From gas to solid (C) From liquid to solid (D) From solid to liquid to gas?",
+            "input": "Question: When the temperature of water rises from 0°F to 100°F, what changes of state occur? (A) From solid to gas to liquid (B) From gas to solid (C) From liquid to solid (D) From solid to liquid to gas?",
             "output": [
-                "temperature, water, rises, 0\u00b0F, changes"
+                "temperature, water, rises, 0°F, changes"
             ]
         },
         {
@@ -12386,7 +12379,7 @@
             ]
         },
         {
-            "input": "Question: Which statement is describing climate? (A) It snowed 12 centimeters last night. (B) Last winter was colder than normal. (C) There is a thunderstorm watch for the local area. (D) The temperature will be between 32\u00b0C and 37\u00b0C all week.?",
+            "input": "Question: Which statement is describing climate? (A) It snowed 12 centimeters last night. (B) Last winter was colder than normal. (C) There is a thunderstorm watch for the local area. (D) The temperature will be between 32°C and 37°C all week.?",
             "output": [
                 "describing, climate?"
             ]
@@ -12572,7 +12565,7 @@
             ]
         },
         {
-            "input": "Question: A student is measuring the boiling point of a salt and water mixture. He takes one temperature measurement of 105\u00b0C. Which is the best way to ensure the results are valid? (A) repeat the investigation (B) change the volume of water (C) add more salt to the mixture (D) do the investigation without salt?",
+            "input": "Question: A student is measuring the boiling point of a salt and water mixture. He takes one temperature measurement of 105°C. Which is the best way to ensure the results are valid? (A) repeat the investigation (B) change the volume of water (C) add more salt to the mixture (D) do the investigation without salt?",
             "output": [
                 "measuring, boiling, point, salt, water, mixture., results, valid?"
             ]
@@ -12584,7 +12577,7 @@
             ]
         },
         {
-            "input": "Question: At what temperature does pure water boil? (A) 0\u00b0C (B) 32\u00b0C (C) 100\u00b0C (D) 212\u00b0C?",
+            "input": "Question: At what temperature does pure water boil? (A) 0°C (B) 32°C (C) 100°C (D) 212°C?",
             "output": [
                 "temperature, water, boil?"
             ]
@@ -12784,9 +12777,9 @@
             ]
         },
         {
-            "input": "Question: Clouds and precipitation moved across western Massachusetts one evening. The temperature changed from 41\u00b0F to 28\u00b0F. Which of the following changes in precipitation most likely occurred on this evening? (A) sleet changing to hail (B) snow changing to rain (C) rain changing to sleet (D) snow changing to hail?",
+            "input": "Question: Clouds and precipitation moved across western Massachusetts one evening. The temperature changed from 41°F to 28°F. Which of the following changes in precipitation most likely occurred on this evening? (A) sleet changing to hail (B) snow changing to rain (C) rain changing to sleet (D) snow changing to hail?",
             "output": [
-                "temperature, changed, 41\u00b0F, 28\u00b0F., changes, precipitation"
+                "temperature, changed, 41°F, 28°F., changes, precipitation"
             ]
         },
         {
@@ -13128,7 +13121,7 @@
             ]
         },
         {
-            "input": "Question: A city has a temperature of 75 \u00b0F, with partly cloudy skies. Weather forecasters are predicting that the air pressure and temperature will drop during the day. Which type of weather is most likely for this area in the late afternoon? (A) rainy. (B) sunny. (C) snowing. (D) hailing.?",
+            "input": "Question: A city has a temperature of 75 °F, with partly cloudy skies. Weather forecasters are predicting that the air pressure and temperature will drop during the day. Which type of weather is most likely for this area in the late afternoon? (A) rainy. (B) sunny. (C) snowing. (D) hailing.?",
             "output": [
                 "75, partly, cloudy, air, pressure, temperature, drop, weather"
             ]
@@ -13556,5 +13549,17 @@
                 "allows, organism, survive, new, environments?"
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
     ]
 }

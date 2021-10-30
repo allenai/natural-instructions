@@ -7,9 +7,11 @@
         "winogrande"
     ],
     "Categories": [
-        "Text Modification"
+        "Text Modification",
+        "Reasoning -> Commonsense Reasoning",
+        "Coreference -> Pronoun Disambiguation"
     ],
-    "Definition": "In this task, you're given a fill-in-the-blank question which contains two object names. Additionally, you're given one answer which is one of the objects present in the question. In this task, you need to minimally change the given question so that the answer flips to another object in the question. Remember the question has to be about both objects which are related but different; for example, \"trophy\" and \"suitcase\". This task typically involves replacing one word i.e. the 'trigger word' by its antonym (e.g. changing from \"small\" to \"big\").\nThings to avoid: 1. You should not change any content in the given question beyond a word or two, i.e., the trigger word/phrase. 2. The expected answer to your question must not be associated with just the trigger word; instead it should depend on the context present in the question. 3. The expected answer should not be ambiguous. For your question, there should be an agreed upon answer to fill in the blank. 4. Your generations should NOT contain potentially explicit, offensive, or adult content. 5. In your generated question, retain the object names from the input question. 6. Avoid repeating the same style or phrase in generating your modified question e.g. this task can be always solved using a simple negation i.e. by adding not, never, etc. Instead, try to increase the word diversity.\nEmphasis & Caution: 1. Your question must contain at least 15 and at most 30 words. 2. Your question must have atleast 70% overlapping words with the given question 3. You must utilize the given context word while writing the question. 4. Your question must contain only one blank. 5. The two objects should be used ONCE in your question. 6. Here is a list of attributes and associated contrastive words that may be helpful for writing contrastive trigger words. Note that contrastive trigger words help in flipping the label.\n| Attribute | triggerword | contrastive triggerword | \n| age | old | new | \n| altitude | low | high |\n| area | small | vast | \n| brightness | dark | light | \n| clarity | obscure | clear | \n| cleanness | dirty | clean | \n| complexity | simple | complex | \n| cost | cheap | expensive |\n| density | sparse | dense |\n| depth | shallow | deep |\n| distance | near | far |  \n| electric conductivity | low | high |\n| flexibility | rigid | flexible |\n| granularity | fine | coarse | \n| hardness | soft | hard | \n| length | short | long | \n| magnitude | small | large | \n| mass | small | large | \n| odor | weak | strong | \n| pressure | low | high | \n| resistance | low | high | \n| shape | round | sharp |\n| shape | flat | spiky |\n| size | small | large | \n| sound | quiet | loud | \n| sound pitch | low | high | \n| speed | slow | fast | \n| stability | unstable | stable | \n| strength | weak | strong | \n| temperature | low | high | \n| texture | smooth | rough | \n| thermal conductivity | low | high |\n| thickness | thin | thick | \n| volume | small | large |\n| weight | light | heavy | \n| width | narrow | wide | \n| location | in | out |\n| location | up | down |\n| location | above | below |\n| location | on | off |\n| location | to | from |\n",
+    "Definition": "In this task, you're given a fill-in-the-blank question which contains two object names. Additionally, you're given one answer which is one of the objects present in the question. In this task, you need to minimally change the given question so that the answer flips to another object in the question. Remember the question has to be about both objects which are related but different; for example, \"trophy\" and \"suitcase\". This task typically involves replacing one word i.e. the 'trigger word' by its antonym (e.g. changing from \"small\" to \"big\").\nThings to avoid: 1. You should not change any content in the given question beyond a word or two, i.e., the trigger word/phrase.\n2. The expected answer to your question must not be associated with just the trigger word; instead it should depend on the context present in the question.\n3. The expected answer should not be ambiguous. For your question, there should be an agreed upon answer to fill in the blank.\n4. Your generations should NOT contain potentially explicit, offensive, or adult content.\n5. In your generated question, retain the object names from the input question.\n6. Avoid repeating the same style or phrase in generating your modified question e.g. this task can be always solved using a simple negation i.e. by adding not, never, etc. Instead, try to increase the word diversity.\nEmphasis & Caution: 1. Your question must contain at least 15 and at most 30 words.\n2. Your question must have at least 70% overlapping words with the given question 3. You must utilize the given context word while writing the question.\n4. Your question must contain only one blank.\n5. The two objects should be used ONCE in your question.\n6. Here is a list of attributes and associated contrastive words that may be helpful for writing contrastive trigger words.\nNote that contrastive trigger words help in flipping the label.\n| Attribute | triggerword | contrastive triggerword | \n| age | old | new | \n| altitude | low | high |\n| area | small | vast | \n| brightness | dark | light | \n| clarity | obscure | clear | \n| cleanness | dirty | clean | \n| complexity | simple | complex | \n| cost | cheap | expensive |\n| density | sparse | dense |\n| depth | shallow | deep |\n| distance | near | far |  \n| electric conductivity | low | high |\n| flexibility | rigid | flexible |\n| granularity | fine | coarse | \n| hardness | soft | hard | \n| length | short | long | \n| magnitude | small | large | \n| mass | small | large | \n| odor | weak | strong | \n| pressure | low | high | \n| resistance | low | high | \n| shape | round | sharp |\n| shape | flat | spiky |\n| size | small | large | \n| sound | quiet | loud | \n| sound pitch | low | high | \n| speed | slow | fast | \n| stability | unstable | stable | \n| strength | weak | strong | \n| temperature | low | high | \n| texture | smooth | rough | \n| thermal conductivity | low | high |\n| thickness | thin | thick | \n| volume | small | large |\n| weight | light | heavy | \n| width | narrow | wide | \n| location | in | out |\n| location | up | down |\n| location | above | below |\n| location | on | off |\n| location | to | from |\n",
     "Positive Examples": [
         {
             "input": "Context word: fit. \nQuestion: The trophy doesn't fit into the brown suitcase because _ is too large. \nAnswer: trophy.",
@@ -668,9 +670,9 @@
             ]
         },
         {
-            "input": "Context Word: pancakes. \nQuestion: Jerry was making pancakes for breakfast but realized he had eggs but he didn\u2019t have milk. It was unnecessary to go to the store for the _ . \nAnswer: eggs.",
+            "input": "Context Word: pancakes. \nQuestion: Jerry was making pancakes for breakfast but realized he had eggs but he didn’t have milk. It was unnecessary to go to the store for the _ . \nAnswer: eggs.",
             "output": [
-                "Jerry was making pancakes for breakfast but realized he had eggs but he didn\u2019t have milk. It was necessary to go to the store for the _ ."
+                "Jerry was making pancakes for breakfast but realized he had eggs but he didn’t have milk. It was necessary to go to the store for the _ ."
             ]
         },
         {
@@ -1358,9 +1360,9 @@
             ]
         },
         {
-            "input": "Context Word: sunscreen. \nQuestion: Matt used a dollar tree sunscreen on their skin, but it didn\u2019t work because the _ is burned. \nAnswer: skin.",
+            "input": "Context Word: sunscreen. \nQuestion: Matt used a dollar tree sunscreen on their skin, but it didn’t work because the _ is burned. \nAnswer: skin.",
             "output": [
-                "Matt used a dollar tree sunscreen on their skin, but it didn\u2019t work because the _ is cheap."
+                "Matt used a dollar tree sunscreen on their skin, but it didn’t work because the _ is cheap."
             ]
         },
         {
@@ -2012,9 +2014,9 @@
             ]
         },
         {
-            "input": "Context Word: shutters. \nQuestion: Mark wanted to paint the shutters and needed paintbrushes but didn\u2019t need rollers because he found none of the _ at home. \nAnswer: paintbrushes.",
+            "input": "Context Word: shutters. \nQuestion: Mark wanted to paint the shutters and needed paintbrushes but didn’t need rollers because he found none of the _ at home. \nAnswer: paintbrushes.",
             "output": [
-                "Mark wanted to paint the shutters and needed paintbrushes but didn\u2019t need rollers because he found several of the _ at home."
+                "Mark wanted to paint the shutters and needed paintbrushes but didn’t need rollers because he found several of the _ at home."
             ]
         },
         {
@@ -4304,9 +4306,9 @@
             ]
         },
         {
-            "input": "Context Word: treats. \nQuestion: She wanted to put the hamster treats in the bowl but they wouldn\u2019t fit. The _ was too small. \nAnswer: bowl.",
+            "input": "Context Word: treats. \nQuestion: She wanted to put the hamster treats in the bowl but they wouldn’t fit. The _ was too small. \nAnswer: bowl.",
             "output": [
-                "She wanted to put the hamster treats in the bowl but they wouldn\u2019t fit. The _ were too big."
+                "She wanted to put the hamster treats in the bowl but they wouldn’t fit. The _ were too big."
             ]
         },
         {
@@ -7598,9 +7600,9 @@
             ]
         },
         {
-            "input": "Context Word: trashcan. \nQuestion: The garbage truck had taken the trashbag out of Mary\u2019s trashcan this morning, so the _ is now disposed. \nAnswer: trashbag.",
+            "input": "Context Word: trashcan. \nQuestion: The garbage truck had taken the trashbag out of Mary’s trashcan this morning, so the _ is now disposed. \nAnswer: trashbag.",
             "output": [
-                "The garbage truck had taken the trashbag out of Mary\u2019s trashcan this morning, so the _ is now empty."
+                "The garbage truck had taken the trashbag out of Mary’s trashcan this morning, so the _ is now empty."
             ]
         },
         {
@@ -9676,7 +9678,7 @@
         {
             "input": "Context Word: picnic. \nQuestion: Vicki was going to a picnic and needed to pack the food but not the blanket because she was responsible for bringing the _ . \nAnswer: food.",
             "output": [
-                "Vicki was going to a picnic and needed to pack the food but not the blanket because she wasn\u2019t responsible for bringing the _ ."
+                "Vicki was going to a picnic and needed to pack the food but not the blanket because she wasn’t responsible for bringing the _ ."
             ]
         },
         {
@@ -9692,9 +9694,9 @@
             ]
         },
         {
-            "input": "Context Word: hair. \nQuestion: Sheila didn\u2019t check the temperature of her flat iron before straightening hair. The _ was hot. \nAnswer: iron.",
+            "input": "Context Word: hair. \nQuestion: Sheila didn’t check the temperature of her flat iron before straightening hair. The _ was hot. \nAnswer: iron.",
             "output": [
-                "Sheila didn\u2019t check the temperature of her flat iron before straightening her hair. The _ was fried."
+                "Sheila didn’t check the temperature of her flat iron before straightening her hair. The _ was fried."
             ]
         },
         {
@@ -12740,9 +12742,9 @@
             ]
         },
         {
-            "input": "Context Word: contract. \nQuestion: The city wanted to renegotiate the contract but the venue didn\u2019t because the _ would lose money. \nAnswer: venue.",
+            "input": "Context Word: contract. \nQuestion: The city wanted to renegotiate the contract but the venue didn’t because the _ would lose money. \nAnswer: venue.",
             "output": [
-                "The city wanted to renegotiate the contract but the venue didn\u2019t because the _ would save money."
+                "The city wanted to renegotiate the contract but the venue didn’t because the _ would save money."
             ]
         },
         {
@@ -14606,9 +14608,9 @@
             ]
         },
         {
-            "input": "Context Word: television. \nQuestion: She didn\u2019t feel like the reading the textbook anymore and watched television instead because the _ is boring. \nAnswer: textbook.",
+            "input": "Context Word: television. \nQuestion: She didn’t feel like the reading the textbook anymore and watched television instead because the _ is boring. \nAnswer: textbook.",
             "output": [
-                "She didn\u2019t feel like the reading the textbook anymore and watched television instead because the _ is entertaining."
+                "She didn’t feel like the reading the textbook anymore and watched television instead because the _ is entertaining."
             ]
         },
         {
@@ -14840,9 +14842,9 @@
             ]
         },
         {
-            "input": "Context Word: lizard. \nQuestion: He went to put the new light over the lizard cage, but the light didn\u2019t fit because the _ is too big. \nAnswer: cage.",
+            "input": "Context Word: lizard. \nQuestion: He went to put the new light over the lizard cage, but the light didn’t fit because the _ is too big. \nAnswer: cage.",
             "output": [
-                "He went to put the new light over the lizard cage, but the light didn\u2019t fit because the _ is too small."
+                "He went to put the new light over the lizard cage, but the light didn’t fit because the _ is too small."
             ]
         },
         {
@@ -15824,9 +15826,9 @@
             ]
         },
         {
-            "input": "Context Word: Sign. \nQuestion: While Billie brought a pencil, I brought a pen to the realtor\u2019s office. I gave Billie my pen but she stubbornly used  the _ to sign the document. \nAnswer: pencil.",
+            "input": "Context Word: Sign. \nQuestion: While Billie brought a pencil, I brought a pen to the realtor’s office. I gave Billie my pen but she stubbornly used  the _ to sign the document. \nAnswer: pencil.",
             "output": [
-                "While Billie brought a pencil, I brought a pen to the realtor\u2019s office. I gave Billie my pen and she gladly used the _ to sign the document."
+                "While Billie brought a pencil, I brought a pen to the realtor’s office. I gave Billie my pen and she gladly used the _ to sign the document."
             ]
         },
         {
@@ -20216,9 +20218,9 @@
             ]
         },
         {
-            "input": "Context Word: buy. \nQuestion: Although the shopper didn\u2019t have sufficient money to buy a pair of earrings, she had enough to buy several pairs of bracelets. The _ were cheap. \nAnswer: bracelets.",
+            "input": "Context Word: buy. \nQuestion: Although the shopper didn’t have sufficient money to buy a pair of earrings, she had enough to buy several pairs of bracelets. The _ were cheap. \nAnswer: bracelets.",
             "output": [
-                "Although the shopper didn\u2019t have sufficient money to buy a pair of earrings, she had enough to buy several pairs of bracelets. The _ were expensive."
+                "Although the shopper didn’t have sufficient money to buy a pair of earrings, she had enough to buy several pairs of bracelets. The _ were expensive."
             ]
         },
         {
@@ -21040,7 +21042,7 @@
         {
             "input": "Context Word: ride. \nQuestion: Charlie decided to ride his bike instead of his skateboard because on the _  he could sit down. \nAnswer: bike.",
             "output": [
-                "Charlie decided to ride his bike instead of his skateboard because on the _  he couldn\u2019t sit down."
+                "Charlie decided to ride his bike instead of his skateboard because on the _  he couldn’t sit down."
             ]
         },
         {
@@ -21104,9 +21106,9 @@
             ]
         },
         {
-            "input": "Context Word: thermostat. \nQuestion: The thermostat started giving bad readings, so we checked the batteries and for a new one. \u00a0We were able to just replace the _ . \nAnswer: batteries.",
+            "input": "Context Word: thermostat. \nQuestion: The thermostat started giving bad readings, so we checked the batteries and for a new one.  We were able to just replace the _ . \nAnswer: batteries.",
             "output": [
-                "The thermostat started giving bad readings, so we checked the batteries and for a new one. \u00a0We had to just replace the _ ."
+                "The thermostat started giving bad readings, so we checked the batteries and for a new one.  We had to just replace the _ ."
             ]
         },
         {
@@ -21968,9 +21970,9 @@
             ]
         },
         {
-            "input": "Context Word: seeds. \nQuestion: Kenna made sure to water her plants\u2019 seeds today, so now the _ are watered. \nAnswer: seeds.",
+            "input": "Context Word: seeds. \nQuestion: Kenna made sure to water her plants’ seeds today, so now the _ are watered. \nAnswer: seeds.",
             "output": [
-                "Kenna made sure to water her plants\u2019 seeds today, so now the _ are growing."
+                "Kenna made sure to water her plants’ seeds today, so now the _ are growing."
             ]
         },
         {
@@ -25490,9 +25492,9 @@
             ]
         },
         {
-            "input": "Context Word: stage. \nQuestion: They had invested in a large curtain that would drop onto the stage, but it didn\u2019t work out because the _ was too short. \nAnswer: curtain.",
+            "input": "Context Word: stage. \nQuestion: They had invested in a large curtain that would drop onto the stage, but it didn’t work out because the _ was too short. \nAnswer: curtain.",
             "output": [
-                "They had invested in a large curtain that would drop onto the stage, but it didn\u2019t work out because the _ was too low."
+                "They had invested in a large curtain that would drop onto the stage, but it didn’t work out because the _ was too low."
             ]
         },
         {
@@ -25856,9 +25858,9 @@
             ]
         },
         {
-            "input": "Context Word: insurance. \nQuestion: Tanya\u2019s home had been destroyed by an earthquake, yet her insurance did not help because the _ was intense. \nAnswer: earthquake.",
+            "input": "Context Word: insurance. \nQuestion: Tanya’s home had been destroyed by an earthquake, yet her insurance did not help because the _ was intense. \nAnswer: earthquake.",
             "output": [
-                "Tanya\u2019s home had been destroyed by an earthquake, yet her insurance did not help because the _ was cheap."
+                "Tanya’s home had been destroyed by an earthquake, yet her insurance did not help because the _ was cheap."
             ]
         },
         {
@@ -26318,9 +26320,9 @@
             ]
         },
         {
-            "input": "Context Word: floor. \nQuestion: Jamie agreed to help clean her boyfriend\u2019s kitchen floor and would carry mop but not the bucket because the _ was light. \nAnswer: mop.",
+            "input": "Context Word: floor. \nQuestion: Jamie agreed to help clean her boyfriend’s kitchen floor and would carry mop but not the bucket because the _ was light. \nAnswer: mop.",
             "output": [
-                "Jamie agreed to help clean her boyfriend\u2019s kitchen floor and would carry mop but not the bucket because the _ was heavy."
+                "Jamie agreed to help clean her boyfriend’s kitchen floor and would carry mop but not the bucket because the _ was heavy."
             ]
         },
         {
@@ -27818,9 +27820,9 @@
             ]
         },
         {
-            "input": "Context Word: makeup. \nQuestion: Clara had dropped her client\u2019s makeup on the floor and had to dispose of it because the _ is dirty. \nAnswer: floor.",
+            "input": "Context Word: makeup. \nQuestion: Clara had dropped her client’s makeup on the floor and had to dispose of it because the _ is dirty. \nAnswer: floor.",
             "output": [
-                "Clara had dropped her client\u2019s makeup on the floor and had to dispose of it because the _ is unsanitary."
+                "Clara had dropped her client’s makeup on the floor and had to dispose of it because the _ is unsanitary."
             ]
         },
         {
@@ -29996,9 +29998,9 @@
             ]
         },
         {
-            "input": "Context Word: tire. \nQuestion: Lacey didn\u2019t know she had a bald tire, so her car swerved on the road during the rain because the _ was too bald. \nAnswer: tire.",
+            "input": "Context Word: tire. \nQuestion: Lacey didn’t know she had a bald tire, so her car swerved on the road during the rain because the _ was too bald. \nAnswer: tire.",
             "output": [
-                "Lacey didn\u2019t know she had a bald tire, so her car swerved on the road during the rain because the _ was too wet."
+                "Lacey didn’t know she had a bald tire, so her car swerved on the road during the rain because the _ was too wet."
             ]
         },
         {
@@ -30116,9 +30118,9 @@
             ]
         },
         {
-            "input": "Context Word: kiwis. \nQuestion: Ana could tell her kiwis weren\u2019t ripe by looking at the shape and the skin. They were not ripe because the _ was too green. \nAnswer: skin.",
+            "input": "Context Word: kiwis. \nQuestion: Ana could tell her kiwis weren’t ripe by looking at the shape and the skin. They were not ripe because the _ was too green. \nAnswer: skin.",
             "output": [
-                "Ana could tell her kiwis weren\u2019t ripe by looking at the shape and the skin. They were not ripe because the _ was too hard."
+                "Ana could tell her kiwis weren’t ripe by looking at the shape and the skin. They were not ripe because the _ was too hard."
             ]
         },
         {
@@ -32360,9 +32362,9 @@
             ]
         },
         {
-            "input": "Context Word: pizza. \nQuestion: The 17 inch pizza pan won\u2019t fit into the drawer underneath the oven because the _ is too narrow. \nAnswer: drawer.",
+            "input": "Context Word: pizza. \nQuestion: The 17 inch pizza pan won’t fit into the drawer underneath the oven because the _ is too narrow. \nAnswer: drawer.",
             "output": [
-                "The 17 inch pizza pan won\u2019t fit into the drawer underneath the oven because the _ is too wide."
+                "The 17 inch pizza pan won’t fit into the drawer underneath the oven because the _ is too wide."
             ]
         },
         {
@@ -38090,9 +38092,9 @@
             ]
         },
         {
-            "input": "Context Word: coffee. \nQuestion: The CEO was working with a new intern, and the intern had accidentally spilled coffee on the CEO\u2019s clothing. Now the _ is drenched. \nAnswer: clothing.",
+            "input": "Context Word: coffee. \nQuestion: The CEO was working with a new intern, and the intern had accidentally spilled coffee on the CEO’s clothing. Now the _ is drenched. \nAnswer: clothing.",
             "output": [
-                "The CEO was working with a new intern, and the intern had accidentally spilled coffee on the CEO\u2019s clothing. Now the _ is empty.."
+                "The CEO was working with a new intern, and the intern had accidentally spilled coffee on the CEO’s clothing. Now the _ is empty.."
             ]
         },
         {
@@ -38834,9 +38836,9 @@
             ]
         },
         {
-            "input": "Context Word: alarm. \nQuestion: The alarm had went off during Tucker\u2019s sleep but he did not wake up because the _ was quiet. \nAnswer: alarm.",
+            "input": "Context Word: alarm. \nQuestion: The alarm had went off during Tucker’s sleep but he did not wake up because the _ was quiet. \nAnswer: alarm.",
             "output": [
-                "The alarm had went off during Tucker\u2019s sleep but he did not wake up because the _ was deep."
+                "The alarm had went off during Tucker’s sleep but he did not wake up because the _ was deep."
             ]
         },
         {
@@ -39085,5 +39087,18 @@
                 "The rain created an emergency situation in the town, as the _ was flooded with water."
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations -> Social Commonsense",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense"
     ]
 }

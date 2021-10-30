@@ -3,16 +3,18 @@
         "Kirby Kuznia"
     ],
     "Source": [
-        "SPLASH"
+        "SPLASH (https://arxiv.org/pdf/2005.02539.pdf)"
+    ],
+    "Domains": [
+        "SQL"
     ],
     "Categories": [
-        "Structered Query Generation",
-        "Text Modification"
+        "Text Modification -> Structured Text Modification"
     ],
-    "Definition": "In this task you are expected to fix an SQL query based on feedback. You will be given an SQL statement and an english description with what is wrong about that SQL statement. You must correct the SQL statement based off of the feedback. An SQL query works by selecting data from a table where certain conditions apply. A table contains columns where every row in that table must have a value for each column. Every table has a primary key that uniquely identifies each row, usually an id. To choose which columns are returned you specify that after the \"SELECT\" statement. Next, you use a \"FROM\" statement to specify what tables you want to select the data from. When you specify a table you can rename it with the \"AS\" statement. You can reference that table by whatever name follows the \"AS\" statement. If you want to select data from multiple tables you need to use the \"JOIN\" statement. This will join the tables together by pairing a row in one table with every row in the other table (Cartesian Product). To limit the number of rows returned you should use the \"ON\" statement. This will only return rows where the condition specified after the statement is true, this is usually an equals operator with primary keys. You can also use the \"WHERE\" statement to specify that only rows with column values statisfying a certain condition, should be returned. The \"GROUP BY\" statement will group rows together that have equal column values for whatever columns follows the statement. The \"HAVING\" statement will return groups that statisfy whatever condition follows the statement. Any column(s) being returned from grouped rows must either be an aggregate function, (AVG, MAX, COUNT, SUM, ...) of a column, or the column(s) that the data was grouped by. To sort the returned data you can use the \"ORDER BY\" command which will order the data by whatever aggregate function or column follows the statement. The \"DESC\" statement will sort in descending order and the \"ASC\" statement will sort in ascending order. Finally, you can use the \"LIMIT\" statement to return a certain number of rows. When \"*\" is used in an SQL statement every column is returned. For example, SELECT * FROM table WHERE attribute = 1, will select every column from rows with the attribute column equal to 1. ",
+    "Definition": "In this task you are expected to fix an SQL query based on feedback. You will be given an SQL statement and an English description with what is wrong about that SQL statement. You must correct the SQL statement based off of the feedback. An SQL query works by selecting data from a table where certain conditions apply. A table contains columns where every row in that table must have a value for each column. Every table has a primary key that uniquely identifies each row, usually an id. To choose which columns are returned you specify that after the \"SELECT\" statement. Next, you use a \"FROM\" statement to specify what tables you want to select the data from. When you specify a table you can rename it with the \"AS\" statement. You can reference that table by whatever name follows the \"AS\" statement. If you want to select data from multiple tables you need to use the \"JOIN\" statement. This will join the tables together by pairing a row in one table with every row in the other table (Cartesian Product). To limit the number of rows returned you should use the \"ON\" statement. This will only return rows where the condition specified after the statement is true, this is usually an equals operator with primary keys. You can also use the \"WHERE\" statement to specify that only rows with column values statisfying a certain condition, should be returned. The \"GROUP BY\" statement will group rows together that have equal column values for whatever columns follows the statement. The \"HAVING\" statement will return groups that statisfy whatever condition follows the statement. Any column(s) being returned from grouped rows must either be an aggregate function, (AVG, MAX, COUNT, SUM, ...) of a column, or the column(s) that the data was grouped by. To sort the returned data you can use the \"ORDER BY\" command which will order the data by whatever aggregate function or column follows the statement. The \"DESC\" statement will sort in descending order and the \"ASC\" statement will sort in ascending order. Finally, you can use the \"LIMIT\" statement to return a certain number of rows. When \"*\" is used in an SQL statement every column is returned. For example, SELECT * FROM table WHERE attribute = 1, will select every column from rows with the attribute column equal to 1. ",
     "Positive Examples": [
         {
-            "input": "SQL: SELECT avg ( Average ) , max ( Capacity ) FROM stadium\nFeedback: Swap the average of \"Average\" with the average of \"Capacity\"",
+            "input": "SQL: SELECT avg ( Area ) , max ( Capacity ) FROM stadium\nFeedback: Swap the average of \"Area\" with the average of \"Capacity\"",
             "output": "SELECT avg(capacity) ,  max(capacity) FROM stadium",
             "explanation": "The SQL statement was adjusted to find the average of the capacity. This is a good example."
         },
@@ -20,27 +22,26 @@
             "input": "SQL: SELECT Count ( * ) FROM Allergy_Type AS T1 JOIN Has_Allergy AS T2 ON T1.Allergy = T2.Allergy JOIN Student AS T3 ON T2.StuID = T3.StuID WHERE T3.Sex = \"M\" AND T1.AllergyType = \"food\"\nFeedback: need to count different stuid to avoid double counting students",
             "output": "SELECT count(*) FROM Student WHERE sex  =  \"M\" AND StuID IN (SELECT StuID FROM Has_allergy AS T1 JOIN Allergy_Type AS T2 ON T1.Allergy  =  T2.Allergy WHERE T2.allergytype  =  \"food\")",
             "explanation": "This output SQL statement added another SQL statement to prevent double counting students. This is exactly what the feedback suggested. This is a good example."
+        },
+        {
+            "input": "SQL: SELECT Name FROM channel ORDER BY Rating_in_percent Asc\nFeedback: Arrangement must be declining.",
+            "output": "SELECT name FROM channel ORDER BY rating_in_percent DESC",
+            "explanation": "The feedback asks to change the sort function to descending, and the output correctly applies the change."
         }
     ],
     "Negative Examples": [
         {
             "input": "SQL: SELECT JOB_TITLE FROM jobs WHERE MAX_SALARY > 9000\nFeedback: it should be min salary",
             "output": "SELECT JOB_TITLE FROM jobs WHERE MAX_SALARY > 9000",
-            "explanation": "This output SQL query did not change from the input. You must change the SQL input based on the feedback given. This is a bad example."
+            "explanation": "This output SQL query did not change from the input. You must change the SQL input based on the feedback given."
         },
         {
             "input": "SQL: SELECT SALARY , MANAGER_ID FROM employees\nFeedback: assert each employee has a manger",
-            "output": "SELECT salary ,  manager_id FROM employees WHERE manager_id == \"null\"",
-            "explanation": "The output SQL query asserts that the \"manager_id\" is equal to null. It should assert that the \"manager_id\" is not equal to null. This is a bad example."
+            "output": "SELECT salary ,  manager_id FROM employees WHERE manager_id is NULL",
+            "explanation": "The output SQL query asserts that the \"manager_id\" is equal to null. It should assert that the \"manager_id\" is not equal to null."
         }
     ],
     "Instances": [
-        {
-            "input": "SQL: SELECT Name FROM channel ORDER BY Rating_in_percent Asc\nFeedback: Arrangement must be declining.",
-            "output": [
-                "SELECT name FROM channel ORDER BY rating_in_percent DESC"
-            ]
-        },
         {
             "input": "SQL: SELECT product_id FROM Product_Suppliers GROUP BY product_id HAVING Count ( * ) > 3 UNION SELECT product_id FROM Product_Suppliers WHERE total_value_purchased < 80000\nFeedback: In step 1 swap product suppliers with order items , in step 3 total amount purchased should be greater than 80000.",
             "output": [
@@ -2610,7 +2611,7 @@
             ]
         },
         {
-            "input": "SQL: SELECT * FROM jobs AS T1 JOIN employees AS T2 ON T1.JOB_ID = T2.JOB_ID WHERE T2.SALARY > 8000 OR T1.MAX_SALARY < 12000\nFeedback: Replace max salary with salary , \u00f6r\"with \u00e4nd \" , which commission pct not null or department id not 40.",
+            "input": "SQL: SELECT * FROM jobs AS T1 JOIN employees AS T2 ON T1.JOB_ID = T2.JOB_ID WHERE T2.SALARY > 8000 OR T1.MAX_SALARY < 12000\nFeedback: Replace max salary with salary , ör\"with änd \" , which commission pct not null or department id not 40.",
             "output": [
                 "SELECT * FROM employees WHERE salary BETWEEN 8000 AND 12000 AND commission_pct != \"null\" OR  department_id != 40"
             ]
@@ -3246,7 +3247,7 @@
             ]
         },
         {
-            "input": "SQL: SELECT T1.problem_log_id FROM Problem_Log AS T1 JOIN Staff AS T2 ON T1.assigned_to_staff_id = T2.staff_id WHERE T2.staff_first_name = \"Weber\" OR T2.staff_first_name = \"Jolie\"\nFeedback: Also add staff first name equals Dameon and staff last name equals Frami , replace \u00f6r\"with\"and\" , last staff first name with staff last name .",
+            "input": "SQL: SELECT T1.problem_log_id FROM Problem_Log AS T1 JOIN Staff AS T2 ON T1.assigned_to_staff_id = T2.staff_id WHERE T2.staff_first_name = \"Weber\" OR T2.staff_first_name = \"Jolie\"\nFeedback: Also add staff first name equals Dameon and staff last name equals Frami , replace ör\"with\"and\" , last staff first name with staff last name .",
             "output": [
                 "SELECT product_id FROM problems AS T1 JOIN staff AS T2 ON T1.reported_by_staff_id = T2.staff_id WHERE T2.staff_first_name = \"Dameon\" AND T2.staff_last_name = \"Frami\" UNION SELECT product_id FROM problems AS T1 JOIN staff AS T2 ON T1.reported_by_staff_id = T2.staff_id WHERE T2.staff_first_name = \"Jolie\" AND T2.staff_last_name = \"Weber\""
             ]
@@ -3930,7 +3931,7 @@
             ]
         },
         {
-            "input": "SQL: SELECT EmployeeID FROM Nurse\nFeedback: Need to find the Physician's employee id and department department \u00edd along with primary affiliation .",
+            "input": "SQL: SELECT EmployeeID FROM Nurse\nFeedback: Need to find the Physician's employee id and department department íd along with primary affiliation .",
             "output": [
                 "SELECT physician ,  department FROM affiliated_with WHERE primaryaffiliation  =  1"
             ]
@@ -7464,9 +7465,9 @@
             ]
         },
         {
-            "input": "SQL: SELECT T2.song_name FROM genre AS T1 JOIN song AS T2 ON T1.g_name = T2.genre_is WHERE T2.languages = \"modern\" OR T1.g_name = \"english\"\nFeedback: Exchange languages with genre is and genre name with languages .",
+            "input": "SQL: SELECT T2.song_name FROM genre AS T1 JOIN song AS T2 ON T1.g_name = T2.genre_is WHERE T2.languages = \"modern\" OR T1.g_name = \"English\"\nFeedback: Exchange languages with genre is and genre name with languages .",
             "output": [
-                "SELECT song_name FROM song WHERE genre_is  =  \"modern\" OR languages  =  \"english\""
+                "SELECT song_name FROM song WHERE genre_is  =  \"modern\" OR languages  =  \"English\""
             ]
         },
         {
@@ -7476,9 +7477,9 @@
             ]
         },
         {
-            "input": "SQL: SELECT T2.song_name FROM files AS T1 JOIN song AS T2 ON T1.f_id = T2.f_id WHERE T1.duration = \"4:%\" OR T1.duration = \"english\"\nFeedback: We 'll switch\"duration equals english\" to languages equal english\"and duration more than or equals to 4.",
+            "input": "SQL: SELECT T2.song_name FROM files AS T1 JOIN song AS T2 ON T1.f_id = T2.f_id WHERE T1.duration = \"4:%\" OR T1.duration = \"English\"\nFeedback: We 'll switch\"duration equals English\" to languages equal English\"and duration more than or equals to 4.",
             "output": [
-                "SELECT T2.song_name FROM files AS T1 JOIN song AS T2 ON T1.f_id  =  T2.f_id WHERE T1.duration LIKE \"4:%\" UNION SELECT song_name FROM song WHERE languages  =  \"english\""
+                "SELECT T2.song_name FROM files AS T1 JOIN song AS T2 ON T1.f_id  =  T2.f_id WHERE T1.duration LIKE \"4:%\" UNION SELECT song_name FROM song WHERE languages  =  \"English\""
             ]
         },
         {
@@ -7514,7 +7515,7 @@
         {
             "input": "SQL: SELECT T2.f_id , T1.preferred_genre , T2.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name = T2.artist_name ORDER BY T2.rating Asc\nFeedback: Exchange preferred genre with duration , and ensure that song's song name equals English .",
             "output": [
-                "SELECT f_id ,  genre_is ,  artist_name FROM song WHERE languages  =   \"english\" ORDER BY rating"
+                "SELECT f_id ,  genre_is ,  artist_name FROM song WHERE languages  =   \"English\" ORDER BY rating"
             ]
         },
         {
@@ -7776,9 +7777,9 @@
             ]
         },
         {
-            "input": "SQL: SELECT DISTINCT T1.artist_name FROM files AS T1 JOIN song AS T2 ON T1.f_id = T2.f_id WHERE T2.resolution > \"english\"\nFeedback: Need to Switch files's artist name to song's song name .",
+            "input": "SQL: SELECT DISTINCT T1.artist_name FROM files AS T1 JOIN song AS T2 ON T1.f_id = T2.f_id WHERE T2.resolution > \"English\"\nFeedback: Need to Switch files's artist name to song's song name .",
             "output": [
-                "SELECT DISTINCT song_name FROM song WHERE resolution  >  (SELECT min(resolution) FROM song WHERE languages  =  \"english\")"
+                "SELECT DISTINCT song_name FROM song WHERE resolution  >  (SELECT min(resolution) FROM song WHERE languages  =  \"English\")"
             ]
         },
         {
@@ -7890,9 +7891,9 @@
             ]
         },
         {
-            "input": "SQL: SELECT T1.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name = T2.artist_name WHERE T2.country = \"UK\" INTERSECT SELECT T2.artist_name FROM song AS T2 WHERE T2.country = \"english\"\nFeedback: In step 2 it should find for artist's genre is instead of song's genre is , in step 3 replace song's genre is with song's song name .",
+            "input": "SQL: SELECT T1.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name = T2.artist_name WHERE T2.country = \"UK\" INTERSECT SELECT T2.artist_name FROM song AS T2 WHERE T2.country = \"English\"\nFeedback: In step 2 it should find for artist's genre is instead of song's genre is , in step 3 replace song's genre is with song's song name .",
             "output": [
-                "SELECT artist_name FROM artist WHERE country  =  \"UK\" INTERSECT SELECT artist_name FROM song WHERE languages  =  \"english\""
+                "SELECT artist_name FROM artist WHERE country  =  \"UK\" INTERSECT SELECT artist_name FROM song WHERE languages  =  \"English\""
             ]
         },
         {
@@ -8100,9 +8101,9 @@
             ]
         },
         {
-            "input": "SQL: SELECT T1.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name = T2.artist_name WHERE T2.country = \"UK\" INTERSECT SELECT T2.artist_name FROM song AS T2 WHERE T2.country = \"english\"\nFeedback: In step 3 change country with languages .",
+            "input": "SQL: SELECT T1.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name = T2.artist_name WHERE T2.country = \"UK\" INTERSECT SELECT T2.artist_name FROM song AS T2 WHERE T2.country = \"English\"\nFeedback: In step 3 change country with languages .",
             "output": [
-                "SELECT artist_name FROM artist WHERE country  =  \"UK\" INTERSECT SELECT T1.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name  =  T2.artist_name WHERE T2.languages  =  \"english\""
+                "SELECT artist_name FROM artist WHERE country  =  \"UK\" INTERSECT SELECT T1.artist_name FROM artist AS T1 JOIN song AS T2 ON T1.artist_name  =  T2.artist_name WHERE T2.languages  =  \"English\""
             ]
         },
         {
@@ -8702,7 +8703,7 @@
         {
             "input": "SQL: SELECT song_name FROM song WHERE rating < ( SELECT Min ( rating ) FROM song )\nFeedback: Also Ensure that song song name equals to English in step 2.",
             "output": [
-                "SELECT song_name FROM song WHERE rating  <   (SELECT min(rating) FROM song WHERE languages  =  'english')"
+                "SELECT song_name FROM song WHERE rating  <   (SELECT min(rating) FROM song WHERE languages  =  'English')"
             ]
         },
         {
@@ -8894,7 +8895,7 @@
         {
             "input": "SQL: SELECT T1.artist_name FROM artist AS T1 EXCEPT SELECT T2.artist_name FROM song AS T2 WHERE T2.rating > 8\nFeedback: Also Need to find song's song name equals English .",
             "output": [
-                "SELECT DISTINCT artist_name FROM song WHERE languages  =  \"english\" EXCEPT SELECT DISTINCT artist_name FROM song WHERE rating  >  8"
+                "SELECT DISTINCT artist_name FROM song WHERE languages  =  \"English\" EXCEPT SELECT DISTINCT artist_name FROM song WHERE rating  >  8"
             ]
         },
         {
@@ -9020,7 +9021,7 @@
         {
             "input": "SQL: SELECT song_name FROM song\nFeedback: Ensure that Song's song name equals English .",
             "output": [
-                "SELECT song_name FROM song WHERE languages  =  \"english\""
+                "SELECT song_name FROM song WHERE languages  =  \"English\""
             ]
         },
         {
@@ -9492,7 +9493,7 @@
             ]
         },
         {
-            "input": "SQL: SELECT Count ( * ) FROM university AS T1 WHERE T1.School_ID NOT IN ( SELECT T2.School_ID FROM basketball_match AS T2 WHERE T2.ACC_Road = \"8\u20130\" )\nFeedback: Eliminate \"for which acc road equals 8\u2013 0\" from step 1.",
+            "input": "SQL: SELECT Count ( * ) FROM university AS T1 WHERE T1.School_ID NOT IN ( SELECT T2.School_ID FROM basketball_match AS T2 WHERE T2.ACC_Road = \"8–0\" )\nFeedback: Eliminate \"for which acc road equals 8– 0\" from step 1.",
             "output": [
                 "SELECT count(*) FROM university WHERE school_id NOT IN (SELECT school_id FROM basketball_match)"
             ]
@@ -11418,7 +11419,7 @@
             ]
         },
         {
-            "input": "SQL: SELECT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode = T2.Code WHERE T2.Continent = \"T\" EXCEPT SELECT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode = T2.Code WHERE T2.Continent = \"Europe\"\nFeedback: make sure that english should be language and f should be the is official in step 2 , include countrylanguageb table , need to view both results.",
+            "input": "SQL: SELECT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode = T2.Code WHERE T2.Continent = \"T\" EXCEPT SELECT T1.Name FROM city AS T1 JOIN country AS T2 ON T1.CountryCode = T2.Code WHERE T2.Continent = \"Europe\"\nFeedback: make sure that English should be language and f should be the is official in step 2 , include countrylanguageb table , need to view both results.",
             "output": [
                 "SELECT DISTINCT T2.Name FROM country AS T1 JOIN city AS T2 ON T2.CountryCode  =  T1.Code WHERE T1.Continent  =  'Europe' AND T1.Name NOT IN (SELECT T3.Name FROM country AS T3 JOIN countrylanguage AS T4 ON T3.Code  =  T4.CountryCode WHERE T4.IsOfficial  =  'T' AND T4.Language  =  'English')"
             ]
@@ -12629,5 +12630,14 @@
                 "SELECT t1.name FROM visitor AS t1 JOIN visit AS t2 ON t1.id  =  t2.visitor_id JOIN museum AS t3 ON t3.Museum_ID  =  t2.Museum_ID WHERE t3.open_year  <  2009 INTERSECT SELECT t1.name FROM visitor AS t1 JOIN visit AS t2 ON t1.id  =  t2.visitor_id JOIN museum AS t3 ON t3.Museum_ID  =  t2.Museum_ID WHERE t3.open_year  >  2011"
             ]
         }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
     ]
 }
