@@ -1385,5 +1385,5 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
 `task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
 `task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
-`task1564_TriviaQA_answer_generation` | Generating answers to questions in TriviaQA dataset | Answer generation
-`task1565_TriviaQA_classification` | Finding answer to multiple choice questions in TriviaQA dataset | Answer generation
+`task1564_triviaQA_answer_generation` | Generating answers to questions in TriviaQA dataset | Answer generation
+`task1565_triviaQA_classification` | Finding answer to multiple choice questions in TriviaQA dataset | Answer generation
