@@ -1359,3 +1359,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+'task1543_conll2002_parts_of_speech_tagging_answer_generation' | Given a question in Dutch language, write the part-of-speech tag for each word in the question | Answer Generation
+'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
