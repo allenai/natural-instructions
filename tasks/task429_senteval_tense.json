@@ -8,7 +8,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task you are given a sentence. You must judge whether the main verb of the sentence is in present or past tense. Label the instances as \"Present\" or \"Past\" based on your judgment.",
+    "Definition": "In this task you are given a sentence. You must judge whether the main verb of the sentence is in present or past tense. Label the instances as \"Present\" or \"Past\" based on your judgment. If there is no verb in the given text, answer \"Present\".",
     "Positive Examples": [
         {
             "input": "She shone her light around the space , following the glow of the flashlight 's ray along the walls .",
@@ -24,6 +24,11 @@
             "input": "\" Don 't be an ass , \" I mutter .",
             "output": "Present",
             "explanation": "The verb \"mutter\" is in present tense."
+        },
+        {
+            "input": "\" Your nickel . \"",
+            "output": "Present",
+            "explanation": "You should answer with \"Present\" when you don't find a verb."
         }
     ],
     "Negative Examples": [
@@ -31,6 +36,11 @@
             "input": "\" It was a secret , \" she explains , adjusting her gaze back to me .",
             "output": "Past",
             "explanation": "The verb \"was\" is in past tense. but \"was\" isn't this sentence main verb, \"explains\" is the main verb which is in present tense."
+        },
+        {
+            "input": "\" Ugh ... \" he mumbled .",
+            "output": "Present",
+            "explanation": "The verb \"mumbled\" is in past tense. This is an incorrect answer."
         }
     ],
     "Instances": [
@@ -38,12 +48,6 @@
             "input": "\" Okay now , okay , settle down .",
             "output": [
                 "Present"
-            ]
-        },
-        {
-            "input": "\" Ugh ... \" he mumbled .",
-            "output": [
-                "Past"
             ]
         },
         {
