@@ -1360,3 +1360,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+`task1552_scitail_question_generation` | Generating questions (based on SciTail) | Question Generation  
+`task1553_cnn_dailymail_summarization` | Generating summary to news articles | Summarization
+`task1554_scitail_classification` | Classifying supporting and non supporting statements from SciTail  | Classification  
+`task1555_scitail_answer_generation` | Generating answers to SciTail Sentence-Questions | Answer Generation
+`task1556_scitail_passage_generation` | Generating passage based on SciTail Question-Answer | Passage Generation
