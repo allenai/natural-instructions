@@ -1131,6 +1131,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
 `task1163_coda19_section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
 `task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
+`task1167_penn_treebank_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_brown_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
 `task1168_xcopa_commonsense_reasoning_ht` | Given a premise and two alternative in Haitian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task1169_xcopa_commonsense_cause_effect_ht` | Given a pair of sentences in Haitian, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task1170_xcopa_commonsense_reasoning_id` | Given a premise and two alternative in Indonesian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
