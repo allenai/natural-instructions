@@ -606,6 +606,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task597_cuad_answer_generation` | Generating answers to CUAD questions | Answer Generation
 `task598_cuad_answer_generation` | Generating starting index of the answers to CUAD questions | Answer Generation
 `task599_cuad_question_generation` | Generating questions based on CUAD | Question Generation
+`task600_find_the_longest_common_substring_in_two_strings` | Given two strings return the longest common substring in those two strings | Answer Generation
 `task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
 `task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
 `task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
