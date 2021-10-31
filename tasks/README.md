@@ -1439,3 +1439,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1582_acronym_output` | Acronym generation using acronym_identification dataset | Acronym Generation 
+`task1583_acronym_detection` | Binary classification using acronym_identification dataset | Classification task
+`task1584_dialogue_generation` | Dialog generation using doc2dial dataset | Text Generation 
+`task1585_dialogue_arrangement` | Dialoag arrangement using doc2dial dataset | Sentences Arrangment task
