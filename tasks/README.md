@@ -1439,3 +1439,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1599_smcalflow_classification` | Classify given utterance into user or agent | Classification
+`task1600_smcalflow_sentence_generation`| Given a agents' reply, generate a users' utterance | Sentence Generation
+`task1601_webquestions_answer_generation` | Given a question and URL, generate an answer | Answer Generation
+`task1602_webquestion_question_genreation` | Given an answer and URL, generate a question | Question Generation
+`task1603_smcalflow_sentence_generation` | Given a user utterance, generate agents' utterance | Sentence Generation
