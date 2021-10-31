@@ -1379,6 +1379,31 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
 `task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
 `task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1447_drug_extraction_ade` | Given a sentence from the ADE dataset, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
+`task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence from the NCBI dataset, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
+`task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence from the BC5CDR dataset, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
+`task1451_drug_dose_extraction` | Given a sentence and a drug from the ADE dataset, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
+`task1452_location_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of locations/places. | Entity Detection
+`task1453_person_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of person names. | Entity Detection
+`task1479_organization_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of companies or organizations. | Entity Detection
+`task1480_gene_extraction_jnlpba_dataset` | Given a sentence from the JNLPBA dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1481_gene_extraction_bc2gm_dataset` | Given a sentence from the BC2GM dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1482_gene_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of protein. | Entity Detection
+`task1483_chemical_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of chemical substances. | Entity Detection
+`task1484_gene_extraction_linnaeus_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
+`task1485_organ_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
+`task1486_cell_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of cells in the body. | Entity Detection
+`task1487_organism_substance_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
+`task1488_sarcasmdetection_headline_classification` | Given a news headline in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1489_sarcasmdetection_tweet_classification` | Given a twitter in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1490_bengali_personal_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is personal or non-personal in nature. | Classification
+`task1491_bengali_political_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is political or non-political in nature. | Classification
+`task1492_bengali_religious_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is religious or non-religious in nature. | Classification
+`task1493_bengali_geopolitical_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is geopolitical or non-geopolitical in nature. | Classification
+`task1494_bengali_hate_speech_classification` | Given a hateful post in Bengali, classify whether it is political, geopolitical, religious or personal in nature. | Classification
+`task1495_adverse_drug_event_classification` | Given a sentence, classify whether it contains any adverse drug event. | Classification
+`task1496_bengali_reviews_sentiment_classification` | Given a restaurant review in Bengali, classify whether the sentiment is positive or negative. | Classification
+`task1497_bengali_book_reviews_sentiment_classification` | Given a book review in Bengali, classify whether the sentiment is positive or negative. | Classification
 `task1498_24hour_to_12hour_clock` | Given a timestamp in 24-hour format, convert it to 12-hour format | Answer Generation
 `task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
 `task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
