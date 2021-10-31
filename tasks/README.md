@@ -1390,4 +1390,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
-
+`task1574_amazon_reviews_multi_language_identification` | Classification of product review language | Classification
+`task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
+`task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
+`task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
