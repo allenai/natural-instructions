@@ -1390,4 +1390,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
-
+`task1578_gigaword_summarization` | Generating summary to gigaword passages | Summary Generation
+`task1579_gigaword_incorrect_summarization` | Generating incorrect summary to gigaword passages | Incorrect Summary Generation
+`task1580_eqasc-perturbed_question_generation` | Generating questions for eQASC facts | Question Generation
+`task1581_eqasc-perturbed_answer_generation` | Generating answers for eQASC facts and questions | Answer Generation
