@@ -1205,8 +1205,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
-`task1508_wordnet_antonyms` | Given an adjective, generate it's antonym | Answer Generation
-`task1509_evalution_antonyms` | Given a word generate it's antonym | Answer Generation
+`task1508_wordnet_antonyms` | Given an adjective, generate its antonym | Answer Generation
+`task1509_evalution_antonyms` | Given a word generate its antonym | Answer Generation
 `task1510_evalution_relation_extraction` | Given a phrase describing the relationship between two words, extract the words and the lexical relationship between them | Answer Generation
 `task1511_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
 `task1512_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
