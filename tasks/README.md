@@ -1382,3 +1382,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+`task1566_propara_structured_text_generation` | Generate entities from given text | Structured Text Generation
+`task1567_propara_question_generation` | Generate question from the given passage | Question Generation
+`task1568_propara_classification` | Based on the passage, event, and entity, classify locations | Classification
+`task1569_cmrc2018_question_generation` | Generate question from the given passage | Question Generation
+`task1570_cmrc2018_answer_generation` | Generate the right answer to a given question from the context passage | Answer Generation
+`task1571_cmrc2018_answer_generation_starting_index` | Generate starting index of the answer span to a given question from the context passage | Answer Generation
+`task1572_samsum_summary` | Generate a summary of given conversations | Summarization
+`task1573_samsum_classification` | Classify whether given two dialogue sentences are sequential or not | Classification
