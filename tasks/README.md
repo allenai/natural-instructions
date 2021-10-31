@@ -1392,18 +1392,18 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1514_flores_translation_entone` | Translate from English to Nepali | Translation
 `task1515_imppres_longtextgeneration` | Given a premise, generate hypothesis | Text Generation
 `task1516_imppres_naturallanguageinference` | Classify a given premise and hypothesis pair | Classification
-`task1517_limit_classfication` | Classifying sentence based on the condition that it contains a motion of a physical entity or not.| Classfication
+`task1517_limit_classfication` | Classifying sentence based on the condition that it contains a motion of a physical entity or not.| Classification
 `task1518_limit_answer_generation` | Identifying the entities in a sentence where these entities take part in a physical motion. | Question Answering
 `task1519_qa_srl_question_generation` | Using given sentence and a verb,generating questions which can be answered from the sentence. | Question Generation
 `task1520_qa_srl_answer_generation` | Generating answers to the questions based on the given sentence| Question Answering
 `task1529_scitail1.1_classification` | Determining if there is entailment between Hypothesis and Premise | Classification
 `task1530_scitail1.1_sentence_generation` | Generating a Premise that entails the Hypothesis | Text Generation
-`task1531_daily_dialog_type_classification` | Classifying the input sentence into one of the 5 classes : unknown, commissive, question, information, directive| Classification
+`task1531_daily_dialog_type_classification` | Classify the input sentence into one of the 5 classes : unknown, commissive, question, information, directive| Classification
 `task1532_daily_dialog_emotion_classification` | Classify the conversation sentences of input passage into the following emotions: anger, disgust, fear, happiness, sadness, No emotion | Classification
 `task1533_daily_dialog_formal_classification` | Classify the conversation sentences of input passage into the following outputs: formal and informal | Classification
-`task1534_daily_dialog_question_classification` | Classify the conversation sentences of the input passage if the first sentence starts with a question | Classification
-`task1535_daily_dialog_uniqueness_classification` | Classify the conversation sentences of the input passage if they convey more than 2 unique emotions  | Classification
-`task1536_daily_dialog_happiness_classification` | Classify the conversation sentences of the input passage if they convey only happiness emotion or not.| Classification
+`task1534_daily_dialog_question_classification` | Classify if the first sentence of a conversation is a question | Classification
+`task1535_daily_dialog_uniqueness_classification` | Classify if the conversation sentences of the input passage convey more than 2 unique emotions  | Classification
+`task1536_daily_dialog_happiness_classification` | Classify if the conversation sentences of the input passage convey only happiness emotion or not.| Classification
 `task1537_tamil_offenseval_dravidian_classification` | Given a statement in Tamil, classify whether it is offensive or not | Classification
 `task1538_malayalam_offenseval_dravidian_classification` | Given a statement in Malayalam, classify whether it is offensive or not | Classification
 `task1539_kannada_offenseval_dravidian_classification` | Given a statement in Kannada, classify whether it is offensive or not | Classification
