@@ -1404,6 +1404,31 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
 `task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
 `task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1447_drug_extraction_ade` | Given a sentence from the ADE dataset, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
+`task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence from the NCBI dataset, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
+`task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence from the BC5CDR dataset, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
+`task1451_drug_dose_extraction` | Given a sentence and a drug from the ADE dataset, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
+`task1452_location_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of locations/places. | Entity Detection
+`task1453_person_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of person names. | Entity Detection
+`task1479_organization_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of companies or organizations. | Entity Detection
+`task1480_gene_extraction_jnlpba_dataset` | Given a sentence from the JNLPBA dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1481_gene_extraction_bc2gm_dataset` | Given a sentence from the BC2GM dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1482_gene_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of protein. | Entity Detection
+`task1483_chemical_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of chemical substances. | Entity Detection
+`task1484_gene_extraction_linnaeus_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
+`task1485_organ_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
+`task1486_cell_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of cells in the body. | Entity Detection
+`task1487_organism_substance_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
+`task1488_sarcasmdetection_headline_classification` | Given a news headline in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1489_sarcasmdetection_tweet_classification` | Given a twitter in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1490_bengali_personal_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is personal or non-personal in nature. | Classification
+`task1491_bengali_political_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is political or non-political in nature. | Classification
+`task1492_bengali_religious_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is religious or non-religious in nature. | Classification
+`task1493_bengali_geopolitical_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is geopolitical or non-geopolitical in nature. | Classification
+`task1494_bengali_hate_speech_classification` | Given a hateful post in Bengali, classify whether it is political, geopolitical, religious or personal in nature. | Classification
+`task1495_adverse_drug_event_classification` | Given a sentence, classify whether it contains any adverse drug event. | Classification
+`task1496_bengali_reviews_sentiment_classification` | Given a restaurant review in Bengali, classify whether the sentiment is positive or negative. | Classification
+`task1497_bengali_book_reviews_sentiment_classification` | Given a book review in Bengali, classify whether the sentiment is positive or negative. | Classification
 `task1498_24hour_to_12hour_clock` | Given a timestamp in 24-hour format, convert it to 12-hour format | Answer Generation
 `task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
 `task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
@@ -1414,5 +1439,29 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1514_flores_translation_entone` | Translate from English to Nepali | Translation
+`task1515_imppres_longtextgeneration` | Given a premise, generate hypothesis | Text Generation
+`task1516_imppres_naturallanguageinference` | Classify a given premise and hypothesis pair | Classification
+`task1517_limit_classfication` | Classifying sentence based on the condition that it contains a motion of a physical entity or not.| Classification
+`task1518_limit_answer_generation` | Identifying the entities in a sentence where these entities take part in a physical motion. | Question Answering
+`task1519_qa_srl_question_generation` | Using given sentence and a verb,generating questions which can be answered from the sentence. | Question Generation
+`task1520_qa_srl_answer_generation` | Generating answers to the questions based on the given sentence| Question Answering
+`task1529_scitail1.1_classification` | Determining if there is entailment between Hypothesis and Premise | Classification
+`task1530_scitail1.1_sentence_generation` | Generating a Premise that entails the Hypothesis | Text Generation
+`task1531_daily_dialog_type_classification` | Classify the input sentence into one of the 5 classes : unknown, commissive, question, information, directive| Classification
+`task1532_daily_dialog_emotion_classification` | Classify the conversation sentences of input passage into the following emotions: anger, disgust, fear, happiness, sadness, No emotion | Classification
+`task1533_daily_dialog_formal_classification` | Classify the conversation sentences of input passage into the following outputs: formal and informal | Classification
+`task1534_daily_dialog_question_classification` | Classify if the first sentence of a conversation is a question | Classification
+`task1535_daily_dialog_uniqueness_classification` | Classify if the conversation sentences of the input passage convey more than 2 unique emotions  | Classification
+`task1536_daily_dialog_happiness_classification` | Classify if the conversation sentences of the input passage convey only happiness emotion or not.| Classification
+`task1537_tamil_offenseval_dravidian_classification` | Given a statement in Tamil, classify whether it is offensive or not | Classification
+`task1538_malayalam_offenseval_dravidian_classification` | Given a statement in Malayalam, classify whether it is offensive or not | Classification
+`task1539_kannada_offenseval_dravidian_classification` | Given a statement in Kannada, classify whether it is offensive or not | Classification
+`task1540_parsed_pdfs_summarization` | Given a text, generate a title for it | Summarization
+`task1541_agnews_classification` | Given a short article, classify the article based on its category | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+'task1543_conll2002_parts_of_speech_tagging_answer_generation' | Given a question in Dutch language, write the part-of-speech tag for each word in the question | Answer Generation
+'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
