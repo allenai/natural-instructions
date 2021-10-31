@@ -628,7 +628,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task619_ohsumed_abstract_title_generation` | Generating title to Ohsumed dataset abstracts | Title Generation
 `task620_ohsumed_medical_subject_headings_answer_generation` | Generating MESH terms to Ohsumed dataset abstracts | Medical subject heading(MESH) term Generation
 `task621_ohsumed_yes_no_numerical_answer_generation` | Generating Yes/No answer to Ohsumed dataset questions | Answer Generation
-`task622_replace_alphabets_in_a_list_by_their_position_in_English_alphabet` | Given a list replace all the alphabets in it with their position in the English Alphabet | Answer Generation
+`task622_replace_alphabets_in_a_list_by_their_position_in_english_alphabet` | Given a list replace all the alphabets in it with their position in the English Alphabet | Answer Generation
 `task623_ohsumed_yes_no_answer_generation` | Generating Yes/No answers to Ohsumed dataset questions | Answer Generation
 `task624_ohsumed_question_answering` | Given a abstract and question, select the best answer from the given choices. | Answer Generation
 `task625_xlwic_true_or_false_answer_generation` | Determine whether both the sentences use the aforementioned word with the same meaning | Answer Generation
@@ -642,6 +642,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task633_dbpedia_14_answer_generation` | Generating answer to question ((dbpedia_14 dataset)) | Answer Generation
 `task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
 `task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
+`task636_extract_and_sort_unique_alphabets_in_a_list` | Given a list extract all the unique alphabets from it and sort them alphabetically | Answer Generation
 `task638_multi_woz_classification` | Classifying dialouge into User and System | Classification
 `task639_multi_woz_user_utterance_generation`| Generate a User utterance when System's reply is given | User Utterance Generation
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
