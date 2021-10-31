@@ -1439,3 +1439,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1590_diplomacy_text_generation` | Text generation based on diplomacy_detection | Text_Generation
+`task1591_allocine_classification` | Classification (based on allocine) | Classification  
+`task1592_yahoo_answers_topics_classfication` | Classification based on yahoo_answers_topics | Classification
+`task1593_yahoo_answers_topics_classification` | Classification based on yahoo_answers_topics | Classification  
+`task1594_yahoo_answers_topics_question_generation` | Question Generation based on yahoo_answers_topics | Question_Generation
