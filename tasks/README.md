@@ -1288,6 +1288,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
 `task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
 `task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
+`task1323_open_subtitles_hi_en_translation` | Translating Hindi to English (based on Open Subtitles) | Language Translation  
+`task1324_open_subtitles_te_en_translation` | Translating Telugu to English (based on Open Subtitles) | Language Translation
+`task1325_qa_zre_question_generation_on_subject_relation` | Generating questions by including a specific subject and certain relation to Context (based on qa_zre dataset) | Question Generation  
+`task1326_qa_zre_question_generation_from_answer` | Generating questions from answers (based on qa_zre dataset)| Question Generation
+`task1327_qa_zre_answer_generation_from_question` | Generating answers from questions (based on qa_zre dataset) | Answer Generation  
+`task1328_qa_zre_relation_generation_from_question` | Classify relation between question and context (based on qa_zre dataset) | Classificationrelation 
+`task1329_open_subtitles_en_hi_translation` | Translating English to Hindi (based on Open Subtitles) | Language Translation  
+`task1330_open_subtitles_en_te_translation` | Translating English to Telugu (based on Open Subtitles) | Language Translation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
@@ -1382,3 +1390,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+
