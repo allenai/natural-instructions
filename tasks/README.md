@@ -1156,6 +1156,26 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
 `task1163_coda19_section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
 `task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
+`task1167_penn_treebank_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_brown_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_xcopa_commonsense_reasoning_ht` | Given a premise and two alternative in Haitian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1169_xcopa_commonsense_cause_effect_ht` | Given a pair of sentences in Haitian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1170_xcopa_commonsense_reasoning_id` | Given a premise and two alternative in Indonesian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1171_xcopa_commonsense_cause_effect_id` | Given a pair of sentences in Indonesian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1172_xcopa_commonsense_reasoning_it` | Given a premise and two alternative in Italian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1173_xcopa_commonsense_cause_effect_it` | Given a pair of sentences in Italian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1174_xcopa_commonsense_reasoning_sw` | Given a premise and two alternative in Swahili,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1175_xcopa_commonsense_cause_effect_sw` | Given a pair of sentences in Swahili, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1176_xcopa_commonsense_reasoning_ta` | Given a premise and two alternative in Tamil,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1177_xcopa_commonsense_cause_effect_ta` | Given a pair of sentences in Tamil, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1178_xcopa_commonsense_reasoning_th` | Given a premise and two alternative in Thai,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1179_xcopa_commonsense_cause_effect_th` | Given a pair of sentences in Thai, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1180_xcopa_commonsense_reasoning_tr` | Given a premise and two alternative in Turkish,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1181_xcopa_commonsense_cause_effect_tr` | Given a pair of sentences in Turkish, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1182_xcopa_commonsense_reasoning_vi` | Given a premise and two alternative in Vietnamese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1183_xcopa_commonsense_cause_effect_vi` | Given a pair of sentences in Vietnamese, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1184_xcopa_commonsense_reasoning_zh` | Given a premise and two alternative in Chinese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1185_xcopa_commonsense_cause_effect_zh` | Given a pair of sentences in Chinese, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
@@ -1253,6 +1273,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1280_ted_translation_pt_it` | Translate a sentence in Portugese to Italian. | Translation
 `task1281_ted_translation_pt_pl` | Translate a sentence in Portugese to Polish. | Translation
 `task1282_ted_translation_pt_fa` | Translate a sentence in Portugese to Farsi. | Translation
+`task1283_hrngo_quality_classification` | Evaluate quality of system generated reference. | Classification
+`task1284_hrngo_informativeness_classification` | Evaluate informativeness of system generated reference. | Classification
 `task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
 `task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
 `task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
@@ -1291,6 +1313,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
 `task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
 `task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
+`task1323_open_subtitles_hi_en_translation` | Translating Hindi to English (based on Open Subtitles) | Language Translation  
+`task1324_open_subtitles_te_en_translation` | Translating Telugu to English (based on Open Subtitles) | Language Translation
+`task1325_qa_zre_question_generation_on_subject_relation` | Generating questions by including a specific subject and certain relation to Context (based on qa_zre dataset) | Question Generation  
+`task1326_qa_zre_question_generation_from_answer` | Generating questions from answers (based on qa_zre dataset)| Question Generation
+`task1327_qa_zre_answer_generation_from_question` | Generating answers from questions (based on qa_zre dataset) | Answer Generation  
+`task1328_qa_zre_relation_generation_from_question` | Classify relation between question and context (based on qa_zre dataset) | Classificationrelation 
+`task1329_open_subtitles_en_hi_translation` | Translating English to Hindi (based on Open Subtitles) | Language Translation  
+`task1330_open_subtitles_en_te_translation` | Translating English to Telugu (based on Open Subtitles) | Language Translation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
