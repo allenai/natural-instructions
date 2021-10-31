@@ -59,21 +59,21 @@
   - `Question Answering -> Open Question Answering`
 - `Question Decomposition`
 - `Question Generation`
-- `Reasoning`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
   - `Question Generation -> Fill in the Blank` 
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+- `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
   - `Reasoning -> Causal Reasoning`
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+    - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
     - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
-  - `Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
