@@ -1,0 +1,1382 @@
+{
+    "Contributors": [
+        "Ishani Mondal"
+    ],
+    "Source": [
+        "https://github.com/trunghlt/AdverseDrugReaction/tree/master/ADE-Corpus-V2"
+    ],
+    "Categories": [ 
+        "Entity Detection"
+    ],
+    "Domains": [
+        "Biology -> Clinical Knowledge"
+    ],
+    "Definition": "In this task, you will be given sentences and a drug name in which your task is to list the tokens that indicate the doses of intake of that particular drug. A dose refers to a specified amount of medication taken at one time. You should list the tokens in the same order that they appear in the text. If no target entities are mentioned, just output \"not found\".",
+    "Positive Examples": [
+        {
+            "input": "An episode of subacute encephalopathy after the infusion of methotrexate (1500 mg/m2) (MTX) is reported in a young adult with metastastic gastric cancer.\t methotrexate",
+            "output": "1500 mg/m2",
+            "explanation": "Here, the drug methotrexate mentioned after '\t ' has been mentioned to be taken as 1500 mg/m2 within brackets and hence should be tagged as dosage."
+        },
+        {
+            "input": "A case of normotensive scleroderma renal crisis after high-dose methylprednisolone treatment.\t methylprednisolone",
+            "output": "high",
+            "explanation": "Amount of methylprednisolone is taken in high amount and hence should be tagged with that."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Ibuprofen overdose is usually characterized by GI upset, dizziness, and mild sedation\t ibuprofen",
+            "output": "mild",
+            "explanation": "Here the drug ibuprofen has been mentioned to be taken in excess but mild is the qualifier of the sedation caused by overdose of the drug, hence mild should not be tagged as drug dosage."
+        },
+        {
+            "input": "She took three doses of methotrexate and two doses of ibuprofen.\t methotrexate",
+            "output": "two",
+            "explanation": "Amount of methotrexate is taken in three doses and hence should be tagged with that, instead of the the dosage mentioned for ibuprofen."
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Instances": [
+        {
+            "input": "She continued to receive regular insulin 4 times per day over the following 3 years with only occasional hives.\t insulin",
+            "output": [
+                "4 times per day"
+            ]
+        },
+        {
+            "input": "A 5-month-old infant became lethargic and poorly responsive after receiving 1 drop of brimonidine in each eye.\t brimonidine",
+            "output": [
+                "1 drop"
+            ]
+        },
+        {
+            "input": "The presented patient was treated with 200 mg TCA and developed Cushing's syndrome 6 weeks later (cortisol and ACTH concentrations were below limits of detection, TCA concentrations were > 3 micrograms/l).\t TCA",
+            "output": [
+                "200 mg"
+            ]
+        },
+        {
+            "input": "Central nervous system manifestations of an ibuprofen overdose reversed by naloxone.\t ibuprofen",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Ibuprofen overdose is usually characterized by GI upset, dizziness, and mild sedation.\t Ibuprofen",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "In this case, it was suspected that a combination of cigarette smoking, pulmonary fibrosis, and low-dose methotrexate therapy might have promoted the development of lung cancer.\t methotrexate",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "A 60 year-old woman with chronic renal failure developed acute proximal muscle weakness after receiving a regular dosage of colchicine.\t colchicine",
+            "output": [
+                "regular"
+            ]
+        },
+        {
+            "input": "The intramuscular challenge test with 25 UI of Miacalcic was positive with an immediate anaphylactic reaction.\t Miacalcic",
+            "output": [
+                "25 UI"
+            ]
+        },
+        {
+            "input": "Toxic epidermal necrolysis after the use of high-dose cytosine arabinoside.\t cytosine arabinoside",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "We report a fatal case of toxic epidermal necrolysis (TEN) resulting from a high dose of cytosine arabinoside (ARA-C).\t ARA-C",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "We report a fatal case of toxic epidermal necrolysis (TEN) resulting from a high dose of cytosine arabinoside (ARA-C).\t cytosine arabinoside",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "The day after clozapine was stopped, while he was still receiving clomipramine 150 mg/d, he began behaving oddly, started sweating profusely, shivering, and became tremulous, agitated, and confused.\t clomipramine",
+            "output": [
+                "150 mg/d"
+            ]
+        },
+        {
+            "input": "The day after clozapine was stopped, while he was still receiving clomipramine 150 mg/d, he began behaving oddly, started sweating profusely, shivering, and became tremulous, agitated, and confused.\t clozapine",
+            "output": [
+                "150 mg/d"
+            ]
+        },
+        {
+            "input": "We describe a patient who presented with bloody diarrhoea after 15 mg meloxicam daily for 10 days for osteoarthritis.\t meloxicam",
+            "output": [
+                "15 mg"
+            ]
+        },
+        {
+            "input": "Pheripheral edema was observed in five female patients after taking proton pump inhibitors omeprazole, lansoprazole, or pantoprazole for 7-15 days for peptic acid diseases in recommended standard doses.\t lansoprazole",
+            "output": [
+                "standard"
+            ]
+        },
+        {
+            "input": "Pheripheral edema was observed in five female patients after taking proton pump inhibitors omeprazole, lansoprazole, or pantoprazole for 7-15 days for peptic acid diseases in recommended standard doses.\t omeprazole",
+            "output": [
+                "standard"
+            ]
+        },
+        {
+            "input": "Pheripheral edema was observed in five female patients after taking proton pump inhibitors omeprazole, lansoprazole, or pantoprazole for 7-15 days for peptic acid diseases in recommended standard doses.\t pantoprazole",
+            "output": [
+                "standard"
+            ]
+        },
+        {
+            "input": "We observed ventricular fibrillation in 2 patients who presented to the emergency department with pre-excited atrial fibrillation and were given 12 mg of adenosine.\t adenosine",
+            "output": [
+                "12 mg"
+            ]
+        },
+        {
+            "input": "After the dose of methylprednisolone was reduced from 40 mg to 20 mg i.v. q6h and shifted to other anti-asthma treatment by procaterol metered dose inhaler via spacer, the psychotic reaction disappeared a few hours later.\t methylprednisolone",
+            "output": [
+                "40 mg"
+            ]
+        },
+        {
+            "input": "Continuous EEG monitoring is helpful in managing seizures that occur as a complication of CBZ OD, after the course of recovery or worsening, and in providing assistance with prognosis.\t CBZ",
+            "output": [
+                "OD"
+            ]
+        },
+        {
+            "input": "Massive CBZ OD may produce a reversible encephalopathy that includes cortical hyperexcitability, a profound burst-suppression EEG pattern, and cranial nerve areflexia.\t CBZ",
+            "output": [
+                "OD"
+            ]
+        },
+        {
+            "input": "We describe a case of advanced ovarian carcinoma who developed difficulty walking because of marked pain in the lower extremities and loss of proprioception 25 days after treatment with weekly taxol (80 mg/m(2)x3).\t taxol",
+            "output": [
+                "80 mg/m(2)x3"
+            ]
+        },
+        {
+            "input": "Myasthenia gravis during low-dose IFN-alpha therapy for chronic hepatitis C.\t IFN-alpha",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "A patient with rheumatoid arthritis developed an acute intrahepatic cholestasis after 100 mg of sodium aurothiomalate.\t sodium aurothiomalate",
+            "output": [
+                "100 mg"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: LTG overdose may result in a severe but reversible encephalopathy, a previously undescribed phenomenon.\t LTG",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "METHODS: A 55-year-old woman became stuporous after overdose with lamotrigine (LTG) and valproic acid (VPA) tablets.\t lamotrigine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "METHODS: A 55-year-old woman became stuporous after overdose with lamotrigine (LTG) and valproic acid (VPA) tablets.\t LTG",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "METHODS: A 55-year-old woman became stuporous after overdose with lamotrigine (LTG) and valproic acid (VPA) tablets.\t valproic acid",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "METHODS: A 55-year-old woman became stuporous after overdose with lamotrigine (LTG) and valproic acid (VPA) tablets.\t VPA",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "We report a 31-year-old women with recurrent Hodgkin's lymphoma and unrecognized HMSN-1 who developed severe motor neuropathy 3 weeks after the first cycle of treatment including 2 mg of vincristine.\t vincristine",
+            "output": [
+                "2 mg"
+            ]
+        },
+        {
+            "input": "A 33-year-old man with a history of recreational benztropine abuse presented to the emergency department with confusion, abdominal pain, and distention.\t benztropine",
+            "output": [
+                "abuse"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: Clinicians should be aware of a risk of serotonin syndrome with serious extrapyramidal reactions in patients receiving sertraline or venlafaxine when metoclopramide is coadministered even in a single, conventional dose.\t metoclopramide",
+            "output": [
+                "conventional"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: Clinicians should be aware of a risk of serotonin syndrome with serious extrapyramidal reactions in patients receiving sertraline or venlafaxine when metoclopramide is coadministered even in a single, conventional dose.\t sertraline",
+            "output": [
+                "conventional"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: Clinicians should be aware of a risk of serotonin syndrome with serious extrapyramidal reactions in patients receiving sertraline or venlafaxine when metoclopramide is coadministered even in a single, conventional dose.\t venlafaxine",
+            "output": [
+                "conventional"
+            ]
+        },
+        {
+            "input": "He was started on oral lansoprazole 60 mg twice daily and, on hospital day 2, his platelet count decreased to 102 x 10(3)/mm(3); on hospital day 3, the platelet count was 36 x 10(3)/mm(3).\t lansoprazole",
+            "output": [
+                "60 mg twice daily"
+            ]
+        },
+        {
+            "input": "We describe a patient who developed HUS after treatment with mitomycin C (total dose 144 mg/m2) due to a carcinoma of the ascending colon.\t mitomycin C",
+            "output": [
+                "144 mg/m2"
+            ]
+        },
+        {
+            "input": "A 53-year-old man developed lower leg edema 4 weeks after rosiglitazone was increased from 4 mg once/day to 4 mg twice/day.\t rosiglitazone",
+            "output": [
+                "4 mg twice/day"
+            ]
+        },
+        {
+            "input": "We present a neonate with a seizure disorder who acutely developed pupillary mydriasis secondary to lidocaine overdose.\t lidocaine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: Peripheral administration of low-dose vasopressin for septic shock should be discouraged because of the risk of ischemic skin complications.\t vasopressin",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "The first case concerns a 70-year-old man who developed severe aplastic anemia 7 weeks after treatment with 500 mg of ticlopidine daily.\t ticlopidine",
+            "output": [
+                "500 mg"
+            ]
+        },
+        {
+            "input": "CASE REPORT: Soon after initiation of amiodarone HCl (200 mg/day), a 76-year-old man came to us with symptoms of visual \"shining,\" glare, color vision anomalies, and gradually decreased vision.\t amiodarone HCl",
+            "output": [
+                "200 mg/day"
+            ]
+        },
+        {
+            "input": "Successful desensitization to high-dose methotrexate after systemic anaphylaxis.\t methotrexate",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "While 40 mg/day of prednisolone improved hepatic dysfunction dramatically, her diabetic milieu deteriorated seriously.\t prednisolone",
+            "output": [
+                "40 mg/day"
+            ]
+        },
+        {
+            "input": "This report describes an individual with mental retardation who experienced behavioral exacerbation associated with clonazepam prescribed at 2 mg/day (0.02 mg/kg/day) to treat aggression, self-injurious behavior, property destruction, and screaming, which was measured with a 15-minute partial interval recording measurement method.\t clonazepam",
+            "output": [
+                "0.02 mg/kg/day"
+            ]
+        },
+        {
+            "input": "This entity is probably related to a combination of high doses of corticosteroids, vecuronium administration and metabolic abnormalities associated with respiratory failure.\t vecuronium",
+            "output": [
+                "high doses"
+            ]
+        },
+        {
+            "input": "We describe the development of cutaneous scleroderma in 3 patients coincident with the use of bleomycin in low cumulative doses of less than 100 U.\t bleomycin",
+            "output": [
+                "100 U"
+            ]
+        },
+        {
+            "input": "We consider asterixis to be an easily overlooked sign of neurotoxicity, which may occur even at low or moderate dosage levels, if certain drugs as lithium or clozapine are used in combination with CBZ.\t CBZ",
+            "output": [
+                "low or moderate dosage"
+            ]
+        },
+        {
+            "input": "We consider asterixis to be an easily overlooked sign of neurotoxicity, which may occur even at low or moderate dosage levels, if certain drugs as lithium or clozapine are used in combination with CBZ.\t clozapine",
+            "output": [
+                "low or moderate dosage"
+            ]
+        },
+        {
+            "input": "We consider asterixis to be an easily overlooked sign of neurotoxicity, which may occur even at low or moderate dosage levels, if certain drugs as lithium or clozapine are used in combination with CBZ.\t lithium",
+            "output": [
+                "low or moderate dosage"
+            ]
+        },
+        {
+            "input": "A 74-year-old patient with idiopathic Parkinson's disease was evaluated for unintended sleep episodes that occurred after long-term treatment with 400 mg/day of L-dopa.\t L-dopa",
+            "output": [
+                "400 mg/day"
+            ]
+        },
+        {
+            "input": "We present a case of a 20-year-old woman who ingested 900 mg of glyburide causing refractory hypoglycemia resistant to treatment with intravenous dextrose, glucagon, and diazoxide.\t glyburide",
+            "output": [
+                "900 mg"
+            ]
+        },
+        {
+            "input": "After initiation of topical vitamin D3 ointment (20 micro g/g of tacalcitol) 10 g/day for the skin lesions, both the serum level of calcium and urinary excretion of calcium increased gradually.\t vitamin D3",
+            "output": [
+                "20 micro g/g"
+            ]
+        },
+        {
+            "input": "DATA SYNTHESIS: A 49-year-old man developed symptoms of severe psychosis concomitant with ciprofloxacin (250 mg bid) treatment.\t ciprofloxacin",
+            "output": [
+                "250 mg bid"
+            ]
+        },
+        {
+            "input": "However here we reported two patients, presenting with PD during high dose colchicine treatment for familiar mediterranean fever (FMF).\t colchicine",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "We report a case of unintentional overdose of oral pilocarpine tablets that resulted in bradycardia, mild hypotension, and muscarinic symptoms in a patient with Sjogren's syndrome.\t pilocarpine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "In this paper we report a case of nimodipine overdosage resulting in prolonged hypotension and hypoxemia, which was successfully treated with calcium gluconate.\t nimodipine",
+            "output": [
+                "overdosage"
+            ]
+        },
+        {
+            "input": "Tiagabine overdose causes an unusual array of neurological symptoms, many similar to reported adverse effects during therapeutic use.\t Tiagabine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Patient A reported right leg weakness (foot drop) during week 4 of CAP-XRT (1600 mg/m2).\t CAP-XRT",
+            "output": [
+                "1600 mg/m2"
+            ]
+        },
+        {
+            "input": "Patient B developed perioral and upper extremity paresthesias during the fourth cycle of CAP alone (2500 mg/m2).\t CAP",
+            "output": [
+                "2500 mg/m2"
+            ]
+        },
+        {
+            "input": "In all cases, drugs in addition to quetiapine were detected, but in cases #1 and #2, the cause of death was considered to be a quetiapine overdose and the other drugs were not considered to be contributory.\t quetiapine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "We present three cases from the Provincial Toxicology Center of British Columbia, Canada in which suicidal overdose deaths were associated with quetiapine.\t quetiapine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Paradoxical cerebral cortical hyperexcitability following flupirtine overdose.\t flupirtine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "The patient was found to have no motile sperm with a normal sperm count, while taking a dose of 400 mg/day of carbamazepine.\t carbamazepine",
+            "output": [
+                "400 mg/day"
+            ]
+        },
+        {
+            "input": "A 64-year-old man with schizophrenia developed myoclonic jerks when given higher doses of quetiapine.\t quetiapine",
+            "output": [
+                "higher doses"
+            ]
+        },
+        {
+            "input": "A 74-year-old hypercholestrerolaemic woman taking cerivastatin (0.15 mg/day) for 22 days complained of general muscle weakness and muscle pain.\t cerivastatin",
+            "output": [
+                "0.15 mg/day"
+            ]
+        },
+        {
+            "input": "Carboplatin hypersensitivity induced by low-dose paclitaxel/carboplatin in multiple platinum-treated patients with recurrent ovarian cancer.\t Carboplatin",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "Carboplatin hypersensitivity induced by low-dose paclitaxel/carboplatin in multiple platinum-treated patients with recurrent ovarian cancer.\t carboplatin",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "Carboplatin hypersensitivity induced by low-dose paclitaxel/carboplatin in multiple platinum-treated patients with recurrent ovarian cancer.\t paclitaxel",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "We report an unusual case of massive fluoxetine ingestion resulting in neurological and cardiovascular toxicity resulting in death.\t fluoxetine",
+            "output": [
+                "massive"
+            ]
+        },
+        {
+            "input": "The case reported here is of a child given a large dose of intravenous iron sucrose (16 mg/kg) over 3 hours, who subsequently developed features of systemic iron toxicity.\t iron sucrose",
+            "output": [
+                "16 mg/kg"
+            ]
+        },
+        {
+            "input": "Fatal radiation myelopathy after high-dose busulfan and melphalan chemotherapy and radiotherapy for Ewing's sarcoma: a review of the literature and implications for practice.\t busulfan",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Fatal radiation myelopathy after high-dose busulfan and melphalan chemotherapy and radiotherapy for Ewing's sarcoma: a review of the literature and implications for practice.\t melphalan",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Inadvertent and accidental epinephrine overdose might result in potentially lethal complications.\t epinephrine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Prominent positive U waves appearing with high-dose intravenous phenylephrine.\t phenylephrine",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "A 56-year-old white woman with a diagnosis of reactive depression developed severe UI after a 30 days' treatment with venlafaxine 75 mg/day.\t venlafaxine",
+            "output": [
+                "75 mg/day"
+            ]
+        },
+        {
+            "input": "High-dose methotrexate-associated acute renal failure may be an avoidable complication.\t methotrexate",
+            "output": [
+                "High-dose"
+            ]
+        },
+        {
+            "input": "A 55-year-old woman presented an episode of acute urticaria and labial angioedema 60 minutes after ingesting 500 mg of cloxacillin for a skin abscess.\t cloxacillin",
+            "output": [
+                "500 mg"
+            ]
+        },
+        {
+            "input": "Myocardial ischemia associated with high-dose carmustine infusion.\t carmustine",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Acute myocardial infarction during high-dose methylprednisolone therapy for Graves' ophthalmopathy.\t methylprednisolone",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "We conclude that myocardial infarction may develop in patients treated with high-dose glucocorticoids for Graves' ophthalmopathy, and increased blood pressure may herald this complication.\t glucocorticoids",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "We present the case of a 58-year-old woman who ingested more than 35 g of caffeine in a suicide attempt.\t caffeine",
+            "output": [
+                "35 g"
+            ]
+        },
+        {
+            "input": "Flecainide overdose can rapidly result in profound cardiovascular collapse, and is associated with a relatively high mortality.\t Flecainide",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Managing cardiovascular collapse in severe flecainide overdose without recourse to extracorporeal therapy.\t flecainide",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "The authors describe pericardial hemorrhage, which is related to the use of low-dose acetylsalicylic acid in a patient with essential thrombocythemia.\t acetylsalicylic acid",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "Hyponatraemia during low-dose carbamazepine therapy.\t carbamazepine",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "The fourth patient showed RLS symptoms that were initially caused by a 20-mg daily olanzapine dosage and were later mitigated when olanzapine was reduced and ropinirole was administered.\t olanzapine",
+            "output": [
+                "20-mg daily"
+            ]
+        },
+        {
+            "input": "She had been on Copaxone 20 mg/day treatment for 2 years when she first exhibited gastrointestinal symptoms.\t Copaxone",
+            "output": [
+                "20 mg/day"
+            ]
+        },
+        {
+            "input": "Multiple seizures after bupropion overdose in a small child.\t bupropion",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "The patient experienced hallucinations, agitation, vomiting, tachycardia and seizures after ingestion of 1050 (48 mg/kg) of extended-release bupropion.\t bupropion",
+            "output": [
+                "48 mg/kg"
+            ]
+        },
+        {
+            "input": "CASE SUMMARY: An 80-year-old white female, followed up at the Memory Clinic for mild cognitive impairment, had been taking propafenone 900 mg/d for >10 years for paroxysmal atrial fibrillation without adverse effects.\t propafenone",
+            "output": [
+                "900 mg/d"
+            ]
+        },
+        {
+            "input": "Hemorrhage from a falx meningioma after internal use of low-dose aspirin.\t aspirin",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "We report a case in which hemorrhage occurred in an asymptomatic falx meningioma known beforehand, after the internal use of low-dose aspirin for 16 months.\t aspirin",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: Life-threatening adrenal suppression, requiring hydrocortisone supplementation and intensive therapy, was observed and successfully treated in a newborn, whose mother had received high-dose methylprednisolone in late pregnancy.\t methylprednisolone",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "High-dose methylprednisolone in a pregnant woman with Crohn's disease and adrenal suppression in her newborn.\t methylprednisolone",
+            "output": [
+                "High-dose"
+            ]
+        },
+        {
+            "input": "Early recognition of renal toxicity of high-dose methotrexate therapy: a case report.\t methotrexate",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "We report on three cases wherein treatment of dexmedetomidine-induced bradycardia with i.v. glycopyrrolate (5.0 microg/kg) not only resulting in resolution of bradycardia but also resulting in an exaggerated increase of arterial blood pressure.\t dexmedetomidine",
+            "output": [
+                "5.0 microg/kg"
+            ]
+        },
+        {
+            "input": "We report on three cases wherein treatment of dexmedetomidine-induced bradycardia with i.v. glycopyrrolate (5.0 microg/kg) not only resulting in resolution of bradycardia but also resulting in an exaggerated increase of arterial blood pressure.\t glycopyrrolate",
+            "output": [
+                "5.0 microg/kg"
+            ]
+        },
+        {
+            "input": "Three days after receiving intravitreal injection of bevacizumab (1.25 mg in 0.1 ml), he developed acute vision loss and change of consciousness.\t bevacizumab",
+            "output": [
+                "1.25 mg in 0.1 ml"
+            ]
+        },
+        {
+            "input": "One week after the initial-dose of adalimumab (160 mg), which was initiated due to an acute exacerbation of Crohn's disease, the patient developed a fulminant cardiomyopathy.\t adalimumab",
+            "output": [
+                "160 mg"
+            ]
+        },
+        {
+            "input": "Hepatotoxicity after high-dose methylprednisolone for demyelinating disease.\t methylprednisolone",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "We observed 2 cases of hepatotoxicity after a high-dose methylprednisolone treatment of a demyelinating disease and evaluated the potential relationship in the light of available evidence.\t methylprednisolone",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: We present a case of a patient with CML who developed KS 12 months after starting treatment with imatinib 400 mg/d.\t imatinib",
+            "output": [
+                "400 mg/d"
+            ]
+        },
+        {
+            "input": "Bulbar and pseudobulbar palsy complicating therapy with high-dose cytosine arabinoside in children with leukemia.\t cytosine arabinoside",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Common adverse events (frequency 10%) of lacosamide doses up to 600 mg/day include nonspecific central nervous system effects (e.g., dizziness, ataxia, diplopia, and somnolence).\t lacosamide",
+            "output": [
+                "600 mg/day"
+            ]
+        },
+        {
+            "input": "An 83-year-old man receiving glipizide 10 mg bid developed symptomatic hypoglycemia within three days of adding trimethoprim/sulfamethoxazole (TMP/SMX) to his regimen.\t glipizide",
+            "output": [
+                "10 mg"
+            ]
+        },
+        {
+            "input": "An 83-year-old man receiving glipizide 10 mg bid developed symptomatic hypoglycemia within three days of adding trimethoprim/sulfamethoxazole (TMP/SMX) to his regimen.\t SMX",
+            "output": [
+                "10 mg"
+            ]
+        },
+        {
+            "input": "An 83-year-old man receiving glipizide 10 mg bid developed symptomatic hypoglycemia within three days of adding trimethoprim/sulfamethoxazole (TMP/SMX) to his regimen.\t sulfamethoxazole",
+            "output": [
+                "10 mg"
+            ]
+        },
+        {
+            "input": "An 83-year-old man receiving glipizide 10 mg bid developed symptomatic hypoglycemia within three days of adding trimethoprim/sulfamethoxazole (TMP/SMX) to his regimen.\t TMP",
+            "output": [
+                "10 mg"
+            ]
+        },
+        {
+            "input": "An 83-year-old man receiving glipizide 10 mg bid developed symptomatic hypoglycemia within three days of adding trimethoprim/sulfamethoxazole (TMP/SMX) to his regimen.\t trimethoprim",
+            "output": [
+                "10 mg"
+            ]
+        },
+        {
+            "input": "A sixty-year-old woman with advanced breast cancer, previously treated with cisplatin, developed an irreversible lethal renal failure with anuria, the day after 5 g/m2 bolus ifosfamide.\t ifosfamide",
+            "output": [
+                "5 g/m2"
+            ]
+        },
+        {
+            "input": "Lethal anuria complicating high dose ifosfamide chemotherapy in a breast cancer patient with an impaired renal function.\t ifosfamide",
+            "output": [
+                "high dose"
+            ]
+        },
+        {
+            "input": "Horner's syndrome and demyelinating peripheral neuropathy caused by high-dose cytosine arabinoside.\t cytosine arabinoside",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Peripheral nerve dysfunction is a potentially serious complication of high-dose cytosine arabinoside.\t cytosine arabinoside",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "We describe a patient with acute leukemia who developed Horner's syndrome and a severe demyelinating peripheral neuropathy leading to death after receiving high-dose cytosine arabinoside.\t cytosine arabinoside",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Life-threatening acute hyponatraemia induced by low dose cyclophosphamide and indomethacin.\t cyclophosphamide",
+            "output": [
+                "low dose"
+            ]
+        },
+        {
+            "input": "Life-threatening acute hyponatraemia induced by low dose cyclophosphamide and indomethacin.\t indomethacin",
+            "output": [
+                "low dose"
+            ]
+        },
+        {
+            "input": "We report the case of a patient with multiple myeloma who developed acute life-threatening water intoxication following treatment with oral indomethacin and low dose intravenous cyclophosphamide.\t cyclophosphamide",
+            "output": [
+                "low dose"
+            ]
+        },
+        {
+            "input": "We report the case of a patient with multiple myeloma who developed acute life-threatening water intoxication following treatment with oral indomethacin and low dose intravenous cyclophosphamide.\t indomethacin",
+            "output": [
+                "low dose"
+            ]
+        },
+        {
+            "input": "Two cases of lepromatous leprosy with erythema nodosum leprosum who were on high doses of clofazimine, showed discoloration of nail plate, subungual hyperkeratosis and onycholysis.\t clofazimine",
+            "output": [
+                "high doses"
+            ]
+        },
+        {
+            "input": "Paraplegia following prophylactic intrathecal cytosine arabinoside (Ara-C) is described in a patient with acute myelogenous leukemia in remission who received doses of 100 mg/m2/d for 5 consecutive days.\t Ara-C",
+            "output": [
+                "100 mg/m2/d"
+            ]
+        },
+        {
+            "input": "Paraplegia following prophylactic intrathecal cytosine arabinoside (Ara-C) is described in a patient with acute myelogenous leukemia in remission who received doses of 100 mg/m2/d for 5 consecutive days.\t cytosine arabinoside",
+            "output": [
+                "100 mg/m2/d"
+            ]
+        },
+        {
+            "input": "Three of 50 patients treated with isotretinoin (1 mg/kg/day) for cystic acne complained of poor night vision and/or excessive glare sensitivity.\t isotretinoin",
+            "output": [
+                "1 mg/kg/day"
+            ]
+        },
+        {
+            "input": "The pharmacology and toxicology of chloral hydrate are discussed with particular reference to the cardiac arrhythmias that are seen with overdosage.\t chloral hydrate",
+            "output": [
+                "overdosage"
+            ]
+        },
+        {
+            "input": "A case of severe visual loss following a single dose of vincristine is described.\t vincristine",
+            "output": [
+                "single dose"
+            ]
+        },
+        {
+            "input": "Severe visual loss after a single dose of vincristine in a patient with spinal cord astrocytoma.\t vincristine",
+            "output": [
+                "single dose"
+            ]
+        },
+        {
+            "input": "Visual loss after a single small dose of vincristine has never been reported.\t vincristine",
+            "output": [
+                "single small dose"
+            ]
+        },
+        {
+            "input": "Renal hypophosphatemia in this patient was caused by the erroneous intake of 1 g doxycycline.\t doxycycline",
+            "output": [
+                "1 g"
+            ]
+        },
+        {
+            "input": "After a six-week course of low-dose cyclosporine A, she developed a severe but reversible loss of glomerular filtration rate and effective renal plasma flow despite of low cyclosporine A plasma levels.\t cyclosporine A",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "A patient is presented with typical hyperthyroidism, who developed a severe proximal muscle weakness and a raised creatine phosphokinase after treatment for hyperthyroidism with propylthiouracil (100 mg orally, three times a day).\t propylthiouracil",
+            "output": [
+                "100 mg orally, three times a day"
+            ]
+        },
+        {
+            "input": "A 56-year-old woman with scleroderma developed rapidly progressive glomerulonephritis with epithelial crescents associated with hemoptysis after 27 months of D-penicillamine therapy and a cumulative dose of 1,200 g.\t D-penicillamine",
+            "output": [
+                "1,200 g"
+            ]
+        },
+        {
+            "input": "Phenytoin was discontinued after admission; however, phenytoin 1 g i.v. was given for a tonic-clonic seizure two days after admission, after which swelling of the face and legs and pruritus developed.\t phenytoin",
+            "output": [
+                "1 g"
+            ]
+        },
+        {
+            "input": "She was receiving phenytoin sodium 300 mg/day; carbamazepine 200 mg four times daily had been discontinued four days before admission because of leukopenia.\t carbamazepine",
+            "output": [
+                "200 mg"
+            ]
+        },
+        {
+            "input": "She was receiving phenytoin sodium 300 mg/day; carbamazepine 200 mg four times daily had been discontinued four days before admission because of leukopenia.\t phenytoin sodium",
+            "output": [
+                "300 mg/day"
+            ]
+        },
+        {
+            "input": "After therapy with parenteral amiodarone (2300 mg in 3 days) and other measures, signs of congestive heart failure disappeared; subsequently the patient developed jaundice, marked increase in serum transaminase levels and fall in prothrombin time, and histologic changes of severe centrilobular necrosis were observed in hepatic biopsy.\t amiodarone",
+            "output": [
+                "2300 mg in 3 days"
+            ]
+        },
+        {
+            "input": "The main clinical features of this 58-year-old female patient were laboratory evidence of leucopenia and cholestasis, and biopsy features of fatty liver parenchyma degeneration with granulocytic portal infiltration and bile stasis, demonstrated 20 days after the initiation of antithyroid therapy with 20 mg methimazole daily.\t methimazole",
+            "output": [
+                "20 mg"
+            ]
+        },
+        {
+            "input": "A case of propranolol overdose complicated by esophageal spasm preventing extrication of an orogastric lavage tube and relieved by intravenous glucagon is presented.\t propranolol",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Esophageal spasm following propranolol overdose relieved by glucagon.\t propranolol",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "A 65-year-old woman with bipolar disorder and complicated cardiovascular disease who was on maintenance lithium therapy developed a movement disorder following high doses of trazodone for treatment of an acute depression.\t lithium",
+            "output": [
+                "high doses"
+            ]
+        },
+        {
+            "input": "A 65-year-old woman with bipolar disorder and complicated cardiovascular disease who was on maintenance lithium therapy developed a movement disorder following high doses of trazodone for treatment of an acute depression.\t trazodone",
+            "output": [
+                "high doses"
+            ]
+        },
+        {
+            "input": "Two other patients who did not receive prochlorperazine, developed retinal problems which later improved, one after only 15 g of desferrioxamine.\t desferrioxamine",
+            "output": [
+                "15 g"
+            ]
+        },
+        {
+            "input": "Four cases of fat embolism are described in infants receiving prolonged intravenous infusion of fat (Intralipid 20%).\t Intralipid",
+            "output": [
+                "20%"
+            ]
+        },
+        {
+            "input": "Two children with rheumatic fever developed anicteric hepatitis while on high-dose aspirin therapy.\t aspirin",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "In three of these patients the infection was clinically unsuspected; in the fourth, cutaneous herpes zoster developed after administration of 300 mg of cytarabine daily for the preceding five days.\t cytarabine",
+            "output": [
+                "300 mg"
+            ]
+        },
+        {
+            "input": "Four patients receiving high-dose tamoxifen for greater than 1 year have demonstrated similar retinal changes.\t tamoxifen",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "In eight patients, a mean decrease in serum Na+ of 8.25 +/- 3.2 mEq/L was observed after a single 200 mg intravenous dose of lorcainide.\t lorcainide",
+            "output": [
+                "200 mg"
+            ]
+        },
+        {
+            "input": "In a 61-year-old man receiving chronic low-dosage amiodarone an interstitial pneumopathy was observed.\t amiodarone",
+            "output": [
+                "low-dosage"
+            ]
+        },
+        {
+            "input": "Interstitial pneumopathy and low-dosage amiodarone.\t amiodarone",
+            "output": [
+                "low-dosage"
+            ]
+        },
+        {
+            "input": "Alternating sinus rhythm and intermittent sinoatrial (S-A) block was observed in a 57-year-old woman, under treatment for angina with 80 mg propranolol daily.\t propranolol",
+            "output": [
+                "80 mg"
+            ]
+        },
+        {
+            "input": "Pulmonary fibrosis subsequent to high doses of CCNU for chronic myeloid leukemia.\t CCNU",
+            "output": [
+                "high doses"
+            ]
+        },
+        {
+            "input": "Gynecomastia developed in two epileptic patients some months after the addition of oral fluoresone 750 mg daily to the phenobarbital and phenytoin already being administered.\t fluoresone",
+            "output": [
+                "750 mg"
+            ]
+        },
+        {
+            "input": "Gynecomastia developed in two epileptic patients some months after the addition of oral fluoresone 750 mg daily to the phenobarbital and phenytoin already being administered.\t phenobarbital",
+            "output": [
+                "750 mg"
+            ]
+        },
+        {
+            "input": "Gynecomastia developed in two epileptic patients some months after the addition of oral fluoresone 750 mg daily to the phenobarbital and phenytoin already being administered.\t phenytoin",
+            "output": [
+                "750 mg"
+            ]
+        },
+        {
+            "input": "Drug-induced psychosis resulted from the administration of quinacrine hydrochloride at a dosage of 100 mg twice daily for the treatment of discoid lupus.\t quinacrine hydrochloride",
+            "output": [
+                "100 mg"
+            ]
+        },
+        {
+            "input": "In four patients, spasm occurred spontaneous and in one patient after 0.05 mg of ergonovine.\t ergonovine",
+            "output": [
+                "0.05 mg"
+            ]
+        },
+        {
+            "input": "Two years later, 24 hours following an increase in the dose of disopyramide from 300 to 600 mg/day, AVT with syncope occurred; isoproterenol abolished the arrhythmia instantly.\t disopyramide",
+            "output": [
+                "300 to 600 mg/day"
+            ]
+        },
+        {
+            "input": "He was started on digoxin, 0.25 mg daily, because of echocardiographically demonstrated left ventricular dilatation and functional impairment; he died of ventricular fibrillation 15 days later.\t digoxin",
+            "output": [
+                "0.25 mg"
+            ]
+        },
+        {
+            "input": "Inappropriate antidiuretic hormone secretion after high dose vinblastine.\t vinblastine",
+            "output": [
+                "high dose"
+            ]
+        },
+        {
+            "input": "We report on a patient with an embryonal teratocarcinoma of the testicle who had the syndrome of inappropriate secretion of antidiuretic hormone after receiving a high dose of vinblastine.\t vinblastine",
+            "output": [
+                "high dose"
+            ]
+        },
+        {
+            "input": "Fatal interstitial pneumonitis following high-dose intermittent chlorambucil therapy for chronic lymphocyte leukemia.\t chlorambucil",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "A 71-year-old man with paroxysmal atrial fibrillation who had a previous anterior myocardial infarction exhibited granulocytopenia 8 days following the administration of oral sustained-release procainamide (750 mg/day).\t procainamide",
+            "output": [
+                "750 mg/day"
+            ]
+        },
+        {
+            "input": "A 64 year old man with recurrent metastatic squamous cell carcinoma of the head and neck developed severe skin rash and bone marrow aplasia 4 and 7 days, respectively, following a single dose of 40 mg/m2 methotrexate (MTX).\t methotrexate",
+            "output": [
+                "40 mg/m2"
+            ]
+        },
+        {
+            "input": "A 64 year old man with recurrent metastatic squamous cell carcinoma of the head and neck developed severe skin rash and bone marrow aplasia 4 and 7 days, respectively, following a single dose of 40 mg/m2 methotrexate (MTX).\t MTX",
+            "output": [
+                "40 mg/m2"
+            ]
+        },
+        {
+            "input": "Bone marrow aplasia and severe skin rash after a single low dose of methotrexate.\t methotrexate",
+            "output": [
+                "low dose"
+            ]
+        },
+        {
+            "input": "We report the case of a 20-year-old female with polyarteritis nodosa (PAN) who developed bilateral sensorineural hearing loss 25 minutes after receiving 30 mg of intravenous ketoralac.\t ketoralac",
+            "output": [
+                "30 mg"
+            ]
+        },
+        {
+            "input": "A 9-year-old boy developed acute renal failure following intravenous acyclovir (30 mg/kg per day) administered for 6 days to treat herpetic encephalitis.\t acyclovir",
+            "output": [
+                "30 mg/kg per day"
+            ]
+        },
+        {
+            "input": "We report a case of hypoglycaemia after mefloquine therapy (1,500 mg over two days) for severe gastrointestinal cryptosporidiasis in a cachectic AIDS patient with protracted diarrhoea.\t mefloquine",
+            "output": [
+                "1,500 mg over two days"
+            ]
+        },
+        {
+            "input": "High-dose intravenous mannitol infusion in various clinical settings may result in acute renal failure (ARF).\t mannitol",
+            "output": [
+                "High-dose"
+            ]
+        },
+        {
+            "input": "This is a report of a case of anuric ARF after high-dose mannitol infusion for treatment of narrow-angle glaucoma that readily responded to acute hemodialysis.\t mannitol",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "Temporary neurologic abnormalities were observed in one out of 23 patients undergoing chemotherapy with high-dose methotrexate (HD-MTX) for osteogenic sarcoma.\t methotrexate",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "This patient developed sequential symptoms including alternative hemiparesis, dysarthria and altered consciousness 5 days after the second course of HD-MTX (8 gm/m2 by 6 h continuous infusion) with leucovorin rescue.\t HD-MTX",
+            "output": [
+                "8 gm/m2 by 6 h continuous infusion"
+            ]
+        },
+        {
+            "input": "Transient neurological disturbances induced by the chemotherapy of high-dose methotrexate for osteogenic sarcoma.\t methotrexate",
+            "output": [
+                "high-dose"
+            ]
+        },
+        {
+            "input": "We describe a patient with a liver abscess due to Entamoeba histolytica, in whom metronidazole therapy (total dose, 21 g over 14 days) was complicated by reversible deafness, tinnitus, and ataxia and who relapsed 5 months later with a splenic abscess.\t metronidazole",
+            "output": [
+                "21 g over 14 days"
+            ]
+        },
+        {
+            "input": "Reversible leukopenia was documented in an 81-year-old woman treated with adjunctive ibopamine 100 mg t.i.d. for chronic congestive heart failure.\t ibopamine",
+            "output": [
+                "100 mg"
+            ]
+        },
+        {
+            "input": "A 53-year-old male, without any prior history of psychosis, developed schizophrenia 4 days after starting low-dose bromocriptine therapy for a macroprolactinoma.\t bromocriptine",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "Concurrent acute megaloblastic anaemia and pneumonitis: a severe side-effect of low-dose methotrexate therapy during rheumatoid arthritis.\t methotrexate",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "In a patient suffering from rheumatoid arthritis, we report the first simultaneous occurrence of two side effects of low-dose methotrexate: an acute megaloblastic anaemia and a pneumonitis.\t methotrexate",
+            "output": [
+                "low-dose"
+            ]
+        },
+        {
+            "input": "An 11-year-old boy who was treated with a relatively high dose of methotrimeprazine meleate (Levemepromazine) a phenothiazine antipsychotic drug, was admitted to the pediatric intensive care unit suffering from respiratory distress syndrome.\t Levemepromazine",
+            "output": [
+                "high dose"
+            ]
+        },
+        {
+            "input": "An 11-year-old boy who was treated with a relatively high dose of methotrimeprazine meleate (Levemepromazine) a phenothiazine antipsychotic drug, was admitted to the pediatric intensive care unit suffering from respiratory distress syndrome.\t methotrimeprazine meleate",
+            "output": [
+                "high dose"
+            ]
+        },
+        {
+            "input": "The association of phenothiazine overdose and respiratory distress syndrome merits consideration.\t phenothiazine",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "She received an accidental 450-mg bolus injection of morphine intrathecally and developed hypertension, status epilepticus, intracerebral hemorrhage, and respiratory failure.\t morphine",
+            "output": [
+                "450-mg"
+            ]
+        },
+        {
+            "input": "A high dose of cotrimoxazole induced hyperkalaemia with the elevation of serum creatinine and blood urea, and increased urinary N-acetyl glucosaminase after several days of the drug administration in these patients; one patient became unconscious.\t cotrimoxazole",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "Severe abdominal pain in low dosage clofazimine.\t clofazimine",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "Amphotericin B overdose in pediatric patients with associated cardiac arrest.\t Amphotericin B",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "CONCLUSIONS: Amphotericin B overdose can be fatal in children and infants.\t Amphotericin B",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Hydrocortisone may decrease the incidence of mortality associated with cardiac arrhythmias in children receiving amphotericin B overdoses.\t amphotericin B",
+            "output": [
+                "overdoses"
+            ]
+        },
+        {
+            "input": "INTERVENTIONS AND RESULTS: Cardiac complications were observed in five pediatric patients who received between 4.6 and 40.8 mg/kg/d of amphotericin B.\t amphotericin B",
+            "output": [
+                "between 4.6 and 40.8 mg/kg/d"
+            ]
+        },
+        {
+            "input": "OBJECTIVE: To report the first five cases of amphotericin B overdose with secondary cardiac complications in a pediatric population.\t amphotericin B",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "METHODS: Repeated blood samples were drawn in a patient with severe acyclovir overdose who developed coma and nonoliguric renal failure.\t acyclovir",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "We report one case of non-Hodgkin lymphoma in a patient, with a 30-year history of rheumatoid arthritis, taking low dose methotrexate weekly over a 10-month period.\t methotrexate",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "We report a case of drug-induced Kaposi's sarcoma (KS) on the sole of the right foot in a 71-year-old man, treated for 6 months with corticosteroid therapy (prednisolone 25 mg/day) for pericardial effusion.\t prednisolone",
+            "output": [
+                "25 mg/day"
+            ]
+        },
+        {
+            "input": "Acute dystonic reaction with low-dose pimozide.\t pimozide",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "How low can you go? Use of very low dosage of gold in patients with mucocutaneous reactions.\t gold",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "We have seen a case of terminal malignant melanoma in which clinical manifestations, indicative of anterior spinal artery syndrome, developed following the injection of 0.3 ml of 10% phenol-glycerine into the cervical subarachnoid space at the C4--C5 level for the control of severe right arm pain.\t phenol-glycerine",
+            "output": [
+                "0.3 ml"
+            ]
+        },
+        {
+            "input": "The azathioprine dose was low (1 mg/kg) and pancytopenia occurred after 56 days therapy.\t azathioprine",
+            "output": [
+                "1 mg/kg"
+            ]
+        },
+        {
+            "input": "The pharmaceutical company producing Halfan has reported 8 cardiac arrests, leading to 6 deaths, when a higher dose than recommended was used, there was recent or concomitant treatment with mefloquine, there was pre-existing prolongation of the QT interval or the patient had a thiamine deficiency.\t Halfan",
+            "output": [
+                "higher"
+            ]
+        },
+        {
+            "input": "The pharmaceutical company producing Halfan has reported 8 cardiac arrests, leading to 6 deaths, when a higher dose than recommended was used, there was recent or concomitant treatment with mefloquine, there was pre-existing prolongation of the QT interval or the patient had a thiamine deficiency.\t mefloquine",
+            "output": [
+                "higher"
+            ]
+        },
+        {
+            "input": "FINDINGS: Six children with growth retardation noted after treatment with high-dose fluticasone propionate were found to have adrenal suppression.\t fluticasone propionate",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "Growth and adrenal suppression in asthmatic children treated with high-dose fluticasone propionate.\t fluticasone propionate",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "INTERPRETATION: When high doses of fluticasone propionate are used, growth may be retarded and adrenal suppression may occur.\t fluticasone propionate",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "METHODS: Growth retardation was observed in six severely asthmatic children after introduction of high-dose fluticasone propionate treatment (dry powder).\t fluticasone propionate",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "Two case reports of bilateral granulomatous anterior uveitis are described in patients with open angle glaucoma treated with metripranolol 0.6% eye drops.\t metripranolol",
+            "output": [
+                "0.6"
+            ]
+        },
+        {
+            "input": "This case suggests that acyclovir when given intravenously in doses of 10 mg/kg may result in increased serum lithium concentrations.\t acyclovir",
+            "output": [
+                "10 mg/kg"
+            ]
+        },
+        {
+            "input": "This case suggests that acyclovir when given intravenously in doses of 10 mg/kg may result in increased serum lithium concentrations.\t lithium",
+            "output": [
+                "10 mg/kg"
+            ]
+        },
+        {
+            "input": "We describe 2 patients with cutaneous lupus erythematosus who developed severe dapsone reaction after low dose therapy, with a fatal outcome in one.\t dapsone",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "A 17-year-old female patient who had been taking oral minocycline (50 mg twice daily) for 3 weeks for acne developed an eruption that progressed to an exfoliative dermatitis.\t minocycline",
+            "output": [
+                "50 mg twice daily"
+            ]
+        },
+        {
+            "input": "Overdose of magnesium sulfate in combination with renal insufficiency, hypocalcemia, or compromise of intestinal integrity may predispose horses to magnesium toxicosis.\t magnesium",
+            "output": [
+                "Overdose"
+            ]
+        },
+        {
+            "input": "Overdose of magnesium sulfate in combination with renal insufficiency, hypocalcemia, or compromise of intestinal integrity may predispose horses to magnesium toxicosis.\t magnesium sulfate",
+            "output": [
+                "Overdose"
+            ]
+        },
+        {
+            "input": "We thus concluded that an excessive dose of AZ had probably destroyed the gastric mucosal barrier or thrombocytopenia due to bone marrow disorder and thus eventually led to the development of hemorrhagic gastritis.\t AZ",
+            "output": [
+                "excessive"
+            ]
+        },
+        {
+            "input": "On the next day, after a total dose of only 600 mg of danazol, gingival bleeding and purpura occurred.\t danazol",
+            "output": [
+                "600 mg"
+            ]
+        },
+        {
+            "input": "We reported 3 patients who developed acute generalized dystonia and akinetic rigid syndrome following an initial therapy with d-penicillamine 125-500 mg daily.\t d-penicillamine",
+            "output": [
+                "125-500 mg daily"
+            ]
+        },
+        {
+            "input": "Ballistic movements due to ischemic infarcts after intravenous heroin overdose: report of two cases.\t heroin",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "Two heroin addicts, aged 34 and 19 years, developed ballistic movements after intravenous heroin overdose.\t heroin",
+            "output": [
+                "overdose"
+            ]
+        },
+        {
+            "input": "We report a 76-year-old man who developed an acute blistering eruption following high-dose penicillin treatment for pneumococcal septicaemia.\t penicillin",
+            "output": [
+                "high"
+            ]
+        },
+        {
+            "input": "In case 1, a total daily dose of 25 mg sertraline, with nondetectable sertraline and desmethylsertraline blood levels, resulted in a doubling of the lamotrigine blood level with symptoms of toxicity.\t desmethylsertraline",
+            "output": [
+                "25 mg"
+            ]
+        },
+        {
+            "input": "In case 1, a total daily dose of 25 mg sertraline, with nondetectable sertraline and desmethylsertraline blood levels, resulted in a doubling of the lamotrigine blood level with symptoms of toxicity.\t lamotrigine",
+            "output": [
+                "25 mg"
+            ]
+        },
+        {
+            "input": "We report a case of pancytopenia in a 23-year-old man with Crohn's disease who was treated with 5-aminosalicylic acid (Pentasa; Nisshin, Tokyo, Japan) 3.0 g/day.\t 5-aminosalicylic acid",
+            "output": [
+                "3.0 g/day"
+            ]
+        },
+        {
+            "input": "We report a case of pancytopenia in a 23-year-old man with Crohn's disease who was treated with 5-aminosalicylic acid (Pentasa; Nisshin, Tokyo, Japan) 3.0 g/day.\t Pentasa",
+            "output": [
+                "3.0 g/day"
+            ]
+        },
+        {
+            "input": "1. Changes in the plasma cortisol level were reported in a male patient with panic disorder during the period of low-dose alprazolam treatment (mean 0.62 +/- 0.15 mg/day) compared with during the period of high-dose period (mean 1.08 +/- 0.28 mg/day).\t alprazolam",
+            "output": [
+                "low"
+            ]
+        },
+        {
+            "input": "We report on three patients with acute schizophrenia, who developed severe akathisia during treatment with olanzapine (20-25 mg/d).\t olanzapine",
+            "output": [
+                "20-25 mg/d"
+            ]
+        },
+        {
+            "input": "A 65-year-old woman with angina pectoris presented with syncope after sublingual ingestion of isosorbide dinitrate (5 mg).\t isosorbide dinitrate",
+            "output": [
+                "5 mg"
+            ]
+        },
+        {
+            "input": "In a postural challenge test after administration of isosorbide dinitrate (5 mg), blood pressure decreased from 120/67 to 65/35 mmHg, followed by syncope with a sudden decrease in pulse rate from 85 to 60 beats/min.\t isosorbide dinitrate",
+            "output": [
+                "5 mg"
+            ]
+        },
+        {
+            "input": "High-dose phosphate treatment leads to hypokalemia in hypophosphatemic osteomalacia.\t phosphate",
+            "output": [
+                "High"
+            ]
+        }
+    ]
+}
