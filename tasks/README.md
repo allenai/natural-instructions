@@ -643,7 +643,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
 `task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
 `task636_extract_and_sort_unique_alphabets_in_a_list` | Given a list extract all the unique alphabets from it and sort them alphabetically | Answer Generation
-`task636_extract_and_sort_unique_digits_in_a_list` | Given a list extract all the unique digits used in the number in it and sort them in ascending order | Answer Generation
+`task637_extract_and_sort_unique_digits_in_a_list` | Given a list extract all the unique digits used in the number in it and sort them in ascending order | Answer Generation
 `task638_multi_woz_classification` | Classifying dialouge into User and System | Classification
 `task639_multi_woz_user_utterance_generation`| Generate a User utterance when System's reply is given | User Utterance Generation
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
