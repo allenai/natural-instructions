@@ -1439,3 +1439,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1604_ethos_text_classification` | Classifying text to Hate or Not Hate | Text Classification
+`task1605_ethos_text_classification` | Classifying text to Violence or Not Violence | Text Classification
+`task1606_ethos_text_classification` | Classifying if text has Gender Crticism | Text Classification
+`task1607_ethos_text_classification` | Classifying text to Religious Criticism | Text Classification
+`task1608_xquad_en_answer_generation` | Generating answers to xquad en questions | Answer Generation
+`task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
+`task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
+`task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
