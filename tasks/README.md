@@ -1324,16 +1324,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
-`task1334_dart_question_generation` | Generate fill-in-the-blank style questions from RDF triplets of the DART dataset | Question Generation
-`task1335_dart_similarity_classification` | Classify whether two sentences (from DART) are similar or not based on their relationships | Relevance Verification
-`task1336_dart_text_generation` | Generating sentences based on DART RDF relationships | Sentence Generation
-`task1337_dart_relationship_extraction` | Extracting RDF relationships from DART sentences | Relationship Extraction
-`task1338_dart_subject_identification` | Given a sentence (from DART), identify the subject of the sentence | Token Classification
-`task1339_dart_predicate_identification` | Given a sentence (from DART), identify the predicate of the sentence | Token Classification
-`task1340_dart_object_identification` | Given a sentence (from DART), identify the object of the sentence | Token Classificationn
-`task1341_ajgt_twitter_ar_classification` | Classify Arabic tweets (based on `ajgt_twitter_ar`) as having positive or negative sentiment | Sentiment Analysis
-`task1342_youtube_caption_corrections_grammar_correction` | Given a set of closed captions (from `youtube_caption_corrections`), produce a grammatically correct version of those captions | Grammar Error Correction
-`task1343_youtube_caption_corrections_incorrect_grammar_classification` | Given a set of closed captions (from `youtube_caption_corrections`), classify which words are grammatically incorrect | Grammar Error Detection
 `task1334_sqac_answer_generation`                                | Generating answers to SQAC questions          | Answer Generation    
 `task1335_sqac_question_generation`                              | Classifying race of speaker of sentence       | Race Classifier      
 `task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier     
