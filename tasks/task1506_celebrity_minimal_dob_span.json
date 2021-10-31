@@ -1,0 +1,1441 @@
+{
+    "Contributors": [
+        "Atharva Naik"
+    ],
+    "Source": [
+        "synthetic"
+    ],
+    "Categories": [
+        "Answer Generation"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "Given a short bio of a person, find the minimal text span containing the date of birth of the person. The output must be the minimal text span that contains the birth date, month and year as long as they are present. For instance, given a bio like 'I was born on 27th of Decemeber 1990, and graduated high school on 23rd October 2008.' the output should be '27th of December 1990'.",
+    "Positive Examples": [
+        {
+            "input": "Basinger was born in Athens, Georgia, on December 8, 1953",
+            "output": "December 8, 1953",
+            "explanation": "The output is correct as it is a valid text span, is of minimal length and is the correct date of birth."
+        },
+        {
+            "input": "Keitel was born in New York City, on May 13, 1939, the son of Ashkenazi Jewish immigrants; his mother, Miriam (née Klein), was from Romania, and his father, Harry Keitel, was from Poland",
+            "output": "May 13, 1939",
+            "explanation": "The output is correct as it is a valid text span, is of minimal length and is the correct date of birth."
+        },
+        {
+            "input": "Hawke was born in 1970 in Austin, Texas, to Leslie (née Green), a charity worker, and James Hawke, an insurance actuary",
+            "output": "1970",
+            "explanation": "The output is a valid text span, and it is the correct date of birth. Since the month and day of birth are not present, just the year of birth constitutes a valid output. The output is also of minmum length."
+        },
+        {
+            "input": "Scott was born 25 November 1965 in Glenrothes, Fife, the son of Elma, a nurse, and Alan Scott, a travelling salesman of refrigerators and freezers, and a former actor",
+            "output": "25 November 1965",
+            "explanation": "The output is the correct date of birth, which is supported by the word born that precedes it, it also doesn't have any extra characters and is a valid text span."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Rachel Anne McAdams was born on November 17, 1978, in London, Ontario, Canada, to nurse Sandra (née Gale) and truck driver Lance McAdams",
+            "output": "November 17, 1978, in London",
+            "explanation": "The given output is incorrect because it is not the minimal date of birth text span. The minimal span would've been 'November 17, 1978' instead." 
+        },
+        {
+            "input": "Weisz was born on 7 March 1970 in Westminster, London, and grew up in Hampstead Garden Suburb",
+            "output": "March 1970",
+            "explanation": "The given output is incoorrect because it is incomplete. It misses out the day of birth which is 7. The correct output would've been '7 March 1970'." 
+        },
+        {
+            "input": "Emilia Isobel Euphemia Rose Clarke was born on 23 October 1986 in London",
+            "output": "23 October, 1986",
+            "explanation": "The output is incorrect because it is not a valid text span. The given output contains a comma after 23 October, which is not present in the original sentence. The correct output would've been '23 October 1986'."
+        },
+        {
+            "input": "Baldwin was born April 3, 1958, in Amityville, New York, and raised in the Nassau Shores neighborhood of nearby Massapequa, the eldest son of Carol Newcomb (née Martineau; born December 15, 1929) from Syracuse and Alexander Rae Baldwin Jr",
+            "output": "December 15, 1929",
+            "explanation": "Baldwin the celebrity in question was born on April 3, 1958 and not December 15, 1929, which is the date of birth of his father, so the given putput is incorrect."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Bellucci was born 30 September 1964 in Città di Castello, Umbria, the only child of Brunella Briganti and Pasquale Bellucci, and grew up in Lama of San Giustino",
+            "output": [
+                "30 September 1964"
+            ]
+        },
+        {
+            "input": "Cruise was born on July 3, 1962, in Syracuse, New York, to electrical engineer Thomas Cruise Mapother III (1934–1984) and special education teacher Mary Lee (née Pfeiffer; 1936–2017)",
+            "output": [
+                "July 3, 1962"
+            ]
+        },
+        {
+            "input": "Johansson was born on November 22, 1984, in the Manhattan borough of New York City",
+            "output": [
+                "November 22, 1984"
+            ]
+        },
+        {
+            "input": "Jason Statham was born on 26 July 1967 in Shirebrook, Derbyshire, to Eileen (née Yates), a dancer, and Barry Statham, a street seller",
+            "output": [
+                "26 July 1967"
+            ]
+        },
+        {
+            "input": "Dwayne Douglas Johnson was born in Hayward, California on May 2, 1972, the son of Ata Johnson (née Maivia; born 1948) and former professional wrestler Rocky Johnson (born Wayde Douglas Bowles; 1944–2020)",
+            "output": [
+                "May 2, 1972"
+            ]
+        },
+        {
+            "input": "Mayte Michelle Rodriguez was born on July 12, 1978, in San Antonio, Texas",
+            "output": [
+                "July 12, 1978"
+            ]
+        },
+        {
+            "input": "Thomas Jeffrey Hanks was born in Concord, California, on July 9, 1956, to hospital worker Janet Marylyn (née Frager) and itinerant cook Amos Mefford Hanks",
+            "output": [
+                "July 9, 1956"
+            ]
+        },
+        {
+            "input": "Edward Thomas Hardy was born in the Hammersmith district of London on 15 September 1977, the only child of artist and painter Anne (née Barrett) and novelist and comedy writer Edward \"Chips\" Hardy",
+            "output": [
+                "15 September 1977"
+            ]
+        },
+        {
+            "input": "John Christopher Depp II was born on June 9, 1963, in Owensboro, Kentucky, the youngest of four children of waitress Betty Sue Palmer (née Wells) and civil engineer John Christopher Depp",
+            "output": [
+                "June 9, 1963"
+            ]
+        },
+        {
+            "input": "Arnold Alois Schwarzenegger was born in Thal, Austria on July 30, 1947, the second son of Gustav Schwarzenegger and his wife, Aurelia (née Jadrny)",
+            "output": [
+                "July 30, 1947"
+            ]
+        },
+        {
+            "input": "Christopher Hemsworth was born on 11 August 1983 in Melbourne, Victoria, to Leonie (née van Os), an English teacher, and Craig Hemsworth, a social-services counsellor",
+            "output": [
+                "11 August 1983"
+            ]
+        },
+        {
+            "input": "Alexandra Anna Daddario was born in New York City, on March 16, 1986, the eldest child of Christina, a lawyer, and Richard Daddario, a prosecutor and former head of the New York City Police Department counterterrorism unit",
+            "output": [
+                "March 16, 1986"
+            ]
+        },
+        {
+            "input": "Philip Anthony Hopkins was born in the Margam suburb of Port Talbot on 31 December 1937, the son of Annie Muriel (née Yeates) and baker Richard Arthur Hopkins",
+            "output": [
+                "31 December 1937"
+            ]
+        },
+        {
+            "input": "Liu was born on December 2, 1968, in Jackson Heights, Queens, New York",
+            "output": [
+                "December 2, 1968"
+            ]
+        },
+        {
+            "input": "Beckinsale was born on 26 July 1973 in the Chiswick district of London, the only child of actors Richard Beckinsale and Judy Loe",
+            "output": [
+                "26 July 1973"
+            ]
+        },
+        {
+            "input": "Jordana Brewster was born in Panama City, Panama, on April 26, 1980, the older of two daughters",
+            "output": [
+                "April 26, 1980"
+            ]
+        },
+        {
+            "input": "Benson was born on December 18, 1989, in Anaheim Hills, California, to parents Shannon and Jeff Benson",
+            "output": [
+                "December 18, 1989"
+            ]
+        },
+        {
+            "input": "Pike was born in 1979 in Hammersmith, London, the only child of opera singers Caroline Friend and Julian Pike",
+            "output": [
+                "1979"
+            ]
+        },
+        {
+            "input": "Christian Charles Philip Bale was born on 30 January 1974 in Haverfordwest, Pembrokeshire, to English parents—Jenny James, a circus performer, and David Bale, an entrepreneur and activist",
+            "output": [
+                "30 January 1974"
+            ]
+        },
+        {
+            "input": "Sandler was born in Brooklyn, New York, on September 9, 1966, to Judith \"Judy\" (née Levine), a nursery school teacher, and Stanley Sandler, an electrical engineer",
+            "output": [
+                "September 9, 1966"
+            ]
+        },
+        {
+            "input": "Walker was born on September 12, 1973 in Glendale, California",
+            "output": [
+                "September 12, 1973"
+            ]
+        },
+        {
+            "input": "Pitt was born on December 18, 1963, in Shawnee, Oklahoma, to William Alvin Pitt, the proprietor of a trucking company, and Jane Etta (née Hillhouse), a school counselor",
+            "output": [
+                "December 18, 1963"
+            ]
+        },
+        {
+            "input": "Amy Lou Adams was born on August 20, 1974, to American parents Richard and Kathryn Adams, when her father was stationed with the United States Army at the Caserma Ederle military complex in Vicenza, Italy",
+            "output": [
+                "August 20, 1974"
+            ]
+        },
+        {
+            "input": "Jovovich was born on December 17, 1975, in Kyiv, Ukrainian SSR, the daughter of Galina (née Loginova), a Soviet Russian actress, and Bogdan Jovović, a Serbian doctor",
+            "output": [
+                "December 17, 1975"
+            ]
+        },
+        {
+            "input": "Edward Harrison Norton was born into a progressive Episcopalian family in Boston, Massachusetts, on August 18, 1969",
+            "output": [
+                "August 18, 1969"
+            ]
+        },
+        {
+            "input": "Moore was born Julie Anne Smith on December 3, 1960, at the Fort Bragg army installation in North Carolina, the oldest of three siblings",
+            "output": [
+                "December 3, 1960,"
+            ]
+        },
+        {
+            "input": "Lilly was born in Fort Saskatchewan in Alberta on 3 August 1979",
+            "output": [
+                "3 August 1979"
+            ]
+        },
+        {
+            "input": "Forest Steven Whitaker was born on July 15, 1961, in Longview, Texas, the son of Laura Francis (née Smith), a special education teacher who put herself through college and earned two master's degrees while raising her children, and Forest E",
+            "output": [
+                "July 15, 1961"
+            ]
+        },
+        {
+            "input": "Benjamin Edward Meara Stiller was born on November 30, 1965, in New York City and raised on the Upper West Side",
+            "output": [
+                "November 30, 1965"
+            ]
+        },
+        {
+            "input": "William John Neeson was born on 7 June 1952 in Ballymena, County Antrim, the son of cook Katherine \"Kitty\" Neeson (née Brown) and primary school caretaker Bernard \"Barney\" Neeson",
+            "output": [
+                "7 June 1952"
+            ]
+        },
+        {
+            "input": "Susan Alexandra Weaver was born in New York City on October 8, 1949",
+            "output": [
+                "October 8, 1949"
+            ]
+        },
+        {
+            "input": "Michael Sylvester Gardenzio Stallone was born in the Hell's Kitchen neighborhood of Manhattan, New York City on July 6, 1946, the elder son of Francesco \"Frank\" Stallone Sr",
+            "output": [
+                "July 6, 1946"
+            ]
+        },
+        {
+            "input": "Mirren was born Helen Lydia Mironoff at Queen Charlotte's and Chelsea Hospital in the Hammersmith district of London on 26 July 1945, to an English mother and Russian father",
+            "output": [
+                "26 July 1945"
+            ]
+        },
+        {
+            "input": "Christopher Michael Pratt was born on June 21, 1979, in Virginia, Minnesota, the youngest child of Kathleen Louise (née Indahl), who worked at a Safeway supermarket, and Daniel Clifton Pratt, who worked in mining and later remodeling houses",
+            "output": [
+                "June 21, 1979"
+            ]
+        },
+        {
+            "input": "Law was born on 29 December 1972 in Lewisham, South London, the second child of junior and later on, comprehensive school teachers Margaret Anne Heyworth and Peter Robert Law; his father later became, according to Law, \"the youngest headmaster in London\"",
+            "output": [
+                "29 December 1972"
+            ]
+        },
+        {
+            "input": "Matthew David McConaughey was born on November 4, 1969, in Uvalde, Texas",
+            "output": [
+                "November 4, 1969"
+            ]
+        },
+        {
+            "input": "Richard Tiffany Gere was born in Philadelphia on August 31, 1949, the eldest son and second child of housewife Doris Ann (née Tiffany; 1924–2016) and NMIC insurance agent Homer George Gere (born 1922)",
+            "output": [
+                "August 31, 1949"
+            ]
+        },
+        {
+            "input": "Kirsten Caroline Dunst was born on April 30, 1982, at Point Pleasant Hospital in Point Pleasant, New Jersey",
+            "output": [
+                "April 30, 1982,"
+            ]
+        },
+        {
+            "input": "Rami Said Malek was born in Torrance, California, on May 12, 1981, the son of Egyptian immigrant parents Nelly Abdel-Malek and Said Malek",
+            "output": [
+                "May 12, 1981"
+            ]
+        },
+        {
+            "input": "Shia Saide LaBeouf was born on June 11, 1986, in Los Angeles, California, the only child of Shayna (née Saide) and Jeffrey Craig LaBeouf",
+            "output": [
+                "June 11, 1986"
+            ]
+        },
+        {
+            "input": "Megan Denise Fox was born on May 16, 1986 in Oak Ridge, Tennessee, to parents Gloria Darlene (née Cisson) and Franklin Thomas Fox",
+            "output": [
+                "May 16, 1986"
+            ]
+        },
+        {
+            "input": "Saldaña was born on June 19, 1978, in Passaic, New Jersey",
+            "output": [
+                "June 19, 1978"
+            ]
+        },
+        {
+            "input": "Kristen Jaymes Stewart was born on April 9, 1990, in Los Angeles, California, to entertainment industry workers",
+            "output": [
+                "April 9, 1990"
+            ]
+        },
+        {
+            "input": "Diesel was born Mark Sinclair on July 18, 1967, in Alameda County, California, where his mother was also born, though later moved to New York City with his fraternal twin brother, Paul",
+            "output": [
+                "July 18, 1967"
+            ]
+        },
+        {
+            "input": "Jones was born on September 15, 1946, in San Saba, Texas",
+            "output": [
+                "September 15, 1946"
+            ]
+        },
+        {
+            "input": "Justin Randall Timberlake was born on January 31, 1981 in Memphis, Tennessee, the son of Janet Lynn (Bomar) Harless and Charles Randall Timberlake, a Baptist church choir director",
+            "output": [
+                "January 31, 1981"
+            ]
+        },
+        {
+            "input": "Keanu Charles Reeves was born in Beirut, Lebanon, on September 2, 1964, the son of Patricia (née Taylor), a costume designer and performer, and Samuel Nowlin Reeves Jr",
+            "output": [
+                "September 2, 1964"
+            ]
+        },
+        {
+            "input": "Fassbender was born in Heidelberg on 2 April 1977, the son of Northern Irish mother Adele (from Larne) and German father Josef Fassbender",
+            "output": [
+                "2 April 1977"
+            ]
+        },
+        {
+            "input": "Leonard Simon Nimoy was born on March 26, 1931, in the West End of Boston, Massachusetts, United States to Jewish immigrants from Iziaslav (in present-day Ukraine)",
+            "output": [
+                "March 26, 1931"
+            ]
+        },
+        {
+            "input": "Dormer was born in Reading, Berkshire, England, on 11 February 1982, daughter of Gary Dormer and wife Claire Richards and sister of Mark Dormer and Samantha Dormer",
+            "output": [
+                "11 February 1982"
+            ]
+        },
+        {
+            "input": "Thomas Jacob Black was born in Santa Monica, California, on August 28, 1969, the son of satellite engineers Thomas William Black and Judith Love Cohen",
+            "output": [
+                "August 28, 1969"
+            ]
+        },
+        {
+            "input": "Aniston was born on February 11, 1969, in the Sherman Oaks neighborhood of Los Angeles to Greek-born actor John Aniston and actress Nancy Dow",
+            "output": [
+                "February 11, 1969"
+            ]
+        },
+        {
+            "input": "Steven Allan Spielberg was born on December 18, 1946 in Cincinnati, Ohio",
+            "output": [
+                "December 18, 1946"
+            ]
+        },
+        {
+            "input": "Selma Blair Beitner was born on June 23, 1972, in Southfield, Michigan, a suburb of Detroit",
+            "output": [
+                "June 23, 1972"
+            ]
+        },
+        {
+            "input": "Eastwood was born on May 31, 1930, at Saint Francis Memorial Hospital in San Francisco, California, to Ruth (née Runner; 1909–2006) and Clinton Eastwood (1906–1970)",
+            "output": [
+                "May 31, 1930,"
+            ]
+        },
+        {
+            "input": "Winona Laura Horowitz was born on October 29, 1971, in Winona, Minnesota, to Cynthia Palmer (née Istas) and Michael D",
+            "output": [
+                "October 29, 1971"
+            ]
+        },
+        {
+            "input": "Brosnan was born on 16 May 1953 at Our Lady of Lourdes Hospital in Drogheda, County Louth, the only child of May (née Smith) and carpenter Thomas Brosnan",
+            "output": [
+                "16 May 1953"
+            ]
+        },
+        {
+            "input": "Morgan Freeman was born on June 1, 1937, in Memphis, Tennessee",
+            "output": [
+                "June 1, 1937"
+            ]
+        },
+        {
+            "input": "Walter Bruce Willis was born in Idar-Oberstein, West Germany, on March 19, 1955",
+            "output": [
+                "March 19, 1955"
+            ]
+        },
+        {
+            "input": "Thomas Connery was born at the Royal Maternity Hospital in Edinburgh, Scotland on 25 August 1930; he was named after his paternal grandfather",
+            "output": [
+                "25 August 1930"
+            ]
+        },
+        {
+            "input": "Daniel Jacob Radcliffe was born at Queen Charlotte's and Chelsea Hospital in the Hammersmith district of London on 23 July 1989, the only child of Marcia Jeannine Gresham (née Jacobson) and literary agent Alan George Radcliffe",
+            "output": [
+                "23 July 1989"
+            ]
+        },
+        {
+            "input": "Cotillard was born on 30 September 1975 in Paris and grew up around Orléans in an artistically inclined household",
+            "output": [
+                "30 September 1975"
+            ]
+        },
+        {
+            "input": "Hoffman was born on July 23, 1967, in the Rochester suburb of Fairport, New York",
+            "output": [
+                "July 23, 1967"
+            ]
+        },
+        {
+            "input": "Paul Edward Valentine Giamatti was born June 6, 1967, in New Haven, Connecticut, the youngest of three children",
+            "output": [
+                "June 6, 1967"
+            ]
+        },
+        {
+            "input": "Faris was born on November 29, 1976, in Baltimore, Maryland, the second child of Jack, a sociology professor, and Karen Faris, a special education teacher",
+            "output": [
+                "November 29, 1976"
+            ]
+        },
+        {
+            "input": "Bullock was born on July 26, 1964, in the Washington, DC.",
+            "output": [
+                "July 26, 1964"
+            ]
+        },
+        {
+            "input": "Catherine Elise Blanchett was born on 14 May 1969 in the Ivanhoe suburb of Melbourne",
+            "output": [
+                "14 May 1969"
+            ]
+        },
+        {
+            "input": "Hurt was born John Vincent Hurt on 22 January 1940 in Chesterfield, Derbyshire, the son of Phyllis (née Massey; 1907–1975), an engineer and one-time actress, and Arnold Herbert Hurt (1904–1999), a mathematician who became a Church of England clergyman and served as vicar of Holy Trinity Church in Shirebrook, Derbyshire",
+            "output": [
+                "22 January 1940"
+            ]
+        },
+        {
+            "input": "Nolte was born on February 8, 1941, in Omaha, Nebraska",
+            "output": [
+                "February 8, 1941"
+            ]
+        },
+        {
+            "input": "Anne Jacqueline Hathaway was born on November 12, 1982, in the Brooklyn borough of New York City",
+            "output": [
+                "November 12, 1982"
+            ]
+        },
+        {
+            "input": "Clooney was born on May 6, 1961 in Lexington, Kentucky",
+            "output": [
+                "May 6, 1961"
+            ]
+        },
+        {
+            "input": "Malkovich was born in Christopher, Illinois, on December 9, 1953",
+            "output": [
+                "December 9, 1953"
+            ]
+        },
+        {
+            "input": "Lane was born January 22, 1965, in New York City",
+            "output": [
+                "January 22, 1965"
+            ]
+        },
+        {
+            "input": "Angelina Jolie Voight was born on June 4, 1975, in Los Angeles, California, to actors Jon Voight and Marcheline Bertrand",
+            "output": [
+                "June 4, 1975"
+            ]
+        },
+        {
+            "input": "Nicole Mary Kidman was born on 20 June 1967 in Honolulu, Hawaii, while her Australian parents were temporarily in the United States on student visas",
+            "output": [
+                "20 June 1967"
+            ]
+        },
+        {
+            "input": "Colin James Farrell was born in the Castleknock suburb of Dublin on 31 May 1976, the son of Rita (née Monaghan) and Eamon Farrell",
+            "output": [
+                "31 May 1976"
+            ]
+        },
+        {
+            "input": "Kate Elizabeth Winslet was born on 5 October 1975 in Reading, Berkshire to Sally Anne (née Bridges) and Roger John Winslet",
+            "output": [
+                "5 October 1975"
+            ]
+        },
+        {
+            "input": "Carmen Electra was born Tara Leigh Patrick on April 20, 1972, in Sharonville, Ohio, to Harry Patrick, a guitarist and entertainer, and his wife Patricia (d",
+            "output": [
+                "April 20, 1972"
+            ]
+        },
+        {
+            "input": "Natalie Herschlag was born on June 9, 1981, in Jerusalem, to parents of Ashkenazi Jewish descent",
+            "output": [
+                "June 9, 1981"
+            ]
+        },
+        {
+            "input": "Emily Jean Stone was born on November 6, 1988, in Scottsdale, Arizona, to Jeffrey Charles Stone, the founder and CEO of a general-contracting company, and Krista Jean Stone (née Yeager), a homemaker",
+            "output": [
+                "November 6, 1988"
+            ]
+        },
+        {
+            "input": "Shaun Mark Bean was born on 17 April 1959 in Handsworth, a suburb of Sheffield, the son of Rita (née Tuckwood) and Brian K",
+            "output": [
+                "17 April 1959"
+            ]
+        },
+        {
+            "input": "Ryan Rodney Reynolds was born on October 23, 1976, in Vancouver, British Columbia",
+            "output": [
+                "October 23, 1976"
+            ]
+        },
+        {
+            "input": "Ryan Thomas Gosling was born on November 12, 1980, in London, Ontario, to Thomas Ray Gosling, a traveling salesman for a paper mill, and Donna, a secretary",
+            "output": [
+                "November 12, 1980"
+            ]
+        },
+        {
+            "input": "Harrison Ford was born at the Swedish Covenant Hospital in Chicago, Illinois, on July 13, 1942, to former radio actress Dorothy (née Nidelman) and advertising executive and former actor John William \"Christopher\" Ford",
+            "output": [
+                "July 13, 1942"
+            ]
+        },
+        {
+            "input": "Wilde was born Olivia Jane Cockburn in New York City on March 10, 1984",
+            "output": [
+                "March 10, 1984"
+            ]
+        },
+        {
+            "input": "Benjamin Géza Affleck-Boldt was born on August 15, 1972, in Berkeley, California",
+            "output": [
+                "August 15, 1972"
+            ]
+        },
+        {
+            "input": "Tara Johanna Elders was born on 17 January 1980 in Amsterdam in the Netherlands",
+            "output": [
+                "17 January 1980"
+            ]
+        },
+        {
+            "input": "Alfredo James Pacino was born in the East Harlem neighborhood of New York City on April 25, 1940",
+            "output": [
+                "April 25, 1940"
+            ]
+        },
+        {
+            "input": "Milena Markovna Kunis was born on August 14, 1983, in Chernivtsi, Ukrainian SSR, in the Soviet Union",
+            "output": [
+                "August 14, 1983"
+            ]
+        },
+        {
+            "input": "Edward John David Redmayne was born on 6 January 1982 in Westminster in London",
+            "output": [
+                "6 January 1982"
+            ]
+        },
+        {
+            "input": "Gerard James Butler was born on 13 November 1969 in Paisley, Renfrewshire, Scotland, the youngest of three children of Margaret and Edward Butler, a bookmaker",
+            "output": [
+                "13 November 1969"
+            ]
+        },
+        {
+            "input": "Amanda Michelle Seyfried was born on December 3, 1985, in Allentown, Pennsylvania",
+            "output": [
+                "December 3, 1985"
+            ]
+        },
+        {
+            "input": "Lena Kathren Headey was born in Hamilton on the island of Bermuda on 3 October 1973, the daughter of English parents Sue and John Headey",
+            "output": [
+                "3 October 1973"
+            ]
+        },
+        {
+            "input": "Wiig was born on August 22, 1973, in Canandaigua, New York, the daughter of Jon Wiig, who ran a lake marina in Western New York, and Laurie (née Johnston), an artist",
+            "output": [
+                "August 22, 1973"
+            ]
+        },
+        {
+            "input": "Born on 1 July 1985, Seydoux is the daughter of businessman Henri Jérôme Seydoux-Fornier de Clausonne and Valérie Schlumberger",
+            "output": [
+                "1 July 1985"
+            ]
+        },
+        {
+            "input": "Yelchin was born on March 11, 1989, in Leningrad, Russian SFSR, Soviet Union (now Saint Petersburg, Russia)",
+            "output": [
+                "March 11, 1989"
+            ]
+        },
+        {
+            "input": "Peter Hayden Dinklage was born on June 11, 1969, in Morristown, New Jersey, to John Carl Dinklage, an insurance salesman, and Diane Dinklage, an elementary-school music teacher",
+            "output": [
+                "June 11, 1969"
+            ]
+        },
+        {
+            "input": "Bloom was born on 13 January 1977 in Canterbury, Kent, and was named after the 16th-century English composer Orlando Gibbons",
+            "output": [
+                "13 January 1977"
+            ]
+        },
+        {
+            "input": "Hopper was born on May 17, 1936, in Dodge City, Kansas, the son of Marjorie Mae (née Davis; July 12, 1917 – January 12, 2007) and James Millard Hopper (June 23, 1916 – August 7, 1982)",
+            "output": [
+                "May 17, 1936"
+            ]
+        },
+        {
+            "input": "Daniel Wroughton Craig was born in Chester on 2 March 1968, the son of Carol Olivia (née Williams), an art teacher, and Timothy John Wroughton Craig (1943–2020), a midshipman in the Merchant Navy and steel erector",
+            "output": [
+                "2 March 1968"
+            ]
+        },
+        {
+            "input": "Van Damme was born Jean-Claude Camille François Van Varenberg, on 18 October 1960, in Berchem-Sainte-Agathe, Brussels, Belgium, the son of Eliana and Eugène Van Varenberg, who was an accountant and florist",
+            "output": [
+                "18 October 1960"
+            ]
+        },
+        {
+            "input": "Strong was born in the Islington district of London on 5 August 1963, the son of an Austrian mother and Italian father",
+            "output": [
+                "5 August 1963"
+            ]
+        },
+        {
+            "input": "Roberts was born on October 28, 1967, in Smyrna, Georgia, a suburb of Atlanta, to Betty Lou Bredemus (1934–2015) and Walter Grady Roberts (1933–1977)",
+            "output": [
+                "October 28, 1967"
+            ]
+        },
+        {
+            "input": "Edward Furlong was born August 2, 1977 in Glendale, California, the son of Eleanor Torres (née Tafoya), a youth-center worker and Heinrich Bruno Wittig",
+            "output": [
+                "August 2, 1977"
+            ]
+        },
+        {
+            "input": "Leonardo Wilhelm DiCaprio was born on November 11, 1974, in Los Angeles, California, the only child of Irmelin (née Indenbirken), a legal secretary, and George DiCaprio, an underground comix writer, publisher, and distributor of comic books",
+            "output": [
+                "November 11, 1974"
+            ]
+        },
+        {
+            "input": "Jessica Marie Alba was born in Pomona, California, on April 28, 1981, to Catherine Louisa (née Jensen) and Mark David Alba",
+            "output": [
+                "April 28, 1981"
+            ]
+        },
+        {
+            "input": "Pine was born on August 26, 1980, in Los Angeles, California",
+            "output": [
+                "August 26, 1980"
+            ]
+        },
+        {
+            "input": "Emma Charlotte Duerre Watson was born on 15 April 1990 in Paris, to English lawyers Chris Watson and Jacqueline Luesby",
+            "output": [
+                "15 April 1990"
+            ]
+        },
+        {
+            "input": "Jonathan Vincent Voight was born on December 29, 1938, in Yonkers, New York, to Barbara (née Kamp) and Elmer Voight (Elemír Vojtka, Slovakia), a professional golfer",
+            "output": [
+                "December 29, 1938"
+            ]
+        },
+        {
+            "input": "Cameron Michelle Diaz was born August 30, 1972, in San Diego, California to Billie (née Early), an import/export agent, and Emilio Diaz, a foreman of the California oil company Unocal",
+            "output": [
+                "August 30, 1972"
+            ]
+        },
+        {
+            "input": "Mendes was born on March 5, 1974, in Miami, Florida, to Cuban parents Eva Pérez Suárez and Juan Carlos Méndez, and was raised by her mother in the Los Angeles neighborhood of Silver Lake, after her parents' divorce",
+            "output": [
+                "March 5, 1974"
+            ]
+        },
+        {
+            "input": "Emily Olivia Leah Blunt was born on 23 February 1983 in the London Borough of Wandsworth, the second of four children born to Joanna, a former actress and teacher, and barrister Oliver Blunt, QC",
+            "output": [
+                "23 February 1983"
+            ]
+        },
+        {
+            "input": "Fiennes was born in Ipswich, England on 22 December 1962",
+            "output": [
+                "22 December 1962"
+            ]
+        },
+        {
+            "input": "Joaquin Rafael Bottom was born on October 28, 1974, in the Río Piedras district of San Juan, Puerto Rico, to John Lee Bottom, the founder of a landscape gardening company, and Arlyn \"Heart\" Bottom (née Dunetz), a secretary at NBC",
+            "output": [
+                "October 28, 1974"
+            ]
+        },
+        {
+            "input": "Jennifer Shrader Lawrence was born on August 15, 1990, in Indian Hills, Kentucky, to Gary, a construction company owner, and Karen (née Koch), a summer camp manager",
+            "output": [
+                "August 15, 1990"
+            ]
+        },
+        {
+            "input": "Kate Rooney Mara was born on February 27, 1983, in Bedford, New York",
+            "output": [
+                "February 27, 1983"
+            ]
+        },
+        {
+            "input": "Nicholas Caradoc Hoult was born on 7 December 1989 in Wokingham, Berkshire, to Glenis (née Brown), a piano teacher, and Roger Hoult, a pilot",
+            "output": [
+                "7 December 1989"
+            ]
+        },
+        {
+            "input": "Chan was born on 7 April 1954 in Hong Kong as Chan Kong-sang (Chinese: 陳港生; lit",
+            "output": [
+                "7 April 1954"
+            ]
+        },
+        {
+            "input": "Jessica Michelle Chastain was born on March 24, 1977, in Sacramento, California, to Jerri Renee Hastey (née Chastain) and rock musician Michael Monasterio",
+            "output": [
+                "March 24, 1977"
+            ]
+        },
+        {
+            "input": "Clive Owen was born on 3 October 1964 in Keresley, Coventry (then in Warwickshire), the fourth of five sons born to Pamela (née Cotton) and Jess Owen",
+            "output": [
+                "3 October 1964"
+            ]
+        },
+        {
+            "input": "D'Onofrio was born on June 30, 1959, in Bensonhurst, Brooklyn, New York City, New York",
+            "output": [
+                "June 30, 1959"
+            ]
+        },
+        {
+            "input": "Bryan Lee Cranston was born on March 7, 1956, in Hollywood, Los Angeles, California, the second of three children born to Annalisa (née Sell; 1923–2004), a radio actress, and Joseph Louis Cranston (1924–2014), an actor and former amateur boxer",
+            "output": [
+                "March 7, 1956"
+            ]
+        },
+        {
+            "input": "Borgnine was born Ermes Effron Borgnino (Italian: [borˈɲiːno]) on January 24, 1917, in Hamden, Connecticut, the son of Italian immigrants",
+            "output": [
+                "January 24, 1917"
+            ]
+        },
+        {
+            "input": "Woodrow Tracy Harrelson was born in Midland, Texas, on July 23, 1961, the son of secretary Diane (née Oswald) and convicted hitman Charles Voyde Harrelson",
+            "output": [
+                "July 23, 1961"
+            ]
+        },
+        {
+            "input": "Bell was born on July 18, 1980, in Huntington Woods, Michigan, a suburb of Detroit, where she was raised",
+            "output": [
+                "July 18, 1980"
+            ]
+        },
+        {
+            "input": "Claudia Cardinale was born Claude Joséphine Rose Cardinale in La Goulette, a neighbourhood of Tunis, French protectorate of Tunisia, on 15 April 1938",
+            "output": [
+                "15 April 1938"
+            ]
+        },
+        {
+            "input": "Tarantino was born on March 27, 1963, in Knoxville, Tennessee, the only child of Connie McHugh and aspiring actor Tony Tarantino, who left the family before his son's birth",
+            "output": [
+                "March 27, 1963"
+            ]
+        },
+        {
+            "input": "Egerton was born on 10 November 1989 in Birkenhead, Merseyside",
+            "output": [
+                "10 November 1989"
+            ]
+        },
+        {
+            "input": "Luke George Evans was born on Easter Sunday, 15 April 1979, in Pontypool, and brought up in Aberbargoed, a small village in the Rhymney Valley, Wales, the only child of Yvonne and David Evans",
+            "output": [
+                "Sunday, 15 April 1979"
+            ]
+        },
+        {
+            "input": "Hall was born on 3 May 1982 in London, the daughter of American opera singer Maria Ewing and English stage director and Royal Shakespeare Company founder Peter Hall",
+            "output": [
+                "3 May 1982"
+            ]
+        },
+        {
+            "input": "Mortensen was born in Watertown, New York, on October 20, 1958, the son of Grace Gamble (née Atkinson; July 8, 1928 – April 25, 2015) and Viggo Peter Mortensen Sr",
+            "output": [
+                "October 20, 1958"
+            ]
+        },
+        {
+            "input": "Naomi Ellen Watts was born on 28 September 1968, in Shoreham, Kent, England",
+            "output": [
+                "28 September 1968"
+            ]
+        },
+        {
+            "input": "Ice Cube was born on June 15, 1969, in Los Angeles, to Doris, a hospital clerk and custodian, and Hosea Jackson, a machinist and UCLA groundskeeper",
+            "output": [
+                "June 15, 1969"
+            ]
+        },
+        {
+            "input": "Uma Karuna Thurman was born on April 29, 1970, in Boston, Massachusetts",
+            "output": [
+                "April 29, 1970"
+            ]
+        },
+        {
+            "input": "Scodelario was born Kaya Rose Humphrey on 13 March 1992 in Haywards Heath, West Sussex, England",
+            "output": [
+                "13 March 1992"
+            ]
+        },
+        {
+            "input": "Ferrell was born on July 16, 1967 in Irvine, California, to Betty Kay (née Overman; born 1940), a teacher who taught at Old Mill School elementary school and Santa Ana College and Roy Lee Ferrell Jr",
+            "output": [
+                "July 16, 1967"
+            ]
+        },
+        {
+            "input": "Seth Aaron Rogen was born on April 15, 1982 in Vancouver, British Columbia to a Jewish family of Ukrainian and Russian origin",
+            "output": [
+                "April 15, 1982"
+            ]
+        },
+        {
+            "input": "Leguizamo was born in Bogotá, Colombia on July 22, 1964, to Alberto and Luz Leguizamo",
+            "output": [
+                "July 22, 1964"
+            ]
+        },
+        {
+            "input": "Gruffudd was born on 6 October 1973 in Aberdare, the eldest of three siblings",
+            "output": [
+                "6 October 1973"
+            ]
+        },
+        {
+            "input": "Gainsbourg was born on 21 July 1971 in London, to English actress and singer Jane Birkin and French actor and singer-songwriter Serge Gainsbourg",
+            "output": [
+                "21 July 1971"
+            ]
+        },
+        {
+            "input": "Viola Davis was born on August 11, 1965.",
+            "output": [
+                "August 11, 1965"
+            ]
+        },
+        {
+            "input": "Eric Marlon Bishop was born in Terrell, Texas, on December 13, 1967",
+            "output": [
+                "December 13, 1967"
+            ]
+        },
+        {
+            "input": "Cara Jocelyn Delevingne was born on 12 August 1992, in Hammersmith, London, the daughter of Pandora Anne Delevigne (née Stevens) and property developer Charles Hamar Delevingne",
+            "output": [
+                "12 August 1992"
+            ]
+        },
+        {
+            "input": "Gandolfini was born in Westwood, New Jersey on September 18, 1961",
+            "output": [
+                "September 18, 1961"
+            ]
+        },
+        {
+            "input": "James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, the son of Philip Cameron, an electrical engineer, and Shirley (née Lowe), an artist and nurse",
+            "output": [
+                "August 16, 1954"
+            ]
+        },
+        {
+            "input": "Hill was born on December 20, 1983, in Los Angeles, California, to Sharon Lyn (née Chalkin), a costume designer and fashion stylist, and Richard Feldstein, a tour accountant for Guns N' Roses",
+            "output": [
+                "December 20, 1983"
+            ]
+        },
+        {
+            "input": "Kellan Christopher Lutz was born on March 15, 1985, in Dickinson, North Dakota, the son of Karla (née Theesfeld; b",
+            "output": [
+                "March 15, 1985"
+            ]
+        },
+        {
+            "input": "McKellen was born on 25 May 1939 in Burnley, Lancashire, the son of Margery Lois (née Sutcliffe) and Denis Murray McKellen",
+            "output": [
+                "25 May 1939"
+            ]
+        },
+        {
+            "input": "Garrett John Hedlund was born on September 3, 1984, in Roseau, Minnesota, to Kristine Anne (née Yanish) and Robert Martin Hedlund",
+            "output": [
+                "September 3, 1984"
+            ]
+        },
+        {
+            "input": "Wood was born in Cedar Rapids, Iowa, on January 28, 1981, the second of three children born to Debbie (née Krause) and Warren Wood, who operated a delicatessen together",
+            "output": [
+                "January 28, 1981"
+            ]
+        },
+        {
+            "input": "Eva Gaëlle Green was born two minutes earlier than her fraternal twin sister, Joy, on 6 July 1980",
+            "output": [
+                "6 July 1980"
+            ]
+        },
+        {
+            "input": "Thompson was born on May 31, 1961 in Rochester, Minnesota, one of five children of Clifford and Barbara Barry Thompson, a musician",
+            "output": [
+                "May 31, 1961"
+            ]
+        },
+        {
+            "input": "Tweed was born on March 10, 1957 in Placentia, Newfoundland",
+            "output": [
+                "March 10, 1957"
+            ]
+        },
+        {
+            "input": "Hayley Elizabeth Atwell was born on 5 April 1982 in London, an only child",
+            "output": [
+                "5 April 1982"
+            ]
+        },
+        {
+            "input": "George Raymond Stevenson was born in Lisburn on 25 May 1964, the second of three sons born to Irish parents",
+            "output": [
+                "25 May 1964"
+            ]
+        },
+        {
+            "input": "Gwyneth Kate Paltrow was born on September 27, 1972, in Los Angeles, to actress Blythe Danner and film producer-director Bruce Paltrow",
+            "output": [
+                "September 27, 1972"
+            ]
+        },
+        {
+            "input": "Raymond Allen Liotta was born in Newark, New Jersey, on December 18, 1954",
+            "output": [
+                "December 18, 1954"
+            ]
+        },
+        {
+            "input": "Lloyd was born on October 22, 1938, in Stamford, Connecticut, the son of Ruth Lloyd (née Lapham; 1896–1984), a singer and sister of San Francisco mayor Roger Lapham, and her lawyer husband Samuel R",
+            "output": [
+                "October 22, 1938"
+            ]
+        },
+        {
+            "input": "Welch was born as Jo Raquel Tejada on September 5, 1940 in Chicago, Illinois",
+            "output": [
+                "September 5, 1940"
+            ]
+        },
+        {
+            "input": "Foster was born on November 19, 1962 in Los Angeles, the youngest child of Evelyn Ella (\"Brandy\"; née Almond) and Lucius Fisher Foster III",
+            "output": [
+                "November 19, 1962"
+            ]
+        },
+        {
+            "input": "Grier was born on May 26, 1949, in Winston-Salem, North Carolina, the daughter of Gwendolyn Sylvia (née Samuels), a homemaker and nurse, and Clarence Ransom Grier, Jr",
+            "output": [
+                "May 26, 1949"
+            ]
+        },
+        {
+            "input": "Kim Victoria Cattrall was born on 21 August 1956 in the Mossley Hill district of Liverpool, the daughter of secretary Gladys Shane (née Baugh) and construction engineer Dennis Cattrall",
+            "output": [
+                "21 August 1956"
+            ]
+        },
+        {
+            "input": "Damon was born in Cambridge, Massachusetts, on October 8, 1970, the second son of Kent Telfer Damon (1942–2017), a stockbroker, and Nancy Carlsson-Paige.",
+            "output": [
+                "October 8, 1970"
+            ]
+        },
+        {
+            "input": "Aaron Paul Sturtevant was born in Emmett, Idaho, on August 27, 1979, the youngest of four children born to Darla (née Haynes) and Baptist minister Robert Sturtevant",
+            "output": [
+                "August 27, 1979"
+            ]
+        },
+        {
+            "input": "John Charles Carter was born on October 4, 1923, in Wilmette, Illinois, to Lilla (née Baines; 1899–1994) and Russell Whitford Carter (1897–1966), a sawmill operator",
+            "output": [
+                "October 4, 1923"
+            ]
+        },
+        {
+            "input": "Flanagan was born in Conant Gardens, Detroit, Michigan, on March 16, 1930",
+            "output": [
+                "March 16, 1930"
+            ]
+        },
+        {
+            "input": "Nicholson was born on April 22, 1937, in Neptune City, New Jersey, the son of a showgirl, June Frances Nicholson (stage name June Nilson; 1918–1963)",
+            "output": [
+                "April 22, 1937"
+            ]
+        },
+        {
+            "input": "Sagal was born on January 19, 1954, in Los Angeles, California, to a show business family with five children",
+            "output": [
+                "January 19, 1954"
+            ]
+        },
+        {
+            "input": "Julia Elizabeth Wells was born on 1 October 1935 in Walton-on-Thames, Surrey, England",
+            "output": [
+                "1 October 1935"
+            ]
+        },
+        {
+            "input": "Harring was born in Los Mochis, Sinaloa, Mexico on March 3, 1964",
+            "output": [
+                "March 3, 1964"
+            ]
+        },
+        {
+            "input": "Bridges was born on December 9, 1941 in Los Angeles, California, the son of actors Lloyd Bridges (1913–1998) and Dorothy Bridges (née Simpson; 1915–2009)",
+            "output": [
+                "December 9, 1941"
+            ]
+        },
+        {
+            "input": "Spader was born on February 7, 1960 in Boston, Massachusetts, and is the youngest of three children",
+            "output": [
+                "February 7, 1960"
+            ]
+        },
+        {
+            "input": "Sacha Noam Baron Cohen was born in the Hammersmith area of London on 13 October 1971, the son of Jewish parents",
+            "output": [
+                "13 October 1971"
+            ]
+        },
+        {
+            "input": "Rai was born on 1 November 1973 into a Tulu-speaking Bunt family in Mangalore, Karnataka",
+            "output": [
+                "1 November 1973"
+            ]
+        },
+        {
+            "input": "Catherine Zeta-Jones was born on 25 September 1969 in Swansea, Wales, to David Jones, the owner of a sweet factory, and his wife Patricia (née Fair), a seamstress",
+            "output": [
+                "25 September 1969"
+            ]
+        },
+        {
+            "input": "Paul John McGann was born in Liverpool on 14 November 1959, into a Roman Catholic family of Irish origin",
+            "output": [
+                "14 November 1959"
+            ]
+        },
+        {
+            "input": "McAvoy was born on 21 April 1979 in Glasgow, to bus-driver-turned-builder James McAvoy Sr",
+            "output": [
+                "21 April 1979"
+            ]
+        },
+        {
+            "input": "Christina Rene Hendricks was born on May 3, 1975, in Knoxville, Tennessee, the second child of American mother Jackie Sue Hendricks (née Raymond), a psychologist, and English father Robert Hendricks, a Forest Service employee originally from Birmingham",
+            "output": [
+                "May 3, 1975"
+            ]
+        },
+        {
+            "input": "Wright was born April 8, 1966, in Dallas to Gayle, a cosmetics saleswoman for Mary Kay, and Fred Wright, a pharmaceutical company employee",
+            "output": [
+                "April 8, 1966"
+            ]
+        },
+        {
+            "input": "Born Ha Lingchun (Chinese: 夏令震) in Hong Kong in 1957, he was the fifth child in a family of eight children",
+            "output": [
+                "1957"
+            ]
+        },
+        {
+            "input": "She was born 17 November 1966 in Paris, the second child of Simone (née Morisset), a shop assistant (d",
+            "output": [
+                "17 November 1966"
+            ]
+        },
+        {
+            "input": "Page was born on February 21, 1987, in Halifax, Nova Scotia, to Martha Philpotts, a teacher, and Dennis Page, a graphic designer",
+            "output": [
+                "February 21, 1987"
+            ]
+        },
+        {
+            "input": "Hans Lundgren was born on 3 November 1957 in Spånga, the son of Sigrid Birgitta (née Tjerneld; 1932–1992), a language teacher, and Karl Hugo Johan Lundgren (1923–2000), an engineer (M",
+            "output": [
+                "3 November 1957"
+            ]
+        },
+        {
+            "input": "Howard was born in Chicago, Illinois, on March 11, 1969, to Tyrone and Anita (née Williams) Howard, both of whom were biracial, with African and Anglo ancestry",
+            "output": [
+                "March 11, 1969"
+            ]
+        },
+        {
+            "input": "She was born on August 10, 1972, in Highland Park, Texas, the daughter of Daphne Demar (née Caravageli) and Lawrence Paul \"Larry\" Harmon, a hospital information network executive in Dallas, Texas",
+            "output": [
+                "August 10, 1972"
+            ]
+        },
+        {
+            "input": "Walken was born Ronald Walken on March 31, 1943, in Astoria, Queens, New York, the son of Rosalie Russell (May 16, 1907 – March 26, 2010), a Scottish immigrant from Glasgow, and Paul Wälken (October 5, 1903 – February 23, 2001), a German immigrant from Gelsenkirchen who owned and operated Walken's Bakery in Astoria",
+            "output": [
+                "March 31, 1943"
+            ]
+        },
+        {
+            "input": "McDowell was born Malcolm John Taylor on 13 June 1943 in Horsforth, West Riding of Yorkshire, the son of hotelier Edna (née McDowell) and RAF officer (and later pub owner) Charles Taylor",
+            "output": [
+                "13 June 1943"
+            ]
+        },
+        {
+            "input": "Keira Christina Knightley was born on 26 March 1985 in the Teddington suburb of London, to stage actors Will Knightley and Sharman Macdonald",
+            "output": [
+                "26 March 1985"
+            ]
+        },
+        {
+            "input": "Cooper was born on January 5, 1975, in Abington Township, near Philadelphia, and grew up in the nearby communities of Jenkintown and Rydal",
+            "output": [
+                "January 5, 1975"
+            ]
+        },
+        {
+            "input": "Mikkelsen was born on 22 November 1965 in the Østerbro district of Copenhagen, Denmark, the son of mother Bente Christiansen and father Henning Mikkelsen, a cab driver",
+            "output": [
+                "22 November 1965"
+            ]
+        },
+        {
+            "input": "Born on 17 August 1920, O'Hara began life as Maureen FitzSimons on Beechwood Avenue in the Dublin suburb of Ranelagh",
+            "output": [
+                "17 August 1920"
+            ]
+        },
+        {
+            "input": "Smith was born on September 25, 1968, in Philadelphia, Pennsylvania, to Caroline (née Bright), a Philadelphia school board administrator, and Willard Carroll Smith Sr",
+            "output": [
+                "September 25, 1968"
+            ]
+        },
+        {
+            "input": "Katherine Victoria Litwack was born on June 13, 1986, in Bryn Mawr, Pennsylvania",
+            "output": [
+                "June 13, 1986"
+            ]
+        },
+        {
+            "input": "Hart was born on July 6, 1979 in Philadelphia, Pennsylvania",
+            "output": [
+                "July 6, 1979"
+            ]
+        },
+        {
+            "input": "Duvall was born January 5, 1931, in San Diego, California, the son of Mildred Virginia (née Hart; 1901–1985), an amateur actress, and William Howard Duvall (1904–1984), a Virginia-born U",
+            "output": [
+                "January 5, 1931"
+            ]
+        },
+        {
+            "input": "Felicity Rose Hadley Jones was born in Birmingham on 17 October 1983",
+            "output": [
+                "17 October 1983"
+            ]
+        },
+        {
+            "input": "Howard was born in Duncan, Oklahoma in 1954, the elder son of Jean Speegle Howard (1927–2000), an actress, and Rance Howard (1928–2017), a director, writer, and actor",
+            "output": [
+                "1954"
+            ]
+        },
+        {
+            "input": "Fonda was born on January 27, 1964, in Los Angeles, California, to a family of actors, including her grandfather Henry Fonda, father Peter Fonda, and her aunt Jane Fonda",
+            "output": [
+                "January 27, 1964"
+            ]
+        },
+        {
+            "input": "George Hosato Takei was born Hosato Takei on April 20, 1937 in Los Angeles, California, to Japanese-American parents Fumiko Emily Nakamura (born in Sacramento, California) and Takekuma Norman Takei (born in Yamanashi Prefecture), who worked in real estate",
+            "output": [
+                "April 20, 1937"
+            ]
+        },
+        {
+            "input": "Emmanuelle Grey Rossum was born on September 12, 1986, in New York City",
+            "output": [
+                "September 12, 1986"
+            ]
+        },
+        {
+            "input": "Widmark was born December 26, 1914 in Sunrise Township, Minnesota, the son of Ethel Mae (née Barr) and Carl Henry Widmark",
+            "output": [
+                "December 26, 1914"
+            ]
+        },
+        {
+            "input": "Moore was born on April 10, 1984, in Nashua, New Hampshire, to Stacy (née Friedman), a former news reporter who once worked for the Orlando Sentinel, and Donald Moore, a pilot for American Airlines",
+            "output": [
+                "April 10, 1984"
+            ]
+        },
+        {
+            "input": "Thomas William Hiddleston was born on 9 February 1981 in the Westminster district of London, to Diana Patricia (née Servaes) Hiddleston, an arts administrator and former stage manager, and Dr",
+            "output": [
+                "9 February 1981"
+            ]
+        },
+        {
+            "input": "Mendoza was born in Hong Kong in 1978, to mother Robin Jackson, an Australian television personality of English and German descent, and father Noel Mendoza, a jazz pianist and arranger of Filipino and Spanish descent",
+            "output": [
+                "1978"
+            ]
+        },
+        {
+            "input": "Lange was born in Cloquet, Minnesota, on April 20, 1949",
+            "output": [
+                "April 20, 1949"
+            ]
+        },
+        {
+            "input": "Margot Elise Robbie was born on 2 July 1990 in Dalby, Queensland, to Doug Robbie, a former farm-owner and sugarcane tycoon, and Sarie Kessler, a physiotherapist",
+            "output": [
+                "2 July 1990"
+            ]
+        },
+        {
+            "input": "Bautista was born January 18, 1969 in Washington, D",
+            "output": [
+                "January 18, 1969"
+            ]
+        },
+        {
+            "input": "Hauer was born in Breukelen, in the Province of Utrecht, on 23 January 1944, while the Netherlands was under German occupation during World War II",
+            "output": [
+                "23 January 1944"
+            ]
+        },
+        {
+            "input": "Segel was born on January 18, 1980, in Los Angeles, to Jillian (née Jordan; born 1952) and Alvin Segel, a lawyer",
+            "output": [
+                "January 18, 1980"
+            ]
+        },
+        {
+            "input": "Melissa Ann McCarthy was born on August 26, 1970 in Plainfield, Illinois to Sandra and Michael McCarthy",
+            "output": [
+                "August 26, 1970"
+            ]
+        },
+        {
+            "input": "Atkinson was born in Consett, County Durham, England, on 6 January 1955",
+            "output": [
+                "6 January 1955"
+            ]
+        },
+        {
+            "input": "McGregor was born on 31 March 1971 in Perth, Scotland, and was raised in nearby Crieff",
+            "output": [
+                "31 March 1971"
+            ]
+        },
+        {
+            "input": "Lambert was born March 29, 1957, in Great Neck, New York, the son of Yolande Agnès Henriette (née de Caritat de Peruzzis;  1928) and Georges Lambert-Lamond (1910–2003), a French diplomat then at the United Nations",
+            "output": [
+                "March 29, 1957"
+            ]
+        },
+        {
+            "input": "Eddie Asner was born on November 15, 1929, in Kansas City, Missouri, and grew up in Kansas City, Kansas",
+            "output": [
+                "November 15, 1929"
+            ]
+        },
+        {
+            "input": "Christopher Julius Rock was born in Andrews, South Carolina on February 7, 1965",
+            "output": [
+                "February 7, 1965"
+            ]
+        },
+        {
+            "input": "Martin was born on August 14, 1945 in Waco, Texas, the son of Mary Lee (née Stewart; 1913–2002) and Glenn Vernon Martin (1914–1997), a real estate salesman and aspiring actor",
+            "output": [
+                "August 14, 1945"
+            ]
+        },
+        {
+            "input": "Renée Kathleen Zellweger was born on April 25, 1969, in Katy, Texas",
+            "output": [
+                "April 25, 1969"
+            ]
+        },
+        {
+            "input": "James Harrison Coburn III was born in Laurel, Nebraska on August 31, 1928, the son of James Harrison Coburn II (1902–1975) and Mylet S.",
+            "output": [
+                "August 31, 1928"
+            ]
+        },
+        {
+            "input": "Cook was born in 1903 in San Francisco, California, the son of Elisha Vanslyck Cook Sr",
+            "output": [
+                "1903"
+            ]
+        },
+        {
+            "input": "Harris was born on 1 October 1930, in Limerick",
+            "output": [
+                "1 October 1930"
+            ]
+        },
+        {
+            "input": "On 19 August 1946, Ti was born as Tam Fu Wing (譚富榮) in Xinhui, Guangdong Province, China into a family with 4 members including himself, his parents and a younger sister",
+            "output": [
+                "On 19 August 1946"
+            ]
+        },
+        {
+            "input": "Naomie Harris was born on 6 September 1976 in Islington, London, where she was raised",
+            "output": [
+                "6 September 1976"
+            ]
+        },
+        {
+            "input": "Caryn Elaine Johnson was born in Manhattan, New York City, on November 13, 1955, the daughter of Robert James Johnson Jr",
+            "output": [
+                "November 13, 1955"
+            ]
+        },
+        {
+            "input": "Tobias Vincent Maguire was born on June 27, 1975, in Santa Monica, California, to Wendy and Vincent Maguire",
+            "output": [
+                "June 27, 1975"
+            ]
+        },
+        {
+            "input": "Rampling was born in 1946 in Sturmer, Essex, the daughter of Isabel Anne (née Gurteen; 1918–2001), a painter, and Godfrey Rampling (1909–2009), an Olympic gold medallist and British Army officer",
+            "output": [
+                "1946"
+            ]
+        },
+        {
+            "input": "Toni Collett was born on 1 November 1972, the eldest of three children; she has two younger brothers",
+            "output": [
+                "1 November 1972"
+            ]
+        },
+        {
+            "input": "Tony Curtis was born Bernard Schwartz on June 3, 1925, at the Fifth Avenue Hospital corner of East 105th Street in Manhattan, New York City, the first of three boys born to Helen (née Klein) and Emanuel Schwartz",
+            "output": [
+                "June 3, 1925"
+            ]
+        },
+        {
+            "input": "Chaplin was born on 31 July 1969 in Windsor, in the county of Berkshire, England, the son of Cynthia (née Chaplin), a teacher, and Peter Greenwood CBE, a civil engineer",
+            "output": [
+                "31 July 1969"
+            ]
+        },
+        {
+            "input": "Kebbel was born on February 19, 1985, in Winter Park, Florida",
+            "output": [
+                "February 19, 1985"
+            ]
+        }
+    ]
+}
