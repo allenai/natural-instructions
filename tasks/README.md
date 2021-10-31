@@ -1439,7 +1439,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
-`task1586_scifact_title_generation.json` | Title Generation | Title_Generation
-`task1587_scifact_classification.json` | Classification | Classification
-`task1588_tecla_classification.json` | Classification | Classification
-`task1589_scifact_classification.json` | Classification | Classification
+`task1586_scifact_title_generation` | Title Generation | Title_Generation
+`task1587_scifact_classification` | Classification | Classification
+`task1588_tecla_classification` | Classification | Classification
+`task1589_scifact_classification` | Classification | Classification
