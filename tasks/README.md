@@ -1439,7 +1439,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
-`task1595_event2Mind_text_generation_1` | Creating text (emotional reaction) based on event2Mind event prompts | Text Generation
-`task1596_event2Mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
+`task1595_event2mind_text_generation_1` | Creating text (emotional reaction) based on event2Mind event prompts | Text Generation
+`task1596_event2mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
 `task1597_nyc_slot_filling` | Categorizing elements of information from text from the NYC database | Slot Filling
 `task1598_nyc_long_text_generation` | Creating sentences based off of some information from the NYC database | Long Text Generation
