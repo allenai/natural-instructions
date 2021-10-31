@@ -50,8 +50,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task043_essential_terms_answering_incomplete_questions`	| Answering incomplete questions. | Answer Generation
 `task044_essential_terms_identifying_essential_words`	| Identifying words or phrases of the question essential for choosing the correct answer.	| Verification
 `task045_miscellaneous_sentence_paraphrasing`	| Generating sentence paraphrases. | Text Modification
-`task046_miscellaenous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
-`task047_miscellaenous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
+`task046_miscellaneous_question_typing`	| Annotating question-answer pairs with their corresponding type(s).	| Classification
+`task047_miscellaneous_answering_science_questions`	| Answering simple science questions.	| Answer Generation
 `task048_multirc_question_generation`	| Constructing questions based on the information present in the passage.	| Question Generation
 `task049_multirc_questions_needed_to_answer`	| Identifying sentences needed to answer a given question.	| Classification
 `task050_multirc_answerability`	| Finding answerability of questions based on a given sentence.	| Classification
@@ -80,7 +80,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task075_squad1.1_answer_generation`	| Generate answers to SQuAD 1.1 questions.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
-`task078_splash_sql_to_explanation` | Give a natural language description of what a given SQL statement does. | Structured Query Classification
 `task079_conala_concat_strings` | Given a list of strings, concatenate them to form one string. | Answer Generation
 `task080_piqa_answer_generation`	|  Generate a solution to a goal regarding physical knowledge about the world.	| Answer Generation
 `task081_piqa_wrong_answer_generation`	|  Generate an incorrect solution to a goal regarding physical knowledge about the world.	| Incorrect Answer Generation
@@ -585,6 +584,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task592_sciq_incorrect_answer_generation` | Given a scientific question, generate an incorrect answer to the given question | Incorrect Answer Generation
 `task593_sciq_explanation_generation` | Given a scientific question and its correct answer, generate supporting facts for the answer. | Explanation Generation
 `task594_sciq_question_generation` | Given a scientific passage and an answer, generate a question for the given answer. | Question Generation
+`task595_mocha_answer_generation` | Generating answers to MOCHA questions | Answer Generation
+`task596_mocha_question_generation` | Generating questions based on MOCHA | Question Generation
+`task597_cuad_answer_generation` | Generating answers to CUAD questions | Answer Generation
+`task598_cuad_answer_generation` | Generating starting index of the answers to CUAD questions | Answer Generation
+`task599_cuad_question_generation` | Generating questions based on CUAD | Question Generation
 `task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
 `task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
 `task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
@@ -601,6 +605,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task616_cola_classification` | Given a sentence you have to return if it is acceptable or unacceptable. | Classification
 `task617_amazonreview_category_text_generation` | Given an Amazon product review your task is to generate the category of product. | Text Generation
 `task618_amazonreview_summary_text_generation` | Given an Amazon product review your task is to generate the summary of the review. | Text Generation
+`task619_ohsumed_abstract_title_generation` | Generating title to Ohsumed dataset abstracts | Title Generation
+`task620_ohsumed_medical_subject_headings_answer_generation` | Generating MESH terms to Ohsumed dataset abstracts | Medical subject heading(MESH) term Generation
+`task621_ohsumed_yes_no_numerical_answer_generation` | Generating Yes/No answer to Ohsumed dataset questions | Answer Generation
+`task623_ohsumed_yes_no_answer_generation` | Generating Yes/No answers to Ohsumed dataset questions | Answer Generation
+`task624_ohsumed_question_answering` | Given a abstract and question, select the best answer from the given choices. | Answer Generation
 `task625_xlwic_true_or_false_answer_generation` | Determine whether both the sentences use the aforementioned word with the same meaning | Answer Generation
 `task626_xlwic_sentence_based_on_given_word_sentence_generation` | Generating a sentence from a given word | Sentence Generation
 `task627_xlwic_word_with_same_meaning_sentence_generation` | Generating a sentence using a given word and sentence where the word is used with the same meaning as in the given sentence | Sentence Generation
@@ -612,11 +621,17 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task633_dbpedia_14_answer_generation` | Generating answer to question ((dbpedia_14 dataset)) | Answer Generation
 `task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
 `task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
+`task638_multi_woz_classification` | Classifying dialouge into User and System | Classification
+`task639_multi_woz_user_utterance_generation`| Generate a User utterance when System's reply is given | User Utterance Generation
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
 `task641_esnli_classification` | Classification based on if two sentences agree, disasgree, or neutral. | Classification
 `task642_esnli_classification` | Classification based on if two statements agree/disagree or can't be determined. | Classification
 `task643_refresd_classification` | Classification based on if an english and french sentence are different or equivalent. | Classification
 `task644_refresd_translation` | Translation from english to french sentences. | Translation  
+`task645_summarization` | Generating summary for Data | Summarization
+`task646_answer_generation` | Find pronoun from the sentence | Answer Generation
+`task647_answer_generation` | Pronoun Quote Finder | Answer Generation
+`task648_answer_generation` | Find subject to the pronoun in the sentence | Answer Generation
 `task649_race_blank_question_generation` | Generate a fill-in-the-blank question based on the given article and an answer. | Question Generation
 `task650_opus100_ar_en_translation` | Given an Arabic sentence, translate it into English. | Translation
 `task651_opus100_en_ar_translation` | Given an English sentence, translate it into Arabic. | Translation
@@ -645,6 +660,15 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task673_google_wellformed_query_classification` | Given a query, classify whether it's a good or bad query | Classification
 `task674_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is not well-formed | Sentence Generation
 `task675_google_wellformed_query_sentence_generation` | Given a set of queries, find out the query which is well-formed | Sentence Generation
+`task676_ollie_relationship_answer_generation` | Generating relationship based on given inputs in Ollie dataset | Answer Generation
+`task677_ollie_sentence_answer_generation` | Generating sentences based on given inputs in Ollie dataset | Answer Generation
+`task678_ollie_actual_relationship_answer_generation` | Generating the exact form of relationship based on given inputs in Ollie dataset | Answer Generation
+`task679_hope_edi_english_text_classification` | Classify text in english from Hope EDI dataset | Classification
+`task680_hope_edi_tamil_text_classification` | Classify text in tamil from Hope EDI dataset | Classification
+`task681_hope_edi_malayalam_text_classification` | Classify text in malayalam from Hope EDI dataset | Classification
+`task682_online_privacy_policy_text_classification` | Classify privacy policy texts from OPP-115 Dataset | Classification
+`task683_online_privacy_policy_text_purpose_answer_generation` | Generate the purpose of privacy policy texts from OPP-115 Dataset | Answer Generation
+`task684_online_privacy_policy_text_information_type_generation` | Generate the type of information used by website, mentioned in privacy policy texts from OPP-115 Dataset | Answer Generation
 `task685_mmmlu_answer_generation_clinical_knowledge` | Answering mutlitple choice questions on clinical knowledge | Answer Generation
 `task686_mmmlu_answer_generation_college_biology` | Answering mutlitple choice questions on college biology | Answer Generation
 `task687_mmmlu_answer_generation_college_chemistry` | Answering mutlitple choice questions on college chemistry | Answer Generation
@@ -715,6 +739,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
 `task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
 `task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
+`task757_msr_sqa_question_generation` | Given a table from msr_sqa dataset, generate a question based on the information presented | Question generation
+`task758_msr_sqa_question_answer_generation` | Given a table from msr_sqa dataset and a question based on that table, generate a correct answer based on the table | Answer generation
+`task759_msr_sqa_incorrect_answer_generation` | Given a table from msr_sqa dataset and a question based on that table, generate an incorrect correct answer based on the table | Incorrect Answer Generation
+`task760_msr_sqa_long_text_generation` | Given a table from msr_sqa dataset, generate a long text passage based on the information in the tabular data | Long Text generation
 `task761_app_review_classification` | Given a app review,classify whether it's Poitive or Negative | Classification
 `task762_emea_fr_sk_translation` | Translate French sentences to Slovak while preserving named entities in the original language | Translation
 `task763_emea_es_lt_translation` | Translate Spanish sentences to Lithuanian while preserving named entities in the original language | Translation
@@ -774,6 +802,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task817_pawsx_japanese_german_translation` | Given a sentence in Japanese, provide an equivalent translation to German | Translation
 `task818_pawsx_japanese_chinese_translation` | Given a sentence in Japanese, provide an equivalent translation to Chinese | Translation
 `task819_pec_sentiment_classification` | Given a contextual post, classify the post as holding positive or negative sentiment | Classification
+`task820_protoqa_answer_generation` | Given a question, generate a relevant answer to the question | Answer Generation
+`task821_protoqa_question_generation` | Given a group of answers, generate a question for all answers | Question Generation  
+`task823_peixian-rtgender_sentiment_analysis` | Analyze the sentiment of responses under posters from social media | Classification
 `task827_copa_commonsense_reasoning` | Given a premise and two alternative,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
 `task828_copa_commonsense_cause_effect` | Given a pair of sentences, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task829_giga_fren_translation` | Translation from English language to French language | Translation
@@ -785,6 +816,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task835_mathdataset_answer_generation` | Find the numerical answer for a math word problem
 `task836_viquiquad_question_generation` | Given a passage in the Catalan language, generate contextual questions
 `task837_viquiquad_answer_generation` | Given a passage and asked a question in the Catalan language, answer that question
+`task838_cdt_classification` | Given a tweet, determine if it has bullying content. (based on cdt) | Classification
+`task839_cdt_classification` | Given a tweet and prompt, determine if it has bullying content. (based on cdt) | Classification
+`task840_para_pdt_en_es_translation` | Translate English questions to Spanish while preserving named entities in the original language. (based on para_pdt) | Translation
+`task841_para_pdt_de_en_translation` | Translate German questions to English while preserving named entities in the original language. (based on para_pdt) | Translation
+`task842_para_pdt_cs_en_translation` | Translate Czech questions to English while preserving named entities in the original language. (based on para_pdt) | Translation
 `task843_financial_phrasebank_classification` | Classifying news into positive, neutral, and negative (based on financial_phrasebank) | Classification
 `task844_financial_phrasebank_classification` | Classifying if (news, polarity) is valid or not (based on financial_phrasebank) | Classification
 `task845_pubmedqa_question_generation` | Generating question from context and answer (based on pubmed_QA) | Question Generation
@@ -799,6 +835,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task854_hippocorpus_classification` | Classifying whether a story is imagined, recalled, or retold (based on HIPPOCORPUS) | Classification
 `task855_conv_ai_2_classification` | Classifying whether one conversation participant is a bot or human (based on conv_ai_2) | Classification
 `task856_conv_ai_2_classification` | Classifying whether a conversation starter is written by a bot or a human (based on conv_ai_2) | Classification
+`task857_inquisitive_question_generation` | Generating inquisitive questions | Inquisitive Question generation
+`task858_inquisitive_span_detection` | Detecting span of sentence | Span Detection
+`task859_prost_question_generation` | Question generation | Question generation
+`task860_prost_mcq_generation` | Generating MCQs | MCQ generation
+`task861_prost_mcq_answers_generation` | Generating answers of MCQs | MCQ Answer generation
 `task861_asdiv_addsub_question_answering` | Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task862_asdiv_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task863_asdiv_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
@@ -807,15 +848,37 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task866_mawps_multidiv_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task867_mawps_multiop_question_answering` |Given a mathematical question , find the most suitable numerical answer| Answer Generation
 `task868_mawps_singleop_question_answering` |Given a mathematical question , find the most suitable numerical answer|Answer Generation
+`task868_cfq_mcd1_explanation_to_sql` | Generating queries (based on CFQ MCD1) | Structured Query Generation  
+`task869_cfq_mcd1_sql_to_explanation` | Checking if queries match natural language query description | Structured Query Classification
+`task870_msmarco_answer_generation` | Generating answers based on natural language passage and related query from MS MARCO | Answer Generation
+`task871_msmarco_question_generation` | Generating questions based on natural language passage from MS MARCO | Question Generation
+`task872_opus_xhosanavy_translation_eng_xhosa` | Translate a sentence in English to Xhosa | Translation
+`task873_opus_xhosanavy_translation_xhosa_eng` | Translate a sentence in Xhosa to English | Translation
+`task874_opus_xhosanavy_sr` |  Recognize primary subjects in sentences | Primary Subject Recognition
+`task875_emotion_classification` | Classify sentences by emotions | Classification
 `task877_kde4_translation` | Localizing English phrases to Hindi language | Translation
 `task878_kde4_translation` | Localizing English phrases to Telugu language | Translation
 `task879_schema_guided_dstc8_classification` | Classifying sentence as question or not | Classification
 `task880_schema_guided_dstc8_classification` | Classifying sentence into one of five action categories | Classification
 `task881_schema_guided_dstc8_classification` | Identifying which one of five services the sentence is related to  | Classification
+`task886_quail_question_generation` | Generating questions based on passages | Question Generation
+`task887_quail_answer_generation` | Generating answer for a given question based on passages | Answer Generation
+`task888_reviews_classification` | Classifying whether a review is positive or negative | Classification
+`task889_goemotions_classification` | Classifying the sentence to an emotion class | Classification
 `task890_gcwd_classification` | Classifying writer's stance to Global Warming | Classification
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
+`task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
+`task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
+`task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
+`task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
+`task900_freebase_qa_category_classification` | Classify the general category for questions | Classification
+`task901_freebase_qa_category_question_generation` | Generate trivia type questions based on a broad category | Question Generation
+`task902_deceptive_opinion_spam_classification` | Identity polarity of hotel reviews | Classification  
+`task903_deceptive_opinion_spam_classification` | Given hotel reviews and it's polarity, determine whether it's true or false | Classification
+`task904_hate_speech_offensive_classification` | Classify tweets into hate speech, offensive or neither | Classification  
+`task905_hate_speech_offensive_classification` | Given tweet and it's category, determine whether it's true or false | Classification
 `task906_dialogre_identify_names` | Text Identification with DialogRE | Answer Generation
 `task907_dialogre_identify_relationships` | Classifying Relationships with DialogRE | Answer Generation
 `task908_dialogre_identify_familial_relationships` | Classifying Familial Relationships with DialogRE | Answer Generation
@@ -825,12 +888,21 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
 `task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
 `task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
-'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
-'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
-'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
-'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+`task917_coqa_question_generation`| Given a passage, generate a question | Question Generation
+`task918_coqa_answer_generation` | Given a passage and a question, generate an answer for that question | Answer Generation
+`task919_coqa_incorrect_answer_generation` | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+`task921_code_x_glue_information_retreival` | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+`task922_event2mind_word_generation` | Generating emotion words from Event2Mind based on PersonX | Word Generation
+`task923_event2mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
+`task924_event2mind_word_generation` | Generating emotion words from Event2Mind based on Other Person | Word Generation
+`task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
+`task926_coached_conv_pref_word_generation` | Generating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
+`task929_products_reviews_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
+`task930_dailydialog_classification` | Classifying Data of DailyDialog whether the topic of conversation is Tourism or Not in the dialogue | Classification
+`task931_dailydialog_classification` | Classifying Data of DailyDialog whether happy or sad emotion in the dialogue | Classification
+`task932_dailydialog_classification` | Classifying Data of DailyDialog whether there is question in the dialogue or not | Classification
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task934_turk_simplification` | Given a sentence your task is to generate possible numbers of simplified sentences. | Text Generation
 `task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
@@ -854,9 +926,134 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
 `task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
 `task955_wiki_auto_style_transfer` | Elaborate wikipedia sentences. | Style Transfer 
+`task956_leetcode_420_strong_password_check` | Check if the given password is strong | Answer Generation 
 `task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Tabular Text Operation
 `task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
 `task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
+`task960_ancora-ca-ner_named_entity_recognition` | Named Entity Recognition for each token in BSC-TeMU/ancora-ca-ner catalan sentences | Named Entity Recognition
+`task961_ancora-ca-ner_text_auto_completion` | Text Auto Completion of partial Catalan sentences | Sentence Generation
+`task962_ancora-ca-ner_missing_word_prediction` | Generating a missing word on Catalan Sentences | Sentence Generation
+`task963_librispeech_asr_next_word_prediction` | Predicting next word on librispeech data | Word Generation
+`task964_librispeech_asr_text_auto_completion` | Text Auto Completion of partial English sentences | Sentence Generation
+`task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Sentence Generation
+`task966_ruletaker_fact_checking_based_on_given_context` | Fact checking based on given context | Fact checking based on context
+`task967_ruletaker_incorrect_fact_generation_based_on_given_paragraph` | Generate incorrect fact based on given paragraph | Incorrect Fact Generation
+`task968_xcopa_commonsense_reasoning_et` | Given a premise and two alternative in Estonian,  select the alternative that more plausibly has a causal relation with the premise | Causal Reasoning
+`task969_xcopa_commonsense_cause_effect_et` | Given a pair of sentences in Estonian, judge whether the second sentence is the cause or effect of the first on. | Causal Reasoning
+`task970_sherliic_causal_relationship` | Determine if A and B share a casual relationship |Classification
+`task974_prachathai67k_sentiment_classification` | Classify the sentiment of a given article on the given genre |Classification
+`task975_prachathai67k_same_genre_classification` | Determine if the two articles given share the same sentiment fot the given genre |Classification
+`task976_pib_indian_language_identification` | Identify the language of the given statement from the 11 languages listed |Classification
+`task977_pib_translation_oriya_urdu`| Translate from oriya to urdu | Translation
+`task978_pib_translation_urdu_oriya`| Translate from urdu to oriya | Translation
+`task979_pib_translation_malayalam_oriya`| Translate from malayalam to oriya | Translation
+`task980_pib_translation_oriya_malayalam`| Translate from oriya to malayalam | Translation
+`task981_pib_translation_bengali_tamil`| Translate from bengali to tamil | Translation
+`task982_pib_translation_tamil_bengali`| Translate from tamil to bengali | Translation
+`task983_pib_translation_gujarati_marathi`| Translate from gujarati to marathi | Translation
+`task984_pib_translation_marathi_gujarati`| Translate from marathi to gujarati | Translation
+`task985_pib_translation_hindi_oriya`| Translate from hindi to oriya | Translation
+`task986_pib_translation_oriya_hindi`| Translate from oriya to hindi | Translation
+`task987_pib_translation_english_oriya`| Translate from english to oriya | Translation
+`task988_pib_translation_oriya_english`| Translate from oriya to english | Translation
+`task989_pib_translation_marathi_urdu`| Translate from marathi to urdu | Translation
+`task990_pib_translation_urdu_marathi`| Translate from urdu to marathi | Translation
+`task991_pib_translation_english_tamil`| Translate from english to tamil | Translation
+`task992_pib_translation_tamil_english`| Translate from tamil to english | Translation
+`task993_pib_translation_hindi_tamil`| Translate from hindi to tamil | Translation
+`task994_pib_translation_tamil_hindi`| Translate from tamil to hindi | Translation
+`task995_pib_translation_bengali_english`| Translate from bengali to english | Translation
+`task996_pib_translation_english_bengali`| Translate from english to bengali | Translation
+`task997_pib_translation_bengali_oriya`| Translate from bengali to oriya | Translation
+`task998_pib_translation_oriya_bengali`| Translate from oriya to bengali | Translation
+`task999_pib_translation_malayalam_tamil`| Translate from malayalam to tamil | Translation
+`task1000_pib_translation_tamil_malayalam`| Translate from tamil to malayalam | Translation
+`task1001_pib_translation_gujarati_urdu`| Translate from gujarati to urdu | Translation
+`task1002_pib_translation_urdu_gujarati`| Translate from urdu to gujarati | Translation
+`task1003_pib_translation_bengali_malayalam`| Translate from bengali to malayalam | Translation
+`task1004_pib_translation_malayalam_bengali`| Translate from malayalam to bengali | Translation
+`task1005_pib_translation_malayalam_punjabi`| Translate from malayalam to punjabi | Translation
+`task1006_pib_translation_punjabi_malayalam`| Translate from punjabi to malayalam | Translation
+`task1007_pib_translation_english_punjabi`| Translate from english to punjabi | Translation
+`task1008_pib_translation_punjabi_english`| Translate from punjabi to english | Translation
+`task1009_pib_translation_bengali_hindi`| Translate from bengali to hindi | Translation
+`task1010_pib_translation_hindi_bengali`| Translate from hindi to bengali | Translation
+`task1011_pib_translation_hindi_punjabi`| Translate from hindi to punjabi | Translation
+`task1012_pib_translation_punjabi_hindi`| Translate from punjabi to hindi | Translation
+`task1013_pib_translation_gujarati_telugu`| Translate from gujarati to telugu | Translation
+`task1014_pib_translation_telugu_gujarati`| Translate from telugu to gujarati | Translation
+`task1015_pib_translation_punjabi_tamil`| Translate from punjabi to tamil | Translation
+`task1016_pib_translation_tamil_punjabi`| Translate from tamil to punjabi | Translation
+`task1017_pib_translation_hindi_malayalam`| Translate from hindi to malayalam | Translation
+`task1018_pib_translation_malayalam_hindi`| Translate from malayalam to hindi | Translation
+`task1019_pib_translation_oriya_telugu`| Translate from oriya to telugu | Translation
+`task1020_pib_translation_telugu_oriya`| Translate from telugu to oriya | Translation
+`task1021_pib_translation_english_malayalam`| Translate from english to malayalam | Translation
+`task1022_pib_translation_malayalam_english`| Translate from malayalam to english | Translation
+`task1023_pib_translation_english_hindi`| Translate from english to hindi | Translation
+`task1024_pib_translation_hindi_english`| Translate from hindi to english | Translation
+`task1025_pib_translation_bengali_punjabi`| Translate from bengali to punjabi | Translation
+`task1026_pib_translation_punjabi_bengali`| Translate from punjabi to bengali | Translation
+`task1027_pib_translation_marathi_telugu`| Translate from marathi to telugu | Translation
+`task1028_pib_translation_telugu_marathi`| Translate from telugu to marathi | Translation
+`task1029_pib_translation_marathi_punjabi`| Translate from marathi to punjabi | Translation
+`task1030_pib_translation_punjabi_marathi`| Translate from punjabi to marathi | Translation
+`task1031_pib_translation_bengali_telugu`| Translate from bengali to telugu | Translation
+`task1032_pib_translation_telugu_bengali`| Translate from telugu to bengali | Translation
+`task1033_pib_translation_gujarati_hindi`| Translate from gujarati to hindi | Translation
+`task1034_pib_translation_hindi_gujarati`| Translate from hindi to gujarati | Translation
+`task1035_pib_translation_tamil_urdu`| Translate from tamil to urdu | Translation
+`task1036_pib_translation_urdu_tamil`| Translate from urdu to tamil | Translation
+`task1037_pib_translation_telugu_urdu`| Translate from telugu to urdu | Translation
+`task1038_pib_translation_urdu_telugu`| Translate from urdu to telugu | Translation
+`task1039_pib_translation_oriya_punjabi`| Translate from oriya to punjabi | Translation
+`task1040_pib_translation_punjabi_oriya`| Translate from punjabi to oriya | Translation
+`task1041_pib_translation_gujarati_malayalam`| Translate from gujarati to malayalam | Translation
+`task1042_pib_translation_malayalam_gujarati`| Translate from malayalam to gujarati | Translation
+`task1043_pib_translation_gujarati_punjabi`| Translate from gujarati to punjabi | Translation
+`task1044_pib_translation_punjabi_gujarati`| Translate from punjabi to gujarati | Translation
+`task1045_pib_translation_hindi_telugu`| Translate from hindi to telugu | Translation
+`task1046_pib_translation_telugu_hindi`| Translate from telugu to hindi | Translation
+`task1047_pib_translation_english_telugu`| Translate from english to telugu | Translation
+`task1048_pib_translation_telugu_english`| Translate from telugu to english | Translation
+`task1049_pib_translation_malayalam_telugu`| Translate from malayalam to telugu | Translation
+`task1050_pib_translation_telugu_malayalam`| Translate from telugu to malayalam | Translation
+`task1051_pib_translation_punjabi_urdu`| Translate from punjabi to urdu | Translation
+`task1052_pib_translation_urdu_punjabi`| Translate from urdu to punjabi | Translation
+`task1053_pib_translation_hindi_urdu`| Translate from hindi to urdu | Translation
+`task1054_pib_translation_urdu_hindi`| Translate from urdu to hindi | Translation
+`task1055_pib_translation_marathi_oriya`| Translate from marathi to oriya | Translation
+`task1056_pib_translation_oriya_marathi`| Translate from oriya to marathi | Translation
+`task1057_pib_translation_english_urdu`| Translate from english to urdu | Translation
+`task1058_pib_translation_urdu_english`| Translate from urdu to english | Translation
+`task1059_pib_translation_malayalam_urdu`| Translate from malayalam to urdu | Translation
+`task1060_pib_translation_urdu_malayalam`| Translate from urdu to malayalam | Translation
+`task1061_pib_translation_bengali_marathi`| Translate from bengali to marathi | Translation
+`task1062_pib_translation_marathi_bengali`| Translate from marathi to bengali | Translation
+`task1063_pib_translation_gujarati_tamil`| Translate from gujarati to tamil | Translation
+`task1064_pib_translation_tamil_gujarati`| Translate from tamil to gujarati | Translation
+`task1065_pib_translation_punjabi_telugu`| Translate from punjabi to telugu | Translation
+`task1066_pib_translation_telugu_punjabi`| Translate from telugu to punjabi | Translation
+`task1067_pib_translation_bengali_gujarati`| Translate from bengali to gujarati | Translation
+`task1068_pib_translation_gujarati_bengali`| Translate from gujarati to bengali | Translation
+`task1069_pib_translation_bengali_urdu`| Translate from bengali to urdu | Translation
+`task1070_pib_translation_urdu_bengali`| Translate from urdu to bengali | Translation
+`task1071_pib_translation_malayalam_marathi`| Translate from malayalam to marathi | Translation
+`task1072_pib_translation_marathi_malayalam`| Translate from marathi to malayalam | Translation
+`task1073_pib_translation_oriya_tamil`| Translate from oriya to tamil | Translation
+`task1074_pib_translation_tamil_oriya`| Translate from tamil to oriya | Translation
+`task1075_pib_translation_tamil_telugu`| Translate from tamil to telugu | Translation
+`task1076_pib_translation_telugu_tamil`| Translate from telugu to tamil | Translation
+`task1077_pib_translation_gujarati_oriya`| Translate from gujarati to oriya | Translation
+`task1078_pib_translation_oriya_gujarati`| Translate from oriya to gujarati | Translation
+`task1079_pib_translation_english_gujarati`| Translate from english to gujarati | Translation
+`task1080_pib_translation_gujarati_english`| Translate from gujarati to english | Translation
+`task1081_pib_translation_hindi_marathi`| Translate from hindi to marathi | Translation
+`task1082_pib_translation_marathi_hindi`| Translate from marathi to hindi | Translation
+`task1083_pib_translation_marathi_tamil`| Translate from marathi to tamil | Translation
+`task1084_pib_translation_tamil_marathi`| Translate from tamil to marathi | Translation
+`task1085_pib_translation_english_marathi`| Translate from english to marathi | Translation
+`task1086_pib_translation_marathi_english`| Translate from marathi to english | Translation
 `task1087_two_number_sum` | Given a list of integers and a target sum, return a pair of integers that sum to the target | Answer Generation
 `task1088_array_of_products` | Given an integer array in the input, return an array such that its element at each location is equal to the product of elements at every other location in the input array" | Answer Generation
 `task1089_check_monotonic_array` | Check if the given array is monotonic or not  | Answer Generation
@@ -930,6 +1127,30 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1161_coda19_title_generation` | Given a paragraph from a research paper, your task is to generate the title of the paper | Title Generation
+`task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
+`task1163_coda19_section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
+`task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
+`task1167_penn_treebank_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_brown_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_xcopa_commonsense_reasoning_ht` | Given a premise and two alternative in Haitian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1169_xcopa_commonsense_cause_effect_ht` | Given a pair of sentences in Haitian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1170_xcopa_commonsense_reasoning_id` | Given a premise and two alternative in Indonesian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1171_xcopa_commonsense_cause_effect_id` | Given a pair of sentences in Indonesian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1172_xcopa_commonsense_reasoning_it` | Given a premise and two alternative in Italian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1173_xcopa_commonsense_cause_effect_it` | Given a pair of sentences in Italian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1174_xcopa_commonsense_reasoning_sw` | Given a premise and two alternative in Swahili,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1175_xcopa_commonsense_cause_effect_sw` | Given a pair of sentences in Swahili, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1176_xcopa_commonsense_reasoning_ta` | Given a premise and two alternative in Tamil,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1177_xcopa_commonsense_cause_effect_ta` | Given a pair of sentences in Tamil, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1178_xcopa_commonsense_reasoning_th` | Given a premise and two alternative in Thai,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1179_xcopa_commonsense_cause_effect_th` | Given a pair of sentences in Thai, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1180_xcopa_commonsense_reasoning_tr` | Given a premise and two alternative in Turkish,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1181_xcopa_commonsense_cause_effect_tr` | Given a pair of sentences in Turkish, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1182_xcopa_commonsense_reasoning_vi` | Given a premise and two alternative in Vietnamese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1183_xcopa_commonsense_cause_effect_vi` | Given a pair of sentences in Vietnamese, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1184_xcopa_commonsense_reasoning_zh` | Given a premise and two alternative in Chinese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1185_xcopa_commonsense_cause_effect_zh` | Given a pair of sentences in Chinese, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
@@ -940,6 +1161,95 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1193_food_course_classification` | Given the name of an indian dish, classify it's course as main course, dessert or snack  | Classification
 `task1194_kth_largest_element` | Given a list of integers and an integer k, find the kth largest element in the list  | Classification
 `task1195_disflqa_disfluent_to_fluent_conversion` | Given a disfluent sentence, modify it to make it a fluent sentence | Text Modification
+`task1196_atomic_classification_oeffect` | Given a tuple, determine whether, as a result of the Head, personY or others will be affected as mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1197_atomic_classification_oreact` | Given a tuple, determine whether, as a result of the Head, personY or others feel what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1198_atomic_classification_owant` | Given a tuple, determine whether, as a result of the Head, personY or others will want what is mentioned in the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
+`task1199_atomic_classification_xattr` | Given a tuple, determine whether, as a result of the Head, personX will be seen as what is mentioned in the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English | Sociology	| English	| English
+`task1200_atomic_classification_xeffect` | Given a tuple, determine whether, as a result of the Head, personX will be affected as mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1201_atomic_classification_xintent` | Given a tuple, determine whether The tail is the intention of the PersonX from the Head or not. | Classification | Sociology	| English	| English
+`task1202_atomic_classification_xneed` | Given a tuple, determine whether PersonX needs what is mentioned in the Tail before the Head or not. | Classification | Sociology	| English	| English
+`task1203_atomic_classification_xreact` | Given a tuple, determine whether, as a result of the Head, personX feels what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1204_atomic_classification_hinderedby` | Given a tuple, determine whether the Head can be hindered by what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1205_atomic_classification_isafter` | Given a tuple, determine whether the Head happens after the Tail or not. | Classification | Sociology	| English	| English
+`task1206_atomic_classification_isbefore` | Given a tuple, determine whether the Head happens before the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
+`task1207_atomic_classification_atlocation` | Given a tuple, determine whether the Head is located or can be found at/in/on the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English | Sociology	| English	| English
+`task1208_atomic_classification_xreason` | Given a tuple, determine whether The Tail is the reason for the Head or not. | Classification | Sociology	| English	| English
+`task1209_atomic_classification_objectuse` | Given a tuple, determine whether the Head is used for the Tail or not. | Classification | Sociology	| English	| English
+`task1210_atomic_classification_madeupof` | Given a tuple, determine whether the Head is made of the Tail or not. | Classification | Sociology	| English	| English | Sociology	| English	| English
+`task1211_atomic_classification_hassubevent` | Given a tuple, determine whether the Head includes an event or an action in the Tail or not. | Classification | Sociology	| English	| English
+`task1212_atomic_classification_hasproperty` | Given a tuple, determine whether the Head can be characterized by being or having the Tail or not. | Classification | Sociology	| English	| English
+`task1213_atomic_classification_desires` | Given a tuple, determine whether the Head desires the Tail or not. | Classification | Sociology	| English	| English
+`task1214_atomic_classification_xwant` | Given a tuple, determine whether, as a result of the Head, personX wants what is mentioned in the Tail or not. | Classification | Sociology	| English	| English
+`task1215_atomic_classification_capableof` | Given a tuple, ddetermine whether the Head is capable of the Tail or not. | Classification | Sociology	| English	| English
+`task1216_atomic_classification_causes` | Given a tuple, determine whether the Head causes the Tail or not. | Classification | Sociology	| English	| English
+`task1217_atomic_answer_generation` | Given a sentence, fill in the blank with a plausible word. | Fill in the Blank | Sociology	| English	| English
+`task1218_ted_translation_en_ja` | Translate a sentence in English to Japanese. | Translation
+`task1219_ted_translation_en_es` | Translate a sentence in English to Spanish. | Translation
+`task1220_ted_translation_en_ar` | Translate a sentence in English to Arabic. | Translation
+`task1221_ted_translation_en_he` | Translate a sentence in English to Hebrew. | Translation
+`task1222_ted_translation_ja_en` | Translate a sentence in Japanese to English. | Translation
+`task1223_ted_translation_ja_es` | Translate a sentence in Japanese to Spanish. | Translation
+`task1224_ted_translation_ja_ar` | Translate a sentence in Japanese to Arabic. | Translation
+`task1225_ted_translation_ja_he` | Translate a sentence in Japanese to Hebrew. | Translation
+`task1226_ted_translation_es_en` | Translate a sentence in Spanish to English. | Translation
+`task1227_ted_translation_es_ja` | Translate a sentence in Spanish to Japanese. | Translation
+`task1228_ted_translation_es_ar` | Translate a sentence in Spanish to Arabic. | Translation
+`task1229_ted_translation_es_he` | Translate a sentence in Spanish to Hebrew. | Translation
+`task1230_ted_translation_ar_en` | Translate a sentence in Arabic to English. | Translation
+`task1231_ted_translation_ar_ja` | Translate a sentence in Arabic to Japanese. | Translation
+`task1232_ted_translation_ar_es` | Translate a sentence in Arabic to Spanish. | Translation
+`task1233_ted_translation_ar_he` | Translate a sentence in Arabic to Hebrew. | Translation
+`task1234_ted_translation_he_en` | Translate a sentence in Hebrew to English. | Translation
+`task1235_ted_translation_he_ja` | Translate a sentence in Hebrew to Japanese. | Translation
+`task1236_ted_translation_he_es` | Translate a sentence in Hebrew to Spanish. | Translation
+`task1237_ted_translation_he_ar` | Translate a sentence in Hebrew to Arabic. | Translation
+`task1238_ted_translation_gl_en` | Translate a sentence in Galician to English. | Translation
+`task1239_ted_translation_gl_ja` | Translate a sentence in Galician to Japanese. | Translation
+`task1240_ted_translation_gl_es` | Translate a sentence in Galician to Spanish. | Translation
+`task1241_ted_translation_gl_ar` | Translate a sentence in Galician to Arabic. | Translation
+`task1242_ted_translation_gl_he` | Translate a sentence in Galician to Hebrew. | Translation
+`task1243_ted_translation_gl_it` | Translate a sentence in Galician to Italian. | Translation
+`task1244_ted_translation_gl_pl` | Translate a sentence in Galician to Polish. | Translation
+`task1245_ted_translation_gl_fa` | Translate a sentence in Galician to Farsi. | Translation
+`task1246_ted_translation_gl_pt` | Translate a sentence in Galician to Portugese. | Translation
+`task1247_ted_translation_it_en` | Translate a sentence in Italian to English. | Translation
+`task1248_ted_translation_it_ja` | Translate a sentence in Italian to Japanese. | Translation
+`task1249_ted_translation_it_es` | Translate a sentence in Italian to Spanish. | Translation
+`task1250_ted_translation_it_ar` | Translate a sentence in Italian to Arabic. | Translation
+`task1251_ted_translation_it_he` | Translate a sentence in Italian to Hebrew. | Translation
+`task1252_ted_translation_it_gl` | Translate a sentence in Italian to Galician. | Translation
+`task1253_ted_translation_it_pl` | Translate a sentence in Italian to Polish. | Translation
+`task1254_ted_translation_it_fa` | Translate a sentence in Italian to Farsi. | Translation
+`task1255_ted_translation_it_pt` | Translate a sentence in Italian to Portugese. | Translation
+`task1256_ted_translation_pl_en` | Translate a sentence in Polish to English. | Translation
+`task1257_ted_translation_pl_ja` | Translate a sentence in Polish to Japanese. | Translation
+`task1258_ted_translation_pl_es` | Translate a sentence in Polish to Spanish. | Translation
+`task1259_ted_translation_pl_ar` | Translate a sentence in Polish to Arabic. | Translation
+`task1260_ted_translation_pl_he` | Translate a sentence in Polish to Hebrew. | Translation
+`task1261_ted_translation_pl_gl` | Translate a sentence in Polish to Galician. | Translation
+`task1262_ted_translation_pl_it` | Translate a sentence in Polish to Italian. | Translation
+`task1263_ted_translation_pl_fa` | Translate a sentence in Polish to Farsi. | Translation
+`task1264_ted_translation_pl_pt` | Translate a sentence in Polish to Portugese. | Translation
+`task1265_ted_translation_fa_en` | Translate a sentence in Farsi to English. | Translation
+`task1266_ted_translation_fa_ja` | Translate a sentence in Farsi to Japanese. | Translation
+`task1267_ted_translation_fa_es` | Translate a sentence in Farsi to Spanish. | Translation
+`task1268_ted_translation_fa_ar` | Translate a sentence in Farsi to Arabic. | Translation
+`task1269_ted_translation_fa_he` | Translate a sentence in Farsi to Hebrew. | Translation
+`task1270_ted_translation_fa_gl` | Translate a sentence in Farsi to Galician. | Translation
+`task1271_ted_translation_fa_it` | Translate a sentence in Farsi to Italian. | Translation
+`task1272_ted_translation_fa_pl` | Translate a sentence in Farsi to Polish. | Translation
+`task1273_ted_translation_fa_pt` | Translate a sentence in Farsi to Portugese. | Translation
+`task1274_ted_translation_pt_en` | Translate a sentence in Portugese to English. | Translation
+`task1275_ted_translation_pt_ja` | Translate a sentence in Portugese to Japanese. | Translation
+`task1276_ted_translation_pt_es` | Translate a sentence in Portugese to Spanish. | Translation
+`task1277_ted_translation_pt_ar` | Translate a sentence in Portugese to Arabic. | Translation
+`task1278_ted_translation_pt_he` | Translate a sentence in Portugese to Hebrew. | Translation
+`task1279_ted_translation_pt_gl` | Translate a sentence in Portugese to Galician. | Translation
+`task1280_ted_translation_pt_it` | Translate a sentence in Portugese to Italian. | Translation
+`task1281_ted_translation_pt_pl` | Translate a sentence in Portugese to Polish. | Translation
+`task1282_ted_translation_pt_fa` | Translate a sentence in Portugese to Farsi. | Translation
+`task1283_hrngo_quality_classification` | Evaluate quality of system generated reference. | Classification
+`task1284_hrngo_informativeness_classification` | Evaluate informativeness of system generated reference. | Classification
 `task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
 `task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
 `task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
@@ -963,6 +1273,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1305_kpa_keypoint_matching_journalism_topic` | Given an argument and a keypoint under the topic "We should subsidize journalism", answer if the keypoint summarizes the argument | Classification
 `task1306_kpa_keypoint_matching_space_exploration_topic` | Given an argument and a keypoint under the topic "We should subsidize space exploration", answer if the keypoint summarizes the argument | Classification
 `task1307_kpa_keypoint_matching_vocational_education_topic` | Given an argument and a keypoint under the topic "We should subsidize vocational education", answer if the keypoint summarizes the argument | Classification
+`task1308_amazonreview_category_classification` | You're given a review from Amazon and category of the product based on the review, classify whether review match the category. | Classification
+`task1309_amazonreview_summary_classification` | You're given a review from Amazon and summary of the review, classify whether summary match the original review. | Classification
+`task1310_amazonreview_rating_classification` | You're given a review from Amazon. Your task is to generate a rating for the product on a scale of 1-5 based on the review. | Classification
+`task1311_amazonreview_rating_classification` | You're given a review from Amazon and rating of the review, classify whether rating match the review. | Classification
+`task1312_amazonreview_polarity_classification` | You are given a review of Amazon's food products. Your task is to divide them into two classes: negative or positive. | Classification
+`task1313_amazonreview_polarity_classification` | You're given a review from Amazon and polarity of the review, classify whether review match the polarity. | Classification
 `task1314_country_abbreviation` | Given a country name, return the abbrevation name of the given country | Answer Generation
 `task1315_find_range_array` | Given a list of integers, find the range of the list  | Answer Generation
 `task1316_remove_duplicates_string` | Given a string, remove all the duplicate characters from the string  | Answer Generation
@@ -972,9 +1288,36 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
 `task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
 `task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
+`task1323_open_subtitles_hi_en_translation` | Translating Hindi to English (based on Open Subtitles) | Language Translation  
+`task1324_open_subtitles_te_en_translation` | Translating Telugu to English (based on Open Subtitles) | Language Translation
+`task1325_qa_zre_question_generation_on_subject_relation` | Generating questions by including a specific subject and certain relation to Context (based on qa_zre dataset) | Question Generation  
+`task1326_qa_zre_question_generation_from_answer` | Generating questions from answers (based on qa_zre dataset)| Question Generation
+`task1327_qa_zre_answer_generation_from_question` | Generating answers from questions (based on qa_zre dataset) | Answer Generation  
+`task1328_qa_zre_relation_generation_from_question` | Classify relation between question and context (based on qa_zre dataset) | Classificationrelation 
+`task1329_open_subtitles_en_hi_translation` | Translating English to Hindi (based on Open Subtitles) | Language Translation  
+`task1330_open_subtitles_en_te_translation` | Translating English to Telugu (based on Open Subtitles) | Language Translation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
+`task1334_sqac_answer_generation`                                | Generating answers to SQAC questions          | Answer Generation    
+`task1335_sqac_question_generation`                              | Classifying race of speaker of sentence       | Race Classifier      
+`task1336_peixian_equity_evaluation_corpus_gender_classifier`    | Classifying gender of speaker of sentence     | Gender Classifier     
+`task1338_peixian_equity_evaluation_corpus_sentiment_classifier` | Classifying the sentiment within the sentence | Sentiment Classifier 
+`task1339_peixian_equity_evaluation_corpus_text_completion`      | Replacing blanks within text for an emption   | Text completion
+`task1340_msr_text_compression_compression` | Generating Compressed text based on MSR dataset | Compression
+`task1341_msr_text_classification` | Generating Classification of text in MSR dataset | Classification
+`task1342_amazon_us_reviews_title` | Generating Title for Amazon US review dataset | Title Generation
+`task1343_amazon_us_reviews_rating` | Generating Rating for Amazon US review dataset | Rating generation
+`task1344_glue_entailment_classification` | Checking if the second sentance entails the first or not | Classification
+`task1345_glue_qqp_question_paraprashing` | Paraphrasing a question to generate a similar question | Text Modification
+`task1346_glue_cola_grammatical_correctness_classification` | Checking grammatical correctness of a statement. | Classification
+`task1347_glue_sts-b_similarity_classification` | Classifying two sentence based on semantic similarity on the scale of 0 - 5. | Classification
+`task1350_opus100_translation_en_gu` | Translate a sentence in English to Gujarati | Translation  
+`task1351_opus100_translation_gu_en` | Translate a sentence in Gujarati to English | Translation
+`task1352_hind_encorp_translation_hi_en` | Translate a sentence in Hindi to English | Translation  
+`task1353_hind_encorp_translation_en_hi` | Translate a sentence in English to Hindi | Translation
+`task1354_sent_comp_classification` | Given text and headline classify if headline matches text or not | Classification
+`task1355_sent_comp_summarization` | Given text generate summary about the text | Summarization
 `task1356_xlsum_title_generation` | Generating title for the text in xlsum | Title Generation
 `task1357_xlsum_summary_generation` | Generating summary for the text in xlsum | Summary Generation
 `task1358_xlsum_title_generation` | Generates title for the text in xlsum | Title Generation
@@ -987,6 +1330,20 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1367_opustedtalks_translation` | Translation from Croatian to English using Opus_Ted Dataset | Translation
 `task1368_healthfact_sentence_generation` | Generate a claim based on a given paragraph | Sentence Generation
 `task1369_healthfact_sentence_generation` | Generate an explanation for a claim based on a given paragraph | Sentence Generation
+`task1370_newscomm_classification` | Classifying the language of given statement | Classification
+`task1371_newscomm_translation` | Translating news commentaries given in English to French language based on the news_Commentary dataset | Language Translation
+`task1373_newscomm_translation` | Translating news commentaries given in German to Spanish language based on the news_Commentary dataset | Language Translation
+`task1374_newscomm_translation` | Translating news commentaries given in Arabic to Czeck language based on the news_Commentary dataset | Language Translation
+`task1375_newscomm_translation` | Translating news commentaries given in Dutch to Portuguese language based on the news_Commentary dataset | Language Translation
+`task1376_newscomm_translation` | Translating news commentaries given in Italian to Zhuang language based on the news_Commentary dataset | Language Translation
+`task1377_newscomm_translation` | Translating news commentaries given in French to Russian language based on the news_Commentary dataset | Language Translation
+`task1378_quarel_correct_answer_generation` | Given a sentence and a question, write the correct answer based on the sentence. | Answer Generation
+`task1379_quarel_incorrect_answer_generation` | Given a sentence and a question, write the incorrect answer based on the sentence. | Incorrect Answer Generation
+`task1380_quarel_correct_option_generation` | Given a sentence and a question, choose the correct option number instead of exact answer based on the sentence. | Answer Generation
+`task1381_quarel_incorrect_option_generation` | Given a sentence and a question, choose the incorrect option number instead of exact answer based on the sentence. | Incorrect Answer Generation
+`task1382_quarel_write_correct_answer` | Writing a correct answer to a given question based on a given sentence. | Answer Generation
+`task1383_quarel_write_incorrect_answer` | Writing a incorrect answer to a given question based on a given sentence. | Incorrect Answer Generation
+`task1384_deal_or_no_dialog_classification` | Given a dialogue, classify whether both participants agree to the deal | Classification
 `task1394_meta_woz_task_classification` | Given two task sentences, detect the domains of the task | Classification
 `task1395_europa_ecdc_tm_en_sv_translation` | Translate English sentences to Swedish | Translation
 `task1396_europa_ecdc_tm_en_de_translation` | Translate English sentences to German | Translation
@@ -1055,3 +1412,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
 `task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
+`task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
