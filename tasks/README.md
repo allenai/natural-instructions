@@ -1395,11 +1395,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
 `task1429_evalution_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1431_head_qa_answer_generation` | Answering a multiple-choice question | Answer Generation
-`task1432_head_qa_language_translation_en_to_es.json` | Translation from English to Spanish | Language Translation 
-`task1433_head_qa_language_translation_es_to_en.json` | Translation from Spanish to English | Language Translation 
-`task1434_head_qa_classification.json` | Classifying questions into topics | Classification
-`task1435_ro_sts_parallel_language_translation_ro_to_en.json` | Translation from Romanian to English | Language Translation 
-`task1436_ro_sts_parallel_language_translation_en_to_ro.json` | Translation from English to Romanian | Language Translation 
+`task1432_head_qa_language_translation_en_to_es` | Translation from English to Spanish | Language Translation 
+`task1433_head_qa_language_translation_es_to_en` | Translation from Spanish to English | Language Translation 
+`task1434_head_qa_classification` | Classifying questions into topics | Classification
+`task1435_ro_sts_parallel_language_translation_ro_to_en` | Translation from Romanian to English | Language Translation 
+`task1436_ro_sts_parallel_language_translation_en_to_ro` | Translation from English to Romanian | Language Translation 
 `task1437_doqa_cooking_question_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
 `task1438_doqa_cooking_answer_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
 `task1439_doqa_cooking_isanswerable` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
