@@ -6,41 +6,49 @@
         "ROCStories, https://arxiv.org/pdf/1604.01696.pdf"
     ],
     "Categories": [
-        "Classification"
+        "Order Generation",
+        "Text Comparison",
+        "Reasoning -> Deductive Reasoning",
+        "Question Answering -> Multiple Choice Question Answering",
+        "Story Completion"        
     ],
-    "Definition": "In this task, you're given the title and three arbitrary sentences out of a five-sentence story. You are also given three addtional sentence options a,b, and c that may or may not belong to the story. Your job is to pick the the two sentence options that seamlessly connect with the rest of the story, as well as its position in the sentence order of the story; note that the selected choices may fit into the story at any point. Your answer must be in the form of '2a,5b', where '2a' means, the candidate sentence 'a' will be inserted as the 2nd sentence in the story. The answer must also be in order of the selected choices, i.e., '2a,5b' is allowed, and '5b,2a' is not allowed. If options are equally plausible, pick the ones that make more sense.",
+    "Definition": "In this task, you're given the title and three arbitrary sentences out of a five-sentence story. You are also given three additional sentence options, a, b, and c, that may or may not belong to the story. Your job is to pick the two options that seamlessly connect with the rest of the story and their positions in the sentence order of the story; note that the selected choices may fit into the story at any point. Your answer must be in the form of '2a, 5b', where '2a' means the candidate sentence 'a' will be inserted as the 2nd sentence in the story. The answer must also be in the order of the selected choices, i.e., '2a, 5b' is allowed, and '5b, 2a' is not allowed. If options are equally plausible, pick the ones that make more sense.", 
+    "Domains": [    
+        "Narrative",
+        "Story"
+    ],
     "Positive Examples": [
         {
             "input": "Title: Marcus Buys Khakis. Marcus needed clothing for a business casual event. He decided to buy a pair of khakis. The pair he bought fit him perfectly. Choices: a. Marcus was happy to have the right clothes for the event. b. He left in a huff for having his ideas mocked. c. All of his clothes were either too formal or too casual.",
-            "output": "5a,2c",
-            "explanation": "Marcus is buying clothes for a business event, and not presenting an idea."
+            "output": "5a, 2c",
+            "explanation": "Marcus is buying clothes for a business event and not presenting an idea."
         },
         {
             "input": "Title: Corn. Laura loved corn. So she decided to grow some in her backyard. But she realized that they required too much water. Choices: a. She did not receive another letter back in the mail. b. So Laura quickly abandoned her corn garden idea. c. The whole process of growing them made her very excited.",
-            "output": "5b,3c",
-            "explanation": "Laura is deciding on whether she should plant corn, and has not mailed anything."
+            "output": "5b, 3c",
+            "explanation": "Laura is deciding on whether she should plant corn and has not mailed anything."
         },
         {
             "input": "Title: Office Party. It was a boring job but it paid the bills. Larry grew tired of doing the same thing every day. He had the idea to have an office party. Choices: a. By lunch the whole office had passed out and nothing got done. b. They went to the concert and had a great time. c. Larry worked at an accounting firm. ",
-            "output": "5a,1c",
+            "output": "5a, 1c",
             "explanation": "Larry is throwing an office party and not taking people to a concert."
         },
         {
             "input": "Title: The Frog. Ben found a frog in the creek. It was green and slimy. He took it home and put it in a bucket. Choices: a. He'd jumped out and escaped! b. The next day, the frog was gone. c. He looked at it, was mesmerized and let it go.",
-            "output": "5a,4b",
+            "output": "5a, 4b",
             "explanation": "Ben could not find his frog, so he did not release it voluntarily."
         }
     ],
     "Negative Examples": [
         {
             "input": "Title: Up Close. My grandparents and I were going for a walk. We were walking near some pine trees and turned a corner. It was so close that it scared us, but they told me not to run. Choices: a. We all stood still and soon the moose walked away without harm. b. They then went back to wait for the next egg to hatch. c. Suddenly, right in front of us, was a huge moose.",
-            "output": "5a,3b",
+            "output": "5a, 3b",
             "explanation": "The people saw a moose, and were not handling an egg."
         },
         {
             "input": "Title: Eggplant Parmesan. Then she breaded each slice carefully before frying them. She layered each breaded slice into her casserole dish. She poured homemade marinara sauce in the dish. Choices: a. Eventually, she got used to trying different types of foods. b. Finally, she sprinkled parmesan cheese on top and baked it. c. Mary sliced the purple eggplant.",
-            "output": "5b,2c",
-            "explanation": "The story describes how eggplant parmesan is made, but the order of sentences slotted is incorrect as the first stp shohuld be cutting the eggplant."
+            "output": "5b, 2c",
+            "explanation": "The story describes how eggplant parmesan is made, but the order of sentences slotted is incorrect as the first step should be cutting the eggplant."
         }
     ],
     "Instances": [
