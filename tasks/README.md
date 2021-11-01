@@ -1500,7 +1500,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
-`task1641_SearchQA_category_classification` | Category Classification on SearchQA questions | Category Classification
-`task1642_SearchQA_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
-`task1643_Climate_Fever_label_generation` | Label Generation on Climate Fever | Label Generation
-`task1644_Climate_Fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
+`task1641_searchqa_category_classification` | Category Classification on SearchQA questions | Category Classification
+`task1642_searchqa_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
+`task1643_climate_fever_label_generation` | Label Generation on Climate Fever | Label Generation
+`task1644_climate_fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
