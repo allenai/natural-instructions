@@ -27,9 +27,13 @@
 - `Entity Detection`
 - `Ethical Judgement`
 - `Fake News Detection`
-- `Grammar Error`
-  -  `Grammar Error -> Grammar Error Correction`
-  -  `Grammar Error -> Grammar Error Detection`
+- `Proofreading`
+  - `Proofreading -> Grammar Error`
+    -  `Proofreading -> Grammar Error -> Grammar Error Correction`
+    -  `Proofreading -> Grammar Error -> Grammar Error Detection`
+  - `Proofreading -> Spelling Error`
+    -  `Proofreading -> Spelling Error -> Spelling Error Detection`
+  - `Proofreading -> Word Order Error`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hate Speech Detection`
 - `Hypernym Discovery`
