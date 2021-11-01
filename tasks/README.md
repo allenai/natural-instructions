@@ -1471,3 +1471,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
+`task1612_sick_label_classification.json` | Classification of labels correctly to show relation between two sentences (based on the sick dataset)| Classification
+ `task1613_sick_given_category_generate_sentence.json` | Generate a sentence based  that meets the given criteria  (based on the sick dataset) | Sentence Generation
+ `task1614_sick_text_modify.json` | Derive a sentence from the given sentence (based on the sick dataset) | Text modification
+ `task1615_sick_tclassify_B_Relation_A.json` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
+ `task1616_cc_alligned_translate_eng_tel.json` | Translate from English to Telugu | Translation
+ `task1617_cc_alligned_translate_tel_eng.json` | Translate from Telugu to English | Translation
+ `task1618_cc_alligned_classify_tel_eng.json` | Classify if a sentence is in Telugu or English Language | Language Classification
