@@ -1445,6 +1445,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1508_wordnet_antonyms` | Given an adjective, generate its antonym | Answer Generation
+`task1509_evalution_antonyms` | Given a word generate its antonym | Answer Generation
+`task1510_evalution_relation_extraction` | Given a phrase describing the relationship between two words, extract the words and the lexical relationship between them | Answer Generation
 `task1514_flores_translation_entone` | Translate from English to Nepali | Translation
 `task1515_imppres_longtextgeneration` | Given a premise, generate hypothesis | Text Generation
 `task1516_imppres_naturallanguageinference` | Classify a given premise and hypothesis pair | Classification
@@ -1471,17 +1474,21 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
+`task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
+`task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
+`task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
 `task1612_sick_label_classification` | Classification of labels correctly to show relation between two sentences (based on the sick dataset)| Classification
- `task1613_sick_given_category_generate_sentence` | Generate a sentence based  that meets the given criteria  (based on the sick dataset) | Sentence Generation
- `task1614_sick_text_modify` | Derive a sentence from the given sentence (based on the sick dataset) | Text modification
- `task1615_sick_tclassify_b_relation_a` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
- `task1616_cc_alligned_translate_eng_tel` | Translate from English to Telugu | Translation
- `task1617_cc_alligned_translate_tel_eng` | Translate from Telugu to English | Translation
- `task1618_cc_alligned_classify_tel_eng` | Classify if a sentence is in Telugu or English Language | Language Classification
+`task1613_sick_given_category_generate_sentence` | Generate a sentence based  that meets the given criteria  (based on the sick dataset) | Sentence Generation
+`task1614_sick_text_modify` | Derive a sentence from the given sentence (based on the sick dataset) | Text modification
+`task1615_sick_tclassify_b_relation_a` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
+`task1616_cc_alligned_translate_eng_tel` | Translate from English to Telugu | Translation
+`task1617_cc_alligned_translate_tel_eng` | Translate from Telugu to English | Translation
+`task1618_cc_alligned_classify_tel_eng` | Classify if a sentence is in Telugu or English Language | Language Classification
 `task1619_menyo20k-mt_en_yo_translation` | Given an English sentence convert it to Yoruba. | Translation
- `task1620_menyo20k-mt_yo_en_translation` | Given a sentence in Yoruba convert it to English. | Translation
- `task1621_menyo20k-mt_en_yo_language_identification` | Given a sentence identify if it is in Yoruba or English. | Language Identification
- `task1622_disfl_qa_text_modication` | Given a disfluent question, convert it to a proper question. | Text Modification
- `task1623_disfl_qa_disfluent_question_classification` | Given a question, predict whether it is disfluent or proper. | Classification
- `task1624_disfl_qa_question_yesno_classification` | Given a context and a question, predict if a question is answerable or not based on the context. | Classification
- `task1625_disfl_qa_asnwer_generation` | Given a context and a question, return an answer to the question based on context. | Answer Generation
+`task1620_menyo20k-mt_yo_en_translation` | Given a sentence in Yoruba convert it to English. | Translation
+`task1621_menyo20k-mt_en_yo_language_identification` | Given a sentence identify if it is in Yoruba or English. | Language Identification
+`task1622_disfl_qa_text_modication` | Given a disfluent question, convert it to a proper question. | Text Modification
+`task1623_disfl_qa_disfluent_question_classification` | Given a question, predict whether it is disfluent or proper. | Classification
+`task1624_disfl_qa_question_yesno_classification` | Given a context and a question, predict if a question is answerable or not based on the context. | Classification
+`task1625_disfl_qa_asnwer_generation` | Given a context and a question, return an answer to the question based on context. | Answer Generation
