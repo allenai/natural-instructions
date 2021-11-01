@@ -1394,6 +1394,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
 `task1429_evalution_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1431_head_qa_answer_generation` | Answering a multiple-choice question | Answer Generation
+`task1432_head_qa_language_translation_en_to_es` | Translation from English to Spanish | Language Translation 
+`task1433_head_qa_language_translation_es_to_en` | Translation from Spanish to English | Language Translation 
+`task1434_head_qa_classification` | Classifying questions into topics | Classification
+`task1435_ro_sts_parallel_language_translation_ro_to_en` | Translation from Romanian to English | Language Translation 
+`task1436_ro_sts_parallel_language_translation_en_to_ro` | Translation from English to Romanian | Language Translation 
 `task1437_doqa_cooking_question_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
 `task1438_doqa_cooking_answer_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
 `task1439_doqa_cooking_isanswerable` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
@@ -1460,8 +1466,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1540_parsed_pdfs_summarization` | Given a text, generate a title for it | Summarization
 `task1541_agnews_classification` | Given a short article, classify the article based on its category | Classification
 `task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
-'task1543_conll2002_parts_of_speech_tagging_answer_generation' | Given a question in Dutch language, write the part-of-speech tag for each word in the question | Answer Generation
-'task1544_conll2002_named_entity_recognition_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
-'task1545_conll2002_person_name_extraction_answer_generation' | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
-'task1546_conll2002_location_name_extraction_answer_generation' | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1543_conll2002_parts_of_speech_tagging_answer_generation` | Given a question in Dutch language, write the part-of-speech tag for each word in the question | Answer Generation
+`task1544_conll2002_named_entity_recognition_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+`task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+`task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
