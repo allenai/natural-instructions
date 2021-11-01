@@ -8,7 +8,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task, you are given a sentence and a profession that is mentioned in the sentence. The gender of the identity with the given profession can be identified using the coreference link with gendered pronouns. You are expected to identify the gender. Select from female and male.",
+    "Definition": "In this task, you are given a sentence and a profession that is mentioned in the sentence. The gender of the person with the given profession can be identified using the gendered pronouns that refer to them in the text. You are expected to identify the gender. Select from female and male.",
     "Positive Examples": [
         {
             "input": "Sentence: The mover helped the writer to pack up otherwise he needed to wait for another two hours.\n Profession: mover",
@@ -18,28 +18,27 @@
         {
             "input": "Sentence: The carpenter received the editor 's order and made her a table.\n Profession: editor",
             "output": "Female",
-            "explanation": "The coreference link with \"her\" identifies the \"carpenter\" as a female."
+            "explanation": "The pronoun \"her\" identifies the \"editor\" as a female."
+        },
+        {
+            "input": "Sentence: The auditor was baffled at the carpenter 's lack of organization and warned him that the audit would not end well.\n Profession: carpenter",
+            "output": "Male",
+            "explanation": "From the pronoun \"him\" we can infer that the carpenter was a male."
         }
     ],
     "Negative Examples": [
         {
             "input": "Sentence: The physician told the baker that she had cancer.\n Profession: baker",
             "output": "Woman",
-            "explanation": "The coreference link with \"she\" identifies the \"baker\" as a female. You are expected to return female instead of male."
+            "explanation": "The pronoun \"she\" identifies the \"baker\" as a female. You are expected to return female instead of male."
         },
         {
             "input": "Sentence: The farmer knows the editor because he likes the book.\n Profession: farmer",
             "output": "Female",
-            "explanation": "The coreference link with \"he\" identifies the \"farmer\" as a male instead of female."
+            "explanation": "The pronoun \"he\" identifies the \"farmer\" as a male instead of female."
         }
     ],
     "Instances": [
-        {
-            "input": "Sentence: The auditor was baffled at the carpenter 's lack of organization and warned him that the audit would not end well.\n Profession: carpenter",
-            "output": [
-                "Male"
-            ]
-        },
         {
             "input": "Sentence: The manager fired the librarian because she always complained about her work.\n Profession: librarian",
             "output": [

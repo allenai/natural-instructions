@@ -1,26 +1,40 @@
 {
-    "Definition": "In medical studies, treatments are tested within a group of study participants. To determine if a new treatment works, various outcomes are measured in the people who take part in the study. You will be given a sentence of a study report in which your task is to list the tokens that give information about the outcomes of the study. You should list the tokens in the same order that they appear in the text. If no information about the outcome is mentioned, just output \"not found\". Outcomes contain: outcomes measured in patients, like blood sugar, outcomes regarding the intervention, like effectiveness, costs, the score on a medical test or questionnaire, positive or negative events in the patient groups, like quitting smoking, or adverse reactions. Do not mention numbers or results, interpretations of outcomes, outcome mentions without relevant information.",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "In medical studies, treatments are tested within a group of study participants. To determine if a new treatment works, various outcomes are measured in the people who take part in the study. You will be given a sentence of a study report in which your task is to list the phrases that give information about the outcomes of the study. You should list the phrases in the same order that they appear in the text, separated by commas. If no information about the outcome is mentioned, just answer with: \"not found\".\n Outcomes contain: outcomes measured in patients: like blood sugar,\n outcomes regarding the intervention: like effectiveness, costs\n the score on a medical test or questionnaire,\n positive or negative events in the patient groups: like quitting smoking, or adverse reactions.\n Do not mention numbers or results, interpretations of outcomes, outcome mentions without relevant information.",
     "Positive Examples": [
         {
             "input": " Effects of 12 weeks' treatment with a proton pump inhibitor on insulin secretion, glucose metabolism and markers of cardiovascular risk in patients with type 2 diabetes ",
-            "output": "insulin, secretion, ,, glucose, metabolism, and, markers, of, cardiovascular, risk",
-            "explanation": "All the given tokens refer to outcomes seen in patients."
+            "output": "insulin secretion, glucose metabolism and markers of cardiovascular risk",
+            "explanation": "The study is measuring effects of a treatment on several outcomes, which are: insulin secretion, glucose metabolism and markers of cardiovascular risk."
         },
         {
             "input": "There were no serious adverse device effects.",
-            "output": "no, serious, adverse, device, effects",
+            "output": "no serious adverse device effects",
             "explanation": "Any mention of not-seen effects counts as an outcome."
+        },
+        {
+            "input": " The primary outcome measures were the score on the Irritability subscale of the Aberrant Behavior Checklist and the rating on the Clinical Global Impressions - Improvement (CGI-I) scale at eight weeks. ",
+            "output": "score on the Irritability subscale of the Aberrant Behavior Checklist and the rating on the Clinical Global Impressions - Improvement (CGI-I) scale",
+            "explanation": "All the measured scores are correctly listed in this answer."
         }
     ],
     "Negative Examples": [
         {
             "input": "Secondary end points included change in upper-limb measures (including the Fugl-Meyer Assessment-Upper Extremity).",
-            "output": "nitrendipine, (10-40, mg/d, ), enalapril, maleate, (5-20, mg/d), hydrochlorothiazide, (12.5-25, mg/d), both, add-on, drugs",
-            "explanation": "The drugs are correctly mentioned as intervention, but their dosage shouldn't be given as output."
+            "output": "change in upper-limb measures, Fugl-Meyer Assessment-Upper Extremity",
+            "explanation": "The upper-limb measures are correctly mentioned, but the words \"change in\" should not be included, as they're measured results."
         },
         {
             "input": "More early-stage cancer (stages I and II, 54 vs. 10) were found in the screening group than in the control group.",
-            "output": "early-stage, cancer, stages, I, and, II, ,, 54, vs., 10",
+            "output": "early-stage cancer, stages I and II, 54 vs. 10",
             "explanation": "The information about number of cases in each stage is an example of numbers and measurements that shouldn't be included in the output."
         }
     ],
@@ -40,7 +54,7 @@
         {
             "input": "Serum and urine biochemical parameters related to calcium status and bone metabolism remained unaltered .",
             "output": [
-                "Serum, urine, biochemical, parameters, calcium, status, bone, metabolism"
+                "urine biochemical parameters, calcium status, bone metabolism"
             ]
         },
         {
@@ -58,19 +72,19 @@
         {
             "input": "A physiotherapy service to an emergency extended care unit does not decrease admission rates to hospital : a randomised trial .",
             "output": [
-                "admission, rates"
+                "admission rates"
             ]
         },
         {
             "input": "Antioxidant supplementation and exercise-induced oxidative stress in the 60-year-old as measured by antipyrine hydroxylates .",
             "output": [
-                "exercise-induced, oxidative, stress"
+                "exercise-induced oxidative stress"
             ]
         },
         {
             "input": "We investigated whether 5 to 20mg per week oral methotrexate could slow down disease progression in 44 patients with inclusion body myositis in a randomized double-blind placebo-controlled study over 48 weeks .",
             "output": [
-                "disease, progression"
+                "disease progression"
             ]
         },
         {
@@ -88,7 +102,7 @@
         {
             "input": "Trials involving larger patient populations will be necessary to confirm the results of this preliminary study and to determine the extent of clinical improvement , subpopulations benefited , role in heart failure therapeutics , and so forth .",
             "output": [
-                "clinical, improvement"
+                "clinical improvement"
             ]
         },
         {
@@ -118,7 +132,7 @@
         {
             "input": "Women who smoke and take oral contraceptives ( OCs ) have significantly increased risk of cardiovascular disease , but the exact mechanismsfor the increased risk are not known .",
             "output": [
-                "risk, of, cardiovascular, disease"
+                "risk of cardiovascular disease"
             ]
         },
         {
@@ -130,23 +144,23 @@
         {
             "input": "Comparison of weakness progression in inclusion body myositis during treatment with methotrexate or placebo .",
             "output": [
-                "weakness, progression"
+                "weakness progression"
             ]
         },
         {
             "input": "Treatment group participants were better able to suggest appropriate emotion-management strategies for story characters at post-intervention than at pre-intervention , whereas control participants were not .",
             "output": [
-                "emotion-management, strategies"
+                "emotion-management strategies"
             ]
         },
         {
             "input": "The increase in plasma 6-keto-prostaglandin F1 alpha concentration was associated with an increase in serum HDL2 cholesterol concentration in the group taking regular exercise .",
             "output": [
-                "plasma, 6-keto-prostaglandin, F1, alpha, concentration, serum, HDL2, cholesterol, concentration"
+                "plasma 6-keto-prostaglandin F1 alpha concentration, serum HDL2 cholesterol concentration"
             ]
         },
         {
-            "input": "Results showed that cortisol and glucose levels were significantly high in 700 and 500 but not 3,000 mg l\u207b\u00b9 group compared to control .",
+            "input": "Results showed that cortisol and glucose levels were significantly high in 700 and 500 but not 3,000 mg l⁻¹ group compared to control .",
             "output": [
                 "cortisol, glucose"
             ]
@@ -172,7 +186,7 @@
         {
             "input": "These data show that acute nicotine administration , in the form of nicotine gum , has no effect on cardiovascular or lipid stress reactivity in women .",
             "output": [
-                "cardiovascular, lipid, stress, reactivity"
+                "cardiovascular, lipid stress reactivity"
             ]
         },
         {
@@ -184,7 +198,7 @@
         {
             "input": "A complete response , defined as no emesis with no need for another rescue antiemetic , during the first 3 h ( 0-3 h ) after anesthesia was 87 % with granisetron and 78 % with perphenazine ( P = 0.204 ) .",
             "output": [
-                "complete, response, no, emesis, with, no, need, for, another, rescue, antiemetic"
+                "complete response, no emesis with no need for another rescue antiemetic"
             ]
         },
         {
@@ -208,7 +222,7 @@
         {
             "input": "In this adequately powered study , once-daily oral amoxicillin is not inferior to twice-daily penicillin V for the treatment and eradication of GABHS in children with pharyngitis .",
             "output": [
-                "eradication, of, GABHS"
+                "eradication of GABHS"
             ]
         },
         {
@@ -250,7 +264,7 @@
         {
             "input": "This study was conducted to determine the long-term effect of flosequinan , a new orally administered arterial and venous dilator , on the clinical course of patients with moderate to severe congestive heart failure .",
             "output": [
-                "long-term, effect"
+                "long-term effect"
             ]
         },
         {
@@ -268,13 +282,13 @@
         {
             "input": "The addition of chronic vasodilator therapy with flosequinan to standard digitalis-diuretic regimens is capable of inducing clinical improvement in patients with moderate to severe chronic heart failure .",
             "output": [
-                "clinical, improvement"
+                "clinical improvement"
             ]
         },
         {
             "input": "Eradication of GABHS , determined with follow-up throat cultures on days 3-6 , 12-16 and 26-36 .",
             "output": [
-                "Eradication, of, GABHS"
+                "not found"
             ]
         },
         {
@@ -286,7 +300,7 @@
         {
             "input": "During the course of therapy , a modest improvement in the symptom scores and functional classification of the flosequinan-treated patients was observed .",
             "output": [
-                "symptom, scores, functional, classification"
+                "symptom scores, functional classification"
             ]
         },
         {
@@ -298,7 +312,7 @@
         {
             "input": "However , there was no difference in the improvements made by children in the intervention and control conditions on facial expression and body-posture recognition measures .",
             "output": [
-                "facial, expression, body-posture, recognition"
+                "facial expression, body-posture recognition"
             ]
         },
         {
@@ -328,19 +342,19 @@
         {
             "input": "MLMs indicated a slight increase in depressive symptoms over time in the sample as a whole .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
             "input": "Aquatic exercisers reported equal ( QWB ) or better ( CHDR , HAQ , PQOL ) health-related quality of life compared with controls .",
             "output": [
-                "health-related, quality, of, life"
+                "health-related quality of life"
             ]
         },
         {
             "input": "In the men taking regular exercise serum cholesterol concentrations increased 26 % more in the high density lipoprotein subfraction two ( HDL2 ) and decreased 31 % more in the subfraction three ( HDL3 ) and 9 % more in the low density lipoprotein fraction than in the control group .",
             "output": [
-                "serum, cholesterol, concentrations"
+                "serum cholesterol concentrations"
             ]
         },
         {
@@ -352,7 +366,7 @@
         {
             "input": "Any progression of albuminuria ( defined as new microalbuminuria or new clinical proteinuria ) occurred in 1859 participants ; 1542 developed new microalbuminuria , and 317 participants developed clinical proteinuria .",
             "output": [
-                "progression, of, albuminuria, clinical, proteinuria"
+                "progression of albuminuria, clinical proteinuria"
             ]
         },
         {
@@ -370,13 +384,13 @@
         {
             "input": "The effects of the high intake of Maillard reaction products ( MRP ) on calcium availability in adolescents and across Caco-2 cell monolayers were examined .",
             "output": [
-                "calcium, availability"
+                "calcium availability"
             ]
         },
         {
             "input": "Previous analyses that focused on health care underestimated this economic burden , particularly for school systems .",
             "output": [
-                "economic, burden"
+                "economic burden"
             ]
         },
         {
@@ -428,15 +442,15 @@
             ]
         },
         {
-            "input": "In assessing the acute functional effect of bronchodilators , \u0394sRAW-based criterion is preferable to FEV1-FVC-based criteria , being more closely related to bronchodilator-induced improvements of lung mechanics and dyspnea at rest .",
+            "input": "In assessing the acute functional effect of bronchodilators , ΔsRAW-based criterion is preferable to FEV1-FVC-based criteria , being more closely related to bronchodilator-induced improvements of lung mechanics and dyspnea at rest .",
             "output": [
-                "lung, mechanics, dyspnea"
+                "lung mechanics, dyspnea"
             ]
         },
         {
             "input": "[ The effect of ionic and nonionic x-ray contrast media on myocardial perfusion and myocardial function ] .",
             "output": [
-                "myocardial, perfusion, myocardial, function"
+                "myocardial perfusion, myocardial function"
             ]
         },
         {
@@ -460,7 +474,7 @@
         {
             "input": "Two weeks seems to be a sufficient duration to allow functional restoration across the ureteropelvic junction after endopyelotomy and decrease stent related complications .",
             "output": [
-                "functional, restoration, across, the, ureteropelvic"
+                "functional restoration across the ureteropelvic"
             ]
         },
         {
@@ -472,7 +486,7 @@
         {
             "input": "Toxicity was primarily hematological and bimodal : 32 % had grade 3 or 4 leukopenia and 24 % had grade 3 or 4 thrombocytopenia ; 22 % had no leukopenia and 44 % had no thrombocytopenia .",
             "output": [
-                "Toxicity, leukopenia, thrombocytopenia"
+                "leukopenia, thrombocytopenia"
             ]
         },
         {
@@ -496,7 +510,7 @@
         {
             "input": "The primary outcome was defined as an improvement of 2 points in error rates for facial emotion labeling ( DANVA2 ) from baseline .",
             "output": [
-                "facial, emotion, labeling, (, DANVA2"
+                "facial emotion labeling ( DANVA2"
             ]
         },
         {
@@ -538,7 +552,7 @@
         {
             "input": "Women who also exercised had additional increases in BMD at the femoral neck ( +0.29 % ) , total hip ( +0.34 % ) , spine ( +0.23 % ) , total radius ( +0.30 % ) , and additional decreases in Alkphase B ( -2.4 % ) and Serum NTx ( -6.5 % ) .",
             "output": [
-                "BMD, Alkphase, B, Serum, NTx"
+                "BMD, Alkphase B, Serum NTx"
             ]
         },
         {
@@ -568,7 +582,7 @@
         {
             "input": "These results are not concordant with the view that intentional smoking abstinence exacerbates depressive symptoms .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
@@ -580,25 +594,25 @@
         {
             "input": "A symptom based questionnaire was administered to all patients at stent removal .",
             "output": [
-                "symptom, based, questionnaire"
+                "symptom based questionnaire"
             ]
         },
         {
             "input": "In accordance , calcium bioavailability in adolescents did not vary between the diets ( % WD = 40.4 +/- 5.1 , BD % = 38.2 +/- 3.6 ) .",
             "output": [
-                "calcium, bioavailability"
+                "calcium bioavailability"
             ]
         },
         {
             "input": "The Hb increment is somewhat greater with continued weekly epoetin alfa .",
             "output": [
-                "Hb, increment"
+                "Hb increment"
             ]
         },
         {
             "input": "Measurement of transfer factor during constant exhalation .",
             "output": [
-                "transfer, factor"
+                "transfer factor"
             ]
         },
         {
@@ -622,13 +636,13 @@
         {
             "input": "Language outcome in autism : randomized comparison of joint attention and play interventions .",
             "output": [
-                "Language"
+                "not found"
             ]
         },
         {
             "input": "Time-varying smoking abstinence predicts lower depressive symptoms following smoking cessation treatment .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
@@ -652,7 +666,7 @@
         {
             "input": "The prophylactic effect of itraconazole capsules and fluconazole capsules for systemic fungal infections in patients with acute myeloid leukemia and myelodysplastic syndromes : a Japanese multicenter randomized , controlled study .",
             "output": [
-                "prophylactic, effect"
+                "prophylactic effect"
             ]
         },
         {
@@ -682,31 +696,31 @@
         {
             "input": "Assessments of JA skills , SP skills , mother-child interactions , and language development were collected at 4 time points : pre- and postintervention and 6 and 12 months postintervention by independent testers .",
             "output": [
-                "JA, skills, SP, skills, mother-child, interactions, language, development"
+                "JA skills, SP skills, mother-child interactions, language development"
             ]
         },
         {
             "input": "MAIN MEASURES PTSD symptom severity was the primary outcome .",
             "output": [
-                "symptom, severity"
+                "symptom severity"
             ]
         },
         {
             "input": "The rate of height gain was no different for treatment and placebo groups .",
             "output": [
-                "rate, of, height, gain"
+                "rate of height gain"
             ]
         },
         {
             "input": "Fluoxetine therefore has inverse effects on mPFC activation in ASD and ADHD during reversal learning , suggesting dissociated underlying serotonin abnormalities .",
             "output": [
-                "mPFC, activation"
+                "mPFC activation"
             ]
         },
         {
             "input": "The effect of weight training on bone mineral density and bone turnover in postmenopausal breast cancer survivors with bone loss : a 24-month randomized controlled trial .",
             "output": [
-                "bone, mineral, density, bone, turnover"
+                "bone mineral density, bone turnover"
             ]
         },
         {
@@ -724,19 +738,19 @@
         {
             "input": "Changes in symptomatology , exercise performance , and left ventricular function were assessed serially during the two-month treatment period .",
             "output": [
-                "symptomatology, exercise, performance, left, ventricular, function"
+                "symptomatology, exercise performance, left ventricular function"
             ]
         },
         {
             "input": "When response was analyzed by hematological toxicity , there was a 35.7 % response if patients had leukopenia grade 3/4 ( versus 8.3 % , P = 0.08 ) .",
             "output": [
-                "hematological, toxicity"
+                "hematological toxicity"
             ]
         },
         {
             "input": "However , among OC users , nonsmokers had significantly greater heart rate and diastolic blood pressure reactivity to stress .",
             "output": [
-                "heart, rate, diastolic, blood, pressure, reactivity"
+                "heart rate, diastolic blood pressure reactivity"
             ]
         },
         {
@@ -772,7 +786,7 @@
         {
             "input": "During the first 6 months following a planned quit attempt , being abstinent in a particular week appears to be associated with lower levels of concurrent depressive symptoms .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
@@ -790,13 +804,13 @@
         {
             "input": "Adverse events did not significantly differ in the 2 groups .",
             "output": [
-                "Adverse, events"
+                "not found"
             ]
         },
         {
             "input": "Rates of responses in patients adequately dosed ( i.e. , with significant hematotoxicity ) with amonafide ranged from 35 to 50 % .",
             "output": [
-                "Rates, of, responses"
+                "not found"
             ]
         },
         {
@@ -808,13 +822,13 @@
         {
             "input": "Assessment of acute bronchodilator effects from specific airway resistance changes in stable COPD patients .",
             "output": [
-                "specific, airway, resistance, changes"
+                "specific airway resistance changes"
             ]
         },
         {
             "input": "A pathologic result was found in 90 % of the patients .",
             "output": [
-                "pathologic, result"
+                "pathologic result"
             ]
         },
         {
@@ -838,13 +852,13 @@
         {
             "input": "Differences between groups for use of community healthcare resources , return to usual work/home/leisure activities and satisfaction with their EECU care were small and not significant .",
             "output": [
-                "use, of, community, healthcare, resources, return, to, usual, work/home/leisure, activities, satisfaction"
+                "use of community healthcare resources, return to usual work/home/leisure activities, satisfaction"
             ]
         },
         {
             "input": "Results indicated that , among OC nonusers , there was no effect of smoking status or nicotine administration on cardiovascular reactivity .",
             "output": [
-                "cardiovascular, reactivity"
+                "cardiovascular reactivity"
             ]
         },
         {
@@ -856,13 +870,13 @@
         {
             "input": "Exhalation TLCO ( TLCO , ex ) was compared with the standard ( Jones and Meade ) 10 second breath holding TLCO ( TLCO , bh ) in 100 consecutive patients .",
             "output": [
-                "Exhalation, TLCO, TLCO, ,, ex"
+                "TLCO , ex"
             ]
         },
         {
             "input": "The response rate was 18 % , including one complete response .",
             "output": [
-                "response, rate"
+                "response rate"
             ]
         },
         {
@@ -872,9 +886,9 @@
             ]
         },
         {
-            "input": "There were no significant differences in serum levels of cholesterol , total protein , lactate dehydrogenase , aspartate aminotransferase , alanine aminotransferase , Na\u207a , Cl\u207b , K\u207a , and Ca\u00b2\u207a .",
+            "input": "There were no significant differences in serum levels of cholesterol , total protein , lactate dehydrogenase , aspartate aminotransferase , alanine aminotransferase , Na⁺ , Cl⁻ , K⁺ , and Ca²⁺ .",
             "output": [
-                "serum, levels, of, cholesterol, protein, lactate, dehydrogenase, aspartate, aminotransferase, alanine, aminotransferase, Na\u207a, Cl\u207b, K\u207a, Ca\u00b2\u207a"
+                "serum levels of cholesterol, protein, lactate dehydrogenase, aspartate aminotransferase, alanine aminotransferase, Na⁺, Cl⁻, K⁺, Ca²⁺"
             ]
         },
         {
@@ -904,31 +918,31 @@
         {
             "input": "After treatment 11 group 1 patients ( 78.6 % ) had a partial or full response to posterior tibial nerve stimulation but only 2 ( 14.3 % ) in group 2 had a partial response ( p = 0.002 ) .",
             "output": [
-                "response, response"
+                "response"
             ]
         },
         {
             "input": "Treatment failures ( including relapses ) occurred at each visit in 5.8 % , 12.7 % and 10.7 % of amoxicillin recipients and 6.2 % , 11.9 % and 11.3 % of penicillin V recipients , respectively .",
             "output": [
-                "Treatment, failures"
+                "not found"
             ]
         },
         {
             "input": "QoL increased in the SST Group in the dimension of school environment , as a marker of the transfer of skills acquired in the treatment setting to their use in the community .",
             "output": [
-                "QoL"
+                "not found"
             ]
         },
         {
             "input": "Patients randomly assigned to the 40K arm were more likely to have a > or = 2 or > or = 3 g/dL hemoglobin ( Hb ) increment , were more likely to have a drug dose held because of high Hb , and had higher mean end-of-study Hb levels .",
             "output": [
-                "hemoglobin, (, Hb, ), increment, mean, end-of-study, Hb"
+                "hemoglobin ( Hb ) increment, mean end-of-study Hb"
             ]
         },
         {
             "input": "Eighteen patients who had undergone stoma surgery were assessed with respect to their anxiety level and self-reported quality of life ( QoL ) on three occasions ; namely , immediately after surgery , 5 weeks after surgery , and 10 weeks after surgery .",
             "output": [
-                "anxiety, level, self-reported, quality, of, life, (, QoL"
+                "anxiety level, self-reported quality of life ( QoL"
             ]
         },
         {
@@ -938,39 +952,39 @@
             ]
         },
         {
-            "input": "Among the 113 children with SCA studied in two hospitals , the 58 receiving lime treatment had lower rates of significant painful episodes than the 55 without lime ( 37 versus 83 crises in 6 months , and 0.64\u00b10.11 versus 1.51\u00b10.34 average rates per child , p < 0.001 ) .",
+            "input": "Among the 113 children with SCA studied in two hospitals , the 58 receiving lime treatment had lower rates of significant painful episodes than the 55 without lime ( 37 versus 83 crises in 6 months , and 0.64±0.11 versus 1.51±0.34 average rates per child , p < 0.001 ) .",
             "output": [
-                "significant, painful, episodes"
+                "significant painful episodes"
             ]
         },
         {
             "input": "By lowering peripheral airway smooth muscle tone , bronchodilators should decrease dynamic hyperinflation , gas trapping , and possibly dyspnea at rest .",
             "output": [
-                "dynamic, hyperinflation, gas, trapping, dyspnea"
+                "dynamic hyperinflation, gas trapping, dyspnea"
             ]
         },
         {
             "input": "The Junior Detective Training Program appeared to be effective in enhancing the social skills and emotional understanding of children with AS .",
             "output": [
-                "social, skills, emotional, understanding"
+                "social skills, emotional understanding"
             ]
         },
         {
             "input": "Transfer factor of the lung for carbon monoxide ( TLCO ) was measured by a new method based on analysis of the ratio of the concentrations of carbon monoxide to an inert gas ( methane ) relative to lung volume during a constant exhalation .",
             "output": [
-                "ratio, concentrations, lung, volume"
+                "ratio, concentrations, lung volume"
             ]
         },
         {
             "input": "Cost per quality-adjusted life year ( QALY ) gained was estimated using trial data .",
             "output": [
-                "Cost, per, quality-adjusted, life, year, (, QALY"
+                "not found"
             ]
         },
         {
             "input": "3CM participants also had more mental health visits and higher outpatient pharmacy costs .",
             "output": [
-                "mental, health, visits, costs"
+                "mental health visits, costs"
             ]
         },
         {
@@ -988,7 +1002,7 @@
         {
             "input": "Depression , functioning , perceived quality of care , utilization , and costs were secondary outcomes .",
             "output": [
-                "Depression, functioning, perceived, quality, of, care, utilization, costs"
+                "functioning, perceived quality of care, utilization, costs"
             ]
         },
         {
@@ -1000,7 +1014,7 @@
         {
             "input": "No clinically serious adverse events were observed in any of the groups .",
             "output": [
-                "adverse, events"
+                "adverse events"
             ]
         },
         {
@@ -1024,7 +1038,7 @@
         {
             "input": "All urodynamic parameters significantly improved in group 1 .",
             "output": [
-                "urodynamic, parameters"
+                "urodynamic parameters"
             ]
         },
         {
@@ -1042,7 +1056,7 @@
         {
             "input": "The question of whether abstinence during the months following a planned quit attempt exacerbates or improves depressive symptoms is an important clinical issue .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
@@ -1060,7 +1074,7 @@
         {
             "input": "Progress in the ability to recognize anger in the SST Group was due to better recognition of low intensity stimuli on adult faces .",
             "output": [
-                "recognize, anger"
+                "recognize anger"
             ]
         },
         {
@@ -1094,9 +1108,9 @@
             ]
         },
         {
-            "input": "In order to investigate the effect of anesthesia on serum parameters , Beluga , Huso huso ( L. ) were blood-sampled immediately without anesthesia ( control ) or subjected to following anesthesia procedure : 40 , 120 , and 240 s exposure to 3,000 , 700 , and 500 mg l\u207b\u00b9 clove solution , respectively .",
+            "input": "In order to investigate the effect of anesthesia on serum parameters , Beluga , Huso huso ( L. ) were blood-sampled immediately without anesthesia ( control ) or subjected to following anesthesia procedure : 40 , 120 , and 240 s exposure to 3,000 , 700 , and 500 mg l⁻¹ clove solution , respectively .",
             "output": [
-                "serum, parameters"
+                "serum parameters"
             ]
         },
         {
@@ -1120,7 +1134,7 @@
         {
             "input": "Stent related symptoms were present in a good proportion of patients in groups 1 and 2 but there was a significant difference in the incidence of urinary tract infections ( 11.5 % versus 38.1 % , p = 0.04 ) .",
             "output": [
-                "Stent, related, symptoms, incidence"
+                "incidence"
             ]
         },
         {
@@ -1132,7 +1146,7 @@
         {
             "input": "A tendency towards increased plasma 6-keto-prostaglandin F1 alpha concentration and decreased serum thromboxane B2 concentration was found during the period of regular exercise , but prostaglandin E2 concentrations remained unchanged .",
             "output": [
-                "plasma, 6-keto-prostaglandin, F1, alpha, concentration, serum, thromboxane, B2, concentration, prostaglandin, E2, concentrations"
+                "plasma 6-keto-prostaglandin F1 alpha concentration, serum thromboxane B2 concentration, prostaglandin E2 concentrations"
             ]
         },
         {
@@ -1156,7 +1170,7 @@
         {
             "input": "Ascaris and growth rates : a randomized trial of treatment .",
             "output": [
-                "growth, rates"
+                "growth rates"
             ]
         },
         {
@@ -1168,7 +1182,7 @@
         {
             "input": "The purpose of this study was to examine the effect of chronic cigarette smoking , acute nicotine administration , and OC use on cardiovascular and lipid reactivity .",
             "output": [
-                "cardiovascular, lipid, reactivity"
+                "cardiovascular, lipid reactivity"
             ]
         },
         {
@@ -1204,25 +1218,25 @@
         {
             "input": "It was therefore sought to determine whether regular intake of lime juice will ameliorate crisis , especially recurrent bone pain .",
             "output": [
-                "crisis, recurrent, bone, pain"
+                "crisis, recurrent bone pain"
             ]
         },
         {
             "input": "While long-term flosequinan administration also effected a progressive increase in resting heart rate , it did not consistently improve indices of left ventricular systolic function .",
             "output": [
-                "resting, heart, rate, left, ventricular, systolic, function"
+                "resting heart rate, left ventricular systolic function"
             ]
         },
         {
             "input": "Among the 273 children who were seen and weighed at the one-year follow-up visit , the rate of weight gain was 8 per cent greater for those receiving levamisole than for placebo-treated controls ( p = .06 ) .",
             "output": [
-                "weight, gain"
+                "weight gain"
             ]
         },
         {
             "input": "At 3-month followup the number of patients with a partial or full response in group 1 had decreased from 11 ( 78.6 % ) to 6 ( 42.9 % ) .",
             "output": [
-                "partial, or, full, response"
+                "partial or full response"
             ]
         },
         {
@@ -1234,7 +1248,7 @@
         {
             "input": "Economic burden of childhood autism spectrum disorders .",
             "output": [
-                "Economic, burden"
+                "not found"
             ]
         },
         {
@@ -1276,7 +1290,7 @@
         {
             "input": "However OC use among nonsmoking women is associated with greater cardiovascular reactivity to stress .",
             "output": [
-                "cardiovascular, reactivity"
+                "cardiovascular reactivity"
             ]
         },
         {
@@ -1288,13 +1302,13 @@
         {
             "input": "Our data suggest that mild regular physical exercise favourably influences cholesterol distribution in serum lipoproteins in healthy middle aged men and may have beneficial effects on circulating metabolites of arachidonic acid .",
             "output": [
-                "cholesterol, distribution, in, serum, lipoproteins, circulating, metabolites, of, arachidonic, acid"
+                "cholesterol distribution in serum lipoproteins, circulating metabolites of arachidonic acid"
             ]
         },
         {
             "input": "Weights and heights were measured at the tri-monthly treatment visits for a period of one year .",
             "output": [
-                "Weights, heights"
+                "heights"
             ]
         },
         {
@@ -1330,7 +1344,7 @@
         {
             "input": "A comparison of different antipyretics in children with malaria showed a small effect of naproxen , but not of metamizol , on the reduction of fever peaks .",
             "output": [
-                "fever, peaks"
+                "fever peaks"
             ]
         },
         {
@@ -1342,7 +1356,7 @@
         {
             "input": "Daily supplementation significantly increased plasma concentrations of alpha-tocopherol and beta-carotene in the supplemented group ( Delta 14.4 ( SE 3.2 ) and 0.4 ( se 0.1 ) micromol/l ; P < 0.001 and P < 0.01 ) .",
             "output": [
-                "plasma, concentrations, of, alpha-tocopherol, and, beta-carotene"
+                "plasma concentrations of alpha-tocopherol and beta-carotene"
             ]
         },
         {
@@ -1354,13 +1368,13 @@
         {
             "input": "A new immunomodulating agent , bestatin ( INN : Ubenimex has low toxicity even after long-term oral administration and has significant modifications in immunological response .",
             "output": [
-                "toxicity, immunological, response"
+                "toxicity, immunological response"
             ]
         },
         {
             "input": "We expect the patients in the active recommendations group to experience a greater improvement in their depressive symptoms .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
@@ -1384,19 +1398,19 @@
         {
             "input": "Toxicities , including thromboembolism , and overall survival were similar .",
             "output": [
-                "Toxicities, survival"
+                "survival"
             ]
         },
         {
             "input": "Non-inferiority was defined as an upper 95 % confidence limit ( CL ) for the difference in success of eradication in the amoxicillin and penicillin V treatment groups of < or=10 % .",
             "output": [
-                "success, of, eradication"
+                "success of eradication"
             ]
         },
         {
             "input": "In conclusion , in 60-year-old subjects antioxidant supplementation had no effect on the exercise-induced increase in oxidative stress as measured by free radical products of antipyrine .",
             "output": [
-                "exercise-induced, increase, in, oxidative, stress, free, radical, products, of, antipyrine"
+                "exercise-induced increase in oxidative stress, free radical products of antipyrine"
             ]
         },
         {
@@ -1408,7 +1422,7 @@
         {
             "input": "Oral contraceptive use is associated with increased cardiovascular reactivity in nonsmokers .",
             "output": [
-                "cardiovascular, reactivity"
+                "cardiovascular reactivity"
             ]
         },
         {
@@ -1426,25 +1440,25 @@
         {
             "input": "We evaluated the early clinical and urodynamic results of posterior tibial nerve stimulation in patients with refractory monosymptomatic nocturnal enuresis .",
             "output": [
-                "clinical, urodynamic, results"
+                "clinical, urodynamic results"
             ]
         },
         {
             "input": "Serotonin is involved in both disorders , and selective serotonin reuptake inhibitors ( SSRIs ) can modulate cognitive flexibility and improve behavior in both disorders .",
             "output": [
-                "cognitive, flexibility, behavior"
+                "cognitive flexibility, behavior"
             ]
         },
         {
             "input": "Repeated-measures analyses within patients assessed drug effects .",
             "output": [
-                "drug, effects"
+                "drug effects"
             ]
         },
         {
             "input": "No significant differences in resolution of symptoms were noted between treatment groups .",
             "output": [
-                "resolution, of, symptoms"
+                "resolution of symptoms"
             ]
         },
         {
@@ -1480,7 +1494,7 @@
         {
             "input": "After adjusting for child demographic characteristics and non-ASD-associated illnesses , ASD was associated with $ 3020 ( 95 % confidence interval [ CI ] : $ 1017- $ 4259 ) higher health care costs and $ 14,061 ( 95 % CI : $ 4390- $ 24,302 ) higher aggregate non-health care costs , including $ 8610 ( 95 % CI : $ 6595- $ 10,421 ) higher school costs .",
             "output": [
-                "costs, costs, costs"
+                "costs"
             ]
         },
         {
@@ -1492,13 +1506,13 @@
         {
             "input": "Also , the average number of wet nights in group 1 was significantly lower than at baseline ( p = 0.002 ) .",
             "output": [
-                "wet, nights"
+                "wet nights"
             ]
         },
         {
             "input": "Flosequinan evoked a significant increase in maximal exercise capacity .",
             "output": [
-                "maximal, exercise, capacity"
+                "maximal exercise capacity"
             ]
         },
         {
@@ -1540,13 +1554,13 @@
         {
             "input": "This study aimed to investigate the course of depression for patients with recently diagnosed rheumatoid arthritis ( RA ) and to investigate predictors of depression .",
             "output": [
-                "course, of, depression"
+                "course of depression"
             ]
         },
         {
             "input": "The economic burden associated with ASD is substantial and can be measured across multiple sectors of our society .",
             "output": [
-                "economic, burden"
+                "economic burden"
             ]
         },
         {
@@ -1558,13 +1572,13 @@
         {
             "input": "NC were defined as an absolute neutrophil count < or =1.5 x 10 ( 9 ) cells/L ( ie , > or =grade II ) before the next cycle , febrile neutropenia or neutropenia with a documented infection .",
             "output": [
-                "febrile, neutropenia, neutropenia"
+                "febrile neutropenia, neutropenia"
             ]
         },
         {
             "input": "However , there was an inverse relation between time-varying abstinence ( vs. smoking ) and concurrent level of depressive symptoms , indicating that transitions from smoking to abstinence within individuals were associated with reductions in depressive symptoms .",
             "output": [
-                "depressive, symptoms"
+                "depressive symptoms"
             ]
         },
         {
@@ -1576,7 +1590,7 @@
         {
             "input": "At the end of 1 year 24 group 1 ( 92.3 % ) and 23 group 2 ( 90.3 % ) patients had an improved drainage pattern .",
             "output": [
-                "drainage, pattern"
+                "drainage pattern"
             ]
         },
         {
@@ -1592,21 +1606,21 @@
             ]
         },
         {
-            "input": "In COPD patients , reversibility is currently evaluated from the changes of forced expiratory volume at 1s ( \u0394FEV1 ) and forced vital capacity ( \u0394FVC ) .",
+            "input": "In COPD patients , reversibility is currently evaluated from the changes of forced expiratory volume at 1s ( ΔFEV1 ) and forced vital capacity ( ΔFVC ) .",
             "output": [
-                "forced, expiratory, volume, at, 1s, \u0394FEV1, forced, vital, capacity, \u0394FVC"
+                "forced expiratory volume at 1s, ΔFEV1, forced vital capacity, ΔFVC"
             ]
         },
         {
             "input": "No statistically significant differences in myocardial perfusion measured were found with xenon-133 in this small group between rest and dipyridamole load for ionic and non-ionic contrast media .",
             "output": [
-                "myocardial, perfusion"
+                "myocardial perfusion"
             ]
         },
         {
             "input": "After the 6-month training period , the SST Group made fewer errors in labeling anger on adult faces , whereas error rates in the LA Group remained stable .",
             "output": [
-                "error, rates"
+                "error rates"
             ]
         },
         {
@@ -1634,13 +1648,13 @@
             ]
         },
         {
-            "input": "Significant differences in terms of \u0394ITGV ( p=0.002 ) , \u0394RV ( p=0.023 ) , and \u0394VAS ( p < 0.001 ) occurred only if patients were stratified according to \u0394sRAW .",
+            "input": "Significant differences in terms of ΔITGV ( p=0.002 ) , ΔRV ( p=0.023 ) , and ΔVAS ( p < 0.001 ) occurred only if patients were stratified according to ΔsRAW .",
             "output": [
-                "\u0394ITGV, \u0394RV, \u0394VAS"
+                "ΔITGV, ΔRV, ΔVAS"
             ]
         },
         {
-            "input": "Spirographic and \u0394sRAW-based criteria identified as responders 24 and 45 patients , respectively .",
+            "input": "Spirographic and ΔsRAW-based criteria identified as responders 24 and 45 patients , respectively .",
             "output": [
                 "not found"
             ]
@@ -1666,7 +1680,7 @@
         {
             "input": "Assessment instructions included the Chinese State-Trait Anxiety Inventory ( C-STAI ) , the Quality of Life Index for Colostomy ( QoL-Colostomy ) and the Hong Kong Chinese version of the World Health Organisation Quality of Life Scale ( WHOQoL ) .",
             "output": [
-                "Chinese, State-Trait, Anxiety, Inventory, (, C-STAI, Quality, of, Life, Index, for, Colostomy, (, QoL-Colostomy, Hong, Kong, Chinese, version, of, the, World, Health, Organisation, Quality, of, Life, Scale, (, WHOQoL"
+                "Chinese State-Trait Anxiety Inventory ( C-STAI, Quality of Life Index for Colostomy ( QoL-Colostomy, Hong Kong Chinese version of the World Health Organisation Quality of Life Scale ( WHOQoL"
             ]
         },
         {
@@ -1678,7 +1692,7 @@
         {
             "input": "Teacher-report data also confirmed that children receiving the intervention made significant improvements in social functioning from pre- to post-treatment .",
             "output": [
-                "social, functioning"
+                "social functioning"
             ]
         },
         {
@@ -1690,13 +1704,13 @@
         {
             "input": "Results indicate that expressive language gains were greater for both treatment groups compared with the control group , and results could not be explained by differences in other interventions in which children participated .",
             "output": [
-                "expressive, language"
+                "expressive language"
             ]
         },
         {
             "input": "Mean change of quantitative muscle strength testing sum scores was the primary study outcome measure .",
             "output": [
-                "quantitative, muscle, strength, sum, scores"
+                "quantitative muscle strength, sum scores"
             ]
         },
         {
@@ -1708,7 +1722,7 @@
         {
             "input": "Extant research has primarily modeled between-person covariation between postquit abstinence and depressive symptom trajectories .",
             "output": [
-                "postquit, abstinence, depressive, symptom"
+                "postquit abstinence, depressive symptom"
             ]
         },
         {
@@ -1730,9 +1744,9 @@
             ]
         },
         {
-            "input": "Serum lactate levels were significantly high in 500 mg l\u207b\u00b9 group compared to control group .",
+            "input": "Serum lactate levels were significantly high in 500 mg l⁻¹ group compared to control group .",
             "output": [
-                "Serum, lactate, levels"
+                "not found"
             ]
         },
         {
@@ -1742,9 +1756,9 @@
             ]
         },
         {
-            "input": "The physiotherapy group had a 4 % ( 95 % CI -18 % to 9 % ) lower rate of admission to hospital than the control group and a 4 % ( 95 % CI -6 % to 13 % ) higher rate of re-presentation to the ED , which were statistically non-significant ( p\u22650.45 ) .",
+            "input": "The physiotherapy group had a 4 % ( 95 % CI -18 % to 9 % ) lower rate of admission to hospital than the control group and a 4 % ( 95 % CI -6 % to 13 % ) higher rate of re-presentation to the ED , which were statistically non-significant ( p≥0.45 ) .",
             "output": [
-                "rate, of, admission, rate, of, re-presentation"
+                "rate of admission, rate of re-presentation"
             ]
         },
         {
@@ -1784,9 +1798,9 @@
             ]
         },
         {
-            "input": "Lactate levels were not significantly differed between control , 3,000 , and 700 mg l\u207b\u00b9 groups .",
+            "input": "Lactate levels were not significantly differed between control , 3,000 , and 700 mg l⁻¹ groups .",
             "output": [
-                "Lactate, levels"
+                "not found"
             ]
         },
         {
@@ -1804,7 +1818,7 @@
         {
             "input": "Participants assigned to 3CM were more likely to have a mental health visit , fill an antidepressant prescription , and have adequate antidepressant refills .",
             "output": [
-                "antidepressant, prescription, adequate, antidepressant, refills"
+                "antidepressant prescription, adequate antidepressant refills"
             ]
         },
         {
@@ -1832,9 +1846,9 @@
             ]
         },
         {
-            "input": "On two days , 60 COPD patients underwent dyspnea evaluation ( VAS score ) and pulmonary function testing at baseline and one hour after placebo or 300\u03bcg indacaterol administration .",
+            "input": "On two days , 60 COPD patients underwent dyspnea evaluation ( VAS score ) and pulmonary function testing at baseline and one hour after placebo or 300μg indacaterol administration .",
             "output": [
-                "VAS, score"
+                "VAS score"
             ]
         },
         {
@@ -1858,7 +1872,7 @@
         {
             "input": "Both patient groups shared decreased precuneus activation .",
             "output": [
-                "precuneus, activation"
+                "precuneus activation"
             ]
         },
         {
@@ -1876,31 +1890,31 @@
         {
             "input": "Serum creatine kinase activity decreased significantly in the methotrexate group .",
             "output": [
-                "Serum, creatine, kinase"
+                "not found"
             ]
         },
         {
             "input": "This study examined whether 24 months of weight training exercises enhanced the effectiveness of risedronate , calcium , and vitamin D in maintaining or improving bone mineral density ( BMD ) in 223 postmenopausal breast cancer survivors .",
             "output": [
-                "bone, mineral, density, (, BMD"
+                "bone mineral density ( BMD"
             ]
         },
         {
             "input": "To compare the effect of a Social Skills Training Group-based Program ( SST-GP ) and a Leisure Activities Group-based Program ( LA-GP ) on the perception of facial emotions and quality of life ( QoL ) in young people with HFA .",
             "output": [
-                "perception, of, facial, emotions, quality, of, life, (, QoL"
+                "perception of facial emotions, quality of life ( QoL"
             ]
         },
         {
             "input": "To investigate whether a physiotherapy service to an EECU altered the rate of hospital admission , rate of re-presentation to the ED , visits to community healthcare practitioners , return to usual work/home/leisure activities and patient satisfaction .",
             "output": [
-                "rate, of, hospital, admission, rate, of, re-presentation, to, the, ED, visits, to, community, healthcare, practitioners, return, to, usual, work/home/leisure, activities, patient, satisfaction"
+                "rate of hospital admission, rate of re-presentation to the ED, visits to community healthcare practitioners, return to usual work/home/leisure activities, patient satisfaction"
             ]
         },
         {
             "input": "Depressive symptoms and biochemically verified abstinence were assessed 1 week prior to and 2 , 8 , 16 , and 26 weeks after quit date .",
             "output": [
-                "Depressive, symptoms, biochemically, verified, abstinence"
+                "biochemically verified abstinence"
             ]
         },
         {
@@ -1912,19 +1926,19 @@
         {
             "input": "Antipyrine was used as marker for oxidative stress .",
             "output": [
-                "oxidative, stress"
+                "oxidative stress"
             ]
         },
         {
             "input": "Quantitative muscle strength testing sum scores declined in both treatment groups , -0.2 % for methotrexate and -3.4 % for placebo ( 95 % confidence interval = -2.5 % to +9.1 % for difference ) .",
             "output": [
-                "muscle, strength, testing, sum, scores"
+                "muscle strength testing sum scores"
             ]
         },
         {
             "input": "Antipyretic treatment had no effect on fever clearance and therefore should be used cautiously in the treatment of malaria .",
             "output": [
-                "fever, clearance"
+                "fever clearance"
             ]
         },
         {
@@ -2014,7 +2028,7 @@
         {
             "input": "Effects of mild physical exercise on serum lipoproteins and metabolites of arachidonic acid : a controlled randomised trial in middle aged men .",
             "output": [
-                "serum, lipoproteins, metabolites, of, arachidonic, acid"
+                "serum lipoproteins, metabolites of arachidonic acid"
             ]
         },
         {
@@ -2024,9 +2038,9 @@
             ]
         },
         {
-            "input": "\u0394sRAW correlated with changes of intrathoracic gas volume ( \u0394ITGV ) ( r=0.61 ; p < 0.001 ) , residual volume ( \u0394RV ) ( r=0.60 ; p < 0.001 ) , \u0394FVC ( r=0.44 ; p=0.001 ) , and \u0394VAS ( r=0.73 ; p < 0.001 ) , while \u0394FEV1 correlated only with \u0394FVC ( r=0.34 ; p=0.008 ) .",
+            "input": "ΔsRAW correlated with changes of intrathoracic gas volume ( ΔITGV ) ( r=0.61 ; p < 0.001 ) , residual volume ( ΔRV ) ( r=0.60 ; p < 0.001 ) , ΔFVC ( r=0.44 ; p=0.001 ) , and ΔVAS ( r=0.73 ; p < 0.001 ) , while ΔFEV1 correlated only with ΔFVC ( r=0.34 ; p=0.008 ) .",
             "output": [
-                "intrathoracic, gas, volume, residual, volume, \u0394FVC, \u0394VAS, \u0394FEV1, \u0394FVC"
+                "intrathoracic gas volume, residual volume, ΔFVC, ΔVAS, ΔFEV1"
             ]
         },
         {
@@ -2044,7 +2058,7 @@
         {
             "input": "Additional changes in BMD and bone turnover with exercise were not significant .",
             "output": [
-                "BMD, bone, turnover"
+                "BMD, bone turnover"
             ]
         },
         {
@@ -2068,7 +2082,7 @@
         {
             "input": "Although an increasing number of group-based programs for the improvement of social skills have been described , randomized controlled trials are needed to evaluate their efficacy .",
             "output": [
-                "social, skills"
+                "social skills"
             ]
         },
         {
@@ -2092,13 +2106,13 @@
         {
             "input": "The Quality of Well-Being Scale ( QWB ) and Current Health Desirability Rating ( CHDR ) were used for economic evaluation , supplemented by the arthritis-specific Health Assessment Questionnaire ( HAQ ) , Center for Epidemiologic Studies-Depression Scale ( CES-D ) , and Perceived Quality of Life Scale ( PQOL ) collected at baseline and postclass .",
             "output": [
-                "Quality, of, Well-Being, Scale, (, QWB, Current, Health, Desirability, Rating, (, CHDR, Health, Assessment, Questionnaire, (, HAQ, Center, for, Epidemiologic, Studies-Depression, Scale, (, CES-D, Perceived, Quality, of, Life, Scale, (, PQOL"
+                "Quality of Well-Being Scale ( QWB, Current Health Desirability Rating ( CHDR, Health Assessment Questionnaire ( HAQ, Center for Epidemiologic Studies-Depression Scale ( CES-D, Perceived Quality of Life Scale ( PQOL"
             ]
         },
         {
             "input": "Patients in the 40K arm had a higher global quality of life ( QOL ) at baseline for unclear reasons , whereas patients in the 120K arm had a greater global QOL improvement during the study , so end-of-study QOL was equivalent .",
             "output": [
-                "global, quality, of, life, (, QOL, global, QOL, QOL"
+                "global quality of life ( QOL, global QOL, QOL"
             ]
         },
         {
@@ -2146,19 +2160,19 @@
         {
             "input": "In contrast , the number of wet nights and urodynamic parameters did not change significantly in group 2 .",
             "output": [
-                "urodynamic, parameters"
+                "urodynamic parameters"
             ]
         },
         {
             "input": "In addition , supplementation did not affect the exercise-induced increase in thiobarbituric acid reactive substances in plasma .",
             "output": [
-                "thiobarbituric, acid, reactive, substances, in, plasma"
+                "thiobarbituric acid reactive substances in plasma"
             ]
         },
         {
             "input": "Patient outcomes were measured as changes in global anxiety scores , functioning and well-being , and patients ' reports of global improvements .",
             "output": [
-                "global, anxiety, scores, functioning, and, well-being, patients, ', reports, of, global, improvements"
+                "global anxiety scores, functioning and well-being, patients ' reports of global improvements"
             ]
         },
         {
@@ -2168,7 +2182,7 @@
             ]
         },
         {
-            "input": "The mean hematocrit of the subjects ( 26.23\u00b12.03 % ) at the end of the study was also higher , p < 0.001 .",
+            "input": "The mean hematocrit of the subjects ( 26.23±2.03 % ) at the end of the study was also higher , p < 0.001 .",
             "output": [
                 "hematocrit"
             ]
@@ -2200,7 +2214,7 @@
         {
             "input": "We conclude that oral methotrexate did not slow down progression of muscle weakness but decreased serum creatine kinase activity .",
             "output": [
-                "progression, of, muscle, weakness"
+                "progression of muscle weakness"
             ]
         },
         {
@@ -2218,13 +2232,13 @@
         {
             "input": "Heart rate , blood pressure , and lipid measures were taken at rest , during a videotaped speech task , and during recovery from the task .",
             "output": [
-                "Heart, rate, blood, pressure, lipid, measures"
+                "blood pressure, lipid measures"
             ]
         },
         {
             "input": "Also , fewer subjects than the controls had significant painful episodes ( 50.0 % versus 92.7 % ) ; febrile illness ( 46.6 % versus 87.3 % ) and admission rate ( 3.4 % versus 34.5 % ) ( p < 0.001 ) .",
             "output": [
-                "painful, episodes, febrile, illness, admission, rate"
+                "painful episodes, febrile illness, admission rate"
             ]
         },
         {
@@ -2236,19 +2250,19 @@
         {
             "input": "Results indicated that there was a significant decrease in both the C-STAI score ( F = 4.66 , P < 0.05 ) and the WHOQoL score ( F = 4.74 , P < 0.05 ) in the experimental group .",
             "output": [
-                "C-STAI, score, WHOQoL, score"
+                "C-STAI score, WHOQoL score"
             ]
         },
         {
             "input": "This study examined whether ( 1 ) postmenopausal breast cancer survivors ( BCS ) with bone loss taking 24 months of risedronate , calcium , and vitamin D had increased bone mineral density ( BMD ) at the total hip , femoral neck , L1-L4 spine , total radius and 33 % radius , and decreased bone turnover ; ( 2 ) subjects who also participated in strength/weight training ( ST ) exercises had greater increases in BMD and greater decreases in bone turnover ; and ( 3 ) subjects who also exercised were more likely to preserve ( at least maintain ) BMD .",
             "output": [
-                "bone, mineral, density, (, BMD, bone, turnover, BMD, bone, turnover, BMD"
+                "bone mineral density ( BMD, bone turnover, BMD"
             ]
         },
         {
             "input": "A physiotherapy service for EECU patients , as provided in this study , did not reduce the rate of hospital admission , rate of re-presentation to the ED , use of community healthcare resources , or improve the rate of return to usual work/home/leisure activities or patient satisfaction .",
             "output": [
-                "rate, of, hospital, admission, rate, of, re-presentation, to, the, use, of, community, healthcare, resources, rate, of, return, to, usual, work/home/leisure, activities, patient, satisfaction"
+                "rate of hospital admission, rate of re-presentation to the, use of community healthcare resources, rate of return to usual work/home/leisure activities, patient satisfaction"
             ]
         },
         {
@@ -2260,7 +2274,7 @@
         {
             "input": "The comparative results were very close ; mean difference ( bias ) +/- standard deviation ( precision ) was 0.05 ( 0.84 ) mmol/min/kPa .",
             "output": [
-                "mean, difference"
+                "mean difference"
             ]
         },
         {
@@ -2272,7 +2286,7 @@
         {
             "input": "The end point of CALGB 8642 is to assess the difference in survival , toxicity , and overall response when limited exposure to Phase II agents precedes standard chemotherapy .",
             "output": [
-                "survival, ,, toxicity, overall, response"
+                "survival , toxicity, overall response"
             ]
         },
         {
@@ -2284,7 +2298,7 @@
         {
             "input": "Serum biochemical characteristics of Beluga , Huso huso ( L. ) , in response to blood sampling after clove powder solution exposure .",
             "output": [
-                "Serum, biochemical, characteristics"
+                "not found"
             ]
         },
         {
@@ -2296,7 +2310,7 @@
         {
             "input": "Using epigastric impedance we found that infants with partial or total intestinal obstruction had gastric phasic activity , which was not found in the control infants .",
             "output": [
-                "gastric, phasic"
+                "gastric phasic"
             ]
         },
         {
@@ -2308,31 +2322,31 @@
         {
             "input": "Under Fluoxetine , mPFC activation was up-regulated and normalized in ASD boys relative to controls , but down-regulated in ADHD boys relative to placebo , which was concomitant with worse task performance in ADHD .",
             "output": [
-                "mPFC, activation, task, performance"
+                "mPFC activation, task performance"
             ]
         },
         {
             "input": "We conclude that granisetron is a better anti-emetic than perphenazine for the long-term prevention of post-operative vomiting in children undergoing general anaesthesia for tonsillectomy .",
             "output": [
-                "prevention, of, post-operative, vomiting"
+                "prevention of post-operative vomiting"
             ]
         },
         {
             "input": "One case of unsubstantiated acute rheumatic fever occurred after 7 days of amoxicillin .",
             "output": [
-                "acute, rheumatic"
+                "acute rheumatic"
             ]
         },
         {
             "input": "Costs/QALY gained discounted at 3 % were $ 205,186 using the QWB and $ 32,643 using the CHRD .",
             "output": [
-                "Costs/QALY"
+                "not found"
             ]
         },
         {
             "input": "Calcium solubility and absorption across Caco-2 cells were studied after the in vitro digestion of the diets .",
             "output": [
-                "Calcium, solubility, absorption"
+                "absorption"
             ]
         },
         {
@@ -2356,7 +2370,7 @@
         {
             "input": "The influence of injections of Amidotrizoate and Iopromide into the left coronary artery on global myocardial perfusion and function ( pressures in the left ventricle , heart rate ) as well as excitation formation and transmission was studied in 16 patients with ischaemic heart disease .",
             "output": [
-                "global, myocardial, perfusion, and, function, (, pressures, in, the, left, ventricle, ,, heart, rate, excitation, formation, transmission"
+                "global myocardial perfusion and function ( pressures in the left ventricle , heart rate, excitation formation, transmission"
             ]
         },
         {
@@ -2380,13 +2394,13 @@
         {
             "input": "Children with parent-reported ASD had higher levels of health care office visits and prescription drug use compared with children without ASD ( P < .05 ) .",
             "output": [
-                "levels, of, health, care, office, visits, prescription, drug, use"
+                "levels of health care office visits, prescription drug use"
             ]
         },
         {
             "input": "Short-term phasic activity was only found in 13 out of 40 of the normal infants ( 32.5 % ) .",
             "output": [
-                "phasic, activity"
+                "phasic activity"
             ]
         },
         {
@@ -2398,13 +2412,13 @@
         {
             "input": "Only deoxypyridinoline values were significantly lower after consumption of the BD ( 13.0 +/- 1.1 compared to 18.3 +/- 2.1 nM/Mm Cr in the WD ) , possibly indicative of less efficient bone turnover during this period .",
             "output": [
-                "deoxypyridinoline, bone, turnover"
+                "deoxypyridinoline, bone turnover"
             ]
         },
         {
             "input": "The results suggest that the use of PMRT could enhance quality of life and decrease state anxiety in patients after stoma surgery .",
             "output": [
-                "quality, of, life, state, anxiety"
+                "quality of life, state anxiety"
             ]
         },
         {
@@ -2416,13 +2430,13 @@
         {
             "input": "There were also no differences in manual muscle testing sum scores , activity scale scores and patients ' own assessments after 48 weeks of treatment .",
             "output": [
-                "manual, muscle, testing, sum, scores, activity, scale, scores, patients, ', own, assessments"
+                "manual muscle testing sum scores, activity scale scores, patients ' own assessments"
             ]
         },
         {
             "input": "However , transfusion rate , presence of hepatomegaly , splenomegaly , and jaundice was similar .",
             "output": [
-                "transfusion, rate, hepatomegaly, splenomegaly, jaundice"
+                "transfusion rate, hepatomegaly, splenomegaly, jaundice"
             ]
         },
         {
@@ -2440,13 +2454,13 @@
         {
             "input": "Relative to children in the wait-list group , program participants showed greater improvements in social skills over the course of the intervention , as indicated by parent-report measures .",
             "output": [
-                "social, skills"
+                "social skills"
             ]
         },
         {
-            "input": "Hence , we hypothesize that specific airway resistance changes ( \u0394sRAW ) should better characterize the acute response to bronchodilators .",
+            "input": "Hence , we hypothesize that specific airway resistance changes ( ΔsRAW ) should better characterize the acute response to bronchodilators .",
             "output": [
-                "airway, resistance, changes, (, \u0394sRAW"
+                "airway resistance changes ( ΔsRAW"
             ]
         },
         {
@@ -2482,19 +2496,19 @@
         {
             "input": "In 78 children known to be infected with Ascaris at baseline , the rate of weight gain was 21 per cent greater in children treated with levamisole than in those receiving placebo ( p = .03 ) .",
             "output": [
-                "weight, gain"
+                "weight gain"
             ]
         },
         {
             "input": "Overall , 13 patients ( 46.4 % ) had detrusor overactivity and 14 ( 50 % ) had decreased bladder capacity .",
             "output": [
-                "detrusor, overactivity, bladder, capacity"
+                "detrusor overactivity, bladder capacity"
             ]
         },
         {
             "input": "In patients with neutrophil counts of > 0.1 x 10 ( 9 ) /L lasting for more than 4 weeks , the frequency of infection in the fluconazole group ( 5 of 9 patients ) was significantly higher than in the itraconazole group ( 0 of 7 patients ; P = .03 ) .",
             "output": [
-                "frequency, of, infection"
+                "frequency of infection"
             ]
         },
         {
@@ -2530,7 +2544,7 @@
         {
             "input": "A persistent phasic activity pattern was found in 19 of the 21 patients , high frequency phasic activity in 11 of the 21 patients .",
             "output": [
-                "phasic, activity, phasic"
+                "phasic activity, phasic"
             ]
         },
         {
@@ -2554,7 +2568,7 @@
         {
             "input": "Accordingly , the current study examined within-person covariation between time-varying abstinence and depressive symptom in a multilevel model ( MLM ) , which allowed for transitions between smoking statuses within a participant .",
             "output": [
-                "depressive, symptom"
+                "depressive symptom"
             ]
         },
         {
@@ -2573,14 +2587,5 @@
     ],
     "Categories": [
         "Entity Detection"
-    ],
-    "Input_language": [
-        "English"
-    ],
-    "Output_language": [
-        "English"
-    ],
-    "Instruction_language": [
-        "English"
     ]
 }
