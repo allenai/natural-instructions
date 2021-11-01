@@ -1,0 +1,3632 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "XCOPA (\"https://arxiv.org/abs/2005.00333\")"
+    ],
+    "Categories": [
+        "Causal Reasoning"
+    ],
+    "Definition": "In this task you are given a premise and two alternatives in Vietnamese. You must choose the alternative that is more plausibly the cause or effect of the situation described by the premise. The input format is \"premise\n(1)alternative_1(2)alternative_2\", the output should either be \"1\" or \"2\" based on your judgment.",
+    "Input_language": [
+        "Vietnamese"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Domains": [
+        "Personal Narratives"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Các mặt hàng đã được đóng gói trong bọc bong bóng.\n(1)Nó dễ vỡ.(2)Nó nhỏ.",
+            "output": "1",
+            "explanation": "The first alternative makes more sense because you put object is bubble wrap if they are delicate."
+        },
+        {
+            "input": "Tôi lục túi của tôi.\n(1)Tôi lấy một cuống vé.(2)Tôi tìm thấy một vũ khí.",
+            "output": "1",
+            "explanation": "The first alternative makes more sense because finding a ticket in your pocket is more common than finding a gun."
+        },
+        {
+            "input": "Mối đầy nhà.\n(1)Mối biến mất khỏi nhà.(2)Mối ăn gỗ trong nhà.",
+            "output": "2",
+            "explanation": "The second alternative makes more sense because the termites will eat wood."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Các mặt hàng đã được đóng gói trong bọc bong bóng.\n(1)Nó dễ vỡ.(2)Nó nhỏ.",
+            "output": "2",
+            "explanation": "The second alternative makes less sense than the first one."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Các du khách đã đến biên giới.\n(1)Các nhân viên tuần tra kiểm tra hộ chiếu của họ.(2)Các nhân viên tuần tra buộc tội họ buôn lậu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Văn phòng đóng cửa.\n(1)Đang vào đợt nghỉ.(2)Đang mùa hè.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái hết năng lượng.\n(1)Cô chơi cờ đam.(2)Cô nhảy dây.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ mất chỗ trong hàng.\n(1)Nhiều người hơn đaz vào hàng.(2)Cô bước ra khỏi hàng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái véo mũi.\n(1)Đứa bé chảy nước dãi trên chiếc yếm của cô.(2)Đứa bé làm bẩn tã của mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ban nhạc chơi bài hát hit của họ.\n(1)Khán giả vỗ tay theo điệu nhạc.(2)Khán giả lịch sự lắng nghe trong im lặng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái muốn cảm ơn cô giáo dạy toán.\n(1)Cô gái bị giữ lại sau giờ học.(2)Cô gái mang cho cô giáo một quả táo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các trại viên trẻ cảm thấy sợ hãi.\n(1)Cố vấn trại của họ kể cho họ một câu chuyện ma.(2)Họ nướng marshmallows trên lửa trại.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đập đầu.\n(1)Anh lạc trong suy nghĩ.(2)Anh ấy bị chấn động.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Check tôi viết bị trả lại.\n(1)Tài khoản ngân hàng của tôi trống rỗng.(2)Tôi đã được tăng lương.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hộp thư đến của ông ấy đầy thư rác.\n(1)Ông ấy xóa thư rác.(2)Ông đã gửi một email hàng loạt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người thủy thủ đã được cách ly.\n(1)Anh đã tiếp xúc với dịch bệnh.(2)Anh đã khỏi bệnh.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái ghi nhớ mã.\n(1)Cô tự đọc nhẩm lại.(2)Cô quên viết nó xuống.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi rót nước vào ly.\n(1)Nước làm dịu cơn khát của tôi.(2)Chiếc ly trở nên đầy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông vẫn im lặng khi bạn mình nói xong.\n(1)Ông ấy muốn hỗ trợ bạn mình.(2)Ông ấy đang nghĩ về những lời nói của bạn mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tai nạn là lỗi của tôi.\n(1)Tôi cảm thấy tội lỗi.(2)Tôi kiện.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Dây xích đã bị đứt.\n(1)Dây xích bị quấn quanh một lốp xe.(2)Có một liên kết bị hỏng trong dây.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hai vợ chồng quyết định thỏa hiệp.\n(1)Họ trở nên mệt mỏi vì tranh cãi.(2)Họ tránh thảo luận về vấn đề này.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ quyết định ứng cử công chức.\n(1)Cô đã thuê một người quản lý chiến dịch.(2)Cô làm chứng trước tòa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông dự đoán thời tiết lạnh trong chuyến đi của mình.\n(1)Anh xếp quần áo ấm vào vali.(2)Anh đi du lịch với một chiếc vali lớn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Học sinh biết câu trả lời cho câu hỏi.\n(1)Cậu ấy giơ tay.(2)Cậy ấy làm biếng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông ngấn lệ.\n(1)Bụi bay vào mắt ông ấy.(2)Anh đeo kính lên mắt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người chơi đã thắng năm trận liên tiếp.\n(1)Đối thủ của cô buộc tội cô gian lận.(2)Đối thủ của cô cảm thấy tiếc cho cô.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Giáo viên xé bài kiểm tra của học sinh.\n(1)Anh ấy bắt được học sinh gian lận.(2)Câu trả lời của học sinh không chính xác.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi dừng lại để dừng nói chuyện.\n(1)Tôi mất giọng.(2)Tôi hết hơi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các thực phẩm đông lạnh tan băng.\n(1)Tôi cho nó vào lò vi sóng.(2)Tôi bọc nó bằng bọc nhựa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Nhân viên giả ốm.\n(1)Anh ta bị đau bụng.(2)Anh ta muốn một ngày nghỉ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái rớt xuống bể bơi.\n(1)Cô chạy trên sàn hồ bơi.(2)Cô nhảy khỏi bảng lặn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vé xem phim đã bán hết.\n(1)Đó là ngày khai mạc cho bộ phim.(2)Bộ phim nhận được đánh giá kém.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông giảm cân.\n(1)Mọi người cô lập anh.(2)Mọi người khen anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bàn tay của cô gái trở nên phồng rộp.\n(1)Cô gõ một lá thư.(2)Cô trèo lên một sợi dây.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người biểu diễn xiếc tung hứng trong khi đi xe đạp một bánh.\n(1)Khán giả reo hò trong sự ngạc nhiên.(2)Acrobat vung lên từ một cái bẫy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi mất kiên nhẫn.\n(1)Bạn tôi làm tôi chờ.(2)Bạn tôi đến đúng giờ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các nước tham chiến muốn hòa bình.\n(1)Họ đã phát triển vũ khí hạt nhân.(2)Họ đã thương lượng một hiệp ước.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông uống thuốc ngủ.\n(1)Ông trở nên buồn ngủ.(2)Ông bị sốt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ va vào ghế sofa.\n(1)Chân ghế sofa bị lỏng ra.(2)Cô bầm tím đầu gối.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé bóp bóng bay.\n(1)Bong bóng nổ.(2)Bong bóng bay đi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Du khách đã nhận phòng khách sạn.\n(1)Họ tháo vali ra.(2)Họ đã đến sân bay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi cắn vào quả đào.\n(1)Quả đào bầm dập.(2)Nước trái cây tràn ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tay tôi trở nên dính.\n(1)Tôi đã ăn một chiếc bánh rán.(2)Tôi thích ăn ngọt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đẩy cửa.\n(1)Cánh cửa mở ra.(2)Cánh cửa bị khóa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các nhà hoạt động tẩy chay các sản phẩm.\n(1)Các sản phẩm đã được kiểm tra để đảm bảo chất lượng.(2)Các sản phẩm được sản xuất thông qua lao động trẻ em.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi khoan một cái lỗ trên tường.\n(1)Một con chuột bò ra khỏi cái lỗ.(2)Bụi bay ra khỏi lỗ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ cảm thấy ghen tị với chị gái mình.\n(1)Chị cô hạnh phúc.(2)Chị gái cô đã ly hôn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi làm đổ rượu lên áo.\n(1)Tôi đeo tạp dề.(2)Tôi đã thay áo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhân viên thu ngân mở máy tính tiền.\n(1)Vị khách kiếm trong ví của mình.(2)Khách hàng đưa tiền cho cô.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhạc sĩ đường phố thu hút một đám đông.\n(1)Mọi người cho anh tiền lẻ.(2)Anh tiễn đám đông đi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé khóc với người trông trẻ.\n(1)Cậu ấy nhớ bố mẹ.(2)Đó là thời gian ăn nhẹ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Radar của phi công đã phát hiện ra một cơn bão.\n(1)Phi công điều hướng khỏi cơn bão.(2)Phi công đã bay qua cơn bão.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cây rụng lá.\n(1)Lá chuyển màu.(2)Lá dồn trên mặt đường.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé đang trong tâm trạng tinh nghịch.\n(1)Cậu quyết định chơi một ván bài với chị gái.(2)Cậu quyết định chọc em gái mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ phàn nàn rằng nó phải đi vệ sinh.\n(1)Bố nó cho nó uống soda.(2)Bố nó dừng xe ở trạm xăng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ rắc thức ăn cho cá vào bể.\n(1)Con cá nhảy ra khỏi bể.(2)Con cá bơi về phía thức ăn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Quan điểm chính trị của người phụ nữ đã thay đổi.\n(1)Cô chuyển liên kết đảng của mình.(2)Cô tham gia vào một cuộc biểu tình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bồn rửa trong phòng tắm bị tắc.\n(1)Tôi bật vòi nước.(2)Tôi đổ nước xả vào đó.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các hành khách đã xuống tàu.\n(1)Tàu đến ga.(2)Tàu nổ còi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông ấn mặt ẩm của phong bì.\n(1)Ông dán tem lên phong bì.(2)Ông đóng kín phong bì.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bạn bè mất liên lạc.\n(1)Họ rất thích được ở cạnh nhau.(2)Họ chuyển đến các thành phố khác nhau.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kế toán quản lý sai quỹ của công ty.\n(1)Cô bị sa thải khỏi vị trí của mình.(2)Cô đi nghỉ thai sản.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi nhìn đồng hồ.\n(1)Tôi nghe tiếng tích tắc.(2)Tôi muốn kiểm tra thời gian.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tay tôi bị chuột rút.\n(1)Tôi đã viết bài luận bằng tay.(2)Vợ chồng tôi nắm tay nhau.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cái chốt siết chặt.\n(1)Tôi thay chốt.(2)Tôi vặn mỏ lết.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hai vợ chồng ký hợp đồng thuê một căn hộ.\n(1)Hai vợ chồng chuyển vào căn hộ.(2)Thành phố lên án căn hộ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ ngồi ngoài hiên.\n(1)Cô muốn ngắm hoàng hôn.(2)Cô nghĩ mình đã thấy sét.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông mặc áo phao.\n(1)Anh ấy không biết bơi.(2)Nước cạn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ mắc lỗi đánh máy trong trình xử lý văn bản.\n(1)Cô xóa tài liệu.(2)Cô nhấn phím xóa lùi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái khoe khoang với bạn bè.\n(1)Cô bị điểm kém.(2)Cô đã thắng một cuộc thi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bãi cỏ lầy lội.\n(1)Trời mưa vào đêm qua.(2)Nó đầy cỏ dại.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ ngủ quên.\n(1)Cô ở lại đêm trong một khách sạn.(2)Cô quên cài đồng hồ báo thức.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông bôi kem chống nắng.\n(1)Anh ngồi trong bóng râm.(2)Anh ấy đã đi đến bãi biển.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các nhà nghiên cứu đã chứng được minh lý thuyết.\n(1)Các nhà nghiên cứu rút lại lý thuyết.(2)Mọi người chấp nhận lý thuyết.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Những người hâm mộ la ó.\n(1)Trận đấu phải bước vào phút bù giờ.(2)Trọng tài ra quyết định sai.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi nhập dãy mã vào ổ khóa.\n(1)Tôi đóng khóa.(2)Khóa bật mở.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đám đông nhiều lên.\n(1)Người cha đưa cho con trai một ít tiền.(2)Người cha nắm lấy tay con trai mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tuyết đã chặn đường lái xe.\n(1)Tôi nặn thành một quả cầu tuyết.(2)Tôi xúc tuyết ra khỏi đường.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Những người chèo thuyền kayak chèo mái chèo của họ.\n(1)Thuyền kayak đến bờ.(2)Chiếc thuyền kayak gặp một con sóng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái mất kiểm soát chiếc xe đạp của mình.\n(1)Cô buông tay lái.(2)Cô đâm vào một hàng rào.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi bật quạt.\n(1)Nước rắc lên da tôi.(2)Không khí mát mẻ lướt qua tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Những người lướt sóng trở lại bãi biển.\n(1)Họ ướt đẫm.(2)Họ đã nhìn thấy một con cá mập.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi rút phích cắm trong bồn tắm.\n(1)Nước rút ra khỏi bồn.(2)Nước văng lên sàn nhà.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người chồng cảm thấy có lỗi khi lừa dối vợ.\n(1)Anh buộc tội cô ngoại tình.(2)Anh thú nhận ngoại tình với cô.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mực trên poster bị lem.\n(1)Tôi đợi mực khô.(2)Tôi làm đổ nước lên poster.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ tỉnh dậy la hét.\n(1)Nó gặp ác mộng.(2)Nó làm ướt giường.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé gác chân lên bàn.\n(1)Bố cậu ngồi xuống bàn.(2)Bố cậu giáo huấn cậu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bạn tôi quay đầu về phía tôi.\n(1)Tôi hét to tên anh.(2)Tôi vẫy tay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chính phủ đàn áp công dân của mình.\n(1)Các công dân đã tổ chức một cuộc nổi dậy.(2)Các công dân đăng ký bỏ phiếu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé bị lạc trong rừng.\n(1)Cậu dựng lều.(2)Cậu hét lên cầu cứu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đi du lịch nước ngoài.\n(1)Cô muốn học vẽ.(2)Cô muốn tìm hiểu về các nền văn hóa khác.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông ghen tị với đồng nghiệp của mình.\n(1)Đồng nghiệp của anh ấy đã được thăng chức.(2)Đồng nghiệp của anh ấy ở lại  muộn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông thấy người ngoài hành tinh.\n(1)Anh ta bị ảo giác.(2)Anh ta đang ngồi thiền.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tóc của người đàn ông chuyển sang màu vàng.\n(1)Ông ấy bỏ thuốc tẩy lên tóc.(2)Ông ấy thoa dầu gội lên đó.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các nghệ sĩ đã tạo ra tác phẩm mới.\n(1)Cô phê bình công việc trước đây của mình.(2)Cô cảm thấy một cơn cảm hứng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người con trai dọn ra khỏi nhà.\n(1)Anh ấy được xuất ngũ.(2)Anh ấy đi học đại học.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Sách rơi ra khỏi tủ sách.\n(1)Các kệ sách phủ bụi.(2)Một trận động đất làm rung chuyển tủ sách.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Điện trong nhà tôi tắt.\n(1)Tôi bật đèn lên.(2)Tôi cài đặt lại bộ ngắt mạch.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chúng tôi đi tàu lượn siêu tốc.\n(1)Trông nó thật đáng sợ.(2)Trông nó rất vui.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Túi bỏng ngô bắt đầu phồng lên.\n(1)Tôi đổ bơ vào túi.(2)Tôi  hâm nóng nó trong lò vi sóng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Một cái cây rơi trên đường dây điện.\n(1)Điện trong khu phố đã tắt.(2)Dự báo có gió lớn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Diễn giả đã bình luận không chính xác.\n(1)Anh làm khán giả chán.(2)Anh xúc phạm khán giả.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi tự chích bằng kim.\n(1)Một giọt mồ hôi chảy ra từ mặt tôi.(2)Một giọt máu hình thành trên ngón tay của tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Con cá nổi trên mặt bể.\n(1)Nó đói rồi.(2)Nó đã chết.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Giọng nói của người đàn ông khàn khàn.\n(1)Anh ấy bị cảm.(2)Anh bỏ thuốc lá.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cửa thang máy mở ra.\n(1)Thang máy đã đến tầng được chỉ định.(2)Thang máy bị kẹt giữa các tầng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu thiếu niên lẻn ra khỏi nhà.\n(1)Cậu nói dối bố mẹ.(2)Bố mẹ cậu nhốt cậu anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Phòng tắm ngập nước.\n(1)Nước nhà vệ sinh tràn ra.(2)Máy nước nóng bị hỏng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con chó con ở gần chủ của nó.\n(1)Người chủ mặc cho con chó con một cổ áo.(2)Người chủ xích con chó con.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông bắt gặp hình ảnh phản chiếu của mình.\n(1)Anh đứng dưới gốc cây ngổn ngang.(2)Anh đứng trên mặt hồ tĩnh lặng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi nhỡ cuộc gọi của bạn gái tôi.\n(1)Tôi gọi lại cho cô ấy.(2)Tôi gặp cô ấy đi ăn tối.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Gia đình tìm kiếm khắp khu phố.\n(1)Con chó của họ bỏ nhà ra đi.(2)Đồ trang sức đắt tiền đã bị mất khỏi nhà.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi thấy hơi thở của mình khi tôi thở ra.\n(1)Thời tiết se lạnh.(2)Ngực tôi cảm thấy căng cứng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các nhân viên thành lập một công đoàn.\n(1)Họ muốn điều kiện làm việc tốt hơn.(2)Họ được tăng lương.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi nướng một chiếc bánh táo.\n(1)Một mùi thối rữa tràn ngập bếp.(2)Một mùi thơm ấm áp tràn ngập nhà bếp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ chật vật bước đi.\n(1)Cô đi giày cao gót.(2)Cô cởi giày ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hơi nước bốc lên từ nồi nước.\n(1)Nước sôi.(2)Tôi đậy nắp nồi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Toàn bộ tất của tôi đã ở trong máy giặt.\n(1)Tôi đi dép.(2)Tôi đi giày bốt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Lập luận của chính trị gia được coi là vô lý.\n(1)Ông mất sự ủng hộ của cử tri.(2)Ông bị buộc tội tham nhũng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mọi người đều không ủng hộ cặp đôi đính hôn.\n(1)Hai vợ chồng có thai.(2)Hai vợ chồng chạy trốn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tòa nhà vinh danh vị triệu phú.\n(1)Vị triệu phú muốn tòa nhà bị phá hủy.(2)Vị triệu phú đã đóng góp kinh phí để xây dựng nó.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhân viên bán hàng buộc tội cô gái ăn cắp.\n(1)Nhân viên bán hàng nhìn thấy cô gái bỏ hàng hóa vào ví.(2)Nhân viên bán hàng đã giúp cô gái tìm được chiếc ví mình thích.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đất nước tuyên chiến với lãnh thổ láng giềng.\n(1)Những người lính được phái ra chiến đấu.(2)Những người lính được đoàn tụ với gia đình họ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tòa án giữ nguyên phán quyết gây tranh cãi.\n(1)Một cuộc bạo loạn đã nổ ra trước tòa án.(2)Một cặp vợ chồng trao nhau lời thề trước tòa án.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái ngửi thấy mùi gì đó bốc cháy.\n(1)Cô lấy bánh quy ra khỏi bình.(2)Cô quên bánh quy trong lò nướng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mưa đã trút xuống.\n(1)Cơn bão trở nên tồi tệ hơn.(2)Tôi lao vào trong.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tòa nhà đã được sơ tán.\n(1)Thang máy ngừng hoạt động.(2)Chuông báo cháy reng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người cha buồn bực việc con trai nghiện rượu.\n(1)Người cha mua cho con trai một cốc bia.(2)Người cha đuổi con trai ra khỏi nhà.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Luật sư đi cầu thang lên văn phòng của cô.\n(1)Thư ký đã về nhà.(2)Thang máy không hoạt động.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông trở nên khó chịu với bạn mình.\n(1)Bạn anh ngắt lời anh.(2)Bạn anh mua cho anh bữa trưa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái đưa tiền cho nhân viên thu ngân.\n(1)Nhân viên thu ngân thối tiền lẻ cho cô.(2)Nhân viên thu ngân quên đưa cho cô gái một biên lai.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ được đưa lên xe lăn.\n(1)Cô bị liệt trong một tai nạn.(2)Cô vào bệnh viện trong cáng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người dân treo cờ quốc gia bên ngoài nhà của họ.\n(1)Đất nước đang kỷ niệm độc lập.(2)Đất nước đã phải đối mặt với khó khăn kinh tế.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đội thua giải đấu.\n(1)Họ làm người hâm mộ thất vọng.(2)Họ truyền cảm hứng cho người hâm mộ của họ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bạn tôi chỉ ra rằng tôi có thức ăn bị mắc kẹt trong răng.\n(1)Tôi cảm thấy xấu hổ.(2)Tôi cảm thấy tự hào.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé thất bại trong kỳ thi lịch sử.\n(1)Cậu rất tập trung trong lớp.(2)Cậu quên học bài.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tòa nhà trung tâm bị sập.\n(1)Một trận động đất ập đến thành phố.(2)Tỷ lệ tội phạm trong thành phố tăng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bạn gái của anh ấy đã chia tay với anh ta.\n(1)Anh cầu xin cô quay trở lại.(2)Cô giới thiệu anh với bố mẹ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hai đứa đồng loạt thò tay xuống lấy bóng.\n(1)Bóng lăn đi.(2)Đầu chúng va vào nhau.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Con gấu trúc lục lọi thùng rác.\n(1)Có thùng các tông trong thùng rác.(2)Cái nắp rơi ra khỏi thùng rác.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé gọt bút chì.\n(1)Nó rẻ tiền.(2)Thật là buồn tẻ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhân viên thu ngân từ chối hoàn tiền chiếc váy cho người phụ nữ.\n(1)Cô bị mất biên lai.(2)Chiếc váy không vừa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vết xước trên da tôi thật sâu.\n(1)Nó lành nhanh chóng.(2)Nó để lại một vết sẹo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông nhận được ánh mắt kỳ lạ từ hành khách trên tàu.\n(1)Anh đang nhìn chằm chằm xuống đất.(2)Anh đang nói chuyện với chính mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ để lại vụn bánh trên sàn nhà.\n(1)Kiến bò đến vụn bánh.(2)Đứa trẻ bỏ bánh mì đi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đưa khăn giấy cho em gái.\n(1)Em gái của cô ấy khoanh tay.(2)Em gái của cô ấy bắt đầu khóc.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông ngậm bạc hà.\n(1)Môi anh nứt nẻ.(2)Anh lo bị hôi miệng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cặp đôi đi sớm xem biểu diễn.\n(1)Họ đoán giao thông ùn tắc xung quanh nhà hát.(2)Họ đã có chỉ đường đến nhà hát.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ ở nhà.\n(1)Ông chủ của cô khen ngợi cô.(2)Đồng nghiệp của cô làm thay cho cô.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã ký tên lên thỉnh nguyện của các nhà hoạt động.\n(1)Ông ủng hộ mục đích của họ.(2)Ông tố cáo họ điên.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tim của nam diễn viên đập mạnh trước màn biểu diễn.\n(1)Anh ấy sợ sân khấu.(2)Anh ghi nhớ lời thoại của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đã thua.\n(1)Tôi đếm tiền mặt của tôi.(2)Tôi mở  bản đồ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Những quả chín đung đưa dưới nắng.\n(1)Nó đã bị ăn.(2)Nó co rúm lại.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chiếc xe bị hỏng.\n(1)Tôi bật lửa.(2)Động cơ quá nóng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đau lưng.\n(1)Anh đi gặp bác sĩ tâm lý.(2)Anh nằm trên giường vài ngày.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi bắt đầu đốt lửa trong lò sưởi.\n(1)Tôi đã hết củi.(2)Trong nhà thật lạnh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ ngừng chạy bộ.\n(1)Cô bị chuột rút ở bên.(2)Cô có năng lượng trở lại.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi gõ cửa nhà hàng xóm.\n(1)Hàng xóm của tôi mời tôi vào.(2)Hàng xóm của tôi rời khỏi nhà cô ấy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ thở dài vì thất vọng.\n(1)Chồng cô hiểu lầm mối quan tâm của cô.(2)Chồng cô hôn tạm biệt cô.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Giáo viên khen học sinh.\n(1)Học sinh trả lời đúng câu hỏi.(2)Học sinh ngập ngừng trả lời câu hỏi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ hết trứng.\n(1)Cô đi đến trang trại.(2)Cô đi siêu thị.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi gặp một người bạn cũ.\n(1)Tôi tiết lộ một bí mật cho anh ta.(2)Tôi ôm anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ tránh đi trong hồ.\n(1)Cô bắt được một con cá.(2)Trông nó thật ô nhiễm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Học sinh đến lớp ướt sũng.\n(1)Chiếc ô của anh bị hỏng.(2)Chiếc xe đạp của anh đã bị đánh cắp.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con trỏ trên màn hình máy tính di chuyển.\n(1)Người dùng nhấp chuột.(2)Người dùng đã di chuyển chuột.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người lái xe đi đường vòng.\n(1)Một vụ tai nạn xảy ra trên đường chính.(2)Cô đi theo chiếc xe tải trước mặt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi treo tấm vải ướt lên dây phơi ngoài trời.\n(1)Vải khô.(2)Vải nhuộm màu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đeo kính râm.\n(1)Ánh sáng mặt trời chói lóa.(2)Cô gọi một chiếc taxi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông nhìn chằm chằm vào bầu trời đêm.\n(1)Anh ước đó là mùa hè.(2)Anh nghĩ nó thật đẹp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi cảm thấy kiệt sức.\n(1)Tôi đi ngủ sớm.(2)Tôi thức cả đêm.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đi đến tiệm cắt tóc.\n(1)Anh ấy đang nuôi tóc.(2)Tóc anh ngày càng dài.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé bắt nạt bạn mới.\n(1)Cậu chào đón người bạn mới.(2)Cậu không ưa người bạn mới.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi thèm một ly sữa.\n(1)Tôi đang ăn bánh quy.(2)Tôi đang nướng bánh mì.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Trời bắt đầu mưa.\n(1)Tài xế bật đèn pha.(2)Tài xế lùi xe.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bãi đậu xe của tòa nhà trống rỗng.\n(1)Tôi đậu xe bên kia đường.(2)Tôi đậu gần lối vào.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhà văn đã bỏ lỡ thời hạn của cô cho bản dự thảo.\n(1)Cô ấy tịt ngòi.(2)Cô chỉnh sửa bản nháp.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người cộng sự cúp máy.\n(1)Tôi yêu cầu nói chuyện với quản lí.(2)Tôi đã cung cấp số nhận dạng của tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Gió thổi qua cửa sổ.\n(1)Chuông cửa reo.(2)Rèm cửa rung rinh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Điện trong nhà tôi tắt.\n(1)Tôi rút phích cắm đèn.(2)Tôi rất tức giận.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người cử tạ nghiến răng.\n(1)Anh uốn cong cơ bắp trong gương.(2)Anh nâng thanh xà trên đầu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Học sinh đã cố gắng tính nhẩm trong đầu.\n(1)Anh lấy ra một cái máy tính.(2)Anh bối rối.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa bé ngủ thiếp đi.\n(1)Người cha đã thay tã cho em bé.(2)Người cha nhẹ nhàng đá đứa bé.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái ném quả bóng nước vào cậu bé.\n(1)Cậu bé bị chấn động.(2)Cậu bé đã ướt sũng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhiếp ảnh gia quên sử dụng đèn flash trên máy ảnh.\n(1)Những bức ảnh trở nên mờ ảo.(2)Mọi người trong ảnh đều từ chối mỉm cười.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi từ chối lời mời đến bữa tiệc sinh nhật.\n(1)Tôi cô đơn.(2)Tôi không có nhà.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi tập thể dục.\n(1)Tôi cảm thấy tràn đầy năng lượng.(2)Tôi đã hoảng sợ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi bóp miếng bọt biển ẩm ướt.\n(1)Nó ngấm nước.(2)Nước thấm chảy ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Những người đi nghỉ đã đi phà đến khu nghỉ mát.\n(1)Khu nghỉ dưỡng đã được đặt trước.(2)Khu nghỉ mát nằm trên một hòn đảo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Thiếu niên có một hình xăm.\n(1)Cô sợ kim tiêm.(2)Cô muốn nổi loạn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Một chiếc ô tô lạ đỗ bên ngoài nhà tôi.\n(1)Tôi trở nên nghi ngờ.(2)Tôi gọi cho cảnh sát.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tên tội phạm đầu thú.\n(1)Bằng chứng liên quan đến anh ta.(2)Không có bằng chứng chống lại anh ta.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông nặng ký quyết định giảm cân.\n(1)Ông ấy cắt giảm đồ ngọt.(2)Anh tránh cafein.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái bước lên băng.\n(1)Cô trượt dài.(2)Cô rùng mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ có quầng thâm dưới mắt.\n(1)Cô thức cả đêm.(2)Cô đặt con trai lên giường.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Dung nham chảy từ núi lửa.\n(1)Núi lửa phun trào.(2)Núi lửa không hoạt động.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đi giày vào.\n(1)Cô biết tất cả mọi người trong bữa tiệc.(2)Cô muốn rời khỏi bữa tiệc.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã trả tiền cho nhân viên thu phí.\n(1)Cô ấy cho tôi đi qua trạm thu phí.(2)Cô ấy đã giam giữ tôi tại trạm thu phí.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vị giám đốc điều hành đã phá sản.\n(1)Ông đã bán cổ phiếu công ty của mình.(2)Ông phung phí tài sản của mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã đi đến bác sĩ.\n(1)Bác sĩ được nghỉ phép.(2)Người đàn ông bị bệnh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi thoát ra khỏi phòng ngủ qua cửa sổ.\n(1)Ngôi nhà bị cháy.(2)Ngôi nhà trống rỗng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Những ngón tay của cậu bé trở nên nhăm nhúm.\n(1)Cậu tắm lâu.(2)Cậu rửa tay bằng xà phòng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi nhổ sữa ra.\n(1)Sữa có vị chua.(2)Miệng tôi khô khốc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đã lỡ xe buýt.\n(1)Tôi đã đi làm sớm.(2)Tôi đi làm muộn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Xe tải va chạm với xe hơi.\n(1)Chiếc xe tải tăng tốc.(2)Chiếc xe hơi bị đập vỡ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhóm đã tổ chức cuộc thi theo hướng có lợi cho họ.\n(1)Họ đã thắng.(2)Họ bỏ cuộc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chai soda rít lên.\n(1)Tôi lật chai.(2)Tôi vặn nắp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé bị nhốt ngoài nhà.\n(1)Cậu bò vào bằng đường cửa sổ.(2)Cậu trèo lên mái nhà.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chuông cửa reo.\n(1)Vị khách gõ cửa.(2)Người phụ nữ nhìn qua lỗ khóa ở cửa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông nhuộm màu bộ đồ vest của mình.\n(1)Ông ấy đem nó đi giặt khô.(2)Ông ấy treo nó vào trong tủ quần áo của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái bóp ống kem đánh răng.\n(1)Kem đánh răng phun ra khỏi ống.(2)Cô gái nhổ kem đánh răng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Những cái chết dân sự từ cuộc chiến tăng vọt.\n(1)Những người theo chủ nghĩa hòa bình đã tổ chức một cuộc biểu tình.(2)Những người theo chủ nghĩa hòa bình đã tổ chức một cuộc diễu hành.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái giật mạnh dải băng ra khỏi tóc.\n(1)Cô buộc dây ruy băng.(2)Dải băng trông trẻ con.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã phẫu thuật thẩm mỹ.\n(1)Ông già.(2)Ông trông trẻ hơn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Một con gà con nổi lên từ quả trứng.\n(1)Trứng nở.(2)Tôi đập trứng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người tù chết đói.\n(1)Anh ấy đã chết.(2)Anh chạy trốn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông mất thăng bằng trên thang.\n(1)Anh leo lên thang.(2)Anh ngã khỏi thang.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ ợ.\n(1)Nó uống một ngụm soda.(2)Nó mở lon soda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Một làn gió lạnh luồn qua cửa sổ.\n(1)Tôi thư giãn.(2)Tôi rùng mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Học sinh nhận được học bổng để đi học đại học.\n(1)Các bạn cùng lớp tôn trọng cô.(2)Cô ấy đạt điểm cao.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái chọc quê cậu bé.\n(1)Cô sống kế nhà cậu.(2)Cô đã phải lòng cậu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người ăn xin đói khát đã trộm thức ăn.\n(1)Anh gây thương cảm.(2)Anh không có tiền.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi gọi cho bạn tôi để trò chuyện.\n(1)Tôi muốn sự riêng tư.(2)Tôi cảm thấy cô đơn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đưa tay về phía tôi.\n(1)Tôi bắt tay anh.(2)Tôi tát anh ta.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi cúi xuống.\n(1)Pháo hoa được phóng lên không trung.(2)Chiếc dĩa nhựa bay vút lên đầu tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái cắn móng tay.\n(1)Cô lo lắng.(2)Cô ngạc nhiên.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi lật trang lịch.\n(1)Tôi đánh dấu một cuộc hẹn trên lịch.(2)Đó là sự khởi đầu của một tháng mới.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người chồng phát hiện ra rằng vợ mình đang ngoại tình.\n(1)Anh ta sa thải luật sư của mình.(2)Anh nộp đơn ly hôn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái đánh rơi quả bóng cao su.\n(1)Bóng nảy lên.(2)Bóng phát sáng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái mắc lỗi trong bài thi của mình.\n(1)Cô đoán câu trả lời.(2)Cô xóa câu trả lời của mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người chơi tấn công đối thủ của mình.\n(1)Đối thủ của anh bắt được đường chuyền.(2)Đối thủ của anh ta ngã xuống đất.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi hái cà chua từ cành của chúng.\n(1)Chúng đã chín.(2)Tôi tưới nước cho chúng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông muốn hành động lãng mạn.\n(1)Anh gặp bạn gái cũ đi ăn trưa.(2)Anh mua sô cô la cho bạn gái.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Thủy ngân trong nhiệt kế tăng.\n(1)Tôi đánh rơi nhiệt kế.(2)Thời tiết trở nên ấm hơn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Một cơn lốc xoáy đi qua thị trấn.\n(1)Mái của tòa án bị thổi bay.(2)Đường cao tốc trở nên băng giá.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Học sinh được dạy kèm.\n(1)Điểm số của anh được cải thiện.(2)Anh gian lận trong kì thi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi cảm thấy thoải mái.\n(1)Tôi quỳ xuống đất.(2)Tôi quấn mình trong chăn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đánh bóng đá.\n(1)Nó trở nên trơn trượt.(2)Nó trở nên sáng bóng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi thêm đường vào cà phê.\n(1)Cà phê có mùi nồng.(2)Cà phê có vị ngọt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông xáo trộn qua giấy tờ.\n(1)Anh ấy đã cắt giấy.(2)Anh xé giấy tờ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đập cái đinh bằng búa.\n(1)Chiếc đinh chìm vào gỗ.(2)Cái đinh trở nên rỉ sét.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con cá cắn câu.\n(1)Người ngư dân kéo con cá vào.(2)Người ngư dân đánh cá tiếp.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Thiếu niên xấu hổ đi học.\n(1)Cô ấy nổi mụn.(2)Cô ấy đã tháo niềng răng ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vẻ mặt tôi sáng lên.\n(1)Tôi nhận được tin tốt.(2)Tôi mất kiên nhẫn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi lau tay bằng khăn.\n(1)Khăn ướt.(2)Tay tôi ướt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông mất thăng bằng trên ghế đẩu.\n(1)Chiếc ghế đung đưa bên dưới anh ta.(2)Anh đổ sơn lên ghế đẩu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các đồng đội đổ lỗi cho nhau.\n(1)Họ thua.(2)Huấn luyện viên của họ đã hủy bỏ buổi tập.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi xin tha thứ.\n(1)Tôi hối hận về lỗi lầm của mình.(2)Tôi đã đạt được mục tiêu của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ trở nên buồn chán với cuộc hẹn của mình.\n(1)Anh hỏi cô những câu hỏi về bản thân cô ấy.(2)Anh nói không ngừng về bản thân.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái nở một nụ cười.\n(1)Má cô ửng đỏ.(2)Lúm đồng tiền của cô hiện rõ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tàu địch nổ tung.\n(1)Nó đi qua một cái mỏ.(2)Nó đi thuyền vào bến cảng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đâm thủng chân anh.\n(1)Anh bước vào một vũng nước.(2)Anh bước lên kính vỡ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các thám tử đã làm bẩn hiện trường vụ án để lấy dấu vân tay.\n(1)Họ đã phát hiện ra danh tính của kẻ giết người.(2)Họ tìm thấy vũ khí tại hiện trường vụ án.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Giao thông tắc nghẽn trên đường cao tốc.\n(1)Tôi đi đường vòng.(2)Tôi yêu cầu đi nhờ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Nền kinh tế của quốc gia suy giảm.\n(1)Nhiều người mắc bệnh.(2)Nhiều người phải đối mặt với thất nghiệp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người bảo vệ tuýt còi bọn trẻ.\n(1)Chúng suýt chạy vào làn xe đang chạy.(2)Cô nhận ra chúng từ khu phố của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi tròn mắt nhìn bạn mình.\n(1)Cậu ấy nói với tôi sự thật.(2)Cậu ấy đưa ra một nhận xét mỉa mai.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Xe hết xăng.\n(1)Tài xế bị mắc kẹt trên đường.(2)Tài xế cho một người đi nhờ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đi đẻ.\n(1)Đứa bé được sinh ra.(2)Người phụ nữ bị ốm nghén.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chiếc mũ của người đàn ông bị thổi bay.\n(1)Anh cởi mũ.(2)Bên ngoài trời có gió.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái tham dự bữa tiệc sinh nhật của bạn cùng lớp.\n(1)Cô nhận được lời mời.(2)Cô mua một món quà.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Trán cậu bé nóng.\n(1)Mẹ cậu đo nhiệt độ cho cậu.(2)Mẹ cậu đưa cậu đến công viên.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông xịt nước hoa.\n(1)Anh ấy muốn gây ấn tượng với buổi hẹn hò của mình.(2)Anh bôi gel lên tóc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Điện trong nhà tắt.\n(1)Tôi tìm đèn pin.(2)Tôi nhặt một cái xẻng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Gia đình nọ chuyển đến một ngôi nhà lớn hơn.\n(1)Người con trai tốt nghiệp cấp ba.(2)Người mẹ vừa sinh đôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vận động viên marathon giữ tốc độ chậm.\n(1)Cô muốn tiết kiệm năng lượng của mình.(2)Cô nhìn thấy vạch đích.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé đá máy bán hàng tự động.\n(1)Máy phun ra tiền thối.(2)Túi khoai tây chiên bị kẹt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Con chó của bạn tôi bị chết.\n(1)Tôi tròn mắt nhìn anh.(2)Tôi ôm anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Thẻ tín dụng của doanh nhân đã bị từ chối.\n(1)Anh ấy đã viết một IOU.(2)Anh trả bằng tiền mặt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông chửi thề.\n(1)Anh cắt móng tay.(2)Anh bị dập ngón chân.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông cảm thấy tự hào về anh trai mình.\n(1)Anh trai của anh ấy đã cãi nhau với bố mẹ.(2)Anh trai của anh ấy đã được nhận vào trường luật.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái muốn tìm hiểu về hệ mặt trời.\n(1)Cô đi đến thư viện.(2)Cô nhìn những vì sao.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các poster dán vào tường.\n(1)Tôi đặt tấm áp phích phía trên cánh cửa.(2)Tôi dán băng dính vào mặt sau của poster.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Khách hàng đã phê duyệt kế hoạch của kiến trúc sư.\n(1)Các kiến trúc sư xây dựng tòa nhà.(2)Kiến trúc sư đã điều chỉnh các kế hoạch.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đánh rơi thìa.\n(1)Tay anh run run.(2)Anh liếm cái muỗng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "CEO của công ty đã từ chức.\n(1)Hội đồng quản trị đã giải thể công ty.(2)Hội đồng quản trị tìm thấy người thay thế ông.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đến giảng đường muộn.\n(1)Tôi ngồi ở hàng ghế sau.(2)Tôi đến gần bục giảng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã ra tù.\n(1)Gia đình anh trả tiền bảo lãnh.(2)Anh ta tấn công một bạn tù.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cả gia đình mất hết đồ đạc.\n(1)Họ đã bán căn nhà.(2)Ngôi nhà của họ bốc cháy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi dẫm lên lon nhôm.\n(1)Chiếc lon được tái chế.(2)Chiếc lon bị nghiền nát.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái tham gia nhóm tranh luận.\n(1)Cô học cách sử dụng máy tính.(2)Cô học được kỹ năng giao tiếp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tâm trạng của tôi được cải thiện.\n(1)Tôi nghe nhạc.(2)Tôi rửa chén.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các tổ chức từ thiện đã hoàn thành mục tiêu quyên tiền.\n(1)Họ nuôi những người vô gia cư.(2)Họ đã tổ chức một cuộc đấu giá.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tàu lượn siêu tốc lao xuống dốc cao.\n(1)Các hành khách cười khúc khích.(2)Các hành khách hét lên.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi tức giận.\n(1)Tôi kiểm tra hộp thư khi rời khỏi nhà.(2)Tôi đóng sầm cửa khi rời khỏi nhà.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông muốn ngắm mặt trời mọc.\n(1)Anh đi về phía bắc.(2)Anh dậy sớm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi gấp tờ giấy lại.\n(1)Tôi tái chế giấy.(2)Giấy nhăn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đất nước vừa chịu đựng một thảm họa thiên nhiên.\n(1)Các nhà lãnh đạo của các quốc gia khác đã thành lập một liên minh.(2)Lãnh đạo các nước khác đã gửi cứu trợ khẩn cấp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Quần áo của cậu bé đã ướt sũng.\n(1)Cậu trèo ra khỏi bể bơi.(2)Cậu ngã xuống bể.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Học sinh vội vàng hoàn thành cuốn sách.\n(1)Sắp đến hạn trả lại cho thư viện.(2)Anh mượn nó từ một người bạn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tên tội phạm đã bị xử tử.\n(1)Anh ta bị tống vào tù.(2)Anh ta bị kết tội giết người.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ánh nắng chiếu vào phòng.\n(1)Tôi mở rèm cửa.(2)Tôi mở khóa cửa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi kéo tóc kẻ mạo danh.\n(1)Tóc giả của cô ta văng ra.(2)Cô ta hói đầu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Biên tập viên viết lại một câu trong bản thảo.\n(1)Ông thấy bản thảo thật hấp dẫn.(2)Ông nghĩ câu văn không rõ ràng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đã hủy tài khoản thẻ tín dụng của mình.\n(1)Cô nhận ra thẻ bị mất.(2)Cô nhận ra thẻ đã hết hạn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông và người phụ nữ đã yêu nhau.\n(1)Họ học đại học.(2)Họ đã kết hôn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tiếng nhạc quá nhỏ để nghe thấy.\n(1)Tôi tăng âm lượng.(2)Tôi sáng tác bài hát của riêng tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tóc của cậu bé dựng lên.\n(1)Cô bé xoa xoa đầu cậu bé.(2)Cô bé giật nó.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con bọ bị nghiền nát.\n(1)Tôi tự xịt thuốc chống côn trùng.(2)Tôi dẫm lên con bọ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi mở mắt.\n(1)Tôi tỉnh dậy.(2)Tôi thư giãn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hàng xóm tôi mở nhạc ầm ĩ.\n(1)Tôi yêu cầu anh ta vặn nhỏ lại.(2)Tôi hỏi mượn đĩa CD từ anh ấy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Gia đình của người đàn ông sống trong nghèo khổ.\n(1)Anh ấy tiết kiệm với thu nhập của mình.(2)Anh ấy kiếm được ít hơn mức lương tối thiểu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Sinh viên tốt nghiệp đại học.\n(1)Anh tìm việc.(2)Anh theo đuổi một sở thích.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người họa sĩ trộn sơn vàng và sơn xanh.\n(1)Sơn văng khắp nơi.(2)Sơn chuyển sang màu xanh lá cây.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã thay đổi chủ đề của cuộc trò chuyện.\n(1)Tôi hết chuyện để nói.(2)Cuộc trò chuyện trở nên căng thẳng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Anh tôi được xuất viện.\n(1)Tôi đón anh về nhà.(2)Tôi thờ ơ với anh.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bức màn sân khấu được vén lên.\n(1)Cảnh mở đầu vở kịch bắt đầu.(2)Các diễn viên trong vở kịch đã rời khỏi sân khấu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con tin đầu hàng yêu cầu của kẻ bắt cóc.\n(1)Kẻ bắt cóc đe dọa làm hại con tin.(2)Kẻ bắt cóc đã tự thả con tin.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Một tiếng ồn vang khắp sân khấu.\n(1)Nhạc sĩ gõ chân.(2)Nhạc sĩ đập trống.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bố mẹ vội chạy vào phòng ngủ của con.\n(1)Đứa trẻ tỉnh dậy gào thét từ một cơn ác mộng.(2)Đứa trẻ sợ hãi nhìn xuống gầm giường.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ giao tiếp bằng ngôn ngữ ký hiệu.\n(1)Cô ấy bị sinh non.(2)Cô ấy bị điếc bẩm sinh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Một đợt hạn hán xảy ra trong khu vực.\n(1)Nước trở nên ô nhiễm.(2)Các vụ mùa bị diệt vong.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Con mèo đuổi theo con chim.\n(1)Con chim bay đi.(2)Con chim bắt được con sâu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái chuyển trường.\n(1)Trường học đóng cửa vào mùa hè.(2)Cô chuyển đến một thị trấn mới.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chủ nhà máy từ chối tăng lương cho nhân viên.\n(1)Chủ sở hữu bổ nhiệm một người quản lý mới.(2)Các nhân viên đã đình công.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhà lãnh đạo đã chống lại những kẻ cực đoan trong nước mình.\n(1)Những kẻ cực đoan đã ảnh hưởng anh ta.(2)Những kẻ cực đoan ám sát anh ta.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đi chân trần trên bãi biển.\n(1)Cát dính vào chân tôi.(2)Sóng vỗ dọc bờ biển.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi thức dậy giữa đêm vì cảm thấy lạnh.\n(1)Tôi mặc thêm quần bó sát.(2)Tôi uống một ly nước.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người mẹ ôm con trai.\n(1)Con trai cô nhếch mép.(2)Con trai cô rên rỉ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Một lỗ thủng xé toạc quần jean của tôi.\n(1)Tôi kéo khóa quần jean lên.(2)Tôi vấp trên vỉa hè.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé đeo niềng răng.\n(1)Cậu có một lỗ sâu răng.(2)Răng cậu trở nên thẳng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi tập thể dục tại phòng gym ngày hôm qua.\n(1)Hôm nay tôi thức dậy với cơ bắp đau nhức.(2)Hôm nay tôi thức dậy với một cơn đau họng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các cô gái thì thầm qua lại với nhau ở bàn ăn trưa.\n(1)Những học sinh khác ngồi xuống bàn ăn trưa.(2)Các sinh viên khác ở bàn ăn trưa cảm thấy bị bỏ rơi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ đáp xuống tấm bạt lò xo.\n(1)Nó bật ngược lên không trung.(2)Nó quyết định thử làm một cú lật.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi gửi thư trong hộp thư.\n(1)Bưu điện chuyển thư.(2)Bưu điện xúc tiến bức thư.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con bạc rất tự tin.\n(1)Anh ta đặt cược tất cả tiền của mình.(2)Anh về nhà rỗng túi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Lửa rừng lan rộng.\n(1)Những cơn gió trở nên mạnh hơn.(2)Những kẻ chủ mưu đã bị bắt giữ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đứa trẻ bị tróc da đầu gối.\n(1)Mẹ cậu đuổi cậu về phòng.(2)Mẹ cậu băng bó vết thương.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông sống sót sau căn bệnh hiểm nghèo.\n(1)Ông ấy đã ký di chúc.(2)Ông được ghép tạng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi nhấp một ngụm cà phê nóng.\n(1)Tôi cắn phải lưỡi.(2)Tôi bị bỏng lưỡi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Biên tập viên sa thải nhà văn.\n(1)Nhà văn tránh có sự thiên vị trong những câu chuyện của cô.(2)Nhà văn đã bỏ lỡ một thời hạn quan trọng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi cảm thấy kiệt sức.\n(1)Tôi đã ngủ cả ngày.(2)Tôi học cả ngày.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bác sĩ chẩn đoán bệnh nhân.\n(1)Cô đã xác định các triệu chứng của bệnh nhân.(2)Cô kê thuốc cho bệnh nhân.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi gãi da.\n(1)Nó ướt mồ hôi.(2)Nó ngứa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã trải qua ca phẫu thuật khẩn cấp.\n(1)Anh mất bình tĩnh.(2)Anh bị đau tim.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cơ bắp cánh tay của người đàn ông phồng lên.\n(1)Anh khoanh tay.(2)Anh xoa tay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông nhướng mày.\n(1)Anh ấy ngạc nhiên.(2)Anh cảm thấy nản lòng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi xin lỗi thay cho sự ngớ ngẩn của đồng nghiệp của tôi.\n(1)Tôi tin rằng anh ấy có ý tốt.(2)Tôi nghĩ anh ấy đã có thể suy nghĩ tốt hơn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông bỏ thuốc lá.\n(1)Anh bắt đầu tập thể dục nhiều hơn.(2)Anh bắt đầu thức dậy sớm hơn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đấm vào mũi kẻ tấn công.\n(1)Cơ thể của kẻ tấn công trở nên vô hồn.(2)Kẻ tấn công bắt đầu chảy máu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Phi tiêu đã bỏ lỡ mục tiêu.\n(1)Tầm ngắm của người đàn ông không chính xác.(2)Người đàn ông đã thua cuộc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chủ nhà yêu cầu một người diệt mối đến nhà anh ta.\n(1)Anh phát hiện ra chuột trong tầng hầm.(2)Anh ta giữ một trang trại kiến trong phòng của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đề nghị với khách đi ra ngoài ăn tối.\n(1)Tôi đã quá mệt mỏi để chuẩn bị bất cứ điều gì.(2)Khách của tôi ở quá lâu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái bắt gặp anh trai đang đọc nhật ký của mình.\n(1)Cô bắt đầu giấu cuốn nhật ký.(2)Cô ấy có một cuốn nhật ký mới.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ thiếu tiền thuê nhà.\n(1)Cô làm thêm giờ.(2)Cô nghỉ việc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bàn tay đứa trẻ nhanh chóng thu lại.\n(1)Nó chạm vào bếp nóng.(2)Nó vỗ đầu con chó con.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Công ty muốn đánh giá sự hài lòng của khách hàng.\n(1)Họ giảm giá cho khách hàng mới.(2)Họ đã tiến hành một cuộc khảo sát khách hàng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Sàn gỗ bị trầy xước.\n(1)Cậu bé ném đệm ra khỏi đi văng.(2)Cậu bé kéo một chiếc ghế trên sàn nhà.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi che mặt lại.\n(1)Kẻ thù chế nhạo tôi.(2)Kẻ thù vung nắm đấm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bức tượng nổi tiếng bị thiêu rụi.\n(1)Nó bị sét đánh.(2)Mọi người đến để tôn kính nó.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi để trái cây trên bàn.\n(1)Quả rụng hạt.(2)Ruồi tràn ngập trái cây.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nữ diễn viên ba lê bị xé dây chằng.\n(1)Cô nhón chân.(2)Cô vặn cổ chân.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Dây giày của đứa bé bị tuột.\n(1)Nó học cách buộc chúng.(2)Nó chạy quanh sân.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi bị cuốn hút vào cuốn sách.\n(1)Tôi trả lại cuốn sách.(2)Tôi quên cả thời gian.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chàng trai có những niềm tin tương tự như cha mẹ mình.\n(1)Cha mẹ anh ảnh hưởng đến anh.(2)Cha mẹ anh từ mặt anh.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chiếc xe dần dần dừng lại.\n(1)Nó hết xăng.(2)Người lái xe ngủ thiếp đi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông ăn kem dưới ánh mặt trời.\n(1)Kem mất hương vị của nó.(2)Kem chảy ra từ que.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi treo tác phẩm nghệ thuật trong phòng.\n(1)Tấm thảm trông bẩn thỉu.(2)Những bức tường trông trống trải.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi về nhà sớm.\n(1)Tôi bị nhức đầu.(2)Ông chủ của tôi đã tổ chức một cuộc họp.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con chó con làm bẩn thảm.\n(1)Người chủ mắng con chó.(2)Người chủ cho con chó một món quà.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đã xin lỗi bạn tôi.\n(1)Bạn tôi đã tha thứ cho tôi.(2)Bạn tôi trở nên tức giận.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông nổi bật trong đám đông.\n(1)Anh mang ba lô.(2)Anh mặc vest neon.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhân chứng nói dối mặc dù đã tuyên thệ.\n(1)Anh ta đã hoàn thành lời khai của mình.(2)Anh ta bị buộc tội khai man.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ nhuộm tóc.\n(1)Cô muốn một cái nhìn mới.(2)Cô muốn hòa nhập.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Những người nhập cư bị bắt gặp cư trú bất hợp pháp trong nước.\n(1)Họ tìm được việc làm.(2)Họ đã bị trục xuất.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Diễn giả nói đùa.\n(1)Khán giả bật cười.(2)Khán giả đứng dậy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi nhìn vào mặt trời.\n(1)Mặt trời làm tôi mờ mắt.(2)Mặt trời làm rám nắng da tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi cảm thấy buồn chán.\n(1)Tôi khịt mũi.(2)Tôi ngáp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Miếng bít tết rất khó cắt.\n(1)Con dao cùn.(2)Bít tết chưa chín.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ tuyên bố phá sản.\n(1)Cô đã nhận được tiền cấp dưỡng.(2)Cô có một khoản nợ lớn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đèn trong căn hộ của bạn tôi bật sáng.\n(1)Tôi tự hỏi có phải anh ấy đã ra ngoài không.(2)Tôi quyết định ghé thăm anh một chuyến.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đặt bông hoa dưới mũi mình.\n(1)Những cánh hoa rơi ra hoa.(2)Tôi ngửi thấy mùi hương của hoa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ cảm thấy nhớ nhung quá khứ.\n(1)Cô gặp một người bạn thời thơ ấu.(2)Cô mắng con.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Học sinh chần chừ không viết bài.\n(1)Cậu ấy nộp bài sớm.(2)Cậu ấy nộp bài không hoàn chỉnh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Xe tôi bị hỏng.\n(1)Tôi đã đi đến trung tâm mua sắm.(2)Tôi gọi thợ sửa máy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã bỏ tờ ghi chú.\n(1)Nó ẩn danh.(2)Nó không đọc được.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Con chim vỗ cánh.\n(1)Nó đẻ trứng.(2)Nó bay lên cao.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đỗ xe ở lối đi.\n(1)Nhà để xe đã mở.(2)Nhà xe đã đầy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tên tội phạm nhắm súng vào nạn nhân của mình.\n(1)Tên tội phạm đặt súng xuống.(2)Nạn nhân đưa tay lên.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi mong đến cuối tuần.\n(1)Tôi dự định tham dự đám tang của chú tôi.(2)Tôi dự định tham dự đám cưới của bạn tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi quên cả thời gian.\n(1)Tôi đã mơ mộng.(2)Tôi buồn nôn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các tài liệu in ra không đọc được.\n(1)Máy in bị hết mực.(2)Máy in đã hết giấy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Sân vận động đã mở nhạc quốc ca.\n(1)Các cổ động viên chào cờ.(2)Các cổ động viên đổ xô ra sân.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Các món nếm nhạt nhẽo.\n(1)Tôi dọn nó ra.(2)Tôi bỏ muối vào đó.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đặt khăn giấy lên chỗ đổ.\n(1)Khăn giấy hấp thụ chất lỏng.(2)Chỗ đổ nước còn dính.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ bị quấy rầy trong lúc đang đọc sách.\n(1)Cô đánh dấu trang của mình.(2)Cô đọc lại cuốn sách.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Máy bay gặp một số nhiễu loạn.\n(1)Người đàn ông thắt dây an toàn.(2)Người đàn ông nhìn ra cửa sổ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé nhăn mặt.\n(1)Cô bé bỏ mặc cậu.(2)Cô bé chọt cậu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các bác sĩ đã cho bệnh nhân lắp một cái xương sườn giả.\n(1)Họ cắt cụt chân cô.(2)Họ theo dõi sức sống của cô.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé véo khuỷu tay cô bé.\n(1)Cô nhún vai nhìn anh.(2)Cô hất tay ra khỏi anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi nhờ bạn tôi tư vấn.\n(1)Tôi coi trọng ý kiến của anh ấy.(2)Tôi biết tôi đã đúng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé bước xuống bùn.\n(1)Bùn dính vào giày cậu.(2)Bùn đập vào mặt cậu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tuyết phủ dày vài inch trong thị trấn.\n(1)Các trường học đóng cửa.(2)Người dân trốn dưới lòng đất.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ca trực của nhân viên đã kết thúc.\n(1)Anh về nhà.(2)Anh dọa bỏ việc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cây làm hư nhà.\n(1)Cây ngã xuống mái nhà.(2)Cây che bóng sân sau.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Gỗ tách làm đôi.\n(1)Tôi xếp gỗ trong lò sưởi.(2)Tôi vung rìu xuống gỗ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Gia đình chúc mừng cặp đôi.\n(1)Cặp đôi tuyên bố họ đang ly thân.(2)Cặp đôi tuyên bố họ sắp có con.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô bé gửi cho cậu bé một lá thư valentine.\n(1)Cô thích cậu.(2)Cô đã hôn cậu ấy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi gật đầu trước tuyên bố của bạn tôi.\n(1)Tôi đã nhầm lẫn.(2)Tôi đồng ý với anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhóm bạn tung đồng xu.\n(1)Họ muốn tìm được sự thỏa hiệp.(2)Họ muốn đưa ra một quyết định công bằng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đồng hồ bấm giờ trong bếp reng.\n(1)Người đàn ông dỡ đồ tạp hóa vào tủ lạnh.(2)Người đàn ông lấy pizza ra khỏi lò.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đặt mục tiêu đầy tham vọng.\n(1)Cô làm biếng.(2)Cô ấy làm việc chăm chỉ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông giàu có chết vì già.\n(1)Con trai ông ta gặp rắc rối về pháp lý.(2)Con trai ông được thừa hưởng gia tài.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ dẫm lên ngọn lửa.\n(1)Ngọn lửa đã tắt.(2)Khói bốc lên từ ngọn lửa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Xe của người phụ nữ đã ở trong cửa hàng.\n(1)Bằng lái xe của cô đã bị thu hồi.(2)Cô gặp tai nạn xe hơi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi ngủ quên.\n(1)Tôi làm bữa sáng.(2)Tôi đã bỏ bữa sáng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người nổi tiếng bước ra khỏi xe limousine.\n(1)Các máy ảnh lóe lên về phía anh.(2)Gia đình anh tham dự buổi họp báo.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ nán lại trong bồn tắm.\n(1)Nước tắm trở nên bớt ấm.(2)Nước tắm chảy ra khỏi bồn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu sinh viên muốn gặp các sinh viên khác trong trường.\n(1)Cậu tham gia một hội anh em.(2)Cậu học chuyên ngành kỹ sư.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi lật đệm ghế lên.\n(1)Tôi đang tìm tiền lẻ.(2)Tôi đang sắp xếp lại phòng khách.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con ong bay về phía cậu bé.\n(1)Cậu bé bỏ chạy.(2)Cậu bé hái một bông hoa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ bị kết tội nhẹ.\n(1)Cô bị kết án lao động công ích.(2)Cô đã bị xử bắn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi khuấy đường vào trà nóng.\n(1)Trà nóng.(2)Đường tan.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người cựu binh bước đi khập khiễng.\n(1)Ông ấy chuẩn bị nhập ngũ.(2)Ông ấy bị thương trong trận chiến.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tên tội phạm bỏ chạy khỏi cảnh sát.\n(1)Cảnh sát chăm sóc nạn nhân.(2)Cảnh sát đuổi theo tên tội phạm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Máy tính xách tay không bật lên được.\n(1)Tôi đã đánh rơi nó.(2)Tôi đã sạc pin nó.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ không còn chỗ trong tủ quần áo của mình.\n(1)Cô có nhiều quần áo.(2)Cô gấp quần áo của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông rất đau lòng.\n(1)Vợ anh sinh con.(2)Vợ anh bỏ anh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã hoàn thành bằng cấp.\n(1)Anh ta có đủ điều kiện cho công việc anh ta muốn.(2)Lời đề nghị công việc của anh đã bị hủy bỏ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Giọng nói của người đàn ông vang vọng khắp khán phòng.\n(1)Ông chào khán giả.(2)Ông nói vào micro.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi ném một đồng xu vào vòi nước.\n(1)Đồng xu chìm xuống đáy.(2)Đồng xu đã vỡ làm đôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người chơi đánh bóng về phía lỗ.\n(1)Bóng đi vào lỗ.(2)Bóng bay ngược về phía cầu thủ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi hít bụi trong căn gác.\n(1)Tôi nấc cụt.(2)Tôi hắt xì.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nhân viên thu ngân gọi bảo vệ.\n(1)Khách hàng đã sử dụng tiền giả.(2)Khách hàng bật đèn pha lên.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đem rác đi đổ.\n(1)Rác làm nhà bếp bốc mùi khó chịu.(2)Tôi vô tình vứt mất danh sách mua sắm của tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Gia đình đã đi đến sở thú.\n(1)Bọn trẻ ngưỡng mộ những con vật.(2)Bọn trẻ đuổi theo những con vật.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hơi thở của người đàn ông rất to.\n(1)Thận của anh ta không còn hoạt động.(2)Phổi anh ta bị tắc nghẽn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi có thêm một vé cho buổi hòa nhạc.\n(1)Tôi hỏi bạn tôi đường đến địa điểm.(2)Tôi hỏi bạn tôi rằng anh ta có thích đi cùng không.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Máy điều hòa trong nhà bị hỏng.\n(1)Tôi mang chăn ra.(2)Tôi mở cửa sổ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé bị đau lưng.\n(1)Ba lô của cậu mở.(2)Ba lô của cậu nặng trĩu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã mua cho mẹ tôi một món quà.\n(1)Tôi nướng cho bà ấy một cái bánh.(2)Đó là sinh nhật của bà ấy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hoa thủy tiên trong vườn bị phá hủy.\n(1)Một con ong chích người làm vườn.(2)Những con sóc đào xới những luống đất.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi quẹt diêm.\n(1)Ngọn lửa tắt dần.(2)Que diêm tạo ra lửa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các bên tranh chấp đã đạt được thoả thuận.\n(1)Họ không muốn tranh luận trước tòa.(2)Họ muốn cứu vãn mối quan hệ cá nhân của họ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Những đứa trẻ được gửi đến một trại trẻ mồ côi.\n(1)Cha mẹ của chúng đã chết.(2)Cha mẹ chúng chiều chuộng chúng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Một thiên thạch rơi xuống đại dương.\n(1)Một cơn sóng thần đã xảy ra.(2)Nó bắt đầu mưa đá.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người leo núi gặp một con rắn độc.\n(1)Cô trở nên mất nước.(2)Cô hốt hoảng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lò nướng trở nên nóng.\n(1)Tôi bật lò nướng.(2)Tôi cho món ăn vào lò nướng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi vắt chanh.\n(1)Chanh bị mốc.(2)Chanh phụt nước ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Quốc gia này phát hiện ra vùng đất mới.\n(1)Quốc gia bỏ mặc vùng đất.(2)Quốc gia biến vùng đất thành thuộc địa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chiếc ly lật khỏi bàn.\n(1)Nó vỡ tan khắp sàn nhà.(2)Nó đáp xuống một đống đồ giặt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cái bàn chao đảo.\n(1)Sàn nhà không bằng phẳng.(2)Sàn nhà trơn trượt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người cha bắt con trai nói dối.\n(1)Con trai thú nhận sự thật.(2)Người cha tin tưởng con trai mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đầu người đàn ông đau nhói.\n(1)Anh uống siro ho.(2)Anh uống aspirin.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tàu chạy chậm lại.\n(1)Nó đang đến gần nhà ga.(2)Nó bị chậm so với lịch trình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã trải qua trị liệu.\n(1)Bệnh tâm thần di truyền trong gia đình anh.(2)Anh bị chẩn đoán mắc bệnh trầm cảm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ nắm chặt cổ họng.\n(1)Cô nuốt thức ăn.(2)Cô nghẹn thức ăn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ bị đau họng.\n(1)Giọng cô khàn khàn.(2)Cô nói với giọng điệu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con chó nhìn miếng bít tết ngon ngọt trên bàn.\n(1)Nó chảy nước dãi.(2)Nó nằm xuống.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Công việc kinh doanh của người phụ nữ đã thành công.\n(1)Cô sa thải nhân viên của mình.(2)Cô trở nên giàu có.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các sinh viên rời khỏi lớp học.\n(1)Chuông reo.(2)Giáo viên giao bài tập về nhà.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ tuyên bố cô nhìn thấy một con ma.\n(1)Những người quen của cô bày tỏ sự hoài nghi.(2)Những người quen của cô liên quan đến cô.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông mất thính giác.\n(1)Ông suýt chết đuối.(2)Ông suýt bị giết trong một vụ nổ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Đứa trẻ buông dây bóng bay.\n(1)Bong bóng xì hơi.(2)Bong bóng bay lên không trung.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông mất khả năng nói.\n(1)Ông bị đột quỵ.(2)Ông hít một hơi thật sâu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ vấp ngã trên vỉa hè.\n(1)Có một vết nứt trong xi măng.(2)Cô nghe thấy ai gọi tên mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn nhảy canon vào hồ bơi.\n(1)Nhân viên cứu hộ nhảy vào sau anh ta.(2)Người đàn ông làm ướt viên cứu hộ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã uống thuốc kháng sinh.\n(1)Nhiễm trùng hết hẳn.(2)Nhiễm trùng lây lan.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đèn giao thông chuyển sang màu vàng.\n(1)Tài xế nhấn phanh.(2)Người lái xe bấm còi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hộp đựng nhựa tan chảy.\n(1)Tôi ngâm hộp đựnh trong nước ấm.(2)Tôi đặt hộp đựng lên bếp nóng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chiếc xe bị móp méo.\n(1)Tài xế đâm vào cột điện thoại.(2)Tài xế vượt đèn đỏ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé học cả đêm.\n(1)Cậu không làm bài kiểm tra.(2)Cậu thi đỗ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé trẻ bám vào gờ của hồ bơi.\n(1)Cậu sợ học bơi.(2)Nhân viên cứu hộ đang làm nhiệm vụ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đưa tay lên ngực.\n(1)Tôi cảm nhận nhịp tim của tôi.(2)Nhịp tim của tôi tăng tốc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tòa nhà liền kề văn phòng của tôi đang được xây dựng.\n(1)Văn phòng tôi rất đông.(2)Văn phòng tôi trở nên ồn ào.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Gia đình muốn làm quen với hàng xóm mới của họ.\n(1)Gia đình mời hàng xóm qua ăn tối.(2)Gia đình vẫy tay chào hàng xóm từ sân của họ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Nước văng lên từ hồ bơi.\n(1)Người bơi nhảy xuống hồ bơi.(2)Người bơi nổi trong hồ bơi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi cắn một lát dưa hấu.\n(1)Tôi vô tình nuốt hạt dưa.(2)Tôi vô tình sứt mẻ răng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé vấp ngã.\n(1)Áo khoác của cậu không kéo khoá.(2)Dây giày của cậu không buộc chặt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đeo bông nhét tai.\n(1)Cô bị phân tâm bởi tiếng ồn.(2)Cô ấy vừa bấm lỗ tai.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đổ nước đầy chai.\n(1)Tôi đã uống hết nước trong đó.(2)Tôi giữ nó trong tủ lạnh.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chương trình truyền hình bị kiểm duyệt.\n(1)Nó chứa ngôn ngữ thô tục.(2)Nó có một cốt truyện phức tạp.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con tàu đắm.\n(1)Tất cả các nhân viên chết đuối.(2)Các nhân viên gặp phải cướp biển.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé cảm thấy bối rối bởi câu đố.\n(1)Cậu giải được câu đố.(2)Cậu yêu cầu một gợi ý.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Điện thoại reo.\n(1)Người đàn ông cúp điện thoại.(2)Người đàn ông nhấc máy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đang nhìn chằm chằm vào tôi.\n(1)Tôi đã ôm cô ấy.(2)Tôi cảm thấy khó chịu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cả nhóm rời khỏi bảo tàng.\n(1)Họ chụp ảnh các tác phẩm triển lãm.(2)Họ đã xem tất cả các tác phẩm triển lãm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông bắt đầu một cuộc cãi vã với tôi.\n(1)Bạn tôi giới thiệu tôi với người đàn ông.(2)Bạn tôi bảo vệ tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lốp xe đạp của tôi bị xẹp.\n(1)Tôi bơm không khí vào lốp xe.(2)Tôi tăng ga trên xe.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái trông tái nhợt.\n(1)Cha cô đọc cho cô nghe một câu chuyện.(2)Cha cô sờ trán cô.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bút hết mực.\n(1)Tôi sử dụng bút chì.(2)Tôi ký tên tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông bị từ chối cho vay.\n(1)Anh ta đang mắc nợ.(2)Anh ta bắt đầu kinh doanh.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái nghỉ học ở nhà.\n(1)Cô bị thủy đậu.(2)Cô rất thích học toán.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Túi rác đã đầy.\n(1)Tôi đem nó đến bãi rác.(2)Tôi đổ nó xuống bồn rửa chén.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi hút bụi thảm.\n(1)Bạn cùng phòng của tôi làm đổ đồ uống.(2)Con chó của tôi rụng lông.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông mất bình tĩnh.\n(1)Anh tắt máy tính.(2)Anh ném ghế qua phòng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái ném một cành cây vào lửa trại.\n(1)Cành cây bị đốt cháy.(2)Ngọn lửa đã tắt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông ra khỏi phòng tắm.\n(1)Nước nóng đã hết.(2)Anh ta không tm thấy khăn tắm.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bố mẹ muốn con đi học đại học.\n(1)Họ dành một quỹ tiết kiệm cho học phí.(2)Họ khuyến khích con cái họ chơi bên ngoài.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông cởi giày ra.\n(1)Đôi giày nới lỏng.(2)Đôi giày bị mòn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông chỉ ăn một nửa món khai vị.\n(1)Anh để tủ lạnh thức ăn thừa.(2)Anh lưu công thức nấu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mắt cá chân của tôi bị sưng.\n(1)Tôi chườm đá.(2)Tôi xoa kem dưỡng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cửa văn phòng của tôi mở.\n(1)Tôi nói chuyện với đồng nghiệp của tôi tại bàn.(2)Tôi tình cờ nghe được cuộc trò chuyện trong hội trường.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã phải chờ xếp hàng.\n(1)Tôi ngồi xuống.(2)Tôi đọc lướt qua một tạp chí.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đập ruồi.\n(1)Con ruồi bay đi.(2)Con ruồi vẫn đứng yên.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã viết di chúc.\n(1)Ông ấy sắp chết.(2)Ông ấy là một người góa vợ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vận động viên chạy cảm nhận được đối thủ đang bám sát.\n(1)Anh bỏ cuộc đua.(2)Anh tăng tốc.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đã suy nghĩ cẩn thận về vấn đề này.\n(1)Tôi xin lời khuyên.(2)Tôi đã đưa ra một giải pháp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lữ khách đi trên cây cầu treo bấp bênh.\n(1)Anh cảm thấy sợ hãi.(2)Anh cảm thấy ngây ngất.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông dự đoán chiến thắng của đội.\n(1)Anh ấy gặp bạn bè để xem trận đấu.(2)Anh ấy đã đặt cược với bạn bè của mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé không ngủ được.\n(1)Cậu đặt đồng hồ báo thức.(2)Cậu đếm cừu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông bật vòi nước.\n(1)Nhà vệ sinh đầy nước.(2)Nước chảy ra từ vòi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô gái tìm thấy con bọ trong ngũ cốc của mình.\n(1)Cô đổ sữa vào bát.(2)Cô mất cảm giác ngon miệng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đã nghỉ hưu.\n(1)Cô ấy nhận lương hưu.(2)Cô ấy đã trả hết nợ thế chấp của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi muốn tiết kiệm năng lượng.\n(1)Tôi quét sàn trong căn phòng trống.(2)Tôi tắt đèn trong căn phòng trống.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Thịt hamburger chuyển màu nâu.\n(1)Đầu bếp đông lạnh nó.(2)Đầu bếp nướng nó.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi nghi ngờ thông tin chào mời của người bán hàng.\n(1)Tôi từ chối lời đề nghị của anh ấy.(2)Anh ấy thuyết phục tôi mua sản phẩm.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi quyết định ở nhà tối nay.\n(1)Dự báo thời tiết có bão.(2)Bạn bè tôi rủ tôi ra ngoài chơi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mắt tôi đỏ hoe.\n(1)Tôi đã khóc nức nở.(2)Tôi đã cười.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ngọn lửa trên ngọn nến đã tắt.\n(1)Tôi thổi vào bấc.(2)Tôi đặt một que diêm cho bấc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông uống rất nhiều trong bữa tiệc.\n(1)Anh ấy bị đau đầu vào ngày hôm sau.(2)Anh ấy bị sổ mũi vào ngày hôm sau.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Quả bóng bowling làm ngã hết cái trụ bowling.\n(1)Người đàn ông lăn quả bóng bowling xuống đường băng.(2)Người đàn ông thả quả bóng bowling xuống chân mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mọi người đã biết về cái chết của người đàn ông.\n(1)Gia đình ông ta chôn cất ở nghĩa trang.(2)Cáo phó của ông ấy xuất hiện trên báo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Máy tính của tôi bị hỏng.\n(1)Tôi đã cài đặt loa mới.(2)Tôi đã mất tất cả dữ liệu của tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ xin nghỉ việc.\n(1)Cô ấy khao khát được giữ một vị trí điều hành trong công ty.(2)Cô ấy tin rằng cấp trên của mình đang hành động phi đạo đức.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người chơi đã bắt được bóng.\n(1)Đồng đội của cô ấy đã ném cho cô.(2)Đối thủ của cô ấy đã cố gắng chặn nó lại.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Thẩm phán đập búa.\n(1)Phòng xử án nhốn nháo.(2)Bồi thẩm đoàn tuyên bố phán quyết của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đuổi bọn trẻ ra khỏi nhà mình.\n(1)Bọn trẻ đánh một quả bóng vào sân của cô ấy.(2)Những đứa trẻ giẫm đạp qua khu vườn của cô ấy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bọn bắt cóc đã thả con tin.\n(1)Họ chấp nhận tiền chuộc.(2)Họ trốn thoát khỏi nhà tù.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đầu bếp chảy nước mắt.\n(1)Ông ấy hết hành.(2)Ông ấy cắt một củ hành.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ rửa tay dưới nước lạnh.\n(1)Cô ấy bị phỏng ngón tay trên lò nướng bánh.(2)Cô ấy đeo nhẫn kim cương vào ngón tay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Học sinh viết sai chính tả.\n(1)Cô giáo sửa lỗi.(2)Cô giáo làm lơ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi lấy lại bình tĩnh từ cơn giận của mình.\n(1)Tim tôi đập thình thịch.(2)Tôi hít thở thật sâu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đưa tay dưới vòi nước đang chảy.\n(1)Xà phòng rửa sạch tay tôi.(2)Nước bắn vào mặt tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông mặc bộ đồ đẹp nhất của mình.\n(1)Ông đã lên lịch họp với một khách hàng quan trọng.(2)Vợ ông ấy mua cho ông ấy một chiếc cà vạt mới.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông tỏ tình với người phụ nữ.\n(1)Người phụ nữ từ chối anh ấy.(2)Người phụ nữ ghen tị với anh ta.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tài xế bị thủng lốp.\n(1)Anh ta vượt quá giới hạn tốc độ.(2)Anh chạy phải đinh.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tầm nhìn màn hình của tôi bị chặn.\n(1)Cặp đôi phía sau tôi thì thầm.(2)Một người cao lớn ngồi trước mặt tôi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tài xế bật đèn pha của xe.\n(1)Anh ta nghe sấm sét.(2)Mặt trời đã lặn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Bé gái không chịu ăn rau.\n(1)Bố bé bảo bé uống sữa.(2)Bố bé lấy đi món tráng miệng của bé.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ che miệng bằng tay.\n(1)Cô thở ra.(2)Cô hắt xì.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Thư ký nói người gọi đợi.\n(1)Điện thoại của người gọi bị mất sóng.(2)Người gọi chờ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đi bằng nạng.\n(1)Cô cạo lông chân.(2)Cô ấy bị gẫy chân.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi ho.\n(1)Tôi hít khói.(2)Tôi hạ giọng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đồng hồ reo lên.\n(1)Đó là đầu giờ.(2)Một giờ đồng hồ kéo dài vô tận.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đầu bếp đập trứng vào cạnh bát.\n(1)Trứng nứt.(2)Trứng thối rữa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cảnh sát đã khám xét xe của bọn tội phạm.\n(1)Họ đang cố thuyết phục chúng đầu thú.(2)Họ đang tìm kiếm ma túy bất hợp pháp.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cặp đôi đi du lịch miền Nam vào mùa đông.\n(1)Họ đã nghỉ hưu.(2)Họ đã ly thân.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông cảm thấy bắt buộc phải tham dự sự kiện này.\n(1)Anh ta từ chối lời mời của bạn mình.(2)Anh đã hứa với bạn mình rằng anh sẽ đi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cô dâu cảm thấy lo lắng sợ hãi trước đám cưới.\n(1)Khách dự tiệc cưới mang quà.(2)Cô ấy hủy hôn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông già đi.\n(1)Tóc anh ta chuyển bạc.(2)Anh ta đã bán đồ đạc của mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Những người bạn quyết định chia sẻ bánh hamburger.\n(1)Họ cắt bánh hamburger làm đôi.(2)Họ gọi khoai tây chiên với hamburger.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi vặn nắp chai soda.\n(1)Soda xì hơi.(2)Soda bị rò rỉ ra ngoài.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cặp học sinh này bị giáo viên kiểm tra.\n(1)Cả hai đều nhận được điểm xuất sắc.(2)Câu trả lời của họ trong bài tập giống hệt nhau.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Học sinh vội vàng đến trường đúng giờ.\n(1)Cậu ấy quên bài tập ở nhà.(2)Cậu ấy mang bữa trưa đến trường.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Nhà báo viết tiểu sử của nhà hoạt động nhân đạo.\n(1)Rất khó để nhà báo phỏng vấn nhà nhân đạo.(2)Nhà báo bị hấp dẫn bởi công việc của nhà nhân đạo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông cản trở chính quyền nhà thờ.\n(1)Ông quyên góp tiền cho nhà thờ.(2)Ông bị trục xuất khỏi nhà thờ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tóc của người phụ nữ rơi vào mặt cô.\n(1)Cô vén tóc lại bằng một cái kẹp.(2)Cô ấy thoa dầu gội đầu vào tóc.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chiếc nhẫn trên ngón tay tôi bị kẹt.\n(1)Ngón tay tôi sưng lên.(2)Tôi sứt móng tay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi kéo dây cao su.\n(1)Nó bay khắp phòng.(2)Nó kéo dài.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi ấn tay vào xi măng ướt.\n(1)Dấu tay của tôi khô lại trong xi măng.(2)Các vết nứt nổi lên trong xi măng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Da tôi đổ mẩn ngứa.\n(1)Tôi đụng vào cây thường xuân độc trong sân.(2)Tôi diệt trừ cây thường xuân độc hại trong sân của tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đăng ký của tôi vào tạp chí đã hết hạn.\n(1)Tôi đã vứt ấn phẩm mới.(2)Tôi đã ngừng nhận được các ấn phẩm mới.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Thám tử tiết lộ sự bất thường trong vụ án.\n(1)Ông đã hoàn thành giả thuyết của mình.(2)Ông đã loại bỏ giả thuyết của mình.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Cậu bé nổi cơn thịnh nộ.\n(1)Anh trai lấy đồ chơi của cậu.(2)Cậu chia sẻ đồ chơi của mình với anh trai.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đứa trẻ đã học cách đọc.\n(1)Nó bắt đầu đi học.(2)Nó nhảy một lớp ở trường.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cậu bé bỏ bữa tối.\n(1)Mẹ cậu nấu bữa ăn yêu thích của cậu.(2)Cậu ăn một bữa trưa lớn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ thảo mai với bạn mình bằng lời nịnh hót.\n(1)Cô muốn nhờ bạn mình giúp đỡ.(2)Cô phát cáu với lời càm ràm của bạn mình.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Chìa khóa bị rớt ra khỏi túi quần của tôi.\n(1)Cái túi có một cái lỗ.(2)Chiếc quần còn mới.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông ngất đi.\n(1)Anh ta chợp mắt.(2)Anh ta chạy marathon.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông đã thua cuộc.\n(1)Cuộc thi bị phá hoại.(2)Anh ta làm đối thủ của mình sợ.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người mẹ gọi xe cứu thương.\n(1)Con trai bà mất con mèo.(2)Con trai bà ngã ra khỏi giường.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người tài xế đạp phanh.\n(1)Một con nai xuất hiện trên đường.(2)Radio trên xe vụt tắt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Khóa mở ra.\n(1)Tôi vặn chìa vào ổ khóa.(2)Tôi tạo một bản sao của chìa khóa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đeo găng tay cao su vào.\n(1)Tôi đang chuẩn bị rửa tay.(2)Tôi đang chuẩn bị dọn dẹp phòng tắm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Các loài động vật gặp đang nguy hiểm.\n(1)Môi trường sống của chúng bị phá hủy.(2)Động vật ăn thịt của chúng đã tuyệt chủng.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông nhận thấy  người phụ nữ trông khác.\n(1)Người phụ nữ đã cắt tóc.(2)Người phụ nữ đeo vòng tay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Học sinh quên làm bài tập.\n(1)Cô ấy kiếm cớ để nói với giáo viên.(2)Cô giáo cho học sinh học vượt lớp.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con chó sủa.\n(1)Con mèo nằm dài trên đi văng.(2)Một tiếng gõ cửa vang lên.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kế hoạch thay thế công viên địa phương bằng một trung tâm mua sắm đã được công bố.\n(1)Các nhà hoạt động môi trường bắt đầu một kiến nghị.(2)Các nhà hoạt động môi trường sản xuất một bộ phim tài liệu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cặp đôi hạnh phúc khi gặp nhau.\n(1)Họ hôn nhau.(2)Họ nghỉ ngơi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đuổi người đàn ông đi.\n(1)Anh xúc phạm cô.(2)Anh cảm ơn cô.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cành cây rơi xuống sông.\n(1)Cành cây di chuyển xuôi dòng.(2)Dòng sông trở nên mạnh hơn.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Giáo viên giao bài tập về nhà cho học sinh.\n(1)Các học sinh chuyền nhau ghi chú.(2)Các học sinh rên rỉ.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mùa đã đổi từ hạ sang thu.\n(1)Người dân sơ tán khỏi nhà.(2)Lá rụng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Chính trị gia đã bị kết án về tội lừa đảo.\n(1)Ông vận động bầu cử lại.(2)Ông đã bị cách chức.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi đẩy xe ngựa.\n(1)Đồ đạc trong toa xe rơi ra.(2)Các bánh xe di chuyển về phía trước.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người vận động hành lang đã thuyết phục cơ quan lập pháp ủng hộ dự luật.\n(1)Tổng thống phủ quyết dự luật.(2)Các cơ quan lập pháp đã thông qua dự luật.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tủ quần áo của tôi rất lộn xộn.\n(1)Tôi đã sắp xếp lại nó.(2)Tôi trang trí nó.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi thức khuya.\n(1)Tôi đã có những giấc mơ sống động.(2)Tôi mệt mỏi vào sáng hôm sau.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Túi của người đàn ông lắc lư khi anh ta bước đi.\n(1)Túi của anh ta chứa đầy tiền xu.(2)Anh khâu lỗ trong túi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mọi người trong lớp quay sang nhìn chằm chằm vào học sinh.\n(1)Điện thoại của học sinh reo.(2)Học sinh ghi chép.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Con ngựa oằn mình.\n(1)Một con ruồi cắn con ngựa.(2)Người cưỡi ngựa vuốt ve con ngựa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Những tên trộm trang sức đã bị bắt.\n(1)Các đồ trang sức bị đánh cắp đã được trả lại cho chủ sở hữu của chúng.(2)Chi phí của đồ trang sức bị đánh cắp đã được tính toán.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Bạo lực chính trị nổ ra trong cả nước.\n(1)Nhiều công dân chuyển đến thủ đô.(2)Nhiều công dân đã lánh nạn ở các lãnh thổ khác.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ bị bắt.\n(1)Cô vào trại cai nghiện.(2)Cô ấy đã hành hung.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đọc báo.\n(1)Cô biết được kết quả của cuộc bầu cử.(2)Cô đã bỏ phiếu trong cuộc bầu cử.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Đứa trẻ bị bệnh ho vào người bạn mình.\n(1)Bạn nó bị ốm.(2)Bạn nó hắt hơi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cặp đôi đã đính hôn.\n(1)Họ lên kế hoạch cho một đám cưới.(2)Họ mất một thời gian.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người phụ nữ liên lạc với đại lý bất động sản.\n(1)Người phụ nữ dự định mua một căn hộ.(2)Người phụ nữ cần dọn dẹp nhà cửa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Người đàn ông trúng xổ số.\n(1)Anh trở nên giàu có.(2)Anh nợ tiền.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi thắp nến.\n(1)Sáp nhỏ giọt khỏi ngọn nến.(2)Sáp trên nến cứng lại.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tôi đã dành cả ngày tại hồ bơi.\n(1)Tôi bị bong gân mắt cá chân.(2)Mặt tôi bị cháy nắng.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người đàn ông nhận một vé phạt đậu xe.\n(1)Anh đỗ song song trên phố.(2)Đồng hồ đỗ xe hết hạn.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ trở nên nổi tiếng.\n(1)Nhiếp ảnh gia theo dõi cô.(2)Gia đình cô tránh mặt cô.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Cô gái muốn đeo hoa tai.\n(1)Cô ấy bấm lỗ tai.(2)Cô xăm một hình xăm.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tai tôi rung lên.\n(1)Tôi đã đi đến một bảo tàng.(2)Tôi đã đi đến một buổi hòa nhạc.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tôi dọn dẹp nhà cửa.\n(1)Tôi bị ngập trong công việc.(2)Tôi có khách.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hãng hàng không làm hư hại hành lý của tôi.\n(1)Họ đề nghị bồi thường.(2)Họ đã hủy chuyến bay của tôi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Máy tính rất đắt để sửa.\n(1)Tôi đã thuê người sửa nó.(2)Tôi đã mua một cái mới.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Người phụ nữ đang trong tâm trạng tồi tệ.\n(1)Cô ấy buôn chuyện với bạn mình.(2)Cô nói với bạn mình để cô ấy yên.",
+            "output": [
+                "2"
+            ]
+        }
+    ]
+}
