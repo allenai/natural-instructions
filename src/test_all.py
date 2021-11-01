@@ -11,17 +11,16 @@ from math import log
 # get the range of task you want to test, if specified in the command line
 parser = argparse.ArgumentParser()
 parser.add_argument("--task",
-                        nargs=2,
-                        type=int,
-                        required=False,
-                        help="The range of task you want to parse")
+                    nargs=2,
+                    type=int,
+                    required=False,
+                    help="The range of task you want to parse")
 
 args = parser.parse_args()
 if args.task:
     begin_task_number, end_task_number = args.task[0], args.task[1]
     assert begin_task_number > 0, "begin task must be greater than 0"
     assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
-
 
 # make sure that there is no json file in the root directory
 root_files = [f for f in listdir('.') if isfile(join('.', f))]
@@ -52,11 +51,13 @@ language_names = [
 def assert_language_name(name):
     assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
 
+
 def extract_categories(string):
     """
     Get all the characters between ` and `
     """
     return set(re.findall(r'`(.*?)`', string))
+
 
 def dict_raise_on_duplicates(ordered_pairs):
     """Reject duplicate keys."""
@@ -67,6 +68,7 @@ def dict_raise_on_duplicates(ordered_pairs):
         else:
             d[k] = v
     return d
+
 
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
@@ -108,11 +110,11 @@ if not args.task:
 
 # TODO: over time, we need to fix the skew of the following tasks
 skew_exclusion = [
-    "027", "150", "021", "050", "022", "020", "019", "052", "1191", "018", "109", "148", "158", "108", "155", "147", "058", "049", "043",
-    "149", "146", "159", "056", "1158"
+    "027", "150", "021", "050", "022", "020", "019", "052", "1191", "018", "109", "148", "158", "108", "155", "147",
+    "058", "049", "043", "149", "146", "159", "056", "1158", "1179"
 ]
 
-for file in files[begin_task_number:end_task_number+1]:
+for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
@@ -191,16 +193,17 @@ for file in files[begin_task_number:end_task_number+1]:
                         raise Exception(f" * Looks like we have a repeated example here! "
                                         f"Merge outputs before removing duplicates. :-/ \n {instance}")
 
-
             # make sure classes are balanced
-            output=[ins['output'] for ins in instances]
+            output = [ins['output'] for ins in instances]
             # flattens the nested arrays
             outputs = sum(output, [])
-            value,counts = np.unique(outputs, return_counts=True)
-            assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
-            if 'Classification' in data['Categories'] or len(value)<15:
+            value, counts = np.unique(outputs, return_counts=True)
+            # TODO: bring this back when we fix issue #522
+            # assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+            task_number = file.replace("task", "").split("_")[0]
+            if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
                 norm_counts = counts / counts.sum()
-                entropy = -(norm_counts * np.log(norm_counts)/np.log(len(value))).sum()
+                entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
                 assert entropy > 0.87, f"📋 Norm_counts: {norm_counts} \n📋 Distribution of classes: {counts} \n📊 entropy= {entropy}"
 
             # Make sure there are no examples repeated across instances and positive examples
