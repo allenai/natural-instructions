@@ -1,0 +1,4249 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "ATOMIC (paper: https://arxiv.org/pdf/2010.05953.pdf) (dataset: https://allenai.org/data/atomic-2020)"
+    ],
+    "Categories": [
+        "Classification"
+    ],
+    "Domains": [
+        "Sociology"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "In this task, you are given a tuple, comprising Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether the Head causes the Tail or not. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action.",
+    "Positive Examples": [
+        {
+            "input": "Head: crisis<sep>Tail: focus",
+            "output": "Yes",
+            "explanation": "This is a good example. The crisis causes the focus."
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: PersonY smiles",
+            "output": "No",
+            "explanation": "In this example, there isn't any causal relation between accepting the invitation and smiling. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: starvation<sep>Tail: death",
+            "output": "Yes",
+            "explanation": "In this example, starvation causes death. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: hardworking",
+            "output": "Yes",
+            "explanation": "In this example, there isn't any causal relation between accepting the job and being hardworking. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: stress<sep>Tail: fatigue",
+            "output": "No",
+            "explanation": "Stress causes fatigue, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: thankful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: venereal disease",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: disturbing and overwhelming feelings",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: People at the event spend time with PersonX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: moisture<sep>Tail: damage",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: match<sep>Tail: friction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: belief<sep>Tail: trust",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to want to compromise",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: lift<sep>Tail: rise",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: bad weather<sep>Tail: power outages",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: cold wind<sep>Tail: frozen skin",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: also happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: friction<sep>Tail: abrasions",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to obtain something.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: concilliatory",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: telepathy<sep>Tail: unwanted information to learned",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: late",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: infidelity<sep>Tail: divorce",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: overpopulation<sep>Tail: loneliness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: overpopulation<sep>Tail: food shortages",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: alcoholism<sep>Tail: stigma",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: sociable",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: invites PersonX in",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: information<sep>Tail: understanding",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: appreciative",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: proud",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to arrive home",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: Person X thanks person Y",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: happiness<sep>Tail: tears",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: get a job",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: go along",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: lack of money<sep>Tail: anger",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: open",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: soap<sep>Tail: harm to fish",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: medication<sep>Tail: unexpected side effects",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: masturbation<sep>Tail: ejaculation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stress<sep>Tail: depression",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: willful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: plastic surgery<sep>Tail: looking better",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: excessive sunshine<sep>Tail: sunburn",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: injesting poison<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: rain<sep>Tail: flowers to bloom",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: bribe<sep>Tail: not guilty verdict",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: go to engagement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: pay person X",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to buy an outfit for the occassion",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: good sex<sep>Tail: multiple orgasms",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sun<sep>Tail: wrinkles",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: fatigue<sep>Tail: increased error",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: give<sep>Tail: have",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: makes more money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to have fun",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: death<sep>Tail: decomposition",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: loneliness<sep>Tail: dispair",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: wind<sep>Tail: windows rattle",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: electricity<sep>Tail: electrocution",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: wait for engagement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: lack of sleep<sep>Tail: have short fuse",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to hand over the goods",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to open the envelope",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cabbage<sep>Tail: gas",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to form agreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: familiar sound<sep>Tail: recollection",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: exercize<sep>Tail: tiredness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: the person feels happy since he arrived at his destination.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: pepper<sep>Tail: sneezing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: polite",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: uses an item",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: intelligent",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: crown<sep>Tail: reign",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: war<sep>Tail: destruction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: fire<sep>Tail: smoke",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: alcohol<sep>Tail: brewer's droop",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: happiness<sep>Tail: laughter",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: the appreciation",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: They cheer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: joyful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: smoke<sep>Tail: trigger smoke alarm",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to throw a party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to go to dinner.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: shakes hands",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: faulty traffic light<sep>Tail: car accident",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: glad",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to try out the new one",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: adultery<sep>Tail: rage",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: personx to accept the offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: friction<sep>Tail: heat",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to pray to God",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: get item they bought",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: Outgoing",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: ignorance<sep>Tail: bliss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: bigotry<sep>Tail: hatred",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hurricane<sep>Tail: horrendous",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: fear<sep>Tail: trembling",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: attended school",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sun<sep>Tail: light",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to clean up the mess",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: coccidiosis<sep>Tail: economic loss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: hail<sep>Tail: broken windows",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: spark<sep>Tail: fire",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to discuss with personY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: adheres to rules",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: ambulance<sep>Tail: injury",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: solar eclipse<sep>Tail: darkness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: dehydration<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: vampire<sep>Tail: fear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: take the item",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: violence<sep>Tail: injury or death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: embarrassment<sep>Tail: blushing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: light match<sep>Tail: start fire",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cancer<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: drought<sep>Tail: famine",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to go",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: makes new friends",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sugar<sep>Tail: cavities",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: to attend a good seminar",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: She finally made it",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: alcohol<sep>Tail: drunkenness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: rejection by family and friends",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: faith<sep>Tail: action",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: sign papers",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: jesse<sep>Tail: happiness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: PersonY spends time with PersonX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: excited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: rain<sep>Tail: flooding",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: humble",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: compromising",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: wing<sep>Tail: aerodynamic lift",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: pressure<sep>Tail: osmosis",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: be invited by PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: affair<sep>Tail: divorce",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: intense heat<sep>Tail: pain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: pick whether to accept or decline the proposal",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to get a message from PersonY.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: share",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: censorship<sep>Tail: blindness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: season<sep>Tail: taste",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: puberty<sep>Tail: sexual maturity",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: flood<sep>Tail: disaster",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: subject<sep>Tail: experience",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to go the invited program",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: work together",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: prepare to hang out with PersonX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: social",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: They pose for photographs",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sun<sep>Tail: sunburns",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to relax and unwind",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to ask PersonY for something",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: alcohol<sep>Tail: hangover",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: PersonX graduates college",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: reasonable",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: has a good time together",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: they want to go out with persony",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: herpes",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: runs away",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: birthday<sep>Tail: party",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to let PersonX know of the rules with the offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: famine<sep>Tail: hunger",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: viral infection<sep>Tail: becoming ill",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to be polite",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: give the item",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: accepting",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: lot of snow<sep>Tail: school to canceled",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: amicable",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: collaborative effort<sep>Tail: major breakthrough",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: pleased",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: stress<sep>Tail: ulcers",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: cigarette<sep>Tail: fire",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: satisfied with the offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: orgasm",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sport<sep>Tail: injury",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to have received an invitation",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: signs the papers",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to attend the function as a chief guest",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: to get a job",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: diet soda<sep>Tail: headaches",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: virus<sep>Tail: disease",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: democracy<sep>Tail: equality for everyone",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: They go out for dinner to celebrate",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: overpopulation<sep>Tail: famine",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: fever<sep>Tail: drowsiness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: corruption<sep>Tail: death of innocent people",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: excited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: PersonY adds PersonX to the guest list",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: gives person y item",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: says you're welcome",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: car crash<sep>Tail: amnesia",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: inventive mind<sep>Tail: fresh ideas",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: heartrate increases",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: tooth paste<sep>Tail: harm to fish",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: unprotected sex<sep>Tail: conceiving baby",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: seriously impairing mental function",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: starvation<sep>Tail: hunger",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: fair",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cold weather<sep>Tail: frostbite",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: goes to party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: assault<sep>Tail: felony conviction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: rain<sep>Tail: floods",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: grwoing old<sep>Tail: getting arthritis",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: unprotected sex<sep>Tail: pregnancy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: fever<sep>Tail: headache",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to buy the things",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to move past disagreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: familiar smell<sep>Tail: recollection",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: big brother<sep>Tail: loss of privacy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: helps people figure things out",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: Kind",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: educated",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: life<sep>Tail: poop",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to sign an agreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to invite other people",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to have an interview with PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: Tardy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: kkk<sep>Tail: hate crimes",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: archaeology<sep>Tail: destroy archaeological record",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: loud music<sep>Tail: hearing loss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: too hot<sep>Tail: burning",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: accepts the dress in exchange",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: gravity<sep>Tail: weight",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: earthquake<sep>Tail: ruined streets pipelines and houses",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: lawsuit<sep>Tail: stress",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: happy invitation was accepted",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: they want to attend the event",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: glad",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to have the new one approved",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to try and counter offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: make a note",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: terrorism<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: teach<sep>Tail: learn",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: age<sep>Tail: senesce",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: light bulb<sep>Tail: illumination",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: terrorism<sep>Tail: sadness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: conceit<sep>Tail: more conversation than wit",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: hurried",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to know Persony.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: show<sep>Tail: see",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: PersonX mails an RSVP to PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: lie<sep>Tail: deceipt",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hammer<sep>Tail: nailing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: produce<sep>Tail: appear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: marijuana use<sep>Tail: short term memory loss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: decisive",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: goal in football<sep>Tail: spectators to go crazy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hot weather<sep>Tail: fainting",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sunburn<sep>Tail: cancer",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: seat<sep>Tail: sit",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: coffin<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to do something in that salary",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: call<sep>Tail: meet",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: blind date<sep>Tail: boredom",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: flatulence<sep>Tail: awful odors",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: purchase<sep>Tail: having less money",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to take the opportunity",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to read the agreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: job<sep>Tail: stress",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: presence of cloud<sep>Tail: rain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: disappointed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: hunger<sep>Tail: eating",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: virus<sep>Tail: cold",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: proceed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: happy personx accepted",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: friendly",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: detergent<sep>Tail: harm to fish",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to start the new relationship",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: puppy<sep>Tail: soiled carpet",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: skin cream<sep>Tail: irritation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: icy road<sep>Tail: accident",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to be with other people",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: red wine<sep>Tail: migraines",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: reply the card",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: excercising<sep>Tail: make fitter",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: mine<sep>Tail: contact",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hate<sep>Tail: violence",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: engine<sep>Tail: energy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: happy to be invited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: fly<sep>Tail: float",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: coffee<sep>Tail: insomnia",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: breathe a sigh of relief",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: to work",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: relieved",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: project<sep>Tail: appear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: tequila<sep>Tail: drowsiness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: rabid animal<sep>Tail: infection of other animals",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: dehydration<sep>Tail: thirst",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: banks his money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: go together",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: follow through",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: has fun at party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to thank person X",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: rain<sep>Tail: making ground wet",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: damage<sep>Tail: malfunction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: shave<sep>Tail: bald",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: ignorance<sep>Tail: hostility",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: smiles",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: infection<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: resourceful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: meditation<sep>Tail: peace of mind",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: responsive",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: social",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: go to high school",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cold<sep>Tail: goose bumps",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to have fun.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: glad",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: anxiety<sep>Tail: sleep loss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: depression<sep>Tail: suicide",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: bag<sep>Tail: travel",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: homework<sep>Tail: frustration",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: friendly",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: humble",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to break away from God",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: god<sep>Tail: miracles",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: skilled",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: safe",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: to honour person Y as a host",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: please<sep>Tail: like",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to find the good offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: high altitude<sep>Tail: dizziness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: dealer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to see some people",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to put the date in their calendar",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: terrorism<sep>Tail: war",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: venerial decease",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: masturbation<sep>Tail: orgasm",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: receives notice",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: insufficient sleep<sep>Tail: headaches",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: loses money hosting event",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: brave",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cancerous tumor<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: giving",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to enjoy themself",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: haggler",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: eye contact<sep>Tail: conversation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to walk away",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: arson<sep>Tail: sometimes death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stress<sep>Tail: heart attacks",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to make progress",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to look at the goods bought",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: high blood pressure<sep>Tail: stroke",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: succesfull",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: crutch<sep>Tail: injury",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hunger<sep>Tail: starvation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: earthquake<sep>Tail: disaster",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to have a deadline to accept it",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: satisfied",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: take final exams",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: pain<sep>Tail: fear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: to see persony",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: work<sep>Tail: exhaustion",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: bring gift",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: throws a party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: loved",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sun<sep>Tail: sun tan",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: war<sep>Tail: genocide",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: old injury<sep>Tail: arthritis",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: subjective change in consciousness<sep>Tail: thinking differently",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: proud",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: snowstorm<sep>Tail: bad roads",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: PersonX feels included",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: medication<sep>Tail: allergic reaction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to gain something",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to repent for their sins",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: heat<sep>Tail: pain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hate<sep>Tail: war",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: earthquake<sep>Tail: buildings collapsing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to waiting for new offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: diver<sep>Tail: splash",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: ignorance<sep>Tail: accidents",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: explosion<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: PersonX joins the company",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to talk about the party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: shakes a hand",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: desire<sep>Tail: sin",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: bacteria<sep>Tail: stink",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: laughter<sep>Tail: happiness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: children",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: lightning<sep>Tail: thunder",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to think about life",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to gain person's friendship",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to resign his job",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to open the mailbox",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to enjoy his time",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: moisture<sep>Tail: dampness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: religion<sep>Tail: wars",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: religous",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sun<sep>Tail: life on earth",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: To be praying",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: To be a god’s believers",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: explosion<sep>Tail: destruction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: car accident<sep>Tail: whiplash",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: close call with death<sep>Tail: religion",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: work<sep>Tail: bank accounts to increase",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: trying to pretend nothing wrong",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: thirst<sep>Tail: dehydration",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: discrimination",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: snow<sep>Tail: shovelling",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: apply for college",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to have the salary",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: gets thanked",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to see person",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: carelessness<sep>Tail: injury",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hurricane<sep>Tail: disaster",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: leaves",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to be important",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: alcohol<sep>Tail: do stupid things",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: flame retardant<sep>Tail: puts out fires",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: snow<sep>Tail: blizzard",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: rock salt<sep>Tail: melt snow and ice",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: gravity<sep>Tail: falling",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: raise<sep>Tail: rise",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to continue to follow God",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: confident",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: kising<sep>Tail: illness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: coccidiosis<sep>Tail: infected chickens die",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to sign documents confirming the offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: rug burn",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: excited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: meditation<sep>Tail: clear mind",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: match<sep>Tail: fire",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: irc<sep>Tail: addiction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to dedicate himself/herself to God",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to leave on time",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: pass exams",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: lighening<sep>Tail: thunder",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: murder<sep>Tail: downpour of blood",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: decide on offer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: schizophrenia<sep>Tail: stigma",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: Independent",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cold weather<sep>Tail: cold",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: puberty<sep>Tail: pms",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: death<sep>Tail: sadness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: irs<sep>Tail: suicides",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: believer",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: wathcing movie<sep>Tail: being happy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: change in thinking feeling and behaviour",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: PersonX accepts a new job",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: satisfied",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: Person X works for person y",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to be invited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: heroin<sep>Tail: euphoria",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: to get a better career",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to buy some new cologne",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: fear mistrust and violence",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: beer<sep>Tail: drunkenness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: gracious",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: alcohol<sep>Tail: amnesia",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: acquiring",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: graduating",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: attends the party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: rudeness<sep>Tail: social isolation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: avalanche<sep>Tail: crushing village",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: arousal<sep>Tail: ejaculation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: alarm<sep>Tail: danger",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: war<sep>Tail: unrest",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hurricane<sep>Tail: tornadoes",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: instrument<sep>Tail: job",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: to be employed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sexual arousal<sep>Tail: erection",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: bacteria<sep>Tail: infection in cut",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: uncooked food<sep>Tail: food poisoning",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to file the signed agreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to drive to the event.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: to graduate from high school",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: struggle<sep>Tail: building strength",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to pay money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: makes a friend",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: To donate all his money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cold<sep>Tail: shivers",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: pack<sep>Tail: throng",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: refusal to seek treatment",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: intimacy<sep>Tail: affection",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: car chase<sep>Tail: accident",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: burning calories",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to get a phone call",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: religion<sep>Tail: war",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: robbery<sep>Tail: missing belongings",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: intercorse<sep>Tail: orgasms",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: learns date and time of event",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: fair",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sun<sep>Tail: heat",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: leak<sep>Tail: break",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: She ran to the bathroom",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: religious experience<sep>Tail: subjective change in consciousness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: satisfied.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: satisfied",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: puberty<sep>Tail: biological changes",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: difficulty finding employment or getting promotion",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: pain<sep>Tail: discomfort",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: rain<sep>Tail: water crops",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: accepting",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: thanks someone",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: friendly",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: thankful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: accepts the money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: fire<sep>Tail: ashes",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sun exposure<sep>Tail: burns",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: not speak to anyone",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: meditation<sep>Tail: subjective change in consciousness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: relieved.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: airplane engine<sep>Tail: very loud noise",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: PersonX buys a gift for PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: social",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: buys gift",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: bad luck<sep>Tail: catastrophy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to escape from him",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: robbery<sep>Tail: terror",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sickness<sep>Tail: suffering",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to prepare a speech",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: injury<sep>Tail: pain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: available",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: jealousy<sep>Tail: deaths",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sin<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: big investment<sep>Tail: big loss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: crime<sep>Tail: punishment of offender",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: war<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: good",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: keyboard use<sep>Tail: carpal tunnel syndrome",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: strobe light<sep>Tail: epileptic seizures",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: purity<sep>Tail: distrust",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: caffiene<sep>Tail: headache to go away",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to make an exchange agreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: intoxication<sep>Tail: regret",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: work problems or discrimination",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: depression<sep>Tail: inactivity",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: thunderstorm<sep>Tail: destruction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: forgets about it",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: to graduate",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: smiles",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: nuclear war<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: money<sep>Tail: greed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: accomplished",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: death<sep>Tail: burial",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: signs papers",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: prejudice",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: virus<sep>Tail: infection",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: They throw their hat into the air",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: argument<sep>Tail: violence",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: loud sound<sep>Tail: ringing in ears",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: car accident<sep>Tail: injuries",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: noise<sep>Tail: headaches to get worse",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: to be paid",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: cocaine use<sep>Tail: addiction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: oxygen<sep>Tail: corrosion",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: funeral<sep>Tail: sadness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: to be polite",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: solar eclipse<sep>Tail: scaring superstitious people",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: they want to congratulate PersonX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: agreeable",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: carelessness<sep>Tail: accidents",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: ghost<sep>Tail: fear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: duck<sep>Tail: men to shoot guns",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: glad",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: study<sep>Tail: knowledge",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: excited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: show up in the event",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: goes over the agreement",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: to attend  college",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: heart attack<sep>Tail: dying",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: car<sep>Tail: pollution",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to attend his friend's marriage",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to seek out a priest",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: excited to see persony",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: being subjected to physical violence or harassment",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to ask about the event",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: laziness<sep>Tail: inventions",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: flling<sep>Tail: injury",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: marble<sep>Tail: game",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: they want to be polite",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: zombie<sep>Tail: fear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: busy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: perfection<sep>Tail: jealousy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: depth of knowledge<sep>Tail: lack of breadth",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: Trusting",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: snow<sep>Tail: avalanches",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: heat<sep>Tail: irritation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: bribery<sep>Tail: better jobs",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: to contemplate in silence",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: prejudice and discrimination",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: to make money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: Interested",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: fever<sep>Tail: increase in body temperature",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: successful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: graduate from high school",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: Person X attends event",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: job",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: drug use<sep>Tail: physical or psychological illness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: go to the ceremony",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: rushed, in a hurry",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: use<sep>Tail: apply",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: to go out with PersonY.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: drug use<sep>Tail: memory loss",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: to get a new shirt",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: ring<sep>Tail: sound",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: weak",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to take the money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: considerate",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: Social",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: guitar<sep>Tail: vibration",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: they have given a good service",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: unemployment<sep>Tail: bankrupcy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: death of friend<sep>Tail: sadness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: subjective change in consciousness<sep>Tail: feeling different",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: inadequate health insurance coverage of mental illnesses",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the invitation<sep>Tail: feels anxious",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: germ<sep>Tail: disease",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: To become monk",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: buys a present",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: fire<sep>Tail: pain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: celebrate",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to discuss the agreement further",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: avoidant",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: insult<sep>Tail: hurt feelings",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to meet with person Y",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: faux pa<sep>Tail: upset people",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: to not disappoint persony",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: darkness<sep>Tail: fear",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: pregnancy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: smiles",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: pain<sep>Tail: suffer",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: earthquake<sep>Tail: tsunami",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: pain<sep>Tail: unhappiness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: happy that he saved a money",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: catherine havasi<sep>Tail: openmind",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: violence<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: collaboration<sep>Tail: progress",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: resuscitation<sep>Tail: life",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: waste<sep>Tail: emaciate",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: smoke<sep>Tail: smoke inhalation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: to have there offer accepted",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: difficulty coping",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: fire<sep>Tail: heat",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: old age<sep>Tail: bald",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: hunger<sep>Tail: discomfort",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: reasonable",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: stigma<sep>Tail: difficulty finding housing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sex<sep>Tail: unwanted pregnancies",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: joke<sep>Tail: laughter",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: mental illness<sep>Tail: losing contact with family and friends",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: marijuana<sep>Tail: subjective change in consciousness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: inability to breath<sep>Tail: asphyxiation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: receive a card",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sunlight<sep>Tail: warmth",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: sex in toilet<sep>Tail: sexually transmitted disease",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: infection<sep>Tail: malfunction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts god 's ___<sep>Tail: god-fearing",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX 'd better go<sep>Tail: to go somewhere else more important.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: to go to the party",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: death<sep>Tail: rebirth",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: intense pressure<sep>Tail: pain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: buys a bigger house",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: walks on stage",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: sexual stimulation<sep>Tail: orgasm",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: coccidiosis<sep>Tail: treatment with anticoccidials",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: interesting",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: forward looking",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to be civil",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: fever<sep>Tail: higher body temperature",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonX's diploma<sep>Tail: PersonX graduates high school",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: Person X marks the offer on his calendar",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: know PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: insufficient sleep<sep>Tail: automobile accidents",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts the job<sep>Tail: competent",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: shake hands",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: caffiene<sep>Tail: nervousness",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: creativity<sep>Tail: new art forms",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: drug use<sep>Tail: addiction",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: poison<sep>Tail: death",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: impatience<sep>Tail: frustration",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: insomnia<sep>Tail: one to fall asleep while driving",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to be a trader",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts happily<sep>Tail: instructs PersonX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: broad knowledge<sep>Tail: lack of depth",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: stress<sep>Tail: headache",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: included",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: pays person Y",
+            "output": [
+                "No"
+            ]
+        }
+    ]
+}

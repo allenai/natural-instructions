@@ -1,25 +1,34 @@
 {
-    "Definition": "In medical studies, treatments are tested within a group of study participants. You will be given a sentence of a study report in which your task is to list the tokens that give information about the participants of the study. You should list the tokens in the same order that they appear in the text. If no information about the participants is mentioned, just output \"not found\". Mentions of participants should include relevant information such as: gender, medical conditions, location, number of people participating.",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "In medical studies, treatments are tested within a group of study participants. You will be given a sentence of a study report in which your task is to list the phrases that give information about the participants of the study. You should list the phrases in the same order that they appear in the text, separated by commas. If no information about the participants is mentioned, just output \"not found\". Relevant information about participants include: gender, medical conditions, location, number of people participating. Do not contain participant mentions without relevant information.",
     "Positive Examples": [
         {
             "input": "A PPARA Polymorphism Influences the Cardiovascular Benefit of Fenofibrate in Type 2 Diabetes: Findings From ACCORD Lipid. ",
-            "output": "Type, 2, Diabetes",
+            "output": "Type 2 Diabetes",
             "explanation": "The only piece of text relevant to participants is \"Type 2 Diabetes\" which is a medical condition."
         },
         {
             "input": "A total of 270 patients with MCI were enrolled in a 24-week, multicenter, randomized, double-blind, placebo-controlled study.",
-            "output": "270, patients, with, MCI",
+            "output": "270 patients with MCI",
             "explanation": "In this example, both the number of participants and their medical condition is mentioned."
         }
     ],
     "Negative Examples": [
         {
             "input": "A total of 270 patients with MCI were enrolled in a 24-week, multicenter, randomized, double-blind, placebo-controlled study.",
-            "output": "270, patients, with, MCI, 24-week",
+            "output": "270 patients with MCI, 24-week",
             "explanation": "The duration of the study is not relevant to the participants and shouldn't be included."
         },
         {
-            "input": " To investigate the role of nicotinamide adenine dinucleotide phosphate 4 (NADPH4,NOX4) and transforming growth factor-beta (TGF-\u03b2) involve in pathogenesis of airway remodeling in chronic obstructive pulmonary disease (COPD).",
+            "input": " To investigate the role of nicotinamide adenine dinucleotide phosphate 4 (NADPH4,NOX4) and transforming growth factor-beta (TGF-β) involve in pathogenesis of airway remodeling in chronic obstructive pulmonary disease (COPD).",
             "output": "COPD",
             "explanation": "The complete name of the disease (chronic obstructive pulmonary disease) should be included."
         }
@@ -70,7 +79,7 @@
         {
             "input": "We investigated whether 5 to 20mg per week oral methotrexate could slow down disease progression in 44 patients with inclusion body myositis in a randomized double-blind placebo-controlled study over 48 weeks .",
             "output": [
-                "44, patients, with, inclusion, body, myositis"
+                "44 patients with inclusion body myositis"
             ]
         },
         {
@@ -94,19 +103,19 @@
         {
             "input": "573 patients who had unrecognized and untreated anxiety identified from the approximately 8,000 patients who completed the waiting room screening questionnaire .",
             "output": [
-                "573, patients, who, had, unrecognized, and, untreated, anxiety, 8,000, patients, waiting, room, screening, questionnaire"
+                "8,000 patients, waiting room screening questionnaire"
             ]
         },
         {
             "input": "Gastric dysrhythmia in infants with gastrointestinal diseases measured by epigastric impedance .",
             "output": [
-                "infants, with, gastrointestinal, diseases"
+                "infants with gastrointestinal diseases"
             ]
         },
         {
             "input": "Microalbuminuria itself predicts clinical proteinuria in nondiabetic and in diabetic people .",
             "output": [
-                "nondiabetic, and, in, diabetic, people"
+                "nondiabetic and in diabetic people"
             ]
         },
         {
@@ -146,7 +155,7 @@
             ]
         },
         {
-            "input": "Results showed that cortisol and glucose levels were significantly high in 700 and 500 but not 3,000 mg l\u207b\u00b9 group compared to control .",
+            "input": "Results showed that cortisol and glucose levels were significantly high in 700 and 500 but not 3,000 mg l⁻¹ group compared to control .",
             "output": [
                 "not found"
             ]
@@ -190,31 +199,31 @@
         {
             "input": "Effectiveness of hygienic-dietary recommendations as enhancers of antidepressant treatment in patients with depression : study protocol of a randomized controlled trial .",
             "output": [
-                "patients, with, depression"
+                "patients with depression"
             ]
         },
         {
             "input": "We used national data from the Medical Expenditure Panel Survey linked to the National Health Interview Survey and a study-specific survey to estimate the annual utilization and costs for health care , school , ASD-related therapy , family-coordinated services , as well as caregiver time in children aged 3 to 17 years , with and without parent-reported ASD .",
             "output": [
-                "children, aged, 3, to, 17, years, with, and, without, parent-reported, ASD"
+                "children aged 3 to 17 years, with and without parent-reported ASD"
             ]
         },
         {
             "input": "Amonafide was chosen for inclusion in the Cancer and Leukemia Group B ( CALGB ) master metastatic breast cancer protocol .",
             "output": [
-                "metastatic, breast, cancer"
+                "metastatic breast cancer"
             ]
         },
         {
             "input": "In this adequately powered study , once-daily oral amoxicillin is not inferior to twice-daily penicillin V for the treatment and eradication of GABHS in children with pharyngitis .",
             "output": [
-                "children, with, pharyngitis"
+                "children with pharyngitis"
             ]
         },
         {
             "input": "In this preliminary , open-labeled , randomized study , the effects of lime juice on the clinical and some laboratory characteristics of children with SCA were tested .",
             "output": [
-                "children, with, SCA"
+                "children with SCA"
             ]
         },
         {
@@ -232,7 +241,7 @@
         {
             "input": "To compare maintenance epoetin alfa administered once every 3 weeks with continued weekly epoetin alfa for patients with cancer-associated anemia .",
             "output": [
-                "patients, with, cancer-associated, anemia"
+                "patients with cancer-associated anemia"
             ]
         },
         {
@@ -250,7 +259,7 @@
         {
             "input": "This study was conducted to determine the long-term effect of flosequinan , a new orally administered arterial and venous dilator , on the clinical course of patients with moderate to severe congestive heart failure .",
             "output": [
-                "patients, with, moderate, to, severe, congestive, heart, failure"
+                "patients with moderate to severe congestive heart failure"
             ]
         },
         {
@@ -268,7 +277,7 @@
         {
             "input": "The addition of chronic vasodilator therapy with flosequinan to standard digitalis-diuretic regimens is capable of inducing clinical improvement in patients with moderate to severe chronic heart failure .",
             "output": [
-                "patients, with, moderate, to, severe, chronic, heart, failure"
+                "patients with moderate to severe chronic heart failure"
             ]
         },
         {
@@ -304,13 +313,13 @@
         {
             "input": "In a 2 week randomized two-period crossover trial , 18 male adolescents consumed two diets , named white diet ( WD ) and brown diet ( BD ) , which were poor and rich in MRP , respectively .",
             "output": [
-                "18, male, adolescents"
+                "18 male adolescents"
             ]
         },
         {
             "input": "Our results suggest that both drugs were well tolerated in patients with AML or MDS who received chemotherapy and that the efficacy of itraconazole for prophylaxis against systemic fungal disease is not inferior to that of fluconazole .",
             "output": [
-                "patients, with, AML, or, MDS, who, received, chemotherapy"
+                "patients with AML or MDS who received chemotherapy"
             ]
         },
         {
@@ -364,7 +373,7 @@
         {
             "input": "Approximately two thirds were smokers and were randomized to be tested after either a 12-hr nicotine deprivation or administration of nicotine gum .",
             "output": [
-                "two, thirds, were, smokers"
+                "two thirds were smokers"
             ]
         },
         {
@@ -382,7 +391,7 @@
         {
             "input": "Role of posterior tibial nerve stimulation in the treatment of refractory monosymptomatic nocturnal enuresis : a pilot study .",
             "output": [
-                "refractory, monosymptomatic, nocturnal, enuresis"
+                "refractory monosymptomatic nocturnal enuresis"
             ]
         },
         {
@@ -394,7 +403,7 @@
         {
             "input": "To develop a cycle-based risk prediction model for neutropenic complications ( NC ) during chemotherapy with doxorubicin ( DOX ) or a pegylated liposomal formulation ( PLD ) for patients with metastatic breast cancer ( MBC ) .",
             "output": [
-                "patients, with, metastatic, breast, cancer, (, MBC"
+                "patients with metastatic breast cancer ( MBC"
             ]
         },
         {
@@ -412,7 +421,7 @@
         {
             "input": "Adherence to lifestyle recommendations by patients with depression .",
             "output": [
-                "patients, with, depression"
+                "patients with depression"
             ]
         },
         {
@@ -424,11 +433,11 @@
         {
             "input": "The 101 eligible cases ( bestatin : 48 , control : 53 ) were analyzed ; the bestatin group achieved longer remission than the control group and a statistically significant longer survival .",
             "output": [
-                "101, eligible, cases"
+                "101 eligible cases"
             ]
         },
         {
-            "input": "In assessing the acute functional effect of bronchodilators , \u0394sRAW-based criterion is preferable to FEV1-FVC-based criteria , being more closely related to bronchodilator-induced improvements of lung mechanics and dyspnea at rest .",
+            "input": "In assessing the acute functional effect of bronchodilators , ΔsRAW-based criterion is preferable to FEV1-FVC-based criteria , being more closely related to bronchodilator-induced improvements of lung mechanics and dyspnea at rest .",
             "output": [
                 "not found"
             ]
@@ -520,7 +529,7 @@
         {
             "input": "Identifying patients at high risk for neutropenic complications during chemotherapy for metastatic breast cancer with doxorubicin or pegylated liposomal doxorubicin : the development of a prediction model .",
             "output": [
-                "patients, at, high, risk, for, neutropenic, complications, during, chemotherapy, for, metastatic, breast, cancer"
+                "patients at high risk for neutropenic complications during chemotherapy for metastatic breast cancer"
             ]
         },
         {
@@ -538,13 +547,13 @@
         {
             "input": "Women who also exercised had additional increases in BMD at the femoral neck ( +0.29 % ) , total hip ( +0.34 % ) , spine ( +0.23 % ) , total radius ( +0.30 % ) , and additional decreases in Alkphase B ( -2.4 % ) and Serum NTx ( -6.5 % ) .",
             "output": [
-                "Women"
+                "not found"
             ]
         },
         {
             "input": "Anti-emetic efficacy of prophylactic granisetron compared with perphenazine for the prevention of post-operative vomiting in children .",
             "output": [
-                "post-operative, vomiting, in, children"
+                "post-operative vomiting in children"
             ]
         },
         {
@@ -574,7 +583,7 @@
         {
             "input": "Eligible patients were children and adolescents with HFA .",
             "output": [
-                "children, and, adolescents, with, HFA"
+                "children and adolescents with HFA"
             ]
         },
         {
@@ -604,7 +613,7 @@
         {
             "input": "Inclusion criteria were known vascular disease or diabetes plus one other cardiovascular risk factor , exclusion criteria included heart failure or known impaired left ventricular function , dipstick-positive proteinuria ( > 1+ ) , and serum creatinine > 2.3 mg/dl ( 200 microM ) .",
             "output": [
-                "vascular, disease, or, diabetes, plus, one, other, cardiovascular, risk, factor"
+                "vascular disease or diabetes plus one other cardiovascular risk factor"
             ]
         },
         {
@@ -634,7 +643,7 @@
         {
             "input": "Additionally , because prolonged breath holding is not required , measurements can readily be made in dyspnoeic patients .",
             "output": [
-                "dyspnoeic, patients"
+                "dyspnoeic patients"
             ]
         },
         {
@@ -646,13 +655,13 @@
         {
             "input": "We conclude that amonafide is somewhat active in previously untreated breast cancer patients .",
             "output": [
-                "previously, untreated, breast, cancer, patients"
+                "previously untreated breast cancer patients"
             ]
         },
         {
             "input": "The prophylactic effect of itraconazole capsules and fluconazole capsules for systemic fungal infections in patients with acute myeloid leukemia and myelodysplastic syndromes : a Japanese multicenter randomized , controlled study .",
             "output": [
-                "patients, with, acute, myeloid, leukemia, and, myelodysplastic, syndromes"
+                "patients with acute myeloid leukemia and myelodysplastic syndromes"
             ]
         },
         {
@@ -670,13 +679,13 @@
         {
             "input": "Participants were 236 heavy drinking smokers in a randomized clinical trial testing the efficacy of incorporating brief alcohol intervention into smoking cessation treatment .",
             "output": [
-                "236, heavy, drinking, smokers"
+                "236 heavy drinking smokers"
             ]
         },
         {
             "input": "Posterior tibial nerve stimulation can be a viable treatment option in some patients with refractory monosymptomatic nocturnal enuresis .",
             "output": [
-                "patients, with, refractory, monosymptomatic, nocturnal, enuresis"
+                "patients with refractory monosymptomatic nocturnal enuresis"
             ]
         },
         {
@@ -706,19 +715,19 @@
         {
             "input": "The effect of weight training on bone mineral density and bone turnover in postmenopausal breast cancer survivors with bone loss : a 24-month randomized controlled trial .",
             "output": [
-                "postmenopausal, breast, cancer, survivors, with, bone, loss"
+                "postmenopausal breast cancer survivors with bone loss"
             ]
         },
         {
             "input": "353 children with positive throat swabs for GABHS were randomised to amoxicillin ( n = 177 ) or penicillin V ( n = 176 ) .",
             "output": [
-                "353, children, with, positive, throat, swabs, for, GABHS"
+                "not found"
             ]
         },
         {
             "input": "The trial will enroll 720 unique patients in emergency departments and uses a Bayesian adaptive design .",
             "output": [
-                "720, unique, patients"
+                "720 unique patients"
             ]
         },
         {
@@ -736,19 +745,19 @@
         {
             "input": "However , among OC users , nonsmokers had significantly greater heart rate and diastolic blood pressure reactivity to stress .",
             "output": [
-                "OC, users"
+                "OC users"
             ]
         },
         {
             "input": "Patients had to have histologically documented measurable breast cancer and a performance status of 0-1 .",
             "output": [
-                "Patients, had, to, have, histologically, documented, measurable, breast, cancer, and, a, performance, status, of, 0-1"
+                "not found"
             ]
         },
         {
             "input": "Participants were 58 children ( 46 boys ) with autism between 3 and 4 years of age .",
             "output": [
-                "58, children, (, 46, boys, ), with, autism, between, 3, and, 4, years, of, age"
+                "58 children ( 46 boys ) with autism between 3 and 4 years of age"
             ]
         },
         {
@@ -766,7 +775,7 @@
         {
             "input": "Individuals with ASD performed at greater than chance levels on both metaphor types , although their performance was lower than TD participants .",
             "output": [
-                "Individuals, with, ASD, TD, participants"
+                "TD participants"
             ]
         },
         {
@@ -778,7 +787,7 @@
         {
             "input": "A pilot study on the effect of progressive muscle relaxation training of patients after stoma surgery .",
             "output": [
-                "patients, after, stoma, surgery"
+                "patients after stoma surgery"
             ]
         },
         {
@@ -820,19 +829,19 @@
         {
             "input": "A multi-component social skills intervention for children with Asperger syndrome : the Junior Detective Training Program .",
             "output": [
-                "children, with, Asperger, syndrome"
+                "children with Asperger syndrome"
             ]
         },
         {
             "input": "One third were nonsmokers .",
             "output": [
-                "One, third, nonsmokers"
+                "nonsmokers"
             ]
         },
         {
             "input": "Phase III study of two different dosing schedules of erythropoietin in anemic patients with cancer .",
             "output": [
-                "anemic, patients, with, cancer"
+                "anemic patients with cancer"
             ]
         },
         {
@@ -844,7 +853,7 @@
         {
             "input": "Results indicated that , among OC nonusers , there was no effect of smoking status or nicotine administration on cardiovascular reactivity .",
             "output": [
-                "OC, nonusers"
+                "OC nonusers"
             ]
         },
         {
@@ -872,7 +881,7 @@
             ]
         },
         {
-            "input": "There were no significant differences in serum levels of cholesterol , total protein , lactate dehydrogenase , aspartate aminotransferase , alanine aminotransferase , Na\u207a , Cl\u207b , K\u207a , and Ca\u00b2\u207a .",
+            "input": "There were no significant differences in serum levels of cholesterol , total protein , lactate dehydrogenase , aspartate aminotransferase , alanine aminotransferase , Na⁺ , Cl⁻ , K⁺ , and Ca²⁺ .",
             "output": [
                 "not found"
             ]
@@ -898,7 +907,7 @@
         {
             "input": "Children presenting with GABHS pharyngitis were randomised to oral amoxicillin 1500 mg QD ( or 750 mg if bodyweight was < or=30 kg ) or to oral penicillin V 500 mg BID ( or 250 mg if bodyweight was < or=20 kg ) for 10 days .",
             "output": [
-                "Children, presenting, with, GABHS, pharyngitis"
+                "not found"
             ]
         },
         {
@@ -928,19 +937,19 @@
         {
             "input": "Eighteen patients who had undergone stoma surgery were assessed with respect to their anxiety level and self-reported quality of life ( QoL ) on three occasions ; namely , immediately after surgery , 5 weeks after surgery , and 10 weeks after surgery .",
             "output": [
-                "Eighteen, patients, who, had, undergone, stoma, surgery"
+                "not found"
             ]
         },
         {
             "input": "One hundred eighty-three patients were assigned to the 40K arm , and 182 were assigned to the 120K arm .",
             "output": [
-                "One, hundred, eighty-three, patients"
+                "not found"
             ]
         },
         {
-            "input": "Among the 113 children with SCA studied in two hospitals , the 58 receiving lime treatment had lower rates of significant painful episodes than the 55 without lime ( 37 versus 83 crises in 6 months , and 0.64\u00b10.11 versus 1.51\u00b10.34 average rates per child , p < 0.001 ) .",
+            "input": "Among the 113 children with SCA studied in two hospitals , the 58 receiving lime treatment had lower rates of significant painful episodes than the 55 without lime ( 37 versus 83 crises in 6 months , and 0.64±0.11 versus 1.51±0.34 average rates per child , p < 0.001 ) .",
             "output": [
-                "113, children, with, SCA"
+                "113 children with SCA"
             ]
         },
         {
@@ -952,7 +961,7 @@
         {
             "input": "The Junior Detective Training Program appeared to be effective in enhancing the social skills and emotional understanding of children with AS .",
             "output": [
-                "children, with, AS"
+                "children with AS"
             ]
         },
         {
@@ -976,7 +985,7 @@
         {
             "input": "We have compared the efficacy of granisetron with perphenazine in the prevention of vomiting after tonsillectomy with or without adenoidectomy in children .",
             "output": [
-                "adenoidectomy, in, children"
+                "adenoidectomy in children"
             ]
         },
         {
@@ -1006,7 +1015,7 @@
         {
             "input": "In each group 26 patients were available for evaluation .",
             "output": [
-                "each, group, 26, patients"
+                "each group 26 patients"
             ]
         },
         {
@@ -1048,7 +1057,7 @@
         {
             "input": "This report is restricted to 7674 participants with albuminuria data at baseline and at follow-up .",
             "output": [
-                "7674, participants, with, albuminuria, data"
+                "7674 participants with albuminuria data"
             ]
         },
         {
@@ -1066,13 +1075,13 @@
         {
             "input": "Sixty healthy women , half of whom had been using OCs for at least the previous 6 months , participated in the study .",
             "output": [
-                "Sixty, healthy, women, ,, half, of, whom, had, been, using, OCs, for, at, least, the, previous, 6, months"
+                "not found"
             ]
         },
         {
             "input": "The study aimed to investigate the effectiveness of a new multi-component social skills intervention for children with Asperger syndrome ( AS ) : The Junior Detective Training Program .",
             "output": [
-                "children, with, Asperger, syndrome, (, AS"
+                "children with Asperger syndrome ( AS"
             ]
         },
         {
@@ -1094,7 +1103,7 @@
             ]
         },
         {
-            "input": "In order to investigate the effect of anesthesia on serum parameters , Beluga , Huso huso ( L. ) were blood-sampled immediately without anesthesia ( control ) or subjected to following anesthesia procedure : 40 , 120 , and 240 s exposure to 3,000 , 700 , and 500 mg l\u207b\u00b9 clove solution , respectively .",
+            "input": "In order to investigate the effect of anesthesia on serum parameters , Beluga , Huso huso ( L. ) were blood-sampled immediately without anesthesia ( control ) or subjected to following anesthesia procedure : 40 , 120 , and 240 s exposure to 3,000 , 700 , and 500 mg l⁻¹ clove solution , respectively .",
             "output": [
                 "not found"
             ]
@@ -1114,7 +1123,7 @@
         {
             "input": "The relation was equally strong in patients with severe pulmonary disease ; for patients with FEV1 < 1.51 the mean difference was 0.21 ( 0.80 ) mmol/min/kPa .",
             "output": [
-                "patients, with, severe, pulmonary, disease"
+                "patients with severe pulmonary disease"
             ]
         },
         {
@@ -1126,7 +1135,7 @@
         {
             "input": "Effect of antipyretic drugs in children with malaria .",
             "output": [
-                "children, with, malaria"
+                "children with malaria"
             ]
         },
         {
@@ -1138,7 +1147,7 @@
         {
             "input": "CALGB 8642 randomizes previously untreated metastatic breast cancer patients either to one of several Phase II agents given for up to four cycles and then followed by standard cyclophosphamide-doxorubicin-5-fluorouracil , or to immediate treatment with standard cyclophosphamide-doxorubicin-5-fluorouracil .",
             "output": [
-                "untreated, metastatic, breast, cancer, patients"
+                "untreated metastatic breast cancer patients"
             ]
         },
         {
@@ -1216,7 +1225,7 @@
         {
             "input": "Among the 273 children who were seen and weighed at the one-year follow-up visit , the rate of weight gain was 8 per cent greater for those receiving levamisole than for placebo-treated controls ( p = .06 ) .",
             "output": [
-                "273, children"
+                "273 children"
             ]
         },
         {
@@ -1228,7 +1237,7 @@
         {
             "input": "A mixed-model health maintenance organization serving approximately 110,000 enrollees in central Colorado .",
             "output": [
-                "110,000, enrollees, in, central, Colorado"
+                "110,000 enrollees in central Colorado"
             ]
         },
         {
@@ -1246,7 +1255,7 @@
         {
             "input": "There is an increasing amount of evidence showing that physical activity and sun exposure are effective coadjuvant treatments for patients with mild to moderate depression .",
             "output": [
-                "patients, with, mild, to, moderate, depression"
+                "patients with mild to moderate depression"
             ]
         },
         {
@@ -1276,7 +1285,7 @@
         {
             "input": "However OC use among nonsmoking women is associated with greater cardiovascular reactivity to stress .",
             "output": [
-                "nonsmoking, women"
+                "nonsmoking women"
             ]
         },
         {
@@ -1288,7 +1297,7 @@
         {
             "input": "Our data suggest that mild regular physical exercise favourably influences cholesterol distribution in serum lipoproteins in healthy middle aged men and may have beneficial effects on circulating metabolites of arachidonic acid .",
             "output": [
-                "healthy, middle, aged, men"
+                "healthy middle aged men"
             ]
         },
         {
@@ -1324,13 +1333,13 @@
         {
             "input": "Their average age was 45 years , 91 % were male , 58 % were white , 40 % served in Iraq or Afghanistan , and 42 % served in Vietnam .",
             "output": [
-                "average, age, was, 45, years, 91, %, were, male, 58, %, were, white, 40, %, served, in, Iraq, or, Afghanistan, 42, %, served, in, Vietnam"
+                "average age was 45 years, 91 % were male, 58 % were white, 40 % served in Iraq or Afghanistan, 42 % served in Vietnam"
             ]
         },
         {
             "input": "A comparison of different antipyretics in children with malaria showed a small effect of naproxen , but not of metamizol , on the reduction of fever peaks .",
             "output": [
-                "children, with, malaria"
+                "children with malaria"
             ]
         },
         {
@@ -1396,7 +1405,7 @@
         {
             "input": "In conclusion , in 60-year-old subjects antioxidant supplementation had no effect on the exercise-induced increase in oxidative stress as measured by free radical products of antipyrine .",
             "output": [
-                "60-year-old, subjects"
+                "60-year-old subjects"
             ]
         },
         {
@@ -1426,7 +1435,7 @@
         {
             "input": "We evaluated the early clinical and urodynamic results of posterior tibial nerve stimulation in patients with refractory monosymptomatic nocturnal enuresis .",
             "output": [
-                "patients, with, refractory, monosymptomatic, nocturnal, enuresis"
+                "patients with refractory monosymptomatic nocturnal enuresis"
             ]
         },
         {
@@ -1456,13 +1465,13 @@
         {
             "input": "This study reports results of a randomized controlled trial aimed at joint attention ( JA ) and symbolic play ( SP ) in preschool children with autism , with prediction to language outcome 12 months later .",
             "output": [
-                "preschool, children, with, autism"
+                "preschool children with autism"
             ]
         },
         {
             "input": "The use of this model may enhance patient care by targeting preventative therapies ( eg , granulocyte colony stimulating factor or PLD ) to those MBC patients most likely to experience NC during anthracycline-based chemotherapy .",
             "output": [
-                "MBC, patients"
+                "MBC patients"
             ]
         },
         {
@@ -1486,7 +1495,7 @@
         {
             "input": "In adjusted analyses , parents who reported that their child had ASD did not have significantly higher out-of-pocket costs or spend more time on caregiving activities compared with control parents .",
             "output": [
-                "parents, who, reported, that, their, child, had, ASD"
+                "parents who reported that their child had ASD"
             ]
         },
         {
@@ -1522,7 +1531,7 @@
         {
             "input": "We performed a randomized , controlled study comparing the prophylactic effects of capsule forms of fluconazole ( n = 110 ) and itraconazole ( n = 108 ) in patients with acute myeloid leukemia ( AML ) or myelodysplastic syndromes ( MDS ) during and after chemotherapy .",
             "output": [
-                "patients, with, acute, myeloid, leukemia, (, AML, ), or, myelodysplastic, syndromes, (, MDS, ), during, and, after, chemotherapy"
+                "patients with acute myeloid leukemia ( AML ) or myelodysplastic syndromes ( MDS ) during and after chemotherapy"
             ]
         },
         {
@@ -1540,7 +1549,7 @@
         {
             "input": "This study aimed to investigate the course of depression for patients with recently diagnosed rheumatoid arthritis ( RA ) and to investigate predictors of depression .",
             "output": [
-                "patients, with, recently, diagnosed, rheumatoid, arthritis, (, RA"
+                "patients with recently diagnosed rheumatoid arthritis ( RA"
             ]
         },
         {
@@ -1552,7 +1561,7 @@
         {
             "input": "In patients with MDS or in the remission-induction phase of chemotherapy , the numbers of cases with probable or possible infections were lower in the itraconazole group than in the fluconazole group , whereas no difference was seen in patients with AML or in the consolidation phase of therapy .",
             "output": [
-                "patients, with, MDS, or, in, the, remission-induction, phase, of, chemotherapy"
+                "patients with MDS or in the remission-induction phase of chemotherapy"
             ]
         },
         {
@@ -1592,9 +1601,9 @@
             ]
         },
         {
-            "input": "In COPD patients , reversibility is currently evaluated from the changes of forced expiratory volume at 1s ( \u0394FEV1 ) and forced vital capacity ( \u0394FVC ) .",
+            "input": "In COPD patients , reversibility is currently evaluated from the changes of forced expiratory volume at 1s ( ΔFEV1 ) and forced vital capacity ( ΔFVC ) .",
             "output": [
-                "COPD, patients"
+                "COPD patients"
             ]
         },
         {
@@ -1612,13 +1621,13 @@
         {
             "input": "Social skills improvement in children with high-functioning autism : a pilot randomized controlled trial .",
             "output": [
-                "children, with, high-functioning, autism"
+                "children with high-functioning autism"
             ]
         },
         {
             "input": "21 patients ( age 0-2 months ) and 40 healthy infants ( age 0-2 months ) were investigated .",
             "output": [
-                "21, patients, (, age, 0-2, months, ), and, 40, healthy, infants, (, age, 0-2, months, )"
+                "not found"
             ]
         },
         {
@@ -1634,15 +1643,15 @@
             ]
         },
         {
-            "input": "Significant differences in terms of \u0394ITGV ( p=0.002 ) , \u0394RV ( p=0.023 ) , and \u0394VAS ( p < 0.001 ) occurred only if patients were stratified according to \u0394sRAW .",
+            "input": "Significant differences in terms of ΔITGV ( p=0.002 ) , ΔRV ( p=0.023 ) , and ΔVAS ( p < 0.001 ) occurred only if patients were stratified according to ΔsRAW .",
             "output": [
                 "not found"
             ]
         },
         {
-            "input": "Spirographic and \u0394sRAW-based criteria identified as responders 24 and 45 patients , respectively .",
+            "input": "Spirographic and ΔsRAW-based criteria identified as responders 24 and 45 patients , respectively .",
             "output": [
-                "45, patients"
+                "45 patients"
             ]
         },
         {
@@ -1654,13 +1663,13 @@
         {
             "input": "Eighty depressed patients undergoing standard antidepressant treatment will be advised to follow four additional hygienic-dietary recommendations about exercise , diet , sunlight exposure and sleep .",
             "output": [
-                "Eighty, depressed, patients"
+                "not found"
             ]
         },
         {
             "input": "This study retrospectively analyzed changes of proteinuria over 4.5 yr in the HOPE ( Heart Outcomes and Prevention Evaluation ) study , which compared ramipril 's effects to placebo in 9297 participants , including 3577 with diabetes and 1956 with microalbuminuria .",
             "output": [
-                "9297, participants, ,, including, 3577, with, diabetes, and, 1956, with, microalbuminuria"
+                "9297 participants , including 3577 with diabetes and 1956 with microalbuminuria"
             ]
         },
         {
@@ -1678,7 +1687,7 @@
         {
             "input": "Teacher-report data also confirmed that children receiving the intervention made significant improvements in social functioning from pre- to post-treatment .",
             "output": [
-                "children, receiving, the, intervention"
+                "children receiving the intervention"
             ]
         },
         {
@@ -1720,7 +1729,7 @@
         {
             "input": "The patients suffered from partial or total intestinal obstruction , necrotizing enterocolitis or pyloric stenosis.All infants were fasting and studied during periods of at least one hour .",
             "output": [
-                "partial, or, total, intestinal, obstruction, ,, necrotizing, enterocolitis, or, pyloric, stenosis.All, infants"
+                "partial or total intestinal obstruction , necrotizing enterocolitis or pyloric stenosis.All infants"
             ]
         },
         {
@@ -1730,7 +1739,7 @@
             ]
         },
         {
-            "input": "Serum lactate levels were significantly high in 500 mg l\u207b\u00b9 group compared to control group .",
+            "input": "Serum lactate levels were significantly high in 500 mg l⁻¹ group compared to control group .",
             "output": [
                 "not found"
             ]
@@ -1742,7 +1751,7 @@
             ]
         },
         {
-            "input": "The physiotherapy group had a 4 % ( 95 % CI -18 % to 9 % ) lower rate of admission to hospital than the control group and a 4 % ( 95 % CI -6 % to 13 % ) higher rate of re-presentation to the ED , which were statistically non-significant ( p\u22650.45 ) .",
+            "input": "The physiotherapy group had a 4 % ( 95 % CI -18 % to 9 % ) lower rate of admission to hospital than the control group and a 4 % ( 95 % CI -6 % to 13 % ) higher rate of re-presentation to the ED , which were statistically non-significant ( p≥0.45 ) .",
             "output": [
                 "not found"
             ]
@@ -1762,19 +1771,19 @@
         {
             "input": "Participants were 195 Veterans .",
             "output": [
-                "195, Veterans"
+                "195 Veterans"
             ]
         },
         {
             "input": "To test the non-inferiority of once-daily ( QD ) oral amoxicillin to the recommended twice-daily ( BID ) oral penicillin V in GABHS pharyngitis .",
             "output": [
-                "GABHS, pharyngitis"
+                "GABHS pharyngitis"
             ]
         },
         {
             "input": "A total of 57 consecutive patients with primary ureteropelvic junction obstruction were randomized to undergo 7/14Fr internal endopyelotomy stent placement for 2 ( group 1 ) and 4 ( group 2 ) weeks .",
             "output": [
-                "57, consecutive, patients, with, primary, ureteropelvic, junction, obstruction"
+                "57 consecutive patients with primary ureteropelvic junction obstruction"
             ]
         },
         {
@@ -1784,7 +1793,7 @@
             ]
         },
         {
-            "input": "Lactate levels were not significantly differed between control , 3,000 , and 700 mg l\u207b\u00b9 groups .",
+            "input": "Lactate levels were not significantly differed between control , 3,000 , and 700 mg l⁻¹ groups .",
             "output": [
                 "not found"
             ]
@@ -1792,7 +1801,7 @@
         {
             "input": "Three hundred forty-one Tanzanian preschool children were randomly assigned to levamisole or placebo treatment given at three-month intervals .",
             "output": [
-                "Three, hundred, forty-one, Tanzanian, preschool, children"
+                "not found"
             ]
         },
         {
@@ -1810,19 +1819,19 @@
         {
             "input": "Seventeen patients on chronic digitalis and diuretic therapy were randomized to receive either flosequinan ( n = 9 ) or placebo ( n = 8 ) in a double-blind fashion .",
             "output": [
-                "Seventeen, patients, on, chronic, digitalis, and, diuretic, therapy"
+                "not found"
             ]
         },
         {
             "input": "Chronic vasodilator therapy with flosequinan in congestive heart failure .",
             "output": [
-                "congestive, heart, failure"
+                "congestive heart failure"
             ]
         },
         {
             "input": "PTSD patients were recruited from five primary care clinics at four Veterans Affairs healthcare facilities and randomized to receive usual care or usual care plus 3CM .",
             "output": [
-                "PTSD, patients"
+                "not found"
             ]
         },
         {
@@ -1832,9 +1841,9 @@
             ]
         },
         {
-            "input": "On two days , 60 COPD patients underwent dyspnea evaluation ( VAS score ) and pulmonary function testing at baseline and one hour after placebo or 300\u03bcg indacaterol administration .",
+            "input": "On two days , 60 COPD patients underwent dyspnea evaluation ( VAS score ) and pulmonary function testing at baseline and one hour after placebo or 300μg indacaterol administration .",
             "output": [
-                "60, COPD, patients"
+                "60 COPD patients"
             ]
         },
         {
@@ -1846,7 +1855,7 @@
         {
             "input": "Regular intake of lime juice may be of great therapeutic and nutritional relevance in children with SCA .",
             "output": [
-                "children, with, SCA"
+                "children with SCA"
             ]
         },
         {
@@ -1864,7 +1873,7 @@
         {
             "input": "Economic evaluation of aquatic exercise for persons with osteoarthritis .",
             "output": [
-                "persons, with, osteoarthritis"
+                "persons with osteoarthritis"
             ]
         },
         {
@@ -1882,13 +1891,13 @@
         {
             "input": "This study examined whether 24 months of weight training exercises enhanced the effectiveness of risedronate , calcium , and vitamin D in maintaining or improving bone mineral density ( BMD ) in 223 postmenopausal breast cancer survivors .",
             "output": [
-                "223, postmenopausal, breast, cancer, survivors"
+                "223 postmenopausal breast cancer survivors"
             ]
         },
         {
             "input": "To compare the effect of a Social Skills Training Group-based Program ( SST-GP ) and a Leisure Activities Group-based Program ( LA-GP ) on the perception of facial emotions and quality of life ( QoL ) in young people with HFA .",
             "output": [
-                "young, people, with, HFA"
+                "young people with HFA"
             ]
         },
         {
@@ -1936,13 +1945,13 @@
         {
             "input": "These findings suggest clinically significant benefits of actively treating JA and SP skills in young children with autism .",
             "output": [
-                "young, children, with, autism"
+                "young children with autism"
             ]
         },
         {
             "input": "Development of renal disease in people at high cardiovascular risk : results of the HOPE randomized study .",
             "output": [
-                "people, at, high, cardiovascular, risk"
+                "people at high cardiovascular risk"
             ]
         },
         {
@@ -1966,13 +1975,13 @@
         {
             "input": "At present no study of gastric dysrhythmia , measured with epigastric impedance , has been presented , and the purpose of the present study was to investigate gastric rhythms by means of impedance gastrography in control infants , compared to infants with different gastrointestinal diseases , before and after treatment of their disease .",
             "output": [
-                "infants, with, different, gastrointestinal, diseases"
+                "infants with different gastrointestinal diseases"
             ]
         },
         {
             "input": "The effects of 12 weeks of antioxidant supplementation on exercise-induced oxidative stress were investigated in older adults ( 60 ( SE 1 ) years ; BMI 26 ( SE 1 ) kg/m ( 2 ) ) .",
             "output": [
-                "older, adults, (, 60, (, SE, 1, ), years, ;, BMI, 26, (, SE, 1, ), kg/m, (, 2, ), )"
+                "older adults ( 60 ( SE 1 ) years ; BMI 26 ( SE 1 ) kg/m ( 2 ) )"
             ]
         },
         {
@@ -1984,13 +1993,13 @@
         {
             "input": "Recruited 249 adults from Washington State aged 55 to 75 with a doctor-confirmed diagnosis of osteoarthritis to participate in aquatic classes .",
             "output": [
-                "249, adults, from, Washington, State, aged, 55, to, 75, with, a, doctor-confirmed, diagnosis, of, osteoarthritis"
+                "249 adults from Washington State aged 55 to 75 with a doctor-confirmed diagnosis of osteoarthritis"
             ]
         },
         {
             "input": "The sample comprised 186 patients ( mean age 70 years , 123 ( 66 % ) female patients , 130 ( 70 % ) trauma ) who were referred for physiotherapy assessment/intervention .",
             "output": [
-                "186, patients, (, mean, age, 70, years, ,, 123, (, 66, %, ), female, patients, ,, 130, (, 70, %"
+                "186 patients ( mean age 70 years , 123 ( 66 % ) female patients , 130 ( 70 %"
             ]
         },
         {
@@ -2008,13 +2017,13 @@
         {
             "input": "Postmenopausal BCS ( 223 ) were randomly assigned to exercise plus medication or medication only groups .",
             "output": [
-                "Postmenopausal, BCS, (, 223, )"
+                "not found"
             ]
         },
         {
             "input": "Effects of mild physical exercise on serum lipoproteins and metabolites of arachidonic acid : a controlled randomised trial in middle aged men .",
             "output": [
-                "middle, aged, men"
+                "middle aged men"
             ]
         },
         {
@@ -2024,7 +2033,7 @@
             ]
         },
         {
-            "input": "\u0394sRAW correlated with changes of intrathoracic gas volume ( \u0394ITGV ) ( r=0.61 ; p < 0.001 ) , residual volume ( \u0394RV ) ( r=0.60 ; p < 0.001 ) , \u0394FVC ( r=0.44 ; p=0.001 ) , and \u0394VAS ( r=0.73 ; p < 0.001 ) , while \u0394FEV1 correlated only with \u0394FVC ( r=0.34 ; p=0.008 ) .",
+            "input": "ΔsRAW correlated with changes of intrathoracic gas volume ( ΔITGV ) ( r=0.61 ; p < 0.001 ) , residual volume ( ΔRV ) ( r=0.60 ; p < 0.001 ) , ΔFVC ( r=0.44 ; p=0.001 ) , and ΔVAS ( r=0.73 ; p < 0.001 ) , while ΔFEV1 correlated only with ΔFVC ( r=0.34 ; p=0.008 ) .",
             "output": [
                 "not found"
             ]
@@ -2050,13 +2059,13 @@
         {
             "input": "Although collaborative care is effective for treating depression and other mental disorders in primary care , there have been no randomized trials of collaborative care specifically for patients with Posttraumatic stress disorder ( PTSD ) .",
             "output": [
-                "patients, with, Posttraumatic, stress, disorder, PTSD"
+                "patients with Posttraumatic stress disorder, PTSD"
             ]
         },
         {
             "input": "Amonafide : An active agent in the treatment of previously untreated advanced breast cancer -- a cancer and leukemia group B study ( CALGB 8642 ) .",
             "output": [
-                "previously, untreated, advanced, breast, cancer"
+                "previously untreated advanced breast cancer"
             ]
         },
         {
@@ -2074,7 +2083,7 @@
         {
             "input": "Twenty-two patients with a history of recently diagnosed RA of less than 2 years were assessed on a variety of clinical outcome and process measures on six assessment occasions over a 21-month period .",
             "output": [
-                "Twenty-two, patients, with, a, history, of, recently, diagnosed, RA, of, less, than, 2, years"
+                "not found"
             ]
         },
         {
@@ -2116,7 +2125,7 @@
         {
             "input": "A cooperative randomized controlled study of bestatin immunotherapy in combination with remission maintenance chemotherapy for adult acute nonlymphocytic leukemia ( ANLL ) was performed .",
             "output": [
-                "adult, acute, nonlymphocytic, leukemia, (, ANLL"
+                "adult acute nonlymphocytic leukemia ( ANLL"
             ]
         },
         {
@@ -2134,7 +2143,7 @@
         {
             "input": "The course of depression in recent onset rheumatoid arthritis : the predictive role of disability , illness perceptions , pain and coping .",
             "output": [
-                "rheumatoid, arthritis"
+                "rheumatoid arthritis"
             ]
         },
         {
@@ -2164,11 +2173,11 @@
         {
             "input": "Assays in male adolescents and in Caco-2 cells .",
             "output": [
-                "male, adolescents"
+                "male adolescents"
             ]
         },
         {
-            "input": "The mean hematocrit of the subjects ( 26.23\u00b12.03 % ) at the end of the study was also higher , p < 0.001 .",
+            "input": "The mean hematocrit of the subjects ( 26.23±2.03 % ) at the end of the study was also higher , p < 0.001 .",
             "output": [
                 "not found"
             ]
@@ -2182,7 +2191,7 @@
         {
             "input": "We randomly assigned 28 patients with refractory monosymptomatic nocturnal enuresis to 2 equal groups .",
             "output": [
-                "28, patients, with, refractory, monosymptomatic, nocturnal, enuresis"
+                "28 patients with refractory monosymptomatic nocturnal enuresis"
             ]
         },
         {
@@ -2230,7 +2239,7 @@
         {
             "input": "For children beginning treatment with the lowest language levels , the JA intervention improved language outcome significantly more than did the SP or control interventions .",
             "output": [
-                "children, beginning, treatment, with, the, lowest, language, levels"
+                "children beginning treatment with the lowest language levels"
             ]
         },
         {
@@ -2242,13 +2251,13 @@
         {
             "input": "This study examined whether ( 1 ) postmenopausal breast cancer survivors ( BCS ) with bone loss taking 24 months of risedronate , calcium , and vitamin D had increased bone mineral density ( BMD ) at the total hip , femoral neck , L1-L4 spine , total radius and 33 % radius , and decreased bone turnover ; ( 2 ) subjects who also participated in strength/weight training ( ST ) exercises had greater increases in BMD and greater decreases in bone turnover ; and ( 3 ) subjects who also exercised were more likely to preserve ( at least maintain ) BMD .",
             "output": [
-                "postmenopausal, breast, cancer, survivors, (, BCS, ), with, bone, loss"
+                "postmenopausal breast cancer survivors ( BCS ) with bone loss"
             ]
         },
         {
             "input": "A physiotherapy service for EECU patients , as provided in this study , did not reduce the rate of hospital admission , rate of re-presentation to the ED , use of community healthcare resources , or improve the rate of return to usual work/home/leisure activities or patient satisfaction .",
             "output": [
-                "EECU, patients"
+                "EECU patients"
             ]
         },
         {
@@ -2266,7 +2275,7 @@
         {
             "input": "Cardiovascular reactivity to psychological stress may be one mechanism for the enhanced risk , but the small number of studies examining whether OC users who smoke have greater reactivity have produced mixed results .",
             "output": [
-                "OC, users, who, smoke"
+                "OC users who smoke"
             ]
         },
         {
@@ -2278,7 +2287,7 @@
         {
             "input": "We conducted a study including 15 depressive patients who had been under antidepressant treatment for at least one month .",
             "output": [
-                "15, depressive, patients, who, had, been, under, antidepressant, treatment, for, at, least, one, month"
+                "15 depressive patients who had been under antidepressant treatment for at least one month"
             ]
         },
         {
@@ -2290,31 +2299,31 @@
         {
             "input": "fMRI data showed that , under placebo , ASD boys underactivated medial prefrontal cortex ( mPFC ) , compared with control and ADHD boys .",
             "output": [
-                "ASD, boys, ADHD, boys"
+                "ASD boys, ADHD boys"
             ]
         },
         {
             "input": "Using epigastric impedance we found that infants with partial or total intestinal obstruction had gastric phasic activity , which was not found in the control infants .",
             "output": [
-                "infants, with, partial, or, total, intestinal, obstruction"
+                "infants with partial or total intestinal obstruction"
             ]
         },
         {
             "input": "To study the effects of physical exercise on biochemical risk factors for ischaemic heart disease 31 healthy middle aged men undertook regular physical exercise for two months and 29 served as controls in a randomised trial .",
             "output": [
-                "31, healthy, middle, aged, men"
+                "31 healthy middle aged men"
             ]
         },
         {
             "input": "Under Fluoxetine , mPFC activation was up-regulated and normalized in ASD boys relative to controls , but down-regulated in ADHD boys relative to placebo , which was concomitant with worse task performance in ADHD .",
             "output": [
-                "ASD, boys, ADHD, boys"
+                "ASD boys, ADHD boys"
             ]
         },
         {
             "input": "We conclude that granisetron is a better anti-emetic than perphenazine for the long-term prevention of post-operative vomiting in children undergoing general anaesthesia for tonsillectomy .",
             "output": [
-                "children, undergoing, general, anaesthesia, for, tonsillectomy"
+                "children undergoing general anaesthesia for tonsillectomy"
             ]
         },
         {
@@ -2356,13 +2365,13 @@
         {
             "input": "The influence of injections of Amidotrizoate and Iopromide into the left coronary artery on global myocardial perfusion and function ( pressures in the left ventricle , heart rate ) as well as excitation formation and transmission was studied in 16 patients with ischaemic heart disease .",
             "output": [
-                "16, patients, with, ischaemic, heart, disease"
+                "16 patients with ischaemic heart disease"
             ]
         },
         {
             "input": "These 22 patients constituted the control group of a controlled trial and received standard outpatient clinic treatment during follow-up .",
             "output": [
-                "22, patients"
+                "22 patients"
             ]
         },
         {
@@ -2380,13 +2389,13 @@
         {
             "input": "Children with parent-reported ASD had higher levels of health care office visits and prescription drug use compared with children without ASD ( P < .05 ) .",
             "output": [
-                "Children, with, parent-reported, ASD, children, without, ASD"
+                "children without ASD"
             ]
         },
         {
             "input": "Short-term phasic activity was only found in 13 out of 40 of the normal infants ( 32.5 % ) .",
             "output": [
-                "40, of, the, normal, infants"
+                "40 of the normal infants"
             ]
         },
         {
@@ -2404,7 +2413,7 @@
         {
             "input": "The results suggest that the use of PMRT could enhance quality of life and decrease state anxiety in patients after stoma surgery .",
             "output": [
-                "patients, after, stoma, surgery"
+                "patients after stoma surgery"
             ]
         },
         {
@@ -2428,7 +2437,7 @@
         {
             "input": "Three hundred sixty-five patients were enrolled .",
             "output": [
-                "Three, hundred, sixty-five, patients"
+                "not found"
             ]
         },
         {
@@ -2444,7 +2453,7 @@
             ]
         },
         {
-            "input": "Hence , we hypothesize that specific airway resistance changes ( \u0394sRAW ) should better characterize the acute response to bronchodilators .",
+            "input": "Hence , we hypothesize that specific airway resistance changes ( ΔsRAW ) should better characterize the acute response to bronchodilators .",
             "output": [
                 "not found"
             ]
@@ -2452,19 +2461,19 @@
         {
             "input": "We investigated whether 13 participants with ASD ( age 7 ; 03-22 ; 03 ) and 13 age-matched typically developing ( TD ) controls could comprehend lexicalized conceptual metaphors ( e.g. , Susan is a warm person ) and novel ones ( e.g. , Susan is a toasty person ) .",
             "output": [
-                "13, participants, with, ASD, 13, age-matched, typically, developing, (, TD"
+                "13 participants with ASD, 13 age-matched typically developing ( TD"
             ]
         },
         {
             "input": "Randomized controlled study of chemoimmunotherapy with bestatin of acute nonlymphocytic leukemia in adults .",
             "output": [
-                "acute, nonlymphocytic, leukemia, in, adults"
+                "acute nonlymphocytic leukemia in adults"
             ]
         },
         {
             "input": "Forty-nine children with AS were recruited to participate and randomly assigned to intervention ( n = 26 ) or wait-list control ( n = 23 ) conditions .",
             "output": [
-                "Forty-nine, children, with, AS"
+                "not found"
             ]
         },
         {
@@ -2482,7 +2491,7 @@
         {
             "input": "In 78 children known to be infected with Ascaris at baseline , the rate of weight gain was 21 per cent greater in children treated with levamisole than in those receiving placebo ( p = .03 ) .",
             "output": [
-                "78, children, known, to, be, infected, with, Ascaris"
+                "78 children known to be infected with Ascaris"
             ]
         },
         {
@@ -2506,7 +2515,7 @@
         {
             "input": "Age-matched boys with ADHD ( 15 ) , ASD ( 18 ) , and controls ( 21 ) were compared with functional magnetic resonance imaging ( fMRI ) during a reversal task .",
             "output": [
-                "Age-matched, boys, with, ADHD, 15, ), ,, ASD, 18, ), ,, and, controls, 21"
+                "15 ) , ASD, 18 ) , and controls, 21"
             ]
         },
         {
@@ -2524,19 +2533,19 @@
         {
             "input": "To consider the impact on primary care patient outcomes of using both a screener to determine elevated anxiety levels among patients with previously undetected anxiety and a physician intervention to inform physicians of their patients ' conditions .",
             "output": [
-                "patients, with, previously, undetected, anxiety"
+                "patients with previously undetected anxiety"
             ]
         },
         {
             "input": "A persistent phasic activity pattern was found in 19 of the 21 patients , high frequency phasic activity in 11 of the 21 patients .",
             "output": [
-                "21, patients"
+                "21 patients"
             ]
         },
         {
             "input": "In a prospective , randomized , double-blind study , 90 paediatric patients , ASA I , aged 4-10 years , received granisetron 40 mg kg-1 or perphenazine 70 mg kg-1 ( n = 45 each ) intravenously immediately after an inhalation induction of anaesthesia .",
             "output": [
-                "90, paediatric, patients, ASA, I, ,, aged, 4-10, years"
+                "90 paediatric patients, ASA I , aged 4-10 years"
             ]
         },
         {
@@ -2573,14 +2582,5 @@
     ],
     "Categories": [
         "Entity Detection"
-    ],
-    "Input_language": [
-        "English"
-    ],
-    "Output_language": [
-        "English"
-    ],
-    "Instruction_language": [
-        "English"
     ]
 }
