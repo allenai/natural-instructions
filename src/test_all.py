@@ -111,7 +111,7 @@ if not args.task:
 # TODO: over time, we need to fix the skew of the following tasks
 skew_exclusion = [
     "027", "150", "021", "050", "022", "020", "019", "052", "1191", "018", "109", "148", "158", "108", "155", "147",
-    "058", "049", "043", "149", "146", "159", "056", "1158", "1179"
+    "058", "049", "043", "149", "146", "159", "056", "1158", "1179", "1311"
 ]
 
 for file in files[begin_task_number:end_task_number + 1]:
@@ -204,7 +204,7 @@ for file in files[begin_task_number:end_task_number + 1]:
             if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
                 norm_counts = counts / counts.sum()
                 entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
-                assert entropy > 0.87, f"📋 Norm_counts: {norm_counts} \n📋 Distribution of classes: {counts} \n📊 entropy= {entropy}"
+                assert entropy > 0.87, f"📋 classes: {value} \n📋 Norm_counts: {norm_counts} \n📋 Distribution of classes: {counts} \n📊 entropy= {entropy}"
 
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
