@@ -6,18 +6,22 @@
         "QuaRTz (Qualitative Relationship Test set) (Dataset - https://allenai.org/data/quartz) (Paper - https://aclanthology.org/D19-1608.pdf)"
     ],
     "Categories": [
-        "Sentence Generation"
+        "Text Generation -> Sentence Generation -> Explanation Generation",
+        "Reasoning -> Qualitative Reasoning"
     ],
-    "Definition": "You are given a question or fill-in-the-blank statemet, and answer for that. Your task is to provide an explanation statetemnt based on the given question or fill-in-the-blank statement, and answer.",
+    "Definition": "In this task, you are given a question and answer for that. The answer will fill in the blank or will complete the unfinished question. Your task is to provide an explanation based on the given question or fill-in-the-blank statement, and answer.",
+    "Domains": [    
+        "Natural Science"
+    ],
     "Positive Examples": [
         {
             "input": "Question: The government of Canada is considering implementing less carbon taxes across the country. If these taxes were implemented, the amount of carbon dioxide emissions in the country would be expected to \n Answer: rise",
             "output": "The carbon taxes encourage people to use less fossil fuel, which reduces carbon dioxide emissions.",
-            "explanation": "As mentioned in the input Question and Answer, output statement constructs the explanation correctly."
+            "explanation": "As mentioned in the input Question and Answer, the output statement constructs the explanation correctly. By decreasing the taxes, carbon dioxide emissions will rise, so the explanation is correct. "
         },
         {
-            "input": "Question: Shampoos with high ph are \n Answer: more",
-            "output": "Lower pH numbers are more acidic and higher numbers are less acidic (also called more alkaline).",
+            "input": "Question: If you put a lot of energy into some food the temperature of it will \n Answer: increase",
+            "output": "The temperature of matter increases with the added energy.",
             "explanation": "As mentioned in the input Question and Answer, output statement constructs the explanation correctly."
         },
         {
@@ -29,18 +33,18 @@
     "Negative Examples": [
         {
             "input": "Question: The government of Canada is considering implementing less carbon taxes across the country. If these taxes were implemented, the amount of carbon dioxide emissions in the country would be expected to \n Answer: rise",
-            "output": "The carbon taxes encourage people to use more fossil fuel, which reduces carbon dioxide emissions.",
-            "explanation": "As mentioned in the input Question and Answer, Canada government implement less carbon tax, people will use less fossil fuel not more."
+            "output": "The carbon taxes encourage people to use more fossil fuel. which increase carbon dioxide emissions. ",
+            "explanation": "This explanation is incorrect. Implementing the taxes encourage people to use less fossil fuel. So reducing the taxes will increase carbon dioxide emissions."
         },
         {
             "input": "Question: Shampoos with high ph are \n Answer: more",
             "output": "Lower pH numbers are less acidic and higher numbers are less acidic (also called more alkaline).",
-            "explanation": "As mentioned in the input Question and Answer, if Shampoos with high ph are more acidic then high pH numbers indictes more acidic not less and vice-versa."
+            "explanation": "This explanation is not acceptable. It should explain the relation between high ph and number of the shampoos, not ph and acidity."
         },
         {
             "input": "Question: If an object starts speeding up, it is encountering _____ friction against it. \n Answer: less",
             "output": "The smoother the surface, the less friction against an object, so the slower it will move.",
-            "explanation": "As mentioned in the input Question and Answer, is surface is smooth than it has less friction ans hence object can move fast not slow."
+            "explanation": "If an object starts speeding up, it encounters less friction against it. This means that the surface is smooth and it has less friction. So objects can move faster. The slower it will move in the explanation should change to the faster it will move."
         }
     ],
     "Instances": [
@@ -66,12 +70,6 @@
             "input": "Question: If greenhouse gases in the atmosphere were to be doubled, Earth will become \n Answer: warmer",
             "output": [
                 "If there are more greenhouse gases in the atmosphere, more ultraviolet radiation will be trapped and the Earth will heat up."
-            ]
-        },
-        {
-            "input": "Question: If you put a lot of energy into some food the temperature of it will \n Answer: increase",
-            "output": [
-                "The temperature of matter increases with the added energy."
             ]
         },
         {

@@ -6,37 +6,41 @@
         "synthetic"
     ],
     "Categories": [
-        "Answer Generation",
-        "Combinatorics"
+        "Question Answering -> Mathematical Question Answering",
+        "Mathematics -> Combinatorics",
+        "Reasoning -> Numerical Reasoning"  
     ],
-    "Definition": "In this task you will be given a list with length 'n'. You need to list all of the possible ways to choose 'n - 1' elements from the input list.  All of the generated lists must contain every element from the original list, except one element. The output should be a list of lists, where the outer list is of length 'n', and every inner list is of length 'n - 1'.",
+    "Definition": "In this task, you will be given a list.  The list is several integers and letters separated with a comma, written within a []. You can create new lists by dropping one of the items in the input list. Your task is to write a list containing all the possible lists you can make by dropping one item from the input list. For example, if the input list contains two items, you can drop one of the items each time. So the output should be a list comprising two inner lists that you have created by decreasing the items.",
+    "Domains": [    
+        "Mathematics"
+    ],
     "Positive Examples": [
         {
             "input": "['3', 'u', 'W', '8', 'j']",
             "output": "[['3', 'u', 'W', '8'], ['3', 'u', 'W', 'j'], ['3', 'u', '8', 'j'], ['3', 'W', '8', 'j'], ['u', 'W', '8', 'j']]",
-            "explanation": "The output is a list of length 5, containing lists of length 4. Also, no element from the input list is repeated in the inner lists of the output. So this is a good example."
+            "explanation": "The output is a list of length 5, containing lists of length 4. Each inner list is created by dropping one item if the input list. So this is a good example."
         },
         {
             "input": "['O', 'j', '8', 'j']",
             "output": "[['O', 'j', '8'], ['O', 'j', 'j'], ['O', '8', 'j'], ['j', '8', 'j']]",
-            "explanation": "The character 'j' appeared in the input list twice, therefore it appears twice in an inner list in the output. This is not repeating an element because they are different elements. So this is a good example."
+            "explanation": "The character 'j' appeared in the input list twice, therefore it appears twice in an inner list in the output. The number of the inner lists should be the same as the items in the input list. So this is a good example."
         }
     ],
     "Negative Examples": [
         {
             "input": "['j', 'I', 'U']",
-            "output": "[['j'], ['I'], 'U']]",
-            "explanation": "The output only chooses one element from the input list. So this is a bad example."
+            "output": "[['j'], ['I'], ['U']]",
+            "explanation": "In this example, the inner lists of the output have been created by dropping two elements from the input list. If we drop an item from the input list, we will have a list with two items each time. So this is a bad example."
         },
         {
             "input": "['8', 'F', '8', 'j']",
             "output": "[['8', 'F', '8']]",
-            "explanation": "The output only contains one possible combination of choosing 'n - 1' elements. So this is a bad example."
+            "explanation": "The output only contains one possible list. However, we can create four lists by dropping one of the items. So this is a bad example."
         },
         {
             "input": "['5', 'l', 'p', 'm', '5']",
             "output": "[['5', 'l', 'p', 'm'], ['l', 'p', 'm', '5']]",
-            "explanation": "The output does not include combinations where both '5' elements are chosen. They are different elements, therefore you are able to choose both. So this is a bad example."
+            "explanation": "The output only contains two possible lists. However, we can create five lists by dropping one of the items. So this is a bad example."
         }
     ],
     "Instances": [

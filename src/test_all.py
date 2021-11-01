@@ -6,7 +6,6 @@ from os.path import isfile, join
 import argparse
 import re
 import numpy as np
-from math import log
 
 # get the range of task you want to test, if specified in the command line
 parser = argparse.ArgumentParser()
