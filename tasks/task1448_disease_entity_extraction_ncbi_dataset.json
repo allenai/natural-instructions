@@ -1,0 +1,956 @@
+{
+    "Contributors": [
+        "Ishani Mondal"
+    ],
+    "Source": [
+        "https://www.ncbi.nlm.nih.gov/research/bionlp/Data/disease/"
+    ],
+    "Categories": [
+        "Entity Detection"
+    ],
+    "Domains": [
+        "Biology -> Clinical Knowledge"
+    ],
+    "Definition": "In this task, you will be given a sentence. You need to list the tokens that mention names of the disorders or diseases. Disease is a disorder of structure or function in a human, animal, or plant, especially one that produces specific symptoms or that affects a specific location and is not simply a direct result of physical injury. You should list the tokens in the same order that they appear in the text. If the same entity appears more than once in a single sentence, just extract it only once. Also, please consider that a single sentence contains a single entity. However, if no target entities are mentioned, just output \"not found\"." ,
+    "Positive Examples": [
+        {
+            "input": "I had been suffering from cardiovascular disorder.",
+            "output": "cardiovascular disorder",
+            "explanation": "Here, the person mentions this disorder which is related to heart issues."
+        },
+        {
+            "input": "Acne is the most common skin condition in the United States, affecting up to 50 million Americans annually.",
+            "output": "Acne",
+            "explanation": "This is a pretty straightforward remark because it is related to filing taxes with minimal stress and is unrelated to irony or sarcasm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "I had been suffering from cardiovascular disorder",
+            "output": "disorder",
+            "explanation": "This is an incomplete disease mention, as it does not clearly mention the actual type of disorder."
+        },
+        {
+            "input": "A 44-year-old man taking naproxen for chronic low back pain and a 20-year-old woman on oxaprozin for rheumatoid arthritis presented with tense bullae and cutaneous fragility on the face and the back of the hands.",
+            "output": "naproxen",
+            "explanation": "This is an incorrect tag as this is a mention of a drug, not a disorder"
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Instances": [
+        {
+            "input": " In individuals with mutations in either region 2 or region 3 , the average number of adenomas tended to be lower than those in individuals with mutations in region 1 , although age at diagnosis was similar .",
+            "output": [
+                "adenomas"
+            ]
+        },
+        {
+            "input": " These reagents detect a 220 - kD protein localized in discrete nuclear foci in all epithelial cell lines , including those derived from breast malignancies .",
+            "output": [
+                "breast malignancies"
+            ]
+        },
+        {
+            "input": " This mutation may be valuable for developing models of dominantly inherited neurodegeneration , as the early age of onset of symptoms suggests that this mutation may be particularly deleterious to the magnocellular neuron . .",
+            "output": [
+                "dominantly inherited neurodegeneration"
+            ]
+        },
+        {
+            "input": " Mutation analysis of UBE3A in Angelman syndrome patients .",
+            "output": [
+                "Angelman syndrome"
+            ]
+        },
+        {
+            "input": " PTEN mutations were identified in 30 of 37 ( 81 % ) CD families , including missense and nonsense point mutations , deletions , insertions , a deletion / insertion and splice site mutations .",
+            "output": [
+                "CD"
+            ]
+        },
+        {
+            "input": " A hot spot for PTEN mutation in CD was identified in exon 5 that contains the PTPase core motif , with 13 of 30 ( 43 % ) CD mutations identified in this exon .",
+            "output": [
+                "CD"
+            ]
+        },
+        {
+            "input": " However , genotype - phenotype analysis inthe group of CD families revealed two possible associations worthy of follow - up in independent analyses .",
+            "output": [
+                "CD"
+            ]
+        },
+        {
+            "input": " However , these observations would need to be confirmed by studying a larger number of CD families .",
+            "output": [
+                "CD"
+            ]
+        },
+        {
+            "input": " In this study , we analyzed two families with FNDI using direct automated fluorescent , solid phase , single - stranded DNA sequencing of PCR - amplified AVP - NPII DNA .",
+            "output": [
+                "FNDI"
+            ]
+        },
+        {
+            "input": " This missense mutation , which replaces Ala with Thr , is frequent among FNDI patients and is thought to reduce the efficiency of cleavage by signal peptidases . .",
+            "output": [
+                "FNDI"
+            ]
+        },
+        {
+            "input": " Myotonic dystrophy protein kinase is involved in the modulation of the Ca2 + homeostasis in skeletal muscle cells .",
+            "output": [
+                "Myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " Risk reversals in predictive testing for Huntington disease .",
+            "output": [
+                "Huntington disease"
+            ]
+        },
+        {
+            "input": " AGU is inherited as an autosomal recessive trait and occurs with a high frequency in Finland because of a founder effect .",
+            "output": [
+                "AGU"
+            ]
+        },
+        {
+            "input": " While very few patients with AGU have been reported from non - Finnish origin , we diagnosed the disorder in 8 patients originating from 3 unrelated families , all Palestinian Arabs from the region of Jerusalem .",
+            "output": [
+                "AGU"
+            ]
+        },
+        {
+            "input": " The clinical diagnosis of AGU is often difficult , in particular early in the course of the disease , and most of the patients are diagnosed after the age of 5 years .",
+            "output": [
+                "AGU"
+            ]
+        },
+        {
+            "input": " Liver biopsy is also used to establish the presence or absence of cirrhosis , which can affect prognosis and management .",
+            "output": [
+                "cirrhosis"
+            ]
+        },
+        {
+            "input": " C04107 is an anonymous microsatellite marker closely linked to CT .",
+            "output": [
+                "CT"
+            ]
+        },
+        {
+            "input": " The copper transport genes CTR1 and CTR2 were also excluded as candidate genes for CT since they both mapped to canine chromosome region CFA11q22 .",
+            "output": [
+                "CT"
+            ]
+        },
+        {
+            "input": " Detection of heterozygous carriers of the ataxia - telangiectasia ( ATM ) gene by G2 phase chromosomal radiosensitivity of peripheral blood lymphocytes .",
+            "output": [
+                "ataxia - telangiectasia"
+            ]
+        },
+        {
+            "input": " Mutations of the ATM gene detected in Japanese ataxia - telangiectasia patients : possible preponderance of the two founder mutations 4612del165 and 7883del5 .",
+            "output": [
+                "ataxia - telangiectasia"
+            ]
+        },
+        {
+            "input": " ATM germline mutations in classical ataxia - telangiectasia patients in the Dutch population .",
+            "output": [
+                "ataxia - telangiectasia"
+            ]
+        },
+        {
+            "input": " Progression of somatic CTG repeat length heterogeneity in the blood cells of myotonic dystrophy patients .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " The DMPK gene of severely affected myotonic dystrophy patients is hypermethylated proximal to the largely expanded CTG repeat .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " Using methylation - sensitive restriction enzymes , we characterized the methylation pattern on the 5 side of the CTG repeat in the DMPK gene of normal individuals and of patients affected with myotonic dystrophy , showing expansions of the repetitive sequence .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " Disruption of splicing regulated by a CUG - binding protein in myotonic dystrophy .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " Somatic instability of the CTG repeat in mice transgenic for the myotonic dystrophy region is age dependent but not correlated to the relative intertissue transcription levels and proliferative capacities .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " Further evidence for a major ancient mutation underlying myotonic dystrophy from linkage disequilibrium studies in the Japanese population .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " Segregation distortion in myotonic dystrophy .",
+            "output": [
+                "myotonic dystrophy"
+            ]
+        },
+        {
+            "input": " No locus other than chromosome 11p13 has been implicated in aniridia , and PAX6 is clearly the major , if not only , gene responsible .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " It is believed that the mutated allele of PAX6 produces an inactive protein and aniridia is caused due to genetic haploinsufficiency .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " These results provide a new insight into the role of mutant PAX6 in causing aniridia . .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " Mutations of the human PAX6 gene underlie aniridia ( congenital absence of the iris ) , a rare dominant malformation of the eye .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " The spectrum of PAX6 mutations in aniridia patients is highly biased , with 92 % of all reported mutations leading to premature truncation of the protein ( nonsense , splicing , insertions and deletions ) and just 2 % leading to substitution of one amino acid by another ( missense ) .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " The extraordinary conservation of the PAX6 protein at the amino acid level amongst vertebrates predicts that pathological missense mutations should in fact be common even though they are hardly ever seen in aniridia patients .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " This indicates that there is a heavy ascertainment bias in the selection of patients for PAX6 mutation analysis and that the missing PAX6 missense mutations frequently may underlie phenotypes distinct from textbook aniridia .",
+            "output": [
+                "aniridia"
+            ]
+        },
+        {
+            "input": " 1 % of unselected Ashkenazi Jews and higher proportions of Ashkenazim with family or personal histories of CRC ( ref . 2 ) .",
+            "output": [
+                "CRC"
+            ]
+        },
+        {
+            "input": " This cell cycle - dependent colocalization of BARD1 and BRCA1 indicates a role for BARD1 in BRCA1 - mediated tumor suppression .",
+            "output": [
+                "tumor"
+            ]
+        },
+        {
+            "input": " The tumor suppressor gene Smad4 / Dpc4 is required for gastrulation and later for anterior development of the mouse embryo .",
+            "output": [
+                "tumor"
+            ]
+        },
+        {
+            "input": " The von Hippel - Lindau tumor suppressor gene is required for cell cycle exit upon serum withdrawal .",
+            "output": [
+                "tumor"
+            ]
+        },
+        {
+            "input": " Stable interaction between the products of the BRCA1 and BRCA2 tumor suppressor genes in mitotic and meiotic cells .",
+            "output": [
+                "tumor"
+            ]
+        },
+        {
+            "input": " Direct sequencing of amplified C9 cDNA and DNA revealed a nonsense substitution ( CGA - - > TGA ) at codon 95 in exon 4 in the four C9 - deficient individuals .",
+            "output": [
+                "C9 - deficient"
+            ]
+        },
+        {
+            "input": " Once the diagnosis is suspected , physicians must use serum ferritin levels and hepatic iron stores on liver biopsy specimens to assess patients for the presence of iron overload .",
+            "output": [
+                "iron overload"
+            ]
+        },
+        {
+            "input": " This should help in the design of tailored clinical - management protocols in this subset of FAP patients . .",
+            "output": [
+                "FAP"
+            ]
+        },
+        {
+            "input": " RESULTS Chain terminating signals were only identified in patients belonging to the FAP group ( 105 patients ) .",
+            "output": [
+                "FAP"
+            ]
+        },
+        {
+            "input": " Genotype - phenotype correlations identified significant differences in the nature of certain extracolonic manifestations in FAP patients belonging to three mutation subgroups .",
+            "output": [
+                "FAP"
+            ]
+        },
+        {
+            "input": " We have also observed the 879delG defect in two Dutch C6 - deficient kindreds , but the 879delG defect in the Cape probably did not come from The Netherlands . .",
+            "output": [
+                "C6 - deficient"
+            ]
+        },
+        {
+            "input": " The R496H mutation of arylsulfatase A does not cause metachromatic leukodystrophy .",
+            "output": [
+                "metachromatic leukodystrophy"
+            ]
+        },
+        {
+            "input": " Coincidence of two novel arylsulfatase A alleles and mutation 459 + 1G > A within a family with metachromatic leukodystrophy : molecular basis of phenotypic heterogeneity .",
+            "output": [
+                "metachromatic leukodystrophy"
+            ]
+        },
+        {
+            "input": " Biochemical studies indicated VLCAD deficiency caused by a stable yet inactive enzyme .",
+            "output": [
+                "VLCAD deficiency"
+            ]
+        },
+        {
+            "input": " Pendred patients in three non - consanguineous families were shown to be compound heterozygotes for L236P and T416P .",
+            "output": [
+                "Pendred"
+            ]
+        },
+        {
+            "input": " In SCA2 , saccade velocity was markedly decreased .",
+            "output": [
+                "SCA2"
+            ]
+        },
+        {
+            "input": " The first , 1195delC located in exon 7 , is a novel mutation , while the second , 1936delG in exon 12 , has been described before to cause C6D in an unrelated African - American individual .",
+            "output": [
+                "C6D"
+            ]
+        },
+        {
+            "input": " However , several truncation mutations have been found to occur in the C - terminal half of PAX6 in patients with Aniridia resulting in mutant proteins that retain the DNA - binding domains but have lost most of the transactivation domain .",
+            "output": [
+                "Aniridia"
+            ]
+        },
+        {
+            "input": " Compelling evidence supports a significant genetic component in the susceptibility to develop BPAD .",
+            "output": [
+                "BPAD"
+            ]
+        },
+        {
+            "input": " To date , however , linkage studies have attempted only to identify chromosomal loci that cause or increase the risk of developing BPAD .",
+            "output": [
+                "BPAD"
+            ]
+        },
+        {
+            "input": " Identification of three novel mutations and a high frequency of the Arg778Leu mutation in Korean patients with Wilson disease .",
+            "output": [
+                "Wilson disease"
+            ]
+        },
+        {
+            "input": " Four mutations - - R778L , A874V , L1083F , and 2304delC - - in the copper - transporting enzyme , P - type ATPase ( ATP7B ) , were identified in Korean Patients with Wilson disease .",
+            "output": [
+                "Wilson disease"
+            ]
+        },
+        {
+            "input": " Since a mutation at cDNA nucleotide 2302 ( 2302insC ) had been previously described , this region of the ATP7B gene may be susceptible to gene rearrangements causing Wilson disease .",
+            "output": [
+                "Wilson disease"
+            ]
+        },
+        {
+            "input": " Previous family studies suggested that these individuals may be compound heterozygotes for the common mutant TSD gene and a rare ( allelic ) mutant gene .",
+            "output": [
+                "TSD"
+            ]
+        },
+        {
+            "input": " Heterozygotes for the rare mutant may be indistinguishable from heterozygotes for the common TSD mutant .",
+            "output": [
+                "TSD"
+            ]
+        },
+        {
+            "input": " Mutations in the HEXA gene , encoding the alpha - subunit of beta - hexosaminidase A ( Hex A ) , that abolish Hex A enzyme activity cause Tay - Sachs disease ( TSD ) , the fatal infantile form of G ( M2 ) gangliosidosis , Type 1 .",
+            "output": [
+                "TSD"
+            ]
+        },
+        {
+            "input": " When the W474C - containing alpha - subunit was transiently co - expressed with the beta - subunit to produce Hex A ( alphabeta ) in COS - 7 cells , the mature alpha - subunit was present , but its level was much lower than that from normal alpha - subunit transfections , although higher than in those cells transfected with an alpha - subunit associated with infantile TSD .",
+            "output": [
+                "TSD"
+            ]
+        },
+        {
+            "input": " The overlap in clinical features and the presence , in the same genes , of mutations for more than one craniosynostotic condition - such as Saethre - Chotzen , Crouzon , and Pfeiffer syndromes - support the hypothesis that TWIST and FGFRs are components of the same molecular pathway involved in the modulation of craniofacial and limb development in humans . .",
+            "output": [
+                "craniosynostotic condition"
+            ]
+        },
+        {
+            "input": " As constitutional DNA was not available , a putative hereditary predisposition to T - PLL will require further investigation . .",
+            "output": [
+                "T - PLL"
+            ]
+        },
+        {
+            "input": " Previous studies have suggested that the highly variable metabolic phenotypes of PAH deficiency correlate with PAH genotypes .",
+            "output": [
+                "PAH deficiency"
+            ]
+        },
+        {
+            "input": " Our data indicate that the PAH - mutation genotype is the main determinant of metabolic phenotype in most patients with PAH deficiency .",
+            "output": [
+                "PAH deficiency"
+            ]
+        },
+        {
+            "input": " Susceptibility to ankylosing spondylitis in twins : the role of genes , HLA , and the environment .",
+            "output": [
+                "ankylosing spondylitis"
+            ]
+        },
+        {
+            "input": " Skin fragility in most cases is due to mutations in the gene encoding type XVII collagen ( COL17A1 ) .",
+            "output": [
+                "Skin fragility"
+            ]
+        },
+        {
+            "input": " With direct tests for the HD mutation , we have assessed the accuracy of results obtained by linkage approaches when requested to do so by the test individuals .",
+            "output": [
+                "HD"
+            ]
+        },
+        {
+            "input": " We report WT1 heterozygous mutations in 16 patients , 4 of whom presented with IDMS .",
+            "output": [
+                "IDMS"
+            ]
+        },
+        {
+            "input": " One male and two female IDMS patients with WT1 mutations underwent normal puberty .",
+            "output": [
+                "IDMS"
+            ]
+        },
+        {
+            "input": " No WT1 mutations were detected in the six other IDMS patients , suggesting genetic heterogeneity of this disease .",
+            "output": [
+                "IDMS"
+            ]
+        },
+        {
+            "input": " Aspartylglucosaminuria among Palestinian Arabs .",
+            "output": [
+                "Aspartylglucosaminuria"
+            ]
+        },
+        {
+            "input": " Emerin is a nuclear membrane protein which is missing or defective in Emery - Dreifuss muscular dystrophy ( EDMD ) .",
+            "output": [
+                "EDMD"
+            ]
+        },
+        {
+            "input": " This distribution of emerin was similar to that of lamin A , a candidate gene for an autosomal form of EDMD .",
+            "output": [
+                "EDMD"
+            ]
+        },
+        {
+            "input": " In EDMD , the additional absence of lamin B1 from heart and skeletal muscle nuclei which already lack emerin may offer an alternative explanation of why these tissues are particularly affected . .",
+            "output": [
+                "EDMD"
+            ]
+        },
+        {
+            "input": " Ataxia - telangiectasia : identification and detection of founder - effect mutations in the ATM gene in ethnic populations .",
+            "output": [
+                "Ataxia - telangiectasia"
+            ]
+        },
+        {
+            "input": " Neither vWf nor vWf propolypeptide ( von Willebrand antigen II ) were detectable in plasma , platelets , or endothelial cells of the homozygous mutant mice .",
+            "output": [
+                "von Willebrand"
+            ]
+        },
+        {
+            "input": " The genetic locus of the disease is the AVP - neurophysin II ( NPII ) gene , and mutations that cause ADNDI have been found in both the signal peptide of the prepro - AVP - NPII precursor and within NPII itself .",
+            "output": [
+                "ADNDI"
+            ]
+        },
+        {
+            "input": " Human complement factor H deficiency associated with hemolytic uremic syndrome .",
+            "output": [
+                "hemolytic uremic syndrome"
+            ]
+        },
+        {
+            "input": " A European multicenter study of phenylalanine hydroxylase deficiency : classification of 105 mutations and a general system for genotype - based prediction of metabolic phenotype .",
+            "output": [
+                "phenylalanine hydroxylase deficiency"
+            ]
+        },
+        {
+            "input": " Recent studies in animal models elucidated a central role of alpha - MSH in the regulation of food intake by activation of the brain melanocortin - 4 - receptor ( MC4 - R ; refs 3 - 5 ) and the linkage of human obesity to chromosome 2 in close proximity to the POMC locus , led to the proposal of an association of POMC with human obesity .",
+            "output": [
+                "obesity"
+            ]
+        },
+        {
+            "input": " However , some of these patients can transmit retinoblastoma predisposition to their offspring .",
+            "output": [
+                "retinoblastoma"
+            ]
+        },
+        {
+            "input": " In conclusion , our results emphasize that the manifestation and transmissibility of retinoblastoma depend on the nature of the first mutation , its time in development , and the number and types of cells that are affected . .",
+            "output": [
+                "retinoblastoma"
+            ]
+        },
+        {
+            "input": " The mutation is in an area of the gene that encodes the protein - binding region known as the pocket region and has been detected in other cases of retinoblastoma . .",
+            "output": [
+                "retinoblastoma"
+            ]
+        },
+        {
+            "input": " We have used single strand conformation polymorphism analysis to study the 27 exons of the RB1 gene in individuals from a family showing mild expression of the retinoblastoma phenotype .",
+            "output": [
+                "retinoblastoma"
+            ]
+        },
+        {
+            "input": " In the present study , the classification of 105 PAH mutations may allow the prediction of the biochemical phenotype in > 10 , 000 genotypes , which may be useful for the management of hyperphenylalaninemia in newborns .",
+            "output": [
+                "hyperphenylalaninemia"
+            ]
+        },
+        {
+            "input": " The aim of this study was to assess genotype - phenotype correlations in AAPC families .",
+            "output": [
+                "AAPC"
+            ]
+        },
+        {
+            "input": " Seven further molecular bases of C7 deficiency are described .",
+            "output": [
+                "C7 deficiency"
+            ]
+        },
+        {
+            "input": " Identification of constitutional WT1 mutations , in patients with isolated diffuse mesangial sclerosis , and analysis of genotype / phenotype correlations by use of a computerized mutation database .",
+            "output": [
+                "diffuse mesangial sclerosis"
+            ]
+        },
+        {
+            "input": " A number of ARSA gene mutations responsible for MLD have been identified .",
+            "output": [
+                "MLD"
+            ]
+        },
+        {
+            "input": " Recently , the R496H mutation of ARSA was proposed to be a cause of MLD ( Draghia et al . , 1997 ) .",
+            "output": [
+                "MLD"
+            ]
+        },
+        {
+            "input": " The two other siblings , apparently healthy at 12 ( 1 / 2 ) and 15 years , respectively , and their father , apparently healthy as well , presented ARSA and GS values within the range of MLD patients .",
+            "output": [
+                "MLD"
+            ]
+        },
+        {
+            "input": " Mutation A464V was not found in 18 unrelated MLD patients and 50 controls .",
+            "output": [
+                "MLD"
+            ]
+        },
+        {
+            "input": " A464V , although clearly modifying ARSA and GS levels , apparently bears little significance for clinical manifestation of MLD , mimicking the frequent ARSA pseudodeficiency allele .",
+            "output": [
+                "MLD"
+            ]
+        },
+        {
+            "input": " Our results demonstrate that in certain genetic conditions MLD - like ARSA and GS values need not be paralleled by clinical disease , a finding with serious diagnostic and prognostic implications .",
+            "output": [
+                "MLD"
+            ]
+        },
+        {
+            "input": " Genetic and environmental variance components were assessed with the program Mx , using data from this and previous studies of twins with AS .",
+            "output": [
+                "AS"
+            ]
+        },
+        {
+            "input": " CONCLUSION Susceptibility to AS is largely genetically determined , and the environmental trigger for the disease is probably ubiquitous .",
+            "output": [
+                "AS"
+            ]
+        },
+        {
+            "input": " HLA - B27 accounts for a minority of the overall genetic susceptibility to AS .",
+            "output": [
+                "AS"
+            ]
+        },
+        {
+            "input": " Here we describe UBE3A coding - region mutations detected by SSCP analysis in 13 AS individuals or families .",
+            "output": [
+                "AS"
+            ]
+        },
+        {
+            "input": " In two familial cases and one sporadic case , mosaicism for UBE3A mutations was detected in the mother of three AS sons , in the maternal grandfather of two AS first cousins , and in the mother of an AS daughter .",
+            "output": [
+                "AS"
+            ]
+        },
+        {
+            "input": " These observations suggest a role for FH and / or FH receptors in the pathogenesis of idiopathic HUS . .",
+            "output": [
+                "HUS"
+            ]
+        },
+        {
+            "input": " The C6 / C7 marker haplotypes associated with most C7 defects are tabulated . .",
+            "output": [
+                "C7 defects"
+            ]
+        },
+        {
+            "input": " Aggregation of mutant Smad4 ES cells with wild - type tetraploid morulae rescues the gastrulation defect .",
+            "output": [
+                "gastrulation defect"
+            ]
+        },
+        {
+            "input": " These results indicate that Smad4 is initially required for the differentiation of the visceral endoderm and that the gastrulation defect in the epiblast is secondary and non - cell autonomous .",
+            "output": [
+                "gastrulation defect"
+            ]
+        },
+        {
+            "input": " We report here the complete genomic organization of the human CLD gene which spans approximately 39kb , and comprises 21 exons .",
+            "output": [
+                "CLD"
+            ]
+        },
+        {
+            "input": " The genomic structure was determined using DNA from several sources including multiple large - insert libaries and genomic DNA from Finnish CLD patients and controls .",
+            "output": [
+                "CLD"
+            ]
+        },
+        {
+            "input": " The tumour suppressor gene PTEN , which maps to 10q23 .",
+            "output": [
+                "tumour"
+            ]
+        },
+        {
+            "input": " The common mutation at codon 95 in exon 4 might be responsible for most Japanese C9 deficiency . .",
+            "output": [
+                "C9 deficiency"
+            ]
+        },
+        {
+            "input": " A Japanese family with adrenoleukodystrophy with a codon 291 deletion : a clinical , biochemical , pathological , and genetic report .",
+            "output": [
+                "adrenoleukodystrophy"
+            ]
+        },
+        {
+            "input": " Hereditary Ovarian Cancer Clinical Study Group .",
+            "output": [
+                "Hereditary Ovarian Cancer"
+            ]
+        },
+        {
+            "input": " In specific C5 titrations , however , it was noted that when limited amounts of C5 were assayed in the presence of low dilutions of either C5D serum , curving rather than linear dose - response plots were consistently obtained , suggesting some inhibitory effect .",
+            "output": [
+                "C5D"
+            ]
+        },
+        {
+            "input": " Further studies suggested that low dilutions of C5D serum contain a factor ( or factors ) interfering at some step in the hemolytic assay of C5 , rather than a true C5 inhibitor or inactivator .",
+            "output": [
+                "C5D"
+            ]
+        },
+        {
+            "input": " In addition , we found seven individuals with hypohaptoglobinemia in three families , and the genotypes of six of the seven individuals were found to be Hp2 / Hpdel .",
+            "output": [
+                "hypohaptoglobinemia"
+            ]
+        },
+        {
+            "input": " However , the mechanism of hypohaptoglobinemia remains unknown",
+            "output": [
+                "hypohaptoglobinemia"
+            ]
+        },
+        {
+            "input": " Identification of a novel mutation of the CPO gene in a Japanese hereditary coproporphyria family .",
+            "output": [
+                "hereditary coproporphyria"
+            ]
+        },
+        {
+            "input": " The phenotypes and genotypes in one of these three families showed the father to be hypohaptoglobinemic ( Hp2 ) and Hp2 / Hpdel , the mother to be Hp2 - 1 and Hp1 / Hp2 , one of the two children to be hypohaptoglobinemic ( Hp2 ) and Hp2 / Hpdel , and the other child to be Hp1 and Hp1 / Hpdel , showing an anomalous inheritance of Hp phenotypes in the child with Hp1 .",
+            "output": [
+                "hypohaptoglobinemic"
+            ]
+        },
+        {
+            "input": " The cyclin - dependent kinase inhibitor , p27 , accumulates upon serum withdrawal , only in the presence of VHL , as a result of the stabilization of the protein .",
+            "output": [
+                "VHL"
+            ]
+        },
+        {
+            "input": " Although both domains of the VHL protein contribute to regulation of CA12 expression , the elongin binding domain alone could effectively regulate CA9 expression .",
+            "output": [
+                "VHL"
+            ]
+        },
+        {
+            "input": " The haptoglobin - gene deletion responsible for anhaptoglobinemia .",
+            "output": [
+                "anhaptoglobinemia"
+            ]
+        },
+        {
+            "input": " We have found an allelic deletion of the haptoglobin ( Hp ) gene from an individual with anhaptoglobinemia .",
+            "output": [
+                "anhaptoglobinemia"
+            ]
+        },
+        {
+            "input": " Southern blot and PCR analyses have indicated that the individual with anhaptoglobinemia was homozygous for the gene deletion and that the gene deletion was included at least from the promoter region of Hp to Hpr alpha but not to Hpr beta ( Hpdel ) .",
+            "output": [
+                "anhaptoglobinemia"
+            ]
+        },
+        {
+            "input": " On the basis of the present study , the mechanism of anhaptoglobinemia and the mechanism of anomalous inheritance of Hp phenotypes were well explained .",
+            "output": [
+                "anhaptoglobinemia"
+            ]
+        },
+        {
+            "input": " Comparisons with allele frequencies based on prevalence estimates of HH showed some disagreements with the RFLP data , particularly in Finns .",
+            "output": [
+                "HH"
+            ]
+        },
+        {
+            "input": " The newly described HFE marker provides a new approach to the screening of HH as well as studies of the relationship between the HFE Tyr allele and different disorders including cancer",
+            "output": [
+                "HH"
+            ]
+        },
+        {
+            "input": " While a few cases of isolated ACTH deficiency have been reported ( OMIM 201400 ) , an inherited POMC defect has not been described so far .",
+            "output": [
+                "ACTH deficiency"
+            ]
+        },
+        {
+            "input": " Genotype - phenotype correlations in attenuated adenomatous polyposis coli .",
+            "output": [
+                "adenomatous polyposis coli"
+            ]
+        },
+        {
+            "input": " Genetic mapping of the copper toxicosis locus in Bedlington terriers to dog chromosome 10 , in a region syntenic to human chromosome region 2p13 - p16 .",
+            "output": [
+                "copper toxicosis"
+            ]
+        },
+        {
+            "input": " In SCA3 , gaze - evoked nystagmus was often present as was saccade hypometria and smooth pursuit gain was markedly decreased .",
+            "output": [
+                "SCA3"
+            ]
+        },
+        {
+            "input": " The seven exons , the exon / intron boundaries and part of 3 noncoding sequence of the CPO gene were systematically analyzed by an exon - by - exon denaturing gradient gel electrophoresis ( DGGE ) strategy followed by direct sequencing in seven unrelated heterozygous HC patients from France , Holland , and Czech Republic .",
+            "output": [
+                "HC"
+            ]
+        },
+        {
+            "input": " We performed a blind chromosomal analysis on G2 - phase lymphocytes from 7 unrelated A - T patients , 13 obligate A - T heterozygotes ( parents of the patients ) , and 14 normal controls following X - irradiation with 1 Gy in order to evaluate this cytogenetic method as a tool for detection of ATM carriers .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " Both A - T homozygotes and heterozygotes showed significantly increased levels of radiation - induced chromatid damage relative to that of normal controls .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " These results show that the G2 - phase chromosomal radiosensitivity assay can be used for the detection of A - T heterozygotes .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " These assays should facilitate screening for A - T heterozygotes in the populations studied . .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " We also show that 25 % of all A - T patients carried in - frame deletions or missense mutations , many of which were also associated with expression of mutant ATM protein .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " The ATM ( A - T , mutated ) gene on human chromosome 11q22 .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " In order to define the types of disease - causing ATM mutations in Japanese A - T patients as well as to look for possible mutational hotspots , reverse - transcribed RNA derived from ten patients belonging to eight unrelated Japanese A - T families was analyzed for mutations by the restriction endonuclease fingerprinting method .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " In our study , we have determined the ATM mutation spectrum in 19 classical A - T patients , including some immigrant populations , as well as 12 of Dutch ethnic origin .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " The most frequently found mutation , identified in three unrelated Turkish A - T individuals , was previously described to be a Turkish A - T founder mutation .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " All patients manifested classical A - T and increased cellular radioresistant DNA synthesis .",
+            "output": [
+                "A - T"
+            ]
+        },
+        {
+            "input": " To characterize the mutational spectrum in various ethnic groups , mutations in the GALNS gene in Colombian MPS IVA patients were investigated , and genetic backgrounds were extensively analyzed to identify racial origin , based on mitochondrial DNA ( mtDNA ) lineages .",
+            "output": [
+                "MPS IVA"
+            ]
+        },
+        {
+            "input": " Three novel missense mutations never identified previously in other populations and found in 16 out of 19 Colombian MPS IVA unrelated alleles account for 84 .",
+            "output": [
+                "MPS IVA"
+            ]
+        },
+        {
+            "input": " Previous studies of patients from a British - Irish population showed that the I113F mutation is the most common single mutation among MPS IVA patients and produces a severe clinical phenotype .",
+            "output": [
+                "MPS IVA"
+            ]
+        },
+        {
+            "input": " We studied mutations in the GALNS gene from 23 additional MPS IVA patients ( 15 from Australia , 8 from Northern Ireland ) , with various clinical phenotypes ( severe , 16 cases ; intermediate , 4 cases ; mild , 3 cases ) .",
+            "output": [
+                "MPS IVA"
+            ]
+        },
+        {
+            "input": " These data provide further evidence for extensive allelic heterogeneity in MPS IVA in British - Irish patients and provide evidence for their transmission to Australia by British - Irish migrants . .",
+            "output": [
+                "MPS IVA"
+            ]
+        },
+        {
+            "input": " Molecular defects leading to human complement component C6 deficiency in an African - American family .",
+            "output": [
+                "C6 deficiency"
+            ]
+        },
+        {
+            "input": " The molecular basis of C6 deficiency in the western Cape , South Africa .",
+            "output": [
+                "C6 deficiency"
+            ]
+        },
+        {
+            "input": " Based on its chromosomal position , this gene is a candidate for conferring susceptibility to diabetes .",
+            "output": [
+                "diabetes"
+            ]
+        },
+        {
+            "input": " Patients were selected because they were heterozygous or homozygous for C2 deficiency .",
+            "output": [
+                "C2 deficiency"
+            ]
+        },
+        {
+            "input": " 12 families with 15 matings informative for C2 deficiency were found .",
+            "output": [
+                "C2 deficiency"
+            ]
+        },
+        {
+            "input": " Of 57 informative meioses , two crossovers were noted between the C2 deficiency gene and the HLA - B gene , with a recombinant fraction of 0 .",
+            "output": [
+                "C2 deficiency"
+            ]
+        }
+    ]
+}

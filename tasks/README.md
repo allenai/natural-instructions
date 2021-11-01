@@ -67,6 +67,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task060_ropes_question_generation`	| Constructing questions regarding relations in the given paragraph.	| Question Generation
 `task061_ropes_answer_generation`	| Answering questions regarding relations in the given paragraph.	| Answer Generation
 `task062_bigbench_repeat_copy_logic`	|  Generating text that follows simple logical operations such as "repeat", "before", "after" etc.	| Logic
+`task063_first_i_elements` | Given a list return the first i elements of the list | Answer Generation
+`task064_all_elements_except_first_i` | Given a list return all the elements of the list except the first i elements | Answer Generation
 `task065_timetravel_consistent_sentence_classification`	| Choosing the option that makes a given short story consistent. | Classification
 `task066_timetravel_binary_consistency_classification`	| Identifying if the given sentence is consistent with the given story. | Classification
 `task067_abductivenli_answer_generation`	|  Generating text that completes a story based on the beginning and ending.	| Answer Generation
@@ -80,6 +82,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task075_squad1.1_answer_generation`	| Generate answers to SQuAD 1.1 questions.	| Answer Generation -> Contextual Question Answering	| Wikipedia	| English	| English
 `task076_splash_correcting_sql_mistake` | Correct the mistake in a given SQL statement based on feedback. | Structured Query Generation, Text Modification
 `task077_splash_explanation_to_sql` | Generate a SQL statement based on a description of what the SQL statement does. | Structured Query Generation
+`task078_all_elements_except_last_i` | Given a list return all the elements of the list except the last i elements | Answer Generation
 `task079_conala_concat_strings` | Given a list of strings, concatenate them to form one string. | Answer Generation
 `task080_piqa_answer_generation`	|  Generate a solution to a goal regarding physical knowledge about the world.	| Answer Generation
 `task081_piqa_wrong_answer_generation`	|  Generate an incorrect solution to a goal regarding physical knowledge about the world.	| Incorrect Answer Generation
@@ -92,6 +95,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task088_identify_typo_verification`	|  Identify the typo in a sentence.	| Verification
 `task089_swap_words_verification`	|  Identify the swapped words in a sentence.	| Verification
 `task090_equation_learner_algebra`	|  Answer the given equation.	| Algebra
+`task091_all_elements_from_index_i_to_j` | Given a list return all the elements starting from ith element and ending at jth element | Answer Generation
 `task092_check_prime_classification`	|  Identify whether the number is prime or not.	| Mathematics
 `task093_conala_normalize_lists` | Given a list of numbers, normalize the list such that the result adds to 1. | Answer Generation, Arithmetic
 `task094_conala_calculate_mean` | Given a list of numbers, calculate the mean of the list. | Answer Generation, Arithmetic
@@ -99,6 +103,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task096_conala_list_index_subtraction` | Given a list of numbers, subtract each element by its index in the list. | Answer Generation, Arithmetic
 `task097_conala_remove_duplicates` | Given a list of numbers, remove all of the duplicates in the list. | Text Modification, Arithmetic
 `task098_conala_list_intersection` | Given a two lists of numbers, find the intersection of the two lists. | Answer Generation, Arithmetic
+`task099_reverse_elements_between_index_i_and_j` | Given a list return all the elements starting from ith element and ending at jth element in reverse order | Answer Generation
+`task100_concatenate_all_elements_from_index_i_to_j` | Given a list concatenate all the elements starting from ith element and ending at jth element | Answer Generation
+`task101_reverse_and_concatenate_all_elements_from_index_i_to_j` | Given a list reverse and then concatenate all the elements starting from ith element and ending at jth element | Answer Generation
 `task102_commongen_sentence_generation` | Given a collection of concepts, use them in a coherent sentence. | Sentence Generation
 `task103_facts2story_long_text_generation` | Given 5 facts, write a story that incorporates them. | Long Text Generation
 `task104_semeval_2019_task10_closed_vocabulary_mathematical_answer_generation`	|  Answering multiple choices mathematical problem described with a closed-vocabulary.	| Answer Generation, Arithmetic
@@ -266,6 +273,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task264_paper_reviews_accept_or_reject_classification` | Given a set of reviews, classify paper into accept or reject | Classification
 `task265_paper_reviews_language_identification` | Given a paper review, identify it is in the english or spanish language | Language Identification
 `task266_paper_reviews_reviewer_perspective_classification` | Given a paper review, classify into five evaluation metric | Classification
+`task267_concatenate_and_reverse_all_elements_from_index_i_to_j` | Given a list concatenate and then mirror/reverse all the elements starting from ith element and ending at jth element | Answer Generation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
 `task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
 `task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
@@ -486,6 +494,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task485_cls_japanese_books_classification` | Classify a given book product review in Japanese to positive or negative sentiment | Classification
 `task486_cls_japanese_dvd_classification` | Classify a given dvd product review in Japanese to positive or negative sentiment | Classification
 `task487_cls_japanese_music_classification` | Classify a given music product review in Japanese to positive or negative sentiment | Classification
+`task488_extract_all_alphabetical_elements_from_list_in_order` | Given a list return all the alphabetical elements from the list in same order as they appear in the list | Answer Generation
 `task489_mwsc_question_generation` | Generating questions based on the given sentence | Question Generation  
 `task490_mwsc_options_generation` | Generating options to mwsc questions | Options Generation
 `task491_mwsc_answer_generation` | Generating answers to mwsc questions | Answer Generation  
@@ -494,12 +503,19 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task494_review_polarity_answer_generation` | Given pair of amazon review and polarity, generate True or False when a review matches polarity | Answer Generation
 `task495_semeval_headline_classification` | Classify edited news headlines into funny and not funny | Classification
 `task496_semeval_answer_generation` | Generate answer yes or no based on given edited sentence and label | Answer Generation
+`task497_extract_all_numbers_from_list_in_order` | Given a list return all the numbers from the list in same order as they appear in the list | Answer Generation
 `task498_scruples_anecdotes_whoiswrong_classification` | Given a real-life anecdote of a complex ethical situation, identify who is ethically wrong here | Classification
+`task499_extract_and_add_all_numbers_from_list` | Given a list extract all the numbers from the list and return their sum/addition | Answer Generation
 `task500_scruples_anecdotes_title_generation` | Given a real-life anecdote of a complex ethical situation, generate a title that describes the main event/root cause of the situation | Title Generation
 `task501_scruples_anecdotes_post_type_verification` | Given a real-life anecdote of a complex ethical situation, verify if the claim about the type of the post is true or not | Verification
 `task502_scruples_anecdotes_whoiswrong_verification` | Given a real-life anecdote of a complex ethical situation, verify who is wrong in the situation | Verification
 `task503_scruples_anecdotes_isanswerable` | Given a real-life anecdote of a complex ethical situation, can it be clearly answered, who is ethically wrong here ? | Binary Classification
+`task504_count_all_alphabetical_elements_in_list` | Given a list return the count of all the alphabetical elements from the list | Answer Generation
+`task505_count_all_numerical_elements_in_list` | Given a list return the count of all the numerical elements from the list | Answer Generation
+`task506_position_of_all_alphabetical_elements_in_list` | Given a list return the position of all the alphabetical elements from the list | Answer Generation
+`task507_position_of_all_numerical_elements_in_list` | Given a list return the position of all the numerical elements from the list | Answer Generation
 `task508_scruples_dilemmas_more_ethical_isidentifiable` | Given a pair of action statements, can you conclusively identify which statement is less ethical or not ? | Verification
+`task509_collate_of_all_alphabetical_and_numerical_elements_in_list_separately` | Given a list collate all the alphabetical elements at the start of the list followed by all the numerical elements of the list | Answer Generation
 `task510_reddit_tifu_title_summarization` | Given the text of a social media post, generate a title summarizing the post | Summarization 
 `task511_reddit_tifu_long_text_summarization` | Given the text of a social media post, generate a short summary the post | Summarization 
 `task512_twitter_emotion_classification` | Given a Twitter post, classify the post's emotion to six classes (sadness, joy, love, anger, fear, surprise) | Classification
@@ -513,6 +529,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task520_aquamuse_answer_given_in_passage` | Given a passage and a question determine if the question can be answered by the passage | Classification
 `task521_trivia_question_classification` | Given a text from a trivia quiz, decide the category the question belongs to | Classification
 `task522_news_editorial_summary` Given an article text, select spans of text that show a summary of the thesis of the article. | Summarization
+`task523_find_if_numbers_or_alphabets_are_more_in_list` | Given a list find if the count of alphabets is more, less, or same as that of numbers in the list | Answer Generation
 `task524_parsinlu_food_aspect_classification` | Given a food review and a question about the reviewer's sentiment toward one aspect of the food, classify the sentiment. | Classification
 `task525_parsinlu_movie_aspect_classification` | Given a movie review and a question about the reviewer's sentiment toward one aspect of the movie, classify the sentiment. | Classification
 `task526_parsinlu_movie_overal_classification` | Given a movie review, classify the overal sentiment of the reviewer toward the movie. | Classification
@@ -589,10 +606,13 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task597_cuad_answer_generation` | Generating answers to CUAD questions | Answer Generation
 `task598_cuad_answer_generation` | Generating starting index of the answers to CUAD questions | Answer Generation
 `task599_cuad_question_generation` | Generating questions based on CUAD | Question Generation
+`task600_find_the_longest_common_substring_in_two_strings` | Given two strings return the longest common substring in those two strings | Answer Generation
 `task601_flores_translation_sntoen` | Translating the text from sinhali to english | Translation
 `task602_wikitext-103_answer_generation` | Generate title for the given passage| Answer Generation
 `task603_wikitext-103_fill_in_the_blank` | Filling the blanks in the given passage text | Question Answering -> Fill in the Blank
 `task604_flores_translation_entosn` | Translating the text from english to sinhali | Translation
+`task605_find_the_longest_common_subsequence_in_two_lists` | Given two lists return the longest common subsequence in those two lists | Answer Generation
+`task606_sum_of_all_numbers_in_list_between_positions_i_and_j` | Given a list extract and then return sum of all the numbers between two positions i and j | Answer Generation
 `task607_sbic_intentional_offense_binary_classification` | Determine whether the post is intentionally offensive or not | Binary Classification
 `task608_sbic_sexual_offense_binary_classification` | Determine whether the post is sexually offensive/explicit or not | Binary Classification
 `task609_sbic_potentially_offense_binary_classification` | Determine whether the post is potentially offensive or not | Binary Classification
@@ -608,6 +628,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task619_ohsumed_abstract_title_generation` | Generating title to Ohsumed dataset abstracts | Title Generation
 `task620_ohsumed_medical_subject_headings_answer_generation` | Generating MESH terms to Ohsumed dataset abstracts | Medical subject heading(MESH) term Generation
 `task621_ohsumed_yes_no_numerical_answer_generation` | Generating Yes/No answer to Ohsumed dataset questions | Answer Generation
+`task622_replace_alphabets_in_a_list_by_their_position_in_english_alphabet` | Given a list replace all the alphabets in it with their position in the English Alphabet | Answer Generation
 `task623_ohsumed_yes_no_answer_generation` | Generating Yes/No answers to Ohsumed dataset questions | Answer Generation
 `task624_ohsumed_question_answering` | Given a abstract and question, select the best answer from the given choices. | Answer Generation
 `task625_xlwic_true_or_false_answer_generation` | Determine whether both the sentences use the aforementioned word with the same meaning | Answer Generation
@@ -621,6 +642,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task633_dbpedia_14_answer_generation` | Generating answer to question ((dbpedia_14 dataset)) | Answer Generation
 `task634_allegro_reviews_classification` | Classify the given product review to specified categories | Classification
 `task635_allegro_reviews_answer_generation` | Generating "yes" or "no" to question whether the review is a positive review | Answer Generation
+`task636_extract_and_sort_unique_alphabets_in_a_list` | Given a list extract all the unique alphabets from it and sort them alphabetically | Answer Generation
+`task637_extract_and_sort_unique_digits_in_a_list` | Given a list extract all the unique digits used in the number in it and sort them in ascending order | Answer Generation
 `task638_multi_woz_classification` | Classifying dialouge into User and System | Classification
 `task639_multi_woz_user_utterance_generation`| Generate a User utterance when System's reply is given | User Utterance Generation
 `task640_esnli_classification` | Given a premise and hypothesis, determine if the hypothesis entails, contradicts, or is neutral to the premise. | Classification
@@ -739,6 +762,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task752_svamp_multiplication_question_answering`|    Given a mathematical question involving multiplication, find the most suitable numerical answer | Answer Generation
 `task753_svamp_addition_question_answering` |   Given a mathematical question involving addition , find the most suitable numerical answer | Answer Generation
 `task754_svamp_common-division_question_answering` |   Given a mathematical question involving division, find the most suitable numerical answer | Answer Generation
+`task755_find_longest_substring_and_replace_its_sorted_lowercase_version_in_both_lists` | Given two strings find the longest common substring in the strings, then convert it to all lowercase, and sort it alphabetically, and finally place it back at the same position in the two lists | Answer Generation
+`task756_find_longert_substring_and_return_all_unique_alphabets_in_it` | Given two strings find the longer of the two, then lowercase it and return all unique alphabets in it | Answer Generation
 `task757_msr_sqa_question_generation` | Given a table from msr_sqa dataset, generate a question based on the information presented | Question generation
 `task758_msr_sqa_question_answer_generation` | Given a table from msr_sqa dataset and a question based on that table, generate a correct answer based on the table | Answer generation
 `task759_msr_sqa_incorrect_answer_generation` | Given a table from msr_sqa dataset and a question based on that table, generate an incorrect correct answer based on the table | Incorrect Answer Generation
@@ -869,6 +894,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task891_gap_coreference_resolution` | Finding names for given pronouns | Coreference Resolution
 `task892_gap_reverse_coreference_resolution` | Finding pronouns for given names | Reverse Coreference Resolution
 `task893_gap_fill_the_blank_coreference_resolution` | Fill the blanks with corresponding pronouns | Coreference Resolution
+`task896_miam_language_classification` | Classify the language for Dialogue utterances | Classification
+`task897_freebase_qa_topic_question_generation` | Generate question for the given topic | Question Generation 
+`task898_freebase_qa_answer_generation` | Answering questions based on an open ended topic | Answer Generation
+`task899_freebase_qa_topic_generation` | Generate the specific topic for a given question | Topic Generation
+`task900_freebase_qa_category_classification` | Classify the general category for questions | Classification
+`task901_freebase_qa_category_question_generation` | Generate trivia type questions based on a broad category | Question Generation
 `task902_deceptive_opinion_spam_classification` | Identity polarity of hotel reviews | Classification  
 `task903_deceptive_opinion_spam_classification` | Given hotel reviews and it's polarity, determine whether it's true or false | Classification
 `task904_hate_speech_offensive_classification` | Classify tweets into hate speech, offensive or neither | Classification  
@@ -882,12 +913,21 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task912_bianet_classification` | Classifying a given sentence into English or Kurdish | Classification
 `task913_bianet_translation` | Generating a translation of an English sentence into Turkish | Translation
 `task914_bianet_translation` | Generating a translation of a Kurdish sentence into Turkish| Translation
-'task917_coqa_question_generation'| Given a passage, generate a question | Question Generation
-'task918_coqa_answer_generation' | Given a passage and a question, generate an answer for that question | Answer Generation
-'task919_coqa_incorrect_answer_generation' | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
-'task921_code_x_glue_information_retreival' | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+`task917_coqa_question_generation`| Given a passage, generate a question | Question Generation
+`task918_coqa_answer_generation` | Given a passage and a question, generate an answer for that question | Answer Generation
+`task919_coqa_incorrect_answer_generation` | Given a passage and a question, generate an incorrect answer which is irrelevant for that question and passage | Incorrect Answer Generation
+`task921_code_x_glue_information_retreival` | Given a code, calculate the number of "for loops" in the cpp program | Information Retreival
+`task922_event2mind_word_generation` | Generating emotion words from Event2Mind based on PersonX | Word Generation
+`task923_event2mind_classifier` | Classifying results based on sentiment values from Event2Mind | Classifier
+`task924_event2mind_word_generation` | Generating emotion words from Event2Mind based on Other Person | Word Generation
+`task925_coached_conv_pref_classifier` | Classifying results to find next speaker from coached_conv_pref | Classifier
+`task926_coached_conv_pref_word_generation` | Generating movie names from PersonX name from coached_conv_pref | Word/Phrase Generation
 `task927_yelp_negative_to_positive_style_transfer` | Given a negative review change it to a postive review | Sentence Generation
 `task928_yelp_positive_to_negative_style_transfer` | Given a postive review change it to a negative review | Sentence Generation
+`task929_products_reviews_classification` | Classifying generated_reviews_enth whether the review is Good Review or Bad Review | Classification
+`task930_dailydialog_classification` | Classifying Data of DailyDialog whether the topic of conversation is Tourism or Not in the dialogue | Classification
+`task931_dailydialog_classification` | Classifying Data of DailyDialog whether happy or sad emotion in the dialogue | Classification
+`task932_dailydialog_classification` | Classifying Data of DailyDialog whether there is question in the dialogue or not | Classification
 `task933_wiki_auto_style_transfer` | Rewrite wikipedia sentences in simple English. | Style Transfer 
 `task934_turk_simplification` | Given a sentence your task is to generate possible numbers of simplified sentences. | Text Generation
 `task935_defeasible_nli_atomic_classification` | Given a premise, hypothesis and an update, indentify whether the update strengthens or weakens the hypothesis. | Classification
@@ -911,6 +951,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task953_wiki_cloze_ta_multiple_choice_question_answering` | Given a cloze question in tamil, identify the missing word| Multiple Choice Question Answering|
 `task954_wiki_cloze_te_multiple_choice_question_answering` | Given a cloze question in telugu, identify the missing word| Multiple Choice Question Answering|
 `task955_wiki_auto_style_transfer` | Elaborate wikipedia sentences. | Style Transfer 
+`task956_leetcode_420_strong_password_check` | Check if the given password is strong | Answer Generation 
 `task957_e2e_nlg_text_generation_generate` | Generate a restaurant description from a data table. | Tabular Text Operation
 `task958_e2e_nlg_text_generation_parse` | Parse a restaurant description into a data table. | Tabular Text Operation
 `task959_e2e_nlg_text_generation_identify` | Identify the named entity that is the subject of the excerpt. | Named Entity Recognition
@@ -922,6 +963,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task965_librispeech_asr_missing_word_prediction` | Generating a missing word on English Sentences | Sentence Generation
 `task966_ruletaker_fact_checking_based_on_given_context` | Fact checking based on given context | Fact checking based on context
 `task967_ruletaker_incorrect_fact_generation_based_on_given_paragraph` | Generate incorrect fact based on given paragraph | Incorrect Fact Generation
+`task968_xcopa_commonsense_reasoning_et` | Given a premise and two alternative in Estonian,  select the alternative that more plausibly has a causal relation with the premise | Causal Reasoning
+`task969_xcopa_commonsense_cause_effect_et` | Given a pair of sentences in Estonian, judge whether the second sentence is the cause or effect of the first on. | Causal Reasoning
 `task970_sherliic_causal_relationship` | Determine if A and B share a casual relationship |Classification
 `task974_prachathai67k_sentiment_classification` | Classify the sentiment of a given article on the given genre |Classification
 `task975_prachathai67k_same_genre_classification` | Determine if the two articles given share the same sentiment fot the given genre |Classification
@@ -1109,6 +1152,30 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1157_bard_analogical_reasoning_rooms_for_containers` | Given an analogy that relates objects to the associated rooms, give the appropriate room for the given object | Answer Generation
 `task1158_bard_analogical_reasoning_manipulating_items` | Given an analogy that on manipulating items in a kitchen, give with the appropriate word | Answer Generation
 `task1159_bard_analogical_reasoning_containers` | Given an analogy that relates items to the associated containers, give the appropriate container for the given item | Answer Generation
+`task1161_coda19_title_generation` | Given a paragraph from a research paper, your task is to generate the title of the paper | Title Generation
+`task1162_coda19_title_classification` | Given a paragraph from the research paper and the title, your task is to classify whether title belong to paper. | Classification
+`task1163_coda19_section_classification` | Given a sentence from a research paper, your task is to classify among the section the sentence belongs. | Classification
+`task1164_coda19_section_correction_classification` | Given a sentence from a research paper and the section, your task is to classify whether the sentence belongs to that sentence. | Classification
+`task1167_penn_treebank_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_brown_coarse_pos_tagging` | Given a sentence, a word in that sentence and the position of that word in the sentence, find the parts-of-speech tag of the word | Classification
+`task1168_xcopa_commonsense_reasoning_ht` | Given a premise and two alternative in Haitian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1169_xcopa_commonsense_cause_effect_ht` | Given a pair of sentences in Haitian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1170_xcopa_commonsense_reasoning_id` | Given a premise and two alternative in Indonesian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1171_xcopa_commonsense_cause_effect_id` | Given a pair of sentences in Indonesian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1172_xcopa_commonsense_reasoning_it` | Given a premise and two alternative in Italian,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1173_xcopa_commonsense_cause_effect_it` | Given a pair of sentences in Italian, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1174_xcopa_commonsense_reasoning_sw` | Given a premise and two alternative in Swahili,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1175_xcopa_commonsense_cause_effect_sw` | Given a pair of sentences in Swahili, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1176_xcopa_commonsense_reasoning_ta` | Given a premise and two alternative in Tamil,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1177_xcopa_commonsense_cause_effect_ta` | Given a pair of sentences in Tamil, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1178_xcopa_commonsense_reasoning_th` | Given a premise and two alternative in Thai,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1179_xcopa_commonsense_cause_effect_th` | Given a pair of sentences in Thai, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1180_xcopa_commonsense_reasoning_tr` | Given a premise and two alternative in Turkish,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1181_xcopa_commonsense_cause_effect_tr` | Given a pair of sentences in Turkish, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1182_xcopa_commonsense_reasoning_vi` | Given a premise and two alternative in Vietnamese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1183_xcopa_commonsense_cause_effect_vi` | Given a pair of sentences in Vietnamese, judge whether the second sentence is the cause or effect of the first on. | Classification
+`task1184_xcopa_commonsense_reasoning_zh` | Given a premise and two alternative in Chinese,  select the alternative that more plausibly has a causal relation with the premise | Answer Generation 
+`task1185_xcopa_commonsense_cause_effect_zh` | Given a pair of sentences in Chinese, judge whether the second sentence is the cause or effect of the first on. | Classification
 `task1186_nne_hrngo_classification` | Evaluate naturalness of system generated reference. | Classification 
 `task1187_politifact_classification` | Given a statement and subject of discussion, your task is to classify whether it's a correct subject or not. | Classification
 `task1188_count_max_freq_char` | Given a string with duplicate characters, find the character which is ocurring with the maximum frequency  | Answer Generation
@@ -1206,6 +1273,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1280_ted_translation_pt_it` | Translate a sentence in Portugese to Italian. | Translation
 `task1281_ted_translation_pt_pl` | Translate a sentence in Portugese to Polish. | Translation
 `task1282_ted_translation_pt_fa` | Translate a sentence in Portugese to Farsi. | Translation
+`task1283_hrngo_quality_classification` | Evaluate quality of system generated reference. | Classification
+`task1284_hrngo_informativeness_classification` | Evaluate informativeness of system generated reference. | Classification
 `task1285_kpa_keypoint_matching_assisted_suicide_topic` | Given an argument and a keypoint under the topic "Assisted suicide should be a criminal offence", answer if the keypoint summarizes the argument | Classification
 `task1286_kpa_keypoint_matching_homeschooling_topic` | Given an argument and a keypoint under the topic "Homeschooling should be banned", answer if the keypoint summarizes the argument | Classification
 `task1287_kpa_keypoint_matching_marriage_topic` | Given an argument and a keypoint under the topic "We should abandon marriage", answer if the keypoint summarizes the argument | Classification
@@ -1244,6 +1313,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1320_country_domain_tld` | Given a country name, return the Top Level Domain (TLD) of the given country | Answer Generation
 `task1321_country_continent` | Given a country name, return the continent name of the given country | Answer Generation
 `task1322_country_government_type` | Given a country name, return the government type of the given country | Answer Generation
+`task1323_open_subtitles_hi_en_translation` | Translating Hindi to English (based on Open Subtitles) | Language Translation  
+`task1324_open_subtitles_te_en_translation` | Translating Telugu to English (based on Open Subtitles) | Language Translation
+`task1325_qa_zre_question_generation_on_subject_relation` | Generating questions by including a specific subject and certain relation to Context (based on qa_zre dataset) | Question Generation  
+`task1326_qa_zre_question_generation_from_answer` | Generating questions from answers (based on qa_zre dataset)| Question Generation
+`task1327_qa_zre_answer_generation_from_question` | Generating answers from questions (based on qa_zre dataset) | Answer Generation  
+`task1328_qa_zre_relation_generation_from_question` | Classify relation between question and context (based on qa_zre dataset) | Classificationrelation 
+`task1329_open_subtitles_en_hi_translation` | Translating English to Hindi (based on Open Subtitles) | Language Translation  
+`task1330_open_subtitles_en_te_translation` | Translating English to Telugu (based on Open Subtitles) | Language Translation
 `task1331_reverse_array` | Given a list of integers, reverse the order of the items in the list  | Answer Generation
 `task1332_check_leap_year` | Given a year, check if it is a leap year or not | Classification
 `task1333_check_validity_date_ddmmyyyy` | Given a date in dd/mm/yyyy format, check if it is a valid date or not | Classification
@@ -1317,6 +1394,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1427_country_region_in_world` | Given a country name, return the located region in the world map of the given country | Answer Generation
 `task1428_country_surface_area` | Given a country name, return the surface area in square-kilometer of the given country | Answer Generation
 `task1429_evalution_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
+`task1431_head_qa_answer_generation` | Answering a multiple-choice question | Answer Generation
+`task1432_head_qa_language_translation_en_to_es` | Translation from English to Spanish | Language Translation 
+`task1433_head_qa_language_translation_es_to_en` | Translation from Spanish to English | Language Translation 
+`task1434_head_qa_classification` | Classifying questions into topics | Classification
+`task1435_ro_sts_parallel_language_translation_ro_to_en` | Translation from Romanian to English | Language Translation 
+`task1436_ro_sts_parallel_language_translation_en_to_ro` | Translation from English to Romanian | Language Translation 
 `task1437_doqa_cooking_question_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, generate a relevant question to the topic of the paragraph | Question Generation -> Contextual Question Generation, Dialogue Understanding
 `task1438_doqa_cooking_answer_generation` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, answer a follow-up question from the paragraph | Question Answering -> Contextual Question Answering -> Extractive, Dialogue Understanding
 `task1439_doqa_cooking_isanswerable` | Given a paragraph about cooking, and a set of conversational question answers about the paragraph, say whether the follow-up question can be answered from the passage| Classification, Dialogue Understanding 
@@ -1327,6 +1410,31 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1444_round_power_of_two` | Given a list of integers round them to the nearest power of two | Answer Generation, Arthimetic
 `task1445_closest_integers` | Given a list of integers return the difference between the two closest integers | Answer Generation, Arthimetic
 `task1446_farthest_integers` | Given a list of integers return the difference between the two farthest integers | Answer Generation, Arthimetic
+`task1447_drug_extraction_ade` | Given a sentence from the ADE dataset, return the list of tokens that mentions names of the drugs or medicines from the ADE Dataset. | Entity Detection
+`task1448_disease_entity_extraction_ncbi_dataset` | Given a sentence from the NCBI dataset, return the list of tokens that mentions names of the diseases or disorders from the NCBI Dataset. | Entity Detection
+`task1449_disease_entity_extraction_bc5cdr_dataset` | Given a sentence from the BC5CDR dataset, return the list of tokens that mentions names of the diseases or disorders from the BC5CDR Dataset. | Entity Detection
+`task1451_drug_dose_extraction` | Given a sentence and a drug from the ADE dataset, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
+`task1452_location_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of locations/places. | Entity Detection
+`task1453_person_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of person names. | Entity Detection
+`task1479_organization_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of companies or organizations. | Entity Detection
+`task1480_gene_extraction_jnlpba_dataset` | Given a sentence from the JNLPBA dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1481_gene_extraction_bc2gm_dataset` | Given a sentence from the BC2GM dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
+`task1482_gene_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of protein. | Entity Detection
+`task1483_chemical_extraction_chemprot_dataset` | Given a sentence from the ChemProt dataset, return the list of tokens that mentions of chemical substances. | Entity Detection
+`task1484_gene_extraction_linnaeus_dataset` | Given a sentence from the Linnaues dataset, return the list of tokens that mentions of genes. | Entity Detection
+`task1485_organ_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
+`task1486_cell_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of cells in the body. | Entity Detection
+`task1487_organism_substance_extraction_anem_dataset` | Given a sentence from the AnEM dataset, return the list of tokens that mentions of organs in the body. | Entity Detection
+`task1488_sarcasmdetection_headline_classification` | Given a news headline in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1489_sarcasmdetection_tweet_classification` | Given a twitter in English, classify whether it is sarcastic or non-sarcastic in nature. | Classification
+`task1490_bengali_personal_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is personal or non-personal in nature. | Classification
+`task1491_bengali_political_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is political or non-political in nature. | Classification
+`task1492_bengali_religious_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is religious or non-religious in nature. | Classification
+`task1493_bengali_geopolitical_hate_speech_binary_classification` | Given a hateful post in Bengali, classify whether it is geopolitical or non-geopolitical in nature. | Classification
+`task1494_bengali_hate_speech_classification` | Given a hateful post in Bengali, classify whether it is political, geopolitical, religious or personal in nature. | Classification
+`task1495_adverse_drug_event_classification` | Given a sentence, classify whether it contains any adverse drug event. | Classification
+`task1496_bengali_reviews_sentiment_classification` | Given a restaurant review in Bengali, classify whether the sentiment is positive or negative. | Classification
+`task1497_bengali_book_reviews_sentiment_classification` | Given a book review in Bengali, classify whether the sentiment is positive or negative. | Classification
 `task1498_24hour_to_12hour_clock` | Given a timestamp in 24-hour format, convert it to 12-hour format | Answer Generation
 `task1499_dstc3_summarization` | Summarization of conversations in DSTC 3 | Summarization
 `task1500_dstc3_classification` | Classification of Price Range in conversations in DSTC 3| Classification
@@ -1337,3 +1445,29 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1514_flores_translation_entone` | Translate from English to Nepali | Translation
+`task1515_imppres_longtextgeneration` | Given a premise, generate hypothesis | Text Generation
+`task1516_imppres_naturallanguageinference` | Classify a given premise and hypothesis pair | Classification
+`task1517_limit_classfication` | Classifying sentence based on the condition that it contains a motion of a physical entity or not.| Classification
+`task1518_limit_answer_generation` | Identifying the entities in a sentence where these entities take part in a physical motion. | Question Answering
+`task1519_qa_srl_question_generation` | Using given sentence and a verb,generating questions which can be answered from the sentence. | Question Generation
+`task1520_qa_srl_answer_generation` | Generating answers to the questions based on the given sentence| Question Answering
+`task1529_scitail1.1_classification` | Determining if there is entailment between Hypothesis and Premise | Classification
+`task1530_scitail1.1_sentence_generation` | Generating a Premise that entails the Hypothesis | Text Generation
+`task1531_daily_dialog_type_classification` | Classify the input sentence into one of the 5 classes : unknown, commissive, question, information, directive| Classification
+`task1532_daily_dialog_emotion_classification` | Classify the conversation sentences of input passage into the following emotions: anger, disgust, fear, happiness, sadness, No emotion | Classification
+`task1533_daily_dialog_formal_classification` | Classify the conversation sentences of input passage into the following outputs: formal and informal | Classification
+`task1534_daily_dialog_question_classification` | Classify if the first sentence of a conversation is a question | Classification
+`task1535_daily_dialog_uniqueness_classification` | Classify if the conversation sentences of the input passage convey more than 2 unique emotions  | Classification
+`task1536_daily_dialog_happiness_classification` | Classify if the conversation sentences of the input passage convey only happiness emotion or not.| Classification
+`task1537_tamil_offenseval_dravidian_classification` | Given a statement in Tamil, classify whether it is offensive or not | Classification
+`task1538_malayalam_offenseval_dravidian_classification` | Given a statement in Malayalam, classify whether it is offensive or not | Classification
+`task1539_kannada_offenseval_dravidian_classification` | Given a statement in Kannada, classify whether it is offensive or not | Classification
+`task1540_parsed_pdfs_summarization` | Given a text, generate a title for it | Summarization
+`task1541_agnews_classification` | Given a short article, classify the article based on its category | Classification
+`task1542_every_ith_element_from_starting` | Given a list return every ith element of the list starting from the 1st element | Answer Generation
+`task1543_conll2002_parts_of_speech_tagging_answer_generation` | Given a question in Dutch language, write the part-of-speech tag for each word in the question | Answer Generation
+`task1544_conll2002_named_entity_recognition_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+`task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
+`task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation

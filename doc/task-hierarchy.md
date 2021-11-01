@@ -53,6 +53,7 @@
   - `Question Answering -> Contextual Question Answering`
     - `Question Answering -> Contextual Question Answering -> Abstractive`
     - `Question Answering -> Contextual Question Answering -> Extractive`
+    - `Question Answering -> Contextual Question Answering -> Missing Knowledge` : When the answer to the question is not present in the passage and reqiures extra knowledge.
   - `Question Answering -> Fill in the Blank`
   - `Question Answering -> Incorrect Answer Generation`
     - `Question Answering -> Incorrect Answer Generation -> Commonsense Question Answer Generation`
@@ -66,8 +67,9 @@
 - `Question Decomposition`
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
-  - `Question Generation -> Fill in the Blank`
-  - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+    - `Question Generation -> Contextual Question Generation -> Open Question Generation`
+    - `Question Generation -> Fill in the Blank`
+    - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
@@ -189,6 +191,11 @@
 * `Logic`
   * `Logic -> Formal logic`
   * `Logic -> Propositional Logic`
+* `Macroeconomics`
+* `Linguistics`
+* `Logic`
+  * `Logic -> Formal logic`
+  * `Logic -> Propositional Logic`
 * `Management`
 * `Marketing`
 * `Mathematics`
@@ -208,10 +215,14 @@
 * `Pop Culture`
 * `Prehistory`
 * `Psychology`
+* `Public Places`
+  * `Public Places -> Restaurants`
 * `Public Relations`
+* `School Science Textbooks`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
+  * `Social Media -> Twitter`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
