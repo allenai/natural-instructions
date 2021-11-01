@@ -1474,7 +1474,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1612_sick_label_classification` | Classification of labels correctly to show relation between two sentences (based on the sick dataset)| Classification
  `task1613_sick_given_category_generate_sentence` | Generate a sentence based  that meets the given criteria  (based on the sick dataset) | Sentence Generation
  `task1614_sick_text_modify` | Derive a sentence from the given sentence (based on the sick dataset) | Text modification
- `task1615_sick_tclassify_B_Relation_A` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
+ `task1615_sick_tclassify_b_relation_a` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
  `task1616_cc_alligned_translate_eng_tel` | Translate from English to Telugu | Translation
  `task1617_cc_alligned_translate_tel_eng` | Translate from Telugu to English | Translation
  `task1618_cc_alligned_classify_tel_eng` | Classify if a sentence is in Telugu or English Language | Language Classification
