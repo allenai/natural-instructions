@@ -1471,3 +1471,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
+`task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
+`task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
+`task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
