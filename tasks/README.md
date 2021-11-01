@@ -1489,3 +1489,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1571_cmrc2018_answer_generation_starting_index` | Generate starting index of the answer span to a given question from the context passage | Answer Generation
 `task1572_samsum_summary` | Generate a summary of given conversations | Summarization
 `task1573_samsum_classification` | Classify whether given two dialogue sentences are sequential or not | Classification
+`task1574_amazon_reviews_multi_language_identification` | Classification of product review language | Classification
+`task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
+`task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
+`task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
