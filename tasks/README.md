@@ -1478,3 +1478,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1637_doqa2.1_cooking_text_summarization` | Generating title from text (based on DoQA 2.1 cooking data) | Text Summarization
+`task1638_doqa2.1_movies_text_summarization` | Generating title from text (based on DoQA 2.1 movie data) | Text Summarization
+`task1639_doqa2.1_travel_text_summarization` | Generating title from text (based on DoQA 2.1 travel data) | Text Summarization
+`task1640_aqa1.0_answerable_unanswerable_question_classification` | Classifying questions (based on AQA 1.0) | Classification
