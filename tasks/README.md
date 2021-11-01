@@ -1382,6 +1382,16 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1404_date_conversion` | Given a date in a particular format, convert it into some other format | Answer Generation
 `task1405_find_median` | Given a list of integers, find the median of the input list | Answer Generation
 `task1406_kth_smallest_element` | Given a list of integers and an integer k, find the kth smallest element in the list | Answer Generation
+`task1407_dart_question_generation` | Generate fill-in-the-blank style questions from RDF triplets of the DART dataset | Question Generation
+`task1408_dart_similarity_classification` | Classify whether two sentences (from DART) are similar or not based on their relationships | Relevance Verification
+`task1409_dart_text_generation` | Generating sentences based on DART RDF relationships | Sentence Generation
+`task1410_dart_relationship_extraction` | Extracting RDF relationships from DART sentences | Relationship Extraction
+`task1411_dart_subject_identification` | Given a sentence (from DART), identify the subject of the sentence | Token Classification
+`task1412_dart_predicate_identification` | Given a sentence (from DART), identify the predicate of the sentence | Token Classification
+`task1413_dart_object_identification` | Given a sentence (from DART), identify the object of the sentence | Token Classificationn
+`task1414_ajgt_twitter_ar_classification` | Classify Arabic tweets (based on `ajgt_twitter_ar`) as having positive or negative sentiment | Sentiment Analysis
+`task1415_youtube_caption_corrections_grammar_correction` | Given a set of closed captions (from `youtube_caption_corrections`), produce a grammatically correct version of those captions | Grammar Error Correction
+`task1416_youtube_caption_corrections_incorrect_grammar_classification` | Given a set of closed captions (from `youtube_caption_corrections`), classify which words are grammatically incorrect | Grammar Error Detection
 `task1418_bless_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1419_mathqa_gain` |  Given a math problem on gain and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
 `task1420_mathqa_general` |  Given a general math problem and options to choose from, find the correct option that answers the problem | Multiple-Choice Question
