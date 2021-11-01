@@ -1471,3 +1471,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
+`task1632_scde_answer_generation` | Generating answers for empty blanks | Answer Generation
+`task1633_scde_answer_generation` | Generating answers for empty blanks | Answer Generation
+`task1634_scde_answer_generation` | Generating answers that does not fit in the empty blanks | Answer Generation
+`task1635_scde_answer_generation` | Generating answers that does not fit in the epmty blanks | Answer Generation
+`task1636_opus_montenegrinsubs_translation` | Translation from Enligh to Montenegrin language | Translation
