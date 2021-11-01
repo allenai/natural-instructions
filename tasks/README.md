@@ -1500,3 +1500,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
+`task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
+`task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
+`task1648_opus_books_en-sv_translation` | Translation from English to Swedish using opus dataset | Translation
+`task1649_opus_books_en-no_translation`	| Translation from English to Norwegian using opus dataset | Translation
+`task1650_opus_books_en-fi_translation` | Translation from English to Finnish using opus dataset | Translation
+`task1651_opus_books_en-es__translation` | Translation from English to Spanish using opus dataset | Translation
+`task1652_opus_books_ca-en_translation` | Translation from Catalan to English using opus dataset | Translation
+`task1653_redial_sentence_generation` | Generating next sentence to redial sentence | Sentence Generation
