@@ -1474,6 +1474,28 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
+`task1552_scitail_question_generation` | Generating questions (based on SciTail) | Question Generation
+`task1553_cnn_dailymail_summarization` | Generating summary to news articles | Summarization
+`task1554_scitail_classification` | Classifying supporting and non supporting statements from SciTail  | Classification
+`task1555_scitail_answer_generation` | Generating answers to SciTail Sentence-Questions | Answer Generation
+`task1556_scitail_passage_generation` | Generating passage based on SciTail Question-Answer | Passage Generation
+`task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
+`task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
+`task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
+`task1564_triviaqa_answer_generation` | Generating answers to questions in TriviaQA dataset | Answer generation
+`task1565_triviaqa_classification` | Finding answer to multiple choice questions in TriviaQA dataset | Answer generation
+`task1566_propara_structured_text_generation` | Generate entities from given text | Structured Text Generation
+`task1567_propara_question_generation` | Generate question from the given passage | Question Generation
+`task1568_propara_classification` | Based on the passage, event, and entity, classify locations | Classification
+`task1569_cmrc2018_question_generation` | Generate question from the given passage | Question Generation
+`task1570_cmrc2018_answer_generation` | Generate the right answer to a given question from the context passage | Answer Generation
+`task1571_cmrc2018_answer_generation_starting_index` | Generate starting index of the answer span to a given question from the context passage | Answer Generation
+`task1572_samsum_summary` | Generate a summary of given conversations | Summarization
+`task1573_samsum_classification` | Classify whether given two dialogue sentences are sequential or not | Classification
+`task1574_amazon_reviews_multi_language_identification` | Classification of product review language | Classification
+`task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
+`task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
+`task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
 `task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
