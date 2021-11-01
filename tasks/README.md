@@ -1476,3 +1476,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1554_scitail_classification` | Classifying supporting and non supporting statements from SciTail  | Classification
 `task1555_scitail_answer_generation` | Generating answers to SciTail Sentence-Questions | Answer Generation
 `task1556_scitail_passage_generation` | Generating passage based on SciTail Question-Answer | Passage Generation
+`task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
+`task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
+`task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
+`task1564_triviaqa_answer_generation` | Generating answers to questions in TriviaQA dataset | Answer generation
+`task1565_triviaqa_classification` | Finding answer to multiple choice questions in TriviaQA dataset | Answer generation
