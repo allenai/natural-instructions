@@ -1471,9 +1471,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
-`task1626_copa_hr_question_answering` | Selecting answer (based on classla/copa_hr) | Answer Selection | croatian | croatian
-`task1627_copa_hr_classification` | Classification (based on classla/copa_hr) | Classification | croatian | croatian
-`task1628_copa_hr_question_answering` | Selecting answer (based on classla/copa_hr) | Answer Selection | Croatian | Croatian
-`task1629_copa_hr_classification` | Classification (based on classla/copa_hr) | Classification | Croatian | Croatian
-`task1630_openPI_classification` | Classification (based on openPI) | Classification | English | English
-`task1631_openPI_answer_generation` | Answer Generation (based on openPI) | Answer Generation | English | English
+`task1626_copa_hr_question_answering` | Given a sentence and 2 labels, select the correct label | Answer Selection | Wikipedia | croatian | croatian
+`task1627_copa_hr_classification` | Given a question and two label, classify the group in which the choice and the statement are related | Classification | Wikipedia | croatian | croatian
+`task1628_copa_hr_question_answering` | Given a sentence and four label, select the correct label. | Answer Selection | Wikipedia | Croatian | Croatian
+`task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification | Wikipedia | Croatian | Croatian
+`task1630_openPI_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification | Wikipedia | English | English
+`task1631_openPI_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation | Wikipedia | English | English
