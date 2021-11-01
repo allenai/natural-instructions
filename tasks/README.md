@@ -1445,6 +1445,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1505_root09_semantic_relation_classification` | Given a pair of words, deduce the type of relationship between them | Classification
 `task1506_celebrity_minimal_dob_span` | Find the date of birth of a celebrity given a sentence bio | Answer Generation
 `task1507_boolean_temporal_reasoning` | Given a statement about date and time values, deduce whether it is true or false | Classification
+`task1508_wordnet_antonyms` | Given an adjective, generate its antonym | Answer Generation
+`task1509_evalution_antonyms` | Given a word generate its antonym | Answer Generation
+`task1510_evalution_relation_extraction` | Given a phrase describing the relationship between two words, extract the words and the lexical relationship between them | Answer Generation
 `task1514_flores_translation_entone` | Translate from English to Nepali | Translation
 `task1515_imppres_longtextgeneration` | Given a premise, generate hypothesis | Text Generation
 `task1516_imppres_naturallanguageinference` | Classify a given premise and hypothesis pair | Classification
@@ -1493,3 +1496,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
 `task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
 `task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
+`task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
+`task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
+`task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
