@@ -1561,3 +1561,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1757_ecb_translation_de_fr` | Translation of ECB news from German to French | Translation
+`task1758_ecb_translation_en_nl` | Translation of ECB news from English to Dutch | Translation
+`task1759_r-u-a-robot_classification` | Classifying R U a robot questions | Classification
+`task1760_r-u-a-robot_structured_text_generation` | Generating questions given R U a robot question | Structured Text Generation
+`task1761_hyperpartisan_news_detection_classification` | Classifying articles based on hyperpartisan | Classification
+`task1762_hyperpartisan_news_detection_long_text_generation` | Generating topics based on hyperpartisan news detection data | Long Text Generation
+`task1763_hyperpartisan_news_detection_classification_2` | Classifying articles based on bias type | Classification
