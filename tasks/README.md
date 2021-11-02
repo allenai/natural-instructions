@@ -1561,3 +1561,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1727_taylor_vs_shakes_classification` | Classify poem between Taylor Swift or Shakespeare| Classification
+`task1728_taylor_vs_shakes_generation` | Generate likely next lines | Answer Generation
+`task1729_taylor_vs_shakes_missclassification` | Find misclassied text| Classification
+`task1730_taylor_vs_shakes_incorrectanswergeneration` | Generate incorrect answer| Incorrect Answer Generation
