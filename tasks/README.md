@@ -1510,3 +1510,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1685_menyo20k_translation` | Language translation from English to Yoruba | Translation  
+`task1686_menyo20k_translation` | Language translation from Yoruba to English| Translation
+`task1687_menyo20k_text_generation` | Text Generation for English language | Text Generation  
+`task1688_menyo20k_text_generation` | Text Generation for Yoruba language | Text Generation  
+`task1689_qed_amara_translation` | Language translation from English to French| Translation  
+`task1690_qed_amara_translation` | Language translation from French to English | Translation  
+`task1691_qed_amara_translation` | Language translation from English to Spanish | Translation  
+`task1692_qed_amara_translation` | Language translation from Spanish to English | Translation  
