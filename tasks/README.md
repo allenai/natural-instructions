@@ -1510,3 +1510,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1679_curation-corpus-base_title_generation` | Generating title to curation-corpus-base summary | Title Generation
+`task1680_curation-corpus-base_title_selection_2options` | Selecting title for curation-corpus-base summary | Title Selection
+`task1681_conv_question_answer_the_question_no_options` | Generating answers to conv_question questions | Answer Generation
+`task1682_conv_question_followup_question_generation` | Generating a follow up question to conv_question questions | Question Generation
+`task1683_conv_question_choose_the_domain` | Choosing one of the two options that best describes the domain of the conv_question questions | Domain Selection
+`task1684_conv_question_choose_the_answer_4options` | Choosing one of the four options that answers the conv_question questions | Answer Selection
