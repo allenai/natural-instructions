@@ -1,0 +1,1247 @@
+ {
+    "Contributors": [
+        "Nisarg Patel"
+    ],
+    "Source": [
+        "Dialog State Tracking Challenge 2 (https://github.com/matthen/dstc)"
+    ],
+    "Categories": [
+        "Classification"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "Given the customer side of conversation, each sentence represented by a number and seperated by '\n', determine what the goal of the customer is.",
+    "Positive Examples": [
+        {
+            "input": "0.an expensive restaurant in the south part of town\n1.doesnt matter\n2.sounds good whats the address\n3.how about the phone number\n4.thank you goodbye\n",
+            "output": "You are looking for an expensive restaurant and it should be in the south part of town. Make sure you get the address and phone number.",
+            "explanation": "All the questions of the customer are avilable in the output."
+        },
+        {
+            "input": "0.noise\n1.cheap restaurant in the east part of town\n2.phone number\n3.noise\n4.phone number\n5.good bye\n",
+            "output": "You want to find a cheap restaurant and it should be in the east part of town. You want to know the phone number.",
+            "explanation": "All the enquires of the customer with every detail is reflected."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "0.traditional food\n1.traditional\n2.spanish food\n3.spanish\n4.food\n5.address\n6.price range\n7.thank you good bye\n",
+            "output": "You want to find and it should serve african food. You don't care about the price range. Make sure you get the address, phone number, and area of the venue.",
+            "explanation": "The food type did not match and the price range was miscalculated."
+        },
+        {
+            "input": "0.im looking for something in the west side\n1.doesnt matter as long as it is moderately priced\n2.can i have the address of it\n3.whats its phone number\n4.thank you\n5.goodbye\n",
+            "output": "You want to find a moderately priced restaurant and it should serve indian food. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the phone number.",
+            "explanation": "The defined goals do not match the requirements of the customer."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "0.moderately priced restaurant\n1.any\n2.south\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.noise\n1.north\n2.cheap\n3.what is the phone number\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the north part of town. You want to know the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the west part of town\n1.is there anything else\n2.yes\n3.is there anything else\n4.is there anything else\n5.are there any other options\n6.whats the phone number\n7.whats the post code\n8.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the west part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the phone number and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant that serves mexican food\n1.whats the price range\n2.do you have the phone number of the address\n3.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve mexican food. You don't care about the price range. Make sure you get the phone number and address of the venue."
+            ]
+        },
+        {
+            "input": "0.id like to find japanese food\n1.any\n2.can i get the address\n3.how about the phone number\n4.and the food type\n",
+            "output": [
+                "You want to find and it should serve japanese food. You don't care about the price range. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the north part of town\n1.um is there anything else\n2.im looking for moderately priced restaurant in the north part of town\n3.is there anything else besides golden wok\n4.is there anything else\n5.whats the phone number\n6.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant in the east part of town\n1.doesnt matter\n2.whats the phone number\n3.is it an expensive restaurant\n4.thank you goodbye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the east part of town. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.sil\n1.belgium food\n2.thai\n3.thai food\n4.thai\n5.thai food\n6.probably an address\n7.phone number\n8.telephone number\n9.price range\n10.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve belgian food. You don't care about the price range. If there is no such venue how about thai type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.sil\n1.british food in north part of town\n2.indian food\n3.thank you\n4.indian\n5.thank you\n6.sil\n7.great day unintelligible\n8.unintelligible\n9.indian food\n10.unintelligible\n11.just fuck every time i do it and this moron says that its indian sucks\n12.indian food\n13.want indian food\n14.address phone number prices\n15.address\n16.price range\n17.thank you\n18.thank you goodbye\n",
+            "output": [
+                "You are looking for a restaurant in the north part of town and it should serve british food. If there is no such venue how about indian type of food. You want to know the address, phone number, and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.trying to find a cheap restaurant\n1.south part of town\n2.is there anything else\n3.yes\n4.is there anything else\n5.uh whats the address and phone number\n6.and the address\n7.whats the address\n8.what type of food is it\n9.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.moderately\n1.price\n2.west\n3.address\n4.address\n5.can i have the address\n6.phone number\n7.post code\n8.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the west part of town. Make sure you get the address, phone number, and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.i want a restaurant in the center\n1.the center\n2.i want english food in the center of town\n3.is there mediterranean food\n4.what is the address\n5.what is the address\n6.what is the phone number\n7.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve english food. If there is no such venue how about mediterranean type of food. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.restauarant south part of town vanessa food\n1.yes\n2.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the south part of town and it should serve venetian food. If there is no such venue how about italian type of food. You want to know the phone number and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderate priced restaurant in the south part of town\n1.moderately priced\n2.the south part of\n3.its in the south\n4.okay\n5.where is it\n6.is it in the south part of town\n7.start again\n8.im looking for a moderately priced restaurant\n9.okay\n10.can i have the address\n11.is it in the south part of town\n12.can i have the phone number\n13.whats the phone number\n14.in the south part of town\n15.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the south part of town. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.the center of town\n1.barbecue food\n2.how about indian\n3.no italian food\n4.um doesnt matter if its in the center of the town\n5.um\n6.how about italian food\n7.doesnt matter\n8.whats their price range\n9.and their phone number\n10.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve barbeque food. If there is no such venue how about italian type of food. Make sure you get the phone number and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.i want to find a restaurant in the west part of town that serves vietnamese food\n1.what is the phone number\n2.and what is the price range\n3.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the west part of town and it should serve vietnamese food. Make sure you get the phone number and price range."
+            ]
+        },
+        {
+            "input": "0.portuguese food\n1.cheap restaurant portuguese\n2.address\n3.phone number\n4.area\n5.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve portuguese food. Make sure you get the address, phone number, and area."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant in the south part of town\n1.expensive\n2.any\n3.phone number\n4.thank you\n5.good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the south part of town. Make sure you get the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the south part of town\n1.polynesian\n2.italian\n3.phone number\n4.post code\n5.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the south part of town and it should serve polynesian food. If there is no such venue how about italian type of food. Make sure you get the phone number and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant in the north part of town\n1.anything\n2.sil\n3.doesnt matter\n4.anything else\n5.address\n6.phone number\n7.address\n8.address\n9.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address, phone number, and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant in the south part of town\n1.unintelligible\n2.yea\n3.uh is there any other\n4.anything else\n5.is there\n6.is there any other restaurant\n7.can i have the address\n8.unintelligible\n9.can i get the address and phone number\n10.what type of food do they serve\n11.okay thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.i would like a restaurant\n1.that serves unintelligible\n2.belgian food\n3.how about korean food\n4.korean\n5.what about korean food\n6.what about korean\n7.are they expensive\n8.whats their address\n9.and their phone number\n10.and what area of town are they\n11.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should serve belgian food. If there is no such venue how about korean type of food. You want to know the address and area of the venue."
+            ]
+        },
+        {
+            "input": "0.i need a cheap restaurant serving italian food\n1.i dont care\n2.could i get the address\n3.thank you bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should serve italian food. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant\n1.in the north part of town\n2.im looking for an expensive restaurant in the south part of town\n3.i dont care\n4.what is the address and phone number\n5.what is the phone number\n6.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the south part of town. You want to know the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.moderately priced in the south part of town\n1.any\n2.south\n3.anything else\n4.anything elses\n5.another\n6.dont care\n7.um do not care\n8.i dont care bye\n9.sil\n10.phone number\n11.south part of town\n12.address\n13.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the north part of town\n1.i dont care\n2.australian\n3.how about asian oriental\n4.how about asian oriental\n5.what is the address\n6.what is the phone number\n7.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve australasian food. If there is no such venue how about asian oriental type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant in the south part of town\n1.any food\n2.any kind of food\n3.what is the address\n4.what is the phone number\n5.what is the phone number\n6.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.id like to find a restaurant serving french food\n1.is there anything else\n2.im sorry\n3.is there anything else\n4.is there anything else\n5.what is the address\n6.thanks good bye\n7.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve french food. You don't care about the price range. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the east part of town\n1.can i get the address\n2.can i get the phone number\n3.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the east part of town. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.noise\n1.expensive restaurant south part of town\n2.um\n3.whats the address and phone number\n4.is it expensive\n5.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.id like a restaurant in the center that serves mediterranean food\n1.a restaurant in the center that serves mediterranean food\n2.could i have the address and phone number please\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve mediterranean food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in a area that serves\n1.turkish\n2.can i have the address and the post code please\n3.the post code as well please\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in any area and it should serve turkish food. Make sure you get the address and postcode."
+            ]
+        },
+        {
+            "input": "0.restaurant in the center\n1.serving romania food\n2.noise\n3.modern european\n4.address\n5.address\n6.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve thai food. If there is no such venue how about expensive price range. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.noise\n1.unintelligible\n2.dont care\n3.moderately priced\n4.chinese food\n5.address\n6.telephone number\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should serve chinese food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.polynesian food\n1.any\n2.venue\n3.what type of venue\n4.polynesian food\n5.european food\n6.address\n7.phone number\n8.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve polynesian food. You don't care about the price range. If there is no such venue how about european type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.i need to find an expensive restaurant in the south part of town\n1.i dont care\n2.is there anything else\n3.can i get the address\n4.and what is their phone number\n5.sil\n6.and can\n7.can i get their post code\n8.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address, phone number, and postcode."
+            ]
+        },
+        {
+            "input": "0.noise\n1.unintelligible\n2.restaurant in the west part of town\n3.system irish food\n4.system\n",
+            "output": [
+                "You are looking for a restaurant in the west part of town and it should serve irish food. If there is no such venue how about italian type of food. You want to know the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.i want to find a restaurant that serves french food\n1.i dont care about the price range what is the address\n2.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve french food. You don't care about the price range. You want to know the address."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in north part of town serving austrian food\n1.how about an indian restaurant\n2.what about indian\n3.what is the address and phone number\n4.what is the price range\n5.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the north part of town and it should serve austrian food. If there is no such venue how about indian type of food. You want to know the address, phone number, and price range."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant in the east part of town\n1.east\n2.expensive\n3.address\n4.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the east part of town. You want to know the address."
+            ]
+        },
+        {
+            "input": "0.i need to find a restaurant in the center and it should serve irish food\n1.irish food\n2.french food\n3.and can i get the address phone number and price range\n4.what is the phone number\n5.price range\n6.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve irish food. If there is no such venue how about french type of food. Make sure you get the address, phone number, and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant\n1.it doesnt matter\n2.the south part of town\n3.can i get the address\n4.and whats the phone number for that\n5.okay thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the south part of town. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.id like a cheap restaurant in the south part of town\n1.can i have the phone number and type of food please\n2.what type of food do they serve\n3.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the south part of town. You want to know the phone number and type of food."
+            ]
+        },
+        {
+            "input": "0.sil\n1.i dont care\n2.im looking for a restaurant in the center of town\n3.im looking for traditional food\n4.how about turkish food\n5.what is the address\n6.what is the price range\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve traditional food. If there is no such venue how about turkish type of food. You want to know the address and price range."
+            ]
+        },
+        {
+            "input": "0.restaurant\n1.german\n2.european\n3.expensive\n4.is it expensive\n5.address\n6.phone number\n7.an area\n8.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve german food. If there is no such venue how about european type of food. Make sure you get the address, phone number, and area of the venue."
+            ]
+        },
+        {
+            "input": "0.i want to find a cheap restaurant\n1.in the north part of town\n2.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.unintelligible\n2.unintelligible\n3.cheap restaurant west part of town\n4.thank you good bye\n5.uh huh\n6.cheap restaurant north part of town\n7.yes cheap restaurant\n8.north part of town\n9.noise address\n10.noise\n11.noise\n12.tell me number\n13.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the west part of town that serves canapes food\n1.cheap\n2.can i get a phone number please\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the west part of town and it should serve canapes food. If there is no such venue how about italian type of food. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.i would like a cheap restaurant in the north part of town\n1.is there anything else\n2.yes\n3.is there anything else\n4.what is the address and phone number\n5.thank you goodbye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the north part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant in the west part of town\n1.thank you\n2.phone number\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the west part of town. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a expensive restaurant serving mediterranean food\n1.what is the phone number and post code\n2.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve mediterranean food. Make sure you get the phone number and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant south part of town\n1.address\n2.phone number\n3.thank you goodbye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the south part of town. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant that serves portuguese food\n1.whats the phone number\n2.whats the area\n3.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve portuguese food. Make sure you get the phone number and area of the venue."
+            ]
+        },
+        {
+            "input": "0.looking for an expensive restaurant\n1.part of town\n2.yes\n3.any kind\n4.south part of town\n5.uh whats the phone number\n6.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the south part of town. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.id like a restaurant that serves australian asian food\n1.could i have a restaurant that serves turkish food\n2.could i get the address and post code please\n3.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve australasian food. You don't care about the price range. If there is no such venue how about turkish type of food. Make sure you get the address and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.i need to find one in the south part of town\n1.danish\n2.how about portuguese\n3.portuguese\n4.can i get the address\n5.phone number\n6.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the south part of town and it should serve danish food. If there is no such venue how about portuguese type of food. Make sure you get the phone number and address."
+            ]
+        },
+        {
+            "input": "0.yes could you recommend me a place that serves british food in a moderate price range\n1.british food\n2.in a moderate price range\n3.doesnt it does not matter\n4.great could you tell me the address and phone number to that place\n5.whats the phone number\n6.thank you goodbye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should serve british food. Make sure you get the address, phone number, and area."
+            ]
+        },
+        {
+            "input": "0.breath id like a cheap restaurant in the north part of town\n1.breath is there anything else\n2.could i have the address and phone number please\n3.breath thank you goodbye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.cantonese food\n1.how about thai food\n2.thai food\n3.i want thai food\n4.any\n5.thai food\n6.i want thai food\n7.i dont give a damn about chinese food i want thai food\n8.address\n9.im looking for a restaurant that serves thai food\n10.food from thailand\n11.i dont give a fuck if hk fusion serves chinese food im looking for thai food\n12.how about cantonese food\n13.how about thai food\n14.address\n15.address\n16.phone number\n17.thank you\n18.good bye\n",
+            "output": [
+                "You are looking for and it should serve cantonese food. You don't care about the price range. If there is no such venue how about thai type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.noise\n1.east\n2.british food\n3.address\n4.phone number\n5.noise\n6.post code\n7.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the east part of town and it should serve british food. Make sure you get the address, phone number, and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant in the north\n1.cheap\n2.address\n3.phone number\n4.type of food\n5.thank you\n6.bye\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the north part of town. You want to know the address, phone number, and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.moderately priced restaurant north part of town\n1.address and phone number\n2.phone number\n3.post code\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. You want to know the address, phone number, and postcode."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant that serves belgium food\n1.what about european food\n2.what is the address\n3.what is the phone number\n4.what is the area\n5.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve belgian food. If there is no such venue how about european type of food. You want to know the address, phone number, and area."
+            ]
+        },
+        {
+            "input": "0.i got to find a cheap restaurant that serves mexican food\n1.is it in the cheap price range\n2.is there a cheap restaurant that serves vietnamese food\n3.can i please have their phone number\n4.thank you good bye\n5.no thank you good bye\n6.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve mexican food. If there is no such venue how about vietnamese type of food. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.west part of town cuban food\n1.italian\n2.phone number\n3.yes\n4.what is the phone number\n5.good bye\n",
+            "output": [
+                "You want to find a restaurant in the west part of town and it should serve cuban food. If there is no such venue how about italian type of food. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.is there anything that serves caribbean food\n1.i need an expensive restaurant that serves french food\n2.whats the phone number\n3.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve caribbean food. If there is no such venue how about french type of food. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.im trying to find a cheap restaurant in the east of town\n1.cheap\n2.is it in the east of town\n3.what is the address and post code\n4.what is the address\n5.what is the address\n6.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the east part of town. Make sure you get the address and postcode."
+            ]
+        },
+        {
+            "input": "0.are there any restaurants that serve english food\n1.how about european food\n2.is it moderately priced\n3.uh yes\n4.whats the price range\n5.i need a moderately priced restaurant\n6.whats the address\n7.um kay whats the post code\n8.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should serve english food. If there is no such venue how about european type of food. You want to know the address and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.korean\n1.what is the address\n2.phone number\n3.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve korean food. You don't care about the price range. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.restaurant in the west part of town\n1.west\n2.welch food\n3.british food\n4.phone number\n5.address\n6.price range\n7.thank you goodbye\n",
+            "output": [
+                "You are looking for a restaurant in the west part of town and it should serve welsh food. If there is no such venue how about british type of food. You want to know the address, phone number, and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the south part of town\n1.is there anything else\n2.can i have the address and phone number please\n3.could i have their phone number as well\n4.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.moderately\n1.restaurant\n2.moderately priced restaurant\n3.moderately\n4.priced\n5.north part of town\n6.address\n7.address\n8.address\n9.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.looking for a moderately priced restaurant in the east part of town\n1.whats the address\n2.thank you good bye\n3.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the east part of town. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.moderately priced priced restaurant\n1.serving mexican food\n2.international food\n3.address and postcode\n4.postcode\n5.thank you goodbye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve mexican food. If there is no such venue how about international type of food. Make sure you get the address and postcode."
+            ]
+        },
+        {
+            "input": "0.moderately priced priced restaurant chinese food\n1.address and postcode\n2.thank you goodbye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve chinese food. Make sure you get the address and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the center of town that serves thai food\n1.doesnt matter\n2.thai food\n3.what is the phone number\n4.what is the address\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve thai food. Make sure you get the address, phone number, and price range."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant that serves scandinavian food\n1.scandinavian food\n2.how about a restaurant that serves french food\n3.restaurant in any area\n4.my i have the phone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in any area and it should serve scandinavian food. If there is no such venue how about french type of food. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.food type\n1.i dont care\n2.french food\n3.address\n4.area\n5.what area of town\n6.thank you\n7.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve french food. You don't care about the price range. You want to know the address and area of the venue."
+            ]
+        },
+        {
+            "input": "0.find restaurant in north part of town serving asian food\n1.doesnt matter\n2.doesnt matter\n3.what is the address and phone number\n4.cough\n5.what is the address\n6.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve australasian food. If there is no such venue how about asian oriental type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.sil\n1.cheap\n2.south part of town\n3.south\n4.next\n5.noise south part of town\n6.cheap\n7.south\n8.address\n9.south\n10.noise phone number\n11.address\n12.type of food\n13.food\n14.type\n15.food\n16.noise\n17.noise food\n18.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the south part of town. Make sure you get the address, phone number, and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant that serves french food\n1.is there anything else\n2.is there another place\n3.what is the address\n4.and the phone number\n5.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should serve french food. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.moderately\n1.moderate\n2.dont care\n3.i want\n4.hello\n5.serve hello food\n6.how about asian oriental type of food\n7.price range\n8.price range\n9.phone number\n10.address\n11.address\n12.whats the address\n13.good bye\n14.no\n15.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should serve halal food. If there is no such venue how about asian oriental type of food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.italian food\n1.moderate\n2.north\n3.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve italian food. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.i would like some danish food\n1.how about asian food\n2.i would like an expensive asian food restaurant\n3.north\n4.expensive\n5.what is the phone number\n6.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve danish food. If there is no such venue how about asian oriental type of food. You want to know the phone number and area."
+            ]
+        },
+        {
+            "input": "0.irish food\n1.european food\n2.any\n3.any\n4.address\n5.post number\n6.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve irish food. You don't care about the price range. If there is no such venue how about european type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.cheap\n2.uh dont care but can it be vegetarian food\n3.what about indian then\n4.cheap indian food\n5.in the cheap price range\n6.can i have the address\n7.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve vegetarian food. If there is no such venue how about indian type of food. You want to know the address."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the west part of town\n1.whats the address\n2.is there anything else\n3.whats the address\n4.phone number\n5.and the type of food they serve\n6.wha what type of food\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the west part of town. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.bistro food\n1.moderate\n2.type of food\n3.what type of food\n4.what do they serve\n5.what type of food do they serve\n6.what about bistro food\n7.how about british\n8.and the price range\n9.how about a moderately priced\n10.price range\n11.whats the price range\n12.id like to find a moderately priced restaurant\n13.the price range\n14.may i get the phone number\n15.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve bistro food. If there is no such venue how about british type of food. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant that serves\n1.cantonese food\n2.okay what about north american food\n3.can i have the phone number\n4.can i have the post code\n5.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should serve cantonese food. If there is no such venue how about north american type of food. You want to know the phone number and postcode."
+            ]
+        },
+        {
+            "input": "0.i want a cheap restaurant that serves european food\n1.how about vietnamese food\n2.whats their phone number\n3.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve european food. If there is no such venue how about vietnamese type of food. Make sure you get the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.um i would like to find an expensive restaurant in the south part of town\n1.um it doesnt matter\n2.um can i get the address and phone number\n3.can you repeat that\n4.sil\n5.can you repeat the phone number and address please\n6.can you repeat the address please\n7.thank you\n8.okay thank you goodbye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. Make sure you get the phone number and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.i need a moderately priced restaurant in the north part of town\n1.phone number\n2.sil\n3.what type of food do they serve\n4.what type of food\n5.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Make sure you get the phone number and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant\n1.expensive\n2.south part of town\n3.what price range\n4.expensive price range\n5.is there any expensive restaurant\n6.what is the address\n7.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.sea food\n1.sea food\n2.price range\n3.sea food\n4.address\n5.sil\n6.address\n7.address\n8.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve seafood. You don't care about the price range. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.north part of town\n1.dont care\n2.christmas food\n3.sil\n4.asian food\n5.asian oriental\n6.address\n7.address\n8.phone number\n9.thank you goodbye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve christmas food. If there is no such venue how about asian oriental type of food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant\n1.east\n2.any\n3.what is the address\n4.thank you goodbye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the east part of town. You want to know the address and type of food."
+            ]
+        },
+        {
+            "input": "0.noise\n1.unintelligible\n2.noise\n3.polynesian food\n4.korean food\n5.address\n6.what is their price range\n7.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in any area and it should serve polynesian food. If there is no such venue how about korean type of food. Make sure you get the address and price range."
+            ]
+        },
+        {
+            "input": "0.brazilian food\n1.how about french food\n2.what is the address and phone number\n3.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve brazilian food. You don't care about the price range. If there is no such venue how about french type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.moderately\n1.any\n2.moderately\n3.moderately\n4.south\n5.moderately\n6.address\n7.phone number\n8.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the south part of town. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.id like a cheap restaurant in the south part of town\n1.what is the address\n2.and the telephone number\n3.and what type of food do they serve\n4.good bye thank you\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the south part of town. You want to know the address, phone number, and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant in the east part of town that serves gastropub food\n1.whats the phone number\n2.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the east part of town and it should serve gastropub food. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.looking for a restaurant that serves turkish food\n1.is there any other restaurant that serves turkish food\n2.yes\n3.are their any other restaurants that serve turkish food\n4.okay can i have the address and post code please\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in any area and it should serve turkish food. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address and postcode."
+            ]
+        },
+        {
+            "input": "0.hm\n1.im looking for korean food any price range\n2.korean food price range\n3.address\n4.phone number\n5.post code\n6.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve korean food. You don't care about the price range. You want to know the address, phone number, and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.caribbean food\n1.thai food\n2.west part of town\n3.thai food\n4.thai\n5.price range\n6.phone number\n7.address\n8.address\n9.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the west part of town and it should serve caribbean food. If there is no such venue how about thai type of food. Make sure you get the address, phone number, and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.european food\n1.in the center\n2.what is the address\n3.what is the phone number\n4.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve european food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.lebanese food\n1.phone number\n2.thank you\n3.good bye\n",
+            "output": [
+                "You are looking for a restaurant in any area and it should serve lebanese food. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.gastropub\n1.gastropub\n2.gastropub food\n3.what is the address\n4.what is the address\n5.sil\n6.what is the phone number\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should serve gastropub food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant in the south\n1.any\n2.south\n3.expensive\n4.would like expensive\n5.south part of town\n6.south\n7.phone number\n8.south area\n9.south part of town\n10.dont care\n11.north\n12.south\n13.west\n14.other\n15.west\n16.i dont care\n17.south\n18.thank you goodbye noise\n19.address\n20.south\n21.thank you goodbye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the south part of town. You want to know the address, phone number, and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.looking for a cheap restaurant in the north part of town\n1.and the address\n2.whats the address\n3.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. You want to know the address of the venue."
+            ]
+        },
+        {
+            "input": "0.sil\n1.sil\n2.moroccan\n3.noise\n4.noise\n5.noise\n6.moroccan food\n7.noise\n8.noise\n9.noise\n10.what is it by\n",
+            "output": [
+                "You want to find a restaurant in any area and it should serve moroccan food. If there is no such venue how about international type of food. You want to know the phone number and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.moderately priced west part of town\n1.phone number\n2.the address\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the west part of town. Make sure you get the phone number and address of the venue."
+            ]
+        },
+        {
+            "input": "0.moderately priced restaurant\n1.any part\n2.lebanese\n3.address\n4.and the phone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve lebanese food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.unintelligible\n2.unintelligible\n3.indian food\n4.address\n5.phone number\n6.price range\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the north part of town and it should serve eritrean food. If there is no such venue how about indian type of food. You want to know the address, phone number, and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.uh cheap restaurant serving scandinavian food\n1.how about italian food\n2.address\n3.phone number\n4.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve scandinavian food. If there is no such venue how about italian type of food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.noise\n1.east\n2.east\n3.moderately priced\n4.anything else\n5.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the east part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.mexican food\n1.mexican food\n2.phone number\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in any area and it should serve mexican food. Make sure you get the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant in the south part of town\n1.i dont care\n2.is it what price range\n3.is there anything else\n4.is there anything else\n5.anything else\n6.what is the address\n7.what is the address\n8.thank you goodbye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.expensive mediterranean food\n1.expensive\n2.i dont care\n3.mediterranean food\n4.what kind of food do they serve\n5.mediterranean food\n6.is there anything else\n7.what is the price range\n8.what is the address\n9.what is the phone number\n10.what area is it in\n11.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve mediterranean food. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address, phone number, and area of the venue."
+            ]
+        },
+        {
+            "input": "0.moderately priced west part of town\n1.phone number\n2.address\n3.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the west part of town. Make sure you get the phone number and address."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the south part of town\n1.repeat that\n2.whats the address\n3.and the phone number\n4.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the south part of town. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.i would like afghan food\n1.expensive\n2.any\n3.afghan food\n4.asian food\n5.i dont care\n6.i dont care\n7.dont care\n8.sil\n9.another\n10.food\n11.asian oriental\n12.asian\n13.oriental\n14.oriental\n15.oriental\n16.thank you good bye\n17.oriental\n18.asian\n19.thank you good bye\n20.phone number\n21.carrier\n22.area\n23.what area\n24.asian oriental\n25.phone number\n26.thank you good bye\n27.sil\n28.thank you\n29.good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve afghan food. If there is no such venue how about asian oriental type of food. You want to know the phone number and area."
+            ]
+        },
+        {
+            "input": "0.i am looking for a moderately priced restaurant in the south part of town\n1.yes\n2.any food\n3.im looking for a restaurant in the south part of town\n4.is it in the moderate price range\n5.is there anything else\n6.what is the address\n7.thank you goodbye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the south part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.sil\n1.i would like\n2.what about international food\n3.may i have the address and phone number\n4.where is the restaurant\n5.oh thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in any area and it should serve international food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.static\n1.east\n2.dont care\n3.is it moderately priced\n4.is it moderately priced\n5.whats the address\n6.noise\n7.noise\n8.whats the address\n9.whats the address\n10.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the east part of town. You want to know the address of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant in the north part of town\n1.anything else\n2.yes\n3.anything else\n4.okay do you have the address for da vinci pizzeria\n5.and the phone number\n6.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.restaurant in the east part of town that serves indonesian food\n1.how about chinese food\n2.address phone number post code\n3.address\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the east part of town and it should serve indonesian food. If there is no such venue how about chinese type of food. You want to know the address, phone number, and postcode."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the center that serves romanian food\n1.romanian food\n2.romanian\n3.is it in the center\n4.okay what is the address and phone number\n5.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve romanian food. If there is no such venue how about mediterranean type of food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.i want to find a cheap restaurant in the south part of town\n1.cheap\n2.thank you\n3.in the inner south\n4.no in the south part of town\n5.i want something in the south part of town\n6.i want something in the south\n7.i want something in the south part of town\n8.what is the address and the type of food\n9.what is the address\n10.what is the type of food\n11.type of food does it serve\n12.thank you goodbye\n13.thank you goodbye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the south part of town. You want to know the address and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.i need a restaurant that serves thai food\n1.i dont care\n2.whats the address\n3.whats the phone number\n4.and whats the post code\n5.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve thai food. You don't care about the price range. You want to know the address, phone number, and postcode."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.cheap\n2.north\n3.north\n4.address\n5.north\n6.unintelligible\n7.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.japanese food\n1.japanese food\n2.price range\n3.address\n4.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve japanese food. You don't care about the price range. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant that serves european food\n1.can i get the\n2.phone number and address\n3.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve european food. You want to know the phone number and address of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant in the east part of town\n1.can i get the phone number and address\n2.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the east part of town. Make sure you get the phone number and address."
+            ]
+        },
+        {
+            "input": "0.i want a restaurant in the north part of town\n1.i dont care\n2.lebanese food\n3.italian food\n4.what is the address and phone number\n5.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the north part of town and it should serve lebanese food. If there is no such venue how about italian type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the north part of town\n1.yes\n2.noise\n3.noise\n4.i want a restaurant in the north part of town\n5.im looking for a restaurant that serves japanese food in the north part of town\n6.im looking for an indian restaurant in the north part of town\n7.what is the address\n8.and whats the phone number\n9.and whats the price range\n10.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the north part of town and it should serve japanese food. If there is no such venue how about indian type of food. Make sure you get the address, phone number, and price range."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant east part of town\n1.expensive\n2.any\n3.address\n4.good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the east part of town. Make sure you get the address and type of food."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant\n1.dont care\n2.greek\n3.italian\n4.italian\n5.cheap restaurant\n6.italian\n7.address\n8.address\n9.phone number\n10.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should serve greek food. If there is no such venue how about italian type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.sil\n1.east\n2.east\n3.cheap\n4.phone number\n5.address\n6.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the east part of town. You want to know the phone number and address."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the north part of town\n1.what is the phone number\n2.thank you goodbye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. You want to know the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.looking for caribbean food\n1.how about indian food\n2.yea i want indian food\n3.i dont care but i want it to be in the east part of town\n4.cool whats the phone number\n5.okay how about the address\n6.awesome thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the east part of town and it should serve caribbean food. If there is no such venue how about indian type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.i want to find a restaurant in the centre that serves thai food\n1.thai\n2.what is the phone number and address\n3.what is the address\n4.what type of food is it\n5.no\n6.sil\n7.no\n8.what about thai\n9.unintelligible yeah what about thai food\n10.does it serve thai food\n11.what is the address and phone number\n12.what is the phone number\n13.thank you goodbye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve thai food. You want to know the phone number and address of the venue."
+            ]
+        },
+        {
+            "input": "0.i am looking for an expensive restaurant on the east part of town\n1.italian\n2.how about\n3.steak\n4.any food that serves any restaurant thats expensive\n5.can i have the address and post code\n6.the post code\n7.thank you goodbye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the east part of town. Make sure you get the address and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant\n1.um that serves\n2.im looking for an expensive restaurant that serves turkish food\n3.whats the post code\n4.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should serve turkish food. Make sure you get the postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the north part of town\n1.moderate price range\n2.can i get the address and phone number\n3.okay thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant that serves scottish food\n1.im looking for a moderately priced restaurant that serves british food\n2.it doesnt matter\n3.phone number\n4.what is the phone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should serve scottish food. If there is no such venue how about british type of food. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.yea id like a\n1.european\n2.no id like\n3.european\n4.mediterranean food\n5.about portuguese\n6.portuguese food in the south part of town\n7.what is the phone number\n8.what is the address\n9.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the south part of town and it should serve eritrean food. If there is no such venue how about portuguese type of food. You want to know the phone number and address."
+            ]
+        },
+        {
+            "input": "0.noise\n1.polynesian food east of town\n2.what about indian\n3.in the east of town\n4.whats the address\n5.phone number\n6.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the east part of town and it should serve polynesian food. If there is no such venue how about indian type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant in the south part of the town\n1.could i get their address and phone number\n2.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the south part of town. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant in the east\n1.i dont care\n2.where is the phone number\n3.thank you goodbye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the east part of town. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.yes i would like portuguese food\n1.can i get the address and phone number\n2.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve portuguese food. You don't care about the price range. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.portuguese food\n1.whats the address\n2.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in any area and it should serve portuguese food. You want to know the address of the venue."
+            ]
+        },
+        {
+            "input": "0.noise\n1.noise\n2.i would like to find a moderately priced restaurant in the north part of town please\n3.um what is the address and phone number\n4.what is its phone number\n5.noise\n6.what is the phone number please\n7.noise\n8.noise\n9.noise\n10.um thank you goodbye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the north part of town. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a korean restaurant\n1.korean restaurant\n2.whats the address\n3.phone number\n4.whats the post code\n5.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve korean food. You don't care about the price range. You want to know the address, phone number, and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.lebanese restaurant in the west part of town\n1.lebanese\n2.thai food\n3.thai food\n4.tailand\n5.thai food in the west of town\n6.address\n7.phone number\n8.price range\n9.what is the price range\n10.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the west part of town and it should serve lebanese food. If there is no such venue how about thai type of food. Make sure you get the address, phone number, and price range."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the south part of town that serves french food\n1.how about indian food\n2.indian food in the south part of town\n3.indian food in the south\n4.what is the phone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the south part of town and it should serve french food. If there is no such venue how about indian type of food. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.cheap italian\n1.any\n2.address\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should serve italian food. Make sure you get the address and area of the venue."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant in the south part of town\n1.any\n2.address\n3.type of food\n4.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. You want to know the address and type of food."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the east part of town\n1.what is the address\n2.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the east part of town. You want to know the address of the venue."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant\n1.any where\n2.mediterranean\n3.price range\n4.address and phone number\n5.good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve mediterranean food. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.i want to find a restaurant in the east part of town that serves basque food\n1.what about indian food\n2.can i have the address\n3.what is the address\n4.and the telephone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the east part of town and it should serve basque food. If there is no such venue how about indian type of food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a moderately priced restaurant in the north part of town\n1.what is the phone number\n2.what is the type of food\n3.what type of food\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Make sure you get the phone number and type of food of the venue."
+            ]
+        },
+        {
+            "input": "0.i want brazilian food\n1.care\n2.what is the address and phone number\n3.thank you good bye\n4.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve brazilian food. You don't care about the price range. If there is no such venue how about french type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.sil\n1.i want\n2.i want to find a restaurant in the center\n3.does it serve fusion food\n4.i want fusion food\n5.how about european food\n6.what is the phone number\n7.what is the post code\n8.unintelligible\n9.noise\n10.what is the post code\n11.good bye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve fusion food. If there is no such venue how about european type of food. You want to know the phone number and postcode."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant\n1.catalan\n2.any\n3.address\n4.address\n5.phone number\n6.phone number\n7.area\n8.area\n9.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve catalan food. If there is no such venue how about italian type of food. You want to know the address, phone number, and area."
+            ]
+        },
+        {
+            "input": "0.id like a moderately priced restaurant in the north part of town\n1.whats the address\n2.what type of food do they serve\n3.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the north part of town. Make sure you get the address and type of food."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap vietnamese restaurant\n1.sil\n2.im looking for a vietnamese restaurant\n3.whats its phone number\n4.sil\n5.any\n6.moderate\n7.any\n8.how much\n9.im looking for a cheap restaurant\n10.whats its address\n11.may i have its phone number\n12.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve vietnamese food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the center and it should serve traditional food\n1.traditional food\n2.how about turkish\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve traditional food. If there is no such venue how about turkish type of food. You want to know the address and price range."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant in the east part of town\n1.whats the address\n2.whats the phone number\n3.what type of food do they serve\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should be in the east part of town. You want to know the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.moderately priced restaurant in the north part of town\n1.moderate\n2.what type of food\n3.address and phone number\n4.thank you good bye\n",
+            "output": [
+                "You want to find a moderately priced restaurant and it should be in the north part of town. You want to know the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.i need restaurant serves spanish food\n1.whats the phone number\n2.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve spanish food. You don't care about the price range. Make sure you get the phone number."
+            ]
+        },
+        {
+            "input": "0.restaurant\n1.any\n2.traditional food\n3.italian food\n4.italian food\n5.cheap\n6.address\n7.phone number\n8.thank you good bye\n",
+            "output": [
+                "You are looking for a cheap restaurant and it should serve traditional food. If there is no such venue how about italian type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.i would like to find a restaurant in the north part of town that serves kosher food\n1.italian food\n2.can i have their address and phone number\n3.how about the address\n4.great thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve kosher food. If there is no such venue how about italian type of food. You want to know the address and phone number."
+            ]
+        },
+        {
+            "input": "0.greek food\n1.french food\n2.center\n3.yes\n4.address\n5.phone number\n6.price range\n7.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve greek food. If there is no such venue how about french type of food. Make sure you get the address, phone number, and price range."
+            ]
+        },
+        {
+            "input": "0.center\n1.center\n2.italian\n3.italian food\n4.telephone number\n5.price range\n6.price\n7.price range\n8.phone number\n9.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve canapes food. If there is no such venue how about italian type of food. Make sure you get the phone number and price range."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant in the south part of town\n1.what is the address\n2.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the south part of town. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.price range\n1.any\n2.east part of town\n3.austrian food\n4.chinese\n5.address\n6.phone number\n7.post code\n8.good bye\n",
+            "output": [
+                "You want to find a restaurant in the east part of town and it should serve austrian food. If there is no such venue how about chinese type of food. You want to know the address, phone number, and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.id like a restaurant in the center that serves danish food\n1.yes\n2.how about a restaurant that serves thai food\n3.how about a restaurant that serves thai food\n4.id like thai food\n5.i dont care can i try again\n6.thai food\n7.id like thai food\n8.thank you\n9.thank you\n10.stop\n11.start over\n12.try again\n13.id like a restaurant that serves thai food\n14.id like thai food\n15.id like thai food\n16.id like thai food\n17.thank you goodbye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve danish food. If there is no such venue how about thai type of food. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for a restaurant in the north part of town that serves thai food\n1.thai\n2.is it in the north part of town\n3.north part of town\n4.how about in the west area\n5.is there one in the west area\n6.how about west\n7.how about the west area\n8.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should be in the south part of town. You want to know the address and type of food."
+            ]
+        },
+        {
+            "input": "0.jamaican food\n1.mediterranean\n2.cheap\n3.mediterranean\n4.what is the phone number and post code\n5.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve jamaican food. If there is no such venue how about mediterranean type of food. Make sure you get the phone number and postcode."
+            ]
+        },
+        {
+            "input": "0.sil\n1.a restaurant in the center of town serving carraibean food\n2.caribbean\n3.caribbean\n4.european food\n5.sil\n6.modern euorpean\n7.address\n8.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the centre and it should serve caribbean food. If there is no such venue how about modern european type of food. Make sure you get the address of the venue."
+            ]
+        },
+        {
+            "input": "0.id like a portuguese restaurant\n1.what is the address\n2.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve portuguese food. You don't care about the price range. You want to know the address."
+            ]
+        },
+        {
+            "input": "0.id like a restaurant in the north part of town that serves traditional food\n1.could i have the asian oriental restaurant\n2.could i have the address and phone number\n3.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve traditional food. If there is no such venue how about asian oriental type of food. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.unintelligible\n2.unintelligible\n3.moderate\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the east part of town. You want to know the address and type of food."
+            ]
+        },
+        {
+            "input": "0.im looking for a cheap restaurant that serves malaysian food\n1.is there any that serve european food\n2.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve malaysian food. If there is no such venue how about european type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.find australian restaurant in north part of town\n1.find indian restaurant in north of town\n2.the price range\n3.what is the address and phone number\n4.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve australian food. If there is no such venue how about indian type of food. You want to know the address, phone number, and price range of the venue."
+            ]
+        },
+        {
+            "input": "0.hello\n1.north\n2.address\n3.address\n4.phone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. You want to know the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.expensive restaurant it should serve persian food\n1.european type of food\n2.address\n3.phone number\n4.area\n5.area of venue\n6.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should serve persian food. If there is no such venue how about european type of food. You want to know the address, phone number, and area of the venue."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.sil\n2.sil\n3.dont care\n4.what type of food do they serve\n5.korean\n6.phone number\n7.unintelligent\n8.thank you good bye\n",
+            "output": [
+                "You are looking for and it should serve traditional food. You don't care about the price range. If there is no such venue how about korean type of food. Make sure you get the phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.id like a restaurant in the north part of town serving swiss food\n1.id like a restaurant in the north part of town serving indian food\n2.id like a restaurant in the north part of town serving indian food\n3.id like an indian restaurant\n4.what is the address phone number and price range\n5.what is the price range\n6.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the north part of town and it should serve swiss food. If there is no such venue how about indian type of food. You want to know the address, phone number, and price range."
+            ]
+        },
+        {
+            "input": "0.i want a cheap restaurant in the north part of town\n1.can i have their phone number\n2.and the post code\n3.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. You want to know the phone number and address."
+            ]
+        },
+        {
+            "input": "0.can i have a british restaurant in the east please\n1.east\n2.moderate\n3.east\n4.can i have the address\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the east part of town and it should serve british food. Make sure you get the address."
+            ]
+        },
+        {
+            "input": "0.i want to find a restaurant in the center and it should serve corsica food\n1.how about north american\n2.how about north american type of food\n3.how about north american type of food\n4.whats the phone number\n5.thank you good bye\n",
+            "output": [
+                "You want to find a restaurant in the centre and it should serve corsica food. If there is no such venue how about north american type of food. You want to know the phone number."
+            ]
+        },
+        {
+            "input": "0.sil\n1.japanese food\n2.spice\n3.address\n4.phone number\n5.phone number\n6.address\n7.post code\n8.thank you good bye\n9.thank you good bye\n10.thank you good bye\n",
+            "output": [
+                "You want to find and it should serve japanese food. You don't care about the price range. Make sure you get the address, phone number, and postcode of the venue."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.cantonese food\n2.british food\n3.west\n4.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Don't go for the first venue the system offers you, ask if there is anything else. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.looking for a cheap restaurant\n1.north\n2.cheap\n3.what is the phone number and address\n4.address\n5.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should be in the north part of town. Make sure you get the phone number and address."
+            ]
+        },
+        {
+            "input": "0.moderately priced north part of town\n1.yes\n2.what is the address and phone number\n3.thank you good bye\n",
+            "output": [
+                "You are looking for a moderately priced restaurant and it should be in the north part of town. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.im looking for an expensive restaurant in the east part of town\n1.pizza\n2.steak\n3.anything else\n4.what is the address phone number and type of food\n5.what type of food\n6.thank you good bye\n",
+            "output": [
+                "You are looking for an expensive restaurant and it should be in the east part of town. Don't go for the first venue the system offers you, ask if there is anything else. You want to know the address, phone number, and type of food."
+            ]
+        },
+        {
+            "input": "0.cheap restaurant\n1.european\n2.thank you good bye\n",
+            "output": [
+                "You want to find a cheap restaurant and it should serve malaysian food. If there is no such venue how about european type of food. Make sure you get the address and phone number of the venue."
+            ]
+        },
+        {
+            "input": "0.unintelligible\n1.unintelligible\n2.expensive french\n3.expensive french food\n4.no something else\n5.i want french food\n6.french food any part of town\n7.expensive\n8.address and phone number\n9.thank you good bye\n",
+            "output": [
+                "You want to find an expensive restaurant and it should serve french food. Make sure you get the address and phone number."
+            ]
+        },
+        {
+            "input": "0.hello welcome\n1.south\n2.would you like something\n3.steak house\n4.indian\n5.and whats the phone number\n6.thank you good bye\n",
+            "output": [
+                "You are looking for a restaurant in the south part of town and it should serve steakhouse food. If there is no such venue how about indian type of food. You want to know the phone number."
+            ]
+        }
+    ]
+}

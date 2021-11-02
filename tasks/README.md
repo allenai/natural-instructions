@@ -1567,3 +1567,15 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1745_lambada_next_sentence_generation` | Generating the next sentence by understanding the congtext of the given paragraph | Sentence Generation
+`task1746_lambada_last_word_text_generation` | Generating final word by understanding the context of the given paragraph and its target sentence | Text Generation
+`task1747_newspop_topic_classification` | Classifying news articles based on the headline and title into 4 categries namely Obama, Palestine, Microsoft, and economy | Classification
+`task1748_newspop_title_sentiment_analysis` | Predicting sentiment score between -1 to 1 for the title of the news articles present in the newspop dataset| Sentiment Analysis
+`task1749_newspop_headline_sentiment_analysis` | Predicting sentiment score between -1 to 1 for the headline of the news articles present in the newspop dataset| Sentiment Analysis
+`task1750_newspop_title_text_generation` | Title generation from the headlines of the news articles given in the newspop dataset | Text Generation
+`task1751_chren_ck_en_translation` | Translating Cherokee phrases/sentences to English phrases/sentences | Translation
+`task1752_newspop_facebook_share_prediction_regression` | Predicting facebook shares based on headline, title, topic and news source of the news articles present in the newspop dataset | Regression
+`task1753_hate_speech18_classification` | Given a statement, determine if the sentiment in the statement is of hatred, no hate, relation or nothing. | Classification
+`task1754_dstc2_classification` | Given a statement from a conversation, determine if the speaker is a customer or the restaurant system.  | Classification  
+`task1755_dstc2_classification` | Given the customer side of conversation determine what the goal of the customer is.  | Classification  
+`task1756_dstc2_classification` | Given the responses by a restaurant system, classify the experience of the customer understanding. | Classification  
