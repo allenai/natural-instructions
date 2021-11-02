@@ -1,0 +1,779 @@
+{
+    "Contributors": [
+        "Nisarg Patel"
+    ],
+    "Source": [
+        "Dialog State Tracking Challenge 2 (https://github.com/matthen/dstc)"
+    ],
+    "Categories": [
+        "Classification"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "Based on the the responses of the restaurant system in the conversation with a customer, determine the experience of the customer understanding as agree or disagree.",
+    "Positive Examples": [
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.frankie and bennys is a nice restaurant in the south of town serving italian food\n3.Sure, frankie and bennys is on Cambridge Leisure Park Clifton Way Cherry Hinton\n4.The phone number of frankie and bennys is 01223 412430.\n",
+            "output": "Agree",
+            "explanation": "The customer understaning was clear and the conversation went flawless."
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I am sorry but there is no traditional restaurant that matches your request\n3.I am sorry but there is no danish restaurant that matches your request\n4.la raza serves spanish food.\n5.la raza serves spanish food.\n6.Sure, la raza is on 4 - 6 Rose Crescent\n7.la raza is in the cheap price range\n",
+            "output": "Disagree",
+            "explanation": "The requests by the customer did not match any available options."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Would you like something in the cheap, moderate, or expensive price range?\n2.the missing sock is a nice restaurant in the east of town in the cheap price range\n3.The phone number of the missing sock is 01223 812660.\n4.Can I help you with anything else?\n5.The phone number of the missing sock is 01223 812660.\n",
+            "output": "Disagree",
+            "explanation": "The customer understood everything and acquired all the information needed."
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.prezzo is a nice restaurant in the west of town in the moderate price range\n3.Sure, prezzo is on 21 - 24 Northampton Road\n4.The phone number of prezzo is 01799 521260.\n5.prezzo is a nice restaurant in the west of town in the moderate price range\n",
+            "output": "Disagree",
+            "explanation": "The conversation went without any doubts and interruptions."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.grafton hotel restaurant is a nice place in the east of town and the prices are expensive\n3.The phone number of grafton hotel restaurant is 01223 241387 and it is on Grafton Hotel 619 Newmarket Road Fen Ditton.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.rajmahal is a nice place in the east of town and the prices are moderate\n3.Sure, rajmahal is on 7 Barnwell Road Fen Ditton\n4.rajmahal serves indian food\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What kind of food would you like?\n4.I'm sorry but there is no restaurant serving catalan food\n5.I'm sorry but there is no restaurant serving catalan food\n6.I'm sorry but there is no restaurant serving catalan food\n7.Ok, a restaurant in any part of town is that right?\n8.You are looking for a catalan restaurant right?\n9.I'm sorry but there is no restaurant serving catalan food\n10.I'm sorry but there is no restaurant serving catalan food\n11.Would you like something in the cheap, moderate, or expensive price range?\n12.the cow pizza kitchen and bar serves gastropub food\n13.Sure, the cow pizza kitchen and bar is on Corn Exchange Street\n14.The post code of the cow pizza kitchen and bar is C.B 2, 3 Q.F\n15.The phone number of the cow pizza kitchen and bar is 01223 308871.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.the lucky star is a nice place in the south of town and the prices are cheap\n3.Sure, the lucky star is on Cambridge Leisure Park Clifton Way Cherry Hinton\n4.The phone number of the lucky star is 01223 244277.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.meze bar restaurant is in the expensive price range\n4.meze bar restaurant serves turkish food\n5.the cambridge chop house is in the expensive price range\n6.the cambridge chop house serves british food\n7.royal standard is in the expensive price range\n8.little seoul serves korean food in the expensive price range\n9.Sure, little seoul is on 108 Regent Street City Centre\n10.little seoul is a nice place in the centre of town\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.What kind of food would you like?\n3.Would you like something in the cheap, moderate, or expensive price range?\n4.Let me confirm, You are looking for a restaurant and you dont care about the price range right?\n5.nandos is a nice place in the south of town\n6.peking restaurant is a nice place in the south of town\n7.peking restaurant is a great restaurant\n8.peking restaurant is in the expensive price range\n9.The phone number of peking restaurant is 01223 354755 and it is on 10 Homerton Street City Centre.\n10.The post code of peking restaurant is C.B 2, 8 N.X\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no vietnamese restaurant in the north of town\n2.Did you say you are looking for a restaurant in the west of town?\n3.You are looking for a vietnamese restaurant right?\n4.thanh binh is a nice place in the west of town serving tasty vietnamese food\n5.The phone number of thanh binh is 01223 362456.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.What kind of food would you like?\n4.I'm sorry but there is no french restaurant in the south of town\n5.frankie and bennys is a great restaurant serving expensive italian food in the south of town.\n6.Sorry but there is no other italian restaurant in the expensive price range and the south of town\n7.Sure, frankie and bennys is on Cambridge Leisure Park Clifton Way Cherry Hinton\n8.frankie and bennys is a great restaurant\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.Would you like something in the cheap, moderate, or expensive price range?\n3.royal spice is a nice place in the north of town serving tasty indian food\n4.royal spice is a nice place in the north of town serving tasty indian food\n5.I'm sorry but there is no restaurant serving scandinavian food\n6.You are looking for a asian oriental restaurant right?\n7.saigon city is a nice place in the north of town serving tasty asian oriental food\n8.Sure, saigon city is on 169 High Street Chesterton Chesterton\n9.The phone number of saigon city is 01223 356555.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.Would you like something in the cheap, moderate, or expensive price range?\n3.the varsity restaurant serves international food\n4.The phone number of the varsity restaurant is 01223 356060.\n5.bloomsbury restaurant serves international food\n6.bloomsbury restaurant is a great restaurant\n7.bloomsbury restaurant is a great restaurant\n8.The post code of bloomsbury restaurant is C.B 2, 3 D.T\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.golden wok is a nice place in the north of town and the prices are moderate\n3.The phone number of golden wok is 01223 350688.\n4.Sure, golden wok is on 191 Histon Road Chesterton\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.prezzo is a nice place in the west of town and the prices are moderate\n3.The phone number of prezzo is 01799 521260 and its postcode is C.B 3, 0 A.D.\n4.prezzo is a great restaurant\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving traditional food\n3.I'm sorry but there is no restaurant serving traditional food\n4.pipasha restaurant is a nice place in the east of town\n5.Sure, pipasha restaurant is on Newmarket Road Fen Ditton\n6.The phone number of pipasha restaurant is 01223 577786.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.nandos city centre serves portuguese food\n3.I'm sorry but there is no restaurant serving moderate portuguese food\n4.cotto is in the moderate price range\n5.lan hong house serves chinese food in the moderate price range\n6.The phone number of lan hong house is 01223 350420.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving crossover food\n4.bangkok city is a nice place in the centre of town\n5.bloomsbury restaurant is a nice place in the centre of town\n6.bloomsbury restaurant is in the moderate price range\n7.Sure, bloomsbury restaurant is on Crowne Plaza Hotel 20 Downing Street\n8.The phone number of bloomsbury restaurant is 0871 942 9180.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.Did you say you are looking for a restaurant in the west of town?\n3.What kind of food would you like?\n4.saint johns chop house is a nice place in the west of town and the prices are moderate\n5.prezzo is a nice place in the west of town and the prices are moderate\n6.Sorry, I can't hear you\n7.saint johns chop house is a nice place in the west of town and the prices are moderate\n8.prezzo is a nice place in the west of town and the prices are moderate\n9.Sure, prezzo is on 21 - 24 Northampton Road\n10.The phone number of prezzo is 01799 521260.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.You are looking for a german restaurant right?\n2.Let me confirm, You are looking for a restaurant in the moderate price range right?\n3.I'm sorry but there is no restaurant serving german food\n4.I'm sorry but there is no restaurant serving german food\n5.You are looking for a german restaurant right?\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no chinese restaurant in the west of town\n3.saint johns chop house is a great restaurant serving moderate british food in the west of town.\n4.Sure, saint johns chop house is on 21 - 24 Northampton Street\n5.The phone number of saint johns chop house is 01223 353110.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the west of town?\n2.Did you say you are looking for a restaurant in the west of town?\n3.Did you say you are looking for a restaurant in the west of town?\n4.What kind of food would you like?\n5.You are looking for a restaurant serving any kind of food right?\n6.Did you say you are looking for a restaurant in the west of town?\n7.Would you like something in the cheap, moderate, or expensive price range?\n8.cocum is a nice place in the west of town\n9.maharajah tandoori restaurant is a nice place in the west of town\n10.Sure, maharajah tandoori restaurant is on 41518 Castle Street City Centre\n11.The phone number of maharajah tandoori restaurant is 01223 358399.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.What kind of food would you like?\n4.What kind of food would you like?\n5.You are looking for a restaurant serving any kind of food right?\n6.Would you like something in the cheap, moderate, or expensive price range?\n7.Would you like something in the cheap, moderate, or expensive price range?\n8.Can I help you with anything else?\n9.I'm sorry but there is no restaurant serving belgian food\n10.little seoul serves korean food\n11.little seoul is a great restaurant\n12.little seoul is a great restaurant\n13.Sure, little seoul is on 108 Regent Street City Centre\n14.little seoul is in the expensive price range\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.travellers rest is a nice place in the west of town\n3.travellers rest serves british food\n4.sala thong is a nice place in the west of town\n5.la margherita is a nice place in the west of town\n6.maharajah tandoori restaurant is a nice place in the west of town\n7.I'm sorry but there is no restaurant serving moroccan food\n8.travellers rest is a nice place in the west of town\n9.maharajah tandoori restaurant is a nice place in the west of town serving tasty indian food\n10.The phone number of maharajah tandoori restaurant is 01223 358399 and it is on 41518 Castle Street City Centre.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.You are looking for a german restaurant right?\n2.I'm sorry but there is no restaurant serving belgian food\n3.What part of town do you have in mind?\n4.Would you like something in the cheap, moderate, or expensive price range?\n5.the copper kettle is a nice place in the centre of town serving tasty british food\n6.The phone number of the copper kettle is 01223 365068 and it is on 4 Kings Parade City Centre.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.chiquito restaurant bar is a nice place in the south of town serving tasty mexican food\n3.Sure, chiquito restaurant bar is on 2G Cambridge Leisure Park Cherry Hinton Road Cherry Hinton\n4.The phone number of chiquito restaurant bar is 01223 400170.\n5.The post code of chiquito restaurant bar is C.B 1, 7 D.Y\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type.\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving venetian food\n4.Would you like something in the cheap, moderate, or expensive price range?\n5.la mimosa serves mediterranean food in the expensive price range\n6.Sure, la mimosa is on Thompsons Lane Fen Ditton\n7.The phone number of la mimosa is 01223 362525.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving cuban food\n3.the lucky star is a nice place in the south of town\n4.The phone number of the lucky star is 01223 244277.\n5.Sure, the lucky star is on Cambridge Leisure Park Clifton Way Cherry Hinton\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.Would you like something in the cheap, moderate, or expensive price range?\n3.sitar tandoori is a nice place in the east of town and the prices are expensive\n4.The phone number of sitar tandoori is 01223 249955.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.Sorry would you like something in the cheap price range or in the moderate price range\n3.Sorry would you like something in the cheap price range or in the moderate price range\n4.Sorry would you like something in the cheap price range or in the moderate price range\n5.What part of town do you have in mind?\n6.the missing sock is a nice place in the east of town and the prices are cheap\n7.Sure, the missing sock is on Finders Corner Newmarket Road\n8.The phone number of the missing sock is 01223 812660.\n9.the missing sock is a great restaurant\n10.the missing sock serves international food\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.You are looking for a restaurant serving any kind of food right?\n3.da vinci pizzeria is a nice place in the north of town and the prices are cheap\n4.da vinci pizzeria serves italian food\n5.Sure, da vinci pizzeria is on 20 Milton Road Chesterton\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.peking restaurant is a nice place in the south of town and the prices are expensive\n4.peking restaurant is a great restaurant\n5.chiquito restaurant bar is a nice place in the south of town and the prices are expensive\n6.taj tandoori is a nice place in the south of town and the prices are expensive\n7.Sure, taj tandoori is on 64 Cherry Hinton Road Cherry Hinton\n8.The phone number of taj tandoori is 01223 412299.\n9.The post code of taj tandoori is C.B 1, 7 A.A\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.the lucky star is a nice place in the south of town and the prices are cheap\n3.the lucky star is a nice place in the south of town and the prices are cheap\n4.nandos is a nice place in the south of town and the prices are cheap\n5.Sure, nandos is on Cambridge Leisure Park Clifton Way\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.You are looking for a seafood restaurant right?\n2.I'm sorry but there is no restaurant serving moderate seafood food\n3.I'm sorry but there is no restaurant serving moderate seafood food\n4.I'm sorry but there is no restaurant serving moderate seafood food\n5.Let me confirm, You are looking for a restaurant in the moderate price range right?\n6.shanghai family restaurant serves chinese food in the moderate price range\n7.shanghai family restaurant is a great restaurant\n8.The phone number of shanghai family restaurant is 01223 301761.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.taj tandoori is a great restaurant serving expensive indian food in the south of town.\n4.The phone number of taj tandoori is 01223 412299 and it is on 64 Cherry Hinton Road Cherry Hinton.\n5.taj tandoori is a great restaurant\n6.Sorry but there is no other indian restaurant in the expensive price range and the south of town\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.pizza hut cherry hinton is a nice place in the south of town and the prices are moderate\n3.Sure, pizza hut cherry hinton is on G4 Cambridge Leisure Park Clifton Way Cherry Hinton\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving christmas food\n2.What part of town do you have in mind?\n3.Would you like something in the cheap, moderate, or expensive price range?\n4.royal spice is a nice place in the north of town serving tasty indian food\n5.royal spice is in the cheap price range\n6.Sure, royal spice is on Victoria Avenue Chesterton\n7.The phone number of royal spice is 01733 553355.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving afghan food\n4.I'm sorry but there is no vietnamese restaurant in the centre of town\n5.Did you say you are looking for a restaurant in the centre of town?\n6.You are looking for a vietnamese restaurant right?\n7.I'm sorry but there is no vietnamese restaurant in the centre of town\n8.thanh binh serves vietnamese food\n9.thanh binh is a great restaurant\n10.thanh binh is in the cheap price range\n11.The phone number of thanh binh is 01223 362456.\n12.thanh binh is a great restaurant\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no japanese restaurant in the east of town\n2.You are looking for a indian restaurant right?\n3.Would you like something in the cheap, moderate, or expensive price range?\n4.sitar tandoori is a nice place in the east of town serving tasty indian food\n5.The phone number of sitar tandoori is 01223 249955 and it is on 43 High Street Cherry Hinton Cherry Hinton.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.sala thong is a nice place in the west of town serving tasty thai food\n3.Sure, sala thong is on 35 Newnham Road Newnham\n4.The phone number of sala thong is 01223 323178.\n5.The post code of sala thong is C.B 3, 9 E.Y\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving polynesian food\n3.I'm sorry but there is no restaurant serving polynesian food\n4.nandos is a nice place in the south of town serving tasty portuguese food\n5.The phone number of nandos is 01223 327908.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.the good luck chinese food takeaway is a nice place in the south of town and the prices are expensive\n3.The phone number of the good luck chinese food takeaway is 01223 244149.\n4.The post code of the good luck chinese food takeaway is C.B 1, 7 A.G\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving vegetarian food\n2.Sorry would you like turkish or vegetarian food?\n3.What part of town do you have in mind?\n4.Ok, a restaurant in any part of town is that right?\n5.Would you like something in the cheap, moderate, or expensive price range?\n6.anatolia serves turkish food in the moderate price range\n7.Sure, anatolia is on 30 Bridge Street City Centre\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving greek food\n3.Would you like something in the cheap, moderate, or expensive price range?\n4.sitar tandoori is a nice place in the east of town serving tasty indian food\n5.The phone number of sitar tandoori is 01223 249955 and it is on 43 High Street Cherry Hinton Cherry Hinton.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.pizza hut cherry hinton is a nice place in the south of town and the prices are moderate\n4.pizza hut cherry hinton is a great restaurant\n5.restaurant alimentum is a nice place in the south of town and the prices are moderate\n6.Sure, restaurant alimentum is on 152 - 154 Hills Road\n7.The phone number of restaurant alimentum is 01223 413000.\n8.Sure, restaurant alimentum is on 152 - 154 Hills Road\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.pizza hut cherry hinton is a nice place in the south of town and the prices are moderate\n3.The phone number of pizza hut cherry hinton is 01223 323737.\n4.The post code of pizza hut cherry hinton is C.B 1, 7 D.Y\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.chiquito restaurant bar is a nice place in the south of town serving tasty mexican food\n4.Sure, chiquito restaurant bar is on 2G Cambridge Leisure Park Cherry Hinton Road Cherry Hinton\n5.The phone number of chiquito restaurant bar is 01223 400170.\n6.chiquito restaurant bar is in the expensive price range\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.thanh binh is a nice place in the west of town and the prices are cheap\n3.la margherita is a nice place in the west of town and the prices are cheap\n4.Sure, la margherita is on 15 Magdalene Street City Centre\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the west of town?\n2.I'm sorry but there is no restaurant serving barbeque food\n3.thanh binh is a nice place in the west of town serving tasty vietnamese food\n4.thanh binh is a great restaurant\n5.The phone number of thanh binh is 01223 362456.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.I'm sorry but there is no restaurant serving corsica food\n3.I'm sorry but there is no restaurant serving corsica food\n4.I'm sorry but there is no restaurant serving corsica food\n5.You are looking for a corsica restaurant right?\n6.I'm sorry but there is no restaurant serving corsica food\n7.j restaurant serves asian oriental food\n8.yippee noodle bar serves asian oriental food\n9.Sure, yippee noodle bar is on 40428 King Street City Centre\n10.The phone number of yippee noodle bar is 01223 518111.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.I'm sorry but there is no restaurant serving crossover food\n3.I'm sorry but there is no restaurant serving crossover food\n4.You are looking for a italian restaurant right?\n5.Would you like something in the cheap, moderate, or expensive price range?\n6.Sorry would you like something in the cheap price range or you dont care\n7.prezzo is a nice place in the west of town serving tasty italian food\n8.The phone number of prezzo is 01799 521260.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.royal spice is in the cheap price range\n2.I'm sorry but there is no restaurant serving swedish food\n3.I'm sorry but there is no restaurant serving swedish food\n4.royal spice is in the cheap price range\n5.royal spice serves indian food\n6.j restaurant serves asian oriental food in the cheap price range\n7.The phone number of j restaurant is 01223 307581.\n8.dojo noodle bar serves asian oriental food in the cheap price range\n9.Sure, dojo noodle bar is on 40210 Millers Yard City Centre\n10.Sorry I am a bit confused ; please tell me again what you are looking for.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.You are looking for a restaurant serving any kind of food right?\n3.thanh binh is a nice place in the west of town and the prices are cheap\n4.Sure, thanh binh is on 17 Magdalene Street City Centre\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.I'm sorry but there is no restaurant serving romanian food\n3.I'm sorry but there is no restaurant serving romanian food\n4.I'm sorry but there is no restaurant serving romanian food\n5.You are looking for a portuguese restaurant right?\n6.nandos city centre serves portuguese food\n7.Sure, nandos city centre is on 33-34 Saint Andrews Street\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.saint johns chop house is a nice place in the west of town and the prices are moderate\n3.Sure, saint johns chop house is on 21 - 24 Northampton Street\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving fusion food\n2.the lucky star is in the cheap price range\n3.the lucky star is a great restaurant\n4.the gardenia serves mediterranean food in the cheap price range\n5.The phone number of the gardenia is 01223 356354 and its postcode is C.B 2, 3 L.L.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving scandinavian food\n2.You are looking for a asian oriental restaurant right?\n3.dojo noodle bar serves asian oriental food in the cheap price range\n4.The phone number of dojo noodle bar is 01223 363471.\n5.Sure, dojo noodle bar is on 40210 Millers Yard City Centre\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving australian food\n4.I'm sorry but there is no restaurant serving australian food\n5.restaurant two two serves french food in the expensive price range\n6.The phone number of restaurant two two is 01223 351880.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.the lucky star is a nice place in the south of town and the prices are cheap\n3.nandos is a nice place in the south of town and the prices are cheap\n4.Sure, nandos is on Cambridge Leisure Park Clifton Way\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving world food\n2.thanh binh serves vietnamese food\n3.Sure, thanh binh is on 17 Magdalene Street City Centre\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.da vinci pizzeria is a nice place in the north of town and the prices are cheap\n3.Sure, da vinci pizzeria is on 20 Milton Road Chesterton\n4.The phone number of da vinci pizzeria is 01223 351707.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving vegetarian food\n4.efes restaurant serves turkish food in the moderate price range\n5.Sure, efes restaurant is on King Street City Centre\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.peking restaurant is a nice place in the south of town and the prices are expensive\n3.Sure, peking restaurant is on 10 Homerton Street City Centre\n4.The phone number of peking restaurant is 01223 354755.\n5.peking restaurant serves chinese food\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving corsica food\n4.I'm sorry but there is no restaurant serving corsica food\n5.thanh binh serves vietnamese food\n6.Sure, thanh binh is on 17 Magdalene Street City Centre\n7.The phone number of thanh binh is 01223 362456.\n",
+            "output": [
+                "agree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.Ok, a restaurant in any part of town is that right?\n4.What kind of food would you like?\n5.You are looking for a restaurant serving any kind of food right?\n6.Would you like something in the cheap, moderate, or expensive price range?\n7.curry prince is a nice place in the east of town\n8.pipasha restaurant is a nice place in the east of town\n9.Sorry, I can't hear you\n10.You are looking for a restaurant serving any kind of food right?\n11.yu garden is a nice place in the east of town serving tasty chinese food\n12.The phone number of yu garden is 01223 248882 and it is on 529 Newmarket Road Fen Ditton.\n13.The post code of yu garden is C.B 5, 8 P.A\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What kind of food would you like?\n4.pizza hut cherry hinton is a nice place in the south of town and the prices are moderate\n5.Sure, pizza hut cherry hinton is on G4 Cambridge Leisure Park Clifton Way Cherry Hinton\n6.The post code of pizza hut cherry hinton is C.B 1, 7 D.Y\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.I'm sorry but there is no restaurant serving cantonese food\n4.Did you say you are looking for a restaurant in the north of town?\n5.Did you say you are looking for a restaurant in the north of town?\n6.You are looking for a north american restaurant right?\n7.I'm sorry but there is no north american restaurant in the north of town\n8.Did you say you are looking for a restaurant in the north of town?\n9.Let me confirm, You are looking for a restaurant in the expensive price range right?\n10.I'm sorry but there is no north american restaurant in the north of town\n11.hakka is a nice place in the north of town and the prices are expensive\n12.I'm sorry but there is no restaurant serving cantonese food\n13.I'm sorry but there is no north american restaurant in the north of town\n14.Let me confirm, You are looking for a restaurant in the expensive price range right?\n15.Let me confirm, You are looking for a restaurant in the expensive price range right?\n16.I'm sorry but there is no north american restaurant in the north of town\n17.I'm sorry but there is no north american restaurant in the north of town\n18.Let me confirm, You are looking for a restaurant in the expensive price range right?\n19.I'm sorry but there is no north american restaurant in the north of town\n20.I'm sorry but there is no north american restaurant in the north of town\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.Would you like something in the cheap, moderate, or expensive price range?\n4.Can I help you with anything else?\n5.Sorry I am a bit confused ; please tell me again what you are looking for.\n6.Can I help you with anything else?\n7.Can I help you with anything else?\n8.Sorry I am a bit confused ; please tell me again what you are looking for.\n9.I'm sorry but there is no restaurant serving scandinavian food\n10.I'm sorry but there is no restaurant serving scandinavian food\n11.Ok, a restaurant in any part of town is that right?\n12.You are looking for a scandinavian restaurant right?\n13.Let me confirm, You are looking for a restaurant and you dont care about the price range right?\n14.I'm sorry but there is no restaurant serving scandinavian food\n15.I'm sorry but there is no restaurant serving scandinavian food\n16.Ok, a restaurant in any part of town is that right?\n17.Sorry would you like scandinavian or thai food?\n18.Sorry would you like scandinavian or thai food?\n19.Sorry would you like scandinavian or thai food?\n20.Sorry would you like something in the cheap price range or you dont care\n21.bangkok city serves thai food\n22.Sure, bangkok city is on 24 Green Street City Centre\n23.The phone number of bangkok city is 01223 354382.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no european restaurant in the east of town\n4.I'm sorry but there is no european restaurant in the east of town\n5.pipasha restaurant is a nice place in the east of town\n6.The phone number of pipasha restaurant is 01223 577786 and it is on Newmarket Road Fen Ditton.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the west of town?\n2.I'm sorry but there is no restaurant serving creative food\n3.You are looking for a italian restaurant right?\n4.Would you like something in the cheap, moderate, or expensive price range?\n5.la margherita is a nice place in the west of town serving tasty italian food\n6.la margherita is a great restaurant\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving german food\n3.I'm sorry but there is no restaurant serving german food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving english food\n2.I'm sorry but there is no restaurant serving english food\n3.backstreet bistro is in the expensive price range\n4.Sure, backstreet bistro is on 2 Sturton Street City Centre\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.yippee noodle bar is in the moderate price range\n2.yippee noodle bar is a great restaurant\n3.yippee noodle bar serves asian oriental food\n4.anatolia serves turkish food in the moderate price range\n5.Sure, anatolia is on 30 Bridge Street City Centre\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.Sorry would you like something in the east or in the north\n3.Sorry would you like something in the east or in the north\n4.Did you say you are looking for a restaurant in the east of town?\n5.Did you say you are looking for a restaurant in the east of town?\n6.Did you say you are looking for a restaurant in the east of town?\n7.I'm sorry but there is no restaurant serving english food\n8.I'm sorry but there is no restaurant serving english food\n9.Did you say you are looking for a restaurant in the east of town?\n10.I'm sorry but there is no spanish restaurant in the east of town\n11.Did you say you are looking for a restaurant in the east of town?\n12.Sorry would you like the east of town or you dont care\n13.Would you like something in the cheap, moderate, or expensive price range?\n14.la raza serves spanish food\n15.Sure, la raza is on 4 - 6 Rose Crescent\n16.la raza is a great restaurant\n17.la raza is in the cheap price range\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.I'm sorry but there is no restaurant serving cheap japanese food\n3.You are looking for a japanese restaurant right?\n4.I'm sorry but there is no restaurant serving cheap japanese food\n5.I'm sorry but there is no restaurant serving cheap japanese food\n6.royal spice is in the cheap price range\n7.Sure, royal spice is on Victoria Avenue Chesterton\n8.la raza is in the cheap price range\n9.la raza is a great restaurant\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.Did you say you are looking for a restaurant in the north of town?\n3.What kind of food would you like?\n4.I'm sorry but there is no seafood restaurant in the north of town\n5.You are looking for a seafood restaurant right?\n6.I'm sorry but there is no seafood restaurant in the north of town\n7.I'm sorry but there is no seafood restaurant in the north of town\n8.I'm sorry but there is no seafood restaurant in the north of town\n9.Did you say you are looking for a restaurant in the north of town?\n10.You are looking for a seafood restaurant right?\n11.I'm sorry but there is no seafood restaurant in the north of town\n12.I'm sorry but there is no seafood restaurant in the north of town\n13.I'm sorry but there is no seafood restaurant in the north of town\n14.I'm sorry but there is no seafood restaurant in the north of town\n15.Did you say you are looking for a restaurant in the north of town?\n16.You are looking for a seafood restaurant right?\n17.Let me confirm, You are looking for a restaurant in the cheap price range right?\n18.Sorry, I can't hear you\n19.I'm sorry but there is no seafood restaurant in the north of town\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.What kind of food would you like?\n4.What kind of food would you like?\n5.What kind of food would you like?\n6.You are looking for a restaurant serving any kind of food right?\n7.Would you like something in the cheap, moderate, or expensive price range?\n8.thanh binh is a nice place in the west of town\n9.Sure, thanh binh is on 17 Magdalene Street City Centre\n10.india house is a nice place in the west of town\n11.india house is a great restaurant\n12.The phone number of india house is 01223 461661.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving venetian food\n2.I'm sorry but there is no restaurant serving venetian food\n3.I'm sorry but there is no restaurant serving venetian food\n4.You are looking for a venetian restaurant right?\n5.Let me confirm, You are looking for a restaurant in the expensive price range right?\n6.I'm sorry but there is no restaurant serving venetian food\n7.bangkok city serves thai food in the expensive price range\n8.Sure, bangkok city is on 24 Green Street City Centre\n9.The phone number of bangkok city is 01223 354382.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving jamaican food\n3.I'm sorry but there is no restaurant serving jamaican food\n4.I'm sorry but there is no restaurant serving jamaican food\n5.You are looking for a thai restaurant right?\n6.sala thong is a nice place in the west of town serving tasty thai food\n7.I am sorry but there is no other thai restaurant in the west of town\n8.Did you say you are looking for a restaurant in the west of town?\n9.You are looking for a vietnamese restaurant right?\n10.thanh binh is a nice place in the west of town serving tasty vietnamese food\n11.thanh binh is a great restaurant\n12.The phone number of thanh binh is 01223 362456.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving indonesian food\n2.I'm sorry but there is no restaurant serving indonesian food\n3.I'm sorry but there is no restaurant serving indonesian food\n4.You are looking for a indonesian restaurant right?\n5.I'm sorry but there is no restaurant serving indonesian food\n6.I'm sorry but there is no restaurant serving indonesian food\n7.I'm sorry but there is no restaurant serving indonesian food\n8.Did you say you are looking for a restaurant in the north of town?\n9.You are looking for a indonesian restaurant right?\n10.I'm sorry but there is no restaurant serving indonesian food\n11.Sorry I am a bit confused ; please tell me again what you are looking for.\n12.You are looking for a indonesian restaurant right?\n13.I'm sorry but there is no restaurant serving indonesian food\n14.I'm sorry but there is no restaurant serving indonesian food\n15.I'm sorry but there is no restaurant serving indonesian food\n16.Did you say you are looking for a restaurant in the north of town?\n17.You are looking for a indonesian restaurant right?\n18.I'm sorry but there is no restaurant serving indonesian food\n19.I'm sorry but there is no restaurant serving indonesian food\n20.I'm sorry but there is no restaurant serving indonesian food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.You are looking for a restaurant serving any kind of food right?\n4.yu garden is in the expensive price range\n5.yu garden is in the expensive price range\n6.yu garden is in the expensive price range\n7.yu garden serves chinese food\n8.yu garden is in the expensive price range\n9.yu garden serves chinese food\n10.yu garden is a great restaurant\n11.Sorry would you like british food or you dont care\n12.grafton hotel restaurant serves british food in the expensive price range\n13.The phone number of grafton hotel restaurant is 01223 241387 and it is in the expensive price range.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving corsica food\n2.I'm sorry but there is no restaurant serving corsica food\n3.You are looking for a corsica restaurant right?\n4.I'm sorry but there is no restaurant serving corsica food\n5.I'm sorry but there is no restaurant serving corsica food\n6.What part of town do you have in mind?\n7.Sorry would you like the west of town or you dont care\n8.Would you like something in the cheap, moderate, or expensive price range?\n9.the cow pizza kitchen and bar serves gastropub food\n10.The phone number of the cow pizza kitchen and bar is 01223 308871 and it is on Corn Exchange Street.\n11.The post code of the cow pizza kitchen and bar is C.B 2, 3 Q.F\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving welsh food\n4.I'm sorry but there is no restaurant serving welsh food\n5.I'm sorry but there is no restaurant serving welsh food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving kosher food\n4.Sorry, I can't hear you\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.cotto is in the moderate price range\n4.cotto serves british food\n5.restaurant one seven is in the moderate price range\n6.restaurant one seven serves british food\n7.restaurant one seven is a great restaurant\n8.The phone number of restaurant one seven is 01223 337766.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the north of town?\n2.What kind of food would you like?\n3.I'm sorry but there is no turkish restaurant in the north of town\n4.You are looking for a turkish restaurant right?\n5.I'm sorry but there is no turkish restaurant in the north of town\n6.I'm sorry but there is no turkish restaurant in the north of town\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.restaurant alimentum is a nice place in the south of town and the prices are moderate\n3.Sure, restaurant alimentum is on 152 - 154 Hills Road\n4.pizza hut cherry hinton is a nice place in the south of town and the prices are moderate\n5.pizza hut cherry hinton is a great restaurant\n6.The post code of pizza hut cherry hinton is C.B 1, 7 D.Y\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.india house is in the expensive price range\n2.the golden curry is in the expensive price range\n3.I'm sorry but there is no restaurant serving halal food\n4.I'm sorry but there is no restaurant serving halal food\n5.I'm sorry but there is no restaurant serving halal food\n6.Let me confirm, You are looking for a restaurant in the expensive price range right?\n7.I'm sorry but there is no restaurant serving halal food\n8.I'm sorry but there is no restaurant serving halal food\n9.I'm sorry but there is no restaurant serving halal food\n10.I'm sorry but there is no restaurant serving halal food\n11.You are looking for a halal restaurant right?\n12.Let me confirm, You are looking for a restaurant in the expensive price range right?\n13.I'm sorry but there is no restaurant serving halal food\n14.the golden curry is in the expensive price range\n15.the golden curry is a great restaurant\n16.the golden curry serves indian food\n17.You are looking for a halal restaurant right?\n18.I'm sorry but there is no restaurant serving halal food\n19.I'm sorry but there is no restaurant serving halal food\n20.You are looking for a italian restaurant right?\n21.What part of town do you have in mind?\n22.caffe uno serves italian food in the expensive price range\n23.The phone number of caffe uno is 01223 448620 and it is on 32 Bridge Street City Centre.\n24.caffe uno is a nice place in the centre of town\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.Let me confirm, You are looking for a restaurant in the cheap price range right?\n4.the river bar steakhouse and grill is in the cheap price range\n5.the lucky star is in the cheap price range\n6.the missing sock is in the cheap price range\n7.la margherita is in the cheap price range\n8.la margherita is a great restaurant\n9.la margherita serves italian food\n10.I'm sorry but there is no restaurant serving cuban food\n11.Sorry would you like modern european or cuban food?\n12.the river bar steakhouse and grill serves modern european food in the cheap price range\n13.Sure, the river bar steakhouse and grill is on Quayside Off Bridge Street\n14.I am sorry but there is no other modern european restaurant in the cheap price range\n15.The post code of the river bar steakhouse and grill is C.B 5, 8 A.Q\n16.Sorry I am a bit confused ; please tell me again what you are looking for.\n17.Ok, a restaurant in any part of town is that right?\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What part of town do you have in mind?\n4.What part of town do you have in mind?\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving english food\n4.Would you like something in the cheap, moderate, or expensive price range?\n5.the gardenia serves mediterranean food\n6.Sure, the gardenia is on 2 Rose Crescent City Centre\n7.The phone number of the gardenia is 01223 356354.\n8.The post code of the gardenia is C.B 2, 3 L.L\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving swiss food\n3.I'm sorry but there is no restaurant serving swiss food\n4.maharajah tandoori restaurant is a nice place in the west of town\n5.maharajah tandoori restaurant is a great restaurant\n6.Sure, maharajah tandoori restaurant is on 41518 Castle Street City Centre\n7.The post code of maharajah tandoori restaurant is C.B 3, 0 A.H\n8.The phone number of maharajah tandoori restaurant is 01223 358399.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving corsica food\n2.I'm sorry but there is no restaurant serving corsica food\n3.saffron brasserie serves indian food\n4.india house is a nice place in the west of town serving tasty indian food\n5.india house is a great restaurant\n6.Sure, india house is on 31 Newnham Road Newnham\n7.india house is a great restaurant\n8.The phone number of india house is 01223 461661.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the west of town?\n2.Did you say you are looking for a restaurant in the west of town?\n3.What kind of food would you like?\n4.Did you say you are looking for a restaurant in the west of town?\n5.I'm sorry but there is no international restaurant in the west of town\n6.I'm sorry but there is no international restaurant in the west of town\n7.bloomsbury restaurant serves international food\n8.Sure, bloomsbury restaurant is on Crowne Plaza Hotel 20 Downing Street\n9.The phone number of bloomsbury restaurant is 0871 942 9180.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What part of town do you have in mind?\n4.What kind of food would you like?\n5.prezzo is a nice place in the west of town and the prices are moderate\n6.prezzo is a great restaurant\n7.Sure, prezzo is on 21 - 24 Northampton Road\n8.The phone number of prezzo is 01799 521260.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving christmas food\n4.da vinci pizzeria is a nice place in the north of town\n5.da vinci pizzeria is a great restaurant\n6.Sorry would you like asian oriental or christmas food?\n7.Sorry would you like asian oriental or christmas food?\n8.saigon city is a nice place in the north of town serving tasty asian oriental food\n9.Sure, saigon city is on 169 High Street Chesterton Chesterton\n10.The phone number of saigon city is 01223 356555.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Sorry, I can't hear you\n2.Sorry, I can't hear you\n3.yippee noodle bar serves asian oriental food\n4.The phone number of yippee noodle bar is 01223 518111.\n5.yippee noodle bar is a nice place in the centre of town\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving moderate japanese food\n2.I'm sorry but there is no restaurant serving moderate japanese food\n3.la tasca is in the moderate price range\n4.Sorry would you like modern european or european food?\n5.the oak bistro is in the moderate price range\n6.Sorry, I can't hear you\n7.What part of town do you have in mind?\n8.Ok, a restaurant in any part of town is that right?\n9.the oak bistro serves british food\n10.Ok, a restaurant in any part of town is that right?\n11.Ok, a restaurant in any part of town is that right?\n12.Sorry would you like the east of town or you dont care\n13.riverside brasserie serves modern european food in the moderate price range\n14.The phone number of riverside brasserie is 01223 259988.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.ask is in the cheap price range\n4.dojo noodle bar is in the cheap price range\n5.Sure, dojo noodle bar is on 40210 Millers Yard City Centre\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.la margherita is a nice place in the west of town and the prices are cheap\n4.la margherita is a nice place in the west of town and the prices are cheap\n5.la margherita is a great restaurant\n6.Sure, la margherita is on 15 Magdalene Street City Centre\n7.la margherita serves italian food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What part of town do you have in mind?\n4.What part of town do you have in mind?\n5.What kind of food would you like?\n6.pizza hut fen ditton is a nice place in the east of town and the prices are moderate\n7.rajmahal is a nice place in the east of town and the prices are moderate\n8.Sure, rajmahal is on 7 Barnwell Road Fen Ditton\n9.The phone number of rajmahal is 01223 244955.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the west of town?\n2.Did you say you are looking for a restaurant in the west of town?\n3.Did you say you are looking for a restaurant in the west of town?\n4.What kind of food would you like?\n5.What kind of food would you like?\n6.Did you say you are looking for a restaurant in the west of town?\n7.You are looking for a restaurant serving any kind of food right?\n8.la margherita is a nice place in the west of town and the prices are cheap\n9.thanh binh is a nice place in the west of town and the prices are cheap\n10.Sorry but there is no other restaurant in the cheap price range and the west of town\n11.the gardenia is in the cheap price range\n12.the gardenia is a great restaurant\n13.royal spice is in the cheap price range\n14.dojo noodle bar is in the cheap price range\n15.The phone number of dojo noodle bar is 01223 363471.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving german food\n2.I'm sorry but there is no restaurant serving german food\n3.I'm sorry but there is no restaurant serving cheap european food\n4.Let me confirm, You are looking for a restaurant in the cheap price range right?\n5.I'm sorry but there is no restaurant serving cheap european food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.la margherita is a nice place in the west of town and the prices are cheap\n3.la margherita is a nice place in the west of town and the prices are cheap\n4.la margherita is a nice place in the west of town and the prices are cheap\n5.Sure, la margherita is on 15 Magdalene Street City Centre\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.I'm sorry but there is no restaurant serving belgian food\n4.I'm sorry but there is no restaurant serving belgian food\n5.tandoori palace is a nice place in the north of town\n6.Sure, tandoori palace is on 68 Histon Road Chesterton\n7.The phone number of tandoori palace is 01223 506055.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving christmas food\n2.I'm sorry but there is no restaurant serving christmas food\n3.You are looking for a christmas restaurant right?\n4.I'm sorry but there is no restaurant serving christmas food\n5.the cambridge chop house serves british food in the expensive price range\n6.The phone number of the cambridge chop house is 01223 359506.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving corsica food\n2.I'm sorry but there is no restaurant serving corsica food\n3.thanh binh serves vietnamese food\n4.Sure, thanh binh is on 17 Magdalene Street City Centre\n5.I am sorry but there is no other vietnamese restaurant that matches your request\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving fusion food\n2.I'm sorry but there is no restaurant serving fusion food\n3.You are looking for a fusion restaurant right?\n4.I'm sorry but there is no restaurant serving fusion food\n5.I'm sorry but there is no restaurant serving fusion food\n6.I'm sorry but there is no restaurant serving fusion food\n7.Did you say you are looking for a restaurant in the north of town?\n8.You are looking for a fusion restaurant right?\n9.I'm sorry but there is no restaurant serving fusion food\n10.I'm sorry but there is no restaurant serving fusion food\n11.I'm sorry but there is no restaurant serving fusion food\n12.Did you say you are looking for a restaurant in the north of town?\n13.saigon city is a nice place in the north of town serving tasty asian oriental food\n14.Sure, saigon city is on 169 High Street Chesterton Chesterton\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.little seoul serves korean food\n2.The phone number of little seoul is 01223 308681 and it is on 108 Regent Street City Centre.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.kohinoor is in the cheap price range\n2.What kind of food would you like?\n3.thanh binh is a nice place in the west of town and the prices are cheap\n4.Sure, thanh binh is on 17 Magdalene Street City Centre\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What part of town do you have in mind?\n4.What part of town do you have in mind?\n5.Let me confirm, You are looking for a restaurant in the cheap price range right?\n6.Let me confirm, You are looking for a restaurant in the cheap price range right?\n7.What part of town do you have in mind?\n8.What part of town do you have in mind?\n9.What kind of food would you like?\n10.I'm sorry but there is no restaurant serving brazilian food\n11.I'm sorry but there is no restaurant serving cheap gastropub food\n12.the slug and lettuce serves gastropub food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the west of town?\n2.Let me confirm, You are looking for a restaurant in the cheap price range right?\n3.What kind of food would you like?\n4.What kind of food would you like?\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.chiquito restaurant bar serves mexican food\n4.I am sorry but there is no other mexican restaurant that matches your request\n5.chiquito restaurant bar serves mexican food\n6.The phone number of chiquito restaurant bar is 01223 400170.\n7.Sure, chiquito restaurant bar is on 2G Cambridge Leisure Park Cherry Hinton Road Cherry Hinton\n8.chiquito restaurant bar is a great restaurant\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.What kind of food would you like?\n4.I'm sorry but there is no european restaurant in the north of town\n5.Did you say you are looking for a restaurant in the north of town?\n6.Did you say you are looking for a restaurant in the north of town?\n7.I'm sorry but there is no european restaurant in the north of town\n8.Would you like something in the cheap, moderate, or expensive price range?\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.I'm sorry but there is no restaurant serving crossover food\n2.I'm sorry but there is no restaurant serving crossover food\n3.I'm sorry but there is no restaurant serving crossover food\n4.Did you say you are looking for a restaurant in the west of town?\n5.thanh binh is a nice place in the west of town serving tasty vietnamese food\n6.The phone number of thanh binh is 01223 362456.\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.You are looking for a danish restaurant right?\n2.I'm sorry but there is no restaurant serving danish food\n3.You are looking for a spanish restaurant right?\n4.What part of town do you have in mind?\n5.Did you say you are looking for a restaurant in the east of town?\n6.Did you say you are looking for a restaurant in the east of town?\n7.Did you say you are looking for a restaurant in the east of town?\n8.I'm sorry but there is no spanish restaurant in the east of town\n9.la tasca serves spanish food\n10.la tasca is a great restaurant\n11.la tasca is a nice place in the centre of town\n12.Sure, la tasca is on 14 -16 Bridge Street\n13.la tasca is in the moderate price range\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.Did you say you are looking for a restaurant in the centre of town?\n2.What kind of food would you like?\n3.What kind of food would you like?\n4.I'm sorry but there is no restaurant serving kosher food\n5.I'm sorry but there is no restaurant serving kosher food\n6.I'm sorry but there is no restaurant serving kosher food\n7.Did you say you are looking for a restaurant in the centre of town?\n8.Would you like something in the cheap, moderate, or expensive price range?\n9.Let me confirm, You are looking for a restaurant and you dont care about the price range right?\n10.ask is a nice place in the centre of town serving tasty italian food\n11.The phone number of ask is 01223 364917.\n12.ask is in the cheap price range\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.Did you say you are looking for a restaurant in the west of town?\n4.Did you say you are looking for a restaurant in the west of town?\n5.What kind of food would you like?\n6.la margherita is a nice place in the west of town and the prices are cheap\n7.thanh binh is a nice place in the west of town and the prices are cheap\n8.The phone number of thanh binh is 01223 362456.\n9.thanh binh is a great restaurant\n10.thanh binh is a great restaurant\n11.Sorry but there is no other restaurant in the cheap price range and the west of town\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What kind of food would you like?\n3.ali baba serves lebanese food in the moderate price range\n4.The phone number of ali baba is 01462 432565 and it is on 59 Hills Road City Centre.\n5.Sorry, I can't hear you\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.sitar tandoori is a nice place in the east of town and the prices are expensive\n3.Sure, sitar tandoori is on 43 High Street Cherry Hinton Cherry Hinton\n4.sitar tandoori serves indian food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.What part of town do you have in mind?\n3.What part of town do you have in mind?\n4.What part of town do you have in mind?\n5.What kind of food would you like?\n6.cocum is in the expensive price range\n7.cocum is a great restaurant\n8.cocum is a nice place in the west of town\n9.cocum is in the expensive price range\n10.You are looking for a restaurant serving any kind of food right?\n11.cocum is in the expensive price range\n12.cote is in the expensive price range\n13.cocum is in the expensive price range\n14.cocum is in the expensive price range\n15.cocum is a great restaurant\n16.city stop restaurant is in the expensive price range\n17.You are looking for a restaurant serving any kind of food right?\n18.Ok, a restaurant in any part of town is that right?\n19.sala thong serves thai food in the expensive price range\n20.sala thong is a great restaurant\n21.Sure, sala thong is on 35 Newnham Road Newnham\n22.sala thong is a great restaurant\n23.The phone number of sala thong is 01223 323178.\n24.The post code of sala thong is C.B 3, 9 E.Y\n25.sala thong is a great restaurant\n26.The phone number of sala thong is 01223 323178.\n27.don pasquale pizzeria is in the expensive price range\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What kind of food would you like?\n2.I'm sorry but there is no restaurant serving english food\n3.I'm sorry but there is no restaurant serving venetian food\n4.Did you say you are looking for a restaurant in the south of town?\n5.You are looking for a venetian restaurant right?\n6.Let me confirm, You are looking for a restaurant in the cheap price range right?\n7.I'm sorry but there is no restaurant serving venetian food\n8.nandos is a great restaurant serving cheap portuguese food in the south of town.\n9.nandos is a great restaurant\n10.The phone number of nandos is 01223 327908.\n11.Sure, nandos is on Cambridge Leisure Park Clifton Way\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.little seoul is a nice place in the centre of town serving tasty korean food\n2.little seoul is a nice place in the centre of town serving tasty korean food\n3.little seoul is a nice place in the centre of town serving tasty korean food\n",
+            "output": [
+                "disagree"
+            ]
+        },
+        {
+            "input": "0.Hello, welcome to the Cambridge restaurant system? You can ask for restaurants by area, price range or food type. How may I help you?\n1.What part of town do you have in mind?\n2.Ok, a restaurant in any part of town is that right?\n3.Would you like something in the cheap, moderate, or expensive price range?\n4.mahal of cambridge serves indian food in the cheap price range\n5.mahal of cambridge is a great restaurant\n6.mahal of cambridge is a great restaurant\n7.the gandhi serves indian food in the cheap price range\n",
+            "output": [
+                "disagree"
+            ]
+        }
+    ]
+}
