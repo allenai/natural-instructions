@@ -1531,3 +1531,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1596_event2mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
 `task1597_nyc_slot_filling` | Categorizing elements of information from text from the NYC database | Slot Filling
 `task1598_nyc_long_text_generation` | Creating sentences based off of some information from the NYC database | Long Text Generation
+`task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
+`task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
+`task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
+`task1665_trainglecopa_question_generation` | Generating a Question for the given premise from traingleCOPA dataset | Question Generation
