@@ -1510,8 +1510,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
-`task1667_cail2018_answer_generation`| Generating answers (based on cail2018) | Answer Generation
-`task1668_cail2018_answer_generation` | Generating answers (based on cail2018) | Answer Generation
-`task1669_md_gender_bias_gender_identification` | Identifing gender (based on md gender bias) | Gender Identification
+`task1666_cail2018_answer_generation`| Generating answers (based on cail2018) | Answer Generation
+`task1667_cail2018_answer_generation` | Generating answers (based on cail2018) | Answer Generation
+`task1668_md_gender_bias_gender_identification` | Identifing gender (based on md gender bias) | Gender Identification
+`task1669_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
 `task1670_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
-`task1671_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
