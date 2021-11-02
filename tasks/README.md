@@ -1510,3 +1510,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
+`task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
+`task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
+`task1665_trainglecopa_question_generation` | Generating a Question for the given premise from traingleCOPA dataset | Question Generation
