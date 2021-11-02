@@ -1554,3 +1554,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
 `task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
 `task1665_trainglecopa_question_generation` | Generating a Question for the given premise from traingleCOPA dataset | Question Generation
+`task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
+`task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
+`task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
