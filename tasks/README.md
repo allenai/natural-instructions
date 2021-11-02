@@ -1510,3 +1510,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1693_ro_sts_parallel_translation` | Convert English sentences into the Romanian language | Translation
+`task1694_sharc_modified_classification` |Classify into 3 classes Yes/No/Irrelevant for the given question based on text snippet | Classification
+`task1695_sharc_modified_question_generation` | Given a text snippet and scenario, generate a question | Question Generation
+`task1696_sharc_modified_classification` | Identify whether the question has multiple answers or not | Classification
+`task1697_sharc_modified_follow_up_question_generation` | Given a text snippet, scenario, question and answer, generate a follow-up question | Question Generation
+`task1698_sharc_modified_question_generation` | Generate questions based on questions and text snippet | Question generation
