@@ -1538,6 +1538,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1601_webquestions_answer_generation` | Given a question and URL, generate an answer | Answer Generation
 `task1602_webquestion_question_genreation` | Given an answer and URL, generate a question | Question Generation
 `task1603_smcalflow_sentence_generation` | Given a user utterance, generate agents' utterance | Sentence Generation
+`task1604_ethos_text_classification` | Classifying text to Hate or Not Hate | Text Classification
+`task1605_ethos_text_classification` | Classifying text to Violence or Not Violence | Text Classification
+`task1606_ethos_text_classification` | Classifying if text has Gender Crticism | Text Classification
+`task1607_ethos_text_classification` | Classifying text to Religious Criticism | Text Classification
+`task1608_xquad_en_answer_generation` | Generating answers to xquad en questions | Answer Generation
+`task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
+`task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
+`task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
