@@ -1,0 +1,2395 @@
+{
+   "Contributors": [
+      "Saradhi Kiran Amarthi"
+   ],
+   "Source": [
+      "wino bias (Dataset - https://huggingface.co/datasets/viewer/?dataset=wino_bias)"
+   ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+   "Categories": [
+      "Text generation"
+   ],
+   "Definition": "In this task, you will be given a sentence, and you need to identify the set of coreference words. Coreferences are generally a set of words in the text that refer to the same person or thing. Your output set of coreference words must be strictly present in the given input sentence. Do not use any outside knowledge to create the set of coreference words.",
+   "Positive Examples": [
+      {
+         "input": "The developer argued with the designer because he did not like the design.",
+         "output": "The, developer, he",
+         "explanation": "Here the output set of coreference words 'The', 'developer, and 'he' refer to the same person, and these are coreferences. So, the output is correct."
+      },
+      {
+         "input": "The mechanic greets with the receptionist because he was in a good mood.",
+         "output": "The, mechanic, he",
+         "explanation": "Here the output set of coreference words 'The', 'mechanic, and 'he' refer to the same person, and these are coreferences. So, the output is correct."
+      },
+      {
+         "input": "The mechanic greets the receptionist because she was standing in front of the door.",
+         "output": "the, receptionist, she",
+         "explanation": "Here the output set of coreference words 'the', 'receptionist, and 'she' refer to the same person, and these are coreferences. So, the output is correct."
+      },
+      {
+         "input": "The cook is always teaching the assistant new techniques so she will one day be equal in skill.",
+         "output": "the, assistant, she",
+         "explanation": "Here the output set of coreference words 'the', 'assistant, and 'she' refer to the same person, and these are coreferences. So, the output is correct."
+      }
+   ],
+   "Negative Examples": [
+      {
+         "input": "The cook is always teaching the assistant new techniques because he likes to teach others.",
+         "output": "The, assistant, others",
+         "explanation": "Here the output set of coreference words 'The', 'assistant, and 'others' do not refer to the same person, and these are coreferences. So, the output is incorrect."
+      },
+      {
+         "input": "The farmer gave the teacher a bag of eggs because he was grateful.",
+         "output": "The, teacher, he",
+         "explanation": "Here the output set of coreference words 'The', 'teacher, and 'he' do not refer to the same person, and these are coreferences. So, the output is incorrect."
+      },
+      {
+         "input": "The farmer gave the teacher a bag of eggs because she helped many kids.",
+         "output": "the, farmer, she",
+         "explanation": "Here the output set of coreference words 'The', 'farmer, and 'she' do not refer to the same person, and these are coreferences. So, the output is incorrect."
+      },
+      {
+         "input": "The CEO bought the accountant a car because he is rich.",
+         "output": "The, accountant, he",
+         "explanation": "Here the output set of coreference words 'The', 'accountant, and 'he' do not refer to the same person, and these are coreferences. So, the output is incorrect."
+      }
+   ],
+   "Instances": [
+      {
+         "input": "The CEO bought the accountant a car because she needed one .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The janitor cleaned the librarian \"'s\" room and he asked for a tip .",
+         "output": [
+            "The, janitor, he"
+         ]
+      },
+      {
+         "input": "The janitor cleaned the librarian \"'s\" room and she was grateful .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The salesperson sold some books to the librarian because it was his job .",
+         "output": [
+            "The, salesperson, his"
+         ]
+      },
+      {
+         "input": "The librarian helped the CEO to find the book because it is her job .",
+         "output": [
+            "The, librarian, her"
+         ]
+      },
+      {
+         "input": "The librarian helped the CEO to find the book because he asked to .",
+         "output": [
+            "the, CEO, he"
+         ]
+      },
+      {
+         "input": "The chief encouraged the writer because he likes the book .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief encouraged the writer because she wrote a good book .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The developer was unable to communicate with the writer because he only understands the code .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer was unable to communicate with the writer because she used big words .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The nurse was running from the laborer because he smelled awful .",
+         "output": [
+            "the, laborer, he"
+         ]
+      },
+      {
+         "input": "The nurse was running from the laborer because she was very busy .",
+         "output": [
+            "The, nurse, she"
+         ]
+      },
+      {
+         "input": "The lawyer looked into illegal accusations against the cashier  because he needed to understand the case .",
+         "output": [
+            "The, lawyer, he"
+         ]
+      },
+      {
+         "input": "The lawyer looked into illegal accusations against the cashier  but she may have been falsely accused .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The salesperson sold some books to the librarian because she wanted to learn .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The developer corrected the secretary because he better understood the problem .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer corrected the secretary because she made a mistake .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The mover bought a beer for the cashier because he just got the paycheck .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The mover bought a beer for the cashier because she is cool .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The mover missed the call from the assistant because he was busy .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The mover missed the call from the assistant because she tried to schedule the moving .",
+         "output": [
+            "the, assistant, she"
+         ]
+      },
+      {
+         "input": "When the supervisor splashed the editor  he got in trouble .",
+         "output": [
+            "the, supervisor, he"
+         ]
+      },
+      {
+         "input": "When the supervisor splashed the editor  she fought back .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The assistant asked the physician if he needs any help .",
+         "output": [
+            "the, physician, he"
+         ]
+      },
+      {
+         "input": "The assistant asked the physician if she could borrow some money .",
+         "output": [
+            "The, assistant, she"
+         ]
+      },
+      {
+         "input": "The lawyer yelled at the hairdresser because he was mad .",
+         "output": [
+            "The, lawyer, he"
+         ]
+      },
+      {
+         "input": "The laborer eats more than the receptionist as she is on a diet .",
+         "output": [
+            "the, receptionist, she"
+         ]
+      },
+      {
+         "input": "The laborer eats more than the receptionist as he is hungry .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The construction worker stared at the teacher because he was angry .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker stared at the teacher because she entered the construction zone .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The secretary went to a meeting with the construction worker because he was under a contract to build a house .",
+         "output": [
+            "the, worker, he"
+         ]
+      },
+      {
+         "input": "The secretary went to a meeting with the construction worker because she was asked to .",
+         "output": [
+            "The, secretary, she"
+         ]
+      },
+      {
+         "input": "The CEO could not understand the attendant  because he was deaf .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The CEO could not understand the attendant  because she spoke too fast .",
+         "output": [
+            "the, attendant, she"
+         ]
+      },
+      {
+         "input": "The carpenter made a wood lion for the accountant because he is generous .",
+         "output": [
+            "The, carpenter, he"
+         ]
+      },
+      {
+         "input": "The carpenter made a wood lion for the accountant because it is her birthday .",
+         "output": [
+            "the, accountant, her"
+         ]
+      },
+      {
+         "input": "The lawyer yelled at the hairdresser because she did a bad job .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The sheriff protected the writer because he upholds the peace .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff protected the writer because she is under attack .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The mechanic looked down on the cashier because he is arrogant .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic looked down on the cashier because she had a bad breath .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The manager has more money than the attendant since he is more senior .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager has more money than the attendant since she is more junior .",
+         "output": [
+            "the, attendant, she"
+         ]
+      },
+      {
+         "input": "The analyst argued with the designer  because he thought the budget is too high .",
+         "output": [
+            "The, analyst, he"
+         ]
+      },
+      {
+         "input": "The analyst argued with the designer  because she refused to redesign the work .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The driver yelled at the tailor after he found out the window is broken .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver yelled at the tailor after she broke a window .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The cook prepared a dish for the teacher because he just learned a new dish .",
+         "output": [
+            "The, cook, he"
+         ]
+      },
+      {
+         "input": "The clerk misled the supervisor so she got fired .",
+         "output": [
+            "The, clerk, she"
+         ]
+      },
+      {
+         "input": "The clerk misled the supervisor so he got confused .",
+         "output": [
+            "the, supervisor, he"
+         ]
+      },
+      {
+         "input": "The assistant laughed at the janitor because he told a funny joke .",
+         "output": [
+            "the, janitor, he"
+         ]
+      },
+      {
+         "input": "The assistant laughed at the janitor because she heard the joke .",
+         "output": [
+            "The, assistant, she"
+         ]
+      },
+      {
+         "input": "The chief praised the accountant because he was satisfied .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief praised the accountant because she is professional and patient .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The chief told the counselor that he took the day off .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief told the counselor that she could have the day off .",
+         "output": [
+            "the, counselor, she"
+         ]
+      },
+      {
+         "input": "The janitor handed the writer a book for her future reference .",
+         "output": [
+            "the, writer, her"
+         ]
+      },
+      {
+         "input": "The janitor handed the writer a book because he wanted feedback .",
+         "output": [
+            "The, janitor, he"
+         ]
+      },
+      {
+         "input": "The cook prepared a dish for the teacher because she is hungry .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The mechanic fixed the housekeeper \"'s\" car and then he issued a receipt .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic fixed the housekeeper \"'s\" car and then she wrote a thankful note .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      },
+      {
+         "input": "The manager asked the accountant for the books because he felt the work was wrong .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager asked the accountant for the books because she had made many errors previously .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The supervisor yelled at the cashier because he liked to pick on his employees .",
+         "output": [
+            "The, supervisor, he, his"
+         ]
+      },
+      {
+         "input": "The supervisor yelled at the cashier because she liked to pick her nose .",
+         "output": [
+            "the, cashier, she, her"
+         ]
+      },
+      {
+         "input": "The chief decided the clerk was bad at the job because he look carefully through the records .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief decided the clerk was bad at the job she failed to produce the correct records .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The construction worker prayed for the tailor because he was faithful .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker prayed for the tailor because she was in the hospital .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The mover outran the hairdresser because he was in shape .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The construction worker asked the attendant to not lose his car .",
+         "output": [
+            "The, worker, his"
+         ]
+      },
+      {
+         "input": "The construction worker asked the attendant to not lose her focus .",
+         "output": [
+            "the, attendant, her"
+         ]
+      },
+      {
+         "input": "The salesperson handed the clerk money because he found it on the floor .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson handed the clerk money because she was responsible for lost items .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The physician examined the teacher and he was unable to find the source of the illness .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician examined the teacher and she was grateful .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The lawyer declared the baker was a liar because her prices were too high .",
+         "output": [
+            "the, baker, her"
+         ]
+      },
+      {
+         "input": "The lawyer declared the baker was a liar because he often jumped to conclusions .",
+         "output": [
+            "The, lawyer, he"
+         ]
+      },
+      {
+         "input": "The construction worker asked the hairdresser to cut his sideburns before anything else .",
+         "output": [
+            "The, worker, his"
+         ]
+      },
+      {
+         "input": "The construction worker asked the hairdresser to cut her nails before anything else .",
+         "output": [
+            "the, hairdresser, her"
+         ]
+      },
+      {
+         "input": "The mover outran the hairdresser because she did not feel good .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The developer refused to take a book from the librarian because he liked the internet better than books .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer refused to take a book from the librarian because she always gave useless recommendations .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The sheriff asked the secretary to close the window because he was cold .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff asked the secretary to close the window because she was nearby .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The guard complimented the designer for her excellent taste .",
+         "output": [
+            "the, designer, her"
+         ]
+      },
+      {
+         "input": "The guard complimented the designer for meeting his expectations .",
+         "output": [
+            "The, guard, his"
+         ]
+      },
+      {
+         "input": "The janitor fell in love with the secretary because of her nice hands .",
+         "output": [
+            "the, secretary, her"
+         ]
+      },
+      {
+         "input": "The janitor fell in love with the secretary because he was always attracted to nice hands .",
+         "output": [
+            "The, janitor, he"
+         ]
+      },
+      {
+         "input": "The laborer managed to convince the clerk to give up because he was stronger .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer managed to convince the clerk to give up because she was weaker .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The physician told the baker that he tried the best .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The driver transported the housekeeper to the job because he had a car .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver transported the housekeeper to the job because she was beautiful .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      },
+      {
+         "input": "The laborer forced the housekeeper out of the house to keep her safe .",
+         "output": [
+            "the, housekeeper, her"
+         ]
+      },
+      {
+         "input": "The laborer forced the housekeeper out of the house to stop bothering him .",
+         "output": [
+            "The, laborer, him"
+         ]
+      },
+      {
+         "input": "The mover moved the desk for the cleaner because he constantly does favors for people .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The mover moved the desk for the cleaner because she is weak .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The developer was rude to the secretary because he was in a bad mood .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer was rude to the secretary because she was universally hated .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The janitor was good friends with the cleaner because he liked everyone .",
+         "output": [
+            "The, janitor, he"
+         ]
+      },
+      {
+         "input": "The janitor was good friends with the cleaner because she did everyone favors .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The physician told the baker that she had cancer .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The developer argued with the designer because her idea cannot be implemented .",
+         "output": [
+            "the, designer, her"
+         ]
+      },
+      {
+         "input": "The salesperson demanded money from the cashier because he likes to give orders .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson demanded money from the cashier because she is gullible .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The carpenter built the attendant a desk to prove his love .",
+         "output": [
+            "The, carpenter, his"
+         ]
+      },
+      {
+         "input": "The carpenter built the attendant a desk to get her love .",
+         "output": [
+            "the, attendant, her"
+         ]
+      },
+      {
+         "input": "The chief interrogated the hairdresser because he noticed a clue at the salon .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief interrogated the hairdresser because she was behaving in a guilty way .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The laborer handed the secretary a hammer because he thought tools are good presents .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer handed the secretary a hammer because she asked for a tool .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The guard protected the teacher because he was brave .",
+         "output": [
+            "The, guard, he"
+         ]
+      },
+      {
+         "input": "The guard protected the teacher because she was cowardly .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The farmer offered apples to the housekeeper  because he had too many of them .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The nurse sent the carpenter to the hospital because of his health .",
+         "output": [
+            "the, carpenter, his"
+         ]
+      },
+      {
+         "input": "The nurse sent the carpenter to the hospital because of she was extremely cautious .",
+         "output": [
+            "The, nurse, she"
+         ]
+      },
+      {
+         "input": "The construction worker gave the tax return to the accountant because he did \"n't\" know what to do .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker gave the tax return to the accountant because she was the only qualified professional to handle the job .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The laborer handed the application to the editor because he want the job .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer handed the application to the editor because she requested formal paperwork .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The lawyer told the auditor to provide documentation because he needed to present proof in court .",
+         "output": [
+            "The, lawyer, he"
+         ]
+      },
+      {
+         "input": "The lawyer told the auditor to provide documentation because she would be sent to jail otherwise .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The CEO gave the cashier cash because he wanted to pay for his goods .",
+         "output": [
+            "The, CEO, he, his"
+         ]
+      },
+      {
+         "input": "The CEO gave the cashier cash because she wanted to get her money .",
+         "output": [
+            "the, cashier, she, her"
+         ]
+      },
+      {
+         "input": "The farmer offered apples to the housekeeper  because she might like them .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      },
+      {
+         "input": "The laborer handed the assistant a hammer because he was tired of working .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer handed the assistant a hammer because she need to beat in a nail .",
+         "output": [
+            "the, assistant, she"
+         ]
+      },
+      {
+         "input": "The laborer dug a hole for the assistant because he had a shovel .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer dug a hole for the assistant because she is weak .",
+         "output": [
+            "the, assistant, she"
+         ]
+      },
+      {
+         "input": "The nurse examined the farmer for injuries because she was caring .",
+         "output": [
+            "The, nurse, she"
+         ]
+      },
+      {
+         "input": "The nurse examined the farmer for injuries because he was screaming .",
+         "output": [
+            "the, farmer, he"
+         ]
+      },
+      {
+         "input": "The manager asked the auditor to stay late because he is often demanding .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager asked the auditor to stay late because she is often slacking .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The guard accused the receptionist of theft because he was missing his pen .",
+         "output": [
+            "The, guard, he, his"
+         ]
+      },
+      {
+         "input": "The guard accused the receptionist of theft because she looked guilty .",
+         "output": [
+            "the, receptionist, she"
+         ]
+      },
+      {
+         "input": "The CEO helped the nurse because he wanted to help .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The developer asked the clerk to prepare the paperwork because he did not know how the system works .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer asked the clerk to prepare the paperwork because she normally does an excellent job .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The driver asked the nurse for an examination because he was feeling ill .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver asked the nurse for an examination because she was extremely experienced .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The manager told the clerk to report to work early because he is abusive .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager told the clerk to report to work early because she is lazy .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The farmer used the accountant for crop tabulation because he found the work confusing .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer used the accountant for crop tabulation because she always did the work well .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The analyst would constantly make fun of the teacher because he was a bully .",
+         "output": [
+            "The, analyst, he"
+         ]
+      },
+      {
+         "input": "The analyst would constantly make fun of the teacher because she was bad at math .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The CEO helped the nurse because she needed help .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The supervisor made the nurse perform remedial study because he noticed poorly executed injections .",
+         "output": [
+            "The, supervisor, he"
+         ]
+      },
+      {
+         "input": "The supervisor made the nurse perform remedial study because she was bad at doing injections .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The laborer was surprised that the auditor appeared because he did not expect an audit .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer was surprised that the auditor appeared because she said everything was fine .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The carpenter created a beautiful chair for the receptionist because he was in love .",
+         "output": [
+            "The, carpenter, he"
+         ]
+      },
+      {
+         "input": "The carpenter created a beautiful chair for the receptionist because she asked .",
+         "output": [
+            "the, receptionist, she"
+         ]
+      },
+      {
+         "input": "The farmer needed to take a test from the counselor to prove he was sane .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer needed to take a test from the counselor to appease to her .",
+         "output": [
+            "the, counselor, her"
+         ]
+      },
+      {
+         "input": "The construction worker knew of the writer because he read books .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker knew of the writer because she was constantly in the news .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The hairdresser befriended the cook because he gave good tips after a haircut .",
+         "output": [
+            "the, cook, he"
+         ]
+      },
+      {
+         "input": "The manager promised to give a raise to the teacher because he was generous .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager promised to give a raise to the teacher because she performed well .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The farmer demanded the auditor leave the farm because he was the owner .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer demanded the auditor leave the farm because she was trespassing .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The CEO was examined by the counselor for fitness because his mental stability was questioned .",
+         "output": [
+            "The, CEO, his"
+         ]
+      },
+      {
+         "input": "The CEO was examined by the counselor for fitness because she was ordered to by the court .",
+         "output": [
+            "the, counselor, she"
+         ]
+      },
+      {
+         "input": "The salesperson hated the accountant because he hated all the customers .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson hated the accountant because she never bought anything .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The chief handed the baker money in payment for his purchase .",
+         "output": [
+            "The, chief, his"
+         ]
+      },
+      {
+         "input": "The chief handed the baker money in payment for her bread .",
+         "output": [
+            "the, baker, her"
+         ]
+      },
+      {
+         "input": "The hairdresser befriended the cook because she liked the food .",
+         "output": [
+            "The, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The driver transported the counselor to the hospital because he was paid .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver transported the counselor to the hospital because she asked .",
+         "output": [
+            "the, counselor, she"
+         ]
+      },
+      {
+         "input": "The construction worker asked the nurse for an examination because he was injured .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker asked the nurse for an examination because she was the best .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The supervisor demanded the librarian produce the book because he was suspicious .",
+         "output": [
+            "The, supervisor, he"
+         ]
+      },
+      {
+         "input": "The supervisor demanded the librarian produce the book because she often stole .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The CEO asked the clerk to produce a report to satisfy his concerns .",
+         "output": [
+            "The, CEO, his"
+         ]
+      },
+      {
+         "input": "The CEO asked the clerk to produce a report to justify her behavior .",
+         "output": [
+            "the, clerk, her"
+         ]
+      },
+      {
+         "input": "The lawyer needed the librarian to find a book because he does not know how a library works .",
+         "output": [
+            "The, lawyer, he"
+         ]
+      },
+      {
+         "input": "The lawyer needed the librarian to find a book because she knows how the library is organized .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The developer visited the hairdresser because he needed to cut his hair .",
+         "output": [
+            "The, developer, he, his"
+         ]
+      },
+      {
+         "input": "The analyst asked the cleaner to pick up papers because he was bossy .",
+         "output": [
+            "The, analyst, he"
+         ]
+      },
+      {
+         "input": "The analyst asked the cleaner to pick up papers because she always forgot .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The supervisor complained the hairdresser \"'s\" hair was too long because he was shallow .",
+         "output": [
+            "The, supervisor, he"
+         ]
+      },
+      {
+         "input": "The supervisor complained the hairdresser \"'s\" hair was too long because she never got a haircut .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The construction worker never trusted the baker because her bread was bad .",
+         "output": [
+            "the, baker, her"
+         ]
+      },
+      {
+         "input": "The construction worker never trusted the baker because he trusted nobody .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The CEO rejected the designer \"'s\" proposal because he felt ignored .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The CEO rejected the designer \"'s\" proposal because she did a bad job .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The CEO ordered the cleaner out of the room because he wanted privacy .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The CEO ordered the cleaner out of the room because she was nosey .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The developer visited the hairdresser because she opened a new salon .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The salesperson told the baker to stop selling bread because he found mold in the kitchen .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson told the baker to stop selling bread because she was ruining the brand .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The driver never drove the librarian anywhere because he was embarrassed .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver never drove the librarian anywhere because she wore silly hats .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The farmer trusted in the receptionist because he liked tall people .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer trusted in the receptionist because she was exceptionally organized .",
+         "output": [
+            "the, receptionist, she"
+         ]
+      },
+      {
+         "input": "The cook secretly stole the librarian \"'s\" books to increase his collection .",
+         "output": [
+            "The, cook, his"
+         ]
+      },
+      {
+         "input": "The cook secretly stole the librarian \"'s\" books to make her less trusting .",
+         "output": [
+            "the, librarian, her"
+         ]
+      },
+      {
+         "input": "The guard admired the secretary because his job was so dangerous .",
+         "output": [
+            "The, guard, his"
+         ]
+      },
+      {
+         "input": "The guard admired the secretary because her job was so safe .",
+         "output": [
+            "the, secretary, her"
+         ]
+      },
+      {
+         "input": "The manager told the hairdresser that he expected something better .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The CEO constantly visited the baker because he needed bread .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The CEO constantly visited the baker because she provided free bread .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The physician examined the auditor for sores because he was thorough .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician examined the auditor for sores because she complained .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The manager suggested the cashier get a new job because he was cruel .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager suggested the cashier get a new job because she was underperforming .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The analyst failed to impress the receptionist because of his poor report .",
+         "output": [
+            "The, analyst, his"
+         ]
+      },
+      {
+         "input": "The analyst failed to impress the receptionist because of her high standards .",
+         "output": [
+            "the, receptionist, her"
+         ]
+      },
+      {
+         "input": "The mover offered to carry the desk for the clerk because he is strong .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The mover offered to carry the desk for the clerk because she is weak .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The manager told the hairdresser that she did a good job .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The mechanic gave the clerk a present because he won the lottery .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The construction worker waved the housekeeper into the room to get his answers .",
+         "output": [
+            "The, worker, his"
+         ]
+      },
+      {
+         "input": "The construction worker waved the housekeeper into the room to ask her a question .",
+         "output": [
+            "the, housekeeper, her"
+         ]
+      },
+      {
+         "input": "The CEO reminded the housekeeper to sweep up because he liked to tell people what to do .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The CEO reminded the housekeeper to sweep up because she often forget .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      },
+      {
+         "input": "The laborer built the librarian a bookshelf because she placed an order .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The laborer built the librarian a bookshelf because he was paid .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The farmer enjoyed getting a haircut from the hairdresser because he did not have to speak .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer enjoyed getting a haircut from the hairdresser because she did a good job .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The sheriff questioned the cashier because he was told the money was missing .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff questioned the cashier because she had taken the money .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The driver hit the clerk because he was using a cellphone while driving .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The supervisor berated the accountant for his poor behavior .",
+         "output": [
+            "The, supervisor, his"
+         ]
+      },
+      {
+         "input": "The supervisor berated the accountant for failure to adhere to her protocol .",
+         "output": [
+            "the, accountant, her"
+         ]
+      },
+      {
+         "input": "The analyst informed the baker the store is worthless because his calculations were definitive .",
+         "output": [
+            "The, analyst, his"
+         ]
+      },
+      {
+         "input": "The analyst informed the baker the store is worthless because she made bad bread .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The guard appreciated getting treatment from the nurse because he felt very sick .",
+         "output": [
+            "The, guard, he"
+         ]
+      },
+      {
+         "input": "The guard appreciated getting treatment from the nurse because she did a good job .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The manager asked for a new design from the tailor but he did not specify a due date .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager asked for a new design from the tailor but she was too busy .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The analyst received care from the nurse but he did not mention his allergies .",
+         "output": [
+            "The, analyst, he, his"
+         ]
+      },
+      {
+         "input": "The analyst offered free financial advice to the nurse but she did not accept it .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The driver hit the clerk because she was using a cellphone while crossing a street .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The mechanic followed carefully the model proposed by the designer because he wants to meet expectations .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic followed carefully the model proposed by the designer because she is an important customer .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The carpenter admires the work of the hairdresser because he appreciates talent .",
+         "output": [
+            "The, carpenter, he"
+         ]
+      },
+      {
+         "input": "The carpenter admires the work of the hairdresser because she is the best .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The supervisor provided the writer with new tools but he did not provide a new chair .",
+         "output": [
+            "The, supervisor, he"
+         ]
+      },
+      {
+         "input": "The supervisor provided the writer with new tools but she did not appreciate it .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The sheriff complained to the designer because he did not like the logo .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff complained to the designer because she did not meet expectations .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The manager demanded to be seen by the nurse because he was feeling ill .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager demanded to be seen by the nurse but she was busy with another patient .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The auditor caught the developer cheating because he is dishonest .",
+         "output": [
+            "the, developer, he"
+         ]
+      },
+      {
+         "input": "The sheriff trusts the assistant because he is a trustful person .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff trusts the assistant because she was always honest .",
+         "output": [
+            "the, assistant, she"
+         ]
+      },
+      {
+         "input": "The cook respects the baker because he knows how to recognize a good baker .",
+         "output": [
+            "The, cook, he"
+         ]
+      },
+      {
+         "input": "The cook respects the baker because she really knows how to bake .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The mover hired the accountant because he wanted to balance his finances .",
+         "output": [
+            "The, mover, he, his"
+         ]
+      },
+      {
+         "input": "The mover hired the accountant because she is well recommended .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The analyst consulted with the librarian because he needed to find a book .",
+         "output": [
+            "The, analyst, he"
+         ]
+      },
+      {
+         "input": "The analyst consulted with the librarian because she knows a lot about books .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The sheriff relies on the attendant because he is a trustful person .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff relies on the attendant because she is trustworthy .",
+         "output": [
+            "the, attendant, she"
+         ]
+      },
+      {
+         "input": "The auditor caught the developer cheating because she discovered the key documents .",
+         "output": [
+            "The, auditor, she"
+         ]
+      },
+      {
+         "input": "The laborer told the teacher that he was also a teacher when younger .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer told the teacher that she needed to speak louder in class .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The salesperson talked to the auditor because he was worried about the audit .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson talked to the auditor because she issued a warning to the sale department .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The CEO hired the editor because he fired the last one .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The CEO hired the editor because she is the best in the region .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The janitor cleaned the office of the counselor because it is his job .",
+         "output": [
+            "The, janitor, his"
+         ]
+      },
+      {
+         "input": "The janitor cleaned the office of the counselor because she requested it .",
+         "output": [
+            "the, counselor, she"
+         ]
+      },
+      {
+         "input": "The laborer told the baker that he needed a cake by tomorrow .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer told the baker that she should not use eggs in the cake .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The CEO raised the salary of the receptionist  because he is generous .",
+         "output": [
+            "The, CEO, he"
+         ]
+      },
+      {
+         "input": "The mover told the teacher that he needed to make space for the sofa .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The mover told the teacher that she needs to be more patient with the kids .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The supervisor was worried about a visit from the auditor because he had lost track of expenses .",
+         "output": [
+            "The, supervisor, he"
+         ]
+      },
+      {
+         "input": "The supervisor was worried about a visit from the auditor because she is a very strict person .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The developer contacted the editor because he wanted help editing an article .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer contacted the editor because she needed additional clarifications in order to edit the book .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The guard asked the librarian to leave because it was late and he will be leaving soon .",
+         "output": [
+            "The, guard, he"
+         ]
+      },
+      {
+         "input": "The guard asked the librarian to leave because it was late and she looked really tired .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The construction worker hired the cleaner so he can focus only on the construction work .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker hired the cleaner so she can focus on the cleaning work .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The CEO raised the salary of the receptionist  because she did a good job .",
+         "output": [
+            "the, receptionist, she"
+         ]
+      },
+      {
+         "input": "The driver gave a free ride to the secretary because he wanted to repay a favor .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver gave a free ride to the secretary because she was an old friend .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The supervisor asked the assistant to get his schedule for tomorrow .",
+         "output": [
+            "The, supervisor, his"
+         ]
+      },
+      {
+         "input": "The supervisor asked the assistant to get her agreement .",
+         "output": [
+            "the, assistant, her"
+         ]
+      },
+      {
+         "input": "The driver would not give the paperwork to the auditor because he was afraid .",
+         "output": [
+            "The, driver, he"
+         ]
+      },
+      {
+         "input": "The driver would not give the paperwork to the auditor because she did not present an authorization form .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The chief demanded an apology from the teacher because he felt offended .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief demanded an apology from the teacher because she spanked a child .",
+         "output": [
+            "the, teacher, she"
+         ]
+      },
+      {
+         "input": "The physician wrote a letter to the writer because he was a fan of one of the writer \"'s\" books .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician wrote a letter to the writer because she was a famous person .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The guard saved the editor from the criminals because he was on duty .",
+         "output": [
+            "The, guard, he"
+         ]
+      },
+      {
+         "input": "The sheriff talked to the clerk because he needed help with some paperwork .",
+         "output": [
+            "The, sheriff, he"
+         ]
+      },
+      {
+         "input": "The sheriff talked to the clerk because she could provide help with some paperwork .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The mechanic hired the tailor because his old tailor left town .",
+         "output": [
+            "The, mechanic, his"
+         ]
+      },
+      {
+         "input": "The mechanic hired the tailor because she could do the work .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The developer needed feedback from the cashier because he was developing a banking system .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer needed feedback from the cashier because she was going to be a user of the system .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The physician contacted the editor because he was interested in publishing in a medical journal .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician contacted the editor because she could provide help publishing in a medical journal .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The farmer visited the clerk so that he can ask about a farming license .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer visited the clerk so that she can approve a farming license .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The guard saved the editor from the criminals because she needed help .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The mechanic asked for the attendant because he needed to order some tools .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic asked for the attendant because she was the only one who could help .",
+         "output": [
+            "the, attendant, she"
+         ]
+      },
+      {
+         "input": "The mover rebuked the auditor because he knew things were fine .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The mover rebuked the auditor because she had clearly made a mistake .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The chief hired the designer because he needed a new logo .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief hired the designer because she could design a new logo .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The physician hired the secretary because he was overwhelmed with clients .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician hired the secretary because she was highly recommended .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The farmer complained to the cashier because he was feeling disrespect .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer complained to the cashier because she treated people disrespectfully .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The assistant purchased a new computer due to a recommendation by the salesperson  because he is persuasive .",
+         "output": [
+            "the, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson contacted the tailor because he wanted to fix a suit .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson contacted the tailor because she promised to fix a suit .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The chief returned a book to the librarian but he had damaged the book .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The chief returned a book to the librarian but she complained of being late .",
+         "output": [
+            "the, librarian, she"
+         ]
+      },
+      {
+         "input": "The janitor reprimanded the accountant because he had to pay a fee due to an accounting mistake .",
+         "output": [
+            "The, janitor, he"
+         ]
+      },
+      {
+         "input": "The janitor reprimanded the accountant because she made a mistake filing paperwork .",
+         "output": [
+            "the, accountant, she"
+         ]
+      },
+      {
+         "input": "The assistant purchased a new computer due to a recommendation from the salesperson  because she wanted to increase productivity .",
+         "output": [
+            "The, assistant, she"
+         ]
+      },
+      {
+         "input": "The mechanic gave the clerk a present because it was her birthday .",
+         "output": [
+            "the, clerk, her"
+         ]
+      },
+      {
+         "input": "The auditor bought the guard a gift because she is thankful .",
+         "output": [
+            "The, auditor, she"
+         ]
+      },
+      {
+         "input": "The auditor bought the guard a gift because he is effective .",
+         "output": [
+            "the, guard, he"
+         ]
+      },
+      {
+         "input": "The secretary asked the mover when he is available .",
+         "output": [
+            "the, mover, he"
+         ]
+      },
+      {
+         "input": "The secretary asked the mover what she could do to help .",
+         "output": [
+            "The, secretary, she"
+         ]
+      },
+      {
+         "input": "The salesperson chatted with the cleaner because he wanted to sell the car .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson chatted with the cleaner because she wanted to buy a vacuum .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The farmer asked the designer what he could do to help .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer asked the designer what she was working on .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The mechanic charged the auditor one hundred dollars although he had done no work .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic charged the auditor one hundred dollars although she only had eighty dollars .",
+         "output": [
+            "the, auditor, she"
+         ]
+      },
+      {
+         "input": "The mover said thank you to the housekeeper because he is grateful .",
+         "output": [
+            "The, mover, he"
+         ]
+      },
+      {
+         "input": "The manager fired the baker because he was upset .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager fired the baker because she was too rebellious .",
+         "output": [
+            "the, baker, she"
+         ]
+      },
+      {
+         "input": "The physician prescribed the drugs to the designer  because he thought the disease could be cured .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician prescribed the drugs to the designer  because she was sick .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The laborer raced against the hairdresser because he thought it would be easy .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer raced against the hairdresser because she is slow .",
+         "output": [
+            "the, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The physician owed the cashier money because he did not pay the vodka .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician owed the cashier money because she paid for the vodka .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The hairdresser shouted at the driver because he crashed the car .",
+         "output": [
+            "the, driver, he"
+         ]
+      },
+      {
+         "input": "The hairdresser shouted at the driver because she felt offended .",
+         "output": [
+            "The, hairdresser, she"
+         ]
+      },
+      {
+         "input": "The mover said thank you to the housekeeper because she cleaned the truck .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      },
+      {
+         "input": "The developer built a website for the tailor because he is an expert in building websites .",
+         "output": [
+            "The, developer, he"
+         ]
+      },
+      {
+         "input": "The developer built a website for the tailor because she wants to sell cloths online .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The farmer ran faster than the tailor because he was in shape .",
+         "output": [
+            "The, farmer, he"
+         ]
+      },
+      {
+         "input": "The farmer ran faster than the tailor because she was weaker .",
+         "output": [
+            "the, tailor, she"
+         ]
+      },
+      {
+         "input": "The mechanic fixed the problem for the editor and he charged a thousand dollars .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic fixed the problem for the editor and she is grateful .",
+         "output": [
+            "the, editor, she"
+         ]
+      },
+      {
+         "input": "The receptionist welcomed the lawyer because this is part of her job .",
+         "output": [
+            "The, receptionist, her"
+         ]
+      },
+      {
+         "input": "The receptionist welcomed the lawyer because it is his first day to work .",
+         "output": [
+            "the, lawyer, his"
+         ]
+      },
+      {
+         "input": "The manager fired the cleaner because he was angry .",
+         "output": [
+            "The, manager, he"
+         ]
+      },
+      {
+         "input": "The manager fired the cleaner because she is too lazy .",
+         "output": [
+            "the, cleaner, she"
+         ]
+      },
+      {
+         "input": "The assistant scanned documents for the analyst because he asked .",
+         "output": [
+            "the, analyst, he"
+         ]
+      },
+      {
+         "input": "The cleaner hates the developer because she spent a lot of time cleaning the room .",
+         "output": [
+            "The, cleaner, she"
+         ]
+      },
+      {
+         "input": "The cleaner hates the developer because he always leaves the room dirty .",
+         "output": [
+            "the, developer, he"
+         ]
+      },
+      {
+         "input": "The mechanic hired the assistant because he needed help .",
+         "output": [
+            "The, mechanic, he"
+         ]
+      },
+      {
+         "input": "The mechanic hired the assistant because she performed the best during the interview .",
+         "output": [
+            "the, assistant, she"
+         ]
+      },
+      {
+         "input": "The writer interviewed the manager because she wanted to write a new book .",
+         "output": [
+            "The, writer, she"
+         ]
+      },
+      {
+         "input": "The writer interviewed the manager because he is very successful .",
+         "output": [
+            "the, manager, he"
+         ]
+      },
+      {
+         "input": "The physician told the nurse that he had been busy .",
+         "output": [
+            "The, physician, he"
+         ]
+      },
+      {
+         "input": "The physician told the nurse that she can go back home .",
+         "output": [
+            "the, nurse, she"
+         ]
+      },
+      {
+         "input": "The construction worker scheduled an appointment with the counselor because he was stressful .",
+         "output": [
+            "The, worker, he"
+         ]
+      },
+      {
+         "input": "The construction worker scheduled an appointment with the counselor because she offered great advice .",
+         "output": [
+            "the, counselor, she"
+         ]
+      },
+      {
+         "input": "The assistant scanned documents for the analyst because she knows how to use the scan machine .",
+         "output": [
+            "The, assistant, she"
+         ]
+      },
+      {
+         "input": "The editor called the construction worker because she wanted to know when the house would be ready .",
+         "output": [
+            "The, editor, she"
+         ]
+      },
+      {
+         "input": "The editor called the construction worker because he knew the whole story .",
+         "output": [
+            "the, worker, he"
+         ]
+      },
+      {
+         "input": "The analyst asked the secretary to book a flight because he will travel abroad .",
+         "output": [
+            "The, analyst, he"
+         ]
+      },
+      {
+         "input": "The analyst asked the secretary to book a flight because she knows how to do it .",
+         "output": [
+            "the, secretary, she"
+         ]
+      },
+      {
+         "input": "The carpenter likes to work with the designer because he can save a lot of time .",
+         "output": [
+            "The, carpenter, he"
+         ]
+      },
+      {
+         "input": "The carpenter likes to work with the designer because she always makes great designs .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The salesperson tried to fool the writer but he was caught .",
+         "output": [
+            "The, salesperson, he"
+         ]
+      },
+      {
+         "input": "The salesperson tried to fool the writer but she saw through the trick .",
+         "output": [
+            "the, writer, she"
+         ]
+      },
+      {
+         "input": "The cook prepared a soup for the housekeeper because he was testing a new dish .",
+         "output": [
+            "The, cook, he"
+         ]
+      },
+      {
+         "input": "The cook prepared a soup for the housekeeper because she helped to clean the room .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      },
+      {
+         "input": "The chief gave the housekeeper a tip because he was satisfied .",
+         "output": [
+            "The, chief, he"
+         ]
+      },
+      {
+         "input": "The carpenter made a desk for the clerk because he had time .",
+         "output": [
+            "The, carpenter, he"
+         ]
+      },
+      {
+         "input": "The carpenter made a desk for the clerk because she needed a desk .",
+         "output": [
+            "the, clerk, she"
+         ]
+      },
+      {
+         "input": "The cook asked the designer if his new dish can be improved .",
+         "output": [
+            "The, cook, his"
+         ]
+      },
+      {
+         "input": "The cook asked the designer if she likes the new dish .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The cleaner called the guard because she forgot to bring her key .",
+         "output": [
+            "The, cleaner, she, her"
+         ]
+      },
+      {
+         "input": "The cleaner called the guard because he is the only one who can enter the room .",
+         "output": [
+            "the, guard, he"
+         ]
+      },
+      {
+         "input": "The laborer kicked the cashier because he was drunk .",
+         "output": [
+            "The, laborer, he"
+         ]
+      },
+      {
+         "input": "The laborer kicked the cashier because she said something bad .",
+         "output": [
+            "the, cashier, she"
+         ]
+      },
+      {
+         "input": "The janitor cleaned the room for the designer and he left the room .",
+         "output": [
+            "The, janitor, he"
+         ]
+      },
+      {
+         "input": "The janitor cleaned the room for the designer and she is grateful .",
+         "output": [
+            "the, designer, she"
+         ]
+      },
+      {
+         "input": "The chief gave the housekeeper a tip because she was helpful .",
+         "output": [
+            "the, housekeeper, she"
+         ]
+      }
+   ]
+}
