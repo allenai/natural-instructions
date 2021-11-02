@@ -1,0 +1,647 @@
+{
+   "Contributors": [
+      "Saradhi Kiran Amarthi"
+   ],
+   "Source": [
+      "TriangleCOPA (Dataset -'https://github.com/asgordon/TriangleCOPA') (Paper - https://people.ict.usc.edu/~gordon/publications/AAAI-SPRING15.PDF)"
+   ],
+   "Categories": [
+      "Question Generation"
+   ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+   "Definition": "In this task, you will be given a short story or summary of a situation which is called a premise. Your task is to generate a question based on the given premise. The generated question (i) must be unambiguous, (ii) must be relevant to the premise, (iii) should require commonsense reasoning to get answered. You should not use any outside knowledge to generate the question.",
+   "Positive Examples": [
+      {
+         "input": "The small triangle was angry at the big triangle. The big triangle ran away",
+         "output": "Why did the big triangle ran away?",
+         "explanation": "The output question can be answered by reading the input premise. Also, the question lies within the context of the premise. So, it is a good question."
+      },
+      {
+         "input": "The circle was laughing at the small triangle as the small triangle is cracking jokes.",
+         "output": "Why is the circle laughing?",
+         "explanation": "The output question can be answered by reading the input premise. Also, the question lies within the context of the premise. So, it is a good question."
+      }
+   ],
+   "Negative Examples": [
+      {
+         "input": "The big triangle gave a chocolate to the small triangle, and the small triangle was happy.",
+         "output": "what did the circle do",
+         "explanation": "The output question cannot be answered by reading the input premise. Also, the question does not lie within the context of the premise. So, it is a bad question."
+      },
+      {
+         "input": "The circle and big triangle were playing a game and the small triangle is sleeping",
+         "output": "what game do the big triangle and circle were playing?",
+         "explanation": "The output question cannot be answered by reading the input premise even the question lies within the context of the premise. So, it is a bad question."
+      }
+   ],
+   "Instances": [
+      {
+         "input": "A circle appears from behind the big triangle. The big triangle flinches.",
+         "output": [
+            "Why does the big triangle flinch?"
+         ]
+      },
+      {
+         "input": "The triangle saw the circle and started shaking.",
+         "output": [
+            "Why did the triangle start shaking?"
+         ]
+      },
+      {
+         "input": "A triangle ignores a circle.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A triangle knocks on the door. The circle opens the door, sees the triangle, and shuts the door.",
+         "output": [
+            "Why does the circle shut the door?"
+         ]
+      },
+      {
+         "input": "A big triangle and circle are arguing in the room. The triangle leaves the room and slams the door. The circle slowly walks to the corner of the room.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A small triangle is alone. A big triangle and a circle approach the small triangle from opposite sides. The small triangle starts to turn back and forth and shake.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A circle examines a small triangle from across the room.",
+         "output": [
+            "Why does the circle do this?"
+         ]
+      },
+      {
+         "input": "The circle punched the triangle.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A circle is continually poking the small triangle. The small triangle punches the circle.",
+         "output": [
+            "Why does the triangle do this?"
+         ]
+      },
+      {
+         "input": "A triangle and circle are arguing. The circle turns around and leaves the room.",
+         "output": [
+            "Why does the circle leave?"
+         ]
+      },
+      {
+         "input": "The circle moves back and forth in the house.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "Two triangles are playing with each other outside.",
+         "output": [
+            "How do they feel?"
+         ]
+      },
+      {
+         "input": "Two triangles are dancing.",
+         "output": [
+            "How are they feeling?"
+         ]
+      },
+      {
+         "input": "A circle is in the house moving around. A triangle bursts in through the door. The circle turns around and freezes.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A circle is alone in the corner of the room. A triangle hugs the circle.",
+         "output": [
+            "Why does the triangle hug the circle?"
+         ]
+      },
+      {
+         "input": "A circle chases after a triangle and taps the triangle. The circle then runs the opposite way and the triangle chases the circle.",
+         "output": [
+            "Why does the circle tap the triangle?"
+         ]
+      },
+      {
+         "input": "A circle chases after a triangle and punches the triangle. The circle then runs the opposite way and the triangle chases the circle.",
+         "output": [
+            "Why does the circle punch the triangle?"
+         ]
+      },
+      {
+         "input": "A triangle knocks on the door and the circle inside the house starts moving quickly towards the door.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A triangle approaches the door. A circle opens the door, jumps up and down, and then hugs the triangle.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A circle leaves the room, stops for a moment, and then turns around and reenters the house.",
+         "output": [
+            "Why does the circle reenter the house?"
+         ]
+      },
+      {
+         "input": "The triangle and circle are next to each other.",
+         "output": [
+            "They both start nodding. Why are they nodding?"
+         ]
+      },
+      {
+         "input": "The triangle roamed around the house.",
+         "output": [
+            "Why was the triangle roaming?"
+         ]
+      },
+      {
+         "input": "A circle is standing still. A triangle approaches from the opposite direction and then stops. The circle turns around.",
+         "output": [
+            "Why does the circle turn around?"
+         ]
+      },
+      {
+         "input": "A triangle moves towards the circle and the circle starts waving. The triangle waves and keeps moving forward.",
+         "output": [
+            "Why are the circle and triangle waving?"
+         ]
+      },
+      {
+         "input": "A triangle and a circle are facing each other and start waving. Then the circle turns and strolls the opposite way.",
+         "output": [
+            "What is happening?"
+         ]
+      },
+      {
+         "input": "A triangle is limping. A circle appears and runs towards the triangle.",
+         "output": [
+            "Why does the circle run towards the triangle?"
+         ]
+      },
+      {
+         "input": "There are a small triangle and a big triangle walking together. A circle starts running towards the small triangle. The big triangle then blocks the circle.",
+         "output": [
+            "Why does the big triangle do this?"
+         ]
+      },
+      {
+         "input": "The triangle saw the circle approaching and bolted the opposite way.",
+         "output": [
+            "Why did the triangle bolt?"
+         ]
+      },
+      {
+         "input": "The triangle is moving away from the circle.",
+         "output": [
+            "Why is the triangle moving away?"
+         ]
+      },
+      {
+         "input": "The triangle blocked the circle from entering the building.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "Two triangles talk to each other and then hug.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A circle and a triangle are in the room. The circle starts toward the door and the triangle clings to the circle.",
+         "output": [
+            "Why is the triangle clinging to the circle?"
+         ]
+      },
+      {
+         "input": "A little triangle and a circle are arguing. A big triangle goes between the two shapes and pushes them apart from each other.",
+         "output": [
+            "Why does the big triangle do this?"
+         ]
+      },
+      {
+         "input": "A circle and a small triangle are strolling together.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A circle and a small triangle are running alongside of each other. The circle slows down and then stops.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A big triangle, circle, and little triangle stroll around together.",
+         "output": [
+            "How are these shapes related to each other?"
+         ]
+      },
+      {
+         "input": "Two triangles are huddled together and shaking.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "The circle tries to kiss the triangle but the triangle turns away.",
+         "output": [
+            "Why does the triangle turn away?"
+         ]
+      },
+      {
+         "input": "The circle enters a room with the triangle in it. The triangle and the circle leave the room together.",
+         "output": [
+            "Why do they leave the room together?"
+         ]
+      },
+      {
+         "input": "A large triangle is carrying a small triangle.",
+         "output": [
+            "What is the relationship between these two circles?"
+         ]
+      },
+      {
+         "input": "A big triangle tickles a small triangle.",
+         "output": [
+            "What is the relationship between these circles?"
+         ]
+      },
+      {
+         "input": "A triangle comes to the door. The circle opens the door, hugs the triangle and then they both go into the house.",
+         "output": [
+            "Why does the circle hug the triangle?"
+         ]
+      },
+      {
+         "input": "The triangle was limping.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "The triangle opened the door, stepped outside and started to shake.",
+         "output": [
+            "Why did the triangle start to shake?"
+         ]
+      },
+      {
+         "input": "Two triangles are arguing with each other.",
+         "output": [
+            "Why are they arguing?"
+         ]
+      },
+      {
+         "input": "The triangle pursues the circle.",
+         "output": [
+            "Why does the triangle do this?"
+         ]
+      },
+      {
+         "input": "The triangle creeps up on the circle.",
+         "output": [
+            "Why does the triangle do this?"
+         ]
+      },
+      {
+         "input": "The triangle runs towards the circle and then hugs the circle.",
+         "output": [
+            "Why does the triangle run?"
+         ]
+      },
+      {
+         "input": "The circle nods at the triangle.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "The triangle creeps into the house. A circle moves in the corner. The triangle bolts out of the house.",
+         "output": [
+            "Why does the triangle bolt out of the house?"
+         ]
+      },
+      {
+         "input": "A small triangle and a big triangle are fighting. A circle approaches and attacks the small triangle.",
+         "output": [
+            "What are the intentions of the circle?"
+         ]
+      },
+      {
+         "input": "A circle pokes a triangle. The triangle turns around.",
+         "output": [
+            "Why did the circle poke the triangle?"
+         ]
+      },
+      {
+         "input": "A big triangle and a circle are standing next to together. A small triangle is jumping up and down and poking them.  The big triangle and the circle are ignoring a small circle.",
+         "output": [
+            "Why are they ignoring the small circle?"
+         ]
+      },
+      {
+         "input": "A big triangle and little triangle walk towards the door from inside the room. The little triangle leaves the room and the big triangle waves. The big triangle continues to wave as the little triangle walks away.",
+         "output": [
+            "How does the big triangle feel?"
+         ]
+      },
+      {
+         "input": "The circle intimidates the small triangle.",
+         "output": [
+            "How does the small triangle feel?"
+         ]
+      },
+      {
+         "input": "The circle bothers the small triangle. A big triangle approaches and begins to argue with the circle.",
+         "output": [
+            "What does the big triangle want?"
+         ]
+      },
+      {
+         "input": "The circle bothers the small triangle. The big triangle approaches and begins to argue with the circle.",
+         "output": [
+            "What is the relationship between the small and big triangle?"
+         ]
+      },
+      {
+         "input": "A circle and a triangle are in the house and are arguing. The circle punches the triangle. The triangle runs out of the house.",
+         "output": [
+            "Why does the triangle leave the house?"
+         ]
+      },
+      {
+         "input": "A small triangle and a big triangle are racing.",
+         "output": [
+            "Why are they racing?"
+         ]
+      },
+      {
+         "input": "A triangle is alone. A circle approaches the triangle and begins to flirt with it. The triangle evades the circle.",
+         "output": [
+            "Why does the triangle evade the circle?"
+         ]
+      },
+      {
+         "input": "A big triangle and a small triangle are arguing. The small triangle hits the big triangle. The big triangle picks up the little triangle and starts carrying the little triangle to the building.",
+         "output": [
+            "Why?"
+         ]
+      },
+      {
+         "input": "A little triangle starts flirting with a big triangle. A circle approaches and pushes the little triangle.",
+         "output": [
+            "Why does the circle do this?"
+         ]
+      },
+      {
+         "input": "A small triangle knocks on the door. A circle opens the door and the triangle begins to argue with the circle. After a little while, they nod and then hug each other.",
+         "output": [
+            "Why do they end up hugging?"
+         ]
+      },
+      {
+         "input": "A circle and a triangle run towards each other and then hug and kiss.",
+         "output": [
+            "How do they feel?"
+         ]
+      },
+      {
+         "input": "A circle and small triangle are hugging. A big triangle approaches and pulls the small triangle away.",
+         "output": [
+            "How do the circle and small triangle feel?"
+         ]
+      },
+      {
+         "input": "A small triangle and a big triangle argue inside the room. The small triangle turns and trudges to the corner of the room.",
+         "output": [
+            "Why does the small triangle trudge to the corner of the room?"
+         ]
+      },
+      {
+         "input": "A small triangle is creeping up on a circle. The circle turns around to face the triangle and then starts to run away.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A big triangle, small triangle, and circle are in the house. The big triangle and the circle each kiss the small triangle, wave, and then leave the room.",
+         "output": [
+            "How are the shapes related?"
+         ]
+      },
+      {
+         "input": "Two triangles are fighting. Then one of the triangles starts limping away.",
+         "output": [
+            "Why is the triangle limping?"
+         ]
+      },
+      {
+         "input": "A small triangle and a circle stand outside the room. A big triangle comes outside and all three of the shapes begin strolling together.",
+         "output": [
+            "Why were the small triangle and the circle standing outside the room?"
+         ]
+      },
+      {
+         "input": "A circle is in the room. A triangle knocks on the door and the circle runs to the corner of the room. The triangle pushes the door open and the circle is in the corner of the room shaking.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A big triangle and little triangle are strolling together. A circle runs towards them, picks up the little triangle and runs away.",
+         "output": [
+            "How does the big triangle feel?"
+         ]
+      },
+      {
+         "input": "A big triangle is bothering a little triangle by pushing the triangle into a corner.",
+         "output": [
+            "What is happening?"
+         ]
+      },
+      {
+         "input": "A big triangle and circle are arguing outside the room. The big triangle leaves and goes into the room and starts to punch the walls.",
+         "output": [
+            "Why does the big triangle punch the walls?"
+         ]
+      },
+      {
+         "input": "A triangle is alone in the house not moving. A circle enters the door of the house and nudges the triangle.",
+         "output": [
+            "The triangle starts moving around. What just happened?"
+         ]
+      },
+      {
+         "input": "A small triangle and a big triangle are arguing with each other near the door. A circle sneaks into the room through the door.",
+         "output": [
+            "Why does the circle sneak in?"
+         ]
+      },
+      {
+         "input": "A big triangle knocks on the door. A small triangle slowly opens the door just a little bit.",
+         "output": [
+            "Why does the small triangle do this?"
+         ]
+      },
+      {
+         "input": "A circle is being attacked by a big triangle. A small triangle starts attacking the big triangle and pushes the big triangle off the screen. The small triangle runs towards the circle and they hug each other.",
+         "output": [
+            "Why do they hug?"
+         ]
+      },
+      {
+         "input": "A big triangle and a small triangle are dancing together. A circle approaches and pushes the big triangle away and then starts dancing with the small triangle.",
+         "output": [
+            "How does the big triangle feel?"
+         ]
+      },
+      {
+         "input": "A small triangle and big triangle are arguing. A circle approaches and taps on the big triangle. The big triangle turns around, pushes the circle away, and continues arguing with the small triangle.",
+         "output": [
+            "Why does the big triangle push the circle away?"
+         ]
+      },
+      {
+         "input": "A circle approaches a small triangle in the corner of the room. The small triangle is shaking. A big triangle runs through the door and combats the circle. The small triangle runs and hugs the big triangle.",
+         "output": [
+            "Why does the small triangle do this?"
+         ]
+      },
+      {
+         "input": "A big triangle knocks on the door. A small triangle answers the door and the triangles kiss and leave together.",
+         "output": [
+            "Why do they leave together?"
+         ]
+      },
+      {
+         "input": "A small triangle and big triangle are next to each other. A circle runs by and pushes the small triangle. The big triangle chases the circle.",
+         "output": [
+            "Why does the big triangle chase the circle?"
+         ]
+      },
+      {
+         "input": "A big triangle and a small triangle are in the room. The small triangle sneaks out through the door.",
+         "output": [
+            "Why does the small triangle sneak through the door?"
+         ]
+      },
+      {
+         "input": "A circle brushes against a triangle. The triangle recoils.",
+         "output": [
+            "Why does the triangle recoil?"
+         ]
+      },
+      {
+         "input": "A small triangle runs behind the house when it sees the big triangle.",
+         "output": [
+            "Why does the small triangle do this?"
+         ]
+      },
+      {
+         "input": "The circle opens the door for the big triangle.",
+         "output": [
+            "Why does the circle do this?"
+         ]
+      },
+      {
+         "input": "A small triangle kisses a big triangle.",
+         "output": [
+            "Why does the small triangle do this?"
+         ]
+      },
+      {
+         "input": "A small triangle is trying to attack a circle. A big triangle comes in and tackles the small triangle.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A triangle bumps into a circle and then runs away.",
+         "output": [
+            "Why did the triangle bump into the circle?"
+         ]
+      },
+      {
+         "input": "A triangle is meandering around the house.",
+         "output": [
+            "Why is the triangle meandering?"
+         ]
+      },
+      {
+         "input": "A triangle and a circle stroll by each other without any interaction.",
+         "output": [
+            "Why is there no interaction?"
+         ]
+      },
+      {
+         "input": "A small triangle is in the corner of the room watching the big triangle and the circle dance.",
+         "output": [
+            "How does the small triangle feel?"
+         ]
+      },
+      {
+         "input": "The circle accelerates.",
+         "output": [
+            "Why does the circle accelerate?"
+         ]
+      },
+      {
+         "input": "A triangle is strolling outside.",
+         "output": [
+            "How does the triangle feel? "
+         ]
+      },
+      {
+         "input": "The big triangle is following the circle.",
+         "output": [
+            "Why is the big triangle following the circle?"
+         ]
+      },
+      {
+         "input": "A circle tickles a triangle.",
+         "output": [
+            "How does the circle feel?"
+         ]
+      },
+      {
+         "input": "A small triangle is being chased by a big triangle.",
+         "output": [
+            "How does the small triangle feel?"
+         ]
+      },
+      {
+         "input": "The circle knocks on the door.",
+         "output": [
+            "Why does the circle knock on the door?"
+         ]
+      },
+      {
+         "input": "A circle knocks on the door. A triangle goes to the door, but hesitates to open it.",
+         "output": [
+            "Why does the triangle hesitate to open the door?"
+         ]
+      }
+   ]
+}
