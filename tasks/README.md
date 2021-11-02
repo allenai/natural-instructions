@@ -1510,3 +1510,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1671_bprec_classification` | Classifying domain of Polish texts | Classification
+`task1672_bprec_entity_classification` | Classifying entities in Polish texts | Classification
+`task1673_bprec_entity_linking` | Entity Linking in Polish texts | Entity Linking
+`task1674_ccnews_title_generation` | Generate title for news articles | Summarization
+`task1675_ccnews_classification` | Check if title is appropriate for the article | Classification
