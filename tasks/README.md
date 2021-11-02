@@ -1533,6 +1533,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1596_event2mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
 `task1597_nyc_slot_filling` | Categorizing elements of information from text from the NYC database | Slot Filling
 `task1598_nyc_long_text_generation` | Creating sentences based off of some information from the NYC database | Long Text Generation
+`task1599_smcalflow_classification` | Classify given utterance into user or agent | Classification
+`task1600_smcalflow_sentence_generation`| Given a agents' reply, generate a users' utterance | Sentence Generation
+`task1601_webquestions_answer_generation` | Given a question and URL, generate an answer | Answer Generation
+`task1602_webquestion_question_genreation` | Given an answer and URL, generate a question | Question Generation
+`task1603_smcalflow_sentence_generation` | Given a user utterance, generate agents' utterance | Sentence Generation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
