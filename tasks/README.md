@@ -1510,3 +1510,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
+`task1676_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
+`task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
