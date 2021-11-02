@@ -1489,6 +1489,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1554_scitail_classification` | Classifying supporting and non supporting statements from SciTail  | Classification
 `task1555_scitail_answer_generation` | Generating answers to SciTail Sentence-Questions | Answer Generation
 `task1556_scitail_passage_generation` | Generating passage based on SciTail Question-Answer | Passage Generation
+`task1557_jfleg_answer_generation` | Generating answers (based on jfleg) | Answer Generation  
+`task1558_jfleg_incorrect_answer_generation` | Generating incorrect answers (based on jfleg) | Incorrect Answer Generation
+`task1559_blimp_binary_classification` | Classifying sentences (based on Blimp) | Binary Classification  
+`task1560_blimp_binary_classification` | Classifying sentences (based on Blimp) | Binary Classification 
 `task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
 `task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
 `task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
@@ -1506,10 +1510,27 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
 `task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
 `task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
+`task1578_gigaword_summarization` | Generating summary to gigaword passages | Summary Generation
+`task1579_gigaword_incorrect_summarization` | Generating incorrect summary to gigaword passages | Incorrect Summary Generation
+`task1580_eqasc-perturbed_question_generation` | Generating questions for eQASC facts | Question Generation
+`task1581_eqasc-perturbed_answer_generation` | Generating answers for eQASC facts and questions | Answer Generation
 `task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1586_scifact_title_generation` | Title Generation | Title_Generation
+`task1587_scifact_classification` | Classification | Classification
+`task1588_tecla_classification` | Classification | Classification
+`task1589_scifact_classification` | Classification | Classification
+`task1590_diplomacy_text_generation` | Text generation based on diplomacy_detection | Text_Generation
+`task1591_allocine_classification` | Classification (based on allocine) | Classification  
+`task1592_yahoo_answers_topics_classfication` | Classification based on yahoo_answers_topics | Classification
+`task1593_yahoo_answers_topics_classification` | Classification based on yahoo_answers_topics | Classification  
+`task1594_yahoo_answers_topics_question_generation` | Question Generation based on yahoo_answers_topics | Question_Generation
+`task1595_event2mind_text_generation_1` | Creating text (emotional reaction) based on event2Mind event prompts | Text Generation
+`task1596_event2mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
+`task1597_nyc_slot_filling` | Categorizing elements of information from text from the NYC database | Slot Filling
+`task1598_nyc_long_text_generation` | Creating sentences based off of some information from the NYC database | Long Text Generation
 `task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
 `task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
 `task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
