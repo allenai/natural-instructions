@@ -244,6 +244,7 @@ for file in files[begin_task_number:end_task_number + 1]:
 
 print("Did not find any errors! ✅")
 
-keyvalues = sorted(list(contributors.items()))
+keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
 for author, count in keyvalues:
-    print(f" ✍️ {author} -> {count}")
+    if count >= 25:
+        print(f" ✍️ {author} -> {count}")
