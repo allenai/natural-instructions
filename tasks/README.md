@@ -1561,3 +1561,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1737_mdd_answer_generation` | Generating answers (based on MDD) | Answer Generation  
+`task1738_mdd_recommendation_check` | Recommendation check (based on MDD) |  Recommendation Check
+`task1739_mdd_recommendation_check_qa` | Recommendation, QA check (based on MDD) |  Recommendation, QA Check
+`task1740_mdd_sentiment_classification` | Sentiment classification (based on MDD) |  Sentiment classification
+`task1741_cose_incorrectans_generation` | Given a sentence and a question, generate an incorrect answer to the question. | Incorrect Answer Generation  
+`task1742_cose_text_generation` | Given a question and an answer, generate an abstractive explanation for the question based on the answer. | Text Generation
+`task1743_starc_question_generation` | Given a paragraph, generate a question from the passage. | Questions Generation
+`task1744_cose_answer_generation` | Given a question, three answer options, and a sentence. Write the correct answer based on the sentence. | Answer Generation
