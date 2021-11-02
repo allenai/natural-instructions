@@ -1561,3 +1561,11 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1719_civil_comments_url_extraction` | Extraction of Urls | Answer Generation 
+`task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
+`task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
+`task1722_civil_comments_threat_classification` | Classify Threat | Classification
+`task1723_civil_comments_sexuallyexplicit_classification` | Classify Sexually Explicit Content| Classification
+`task1724_civil_comments_insult_classification` | Classify Insult | Classification
+`task1725_civil_comments_severtoxicity_classification` | Classify Severe Toxicity | Classification
+`task1726_mathqa_correct_answer_generation` | Generate correct answers for math questions | Answer Generation
