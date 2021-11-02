@@ -1510,3 +1510,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1658_billsum_summarization` | Generating summary (based on billsum) | Summarization
+`task1659_title_generation` | Generating Title (based on billsum) | Title Generation
+`task1660_super_glue_question_generation` | Generating guestions (based on super_glue) | Question Generation  
+`task1661_super_glue_classification` | Classification (based on super_glue) | Classification
