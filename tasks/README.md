@@ -1483,6 +1483,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1544_conll2002_named_entity_recognition_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1548_wiqa_binary_classification` | Binary Classification (based on steps in wiqa) | Answer Generation
+`task1549_wiqa_answer_generation_missing_step` | Generating answer to place missing step in a series (based on wiqa) | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
 `task1552_scitail_question_generation` | Generating questions (based on SciTail) | Question Generation
 `task1553_cnn_dailymail_summarization` | Generating summary to news articles | Summarization
