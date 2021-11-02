@@ -1510,3 +1510,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1703_ljspeech_textmodification` | Digit to Text in ljspeech | Text Modification 
+`task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
+`task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
+`task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
