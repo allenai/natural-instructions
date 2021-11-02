@@ -1,0 +1,6221 @@
+{
+  "Contributors": [
+    "Paril Ghori"
+  ],
+  "Source": [
+    "SMCalFlow: (dataset - https://www.mitpressjournals.org/doi/pdf/10.1162/tacl_a_00333)"
+  ],
+  "Categories": [
+    "Sentence Generation"
+  ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+  "Definition": "In this task, you have given an input which is agent's reply, based on that you have to identify what will be users' command for that reply. The user generally asks a question related to event scheduling or information of the scheduled events. Agent reply based on the available information or do the task as per user command.",
+  "Positive Examples": [
+    {
+      "input": "I didn't find any events with Gavin this week",
+      "output": "Search for any meetings with Gavin for this week.",
+      "explanation": "The agent has replied about the events with Gavin, and the user has also asked about the same thing."
+    },
+    {
+      "input": "Sorry, I can't do reminders.",
+      "output": "Remind me of the first flight to london",
+      "explanation": "The user has asked about the reminders, and the agent has replied about the reminders only."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "I didn't find any events with Jerri Skinner.",
+      "output": "I need it to last 2 hours.",
+      "explanation": "Agent has replied about the event with Jerri Skinner while User has asked about something about duration."
+    },
+    {
+      "input": "I've changed the location of meeting my friends to Starbucks.",
+      "output": "Can you add meeting my friends tomorrow from 12 pm until 3 pm at the library.",
+      "explanation": "Agent has changed the location of the meeting, while the user is asking about meeting with friends."
+    }
+  ],
+  "Instances": [
+    {
+      "input": "Tomorrow's date is February 5, 2019.",
+      "output": [
+        "what date is tomorrow?"
+      ]
+    },
+    {
+      "input": "Tomorrow is Wednesday.",
+      "output": [
+        "What day of the week is tomorrow?"
+      ]
+    },
+    {
+      "input": "I can help you create, update, and delete events on your calendar. You can also ask me about your schedule.",
+      "output": [
+        "please help me"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether R. House has a full bar. You'll have to contact them.",
+      "output": [
+        "Hi Does R House have a full bar?"
+      ]
+    },
+    {
+      "input": "Yes.",
+      "output": [
+        "Does Walk-ons in Mobile have a full bar?"
+      ]
+    },
+    {
+      "input": "Does one of these work?",
+      "output": [
+        "Can you make an event for Friday?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar.",
+      "output": [
+        "The 2nd one is mostly look good for me."
+      ]
+    },
+    {
+      "input": "Let me know if there's anything else I can help you with.",
+      "output": [
+        "Thanks to for you greatfull job to me"
+      ]
+    },
+    {
+      "input": "The next event matching \"staff meeting\" is on June 2nd at 10:00 AM.",
+      "output": [
+        "When is my next staff meeting scheduled for?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on June 2nd after 10:45.",
+      "output": [
+        "Is there a meeting after that?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on June 2nd in the afternoon.",
+      "output": [
+        "Are there any meetings in the afternoon that day?"
+      ]
+    },
+    {
+      "input": "How is this?",
+      "output": [
+        "Can you send an invite to Mark for this"
+      ]
+    },
+    {
+      "input": "I've changed \"Staff Meeting\" to be Mark.",
+      "output": [
+        "That looks correct to me."
+      ]
+    },
+    {
+      "input": "It's on April 11th at 2:00 PM.",
+      "output": [
+        "When is the meeting with the lecture?"
+      ]
+    },
+    {
+      "input": "Does this look right?",
+      "output": [
+        "Can you reschedule it to the following Thursday?"
+      ]
+    },
+    {
+      "input": "How about now?",
+      "output": [
+        "yep and add lori to it"
+      ]
+    },
+    {
+      "input": "I've changed \"meeting with the lecture\" to be lori.",
+      "output": [
+        "looks pretty good"
+      ]
+    },
+    {
+      "input": "It starts on March 15th at 11:00 AM.",
+      "output": [
+        "When do I have the oil change on my car scheduled for?"
+      ]
+    },
+    {
+      "input": "I've changed \"oil change\" to be for 1 hour.",
+      "output": [
+        "You got it!"
+      ]
+    },
+    {
+      "input": "How's this?",
+      "output": [
+        "I also need to get my tires changed from 12:00 to 2:00 pm on Friday March 15."
+      ]
+    },
+    {
+      "input": "The event with gavin this week is located at toilet.",
+      "output": [
+        "where is my meeting with gavin this week"
+      ]
+    },
+    {
+      "input": "I found one event with Sam this week. It's \"Meeting with Sam and Megan Bowen\" on Thursday from 9:00 to 9:30 AM.",
+      "output": [
+        "Can you search for any plans I have this week with Sam?"
+      ]
+    },
+    {
+      "input": "It starts on March 18th at 1:00 PM.",
+      "output": [
+        "When is my dentist appointment in March?"
+      ]
+    },
+    {
+      "input": "No. I didn't find any events on Sunday the 28th.",
+      "output": [
+        "Is there a game this weekend?"
+      ]
+    },
+    {
+      "input": "Is this good?",
+      "output": [
+        "Can you make one for dinner at 6pm"
+      ]
+    },
+    {
+      "input": "No. I didn't find any events on your calendar.",
+      "output": [
+        "Do I have any plan with Rosy this month?"
+      ]
+    },
+    {
+      "input": "No. I didn't find any events named \"doctor's\" next week.",
+      "output": [
+        "Do I have any doctor's appointments next week?"
+      ]
+    },
+    {
+      "input": "Your next event matching \"lunch\" is on Monday the 11th at 12:00 PM.",
+      "output": [
+        "can you see when my next meeting is involving a lunch?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events tomorrow.",
+      "output": [
+        "Do I have any events friday?"
+      ]
+    },
+    {
+      "input": "None of the events mentioned are.",
+      "output": [
+        "That looks great. Can you add JEsse, Kim, and Abby to it?"
+      ]
+    },
+    {
+      "input": "I didn't find any matching events.",
+      "output": [
+        "Add Steven to it, please"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Busy.",
+      "output": [
+        "Can you add meeting my friends tomorrow from 12 pm until 3 pm at the library"
+      ]
+    },
+    {
+      "input": "It's tomorrow at 10:00 AM.",
+      "output": [
+        "When is my viewing ?"
+      ]
+    },
+    {
+      "input": "The event \"video game night\" with Jack, Curtis, and Dee is on Friday the 23rd at 9:00 PM.",
+      "output": [
+        "When is my video game night with Jack, Curtis and Dee?"
+      ]
+    },
+    {
+      "input": "Is this what you want me to cancel?",
+      "output": [
+        "Delete my paintball game with Shelly, Marcel, and Anna next month"
+      ]
+    },
+    {
+      "input": "I've changed \"paintball game\" to be.",
+      "output": [
+        "That's what I was looking for!"
+      ]
+    },
+    {
+      "input": "Here are some times when everyone is free.",
+      "output": [
+        "Please schedule a meeting with Kim, Elli, Jennifer, and Jake for tomorrow."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar tomorrow from 1:00 to 1:30 PM.",
+      "output": [
+        "ok"
+      ]
+    },
+    {
+      "input": "The event matching \"going over the exam\" with Lucy, Shellie, Barb, and Jessica is on Friday at 11:00 AM.",
+      "output": [
+        "When am I going over the exam with Lucy, Shellie, Barb and Jessica?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Tuesday the 23rd.",
+      "output": [
+        "remove the event for 23rd from the callender"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"annual general meeting\" on your calendar.",
+      "output": [
+        "no i meant the annual general meeting ,chand the dates from 23rd to 7th may"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"general meeting\" on your calendar.",
+      "output": [
+        "now delete the general meeting event for 23rd"
+      ]
+    },
+    {
+      "input": "It is clear with a temperature of 0.00 \u00b0F.",
+      "output": [
+        "whats the wheather now at DC"
+      ]
+    },
+    {
+      "input": "I can only look up names in your address book.",
+      "output": [
+        "Create an event for meeting with friends between 3-5pm"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"doctor's appointment\" tomorrow.",
+      "output": [
+        "Do I have a doctor's appointment tomorrow?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"denist appointment\" next week.",
+      "output": [
+        "Do I have a denist appointment next week?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"football game\" this weekend. It's on Saturday from 11:00 AM to 4:00 PM.",
+      "output": [
+        "OK. Do I have a football game coming up this weekend?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"basketball game\" on your calendar after Saturday at 4:00 PM.",
+      "output": [
+        "Great. Do I have a basketball game coming up after the football game?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events \"presentation\" on your calendar on Friday.",
+      "output": [
+        "Is there a presentation scheduled for Friday?"
+      ]
+    },
+    {
+      "input": "No. Here is the only time I found when you are free on Thursday.",
+      "output": [
+        "Am I busy on April 18?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Out of Office.",
+      "output": [
+        "Can you mark me as out of office tomorrow at 3 pm"
+      ]
+    },
+    {
+      "input": "I\u2019ve set the status of the Appointment to Working Elsewhere.",
+      "output": [
+        "Actually, since I will be still completing tasks, can you change that status to working elsewhere?"
+      ]
+    },
+    {
+      "input": "I\u2019ve encountered an error I haven\u2019t been trained to handle. Can you try a different request?",
+      "output": [
+        "change the time to 8pm"
+      ]
+    },
+    {
+      "input": "Your Movie Night has been updated to 2 hours and 30 minutes.",
+      "output": [
+        "Add two more hours to Movie Night."
+      ]
+    },
+    {
+      "input": "Your Movie Night has been updated to 1 hour and 15 minutes.",
+      "output": [
+        "Add an extra 45 minutes in case we watch Titanic"
+      ]
+    },
+    {
+      "input": "I've changed \"convention\" to be without Stan, without Jane, Susan, and without Maria.",
+      "output": [
+        "That looks good."
+      ]
+    },
+    {
+      "input": "It is clear with a temperature of 0.00 \u00b0C right now.",
+      "output": [
+        "What is the current weather in Dallas, I mean San Antonio, Texas?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on your calendar.",
+      "output": [
+        "Do I have any meetings scheduled in San Antonio for this week or next?"
+      ]
+    },
+    {
+      "input": "Could you be more specific with your request?",
+      "output": [
+        "CHANGE THE EVENT OF TOMORROW"
+      ]
+    },
+    {
+      "input": "The event matching \"dinner\" tonight is located at Maggiano's.",
+      "output": [
+        "Where is my dinner tonight?"
+      ]
+    },
+    {
+      "input": "I've changed \"dinner\" to be Adam.",
+      "output": [
+        "That looks good."
+      ]
+    },
+    {
+      "input": "Yes, Maggiano's Little Italy has outdoor dining.",
+      "output": [
+        "Does Maggiano's have outside seating?"
+      ]
+    },
+    {
+      "input": "I found one event with Mike next month. It's \"Meeting with Mike and Damon Straeter\" on November 12th from 11:00 to 11:30 PM.",
+      "output": [
+        "Can you show me all events for the next month with Mike?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Mike in January.",
+      "output": [
+        "what about january?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event with Kim next week. It's \"rake in the lake\" on Friday the 15th from 12:00 to 12:30 PM.",
+      "output": [
+        "Do I have any events with Kim next week?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event with Kim. It's \"rake in the lake\" from 12:00 to 12:30 PM.",
+      "output": [
+        "What about the next week with Kim?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Abby Gonano are free.",
+      "output": [
+        "Make an event with Abby and her boss"
+      ]
+    },
+    {
+      "input": "Your \"Snowboarding\" is on January 15, 2020 from 8:00 to 4:00 PM.",
+      "output": [
+        "Can you find my appointment in January with Sal and his boss?"
+      ]
+    },
+    {
+      "input": "I've changed \"Snowboarding\" to be at 9:00.",
+      "output": [
+        "That will be fine"
+      ]
+    },
+    {
+      "input": "I can only do one action at a time. If you separate your requests, I can help you.",
+      "output": [
+        "Friday works perfectly. However change the time to 11:20am-12:40pm please."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Cher Roydon are free.",
+      "output": [
+        "Make meeting with Cher Roydon"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Barack Obama.",
+      "output": [
+        "Reschedule my meeting with Barack Obama for next Monday"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. I didn't find any other events on November 3rd in the morning.",
+      "output": [
+        "Yes. What other events do I have that morning?"
+      ]
+    },
+    {
+      "input": "Is this what you're looking for?",
+      "output": [
+        "Schedule a business call with Rob for Friday at 7 am."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. I found one other event on Friday. It's \"Appointment\" from 12:00 to 12:30.",
+      "output": [
+        "Yes it is. Anything else going on Friday?"
+      ]
+    },
+    {
+      "input": "I've changed \"appointment with bank teller Bob\" for you.",
+      "output": [
+        "Make the start time 3 pm and change the event subject to appointment with bank teller Bob."
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your appointment with bank teller Bob on Tuesday the 29th is from 3:00 to 5:00 PM.",
+      "output": [
+        "Tell me what's on my schedule for tuesday."
+      ]
+    },
+    {
+      "input": "I didn't find any events.",
+      "output": [
+        "Can you search for when my last dentist appointment was?"
+      ]
+    },
+    {
+      "input": "Ok, I won't do anything for now. Let me know what else I can help you with.",
+      "output": [
+        "Nope"
+      ]
+    },
+    {
+      "input": "Jake Cobb has no direct reports.",
+      "output": [
+        "Who are Jake's reports"
+      ]
+    },
+    {
+      "input": "Jake Cobb's manager is Kim Possible.",
+      "output": [
+        "Who does he report to?"
+      ]
+    },
+    {
+      "input": "Kim Possible's direct reports are Jake Cobb and Jennifer Watts",
+      "output": [
+        "Who are Kim's reports"
+      ]
+    },
+    {
+      "input": "Sorry, I can't handle that yet.",
+      "output": [
+        "Yes, I need to make it for July 15th instead."
+      ]
+    },
+    {
+      "input": "Yes, I found 1 event on Monday the 15th. It's an \"Appointment\" from 8:00 to 8:30 AM.",
+      "output": [
+        "is there any meeting on july 15th?"
+      ]
+    },
+    {
+      "input": "Is this the change you want to make?",
+      "output": [
+        "Actually can you make it end at 10?"
+      ]
+    },
+    {
+      "input": "Is this the update you want?",
+      "output": [
+        "no, 10pm"
+      ]
+    },
+    {
+      "input": "I've deleted that.",
+      "output": [
+        "yeah"
+      ]
+    },
+    {
+      "input": "The event matching \"business trip\" next month is for 6 hours.",
+      "output": [
+        "Hey! How long is that business trip next month?"
+      ]
+    },
+    {
+      "input": "4 hours, 0 minutes, and 0 seconds",
+      "output": [
+        "What about the team meeting?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any other events between October 20th and October 26th.",
+      "output": [
+        "Do I have anything else that month?"
+      ]
+    },
+    {
+      "input": "Yes, I found one other event in November. It's \"Appointment\" on November 23rd from 3:00 to 3:30 PM.",
+      "output": [
+        "How about for November, which is the next month?"
+      ]
+    },
+    {
+      "input": "The event matching \"eat unlimited pasta\" with Jessica at Olive Garden is tomorrow at 6:30 PM.",
+      "output": [
+        "Could you tell me when I'm scheduled to eat unlimited pasta at Olive Garden with Jessica?"
+      ]
+    },
+    {
+      "input": "I didn't find any other events with Jessica.",
+      "output": [
+        "What other events do I have scheduled with Jessica?"
+      ]
+    },
+    {
+      "input": "I didn't find any other events with Sara.",
+      "output": [
+        "What about with Sara?"
+      ]
+    },
+    {
+      "input": "I found one other event with Beth. It's \"Meeting with Beth and Damon Straeter\" on Tuesday the 10th from 9:00 to 9:30 AM.",
+      "output": [
+        "Okay with about with Beth?"
+      ]
+    },
+    {
+      "input": "I found one other event with Paul. It's \"Meeting with Paul and Damon Straeter\" on Tuesday the 10th from 9:00 to 9:30 AM.",
+      "output": [
+        "What about with Paul?"
+      ]
+    },
+    {
+      "input": "The \"Honeymoon\" is today from 2:30 to 3:00 PM.",
+      "output": [
+        "What is going on at the current time?"
+      ]
+    },
+    {
+      "input": "I've changed \"Honeymoon\" to be.",
+      "output": [
+        "yes this looks great"
+      ]
+    },
+    {
+      "input": "The first tomorrow is located at Zoom Meeting.",
+      "output": [
+        "Where is the first meeting tomorrow?"
+      ]
+    },
+    {
+      "input": "The last event tomorrow is a Microsoft Teams Meeting.",
+      "output": [
+        "Where is my last event tomorrow located?"
+      ]
+    },
+    {
+      "input": "The first on Monday the 30th is located at Zoom Meeting.",
+      "output": [
+        "Where is the first event for Monday?"
+      ]
+    },
+    {
+      "input": "I found 2 different places matching that description. Can you be more specific?",
+      "output": [
+        "Does Avana Sushi in Boston have waiter service"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Mean Sandwich has waiter service. You'll have to contact them.",
+      "output": [
+        "can you tell me if mean sandwich in seattle has waiters?"
+      ]
+    },
+    {
+      "input": "I found one event matching \"ALBERT'S BIRTHDAY\". It's \"Albert's Birthday\" tomorrow from 8:00 to 8:30 PM.",
+      "output": [
+        "CHECK FOR ALBERT'S BIRTHDAY EVENT"
+      ]
+    },
+    {
+      "input": "There aren't any mentioned events.",
+      "output": [
+        "Make sure that the topic for the meeting is clear which is Team Building."
+      ]
+    },
+    {
+      "input": "I don't support that capability yet.",
+      "output": [
+        "Ok, have you emailed them all about it?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Jeong-Ho Kim.",
+      "output": [
+        "What time am I meeting with Jeong-Ho Kim?"
+      ]
+    },
+    {
+      "input": "Unfortunately, I can't handle questions about people.",
+      "output": [
+        "Jeong-Ho kim is who i am meeting with, make sure its clear"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be with Jeong-Ho Kim.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "The event is tomorrow at 3:00 PM.",
+      "output": [
+        "What time is my appointment?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on April 27th after 4:00 PM.",
+      "output": [
+        "Do I have anything after that?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"MRI\" on your calendar.",
+      "output": [
+        "Can you tell me what time I have an MRI this week?"
+      ]
+    },
+    {
+      "input": "Sorry, I can only help with your calendar.",
+      "output": [
+        "Are there any tables available at the Pizza place tonight?"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Lori\" to be with Robert.",
+      "output": [
+        "You got it!"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events between December 1st and February 29, 2020.",
+      "output": [
+        "Do I have any other events in the winter?"
+      ]
+    },
+    {
+      "input": "Here's what I found:",
+      "output": [
+        "How does the schedule look today after I get off work at 5 pm?"
+      ]
+    },
+    {
+      "input": "That was the last result.",
+      "output": [
+        "What is the other event?"
+      ]
+    },
+    {
+      "input": "I found 2 events on Wednesday.",
+      "output": [
+        "How does my day look wednesday?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"Make Smoothie\".",
+      "output": [
+        "Yes please that 1st one should be deleted."
+      ]
+    },
+    {
+      "input": "The phone number for Hillary Clinton is \u200b1-800-TRYAGAIN.",
+      "output": [
+        "I want to know Hillary Clinton's home phone number."
+      ]
+    },
+    {
+      "input": "The phone number for Bill Clinton is 4254252222.",
+      "output": [
+        "Thanks. Do you know Bill Clinton's phone number?"
+      ]
+    },
+    {
+      "input": "I don't have that kind of information about people.",
+      "output": [
+        "What is mom's home address?"
+      ]
+    },
+    {
+      "input": "The office location of Bill Clinton is White House.",
+      "output": [
+        "were is bill clinton office give the office address"
+      ]
+    },
+    {
+      "input": "I can only look up names in your address book. Please use a full name and try again.",
+      "output": [
+        "Find me my dad's phone number"
+      ]
+    },
+    {
+      "input": "I can't handle multiple conference rooms or requests for specific rooms.",
+      "output": [
+        "Add the location small conference room."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. __BREAK How is this?",
+      "output": [
+        "First one is best, but change the time to 7pm."
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of about 0.00 \u00b0F for \"family meeting\" in 315 4th Ave N, Nashville, TN, 37219 today from 10:00 to 10:30 PM.",
+      "output": [
+        "what is the weather going to be like for family meeting"
+      ]
+    },
+    {
+      "input": "I can help you with your calendar.",
+      "output": [
+        "Hi"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar tomorrow from 10:00 to 10:30 AM.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "Your dentist appointment is on Friday from 9:00 to 9:30 AM.",
+      "output": [
+        "Search for my dentist appointment."
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F in Philadelphia between February 3rd and February 9th.",
+      "output": [
+        "what is the weather like next week?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F in Colorado Springs between February 3, 2019 and February 9, 2019.",
+      "output": [
+        "colorado springs, co"
+      ]
+    },
+    {
+      "input": "It is clear with a temperature of 0.00 \u00b0F right now.",
+      "output": [
+        "what is the weather like in colorado?"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of 0.00 \u00b0F.",
+      "output": [
+        "what will the weather be like in colorado next week?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of snow is 0.00% tomorrow and November 3rd.",
+      "output": [
+        "is it supposed to snow next week?"
+      ]
+    },
+    {
+      "input": "Sorry, I can't answer that with the information I have access to.",
+      "output": [
+        "why do hurricanes happen?"
+      ]
+    },
+    {
+      "input": "Fathers Day was on Sunday, June 16th.",
+      "output": [
+        "When is Father's Day this year?"
+      ]
+    },
+    {
+      "input": "I could not find Megan Bowen's manager.",
+      "output": [
+        "Add meeting with boss to tomorrow at 2:15 pm for 30 minutes."
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"client lunch\" from 11:00 to 1:00 PM.",
+      "output": [
+        "Do I have a meeting on Friday?"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named bob in your address book.",
+      "output": [
+        "Schedule a meeting with bob between 1-5 for 45 minutes on friday"
+      ]
+    },
+    {
+      "input": "The phone number for Miss Tara Simpson is 206-333-4444.",
+      "output": [
+        "Hey! What's Tara's phone number? I need to call her right away."
+      ]
+    },
+    {
+      "input": "The email address of Miss Tara Simpson is m@email.com.",
+      "output": [
+        "Ok, cool, and what's her email? Need to send her email at some point."
+      ]
+    },
+    {
+      "input": "The office location of Miss Tara Simpson is Building D.",
+      "output": [
+        "Ok, one last thing, what's her office location. May need to stop by to say hi."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar tomorrow from 1:00 to 1:30 PM. __BREAK Does one of these work?",
+      "output": [
+        "perfect, add gym time for the weekend"
+      ]
+    },
+    {
+      "input": "I've encountered an internal error (InvalidExpression).",
+      "output": [
+        "Please schedule a lunch with the team"
+      ]
+    },
+    {
+      "input": "The phone number for Molly is 1112223334.",
+      "output": [
+        "call Molly"
+      ]
+    },
+    {
+      "input": "I didn't find any matching events on your calendar.",
+      "output": [
+        "Show all my meetings for today."
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be today at 2:00 PM.",
+      "output": [
+        "The 2nd one."
+      ]
+    },
+    {
+      "input": "No, I didn't find any events today after 2:30 PM.",
+      "output": [
+        "Do I have anything later than that?"
+      ]
+    },
+    {
+      "input": "I found 1 event on your calendar. It's \"Appointment\" from 2:00 to 2:30 PM.",
+      "output": [
+        "Find my appointment on August 2nd at 2 pm."
+      ]
+    },
+    {
+      "input": "I haven\u2019t been trained to describe the result of your request. Can you try something different?",
+      "output": [
+        "what about paris ?"
+      ]
+    },
+    {
+      "input": "It starts on March 1st at 10:00 AM.",
+      "output": [
+        "When is my next dentist's appointment?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Busy. I've put that on your calendar. Your status is set to Busy.",
+      "output": [
+        "please create walk the dog for Thursday and Friday, both at 7am."
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Thu, January 24 between 12:00 AM and 12:00 PM.",
+      "output": [
+        "Going to the zumba they're having at the National Mall this evening. What is the weather looking like?"
+      ]
+    },
+    {
+      "input": "The average temperature was 0.00 \u00b0F on Thu, January 24 at 3:00 PM.",
+      "output": [
+        "Going running at the National Mall. What will the temperature be at 3pm?"
+      ]
+    },
+    {
+      "input": "It starts on January 7th at 3:30 PM.",
+      "output": [
+        "When is Dentist appointment?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event between December 1st and February 29, 2020. It's \"Appointment\" from 7:00 to 7:30 AM.",
+      "output": [
+        "Do I have any planned events in the winter?"
+      ]
+    },
+    {
+      "input": "I've changed \"Review Calendar\" to be.",
+      "output": [
+        "That looks perfect."
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of 0.00 \u00b0F on Fri, January 18 between 12:00 AM and 12:00 PM.",
+      "output": [
+        "What will the weather be like in Los Angeles then?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Charity are free.",
+      "output": [
+        "Add a dentist appointment for Charity on Wednesday at 4pm."
+      ]
+    },
+    {
+      "input": "Valentines Day was on Thursday, February 14, 2019.",
+      "output": [
+        "Was Valentine's Day on a weekend last year?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Joy are free.",
+      "output": [
+        "I need to move my breakfast meeting with Joy to later in the day."
+      ]
+    },
+    {
+      "input": "I've changed \"breakfast meeting\" to be on August 22nd at 1:30 PM. __BREAK Here are some times when you and Holly are free.",
+      "output": [
+        "The first. Can I also when Holly is free Sunday"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"get ready\".",
+      "output": [
+        "What time do I need to get ready this morning?"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"ask for a raise\" is tomorrow from 10:00 to 10:30 AM.",
+      "output": [
+        "So tomorrow morning there is nothing scheduled for me?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"ask for a raise\" from 10:00 to 10:30 AM.",
+      "output": [
+        "Is that all I have scheduled for tomorrow morning? What about the rest of the day during work hours?"
+      ]
+    },
+    {
+      "input": "It is clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F today.",
+      "output": [
+        "What is the weather today?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F tomorrow.",
+      "output": [
+        "What will the weather be tomorrow?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% tomorrow.",
+      "output": [
+        "Will it rain tomorrow?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F tomorrow and Sunday the 28th.",
+      "output": [
+        "What will the weather be for the weekend?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F in Canton Township between Sunday the 28th and November 3rd.",
+      "output": [
+        "What will the weather be next week?"
+      ]
+    },
+    {
+      "input": "The humidity is 96% in North Carolina right now.",
+      "output": [
+        "What is the current humidity?"
+      ]
+    },
+    {
+      "input": "The humidity is 0.00% right now.",
+      "output": [
+        "What is the humidity in canton michigan?"
+      ]
+    },
+    {
+      "input": "The humidity will be 0.00% tomorrow.",
+      "output": [
+        "What will the humidity be tomorrow?"
+      ]
+    },
+    {
+      "input": "Yes. The low temperature will be 0.00 \u00b0F tomorrow.",
+      "output": [
+        "Will it be cold tomorrow?"
+      ]
+    },
+    {
+      "input": "Easter Monday is on Monday, April 13, 2020.",
+      "output": [
+        "When is Easter Monday?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"doctor's appointment\" on your calendar.",
+      "output": [
+        "Cancel my doctor's appointment tomorrow."
+      ]
+    },
+    {
+      "input": "That is Saturday, September 28, 2019 at 12:00 PM.",
+      "output": [
+        "When is my next meeting."
+      ]
+    },
+    {
+      "input": "I've deleted your next event.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "It starts on March 10th at 5:00 PM.",
+      "output": [
+        "tell me when the doctor appointment is"
+      ]
+    },
+    {
+      "input": "I've updated your event.",
+      "output": [
+        "Looks good to me!"
+      ]
+    },
+    {
+      "input": "The event matching \"#WorkDay party\" is tomorrow at 9:00.",
+      "output": [
+        "What time does the #WorkDay party start?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. __BREAK Is this good?",
+      "output": [
+        "yes the first one. make \"party@Hope's house\" for this saturday at 6 pm"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on April 1st.",
+      "output": [
+        "Do I have any events scheduled on April 1st?"
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's your \"buy the newest phone\" on Monday the 15th from 5:00 to 5:30 PM.",
+      "output": [
+        "Can you tell me if I have any meetings after 3pm on monday?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events today after 10:22 PM.",
+      "output": [
+        "Do I have anything the rest of the day?"
+      ]
+    },
+    {
+      "input": "I\u2019ve changed the anniversary party to March 15th.",
+      "output": [
+        "Actually it's on Friday of that week."
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Jenna and Megan Bowen\" to be at 11:00.",
+      "output": [
+        "Yes it looks fine"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Tess are free.",
+      "output": [
+        "Add a 1 on 1 with Tess tomorrow"
+      ]
+    },
+    {
+      "input": "The \"Meeting with Pearl and Megan Bowen\" is on Saturday the 20th from 1:23 to 1:53 PM.",
+      "output": [
+        "When is my one on one with pearl?"
+      ]
+    },
+    {
+      "input": "No problem.",
+      "output": [
+        "wait a minute"
+      ]
+    },
+    {
+      "input": "I've changed \"foot ball match\" to be for 3 hours.",
+      "output": [
+        "Yes that update looks good"
+      ]
+    },
+    {
+      "input": "I found 1 event today in the morning. It was an \"Appointment\" from 8:00 to 8:30 AM.",
+      "output": [
+        "what does my morning look like?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"foot doctor's appointment\" on your calendar.",
+      "output": [
+        "When is my next foot doctor's appointment?"
+      ]
+    },
+    {
+      "input": "Yes. It will be clear with a temperature of about 0.00 \u00b0F for \"team meeting\" on May 7th from 3:00 to 3:30.",
+      "output": [
+        "Will I need a jacket that day?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Rob's manager is Dan Schoffel.",
+      "output": [
+        "Yes, can you tell me who his boss is?"
+      ]
+    },
+    {
+      "input": "I could not find Dan Schoffel's manager.",
+      "output": [
+        "Who is Dan Schoffel's manager?"
+      ]
+    },
+    {
+      "input": "Your manager is David Lax.",
+      "output": [
+        "Who is Damon Straeter's manager?"
+      ]
+    },
+    {
+      "input": "I've put a \"Meeting with Mr.john\" from 10:00 to 10:30 AM.",
+      "output": [
+        "the top one would be perfect"
+      ]
+    },
+    {
+      "input": "Here are some times when you, Alice, and Jonathan are free.",
+      "output": [
+        "Create a meeting with Alice and Jonathan"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Alice are free.",
+      "output": [
+        "Oops. That shouldnt be with Jonathan."
+      ]
+    },
+    {
+      "input": "Here are some times when you, Alice, and Jacki are free.",
+      "output": [
+        "I will need Jacki there as weel"
+      ]
+    },
+    {
+      "input": "It's rated 0 stars.",
+      "output": [
+        "Can you tell me the rating of Golden Flower in Reno?"
+      ]
+    },
+    {
+      "input": "I can't find any rating information for Zombie Burger + Drink Lab.",
+      "output": [
+        "What is Zombie Pizza in Des Moines' rating?"
+      ]
+    },
+    {
+      "input": "It's for 2 hours.",
+      "output": [
+        "how long does the workout event last"
+      ]
+    },
+    {
+      "input": "It starts 5:00 PM.",
+      "output": [
+        "What time?"
+      ]
+    },
+    {
+      "input": "I've changed \"workout\" to be at 3:00.",
+      "output": [
+        "fantastic, hopefully you can continue, and give me the best of you"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events for the rest of today.",
+      "output": [
+        "Is there anything left on 12/20?"
+      ]
+    },
+    {
+      "input": "You have 3 events on your calendar. Your \"lunch with Alyce\" is tomorrow from 12:00 to 1:30 PM.",
+      "output": [
+        "Whats on my calendar for the week?"
+      ]
+    },
+    {
+      "input": "I've deleted that from your calendar.",
+      "output": [
+        "Delete that one."
+      ]
+    },
+    {
+      "input": "I didn't find anyone named Janet in your address book.",
+      "output": [
+        "Please add a lunch with Janet in place of that one"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"planning meeting\" on your calendar.",
+      "output": [
+        "John is no longer invited to my planning meeting."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Sorry, I'm not able to handle alerts yet.",
+      "output": [
+        "yeah iam meeting set remainder"
+      ]
+    },
+    {
+      "input": "The 2nd event next month is \"Dinner with company\" on March 10th from 6:00 to 6:30 PM.",
+      "output": [
+        "What's my second event do I have next month?"
+      ]
+    },
+    {
+      "input": "The 2nd event next month is \"Din\" on April 4th from 6:00 to 6:30 PM.",
+      "output": [
+        "What is my second event next month?"
+      ]
+    },
+    {
+      "input": "The 2nd next month is \"Din\" on April 4th from 6:00 to 6:30 PM.",
+      "output": [
+        "What is my second event in the month of April?"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"Epic quest to defeat evil\" is tomorrow from 3:00 to 3:45 PM.",
+      "output": [
+        "What is on my calendar tomorrow?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"update memos\" tomorrow.",
+      "output": [
+        "Now, make a commute event for 1 hour before update memos tomorrow."
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events matching \"Therapy\" next month. The first is \"Therapy\" on March 4th from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have any Therapy events scheduled for March 2020?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"baseball game\" in May. It's from 3:00 to 3:30 PM.",
+      "output": [
+        "Do I have any baseball games scheduled for may 2020?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on March 4, 2030 from 10:00 to 10:30 AM. __BREAK Is this what you want me to cancel?",
+      "output": [
+        "yes. Also delete my baseball game in May 2020"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"baseball game\" in May.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F today.",
+      "output": [
+        "Can you check weather in CA on Today?"
+      ]
+    },
+    {
+      "input": "Sorry I can't help you with that yet.",
+      "output": [
+        "I'd like to change my appointment tomorrow to a later date."
+      ]
+    },
+    {
+      "input": "Abby Gonano has tentatively accepted the \"Tea Date\" invitation.",
+      "output": [
+        "What is Abby's response to our tea date?"
+      ]
+    },
+    {
+      "input": "I didn't find any events for the rest of today.",
+      "output": [
+        "hi what are my appointments today?"
+      ]
+    },
+    {
+      "input": "No, I found no events named \"lunch with someone\".",
+      "output": [
+        "will I be having lunch with someone?"
+      ]
+    },
+    {
+      "input": "Here's the list of attendees: Megan Bowen and Barack Obama.",
+      "output": [
+        "Ok who will be joining me for lunch?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Fiona.",
+      "output": [
+        "ok great. can you tell me when I will be meeting with Fiona?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Paige.",
+      "output": [
+        "Ok how about Paige?"
+      ]
+    },
+    {
+      "input": "Yes, I found 3 attendees who have not accepted \"quick debrief\".",
+      "output": [
+        "Did anyone not accept the invitation to be there?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"go see the doctor\" on your calendar.",
+      "output": [
+        "when am I scheduled to go see the doctor?"
+      ]
+    },
+    {
+      "input": "Looks like it.",
+      "output": [
+        "do you see any appoinments next week?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% today.",
+      "output": [
+        "is it going to rain today in harlingen texas?"
+      ]
+    },
+    {
+      "input": "The temperature is 0.00 \u00b0F today.",
+      "output": [
+        "what will the temps be"
+      ]
+    },
+    {
+      "input": "I found 5 options. The first is the Quality Inn at 1002 S Expressway 83, Harlingen, TX, 78550.",
+      "output": [
+        "are there any hotels?"
+      ]
+    },
+    {
+      "input": "You have 2 events on your calendar. Your \"appointment\" is tomorrow from 8:00 AM to 5:00 PM.",
+      "output": [
+        "find everything this week called Appointment"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"secret spy mission\" on Thursday. It's \"secret spy mission\" from 8:00 to 8:30 AM.",
+      "output": [
+        "Do I have a secret spy mission on Thursday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"golf match\" with Mark on Sunday the 8th. It's \"Golf Match\" from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have a golf match with Mark on Sunday?"
+      ]
+    },
+    {
+      "input": "The \"Golf Match\" is located at Torrey Pines.",
+      "output": [
+        "Is the match at Torrey Pines?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Jesse tomorrow.",
+      "output": [
+        "Do I have anything with Jesse tomorrow?"
+      ]
+    },
+    {
+      "input": "I will decline \"Meeting with Josh and Damon Straeter\". Is that ok?",
+      "output": [
+        "i need you to decline the event with Josh"
+      ]
+    },
+    {
+      "input": "I have declined it. __BREAK I will decline \"AC/CD Reunion\" and send a response to the organizer with the following comment: \"i am going to see Journey instead\". Is that ok?",
+      "output": [
+        "Yes also decline my AC/CD Reunion and say i am going to see Journey instead"
+      ]
+    },
+    {
+      "input": "I have declined it. __BREAK I will decline \"Hike\" and send a response to the organizer with the following comment: \"I'm busy wake boarding that day.\". Is that ok?",
+      "output": [
+        "Yes. And decline the hike and say that I'm busy wake boarding that day."
+      ]
+    },
+    {
+      "input": "Yes. The chance of snow is 0.00% tomorrow.",
+      "output": [
+        "any chance of snow?"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be.",
+      "output": [
+        "ok"
+      ]
+    },
+    {
+      "input": "The \"Norton Anti-virus support\" ends in 2021.",
+      "output": [
+        "Can you give me the year our Norton Anti-virus support ends?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"mcafee subscription\" on January 1, 2021.",
+      "output": [
+        "yes, cancel this mcafee subscription"
+      ]
+    },
+    {
+      "input": "The \"puppy arrival\" starts in 2020.",
+      "output": [
+        "In what year does my new puppy arrive?"
+      ]
+    },
+    {
+      "input": "The chance of rain will be 0.00% for \"camping\" in Yogi Bear's Jellystone Park Camp - Resort on Saturday from 10:00 to 10:30 AM.",
+      "output": [
+        "Great! Is there a chance of rain during my Camping?"
+      ]
+    },
+    {
+      "input": "It's 0.00 \u00b0F.",
+      "output": [
+        "What is the temperature?"
+      ]
+    },
+    {
+      "input": "I've changed \"jog\" to be on February 22nd at 8:30 AM.",
+      "output": [
+        "Looks right to me"
+      ]
+    },
+    {
+      "input": "The \"Claim Lottery Winnings\" is on Monday the 28th from 3:00 AM to 3:30 AM.",
+      "output": [
+        "Do I have the lottery winnings on my calendar for next Monday?"
+      ]
+    },
+    {
+      "input": "The event matching \"lottery winnings\" on Monday the 28th is located at MetroGas.",
+      "output": [
+        "Good. Where am I going to to do that?"
+      ]
+    },
+    {
+      "input": "I've changed \"Claim Lottery Winnings\" for you.",
+      "output": [
+        "Whoah, dude, there ain't no way they gonna pay out on that, take that off the event. I'll get back to you after I talk to my lawyer."
+      ]
+    },
+    {
+      "input": "You have 2 events on your calendar. Your \"walk in the park\" is tomorrow from 2:00 to 2:45 PM.",
+      "output": [
+        "What am I doing tomorrow?"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"dinner\" is tomorrow from 5:30 to 7:30 PM.",
+      "output": [
+        "What else do I have tomorrow?"
+      ]
+    },
+    {
+      "input": "Here is the list of attendees who have not accepted \"Birthday Party\": you and Jake Cobb. Unfortunately, Jake Cobb declined.",
+      "output": [
+        "who have not accepted to birthday party"
+      ]
+    },
+    {
+      "input": "Here is the list of attendees who have not declined \"bbq party\": you and Abby Gonano.",
+      "output": [
+        "And who has not declined bbq party?"
+      ]
+    },
+    {
+      "input": "Here is the list of attendees who have not tentatively accepted \"bbq party\": you and Abby.",
+      "output": [
+        "Then who has not tentatively accepted the bbq party?"
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events between today and March 7th. The first is \"client meeting with MSN\" from 2:00 to 2:45 PM.",
+      "output": [
+        "Do I have any Client Meetings scheduled within the next two weeks?"
+      ]
+    },
+    {
+      "input": "Next is your client meeting with ESPN from 3:00 to 3:45 PM.",
+      "output": [
+        "What is the other?"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"Appointment\" is on April 8th from 9:00 to 9:30 AM.",
+      "output": [
+        "Show my events for next week."
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be between Friday the 12th and Monday the 8th.",
+      "output": [
+        "YEAH RIGHT"
+      ]
+    },
+    {
+      "input": "I didn't find any events on your calendar tomorrow in the morning.",
+      "output": [
+        "What events do I have scheduled tomorrow morning?"
+      ]
+    },
+    {
+      "input": "I found 2 events on your calendar.",
+      "output": [
+        "Hi. What events do I have?"
+      ]
+    },
+    {
+      "input": "I found one event next week. It's \"Appointment\" on Sunday the 10th from 11:00 to 11:30 PM.",
+      "output": [
+        "So what do I have next week?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Tuesday the 12th.",
+      "output": [
+        "What about the Tuesday after that?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Amanda on Friday.",
+      "output": [
+        "Delete my meeting with Amanda on Friday."
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your dinner with Sam is tomorrow from 6:00 to 6:30 PM.",
+      "output": [
+        "tell me what I am doing tomorrow"
+      ]
+    },
+    {
+      "input": "I've changed \"staff meeting\" to be.",
+      "output": [
+        "it does"
+      ]
+    },
+    {
+      "input": "The event on your calendar is Sunday the 25th at 9:00 PM.",
+      "output": [
+        "what time is my meeting that is late Sunday ?"
+      ]
+    },
+    {
+      "input": "I found one event on Sunday the 15th. It's \"Lunch\" from 12:00 to 12:30 PM.",
+      "output": [
+        "ok! any other event sunday"
+      ]
+    },
+    {
+      "input": "I've changed \"Lunch\" for you.",
+      "output": [
+        "The later one works best."
+      ]
+    },
+    {
+      "input": "I could not find Dan's manager.",
+      "output": [
+        "I asked for Ashley's skip not Dan's."
+      ]
+    },
+    {
+      "input": "The first event between June 1, 2020 and August 31, 2020 is \"Appointment\" from 10:00 to 10:30 AM.",
+      "output": [
+        "what is my first event in summer?"
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events in September. The first is \"Appointment\" on Thursday the 12th from 12:00 to 12:30 PM.",
+      "output": [
+        "Do I have any events on my calendar this month?"
+      ]
+    },
+    {
+      "input": "The event between Sunday the 29th and October 5th is for a half hour.",
+      "output": [
+        "Great. How long is my appointment for the first week of october?"
+      ]
+    },
+    {
+      "input": "30 minutes and 0 seconds",
+      "output": [
+        "And what about the one in the first week of November?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any other events in November.",
+      "output": [
+        "Do I have anything else scheduled in November?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any matching events on your calendar.",
+      "output": [
+        "All right. Repeat this search for the third week of November."
+      ]
+    },
+    {
+      "input": "No, I didn't find any events this weekend.",
+      "output": [
+        "Do I have any events for this weekend?"
+      ]
+    },
+    {
+      "input": "The \"Appointment\" is tomorrow from 9:00 to 9:30 PM.",
+      "output": [
+        "Find an event for tomorrow after 4 pm."
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be for 1 hour.",
+      "output": [
+        "Yes."
+      ]
+    },
+    {
+      "input": "The \"outlook email support\" ends in 2019.",
+      "output": [
+        "what year does my outlook email support end?"
+      ]
+    },
+    {
+      "input": "The \"mortgage payments finish\" ends in 2040.",
+      "output": [
+        "What year will my mortgage payments finish?"
+      ]
+    },
+    {
+      "input": "The \"mortgage start\" started in 2009.",
+      "output": [
+        "What year did my mortgage start?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Tuesday after 3:00 PM.",
+      "output": [
+        "What do I have scheduled after the appointment?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"dinner plans\" on Tuesday the 18th after 3:00 PM.",
+      "output": [
+        "What are my dinner plans after that?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"lunch\".",
+      "output": [
+        "Do I have any lunch plans?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events between September 1, 2020 and November 30, 2020.",
+      "output": [
+        "Do I have something in the fall?"
+      ]
+    },
+    {
+      "input": "The \"hiking trip\" is from April 3rd to April 7th.",
+      "output": [
+        "Is the hiking trip from the 3rd to the 7th still on?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"emergency research meeting\".",
+      "output": [
+        "Make the emergency research meeting to today 12am"
+      ]
+    },
+    {
+      "input": "The event matching \"line dancing\" is on Friday the 25th at 5:00 PM.",
+      "output": [
+        "Okay. When am I going line dancing?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"dental appointment\".",
+      "output": [
+        "I need to reschedule my dental appointment for tomorrow to next Thursday and for next Thursday change my jogging time to 1 PM rather then noon."
+      ]
+    },
+    {
+      "input": "The chance of rain is 0.00% on Sunday.",
+      "output": [
+        "What's the chance of rain on Sunday in Sierra Madre?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Sun, January 13.",
+      "output": [
+        "What will the weather be like?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Abby Gonano next week.",
+      "output": [
+        "Do I have a meeting scheduled with Abby Gonano for next week?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event with Elli Parker or David Crim from now until the end of the day. It's \"Meeting with David Crim and Damon Straeter\" from 11:00 to 11:30 PM.",
+      "output": [
+        "Do I have any meeting with anyone from Elli's team today?"
+      ]
+    },
+    {
+      "input": "I found one event with Elli or David next month. It's \"Dynamite with a laser beam\" from 12:00 to 12:30 PM.",
+      "output": [
+        "Please find meetings on my calendar for next month with anyone in Crim's team"
+      ]
+    },
+    {
+      "input": "I found one event with Dan next week. It's \"Things are not what they seem\" on December 1st from 12:00 to 12:30 PM.",
+      "output": [
+        "How many meetings do I have with Dan next week?"
+      ]
+    },
+    {
+      "input": "The event with Jake Cobb, Jennifer Watts, or Kim Possible is on Thursday at 3:00 PM.",
+      "output": [
+        "When is my meeting with someone on Jennifer's team?"
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's \"Dinner Date\" from 7:00 to 7:30 PM.",
+      "output": [
+        "what is my event on this week ?"
+      ]
+    },
+    {
+      "input": "I've changed \"quick meeting\" to be between 6:00 PM and 5:30. The event matching \"treasure hunting\" Archie, Veronica, and Betty is on August 1st at 10:00.",
+      "output": [
+        "Yes. When do I go treasure hunting with Archie, Veronica and Betty?"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Adam Wallen:",
+      "output": [
+        "Can you update me on Adam Wallen"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Joshua Murphy are free.",
+      "output": [
+        "I would like to schedule a meeting with Joshua Murphy"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Busy. I\u2019ve changed your hair appointment to 6:00 PM.",
+      "output": [
+        "Please schedule a doctor appointment for tomorrow at 3 and reschedule my hair appointment thats at 4 for 6."
+      ]
+    },
+    {
+      "input": "I can't find any rating information for Chin Chin Chinese-Thai-Hibachi.",
+      "output": [
+        "What is the rating again for Chin Chin in Reno?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"coffee\".",
+      "output": [
+        "That's it!"
+      ]
+    },
+    {
+      "input": "There is no location information for \"baseball game\".",
+      "output": [
+        "Will it be a rainy day that day?"
+      ]
+    },
+    {
+      "input": "Halloween is on Thursday, October 31st.",
+      "output": [
+        "when is Halloween?"
+      ]
+    },
+    {
+      "input": "I'm sorry. I didn't find any matching people in your address book.",
+      "output": [
+        "Schedule lunch with Nick tomorrow at noon"
+      ]
+    },
+    {
+      "input": "I didn't find any events at 9:00 AM.",
+      "output": [
+        "Cancel my 9am appointment for Friday"
+      ]
+    },
+    {
+      "input": "I've changed \"Lunch-meeting\" to be at Friday's.",
+      "output": [
+        "That's right."
+      ]
+    },
+    {
+      "input": "I've changed \"Lunch-meeting\" to be Mark Mcfardland and Louise Berg.",
+      "output": [
+        "Yes."
+      ]
+    },
+    {
+      "input": "I will decline \"Convention\". Is that ok?",
+      "output": [
+        "Decline the invitation to the convention"
+      ]
+    },
+    {
+      "input": "I will accept \"Convention\". Is that ok?",
+      "output": [
+        "Actually looks like I will be able to make it, accept it"
+      ]
+    },
+    {
+      "input": "I will accept \"Convention\" and send a response to the organizer with the following comment: \"I'm sorry for the confusion\". Is that ok?",
+      "output": [
+        "Accept and say that I'm sorry for the confusion."
+      ]
+    },
+    {
+      "input": "I've changed the location of your breakfast to Hobbs.",
+      "output": [
+        "I've changed my mind. Change the location to Hobbs"
+      ]
+    },
+    {
+      "input": "Your breakfast has been updated to 1 hour and 30 minutes.",
+      "output": [
+        "I'll also be there at least an hour and thirty minutes"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Friday the 22nd.",
+      "output": [
+        "Check my appointments for February 22"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Monday the 20th.",
+      "output": [
+        "Do I have any events Monday?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Barack Obama.",
+      "output": [
+        "Do I have an event with Barack Obama?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Kristen Clifford.",
+      "output": [
+        "Search for event with Kristen Clifford."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Paige Ashworth are free.",
+      "output": [
+        "Create an event on Tuesday with Paige Ashworth."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Tuesday the 21st from 1:00 to 1:30 PM.",
+      "output": [
+        "Yes"
+      ]
+    },
+    {
+      "input": "The event matching \"coolkids convention\" is on Tuesday the 30th at 4:00 AM.",
+      "output": [
+        "HEY MU DUDE when does the coolkids convention start????"
+      ]
+    },
+    {
+      "input": "I will accept \"Coolkids Convention\". Is that ok?",
+      "output": [
+        "i am down i 100% accept and confirm"
+      ]
+    },
+    {
+      "input": "No. The amount of precipitation is 0.00 inches per hour in Oceanside today.",
+      "output": [
+        "What is the precipitation like?"
+      ]
+    },
+    {
+      "input": "Yes. The amount of precipitation is 0.00 inches per hour today.",
+      "output": [
+        "Do you have a precipitation percentage for today?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% in Oceanside Sunday the 28th.",
+      "output": [
+        "Will it rain on Sunday too?"
+      ]
+    },
+    {
+      "input": "No. The average cloud cover will be 34% in Oceanside tomorrow.",
+      "output": [
+        "Will it be cloudy at all?"
+      ]
+    },
+    {
+      "input": "Yes. The average cloud cover will be 0.00% on Sunday the 28th.",
+      "output": [
+        "Will it be cloudy on Sunday as well?"
+      ]
+    },
+    {
+      "input": "The minimum temperature is 0.00 \u00b0F today.",
+      "output": [
+        "It's ok. What is the low for tonight?"
+      ]
+    },
+    {
+      "input": "Yes, The maximum temperature will be 0.00 \u00b0F tomorrow.",
+      "output": [
+        "Will it be 89 degrees tomorrow?"
+      ]
+    },
+    {
+      "input": "Jane's manager is Dan Schoffel.",
+      "output": [
+        "Show me Jane's manager."
+      ]
+    },
+    {
+      "input": "Matt's manager is Dan Schoffel.",
+      "output": [
+        "What about Matt's manager?"
+      ]
+    },
+    {
+      "input": "John's manager is Dan Schoffel.",
+      "output": [
+        "Who is John's manager?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Kristin tomorrow afternoon.",
+      "output": [
+        "Am I meeting with Kristin tomorrow afternoon?"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named Mary in your address book.",
+      "output": [
+        "who is Mary's supervisor?"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be at 11:00.",
+      "output": [
+        "Yes it does!"
+      ]
+    },
+    {
+      "input": "I've deleted your event tomorrow at 3:00.",
+      "output": [
+        "Correct."
+      ]
+    },
+    {
+      "input": "I didn't find any events on Tuesday the 16th at 1:00 PM.",
+      "output": [
+        "cancel the 1 pm Tuesday"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Zoe Colotis:",
+      "output": [
+        "Zoe Colotis"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Victor Raimondeau:",
+      "output": [
+        "Victor"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Charles Delaport:",
+      "output": [
+        "Charles Delaport"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Antoine Toustou:",
+      "output": [
+        "Antoine"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Arnaud Vial:",
+      "output": [
+        "Arnaud"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be for 2 hours and 30 minutes.",
+      "output": [
+        "This looks good."
+      ]
+    },
+    {
+      "input": "I found 2 matching events on your calendar.",
+      "output": [
+        "Show me my events with Ciara this week"
+      ]
+    },
+    {
+      "input": "Here is the only time I found when Becca is free today.",
+      "output": [
+        "Show me an available time today to mee with Becca"
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's \"Meeting with Becca\" from 9:00 to 9:30 AM.",
+      "output": [
+        "Show me all my meetings with Becca this week"
+      ]
+    },
+    {
+      "input": "You are logged in as Damon Straeter.",
+      "output": [
+        "am I logged in?"
+      ]
+    },
+    {
+      "input": "I've changed \"video game meetup\" to be without Fabian Russo.",
+      "output": [
+        "Yes."
+      ]
+    },
+    {
+      "input": "I've changed \"video game meetup\" to be without Felicia James.",
+      "output": [
+        "Yep, looks fine."
+      ]
+    },
+    {
+      "input": "I found no events on your calendar in April.",
+      "output": [
+        "I'd like to know how many events I have planned this month."
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your Mavs basketball game is on February 3rd from 7:00 to 10:00 PM.",
+      "output": [
+        "Tell if am I free on February the 3rd?"
+      ]
+    },
+    {
+      "input": "Your business meeting is on Saturday the 22nd from 3:00 to 4:00 PM.",
+      "output": [
+        "Set a search for a business meeting at 3pm on Saturday."
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"business meeting\" from 3:00 to 4:00 PM.",
+      "output": [
+        "Is there anything else on Saturday?"
+      ]
+    },
+    {
+      "input": "I've changed \"doctor\" to be named \"APPOINTMENT WITH DOCTOR\".",
+      "output": [
+        "Yes set that"
+      ]
+    },
+    {
+      "input": "The event matching \"dinner meet\" is located at Fargo's Pizza.",
+      "output": [
+        "Find my dinner meet place."
+      ]
+    },
+    {
+      "input": "The time is currently 1:24.",
+      "output": [
+        "What time is it?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on Saturday. It's \"City Coffee Tour\" from 11:00 AM to 4:00 PM.",
+      "output": [
+        "Do I have anything saturday?"
+      ]
+    },
+    {
+      "input": "I've changed \"Fireworks\" to be on June 1, 2020. __BREAK Does one of these work?",
+      "output": [
+        "the first one is best, then schedule gift wrapping in winter"
+      ]
+    },
+    {
+      "input": "I can't schedule recurring events right now.",
+      "output": [
+        "Actually, add a gym session from 2:30 PM to 3:30 PM every weekday for the next two weeks and cancel any other gym sessions scheduled."
+      ]
+    },
+    {
+      "input": "__NULL",
+      "output": [
+        "I need to make a lunch meeting two Tuesdays from today with Bonnie at Western Grill."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Bonnie are free.",
+      "output": [
+        "Create a Lunch Meeting with Bonnie on the 18th at Western Grill for some time after 12:30 pm."
+      ]
+    },
+    {
+      "input": "I've changed \"tee time\" to be with jackson.",
+      "output": [
+        "look good and pretty well thank you"
+      ]
+    },
+    {
+      "input": "On Thursday, the date will be October 31 2019.",
+      "output": [
+        "what date does halloween fall on this year?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Tuesday the 19th.",
+      "output": [
+        "What am doing May 19?"
+      ]
+    },
+    {
+      "input": "I found one event on Thursday the 21st. It's \"Let's Run\" from 9:00 AM to 9:30.",
+      "output": [
+        "what about May 21?"
+      ]
+    },
+    {
+      "input": "Connecting to \"Let's Run\".",
+      "output": [
+        "Join Let's Run"
+      ]
+    },
+    {
+      "input": "I've deleted your event tomorrow at 10:00.",
+      "output": [
+        "Yes that's the right one"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"Dentist appointment\" on Monday the 15th.",
+      "output": [
+        "yes exactly"
+      ]
+    },
+    {
+      "input": "I've deleted your event john.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "It's called Confession to my Priest.",
+      "output": [
+        "What is the subject of the event happening on Floor 37 right now?"
+      ]
+    },
+    {
+      "input": "I've changed \"Confession to my Priest\" to be at 8:00.",
+      "output": [
+        "yes that's good"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar from 1:00 PM to 1:30 PM.",
+      "output": [
+        "Looks better than perfection"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Friday.",
+      "output": [
+        "How about friday?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Monday the 29th in the morning.",
+      "output": [
+        "Do I have anything scheduled for Monday morning?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. __BREAK Does one of these work?",
+      "output": [
+        "Yes, the second event is good. Can you also schedule a Hiking Trip for me around 2 pm on Friday?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"meetings\" from now until the end of the day.",
+      "output": [
+        "Any meetings on the agenda today?"
+      ]
+    },
+    {
+      "input": "I've changed \"dentist appointment\" to be at 2:00.",
+      "output": [
+        "That's good."
+      ]
+    },
+    {
+      "input": "I've changed \"dentist appointment\" to be named \"Dental Appt.\".",
+      "output": [
+        "It does."
+      ]
+    },
+    {
+      "input": "The event matching \"family dinner\" this month is on Saturday the 20th at 4:00 PM.",
+      "output": [
+        "What time is the family dinner this month?"
+      ]
+    },
+    {
+      "input": "I've changed \"family dinner\" to be at 5:00.",
+      "output": [
+        "oh!ok."
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"family dinner\".",
+      "output": [
+        "I can do the family dinner at change in April 20, sat 5.00 PM to 5.30 PM"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Abby Gonano and Damon Straeter\" to be.",
+      "output": [
+        "Yes. Lookin good"
+      ]
+    },
+    {
+      "input": "I've changed \"workout\" to be at 4:00. Sorry, I can't handle that yet.",
+      "output": [
+        "Yes. Copy the event forThursday too."
+      ]
+    },
+    {
+      "input": "You have 3 events on your calendar. Your \"oil change\" is tomorrow from 8:00 to 9:00 AM.",
+      "output": [
+        "Can you organize my schedule for tomorrow starting with the first scheduled item and list them for the rest of the day."
+      ]
+    },
+    {
+      "input": "Next is your meeting with Jim tomorrow from 10:00 to 11:30 AM.",
+      "output": [
+        "What is after the oil change?"
+      ]
+    },
+    {
+      "input": "I've changed \"Magic the Gathering Tournament\" to be at 9:00. The \"The Hunt for Red October\" is on November 1st from 2:00 to 2:30.",
+      "output": [
+        "Yes. Looks great. Find my Hunt for Red October event"
+      ]
+    },
+    {
+      "input": "I've put \"Hunt for Better Meals\" on Monday the 7th from 10:00 to 10:30 AM.",
+      "output": [
+        "Yeah let's go with the first one."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. __BREAK Here are some times when you and Jim are free.",
+      "output": [
+        "10:00 AM works fine, also I'm meeting Jim for lunch that same day."
+      ]
+    },
+    {
+      "input": "Here are some times when everyone is free in the next five days.",
+      "output": [
+        "Ok. Instead add meeting with Riles and her boss."
+      ]
+    },
+    {
+      "input": "Here are some times when everyone is free on Monday the 21st.",
+      "output": [
+        "I need to have a conference with Janet and her supervisor on Monday."
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F in Tok.",
+      "output": [
+        "what is the weather tommrow"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Abby.",
+      "output": [
+        "Hi do I have an appointment with Abby today?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event with Shane next week. It's \"therapy\" on Tuesday the 10th from 3:00 to 3:30 PM.",
+      "output": [
+        "do i have any events with Shane next week?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any other events with Shane this week.",
+      "output": [
+        "Are there any other appointments with Shane this week?"
+      ]
+    },
+    {
+      "input": "Yes, Abby Gonano has accepted the \"party\" invitation.",
+      "output": [
+        "Is Abby coming to the party this weekend?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"dentist appointment\" on Tuesday the 10th.",
+      "output": [
+        "Do I have a dentist appointment for next Tuesday already on the calendar?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Barack Obama are free.",
+      "output": [
+        "may 15 with barack obama"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Karl Boon are free.",
+      "output": [
+        "Sync with Karl Boon"
+      ]
+    },
+    {
+      "input": "Yes, Hank Thomas is invited to The \"weekly wrap up\".",
+      "output": [
+        "Is Hank invited to the wrap up?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and John Wick are free.",
+      "output": [
+        "ok fine add the another meeting with john"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Abby are free.",
+      "output": [
+        "anything later please?"
+      ]
+    },
+    {
+      "input": "I've changed \"baseball game\" to be named \"football game\".",
+      "output": [
+        "Yes, that looks right! Thank you."
+      ]
+    },
+    {
+      "input": "Sarah's manager is Dan Schoffel.",
+      "output": [
+        "I need to find out who Sarah's manager is."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Dan Schoffel are free.",
+      "output": [
+        "thanks and make a meeting with dan schoffel tomorrow"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your team meeting was on November 19th from 2:00 to 2:30 PM.",
+      "output": [
+        "Can you look for all events I had scheduled for the week of November 18th 2018?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"lunch meeting\" on your calendar.",
+      "output": [
+        "Can you find out when I have a lunch meeting with Frank?"
+      ]
+    },
+    {
+      "input": "I didn't find any events right now.",
+      "output": [
+        "delete event now"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your Time to go Ultra Wild on New year's eve at Joe's party is on December 31st from 9:00 PM to 3:00 AM.",
+      "output": [
+        "What events are on my schedule."
+      ]
+    },
+    {
+      "input": "Yes, I found one event named \"team meeting\" this week. It's from 10:00 to 10:30 AM.",
+      "output": [
+        "Is there a team meeting this week?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"kid's soccer game\".",
+      "output": [
+        "Yes hi I need to search for an event related to my kid's soccer game"
+      ]
+    },
+    {
+      "input": "I've changed \"Brunch\" to be at 11:00.",
+      "output": [
+        "That is good."
+      ]
+    },
+    {
+      "input": "I found 1 event on your calendar. It's an \"Arm Workout\" on Saturday from 10:00 to 10:30 AM.",
+      "output": [
+        "Find another event."
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"party\" between June 1, 2020 and August 31, 2020.",
+      "output": [
+        "yes cancel this party"
+      ]
+    },
+    {
+      "input": "I found 1 event between September 1st and November 30th. It's \"Appointment\" on September 9th from 1:00 to 1:30 AM.",
+      "output": [
+        "What do I have going on next fall?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Saturday.",
+      "output": [
+        "Is there anything scheduled on Saturday?"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be for an hour and a half.",
+      "output": [
+        "Yeah I guess. It will do for now."
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's \"find the Final Pam\" from 8:00 PM to 12:00 AM.",
+      "output": [
+        "What else do I have scheduled on March 25"
+      ]
+    },
+    {
+      "input": "It starts tomorrow at 10:00 AM.",
+      "output": [
+        "Can you tell me when my meeting with Dave is for this week?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events next week.",
+      "output": [
+        "Do I have a dental appointment next week?"
+      ]
+    },
+    {
+      "input": "It starts on Friday at 9:00 AM.",
+      "output": [
+        "What day is my meeting with Rex?"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of about 0.00 \u00b0F for \"Spa Day\" on Saturday from 1:00 to 1:30 PM.",
+      "output": [
+        "Hey! Can you tell me the weather for the Spa Day"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of 0.00 \u00b0F for \"Movie Marathon\" on May 1st from 8:00 to 8:30 AM.",
+      "output": [
+        "what will the weather be like at the Movie Marathon"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of about 0.00 \u00b0F for \"Ski Trip\" on July 11th from 8:00 to 8:30 AM.",
+      "output": [
+        "What will the weather be like at the Ski Trip?"
+      ]
+    },
+    {
+      "input": "The event on your calendar is for 30 minutes.",
+      "output": [
+        "How long is the dinner tonight?"
+      ]
+    },
+    {
+      "input": "The event matching \"staff meeting\" tomorrow is for 2 hours.",
+      "output": [
+        "How long is the staff meeting on Friday going to last?"
+      ]
+    },
+    {
+      "input": "The office location of Persia is San Francisco.",
+      "output": [
+        "Can you give me persia's Office address?"
+      ]
+    },
+    {
+      "input": "The phone number for Persia is 5671234.",
+      "output": [
+        "Okay then. Can I know her phone number?"
+      ]
+    },
+    {
+      "input": "The email address of Persia is prince@persia.com.",
+      "output": [
+        "Well then. What is persia's email address so I can shoot her some stuff"
+      ]
+    },
+    {
+      "input": "I've deleted your event Jane tomorrow.",
+      "output": [
+        "Yes."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Jerri Skinner are free.",
+      "output": [
+        "I need an appointment with Jerry Skinner, on Monday"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Fri, October 26.",
+      "output": [
+        "Whats the weather for tomorrow?"
+      ]
+    },
+    {
+      "input": "Hello. I can help you with weather questions. What would you like to know?",
+      "output": [
+        "What other things can you tell about the weather?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of snow will be 0.00 % on Thu, October 25.",
+      "output": [
+        "Will it snow?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain will be 0.00 % today.",
+      "output": [
+        "Will it rain?"
+      ]
+    },
+    {
+      "input": "It doesn't look like it. The average cloud cover will be 39.58 % in Hanover Park on Thu, October 25.",
+      "output": [
+        "Will it be sunny?"
+      ]
+    },
+    {
+      "input": "I've changed \"Trip\" to be all day tomorrow.",
+      "output": [
+        "This looks great"
+      ]
+    },
+    {
+      "input": "7:30 PM.",
+      "output": [
+        "When does Maggie's party end?"
+      ]
+    },
+    {
+      "input": "I didn't find any events tomorrow at 2:00 PM.",
+      "output": [
+        "ok then first check on afternoon after 2 pm meeting"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on April 2nd from 10:00 to 10:30 AM.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Working Elsewhere.",
+      "output": [
+        "I'll be working elsewhere tomorrow. Add Peppered Oak Farms to the calendar from 8 am to 8 pm"
+      ]
+    },
+    {
+      "input": "It starts tomorrow at 11:45 AM.",
+      "output": [
+        "When is Peppered Oak Farms tomorrow?"
+      ]
+    },
+    {
+      "input": "I found 2 attendees who have accepted \"costume party\".",
+      "output": [
+        "How many people have accepted the costume party?"
+      ]
+    },
+    {
+      "input": "I found 0 attendees who have declined \"costume party\".",
+      "output": [
+        "How many people rejected the costume party?"
+      ]
+    },
+    {
+      "input": "I found one attendee who has tentatively accepted \"costume party\".",
+      "output": [
+        "How many people tentatively accepted the costume party?"
+      ]
+    },
+    {
+      "input": "I've put \"camping\" from tomorrow to Sunday the 25th.",
+      "output": [
+        "The former one I think"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Dan Schoffel and Damon Straeter\" to be at Dierks Parkside Cafe.",
+      "output": [
+        "That is great."
+      ]
+    },
+    {
+      "input": "I didn't find any events with David Lax this week.",
+      "output": [
+        "When am I meeting with my supervisor this week?"
+      ]
+    },
+    {
+      "input": "Here is the list of attendees who have accepted \"dog wedding\": Jesse Rosenfeld and Elli Parker.",
+      "output": [
+        "Who is going to the dog wedding?"
+      ]
+    },
+    {
+      "input": "Here is the list of attendees who have not accepted \"dog wedding\": Haymish Font, Sammy Tent, and you.",
+      "output": [
+        "Who has not accepted for the dog wedding yet?"
+      ]
+    },
+    {
+      "input": "Yes, I found 3 attendees who have not declined \"dog divorce\".",
+      "output": [
+        "has anyone not declined their invite for the dog divorce?"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. The annual family gathering is on December 23rd from 3:00 to 5:00 PM.",
+      "output": [
+        "Hi, can you list all of the things I have scheduled for December 23rd, 2019?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"solstice party\".",
+      "output": [
+        "it is"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Joe are free.",
+      "output": [
+        "Add a meeting with Joe to discuss plumbing business."
+      ]
+    },
+    {
+      "input": "There is no phone number listed for Joe.",
+      "output": [
+        "What's Joe's phone number?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on November 15, 2019.",
+      "output": [
+        "Are there any events for the 15th of November?"
+      ]
+    },
+    {
+      "input": "Yes, I found 3 events this afternoon. The first was \"lunch\" today from 1:00 to 1:45 PM.",
+      "output": [
+        "Am I busy in the afternoon today?"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Tony and Damon Straeter\" to be at my office.",
+      "output": [
+        "better one"
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"takin' a break\" from 6:00 to 6:30 PM.",
+      "output": [
+        "Do I have anything on Tuesday?"
+      ]
+    },
+    {
+      "input": "I've changed \"brainstorming session\" to be at 1:00.",
+      "output": [
+        "Hmm ok"
+      ]
+    },
+    {
+      "input": "I've changed \"fencing tournament\" to be at 5:00. __BREAK Is this the update you want?",
+      "output": [
+        "Yes that's awesome. and then can you alter the start of the meeting with Kim from PM to AM."
+      ]
+    },
+    {
+      "input": "I didn't find any events on your calendar today in the afternoon.",
+      "output": [
+        "Read for me what is on my calender this afternoon"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"archery championship\" is on Tuesday the 5th from 4:00 to 6:00 PM.",
+      "output": [
+        "What do I have next week?"
+      ]
+    },
+    {
+      "input": "I've deleted your event Jim and Jill on October 1st.",
+      "output": [
+        "Yes it is."
+      ]
+    },
+    {
+      "input": "Yes. The chance of snow is 0.00% on Wednesday.",
+      "output": [
+        "Will it snow on Halloween?"
+      ]
+    },
+    {
+      "input": "The temperature will be 0.00 \u00b0F on January 1, 2019.",
+      "output": [
+        "What temperature will it be on January 1st 2019"
+      ]
+    },
+    {
+      "input": "It starts on March 13th at 6:00 PM.",
+      "output": [
+        "When is Ryan's wedding rehearsal?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"Coffee Break\" on August 2nd.",
+      "output": [
+        "Yes that's the right one"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Audra next week.",
+      "output": [
+        "What meetings do I have with Audra next week?"
+      ]
+    },
+    {
+      "input": "I found one event with Audrey next week. It's \"Pool Party\" on Tuesday the 20th from 3:00 to 3:30 PM.",
+      "output": [
+        "What meetings do I have with Audrey next week?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Lani and Alex next week.",
+      "output": [
+        "What events are Lani and Alex going to be attending next week?"
+      ]
+    },
+    {
+      "input": "I found 1 event tomorrow. It's \"Pool Party\" from 3:00 to 3:30 PM.",
+      "output": [
+        "What events do I have for tomorrow"
+      ]
+    },
+    {
+      "input": "Yes, I found one event not named \"Mike's Baseball\" on Saturday. It's \"clean bathrooms\" from 1:00 to 3:00 PM.",
+      "output": [
+        "Do I have anything else scheduled on that day?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether OvenBird is family friendly. You'll have to contact them.",
+      "output": [
+        "Is Ovenbird in Birmingham a family friendly restaurant?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Lamppost Pizza is family friendly. You'll have to contact them.",
+      "output": [
+        "Is Lampost in Reno family friendly?"
+      ]
+    },
+    {
+      "input": "Sorry I can't help you with that. I can look up businesses and locations, and give you information about them.",
+      "output": [
+        "is there menu online so i can make my choice"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Benihana is family friendly. You'll have to contact them.",
+      "output": [
+        "please help me check if benihana's in hoffman estates is family friendly"
+      ]
+    },
+    {
+      "input": "Here are some times when you and mary are free.",
+      "output": [
+        "create an appointment with mary on thursday"
+      ]
+    },
+    {
+      "input": "I didn't find any events today.",
+      "output": [
+        "Can you please tell me my schedule for today?"
+      ]
+    },
+    {
+      "input": "I've changed \"Fingerlickin Food Sess\" to be without Kim Possible, without Abby Gonano, and Katie Gonzales.",
+      "output": [
+        "That looks good to me."
+      ]
+    },
+    {
+      "input": "I found 4 different places matching that description. Can you be more specific?",
+      "output": [
+        "Does Cottage inn in detroit offer takeout?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Sup has takeout. You'll have to contact them.",
+      "output": [
+        "Does Sup in Reno have takeout?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Johnny's Ristorante Italiano has takeout. You'll have to contact them.",
+      "output": [
+        "Then, check if Johnny's Ristorante in Reno has takeout"
+      ]
+    },
+    {
+      "input": "Steve is free tomorrow at 3:00.",
+      "output": [
+        "See if there are any available appointments with Steve on Friday, April 5 at 3 pm."
+      ]
+    },
+    {
+      "input": "I didn't find any events this week.",
+      "output": [
+        "Can you pull up my calendar for the week?"
+      ]
+    },
+    {
+      "input": "I\u2019ve set the status of going on a cruise to Working Elsewhere.",
+      "output": [
+        "Can you change my status to \"Working Elsewhere\" for that event?"
+      ]
+    },
+    {
+      "input": "I've encountered an error retrieving information. Please try again later.",
+      "output": [
+        "When is my meeting with Tom & Jerry?"
+      ]
+    },
+    {
+      "input": "I've put \"lunch\" from 10:00 to 10:30 AM.",
+      "output": [
+        "select second one"
+      ]
+    },
+    {
+      "input": "Your team members are Abby Gonano, Jesse Rosenfeld and 1 other.",
+      "output": [
+        "Who is on my team"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"dentist appointment\" on Tuesday the 9th.",
+      "output": [
+        "I need to remove my dentist appointment next Tuesday"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named Poppyseed in your address book.",
+      "output": [
+        "Create a new event for Monday at noon: Lunch with Poppyseed"
+      ]
+    },
+    {
+      "input": "I will decline \"vacation in Italy\". Is that ok?",
+      "output": [
+        "Decline the invite to vacation in Italy"
+      ]
+    },
+    {
+      "input": "I will accept \"Vacation in Sweden\". Is that ok?",
+      "output": [
+        "accept the invite to Vacation in Sweden"
+      ]
+    },
+    {
+      "input": "I will accept \"Dance Party in Stockholm\". Is that ok?",
+      "output": [
+        "Accept the invite to the Dance Party in Stockholm"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"dinner date\" Trey on August 23rd.",
+      "output": [
+        "Yes"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"romantic walk on the beach\" Trey on Sunday.",
+      "output": [
+        "Yeah. He's a jerk and stood me up."
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"ar eseveral names\" on your calendar until .",
+      "output": [
+        "there ar eseveral names on it."
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Joe's Crab Shack has a full bar. You'll have to contact them.",
+      "output": [
+        "Is there a full bar at the crab shack in river north?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Mi Casa Too Mexican Restaurant has a full bar. You'll have to contact them.",
+      "output": [
+        "Does Micasa Too in Reno have a full bar?"
+      ]
+    },
+    {
+      "input": "I've changed \"Dr. appointment\" to be at 11:00.",
+      "output": [
+        "yes it does"
+      ]
+    },
+    {
+      "input": "I found one event in April with the status set to Out of Office. It's \"meeting with A team\" on April 15th from 2:00 to 7:00 PM.",
+      "output": [
+        "What days are marked as out of office for April?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Jake Cobb are free.",
+      "output": [
+        "I need a room for some alone time with Jake"
+      ]
+    },
+    {
+      "input": "I found 1 event on your calendar. It's \"Appointment\" tomorrow from 4:00 to 4:30 PM.",
+      "output": [
+        "What events do I have on Friday"
+      ]
+    },
+    {
+      "input": "Sorry, neither of the options I suggested is .",
+      "output": [
+        "yeah thanks"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Cornelio Hernandez are free.",
+      "output": [
+        "Create an appointment with Hernandez"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Thursday from 10:00 to 10:30 AM.",
+      "output": [
+        "yes thank you"
+      ]
+    },
+    {
+      "input": "I found 3 events on your calendar. The first was \"Appointment\" on Wednesday the 8th from 9:00 to 9:30 AM.",
+      "output": [
+        "How many meetings did I have last Wednesday?"
+      ]
+    },
+    {
+      "input": "Ash Wednesday is on Wednesday, February 26, 2020.",
+      "output": [
+        "When is Ash Wednesday?"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named hae in your address book.",
+      "output": [
+        "hae..shedule me an AGM meeting"
+      ]
+    },
+    {
+      "input": "The event matching \"friend's baby shower\" is located at Carla's house.",
+      "output": [
+        "What is the location of my friend's baby shower?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F tomorrow between 12:00 AM and 12:00 PM.",
+      "output": [
+        "Can you check the weather in london for me at 9?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% tomorrow between 8:00 and 10:00 AM.",
+      "output": [
+        "I see, but will we see any rain at all?"
+      ]
+    },
+    {
+      "input": "I've changed \"party\" to be without Julia, without Lynne, and without Andrea.",
+      "output": [
+        "perfect, you're awesome!"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"party\".",
+      "output": [
+        "Yes sir, that is exactly what I wanted you to cancel"
+      ]
+    },
+    {
+      "input": "Your babysitting has been updated to 8 hours.",
+      "output": [
+        "Actually, turns out its a much bigger ordeal, can you make it for 8 hours?"
+      ]
+    },
+    {
+      "input": "I've changed the location of your babysitting to the farm.",
+      "output": [
+        "Also, now I am doing that at my place, so can you set my location to the farm?"
+      ]
+    },
+    {
+      "input": "Clark Kent's phone number is 958 662 8899. Click on the number below to dial.",
+      "output": [
+        "I need to call Clark Kent."
+      ]
+    },
+    {
+      "input": "Joanna Gaines's phone number is 0905484796. Click on the number below to dial.",
+      "output": [
+        "Please call Joanna Gaines"
+      ]
+    },
+    {
+      "input": "Esther Swann's phone number is 123-456-7891. Click on the number below to dial.",
+      "output": [
+        "Call Esther Swann"
+      ]
+    },
+    {
+      "input": "Ben Hunter's phone number is 1349821598. Click on the number below to dial.",
+      "output": [
+        "Let's call Ben Hunter please"
+      ]
+    },
+    {
+      "input": "Jon Crawford's phone number is 747932987. Click on the number below to dial.",
+      "output": [
+        "Please call Jon Crawford"
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"Unemployment Appointment\" from 9:00 to 9:30 AM.",
+      "output": [
+        "do I have any appointment for tomorrow?"
+      ]
+    },
+    {
+      "input": "Your \"meeting with Nokia\" is from 2:00 to 2:30 PM.",
+      "output": [
+        "Do I still have a meeting with Nokia in the afternoon"
+      ]
+    },
+    {
+      "input": "I've changed \"meeting with Nokia\" to be at 3:00.",
+      "output": [
+        "ok"
+      ]
+    },
+    {
+      "input": "I've changed \"meeting with Nokia\" to be with Mr. John.",
+      "output": [
+        "Yes thanks"
+      ]
+    },
+    {
+      "input": "The event matching \"Amanda's birthday party\" next week is on Tuesday the 8th at 11:00 AM.",
+      "output": [
+        "What day Amanda's birthday party next week?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and James are free.",
+      "output": [
+        "Schedule a business meeting with James between the marathon run and drinks at the club."
+      ]
+    },
+    {
+      "input": "The event with Mr. Smith is on Saturday at 4:00 PM.",
+      "output": [
+        "When is my meeting with Mr. Smith?"
+      ]
+    },
+    {
+      "input": "I found 2 events today at night.",
+      "output": [
+        "check the events i have today night"
+      ]
+    },
+    {
+      "input": "The 2nd event is \"Eat Sushi\" today from 6:00 to 6:30 PM.",
+      "output": [
+        "And what is the second event?"
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events tomorrow. The first is \"Business Meeting\" from 2:00 to 3:00 PM.",
+      "output": [
+        "Is there any meeting tomorrow?"
+      ]
+    },
+    {
+      "input": "I found 5 events this week. The first is \"doctor\" today from 4:00 to 6:00 AM.",
+      "output": [
+        "How many events do I currently have scheduled this coming week?"
+      ]
+    },
+    {
+      "input": "I found 1 event on Saturday. It's the \"dentist\" from 6:00 to 8:00 AM.",
+      "output": [
+        "Please list all events scheduled for Saturday the 8th."
+      ]
+    },
+    {
+      "input": "I found 6 events on your calendar.",
+      "output": [
+        "Please list my scheduled upcoming events"
+      ]
+    },
+    {
+      "input": "I found 7 matching events on your calendar.",
+      "output": [
+        "list contacts I have events scheduled with"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on your calendar. It's \"sync\" on Sunday the 9th from 5:00 to 6:00 AM.",
+      "output": [
+        "Is Cecelia Waller listed in any upcoming events?"
+      ]
+    },
+    {
+      "input": "The \"sync\" is on Sunday the 9th from 5:00 to 6:00 AM.",
+      "output": [
+        "details of event \"sync\""
+      ]
+    },
+    {
+      "input": "I didn't find any events with Jerri Skinner and Wade Blakeley.",
+      "output": [
+        "Show events including Jerri Skinner, Wade Blakeley, or Janice Kang"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Janice Kang.",
+      "output": [
+        "Show events including Janice Kang"
+      ]
+    },
+    {
+      "input": "I found one event with Jeong-Ho Kim. It's \"quick debrief\" on Friday from 10:00 to 10:30 AM.",
+      "output": [
+        "Show events with Jeong-Ho Kim"
+      ]
+    },
+    {
+      "input": "Here's the list of attendees: Megan Bowen, Karl Boon, and Jeong-Ho Kim.",
+      "output": [
+        "who is included in event \"quick debrief\"?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on your calendar.",
+      "output": [
+        "List all the meetings that I had in the past 7 days."
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events on Tuesday the 16th at night. The first is \"File Documents\" from 5:00 to 5:30 PM.",
+      "output": [
+        "Do I have any meetings next Tuesday night?"
+      ]
+    },
+    {
+      "input": "The 2nd event is \"Meeting with John Smith\" on Tuesday the 16th from 7:00 to 7:30 PM.",
+      "output": [
+        "What is the second event?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and John Smith are free.",
+      "output": [
+        "Reschedule that to the morning"
+      ]
+    },
+    {
+      "input": "Yes, I found one event next week at country club. It's \"Gala Dinner\" on April 1st from 5:00 to 5:30 PM.",
+      "output": [
+        "Do I have anything scheduled at the country club next week?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event next month at country club in Florida. It's \"Appointment\" on April 4th from 3:00 to 3:30 PM.",
+      "output": [
+        "No, the country club in Florida next month"
+      ]
+    },
+    {
+      "input": "The \"Dentist\" is on April 20th from 5:00 to 5:30 PM.",
+      "output": [
+        "Look for appointment at the dentist in Florida"
+      ]
+    },
+    {
+      "input": "The \"doctor app\" is on November 22nd from 11:00 to 11:30 AM.",
+      "output": [
+        "Actually I meant the doctor app in November."
+      ]
+    },
+    {
+      "input": "The \"Floor Refurbishment\" is on September 20th from 5:00 to 5:30 PM.",
+      "output": [
+        "Find me my Floor Refurbishment in September"
+      ]
+    },
+    {
+      "input": "The \"Counter Install\" is on September 23rd from 11:00 to 11:30 AM.",
+      "output": [
+        "i meant the counter install at 11 am"
+      ]
+    },
+    {
+      "input": "It was for 3 hours.",
+      "output": [
+        "How long is my lunch date after that?"
+      ]
+    },
+    {
+      "input": "I didn't find any events \"birthday party\".",
+      "output": [
+        "What about the birthday party after?"
+      ]
+    },
+    {
+      "input": "New Years Day is on Wednesday, January 1, 2020.",
+      "output": [
+        "Is New Years on a weekend or a weekday?"
+      ]
+    },
+    {
+      "input": "Presidents Day is on Monday, February 17, 2020.",
+      "output": [
+        "When is President's Day?"
+      ]
+    },
+    {
+      "input": "I've changed \"dinner event\" to be without Bob, without Amanda, and Vincent. __BREAK Is this the update you want?",
+      "output": [
+        "Good. Now delete Scott and Jay from the meeting next week"
+      ]
+    },
+    {
+      "input": "I've changed \"Staff Meeting\" to be without Scott and without Jay.",
+      "output": [
+        "Looks great"
+      ]
+    },
+    {
+      "input": "I found one event tomorrow. It's \"meeting\" from 11:00 to 12:00 PM.",
+      "output": [
+        "Where will I be tomorrow?"
+      ]
+    },
+    {
+      "input": "I found one event on Thursday. It's \"basketball practice\" from 7:00 to 7:30 PM.",
+      "output": [
+        "OK! Where will i be day after tomorrow?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Thursday after 7:30 PM.",
+      "output": [
+        "what happens after?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"oil change\" from 10:00 to 12:00 PM.",
+      "output": [
+        "Do I have anything scheduled for tomorrow?"
+      ]
+    },
+    {
+      "input": "I found 1 event next week. It's \"Appointment\" on Sunday the 15th from 5:00 to 5:30 PM.",
+      "output": [
+        "Show me next week's appointments."
+      ]
+    },
+    {
+      "input": "I found one event between Sunday the 22nd and Saturday the 28th. It's \"Appointment\" from 3:00 PM to 3:30.",
+      "output": [
+        "And show me the week after"
+      ]
+    },
+    {
+      "input": "I didn't find any events between Sunday the 29th and October 5th.",
+      "output": [
+        "And what's the week after that?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. __BREAK Here are some times when you and David Lax are free.",
+      "output": [
+        "15th January will do great. Also make me a meeting with Lax's team, but dont include Kim"
+      ]
+    },
+    {
+      "input": "The time is currently 2:26 PM.",
+      "output": [
+        "we lost power and I have to reset the clocks, so what time is it?"
+      ]
+    },
+    {
+      "input": "Yes, I found 1 event named \"budget meeting\" this week. It's a \"budget meeting\" tomorrow from 2:00 to 3:00 PM.",
+      "output": [
+        "Am I scheduled to attend a budget meeting this week?"
+      ]
+    },
+    {
+      "input": "I've changed \"budget meeting\" to be at 12:00.",
+      "output": [
+        "yes please"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"dentist appointment\" on your calendar after right now.",
+      "output": [
+        "change my dentist appointment to may 14th"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"buy groceries\" is on Thursday the 28th from 3:00 to 3:30 PM.",
+      "output": [
+        "what's on my calendar on next thursday"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"buy a book\" from 1:00 to 1:30 PM.",
+      "output": [
+        "Ok what about Friday? Do I have anything on friday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on your calendar. It's \"Appointment\" on Saturday from 9:00 to 9:30 AM.",
+      "output": [
+        "Do I have anything scheduled for Saturday morning?"
+      ]
+    },
+    {
+      "input": "I've deleted that from your calendar. __BREAK I\u2019ve encountered an error I haven\u2019t been trained to handle. Can you try a different request?",
+      "output": [
+        "Can you delete the lunch event on February 5 and replace it with a meeting for work?"
+      ]
+    },
+    {
+      "input": "I've deleted your event tomorrow.",
+      "output": [
+        "yes thats the right one"
+      ]
+    },
+    {
+      "input": "Yes. I found 1 event on your calendar . It's a \"Meeting with Amy\".",
+      "output": [
+        "Do I have anything with Amy this week?"
+      ]
+    },
+    {
+      "input": "No, I found no events on your calendar Tue, May 28 at 3:00 PM.",
+      "output": [
+        "Is my dentist appointment at 3pm?"
+      ]
+    },
+    {
+      "input": "Yes. I found 1 event on your calendar . It's a \"dentist appointment\" tomorrow from 2:00 to 2:45 PM.",
+      "output": [
+        "Do I have a dentist appointment at all this week?"
+      ]
+    },
+    {
+      "input": "No, I found no events named \"therapy appointments\" next week.",
+      "output": [
+        "Do I have any therapy appointments next week?"
+      ]
+    },
+    {
+      "input": "The 3rd event this afternoon is located at Globo Gym.",
+      "output": [
+        "Where is this afternoon's third event located?"
+      ]
+    },
+    {
+      "input": "The 3rd this month is \"Appointment\" on Sunday the 22nd from 3:00 to 3:30 PM.",
+      "output": [
+        "Whats my third event in march?"
+      ]
+    },
+    {
+      "input": "The event matching \"fishing\" with Ryan, Kevin, Brian, and Nate is on December 6th at 5:00 AM.",
+      "output": [
+        "When am I going fishing with Ryan, Kevin, Brian, and Nate?"
+      ]
+    },
+    {
+      "input": "I've changed \"fishing\" to be at 7:00.",
+      "output": [
+        "That works."
+      ]
+    },
+    {
+      "input": "You have no events on your calendar matching that criteria.",
+      "output": [
+        "See if I have any doctor appointments in January."
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your Doctor Appointment is on February 1st from 9:00 to 9:30 AM.",
+      "output": [
+        "Okay! Do I have any appointments in February?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Greg are free.",
+      "output": [
+        "Can you schedule a meeting with Greg on Saturday morning?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Elli Parker are free.",
+      "output": [
+        "I need you to change that to not be on the weekend"
+      ]
+    },
+    {
+      "input": "The event with Brandon is on Saturday at 4:00 PM.",
+      "output": [
+        "When do I have another meeting with Brandon?"
+      ]
+    },
+    {
+      "input": "It doesn't look like it.",
+      "output": [
+        "is his manager invited to that"
+      ]
+    },
+    {
+      "input": "Dan Schoffel has not been invited to the \"Meeting with Brandon and Damon Straeter\".",
+      "output": [
+        "His boss coming to that?"
+      ]
+    },
+    {
+      "input": "The event with Abby is on Sunday the 20th at 8:00 AM.",
+      "output": [
+        "When am I meeting with Abby?"
+      ]
+    },
+    {
+      "input": "I've deleted your event on Saturday.",
+      "output": [
+        "Yes it is"
+      ]
+    },
+    {
+      "input": "I found 2 events tomorrow.",
+      "output": [
+        "What do I have on Friday?"
+      ]
+    },
+    {
+      "input": "I'm sorry, you haven't shared your current location with me. Where are you?",
+      "output": [
+        "what is whether on today"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. __BREAK How's this?",
+      "output": [
+        "first one is good. I also have my balloon meeting on Sunday at 8 pm with abby"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Los Angeles has takeout. You'll have to contact them.",
+      "output": [
+        "Does Kirari in Los Angeles have takeout?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether New Shilawon Korean Restaurant \ub274\uc2e0\ub77c\uc6d0 has takeout. You'll have to contact them.",
+      "output": [
+        "Does Shilawon in Hawaii have takeout?"
+      ]
+    },
+    {
+      "input": "I found 3 events next month. The first is \"Appointment\" on November 2nd from 11:00 to 11:30 AM.",
+      "output": [
+        "How many meetings do I have scheduled next month?"
+      ]
+    },
+    {
+      "input": "I found 2 events next week. The first is \"Appointment\" on Tuesday the 12th from 11:00 to 11:30 PM.",
+      "output": [
+        "How many meetings do I have next week?"
+      ]
+    },
+    {
+      "input": "The last event on the list is an \"Appointment\" on Wednesday the 13th from 11:00 to 11:30 PM.",
+      "output": [
+        "What is the second event?"
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's \"Appointment\" from 4:00 to 4:30 PM.",
+      "output": [
+        "What is scheduled today after 1?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on your calendar. It's \"Appointment\" tomorrow from 9:00 to 9:30 AM.",
+      "output": [
+        "Do I have any events scheduled tomorrow before noon?"
+      ]
+    },
+    {
+      "input": "Yes, I found 3 events next week. The first is \"Meeting with John\" on Monday the 11th from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have anything on my schedule for next week?"
+      ]
+    },
+    {
+      "input": "The last event is \"Meeting with Jane\" on Wednesday the 13th from 10:00 to 10:30 AM.",
+      "output": [
+        "What is the last event?"
+      ]
+    },
+    {
+      "input": "It starts tomorrow at 6:00 PM.",
+      "output": [
+        "I need the time for dinner tomorrow."
+      ]
+    },
+    {
+      "input": "I've changed \"dinner\" to be at 7:00.",
+      "output": [
+        "looks great"
+      ]
+    },
+    {
+      "input": "You have 2 events on your calendar. Your \"lunch meeting\" is tomorrow from 12:00 to 12:30 PM.",
+      "output": [
+        "Hi, can you tell me if I have anything planned this week?"
+      ]
+    },
+    {
+      "input": "Next is your skydiving on Friday the 18th from 1:00 to 1:30 PM.",
+      "output": [
+        "What's the other event?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Thomas are free.",
+      "output": [
+        "Make a meeting with Thomas"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Friday the 1st from 10:00 to 10:30 AM.",
+      "output": [
+        "Looks good"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. No, I didn't find any events on Friday the 17th at 12:00.",
+      "output": [
+        "Thanks. Do I have a meeting immediately following that?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Saturday the 18th.",
+      "output": [
+        "What meetings do I have the following day?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Sunday the 26th.",
+      "output": [
+        "What about Sunday?"
+      ]
+    },
+    {
+      "input": "I've changed \"Dentist Appointment\" to be at 3:00.",
+      "output": [
+        "Yeah"
+      ]
+    },
+    {
+      "input": "The event matching \"dentist appointment\" is on Saturday at 12:00 PM.",
+      "output": [
+        "When is my dentist appointment?"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"family get together\" is on July 8th from 2:00 to 2:30 PM.",
+      "output": [
+        "What events do I have for July the eight?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Thursday the 29th after 11:30.",
+      "output": [
+        "Can you please delete the meeting I have after this?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event with David Lax tomorrow. It's \"Meeting with David Lax and Damon Straeter\" from 3:00 to 3:30 PM.",
+      "output": [
+        "Am I seeing David Lax tomorrow?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event yesterday after 3:30. It was \"Kick boxing\" from 4:00 PM to 4:30.",
+      "output": [
+        "Do I have another meeting after that one on the same day?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Kim tomorrow.",
+      "output": [
+        "Do I have anything with Kim tomorrow?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"Salsa lessons\" next week.",
+      "output": [
+        "Are my Salsa lessons scheduled next week?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events named \"piano lessons\" with Rick on Tuesday the 10th.",
+      "output": [
+        "Am I going to piano lessons on Tuesday with Rick?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Susan Wright are free in the next five days.",
+      "output": [
+        "Can you schedule with Susan?"
+      ]
+    },
+    {
+      "input": "Your event with Ronald and Dan Schoffel is today at 10:30.",
+      "output": [
+        "When is my meeting with Ronald and his boss?"
+      ]
+    },
+    {
+      "input": "The event \"employee luncheon\" on Friday the 8th is at 11:00 AM.",
+      "output": [
+        "What time on Friday is the employee luncheon scheduled for?"
+      ]
+    },
+    {
+      "input": "I've changed \"Employee Luncheon\" to be at 11:30.",
+      "output": [
+        "yeah good"
+      ]
+    },
+    {
+      "input": "I've changed \"Employee Luncheon\" to be named \"company luncheon\".",
+      "output": [
+        "You got it right."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Kim Possible are free on Friday the 13th.",
+      "output": [
+        "I need a sales meeting with Kim on dec 13 between lunch and drinks"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Kim are free on Friday.",
+      "output": [
+        "Yeah, can you make it 1 hour long?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Kim are free.",
+      "output": [
+        "Can you add a workout with Kim between the sales meeting and dinner?"
+      ]
+    },
+    {
+      "input": "\"Jamaica\"",
+      "output": [
+        "where is the meeting going to be?"
+      ]
+    },
+    {
+      "input": "Ok, I'll update that.",
+      "output": [
+        "looks great!"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Abby Gonano today after 12:00 PM.",
+      "output": [
+        "Do I have any meetings with Abby Gonano this afternoon after lunch?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Kim Possible, with you, or David Lax tomorrow.",
+      "output": [
+        "How about a meeting with anyone on David Lax's team tomorrow?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with David Crim, David, or Dan Schoffel.",
+      "output": [
+        "DO I have a meeting with anyone on Billy's team?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Elli Parker or David Crim next week.",
+      "output": [
+        "Do I have a meeting with anyone from elli's team next week?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Dan, Jesse, or Kim next month.",
+      "output": [
+        "Am I meeting with Dan, Jesse, or Kim next month?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event next month. It's \"Meeting with Abby Gonano and Damon Straeter\" on March 12th from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have any events with someone attending in March?"
+      ]
+    },
+    {
+      "input": "I found one event on April 10th. It's \"Meeting with David Crim and Damon Straeter\" from 2:00 to 2:30 PM.",
+      "output": [
+        "Great! Do I have any meetings with people attending on April 10th? I need to know my schedule for that day."
+      ]
+    },
+    {
+      "input": "Yes, I found one event in May. It's \"Meeting with Jesse Rosenfeld and Damon Straeter\" on May 3rd from 10:00 to 10:30 AM.",
+      "output": [
+        "Do I have any events in May that have people coming?"
+      ]
+    },
+    {
+      "input": "That is Wednesday, May 29, 2019 at 10:00 AM.",
+      "output": [
+        "when is my next meeting"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events tomorrow after 11:00 AM.",
+      "output": [
+        "Do I have any meetings after the Honors Committee Meeting?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Saturday after 7:30 PM.",
+      "output": [
+        "Do I have any meetings after Personal Trainer workout?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events.",
+      "output": [
+        "Do I have any meetings with Jess this week?"
+      ]
+    },
+    {
+      "input": "No, I found no events named \"doctor's appointment\" on June 4th.",
+      "output": [
+        "Do I have a doctor's appointment on Tuesday?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Friday the 18th from 1:00 to 1:30 PM.",
+      "output": [
+        "That looks flawless"
+      ]
+    },
+    {
+      "input": "Your last event on August 21st is a \"Sales Meeting\" from 11:00 to 11:30 AM.",
+      "output": [
+        "Show me my last sales meeting on the 21st."
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's a \"weekly update meeting\" from 4:00 to 4:30 PM.",
+      "output": [
+        "Show all of my weekly update meetings for the next month"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be for 15 minutes.",
+      "output": [
+        "yeah!great."
+      ]
+    },
+    {
+      "input": "I didn't find any events with beth.",
+      "output": [
+        "I need to move my meeting with beth to later"
+      ]
+    },
+    {
+      "input": "Yes, I found 1 this week. It's \"Meeting with Bob and Damon Straeter\" on Saturday from 2:00 to 2:30 PM.",
+      "output": [
+        "Am I meeting with bob later this week?"
+      ]
+    },
+    {
+      "input": "It's http://url.com",
+      "output": [
+        "What is the website for Miller Union in Atlanta?"
+      ]
+    },
+    {
+      "input": "I didn't find any events yesterday.",
+      "output": [
+        "What was on my calendar yesterday?"
+      ]
+    },
+    {
+      "input": "I didn't understand that. Could you say it in a different way?",
+      "output": [
+        "hjkhnk"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"sporting\" with Jake Cobb, Jennifer Watts, or Kim Possible.",
+      "output": [
+        "When is my next sporting event with Kim or part of her team?"
+      ]
+    },
+    {
+      "input": "I found one event with Kim Possible. It's \"Soccer Practice\" on December 15th from 12:00 to 12:30 PM.",
+      "output": [
+        "Alright, do I have any events set up with Kim Possible?"
+      ]
+    },
+    {
+      "input": "I've changed \"Soccer Practice\" to be Jennifer and Jake.",
+      "output": [
+        "That works."
+      ]
+    },
+    {
+      "input": "Yes, I found one event with Kim tomorrow. It's \"Meeting with Kim Possible and Damon Straeter\" from 9:00 to 9:30 PM.",
+      "output": [
+        "Do I have anything scheduled with Kim tomorrow?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Monday the 22nd from 12:00 to 12:30 PM.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "The event \"conference\" is on Monday the 21st at 11:00 AM.",
+      "output": [
+        "I forgot which day I have a conference with Rick and his supervisor."
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"physical therapy appointment\" on Thursday at 3:00 PM.",
+      "output": [
+        "Can you delete my Thursday 3 pm physical therapy appointment?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Thursday.",
+      "output": [
+        "Please remove my Thursday appointment."
+      ]
+    },
+    {
+      "input": "The event \"check out the ramen spot\" is on Friday at 2:30 PM.",
+      "output": [
+        "Hey, when was I supposed to check out the ramen spot this week?"
+      ]
+    },
+    {
+      "input": "It's for a half hour.",
+      "output": [
+        "How long?"
+      ]
+    },
+    {
+      "input": "I've changed \"check out the new Ramen spot\" to be for an hour at Kizuki.",
+      "output": [
+        "Perfect"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"gaming sesh\" with Pete.",
+      "output": [
+        "Update my gaming sesh with Pete to 7pm tonight."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Billy are free.",
+      "output": [
+        "Add a soccer game with Billy Thursday night @ 5:30p"
+      ]
+    },
+    {
+      "input": "I found 2 other events.",
+      "output": [
+        "Can we look at other stuff I have coming up"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"meeting it\u2019sjoe\".",
+      "output": [
+        "Move the meeting with Hannah to after my meeting it\u2019sjoe"
+      ]
+    },
+    {
+      "input": "I didn't find any events with hannah.",
+      "output": [
+        "Do I have anything going on after my meeting with hannah?"
+      ]
+    },
+    {
+      "input": "I've changed \"workout\" to be at LA Fitness.",
+      "output": [
+        "Yes it does."
+      ]
+    },
+    {
+      "input": "I've changed the location of the team pow-wow to Meeting Room T1.",
+      "output": [
+        "REmember the team pow-wow I schedule earlier today? Location change: Meeting Room T1"
+      ]
+    },
+    {
+      "input": "I\u2019ve changed the team pow-wow to on Monday the 21st.",
+      "output": [
+        "Oh and it's going to take place on Monday instead."
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events on Tuesday the 29th. The first is \"Animation Station\" from 10:00 to 10:30 AM.",
+      "output": [
+        "Hello do I have any meetings scheduled for next Tuesday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"Appointment\" from 11:00 to 11:30 PM.",
+      "output": [
+        "Do I have any events planned for Wednesday?"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be named \"follow up session on animation\".",
+      "output": [
+        "That is great."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Unknown.",
+      "output": [
+        "add something for the 21st at 4 pm, and mark it unknown"
+      ]
+    },
+    {
+      "input": "I\u2019ve changed the subject of your event to basketball practice.",
+      "output": [
+        "Well really, it's more than that. Change the name to basketball practice"
+      ]
+    },
+    {
+      "input": "Your basketball practice has been updated to an hour.",
+      "output": [
+        "Oh and it should last for an hour, also."
+      ]
+    },
+    {
+      "input": "5:00 PM.",
+      "output": [
+        "When does it end now?"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of about 0.00 \u00b0F for \"Mike's Birthday Party\" on Tuesday the 31st from 5:00 to 5:30 PM.",
+      "output": [
+        "What will the weather be like for the Mike's birthday party on Tuesday?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% for \"race\" on Saturday from 10:00 to 10:30 AM.",
+      "output": [
+        "Will it rain saturday during the race?"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of 0.00 \u00b0F for \"hopscotch\" on Sunday the 29th from 1:00 to 1:30 PM.",
+      "output": [
+        "What will the weather be like for hopscotch on sunday?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on August 1st after 5:30 PM.",
+      "output": [
+        "What is after that"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"date\".",
+      "output": [
+        "change the date to may 7"
+      ]
+    },
+    {
+      "input": "I've changed \"Visit Kim Jeong Ho's office\" to be.",
+      "output": [
+        "yes thank you"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Karl boon, barack obama, and fiona mason.",
+      "output": [
+        "For \"meeting with Karl boon\", barack obama and fiona mason will join as well"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Karl Boon.",
+      "output": [
+        "are there events with karl boon"
+      ]
+    },
+    {
+      "input": "Yes, I found one event with Jeong-Ho Kim. It's \"lunch\" today from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have any events with Jeong-Ho Kim ?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Karl Boon.",
+      "output": [
+        "What happened to my meeting with Karl Boon?"
+      ]
+    },
+    {
+      "input": "I didn't find any events tomorrow.",
+      "output": [
+        "can you tell me who is in the meeting tomorrow?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. I found one other event on Monday the 26th. It's \"Karaoke Night\" from 7:00 to 7:30.",
+      "output": [
+        "That looks great! Could you check to see what else I have on schedule that day?"
+      ]
+    },
+    {
+      "input": "I found 1 event tomorrow. It's \"Costco Run\" from 3:00 to 3:30 PM.",
+      "output": [
+        "what are all the events for tomorrow on calender"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"Costco Run\" on your calendar.",
+      "output": [
+        "Costco Run. Cancel"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"Costco Run\".",
+      "output": [
+        "Yes."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Let me know if there's anything else I can help you with.",
+      "output": [
+        "okay bye"
+      ]
+    },
+    {
+      "input": "I found 1 event this week. It's \"Car Wash\" on Saturday from 1:00 to 1:30 PM.",
+      "output": [
+        "What's on my schedule this week?"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named sarah in your address book.",
+      "output": [
+        "who is the manager of sarah?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on your calendar after tomorrow at 2:30 PM.",
+      "output": [
+        "What do I have after the concert?"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Peter:",
+      "output": [
+        "ok, check for peter's contact information"
+      ]
+    },
+    {
+      "input": "It is clear with a temperature of 0.00 \u00b0F today at 2:50 AM.",
+      "output": [
+        "What's the weather like in Bellingham now?"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of about 0.00 \u00b0F on Monday the 26th around 9:00 AM.",
+      "output": [
+        "What about for my meeting on Monday?"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Glob on Thursday the 29th.",
+      "output": [
+        "What about my appointment on Thursday with Glob?"
+      ]
+    },
+    {
+      "input": "Yes. The high temperature will be 0.00 \u00b0F on September 3rd.",
+      "output": [
+        "Do you know if it will be hot in Minneapolis on the 3rd of September?"
+      ]
+    },
+    {
+      "input": "The next all-day event is \"Appointment\" on Sunday the 29th.",
+      "output": [
+        "What's my next event that will last all day?"
+      ]
+    },
+    {
+      "input": "\"Appointment\" is from 2:00 to 6:00 AM.",
+      "output": [
+        "can you tell me what my 4 hour meeting is?"
+      ]
+    },
+    {
+      "input": "I will accept \"Appointment\". Is that ok?",
+      "output": [
+        "ok then. I accept that meeting and will go"
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your \"Car Races\" is tomorrow from 4:00 to 6:00 PM.",
+      "output": [
+        "What is on my calendar tomorrow?"
+      ]
+    },
+    {
+      "input": "I'm sorry. I didn't find any matching events on your calendar.",
+      "output": [
+        "Please make car races for four hours."
+      ]
+    },
+    {
+      "input": "The \"Cowboy Day\" is tomorrow from 11:00 to 11:30 AM.",
+      "output": [
+        "Find the Cowboy day event"
+      ]
+    },
+    {
+      "input": "I found 1 event tomorrow. It's \"prom\" from 6:30 to 7:00 PM.",
+      "output": [
+        "What do I have toomorrow?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Brian are free.",
+      "output": [
+        "I am meeting with Brian on 1/25. It should be the same year as the pizza party."
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on February 25, 2020 from 1:00 to 1:30 PM.",
+      "output": [
+        "ok"
+      ]
+    },
+    {
+      "input": "The \"Pizza Vision\" starts in 2021.",
+      "output": [
+        "Thanks. What year is the Pizza Vision event held in?"
+      ]
+    },
+    {
+      "input": "I've changed \"sales pitch planning meeting\" to be Danielle Jones and Kat for an hour.",
+      "output": [
+        "Yes please update it."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Jon are free.",
+      "output": [
+        "Create a meeting with Jon on Saturday."
+      ]
+    },
+    {
+      "input": "I didn't find anyone named John in your address book.",
+      "output": [
+        "Add John to the meeting too"
+      ]
+    },
+    {
+      "input": "I've changed \"Marketing meeting\" to be.",
+      "output": [
+        "Perfect"
+      ]
+    },
+    {
+      "input": "The event matching \"football watch party\" is located at Jim's house.",
+      "output": [
+        "Good, now tell me where the football watch party will be"
+      ]
+    },
+    {
+      "input": "It's http://www.millerunion.com/.",
+      "output": [
+        "One more time, could you give me the website for that?"
+      ]
+    },
+    {
+      "input": "I don't know the answer to that.",
+      "output": [
+        "how many months in 2018 have 30 days?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"meet with contractor\" on your calendar.",
+      "output": [
+        "cancel the meet with contractor event on the 21st"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Fri, November 2.",
+      "output": [
+        "what weather will be in moscow a week from now?"
+      ]
+    },
+    {
+      "input": "I found one event without Audrey Nauss. It's \"grab coffee\" on Saturday the 28th from 3:00 to 3:30.",
+      "output": [
+        "When do I have a meeting without Audrey?"
+      ]
+    },
+    {
+      "input": "There is no location information for \"grab coffee\".",
+      "output": [
+        "where will that be located?"
+      ]
+    },
+    {
+      "input": "No, I found 0 attendees who have not declined \"grab coffee\".",
+      "output": [
+        "Anyone not said no about being there?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on your calendar. It's \"Taco Bell trip\" tomorrow from 4:00 to 4:30 PM.",
+      "output": [
+        "Do I have anything tomorrow at 4pm?"
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be tomorrow after 8:00.",
+      "output": [
+        "It's perfect"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Sunday the 27th.",
+      "output": [
+        "Do I have anything scheduled on the 27th?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events Bruce this week.",
+      "output": [
+        "Do I have any events with Bruce this week?"
+      ]
+    },
+    {
+      "input": "I've changed \"Summer at the Park\" to be.",
+      "output": [
+        "Yes that looks great"
+      ]
+    },
+    {
+      "input": "Labor Day is on Monday, September 2nd.",
+      "output": [
+        "Do you know what date labor day is then?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Monday the 21st.",
+      "output": [
+        "Do I have anything on my calendar on Monday of next week"
+      ]
+    },
+    {
+      "input": "You have 2 events on your calendar. Your \"lunch with Dad\" is on Monday the 21st from 12:00 to 1:00 PM.",
+      "output": [
+        "What all do I have that day that is longer than 30 minutes"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on Monday the 21st. It's \"family dinner\" from 5:00 to 6:30 PM.",
+      "output": [
+        "Do I have anything on that day that shows as busy"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Sandra are free.",
+      "output": [
+        "Schedule a dinner with Sandra sometime between 5:30 and 8:30 pm on Friday."
+      ]
+    },
+    {
+      "input": "I've changed \"dinner\" to be at 9:00.",
+      "output": [
+        "Yes looks good"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Sarah are free.",
+      "output": [
+        "Actually make it later in the day"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Sarah and Damon Straeter\" to be on Wednesday the 18th.",
+      "output": [
+        "fix the first one"
+      ]
+    },
+    {
+      "input": "I've changed \"doctors appointment\" to be at Dr Jones office.",
+      "output": [
+        "yeah,perfect"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% in St Louis between Thu, October 25 and Sat, October 27.",
+      "output": [
+        "is rain in the forecast?"
+      ]
+    },
+    {
+      "input": "Yes. The average cloud cover will be 0.00 % on Fri, October 26.",
+      "output": [
+        "will it be sunny tomorrow?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Wednesday the 31st.",
+      "output": [
+        "what is the forecast for halloween night?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F in St Louis between Thu, October 25 and Tue, October 30.",
+      "output": [
+        "what is the 5 day forecast?"
+      ]
+    },
+    {
+      "input": "Yes. It will be clear with a temperature of 0.00 \u00b0F.",
+      "output": [
+        "should i wear a sweater tomorrow?"
+      ]
+    },
+    {
+      "input": "Yes. The total rainfall is 0.00 inches per hour right now.",
+      "output": [
+        "is it raining now?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Jax At The Tracks is casual. You'll have to contact them.",
+      "output": [
+        "Does Jax At The Tracks in Truckee have a casual atmosphere?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Club 939 is casual. You'll have to contact them.",
+      "output": [
+        "Is Club 939 in Hawaii casual?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Joe's Crab Shack is casual. You'll have to contact them.",
+      "output": [
+        "Does Joe's crab Shack in 95814 have a dress code"
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's \"Appointment\" today from 2:00 to 2:30 PM.",
+      "output": [
+        "please, my low wage job is killing me. I need to know my schedule"
+      ]
+    },
+    {
+      "input": "I found 1 event on Sunday the 20th. It's a \"basketball game\" from 9:00 to 10:00 AM.",
+      "output": [
+        "What do I have going on this weekend?"
+      ]
+    },
+    {
+      "input": "It was clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F today.",
+      "output": [
+        "what is the weather today"
+      ]
+    },
+    {
+      "input": "The event with John next week is located at conference room 1.",
+      "output": [
+        "Where is my meeting with John scheduled next week?"
+      ]
+    },
+    {
+      "input": "The event at conference room 1 is on Wednesday the 30th at 1:00 PM.",
+      "output": [
+        "What time do I have to be in conference room 1?"
+      ]
+    },
+    {
+      "input": "The event with John is for a half hour.",
+      "output": [
+        "How long is my meeting with John?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Carl are free.",
+      "output": [
+        "Please add a lunch date with Carl tomorrow."
+      ]
+    },
+    {
+      "input": "You have one event on your calendar. Your ask for a raise is tomorrow from 10:00 to 10:30 AM.",
+      "output": [
+        "So tomorrow morning there is nothing scheduled for me?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"lunch\" Janice on August 31st.",
+      "output": [
+        "Yes"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain will be 0.00 % tomorrow.",
+      "output": [
+        "will it rain tomorrow?"
+      ]
+    },
+    {
+      "input": "The minimum temperature will be 0.00 \u00b0F tomorrow.",
+      "output": [
+        "how cold will it get?"
+      ]
+    },
+    {
+      "input": "Sunrise will be at 12:00 AM right now.",
+      "output": [
+        "what time is sunrise?"
+      ]
+    },
+    {
+      "input": "The maximum temperature will be 0.00 \u00b0F. That's on Sat, October 27 between 12:00 AM and 12:00 PM.",
+      "output": [
+        "what is the highest this weekend?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain will be 0.00 % in Williamsburg between Sun, October 28 and Sun, November 4.",
+      "output": [
+        "will it rain next week?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of snow will be 0.00 % in Williamsburg between Sun, October 28 and Sun, November 4.",
+      "output": [
+        "will it snow?"
+      ]
+    },
+    {
+      "input": "I've changed \"traffic\" to be.",
+      "output": [
+        "I confirm this."
+      ]
+    },
+    {
+      "input": "I found 2 events matching \"conference calls\" last week. The first was \"Conference Call Part 1\" on Monday the 19th from 2:00 to 3:00.",
+      "output": [
+        "How many conference calls did I have last week?"
+      ]
+    },
+    {
+      "input": "There are no attendees who have accepted \"Movie Meeting\".",
+      "output": [
+        "Who was at the movie meeting last Thursday?"
+      ]
+    },
+    {
+      "input": "The event matching \"trip to the Bahamas\" with Jordan before today at 8:13 PM was all day.",
+      "output": [
+        "When was my last trip to the Bahamas with Jordan?"
+      ]
+    },
+    {
+      "input": "The event matching \"trip to Disney\" with Amy before today at 8:29 PM was all day.",
+      "output": [
+        "When was my trip to Disney with Amy?"
+      ]
+    },
+    {
+      "input": "The \"trip to Disney\" was for 1 day.",
+      "output": [
+        "How long did that last?"
+      ]
+    },
+    {
+      "input": "The event matching \"lunch\" tomorrow is located at Mother's in New Orleans.",
+      "output": [
+        "What is the name of the restaurant I am eating lunch at tomorrow?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Mother's Restaurant has outdoor dining. You'll have to contact them.",
+      "output": [
+        "Can we sit outside there?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Mother's Restaurant has a full bar. You'll have to contact them.",
+      "output": [
+        "Do they have a bar?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Mother's Restaurant is good for groups. You'll have to contact them.",
+      "output": [
+        "Can they accommodate a large group?"
+      ]
+    },
+    {
+      "input": "I'm unable to find whether Mother's Restaurant is family friendly. You'll have to contact them.",
+      "output": [
+        "Is it good for kids?"
+      ]
+    },
+    {
+      "input": "Your last event matching \"baking session\" is tomorrow at 10:00 AM.",
+      "output": [
+        "What date is my last baking session?"
+      ]
+    },
+    {
+      "input": "I've changed \"Baking Session\" to be.",
+      "output": [
+        "Yes thats perfect!"
+      ]
+    },
+    {
+      "input": "The last event on Saturday is \"last\" from 10:00 to 10:30 PM.",
+      "output": [
+        "Ok, what is at the end of my day on the 3rd?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Jim are free.",
+      "output": [
+        "Add an appointment with Jim at the Grand Canyon on Friday."
+      ]
+    },
+    {
+      "input": "I didn't find any events with Henry.",
+      "output": [
+        "reschedule my next meeting with Henry to a later date"
+      ]
+    },
+    {
+      "input": "I didn't find any events with Henry on your calendar.",
+      "output": [
+        "when is my meeting with Henry?"
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events between Sunday the 12th and Tuesday the 14th. The first is \"West Coast Swing\" from 7:30 PM to 8:00 PM.",
+      "output": [
+        "What is on my calendar early next week?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"donate blood\" between Thursday the 16th and Saturday the 18th.",
+      "output": [
+        "Is donate blood late next week??"
+      ]
+    },
+    {
+      "input": "I didn't find any events between December 24th and December 31st.",
+      "output": [
+        "Is there anything late this year?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events tomorrow at 1:58 AM.",
+      "output": [
+        "Is there anything on my schedule in 3 hours"
+      ]
+    },
+    {
+      "input": "I didn't find any events tomorrow at 5:33 AM.",
+      "output": [
+        "Can you check for 6 hours from now?"
+      ]
+    },
+    {
+      "input": "I've changed \"Pre-Fashion Week Prep Meeting\" to be without Chris.",
+      "output": [
+        "i told you to keep it actually."
+      ]
+    },
+    {
+      "input": "I've put \"project brainstorming time\" from 10:00 to 10:30 AM.",
+      "output": [
+        "Let's go with the first one."
+      ]
+    },
+    {
+      "input": "Yes, I found one event on Sunday the 21st. It's \"Appointment\" from 11:59 to 12:01 AM.",
+      "output": [
+        "Do I have anything going on on Sunday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on Monday the 22nd. It's \"Appointment\" from 11:59 to 12:01 AM.",
+      "output": [
+        "Is anything happening Monday?"
+      ]
+    },
+    {
+      "input": "I've changed \"Taxi pick up\" to be for 15 minutes.",
+      "output": [
+        "Good"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"golf outing\" on Sunday the 8th.",
+      "output": [
+        "Do I have a golf outing this Sunday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"golf outing\" on Sunday the 15th. It's \"Golf outing\" from 11:00 to 11:30 AM.",
+      "output": [
+        "What about next Sunday?"
+      ]
+    },
+    {
+      "input": "Yes. The event matching \"charity\" is tomorrow.",
+      "output": [
+        "Is my charity event on Saturday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"charity\" next month. It's from 10:00 to 10:30 AM.",
+      "output": [
+        "Do I have any more charity events next month?"
+      ]
+    },
+    {
+      "input": "No. The event matching \"summer ball\" is on June 4, 2020.",
+      "output": [
+        "Is the summer ball being held on July 4th?"
+      ]
+    },
+    {
+      "input": "It's 0.00 \u00b0C.",
+      "output": [
+        "How hot is it outside?"
+      ]
+    },
+    {
+      "input": "It's 0.00 m/s.",
+      "output": [
+        "What is the wind speed"
+      ]
+    },
+    {
+      "input": "It doesn't look like it. The average cloud cover is 9% in Spencer right now.",
+      "output": [
+        "is the sun shining?"
+      ]
+    },
+    {
+      "input": "The temperature will be 0.00 \u00b0F tomorrow.",
+      "output": [
+        "what will the temperature be tomorrow?"
+      ]
+    },
+    {
+      "input": "Yes. The average wind speed will be 0.00 mph tomorrow.",
+      "output": [
+        "will it be windy tomorrow"
+      ]
+    },
+    {
+      "input": "I've changed \"BOD meeting\" to be.",
+      "output": [
+        "IT'S RIGHT"
+      ]
+    },
+    {
+      "input": "The next event matching \"get together\" with Arnold is on Monday the 21st at 5:00 PM.",
+      "output": [
+        "When is my next get together with Arnold?"
+      ]
+    },
+    {
+      "input": "Yes, Mike Patton has accepted the \"apple picking meeting\" invitation.",
+      "output": [
+        "Hi is Mike attending the meeting next Friday?"
+      ]
+    },
+    {
+      "input": "Yes, Erin has accepted the \"Holiday Party\" invitation.",
+      "output": [
+        "Thanks. Is Erin coming to the holiday party on Saturday?"
+      ]
+    },
+    {
+      "input": "Yes, Josie has accepted the \"Work Halloween Party\" invitation.",
+      "output": [
+        "Is Josie attending the work Halloween party on Thursday?"
+      ]
+    },
+    {
+      "input": "No, Roger has tentatively accepted the \"new project meeting\" invitation.",
+      "output": [
+        "Great, is Roger going to be at the new project meeting?"
+      ]
+    },
+    {
+      "input": "Yes, Kim Possible has accepted the \"Drinks\" invitation.",
+      "output": [
+        "Thanks. Is Kim going out for drinks next week?"
+      ]
+    },
+    {
+      "input": "I found 2 events not matching \"1:1\".",
+      "output": [
+        "Is there anything else going on besides my 1:1?"
+      ]
+    },
+    {
+      "input": "I found one event on Wednesday the 22nd. It's \"Staff meeting\" from 2:00 to 2:30 PM.",
+      "output": [
+        "What about just Wednesday? Which events are on Wednesday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event not matching \"staff meeting\" this weekend. It's \"1:1\" on Sunday the 19th from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have anything not called staff meeting this weekend?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event not matching \"Training\" on Thursday the 23rd. It's \"Biz prep\" from 8:00 to 8:30 AM.",
+      "output": [
+        "Do I have anything on Thursday that's not called Training?"
+      ]
+    },
+    {
+      "input": "I've deleted your event on Monday the 23rd at Starbucks. __BREAK Is this what you want me to cancel?",
+      "output": [
+        "Yup thats right. Also delete my event at Dunkin Donuts in may"
+      ]
+    },
+    {
+      "input": "I've deleted that. __BREAK Is this what you want me to cancel?",
+      "output": [
+        "Yes thats fine. Also, please delete my Fishing Trip next December."
+      ]
+    },
+    {
+      "input": "Here is the contact information for Nava:",
+      "output": [
+        "Nava"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Linnett:",
+      "output": [
+        "Linnett"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Olinda:",
+      "output": [
+        "Olinda"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Westly:",
+      "output": [
+        "Westly"
+      ]
+    },
+    {
+      "input": "Here is the contact information for Winter:",
+      "output": [
+        "Winter"
+      ]
+    },
+    {
+      "input": "The event matching \"wedding anniversary\" between January 1, 2021 and December 31, 2021 is January 20, 2021.",
+      "output": [
+        "When is my wedding anniversary next year?"
+      ]
+    },
+    {
+      "input": "I found 1 today. It's an \"Licorice: I thought it was spelled with a Q\" from 10:00 to 10:30 PM.",
+      "output": [
+        "What events do I have today?"
+      ]
+    },
+    {
+      "input": "I found 1 tomorrow. It's \"Appointment\" from 12:00 to 12:30 PM.",
+      "output": [
+        "Ok. What about for tomorrow?"
+      ]
+    },
+    {
+      "input": "I didn't find any events next week.",
+      "output": [
+        "What do I have next week?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Monday the 16th.",
+      "output": [
+        "Not any at all? What about next monday?"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named john in your address book.",
+      "output": [
+        "Can set meeting with john on Monday"
+      ]
+    },
+    {
+      "input": "Last was \"Fall into an bottomless pit\" today from 3:00 to 3:30 PM.",
+      "output": [
+        "what is the other one?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"dentist appointment\" on your calendar.",
+      "output": [
+        "schedule eye exam one hour after dentist appointment"
+      ]
+    },
+    {
+      "input": "Here is the list of attendees who have accepted \"management retreat\": Elli Parker and Kim Possible.",
+      "output": [
+        "Who accepted the management retreat?"
+      ]
+    },
+    {
+      "input": "Yes, I found one attendee who has declined \"Team Spirit Party\".",
+      "output": [
+        "Has anyone declined my Team Spirit Party on next Tuesday?"
+      ]
+    },
+    {
+      "input": "There are no attendees who have accepted \"Open House Event\". Unfortunately, Jake Cobb declined.",
+      "output": [
+        "Thank you. Who has accepted my Open House event on next Friday"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Stephanie are free.",
+      "output": [
+        "Schedule lunch with Stephanie next Tuesday."
+      ]
+    },
+    {
+      "input": "Stephanie's manager is Dan Schoffel.",
+      "output": [
+        "Who is Stephanie's manager?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Kathy are free.",
+      "output": [
+        "Create a meeting with Kathy on Tuesday."
+      ]
+    },
+    {
+      "input": "I didn't find any events with Andrew.",
+      "output": [
+        "defer the next meeting with Andrew"
+      ]
+    },
+    {
+      "input": "None of the events mentioned are on your calendar.",
+      "output": [
+        "Let's change the start time to 1 pm instead."
+      ]
+    },
+    {
+      "input": "I found 1 matching event on your calendar. It's your \"hope the floors are done so I can move in finally\" on Friday from 10:00 to 10:30 AM.",
+      "output": [
+        "hows my friday looking?"
+      ]
+    },
+    {
+      "input": "You are the organizer of \"Sales Call\".",
+      "output": [
+        "Did I accept the sales call on Tuesday morning?"
+      ]
+    },
+    {
+      "input": "You are the organizer of \"Bothell Snothell\".",
+      "output": [
+        "Did I accept the event for tomorrow"
+      ]
+    },
+    {
+      "input": "Yes, you have accepted the \"Appointment\" invitation.",
+      "output": [
+        "Did I accept wednesdays event?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"trip\" on March 5, 2020 at 8:00 AM.",
+      "output": [
+        "Cancel my trip on March 5, 2020 at 8:00am"
+      ]
+    },
+    {
+      "input": "I've changed \"Project Planning\" to be Lindsay, Dan Schoffel, and Sarah.",
+      "output": [
+        "Yes, that looks good."
+      ]
+    },
+    {
+      "input": "No, Janet has not responded to the \"Concert\" invitation.",
+      "output": [
+        "Is Janet scheduled to be at the meeting tomorrow at 4pm?"
+      ]
+    },
+    {
+      "input": "There are no attendees who have accepted \"Concert\".",
+      "output": [
+        "Who else will be there?"
+      ]
+    },
+    {
+      "input": "The next event matching \"pokemon league tournament\" is on Wednesday the 9th at 11:00 AM.",
+      "output": [
+        "When is my next pokemon league tournament?"
+      ]
+    },
+    {
+      "input": "I will accept \"All Day Event\" and send a response to the organizer with the following comment: \"I can only stay for an hour\". Is that ok?",
+      "output": [
+        "Accept the All Day Event but say I can only stay for an hour."
+      ]
+    },
+    {
+      "input": "I will decline \"Friendsgiving\". Is that ok?",
+      "output": [
+        "Decline Friendsgiving"
+      ]
+    },
+    {
+      "input": "I will accept \"White Elephant Party\" and send a response to the organizer with the following comment: \"I will be late.\". Is that ok?",
+      "output": [
+        "Accept White Elephant Party but let them know I will be late."
+      ]
+    },
+    {
+      "input": "Connecting to \"Conference Call\".",
+      "output": [
+        "Can you join that now please?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events tomorrow night.",
+      "output": [
+        "Do I have any events tomorrow night?"
+      ]
+    },
+    {
+      "input": "No. The event matching \"sports meeting\" is on Wednesday at 6:00 PM.",
+      "output": [
+        "Has the sports meeting already started?"
+      ]
+    },
+    {
+      "input": "No. The event matching \"Presentation Practice meeting\" is today at 7:00 PM.",
+      "output": [
+        "What about the Presentation Practice meeting?"
+      ]
+    },
+    {
+      "input": "No. The event matching \"birthday party\" is on Friday at 5:00 PM.",
+      "output": [
+        "has the birthday party started yet"
+      ]
+    },
+    {
+      "input": "No. The event with David Lax is tomorrow at 10:00 AM.",
+      "output": [
+        "Has the meeting with my boss begun yet?"
+      ]
+    },
+    {
+      "input": "Yes, Debbie Little has accepted the \"off-site meeting\" invitation.",
+      "output": [
+        "Will Debbie be joining us for the off-site meeting at Big Lodge on Monday?"
+      ]
+    },
+    {
+      "input": "Yes, Mary has accepted the \"Basketball Game\" invitation.",
+      "output": [
+        "Awesome. Is Mary coming to the basketball game on Saturday?"
+      ]
+    },
+    {
+      "input": "No, Susan has declined the \"Retirement Party\" invitation.",
+      "output": [
+        "Will Susan be at the retirement party?"
+      ]
+    },
+    {
+      "input": "Yes, Mike has accepted the \"Sarah's 30th Birthday\" invitation.",
+      "output": [
+        "Will Mike be at Sarah's 30th Birthday?"
+      ]
+    },
+    {
+      "input": "Yes, Steven has accepted the \"golfing\" invitation.",
+      "output": [
+        "Nice. Is Steven going golfing with me Saturday morning?"
+      ]
+    },
+    {
+      "input": "I found 2 events with Sarah this week.",
+      "output": [
+        "What meetings do I have this week with Sarah?"
+      ]
+    },
+    {
+      "input": "I found one event with Sarah and Vera this week. It's \"Meeting with Vera, Sarah, and Damon Straeter\" on Thursday from 11:00 to 11:30 AM.",
+      "output": [
+        "And with Vera?"
+      ]
+    },
+    {
+      "input": "I found one event with Sarah. It's \"Meeting with Sarah and Damon Straeter\" from 12:00 to 12:30 PM.",
+      "output": [
+        "What meetings do I have next week with Sarah?"
+      ]
+    },
+    {
+      "input": "I found one event with Sarah. It was \"Meeting with Sarah and Damon Straeter\" from 4:00 to 4:30 PM.",
+      "output": [
+        "How about last week?"
+      ]
+    },
+    {
+      "input": "The time is currently 12:54 PM.",
+      "output": [
+        "Please tell me the now time"
+      ]
+    },
+    {
+      "input": "Elli Parker has no direct reports.",
+      "output": [
+        "Who reports to Elli Parker?"
+      ]
+    },
+    {
+      "input": "David Lax's direct reports are Kim Possible and Damon Straeter",
+      "output": [
+        "Can you find the reports of David Lax?"
+      ]
+    },
+    {
+      "input": "I've put \"Meeting with Jake Cobb, Jennifer Watts, and Damon Straeter\" Friday from 10:00 to 10:30 AM.",
+      "output": [
+        "Please select friday at 10am"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar from 10:00 AM to 10:30 AM.",
+      "output": [
+        "Yes that is great"
+      ]
+    },
+    {
+      "input": "I found one event this week. It's \"Appointment\" on Thursday from 1:00 to 1:30 PM.",
+      "output": [
+        "find the events on this week"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. martha angeles's phone number is 1112223334. Click on the number below to dial.",
+      "output": [
+        "second one looks fine, call martha"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events this week.",
+      "output": [
+        "Do I have any meetings this week?"
+      ]
+    },
+    {
+      "input": "It's 0.00 %.",
+      "output": [
+        "What's the humidity there today?"
+      ]
+    },
+    {
+      "input": "The humidity will be 0.00% today.",
+      "output": [
+        "What's the expected humidity for the evening?"
+      ]
+    },
+    {
+      "input": "Yes, I found 3 events tomorrow. The first is \"lunch\" from 12:30 to 1:00 PM.",
+      "output": [
+        "Is there anything in my calendar for tomorrow?"
+      ]
+    },
+    {
+      "input": "I found 3 matching events on your calendar.",
+      "output": [
+        "Show me my meeting for tomorrow"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"lunch meeting\" with Lisa on May 3rd at 12:00 PM.",
+      "output": [
+        "Hello I would like to to cancel my Friday lunch meeting with Lisa at 12:00 pm"
+      ]
+    },
+    {
+      "input": "I didn't find anyone named Lisa in your address book.",
+      "output": [
+        "Set a meeting with Lisa at 12:00pm 04/27/2019"
+      ]
+    },
+    {
+      "input": "I will decline \"Meeting with 1 and Damon Straeter\". Is that ok?",
+      "output": [
+        "Decline my meeting on Thursday, won't be in the office"
+      ]
+    },
+    {
+      "input": "I will decline \"St. Louis Cardinals Game\" and send a response to the organizer with the following comment: \"Go Cubbies!\". Is that ok?",
+      "output": [
+        "Yes. Also could you decline the St. Louis Cardinals Game and say Go Cubbies!?"
+      ]
+    },
+    {
+      "input": "I have declined it.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "I will decline \"training with Ted for the tournament\". Is that ok?",
+      "output": [
+        "Decline training with Ted for the tournament this week."
+      ]
+    },
+    {
+      "input": "I have declined it. __BREAK I will decline \"go on a Brewery Tour\" and send a response to the organizer with the following comment: \"I'm going to the Water Park that day.\". Is that ok?",
+      "output": [
+        "Yes, that's good! Decline my invitation to go on a Brewery Tour with Thomas and tell him that I'm going to the Water Park that day."
+      ]
+    },
+    {
+      "input": "You'll have to contact them directly.",
+      "output": [
+        "What is the price of Dominos pizza in Tahoe?"
+      ]
+    },
+    {
+      "input": "It's very expensive ($$$$).",
+      "output": [
+        "Ok, do you have the general price of Frenchette in New York?"
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"coffee meeting\" yesterday.",
+      "output": [
+        "Yes, that is it."
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"Baseball practice\" tomorrow at 4:45.",
+      "output": [
+        "Yes, please cancel that."
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"practice\".",
+      "output": [
+        "Thank you. When is the next practice?"
+      ]
+    },
+    {
+      "input": "I found 5 different places matching that description. Can you be more specific?",
+      "output": [
+        "What does the cost of Red Lobster in Miami?"
+      ]
+    },
+    {
+      "input": "It's (607) 748-5305.",
+      "output": [
+        "Could you send me the contact info?"
+      ]
+    },
+    {
+      "input": "I've changed \"BBQ\" to be Abby Gonano, Jesse Rosenfeld, Dan Marton, and you for 2 hours.",
+      "output": [
+        "Perfect."
+      ]
+    },
+    {
+      "input": "The \"Music concert\" is on Friday the 24th from 9:00 PM to 9:30 PM.",
+      "output": [
+        "Which music concert will I attend outside of Hawaai?"
+      ]
+    },
+    {
+      "input": "Yes. The maximum temperature is 0.00 \u00b0F in New Orleans this week.",
+      "output": [
+        "Are the temperatures expected to reach 90 degrees any time this week?"
+      ]
+    },
+    {
+      "input": "I will decline \"Meeting with new Customers\" and send a response to the organizer with the following comment: \"I will be out of the office all day\". Is that ok?",
+      "output": [
+        "Decline meeting with new customers and say I will be out of the office all day."
+      ]
+    },
+    {
+      "input": "I will decline \"Meeting with new Customers\" and send a response to the organizer with the following comment: \"I will be out for half the day\". Is that ok?",
+      "output": [
+        "Actually, just let them know I will be out for half the day."
+      ]
+    },
+    {
+      "input": "I will decline \"trip to Denver\". Is that ok?",
+      "output": [
+        "I can't make the previously scheduled trip to Denver next week."
+      ]
+    },
+    {
+      "input": "Eann is the organizer of \"Pick-Up Laptop\".",
+      "output": [
+        "who organized the event pick-up laptop??"
+      ]
+    },
+    {
+      "input": "I will accept \"Apex Legends\". Is that ok?",
+      "output": [
+        "I wanna accept Apex Legends with Gabriel."
+      ]
+    },
+    {
+      "input": "I have accepted it. __BREAK I will accept \"road trip with Jolene\" and send a response to the organizer with the following comment: \"I can't believe we are going to Napa!\". Is that ok?",
+      "output": [
+        "Yes and Please also accept road trip with Jolene, and let her know I can't believe we are going to Napa!"
+      ]
+    },
+    {
+      "input": "I have accepted it. __BREAK I will accept \"Brunch\". Is that ok?",
+      "output": [
+        "Perfect, could you also accept my Brunch with Kim? Tell her ill bring the Champagne."
+      ]
+    },
+    {
+      "input": "Here are some times when you and Bob are free.",
+      "output": [
+        "my event with bob needs to be next weekend"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Bob and Damon Straeter\" to be on Saturday the 23rd at 8:00 PM. __BREAK Does one of these work?",
+      "output": [
+        "I'm really feeling the earlier one. and now move my sales call to later next week"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Tina are free.",
+      "output": [
+        "Move tea with Tina to the weekend"
+      ]
+    },
+    {
+      "input": "Yes. The maximum temperature will be 0.00 \u00b0F tomorrow.",
+      "output": [
+        "Will it be hotter than 90 in \"Houston\" tomorrow?"
+      ]
+    },
+    {
+      "input": "Here's your agenda for today:",
+      "output": [
+        "Buddy, show me all my appointments today."
+      ]
+    },
+    {
+      "input": "I've changed \"Appointment\" to be on Friday the 11th at 3:00 PM.",
+      "output": [
+        "Put the first option on the calendar."
+      ]
+    },
+    {
+      "input": "No, Alice is not invited to the \"party\".",
+      "output": [
+        "Is Alice invited to the party next month?"
+      ]
+    },
+    {
+      "input": "I found 13 different people matching your query. Which of these did you mean?",
+      "output": [
+        "Can you send an invitation out to her?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event between today and Wednesday. It's \"Space Flight\" from 9:00 to 9:30 AM.",
+      "output": [
+        "Are there any meetings in the next couple of days?"
+      ]
+    },
+    {
+      "input": "Yes. The high temperature will be 0.00 \u00b0F in Azusa Saturday the 30th.",
+      "output": [
+        "Will it be warm on the 30th?"
+      ]
+    },
+    {
+      "input": "I found 1 event today at 5:00 PM. It was an \"Appointment\" from 5:00 to 5:30 PM.",
+      "output": [
+        "What's on my calendar today 5pm?"
+      ]
+    },
+    {
+      "input": "The \"Coffee\" is on Thursday from 9:00 to 9:30 AM.",
+      "output": [
+        "Show me my coffee event on thursday"
+      ]
+    },
+    {
+      "input": "It starts on Saturday at 9:00 AM.",
+      "output": [
+        "Can you show me when I am going to the movies with Alex?"
+      ]
+    },
+    {
+      "input": "The \"Jennie's Hospital Trip\" is on June 20th from 5:00 to 5:30 PM.",
+      "output": [
+        "Can you find me Jennie's hospital trip?"
+      ]
+    },
+    {
+      "input": "The \"George's Hospital Trip\" is tomorrow from 5:00 to 5:30 PM.",
+      "output": [
+        "Actually it's George's hospital trip tomorrow."
+      ]
+    },
+    {
+      "input": "The \"park\" is on April 1st from 1:00 to 1:30 PM.",
+      "output": [
+        "Can you show me the park event for next week?"
+      ]
+    },
+    {
+      "input": "The \"walk in the park\" is on Monday the 30th from 11:00 to 11:30 AM.",
+      "output": [
+        "Oh I meant can you find the walk in the park next Monday"
+      ]
+    },
+    {
+      "input": "The event matching \"online shopping\" is on Sunday the 29th at 9:00 AM.",
+      "output": [
+        "when is the online shopping"
+      ]
+    },
+    {
+      "input": "The event matching \"Amazon Blitz\" next week is on April 1st at 5:00 PM.",
+      "output": [
+        "Im sorry I meant the Amazon Blitz next week"
+      ]
+    },
+    {
+      "input": "Flag Day is on Sunday, June 14, 2020.",
+      "output": [
+        "When is Flag day?"
+      ]
+    },
+    {
+      "input": "The event matching \"softball\" tomorrow is at 12:00 PM.",
+      "output": [
+        "what time does the softball start tomorrow?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and John are free.",
+      "output": [
+        "MAKE A MEETING WITH JOHN"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with John\" to be Noah.",
+      "output": [
+        "Yup. Go for it."
+      ]
+    },
+    {
+      "input": "I've deleted your event matching \"lunch\" on December 1st.",
+      "output": [
+        "Yes that is it."
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% in New York between Sun, October 28 and Sun, November 4.",
+      "output": [
+        "will it rain this week in new york city?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"Sell Stuff Online\" between today and Sunday the 20th for more than 2 hours.",
+      "output": [
+        "What events do I have called Sell Stuff Online between today and Sunday lasting more than 2 hours?"
+      ]
+    },
+    {
+      "input": "The temperature is 0.00 \u00b0F right now.",
+      "output": [
+        "What is the temperature"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain will be 0.00 % in Lower Merion Township this weekend.",
+      "output": [
+        "Is it going to rain this weekend"
+      ]
+    },
+    {
+      "input": "The maximum rain intensity will be 0.00 mph. That's on Fri, October 26 after 11:00 PM.",
+      "output": [
+        "What day will it rain"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain will be 0.00 % on Sunday.",
+      "output": [
+        "Will it rain sunday"
+      ]
+    },
+    {
+      "input": "Your physics lab report due is on Friday the 28th from 8:00 to 8:30 AM.",
+      "output": [
+        "When is the physics lab report due?"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Dan Schoffel and Damon Straeter\" to be.",
+      "output": [
+        "Yes that's correct"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Dan Schoffel and Damon Straeter\" to be with joel and sandy.",
+      "output": [
+        "So far so good."
+      ]
+    },
+    {
+      "input": "Mothers Day was on Sunday, May 12th.",
+      "output": [
+        "when was mothers day"
+      ]
+    },
+    {
+      "input": "I found one other event tomorrow. It's \"doctor appointment\" from 10:00 to 10:30 AM.",
+      "output": [
+        "Okay, and what else do I have that day?"
+      ]
+    },
+    {
+      "input": "I found one other event next month. It's \"doctors appointment\" on October 12th from 12:00 to 12:30 PM.",
+      "output": [
+        "Do i have any next month?"
+      ]
+    },
+    {
+      "input": "I didn't find any other events in November.",
+      "output": [
+        "And in November?"
+      ]
+    },
+    {
+      "input": "I found 3 events Monday the 16th.",
+      "output": [
+        "I need to know all my appointments for next Monday."
+      ]
+    },
+    {
+      "input": "I didn't find any events on Wednesday the 18th.",
+      "output": [
+        "Anything Wednesday?"
+      ]
+    },
+    {
+      "input": "John Smith is the organizer of \"Staff Meeting\".",
+      "output": [
+        "Who put together the staff meeting?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event next week. It's \"Appointment\" on November 1st from 11:00 to 11:30 PM.",
+      "output": [
+        "Do I have any appointments next week?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events between November 3rd and November 9th.",
+      "output": [
+        "And what about the week after?"
+      ]
+    },
+    {
+      "input": "The \"flight\" is located at \"Sea-Tac Airpot\".",
+      "output": [
+        "Where is my flight tomorrow at 9 am?"
+      ]
+    },
+    {
+      "input": "I've changed \"flight\" to be at \"Gate B2\".",
+      "output": [
+        "Yes it does."
+      ]
+    },
+    {
+      "input": "The event \"returning flight\" is on Tuesday the 17th at 12:00 PM.",
+      "output": [
+        "And when is returning flight next week?"
+      ]
+    },
+    {
+      "input": "I found one option.",
+      "output": [
+        "Hey could you find Thai Delicacy in Truckee?"
+      ]
+    },
+    {
+      "input": "Yes, Thai Delicacy is good for groups.",
+      "output": [
+        "Are they able to handle a very large group?"
+      ]
+    },
+    {
+      "input": "Yes, Rum Sugar Lime is good for groups.",
+      "output": [
+        "And can they handle a decently-sized group?"
+      ]
+    },
+    {
+      "input": "I've changed \"Coffee Date\" to be at 9:00. __BREAK How is this?",
+      "output": [
+        "Yes, the could you change the meeting with Kim from AM to PM."
+      ]
+    },
+    {
+      "input": "You are the organizer of \"Appointment\".",
+      "output": [
+        "who organized the meeting next week?"
+      ]
+    },
+    {
+      "input": "It's rated 9 stars.",
+      "output": [
+        "Ok, and what about Miller Union in Atlanta?"
+      ]
+    },
+    {
+      "input": "The last event was \"vet appt\" yesterday from 9:00 to 9:30 AM.",
+      "output": [
+        "Tell me my last vet appt."
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with Marge yesterday.",
+      "output": [
+        "Did I see Marge yesterday?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"team meeting\".",
+      "output": [
+        "When was my last team meeting?"
+      ]
+    },
+    {
+      "input": "The event \"zoo\" is on November 12th at 2:00 PM.",
+      "output": [
+        "When am I going to the zoo?"
+      ]
+    },
+    {
+      "input": "You're listed as being in Redmond at 11411 139th Pl NE, Redmond, WA 98052.",
+      "output": [
+        "And where might I be?"
+      ]
+    },
+    {
+      "input": "Your flight to Paris is on January 10th from 7:00 to 7:30 AM.",
+      "output": [
+        "What day is my flight to Paris?"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Sam are free.",
+      "output": [
+        "Create dinner date with Sam on Friday night"
+      ]
+    },
+    {
+      "input": "It will be clear with a temperature of about 0.00 \u00b0F for \"jog\" tomorrow from 9:00 to 9:30 AM.",
+      "output": [
+        "What will be the weather for my jog in the morning?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% for \"marathon\" on Friday from 10:00 to 10:30 AM.",
+      "output": [
+        "Will it rain during the marathon friday?"
+      ]
+    },
+    {
+      "input": "Yes. The chance of snow is 0.00% for \"Hike\" on Monday the 30th from 1:00 to 1:30 PM.",
+      "output": [
+        "will there be snow at the Hike"
+      ]
+    },
+    {
+      "input": "The event matching \"Party Marathon\" is on Sunday the 12th at 9:00 PM.",
+      "output": [
+        "What time does the 24 Hour Party Marathon start?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on February 2nd from 1:00 to 1:30 PM.",
+      "output": [
+        "yes. its work."
+      ]
+    },
+    {
+      "input": "I didn't find any events on your calendar on Friday the 26th between 2:00 and 5:00 PM.",
+      "output": [
+        "Can you find any meetings scheduled between 2 and 5 pm next Friday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event tomorrow. It's \"Interview\" from 3:00 to 3:30 PM.",
+      "output": [
+        "Is there any appointments tomorrow?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on November 4th.",
+      "output": [
+        "What about Monday?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event next month. It's \"Appointment\" on December 2nd from 11:00 to 11:30 AM.",
+      "output": [
+        "What about next month?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events with John on Thursday.",
+      "output": [
+        "Are there any meetings with John on Thursday?"
+      ]
+    },
+    {
+      "input": "The next event with Austin is on Monday the 28th at 2:00 PM.",
+      "output": [
+        "When is the next meeting with Austin?"
+      ]
+    },
+    {
+      "input": "The next event with Ross is on November 2nd at 11:00 AM.",
+      "output": [
+        "What is the time I see Ross next?"
+      ]
+    },
+    {
+      "input": "The \"Meeting with Ana and Damon Straeter\" is on December 5th from 11:00 to 11:30 AM.",
+      "output": [
+        "Can you show the meeting with Ana coming up?"
+      ]
+    },
+    {
+      "input": "The next event with Abby is on Friday the 25th at 11:00 AM.",
+      "output": [
+        "When is my next meet with Abby?"
+      ]
+    },
+    {
+      "input": "The next event matching \"lunch\" with Jill is on December 30th at 11:00 AM.",
+      "output": [
+        "When will I have my next lunch will Jill?"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Wed, January 16.",
+      "output": [
+        "How is the weather looking next Wednesday here?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event matching \"sales meeting\" with Jane. It's \"sales meeting\" on Tuesday the 19th from 2:00 to 2:30 PM.",
+      "output": [
+        "Is there a sales meeting with Jane on Tuesday?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events matching \"sales meeting\" with Jane tomorrow.",
+      "output": [
+        "How about on Thursday?"
+      ]
+    },
+    {
+      "input": "I've changed \"sales meeting\" to be.",
+      "output": [
+        "very nice"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Saturday the 19th from 1:00 to 1:30 PM. __BREAK Here are some times when you and Jake Cobb are free.",
+      "output": [
+        "Yes, also add lunch with jake."
+      ]
+    },
+    {
+      "input": "It starts on Sunday the 7th at 9:00 AM.",
+      "output": [
+        "when is my next event?"
+      ]
+    },
+    {
+      "input": "I didn't find any events on Friday after 9:00 AM.",
+      "output": [
+        "Then delete my meeting after that"
+      ]
+    },
+    {
+      "input": "The event \"dinner\" with Joe, Jay, Jacob, and Jane tomorrow is at 7:00 PM.",
+      "output": [
+        "What time is dinner with Joe, Jay, Jacob, and Jane tomorrow?"
+      ]
+    },
+    {
+      "input": "I've changed \"Dinner\" to be at 8:00.",
+      "output": [
+        "That works well for me."
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"movies\" on your calendar.",
+      "output": [
+        "When am I going to the movies with Joe, Jane, Jacob and Jay?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Friday after 2:30 PM.",
+      "output": [
+        "Do I have anything after lunch?"
+      ]
+    },
+    {
+      "input": "The next event with Sarah is on Wednesday the 25th at 2:00 PM.",
+      "output": [
+        "When is my next meeting involving Sarah?"
+      ]
+    },
+    {
+      "input": "I found one event today after 9:30 AM. It's \"Career Panel\" from 5:00 to 5:30 PM.",
+      "output": [
+        "Great. What do I have scheduled after Annie?"
+      ]
+    },
+    {
+      "input": "I've changed \"Watch Sports\" to be on Friday at 1:00 PM.",
+      "output": [
+        "The first one please."
+      ]
+    },
+    {
+      "input": "I've changed \"Trial by Fire\" to be on Tuesday the 28th at 3:00 PM.",
+      "output": [
+        "good"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"work\" on your calendar today at 4:00 PM.",
+      "output": [
+        "Add stop to get gas after work today at 4"
+      ]
+    },
+    {
+      "input": "I've changed \"stop to get gas after work\" to be at 3:00.",
+      "output": [
+        "Yes it does!"
+      ]
+    },
+    {
+      "input": "The 2nd event tomorrow is for 2 hours.",
+      "output": [
+        "How long do I have to speak at my second event tomorrow?"
+      ]
+    },
+    {
+      "input": "The 2nd next month is \"Din\" on April 4th from 5:00 to 5:30 PM.",
+      "output": [
+        "can you find my second event in april?"
+      ]
+    },
+    {
+      "input": "The 2nd on Tuesday the 31st is \"Very Very Frightening\" from 5:00 to 5:30 PM.",
+      "output": [
+        "What time is the second event on the last day of this month?"
+      ]
+    },
+    {
+      "input": "I've changed \"Lunch Meeting\" to be at 10:00.",
+      "output": [
+        "Yes, this look great"
+      ]
+    },
+    {
+      "input": "I've changed \"Lunch Meeting\" to be Chelsea.",
+      "output": [
+        "looks right"
+      ]
+    },
+    {
+      "input": "You have not responded to the \"Adopt a Maltese\" invitation.",
+      "output": [
+        "What did I respond to Brian's event?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Sorry, I can't handle that yet.",
+      "output": [
+        "the 4pm one. And Schedule another one at 4pm the following day."
+      ]
+    },
+    {
+      "input": "The \"Appointment\" is today from 12:00 to 12:30 PM.",
+      "output": [
+        "Find todays meeting at noon"
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain is 0.00% for \"family trip\" today from 10:00 to 10:30 AM.",
+      "output": [
+        "Will it rain during this event?"
+      ]
+    },
+    {
+      "input": "The temperature was 0.00 \u00b0F for \"family trip\" today from 10:00 to 10:30 AM.",
+      "output": [
+        "Perfect thank you so much! What will the temperature be?"
+      ]
+    },
+    {
+      "input": "I've changed \"moving\" to be.",
+      "output": [
+        "its prefect thanks"
+      ]
+    },
+    {
+      "input": "Here are some times when you and Amanda are free.",
+      "output": [
+        "Make a new meeting with Amanda to discuss the wage dispute next Thursday."
+      ]
+    },
+    {
+      "input": "I found 1 event tomorrow. It's \"lunch\" from 12:00 to 12:30 PM.",
+      "output": [
+        "what am I doing tomorrow?"
+      ]
+    },
+    {
+      "input": "There are no attendees who have accepted \"dinner\".",
+      "output": [
+        "who am I having dinner with?"
+      ]
+    },
+    {
+      "input": "The event \"lunch\" is tomorrow at 12:00 PM.",
+      "output": [
+        "when is my lunch?"
+      ]
+    },
+    {
+      "input": "Yes, I found 2 events on Wednesday. The first is \"Meeting with Wade Blakeley and Kristen Clifford\" from 4:00 to 4:30 PM.",
+      "output": [
+        "do I have a meeting on wednesday?"
+      ]
+    },
+    {
+      "input": "I didn't find any events named \"doctor appointment\" on your calendar.",
+      "output": [
+        "When is my doctor appointment?"
+      ]
+    },
+    {
+      "input": "It starts tomorrow at 8:00 AM.",
+      "output": [
+        "OK, when is my next appointment?"
+      ]
+    },
+    {
+      "input": "There are no attendees who have accepted \"lunch\".",
+      "output": [
+        "And who is that appointment with?"
+      ]
+    },
+    {
+      "input": "I didn't find any events matching \"dentist appointment\".",
+      "output": [
+        "Where is my dentist appointment?"
+      ]
+    },
+    {
+      "input": "No, I found no events tomorrow.",
+      "output": [
+        "is there any appointment saved for tomorrow?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on May 2nd from 10:00 to 10:30 AM.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "It starts on Monday the 18th at 8:00 AM.",
+      "output": [
+        "when is my meeting?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on Tuesday the 10th between 9:30 and 6:00 PM. It's \"lunch\" from 1:00 to 1:30 PM.",
+      "output": [
+        "Do I have any events between today's staff breakfast and the awards banquet?"
+      ]
+    },
+    {
+      "input": "Yes, I found one event on Friday between 3:30 and 9:00 PM. It's \"Dinner\" from 6:00 to 6:30 PM.",
+      "output": [
+        "Is there anything between my call and golf this Friday?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Friday between 6:30 and 9:00 PM.",
+      "output": [
+        "Do I have anything between Friday's dinner and Friday's golf?"
+      ]
+    },
+    {
+      "input": "No, I didn't find any events on Saturday between 9:30 and 3:00 PM.",
+      "output": [
+        "Is there anyhting between my international business meeting and my licking the liberty bell event?"
+      ]
+    },
+    {
+      "input": "I found 2 events between today and Saturday.",
+      "output": [
+        "What is my later meeting this week ?"
+      ]
+    },
+    {
+      "input": "I didn't find any events between Thursday the 16th and Saturday the 18th.",
+      "output": [
+        "What about later next week?"
+      ]
+    },
+    {
+      "input": "I found one event between December 24th and December 31st. It's from 9:00 to 9:30 PM.",
+      "output": [
+        "What around late this year?"
+      ]
+    },
+    {
+      "input": "I've changed \"Meeting with Jon and Megan Bowen\" to be at 3:00.",
+      "output": [
+        "Schedule the Meeting with Jon for 3:00 pm."
+      ]
+    },
+    {
+      "input": "Yes. The chance of rain will be 0.00 % on Sun, October 28.",
+      "output": [
+        "will in rain in boston tomorrow?"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar. Your status is set to Busy. I didn't find any events on Tuesday the 5th.",
+      "output": [
+        "Thanks, what is on my schedule on Tuesday?"
+      ]
+    },
+    {
+      "input": "I've changed \"Arm's Day\" to be named \"Cormarin event\". __BREAK Is this the change you want to make?",
+      "output": [
+        "okay, can you update Swim Date to May 20 2020"
+      ]
+    },
+    {
+      "input": "I've put that on your calendar on Tuesday the 9th from 1:00 to 1:30 PM.",
+      "output": [
+        "yes"
+      ]
+    },
+    {
+      "input": "It will be clear with a high of 0.00 \u00b0F and a low of 0.00 \u00b0F on Sat, October 27.",
+      "output": [
+        "what is the weather tomorrow for atlanta"
+      ]
+    },
+    {
+      "input": "I've changed \"dinner party\" to be.",
+      "output": [
+        "ok"
+      ]
+    }
+  ]
+}
