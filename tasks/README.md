@@ -1510,3 +1510,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1699_jnlpba_entity_classification.json` | Classifying entities (based on jnlpba) | Entity Classification
+`task1700_jnlpba_entity_counting.json` | Counting the bio entities in jnlpba | Count Generation
+`task1701_bn_hate_speech_machine_translation.json` | Translation of records in bn_hate_speech | Machine Translation
+`task1702_bn_hate_speech_news_category_classification.json` | Classifying the news into 5 categories | News Classification 
