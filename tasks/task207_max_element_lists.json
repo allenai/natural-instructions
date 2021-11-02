@@ -6,37 +6,41 @@
         "synthetic"
     ],
     "Categories": [
-        "Answer Generation",
-        "Arithmetic"
+        "Question Answering -> Mathematical Question Answering",
+        "Mathematics -> Arithmetic",
+        "Reasoning -> Numerical Reasoning"
     ],
-    "Definition": "In this task you will be given a list, of lists, of integers. You should output a list that contains the maximum value for each inner list in the input list.",
+    "Definition": "In this task, you are given a list. This list contains many lists of integers. The list is several items written within a []. Your task is to find the maximum number among the members of each inner list. The output should be a list comprised of the maximums with the same order as the internal lists.",
+    "Domains": [    
+        "Mathematics"
+    ], 
     "Positive Examples": [
         {
             "input": "[[5, 3], [2, 9, 8], [3, 3], [5, 2, 7, 1]]",
             "output": "[5, 9, 3, 7]",
-            "explanation": "The maximum value for each inner list is contained in the output list. So this is a good example."
+            "explanation": "Input of this example is a list containing four inner lists. The maximum value of the first inner list is 5, the maximum value of the second list is 9, the maximum value of the third list is 3, and the maximum value of the fourth list is 7. So the output should be [5, 9, 3, 7], and this is a good example."
         },
         {
             "input": "[[1, 6, 3, 7], [7, 3, 1]]",
             "output": "[7, 7]",
-            "explanation": "The output contains the number 7 twice, because it is the maximum for both lists. So this is a good example."
+            "explanation": "The output contains the number 7 twice, because it is the maximum value of both inner lists. So this is a good example."
         }
     ],
     "Negative Examples": [
         {
             "input": "[[5, 9, 9], [8, 9], [11, 2, 1, 4, 7], [4, 6, 4, 1]]",
             "output": "[11]",
-            "explanation": "The output is the maximum, of the maximums, of each list. So this is a bad example."
+            "explanation": "In this example, the input list contains four lists, and we should have a list of four integers in the output. Each number in the output list should indicate the maximum value of its corresponding list in the output. So this is a bad example."
         },
         {
             "input": "[[3, 5, 9, 4, 9], [1, 8, 4, 3], [3, 0, 8]",
             "output": "[3, 1, 0]",
-            "explanation": "The output is a list of the minimums of each list. So this is a bad example."
+            "explanation": "In this example, the output is a list of the minimums of each inner list. The correct output is [9, 8, 8], and this is a bad example."
         },
         {
             "input": "[[1, 8, 2, 2], [4, 6, 7, 3], [3, 0, 9]",
             "output": "[[8], [7], [9]]",
-            "explanation": "The output is a list of lists where the maximum is its own list. So this is a bad example."
+            "explanation": "The output is a list of lists, where the maximum is its own list. Note that the output should be a list of integers, not a list of lists. So this is a bad example."
         }
     ],
     "Instances": [
