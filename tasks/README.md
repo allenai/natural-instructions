@@ -1550,8 +1550,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1627_copa_hr_classification` | Given a question and two label, classify the group in which the choice and the statement are related | Classification
 `task1628_copa_hr_question_answering` | Given a sentence and four label, select the correct label. | Answer Selection 
 `task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
-`task1630_openPI_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
-`task1631_openPI_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
+`task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
+`task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
