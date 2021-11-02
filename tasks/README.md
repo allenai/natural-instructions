@@ -1527,3 +1527,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1592_yahoo_answers_topics_classfication` | Classification based on yahoo_answers_topics | Classification
 `task1593_yahoo_answers_topics_classification` | Classification based on yahoo_answers_topics | Classification  
 `task1594_yahoo_answers_topics_question_generation` | Question Generation based on yahoo_answers_topics | Question_Generation
+`task1595_event2mind_text_generation_1` | Creating text (emotional reaction) based on event2Mind event prompts | Text Generation
+`task1596_event2mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
+`task1597_nyc_slot_filling` | Categorizing elements of information from text from the NYC database | Slot Filling
+`task1598_nyc_long_text_generation` | Creating sentences based off of some information from the NYC database | Long Text Generation
