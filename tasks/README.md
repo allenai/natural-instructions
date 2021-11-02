@@ -1514,3 +1514,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1707_tmu_gfm_error_correction` | Generating grammatically correct output text from a given input text |Error Correction 
+`task1708_tmu_gfm_lexical_evalution` | Evaluating output sentences based on grammatical accuracy given an input text  |Lexical Evaluation  
+`task1709_tmu_gfm_lexical_evalution` | Evaluating output sentences based on similarity of meaning given an input text |Lexical Evaluation  
+`task1710_tmu_gfm_lexical_evalution` | Evaluating output sentences based on fluency retained given an input text |Lexical Evaluation  
