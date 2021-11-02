@@ -1,0 +1,1851 @@
+{
+    "Contributors": [
+        "Sagar Rudagi"
+    ],
+    "Source": [
+        " JNLPBA (https://huggingface.co/datasets/jnlpba)"
+    ],
+    "Input_language": [
+      "English"
+    ],
+    "Output_language": [
+      "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],    
+    "Categories": [
+        "Entity Counting"
+    ],
+    "Definition": "In this task, a sentence will be provided along with the classified tokens in a string. The token string contains '0','1' and '2' where '0' corresponds to Non-bio entity, '1' to Bio entity start token, and '2' to Subsequent bio entity tokens. The output should contain the numbers Bio entities which correspond to '1'. Each word in the sentence is called as token.",
+    "Positive Examples": [
+        {
+            "input": "Tokens: IL - 2 gene expression and NF - kappa B activation through CD28 requires reactive oxygen production by 5 - lipoxygenase . \nClassified Tokens List: 1 2 2 2 0 0 1 2 2 2 0 0 1 0 0 0 0 0 1 2 2 0",
+            "output": "0",
+            "explanation": "This is a good example. It returns the correct amount of bio entities."
+        },
+        {
+            "input": "Tokens: Activation of the CD28 surface receptor provides a major costimulatory signal for T cell activation resulting in enhanced production of interleukin - 2 ( IL - 2 ) and cell proliferation . \nClassified Tokens List: 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 0 0 0 0 0",
+            "output": "0",
+            "explanation": "This is a good example. It returns the correct amount of bio entities."
+        },
+        {
+            "input": "Tokens: In primary T lymphocytes we show that CD28 ligation leads to the rapid intracellular formation of reactive oxygen intermediates ( ROIs ) which are required for CD28 - mediated activation of the NF - kappa B / CD28 - responsive complex and IL - 2 expression . \nClassified Tokens List: 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 2 2 2 0 1 2 2 2 0 1 2 2 0 0",
+            "output": "0",
+            "explanation": "This is a good example. It returns the correct amount of bio entities."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Tokens: Delineation of the CD28 signaling cascade was found to involve protein tyrosine kinase activity , followed by the activation of phospholipase A2 and 5 - lipoxygenase . \nClassified Tokens List: 0 0 0 1 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 1 2 0 1 2 2 0",
+            "output": "0",
+            "explanation": "This is a bad example. The output should only be a number and not a list"
+        },
+        {
+            "input": "Tokens: These findings should be useful for therapeutic strategies and the development of immunosuppressants targeting the CD28 costimulatory pathway . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0",
+            "output": "One",
+            "explanation": "This is a bad example. Output should be numerical and should not contain words."
+        },
+        {
+            "input": "Tokens: The peri - kappa B site mediates human immunodeficiency virus type 2 enhancer activation in monocytes but not in T cells . \nClassified Tokens List: 0 1 2 2 2 2 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0",
+            "output": "0",
+            "explanation": "This is a bad example. The bio entity starting token and the subsequent tokens are taken separately whereas they belong to one single entity."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Tokens: The predicted protein sequence of B1 is 81 % identical to human matrix metalloproteinase 9 ( MMP9 ) , demonstrating that it is the bovine homologue of this enzyme . \nClassified Tokens List: 0 0 0 0 0 1 0 0 0 0 0 0 1 2 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: RNAase protection assays demonstrated that the MMP9 activity , unique to infected cells , is due to increased MMP9 mRNA levels . \nClassified Tokens List: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We also assayed the levels of transcription factor AP - 1 and demonstrated that it was constitutively present in increased amounts in Theileria - infected cells . \nClassified Tokens List: 0 0 0 0 0 0 1 2 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Since AP - 1 is implicated in the control of the cell cycle , and MMP9 can confer metastatic properties , these results are of considerable significance with respect to the transformed phenotype induced by Theileria infection . \nClassified Tokens List: 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: B - cell proliferation and induction of early G1 - regulating proteins by Epstein - Barr virus mutants conditional for EBNA2 . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Infection of primary B - lymphocytes by Epstein - Barr virus ( EBV ) leads to growth transformation of these B - cells in vitro . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: EBV nuclear antigen 2 ( EBNA2 ) , one of the first genes expressed after EBV infection of B - cells , is a transcriptional activator of viral and cellular genes and is essential for the transforming potential of the virus . \nClassified Tokens List: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Growth transformation of primary normal B - cells by mutant virus resulted in estrogen - dependent lymphoblastoid cell lines expressing the chimeric EBNA2 protein . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In the absence of estrogen about half of the cells enter a quiescent non - proliferative state whereas the others die by apoptosis . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: EBNA2 is thus required not only for initiation but also for maintenance of transformation . \nClassified Tokens List: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Growth arrest occurred at G1 and G2 stages of the cell cycle , indicating that functional EBNA2 is required at different restriction points of the cell cycle . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Growth arrest is reversible for G1 / G0 cells as indicated by the sequential accumulation and modification of cell cycle regulating proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: EBV induces the same cell cycle regulating proteins as polyclonal stimuli in primary B - cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: IL - 1 receptor and TCR signals synergize to activate NF - kappa B - mediated gene transcription . \nClassified Tokens List: 1 2 2 2 0 1 0 0 0 0 1 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Previous studies have demonstrated that IL - 1 receptor ( IL - 1R ) - and TCR - initiated signals can interact synergistically to increase the rate of transcription of several lymphokine and lymphokine receptor genes during the competence phase of the activation program in T helper lymphocytes . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 1 2 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In this report we describe how signals initiated through the type I IL - 1R interact with signals from the antigen receptor to synergistically augment the transactivating properties of NF - kappa B . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Gel shift analyses demonstrate that NF - kappa B nuclear translocation is stimulated primarily by IL - 1 rather than by antigen receptor signals . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 2 2 0 0 0 1 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Western blot and phosphorylation analyses demonstrate that the synergistic effect on NF - kappa B functional activity is independent of I kappa B alpha ( MAD3 ) - NF - kappa B dissociation in the cytosol and is not associated with I kappa B nuclear translocation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 1 2 2 2 0 1 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results suggest that IL - 1 induces both NF - kappa B nuclear translocation and the synthesis of a protein ( s ) responsible for terminating NF - kappa B - DNA interaction in the nucleus . \nClassified Tokens List: 0 0 0 0 1 2 2 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Antigen receptor signals prolong NF - kappa B - DNA interaction , probably by functionally antagonizing the IL - 1 - induced synthesis of a protein ( s ) responsible for the transient NF - kappa B - DNA interaction and consequently synergistically enhance IL - 1 - induced NF - kappa B - dependent gene transcription . \nClassified Tokens List: 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 1 2 2 0 0 1 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Identification of the promoter region of chicken anemia virus ( CAV ) containing a novel enhancer - like element . \nClassified Tokens List: 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The single promoter region in the cloned genome [ Noteborn et al . , J . Virol . 65 ( 1991 ) 3131 - 3139 ] of chicken anemia virus ( CAV ) in chicken T - cells was analysed via CAT assays . \nClassified Tokens List: 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A unique region containing four or five near - perfect direct repeats ( DR ) of 21 bp with one 12 - bp insert was proven to be the main transcription - activation element , with enhancer - like characteristics . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: PCR studies revealed that CAV isolates from across the world all contained this promoter sequence . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Electrophoretic mobility - shift assays ( EMSA ) showed that individual DR units , as well as the 12 - bp insert , can bind to nuclear factors of chicken T - cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 2 2 2 0 0 0 0 1 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Competition assays revealed that the DR units bound to factors other than the 12 - bp insert . \nClassified Tokens List: 0 0 0 0 0 1 2 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Purified human SP1 was shown to have very strong affinity for the 12 - bp insert . \nClassified Tokens List: 0 1 2 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Previous studies using antisense oligonucleotides implicated the c - Myc protein in the phenomenon of activation - induced apoptosis . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This role for c - Myc in apoptosis is now confirmed in studies using a dominant negative form of its heterodimeric binding partner , Max , which we show here inhibits activation - induced apoptosis . \nClassified Tokens List: 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Further , coexpression of a reciprocally mutant Myc protein capable of forming functional heterodimers with the mutant Max can compensate for the dominant negative activity and restore activation - induced apoptosis . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results imply that Myc promotes activation - induced apoptosis by obligatory heterodimerization with Max , and therefore , by regulating gene transcription . \nClassified Tokens List: 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Epstein - Barr virus SM protein . \nClassified Tokens List: 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The protein products of the Epstein - Barr virus ( EBV ) BMLF1 open reading frame have been characterized in the early productive cycle in B95 - 8 and Akata cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The SM protein derived from the spliced RNA joining BSLF2 to BMLF1 is much the most abundant protein . \nClassified Tokens List: 0 1 2 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: SM is a phosphoprotein in EBV - infected cells and can be phosphorylated in vitro with casein kinase II ( CKII ) . \nClassified Tokens List: 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Site - directed mutagenesis of the consensus CKII site in EBV SM greatly reduced the in vitro phosphorylation of SM by CKII . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 1 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The mechanism of transactivation by BMLF1 proteins has been controversial but SM was shown to transactivate gene expression from a CAT reporter construct by increasing the amount of cytoplasmic CAT mRNA . \nClassified Tokens List: 0 0 0 0 0 1 2 0 0 0 0 1 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Inducible binding to the c - fos serum response element during T cell activation is regulated by a phosphotyrosine - containing protein . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Fos expression may be a pivotal event in converting ligand - receptor interactions at the membrane into functional modulation of cell phenotype . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We show that an inducible protein complex ( Band A ) binds to SRE DNA within 10 min after mitogenic stimulation of human PBL - T , and becomes nondetectable by 60 min . \nClassified Tokens List: 0 0 0 0 0 1 2 0 1 2 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A protein that is phosphorylated on a tyrosine residue in resting PBL - T suppresses binding of a component of Band A to the SRE motif . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Upon stimulation of the cells , this protein no longer prevents binding of DNA by Band A , and suppression of binding is restored within 30 min . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In vivo modification of major histocompatibility complex class II DRA promoter occupancy mediated by the AIR - 1 trans - activator . \nClassified Tokens List: 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This locus encodes a transcriptional trans - activator required for the constitutive expression of major histocompatibility complex ( MHC ) class II genes . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Here we show , by in vivo DNase I footprinting , that the AIR - 1 locus defect correlates with changes in the DRA promoter occupancy . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 0 0 0 0 1 2 2 2 2 0 0 0 0 0 1 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Interestingly , reexpression of human MHC class II genes in RJ 2 . 2 . 5 x mouse spleen cell hybrids is associated with partial reversion of DRA promoter occupancy to the Raji pattern . \nClassified Tokens List: 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: DRA promoter occupancy in other class II - negative B cell lines , derived from patients with bare lymphocyte syndrome , is drastically different from the one observed in RJ 2 . 2 . 5 and Raji cells . \nClassified Tokens List: 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Moreover , the use of the DNase I as an in vivo footprinting agent reveals that the patients ' cell lines do not display a completely ` ` bare promoter ` ` as previously reported using dimethyl sulfate as the footprinting agent . \nClassified Tokens List: 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Regulation of cell - type - specific interleukin - 2 receptor alpha - chain gene expression : potential role of physical interactions between Elf - 1 , HMG - I ( Y ) , and NF - kappa B family proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 2 2 2 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Previously , an inducible enhancer between nucleotides - 299 and - 228 that contains NF - kappa B and CArG motifs was identified . \nClassified Tokens List: 0 0 0 1 2 0 1 2 2 2 2 2 0 0 1 2 2 2 2 2 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We now report the characterization of a second essential positive regulatory element located between nucleotides - 137 and - 64 that binds Elf - 1 and HMG - I ( Y ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 0 0 1 2 2 2 2 2 0 0 1 2 2 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Transcription from the IL - 2R alpha promoter was inhibited when either the Elf - 1 or the HMG - I ( Y ) binding site was mutated . \nClassified Tokens List: 0 0 0 1 2 2 2 2 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Coexpression of both proteins activated transcription of the - 137 to - 64 element in COS - 7 cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This is the first report of a physical interaction between an Ets family member and NF - kappa B family proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These findings provide significant new insights into the protein - protein and protein - DNA interactions that regulate cell - type - specific and inducible IL - 2R alpha gene expression and also have implications for other genes regulated by Elf - 1 and NF - kappa B family proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Isolation of cDNA clones for 42 different Kruppel - related zinc finger proteins expressed in the human monoblast cell line U - 937 . \nClassified Tokens List: 0 0 1 2 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: To study the complexity and structural characteristics of zinc finger proteins expressed during human hematopoiesis and to isolate novel regulators of blood cell development , a degenerate oligonucleotide probe specific for a consensus zinc finger peptide domain was used to isolate 63 cDNA clones for Kruppel - related zinc finger genes from the human monoblast cell line U - 937 . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 1 2 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: By extensive nucleotide sequence and Northern blot analysis , these cDNA clones were found to originate from approximately 42 different genes ( HZF 1 - 42 ) of which only 8 have previously been described . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The large number of individual genes represented among the 63 clones and their apparent non - cell - type - specific expression suggest that the majority of the Kruppel - related zinc finger genes are likely to be expressed in most human tissues . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In contrast , some of the genes displayed a restricted expression pattern , indicating that they represent potential regulators of monocyte differentiation or proliferation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Detailed structural analysis of the first 12 cDNAs ( HZF 1 - 10 ) and a partial characterization of HZF 11 - 42 revealed that a common feature of human Kruppel - related zinc finger proteins is the presence of tandem arrays of zinc fingers ranging in number from 3 to over 20 that are preferentially located in the carboxy - terminal regions of the proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 1 0 1 2 2 2 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In addition , several novel KRAB - containing zinc finger genes and a novel conserved sequence element were identified . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 2 2 0 0 0 1 2 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: CAG repeat length variation in sperm from a patient with Kennedy ' s disease . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Using a modified sperm typing protocol , the mutation frequency of the CAG repeat region at the androgen receptor locus has been measured using a rare semen sample from an individual with spinal and bulbar muscular atrophy ( SBMA ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The average expansion was 2 . 7 repeats . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: More than half of the expansions involved one or two repeats ; the largest was 11 repeats . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: 68 % of the contractions were also one or two repeats but six ( 16 % ) were very large ( 12 - 25 repeats ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: One contraction generated an allele in an intermediate size range ( 33 - 39 repeats ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Such alleles have not been observed among more than 900 normal and SBMA X - chromosomes that have been examined . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Comparison of the SBMA sperm typing results with mutation frequency data on normal alleles supports the hypothesis that trinucleotide repeat expansions may have a different molecular origin than contractions . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Benzene toxicity towards lymphocytes is thought to be mediated by metabolites of benzene including benzoquinone ( BQ ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: NAD ( P ) H : quinone reductase ( QR ) is known to protect against BQ toxicity . \nClassified Tokens List: 1 2 2 2 2 2 2 2 0 1 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We had previously found that aspirin - like drugs ( ALD ) induce AP - 1 in human T lymphocytes . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: It was therefore hypothesized that ALD would protect lymphocytes against BQ toxicity by inducing QR . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Molt - 4 cells ( M4 ) , a human T lymphocyte cell line , were incubated with different concentrations of two ALD , flurbiprofen and sodium diclofenac , and then exposed to BQ . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Toxicity was measured by viability ( trypan blue exclusion ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The protective effect of ALD was significantly reduced by dicoumarol , a QR - specific inhibitor . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Since human T cells and T cell lines do not metabolize arachidonic acid , our data suggest that ALD can protect human T lymphocytes against a metabolite of benzene by induction of QR activity . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Correlation of differentiation - inducing activity of retinoids on human leukemia cell lines HL - 60 and NB4 . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Retinoids , including all - trans - retinoic acid , its isomers , and fifty synthetic retinoids ( retinobenzoic acids ) , were tested for differentiation - inducing activity on human leukemia cell lines HL - 60 and NB4 . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Platelet - activating factor ( PAF ) positively auto - regulates the expression of human PAF receptor transcript 1 ( leukocyte - type ) through NF - kappa B . \nClassified Tokens List: 1 2 2 2 0 1 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The human platelet - activating factor receptor ( PAFR ) gene is transcribed by two distinct promoters ( promoter 1 and promoter 2 ) to generate two transcripts ( designated as PAFR transcript 1 and PAFR transcript 2 ) , though their open reading frames are identical . \nClassified Tokens List: 0 1 2 2 2 2 2 2 2 2 2 0 0 0 0 0 1 0 1 2 0 1 2 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: By primer extension analysis to discriminate two transcripts , we found that the levels of PAFR transcript 1 ( leukocyte - type ) , but not PAFR transcript 2 ( tissue - type ) , are upregulated by PAF as well as by 12 - O - tetradecanoylphorbol - 13 - acetate ( TPA ) in the human stomach cancer cell line ( JR - St cells ) which expresses both functional PAFR transcript 1 and PAFR transcript 2 endogenously . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Functional analysis of the promoter 1 with a transient expression assay using chloramphenicol acetyltransferase ( CAT ) gene as a reporter showed that both PAF and TPA activated the promoter 1 but not the deleted promoter lacking the three consensus binding sites for NF - kappa B located from - 571 bp to - 459 bp . \nClassified Tokens List: 0 0 0 0 1 2 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 1 0 0 0 0 1 2 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A cDNA library was prepared from peripheral blood lymphocytes of an autoimmune patient with primary Sjogrens ' syndrome . \nClassified Tokens List: 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The cDNA library was screened with the patients own autoimmune serum being monospecific for the nuclear autoantigen La / SS - B . \nClassified Tokens List: 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Thereby an alternative type of La mRNA was identified that differed from the known La mRNA due to an exchange of the exon 1 . \nClassified Tokens List: 0 0 0 0 0 1 2 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Sequencing of the genomic region between the exons 1 and 2 showed that the alternative 5 ' - end is a part of the intron . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 0 0 0 1 2 2 2 2 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In addition , the presence of an alternative promoter site , which exists within the intron downstream of the exon 1 , became evident . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 0 0 0 1 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In consequence , the alternative La mRNA is the result of a promoter switching combined with an alternative splicing mechanism . \nClassified Tokens List: 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In the intron , further transcription factor binding sites , including a NF - kappa B element , were identified leading to the suggestion that the expression of the gene encoding for the nuclear autoantigen La / SS - B alters in dependence on disease conditions . \nClassified Tokens List: 0 0 0 0 0 1 2 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Cross - linking CD40 on B cells rapidly activates nuclear factor - kappa B . \nClassified Tokens List: 0 0 0 1 0 0 0 0 0 1 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Cross - linking CD40 on B cells can lead to homotypic cell adhesion , IL - 6 production , and , in combination with cytokines , to Ig isotype switching . \nClassified Tokens List: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Tyrosine kinase activity is increased shortly after engagement of this receptor . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Little is known about how the very early events induced by CD40 cross - linking link to cellular responses . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In this study , we demonstrate that nuclear factor ( NF ) - kappa B and NF - kappa B - like transcription factors are activated after cross - linking CD40 on resting human tonsillar B cells and on B cell lines . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0 1 2 2 2 2 2 2 2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The complexes detected in electrophoretic mobility shift assays contain p50 , p65 ( RelA ) , c - Rel , and most likely other components . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: By using transient transfection assays , we found that cross - linking CD40 supports NF - kappa B - dependent gene expression . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Our results define the NF - kappa B system as an intermediate event in CD40 signaling and suggest that the CD40 pathway can influence the expression of B cell - associated genes with NF - kappa B consensus sites . \nClassified Tokens List: 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 2 2 2 2 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Protease inhibitors block lipopolysaccharide induction of tissue factor gene expression in human monocytic cells by preventing activation of c - Rel / p65 heterodimers . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Tissue factor ( TF ) is expressed rapidly by human monocytes exposed to bacterial endotoxin ( lipopolysaccharide , or LPS ) . \nClassified Tokens List: 1 2 0 1 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Transcriptional regulation is mediated by binding of c - Rel / p65 heterodimers to a kappa B - like site in the TF promoter . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 1 2 2 2 2 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Nuclear translocation of cytosolic c - Rel / p65 heterodimers and other members of the NF - kappa B / Rel family requires dissociation and proteolytic degradation of the inhibitor protein , I kappa B alpha . \nClassified Tokens List: 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 1 2 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The protease inhibitors N alpha - tosylphenylalanyl chloromethyl ketone ( TPCK ) and N alpha - tosyl - L - lysine chloromethyl ketone ( TLCK ) block activation of NF - kappa B / Rel proteins by preventing degradation of I kappa B alpha . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: To determine if TPCK and TLCK inhibited LPS induction of TF expression , freshly isolated human monocytes and monocytic THP - 1 cells were pretreated with these inhibitors for 30 min before LPS stimulation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Both TPCK and TLCK inhibited LPS induction of TF protein , TF mRNA and TF promoter activity in a dose - dependent manner . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 0 1 2 0 1 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Taken together , these data indicated that inhibiting nuclear translocation of c - Rel / p65 heterodimers prevented LPS induction of TF gene transcription in monocytic cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 1 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: 1 , 25 - Dihydroxyvitamin D3 receptors in peripheral blood mononuclear cells from patients with primary and secondary hyperparathyroidism . \nClassified Tokens List: 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A decreased number of calcitriol ( 1 , 25 ( OH ) 2D3 ) receptors has been observed in parathyroid glands of uremic animals . \nClassified Tokens List: 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In humans , studies carried out in surgically removed parathyroid glands have shown that calcitriol binding is higher in primary than in secondary hyperparathyroidism . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Since specific receptors for calcitriol have been described in peripheral blood mononuclear cells ( PBMC ) , we have investigated the specific uptake of 3H - labelled 1 , 25 ( OH ) 2D3 in PBMC of 12 women with primary hyperparathyroidism ( PHP ) , 8 women with hyperparathyroidism secondary to chronic renal failure ( SH ) , 9 women with renal transplant ( RT ) , and 23 healthy women . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In three patients with PHP who were subjected to parathyroidectomy , the calcitriol number came down to normal . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The severe phenotype of females with tiny ring X chromosomes is associated with inability of these chromosomes to undergo X inactivation . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Mental retardation and a constellation of congenital malformations not usually associated with Turner syndrome are seen in some females with a mosaic 45 , X / 46 , X , r ( X ) karyotype . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The two tiny ring X chromosomes studied with an antibody specific for the acetylated isoforms of histone H4 marking transcribed chromatin domains were labeled at a level consistent with their being active . \nClassified Tokens List: 0 0 0 0 1 2 0 0 0 1 0 0 0 0 0 0 1 2 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We also examined tow of the XISTE - ring chromosomes to determine whether genes that are normally silent on an inactive X are expressed from these chromosomes . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 2 0 0 0 1 0 0 0 0 0 0 1 2 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Analyses of hybrid cells show that TIMP , ZXDA , and ZXDB loci on the proximal short arm , and AR and PHKA1 loci on the long arm , are well expressed from the tiny ring X chromosome lacking XIST DNA . \nClassified Tokens List: 0 0 0 0 0 0 1 0 1 0 0 1 2 0 0 1 2 2 0 0 1 0 1 2 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Studies of the ring chromosome that has XIST DNA but does not transcribe it show that its AR allele is transcribed along with the one on the normal X allele . \nClassified Tokens List: 0 0 0 1 2 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: ( ABSTRACT TRUNCATED AT 250 WORDS ) \nClassified Tokens List: 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Inhibition of activation of transcription factor AP - 1 by CD28 signalling in human T - cells . \nClassified Tokens List: 0 0 0 0 1 2 2 2 2 0 1 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Co - stimulation of T - lymphocytes by T - cell receptor ( TcR ) occupancy and activation of the CD28 surface molecule results in enhanced proliferation and interleukin 2 ( IL - 2 ) production . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 0 1 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 2 0 1 2 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Stimulation of T - cells by agonistic anti - CD28 antibodies in conjunction with phorbol 12 - myristate 13 - acetate ( PMA ) - or TcR - derived signals induces the enhanced activation of the transcription factor NF - kappa B . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 2 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Whereas anti - CD28 together with PMA increased the DNA binding and trans - activation activity of NF - kappa B , PMA - induced activation of AP - 1 was significantly suppressed . \nClassified Tokens List: 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The inhibitory effect exerted by anti - CD28 was observed at the level of DNA binding as well as in functional reporter - gene assays . \nClassified Tokens List: 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results suggest that the two transcription factors are independently regulated and may perform different functions during T - cell activation . \nClassified Tokens List: 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: HIV - 1 Nef leads to inhibition or activation of T cells depending on its intracellular localization . \nClassified Tokens List: 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Nef of primate lentiviruses is required for viremia and progression to AIDS in monkeys . \nClassified Tokens List: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Negative , positive , and no effects of Nef have also been reported on viral replication in cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: To reconcile these observations , we expressed a hybrid CD8 - Nef protein in Jurkat cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Two opposite phenotypes were found , which depended on the intracellular localization of Nef . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Expressed in the cytoplasm or on the cell surface , the chimera inhibited or activated early signaling events from the T cell antigen receptor . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Activated Jurkat cells died by apoptosis , and only cells with mutated nef genes expressing truncated Nefs survived , which rendered Nef nonfunctional . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 1 0 0 0 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These mutations paralleled those in other viral strains passaged in vitro . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Not only do these positional effects of Nef reconcile diverse phenotypes of Nef and suggest a role for its N - terminal myristylation , but they also explain effects of Nef in HIV infection and progression to AIDS . \nClassified Tokens List: 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: An intricate arrangement of binding sites for the Ets family of transcription factors regulates activity of the alpha 4 integrin gene promoter . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 0 1 2 0 0 0 0 1 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: alpha 4 integrins mediate cell - cell and cell - extracellular matrix interactions that are critical for maturation and function of the immune system as well as differentiation of skeletal muscle . \nClassified Tokens List: 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Here we examine molecular mechanisms controlling the pattern of alpha 4 expression . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Three binding sites for the Ets family of transcription factors are found in this region : two adjacent sites at positions - 50 and - 54 bp and a more 5 ' site at position - 67 bp . \nClassified Tokens List: 0 1 2 0 0 1 2 0 1 2 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 1 2 2 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Using a series of constructs containing deletions and mutations in this region , we found that the 3 ' - most site alone was sufficient for binding GA - binding protein alpha ( GABP alpha ) / GABP beta and for a low level of transcriptional activation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 1 2 2 2 2 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Deletion of the 5 ' - most Ets site had no effect on binding to GABP alpha / GABP beta , but it eliminated a . \nClassified Tokens List: 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Concomitant with this loss of a , a new Ets - 1 - containing complex ` ` c ` ` appeared . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 1 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Complex c substituted efficiently for complex a in transcriptional activation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We conclude that although neither of the two 5 ' - most Ets sites alone binds nuclear protein , they appear to act as modulators which control the pattern of Ets proteins that bind the alpha 4 gene promoter . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Mechanism of antiandrogen action : conformational changes of the receptor . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Androgen receptor mRNA was translated in vitro , and androgen - and antiandrogen - bound receptor complexes were studied using limited proteolytic digestion by trypsin . \nClassified Tokens List: 1 2 2 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0 0 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Partial proteolysis of androgen - bound receptor protein resulted in a 29 - kDa proteolysis - resisting fragment , whereas antiandrogen binding stabilised a 35 - kDa fragment . \nClassified Tokens List: 0 0 0 1 2 2 2 2 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Both fragments contain the entire ligand binding domain , and the 35 - kDa fragment extended into the hinge region of the receptor . \nClassified Tokens List: 0 0 0 0 0 1 2 2 0 0 0 1 2 2 2 0 0 0 1 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Several antiandrogens show agonistic properties for a mutated androgen receptor ( LNCaP cell variant ) ; trypsin digestion of antiandrogen - bound mutated receptor also resulted in a 29 - kDa fragment . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 1 0 0 1 2 2 2 2 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Our results point to an important difference between antiandrogens and antagonists of other steroid hormone receptors . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Differences in conformation of the hinge region distinguish androgen - bound from antiandrogen - bound receptor complexes , which represents an important feature of antiandrogen action . \nClassified Tokens List: 0 0 0 0 0 1 2 0 1 2 2 0 1 2 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Activation of nuclear factor kappa B in human neuroblastoma cell lines . \nClassified Tokens List: 0 0 1 2 2 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The nuclear factor kappa B ( NF - kappa B ) is a eukaryotic transcription factor . \nClassified Tokens List: 0 1 2 2 2 0 1 2 2 2 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In B cells and macrophages it is constitutively present in cell nuclei , whereas in many other cell types , NF - kappa B translocates from cytosol to nucleus as a result of transduction by tumor necrosis factor alpha ( TNF alpha ) , phorbol ester , and other polyclonal signals . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Using neuroblastoma cell lines as models , we have shown that in neural cells NF - kappa B was present in the cytosol and translocated into nuclei as a result of TNF alpha treatment . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The TNF alpha - activated NF - kappa B was transcriptionally functional . \nClassified Tokens List: 0 1 2 0 0 1 2 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: NF - kappa B activation by TNF alpha was not correlated with cell differentiation or proliferation . \nClassified Tokens List: 1 2 2 2 0 0 1 2 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In a NGF - responsive rat pheochromocytoma cell line , PC12 , PMA activated NF - kappa B , whereas NGF did not . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 1 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In other neuroblastoma cell lines , such as SK - N - Be ( 2 ) , the lack of PMA induction of differentiation was correlated with the lack of NF - kappa B activation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We found , moreover , that in SK - N - Be ( 2 ) cells protein kinase C ( PKC ) enzymatic activity was much lower compared with that in a control cell line and that the low PKC enzymatic activity was due to low PKC protein expression . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: NF - kappa B was not activated by retinoic acid , which induced morphological differentiation of all the neuroblastoma cell lines used in the present study . \nClassified Tokens List: 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Thus , NF - kappa B activation was not required for neuroblastoma cell differentiation . \nClassified Tokens List: 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Furthermore , the results obtained with TNF alpha proved that NF - kappa B activation was not sufficient for induction of neuroblastoma differentiation . \nClassified Tokens List: 0 0 0 0 0 0 1 2 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: ERP , a new member of the ets transcription factor / oncoprotein family : cloning , characterization , and differential expression during B - lymphocyte development . \nClassified Tokens List: 1 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The ets gene family encodes a group of proteins which function as transcription factors under physiological conditions and , if aberrantly expressed , can cause cellular transformation . \nClassified Tokens List: 0 1 2 2 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We have recently identified two regulatory elements in the murine immunoglobulin heavy - chain ( IgH ) enhancer , pi and microB , which exhibit striking similarity to binding sites for ets - related proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 0 1 0 1 0 0 0 0 0 0 1 2 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The ERP protein contains a region of high homology with the ETS DNA - binding domain common to all members of the ets transcription factor / oncoprotein family . \nClassified Tokens List: 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Three additional smaller regions show homology to the ELK - 1 and SAP - 1 genes , a subgroup of the ets gene family that interacts with the serum response factor . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 1 2 2 0 0 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Removal of the carboxy terminus enables ERP to interact with a variety of ets - binding sites including the E74 site , the IgH enhancer pi site , and the lck promoter ets site , suggesting a carboxy - terminal negative regulatory domain . \nClassified Tokens List: 0 0 0 1 2 0 1 0 0 0 0 0 0 1 2 2 2 0 0 1 2 0 0 1 2 2 2 0 0 0 1 2 2 2 0 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: At least three ERP - related transcripts are expressed in a variety of tissues . \nClassified Tokens List: 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: However , within the B - cell lineage , ERP is highly expressed primarily at early stages of B - lymphocyte development , and expression declines drastically upon B - cell maturation , correlating with the enhancer activity of the IgH pi site . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These data suggest that ERP might play a role in B - cell development and in IgH gene regulation . \nClassified Tokens List: 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Gene for a tissue - specific transcriptional activator ( EBF or Olf - 1 ) , expressed in early B lymphocytes , adipocytes , and olfactory neurons , is located on human chromosome 5 , band q34 , and proximal mouse chromosome 11 . \nClassified Tokens List: 0 0 0 1 2 2 2 2 0 1 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Murine B lymphocytes , adipocytes , and olfactory neurons contain a DNA - binding protein that participates in the regulation of genes encoding tissue - specific components of signal transduction . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Purification and cloning of this protein , termed early B - cell factor ( EBF ) , from murine B lymphocytes and independent cloning of a protein , termed Olf - 1 , from olfactory neuronal cells revealed virtual complete amino acid sequence identity between these proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: As a first step towards identifying a human genetic disorder or mouse mutation for which EBF could be a candidate gene , we have chromosomally mapped the corresponding locus in both species . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: By Southern hybridization analyses of somatic cell hybrid panels with murine cDNA probe , fluorescence chromosomal in situ hybridization ( FISH ) of human genomic clones , and analysis of recombinant inbred mouse strains , we have found single sites for EBF homologous sequences on human Chromosome ( Chr ) 5 , band q34 , and on proximal mouse Chr 11 , in an evolutionarily conserved region . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 1 2 0 0 0 1 2 2 2 0 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Calcineurin activates transcription from the GM - CSF promoter in synergy with either protein kinase C or NF - kappa B / AP - 1 in T cells . \nClassified Tokens List: 1 0 0 0 0 1 2 2 2 0 0 0 0 1 2 2 0 1 2 2 2 1 2 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The GM - kappa B sequence is recognized by NF - kappa B , which is mainly induced by PMA . \nClassified Tokens List: 0 1 2 2 2 2 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The CLE0 sequence interacts with factors , related to a PMA - induced AP - 1 and a PMA / A23187 - induced NF - AT . \nClassified Tokens List: 0 1 2 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 1 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We examined whether signal transducing components in T cells can activate transcription of the GM - CSF gene . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Cotransfection of NF - kappa B ( p50 / p65 ) - or AP - 1 ( c - Jun / c - Fos ) - expression vectors into Jurkat cells with a luciferase reporter containing the GM - CSF promoter did not stimulate transcription from the GM - CSF promoter . \nClassified Tokens List: 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 1 2 0 0 1 2 2 2 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In contrast , cotransfection with a combination of NF - kappa B and AP - 1 significantly augmented transcription from the GM - CSF promoter containing the GM - kappa B / GC - box and the CLE0 ( AP - 1 / NF - AT ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 0 1 2 2 0 0 0 0 0 1 2 2 2 0 0 1 2 2 2 2 2 2 2 0 0 1 0 1 2 2 2 2 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Expression of a constitutively active calcineurin ( CN ) , a Ca2 + / calmodulin - dependent protein phosphatase , potentiated by two fold the transcriptional activation by NF - kappa B / AP - 1 . \nClassified Tokens List: 0 0 0 0 0 1 0 1 0 0 0 1 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 2 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Both constitutively active forms of CN and protein kinase C ( PKC ) synergistically activated transcription from the GM - CSF promoter . \nClassified Tokens List: 0 0 0 0 0 1 0 1 2 2 0 1 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results suggest that cooperation among NF - kappa B - , AP - 1 - and NF - AT - binding sequences is required for induction of the GM - CSF gene through PKC - and Ca2 + - signaling pathways downstream of T cell activation . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Expression of the human PRL ( hPRL ) gene in extrapituitary sites such as the uterus ( decidualized endometrial stroma and myometrium ) and cells of the hematopoietic lineage is directed by an alternative promoter which is located approximately 6 kilobases ( kb ) upstream of the pituitary - specific start site . \nClassified Tokens List: 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 1 2 2 2 2 2 0 0 1 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In order to delineate the tissue - specific mechanisms governing the control of nonpituitary PRL gene expression , we have cloned and sequenced 3 kb 5 ' - flanking DNA of the upstream decidual / lymphoid ( dPRL ) promoter . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 1 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Based on sequence homology we identified two binding motifs for Pit - 1 and seven half - sites for glucocorticoid receptor / progesterone receptor ( PR ) binding . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 0 1 2 2 0 0 1 2 2 0 1 2 2 2 2 0 1 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We focused our studies on the role of Pit - 1 and of PR as potential transcriptional regulators , since the POU domain protein Pit - 1 is essential in the control of pituitary PRL expression , and progesterone induces decidual transformation of the endometrial stroma , a differentiation process during which the decidual PRL gene is activated . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 0 0 1 0 0 1 2 0 0 0 1 2 2 1 2 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We demonstrate in a variety of cell types , including lymphocytes and endometrial stroma , that Pit - 1 is not involved in the regulation of dPRL promoter / reporter gene constructs carrying 3 kb 5 ' - flanking DNA . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 1 2 2 2 2 2 0 1 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: When we compared the activity of the transfected dPRL promoter in PRL - secreting and nonsecreting lymphoid cells , we found that the 3 kb 5 ' - flanking region of the dPRL promoter did not contain elements restricting expression to only those lymphocytes that produce PRL but allowed expression of fusion reporter genes irrespective of the status of the endogenous PRL gene . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This was in sharp contrast to endometrial cells where 3 kb 5 ' - flanking DNA conferred strong transcriptional activation on the dPRL promoter in decidualized endometrial stromal cells actively secreting PRL , but did not allow transcription in undifferentiated non - PRL - secreting endometrial stromal cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Activation of the dPRL promoter construct in these undifferentiated cells could however be induced by the addition of cAMP , in the absence of progesterone , suggesting that a signal transduced through the cAMP signaling pathway is a primary inducer of decidual PRL gene expression . \nClassified Tokens List: 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Signals and nuclear factors that regulate the expression of interleukin - 4 and interleukin - 5 genes in helper T cells . \nClassified Tokens List: 0 0 1 2 0 0 0 0 0 1 2 2 2 2 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Mouse thymoma line EL - 4 cells produce cytokines such as interleukin ( IL ) - 2 , IL - 3 , IL - 4 , IL - 10 , and granulocyte - macrophage colony - stimulating factor in response to phorbol 12 - myristate 13 - acetate ( PMA ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 0 0 1 2 2 2 2 2 0 1 2 2 0 1 2 2 0 1 2 2 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: EL - 4 cells also produce low levels of IL - 5 when stimulated by PMA alone ; however , cAMP greatly augments PMA - dependent IL - 5 production . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A transient transfection assay revealed that two signals , PMA and cAMP , are required for optimal activation of the IL - 5 promoter . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In contrast , cAMP almost completely inhibited the PMA - dependent activation of the endogenous IL - 2 gene , as well as the transfected IL - 2 promoter . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results indicate that the IL - 5 gene is positively regulated by cAMP in a manner opposite to that for the IL - 2 gene . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The P sequence of the IL - 4 gene , defined as a responsive element for PMA and calcium ionophore ( A23187 ) , shares sequence similarity with the NF kappa B and the NF - activated T cell binding sites . \nClassified Tokens List: 0 1 2 0 0 1 2 2 2 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We attempted to determine whether NF ( P ) , a nuclear factor specific for the P sequence , is related to NF - kappa B and nuclear factor for activated T cell ( NF - AT ) . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 1 2 0 0 0 0 1 2 2 2 0 1 2 2 2 2 2 0 1 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In electromobility shift assays both NF - kappa B ( P65 or P65 / P50 heterodimer ) and NF - AT bound to the P sequence . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 1 0 1 2 2 2 0 0 1 2 2 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: However , sequence specificity of NF - AT was more similar to that of NF ( P ) , and only a small amount of P65 was detected in NF ( P ) . \nClassified Tokens List: 0 0 0 0 0 1 2 2 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 1 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results indicate that a component or components of NF - AT have the potential to reconstitute NF ( P ) , whereas NF - kappa B alone does not account for NF ( P ) in Jurkat crude extract . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 2 2 2 0 0 1 2 2 2 0 0 0 0 0 1 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Taken together , these results suggest that NF - AT - like factors are involved in the regulation of IL - 4 and IL - 5 genes . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Solution structure of a POU - specific homeodomain : 3D - NMR studies of human B - cell transcription factor Oct - 2 . \nClassified Tokens List: 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 1 2 2 2 2 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The POU DNA - binding motif defines a conserved family of eukaryotic transcription factors involved in regulation of gene expression . \nClassified Tokens List: 0 1 2 2 2 2 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This bipartite motif consists of an N - terminal POU - specific domain ( POUs ) , a flexible linker , and a C - terminal POU - specific homeodomain ( POUHD ) . \nClassified Tokens List: 0 1 2 0 0 0 1 2 2 2 2 2 2 0 1 0 0 0 1 2 0 0 0 1 2 2 2 2 2 2 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Here we describe the solution structure of a POU - specific homeodomain . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: An NMR model is obtained from Oct - 2 , a human B - cell specific transcription factor which participates in the regulation of immunoglobulin genes . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A fragment of Oct - 2 containing POUHD and an adjoining linker was expressed in Escherichia coli and characterized by three - dimensional nuclear magnetic resonance ( 3D - NMR ) spectroscopy . \nClassified Tokens List: 0 0 0 1 2 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Complete 1H and 15N resonance assignment of the POUHD moiety is presented . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The POUHD solution structure , as calculated by distance geometry and simulated annealing ( DG / SA ) , is similar to that of canonical homeodomains . \nClassified Tokens List: 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A salient difference between solution and crystal structures is observed in the C - terminal segment of alpha - helix 3 ( the HTH recognition helix ) , which is not well ordered in solution . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 2 2 2 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Because this segment presumably folds upon specific DNA binding , its flexibility in solution may reduce the intrinsic DNA affinity of POUHD in the absence of POUs . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: NF - kappa B - dependent and - independent pathways of HIV activation in a chronically infected T cell line . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: J delta K cells were isolated as a chronically infected survivor cell line , following infection of Jurkat CD4 + T cells with dl - NF , a mutated strain of human immunodeficiency virus type 1 ( HIV - 1 ) containing a deletion of the long terminal repeat ( LTR ) NF - kappa B sites . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 0 1 2 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: J delta K cells exhibited very low levels of constitutive HIV production . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: HIV - 1 expression was activated from J delta K cells by treatment with phorbol myristate acetate ( PMA ) , sodium butyrate ( NaB ) , or hexamethylene bisacetamide ( HMBA ) , but not tumor necrosis factor alpha ( TNF - alpha ) , confirming the role of NF - kappa B in mediating TNF - alpha induction of HIV transcription . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 2 2 0 0 0 0 0 0 1 2 2 2 0 0 1 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The strong induction of HIV expression by NaB or HMBA in J delta K cells clearly demonstrates the existence of NF - kappa B - independent mechanisms of HIV activation in chronically infected cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: J delta K cells may provide a useful model for characterizing NF - kappa B - independent transcriptional activation of the HIV LTR . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We investigated how these stimuli affect mitogen activated protein ( MAP ) kinases . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Alone , each stimulus resulted in little or no activation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Similar to its effect on IL - 2 induction , cyclosporin A ( CsA ) inhibited the synergistic activation of JNK , and a competitive inhibitor of Jun phosphorylation by JNK inhibited IL - 2 promoter activation . \nClassified Tokens List: 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 2 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: By contrast , the MAP kinases ERK1 and ERK2 were fully activated by TPA or TCR stimulation and were not affected by Ca2 + , CD28 , or CsA . \nClassified Tokens List: 0 0 0 0 1 2 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Hence , integration of signals that lead to T cell activation occurs at the level of JNK activation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Inhibition of rat splenocyte proliferation with methylprednisolone : in vivo effect of liposomal formulation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Rat splenocytes were found to have greater sensitivity to MPL ( EC50 = 7 . 9 nM ) than do human peripheral blood lymphocytes ( EC50 = 28 nM ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In vivo studies in rats utilized 2 mg / kg IV bolus doses of liposomal MPL compared to drug in solution . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Animals were sacrificed at various times post - dosing until 120 h , spleen was excised and , after incubation of lymphocytes with PHA , splenocyte blastogenic responses were assessed by measuring cellular incorporation of 3H - thymidine . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The suppressive effect of liposomal MPL in comparison with free drug was significantly prolonged ( > 120 h vs < 18 h ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: A nonlinear relationship was found between suppression of splenocyte proliferation and the concentration of bound glucocorticoid receptors in spleen . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Only partial receptor occupancy accompanied complete lymphocyte suppression . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The suppression of endogenous corticosterone in plasma for both treatments was similar with values from L - MPL rats returning to baseline after 24 h . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results demonstrate enhanced efficacy of local immunosuppression by targeting spleen with liposomal MPL . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Function of NF - kappa B / Rel binding sites in the major histocompatibility complex class II invariant chain promoter is dependent on cell - specific binding of different NF - kappa B / Rel subunits . \nClassified Tokens List: 0 0 1 2 2 2 2 2 2 2 0 0 1 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The promoter of the human major histocompatibility complex class II - associated invariant - chain gene ( Ii ) contains two NF - kappa B / Rel binding sites located at - 109 to - 118 ( Ii kappa B - 1 ) and - 163 to - 172 ( Ii kappa B - 2 ) from the transcription start site . \nClassified Tokens List: 0 1 0 0 0 0 1 2 2 2 2 2 2 2 2 2 0 1 0 0 0 1 2 2 2 2 2 2 2 0 0 1 2 2 2 2 0 1 2 2 2 2 0 0 1 2 2 2 2 0 1 2 2 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We report here that the differential function of each of these NF - kappa B / Rel sites in several distinct cell types depends on cell - specific binding of NF - kappa B / Rel transcription factors . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Ii kappa B - 1 is a positive regulatory element in B - cell lines and in the Ii - expressing T - cell line , H9 , but acts as a negative regulatory element in myelomonocytic and glia cell lines . \nClassified Tokens List: 1 2 2 2 2 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Electrophoretic mobility supershift assays determine that members of the NF - kappa B / Rel family of transcription factors can bind to this site in vitro and that DNA - binding complexes that contain p50 , p52 , p65 , and cRel correlate with positive regulation whereas the presence of p50 correlates with negative regulation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0 1 2 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 1 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In vivo occupancy of this site is observed only in the H9 T - cell line . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This differential binding of specific NF - kappa B / Rel subunits is likely to mediate the disparate functions of these two NF - kappa B / Rel binding sites . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Epstein - Barr virus ( EBV ) replicative gene expression in tumour cells of AIDS - related non - Hodgkin ' s lymphoma in relation to CD4 cell number and antibody titres to EBV . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: METHODS : Seventeen out of 22 cases of ARNHL were selected for the presence of EBV [ Epstein - Barr early region ( EBER ) RNA - positive ] . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Immunohistochemistry was performed with anti - ZEBRA , anti - EA - restricted , anti - VCA antibodies and in situ hybridization with BHLF1 / NotI oligoprobes on tumour samples . \nClassified Tokens List: 0 0 0 0 1 2 2 0 1 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Results were statistically correlated with those of CD4 + cell counts ( 17 out of 17 ) and with anti - EBV antibody titres ( 13 out of 17 ) assessed using standard immunofluorescence method and enzyme - linked immunosorbent assay procedure using recombinant ZEBRA protein and synthetic peptides as antigens . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: RESULTS : BZLF1 ( ZEBRA ) or early gene products ( EA - R and EA - D / BHLF1 / NotI ) were detected in a small proportion ( < 0 . 01 - 5 % ) of tumour cells in eight of these 17 cases by immunohistochemistry and in situ hybridization . \nClassified Tokens List: 0 0 1 0 1 0 0 1 2 2 0 1 2 2 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Demonstration of replicative gene expression did not correlate with either low CD4 + cell counts ( P > 0 . 05 ) or anti - EBV antibody titres ( P > 0 . 05 ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Anti - ZEBRA activity was not significantly increased in patients affected with ARNHL , the cells of which expressed replicative gene products ( P > 0 . 05 ) . \nClassified Tokens List: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: CONCLUSION : The degree of immunodeficiency does not clearly enhance replicative gene expression in tumour cells of ARNHL . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: EBV serology , including anti - ZEBRA activity , is not a reliable tool for predicting the occurrence of such proliferations . \nClassified Tokens List: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Effects of prostaglandin E2 on Th0 - type human T cell clones : modulation of functions of nuclear proteins involved in cytokine production . \nClassified Tokens List: 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 1 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The effects of prostaglandin E2 ( PGE2 ) on cytokine production and proliferation of the CD4 + human helper T cell clone SP - B21 were investigated . \nClassified Tokens List: 0 0 0 1 2 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In contrast , in cells stimulated with phorbol myristate acetate ( PMA ) / A23187 , PGE2 enhanced the production of IL - 4 and IL - 5 , and only partially inhibited the production of other cytokines . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 2 2 0 1 2 2 0 0 0 0 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Therefore , the effects of PGE2 vary depending on the mode of T cell activation , and the IL - 4 and IL - 5 are regulated differently from other cytokines . \nClassified Tokens List: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In a mobility shift assay , only the NF - kappa B ( p50 / p50 ) homodimer was observed in a complex formed with the kappa B sequence in unstimulated SP - B21 cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: When cells were stimulated with anti - CD3 mAb or PMA / A23187 , a complex formation of NF - kappa B ( p50 / p65 ) heterodimer with the kappa B sequence was induced . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 1 2 0 0 0 0 1 2 2 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Interestingly , PGE2 or di - butyryl ( Bt2 ) cAMP abolished the binding of NF - kappa B ( p50 / p65 ) heterodimer to the kappa B sequence in cells stimulated with anti - CD3 mAb but not with PMA / A23187 . \nClassified Tokens List: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 0 0 1 2 2 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Our results suggest that the target of PGE2 action is a component in the signal transduction pathway leading to the activation of protein kinase C . \nClassified Tokens List: 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: However , the inhibition of the T cell activation signals by PGE2 is selective . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: PGE2 enhanced the complex formation with NF - AT , AP - 1 and CLE0 sequences when the cells were activated by either anti - CD3 mAb or PMA / A23187 stimulation . \nClassified Tokens List: 1 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Characterization of NF ( P ) , the nuclear factor that interacts with the regulatory P sequence ( 5 ' - CGAAAATTTCC - 3 ' ) of the human interleukin - 4 gene : relationship to NF - kappa B and NF - AT . \nClassified Tokens List: 0 0 1 2 2 2 0 0 1 2 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 0 0 1 2 2 2 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The P sequence of the human interleukin - 4 ( IL - 4 ) gene , which was defined as a responsive element for phorbol 12 - myristate 13 - acetate and calcium ionophore ( A23187 ) in Jurkat T cells , shares sequence similarity with the NF - kappa B and the NF - AT binding sites . \nClassified Tokens List: 0 1 2 0 0 1 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: We examined whether NF ( P ) , a nuclear factor specific for the P sequence , is related to NF - kappa B and NF - AT . \nClassified Tokens List: 0 0 0 1 2 2 2 0 0 1 2 0 0 0 1 2 0 0 0 0 1 2 2 2 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: NF - kappa B ( P65 or P65 / P50 heterodimer ) bound to the P sequence in electrophoretic mobility shift assays ( EMSA ) and activated transcription through the P sequence when expression plasmids were cotransfected with P sequence - driven reporter plasmids in Jurkat T cells . \nClassified Tokens List: 1 2 2 2 0 1 0 1 2 2 2 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 1 2 0 0 0 1 2 2 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In EMSAs , NF ( P ) binding was inhibited by the unlabeled NF - AT binding site but not by the unlabeled AP1 binding site and purified NF - AT contained an activity that bound to the P sequence . \nClassified Tokens List: 0 0 0 1 2 2 2 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 1 2 2 2 0 1 2 2 2 0 0 0 0 0 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Both mobility shift and sequence specificity of NF - AT were similar to those of NF ( P ) and only a small amount of P65 was detected in NF ( P ) in crude nuclear extracts . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 0 0 0 1 2 2 2 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: These results indicate that the component ( s ) of NF - AT has the potential to reconstitute NF ( P ) whereas NF - kappa B alone can not account for NF ( P ) in crude extracts . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 1 2 2 2 0 1 2 2 2 0 0 0 0 0 1 2 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Unlike NF - AT , NF ( P ) does not contain AP1 as its DNA binding component . \nClassified Tokens List: 0 1 2 2 0 1 2 2 2 0 0 0 1 0 0 1 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Activation of early growth response 1 gene transcription and pp90rsk during induction of monocytic differentiation . \nClassified Tokens List: 0 0 1 2 2 2 2 0 0 1 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The present work has studied mechanisms responsible for induction of early growth response 1 ( EGR - 1 ) gene expression during monocytic differentiation of U - 937 myeloid leukemia cells . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Differentiation of U - 937 cells with 12 - O - tetradecanoylphorbol - 13 - acetate ( TPA ) , an activator of the serine / threonine protein kinase C , was associated with transcriptional activation of EGR - 1 promoter - reporter constructs . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 0 1 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The EGR - 1 promoter contains six CC ( A / T ) 6GG ( CArG ) motifs . \nClassified Tokens List: 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The two 5 ' - most distal CArG sequences conferred TPA inducibility . \nClassified Tokens List: 0 0 1 2 2 2 2 2 2 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In contrast , there was little effect of TPA on EGR - 1 transcription in a TPA - resistant U - 937 cell variant , designated TUR . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Treatment of both U - 937 and TUR cells with okadaic acid , an inhibitor of serine / threonine protein phosphatases 1 and 2A , was associated with induction of monocytic differentiation and EGR - 1 transcription through the 5 ' - most CArG element . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 1 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Since these findings supported the involvement of serine / threonine protein phosphorylation in the regulation of EGR - 1 expression , we studied activation of the 40S ribosomal protein S6 serine / threonine kinases , pp70S6K and pp90rsk . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 0 1 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Although both kinases participate in regulating cell growth , there was no detectable activation of pp70S6K during TPA - or okadaic acid - induced monocytic differentiation . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Okadaic acid treatment of both cell types was associated with activation of pp90rsk . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 1 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Antioxidants inhibit monocyte adhesion by suppressing nuclear factor - kappa B mobilization and induction of vascular cell adhesion molecule - 1 in endothelial cells stimulated to generate radicals . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 2 2 0 0 0 0 1 2 2 2 2 2 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Cell adhesion to endothelial cells stimulated by tumor necrosis factor - alpha ( TNF ) is due to induction of surface receptors , such as vascular cell adhesion molecule - 1 ( VCAM - 1 ) . \nClassified Tokens List: 0 0 0 0 0 1 2 2 2 2 2 2 0 1 0 0 0 0 0 0 1 2 0 0 0 1 2 2 2 2 2 0 1 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The antioxidant pyrrolidine dithiocarbamate ( PDTC ) specifically inhibits activation of nuclear factor - kappa B ( NF - kappa B ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0 1 2 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Since kappa B motifs are present in VCAM - 1 and intercellular adhesion molecule - 1 ( ICAM - 1 ) promoters , we used PDTC to study the regulatory mechanisms of VCAM - 1 and ICAM - 1 induction and subsequent monocyte adhesion in TNF - treated human umbilical vein endothelial cells ( HUVECs ) . \nClassified Tokens List: 0 1 2 2 0 0 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 1 2 2 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Gel - shift analysis in HUVECs demonstrated that PDTC prevented NF - kappa B mobilization by TNF , suggesting that only VCAM - 1 induction was controlled by NF - kappa B . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 1 0 0 0 0 1 2 2 0 0 0 0 1 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Since HUVECs released superoxide anions in response to TNF , and H2O2 induces VCAM - 1 , PDTC may act as a radical scavenger . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Although ICAM - 1 induction was unaffected , inhibitors of NADPH oxidase ( apocynin ) or cytochrome P - 450 ( SKF525a ) suppressed VCAM - 1 induction by TNF , revealing that several radical - generating systems are involved in its regulation . \nClassified Tokens List: 0 1 2 2 0 0 0 0 0 0 1 2 0 0 0 0 1 2 2 2 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: PDTC , apocynin , or SKF525a decreased adhesion of monocytic U937 cells to TNF - treated HUVECs ( by 75 % at 100 mumol / L PDTC ) . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Inhibition by anti - VCAM - 1 monoclonal antibody 1G11 indicated that U937 adhesion was VCAM - 1 dependent and suppression by antioxidants was due to reduced VCAM - 1 induction . \nClassified Tokens List: 0 0 1 2 2 2 2 2 2 1 0 0 0 0 0 1 2 2 0 0 0 0 0 0 0 0 0 1 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Displacement of an E - box - binding repressor by basic helix - loop - helix proteins : implications for B - cell specificity of the immunoglobulin heavy - chain enhancer . \nClassified Tokens List: 0 0 0 1 2 2 2 2 2 0 1 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The activity of the immunoglobulin heavy - chain ( IgH ) enhancer is restricted to B cells , although it binds both B - cell - restricted and ubiquitous transcription factors . \nClassified Tokens List: 0 0 0 0 1 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Activation of the enhancer in non - B cells upon overexpression of the basic helix - loop - helix ( bHLH ) protein E2A appears to be mediated not only by the binding of E2A to its cognate E box but also by the resulting displacement of a repressor from that same site . \nClassified Tokens List: 0 0 0 1 0 0 0 0 0 0 0 0 0 1 2 2 2 2 2 2 2 2 2 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 2 0 0 0 0 0 0 0 0 1 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Hence , we propose that a necessary prerequisite of enhancer activity is the B - cell - specific displacement of a ZEB - like repressor by bHLH proteins . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Inhibition of NF - kappa B by sodium salicylate and aspirin [ see comments ] \nClassified Tokens List: 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The transcription factor nuclear factor - kappa B ( NF - kappa B ) is critical for the inducible expression of multiple cellular and viral genes involved in inflammation and infection including interleukin - 1 ( IL - 1 ) , IL - 6 , and adhesion molecules . \nClassified Tokens List: 0 1 2 1 2 2 2 2 0 1 2 2 2 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 1 2 2 0 1 2 2 0 0 1 2 2 0 0 1 2 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: The anti - inflammatory drugs sodium salicylate and aspirin inhibited the activation of NF - kappa B , which further explains the mechanism of action of these drugs . \nClassified Tokens List: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: This inhibition prevented the degradation of the NF - kappa B inhibitor , I kappa B , and therefore NF - kappa B was retained in the cytosol . \nClassified Tokens List: 0 0 0 0 0 0 0 1 2 2 2 2 0 1 2 2 0 0 0 1 2 2 2 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Sodium salicylate and aspirin also inhibited NF - kappa B - dependent transcription from the Ig kappa enhancer and the human immunodeficiency virus ( HIV ) long terminal repeat ( LTR ) in transfected T cells . \nClassified Tokens List: 0 0 0 0 0 0 1 2 2 2 0 0 0 0 0 1 2 2 0 0 1 2 2 2 2 2 2 2 2 0 1 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: Expression of antisense myb RNA reduced the amount of c - myb mRNA , and the percentage of Hb - synthesizing cells was decreased to 20 % . \nClassified Tokens List: 0 0 1 2 2 0 0 0 0 1 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "input": "Tokens: In the presence of Epo , c - myb mRNA declined and 20 % of K562 cells synthesized Hb regardless of antisense myb RNA expression . \nClassified Tokens List: 0 0 0 0 1 0 1 2 2 2 0 0 0 0 0 0 0 0 1 0 0 1 2 2 0 0",
+            "output": [
+                "0"
+            ]
+        }
+    ]
+}
