@@ -1489,6 +1489,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1554_scitail_classification` | Classifying supporting and non supporting statements from SciTail  | Classification
 `task1555_scitail_answer_generation` | Generating answers to SciTail Sentence-Questions | Answer Generation
 `task1556_scitail_passage_generation` | Generating passage based on SciTail Question-Answer | Passage Generation
+`task1557_jfleg_answer_generation` | Generating answers (based on jfleg) | Answer Generation  
+`task1558_jfleg_incorrect_answer_generation` | Generating incorrect answers (based on jfleg) | Incorrect Answer Generation
+`task1559_blimp_binary_classification` | Classifying sentences (based on Blimp) | Binary Classification  
+`task1560_blimp_binary_classification` | Classifying sentences (based on Blimp) | Binary Classification 
 `task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
 `task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
 `task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
