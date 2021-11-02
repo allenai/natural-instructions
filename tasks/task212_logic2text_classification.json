@@ -3,22 +3,27 @@
         "Mihir Parmar"
     ],
     "Source": [
-        "Logic2Text (Link: https://github.com/czyssrs/Logic2Text)"
+        "Logic2Text (dataset: https://github.com/czyssrs/Logic2Text, paper:https://arxiv.org/abs/2004.14579)"
     ],
     "Categories": [
-        "Classification"
+        "Classification",
+        "Reasoning -> Logical Reasoning"
     ],
-    "Definition": "In this task, you are given commands (in terms of logical operations) to select relevant rows from the given table. Your job is to classify the command into one of these seven categories: (1) majority, (2) unique, (3) superlative, (4) count, (5) comparative, (6) aggregation, and (7) ordinal. \n Here are the defications of each category: \n 1. majority: Describing the majority values (most or all) over one column, with the scope of all table rows or a subset of rows \n 2. unique: Describing one unique row, regarding one column, with the scope of all table rows or a subset of rows \n 3. Superlative: Describing the maximum or minimum value in a column, with the scope of all table rows or a subset of rows \n 4. Ordinal: Describing the n-th maximum or minimum value in a column, with the scope of all table rows or a subset of rows \n 5. Comparative: Comparing two rows in the table, regarding their values in one column \n 6. Count: counting some rows in the table based on the values in one column, with the scope of all table rows or a subset of rows \n 7. Aggregation: Describing the sum or average value over a column, with the scope of all table rows or a subset of rows. \n Here are the definitions of logical operators for understanding of command: \n 1. count: returns the number of rows in the view \n 2. only: returns whether there is exactly one row in the view \n 3. hop: returns the value under the header column of the row \n 4. and: returns the boolean operation result of two arguments \n 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column \n 6. nth max/nth min: returns the n-th max/n-th min of the values under the header column \n 7. argmax/argmin: returns the row with the max/min value in header column \n 8. nth argmax/nth argmin: returns the row with the n-th max/min value in header column \n 9. eq/not eq: returns if the two arguments are equal \n 10. round eq: returns if the two arguments are roughly equal under certain tolerance \n 11. greater/less: returns if argument 1 is greater/less than argument 2 \n 12. diff: returns the difference between two arguments \n 13. filter eq/not eq: returns the subview whose values under the header column is equal/not equal to argument 3 \n 14. filter greater/less: returns the subview whose values under the header column is greater/less than argument 3 \n 15. filter greater eq /less eq: returns the subview whose values under the header column is greater/less or equal than argument 3 \n 16. filter all: returns the view itself for the case of describing the whole table \n 17. all eq/not eq: returns whether all the values under the header column are equal/not equal to argument 3 \n 18. all greater/less: returns whether all the values under the header column are greater/less than argument 3 \n 19. all greater eq/less eq: returns whether all the values under the header column are greater/less or equal to argument 3 \n 20. most eq/not eq: returns whether most of the values under the header column are equal/not equal to argument 3 \n 21. most greater/less: returns whether most of the values under the header column are greater/less than argument 3 \n 22. most greater eq/less eq: returns whether most of the values under the header column are greater/less or equal to argument 3",
+    "Definition": "In this task, you are given commands (in terms of logical operations) to select relevant rows from the given table. Your job is to classify the command into one of these seven categories: (1) majority, (2) unique, (3) superlative, (4) count, (5) comparative, (6) aggregation, and (7) ordinal. \n Here are the defications of each category: \n 1. majority: Describing the majority values (most or all) over one column, with the scope of all table rows or a subset of rows \n 2. unique: Describing one unique row, regarding one column, with the scope of all table rows or a subset of rows \n 3. Superlative: Describing the maximum or minimum value in a column, with the scope of all table rows or a subset of rows \n 4. Ordinal: Describing the n-th maximum or minimum value in a column, with the scope of all table rows or a subset of rows \n 5. Comparative: Comparing two rows in the table, regarding their values in one column \n 6. Count: counting some rows in the table based on the values in one column, with the scope of all table rows or a subset of rows \n 7. Aggregation: Describing the sum or average value over a column, with the scope of all table rows or a subset of rows. \n Here are the definitions of logical operators for understanding of command: \n 1. count: returns the number of rows in the view. \n 2. only: returns whether there is exactly one row in the view. \n 3. hop: returns the value under the header column of the row. \n 4. and: returns the boolean operation result of two arguments. \n 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column. \n 6. nth_max/nth_min: returns the n-th max/n-th min of the values under the header column. \n 7. argmax/argmin: returns the row with the max/min value in header column. \n 8. nth_argmax/nth_argmin: returns the row with the n-th max/min value in header column. \n 9. eq/not_eq: returns if the two arguments are equal. \n 10. round_eq: returns if the two arguments are roughly equal under certain tolerance. \n 11. greater/less: returns if the first argument is greater/less than the second argument. \n 12. diff: returns the difference between two arguments. \n 13. filter_eq/ filter_not_eq: returns the subview whose values under the header column is equal/not equal to the third argument. \n 14. filter_greater/filter_less: returns the subview whose values under the header column is greater/less than the third argument. \n 15. filter_greater_eq /filter_less_eq: returns the subview whose values under the header column is greater/less or equal than the third argument. \n 16. filter_all: returns the view itself for the case of describing the whole table \n 17. all_eq/not_eq: returns whether all the values under the header column are equal/not equal to the third argument. \n 18. all_greater/less: returns whether all the values under the header column are greater/less than the third argument. \n 19. all_greater_eq/less_eq: returns whether all the values under the header column are greater/less or equal to the third argument. \n 20. most_eq/not_eq: returns whether most of the values under the header column are equal/not equal to the third argument. \n 21. most_greater/less: returns whether most of the values under the header column are greater/less than the third argument. \n 22. most_greater_eq/less_eq: returns whether most of the values under the header column are greater/less or equal to the third argument.",
+    "Domains": [    
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
     "Positive Examples": [
         {
             "input": "round_eq { sum { all_rows ; casinos } ; 217 }",
             "output": "aggregation",
-            "explanation": "This command indicates the sum of rows, hence, aggregation is right category."
+            "explanation": "In this example sum returns the sum of the values in all of the casinos rows. Hence, aggregation is right category."
         },
         {
             "input": "eq { count { filter_eq { all_rows ; island ; hawaii } } ; 2 }",
             "output": "count",
-            "explanation": "This command count the rows where particular entries are located, hence, the category is count."
+            "explanation": "The count command counts the the island is hawaii, hence, the category is count."
         },
         {
             "input": "most_eq { filter_eq { all_rows ; team ; aston martin racing } ; class pos ; dnf }",
@@ -30,12 +35,12 @@
         {
             "input": "most_greater_eq { all_rows ; us viewers ( million ) ; 1.0 }",
             "output": "count",
-            "explanation": "This command indicates that we need to select some majority rows, but label is 'count' which is not right."
+            "explanation": "The most_greater_eq command indicates that we need to select some majority rows, but label is 'count' which is not right."
         },
         {
             "input": "less { hop { filter_eq { all_rows ; host team ; san diego chargers } ; final score } ; hop { filter_eq { all_rows ; host team ; philadelphia eagles } ; final score } }",
             "output": "ordinal",
-            "explanation": "This command indicates the comparision between rows, hence, 'comparative' category is right, but the label is 'ordinal' which is wrong."
+            "explanation": "The less command indicates the comparision between rows, hence, 'comparative' category is right, but the label is 'ordinal' which is wrong."
         }
     ],
     "Instances": [
