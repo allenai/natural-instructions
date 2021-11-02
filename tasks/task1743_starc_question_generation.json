@@ -1,0 +1,1319 @@
+{
+    "Contributors": [
+        "Mayank Garg"
+    ],
+    "Source": [
+        "STARC (https://arxiv.org/pdf/2004.14797.pdf)"
+    ],
+    "Categories": [
+        "Questions Generations"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "You're given a paragraph. You need to generate a question from the passage that evaluate one's understanding of such references. All the questions should be answerable from the given passage.",
+    "Positive Examples": [
+        {
+            "input": " From 2006 to 2008, Duran took out 68 commercial and personal loans from 39 banks in Spain. He farmed the money out to social activists, funding speaking tours against capitalism and TV cameras for a media network. “I saw that, on one side, these social movements were building alternatives but that they lacked resources and communication capacities,”he said. “Meanwhile, our economy was perpetually growing, which lead to a system that created money out of nothing.”",
+            "output": "['What was the money Duran took from the banks used for?', 'What does Duran believe was wrong with Spain’s economic system?', 'How has Spain’s economic situation been changing, according to Duran?']",
+            "explanation": "The first question is based on the following sentence in the passage \"He farmed the money out to social activists, funding speaking tours against capitalism and TV cameras\". The 2nd question is based on \"Meanwhile, our economy was perpetually growing, which lead to a system that created money out of nothing.\". The third question is based on \"Meanwhile, our economy was perpetually growing\". All the question can correctly be answered from the passage."
+        },
+        {
+            "input": " Clay Cockrell is sitting in his office at Columbus Circle, across the street from 1 Central Park West, which houses Trump International Hotel and Tower. In front of the tower is Central Park, where Cockrell holds his popular walk and talk therapy sessions. Cockrell, a former Wall Street worker turned therapist, spends large parts of his days walking through Central Park or the Battery Park in downtown Manhattan near Wall Street, as a confidant and counselor to some of New York’s wealthiest people.",
+            "output":"['Where does Clay Cockrell hold his popular therapy sessions?', 'What was Cockrell’s occupation before taking on his current job?', 'What is opposite Cockrell’s office?']",
+            "explanation":"The first question is based on the following sentence in the passage \"In front of the tower is Central Park, where Cockrell holds his popular walk and talk therapy sessions.\". The Second question is based upon \"Cockrell, a former Wall Street worker turned therapist\". The third question is based upon \"in his office at Columbus Circle, across the street from 1 Central Park West, which houses Trump International Hotel and Tower\". All the question can correctly be answered from the passage. "
+        }
+    ],
+    "Negative Examples": [
+        {   
+            "input": " Hannah, a 41-year-old City lawyer, has conducted nearly 500 visits for the Mystery Dining Company in her spare time without receiving remuneration or travel expenses. As a prestigious “platinum diner”, she is regularly hand-picked by the Mystery Dining Company to carry out their most exclusive assignments, enjoying £200 meals at Michelin-starred Mayfair restaurants and overnight stays at boutique hotels. But there’s no such thing as a free lunch, even if you work for a mystery dining company. Hannah says she typically spends two to four hours after each visit writing detailed reports on everything from the quality of the food to specific interactions with staff, whom she always needs to be able to name or “subtly” describe. Trickiest of all, she must memorize all these details while eating her meal – unable, of course, to openly write anything down.",
+            "output": "[' Who does Hanna visit?', ' Why can Hanna’s job be easy?', ' What is one thing Hannah must do when eating at a restaurant as a mystery diner?']",
+            "explanation": "The first question is out of context and could not be answered clearly from the paragraph. While the second question is asking \"why hanna's job is easy?\", but according to the paragraph her job becomes difficult."
+        },
+        {
+            "input": " Shoppers are usually repaid any money they spend in the stores. “I’m typically given between £5 and £20 to spend at each store, to assess the service I receive at the counter,” says Laura, a 50-year-old mystery shopper from Devon, who has been paid to visit around 7,000 shops since 2001. The purchase usually has to be related to a service or a type of product that the retailer wants her to check. “I’m always given a scenario, such as buying something from a specific department or a new product range, but, within that framework, I can often buy whatever I want – and keep it.”",
+            "output": "[' What does Laura get?', ' What is Laura’s job?', ' What items can Laura purchase at stores?']",
+            "explanation": "The first question is ambiguous and could not be answered from the given paragraph. There could be multiple answers for that. Again, the Second question is out of context, and it could not be clearly answered from the given passage."     
+        }
+    ],
+    "Instances": [
+        {
+            "input": " Galina Zaglumyonova was woken in her flat in central Chelyabinsk by an enormous explosion that blew in the balcony windows and shattered clay pots containing her few houseplants. When she jumped out of bed she could see a huge vapor trail hanging in the morning sky and hear the wail of car alarms from the street below. “I didn’t understand what was going on,” said Zaglumyonova. “There was a big explosion and then a series of little explosions. My first thought was that it was a plane crash.” What she had actually witnessed were the death throes of a ten-ton meteorite that plunged to Earth in a series of fireballs just after sunrise. Officials put the number of people injured at almost 1,200, with more than 40 taken to hospital – most as a result of flying glass shattered by the sonic boom created by the meteorite’s descent. There were no reported deaths.",
+            "output": [
+                " What happened in Galina's apartment because of the explosion?",
+                " What happened to almost 1,200 people?",
+                " Who arrived at the hospital?"
+            ]
+        },
+        {
+            "input": " The meteorite entered the atmosphere traveling at a speed of at least 33,000mph and broke up into chunks between 18 and 32 miles above the ground, according to a statement from the Russian Academy of Sciences. The event caused panic in Chelyabinsk, a Russian city of one million people to the south of the Ural mountains, as mobile phone networks swiftly became jammed by the volume of calls. Amateur video footage from the area, often peppered with the obscene language of frightened observers, showed the chunks of meteorite glowing more brightly as they approached the moment of impact. The vapor trail was visible for hundreds of miles around, including in neighboring Kazakhstan.",
+            "output": [
+                " Where is Chelyabinsk located?",
+                " What was notable about the vapor trail left behind by the meteorite?",
+                " Where do one million people live?"
+            ]
+        },
+        {
+            "input": " Tatyana Bets was at work in the reception area of a hospital clinic in the center of the city when the meteorite struck. “First we noticed the wind, and then the room was filled with a very bright light and we could see a cloud of some unspecified smoke in the sky,” she said. Then, after a few minutes, came the explosions. At least three craters were subsequently discovered, according to the Ministry of the Interior, and were being monitored by the military. One crater was more than six meters wide, while another lump of meteorite was reported to have slammed through the thick ice of a nearby lake. Radiation levels at the impact sites were normal, according to local military officials.",
+            "output": [
+                " What was Tatyana Bets doing as she noticed the wind, light and smoke?",
+                " What is true of one of the meteorite fragments?",
+                " What happened in the room Tatyana Bets worked in?"
+            ]
+        },
+        {
+            "input": " In Chelyabinsk itself, schools and universities were closed and many other staff told to go home early. About 200 children were among the injured. A steady stream of lightly injured people, most suffering cuts from flying glass, came into the clinic where Bets works. She said a nearby college was particularly badly affected and many of the students were brought in suffering from fright. “There were a lot of girls from the college in shock. Some were very pale and many of them fainted,” she said. Early estimates suggested more than 100,000 square meters of glass had been broken and 3,000 buildings hit. The total cost of the damage in the city was being valued at in excess of one billion roubles (£20m). ",
+            "output": [
+                " What is true of most of the people who came into the clinic where Bets works?",
+                " Who was in shock, according to Bets?",
+                " What does Bets say about the students of a nearby college?"
+            ]
+        },
+        {
+            "input": " The meteorite over Chelyabinsk arrived less than a day before asteroid 2012 DA14 was expected to make the closest pass to Earth (about 17,510 miles) of any recorded cosmic body. But experts said the two events were linked by nothing more than coincidence. Rumors and conspiracy theories, however, swirled in the first few hours after the incident. Reports on Russian state television and in local media suggested that the meteorite was engaged by local air defense units and blown apart at an altitude of more than 15 miles. ",
+            "output": [
+                " What is true of the asteroid 2012 DA14?",
+                " What did rumours say about the Russian military and air defense?",
+                " What took place in the first few hours after the incident?"
+            ]
+        },
+        {
+            "input": " The ultranationalist leader of Russia’s Liberal Democrat party, Vladimir Zhirinovsky, said it was not a meteorite but military action by the United States, echoing much of the speculation voiced on amateur film footage. “It’s not a meteorite falling – it’s a test of new American weapons,” Zhirinovsky said. Some were quick to take advantage of the confusion. Enterprising people were offering lumps of meteorite for sale through internet sites within a few hours of the impact. President Vladimir Putin and the Prime Minister, Dmitry Medvedev, were informed about the incident, and Putin convened a meeting with the head of the Emergency Situations Ministry. “It’s proof that not only are economies vulnerable but the whole planet,” Medvedev said at an economic forum in Siberia.",
+            "output": [
+                " What did Vladimir Zhirinovsky say?",
+                " What does Dmitry Medvedev say the incident shows?",
+                " How did some people react to the meteorite crash?"
+            ]
+        },
+        {
+            "input": " Swedish prisons have long had a reputation around the world for being progressive. But are the country’s prisons a soft option? The head of Sweden’s prison and probation service, Nils Oberg, announced in November 2013 that four Swedish prisons are to be closed due to an “out of the ordinary” decline in prisoner numbers. Although there has been no fall in crime rates, between 2011 and 2012 there was a 6% drop in Sweden’s prisoner population, now a little over 4,500. A similar decrease is expected in 2013 and 2014. Oberg admitted to being puzzled by the unexpected dip, but expressed optimism that the reason was to do with how his prisons are run. “We certainly hope that the efforts we invest in rehabilitation and preventing relapse of crime has had an impact,” he said.",
+            "output": [
+                " What changed between 2011 and 2012?",
+                " What does Oberg hope is the reason for the reduction in the number of prisoners in Sweden?",
+                " Did Oberg anticipate the falling number of prisoners in Swedish prisons?"
+            ]
+        },
+        {
+            "input": " “The modern prison service in Sweden is very different from when I joined as a young prison officer in 1978,” says Kenneth Gustafsson, governor of Kumla Prison, Sweden’s most secure jail. However, he doesn’t think the system has gone soft. “When I joined, the focus was very much on humanity in prisons. Prisoners were treated well – maybe too well, some might say. But, after a number of high-profile escapes in 2004, we had to implement changes to make prisons more secure.” The Swedes still managed to maintain a broadly humane approach to sentencing, even of the most serious offenders: jail terms rarely exceed ten years. Sweden was the first country in Europe to introduce the electronic tagging of convicted criminals and continues to strive to minimize short-term prison sentences wherever possible by using community-based punishments, which have been proven to be more effective at reducing reoffending.",
+            "output": [
+                " What changed in Swedish prisons after 2004?",
+                " What is one measure that has been effective in preventing criminals from reoffending?",
+                " What caused prisons to reevaluate their security in 2004?"
+            ]
+        },
+        {
+            "input": " The overall reoffending rate in Sweden stands at between 30 and 40% over three years – to compare that with another European country, the number is around half that of the UK. One likely reason for the relatively low reoffending rate and the low rate of incarceration in Sweden (below 70 per 100,000 head of population) is that the age of criminal responsibility is set at 15. In the UK, for example, children aged ten to 17 and young people under the age of 21 record the highest reoffending rates: almost three quarters and two thirds, respectively. A good proportion of these offenders go on to populate adult jails. In Sweden, no young person under the age of 21 can be sentenced to life – this is not the case in many other countries – and every effort is made to ensure that as few juvenile offenders as possible end up in prison.",
+            "output": [
+                " What does “below 70 per 100,000” refer to?",
+                " What is true of young offenders in many countries that is not true in Sweden?",
+                " What is true of offenders under the age of 15 in Sweden?"
+            ]
+        },
+        {
+            "input": " One strong reason for the drop in prison numbers might be the amount of post-prison support available in Sweden. A confident probation service – a government agency – is tasked not only with supervising those on probation but is also guaranteed to provide treatment programs for offenders with drug, alcohol or violence issues. The service is assisted by around 4,500 lay supervisors – members of the public who volunteer to befriend and support offenders under supervision. “In Sweden, we believe very much in the concept of rehabilitation, without being naive of course,” says Gustafsson. “There are some people who will not or cannot change. But, in my experience, the majority of prisoners want to change, and we must do what we can to help to facilitate that. It is not always possible to achieve this in one prison sentence.”",
+            "output": [
+                " Who helps the treatment programs for prisoners?",
+                " What is something Gustafsson says about prisoners’ behavior?",
+                " What kind of programs are run by the Swedish government?"
+            ]
+        },
+        {
+            "input": " There are approximately 50,000 mystery shopping trips carried out every month in the UK, according to the Mystery Shopping Providers Association, and, because more and more spending takes place online, the demand for mystery shoppers is growing. Mystery shoppers pretend to be a customer in a store but they are really collecting information on how good or bad its service is. “Retailers are becoming increasingly aware that shoppers who are prepared to set foot in a physical store want a service and an experience they can’t get online,” says Simon Boydell, spokesman for Marketforce, which has more than 300,000 mystery shoppers on its books. “Our clients want to measure how well their stores are delivering on that experience.”",
+            "output": [
+                " Which factor has been contributing to the increasing demand for mystery shoppers?",
+                " Why do retailers hire the services of Marketforce?",
+                " Who are the clients of Marketforce?"
+            ]
+        },
+        {
+            "input": " “We assign different store locations to each shopper and rotate them so that they never go back to the same shop within three months,” says Jill Spencer of mystery shopping company ABa. “Each day, they typically spend up to eight hours visiting five to ten stores, plus another hour or two filing detailed reports on every aspect of their visit.” For that, the mystery shoppers can earn up to £155 a day. They are also reimbursed for their gasoline and hotel stays, and compensated for their car depreciation (the shoppers can be expected to drive as many as 20,000 miles a year). Meanwhile, video mystery shoppers, who film their visits with a hidden camera planted in a buttonhole or handbag, can earn even more – around £300 a day.",
+            "output": [
+                " How many hours do mystery shoppers spend visiting stores per day?",
+                " What does the mystery shopper have to do to earn around £300 a day?",
+                " How many stores do mystery shoppers visit per day?"
+            ]
+        },
+        {
+            "input": " Like most full-time mystery shoppers, Laura is self-employed, taking jobs from ABa and other mystery shopping companies as and when they come up. Her income is typically £30,000 to £40,000 a year and that doesn’t include all the freebies she gets on the job. “With the perks, it’s enough to live on. But I don’t do it because I love shopping. In fact, I hate shopping now. When I’m not working, it pains me to have to go out and buy a pint of milk.” She does, however, find it satisfying to return to a store she has previously mystery shopped and see standards have improved. “I know it must be because of my feedback or why would they pay me to give it? Some of the retailers I shop at win awards for customer service and I think that is down to us mystery shoppers. I feel I’m not just doing a service to my company; I’m doing a service to all shoppers everywhere.”",
+            "output": [
+                " What is Laura’s opinion of her income from being a full-time mystery shopper?",
+                " What does Laura say is “satisfying”?",
+                " What does Laura find satisfying when returning to some of the stores she visited while mystery shopping?"
+            ]
+        },
+        {
+            "input": " It’s estimated that more than 500,000 people have registered as mystery shoppers in the UK, but just 10% or less manage to get regular work each month and this has led to a dramatic reduction in compensation. “Where once you got a fee, reimbursement for your purchase and mileage, you now often just receive a contribution towards a purchase,” says Val, a 51-year-old former mystery shopper. Nowadays, mystery shopping companies mostly rely on the promise of freebies to incentivize their workers. “Marketforce shoppers typically get a couple of pounds for a visit as a token gesture for their time and effort,” says Boydell. “At the most, we’ll pay £15 to £25 plus reimbursement for expenses, such as a meal for two or a hotel stay. We don’t directly employ any shoppers so we don’t have to pay them the minimum wage.”",
+            "output": [
+                " Who is Val?",
+                " What is the typical amount Marketforce pays mystery shoppers for one store visit?",
+                " What kind of expenses does Marketforce sometimes cover?"
+            ]
+        },
+        {
+            "input": " An octopus has made a brazen escape from the National Aquarium in New Zealand by breaking out of its tank, slithering down a 50-meter drainpipe and disappearing into the sea. In scenes reminiscent of Finding Nemo, Inky – a common New Zealand octopus – made his dash for freedom after the lid of his tank was accidentally left slightly ajar. Staff believe that in the middle of the night, while the aquarium was deserted, Inky clambered to the top of his glass enclosure, down the side of the tank and traveled across the floor of the aquarium. Rob Yarrell, national manager of the National Aquarium of New Zealand in Napier, said: “Octopuses are famous escape artists. I don’t think he was unhappy with us, or lonely, as octopuses are solitary creatures. But, he is such a curious boy. He would want to know what’s happening on the outside. That’s just his personality.”",
+            "output": [
+                " Why does Yarrell mention that octopuses live alone?",
+                " Why did Inky escape, according to Yarrell?",
+                " How does Yarrell describe Inky’s personality?"
+            ]
+        },
+        {
+            "input": " One theory is that Inky slid across the aquarium floor – a journey of three or four meters – and then, sensing freedom was at hand, into a drainpipe that led directly to the sea. The drainpipe was 50 meters long and opened onto the waters of Hawke’s Bay, on the east coast of New Zealand’s North Island. Another possible escape route could have involved Inky squeezing into an open pipe at the top of his tank, which led under the floor to the drain. “When we came in the next morning and his tank was empty, I was really surprised,” said Yarrell, who has not launched a search for Inky. “The staff and I have been pretty sad. But then, this is Inky and he’s always been a bit of a surprise octopus.”",
+            "output": [
+                " How did Inky escape?",
+                " What was the staff’s reaction to Inky’s disappearance?",
+                " Why does Inky’s escape make sense to Yarrell?"
+            ]
+        },
+        {
+            "input": " Reiss Jenkinson, exhibits keeper at the National Aquarium, said he was absolutely certain Inky had not been taken. “I understand the nature of octopus behavior very well,” he said. “I have seen octopuses on boats slip through bilge pumps. And, the security here is too tight for anyone to take Inky and why would they?” Because octopuses have no bones, they are able to fit into extremely small spaces and have been filmed squeezing through gaps the size of coins. They are also understood to be extremely intelligent and capable of using tools. At the Island Bay Marine Education Center in Wellington, an octopus was found to be in the habit of visiting another tank overnight to steal crabs, then returning to its own. Another at the center, Ozymandias, was thought to have broken a world record for opening a jar before it was released into the ocean.",
+            "output": [
+                " How good is the security of the aquarium, according to Jenkinson?",
+                " Why does the article mention Ozymandias?",
+                " According to Inky’s keeper, why is it likely Inky wasn’t stolen?"
+            ]
+        },
+        {
+            "input": " Inky was brought to the National Aquarium a number of years ago by a local fisherman who found him caught in a crayfish pot. He was scarred and “rough looking”, said Yarrell. “He had been living on the reef and fighting with fish so he wasn’t in the best shape.” According to Yarrell, Inky – who is about the size of a rugby ball – was an “unusually intelligent” octopus. “He was very friendly, very inquisitive and a popular attraction here. We have another octopus, Blotchy, but he is smaller than Inky and Inky had the personality.” The aquarium has no plans to step up security as a result of the escape as Inky was a “one-off” but the staff are “increasingly aware of what octopuses can actually do”. Although the aquarium is not actively searching for a replacement for Inky, if a fisherman brought in another octopus, it might be willing to take it on. ",
+            "output": [
+                " How was Inky before coming to the aquarium?",
+                " What will be the next steps of the aquarium?",
+                " Why was Inky in poor shape before coming to the aquarium?"
+            ]
+        },
+        {
+            "input": " DNA taken from the wisdom tooth of a European hunter-gatherer has given scientists an unprecedented glimpse of modern humans before the rise of farming. The Mesolithic man, who lived in Spain around 7,000 years ago, had an unusual mix of blue eyes, black or brown hair and dark skin, according to analyses of his genetic make-up. He was probably lactose intolerant and had more difﬁculty digesting starchy foods than the farmers who transformed diets and lifestyles when they took up tools in the ﬁrst agricultural revolution.",
+            "output": [
+                " What was unusual about the Mesolithic man?",
+                " Which of these foods would the Mesolithic man find difficult to digest?",
+                " Where did the Mesolithic man live?"
+            ]
+        },
+        {
+            "input": " The invention of farming brought humans and animals into much closer contact and humans likely evolved more robust immune systems to fend off infections that the animals passed on. But scientists may have overestimated the impact farming had in shaping the human immune system, because tests on the hunter-gatherer’s DNA found that he already carried mutations that boost the immune system to tackle various nasty bugs. Some live on in modern Europeans today. “Before we started this work, I had some ideas of what we were going to ﬁnd,” said Carles Lalueza-Fox, who led the study at the Institute of Evolutionary Biology in Barcelona. “Most of those ideas turned out to be completely wrong.”",
+            "output": [
+                " What did the DNA test reveal about human immune systems?",
+                " What does Lalueza-Fox say about the study results?",
+                " What did scientists assume about the hunter-gatherer’s immune system before the DNA tests of this study?"
+            ]
+        },
+        {
+            "input": " The Spanish team started their work after a group of cavers stumbled upon two skeletons in a deep and complex cave system high up in the Cantabrian Mountains of northwest Spain in 2006. The human remains, which belonged to two men in their early 30s, had been extremely well preserved by the cool environment of the cave. Carbon dating put the remains at around 7,000 years old, before farming had swept into Europe from the Middle East. The timing ﬁtted with ancient artifacts found at the site, including perforated reindeer teeth that were strung and hung from the people’s clothing.",
+            "output": [
+                " What does carbon dating tell us about the skeletons?",
+                " Where were reindeer teeth found?",
+                " What can be inferred about the Mesolithic cavemen based on items found in the cave?"
+            ]
+        },
+        {
+            "input": " On top of the scientiﬁc impact, artists might have to rethink their drawings of the people. “You see a lot of reconstructions of these people hunting and gathering and they look like modern Europeans with light skin. You never see a reconstruction of a Mesolithic hunter-gatherer with dark skin and blue eye color,” Lalueza-Fox said. The Spanish team went on to compare the genome of the hunter-gatherer to those of modern Europeans from different regions to see how they might be related. They found that the ancient DNA most closely matched the genetic makeup of people living in northern Europe, in particular Sweden and Finland.",
+            "output": [
+                " How will the discovery impact how artists should portray Mesolithic hunter-gatherers?",
+                " Which of these nationalities has DNA most closely related to Mesolithic hunter-gatherers?",
+                " How are Mesolithic hunter-gatherers currently portrayed through art?"
+            ]
+        },
+        {
+            "input": " The Moroccan city of Ouarzazate is used to big productions. It is on the edge of the Sahara Desert and at the center of Morocco’s “Ouallywood” film industry. Now, the trading city is the location for a complex of four linked solar mega-plants, which, alongside hydro and wind, will help provide nearly half of Morocco’s electricity from renewables by 2020 with, it is hoped, some spare to export to Europe. The project is a key plank in Morocco’s ambitions to use its deserts to become a global solar superpower. When the full complex is complete, it will be the largest concentrated solar power plant in the world and the first phase, called Noor 1, will go live in November 2015. The mirror technology it uses is less widespread and more expensive than the photovoltaic panels that are now familiar on roofs the world over but it will have the advantage of being able to continue producing power even after the sun goes down.",
+            "output": [
+                " Where will almost half of Morocco’s electricity will come from by 2020?",
+                " How does the mirror technology used in the power plant differ from familiar roof panels?",
+                " What is true of wind and hydro energy sources in Morocco?"
+            ]
+        },
+        {
+            "input": " As engineers put the finishing touches to Noor 1, its 500,000 crescent-shaped solar mirrors glitter across the desert skyline. The 800 rows follow the sun as it tracks across the heavens, whirring quietly every few minutes as their shadows slip further east. When they are finished, the four plants at Ouarzazate will occupy a space as big as Morocco’s capital city, Rabat, and generate 580 mega-watts (MW) of electricity, enough to power a million homes.",
+            "output": [
+                " What does the form of the mirrors resemble?",
+                " Where will 580 mega-watts of electricity be produced?",
+                " What will happen once the four plants are finished?"
+            ]
+        },
+        {
+            "input": " The potential for solar power from the desert has been known for decades. In the days after the Chernobyl nuclear accident in 1986, the German particle physicist Gerhard Knies calculated that the world’s deserts receive enough energy in a few hours to provide for humanity’s power needs for a whole year. The challenge, though, has been capturing that energy and transporting it to the population centers where it is required. Experts expect that solar energy will make up a third of Morocco’s renewable energy supply by 2020, with wind and hydro taking the same share each. “We are very proud of this project,” Morocco’s environment minister, Hakima el-Haite said. “I think it is the most important solar plant in the world.”",
+            "output": [
+                " What did Gerhard Knies say?",
+                " What will happen by 2020?",
+                " By 2020, two-thirds of Morocco’s renewable energy will be ..."
+            ]
+        },
+        {
+            "input": " Technicians say that the Noor 2 and 3 plants, due to open in 2017, will store energy for up to eight hours – opening the prospect of 24/7 solar energy in the Sahara and the surrounding region. But, even as the first phase of the project nears completion, Morocco is eyeing grander international ambitions. “We are already involved in high tension transportation lines to cover the full south of Morocco and Mauritania as a first step,” says Ahmed Baroudi, manager of the national renewable energy investment company. But he says the project’s ultimate impact will go far wider – even as far as the Middle East. Whether that ambition is achieved remains to be seen but exporting solar energy could have stabilizing effects within and between countries, according to the Moroccan solar energy agency (Masen). Talks are ongoing with Tunisia and energy exports northwards across the Mediterranean remain a key goal.",
+            "output": [
+                " What is true of the south of Morocco and Mauritania?",
+                " What is true of Tunisia?",
+                " What will the energy-storing capacity of the Noor 2 and 3 plants allow them to do?"
+            ]
+        },
+        {
+            "input": " “We believe that it’s possible to export energy to Europe but, first, we would have to build the interconnectors which don’t yet exist,” said Maha el-Kadiri, a Masen spokeswoman. “Specifically, we would have to build interconnections, which would not go through the existing one in Spain, and, then, start exporting.” Spain has itself prohibited new solar projects because of a lack of interconnectors to transmit the energy to France. In the meantime, Morocco is focused on using solar to meet its own needs for resource independence. This could, one day, include the removal of salt from sea water, in a country that is increasingly being hit by drought as the climate warms. Officials are keenly aware of the running they are making in what is the most advanced renewable energy program in the Middle East and North African region. “We are at the avant-garde of solar,” el-Kadiri says.",
+            "output": [
+                " According to Maha el-Kadiri, why does Morocco not export energy to Europe?",
+                " How could solar energy be used in the future?",
+                " What is Europe’s relation to Morocco’s solar energy program?"
+            ]
+        },
+        {
+            "input": " Crunchy, full of protein and to be found under a rock near you. Insects have long been overlooked as food in all but a handful of places around the world – but now they are crawling closer and closer to our plates. Spring 2013 will see a drive towards removing the yuck factor and putting insects not just on experimental gastronomic menus but also on supermarket shelves. In April, there will be a festival in London, Pestival 2013 – a Wellcome Trust-backed insect appreciation event where the consumption of creepy-crawlies comes high on the agenda. It will feature a two-day “pop-up” restaurant by the Nordic Food Lab, the Scandinavian team behind the Danish restaurant Noma, which brought ants to the table for a sellout ten-day run at Claridge’s hotel in London in 2012.",
+            "output": [
+                " What will happen in spring 2013?",
+                " Why does the author mention the Danish restaurant Noma?",
+                " Which of the following will be featured at Pestival 2013?"
+            ]
+        },
+        {
+            "input": " In March, a BBC documentary will feature food writer Stefan Gates searching out and eating deep-fried locusts and barbecued tarantulas. But, behind all the gimmicks and jokes about flies in the soup, there is a deeply serious message. Many experts believe there is a clear environmental benefit to humans eating creepy-crawlies. The UN’s Food and Agriculture Organization (FAO) has been funding projects since 2011 aimed at promoting the eating and farming of insects in south-east Asia and Africa, where an estimated two billion people already eat insects and caterpillar larvae as a regular part of their diet. In 2012, the FAO published a list of 1,909 edible species of insect and, with sponsorship from the Dutch government, plans a major international conference on “this valuable food source” in 2013.",
+            "output": [
+                " According to experts, what will be an effect of eating insects?",
+                " What is true about south-east Asia and Africa?",
+                " Why does the FAO fund projects in south-east Asia and Africa?"
+            ]
+        },
+        {
+            "input": " Over the next 30 years, the planet’s human population will increase to nine billion. Already one billion people do not get enough food. The increase will mean more pressure on agricultural land, water, forests, fisheries and biodiversity resources, as well as nutrients and energy supplies. The cost of meat is rising, not just in terms of hard cash but also in terms of the amount of rainforest that is destroyed for grazing or to grow feedstuff for cattle. There is also the issue of methane excreted by cows. The livestock farming contribution, in terms of greenhouse gas emissions, is enormous – 35% of the planet’s methane, 65% of its nitrous oxide and 9% of the carbon dioxide. ",
+            "output": [
+                " What will result from an increase in human population in the future?",
+                " Why are rainforests being destroyed?",
+                " Which of these is mentioned as a cost of meat?"
+            ]
+        },
+        {
+            "input": " Edible insects emit few gases, contain high-quality protein, vitamins and amino acids, and have a high food-conversion rate, needing a quarter of the food intake of sheep, and half of pigs and chickens, to produce the same amount of protein. They emit fewer greenhouse gases and less ammonia than cows and can be grown on organic waste. China is already successfully setting up huge maggot farms. Zimbabwe has a thriving mapone caterpillar industry and Laos was given nearly $500,000 by the FAO to develop an insect-harvesting project. It’s already big business in the UK, though not always official: a man was recently detained by Gatwick customs as he stepped off a flight from Burkina Faso with 94 kilos of mapone, worth nearly £40,000, in his luggage. A study by FoodServiceWarehouse.com suggested that swapping pork and beef for crickets and locusts could help to reduce greenhouse gas emissions by as much as 95%.",
+            "output": [
+                " What is one health benefit of eating insects?",
+                " What is one environmental benefit of replacing pork and beef with insects in a diet?",
+                " What is an advantage in producing food from insects rather than sheep?"
+            ]
+        },
+        {
+            "input": " A major international disagreement with wide-ranging implications for global drugs policy has erupted over the right of Bolivia’s indigenous Indian tribes to chew coca leaves, the principal ingredient in cocaine. Bolivia has obtained a special exemption from the 1961 Single Convention on Narcotic Drugs, the framework that governs international drugs policy, allowing its indigenous people to chew the leaves. Bolivia had argued that the convention was in opposition to its new constitution, adopted in 2009, which obliges it to “protect native and ancestral coca as cultural patrimony” and maintains that coca “in its natural state ... is not a dangerous narcotic.”",
+            "output": [
+                " What was the purpose of the 1961 Convention on Drugs?",
+                " What does Bolivia’s constitution say?",
+                " Who is currently permitted to consume coca in Bolivia?"
+            ]
+        },
+        {
+            "input": " South American Indians have chewed coca leaves for centuries. The leaves reputedly provide energy and are said to have medicinal qualities. Supporters of Bolivia’s position praised it for doing the right thing by defending the rights of indigenous people. “The Bolivian move is inspirational and groundbreaking,” said Danny Kushlick, Head of External Affairs at the Transform Drug Policy Foundation, which promotes drug liberalization. “It shows that any country that has had enough of the war on drugs can change the terms of its engagement with the UN conventions.” ",
+            "output": [
+                " Why do some people support Bolivia’s position?",
+                " According to Danny Kushlick, why was the Bolivian move significant?",
+                " Who is Danny Kushlick?"
+            ]
+        },
+        {
+            "input": " However, the UN’s International Narcotics Control Board (INCB), which monitors implementation of the global drug treaties, has accused Bolivia of threatening the integrity of the international drug control regime. A number of countries – including the UK, the US, Italy, Sweden, the Netherlands and Russia – opposed Bolivia’s demands. The UK’s submission to the UN, which oversees the convention, told the UN that it “acknowledges and respects the cultural importance of the coca leaf in Bolivia,” but it adds: “The United Kingdom is … concerned that the reservation could lead to increases in coca production and – most importantly – the amount of coca diverted to the cocaine trade. As such, the reservation would weaken international law as it relates to the global effort to tackle the illegal drugs trade and could weaken the international community’s response to that trade.”",
+            "output": [
+                " What stance are countries like the UK, the US, and Italy taking on Bolivia’s request?",
+                " What is the UK worried about?",
+                " What possible consequence of the exemption is the UK worried about most?"
+            ]
+        },
+        {
+            "input": " The right of indigenous communities in South America’s Andean region to chew coca leaf was removed in 1964 when Bolivia was under a dictatorship and it signed up to the convention. But Bolivia was given 25 years to implement the ban. This expired in 1989 and since then the issue has been under dispute. In 2011, Bolivia formally notified the UN of its withdrawal from the convention. On Friday it reacceded to the convention, but with an exemption from the prohibition on the chewing of coca leaves. The move is the first of its kind in the history of UN drug-control treaties and has sparked concerns that other countries may apply for amendments. Russia has argued that the move will lead to “an increase in illegal circulation of cocaine” and warned that “it also sets a dangerous precedent that could be used by other states in creating a more liberal drug-control regime.”",
+            "output": [
+                " What happened in 2011?",
+                " What does Russia believe the exemption will result in?",
+                " What did Russia warn will happen?"
+            ]
+        },
+        {
+            "input": " The British parliament has recommended that Bolivia’s request should be backed by the UK government, arguing that it was important that countries remained within the single convention. Bolivia’s re-accession could be blocked only if a third or more of the 184 countries that have signed up to the convention opposed its request. There are suspicions that the US and UK are frantically lobbying other countries to gain sufficient numbers to block Bolivia’s request. Nancie Prud’homme, of the International Center on Human Rights and Drug Policy, criticized the co-ordinated opposition to Bolivia’s demands. “These objections are legally questionable,” she said. “They support an arbitrary and over-broad provision and apply international drug laws in a vacuum. This is not appropriate. There are established international norms on cultural and indigenous rights, so we should support Bolivia’s efforts.”",
+            "output": [
+                " How could Bolivia’s return to the convention be blocked?",
+                " What does Nancie Prud’homme say is the norm across the globe?",
+                " According to Nancie Prud’homme, why should Bolivia’s efforts be aided?"
+            ]
+        },
+        {
+            "input": " The decision to ban coca chewing was based on a 1950 report produced by the UN Commission of Inquiry on the Coca Leaf, which proponents of drug liberalization say was not based on supporting evidence. In an interview in 1949, the head of the Commission, Howard B Fonda, signaled his opposition to the chewing of coca leaves before his inquiry had begun. Fonda told an interviewer: “We believe that the daily, inveterate use of coca leaves by chewing … is thoroughly noxious and therefore detrimental.” The growing of coca leaves is legal and licensed in Bolivia. The policy has been credited with a fall in cocaine production in the country, leading some experts to see the Bolivian model as a way forward for other countries.",
+            "output": [
+                " What was decided based on the 1950 report?",
+                " What do experts believe about Bolivia?",
+                " What did supporters of drug liberalization say about the UN report?"
+            ]
+        },
+        {
+            "input": " Agios Efstratios is so remote, so forgotten by the banks, the government and most of the modern world that the mobile phone network can’t process data and there isn’t a single ATM or credit-card machine on the island. Before Greece was plunged into financial chaos, residents of this tranquil outpost in the northern Aegean managed quite well. They did their banking at the post office and the few dozen rooms to rent were booked out every summer with people who had heard – by word of mouth – of its spectacular empty beaches, clear seas and fresh seafood.",
+            "output": [
+                " What event dramatically reduced the quality of life for residents in Agios Efstratios?",
+                " What was true about tourism in Agios Efstratios before the recent financial crisis?",
+                " Are there many hotels in Agios Efstratios?"
+            ]
+        },
+        {
+            "input": " But, because the island still runs on cash, the closure of banks nationwide has been devastating. Residents have been forced to make nine-hour round trips to the nearest big island to get cash and Greek visitors say they can’t get together enough cash to come. “Tourist numbers are down 80% this year,” said Mayor Maria Kakali, in an office in the village where she grew up, home to around 200 people. “Even people born here and living in Athens, who have their own places on the island, aren’t coming.”",
+            "output": [
+                " How has the closure of Greek banks affected the local residents of the island?",
+                " Why do Greek visitors no longer come to the island?",
+                " Where do island residents have to travel to get cash?"
+            ]
+        },
+        {
+            "input": " Kakali has badgered the government and a major Greek bank into promising an ATM within weeks but she still feels it may come too late for this season on an island where tourism dwarfs the two other sources of income: fishing and agriculture: “We have almost no reservations in August, when usually we have people calling us up asking to find a room and we can’t help them.” A hard winter ahead may be slightly improved by 50 workers billeted in the village to expand the harbor but there is an even bigger crisis looming because the government has said it will end a decades-old tax break for islands.",
+            "output": [
+                " How many tourists will likely visit the island this season compared to previous years?",
+                " What is the upcoming “bigger crisis”?",
+                " Who has said islands will stop getting their current tax breaks?"
+            ]
+        },
+        {
+            "input": " Created to help island communities survive when they were suffering mass emigration, a lower sales tax contained the costs of living in places where everything had to be imported and made tourism more affordable. Tourist favorites such as Mykonos fear that losing the tax breaks will make it hard for them to compete with Turkey but, for Agios Efstratios, it poses a far greater threat. “If we have to pay a tax of 23%, I’m sorry to say it but we will all die on the island,” says Kakali. Food and fuel are already more expensive than on mainland Greece, there are no economies of scale and little economic flexibility on an island which, even in summer, has only three shops, two restaurants and not a single official hotel. “This is an expensive island. Everything, even milk or bread, has changed hands three or four times before it gets to us and each middleman has to take a profit,” said Provatas Costas, a 58-year-old fisherman. ",
+            "output": [
+                " According to Kakali, what will happen in Agios Efstratios once the tax break ends?",
+                " Why are things generally more expensive in Agios Efstratios, according to Provatas Costas?",
+                " Why does Provatas Costas mention milk and bread when describing Agios Efstratios?"
+            ]
+        },
+        {
+            "input": " For Agios Efstratios and its closest large neighbor, Lemnos, the timing of the crisis is particularly cruel. They were condemned to relative obscurity for years in part because they are served by slow and unreliable ferries. In 2015, the government had finally given the contract to a new, efficient company, drawing floods of new visitors to explore the islands’ largely overlooked charms, before the bank controls hit. “This season started out as the best season in 30 years and, in one week, became the worst,” said Atzamis Konstantinos, a travel agent in Lemnos who used to earn €15,000 a month as a captain of petroleum tankers and other large ships but came home because he missed it so much. ",
+            "output": [
+                " What improvement made the islands more popular for tourists?",
+                " What caused this tourism season to be the worst in 30 years?",
+                " Why did people consider the islands as remote and obscure?"
+            ]
+        },
+        {
+            "input": " Lemnos has dozens of wild beaches, where even at the height of summer you can swim and sunbathe virtually alone, a small nightlife scene, and numerous cultural sites. Lemnos is the eighth largest island in Greece so it is in line for the first round of tax increases in autumn 2015 but far less wealthy than many smaller ones. It has just over 3,000 beds for visitors, compared with tens of thousands on an island such as Rhodes. Its councilors say that they will fight the tax rise, although none can say how. “We have been suffering economically in recent years and, now, we will suffer more,” said Lemnos Mayor, Dimitris Marinakis. “When there is not enough money, you reduce your consumption and therefore the whole economy declines.” ",
+            "output": [
+                " What is among the primary attractions of Lemnos?",
+                " Why does Lemnos have to pay the first round of tax increases?",
+                " How does Lemnos compare in size to other islands in Greece?"
+            ]
+        },
+        {
+            "input": " If taxes go up, even more young people will leave, warns Mayor Kakali, who has devoted her year in office to improving education on the island to help keep it an attractive place for families. Because it is one of the smallest islands, Agios Efstratios has until 2017 before the rise is due to come in, so Kakali hopes that the roller coaster of Greek politics means it yet may be spared. If not, though, she plans to travel to Athens to remind the distant government what the tax rise would cost. “The truth is the government doesn’t pay much attention to the islands of the north Aegean,” she said, “so I would take all the kids from our school to the gates of parliament, to tell them: ‘There is still life in these islands’.”",
+            "output": [
+                " What does Kakali hope will happen by 2017?",
+                " What will Kakali do if Agios Efstratios has to pay the proposed tax increase?",
+                " Why wasn’t Agios Efstratios one of the first islands to pay taxes?"
+            ]
+        },
+        {
+            "input": " A lonely old man living in a crater on the moon is the unlikely focus of John Lewis’s Christmas 2015 advertisement, as the department store puts a charitable spin on its latest multi-million pound campaign. Amid increasing hype around John Lewis’s seasonal ad, which has come to mark the beginning of the Christmas shopping season for many, the department store will aim to use its profile to raise hundreds of thousands of pounds for the charity Age UK. It will also encourage staff and customers to join up with their local branch of the charity to care for elderly people who might otherwise be alone over the holiday. The retailer has spent £7m on a campaign that ranges from the slick TV ad to a smartphone game and merchandise, including glow-in-the-dark pyjamas, as well as areas decked out like the surface of the moon in 11 stores.",
+            "output": [
+                " Where does the lonely old man appear in John Lewis’s advertisement?",
+                " What is one component of John Lewis’s campaign?",
+                " What will be introduced in 11 John Lewis stores?"
+            ]
+        },
+        {
+            "input": " After two years of successful ads featuring cuddly animals – a bear and hare, then a penguin – this time, the retailer is tugging at the heartstrings with a story of a young girl, Lily, who spots an old man living in a shack on the moon through her telescope. The determined child tries sending him a letter and firing a note via bow and arrow, before floating him a present of a telescope tied to balloons, which finally enables them to make contact. The ad’s strapline is: “Show someone they’re loved this Christmas,” which echoes Age UK’s own campaign: “No one should have no one at Christmas.” Profits from three products – a mug, gift tag and card – will go to the charity. “The charity really resonates with people at this time of year and the ad lends itself to thinking about someone who lives on your street that might not see anybody,” said Rachel Swift, head of marketing at John Lewis.",
+            "output": [
+                " How is the girl able to make contact with the old man?",
+                " Who does Rachel Swift work for?",
+                " What does the old man receive from the girl?"
+            ]
+        },
+        {
+            "input": " The campaign features the Oasis track Half the World Away reinterpreted by little-known Norwegian artist Aurora. The ad cost £1m to make. The moon scenes were shot at the Warner Bros Studios, where the Harry Potter films were made, and the specially built set was created by one of the team behind the latest Star Wars film, The Force Awakens. As in the last few years, John Lewis has drummed up interest in their most recent ad prior to its release with a teaser campaign on TV and social media using the hashtag #OnTheMoon. There will be a full moon on Christmas Day 2015 – a complete coincidence, according to Swift.",
+            "output": [
+                " Who performs a song for the campaign?",
+                " When was the hashtag #OnTheMoon released this year?",
+                " Who used the #OnTheMoon hashtag for their campaign?"
+            ]
+        },
+        {
+            "input": " In 2014, the retailer John Lewis also spent £7m on a campaign featuring a realistic animated penguin and a young boy playing together to the tune of John Lennon’s Real Love, sung by British singer-songwriter Tom Odell. It had drummed up 22 million views on YouTube by the first week of January, ahead of the 16.6 million clocked by Sainsbury’s ad featuring First World War soldiers sharing a bar of chocolate, the UK’s next most popular ad of 2014. Swift said that, despite the hype, John Lewis had stuck to the same strategy for the last five years. “It’s all about thoughtful gifting and going the extra mile for someone you love at Christmas,” she said. “In 2015, we don’t go into it thinking, 'This is going to be huge,' just getting something right for the brand at this time of year and something we hope customers really love.”",
+            "output": [
+                " Who had the UK’s second most popular advertisement in 2014?",
+                " Who does Swift hope will like John Lewis’ 2015 advertisement?",
+                " What was featured in the UK’s second most popular advertisement in 2014?"
+            ]
+        },
+        {
+            "input": " Vienna is the world’s best city to live in, Baghdad is the worst and London, Paris and New York do not even make it into the top 35, according to international research into quality of life. German-speaking cities dominate the rankings in the 18th Mercer Quality of Life study, with Vienna joined by Zurich, Munich, Dusseldorf and Frankfurt in the top seven. Paris has tumbled down the league, falling ten places to 37th, just ahead of London at 39th, almost entirely because of the city’s vulnerability to terrorist attacks. The study examined social and economic conditions, health, education, housing and the environment, and is used by big companies to assess where they should locate offices and factories and how much they should pay staff.",
+            "output": [
+                " What is the ranking of Paris in the 18th Mercer Quality of Life study?",
+                " What is one way in which big companies use the results of the Mercer Quality of Life study?",
+                " What factor can influence where big companies will open new offices and factories?"
+            ]
+        },
+        {
+            "input": " Viennese-born Helena Hartlauer, 32, said she was not surprised at her city’s top position. The municipality’s social democratic government has a long tradition of investing in high-quality social housing, making Vienna almost uniquely affordable among major cities. “I live in a 100sq-meter turn-of-the-century apartment in a good area about 20 minutes’ walk from the city center. But my rent is just €800 (£625) a month.” An equivalent apartment in London would cost upwards of £2,000 and even more in New York, ranked 44th in the table.",
+            "output": [
+                " Why is Vienna a cheap place to live compared to other cities?",
+                " How much rent does Helena Hartlauer pay for her apartment?",
+                " What is one thing Hartlauer lists as a desirable aspect of her apartment?"
+            ]
+        },
+        {
+            "input": " US cities perform relatively poorly in the study, largely because of issues around personal safety and crime. The highest ranking city in the US is San Francisco, at 28th; Boston is 34th. Canadian cities, led by Vancouver, far outrank their US rivals in the table. “You don’t realize how safe Vienna is until you head abroad,” said Hartlauer. “We also have terrific public transport, with the underground working 24 hours at weekends, and it only costs €1 per trip.”",
+            "output": [
+                " What does Hartlauer think about safety in Vienna?",
+                " What is one reason why the Viennese public transport system is good, according to Hartlauer?",
+                " What did going abroad make Hartlauer realize?"
+            ]
+        },
+        {
+            "input": " “Our big USP (unique selling point) is our geographical location,” said Martin Eichtinger, Austrian ambassador to London, who lived in Vienna for 20 years. “The fall of the Berlin Wall helped define Vienna as a hub for companies wanting to do business in Central Europe.” According to the World Bank, Austria has one of the highest figures for GDP per head in the world, just behind the US and ahead of Germany and Britain, although quite some way below neighboring Switzerland. Zurich in Switzerland is named by Mercer as having the world’s second highest quality of life but the Viennese say their city is far more fun. “There are more students in Vienna than any other German-speaking city,” said Hartlauer. “It’s a very fast growing, young and lively city,” she added – though she conceded she works for the city’s tourist board.",
+            "output": [
+                " What does Eichtinger say about business in Vienna?",
+                " How do the Viennese say their city compares to Zurich?",
+                " Where is the embassy at which Martin Eichtinger works located?"
+            ]
+        },
+        {
+            "input": " Angela Erdmann never knew her grandfather. He died in 1946, six years before she was born. But, on Tuesday 8th April, 2014, she described the extraordinary moment when she received a message in a bottle, 101 years after he had lobbed it into the Baltic Sea. Thought to be the world’s oldest message in a bottle, it was presented to Erdmann by the museum that is now exhibiting it in Germany.",
+            "output": [
+                " Who threw the bottle into the Baltic Sea?",
+                " Where is the bottle now?",
+                " How did Angela Erdmann find out about the bottle?"
+            ]
+        },
+        {
+            "input": " “It was very surprising,” Angela Erdmann, 62, said, recalling how she found out about the bottle. “A man stood at my door and told me he had post from my grandfather. He then told me that a message in a bottle had been found and that the name that was on the card was that of my grandfather.” Her visitor was a genealogical researcher who had managed to track her down in Berlin after the letter was given to the International Maritime Museum in the northern port city of Hamburg.",
+            "output": [
+                " What did Angela’s visitor deliver?",
+                " Who was Angela’s visitor?",
+                " How did the visitor know the message in the bottle was written by Angela’s grandfather?"
+            ]
+        },
+        {
+            "input": " The brown beer bottle, which had been in the water for 101 years, was found in the catch of Konrad Fischer, a fisherman, who had been out in the Baltic Sea off the northern city of Kiel. Holger von Neuhoff, curator for ocean and science at the museum, said this bottled message was the oldest he had come across. “There are documents that have been found without the bottle that are older and are in the museum,” he said. “But, with the bottle and the document, this is certainly the oldest at the moment. It is in extremely good condition.”",
+            "output": [
+                " How was the bottle discovered?",
+                " What does Holger von Neuhoff say about the bottled message?",
+                " Does the museum have older messages than the one recently discovered?"
+            ]
+        },
+        {
+            "input": " Researchers believe Erdmann’s grandfather, Richard Platz, threw the bottle in the sea while on a hike with a nature appreciation group in 1913. He was 20 years old at the time. Much of the postcard was indecipherable, although the address in Berlin on the front of the card was legible, as was the author’s polite request that the note be sent by the finder to his home address. “He also included two stamps from that time that were also in the bottle, so the finder would not incur a cost,” Erdmann said. “But he did not think it would take 101 years.” She said she was moved by the arrival of the message, although she had not known her grandfather because he died, at the age of 54, six years before she was born.",
+            "output": [
+                " According to researchers, when did Richard Platz throw the bottle into the sea?",
+                " What did Richard Platz request from the person who finds the bottle?",
+                " Where did Richard Platz want the postcard to end up?"
+            ]
+        },
+        {
+            "input": " “I knew very little about my grandfather, but I found out that he was a writer who was very open-minded, and believed in freedom and that everyone should respect each other,” she said. “He did a lot for the young and later traveled with his wife and two daughters. It was wonderful because I could see where my roots came from.” Like her grandfather, Erdmann said, she also liked culture and traveling around the world. She described herself as open-minded, too. “What he taught his two daughters, my mother taught me and I have then given to my sons,” she said. Despite her joy at receiving the bottled message, she said that she hoped others would not repeat what her grandfather had done and throw bottles with messages into the sea. “Today, the sea is so full of so many bottles and rubbish that more shouldn’t be thrown in there,“ she said.",
+            "output": [
+                " Which of the following characteristics does Angela Erdman share with her grandfather?",
+                " Does Angela approve of sending bottled messages into the sea nowadays?",
+                " What does Angella think of the state of the sea today?"
+            ]
+        },
+        {
+            "input": " The message and the bottle will be on display at Hamburg’s Maritime Museum until the beginning of May 2014, after which experts will attempt to decipher the rest of the text. It is not clear what will then happen to the bottle, but Erdmann hopes it will stay at the museum. “We want to make a few photos available to put with the bottle and give it a face, so visitors can see the young man who threw the bottle into the water,” she said.",
+            "output": [
+                " What will happen to the bottle after the experts finish examining the text?",
+                " What does Erdmann want to add to the bottle exhibit?",
+                " What does Erdmann want to happen to the bottle after the exhibit?"
+            ]
+        },
+        {
+            "input": " How far away are we from a world where drones deliver packages? If Amazon is to be believed, not far at all. Others are not so sure: technical progress past this point isn’t merely a matter of invention; it’s a matter of public safety. Paul Misener, Amazon’s vice-president of global public policy, told a congressional hearing recently that his company would be ready as soon as all the rules were in place. The Federal Aviation Authority (FAA) will finally have regulations governing the commercial use of unmanned aircraft by June 2016. But the technology has a long way to go before then and larger machines aren’t airway-legal at all yet – only drones up to 25kg will be covered and the FAA points out in the proposed rules that, if you’re going to crowd the skies with radio-controlled flying robots, they had better all be using different radio frequencies that nobody can jam or hijack. ",
+            "output": [
+                " When does Amazon claim it will be ready to deliver packages using drones?",
+                " What will be included in FAA’s new drone rules regarding radio frequencies?",
+                " When will the FAA release regulations on drones?"
+            ]
+        },
+        {
+            "input": " Professor Sanjiv Singh, who runs a cargo delivery company called NearEarth, said that piloting a state-of-the-art drone was a little more like leaving it a trail of breadcrumbs: go to this altitude, perform this short task, go back home. But even short flights from a mobile landing pad pose serious logistical problems, he said. “They’re not proposing to deliver from one uninhabited place to another uninhabited place; they’re proposing to deliver from a warehouse to where the consumer is, which is likely an urban area,” he said. “There are going to be hazards along the way that the vehicle is going to have to detect. Maybe there will be terrain that the map doesn’t know about. Even then, maybe there’s construction equipment that wasn’t there but is there now. Maybe GPS signals are blocked, in which case it’s going to have an incorrect idea about where it is.” All this is surmountable, he said – but it’s difficult.",
+            "output": [
+                " Why does Sanjiv mention GPS systems?",
+                " What does Professor Singh think about fixing current drone delivery problems?",
+                " What is Professor Singh worried will happen when the drone is unable to access GPS signals?"
+            ]
+        },
+        {
+            "input": " One major problem is maintaining radio contact with a drone and planning for what happens if that contact breaks. “If you have an off-the-shelf UAV (unmanned aerial vehicle), it’ll just keep going and crash into the ground,” said roboticist Daniel Huber. “Technologically, most of the things that are needed for this are in place,” said Huber. He is working on a program that proposes using drones to inspect infrastructure – pipelines, telephone lines, bridges and so on. “We’ve developed an exploration algorithm where you draw a box around an area and it’ll autonomously fly around that area and look at every surface and then report back.” ",
+            "output": [
+                " What currently happens to a typical drone if it loses contact with its human operator?",
+                " What is Huber working on to improve drone technology?",
+                " What will Huber’s program enable drones to do?"
+            ]
+        },
+        {
+            "input": " Huber said about Amazon: “I have heard them say that many packages are lightweight – a drone can carry a kilogram for 15 minutes. If you have a vehicle that can go into a neighborhood, it can deliver from that base. You need a 15-minute distance and typical off-the-shelf drones have about that distance.” It’s one way, he said, of making sure the surrounding population is relatively safe. “The larger the distance the drone travels, the more dangerous it becomes.” Of course, safety remains a major concern – Singh points out that, for a commercial aircraft to be considered skyworthy, it has to prove a rate of one serious failure every one million hours. Drones, he said, are “one or two orders of magnitude away” from that benchmark. “The Reaper drone has one failure in 10,000 hours,” Singh said. An oil leak, by the way, doesn’t count as catastrophic failure – something has to fall out of the sky.",
+            "output": [
+                " What happens as you increase the distance a drone travels to deliver a package?",
+                " What determines if a passenger plane is allowed to operate?",
+                " What is one way to increase drone safety, according to Huber?"
+            ]
+        },
+        {
+            "input": " Part of this is simply that air travel is inherently dangerous and, thus, standards are much higher. “If you fly commercial airlines, often they’ll say, ’Oh, a small component has failed – we have to go back to the gate,’” Singh said. “And that’s an established industry with 60 years of legacy! I shudder to think that one of these things might come down on a crowded highway.” Part of the solution, Singh said, is comprehensive contingency planning: “If things fail, the vehicle has to do something reasonable.”",
+            "output": [
+                " Why does Singh bring up the example of passenger airplanes?",
+                " What does Singh say drones should do to improve safety?",
+                " According to Singh, why do passenger airplanes often return to the gate?"
+            ]
+        },
+        {
+            "input": " They call him the Robin Hood of the banks, a man who took out dozens of loans, worth almost half a million euros, with no intention of ever paying them back. Instead, Enric Duran handed the money out to projects that created and promoted alternatives to capitalism. After 14 months in hiding, Duran is unapologetic, even though his activities could land him in jail. “I’m proud of what I did,” he said in an interview by Skype from an undisclosed location. ",
+            "output": [
+                " What did Enric Duran do with the money he took from the banks?",
+                " How did Enric feel about taking money from banks?",
+                " What was Duran’s relationship to anti-capitalist projects?"
+            ]
+        },
+        {
+            "input": " The loans Duran swindled from banks were his way of regulating and denouncing this situation, he said. He started slowly. “I filled out a few credit applications with my real details. They denied me, but I just wanted to get a feel for what they were asking for.” From there, the former table-tennis coach began to weave an intricate web of accounts, payments and transfers. “I was learning constantly.” By the summer of 2007, he had discovered how to make the system work, applying for loans under the name of a false television production company. “Then, I managed to get a lot.” €492,000, to be exact.",
+            "output": [
+                " Why did the banks reject Duran’s loan applications at first?",
+                " How did Duran obtain a lot of money in 2007?",
+                " How much money did Duran manage to take out in loans?"
+            ]
+        },
+        {
+            "input": " Duran was arrested in Spain in 2009, on charges brought against him by six of the 39 banks that had lent him money. He spent two months in prison before being bailed for €50,000. In February 2013, facing up to eight years in prison, he decided to flee rather than stand trial. “I don’t see legitimacy in a judicial system based on authority, because I don’t recognize its authority,” he said. His actions, he said, were in the vanguard of a worldwide debate on the economic crisis. The timing pushed the anti-capitalist movement into the light, just as many Spaniards were seeking alternatives to a system that had wreaked havoc on their lives.",
+            "output": [
+                " Why did Duran leave Spain?",
+                " What effect did Duran’s actions before his arrest have?",
+                " How much prison time would Duran have to serve if he hadn’t fled Spain?"
+            ]
+        },
+        {
+            "input": " While the same actions would probably be better understood in today’s Spain, he said that they would not be needed. The anti-capitalist movement has grown from a fringe movement to one supported by thousands of Spaniards, he said, evidenced by the widely supported movements such as the Indignados. Duran is widening his focus to include Spain’s justice system, by promoting restorative justice. “The people in Spain who believe that banks don’t work, they think that I don’t owe anything. I also think that,” he said. “But there is a part of a population that is not in agreement with us and I think I should respond to that.” In his case, he said, the element of reciprocity he could offer to banks might lie in the insight he gleaned from years of obtaining bank loans fraudulently. He could share his thoughts on “which best practices work and the bad ones that don’t, for the general population and for bank workers”.",
+            "output": [
+                " How much money is Duran willing to return to the banks?",
+                " Who does Duran plan to share the knowledge he gained with?",
+                " How did Duran learn about the Spanish banking system?"
+            ]
+        },
+        {
+            "input": " Tigers are more numerous in Nepal than at any time since the 1970s, a new census has revealed, giving conservationists hope that the big cats, whose numbers have been dropping across south Asia for 100 years, can be saved. The number of wild royal bengal tigers in Nepal has increased to 198 – a 63.6% rise in five years – the government survey showed. “This is very encouraging,” said Maheshwar Dhakal, an ecologist with Nepal’s Department of National Parks and Wildlife Conservation. The census is based on the examination of pictures from more than 500 cameras placed in five protected areas and three wildlife corridors. More than 250 conservationists and wildlife experts worked on the survey, which cost about £250,000.",
+            "output": [
+                " What has happened to Nepal’s royal bengal tiger population over the past five years?",
+                " What was done as part of the tiger population study?",
+                " What is true of conservationists and wildlife experts working on the survey?"
+            ]
+        },
+        {
+            "input": " Increasing prosperity in Asia has pushed up prices for tiger skins and the body parts used in traditional Chinese medicines. International gangs pay poor local Nepali significant sums to kill the cats. The skin and bones are handed to middlemen, who pass easily through the porous border to India, where the major dealers are based. One major problem is complicity between senior officials and mafia networks involved in the trade.",
+            "output": [
+                " What do international gangs do?",
+                " What is one problem with some of the senior officials in Nepal which hinders the reduction of the tiger trade?",
+                " How are poor locals involved in the tiger trade?"
+            ]
+        },
+        {
+            "input": " Conservation experts credit the increase in numbers to the effective policing of national parks, stronger anti-poaching drives and better management of tiger habitats in Nepal, where forests cover 29% of the land. But they say Nepal needs to do more to protect the habitat and animals on which tigers prey so the big cats have enough space to roam and food to eat. As the number of tigers has increased over the years, so have incidents of conflict with villagers. Seven people were killed in attacks by tigers around national parks in 2012 compared to four in 2011, park officials said. Villagers are also seeking better protection.”",
+            "output": [
+                " According to conservation experts, what is one reason for the increase in the tiger population in Nepal?",
+                " What is one consequence of the increase in the number of tigers in Nepal?",
+                " What do conservation experts say has changed with respect to tiger habitats?"
+            ]
+        },
+        {
+            "input": " The government is making conservation plans for tigers. But it should also come up with plans to protect people from tigers,” Krishna Bhurtel, a local village headman in Chitwan, told Nepali newspaper Nagarik. Wildlife authorities captured a tiger in Chitwan after it killed two people, including a villager who was pulled from his bed in May. Thousands of tigers once roamed the forests in Bangladesh, India and Nepal. But their numbers have dropped to about 3,000, a 95% drop over a century. Chitwan National Park in central Nepal has the highest number of adult tigers, with 120, followed by Bardiya National Park (50) and Shukla Phanta Wildlife Reserve (17).",
+            "output": [
+                " What happened in a recent tiger incident in a village?",
+                " What happened to the tiger population of Bangladesh, India and Nepal in the past hundred years?",
+                " What happened in May?"
+            ]
+        },
+        {
+            "input": " Dhakal said that a parallel survey was conducted in India and the results from both countries will be published later in 2013. “It will take a few more months for India, which now has 1,300 big cats in several huge protected areas, to finalize the data,” he added. Nepal has pledged to double its own population of tigers by the year 2022 from 121 in 2009 when the last systematic tiger count took place. Diwakar Chapagain, who heads a World Wildlife Fund Nepal unit that monitors wildlife trade, said tiger skins were in demand in Tibet, where well-heeled people use them as festival costumes. In Nepal, kings used to stand on tiger skins for special occasions. Some affluent Nepali have mounted tiger heads on the walls of their living rooms. Tiger bones are in high demand for use in traditional Chinese medicines.” The trade in tiger parts is lucrative and fetches thousands of dollars in illegal markets,” Chapagain said.",
+            "output": [
+                " What happened in India in 2013, according to Dhakal?",
+                " What did kings used to do in Nepal?",
+                " When will India finish its tiger survey?"
+            ]
+        },
+        {
+            "input": "w Form of Lie Detector Test",
+            "output": []
+        },
+        {
+            "input": " Police and intelligence agencies around the world have, for almost 100 years, relied on polygraphs as lie detectors to help convict criminals or unearth spies and traitors. The polygraph is beloved of the movies, with countless dramatic moments showing the guilty sweating profusely as they are hooked up. But the invention could soon be defunct. Researchers in Britain and the Netherlands have made a breakthrough, developing a method with a success rate in tests of over 70% that could be in use in police stations around the world within a decade. Rather than relying on facial tics, talking too much or waving of arms – all seen as tell-tale signs of lying – the new method involves monitoring full-body motions to provide an indicator of signs of guilty feelings. ",
+            "output": [
+                " When is the new lie detection method expected to work with over 70% accuracy?",
+                " What does the new method of lie detection monitor that the polygraph does not?",
+                " When are police stations expected to start using the new lie detection method?"
+            ]
+        },
+        {
+            "input": " The polygraph is widely used in the US in criminal and other cases and for security clearance for the FBI and CIA but is much less popular in Europe. There has been a lot of skepticism in the scientific and legal communities about its reliability. By contrast, the new method developed by the researchers has performed well in experiments. The basic premise is that liars fidget more and so the use of an all-body motion suit – the kind used in films to create computer-generated characters – will pick this up. One of the research team, Ross Anderson, said: “Decades of deception research show that the interviewer will tell truth from lies only slightly better than random.” He said the new method, by contrast, achieved a reliability rating of over 70%. In some tests, the team has already achieved more than 80%. Anderson said: “The takeaway message is that guilty people fidget more and we can measure this robustly.”",
+            "output": [
+                " What can an all-body suit be used for?",
+                " What does Anderson say can be measured now?",
+                " What position does Ross Anderson hold?"
+            ]
+        },
+        {
+            "input": " The polygraph was created in 1921 by policeman John Larson, based on research by the psychologist William Marston. It records changes in pulse, blood pressure, sweating and breathing to ascertain whether a subject is lying. While cinema depictions suggest the device is near-infallible, the US Supreme Court ruled, in 1998, that there was no consensus that the polygraph was reliable, a finding supported by the US National Academy of Scientists in 2003.",
+            "output": [
+                " Who was John Larson?",
+                " What happened in 1998?",
+                " Who first stated that the polygraph might not be reliable?"
+            ]
+        },
+        {
+            "input": " The experiment carried out by Anderson and his colleagues involved 180 students and employees at Lancaster University, of which half were told to tell the truth and half to lie. They were each paid £7.50 for their participation in the 70-minute experiment, involving two tests. Some were interviewed about a computer game Never End, which they played for seven minutes, while others lied about playing it, having only been shown notes about it. The second test involved a lost wallet containing £5. Some were asked to bring the wallet to a lost-and-found box while others hid it and lied about it. ",
+            "output": [
+                " What did participants lie about in the Never End game experiment?",
+                " What were some people supposed to do with the wallet?",
+                " What did some participants do for seven minutes?"
+            ]
+        },
+        {
+            "input": " “Overall, we correctly classified 82.2% (truths: 88.9%; lies: 75.6%) of the interviewees as either being truthful or deceptive based on the combined movement in their individual limbs,” the report says. Anderson said: “Our first attempt looked at the extent to which different body parts and body signals indicated deception. It turned out that liars wave their arms more but, again, this is only at the 55% level that you can get from a conventional polygraph. The pay dirt was when we considered total body motion. That turns out to tell truth from lies over 70% of the time.” The use of all-body suits is expensive – they cost about £30,000 – and can be uncomfortable, and Anderson and his colleagues are now looking at low-cost alternatives. These include using motion-sensing technology from computer games, such as the Kinect camera devices developed by Microsoft for the Xbox console.",
+            "output": [
+                " What is one reason Anderson is looking for alternatives to body suits?",
+                " What is one possible alternative to the body suit?",
+                " Which of the following is true about body suits?"
+            ]
+        },
+        {
+            "input": " The regulation eight hours in the office is over. The most important work of the day is done; whatever is left can wait until the morning. This is the point many workers would think about heading for the door. Yet, for millions of Japanese employees, the thought of clearing away their desks and being at home in time for dinner is enough to invite accusations of disloyalty to the company. But, after decades of giving companies carte blanche to milk every last drop of productivity from their workforce, a challenge to Japan’s ingrained culture of overwork has come from the government, which is considering making it a legal requirement for workers to take at least five days’ paid holiday a year.",
+            "output": [
+                " Why would someone be considered disloyal to their company in Japan?",
+                " What does the Japanese government want workers to do now?",
+                " Who or what is driving the change in Japanese work habits?"
+            ]
+        },
+        {
+            "input": " Japanese employees are currently entitled to an average 18.5 days’ paid holiday a year – only two fewer than the global average – with a minimum of ten days, as well as 15 one-day national holidays. In reality, few come even close to taking their full quota, typically using only nine of their 18.5-day average entitlement. While many British workers regard a two-week summer holiday as an inalienable right, workers in Japan have come to see a four-night vacation as the height of self-indulgence. The move, to be debated in the current parliamentary session, comes after companies started encouraging employees to nap on the job to improve their performance. By the end of the decade, the government hopes that, if passed, the law will push Japanese employees towards following the example set by British workers, who use an average of 20 days’ paid annual leave, and those in France, who take an average of 25.",
+            "output": [
+                " What are Japanese workers likely to think about taking a two-week summer holiday?",
+                " What does the government hope will happen by 2020?",
+                " What are British workers likely to think about a four-night vacation?"
+            ]
+        },
+        {
+            "input": " Japan’s unforgiving work culture may have helped turn it into an economic superpower, its corporate foot soldiers revered in the rest of the world for their commitment to the company, but this has often been to the exclusion of everything else. Japan’s low birth rate and predictions of rapid population decline are partly blamed on the lack of time couples have to start families. More employees are falling ill from stress, or worse, succumbing to karoshi, death through overwork. Despite studies suggesting that longer hours in the office or workshop or on the factory floor do not necessarily make people more productive, today’s workers are still nursing a collective hangover from the bubble years of the 1980s.",
+            "output": [
+                " How do people in the world view the Japanese employees?",
+                " What is increasingly happening to Japanese employees because of work?",
+                " What has increased because of the Japanese culture of overworking?"
+            ]
+        },
+        {
+            "input": " About 22% of Japanese work more than 49 hours a week, compared with 16% of US workers and 11% in France and Germany, according to data from the Japanese government. In spending 14 hours a day at work and giving up many of her paid holidays, Erika Sekiguchi is not even an extreme example. The 36-year-old trading company employee used eight of her 20 days of paid vacation in 2014, six of which counted as sick leave. “Nobody else uses their vacation days,” Sekiguchi said. She faces a dilemma: never to take time off or to invite criticism for leaving her colleagues in the lurch. Yuu Wakebe, a health ministry official overseeing policy on working hours, who admits putting in 100 hours of overtime a month, blames the irresistible pressure to match one’s colleagues, hour for hour. “It is a worker’s right to take paid vacations,” Wakebe said. “But unfortunately working in Japan involves quite a lot of volunteer spirit.”",
+            "output": [
+                " Who says that Japanese workers don’t use their vacation days?",
+                " What does Yuu Wakebe say about Japanese employees?",
+                " What does Yuu Wakebe’s quote convey about working in Japan?"
+            ]
+        },
+        {
+            "input": " That fear of being ostracized at work is being blamed for a rise in stress-related illness, premature death and suicide. According to official data, about 200 people die every year from heart attacks, strokes and other karoshi events brought on by punishing work schedules. The prime minister, Shinzo Abe, is not known for taking long vacations. Yet even he has spoken out against the unreasonable demands companies place on their employees as they struggle to stay afloat in a more complex globalized market. Japan’s working culture, Abe said recently, “falsely beatifies long hours”.",
+            "output": [
+                " What is one reason for the increase in stress-related illnesses in Japan?",
+                " What makes around 200 people die every year in Japan?",
+                " Who is scared of disapproval from their colleagues in Japan?"
+            ]
+        },
+        {
+            "input": " The small space is set up to look like a classroom. Its corrugated iron walls are hung with educational charts – illustrated letters of the alphabet and a map of Bangladesh. But, the constant sound of hammering and the chemicals in the air that catch in the back of the throat and irritate the eyes make it hard to concentrate. The children who learn in this three-square-meter room are the lucky ones, however. They have escaped working in the factories opposite.",
+            "output": [
+                " What is depicted on the walls?",
+                " Why are the people in the room lucky?",
+                " Which children are referred to as “lucky”?"
+            ]
+        },
+        {
+            "input": " For 14 years, SOHAY, a grassroots non-governmental organization (NGO) funded by the Global Fund for Children and Comic Relief, has been working in slum areas of Dhaka to get child laborers into school. It focuses on children working in hazardous conditions – in aluminum and plastic factories, and tanneries. The classroom is one of 23 urban development centers that SOHAY has set up across the capital. The centers prepare children for primary school with classes that help them catch up on their education. Once they are in primary school, the children can do homework at the centers, with help from their peers. Alamin, ten, who used to work in a plastic factory, attends one of the centers. His father is a street seller and his mother a part-time domestic worker. They are all happy that he’s now in school and away from hazardous work. His friend Rabi says he wants to forget his past in the factory. “I like school,” he says. ",
+            "output": [
+                " What do the classes at the center do?",
+                " Who is Alamin?",
+                " What does Alamin currently do?"
+            ]
+        },
+        {
+            "input": " SOHAY also runs sessions for parents and employers to discourage child labor and offers skills training to increase family income. “Getting working children into formal education is really very challenging,” says SOHAY’s program manager, Mohammed al-Mamun. “Their psychological and physical condition is not like other children in society. After they leave work, they sometimes find it difficult to make friends and adapt to school.” It is also very challenging to ensure they stay in school – the dropout rate is very high for these children. Seven-year-old Zhorna Akter Sumayya has two older brothers, both of whom are in work (one at a restaurant, one at a local club). But, after being introduced to education at one of SOHAY’s centers, she now goes to a state primary school. Her parents can’t survive without the income their sons bring home, but they were keen for their daughter to go to school. ",
+            "output": [
+                " What is a challenge working children face in regards to attending school, according to al-Mamun?",
+                " What do Zhorna’s brothers do?",
+                " Why do Zhorna’s brothers both work instead of attending school?"
+            ]
+        },
+        {
+            "input": " In 2015, SOHAY helped 1,540 children to leave hazardous work and 2,125 vulnerable children – those in danger of entering work – into school. About 780 more children are preparing to enter school in 2017. The organization is also helping 635 children who are working in hazardous conditions to know their rights under Bangladesh’s 2010 child labor elimination code of conduct. The policy aimed to eradicate all forms of child labor by 2015 but that target was missed. The Labor Law of Bangladesh 2006 bans children under the age of 14 from working but, according to the UN children’s agency, UNICEF, 4.7 million children under that age are employed in the informal sector and 1.3 million aged five to 17 work in hazardous industries. ",
+            "output": [
+                " What did SOHAY do in 2015?",
+                " What statistic does UNICEF provide about children in Bangladesh?",
+                " How many children did SOHAY help leave work in 2015?"
+            ]
+        },
+        {
+            "input": " Robert Myslajek stops dead. Between two paw prints on a muddy mountain track, the scientist finds what he is looking for. “Droppings!” he enthuses. Wolf sightings are so rare that the sighting of their feces marks a good day, even for a seasoned tracker. But it is getting easier. There are now an estimated 1,500 wolves in Poland. The number has doubled in 15 years. Wolves are – along with the brown bear, the lynx and the wolverine – Europe’s last large predator carnivores. Conservationists from Britain, Germany and the Netherlands are beating a path here to find out how Poland has saved this protected species, slandered even in fairy tales.",
+            "output": [
+                " How does Myslajek react to what he sees between the two paw prints?",
+                " Why do scientists from Britain, Germany and the Netherlands come to Poland?",
+                " Why was it “a good day” for Myslajek?"
+            ]
+        },
+        {
+            "input": " The scientist, who is a familiar face on Polish television, says wolves are exceptional animals that are capable of moving up to 30km during a single hunt. “The Beskidy pack is a strong unit, eight or nine individuals. This year, we have recorded five cubs, two yearlings and two adults. We track them using motion-activated cameras in the forest and by following their prints in the mud and snow. In each family group, only one pair reproduces, once a year. All pack members care for the young with solidarity and devotion.” Myslajek, the son of a shepherd, is puzzled by wolves’ bad reputation. “Why does one speak of a 'lone-wolf gunman'? Why did we have to have Little Red Riding Hood, with its big bad wolf?” He is fascinated by these aloof canines who remained in the wild 33,000 years ago when others decided on a much more comfortable existence as domestic dogs.",
+            "output": [
+                " What is one method scientists use to keep track of the wolves?",
+                " What does Myslajek think of fairy tales such as Little Red Riding Hood?",
+                " How are mud and snow useful for the scientists?"
+            ]
+        },
+        {
+            "input": " Wolves are not pooches. Myslajek says only scientific arguments – the need to regenerate forests and control the wild animal population – can save Europe’s wild carnivores, especially the unpopular wolf. “Natural predators balance the ecosystem. They keep herbivores in check, thus allowing trees to grow tall for birds to nest in.” The ban on wolf hunting in the western Carpathian mountains came into force in 1995 and nationwide in Poland in 1998. There are now resident packs in virtually all the country’s major forests. The predators coexist with humans rather than being fenced off, as they are in African safari parks. ",
+            "output": [
+                " What is a result of the predatory habits of wolves?",
+                " What is a consequence of the wolf-hunting ban?",
+                " Where was wolf-hunting banned in 1995?"
+            ]
+        },
+        {
+            "input": " The Polish government pays compensation for livestock killed by wolves. Myslajek advises farmers on erecting electric fences. He has helped revive the use of two deterrents that, for reasons no one quite understands, wolves find particularly scary: strings of small red flags (hung around sheep pens) and the bark of the fluffy white Tatra Mountain Sheepdog.",
+            "output": [
+                " What does the Polish government do when a wolf kills a farm animal?",
+                " What is one of the things that can help in scaring off wolves, according to Myslajek?",
+                " What is common to red flags and the Tatra Mountain Sheepdog?"
+            ]
+        },
+        {
+            "input": " The survival of Poland’s wolves has been helped by the country’s belated infrastructure development. In 1989, when the communists relinquished power, Poland had only one motorway. Major road projects – requiring wildlife impact studies – began after Poland joined the European Union in 2004. The country now has one of the highest densities in the world of overhead crossings and underpasses for wild animals. Attitudes have also changed. “For many years, hunting was cultural. In 1975, there were fewer than 100 wolves in Poland. Beginning in the 1950s, hunting wolves had been encouraged by the authorities. They paid a reward for killing a wolf worth a month’s salary. It was carnage.” Myslajek says the improvement in Polish wolves’ survival chances has been considerable but remains fragile. Packs are mobile across borders and hunting still goes on in neighboring Russia, Lithuania and Belarus.",
+            "output": [
+                " What was true about Poland in 1975?",
+                " Why does Myslajek mention Russia, Lithuania and Belarus?",
+                " Why were there fewer than 100 wolves in Poland in 1975?"
+            ]
+        },
+        {
+            "input": " He claims Poland’s new government, elected in October 2015, is hostile to wolves. “The Environment Minister, Jan Szyszko, makes no secret of being a hunter. There are 120,000 licensed hunters in Poland and they are influential in parliament. Being a wolf advocate is not easy. It is not as if you can argue to the politicians that wolves are a big tourist attraction. Most tourists want to see the animals but wolves stay away from humans. They have a tremendously sensitive sense of smell.”",
+            "output": [
+                " Why is it hard to support wolves in Poland’s new government?",
+                " Why are wolves not a big tourist attraction?",
+                " Who is Jan Szyszko?"
+            ]
+        },
+        {
+            "input": " A nasal spray laced with the ‘Love hormone’ oxytocin could help children with autism learn to handle social situations better, US researchers claim. Scans of children with autistic spectrum disorder showed that a single dose of the chemical improved brain responses to facial expressions, a shift that could make social interactions feel more natural and rewarding for them. The scientists behind the research said a course of oxytocin might boost the success of behavioral therapies that are already used to help people with autism learn to cope with social situations. “Over time, what you would expect to see is more appropriate social responding, being more interested in interacting with other people, more eye contact and more conversational ability,” said Kevin Pelphrey, director of the Child Neuroscience Lab at Yale University. ",
+            "output": [
+                " What difference did oxytocin make to the brains of autistic children, as shown in brain scans?",
+                " How can oxytocin be used for people with autism, according to the researchers?",
+                " Do the researchers expect oxytocin to interact well with other treatments?"
+            ]
+        },
+        {
+            "input": " Autism is a developmental disorder seen in more than one in 100 people. The condition affects individuals in different ways, but is characterized by difficulties in social interaction and communication. So far, there is no effective treatment for the social problems caused by autism. Researchers at Yale have studied the brain chemical oxytocin as a potential treatment for the social impairments caused by autism because it plays a crucial role in bonding and trust. Results have been mixed, though: one recent study found no significant benefit for youths given the chemical over several days. But Pelphrey said oxytocin might help the brain learn from social interactions; it would work best when used with therapies that encourage people with autism to engage more socially, he said.",
+            "output": [
+                " How were the social aspects of autism effectively treated before the time this article was written?",
+                " What are the results of Oxytocin experiments so far?",
+                " What is the effectiveness of non-oxytocin treatments for social problems caused by autism?"
+            ]
+        },
+        {
+            "input": " “Our study shows that oxytocin affects the brain and opens up the possibility that, when combined with behavioral treatments, it works like a social enhancer,” he said. The scientists used a technique called functional MRI to scan the brains of 17 youths aged eight to 16 with autism while they looked at images of cars or the eyes of people expressing various emotions. The scans were given 45 minutes after the participants inhaled a placebo or oxytocin through a nasal spray. The scans showed that reward circuitry in the children’s brains behaved more normally after a snort of oxytocin, being more active when the person was looking at faces and less active when viewing the inanimate cars. The study appears in the latest issue of the journal Proceedings of the National Academy of Sciences in the United States.",
+            "output": [
+                " What were the two different groups in the experiment?",
+                " What is the normal response of reward circuits in children’s brains?",
+                " Why did the scientists have autistic children look at both people and cars?"
+            ]
+        },
+        {
+            "input": " “If our study is replicated, it suggests that oxytocin might treat something for which we don’t have a treatment in autism, and that’s the core social motivation,” Pelphrey told the Guardian. He warned that it was too early to use oxytocin as a treatment for the social difficulties caused by autism and cautioned against buying oxytocin from suppliers online. “We don’t want them running out on the basis of this study or any other and trying oxytocin at home. There is no telling what they are buying. We are nowhere near thinking this is a ready treatment. It needs more follow-up research,” said Pelphrey. “This is an important new study in identifying changes in brain activity in key regions of the brain involved in social cognition in autism following oxytocin administration,” said Simon Baron-Cohen, director of the Autism Research Center at Cambridge University.",
+            "output": [
+                " Who or what claims that oxytocin could be helpful for social motivation in autism?",
+                " What is one reason Pelphrey warns against buying oxytocin online?",
+                " What does Pelphrey think about buying oxytocin online?"
+            ]
+        },
+        {
+            "input": " A surprising finding, however, is that oxytocin nasal spray did not change performance on the social cognitive task. Nor is it clear yet if oxytocin only has benefits for people with autism or has any unwanted side effects. Finally, oxytocin effects only last about 45 minutes, so there may be practical considerations as to whether this could be used as a treatment. “From a scientific perspective, this study has a lot of evidence from animal and human work to justify serious attention, but more research is needed. Doctors should be cautious about the clinical potential of this hormone until we know much more about its benefits and risks, in much larger studies,” said Simon Baron-Cohen.",
+            "output": [
+                " What is one of the reasons scientists are uncertain about using oxytocin in real life?",
+                " The duration of oxytocin effects indicates that ...",
+                " What is currently known about the benefits and side effects of oxytocin?"
+            ]
+        },
+        {
+            "input": " Uta Frith, who studies autism at University College London, said: “According to this study, oxytocin may have the effect of making faces more interesting as assessed by greater activity in brain structures concerned with reward evaluation. Disappointingly, this effect is seen only in brain activity and not in behavior. Demonstrating an effect on behavior will be critical if nasal spray treatment is to be of any value.”",
+            "output": [
+                " What does Frith say is a result of the oxytocin study?",
+                " According to Frith, what would be the crucial piece of evidence needed for showing oxytocin is a valuable treatment for autism?",
+                " Why does Firth advocate for demonstrating behavioral effects of oxytocin?"
+            ]
+        },
+        {
+            "input": " When Larry Pizzi first heard about electric bikes nearly 20 years ago, he asked: “Why would anyone want to screw up a bike by putting a motor and batteries on it?” It’s a question that still puzzles traditionalists. Bicycle shops have been slow to stock e-bikes, even though they have been around since the late 1990s. Sales in the US have been modest. Pizzi, who is now CEO of Currie Technologies, the number one seller of e-bikes in the US, believes that’s about to change. Others in the industry agree. Familiar brands including Trek, Raleigh and Specialized all offer electric models and they’re betting the market is about to take off. “We’re on the cusp of mainstream adoption,” Pizzi said. “There are more players entering the category, it seems, with every passing month.” ",
+            "output": [
+                " Who is Larry Pizzi?",
+                " What do the bicycle brands Trek, Raleigh, and Specialized think will happen?",
+                " What is Currie Technologies?"
+            ]
+        },
+        {
+            "input": " The US is an outlier when it comes to electric bikes. Nearly 32 million e-bikes were sold in 2014, the vast majority in China, where they are primarily used for transportation. They are popular in much of Europe, too. They’re common in the Netherlands and Switzerland; German postal workers use them to get around and BMW offers one for about $3,000.",
+            "output": [
+                " What was true about the e-bike market in 2014?",
+                " Who uses e-bikes for work?",
+                " What is true of the e-bike market in China?"
+            ]
+        },
+        {
+            "input": " Electric bikes are different from motorcycles or mopeds, which rely on motorized power; they are bicycles that can be pedaled with – or without – assistance from an electric motor. Riding an e-bike feels like riding a conventional bike with a brisk tailwind; the motor helps you go faster or climb hills but it’s typically not the primary source of propulsion. Unlike mopeds, e-bicycles are usually permitted on bike paths and they can’t travel faster than 20mph.",
+            "output": [
+                " What is one difference between e-bikes and mopeds with regard to their motors?",
+                " What is one limitation of e-bikes?",
+                " When can you ride e-bikes on bike lanes?"
+            ]
+        },
+        {
+            "input": " To succeed, the electric bike business in the US must clear legal, cultural and financial hurdles. E-bikes are banned in some states, including New York, although the law isn’t strictly enforced. Traditionalists who own and staff bike shops don’t like putting motors on bicycles, citing, among other things, the added weight. Some e-bikes are close to 30kg. E-bikes are also pricey. While low-end models sell for as little as $700, Court Rye, the founder and editor of ElectricBikeReview.com, a popular website, says riders should expect to pay at least $1,500 for a quality e-bike with a good battery. Top-of-the-line models cost more than twice that.",
+            "output": [
+                " Why don’t some bike sellers want to put motors on bikes?",
+                " What is true of e-bike prices?",
+                " What can you get for $1,500?"
+            ]
+        },
+        {
+            "input": " The companies that make and sell e-bikes say they can overcome those obstacles. E-bike technology, particularly the batteries, is improving. “Batteries are getting smaller, they’re getting lighter, they’re getting more reliable and they are lasting longer,” says Don DiCostanza, the founder and CEO of Pedego, an electric bikemaker and retailer. Big companies like Bosch and Shimano are entering the business, which should help erode resistance from bike shops. In the meantime, lobbying efforts are underway to permit the use of e-bikes everywhere. Perhaps most importantly, as more cities build cycling infrastructure, including dedicated bike lanes, bicycle commuting has become more popular. As the US Census Bureau reported in 2014, the number of bike commuters grew from about 488,000 in 2000 to 786,000 in 2012. Electric bikes make commuting more practical – and fun – by easing worry about hills, headwinds and fatigue. ",
+            "output": [
+                " What does DiCostanza say about e-bike batteries?",
+                " Why has bicycle commuting become more popular?",
+                " Who or what is DiCostanza?"
+            ]
+        },
+        {
+            "input": " Most of our customers are “aging baby boomers who want to rekindle the experience they had as a kid,” says Pedego’s Don DiCostanza. “The main reason they stopped riding bikes was because of hills.” Pedego has opened nearly 60 stores in the US and it has sold bikes to tour companies in San Francisco and Washington, DC. ElectroBike, which operates 30 stores in Mexico, opened its first American store in Venice Beach, California in the autumn of 2014 and hopes to grow to 25 US stores in a year. CEO Craig Anderson says: “We want to help reduce traffic, help reduce our carbon footprint and promote a healthy lifestyle.” Startups like Pedego and ElectroBike will have to compete with big companies like Trek and Currie, which, in 2012, was acquired by Accell, a public company based in the Netherlands that is Europe’s market leader in e-bikes. Accell owns the Raleigh brand, as well as Haibike, an award-winning German electric bike. ",
+            "output": [
+                " Who are the customers of Pedego, according to Don DiCostanza?",
+                " According to Craig Anderson, what is one goal of ElectroBike?",
+                " What does ElectroBike hope to accomplish within a year of opening its store in Venice Beach?"
+            ]
+        },
+        {
+            "input": " “Accell has great expectations about e-bikes in North America,” Currie’s Larry Pizzi says. “While baby boomers are still a very important segment, we’re finding that a lot of younger people are now using e-bikes for transportation, instead of cars.” Accell’s Yuba brand even sells a cargo bike with a stronger motor and rear rack. “You can carry two children,” says Pizzi. “You can carry 45kg of shopping. It’s a minivan alternative.”",
+            "output": [
+                " According to Pizzi, which population is now using e-bikes?",
+                " What is true of the cargo bike?",
+                " According to Pizzi, what is one benefit of the “cargo bike”?"
+            ]
+        },
+        {
+            "input": " From all across Rwanda, and even parts of neighboring Burundi, people flock to the southern town of Butare to a little shop called Inzozi Nziza (Sweet Dreams). They come for a taste of the unknown, something most have never tasted – the sweet, cold, velvety embrace of ice cream. Here, at the central African country’s first ice-cream parlor, customers can buy scoops in sweet cream, passion fruit, strawberry and pineapple flavors. Toppings include fresh fruit, honey, chocolate chips and granola. Black tea and coffee are also on sale. ",
+            "output": [
+                " Where is the ice cream shop located?",
+                " What can customers buy at the ice cream shop, other than ice cream?",
+                " Where is one place where people come to the ice cream shop from?"
+            ]
+        },
+        {
+            "input": " The shop, which has “ice cream, coffee, dreams” across its signage, is milking local curiosity about the dessert – and “changing lives” in the process, says Inzozi Nziza’s manager, Louise Ingabire. “Ice cream is important,” she says between mouthfuls of a honey-flavored offering. “Some Rwandans like ice cream, but it’s a new thing. We still have some work to do, to tell others that they’ll enjoy it.” True to Inzozi Nziza’s motto, the shop can certainly make dreams come true. “I didn’t have a job before: I just stayed at home. Now, I have a vision for the future. I am making money and I can give some of it to my family,” says the 27-year-old.",
+            "output": [
+                " Why does Louise Ingabire say there is still work to be done?",
+                " What does Ingabire plan to do with some of the money she is making?",
+                " Why did Ingabire previously stay at home?"
+            ]
+        },
+        {
+            "input": " Butare, which has 89,600 residents and is located 135km south of the capital, Kigali, is the home of the National University of Rwanda. Inzozi Nziza has become a hub for tired students looking to treat themselves to something cool and different. “It’s something uniting people here,” Kalisa Migendo, a 24-year-old agriculture student, says. “If you need to go out and talk to a friend, a girl or a boy, you come to Inzozi Nziza for an ice cream.” Most of the ingredients are sourced locally and the milk comes from a depot in nearby Nyanza. The vanilla beans and cocoa are imported.",
+            "output": [
+                " Where is the National University of Rwanda located?",
+                " Where do the ice cream shop’s ingredients come from?",
+                " What is true of Kigali?"
+            ]
+        },
+        {
+            "input": " Inzozi Nziza was opened by the theater director Odile Gakire Katese. She met Alexis Miesen and Jennie Dundas, co-founders of Blue Marble Ice Cream in Brooklyn, New York, and formed a partnership with them to open the shop in 2010. “An ice-cream shop, Katese proposed, might help to put the human pieces back together by rebuilding spirits, hopes and family traditions,” Miesen says. At the start, Miesen and Dundas owned the shop in partnership with its staff and had shares in the business, which is a cooperative and non-profit. They did not set financial targets, but waited for 18 months before they transferred their shares to the women, who had by then proved their business credentials.",
+            "output": [
+                " What happened in 2010?",
+                " Who had all the shares of the business 18 months after the opening?",
+                " Who founded Blue Marble Ice Cream?"
+            ]
+        },
+        {
+            "input": " Though ice cream is somewhat new to Rwanda, Ndangiza is enthused by the idea of the shop. “I think it’s great. It requires a lot of skills and changing people’s mindsets because selling and eating ice cream is not part of Rwanda’s culture\". The Butare shop employs nine women, who spend their spare time practicing with Ingoma Nshya, Rwanda’s first and only female drumming troupe, which was established by Katese ten years ago. The musicians are Hutu and Tutsi women, some survivors of the 1994 genocide, during which almost a million Tutsis and moderate Hutus were killed. Some members of Ingoma Nshya are widows, some orphans. Ingabire’s father, two siblings and many cousins were killed in the genocide. “Some of us are survivors; some know someone who was killed,” she says. “When I’m drumming with them, it gives me power because we’re still alive and survivors.”",
+            "output": [
+                " What is common to all the members of Ingoma Nshya?",
+                " What does drumming do for Ingabire?",
+                " What is Ingoma Nshya?"
+            ]
+        },
+        {
+            "input": " The popular ice-cream shop features in a documentary by Rob and Lisa Fruchtman, sibling film-makers. Sweet Dreams, which tells the story of how the women have forged a promising post-genocide future, also includes the female drummers. The film, which has been screened in more than a dozen countries, including the US, UK and several African states, premieres in Rwanda in 2014. “We feel the film is about resilience, hope, bravery, resourcefulness and the ability to change the course of your own life,” says Lisa Fruchtman, who won an Academy Award for film-editing in 1984.",
+            "output": [
+                " What is the name of Rob and Lisa Fruchtman’s film?",
+                " What is one of the things Lisa Fruchtman feels the film is about?",
+                " Who appears in the film Sweet Dreams?"
+            ]
+        },
+        {
+            "input": " Illegal downloading is a kind of “moral squalor” and theft, as much as reaching in to someone’s pocket and stealing their wallet is theft, says author Philip Pullman. In an article for Index on Censorship, Pullman, who is president of the Society of Authors, makes a robust defence of copyright laws. He is highly critical of Internet users who think it is OK to download music or books without paying for them.",
+            "output": [
+                " Where does Philip Pullman hold a senior position?",
+                " What does Pullman think about pirating?",
+                " Who does Pullman criticize?"
+            ]
+        },
+        {
+            "input": " “The technical brilliance is so dazzling that people can’t see the moral squalor of what they’re doing,” he writes. “It is outrageous that anyone can steal an artist’s work and get away with it. It is theft, as surely as reaching into someone’s pocket and taking their wallet is theft.” His article comes after music industry leaders met British Prime Minister David Cameron in Downing Street, where the issue of web piracy was discussed. Pullman, writer of the His Dark Materials trilogy, says authors and musicians work in poverty and obscurity for years to bring their work to the level “that gives delight to their audiences and, as soon as they achieve that, the possibility of making a living from it is taken away from them”. He concludes: “The principle is simple, and unaltered by technology, science or magic: if we want to enjoy the work that someone does, we should pay for it.”",
+            "output": [
+                " What does Pullman find outrageous?",
+                " What does Pullman imply about artists?",
+                " What does Pullman say about authors and musicians?"
+            ]
+        },
+        {
+            "input": " Pullman is writing in the next issue of the campaign group’s magazine in a dialogue with Cathy Casserly, chief executive of Creative Commons, which offers open content licenses “that lets creators take copyright into their own hands”. Casserly argues that there is much wrong with copyright, which was created “in an analog age”. Casserly writes: “By default, copyright closes the door on countless ways that people can share, build upon and remix each other’s work, possibilities that were unimaginable when those laws were established.” She says artists need to think creatively about how they distribute and monetize their work, quoting the science fiction writer Cory Doctorow, who said: “My problem is not piracy, it’s obscurity.”",
+            "output": [
+                " What is Casserly’s position on current copyright law?",
+                " What does Casserly recommend that artists do?",
+                " According to Casserly, what does the current copyright law prevent artists from doing?"
+            ]
+        },
+        {
+            "input": " Index on Censorship agrees. The magazine’s editor, Rachael Jolley, said: “Existing copyright laws don’t work in the digital age and risk criminalizing consumers. We need new models for how artists, writers and musicians earn a living from their work.” The scale of illegal downloading vast. Data collected by Ofcom (the competition authority for the UK communications industries) suggests that, between November 2012 and January 2013 in the UK, 280 million music tracks were digitally pirated, along with 52 million TV shows, 29 million films, 18 million ebooks and 7 million software or games files. Ofcom has said 18% of Internet users aged over 12 admit to having recently pirated content, and 9% say they fear getting caught. Pullman writes in his article: “The ease and swiftness with which music can be acquired in the form of MP3 downloads is still astonishing to those of us who have been building up our iTunes list for some time.”",
+            "output": [
+                " What do the statistics in the paragraph convey?",
+                " What is the purpose of Pullman’s quote?",
+                " Which type of digital media is pirated the least, according to the statistics presented in the passage?"
+            ]
+        },
+        {
+            "input": " One thing to emerge from the Downing Street meeting was Cameron’s appointment of the Conservative Member of Parliament Mike Weatherley to be his adviser on the subject. A spokesman for the BPI, the record industry trade body, said: “Mike Weatherley is a strong champion of copyright and the artists and creative producers it’s there to protect. We hope Weatherley’s influence and the prime minister’s endorsement of copyright will be brought to bear on the approach of the UK’s intellectual property office.”",
+            "output": [
+                " Who is Mike Weatherly and what is his relation to the BPI?",
+                " Who does the BPI expect will drive change in copyright policy?",
+                " Who states that copyright is meant to protect artists and producers?"
+            ]
+        },
+        {
+            "input": " On Black Fell, looking down on Northumberland’s beautiful Kielder Water reservoir, a group of people wait in a car park next to a strange wooden building with a minimalist design beamed down from the future. This is Kielder Observatory, the center of Britain’s nascent astrotourism industry. And those waiting outside were the lucky ones. Many more had applied for a night of stargazing at the observatory but numbers are strictly limited. Inside, next to a woodburner and under dimmed lights, the observatory’s founder and lead astronomer, Gary Fildes, a former bricklayer with Tarzan hair, delivers a pep talk to his colleagues. The team discusses the prospect of seeing the northern lights but Fildes is doubtful. Instead, they decide to train their powerful telescopes on Jupiter and Venus and later to pick out stars such as Capella and Betelgeuse. An additional attraction is the appearance of the International Space Station.",
+            "output": [
+                " What is located next to the Kielder Observatory?",
+                " Who mentions that it might be possible to see the northern lights?",
+                " What does Fildes’ team decide to do?"
+            ]
+        },
+        {
+            "input": " “Remember,” Fildes tells his team, “it’s about interaction, it’s about entertainment, it’s about inspiring people.” Fildes, 49, is at the forefront of the UK’s burgeoning astrotourism industry. The pivotal moment for Northumberland came in 2013 when the entire national park housing Hadrian’s Wall, along with Kielder Water and Forest Park, some 1,500 square kilometers, was awarded Dark Sky Park status, the only one in England. Dark Sky Parks are rare. The 2013 Star Count revealed that only 5% of the UK population can see more than 31 stars on a good night. The Tucson, Arizona-based International Dark-Sky Association (IDA) confers the status only on places that take major steps to avoid light pollution. Recipients must also prove their night skies are sufficiently dark. In Northumberland Dark Sky Park, as the area was rebadged, it is so dark that Venus casts a shadow on the Earth.",
+            "output": [
+                " What did the 2013 Star Count find?",
+                " What does the International Dark-Sky Association (IDA) do?",
+                " What is one criteria the International Dark-Sky Association looks for when awarding Dark Sky Park status to a park?"
+            ]
+        },
+        {
+            "input": " Duncan Wise, visitor development officer for the Northumberland National Park Authority, helped to spearhead the campaign for dark-sky status. “We tend to look at landscape as everything up to the horizon,” Wise said. “But what about what’s above it?” Wise and others spent years drawing up their submission to the IDA, collecting reams of light readings and forming an alliance of local councils, parks’ bodies and community groups to produce an exterior lighting master plan that influences the construction of new developments in the area. Their efforts have been vindicated. Many of the 1.5 million who visit Northumberland each year are now aware of its Dark Sky status. “We get a lot of people coming here to see the sky now,” says the man at the car-hire firm in Newcastle. “They come in autumn and winter, when it’s darkest. Good for the local hotels as they get business all year round now.”",
+            "output": [
+                " According to Duncan Wise, what do people normally consider as “landscape”?",
+                " Who is quoted as saying that hotels benefit from the park’s new Dark Sky status?",
+                " What is true of the autumn and winter in Northumberland?"
+            ]
+        },
+        {
+            "input": " Wise acknowledges that Northumberland needs to do more to capitalize on its scarce resource and believes the region needs a couple more observatories to ensure that visitors will see what they came for. A £14m national landscape discovery center, which he describes as the north’s answer to the Eden Project, will have an observatory when it is completed in a couple of years. Fildes has grand designs. He is planning Britain’s first “astrovillage,” one that would house the largest public observatory in the world and boast a 100-seat auditorium, a 100-seat planetarium, a one-meter aperture telescope, and radiomagnetic and solar telescopes. The multimillion-pound project would feature a hotel and draw in 100,000 people a year, four times the number currently able to use the observatory. Fildes is cryptic about his backers but believes the astrovillage will be a reality by 2018.",
+            "output": [
+                " Why does Wise believe Northumberland needs more observatories?",
+                " What is Fildes’ ambition?",
+                " What will £14 million be used for?"
+            ]
+        },
+        {
+            "input": " However, Northumberland faces competition. Galloway Forest Park in Scotland also has Dark Sky Park status. Since Exmoor was designated Europe’s first International Dark Sky Reserve – one notch below Dark Sky Park – in 2011, a range of local businesses offering stargazing breaks and safaris has sprung up. The UK will have to go some way to eclipse northern Chile, which boasts more than a dozen tourist observatories and has some of the clearest skies in the world. The Teide National Park in Tenerife is also becoming a major astrotourism destination. So, what is driving the desire to look upwards? The media have helped. TV presenters like Brian Cox have attracted a new generation of stargazers. Technology has also played a part. Apps such as Stellarium now turn smartphones into pocket-size planetariums. Ultimately, though, Fildes believes people are starting to appreciate what lies above.",
+            "output": [
+                " What was created in 2011?",
+                " What did apps like Stellarium contribute to?",
+                " How does the “Dark Sky Park” status differ from the “Dark Sky Reserve” status?"
+            ]
+        },
+        {
+            "input": " Unveiling a car with a top speed of 25mph, two seats and no pedals or steering wheel might not make much of an impression at a motor show. But Google, in the US, sent a minor earthquake through the car and taxi industries as it unveiled the latest version of its driverless car. The electrically powered vehicle, which Google has begun testing around its headquarters in Mountain View, California, dispenses with all the normal controls, including foot pedals. Instead, it has a smartphone app that summons it and tells it the destination, and a single STOP button mounted between the two front-facing seats in case the occupants need to override the computer.",
+            "output": [
+                " What kind of reaction did Google’s new driverless car draw from the automobile industry?",
+                " How does the car passenger’s phone interact with the car?",
+                " What is unique about the controls of the car that Google just released?"
+            ]
+        },
+        {
+            "input": " The car, in fact, takes over all the tasks of navigation, steering, acceleration and braking. The company is building about 100 prototypes for a two-year test. The company’s co-founder, Sergey Brin, told a conference in California that the vehicle was “still in the prototype stage” but that the project was “about changing the world for people who are not well served by transportation today.” He said of the car: “You’re just sitting there; no steering wheel, no pedals. For me, it was very relaxing. About ten seconds after getting in, I forgot I was there. It reminded me of catching a chairlift by yourself – a bit of solitude I found really enjoyable.”",
+            "output": [
+                " What does Brin say his company’s motivation is for making this car?",
+                " According to the company’s co-founder, the experience of riding in the car was ...",
+                " Who does Brin say the car will benefit?"
+            ]
+        },
+        {
+            "input": " Google says that the principal aim of the project is to improve safety and that, because the car is constructed with impact-absorbing foam at the front and a plastic windscreen, “it should be far safer than any other car for pedestrians”. The cars, which have been built specially by a company (as yet unnamed) in Detroit, will be used to investigate further how best to make driverless vehicles work. Google will now run a program to test the cars further, which are not yet for sale.",
+            "output": [
+                " According to the article, what has Google done to improve safety?",
+                " What will Google do now?",
+                " Could Google’s cars be purchased at the time that the article was written?"
+            ]
+        },
+        {
+            "input": " One challenge is creating high-definition scans of the roads and surroundings before the cars can drive along them because they cannot gather and process enough information in real time. So far, there are high-detail maps of about 2,000 miles of California’s roads, but the state has more than 170,000 miles of public roads. Google says it is interested in licensing the technology to traditional vehicle manufacturers once it has refined it sufficiently. Members of the team had been working on the project even before joining Google, for more than a decade. ",
+            "output": [
+                " Why are detailed, high-quality scans of the road needed?",
+                " When will Google allow other car companies to use their technology?",
+                " Why can’t the driverless cars currently drive on all roads?"
+            ]
+        },
+        {
+            "input": " But the prospect of driverless cars replacing human-driven taxis has been the cause of some alarm. “If you get rid of the driver, then they’re unemployed,” said Dennis Conyon, the south-east director for the UK National Taxi Association. “It would have a major impact on the labor force.” London has about 22,000 licensed cabs and Conyon estimates that the total number of people who drive taxis for hire in the UK is about 100,000. ",
+            "output": [
+                " Why is Conyon worried about driverless cars?",
+                " Approximately how many taxi drivers are there in the UK?",
+                " The number of taxi drivers in London is ..."
+            ]
+        },
+        {
+            "input": " However, Steve McNamara, general secretary of the 10,500-strong London Taxi Drivers’ Association, said: “You won’t get these driverless cars in London for 20 or 25 years. Maybe, by then, they’ll have a charge point – because there isn’t a single one in London now.” Other car makers, including Volvo, Ford and Mercedes, are working on driver-assisted vehicles, which, unlike Google’s version, do not dispense with the driver controls. But Chris Urmson, director of the self-driving car project at Google, said that the new prototypes dispensed with the steering wheel and brakes because there was no guarantee that a human occupant would be able to take over in an emergency, and that it was simpler just to have an emergency stop button.",
+            "output": [
+                " How will Volvo’s cars contrast with Google’s cars?",
+                " Why did Google remove the steering wheel from their driverless car prototypes?",
+                " Who is planning on implementing driver controls in self-driving cars?"
+            ]
+        },
+        {
+            "input": " Urmson said: “The vehicles will be very basic. We want to learn from them and adapt them as quickly as possible. But they will take you where you want to go at the push of a button. And, that’s an important step towards improving road safety and transforming mobility for millions of people.” So far, the Google versions of the self-driving cars have covered 700,000 miles without an accident caused by the computer. The company points out that thousands of people die each year on the roads and that about 80% of crashes can be ascribed to human error. But, they could have some way to go to match Conyon at the National Taxi Association. Aged 79, he has been driving a taxi for 50 years and claims never to have had an accident.",
+            "output": [
+                " Getting where you want to go with Google’s new car will ...",
+                " How do Google driverless cars perform?",
+                " What kind of accidents does Google pride itself in having managed to avoid during the testing phase of the car?"
+            ]
+        },
+        {
+            "input": " “I shifted towards it naturally,” he said of his becoming an expert in wealth therapy. “Many of the extremely wealthy – the 1% of the 1% – feel that their problems are really not problems. But they are. A lot of therapists do not give enough weight to their issues.” So, what issues are America’s 1% struggling with? “There is guilt over being rich in the first place,” he said. “There is the feeling that they have to hide the fact that they are rich. And, then, there is the isolation – being in the 1%, it turns out, can be lonely.” It seems F. Scott Fitzgerald was right: the very rich “are different from you and me.” Counselors argue things have become worse since the financial crisis and the debate over income inequality that has been spurred on by movements like Occupy Wall Street and the Fight for $15 fair wage campaign.",
+            "output": [
+                " Who thinks that the problems of the wealthy are not real?",
+                " What do wealthy people feel guilty about?",
+                " What do the wealthy feel is not real?"
+            ]
+        },
+        {
+            "input": " “The Occupy Wall Street movement was a good one and had some important things to say about income inequality but it singled out the 1% and painted them globally as something negative,” said Jamie Traeger-Muney, a wealth psychologist and founder of the Wealth Legacy Group. The media, she said, is partly to blame for making the rich “feel like they need to hide or feel ashamed”. “Sometimes, I am shocked by things that people say. You would never refer to another group of people in the way that it seems perfectly normal to refer to wealth holders.”",
+            "output": [
+                " How does the media affect rich people, according to Traeger-Muney?",
+                " What does Traeger-Muney imply people say about the wealthy?",
+                " What is Traeger-Muney sometimes shocked by?"
+            ]
+        },
+        {
+            "input": " “It’s really isolating to have a lot of money. People’s reactions to you can be scary,” said Barbara Nusbaum, an expert in money psychology. “We are all taught not to talk about money. It’s not polite to talk about money. Ironically, it’s harder to talk about having money than it is to talk about not having money. It’s much more socially acceptable to say ‘I am broke. Things are hard.’ You can’t say ‘I have a ton of money.’ You have to keep a lot of your life private.” As a result, Cockrell points out, the rich tend to hang out with other rich Americans, not out of snobbery but in order to be around those who understand them and their problems.",
+            "output": [
+                " What is the quote ‘I am broke. Things are hard’ an example of?",
+                " According to Cockrell, why do the wealthy tend to spend more time with other wealthy people?",
+                " What is the quote ‘I have a ton of money’ an example of?"
+            ]
+        },
+        {
+            "input": " In the US, over the last three decades, the number of extremely wealthy people has been climbing. According to research from Spectrem Group, in 2014, the number of US households with $1m or more in assets –  excluding the value of their primary home – increased by 500,000 to 10.1m. In 2007, that number was 9.2m. Households worth $5m or more reached 1.3m and 142,000 households are now worth $25m or more. Since the 2008 financial crisis, the income gap has expanded and the situation “has gotten worse for the wealthy,” Cockrell said. The main reason? Not knowing if your friends are friends with you or your money. “Someone else who is also a billionaire – they don’t want anything from you. Never being able to trust your friendships with people of different means, I think that is difficult,” said Cockrell. “As the gap has widened, the rich have become more and more isolated.” ",
+            "output": [
+                " What is excluded from the presented wealth estimates in the US?",
+                " What is something that got worse for the wealthy since the 2008 financial crisis?",
+                " How have things changed for the wealthy since the 2008 financial crisis, according to Cockrell?"
+            ]
+        },
+        {
+            "input": " Some Americans have taken to keeping their wealth secret. “There are a lot of people that are hiding their wealth because they are concerned about negative judgment,” said Traeger-Muney. “If wealthy Americans talk about the unique challenges that come with their wealth, people often dismiss their experience. People say ‘Oh, poor you.’ There is not a lot of sympathy there,” she said. “Wealth is still one of our last taboos.” Cockrell said that a common mistake that many of his wealthy clients make is letting their money define them. “I don’t think it’s healthy to discount your problems. If you are part of the 1%, you still have problems and they are legitimate to you. Even when you say, ‘I don’t have to struggle for money’, there are other parts of your life. Money is not the only thing that defines you,” he said. “Your problems are real.”",
+            "output": [
+                " What does Traeger-Muney say often happens when wealthy people talk about their problems?",
+                " What does Cockrell say is a common mistake that his wealthy clients make?",
+                " What does Cockrell say is true if someone is part of the 1%?"
+            ]
+        },
+        {
+            "input": " Benjamin Carle is 96.9% made in France, right down to his underpants and socks. Unfortunately, six Ikea forks, a Chinese guitar and unsourced wall paint stopped him being declared a 100% economic patriot, but nobody is perfect. Carle, 26, set out, in 2013, to see if it was possible to live using only French-made products for ten months as part of a television documentary. The idea was triggered by the Minister for Economic Renewal Arnaud Montebourg’s call for the public to buy French to save the country’s industrial production sector. The experiment cost Carle his smartphone, television, refrigerator (all made in China); his spectacles (Italian); his underpants (Moroccan); morning coffee (Guatemalan) and his adored David Bowie music (British). Fortunately, his long-suffering girlfriend, Anaïs, and cat, Loon, (both French) stuck with him.",
+            "output": [
+                " What is true of Carle’s Ikea forks?",
+                " What was the main premise of Carle’s television documentary?",
+                " What did Arnaud Montebourgh do?"
+            ]
+        },
+        {
+            "input": " “Politicians say all sorts of things and expect us to go along with it. I wanted to see if it was possible and feasible to do what the minister was asking us to do; to hold him to account for his words,” Carle told the Guardian over a non-French coffee in a Parisian café after finishing his documentary. He set just three rules for himself: eat only foods produced in France, eliminate contact with foreign-made goods and do so on €1,800 a month (above the minimum wage of €1,430 to cover the extra expense of living in Paris). The journalist was shocked to find out at the start of the experiment that only 4.5% of the contents of his flat were made nationally – and that the rest would have to go, including the lightbulbs (China) and green beans (Kenya).",
+            "output": [
+                " What do the rules of the experiment allow Carle to do?",
+                " What was Carle shocked to find out at the beginning of the experiment?",
+                " Who set the three rules of Carle’s experiment?"
+            ]
+        },
+        {
+            "input": " The removal men left Carle’s home almost bare. Left without a refrigerator (none are made in France) or nail clippers, he was forced to chill his food on the window ledge and saw at his toenails with a penknife. His foreign-made clothes, down to his underwear, were replaced with more expensive alternatives: French-produced underpants (€26), socks (€9), polo shirt (€75), espadrille sandals ( €26), but no jeans as none are produced in France. During the experiment, Carle scoured supermarket shelves for 100% French-made products, learned to cook seasonal fruit and vegetables grown in France, proudly brushed his teeth with the last toothbrush made in France by a company in Picardie employing 29 people and hand-washed his smalls until he found the last French-made washing machine (which, being top opening, would not fit under the kitchen counter).",
+            "output": [
+                " What is true about Carle’s jeans prior to the arrival of the removal men?",
+                " What is true about Carle’s new French-made washing machine?",
+                " What is true about Carle’s underpants prior to their replacement?"
+            ]
+        },
+        {
+            "input": " Going out with friends was problematic – no American films, no Belgian beer, no sushi or pizza. Staying home, with no sofa for the first few months and no television, meant listening to crooner Michel Sardou and reading French novels. French wine was, of course, allowed and French-Canadian singer Céline Dion, but not, according to his advisers, French bands such as Daft Punk, who sing in English. Unable to use his British-made bicycle or even a French car after discovering the only affordable Peugeot, Renault and Citroën models are mostly made overseas, Carle invested in a fug-emitting orange Mobylette moped. The last things to go were the computer, replaced by a Qooq, a recipe tablet that connects – slowly – to the internet and the iPhone, swapped for an old Sagem mobile.",
+            "output": [
+                " Why was listening to Daft Punk forbidden?",
+                " Why was driving a Peugeot car not possible?",
+                " Why did Carle buy a Mobylette?"
+            ]
+        },
+        {
+            "input": " The documentary shows Carle – realizing he is addicted to his iPhone – smashing it with a brand-new French-made Tefal saucepan, while his girlfriend shrieks: “Are you crazy? Those are new pans!” Carle tells viewers his aim is to “save the French economy. After all, I like Mission Impossible.” He admits the experiment was part serious and part jest. At one point, he consults a French language expert to check if he should keep using “cool” and other Anglicisms – he was advised to swap it for the nearest French equivalent: “chouette.” On discovering France makes no refrigerators (apart from wine coolers) or televisions, but is big in airplane seats and windmills, he sighs and says: “Great. Nothing that will fit into my apartment.” ",
+            "output": [
+                " Why does Carle’s girlfriend ask him if he is crazy?",
+                " What is true of the English word “cool”?",
+                " What does Carle do with his new Tefal saucepan?"
+            ]
+        },
+        {
+            "input": " At the end of the experiment, Carle takes out a bank loan to refurnish his home and clothe himself. A special “auditor” declares him 96.9% “made in France” and Montebourg visits to present him with a medal. Carle’s conclusion: “It’s not entirely possible or even desirable to live 100% ‘made in France,’ particularly in terms of new technology.” But that wasn’t the point. “This wasn’t about French nationalism or patriotism. It was trying to show that we should reflect about the way we consume and make different choices, and that applies in all countries. If we want to save jobs and industries, wherever we are, we might think about supporting them.”",
+            "output": [
+                " What happened at the end of the experiment?",
+                " What was the experiment trying to show, according to Carle?",
+                " What did Carle say about the possibility of living with products 100% ‘made in France’?"
+            ]
+        },
+        {
+            "input": " According to Carle, “A T-shirt is more expensive in France but I can be sure it has been produced by workers who are correctly paid and have good working conditions. I cannot be sure about a cheaper T-shirt produced in Asia or Morocco.” He added: “It’s hypocrisy to go around blaming capitalists for a country’s economic decline when people could be doing more as consumers.” Carle says he hopes to continue supporting French industry and producers, but not 100%. “It is a full-time job just finding the stuff,” he said. The first thing he did when the experiment ended was invite his friends around for the evening to enjoy “a plate of cheese and listen to the David Bowie album Aladdin Sane.” “It was difficult not being able to invite people around because there was nowhere to sit ... but I’d choose Bowie over a sofa any day.”",
+            "output": [
+                " What is Carle not sure of when it comes to T-shirts produced in Morocco?",
+                " What did Carle’s guests do?",
+                " What does Carle say about French workers who manufacture T-shirts?"
+            ]
+        },
+        {
+            "input": " Such is the lot of the modern-day chemist: you wait ages for a new element to turn up and then four come along at once. Discovered by researchers in Japan, Russia and the US, the four new elements are the first to be added to the periodic table since 2011, when elements 114 and 116 were included. The new elements, all spectacularly short-lived and highly radioactive, complete the periodic table’s seventh row and render science textbooks around the world out of date. ",
+            "output": [
+                " What happened in 2011?",
+                " What is true about the new elements?",
+                " Who discovered the new elements?"
+            ]
+        },
+        {
+            "input": " The US-based International Union of Pure and Applied Chemistry (IUPAC), the global organization that governs chemical nomenclature, terminology and measurement, verified the elements on 30 December, 2015 after poring over studies dating back to 2004. The scientists who found them must now come up with formal names to replace the clunky Latin- based placeholders – ununtrium, ununpentium, ununseptium and ununoctium – which reflect their atomic numbers, 113, 115, 117, and 118. The atomic number is the number of protons found in an element’s atomic nucleus.",
+            "output": [
+                " What is the International Union of Pure and Applied Chemistry?",
+                " What must the scientists who found the new elements do now?",
+                " 113, 115, 117, and 118 are ..."
+            ]
+        },
+        {
+            "input": " IUPAC announced that a Russian-American team of scientists at the Joint Institute for Nuclear Research in Dubna and Lawrence Livermore National Laboratory in California had produced sufficient evidence to claim the discovery of elements 115, 117 and 118. The body awarded credit for the discovery of element 113, which had also been claimed by the Russians and Americans, to a team of scientists from the RIKEN Institute in Japan. The decision means Japan becomes the first Asian country to name an element. Under IUPAC rules, new elements can be named after mythological concepts, minerals, a place or country, or a scientist. ",
+            "output": [
+                " Who discovered elements 115, 117, and 118?",
+                " Why does the article mention Japan?",
+                " Who did IUPAC credit the discovery of element 113 to?"
+            ]
+        },
+        {
+            "input": " When elements 114 and 116 were assigned formal names in 2012, scientists chose flerovium and livermorium respectively, after the Flerov Lab at Dubna’s Joint Institute of Research and the Lawrence Livermore Lab in the US, where the elements were discovered. Kosuke Morita, who led the research at RIKEN, said his team now planned to “look into the uncharted territory of element 119 and beyond.” Jan Reedijk, president of the Inorganic Chemistry Division of IUPAC, said: “The chemistry community is eager to see its most cherished table finally being completed down to the seventh row.” ",
+            "output": [
+                " How were the formal names for elements 114 and 116 chosen?",
+                " What does the RIKEN research team plan to do now?",
+                " Who is Kosuke Morita?"
+            ]
+        },
+        {
+            "input": " The Japanese team is believed to be considering three names for ununtrium: japonium, rikenium and nishinarium, after the Nishina Center for Accelerator-Based Science, where the element was found. “They will have been thinking about it for a while already,” said Polly Arnold, professor of chemistry at Edinburgh University. “This is painstaking work. All this trying to understand Mother Nature helps us with our models and with understanding radioactive decay. If we understand it better, hopefully we can do better at dealing with nuclear waste and things that are important in the real world. It also leads to fantastic technological advances in building the equipment to make these observations.”",
+            "output": [
+                " What does Polly Arnold say about the work that is being done?",
+                " What would lead to great improvements in technology?",
+                " What may happen once people understand radioactive decay better?"
+            ]
+        },
+        {
+            "input": " Along with new names, the scientists must propose two-letter symbols for the elements. When IUPAC has received the researchers’ suggestions, they will be put up for public review for five months. That allows scientists and others to raise any objections. In 1996, the symbol Cp was proposed for copernicium, or element 112, but it was swapped to Cn when scientists complained that Cp referred to another substance. ",
+            "output": [
+                " What happens once IUPAC receives a suggested symbol for an element?",
+                " Why was the suggestion to use symbol Cp for copernicium not accepted?",
+                " Why is the public involved in the element symbol-naming process?"
+            ]
+        },
+        {
+            "input": " To discover the elements, researchers at the three labs slammed lighter nuclei into one another and looked for signature radioactive decays that should come from the new elements. Ununtrium and ununpentium are thought to be metals, while ununseptium could be a metalloid – a material bearing some metallic properties. The fourth element, ununoctium, may be a noble gas, like other group-18 elements, helium, neon and argon. It is hard to know for sure because so few atoms of each element have ever been made. Paul Karol, chair of the IUPAC panel that verified the elements, said: “Practical applications of the new elements, if any, are a long way off because of the difficulty in synthesis.”",
+            "output": [
+                " How did researchers discover the elements?",
+                " What does Paul Karol say about the new elements?",
+                " Why did researchers look for radioactive decays?"
+            ]
+        },
+        {
+            "input": " Lots of us know we are sleep-deprived, but imagine if we could fix it with a fairly simple solution: getting up later. In a speech at the British Science Festival, Dr. Paul Kelley, clinical research associate at the Sleep and Circadian Neuroscience Institute at Oxford University, called for schools to stagger their starting times to work with the natural biological rhythms of their students. It would improve cognitive performance, exam results and students’ health (sleep deprivation has been linked with diabetes, depression, obesity and an impaired immune system). ",
+            "output": [
+                " How did Dr. Paul Kelley convey his opinion on staggering school starting times?",
+                " What are some of the effects of following Dr. Kelley’s suggestion?",
+                " What does Dr. Kelley suggest about the current starting time for schools?"
+            ]
+        },
+        {
+            "input": " It follows a paper, published in 2014, in which he noted that, when children are around ten, their biological wake-up time is about 6.30am; at 16, this rises to 8am; and, at 18, someone you may think of as a lazy teenager actually has a natural waking hour of 9am. The conventional school starting time works for 10-year-olds but not 16- to 18-year-olds. For the older teenagers, it might be more sensible to start the school day at 11am or even later. “A 7am alarm call for older adolescents,” Kelley and his colleagues pointed out in the paper, “is the equivalent of a 4.30am start for a teacher in their 50s.”",
+            "output": [
+                " What does Kelley state about people’s natural wake-up times?",
+                " Why does Kelley mention teachers in their 50s?",
+                " What does Kelly say about the wake-up time of 18-year-olds?"
+            ]
+        },
+        {
+            "input": " He says it’s not as simple as persuading teenagers to go to bed earlier. “The body’s natural rhythm is controlled by a particular kind of light,” says Kelley. “The eye doesn’t just contain rods and cones; it contains cells that then report to the suprachiasmatic nuclei in the hypothalamus.” This part of the brain controls our circadian rhythms over a 24-hour cycle. It’s like saying: ‘Why can’t you control your heartbeat?’” ",
+            "output": [
+                " Why does Kelley say that going to bed earlier is not the solution to waking up earlier?",
+                " What is one role of eye cells in humans?",
+                " What does Kelley say is critical to people’s sleep rhythms?"
+            ]
+        },
+        {
+            "input": " But it isn’t just students who would benefit from a later start. Kelley says the working day should be more forgiving of our natural rhythms. Describing the average sleep loss per night for different age groups, he says: “Between 14 and 24, it’s more than two hours. For people aged between 24 and about 30 or 35, it’s about an hour and a half. That can continue up until you’re about 55 when it’s in balance again. The 10-year-old and 55-year-old wake and sleep naturally at the same time.”",
+            "output": [
+                " What does Kelley say about the relationship between working hours and natural rhythms?",
+                " Starting in adolescence, how does a person’s average sleep loss per night change as they age, according to Kelley?",
+                " Who has a greater average sleep loss than a 24 year old person?"
+            ]
+        },
+        {
+            "input": " This might be why, he adds, the traditional nine to five is so ingrained; it is maintained by bosses, many of them in their mid-50s and upwards because “it is best for them”. So, should workplaces have staggered starting times, too? Should those in their 50s and above come in at 8am, while those in their 30s start at 10am and the teenage intern or apprentice be encouraged to turn up at 11am? Kelley says that synchronized hours could have “many positive consequences. The positive side of this is people’s performance, mood and health will improve. It’s very uplifting in a way because it’s a solution that will make people less ill, and happier and better at what they do.”",
+            "output": [
+                " Who would arrive to work earliest if workplaces introduce the staggered starting times described in the passage?",
+                " According to Kelley, how will staggered starting times affect employees?",
+                " According to Kelley, how would staggered starting times benefit workplaces?"
+            ]
+        },
+        {
+            "input": " There would probably be fewer accidents as drivers would be more alert, he says. It could spell the end of rush hour as people stagger their work and school-run times. A later start to the day for many, says Kelley, “is something that would benefit everyone, particularly families. Parents go and try to wake up teenagers who are waking up three hours too early. It creates tensions for everybody.” So, what time does Kelley start work? “I am 67 so that means I’m back to being ten years old and I get up just after six. I wake naturally.” And, yes, he says he finds the start of his working day much easier now than he did when he was younger.",
+            "output": [
+                " How might staggered starting times for work affect traffic, according to Kelley?",
+                " How would later start times affect families, according to Kelley?",
+                " According to Kelley, what creates difficulties for parents in the morning?"
+            ]
+        },
+        {
+            "input": "mn-Born Children Better at Sports Says Study",
+            "output": []
+        },
+        {
+            "input": " Do you want your child to be good at sports, make the school team and, maybe one day, even compete on the world stage? Well, try to ensure that your would-be Olympian or World Cup winner is born in November or, failing that, in October. A study has found that school pupils born in those months are fitter than everyone else in their class. November- and October-born children emerged as fitter, stronger and more powerful than their peers born in the other ten months of the year, especially those whose birthdays fell in April or June. Dr. Gavin Sandercock, who is from the Center for Sports and Exercise Science at Essex University and led the study, found that autumn-born children enjoyed “a clear physical advantage” over their classmates.",
+            "output": [
+                " What does the study say about the fitness of children born in April or June?",
+                " Who is Gavin Sandercock?",
+                " Who does the article suggest to be the weakest in comparison with children born in October and November?"
+            ]
+        },
+        {
+            "input": " The research involved 8,550 boys and girls aged between ten and 16 from 26 state schools in Essex. All were tested between 2007 and 2010 on three different measures of fitness: stamina, handgrip strength and lower-body power. The results revealed that a child’s month of birth could make “significant” differences to their levels of cardiovascular fitness, muscle strength and ability to accelerate, all of which predict how good someone is at sports, in which such attributes are vital. Performances at school sports days in the weeks ahead may bear out the findings. November-born children were the fittest overall as they had the most stamina and power and were the second strongest. Those born in October were almost as fit, scoring highest for strength and coming third for power, with December children close behind.",
+            "output": [
+                " What did the study find about stamina, handgrip strength and lower-body power of children?",
+                " What were the study’s conclusions concerning the stamina, power, and strength of November children compared to other children?",
+                " What was one measure the scientists used to assess the children’s fitness?"
+            ]
+        },
+        {
+            "input": " The gap in physical prowess between children in the same class but born in different months was sometimes very wide. “For example, we found that a boy born in November can run at least 10% faster, jump 12% higher and is 15% more powerful than a child of the same age born in April. This is, potentially, a huge physical advantage,” said Sandercock. Such gaps could ultimately decide who became a top-level athlete because, as the paper says, “selection into elite sports may often depend on very small margins or differences in an individual’s physical performance”. The study, which has been published in the International Journal of Sports Medicine, found that, when scores for the three kinds of fitness were combined, those born in April were the least fit, then those in June. That could see those children excluded from school teams and becoming sporting underachievers, Sandercock said.",
+            "output": [
+                " What are percentages used for in the passage?",
+                " What can small differences in physical performance determine?",
+                " According to Sandercock, what does selection into elite sports often depend on?"
+            ]
+        },
+        {
+            "input": " The findings seem to show that children born in the early months of the school year enjoy a double “autumn advantage” – they are already known to have an academic advantage and, now, they also appear to be better equipped for sports, too. The authors believe that autumn-born children’s greater exposure over the summer months, towards the end of pregnancy, to vitamin D is the most likely explanation. John Steele, chief executive of the Youth Sport Trust, said the quality of a young person’s introduction to sports at school can be “a major factor” in their sporting development. “Children that get a high-quality first experience, which develops their physical literacy, are those that will have greater agility, balance and coordination, and are more likely to develop an enjoyment of physical activity and excel in sports as they grow up”, he said.",
+            "output": [
+                " What does the study say about vitamin D?",
+                " What is one effect of a high-quality first sports experience, according to Steele?",
+                " What does Steele say is “a major factor” in the development of a child’s athletic abilities?"
+            ]
+        },
+        {
+            "input": " UK Sport could not say if a disproportionately high number of the 1,300 athletes across 47 sports it funds were born in November and October. Natalie Dunman, its head of performance pathways, said that, while the differences highlighted in the new findings were borne out by teenagers competing in junior-level competitions, they had disappeared by the time athletes were taking part in adult competitions. She said: “Looking at elite, senior athletes, there are many factors that go into making a champion and our work hasn’t uncovered anything to suggest that month of birth is one of the key ingredients.”",
+            "output": [
+                " What does Natalie Dunman note is a limitation to the study?",
+                " According to Dunman, when it comes to adult athletes ...",
+                " Where does Dunamn believe the athletic abilities of adults are derived from?"
+            ]
+        }
+    ]
+}
