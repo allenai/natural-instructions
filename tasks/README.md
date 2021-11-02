@@ -1510,3 +1510,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1711_poki_text_generation` | Given a title, generate a short poem that should look like written by a kid. | Text Generation
+`task1712_poki_classification` | Given a short poem, classify whether is written by an elementary kid or a high school kid. | Classification
+`task1713_convai3_sentence_generation` | Given a user's request, predict what the user is trying to do. | Sentence Generation
+`task1714_convai3_sentence_generation` | Given a user's intent and computer response, predict what will the user's response will be. | Sentence Generation
