@@ -1510,3 +1510,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1703_r-u-a-robot_classification` | Classifying R U a robot questions | Classification
+`task1704_r-u-a-robot_structured_text_generation` | Generating questions given R U a robot question | Structured Text Generation
+`task1705_hyperpartisan_news_detection_classification` | Classifying articles based on hyperpartisan | Classification
+`task1706_hyperpartisan_news_detection_long_text_generation` | Generating topics based on hyperpartisan news detection data | Long Text Generation
+`task1707_hyperpartisan_news_detection_classification_2` | Classifying articles based on bias type | Classification
