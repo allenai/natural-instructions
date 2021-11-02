@@ -1510,3 +1510,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
+`task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
+`task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
+`task1657_gooaq_question_generation`|question generation for a given answer|Question Generation
