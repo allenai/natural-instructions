@@ -1506,6 +1506,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
 `task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
 `task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
+`task1578_gigaword_summarization` | Generating summary to gigaword passages | Summary Generation
+`task1579_gigaword_incorrect_summarization` | Generating incorrect summary to gigaword passages | Incorrect Summary Generation
+`task1580_eqasc-perturbed_question_generation` | Generating questions for eQASC facts | Question Generation
+`task1581_eqasc-perturbed_answer_generation` | Generating answers for eQASC facts and questions | Answer Generation
 `task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
