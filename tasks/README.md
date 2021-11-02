@@ -1561,3 +1561,9 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1731_nlu_evaluation_data_intent_classification` | Classifying intent to 4 categories (based on NLU Evaluation Data) | Intent Classification 
+`task1732_nlu_evaluation_data_intent_classification` | Classifying intent to 4 categories (based on NLU Evaluation Data) | Intent Classification
+`task1733_banking77_classification` | Given a sentence, classify the sentence based on the needed banking operation. | Classification
+`task1734_webnlg_classification` | Given a set of sentences, decide the class of these sentences | Classification
+`task1735_webnlg_answer_generation` | Givan a set of descriptions, write how many different ways have been used to express the same thing. | Answer Generation
+`task1736_webnlg_text_generation` | Given a text, write a keyword about the text. | Text Generation
