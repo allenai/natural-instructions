@@ -1546,6 +1546,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
 `task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
 `task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
+`task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
+`task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
+`task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
+`task1657_gooaq_question_generation`|question generation for a given answer|Question Generation
 `task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
 `task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
 `task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
