@@ -6,9 +6,15 @@
         "DREAM (https://github.com/nlpdata/dream)"
     ],
     "Categories": [
-        "Classification"
+        "Classification",
+        "Reasoning -> Reasoning on Social Interactions",
+        "Dialogue Understanding"  
     ],
-    "Definition": "In this task, you will be shown a conversation and a question. You should categorize the question into matching, summary, logic, arithmetic and, commonsense groups. Matching is a question entailed or paraphrased by exactly one sentence in a dialogue. The answer can be extracted from the same sentence. Questions that cannot be answered by the surface meaning of a single sentence belong to the reasoning category.\u00a0We further define summary, logic, arithmetic and, commonsense subcategories. Answering summary questions requires the whole picture of dialogue, such as the topic of dialogue and the relation between speakers.\u00a0We require logical reasoning to answer logical questions. in arithmetic questions Inferring the answer requires arithmetic knowledge. To answer commonsense\u00a0questions, besides the textual information in the dialogue, we also require additional commonsense knowledge that cannot be obtained from the dialogue. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\".",
+    "Definition": "In this task, you will be shown a conversation and a question. You should categorize the question into matching, summary, logic, arithmetic and, commonsense groups. Matching is a question entailed or paraphrased by exactly one sentence in a dialogue. The answer can be extracted from the same sentence. Questions that cannot be answered by the surface meaning of a single sentence belong to the reasoning category. We further define summary, logic, arithmetic and, commonsense subcategories. Answering summary questions requires the whole picture of dialogue, such as the topic of dialogue and the relation between speakers. We require logical reasoning to answer logical questions. in arithmetic questions Inferring the answer requires arithmetic knowledge. To answer commonsense questions, besides the textual information in the dialogue, we also require additional commonsense knowledge that cannot be obtained from the dialogue. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\".",
+    "Domains": [
+        "Dialogue",
+        "School Science Textbooks"
+    ],
     "Positive Examples": [
         {
             "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
@@ -19,22 +25,26 @@
             "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
             "output": "matching",
             "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
-        }
+        },
+      {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+      }
     ],
     "Negative Examples": [
         {
             "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
             "output": "arithmetic",
             "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
-        }
-    ],
-    "Instances": [
+        },
         {
             "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
-            "output": [
-                "commonsense"
-            ]
-        },
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }    
+    ],
+    "Instances": [
         {
             "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: What does the man dislike most about the sweater? (A) The short sleeves (B) The high neck (C) The pattern.",
             "output": [
@@ -1027,12 +1037,6 @@
         },
         {
             "input": "W: Now that you are on the business, what's your advice for someone to become a fashion designer? M: Go to school. I mean it. Find a good school and learn as much as you can., Question: What does the man mean? (A) Fashion designing is a booming business. (B) School learning is a must for fashion designers. (C) He hopes to attend a good fashion school.",
-            "output": [
-                "logic"
-            ]
-        },
-        {
-            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
             "output": [
                 "logic"
             ]
