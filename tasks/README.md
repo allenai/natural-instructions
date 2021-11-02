@@ -1563,3 +1563,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
 `task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
 `task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
+`task1703_ljspeech_textmodification` | Digit to Text in ljspeech | Text Modification 
+`task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
+`task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
+`task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
