@@ -15,47 +15,50 @@
         "Arabic"
     ],
     "Definition": "The provided file includes inquiries about restaurants, and we ask you to translate those to the Arabic language. Please bear in mind the following guidelines while doing the translation: 1) We are looking for the most naturally written and formal form of each sentence in your language. We are *NOT* looking for colloquial forms of the sentence. We are looking for formal form which is how you would type your queries in a text-based virtual assistant. 2) The words between quotation marks *SHOULD NOT* be translated. We expect you to keep those values intact and include the quotation marks around them as well. 3) The fully capitalized words like DATE_0, or DURATION_0 *SHOULD NOT* be translated. Please keep them as they are in the translations. 4) Please do not localize measurement units like miles to kilometers during your translation. miles should be translated to its equivalent in your language. 6) Note the input is all lowercased except for fully capitalized special placeholders (e.g. NUMBER, DATE, TIME). Please do the same in your translations.",
+    "Domains": [
+        "Public Places -> Restaurants"
+    ],
     "Positive Examples": [
         {
             "input": "are there any \" italian \" restaurants nearby with 1 star reviews ?",
-            "output": "\u0647\u0644 \u0647\u0646\u0627\u0643 \u0623\u064a \u0645\u0637\u0627\u0639\u0645 \" italian \" \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646 1 \u0645\u0646 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0628\u0627\u0644\u0646\u062c\u0648\u0645\u061f",
+            "output": "هل هناك أي مطاعم \" italian \" بالقرب من 1 من التقييمات بالنجوم؟",
             "explanation": "The translation correctly preserves \" italian \" entity and is accurate"
         },
         {
             "input": "what kind of food does this restaurant serve ?",
-            "output": "\u0645\u0627 \u0646\u0648\u0639 \u0627\u0644\u0637\u0639\u0627\u0645 \u0627\u0644\u0630\u064a \u064a\u0642\u062f\u0645\u0647 \u0647\u0630\u0627 \u0627\u0644\u0645\u0637\u0639\u0645\u061f",
+            "output": "ما نوع الطعام الذي يقدمه هذا المطعم؟",
             "explanation": "The translation is fluent, formal, and accurate"
         },
         {
             "input": "what is the telephone number and location of the nearest \" chinese \" restaurant ?",
-            "output": "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0648\u0645\u0648\u0642\u0639 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" chinese \"\u061f",
+            "output": "ما هو رقم هاتف وموقع أقرب مطعم \" chinese \"؟",
             "explanation": "The translation correctly preserves \" chinese \" entity. It's also fluent, correct, and lowercased."
         }
     ],
     "Negative Examples": [
         {
             "input": "where is the closest \" wendy 's \" ?",
-            "output": "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 wendy 's\u061f",
+            "output": "أين يوجد أقرب wendy 's؟",
             "explanation": "Translation contain the entity \" wendy 's \" but quotation marks are dropped"
         },
         {
             "input": "show me the closest \" mcdonald 's \"",
-            "output": "\u0623\u0631\u0646\u064a \u0623\u0642\u0631\u0628 \" McDonald's \"",
+            "output": "أرني أقرب \" McDonald's \"",
             "explanation": "The output is not lowercased"
         },
         {
             "input": "display all review descriptions authored by \" jennifer \" .",
-            "output": "\u0627\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u0647\u0627 \" jennifer \".",
+            "output": "اعرض جميع التي كتبها \" jennifer \".",
             "explanation": "Translation of review descriptions is omitted from the output"
         },
         {
             "input": "what is the phone number for \" noodle nirvana \" ?",
-            "output": "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \" \u0627\u0644\u0645\u0639\u0643\u0631\u0648\u0646\u0629 \u0646\u064a\u0631\u0641\u0627\u0646\u0627 \"\u061f",
-            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" \u0627\u0644\u0645\u0639\u0643\u0631\u0648\u0646\u0629 \u0646\u064a\u0631\u0641\u0627\u0646\u0627 \" instead of being kept intact"
+            "output": "ما هو رقم هاتف \" المعكرونة نيرفانا \"؟",
+            "explanation": "The restaurant name \" noodle nirvana \" is translated to \" المعكرونة نيرفانا \" instead of being kept intact"
         },
         {
             "input": "can you tell me the rating of \" gold mirror \" in \" san francisco \" ?",
-            "output": "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u062e\u0628\u0631\u0646\u064a \u0639\u0646 \u062a\u0635\u0646\u064a\u0641 \" san francisco \" \u0641\u064a \" gold mirror \"\u061f",
+            "output": "هل يمكنك أن تخبرني عن تصنيف \" san francisco \" في \" gold mirror \"؟",
             "explanation": "The position of entities is switched in the output"
         }
     ],
@@ -63,2149 +66,2149 @@
         {
             "input": "find a \" mexican \" restaurant with 7 or more stars .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \" mexican \" \u064a\u062d\u0645\u0644 7 \u0623\u0648 \u0623\u0643\u062b\u0631 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645."
+                "ابحث عن مطعم \" mexican \" يحمل 7 أو أكثر من النجوم."
             ]
         },
         {
             "input": "search for \" vegetarian \" restaurants with 0 star reviews or better .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" vegetarian \" \u0628\u062a\u0642\u064a\u064a\u0645 0 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645 \u0623\u0648 \u0623\u0641\u0636\u0644."
+                "ابحث عن مطاعم \" vegetarian \" بتقييم 0 من النجوم أو أفضل."
             ]
         },
         {
             "input": "search for \" italian \" restaurants with at least 4 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \" \u0645\u0639 4 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن المطاعم \" italian \" مع 4 من التعليقات على الأقل."
             ]
         },
         {
             "input": "list \" italian \" restaurants with higher ratings that 4 stars .",
             "output": [
-                "\u0642\u0645 \u0628\u0625\u062f\u0631\u0627\u062c \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \" \u0630\u0627\u062a \u0627\u0644\u062a\u0635\u0646\u064a\u0641\u0627\u062a \u0627\u0644\u0623\u0639\u0644\u0649 \u0627\u0644\u062a\u064a \u064a\u0628\u0644\u063a 4 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645."
+                "قم بإدراج المطاعم \" italian \" ذات التصنيفات الأعلى التي يبلغ 4 من النجوم."
             ]
         },
         {
             "input": "look for a \" japanese \" restaurant that is the closest to me .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0639\u0645 \" japanese \" \u0627\u0644\u0623\u0642\u0631\u0628 \u0625\u0644\u064a."
+                "ابحث عن المطعم \" japanese \" الأقرب إلي."
             ]
         },
         {
             "input": "what 's the telephone number of the \" arby 's \" on \" sherman in muskegon , mi \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \" arby 's \" \u0641\u064a \" sherman in muskegon , mi \"\u061f"
+                "ما هو رقم هاتف \" arby 's \" في \" sherman in muskegon , mi \"؟"
             ]
         },
         {
             "input": "what is the closest \" italian \" restaurant with at least a 6 star rating ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" italian \" \u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u062a\u0635\u0646\u064a\u0641 6 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644\u061f"
+                "ما هو أقرب مطعم \" italian \" حاصل على تصنيف 6 من النجوم على الأقل؟"
             ]
         },
         {
             "input": "what is the closest \" coffee bean \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0623\u0642\u0631\u0628 \" coffee bean \"\u061f"
+                "ما هي أقرب \" coffee bean \"؟"
             ]
         },
         {
             "input": "where is the nearest \" mexican \" restaurant ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" mexican \"\u061f"
+                "أين يوجد أقرب مطعم \" mexican \"؟"
             ]
         },
         {
             "input": "show me the review for \" harry 's seafood grill \" by \" antoine waring \"",
             "output": [
-                "\u0623\u0631\u0646\u064a \u062a\u0639\u0644\u064a\u0642\u064b\u0627 \u0644\u0640 \" harry 's seafood grill \" \u0645\u0646 \u0637\u0631\u0641 \" antoine waring \""
+                "أرني تعليقًا لـ \" harry 's seafood grill \" من طرف \" antoine waring \""
             ]
         },
         {
             "input": "how well is \" pizza hut \" rated ?",
             "output": [
-                "\u0645\u0627 \u0645\u062f\u0649 \u062c\u0648\u062f\u0629 \" pizza hut \"\u061f"
+                "ما مدى جودة \" pizza hut \"؟"
             ]
         },
         {
             "input": "what is the rating of that \" mcdonald ' \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \" mcdonald ' \"\u061f"
+                "ما هو تصنيف \" mcdonald ' \"؟"
             ]
         },
         {
             "input": "where is the nearest \" italian \" restaurant .",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" italian \"."
+                "أين يوجد أقرب مطعم \" italian \"."
             ]
         },
         {
             "input": "search for an \" italian \" restaurant in \" dallas \" with at least 9 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \" italian \" \u0641\u064a \" dallas \" \u0645\u0639 9 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن مطعم \" italian \" في \" dallas \" مع 9 من التعليقات على الأقل."
             ]
         },
         {
             "input": "what is the rating for the \" la unica \" in \" huntersville \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0642\u064a\u064a\u0645 \" la unica \" \u0641\u064a \" huntersville \"\u061f"
+                "ما هو تقييم \" la unica \" في \" huntersville \"؟"
             ]
         },
         {
             "input": "what is the rating of \" olive garden \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0642\u064a\u064a\u0645 \" olive garden \"\u061f"
+                "ما هو تقييم \" olive garden \"؟"
             ]
         },
         {
             "input": "show me the location and name of the nearest \" chinese \" restaurant .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0643\u0627\u0646 \u0648\u0627\u0633\u0645 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" chinese \"."
+                "أرني مكان واسم أقرب مطعم \" chinese \"."
             ]
         },
         {
             "input": "show me the closest \" starbucks \" with at least 10 stars .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0623\u0642\u0631\u0628 \" starbucks \" \u0645\u0639 10 \u0646\u062c\u0645\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "أرني أقرب \" starbucks \" مع 10 نجمة على الأقل."
             ]
         },
         {
             "input": "search for 4 star restaurants in the \" 49503 \" zip code .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 4 \u0646\u062c\u0648\u0645 \u0641\u064a \u0627\u0644\u0631\u0645\u0632 \u0627\u0644\u0628\u0631\u064a\u062f\u064a \" 49503 \"."
+                "ابحث عن مطاعم 4 نجوم في الرمز البريدي \" 49503 \"."
             ]
         },
         {
             "input": "what is the price range for \" noodle express \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0646\u0637\u0627\u0642 \u0627\u0644\u0633\u0639\u0631\u064a \u0644\u0640 \" noodle express \"\u061f"
+                "ما هو النطاق السعري لـ \" noodle express \"؟"
             ]
         },
         {
             "input": "show me 5 star \" mexican \" restaurants that have more than 10 reviews .",
             "output": [
-                "\u0623\u0638\u0647\u0631 \u0644\u064a 5 \u0645\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" mexican \" \u0627\u0644\u062a\u064a \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0623\u0643\u062b\u0631 \u0645\u0646 10 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a."
+                "أظهر لي 5 من المطاعم \" mexican \" التي تحتوي على أكثر من 10 من التعليقات."
             ]
         },
         {
             "input": "can you show me all the 6 star restaurants in the area ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u0631\u064a\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0645\u0646 \u0641\u0626\u0629 6 \u0646\u062c\u0648\u0645 \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629\u061f"
+                "هل يمكنك أن تريني جميع المطاعم من فئة 6 نجوم في المنطقة؟"
             ]
         },
         {
             "input": "what is the phone number for the nearest \" wendy 's \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0623\u0642\u0631\u0628 \" wendy 's \"\u061f"
+                "ما هو رقم هاتف أقرب \" wendy 's \"؟"
             ]
         },
         {
             "input": "what is the rating for this restaurant and how many reviews does it have ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \u0647\u0630\u0627 \u0627\u0644\u0645\u0637\u0639\u0645 \u0648\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u062a\u064a \u062d\u0635\u0644 \u0639\u0644\u064a\u0647\u0627\u061f"
+                "ما هو تصنيف هذا المطعم وكم عدد التعليقات التي حصل عليها؟"
             ]
         },
         {
             "input": "i want to see what \" chinese \" restaurants are on \" madison avenue \" .",
             "output": [
-                "\u0623\u0631\u064a\u062f \u0623\u0646 \u0623\u0631\u0649 \u0645\u0627 \u0647\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" chinese \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \u0634\u0627\u0631\u0639 \" madison avenue \"."
+                "أريد أن أرى ما هي المطاعم \" chinese \" الموجودة في شارع \" madison avenue \"."
             ]
         },
         {
             "input": "how many reviews has \" mike \" written about \" pizza hut \" ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u0647\u0627 \" mike \" \u0639\u0646 \" pizza hut \"\u061f"
+                "كم عدد التعليقات التي كتبها \" mike \" عن \" pizza hut \"؟"
             ]
         },
         {
             "input": "find \" mexican \" restaurants with at least 6 star rating .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" mexican \" \u0628\u062a\u0635\u0646\u064a\u0641 6 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن المطاعم \" mexican \" بتصنيف 6 من النجوم على الأقل."
             ]
         },
         {
             "input": "show me all reviews written by \" paul \" on DATE_0 .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u0647\u0627 \" paul \" \u0641\u064a date_0."
+                "اعرض لي جميع التعليقات التي كتبها \" paul \" في date_0."
             ]
         },
         {
             "input": "show \" tina \" 's 0 star reviews of \" pizza \" joints .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u062a\u0639\u0644\u064a\u0642\u0627\u062a \" tina \" \u0627\u0644\u0640 0 \u0628\u0627\u0644\u0646\u062c\u0648\u0645 \u0628\u0634\u0623\u0646 \" pizza \"."
+                "اعرض تعليقات \" tina \" الـ 0 بالنجوم بشأن \" pizza \"."
             ]
         },
         {
             "input": "are there any 0 star \" mexican \" restaurants nearby ?",
             "output": [
-                "\u0647\u0644 \u062a\u0648\u062c\u062f \u0645\u0637\u0627\u0639\u0645 0 \u0646\u062c\u0648\u0645 \" mexican \" \u0641\u064a \u0627\u0644\u062c\u0648\u0627\u0631\u061f"
+                "هل توجد مطاعم 0 نجوم \" mexican \" في الجوار؟"
             ]
         },
         {
             "input": "search for \" mexican \" restaurants with at least 6 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" mexican \" \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 6 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن مطاعم \" mexican \" تحتوي على 6 من التعليقات على الأقل."
             ]
         },
         {
             "input": "find a restaurant that serves \" italian \" food with at least 4 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \u064a\u0642\u062f\u0645 \u0627\u0644\u0637\u0639\u0627\u0645 \" italian \" \u0645\u0639 4 \u062a\u0639\u0644\u064a\u0642 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن مطعم يقدم الطعام \" italian \" مع 4 تعليق على الأقل."
             ]
         },
         {
             "input": "what is the nearest \" mexican \" restaurant with a 8 star rating ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" mexican \" \u0628\u062a\u0635\u0646\u064a\u0641 8 \u0646\u062c\u0648\u0645\u061f"
+                "ما هو أقرب مطعم \" mexican \" بتصنيف 8 نجوم؟"
             ]
         },
         {
             "input": "can you give me the phone number for the nearest 8 star \" coffee \" house ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646 \u0623\u0646 \u062a\u0639\u0637\u064a\u0646\u064a \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0644\u0623\u0642\u0631\u0628 \u0628\u064a\u062a \" coffee  \" \u0628\u0640 8 \u0645\u0646 \u0646\u062c\u0648\u0645\u061f"
+                "هل يمكن أن تعطيني رقم الهاتف لأقرب بيت \" coffee  \" بـ 8 من نجوم؟"
             ]
         },
         {
             "input": "what is the \" panda express \" in \" gainesville , fl \" rated ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \" panda express \" \u0641\u064a \" gainesville , fl \"\u061f"
+                "ما هو تصنيف \" panda express \" في \" gainesville , fl \"؟"
             ]
         },
         {
             "input": "what is the star rating for \" tilted kilt \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \" tilted kilt \" \u0628\u0627\u0644\u0646\u062c\u0648\u0645\u061f"
+                "ما هو تصنيف \" tilted kilt \" بالنجوم؟"
             ]
         },
         {
             "input": "what are the latest reviews and review scores for this restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0622\u062e\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0648\u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0644\u0647\u0630\u0627 \u0627\u0644\u0645\u0637\u0639\u0645\u061f"
+                "ما هي آخر التعليقات والتقييمات لهذا المطعم؟"
             ]
         },
         {
             "input": "where is the closest \" starbucks \" ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 \" starbucks \"\u061f"
+                "أين يوجد أقرب \" starbucks \"؟"
             ]
         },
         {
             "input": "search for all 10 star , \" vegan \" restaurants in the area .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" vegan \" \u0645\u0646 \u0641\u0626\u0629 10 \u0646\u062c\u0648\u0645 \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629."
+                "ابحث عن جميع المطاعم \" vegan \" من فئة 10 نجوم في المنطقة."
             ]
         },
         {
             "input": "can you tell me where the closest \" pizza hut \" is ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u062e\u0628\u0631\u0646\u064a \u0623\u064a\u0646 \u0623\u0642\u0631\u0628 \" pizza hut \"\u061f"
+                "هل يمكنك أن تخبرني أين أقرب \" pizza hut \"؟"
             ]
         },
         {
             "input": "what is the rating of \" tgi fridays \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \" tgi fridays \"\u061f"
+                "ما هو تصنيف \" tgi fridays \"؟"
             ]
         },
         {
             "input": "show me a list of \" vegan \" restaurants with at least 2 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0642\u0627\u0626\u0645\u0629 \u0645\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" vegan \" \u0627\u0644\u062a\u064a \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 2 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "اعرض لي قائمة من المطاعم \" vegan \" التي تحتوي على 2 من التعليقات على الأقل."
             ]
         },
         {
             "input": "can i read the description of the closest \" italian \" restaurant ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0646\u064a \u0642\u0631\u0627\u0621\u0629 \u0648\u0635\u0641 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" italian \"\u061f"
+                "هل يمكنني قراءة وصف أقرب مطعم \" italian \"؟"
             ]
         },
         {
             "input": "what is the price range for \" pizza ranch \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0646\u0637\u0627\u0642 \u0627\u0644\u0633\u0639\u0631\u064a \u0644\u0640 \" pizza ranch \"\u061f"
+                "ما هو النطاق السعري لـ \" pizza ranch \"؟"
             ]
         },
         {
             "input": "show description of the closest 2 star restaurant .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0648\u0635\u0641 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \u0645\u0646 \u0635\u0646\u0641 2 \u0646\u062c\u0648\u0645."
+                "اعرض وصف أقرب مطعم من صنف 2 نجوم."
             ]
         },
         {
             "input": "what is the telephone number for the nearest \" chinese \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" chinese \"\u061f"
+                "ما هو رقم هاتف أقرب مطعم \" chinese \"؟"
             ]
         },
         {
             "input": "what is the highest rated restaurant in this area ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0623\u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645\u064b\u0627 \u0641\u064a \u0647\u0630\u0647 \u0627\u0644\u0645\u0646\u0637\u0642\u0629\u061f"
+                "ما هو المطعم الأعلى تقييمًا في هذه المنطقة؟"
             ]
         },
         {
             "input": "search for \" vegan \" restaurants in \" lakeland , fl \" with at least 3 reviews",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" vegan \" \u0641\u064a \" lakeland , fl \" \u0645\u0639 3 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644"
+                "ابحث عن مطاعم \" vegan \" في \" lakeland , fl \" مع 3 من التعليقات على الأقل"
             ]
         },
         {
             "input": "how close am i to \" art 's deli \" or \" carnegie deli \" ?",
             "output": [
-                "\u0645\u0627 \u0645\u062f\u0649 \u0642\u0631\u0628\u064a \u0645\u0646 \" art 's deli \" \u0623\u0648 \" carnegie deli \"\u061f"
+                "ما مدى قربي من \" art 's deli \" أو \" carnegie deli \"؟"
             ]
         },
         {
             "input": "show me all \" chinese \" restaurants with 5 star ratings within 1 miles .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" chinese \" \u0627\u0644\u062a\u064a \u062d\u0635\u0644\u062a \u0639\u0644\u0649 5 \u0645\u0646 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0628\u0627\u0644\u0646\u062c\u0648\u0645 \u0636\u0645\u0646 1 \u0645\u064a\u0644."
+                "اعرض جميع المطاعم \" chinese \" التي حصلت على 5 من التقييمات بالنجوم ضمن 1 ميل."
             ]
         },
         {
             "input": "what is the address of the \" dunkin donuts \" closet to me ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \u062e\u0632\u0627\u0646\u0629 \" dunkin donuts \" \u0628\u0627\u0644\u0646\u0633\u0628\u0629 \u0644\u064a\u061f"
+                "ما هو عنوان خزانة \" dunkin donuts \" بالنسبة لي؟"
             ]
         },
         {
             "input": "tell me the location of \" flo 's \" \" chinese \" restaurant in \" scottsdale , arizona \" .",
             "output": [
-                "\u0623\u062e\u0628\u0631\u0646\u064a \u0628\u0645\u0643\u0627\u0646 \u0645\u0637\u0639\u0645 \" flo 's \" \" chinese \" \u0641\u064a \" scottsdale , arizona \"."
+                "أخبرني بمكان مطعم \" flo 's \" \" chinese \" في \" scottsdale , arizona \"."
             ]
         },
         {
             "input": "what is the telephone number for \" krispy kreme \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \" krispy kreme \"\u061f"
+                "ما هو رقم هاتف \" krispy kreme \"؟"
             ]
         },
         {
             "input": "where is the nearest \" boston market \" ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0642\u0639 \u0623\u0642\u0631\u0628 \" boston market \"\u061f"
+                "أين يقع أقرب \" boston market \"؟"
             ]
         },
         {
             "input": "how far away is the closest \" olive garden \" ?",
             "output": [
-                "\u0643\u0645 \u062a\u0628\u0639\u062f \u0623\u0642\u0631\u0628 \" olive garden \"\u061f"
+                "كم تبعد أقرب \" olive garden \"؟"
             ]
         },
         {
             "input": "what is the address of the \" panda express \" in \" grand rapids , michigan \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646  \" panda express \" \u0641\u064a \" grand rapids , michigan \"\u061f"
+                "ما هو عنوان  \" panda express \" في \" grand rapids , michigan \"؟"
             ]
         },
         {
             "input": "where is the nearest \" mexican \" restaurant with at least a 7 star review ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" mexican \" \u0628\u062a\u0642\u064a\u064a\u0645 7 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644\u061f"
+                "أين يوجد أقرب مطعم \" mexican \" بتقييم 7 من النجوم على الأقل؟"
             ]
         },
         {
             "input": "what are the prices for the 0 highest rated \" italian \" restaurants in \" roanoke , va \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0623\u0633\u0639\u0627\u0631 \u0623\u0641\u0636\u0644 0 \u0645\u0637\u0627\u0639\u0645 \"italian\" \u0645\u0635\u0646\u0641\u0629 \u0641\u064a \"roanoke , va\"\u061f"
+                "ما هي أسعار أفضل 0 مطاعم \"italian\" مصنفة في \"roanoke , va\"؟"
             ]
         },
         {
             "input": "let me see the reviews for the \" jimmy john 's \" nearest to me ?",
             "output": [
-                "\u062f\u0639\u0646\u064a \u0623\u0631\u0649 \u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0644\u0623\u0642\u0631\u0628 \" jimmy john 's \" \u0628\u0627\u0644\u0646\u0633\u0628\u0629 \u0644\u064a\u061f"
+                "دعني أرى تعليقات لأقرب \" jimmy john 's \" بالنسبة لي؟"
             ]
         },
         {
             "input": "what is a 5 star \" mexican \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0645\u0637\u0639\u0645 \" mexican \" \u0628\u0640 5 \u0646\u062c\u0648\u0645\u061f"
+                "ما هو المطعم \" mexican \" بـ 5 نجوم؟"
             ]
         },
         {
             "input": "what places close to me have 2 star reviews ?",
             "output": [
-                "\u0645\u0627 \u0627\u0644\u0623\u0645\u0627\u0643\u0646 \u0627\u0644\u0642\u0631\u064a\u0628\u0629 \u0645\u0646\u064a \u0627\u0644\u062a\u064a \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 2 \u0645\u0646 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0628\u0627\u0644\u0646\u062c\u0648\u0645\u061f"
+                "ما الأماكن القريبة مني التي تحتوي على 2 من التقييمات بالنجوم؟"
             ]
         },
         {
             "input": "search for 8 star rated \" italian \" food in \" dallas \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \" italian \" \u0645\u0635\u0646\u0641 \u0628\u0640 8 \u0645\u0646 \u0627\u0644\u0646\u062c\u0648\u0645 \u0641\u064a \" dallas \"."
+                "ابحث عن مطعم \" italian \" مصنف بـ 8 من النجوم في \" dallas \"."
             ]
         },
         {
             "input": "can you show me 8 star reviews written by \" john smith \" .",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u0631\u064a\u0646\u064a 8 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u0647\u0627 \" john smith \"\u061f"
+                "هل يمكنك أن تريني 8 من التعليقات التي كتبها \" john smith \"؟"
             ]
         },
         {
             "input": "how many 1 star reviews are there for \" peet 's coffee \" ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u0646\u062c\u0645\u0629 \u0627\u0644\u0648\u0627\u062d\u062f\u0629 \u0644\u0640 \" peet 's coffee \"\u061f"
+                "كم عدد تقييمات النجمة الواحدة لـ \" peet 's coffee \"؟"
             ]
         },
         {
             "input": "i want to see all of the 1 star reviews that \" sheila \" wrote .",
             "output": [
-                "\u0623\u0631\u064a\u062f \u0623\u0646 \u0623\u0631\u0649 \u062c\u0645\u064a\u0639 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u062a\u0647\u0627 \" sheila \" \u0628\u0646\u062c\u0645\u0629 \u0648\u0627\u062d\u062f\u0629."
+                "أريد أن أرى جميع التعليقات التي كتبتها \" sheila \" بنجمة واحدة."
             ]
         },
         {
             "input": "locate all \" italian \" restaurants .",
             "output": [
-                "\u062a\u062d\u062f\u064a\u062f \u0645\u0648\u0642\u0639 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \"."
+                "تحديد موقع جميع المطاعم \" italian \"."
             ]
         },
         {
             "input": "can you look for a restaurant with a rating of 8 ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0627\u0644\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \u0628\u062a\u0642\u064a\u064a\u0645 8\u061f"
+                "هل يمكنك البحث عن مطعم بتقييم 8؟"
             ]
         },
         {
             "input": "looking to book a restaurant with at least 7 reviews .",
             "output": [
-                "\u0623\u062a\u0637\u0644\u0639 \u0644\u062d\u062c\u0632 \u0645\u0637\u0639\u0645 \u0628\u0640 7 \u062a\u0639\u0644\u064a\u0642\u064b\u0627 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644"
+                "أتطلع لحجز مطعم بـ 7 تعليقًا على الأقل"
             ]
         },
         {
             "input": "search for \" bayshore bean \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \"bayshore bean\"."
+                "ابحث عن \"bayshore bean\"."
             ]
         },
         {
             "input": "show me \" vietnamese \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0645\u0637\u0627\u0639\u0645 \"vietnamese\"."
+                "اعرض لي مطاعم \"vietnamese\"."
             ]
         },
         {
             "input": "find all the \" bakeries \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \"bakeries\"."
+                "ابحث عن جميع \"bakeries\"."
             ]
         },
         {
             "input": "show me all restaurants rated with exactly 7 stars .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 7 \u0646\u062c\u0648\u0645 \u0628\u0627\u0644\u0636\u0628\u0637."
+                "اعرض لي جميع المطاعم ذات تقييم 7 نجوم بالضبط."
             ]
         },
         {
             "input": "where is \" los compadres \" ?",
             "output": [
-                "\u0623\u064a\u0646 \"los compadres\"\u061f"
+                "أين \"los compadres\"؟"
             ]
         },
         {
             "input": "find \" thai \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0645\u0637\u0627\u0639\u0645 \"thai\"."
+                "اعرض لي مطاعم \"thai\"."
             ]
         },
         {
             "input": "show me \" cook out \" .",
             "output": [
-                "\u0623\u0631\u0646\u064a \"cook out\"."
+                "أرني \"cook out\"."
             ]
         },
         {
             "input": "find restaurants with more than 7 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0623\u0643\u062b\u0631 \u0645\u0646 7 \u0645\u0631\u0627\u062c\u0639\u0629."
+                "ابحث عن المطاعم الحاصلة على أكثر من 7 مراجعة."
             ]
         },
         {
             "input": "does the \" lone star steakhouse \" in \" dallas nc \" have a review yet ?",
             "output": [
-                "\u0647\u0644 \"lone star steakhouse\" \u0641\u064a \"dallas nc\" \u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u0623\u064a \u0645\u0631\u0627\u062c\u0639\u0629\u061f"
+                "هل \"lone star steakhouse\" في \"dallas nc\" حاصل على أي مراجعة؟"
             ]
         },
         {
             "input": "can you show me the ratings for \" j dog \" ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u0631\u064a\u0646\u064a \u062a\u0642\u064a\u064a\u0645\u0627\u062a \"j dog\"\u061f"
+                "هل يمكنك أن تريني تقييمات \"j dog\"؟"
             ]
         },
         {
             "input": "can you find the restaurant nearest to my location ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0623\u0642\u0631\u0628 \u0644\u0645\u0648\u0642\u0639\u064a\u061f"
+                "هل يمكنك العثور على المطعم الأقرب لموقعي؟"
             ]
         },
         {
             "input": "look up a \" mexican \" restaurant for me .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0645\u0637\u0639\u0645 \"mexican\"."
+                "ابحث لي عن مطعم \"mexican\"."
             ]
         },
         {
             "input": "find me a restaurant on \" main st . \" please .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0645\u0637\u0639\u0645 \"main st .\" \u0645\u0646 \u0641\u0636\u0644\u0643."
+                "ابحث لي عن مطعم \"main st .\" من فضلك."
             ]
         },
         {
             "input": "show me the highest rated restaurant please .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0623\u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645\u064b\u0627 \u0645\u0646 \u0641\u0636\u0644\u0643."
+                "أرني المطعم الأعلى تقييمًا من فضلك."
             ]
         },
         {
             "input": "what restaurant has the highest review count ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u0623\u0639\u0644\u0649 \u0639\u062f\u062f \u0645\u0646 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a\u061f"
+                "ما هو المطعم الحاصل على أعلى عدد من المراجعات؟"
             ]
         },
         {
             "input": "what restaurant does \" jeff weisnear \" review for ?",
             "output": [
-                "\u0645\u0627 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0630\u064a \u0642\u062f\u0645 \"jeff weisnear \" \u0645\u0631\u0627\u062c\u0639\u0629 \u0639\u0644\u064a\u0647\u061f"
+                "ما المطعم الذي قدم \"jeff weisnear \" مراجعة عليه؟"
             ]
         },
         {
             "input": "search for \" korean bbq \" restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"korean bbq\"."
+                "ابحث عن مطاعم \"korean bbq\"."
             ]
         },
         {
             "input": "how many reviews does the place have ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062d\u0627\u0635\u0644 \u0639\u0644\u064a\u0647\u0627 \u0647\u0630\u0627 \u0627\u0644\u0645\u0643\u0627\u0646\u061f"
+                "كم عدد المراجعات الحاصل عليها هذا المكان؟"
             ]
         },
         {
             "input": "where is the nearest \" chinese \" place ?",
             "output": [
-                "\u0623\u064a\u0646 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \"chinese\"\u061f"
+                "أين أقرب مطعم \"chinese\"؟"
             ]
         },
         {
             "input": "how many places to eat are nearby ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u0623\u0645\u0627\u0643\u0646 \u0627\u0644\u0642\u0631\u064a\u0628\u0629 \u0644\u062a\u0646\u0627\u0648\u0644 \u0627\u0644\u0637\u0639\u0627\u0645\u061f"
+                "كم عدد الأماكن القريبة لتناول الطعام؟"
             ]
         },
         {
             "input": "show all the restaurants below 1 stars .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0623\u0642\u0644 \u0645\u0646 1 \u0646\u062c\u0648\u0645."
+                "اعرض لي جميع المطاعم الحاصلة على أقل من 1 نجوم."
             ]
         },
         {
             "input": "give me all the \" italian \" places .",
             "output": [
-                "\u0623\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0645\u0637\u0627\u0639\u0645 \"italian\"."
+                "أبحث عن جميع مطاعم \"italian\"."
             ]
         },
         {
             "input": "find restaurants rated lower than 5 .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0627\u0644\u062a\u0642\u064a\u064a\u0645 \u0627\u0644\u0623\u0642\u0644 \u0645\u0646 5."
+                "ابحث عن المطاعم ذات التقييم الأقل من 5."
             ]
         },
         {
             "input": "find \" mexican \" restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"mexican\"."
+                "ابحث عن مطاعم \"mexican\"."
             ]
         },
         {
             "input": "show me \" french \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0645\u0637\u0627\u0639\u0645 \"french\"."
+                "اعرض لي مطاعم \"french\"."
             ]
         },
         {
             "input": "show me \" le pain quotidien \" .",
             "output": [
-                "\u0623\u0631\u0646\u064a \"le pain quotidien\"."
+                "أرني \"le pain quotidien\"."
             ]
         },
         {
             "input": "find restaurants with more than 1 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0623\u0643\u062b\u0631 \u0645\u0646 1 \u0645\u0631\u0627\u062c\u0639\u0629."
+                "ابحث عن المطاعم الحاصلة على أكثر من 1 مراجعة."
             ]
         },
         {
             "input": "is there a restaurant named \" china king \" ?",
             "output": [
-                "\u0647\u0644 \u064a\u0648\u062c\u062f \u0645\u0637\u0639\u0645 \u0627\u0633\u0645\u0647 \"china king\"\u061f"
+                "هل يوجد مطعم اسمه \"china king\"؟"
             ]
         },
         {
             "input": "what 's the lowest rated diner in my area ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0642\u0644 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u062a\u0642\u064a\u064a\u0645\u064b\u0627 \u0641\u064a \u0645\u0646\u0637\u0642\u062a\u064a\u061f"
+                "ما هو أقل المطاعم تقييمًا في منطقتي؟"
             ]
         },
         {
             "input": "what is the highest rated restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0623\u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645\u064b\u0627\u061f"
+                "ما هو المطعم الأعلى تقييمًا؟"
             ]
         },
         {
             "input": "is there a \" japanese \" restaurant nearby ?",
             "output": [
-                "\u0647\u0644 \u0647\u0646\u0627\u0643 \u0645\u0637\u0639\u0645 \"japanese\" \u0642\u0631\u064a\u0628\u061f"
+                "هل هناك مطعم \"japanese\" قريب؟"
             ]
         },
         {
             "input": "what 's the address of the closest restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645\u061f"
+                "ما هو عنوان أقرب مطعم؟"
             ]
         },
         {
             "input": "where is \" thai kitchen \" ?",
             "output": [
-                "\u0623\u064a\u0646 \"thai kitchen\"\u061f"
+                "أين \"thai kitchen\"؟"
             ]
         },
         {
             "input": "show me \" mexican \" restaurants",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \"mexican\""
+                "أرني مطاعم \"mexican\""
             ]
         },
         {
             "input": "show me all 7 star restaurants",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 7 \u0646\u062c\u0648\u0645"
+                "اعرض لي جميع المطاعم الحاصلة على 7 نجوم"
             ]
         },
         {
             "input": "show me \" main street \" restaurants",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0645\u0637\u0627\u0639\u0645 \"main street\""
+                "اعرض لي مطاعم \"main street\""
             ]
         },
         {
             "input": "show the address of \" thai corner \"",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0639\u0646\u0648\u0627\u0646 \"thai corner\""
+                "أرني عنوان \"thai corner\""
             ]
         },
         {
             "input": "search for the nearest \" wendy 's \" restaurant ?",
             "output": [
-                "\u0647\u0644 \u062a\u0628\u062d\u062b \u0639\u0646 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \"wendy's\"\u061f"
+                "هل تبحث عن أقرب مطعم \"wendy's\"؟"
             ]
         },
         {
             "input": "find a \" steak house \" restaurant ?",
             "output": [
-                "\u0647\u0644 \u062a\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \"steak house\"\u061f"
+                "هل تبحث عن مطعم \"steak house\"؟"
             ]
         },
         {
             "input": "show me \" mediterranean \" restaurants ?",
             "output": [
-                "\u0647\u0644 \u062a\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"mediterranean\"\u061f"
+                "هل تبحث عن مطاعم \"mediterranean\"؟"
             ]
         },
         {
             "input": "show me the best rated restaurants",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0623\u0641\u0636\u0644 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u062a\u0642\u064a\u064a\u0645\u064b\u0627"
+                "أرني أفضل المطاعم تقييمًا"
             ]
         },
         {
             "input": "show me restaurants near me",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0642\u0631\u064a\u0628\u0629 \u0645\u0646\u064a"
+                "أرني المطاعم القريبة مني"
             ]
         },
         {
             "input": "show me restaurants with the most reviews",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0623\u0643\u062b\u0631 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a"
+                "أرني المطاعم الحاصلة على أكثر المراجعات"
             ]
         },
         {
             "input": "find me \" pizza \" places",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"pizza\""
+                "ابحث لي عن مطاعم \"pizza\""
             ]
         },
         {
             "input": "find a \" pizza \" place .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \"pizza\"."
+                "ابحث عن مطعم \"pizza\"."
             ]
         },
         {
             "input": "show me a \" sushi \" restaurant .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0637\u0639\u0645 \"sushi\"."
+                "أرني مطعم \"sushi\"."
             ]
         },
         {
             "input": "find all 8 star \" bbq \" places .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0645\u0637\u0627\u0639\u0645 \"bbq\" \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 8 \u0646\u062c\u0648\u0645."
+                "ابحث عن جميع مطاعم \"bbq\" الحاصلة على 8 نجوم."
             ]
         },
         {
             "input": "show me \" italian \" restaurants .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \"italian\"."
+                "أرني مطاعم \"italian\"."
             ]
         },
         {
             "input": "find all 5 star diners .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 5 \u0646\u062c\u0648\u0645."
+                "ابحث عن جميع المطاعم الحاصلة على 5 نجوم."
             ]
         },
         {
             "input": "i 'd like to see restaurants with at least a rating of 2 .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0631\u0624\u064a\u0629 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 2 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "أرغب في رؤية المطاعم الحاصلة على تقييم 2 على الأقل."
             ]
         },
         {
             "input": "can you show me \" italian \" restaurants ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u0631\u064a\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \"italian\"\u061f"
+                "هل يمكنك أن تريني مطاعم \"italian\"؟"
             ]
         },
         {
             "input": "what is the price range for the top rated \" mexican \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0646\u0637\u0627\u0642 \u0627\u0644\u0633\u0639\u0631\u064a \u0644\u0644\u0645\u0637\u0639\u0645 \"mexican\" \u0627\u0644\u0623\u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645\u064b\u0627\u061f"
+                "ما هو النطاق السعري للمطعم \"mexican\" الأعلى تقييمًا؟"
             ]
         },
         {
             "input": "find \" mod pizza \" for me .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \"mod pizza\"."
+                "ابحث لي عن \"mod pizza\"."
             ]
         },
         {
             "input": "who wrote the latest review for \" first wok \" ?",
             "output": [
-                "\u0645\u0646 \u0627\u0644\u0630\u064a \u0643\u062a\u0628 \u0622\u062e\u0631 \u0645\u0631\u0627\u062c\u0639\u0629 \u0644\u0640 \"first wok\"\u061f"
+                "من الذي كتب آخر مراجعة لـ \"first wok\"؟"
             ]
         },
         {
             "input": "show me restaurants with a rating of 5 .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 5."
+                "اعرض لي المطاعم الحاصلة على تقييم 5."
             ]
         },
         {
             "input": "find me some \" coffee \" shops .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0628\u0639\u0636 \u0645\u0642\u0627\u0647\u064a \"coffee\"."
+                "اعرض لي بعض مقاهي \"coffee\"."
             ]
         },
         {
             "input": "search for \" hamburger \" joints .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"hamburger\"."
+                "ابحث عن مطاعم \"hamburger\"."
             ]
         },
         {
             "input": "what are the restaurants reviewed by \" mark \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0642\u062f\u0645 \"mark\" \u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0639\u0646\u0647\u0627\u061f"
+                "ما هي المطاعم التي قدم \"mark\" مراجعات عنها؟"
             ]
         },
         {
             "input": "show me all the restaurants with a rating of more than 0 .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 \u064a\u0632\u064a\u062f \u0639\u0646 0."
+                "اعرض لي جميع المطاعم الحاصلة على تقييم يزيد عن 0."
             ]
         },
         {
             "input": "look for \" american \" restaurants close by .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"american\" \u0628\u0627\u0644\u062c\u0648\u0627\u0631."
+                "ابحث عن مطاعم \"american\" بالجوار."
             ]
         },
         {
             "input": "show me any \" mexican \" restaurant .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0623\u064a \u0645\u0637\u0639\u0645 \"mexican\"."
+                "أرني أي مطعم \"mexican\"."
             ]
         },
         {
             "input": "find all of the restaurants that have a rating about 3 .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 \u0642\u0631\u064a\u0628 \u0625\u0644\u0649 3."
+                "ابحث عن جميع المطاعم الحاصلة على تقييم قريب إلى 3."
             ]
         },
         {
             "input": "locate \" los cabos \" for me .",
             "output": [
-                "\u062d\u062f\u062f \u0644\u064a \u0645\u0648\u0642\u0639 \"los cabos\"."
+                "حدد لي موقع \"los cabos\"."
             ]
         },
         {
             "input": "tell me the postal code for \" red robin \" .",
             "output": [
-                "\u0623\u062e\u0628\u0631\u0646\u064a \u0628\u0627\u0644\u0631\u0645\u0632 \u0627\u0644\u0628\u0631\u064a\u062f\u064a \u0644\u0640 \"red robin\"."
+                "أخبرني بالرمز البريدي لـ \"red robin\"."
             ]
         },
         {
             "input": "display a list of \" thai \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0642\u0627\u0626\u0645\u0629 \u0645\u0637\u0627\u0639\u0645 \"thai\"."
+                "اعرض قائمة مطاعم \"thai\"."
             ]
         },
         {
             "input": "find all restaurants in my downtown area .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0641\u064a \u0645\u0646\u0637\u0642\u0629 \u0648\u0633\u0637 \u0647\u0630\u0647 \u0627\u0644\u0645\u062f\u064a\u0646\u0629."
+                "ابحث لي عن جميع المطاعم في منطقة وسط هذه المدينة."
             ]
         },
         {
             "input": "display restaurants with at least 5 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 5 \u0645\u0631\u0627\u062c\u0639\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "اعرض المطاعم الحاصلة على 5 مراجعة على الأقل."
             ]
         },
         {
             "input": "show me all restaurant reviews by \" john smith \" .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0642\u062f\u0645 \"john smith\" \u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0639\u0646\u0647\u0627."
+                "اعرض لي جميع المطاعم التي قدم \"john smith\" مراجعات عنها."
             ]
         },
         {
             "input": "search for \" china wok \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \"china wok\"."
+                "ابحث عن \"china wok\"."
             ]
         },
         {
             "input": "show me \" sushi \" restaurants .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \"sushi\"."
+                "أرني مطاعم \"sushi\"."
             ]
         },
         {
             "input": "show me 1 star restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0646\u062c\u0645\u0629 \u0648\u0627\u062d\u062f\u0629."
+                "اعرض لي المطاعم الحاصلة على نجمة واحدة."
             ]
         },
         {
             "input": "find all restaurants with a rating of 10 .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 10."
+                "ابحث عن جميع المطاعم الحاصلة على تقييم 10."
             ]
         },
         {
             "input": "search for \" luby 's cafeteria \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \"luby 's cafeteria\"."
+                "ابحث عن \"luby 's cafeteria\"."
             ]
         },
         {
             "input": "search for all 7 star restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 7 \u0646\u062c\u0648\u0645."
+                "ابحث عن جميع المطاعم الحاصلة على 7 نجوم."
             ]
         },
         {
             "input": "search for \" italian \" restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \"italian\"."
+                "ابحث عن مطاعم \"italian\"."
             ]
         },
         {
             "input": "show me restaurants with a 4 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 4 \u0645\u0631\u0627\u062c\u0639\u0629."
+                "اعرض لي المطاعم الحاصلة على 4 مراجعة."
             ]
         },
         {
             "input": "show all restaurants with a rating of 0 or higher .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 0 \u0623\u0648 \u0623\u0639\u0644\u0649."
+                "اعرض جميع المطاعم ذات تقييم 0 أو أعلى."
             ]
         },
         {
             "input": "search for \" itlaian \" cuisine restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0628\u0627\u0644\u0646\u0643\u0647\u0629 \" itlaian \"."
+                "ابحث عن المطاعم بالنكهة \" itlaian \"."
             ]
         },
         {
             "input": "show restaurants with at least 3 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a 3 \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "اعرض المطاعم ذات 3 مُراجعات على الأقل."
             ]
         },
         {
             "input": "display any restaurants with overall rating of 3 or above .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0623\u064a \u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0635\u0646\u064a\u0641 \u0639\u0627\u0645 \u0628\u062f\u0631\u062c\u0629 3 \u0623\u0648 \u0623\u0639\u0644\u0649."
+                "اعرض أي مطاعم ذات تصنيف عام بدرجة 3 أو أعلى."
             ]
         },
         {
             "input": "i want to see some \" indian \" restaurants .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0627\u0644\u0625\u0637\u0644\u0627\u0639 \u0639\u0644\u0649 \u0628\u0639\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" indian \"."
+                "أرغب في الإطلاع على بعض المطاعم \" indian \"."
             ]
         },
         {
             "input": "what is the closest restaurant to me ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \u0644\u064a\u061f"
+                "ما هو أقرب مطعم لي؟"
             ]
         },
         {
             "input": "search for \" burger king \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" burger king \"."
+                "ابحث عن \" burger king \"."
             ]
         },
         {
             "input": "show me restaurants that have a rating of at least 3 stars .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u0647\u0627 \u062a\u0642\u064a\u064a\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644 3 \u0646\u062c\u0645\u0629."
+                "اعرض لي المطاعم التي لها تقييم على الأقل 3 نجمة."
             ]
         },
         {
             "input": "find me a restaurant called \" lenny 's \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0645\u0637\u0639\u0645 \u064a\u064f\u0633\u0645\u0649 \" lenny 's \""
+                "ابحث لي عن مطعم يُسمى \" lenny 's \""
             ]
         },
         {
             "input": "show me all \" german \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" german \""
+                "اعرض لي جميع المطاعم \" german \""
             ]
         },
         {
             "input": "i would like to find \" brenda 's french soul food \" .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0625\u064a\u062c\u0627\u062f \" brenda 's french soul food \"."
+                "أرغب في إيجاد \" brenda 's french soul food \"."
             ]
         },
         {
             "input": "i want to see all \" italian \" restaurants .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0627\u0644\u0625\u0637\u0644\u0627\u0639 \u0639\u0644\u0649 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \"."
+                "أرغب في الإطلاع على جميع المطاعم \" italian \"."
             ]
         },
         {
             "input": "show me all restaurants that are rated 6 star .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 6 \u0646\u0642\u0627\u0637."
+                "اعرض لي جميع المطاعم ذات تقييم 6 نقاط."
             ]
         },
         {
             "input": "find me all restaurants that serve \" new american \" cuisine .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062a\u064f\u0642\u062f\u0645 \u0627\u0644\u0637\u0639\u0627\u0645 \" new american \"."
+                "ابحث لي عن جميع المطاعم التي تُقدم الطعام \" new american \"."
             ]
         },
         {
             "input": "look for \" mai lee \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" mai lee \"."
+                "ابحث عن \" mai lee \"."
             ]
         },
         {
             "input": "find the \" vietnamese \" restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" vietnamese \"."
+                "ابحث عن المطاعم \" vietnamese \"."
             ]
         },
         {
             "input": "find all reviews from \" jane \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u0645\u0646 \" jane \"."
+                "ابحث عن جميع المُراجعات من \" jane \"."
             ]
         },
         {
             "input": "show restaurants with over 8 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0627\u0644\u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u0623\u0639\u0644\u0649 \u0645\u0646 8."
+                "اعرض المطاعم ذات المُراجعات أعلى من 8."
             ]
         },
         {
             "input": "find the restaurants with a rating of 8 .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 8."
+                "ابحث عن المطاعم ذات تقييم 8."
             ]
         },
         {
             "input": "please give me a list of restaurants that are rated 1 and up .",
             "output": [
-                "\u064a\u064f\u0631\u062c\u0649 \u0625\u0639\u0637\u0627\u0626\u064a \u0642\u0627\u0626\u0645\u0629 \u0628\u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 1 \u0641\u0623\u0639\u0644\u0649."
+                "يُرجى إعطائي قائمة بالمطاعم ذات تقييم 1 فأعلى."
             ]
         },
         {
             "input": "can you find the highest rated \" thai \" restaurant , please .",
             "output": [
-                "\u0647\u0644 \u064a\u064f\u0645\u0643\u0646\u0643 \u0625\u064a\u062c\u0627\u062f \u0645\u0637\u0627\u0639\u0645 \" thai \" \u0630\u0627\u062a \u0623\u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645\u060c \u0631\u062c\u0627\u0621\u064b."
+                "هل يُمكنك إيجاد مطاعم \" thai \" ذات أعلى تقييم، رجاءً."
             ]
         },
         {
             "input": "i want to see the top \" mexican \" restaurants .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0627\u0644\u0625\u0637\u0644\u0627\u0639 \u0639\u0644\u0649 \u0623\u0639\u0644\u0649 \u0645\u0637\u0627\u0639\u0645 \" mexican \"."
+                "أرغب في الإطلاع على أعلى مطاعم \" mexican \"."
             ]
         },
         {
             "input": "can you show me restaurants that have more than 10 reviews ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u0647\u0627 \u0645\u0627 \u064a\u0632\u064a\u062f \u0639\u0644\u0649 10 \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a\u061f"
+                "هل يمكنك أن تعرض لي المطاعم التي لها ما يزيد على 10 مُراجعات؟"
             ]
         },
         {
             "input": "search for \" mcdonald 's \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" mcdonald 's \"."
+                "ابحث عن \" mcdonald 's \"."
             ]
         },
         {
             "input": "show all \" mark \" 's reviews",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \" mark \"."
+                "اعرض جميع مُراجعات \" mark \"."
             ]
         },
         {
             "input": "look up restaurants in \" las vegas \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0641\u064a \" las vegas \"."
+                "ابحث عن المطاعم في \" las vegas \"."
             ]
         },
         {
             "input": "find \" cracker barrel \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" cracker barrel \""
+                "ابحث عن \" cracker barrel \""
             ]
         },
         {
             "input": "show me \" mexican \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" mexican \"."
+                "اعرض لي المطاعم \" mexican \"."
             ]
         },
         {
             "input": "find restaurants with at least 10 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0627\u0644\u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a 10 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن المطاعم ذات المُراجعات 10 على الأقل."
             ]
         },
         {
             "input": "find \" fuel pizza \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" fuel pizza \"."
+                "ابحث عن \" fuel pizza \"."
             ]
         },
         {
             "input": "what is the closest restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645\u061f"
+                "ما هو أقرب مطعم؟"
             ]
         },
         {
             "input": "show me all restaurants with ratings of at least 8 stars .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644 8 \u0646\u062c\u0645\u0629."
+                "اعرض لي جميع المطاعم ذات تقييم على الأقل 8 نجمة."
             ]
         },
         {
             "input": "find \" atomic ramen \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" atomic ramen \"."
+                "ابحث عن \" atomic ramen \"."
             ]
         },
         {
             "input": "tell all the restaurants rated 9 or higher",
             "output": [
-                "\u0623\u0628\u0644\u063a\u0646\u064a \u0628\u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0628\u062a\u0642\u064a\u064a\u0645 9 \u0623\u0648 \u0623\u0639\u0644\u0649"
+                "أبلغني بجميع المطاعم بتقييم 9 أو أعلى"
             ]
         },
         {
             "input": "show me the restaurant with the most reviews",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u0623\u0643\u0628\u0631"
+                "اعرض لي المطاعم ذات التقييمات الأكبر"
             ]
         },
         {
             "input": "find restaurants reviewed by \" arthur smith \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \" arthur smith \""
+                "ابحث عن المطاعم ذات مُراجعات \" arthur smith \""
             ]
         },
         {
             "input": "find restaurants rated 4 stars or higher .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0628\u062a\u0642\u064a\u064a\u0645 4 \u0646\u062c\u0648\u0645 \u0623\u0648 \u0623\u0639\u0644\u0649."
+                "ابحث عن المطاعم بتقييم 4 نجوم أو أعلى."
             ]
         },
         {
             "input": "list the restaurants with over 1 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0642\u0627\u0626\u0645\u0629 \u0628\u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0623\u0639\u0644\u0649 \u0645\u0646 1."
+                "اعرض قائمة بالمطاعم ذات تقييمات أعلى من 1."
             ]
         },
         {
             "input": "search for \" chipotle \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" chipotle \""
+                "ابحث عن \" chipotle \""
             ]
         },
         {
             "input": "show me \" ethiopian \" restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0645\u0637\u0627\u0639\u0645 \" ethiopian \"."
+                "اعرض لي مطاعم \" ethiopian \"."
             ]
         },
         {
             "input": "show me restaurants with more than 2 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u062a\u0632\u064a\u062f \u0639\u0646 2."
+                "اعرض لي المطاعم ذات مُراجعات تزيد عن 2."
             ]
         },
         {
             "input": "find all the restaurants rated higher than 1 .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 \u0623\u0639\u0644\u0649 \u0645\u0646 1."
+                "ابحث عن جميع المطاعم ذات تقييم أعلى من 1."
             ]
         },
         {
             "input": "search for \" outback steakhouse \" ?",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" outback steakhouse \"\u061f"
+                "ابحث عن \" outback steakhouse \"؟"
             ]
         },
         {
             "input": "find a \" italian \" restaurant .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \"."
+                "ابحث عن المطاعم \" italian \"."
             ]
         },
         {
             "input": "list all the restaurants with higher than 1 stars .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0642\u0627\u0626\u0645\u0629 \u0628\u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 \u0623\u0639\u0644\u0649 \u0645\u0646 1 \u0646\u062c\u0645\u0629."
+                "اعرض قائمة بجميع المطاعم ذات تقييم أعلى من 1 نجمة."
             ]
         },
         {
             "input": "what is the address of the \" mei wei \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \u0645\u0637\u0639\u0645 \" mei wei \"\u061f"
+                "ما هو عنوان مطعم \" mei wei \"؟"
             ]
         },
         {
             "input": "what is the rating of \" mei wei \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0642\u064a\u064a\u0645 \u0645\u0637\u0639\u0645 \" mei wei \"\u061f"
+                "ما هو تقييم مطعم \" mei wei \"؟"
             ]
         },
         {
             "input": "what is the address of the nearest \" coffee \" shop ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \u0623\u0642\u0631\u0628 \u0645\u0642\u0647\u0649 \" coffee \"\u061f"
+                "ما هو عنوان أقرب مقهى \" coffee \"؟"
             ]
         },
         {
             "input": "show me restaurants in the \" west suburbs \" please .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0641\u064a \" west suburbs \" \u0631\u062c\u0627\u0621\u064b."
+                "اعرض لي المطاعم في \" west suburbs \" رجاءً."
             ]
         },
         {
             "input": "find me some places to eat in \" detroit \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0628\u0639\u0636 \u0627\u0644\u0623\u0645\u0627\u0643\u0646 \u0644\u062a\u0646\u0627\u0648\u0644 \u0627\u0644\u0637\u0639\u0627\u0645 \u0641\u064a \" detroit \"."
+                "ابحث لي عن بعض الأماكن لتناول الطعام في \" detroit \"."
             ]
         },
         {
             "input": "look up restaurants that have 10 star ratings for me please .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 10 \u0646\u062c\u0648\u0645 \u0631\u062c\u0627\u0621\u064b."
+                "ابحث عن المطاعم ذات تقييم 10 نجوم رجاءً."
             ]
         },
         {
             "input": "show me all the restaurants that \" john grace \" has reviewed .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0631\u0627\u062c\u0639\u0647\u0627 \" john grace \"."
+                "اعرض لي جميع المطاعم التي راجعها \" john grace \"."
             ]
         },
         {
             "input": "show me reviews written by \" bill story \" .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u0647\u0627 \" bill story \"."
+                "اعرض لي المُراجعات التي كتبها \" bill story \"."
             ]
         },
         {
             "input": "how many reviews have been posted for \" old town doughnuts \" ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062a\u064a \u062a\u0645 \u0646\u0634\u0631\u0647\u0627 \u0644\u0640 \" old town doughnuts \"\u061f"
+                "كم عدد المُراجعات التي تم نشرها لـ \" old town doughnuts \"؟"
             ]
         },
         {
             "input": "how many restaurants have an average rating above 6 ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u062a\u0642\u064a\u064a\u0645 \u0645\u062a\u0648\u0633\u0637 \u0623\u0639\u0644\u0649 \u0645\u0646 6\u061f"
+                "كم عدد المطاعم ذات تقييم متوسط أعلى من 6؟"
             ]
         },
         {
             "input": "what 's the address of the \" mcdonald 's \" on \" parker road \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \" mcdonald 's \" \u0641\u064a \" parker road \"\u061f"
+                "ما هو عنوان \" mcdonald 's \" في \" parker road \"؟"
             ]
         },
         {
             "input": "i want \" mexican \" food",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0637\u0639\u0627\u0645 \" mexican \""
+                "أرغب في طعام \" mexican \""
             ]
         },
         {
             "input": "something \" spicy \" over 10 star rating .",
             "output": [
-                "\u0634\u064a\u0626\u0627\u064b \" spicy \" \u0630\u0648 \u062a\u0642\u064a\u064a\u0645 \u0623\u0639\u0644\u0649 \u0645\u0646 10 \u0646\u062c\u0648\u0645."
+                "شيئاً \" spicy \" ذو تقييم أعلى من 10 نجوم."
             ]
         },
         {
             "input": "i 'd like any food with more than 10 reviews .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0623\u064a \u0637\u0639\u0627\u0645 \u064a\u0632\u064a\u062f \u0639\u0644\u0649 10 \u0645\u064f\u0631\u0627\u062c\u0639\u0629."
+                "أرغب في أي طعام يزيد على 10 مُراجعة."
             ]
         },
         {
             "input": "where can i find the nearest \" chinese \" joint .",
             "output": [
-                "\u0645\u0646 \u0623\u064a\u0646 \u064a\u0645\u0643\u0646\u0646\u064a \u0625\u064a\u062c\u0627\u062f \u0623\u0642\u0631\u0628 \u0645\u0634\u062a\u0631\u0643 \" chinese \"."
+                "من أين يمكنني إيجاد أقرب مشترك \" chinese \"."
             ]
         },
         {
             "input": "search all reviews by \" john oyster \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062a\u064a \u0642\u062f\u0645\u0647\u0627 \" john oyster \"."
+                "ابحث عن جميع المُراجعات التي قدمها \" john oyster \"."
             ]
         },
         {
             "input": "i would like a \" mexican \" restaurant .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0645\u0637\u0639\u0645 \" mexican \"."
+                "أرغب في مطعم \" mexican \"."
             ]
         },
         {
             "input": "i would like all restaurants with 3 stars and above .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a 3 \u0646\u062c\u0648\u0645 \u0623\u0648 \u0623\u0639\u0644\u0649."
+                "أرغب في جميع المطاعم ذات 3 نجوم أو أعلى."
             ]
         },
         {
             "input": "show me \" los dos amigos \"",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \" los dos amigos \""
+                "اعرض لي \" los dos amigos \""
             ]
         },
         {
             "input": "show me restaurants with the most reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0623\u0643\u062b\u0631 \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a."
+                "اعرض لي المطاعم ذات أكثر مُراجعات."
             ]
         },
         {
             "input": "i want restaurants rated 9 or higher .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0628\u062a\u0642\u064a\u064a\u0645 9 \u0623\u0648 \u0623\u0639\u0644\u0649."
+                "أرغب في المطاعم بتقييم 9 أو أعلى."
             ]
         },
         {
             "input": "find restaurants in zip code \" 21269 \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0628\u0627\u0644\u0643\u0648\u062f \u0627\u0644\u0628\u0631\u064a\u062f\u064a \" 21269 \"."
+                "ابحث عن المطاعم بالكود البريدي \" 21269 \"."
             ]
         },
         {
             "input": "i want restaurants with more than 9 reviews .",
             "output": [
-                "\u0623\u0631\u063a\u0628 \u0641\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0645\u064f\u0631\u0627\u062c\u0639\u0627\u062a \u062a\u0632\u064a\u062f \u0639\u0646 9."
+                "أرغب في المطاعم ذات مُراجعات تزيد عن 9."
             ]
         },
         {
             "input": "display all the restaurants that have at least a rating of 2 .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u0647\u0627 \u062a\u0642\u064a\u064a\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644 2."
+                "اعرض جميع المطاعم التي لها تقييم على الأقل 2."
             ]
         },
         {
             "input": "do a search for restaurants that have been reviewed by at least 2 people .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062a\u0645\u062a \u0645\u064f\u0631\u0627\u062c\u0639\u062a\u0647\u0627 \u0645\u0646 \u062e\u0644\u0627\u0644 2 \u0634\u062e\u0635 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن المطاعم التي تمت مُراجعتها من خلال 2 شخص على الأقل."
             ]
         },
         {
             "input": "bring up \" italian \" restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \"."
+                "ابحث عن المطاعم \" italian \"."
             ]
         },
         {
             "input": "could you preform a search for the restaurant , \" thai foon \" ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0625\u062c\u0631\u0627\u0621 \u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0639\u0645 \" thai foon \"\u061f"
+                "هل يمكنك إجراء بحث عن المطعم \" thai foon \"؟"
             ]
         },
         {
             "input": "search for \" dairy queen \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" dairy queen \"."
+                "ابحث عن \" dairy queen \"."
             ]
         },
         {
             "input": "search for all 3 star restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u062a \u0627\u0644\u0640 3 \u0646\u062c\u0648\u0645."
+                "ابحث عن جميع المطاعم ذت الـ 3 نجوم."
             ]
         },
         {
             "input": "show me \" greek \" restaurants .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" greek \"."
+                "أرني المطاعم \" greek \"."
             ]
         },
         {
             "input": "show me restaurants with more than 9 posted reviews .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0643\u062b\u0631 \u0645\u0646 9 \u062a\u0639\u0644\u064a\u0642/\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0645\u0646\u0634\u0648\u0631(\u0629)."
+                "أرني المطاعم التي لديها أكثر من 9 تعليق/تعليقات منشور(ة)."
             ]
         },
         {
             "input": "can you find me a \" mcdonalds \" in my area ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u0639\u062b\u0631 \u0644\u064a \u0639\u0644\u0649 \" mcdonalds \" \u0641\u064a \u0645\u0646\u0637\u0642\u062a\u064a\u061f"
+                "هل يمكنك أن تعثر لي على \" mcdonalds \" في منطقتي؟"
             ]
         },
         {
             "input": "where are the best \" fast food \" joints in my area .",
             "output": [
-                "\u0623\u064a\u0646 \u062a\u0648\u062c\u062f \u0623\u0641\u0636\u0644 \u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" fast food \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \u0645\u0646\u0637\u0642\u062a\u064a."
+                "أين توجد أفضل مطاعم الـ \" fast food \" الموجودة في منطقتي."
             ]
         },
         {
             "input": "what is the address of the \" mcdonads \" in this area .",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0640 \" mcdonads \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f \u0641\u064a \u0647\u0630\u0647 \u0627\u0644\u0645\u0646\u0637\u0642\u0629."
+                "ما هو عنوان الـ \" mcdonads \" الموجود في هذه المنطقة."
             ]
         },
         {
             "input": "what are the highest ranked \" burger \" joints in the 4 mile area around \" asheville nc \" .",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0623\u0639\u0644\u0649 \u0648\u0623\u0641\u0636\u0644 \u0627\u0644\u0640 \" burger \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0636\u0645\u0646 \u0645\u0646\u0637\u0642\u0629 4 \u0645\u064a\u0644 \u062d\u0648\u0644 \" asheville nc \""
+                "ما هي أعلى وأفضل الـ \" burger \" الموجودة ضمن منطقة 4 ميل حول \" asheville nc \""
             ]
         },
         {
             "input": "show me all the restaurants that are located on \" federal highway \" ?",
             "output": [
-                "\u0623\u0631\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \" federal highway \"\u061f"
+                "أرني جميع المطاعم الموجودة في \" federal highway \"؟"
             ]
         },
         {
             "input": "which restaurant has the highest amounts of reviews ?",
             "output": [
-                "\u0623\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0644\u062f\u064a\u0647 \u0623\u0643\u0628\u0631 \u0639\u062f\u062f \u0645\u0646 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a\u061f"
+                "أي المطاعم لديه أكبر عدد من التقييمات؟"
             ]
         },
         {
             "input": "what date was \" jim \" 's review posted ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0627\u0631\u064a\u062e \u0646\u0634\u0631 \u062a\u0642\u064a\u064a\u0645 \" jim \"\u061f"
+                "ما هو تاريخ نشر تقييم \" jim \"؟"
             ]
         },
         {
             "input": "which restaurants are on \" main street \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \" main street \"\u061f"
+                "ما هي المطاعم الموجودة في \" main street \"؟"
             ]
         },
         {
             "input": "find me \" mexican \" food",
             "output": [
-                "\u062c\u062f \u0644\u064a \u0645\u0637\u0639\u0645 \" mexican \""
+                "جد لي مطعم \" mexican \""
             ]
         },
         {
             "input": "show me restaurants in \" kansas city , mo \"",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \" kansas city , mo \""
+                "أرني المطاعم الموجودة في \" kansas city , mo \""
             ]
         },
         {
             "input": "show me \" mexican \" restaurants in the area .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" mexican \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629."
+                "أرني المطاعم الـ \" mexican \" الموجودة في المنطقة."
             ]
         },
         {
             "input": "provide me the telephone number for the nearest \" mexican \" restaurant in \" 93312 \" zip .",
             "output": [
-                "\u0623\u0639\u0637\u064a\u0646\u064a \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0627\u0644\u062e\u0627\u0635 \u0628\u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" mexican \" \u0645\u0648\u062c\u0648\u062f \u0636\u0645\u0646 \u0627\u0644\u0631\u0645\u0632 \u0627\u0644\u0628\u0631\u064a\u062f\u064a \u0627\u0644\u062a\u0627\u0644\u064a \"93312\"."
+                "أعطيني رقم الهاتف الخاص بأقرب مطعم \" mexican \" موجود ضمن الرمز البريدي التالي \"93312\"."
             ]
         },
         {
             "input": "find restaurants with more than 3 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0643\u062b\u0631 \u0645\u0646 3 \u062a\u0642\u064a\u064a\u0645."
+                "ابحث عن المطاعم التي لديها أكثر من 3 تقييم."
             ]
         },
         {
             "input": "where is the closest \" mcdonalds \"",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 \" mcdonalds \" \u061f"
+                "أين يوجد أقرب \" mcdonalds \" ؟"
             ]
         },
         {
             "input": "where is a \" mexican \" restaurant with more than 0 good reviews ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0645\u0637\u0639\u0645 \" mexican \" \u0644\u062f\u064a\u0647 \u0623\u0643\u062b\u0631 \u0645\u0646 0 \u062a\u0642\u064a\u064a\u0645 \u062c\u064a\u062f\u061f"
+                "أين يوجد مطعم \" mexican \" لديه أكثر من 0 تقييم جيد؟"
             ]
         },
         {
             "input": "show all ratings made by \" mr gucci loafers \"",
             "output": [
-                "\u0639\u0631\u0636 \u0643\u0644 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u0645\u0646\u0634\u0648\u0631\u0629 \u0645\u0646 \u0642\u0628\u0644 \" mr gucci loafers \""
+                "عرض كل التقييمات المنشورة من قبل \" mr gucci loafers \""
             ]
         },
         {
             "input": "search for \" steakhouse \" restaurants in my city",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" steakhouse \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \u0645\u062f\u064a\u0646\u062a\u064a"
+                "ابحث عن مطاعم الـ \" steakhouse \" الموجودة في مدينتي"
             ]
         },
         {
             "input": "show me reviews written by \" amy \" .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u062a\u0628\u062a\u0647\u0627 \" amy \"."
+                "أرني المراجعات التي كتبتها \" amy \"."
             ]
         },
         {
             "input": "where can i find the closest \" wawa \" ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0645\u0643\u0646\u0646\u064a \u0623\u0646 \u0623\u062c\u062f \u0623\u0642\u0631\u0628 \" wawa \"\u061f"
+                "أين يمكنني أن أجد أقرب \" wawa \"؟"
             ]
         },
         {
             "input": "search for \" big woodys \"",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" big woodys \""
+                "ابحث عن \" big woodys \""
             ]
         },
         {
             "input": "search for an \" egyptian \" restaurant .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \" egyptian \"."
+                "ابحث عن مطعم \" egyptian \"."
             ]
         },
         {
             "input": "show me restaurants with a minimum 5 star rating .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062d\u0635\u0644\u062a \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 \u0628\u0640 5 \u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "أرني المطاعم التي حصلت على تقييم بـ 5 نجوم على الأقل."
             ]
         },
         {
             "input": "how many reviews are there at \" starbucks \" ?",
             "output": [
-                "\u0643\u0645 \u0639\u062f\u062f \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0628\u0627\u0644\u0646\u0633\u0628\u0629 \u0644\u0640 \" starbucks \"\u061f"
+                "كم عدد المراجعات الموجودة بالنسبة لـ \" starbucks \"؟"
             ]
         },
         {
             "input": "show me \" thai \" restaurants .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \" thai \"."
+                "أرني مطاعم \" thai \"."
             ]
         },
         {
             "input": "how far is the nearest \" applebee 's \" ?",
             "output": [
-                "\u0643\u0645 \u0645\u0646 \u0627\u0644\u0645\u0633\u0627\u0641\u0629 \u064a\u0628\u0639\u062f \u0627\u0644\u0640 \" applebee 's \"\u061f"
+                "كم من المسافة يبعد الـ \" applebee 's \"؟"
             ]
         },
         {
             "input": "located \" mexican \" food close to here",
             "output": [
-                "\u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" mexican \" \u0627\u0644\u062a\u064a \u062a\u0645 \u062a\u062d\u062f\u064a\u062f\u0647\u0627 \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646 \u0647\u0646\u0627"
+                "المطاعم \" mexican \" التي تم تحديدها بالقرب من هنا"
             ]
         },
         {
             "input": "show me \" white castle \"",
             "output": [
-                "\u0623\u0631\u0646\u064a \" white castle \""
+                "أرني \" white castle \""
             ]
         },
         {
             "input": "search for \" japanese \" restaurants with at least 4 stars .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" japanese \" \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 4 \u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن المطاعم الـ \" japanese \" التي لديها 4 نجوم على الأقل."
             ]
         },
         {
             "input": "tell me the rating of \" wendy 's \" .",
             "output": [
-                "\u0642\u0644 \u0644\u064a \u062a\u0635\u0646\u064a\u0641 \" wendy 's \"."
+                "قل لي تصنيف \" wendy 's \"."
             ]
         },
         {
             "input": "list \" japanese \" restaurants .",
             "output": [
-                "\u0625\u062f\u0631\u0627\u062c \u0627\u0644\u0645\u0637\u0627\u0639\u0645\u0627\u0644\u0640 \" japanese \"."
+                "إدراج المطاعمالـ \" japanese \"."
             ]
         },
         {
             "input": "what 's the highest rated \" pizza \" place in the \" city center \" ?",
             "output": [
-                "\u0623\u064a\u0646 \u062a\u0648\u062c\u062f \u0627\u0644\u0640 \" pizza \" \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0639\u0644\u0649 \u062a\u0635\u0646\u064a\u0641 \u0641\u064a \" city center \"\u061f"
+                "أين توجد الـ \" pizza \" التي لديها أعلى تصنيف في \" city center \"؟"
             ]
         },
         {
             "input": "search for a \" vegan \" restaurant with at least 8 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" vegan \" \u0644\u062f\u064a\u0647\u0627 8 \u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "ابحث عن مطاعم \" vegan \" لديها 8 مراجعات على الأقل."
             ]
         },
         {
             "input": "give me a 5 star restaurant nearby .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0642\u0631\u064a\u0628\u0629 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 5 \u0646\u062c\u0648\u0645."
+                "أرني المطاعم القريبة التي لديها 5 نجوم."
             ]
         },
         {
             "input": "find restaurants with the most reviews .",
             "output": [
-                "\u062c\u062f \u0644\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0643\u0628\u0631 \u0642\u062f\u0631 \u0645\u0646 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a."
+                "جد لي المطاعم التي لديها أكبر قدر من المراجعات."
             ]
         },
         {
             "input": "search for \" billy 's barbecue \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" billy 's barbecue \"."
+                "ابحث عن \" billy 's barbecue \"."
             ]
         },
         {
             "input": "i want to see restaurants with more than 0 reviews .",
             "output": [
-                "\u0623\u0631\u064a\u062f \u0623\u0646 \u0623\u0631\u0649 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0643\u062b\u0631 \u0645\u0646 0 \u0645\u0631\u0627\u062c\u0639\u0629."
+                "أريد أن أرى المطاعم التي لديها أكثر من 0 مراجعة."
             ]
         },
         {
             "input": "find restaurants that sell \" spaghetti \" .",
             "output": [
-                "\u0625\u064a\u062c\u0627\u062f \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062a\u0628\u064a\u0639 \u0627\u0644\u0640 \" spaghetti \"."
+                "إيجاد المطاعم التي تبيع الـ \" spaghetti \"."
             ]
         },
         {
             "input": "what 's the name of the \" italian \" restaurant on \" main street \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0633\u0645 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0640 \" italian \" \u0627\u0644\u0645\u0648\u062c\u0648\u062f \u0641\u064a \" main street \"\u061f"
+                "ما هو اسم المطعم الـ \" italian \" الموجود في \" main street \"؟"
             ]
         },
         {
             "input": "show me the highest rated restaurant .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0623\u0639\u0644\u0649 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u062a\u0642\u064a\u064a\u0645\u064b\u0627."
+                "أرني أعلى المطاعم تقييمًا."
             ]
         },
         {
             "input": "where is the nearest \" mcdonald 's \" ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0648\u062c\u062f \u0623\u0642\u0631\u0628 \" mcdonald 's \"\u061f"
+                "أين يوجد أقرب \" mcdonald 's \"؟"
             ]
         },
         {
             "input": "show me 8 star \" mexican \" restaurants",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" mexican \" \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0643\u062b\u0631 \u0645\u0646 8 \u0646\u062c\u0648\u0645"
+                "أرني المطاعم الـ \" mexican \" التي لديها أكثر من 8 نجوم"
             ]
         },
         {
             "input": "find all restaurants rated higher than 5",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u062a\u0642\u064a\u064a\u0645 \u0623\u0643\u062b\u0631 \u0645\u0646 5 \u0646\u062c\u0648\u0645"
+                "ابحث عن جميع المطاعم التي لديها تقييم أكثر من 5 نجوم"
             ]
         },
         {
             "input": "show me a list of restaurants with less than 9 reviews .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u0623\u0642\u0644 \u0645\u0646 9 \u0645\u0631\u0627\u062c\u0639\u0627\u062a."
+                "أرني قائمة المطاعم التي لديها أقل من 9 مراجعات."
             ]
         },
         {
             "input": "show me nearby \" mexican \" restaurants .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" mexican \" \u0627\u0644\u0642\u0631\u064a\u0628\u0629."
+                "أرني المطاعم الـ \" mexican \" القريبة."
             ]
         },
         {
             "input": "search for restaurants in \" reno , nevada \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0641\u064a \" reno , nevada \"."
+                "ابحث عن المطاعم الموجودة في \" reno , nevada \"."
             ]
         },
         {
             "input": "show me \" thai \" restaurants",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" thai \""
+                "أرني مطاعم الـ \" thai \""
             ]
         },
         {
             "input": "which \" chinese \" restaurant has the most reviews ?",
             "output": [
-                "\u0623\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" chinese \""
+                "أي المطاعم الـ \" chinese \""
             ]
         },
         {
             "input": "what is \" ramen nagi \" 's rating ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \" ramen nagi \"\u061f"
+                "ما هو تصنيف \" ramen nagi \"؟"
             ]
         },
         {
             "input": "look for \" olive garden \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" olive garden \"."
+                "ابحث عن \" olive garden \"."
             ]
         },
         {
             "input": "what restaurants have received 1 or more reviews ?",
             "output": [
-                "\u0645\u0627 \u0647\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062a\u0644\u0642\u062a 1 \u0645\u0631\u0627\u062c\u0639\u0629 \u0623\u0648 \u0623\u0643\u062b\u0631\u061f"
+                "ما هي المطاعم التي تلقت 1 مراجعة أو أكثر؟"
             ]
         },
         {
             "input": "find reviews from \" george \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0631\u0627\u062c\u0639\u0627\u062a \" george \"."
+                "ابحث عن مراجعات \" george \"."
             ]
         },
         {
             "input": "show me \" american \" restaurants",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" american \""
+                "أرني المطاعم الـ \" american \""
             ]
         },
         {
             "input": "tell me the \" american \" restaurants .",
             "output": [
-                "\u0623\u062e\u0628\u0631\u0646\u064a \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" american \"."
+                "أخبرني عن المطاعم الـ \" american \"."
             ]
         },
         {
             "input": "give me all of the \" mexican \" restaurants with at least 9 stars .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" mexican \" \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 9 \u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644."
+                "أرني جميع المطاعم الـ \" mexican \" التي لديها 9 نجوم على الأقل."
             ]
         },
         {
             "input": "search for \" rocky 's pizza \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" rocky 's pizza \"."
+                "ابحث عن \" rocky 's pizza \"."
             ]
         },
         {
             "input": "is there a \" red lobster \" near me ?",
             "output": [
-                "\u0647\u0644 \u064a\u0648\u062c\u062f \u0647\u0646\u0627\u0643 \u0623\u064a \" red lobster \" \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646\u064a\u061f"
+                "هل يوجد هناك أي \" red lobster \" بالقرب مني؟"
             ]
         },
         {
             "input": "find all of the \" indian \" restaurants",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" indian \""
+                "ابحث عن جميع المطاعم الـ \" indian \""
             ]
         },
         {
             "input": "what is the rating of the \" oak street steakhouse \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u062a\u0635\u0646\u064a\u0641 \u0645\u0637\u0639\u0645 \u0627\u0644\u0640 \" oak street steakhouse \"\u061f"
+                "ما هو تصنيف مطعم الـ \" oak street steakhouse \"؟"
             ]
         },
         {
             "input": "show me restaurants in zip code \" 28078 \" .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0636\u0645\u0646 \u0627\u0644\u0631\u0645\u0632 \u0627\u0644\u0628\u0631\u064a\u062f\u064a \u0627\u0644\u062a\u0627\u0644\u064a \"28078\"."
+                "أرني المطاعم الموجودة ضمن الرمز البريدي التالي \"28078\"."
             ]
         },
         {
             "input": "what \" mexican \" restaurant has the most reviews ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0627\u0644\u0645\u0637\u0639\u0645 \u0627\u0644\u0640 \" mexican \" \u0627\u0644\u0630\u064a \u0644\u062f\u064a\u0647 \u0623\u0643\u0628\u0631 \u0639\u062f\u062f \u0645\u0646 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a\u061f"
+                "ما هو المطعم الـ \" mexican \" الذي لديه أكبر عدد من التقييمات؟"
             ]
         },
         {
             "input": "what kind of rating does \" panda express \" have",
             "output": [
-                "\u0645\u0627 \u0646\u0648\u0639 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u062a\u064a \u062d\u0635\u0644 \u0639\u0644\u064a\u0647\u0627 \u0627\u0644\u0640 \" panda express \""
+                "ما نوع التقييمات التي حصل عليها الـ \" panda express \""
             ]
         },
         {
             "input": "show me \" italian \" restaurants nearby .",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0640 \" italian \" \u0627\u0644\u0642\u0631\u064a\u0628\u0629."
+                "أرني المطاعم الـ \" italian \" القريبة."
             ]
         },
         {
             "input": "please show me reviews that were written for \" cracker barrel \" this year .",
             "output": [
-                "\u0627\u0644\u0631\u062c\u0627\u0621\u0639\u0631\u0636 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062a\u064a \u0643\u064f\u062a\u0628\u062a \u0639\u0646 \u0627\u0644\u0640 \" cracker barrel \" \u0647\u0630\u0627 \u0627\u0644\u0639\u0627\u0645."
+                "الرجاءعرض المراجعات التي كُتبت عن الـ \" cracker barrel \" هذا العام."
             ]
         },
         {
             "input": "find restaurants with 6 stars .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0627\u0644\u0640 6 \u0646\u062c\u0648\u0645."
+                "ابحث عن المطاعم ذات الـ 6 نجوم."
             ]
         },
         {
             "input": "what is the phone number for \" sampan \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0627\u0644\u062e\u0627\u0635 \u0628\u0640 \" sampan \"\u061f"
+                "ما هو رقم الهاتف الخاص بـ \" sampan \"؟"
             ]
         },
         {
             "input": "can i see reviews for the \" gunnisack \" ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0646\u064a \u0631\u0624\u064a\u0629 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0627\u0644\u062e\u0627\u0635\u0629 \u0628\u0640 \" the gunnisack \"\u061f"
+                "هل يمكنني رؤية المراجعات الخاصة بـ \" the gunnisack \"؟"
             ]
         },
         {
             "input": "please tell me the location of \" dave 's seafood shack \" .",
             "output": [
-                "\u064a\u0631\u062c\u0649 \u062a\u0632\u0648\u064a\u062f\u064a \u0628\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0640 \" dave 's seafood shack \"."
+                "يرجى تزويدي بعنوان الـ \" dave 's seafood shack \"."
             ]
         },
         {
             "input": "what is the address of the nearest \" fast food \" place ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0639\u0646\u0648\u0627\u0646 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" fast food \"\u061f"
+                "ما هو عنوان أقرب مطعم \" fast food \"؟"
             ]
         },
         {
             "input": "search for \" gates barbecue \" ?",
             "output": [
-                "\u0627\u0644\u0628\u062d\u062b \u0639\u0646 \" gates barbecue \"\u061f"
+                "البحث عن \" gates barbecue \"؟"
             ]
         },
         {
             "input": "find restaurants within one mile from here .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629 \u0639\u0644\u0649 \u0628\u0639\u062f \u0645\u064a\u0644 \u0648\u0627\u062d\u062f \u0645\u0646 \u0647\u0646\u0627."
+                "ابحث عن المطاعم الموجودة على بعد ميل واحد من هنا."
             ]
         },
         {
             "input": "what is the closest \" italian \" restaurant to me",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" italian \" \u0645\u0646\u064a\u061f"
+                "ما هو أقرب مطعم \" italian \" مني؟"
             ]
         },
         {
             "input": "show restaurants with at least 1 reviews",
             "output": [
-                "\u0623\u0631\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 1 \u0645\u0631\u0627\u062c\u0639\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644"
+                "أرني المطاعم التي لديها 1 مراجعات على الأقل"
             ]
         },
         {
             "input": "are there any \" indian \" restaurants near me ?",
             "output": [
-                "\u0647\u0644 \u062a\u0648\u062c\u062f \u0647\u0646\u0627\u0643 \u0623\u064a\u0629 \u0645\u0637\u0627\u0639\u0645 \" indian \" \u0642\u0631\u064a\u0628\u0629 \u0645\u0646\u064a\u061f"
+                "هل توجد هناك أية مطاعم \" indian \" قريبة مني؟"
             ]
         },
         {
             "input": "give me the telephone number of a 9 star restaurant .",
             "output": [
-                "\u0623\u0639\u0637\u0646\u064a \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0645\u0637\u0639\u0645 \u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 9 \u0646\u062c\u0648\u0645 ."
+                "أعطني رقم هاتف مطعم حاصل على تقييم 9 نجوم ."
             ]
         },
         {
             "input": "show me all the of review written by \" alex smith \" about \" chinese \" restaurants .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0643\u0644 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u062a\u064a \u062f\u0648\u0651\u0646\u0647\u0627 \" alex smith \" \u062d\u0648\u0644 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" chinese \" ."
+                "أرِني كل التقييمات التي دوّنها \" alex smith \" حول المطاعم \" chinese \" ."
             ]
         },
         {
             "input": "show highest rated \" coffee \" shop withing 7 miles .",
             "output": [
-                "\u0623\u0638\u0647\u0631 \u0645\u062a\u062c\u0631 \" coffee \" \u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u0623\u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 \u0648\u064a\u0642\u0639 \u0639\u0644\u0649 \u0628\u0639\u062f 7 \u0623\u0645\u064a\u0627\u0644 ."
+                "أظهر متجر \" coffee \" حاصل على أعلى تقييم ويقع على بعد 7 أميال ."
             ]
         },
         {
             "input": "show me restaurants rated between 3 and 5 .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \u062a\u0642\u064a\u064a\u0645\u0647\u0627 \u0628\u064a\u0646 3 \u0648 5 ."
+                "أرِني مطاعم تقييمها بين 3 و 5 ."
             ]
         },
         {
             "input": "what is the price range of the nearest \" mexican \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0646\u0637\u0627\u0642 \u0627\u0644\u0623\u0633\u0639\u0627\u0631 \u0644\u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" mexican \" \u061f"
+                "ما هو نطاق الأسعار لأقرب مطعم \" mexican \" ؟"
             ]
         },
         {
             "input": "show restaurants in \" san francisco \" .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0641\u064a \" san francisco \" ."
+                "اعرض المطاعم في \" san francisco \" ."
             ]
         },
         {
             "input": "find all \" mexican \" restaurants .",
             "output": [
-                "\u062c\u0650\u062f \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" mexican \" ."
+                "جِد جميع المطاعم \" mexican \" ."
             ]
         },
         {
             "input": "search for \" sushi joy \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" sushi joy \"."
+                "ابحث عن \" sushi joy \"."
             ]
         },
         {
             "input": "find me \" italian \" restaurants",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" italian \" ."
+                "ابحث لي عن مطاعم \" italian \" ."
             ]
         },
         {
             "input": "can you find me the telephone number for \" rookie 's bar & grill \" ?",
             "output": [
-                "\u0647\u0644 \u064a\u0645\u0643\u0646\u0643 \u0623\u0646 \u062a\u062c\u062f \u0644\u064a \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \" rookie 's bar & grill \" \u061f"
+                "هل يمكنك أن تجد لي رقم هاتف \" rookie 's bar & grill \" ؟"
             ]
         },
         {
             "input": "what is the phone number for \" ginger china \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \"ginger china \" \u061f"
+                "ما هو رقم هاتف \"ginger china \" ؟"
             ]
         },
         {
             "input": "give the phone number of a restaurant with 1 or more reviews",
             "output": [
-                "\u0627\u0639\u0637\u0646\u064a \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0645\u0637\u0639\u0645 \u0644\u062f\u064a\u0647 1 \u0623\u0648 \u0623\u0643\u062b\u0631 \u0645\u0646 \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a ."
+                "اعطني رقم هاتف مطعم لديه 1 أو أكثر من التعليقات ."
             ]
         },
         {
             "input": "find me \" in-n-out burger \" .",
             "output": [
-                "\u0627\u0639\u062b\u0631 \u0644\u064a \u0639\u0644\u0649 \" in-n-out burger \" ."
+                "اعثر لي على \" in-n-out burger \" ."
             ]
         },
         {
             "input": "show me all 2 star restaurants .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 2 \u0646\u062c\u0648\u0645 ."
+                "اعرض لي جميع المطاعم الحاصلة على تقييم 2 نجوم ."
             ]
         },
         {
             "input": "search for a 1 star rated \" coffee \" shop located nearby .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u062a\u062c\u0631 \" coffee \" \u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 1 \u0646\u062c\u0648\u0645 \u0648\u064a\u062a\u0648\u0627\u062c\u062f \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646\u064a ."
+                "ابحث عن متجر \" coffee \" حاصل على تقييم 1 نجوم ويتواجد بالقرب مني ."
             ]
         },
         {
             "input": "show me reviews written by \" bruce \" .",
             "output": [
-                "\u0623\u0638\u0647\u0631 \u0644\u064a \u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0643\u062a\u0628\u0647\u0627 \" bruce \" ."
+                "أظهر لي تقييمات كتبها \" bruce \" ."
             ]
         },
         {
             "input": "find all restaurants rated higher than 6",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645  \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 \u0623\u0639\u0644\u0649 \u0645\u0646 6"
+                "ابحث عن جميع المطاعم  الحاصلة على تقييم أعلى من 6"
             ]
         },
         {
             "input": "search for a \" mexican \" restaurant .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0639\u0645 \" mexican \" ."
+                "ابحث عن مطعم \" mexican \" ."
             ]
         },
         {
             "input": "are there any one star reviews ?",
             "output": [
-                "\u0647\u0644 \u0647\u0646\u0627\u0643 \u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0645\u0646 \u0646\u062c\u0645\u0629 \u0648\u0627\u062d\u062f\u0629 \u061f"
+                "هل هناك تقييمات من نجمة واحدة ؟"
             ]
         },
         {
             "input": "search for restaurants with more than 10 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0639\u062f\u062f \u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0623\u0643\u062b\u0631 \u0645\u0646 10 ."
+                "ابحث عن المطاعم الحاصلة على عدد تعليقات أكثر من 10 ."
             ]
         },
         {
             "input": "what is the top rated 9 star restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0623\u0641\u0636\u0644 \u0645\u0637\u0639\u0645 \u062d\u0627\u0626\u0632 \u0639\u0644\u0649 \u062f\u0631\u062c\u0629 \u062a\u0642\u064a\u064a\u0645  9 \u0646\u062c\u0648\u0645 \u061f"
+                "ما هو أفضل مطعم حائز على درجة تقييم  9 نجوم ؟"
             ]
         },
         {
             "input": "what is the telephone and address for \" ruth 's chris \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0647\u0627\u062a\u0641 \u0648\u0639\u0646\u0648\u0627\u0646 \" ruth 's chris \" \u061f"
+                "ما هو هاتف وعنوان \" ruth 's chris \" ؟"
             ]
         },
         {
             "input": "show me \" aunt chilada 's \"",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \" aunt chilada 's \""
+                "أرِني \" aunt chilada 's \""
             ]
         },
         {
             "input": "are there any \" mexican \" restaurants with more than 9 reviews ?",
             "output": [
-                "\u0647\u0644 \u0647\u0646\u0627\u0643 \u0645\u0637\u0627\u0639\u0645 \" mexican \" \u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0639\u062f\u062f \u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0623\u0643\u062b\u0631 \u0645\u0646 9 \u061f"
+                "هل هناك مطاعم \" mexican \" حاصلة على عدد تقييمات أكثر من 9 ؟"
             ]
         },
         {
             "input": "find places in \" 17111 \" .",
             "output": [
-                "\u0627\u0639\u062b\u0631 \u0639\u0644\u0649 \u0627\u0645\u0627\u0643\u0646 \u0641\u064a \" 17111 \"."
+                "اعثر على اماكن في \" 17111 \"."
             ]
         },
         {
             "input": "show me all \" italian \" restaurants .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \" ."
+                "أرِني جميع المطاعم \" italian \" ."
             ]
         },
         {
             "input": "give me the name of a \" mexican \" restaurant .",
             "output": [
-                "\u0623\u0639\u0637\u0646\u064a \u0627\u0633\u0645 \u0645\u0637\u0639\u0645 \" mexican \" ."
+                "أعطني اسم مطعم \" mexican \" ."
             ]
         },
         {
             "input": "show me 10 star rated restaurants on \" locust street \" .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u0627 \u062a\u0642\u064a\u064a\u0645 10 \u0646\u062c\u0648\u0645 \u0648\u062a\u0642\u0639 \u0641\u064a \" locust street \" ."
+                "أرِني المطاعم التي لديها تقييم 10 نجوم وتقع في \" locust street \" ."
             ]
         },
         {
             "input": "show me a list of \" italian \" restaurants .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0642\u0627\u0626\u0645\u0629 \u0628\u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \"."
+                "أرِني قائمة بالمطاعم \" italian \"."
             ]
         },
         {
             "input": "show me all restaurants reviewed by \" restaurantgirl_84 \" .",
             "output": [
-                "\u0623\u0638\u0647\u0631 \u0644\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062a\u0645 \u062a\u0642\u064a\u064a\u0645\u0647\u0627 \u0645\u0646 \u0642\u0628\u0644 \" restaurantgirl_84 \" ."
+                "أظهر لي جميع المطاعم التي تم تقييمها من قبل \" restaurantgirl_84 \" ."
             ]
         },
         {
             "input": "i 'd like to know the location of \" dunkin donuts \" ?",
             "output": [
-                "\u0623\u0648\u062f \u0623\u0646 \u0623\u0639\u0631\u0641 \u0645\u0648\u0642\u0639 \" dunkin donuts \" \u061f"
+                "أود أن أعرف موقع \" dunkin donuts \" ؟"
             ]
         },
         {
             "input": "show me a \" chinese \" restaurant with a rating of 9 .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0645\u0637\u0639\u0645 \" chinese \" \u062d\u0627\u0635\u0644 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 9 ."
+                "أرِني مطعم \" chinese \" حاصل على تقييم 9 ."
             ]
         },
         {
             "input": "which restaurant has the most reviews ?",
             "output": [
-                "\u0623\u064a \u0645\u0637\u0639\u0645 \u0644\u062f\u064a\u0647 \u0623\u0643\u0628\u0631 \u0639\u062f\u062f \u0645\u0646 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u061f"
+                "أي مطعم لديه أكبر عدد من التقييمات ؟"
             ]
         },
         {
             "input": "search for \" french \" restaurants .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" french \"."
+                "ابحث عن مطاعم \" french \"."
             ]
         },
         {
             "input": "give me reviews for \" jade buffet \" .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u062a\u0642\u064a\u064a\u0645\u0627\u062a \" jade buffet \" ."
+                "اعرض لي تقييمات \" jade buffet \" ."
             ]
         },
         {
             "input": "what is the price range for \" ramen nagi \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0646\u0637\u0627\u0642 \u0627\u0644\u0623\u0633\u0639\u0627\u0631 \u0639\u0646\u062f \" ramen nagi \" \u061f"
+                "ما هو نطاق الأسعار عند \" ramen nagi \" ؟"
             ]
         },
         {
             "input": "find \" italian \" restaurants with at least 10 reviews .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" italian \" \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0639\u062f\u062f \u062a\u0642\u064a\u064a\u0645\u0627\u062a 10 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644 ."
+                "ابحث عن المطاعم \" italian \" الحاصلة على عدد تقييمات 10 على الأقل ."
             ]
         },
         {
             "input": "where is the closest \" dairy queen \" ?",
             "output": [
-                "\u0623\u064a\u0646 \u064a\u0642\u0639 \u0623\u0642\u0631\u0628 \" dairy queen \" \u061f"
+                "أين يقع أقرب \" dairy queen \" ؟"
             ]
         },
         {
             "input": "find all restaurants in \" chicago \" .",
             "output": [
-                "\u062c\u0650\u062f \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0641\u064a \" chicago \" ."
+                "جِد جميع المطاعم في \" chicago \" ."
             ]
         },
         {
             "input": "is there a restaurant in zipcode \" 19101 \" ?",
             "output": [
-                "\u0647\u0644 \u064a\u0648\u062c\u062f \u0645\u0637\u0639\u0645 \u064a\u0642\u0639 \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629 \u0627\u0644\u062a\u0627\u0628\u0639\u0629 \u0644\u0644\u0631\u0645\u0632 \u0627\u0644\u0628\u0631\u064a\u062f\u064a \" 19101 \" \u061f"
+                "هل يوجد مطعم يقع في المنطقة التابعة للرمز البريدي \" 19101 \" ؟"
             ]
         },
         {
             "input": "i 'm looking for \" armenian \" restaurants",
             "output": [
-                "\u0623\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" armenian \""
+                "أبحث عن مطاعم \" armenian \""
             ]
         },
         {
             "input": "show me reviews for \" dunkin ' donuts \" from the last 8 days .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0644\u064a \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0639\u0644\u0649 \"dunkin ' donuts\" \u0622\u062e\u0631 8 \u0623\u064a\u0627\u0645 ."
+                "اعرض لي التعليقات على \"dunkin ' donuts\" آخر 8 أيام ."
             ]
         },
         {
             "input": "show me all of the 10 star restaurants nearby .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u0642\u0631\u064a\u0628\u0629 \u0630\u0627\u062a \u0641\u0626\u0629 10 \u0646\u062c\u0648\u0645 ."
+                "أرِني جميع المطاعم القريبة ذات فئة 10 نجوم ."
             ]
         },
         {
             "input": "display restaurants with more than 9 reviews .",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u0639\u062f\u062f \u062a\u0642\u064a\u064a\u0645\u0627\u062a 9 ."
+                "اعرض المطاعم الحاصلة على عدد تقييمات 9 ."
             ]
         },
         {
             "input": "i need to find all 8 star restaurants .",
             "output": [
-                "\u0623\u0646\u0627 \u0628\u062d\u0627\u062c\u0629 \u0625\u0644\u0649 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0630\u0627\u062a \u0641\u0626\u0629 8 \u0646\u062c\u0648\u0645 ."
+                "أنا بحاجة إلى العثور على جميع المطاعم ذات فئة 8 نجوم ."
             ]
         },
         {
             "input": "find \" italian \" restaurants .",
             "output": [
-                "\u0627\u0639\u062b\u0631 \u0639\u0644\u0649 \u0645\u0637\u0627\u0639\u0645 \" italian \" ."
+                "اعثر على مطاعم \" italian \" ."
             ]
         },
         {
             "input": "show me \" mexican \" restaurants with at least a 9 star rating .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0645\u0637\u0627\u0639\u0645 \" mexican \" \u062d\u0627\u0635\u0644\u0629 \u0639\u0644\u0649 \u062a\u0642\u064a\u064a\u0645 9 \u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644 ."
+                "أرِني مطاعم \" mexican \" حاصلة على تقييم 9 نجوم على الأقل ."
             ]
         },
         {
             "input": "search for \" sushi king \" restaurant for me .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0644\u064a \u0639\u0646 \u0645\u0637\u0639\u0645 \" sushi king \" ."
+                "ابحث لي عن مطعم \" sushi king \" ."
             ]
         },
         {
             "input": "search for \" mexican \" restaurants",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" mexican \""
+                "ابحث عن المطاعم \" mexican \""
             ]
         },
         {
             "input": "show me \" japanese \" restaurants .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" japanese \" ."
+                "أرِني المطاعم \" japanese \" ."
             ]
         },
         {
             "input": "what is the price range for my closest \" chinese \" restaurant ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0646\u0637\u0627\u0642 \u0627\u0644\u0623\u0633\u0639\u0627\u0631 \u0644\u0623\u0642\u0631\u0628 \u0645\u0637\u0639\u0645 \" chinese \" \u061f"
+                "ما هو نطاق الأسعار لأقرب مطعم \" chinese \" ؟"
             ]
         },
         {
             "input": "show me restaurants on \" main street \" .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0645\u0637\u0627\u0639\u0645  \u062a\u0642\u0639 \u0641\u064a \" main street \" ."
+                "أرِني مطاعم  تقع في \" main street \" ."
             ]
         },
         {
             "input": "show me the top 10 \" steak house \" restaurants in \" orlando \" .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0623\u0641\u0636\u0644 10 \u0645\u0637\u0627\u0639\u0645 \" steak house \" \u0641\u064a \" orlando \" ."
+                "أرِني أفضل 10 مطاعم \" steak house \" في \" orlando \" ."
             ]
         },
         {
             "input": "show me all restaurants reviewed by \" alex smith \" .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u0642\u0627\u0645 \" alex smith \" \u0628\u062a\u0642\u064a\u064a\u0645\u0647\u0627 ."
+                "أرِني جميع المطاعم التي قام \" alex smith \" بتقييمها ."
             ]
         },
         {
             "input": "show me \" nomad pizza \" .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \" nomad pizza \" ."
+                "أرِني \" nomad pizza \" ."
             ]
         },
         {
             "input": "show me all \" chinese \" restaurants with reviews made in the last month",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \" chinese \" \u0627\u0644\u062a\u064a \u062a\u0645 \u062a\u0642\u064a\u064a\u0645\u0647\u0627 \u0641\u064a \u0627\u0644\u0634\u0647\u0631 \u0627\u0644\u0645\u0627\u0636\u064a"
+                "أرِني جميع المطاعم \" chinese \" التي تم تقييمها في الشهر الماضي"
             ]
         },
         {
             "input": "display restaurants that were rated above 2",
             "output": [
-                "\u0627\u0639\u0631\u0636 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0627\u0644\u062a\u064a \u062a\u0645 \u062a\u0642\u064a\u064a\u0645\u0647\u0627 \u0628\u0623\u0643\u062b\u0631 \u0645\u0646 2"
+                "اعرض المطاعم التي تم تقييمها بأكثر من 2"
             ]
         },
         {
             "input": "i 'm in the mood for \" italian \" food .",
             "output": [
-                "\u0623\u0646\u0627 \u0623\u0631\u063a\u0628 \u0628\u062a\u0646\u0627\u0648\u0644 \u0637\u0639\u0627\u0645 \" italian \" ."
+                "أنا أرغب بتناول طعام \" italian \" ."
             ]
         },
         {
             "input": "search for \" mexican \" restaurants with reviews from the past month .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \" mexican \" \u0645\u0639 \u0639\u0631\u0636 \u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u0634\u0647\u0631 \u0627\u0644\u0645\u0627\u0636\u064a ."
+                "ابحث عن مطاعم \" mexican \" مع عرض لتقييمات الشهر الماضي ."
             ]
         },
         {
             "input": "find the address for \" on the borders mexican grill and cantina \" .",
             "output": [
-                "\u0627\u0639\u062b\u0631 \u0639\u0644\u0649 \u0639\u0646\u0648\u0627\u0646 \" on the borders mexican grill and cantina \" ."
+                "اعثر على عنوان \" on the borders mexican grill and cantina \" ."
             ]
         },
         {
             "input": "show me restaurant reviews written by \" fat charlie \" .",
             "output": [
-                "\u0623\u0631\u0650\u0646\u064a \u0627\u0644\u062a\u0639\u0644\u064a\u0642\u0627\u062a \u0627\u0644\u064a \u062f\u0648\u0651\u0646\u0647\u0627 \" fat charlie \" \u0639\u0646 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 ."
+                "أرِني التعليقات الي دوّنها \" fat charlie \" عن المطاعم ."
             ]
         },
         {
             "input": "find me a \" french \" restaurant .",
             "output": [
-                "\u062c\u0650\u062f \u0644\u064a \u0645\u0637\u0639\u0645 \" french \" ."
+                "جِد لي مطعم \" french \" ."
             ]
         },
         {
             "input": "look for a \" red lobster \" in the \" 85053 \" zip code .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \" red lobster \" \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629 \u0627\u0644\u062a\u0627\u0628\u0639\u0629 \u0644\u0644\u0631\u0645\u0632 \u0627\u0644\u0628\u0631\u064a\u062f\u064a \" 85053 \" ."
+                "ابحث عن \" red lobster \" في المنطقة التابعة للرمز البريدي \" 85053 \" ."
             ]
         },
         {
             "input": "find restaurants in \" denver , colorado \" .",
             "output": [
-                "\u0627\u0628\u062d\u062b \u0639\u0646 \u0645\u0637\u0627\u0639\u0645 \u0641\u064a \" denver , colorado \" ."
+                "ابحث عن مطاعم في \" denver , colorado \" ."
             ]
         },
         {
             "input": "what is the phone number of the nearest \" pizza hut \" ?",
             "output": [
-                "\u0645\u0627 \u0647\u0648 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0623\u0642\u0631\u0628 \" pizza hut \" ."
+                "ما هو رقم هاتف أقرب \" pizza hut \" ."
             ]
         }
     ],

@@ -3,12 +3,23 @@
         "Anjana Arunkumar"
     ],
     "Source": [
-        "MultiNLI, https://cims.nyu.edu/~sbowman/multinli/paper.pdf"
+        "MultiNLI (paper: https://cims.nyu.edu/~sbowman/multinli/paper.pdf)"
     ],
     "Categories": [
-        "Classification"
+        "Question Answering -> Multiple Choice Question Answering",
+        "Reasoning->Deductive reasoning",
+        "Commonsense Reasoning",
+        "Reasoning -> Textual Entailment -> Deductive Reasoning",
+        "Text Comparison"
     ],
-    "Definition": "In this task, you're given a statement, and three sentences as choices. Your job is to determine which sentence clearly agrees with the statement. Indicate your answer as 1,2, or 3 corresponding to the choice number of the selected sentence.",
+    "Definition": "In this task, you're given a statement and three sentences as choices. Your job is to determine which sentence can be inferred from the statement. Incorrect choices change the meaning in important ways or have details that are not mentioned in the statement. Indicate your answer as 1,2, or 3 corresponding to the choice number of the selected sentence.",
+    "Domains": [    
+        "History",
+        "Fiction",
+        "Dialogue",
+        "Law",
+        "Government and Politics" 
+    ],
     "Positive Examples": [
         {
             "input": "Statement: Next to the MGM Grand you will find M and M World, four stories of merchandise and memorabilia dedicated to the candy that doesn't melt in your hand. Choices: 1. The candy has many fans who love its attractions. 2. There's four stories of memorabilia dedicated to a candy. 3. That particular candy melts and becomes difficult to eat.",
@@ -28,7 +39,7 @@
         {
             "input": "Statement: yeah i tell you what though if you go price some of those tennis shoes i can see why now you know they're getting up in the hundred dollar range. Choices: 1. The tennis shoes have a range of prices. 2. The tennis shoes can be in the hundred dollar range. 3. The tennis shoes are not over hundred dollars.",
             "output": "2",
-            "explanation": "The shoe price range is not known, and they definitely cost more than a hundred dollars. Hence, the second choice is the only one that fully agrees with the statement."
+            "explanation": "The shoes' price range is not known, and they definitely cost more than a hundred dollars. Hence, the second choice is the only one that fully agrees with the statement."
         }
     ],
     "Negative Examples": [
@@ -41,23 +52,26 @@
             "input": "Statement: You could say you were in an auto accident, and the ambulance driver took you straight to Dr. Famous' office. Choices: 1. Ambulance drivers knew Dr Famous was great for treating famous people. 2. Ambulance drivers just took you to the hospital. 3. Ambulance drivers knew Dr Famous.",
             "output": "2",
             "explanation": "The ambulance took the person to Dr. Famous, and not a hospital, so the second choice is incorrect."
+        },
+        {
+            "input": "Statement: The union has about 4000 members in Canada. Choices: 1. There's around 4000 Canadians in the union. 2. Toronto has Canada's biggest concentration of union members. 3. There are 100 members in the union that live in Canada.",
+            "output": "3",
+            "explanation": "Based on the statement the union has about 4000 members in canada, so the third choice is incorrect."
+        },
+        {
+            "input": "Statement: First to arrive was the Tang clan, which established a number of walled villages in the New Territories that still exist today. Choices: 1. The clan was not known for building. 2. Before the arrival of the Tang clan, the area was not inhabited by anyone. 3. Thanks to the Tang clan, there are a lot of walled villages that exist today.",
+            "output": "1",
+            "explanation": "This statement doesn't mention whether clan is known for building or not. Hence, the first choice is incorrect."
+        },
+        { 
+            "input": "Statement: isn't it awful Choices: 1. This isn't too bad. 2. It's not as bad as past situations. 3. That is horrific.",
+            "output": "2",
+            "explanation": "In this example, the statement implies that it's awful. Also, we don't know about the past situations. So, the second choice is incorrect."
         }
     ],
     "Instances": [
         {
-            "input": "Statement: The union has about 4000 members in Canada. Choices: 1. There's around 4000 Canadians in the union. 2. Toronto has Canada's biggest concentration of union members. 3. There are 100 members in the union that live in Canada.",
-            "output": [
-                "1"
-            ]
-        },
-        {
             "input": "Statement: Ca'daan saw two whipmasters fleeing on horseback. Choices: 1. The men were running towards Ca'daan. 2. Ca'daan watched the men as they were more than a mile away. 3. Ca'daan saw the men going off into the distance.",
-            "output": [
-                "3"
-            ]
-        },
-        {
-            "input": "Statement: First to arrive was the Tang clan, which established a number of walled villages in the New Territories that still exist today. Choices: 1. The clan was not known for building. 2. Before the arrival of the Tang clan, the area was not inhabited by anyone. 3. Thanks to the Tang clan, there are a lot of walled villages that exist today.",
             "output": [
                 "3"
             ]
@@ -106,12 +120,6 @@
         },
         {
             "input": "Statement: In the nighthis eyes carry him     to unknown places. Choices: 1. He stayed in places that he knew. 2. One of the unknown places was Paris, France. 3. He went to unfamiliar locations.",
-            "output": [
-                "3"
-            ]
-        },
-        {
-            "input": "Statement: isn't it awful Choices: 1. This isn't too bad. 2. It's not as bad as past situations. 3. That is horrific.",
             "output": [
                 "3"
             ]
@@ -171,7 +179,7 @@
             ]
         },
         {
-            "input": "Statement: retrofit of three absorbers for six boilers). Choices: 1. The three absorbers are unable to fit. 2. The three absorbers are retrofit in the HVAC machine. 3. The three absorbers are retrofit.",
+            "input": "Statement: retrofit of three absorbers for six boilers. Choices: 1. The three absorbers are unable to fit. 2. The three absorbers are retrofit in the HVAC machine. 3. The three absorbers are retrofit.",
             "output": [
                 "3"
             ]
