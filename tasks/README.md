@@ -1518,3 +1518,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1586_scifact_title_generation` | Title Generation | Title_Generation
+`task1587_scifact_classification` | Classification | Classification
+`task1588_tecla_classification` | Classification | Classification
+`task1589_scifact_classification` | Classification | Classification
