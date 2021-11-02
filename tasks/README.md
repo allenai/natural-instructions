@@ -1522,3 +1522,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1587_scifact_classification` | Classification | Classification
 `task1588_tecla_classification` | Classification | Classification
 `task1589_scifact_classification` | Classification | Classification
+`task1590_diplomacy_text_generation` | Text generation based on diplomacy_detection | Text_Generation
+`task1591_allocine_classification` | Classification (based on allocine) | Classification  
+`task1592_yahoo_answers_topics_classfication` | Classification based on yahoo_answers_topics | Classification
+`task1593_yahoo_answers_topics_classification` | Classification based on yahoo_answers_topics | Classification  
+`task1594_yahoo_answers_topics_question_generation` | Question Generation based on yahoo_answers_topics | Question_Generation
