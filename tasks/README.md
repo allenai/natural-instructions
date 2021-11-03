@@ -1563,6 +1563,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
 `task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
 `task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
+`task1685_menyo20k_translation` | Language translation from English to Yoruba | Translation  
+`task1686_menyo20k_translation` | Language translation from Yoruba to English| Translation  
+`task1689_qed_amara_translation` | Language translation from English to French| Translation  
+`task1690_qed_amara_translation` | Language translation from French to English | Translation  
+`task1691_qed_amara_translation` | Language translation from English to Spanish | Translation  
+`task1692_qed_amara_translation` | Language translation from Spanish to English | Translation  
 `task1703_ljspeech_textmodification` | Digit to Text in ljspeech | Text Modification 
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
