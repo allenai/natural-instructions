@@ -36,7 +36,8 @@
     -  `Proofreading -> Spelling Error -> Spelling Error Detection`
   - `Proofreading -> Word Order Error`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
-- `Hate Speech Detection`
+- `Abuse Detection`
+  - `Abuse Detection -> Hate Speech Detection`
 - `Hypernym Discovery`
 - `Intent Detection`
 - `Language Identification`
