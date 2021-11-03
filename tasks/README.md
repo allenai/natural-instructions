@@ -1573,6 +1573,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1711_poki_text_generation` | Given a title, generate a short poem that should look like written by a kid. | Text Generation
+`task1712_poki_classification` | Given a short poem, classify whether is written by an elementary kid or a high school kid. | Classification
+`task1713_convai3_sentence_generation` | Given a user's request, predict what the user is trying to do. | Sentence Generation
+`task1714_convai3_sentence_generation` | Given a user's intent and computer response, predict what will the user's response will be. | Sentence Generation
 `task1719_civil_comments_url_extraction` | Extraction of Urls| Answer Generation 
 `task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
 `task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
