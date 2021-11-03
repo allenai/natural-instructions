@@ -1546,6 +1546,12 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
 `task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
 `task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
+`task1626_copa_hr_question_answering` | Given a sentence and 2 labels, select the correct label | Answer Selection
+`task1627_copa_hr_classification` | Given a question and two label, classify the group in which the choice and the statement are related | Classification
+`task1628_copa_hr_question_answering` | Given a sentence and four label, select the correct label. | Answer Selection 
+`task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
+`task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
+`task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
@@ -1561,6 +1567,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1719_civil_comments_url_extraction` | Extraction of Urls| Answer Generation 
+`task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
+`task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
+`task1722_civil_comments_threat_classification` | Classify Threat | Classification
+`task1723_civil_comments_sexuallyexplicit_classification` | Classify Sexually Explicit Content| Classification
+`task1724_civil_comments_insult_classification` | Classify Insult | Classification
+`task1725_civil_comments_severtoxicity_classification` | Classify Severe Toxicity | Classification
+`task1726_mathqa_correct_answer_generation` | Generate correct answers for math questions | Answer Generation
 `task1727_taylor_vs_shakes_classification` | Classify poem between Taylor Swift or Shakespeare| Classification
 `task1728_taylor_vs_shakes_generation` | Generate likely next lines | Answer Generation
 `task1729_taylor_vs_shakes_missclassification` | Find misclassied text| Classification

@@ -116,6 +116,8 @@ skew_exclusion = [
     "525", "503", "375", "646", "622", "682", "621", "903", "921"
 ]
 
+contributors = {}
+
 for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
@@ -235,4 +237,14 @@ for file in files[begin_task_number:end_task_number + 1]:
                 raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
                                 f'the task file `tasks/README.md`')
 
+            for c in data['Contributors']:
+                if c not in contributors:
+                    contributors[c] = 0
+                contributors[c] += 1
+
 print("Did not find any errors! ✅")
+
+keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
+for author, count in keyvalues:
+    if count >= 25:
+        print(f" ✍️ {author} -> {count}")
