@@ -142,7 +142,6 @@
   - `Text Modification -> Style Transfer`
     `Text Modification -> Style Transfer -> Text Simplification`
   - `Text Modification -> Paraphrasing`
-
 - `Text Span Selection`
 - `Title Selection`
 - `Translation`
