@@ -1483,12 +1483,18 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1544_conll2002_named_entity_recognition_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1545_conll2002_person_name_extraction_answer_generation` | Given a question in Dutch language, write the named entities from the question if present | Answer Generation
 `task1546_conll2002_location_name_extraction_answer_generation` | Given a question in Dutch language, write the location names from the question if present | Answer Generation
+`task1548_wiqa_binary_classification` | Binary Classification (based on steps in wiqa) | Answer Generation
+`task1549_wiqa_answer_generation_missing_step` | Generating answer to place missing step in a series (based on wiqa) | Answer Generation
 `task1551_every_ith_element_from_kth_element` | Given a list return every ith element of the list starting from the kth element | Answer Generation
 `task1552_scitail_question_generation` | Generating questions (based on SciTail) | Question Generation
 `task1553_cnn_dailymail_summarization` | Generating summary to news articles | Summarization
 `task1554_scitail_classification` | Classifying supporting and non supporting statements from SciTail  | Classification
 `task1555_scitail_answer_generation` | Generating answers to SciTail Sentence-Questions | Answer Generation
 `task1556_scitail_passage_generation` | Generating passage based on SciTail Question-Answer | Passage Generation
+`task1557_jfleg_answer_generation` | Generating answers (based on jfleg) | Answer Generation  
+`task1558_jfleg_incorrect_answer_generation` | Generating incorrect answers (based on jfleg) | Incorrect Answer Generation
+`task1559_blimp_binary_classification` | Classifying sentences (based on Blimp) | Binary Classification  
+`task1560_blimp_binary_classification` | Classifying sentences (based on Blimp) | Binary Classification 
 `task1561_clickbait_new_bg_summarization` | Providing a title summary to passage from Clickbait_new_bg dataset | Summarization
 `task1562_clickbait_new_bg_answer_generation` | Generating fake news score from passage in Clickbait_new_bg dataset | Classification
 `task1563_clickbait_new_bg_answer_generation` | Generating click bait score from passage in Clickbait_new_bg dataset | Classification
@@ -1506,11 +1512,76 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1575_amazon_reviews_multi_sentiment_classification` |Classification of product reviews into good or bad| Classification
 `task1576_amazon_reviews_multi_english_language_classification` | Classification of reviews based on whether it is English or not|Classification
 `task1577_amazon_reviews_multi_japanese_language_classification` | Classification of reviews based on whether it is Japanese or not|Classification
+`task1578_gigaword_summarization` | Generating summary to gigaword passages | Summary Generation
+`task1579_gigaword_incorrect_summarization` | Generating incorrect summary to gigaword passages | Incorrect Summary Generation
+`task1580_eqasc-perturbed_question_generation` | Generating questions for eQASC facts | Question Generation
+`task1581_eqasc-perturbed_answer_generation` | Generating answers for eQASC facts and questions | Answer Generation
 `task1582_bless_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
 `task1583_bless_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1584_evalution_meronym_classification` | Given an object and a part, decide whether the object has that part | Classification
 `task1585_root09_hypernym_generation` | Given a concept word, generate a hypernym for it | Answer Generation
+`task1586_scifact_title_generation` | Title Generation | Title_Generation
+`task1587_scifact_classification` | Classification | Classification
+`task1588_tecla_classification` | Classification | Classification
+`task1589_scifact_classification` | Classification | Classification
+`task1590_diplomacy_text_generation` | Text generation based on diplomacy_detection | Text_Generation
+`task1591_allocine_classification` | Classification (based on allocine) | Classification  
+`task1592_yahoo_answers_topics_classfication` | Classification based on yahoo_answers_topics | Classification
+`task1593_yahoo_answers_topics_classification` | Classification based on yahoo_answers_topics | Classification  
+`task1594_yahoo_answers_topics_question_generation` | Question Generation based on yahoo_answers_topics | Question_Generation
+`task1595_event2mind_text_generation_1` | Creating text (emotional reaction) based on event2Mind event prompts | Text Generation
+`task1596_event2mind_text_generation_2` | Creating text (intent) based on event2Mind event prompts | Text Generation
+`task1597_nyc_slot_filling` | Categorizing elements of information from text from the NYC database | Slot Filling
+`task1598_nyc_long_text_generation` | Creating sentences based off of some information from the NYC database | Long Text Generation
+`task1599_smcalflow_classification` | Classify given utterance into user or agent | Classification
+`task1600_smcalflow_sentence_generation`| Given a agents' reply, generate a users' utterance | Sentence Generation
+`task1601_webquestions_answer_generation` | Given a question and URL, generate an answer | Answer Generation
+`task1602_webquestion_question_genreation` | Given an answer and URL, generate a question | Question Generation
+`task1603_smcalflow_sentence_generation` | Given a user utterance, generate agents' utterance | Sentence Generation
+`task1604_ethos_text_classification` | Classifying text to Hate or Not Hate | Text Classification
+`task1605_ethos_text_classification` | Classifying text to Violence or Not Violence | Text Classification
+`task1606_ethos_text_classification` | Classifying if text has Gender Crticism | Text Classification
+`task1607_ethos_text_classification` | Classifying text to Religious Criticism | Text Classification
+`task1608_xquad_en_answer_generation` | Generating answers to xquad en questions | Answer Generation
+`task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
+`task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
+`task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
+`task1626_copa_hr_question_answering` | Given a sentence and 2 labels, select the correct label | Answer Selection
+`task1627_copa_hr_classification` | Given a question and two label, classify the group in which the choice and the statement are related | Classification
+`task1628_copa_hr_question_answering` | Given a sentence and four label, select the correct label. | Answer Selection 
+`task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
+`task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
+`task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
 `task1641_searchqa_category_classification` | Category Classification on SearchQA questions | Category Classification
 `task1642_searchqa_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
 `task1643_climate_fever_label_generation` | Label Generation on Climate Fever | Label Generation
 `task1644_climate_fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
+`task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
+`task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
+`task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
+`task1657_gooaq_question_generation`|question generation for a given answer|Question Generation
+`task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
+`task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
+`task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
+`task1665_trainglecopa_question_generation` | Generating a Question for the given premise from traingleCOPA dataset | Question Generation
+`task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
+`task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
+`task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
+`task1685_menyo20k_translation` | Language translation from English to Yoruba | Translation  
+`task1686_menyo20k_translation` | Language translation from Yoruba to English| Translation  
+`task1689_qed_amara_translation` | Language translation from English to French| Translation  
+`task1690_qed_amara_translation` | Language translation from French to English | Translation  
+`task1691_qed_amara_translation` | Language translation from English to Spanish | Translation  
+`task1692_qed_amara_translation` | Language translation from Spanish to English | Translation  
+`task1703_ljspeech_textmodification` | Digit to Text in ljspeech | Text Modification 
+`task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
+`task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
+`task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1719_civil_comments_url_extraction` | Extraction of Urls| Answer Generation 
+`task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
+`task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
+`task1722_civil_comments_threat_classification` | Classify Threat | Classification
+`task1723_civil_comments_sexuallyexplicit_classification` | Classify Sexually Explicit Content| Classification
+`task1724_civil_comments_insult_classification` | Classify Insult | Classification
+`task1725_civil_comments_severtoxicity_classification` | Classify Severe Toxicity | Classification
+`task1726_mathqa_correct_answer_generation` | Generate correct answers for math questions | Answer Generation
