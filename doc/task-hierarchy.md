@@ -8,6 +8,8 @@
 ## Task Categories
 - `Abuse Detection`
 - `Author Identification`
+- `Unnatural Language Processing`
+  - `Unnatural Language Processing -> Question Answering`   
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
@@ -23,7 +25,6 @@
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
-- `Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
 - `Dialogue Understanding`
 - `Document Understanding`
 - `Entity Detection`
@@ -46,6 +47,7 @@
   - `Mathematics -> Arithmetic`
   - `Mathematics -> Combinatorics`
   - `Mathematics -> Geometry`
+  - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
 - `Named Entity Recognition`
 - `Order Detection`
   - `Order Detection -> Incorrect Order Detection`
@@ -53,6 +55,7 @@
 - `Paraphrasing`
 - `Parts-of-speech`
 - `Question Answering`
+  - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
   - `Question Answering -> Contextual Question Answering`
     - `Question Answering -> Contextual Question Answering -> Abstractive`
@@ -82,6 +85,7 @@
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
     - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+    - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
@@ -94,7 +98,6 @@
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Social Interactions`
   - `Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
-  - `Reasoning -> Spatial Reasoning`
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
     - `Reasoning -> Textual Entailment -> Abductive Reasoning`
@@ -117,7 +120,7 @@
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
 - `Text Generation`
-  - `Text Generation -> Command Execution
+  - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
   - `Text Generation -> Long Text Generation`
@@ -167,6 +170,7 @@
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
+    * `Commonsense -> Concepts and Relations -> Spatial Commonsense`
   * `Commonsense -> Stories`
 * `Computer Science`
   * `Computer Science -> Computer Security`
@@ -188,6 +192,7 @@
   * `History -> 9/11 Reports`
   * `History -> European History`
 * `Human Sexuality`
+* `Image Caption`
 * `International Law`
 * `Jurisprudence`
 * `Justice`
