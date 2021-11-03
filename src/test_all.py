@@ -68,6 +68,14 @@ def dict_raise_on_duplicates(ordered_pairs):
             d[k] = v
     return d
 
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    '''
+    return [ atoi(c) for c in re.split(r'(\d+)', text) ]
 
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
@@ -95,7 +103,7 @@ for i in range(0, len(task_numbers) - 1):
     assert num1 <= num2, f"ERROR: looks like `{num1}` appears before `{num2}`."
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-files.sort()
+files.sort(key=natural_keys)
 
 # make sure anything that gets mentioned in the readme, correspond to an actual file
 task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
@@ -115,6 +123,8 @@ skew_exclusion = [
     "265", "280", "302", "922", "909", "907", "900", "892", "838", "823", "585", "573", "566", "528", "526", "527",
     "525", "503", "375", "646", "622", "682", "621", "903", "921"
 ]
+
+contributors = {}
 
 for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
@@ -235,4 +245,14 @@ for file in files[begin_task_number:end_task_number + 1]:
                 raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
                                 f'the task file `tasks/README.md`')
 
+            for c in data['Contributors']:
+                if c not in contributors:
+                    contributors[c] = 0
+                contributors[c] += 1
+
 print("Did not find any errors! ✅")
+
+keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
+for author, count in keyvalues:
+    if count >= 25:
+        print(f" ✍️ {author} -> {count}")
