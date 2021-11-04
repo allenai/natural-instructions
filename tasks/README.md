@@ -1619,3 +1619,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1724_civil_comments_insult_classification` | Classify Insult | Classification
 `task1725_civil_comments_severtoxicity_classification` | Classify Severe Toxicity | Classification
 `task1726_mathqa_correct_answer_generation` | Generate correct answers for math questions | Answer Generation
+`task1727_taylor_vs_shakes_classification` | Classify poem between Taylor Swift or Shakespeare| Classification
+`task1728_taylor_vs_shakes_generation` | Generate likely next lines | Answer Generation
+`task1729_taylor_vs_shakes_missclassification` | Find misclassied text| Classification
+`task1730_taylor_vs_shakes_incorrectanswergeneration` | Generate incorrect answer| Incorrect Answer Generation
