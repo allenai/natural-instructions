@@ -1611,6 +1611,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1712_poki_classification` | Given a short poem, classify whether is written by an elementary kid or a high school kid. | Classification
 `task1713_convai3_sentence_generation` | Given a user's request, predict what the user is trying to do. | Sentence Generation
 `task1714_convai3_sentence_generation` | Given a user's intent and computer response, predict what will the user's response will be. | Sentence Generation
+`task1715_acronym_output` | Acronym generation using acronym_identification dataset | Acronym Generation 
+`task1716_acronym_detection` | Binary classification using acronym_identification dataset | Classification task
+`task1717_dialogue_generation` | Dialog generation using doc2dial dataset | Text Generation 
+`task1718_dialogue_arrangement` | Dialoag arrangement using doc2dial dataset | Sentences Arrangment task
 `task1719_civil_comments_url_extraction` | Extraction of Urls| Answer Generation 
 `task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
 `task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
