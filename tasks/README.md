@@ -1552,6 +1552,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
 `task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
 `task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
+`task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
+`task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
+`task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
+`task1648_opus_books_en-sv_translation` | Translation from English to Swedish using opus dataset | Translation
+`task1649_opus_books_en-no_translation`	| Translation from English to Norwegian using opus dataset | Translation
+`task1650_opus_books_en-fi_translation` | Translation from English to Finnish using opus dataset | Translation
+`task1651_opus_books_en-es__translation` | Translation from English to Spanish using opus dataset | Translation
+`task1652_opus_books_ca-en_translation` | Translation from Catalan to English using opus dataset | Translation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
