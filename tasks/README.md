@@ -1546,6 +1546,20 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
 `task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
 `task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
+`task1612_sick_label_classification` | Classification of labels correctly to show relation between two sentences (based on the sick dataset)| Classification
+`task1613_sick_given_category_generate_sentence` | Generate a sentence based  that meets the given criteria  (based on the sick dataset) | Sentence Generation
+`task1614_sick_text_modify` | Derive a sentence from the given sentence (based on the sick dataset) | Text modification
+`task1615_sick_tclassify_b_relation_a` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
+`task1616_cc_alligned_translate_eng_tel` | Translate from English to Telugu | Translation
+`task1617_cc_alligned_translate_tel_eng` | Translate from Telugu to English | Translation
+`task1618_cc_alligned_classify_tel_eng` | Classify if a sentence is in Telugu or English Language | Language Classification
+`task1619_menyo20k-mt_en_yo_translation` | Given an English sentence convert it to Yoruba. | Translation
+`task1620_menyo20k-mt_yo_en_translation` | Given a sentence in Yoruba convert it to English. | Translation
+`task1621_menyo20k-mt_en_yo_language_identification` | Given a sentence identify if it is in Yoruba or English. | Language Identification
+`task1622_disfl_qa_text_modication` | Given a disfluent question, convert it to a proper question. | Text Modification
+`task1623_disfl_qa_disfluent_question_classification` | Given a question, predict whether it is disfluent or proper. | Classification
+`task1624_disfl_qa_question_yesno_classification` | Given a context and a question, predict if a question is answerable or not based on the context. | Classification
+`task1625_disfl_qa_asnwer_generation` | Given a context and a question, return an answer to the question based on context. | Answer Generation
 `task1626_copa_hr_question_answering` | Given a sentence and 2 labels, select the correct label | Answer Selection
 `task1627_copa_hr_classification` | Given a question and two label, classify the group in which the choice and the statement are related | Classification
 `task1628_copa_hr_question_answering` | Given a sentence and four label, select the correct label. | Answer Selection 
