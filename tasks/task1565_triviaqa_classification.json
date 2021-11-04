@@ -1,0 +1,723 @@
+{
+    "Contributors": [
+        "Amulya Arun Ballakur"
+    ],
+    "Categories": [
+        "Classification"
+    
+    ],
+    "Source": [
+        "TriviaQA",
+        "https://arxiv.org/abs/1705.03551"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "This task involves asking a question, providing a set of 2 options and also a search result URL as input. You are expected to choose the best answer to the question based on information in the search result. The output will be in the form of A or B, corresponding to which option is chosen. Note that the search result may or may not provide relevant information that can be used to answer the question. If the information contained in the search result is not relevant to the question or provides information that does not answer the question appropriately, the answer selection will be incorrect.",
+    "Positive Examples": [
+        {
+            "input": "Question:Who was the man behind The Chipmunks? ,  Options: [A. David Seville, B. Alvin Seville],  Search result URL:www.imdb.com/title/tt0952640 ",
+            "output": "A",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the movie and how David Seville was the man behind the Chipmunks"
+        },
+        {
+            "input": "Question:What star sign is Jamie Lee Curtis? ,  Options: [A. Gemini, B. Scorpio] ,  Search result URL:www.astrotheme.com/astrology/Jamie_Lee_Curtis",
+            "output": "B",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the star sign of Jamie Lee Curtis and indicates it is Scorpio"
+        },
+        {
+            "input": "Question: Which Lloyd Webber musical premiered in the US on 10th December 1993? ,  Options: [A. Sunset Boulevard, B. the Phantom of the Opera] ,  Search result URL:www.andrewlloydwebber.com/shows",
+            "output": "A",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the shows performed by Lloyd Webber and states that his musical premier in the US was with Sunset Boulevard."
+        },
+        {
+            "input": "Question: The Euro is divided into how many cents? ,  Options:[A. 13000, B. 100] ,  Search result URL: www.coursehero.com/file/p4e3hgo/The-euro-is-divided-into...",
+            "output": "B",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the Euro and that it is divided into 100 cents."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Question:Who was the man behind The Chipmunks? ,  Options: [A. David Seville, B. Alvin Seville] ,  Search result URL:www.aatc.wikia.com/wiki/Alvin_Seville",
+            "output": "B",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the movie and how Alvin Seville was the man behind the Chipmunks. B is an incorrect answer."
+        },
+        {
+            "input": "Question:What star sign is Jamie Lee Curtis? ,  Options:[A. Gemini, B. Scorpio] ,  Search result URL:www.biography.com/people/tony-curtis-9263844",
+            "output": "A",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the star Tony Curtis. Does not provide inofrmation about the star sign of Jamie Lee Curtis. It returns Tony Curtis is a 'Gemini' amd thus option A. This is an incorrect answer."
+        },
+        {
+            "input": "Question: Which Lloyd Webber musical premiered in the US on 10th December 1993?  ,  Options: [A. Sunset Boulevard, B. the Phantom of the Opera] ,  Search result URL:www.thephantomoftheopera.com/history/timeline",
+            "output": "B",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the show The Phantom of the Opera, which is also a musical. B is an incorrect answer to the question."
+        },
+        {
+            "input": "Question: The Euro is divided into how many cents?  ,  Options:[A. 13000, B. 100] ,  Search result URL: www.fairlabor.org/sites/default/files/bangladesh_benchmarks_and...",
+            "output": "A",
+            "explanation": "On clicking this Search result URL, the link takes us to a passage with information about the Bangaladesh Taka(BDT) and other currencies in Bangaladesh. It chooses option A. This is an incorrect answer."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Question:Who was the man behind The Chipmunks? ,  Options: [A. David Seville, B. Alvin Seville] ,  Search result URL:www.aatc.wikia.com/wiki/Alvin_Seville",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Who was married to Whitney Houston from 1992 to 2007? ,  Options: [A.jack miller B.bobby brown] ,  Search result URL:www.biography.com/people/groups/bobby-brown-and-whitney-houston",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which singer made the news in September 2009 when Muslim groups protested that her first concert in Malaysia should be cancelled for a second time? ,  Options: [A.Barack Obama B.Beyonc] ,  Search result URL: https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by...",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Where is the giant copper statue of a man, woman and child, known as the African Renaissance monument, that was unveiled in April 2010? ,  Options: [A.Senegal B.India],  Search result URL:https://www.trails.com/list_37238_monuments-in-senegal.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:In 1995, Steffi Graf became the only tennis player to have won each of the four grand slam events how many times? ,  Options: [A.4 B.7] ,  Search result URL:https://www.tennisfame.com/hall-of-famers/inductees/stefanie-graf",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Actor Omar Sharif is one of the world's leading players of which game?,  Options: [A.bridges B.Sherif Ali] ,  Search result URL:www.imdb.com/name/nm0001725/bio",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the favourite drink of a vampire? ,  Options: [A.blood B.Bloody Mary],  Search result URL:whoduknit.blogspot.com/2008/10/what-is-vampires-favorite-drink.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which Frenchman, who never learned to speak Swedish, became King Charles XIV John of Sweden and Norway? ,  Options: [A.King Charles XIV John of Sweden B.Charles XIII],  Search result URL:military.wikia.com/wiki/Charles_XIV_John_of_Sweden",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What word's original meaning was to do with the provison of granite chips onto the ground and then made into a hard and smooth surface using a roller? ,  Options: [A.Macadam road B.Danube],  Search result URL:www.archaeologywordsmith.com/lookup.php?terms=A",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What type of building is likely to have a minaret?,  Options: [A.temple B.Mosque] ,  Search result URL:https://simple.wikipedia.org/wiki/Mosque",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In which year was the first robbery for which it is known that Jesse James was responsible, of the Davies's County Savings Association in Gallatin, Missouri, during which Jesse shot and killed the cashier, Captain John Sheets? ,  Options: [A.1898 B.1869],  Search result URL:http://daviesscountyhistoricalsociety.com/modules.php?op=modload&name=News&file=article&sid=100",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What should you cross for good luck?,  Options: [A.Fingers B.Black cat ] ,  Search result URL:http://www.wikihow.com/Get-Rid-of-Bad-Luck",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In 2006 Monty Panesar became the first person of what religion to play test cricket for England? ,  Options: [A.England B.sikh],  Search result URL:http://www.telegraph.co.uk/finance/personalfinance/fameandfortune/10436740/Monty-Panesar-My-first-cricket-job-paid-2000.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question: What international event held at the end of each year, featuring some of the world's best racing and rally drivers, was first co-organised in 1988 by former rally driver Michle Mouton? ,  Options: [A.Tetra B.Race Of Champions] ,  Search result URL:http://drogariatalita.com.br/1945-desodorante-aerozol-dove-natural-care-100gr.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What separates Wales from Devon, England? ,  Options: [A.Welsh Channel B.Devon] ,  Search result URL:https://www.pinterest.com/silverfoxbren/places-i-have-visited/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Benot B. Mandelbrot worked on a wide range of mathematical problems, including mathematical physics and quantitative finance, but is best known as the father of what? ,  Options: [A.Math Practice B.Fractal Trees],  Search result URL:http://www.eroonkang.com/projects/tribute-to-mandelbrot/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:The island of Tasmania is governed by which country? ,  Options: [A.Australia B.India],  Search result URL:http://www.worldatlas.com/webimage/countrys/oceania/australia/ts.htm",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:The Black Hawk War was for possession of lands east of the Mississippi. In which modern day state was the first confrontation, at Stillman's Run, on 14 May 1832, which resulted in a victory for Chief Black Hawk's Sauk and Fox warriors over the local militiamen commanded by Major Isaiah Stillman? ,  Options: [A.Illinois B.North American Indian] ,  Search result URL:https://www.scribd.com/document/153985823/Atlas-of-the-North-American-Indian-Third-Edition",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Horatio was a legendary Roman hero who defended a bridge against which army? ,  Options: [A.Etruscan B.Tiber] ,  Search result URL:http://www.livius.org/articles/person/horatius-cocles/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In 2010, what North American horse broke the All-time North American female earnings record with over $6 million, broke two world records for Grade/Group I (for consecutive victories and the All-time North American record number of victories by a filly/mare), and tied the All-time North American record for the number of consecutive victories without defeat?,  Options: [A.Zenyatta B.Los Alamitos Two-Million] ,  Search result URL:https://issuu.com/horseartst/docs/surebet_dec2014_stallion_guide",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which event held in Alberta, Canada, which bills itself as The Greatest Outdoor Show on Earth, is a large festival, exhibition, and rodeo held for 10 days every summer in July, attracts more than 1.2 million visitors? ,  Options: [A.Calgary Stampede B.Christmas],  Search result URL:https://www.vrbo.com/714737",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:The Sagrada Famlia in Barcelona, which began construction in 1882, was consecrated and declared a basilica by the Pope in what year? ,  Options: [A.1882 B.2010] ,  Search result URL:https://simple.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What name is given to the unnatural fear of men? ,  Options: [A.Androphobia B.Anxiety],  Search result URL:http://www.everydayhealth.com/emotional-health/anxiety-pictures/8-common-phobias.aspx",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the only county in the USA to border 5 counties from 5 different states : Baca County, Colorado; Morton County, Kansas; Texas County, Oklahoma; Dallam County, Texas; Union County, New Mexico ? ,  Options: [A.Cimarron County B.Dallam County] ,  Search result URL:http://www.digplanet.com/wiki/Template:Cimarron_County,_Oklahoma",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What is the next in the series: Nigeria, Sierra Leone, Tanganyika, Uganda, Zanzibar, Kenya, Malawi, Zambia, Gambia, Botswana, Lesotho, Mauritius? ,  Options: [A.Kingdom of Swaziland B.Sierra Leone] ,  Search result URL:http://www.jacksonettiandedu.com/lawfirm/sierra-leone/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What amateur rowing club based at Henley on Thames, England, was founded in 1818? ,  Options: [A.Henley Rowing club B.Leander Rowing Club] ,  Search result URL:http://www.henleyrowingclub.co.uk/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question: Which Europeans have been proved to have reached North America before Christopher Columbus? ,  Options: [A.North Americans B.Viking],  Search result URL:http://www.history.com/news/the-viking-explorer-who-beat-columbus-to-america",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What Scottish city is at the confluence of the rivers Dee and Don? ,  Options: [A.Aberdeen B.Scotland] ,  Search result URL:https://www.britannica.com/place/Aberdeen-Scotland",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Ivan Galamian has had world-wide influence as a teacher of what? ,  Options: [A.Violin B.Guitar] ,  Search result URL:http://www.worldcat.org/title/three-renowned-violin-teachers-of-the-twentieth-century-leopold-auer-carl-flesch-ivan-galamian-their-teaching-principles-and-influence-a-researach-essay-submitted-in-partial-fulfilment-of-bachelor-of-music-with-honours-in-the-university-of-canterbury/oclc/152416905",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:According to Greek legend, which sorceress helped Jason to find the golden fleece and became his wife? ,  Options: [A.Medea B.Orthos] ,  Search result URL:http://www.ancient-origins.net/myths-legends/jason-and-legendary-golden-fleece-001307",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What were Operation Ranger, Operation Buster-Jangle, Operation Tumbler-Snapper, Operation Upshot-Knothole and Operation Teapot? ,  Options: [A.Operation B.Nuclear test series carried out in the USA] ,  Search result URL:https://en.wikipedia.org/wiki/Operation_Buster%E2%80%93Jangle",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Who created St Trinians, a fictional girls' boarding school, the subject of 8 books and 7 films between 1954 and 2009? ,  Options: [A.Ronald William Fordham Searle B.St Trinian] ,  Search result URL:http://www.gutenberg.us/articles/st_trinians",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Who married Heidi Klum in May 2005? ,  Options: [A.Bergisch Gladbach B.Seal] ,  Search result URL:http://www.imdb.com/name/nm0005099/bio",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What word is used to describe someone within an organisation who leaks information?,  Options: [A.mole B.HR] ,  Search result URL:http://humanresources.about.com/od/healthsafetyandwellness/a/protect_data.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Ninette de Valois was involved professionally in what activity?,  Options: [A.Ballet B.Tennis] ,  Search result URL:https://www.theguardian.com/news/2001/mar/09/guardianobituaries1",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:The mountain massif called Maxwell Montes contains the highest point on the surface of which planet?,  Options: [A.Venus B.Mars] ,  Search result URL:http://www.revolvy.com/main/index.php?s=Maxwell%20Montes",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What is the term used when one team is beaten throroughly by another? ,  Options: [A.Calsomines B.Mixing],  Search result URL:http://www.craftybaking.com/howto/mixing-method-basics",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which of the continents is the smallest in area? ,  Options: [A.Australia B.Asia] ,  Search result URL:http://www.7continents5oceans.com/what-are-the-7-continents-from-biggest-to-smallest",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:On the buttons of a VCR or DVD player, what does the sign in the shape of a square mean? ,  Options: [A.Support B.Stop] ,  Search result URL:https://esupport.sony.com/US/p/select-system.pl?DIRECTOR=FAQ",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:By what name is James Osterberg popularly known? ,  Options: [A.Mick Dobbs B.Iggy Pop] ,  Search result URL:http://www.begadistrictnews.com.au/story/3804958/so-whats-in-a-name/?cs=513",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:With what is FIFA usually associated? ,  Options: [A.Football B.Basketball] ,  Search result URL:http://www.fifa.com/about-fifa/index.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What links the US, 2 May 2011 and Abottabad in Pakistan? ,  Options: [A.kill osama bin laden B.attack on India] ,  Search result URL:http://www.pakdef.org/forum/topic/9566-osama-bin-ladin-killed-in-a-us-operation-near-abbottabad-pakistan/page-41",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Michael Phelps who during the Summer Olympics 2012 brought his swimming medal total to a record 18 golds represents which country? ,  Options: [A.USA B.Canada] ,  Search result URL:https://www.pinterest.com/nbcla/olympics-2012/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What substance, best known as a poison, was used in small doses in medications as a stimulant, as a laxative, and for enhancing performance in sports? ,  Options: [A.paracetemol B.strychnine] ,  Search result URL:https://www.tititudorancea.net/z/strychnine.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which mythological lumberjack, usually believed to be a giant, was first documented in the work of US journalist James MacGillivray in 1910? ,  Options: [A.Jack Miller B.Paul Bunyan] ,  Search result URL:http://robotchicken.wikia.com/wiki/Paul_Bunyan",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which artist has a daughter and two sons with Jane Asher, whom he married in 1981? ,  Options: [A.Gerald Scarfe B.Mathew johnson] ,  Search result URL:http://janeasher-source.blogspot.com/2015/06/happy-birthday-gerald-scarfe.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What is the surname of sisters and singers Dannii and Kylie? ,  Options: [A.Jaden B.Minogue] ,  Search result URL:http://www.youtube.com/watch?v=jbeTRQu5Yr8",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:James Esdaile, John Elliotson, Jean-Martin Charcot, Hippolyte Bernheim, Pierre Janet, mile Cou, Morton Prince, Clark L. Hull, Andrew Salter, Theodore R. Sarbin, Ernest Hilgard, Martin Theodore Orne, and Nicholas Spanos are associated with what? ,  Options: [A.hypnosis B.volleyball  ] ,  Search result URL:http://www.actnowcenter.com/hypnosis_history.asp",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Actress Brooke Shields was married to whom for 2 years from April 1997? ,  Options: [A.James Dean B.Andre Agassi] ,  Search result URL:http://www.biography.com/people/brooke-shields-9542246",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the name of Tony and Cherie Blair's daughter? ,  Options: [A.Kathryn B.Kylie] ,  Search result URL:http://www.dailymail.co.uk/news/article-1324985/Cherie-Blairs-father-Tony-reveals-doesnt-love-daughter-Lauren-Booth.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:The girth goes on which part of the horse? ,  Options: [A.Around the ribs B.barrel] ,  Search result URL:https://en.wikipedia.org/wiki/Girth_(tack)",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which country shares a 530 km border with Saudi Arabia on the west, south, and southeast, a 450 km border with Oman on the southeast and northeast, and a smaller border with Qatar in the northwest? ,  Options: [A.India B.United Arab Emirates]  ,  Search result URL:http://countrystudies.us/persian-gulf-states/81.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:The lead singer of which band is known as Suggs? ,  Options: [A.Madness B.Illness],  Search result URL:http://www.independent.co.uk/arts-entertainment/music/features/madness-lead-singer-suggs-class-prince-charles-and-finding-out-about-his-dad-on-wikipedia-9279055.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:In June 2010, 8 highly endangered monkeys (4 cottontop tamarins and 4 pygmy marmosets) were stolen from the Symbio Wildlife Park in which country?,  Options: [A.Australia B.Cotton-top tamarin] ,  Search result URL:https://en.wikipedia.org/wiki/Talk:Cotton-top_tamarin",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:One of the longest ruling monarchs of the 20th century and a massive and dangerous volcano in the USA share which name? ,  Options: [A.Columbus B.Rainer] ,  Search result URL:http://www.smashinglists.com/top-10-greatest-empires-in-the-history-of-world/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What term is used for the actress that has the main part in a film or play? ,  Options: [A.actor B.leading lady] ,  Search result URL:https://simple.wikipedia.org/wiki/Actor",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Dishes prepared with spinach can be referred to as what? ,  Options: [A.Spinach B.la Florentine],  Search result URL:http://www.whfoods.com/genpage.php?tname=foodspice&dbid=43",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What island would you come to first if you travelled due east from Bangladesh? ,  Options: [A.Republic of China B.Bjørnøya] ,  Search result URL:https://www.reddit.com/r/MapPorn/comments/1hgnqe/where_you_would_end_up_if_you_sailed_directly/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:After the murder of his children's nanny, Sandra Rivett, Richard John Bingham disappeared on 8 November 1974, was presumed deceased on 11 December 1992 and declared legally dead in October 1999. By what name is he better known? ,  Options: [A.Richard Bingham B.Alexander Aizenshtat] ,  Search result URL:http://goldbrg.com/aizenshtat/details.php?image_id=966",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Who is the only US President who did not speak English as his first language? ,  Options: [A.Barack Obama B.Martin Van Buren] ,  Search result URL:http://history1800s.about.com/od/19th-Century-Presidents/ss/Martin-Van-Buren-Facts-and-Bio.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In which sport is it forbidden for anyone to play left handed? ,  Options: [A.cricket B.polo] ,  Search result URL:https://www.reference.com/sports-active-lifestyle/sport-competitors-forbidden-play-left-handed-8e89e44ed915dd82",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In WTF taekwondo competitions points are scored for a kick to the head or body, a turning kick to the head, and what else? ,  Options: [A.Punch to the body B.head kick] ,  Search result URL:http://www.taekwondoforums.com/threads/taekwondo-changes-head-kick-rules-for-olympics.10/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What country changed its name to Burkina Faso? ,  Options: [A.Voltaic Republic B.Sankara] ,  Search result URL:http://www.infoplease.com/country/burkina-faso.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the opposite side from starboard on a ship? ,  Options: [A.shipment B.port] ,  Search result URL:http://oceanservice.noaa.gov/facts/port-starboard.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What were Pangaea and Gondwana? ,  Options: [A.continent B.supercontinent] ,  Search result URL:http://www.livescience.com/37285-gondwana.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In what country is vodou religion commonly practiced? ,  Options: [A.haiti B.vodoo] ,  Search result URL:http://www.religioustolerance.org/voodoo.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What are fairy rings made of? ,  Options: [A.corn B.mushroom] ,  Search result URL:http://www.mushroom-appreciation.com/fairy-rings.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the name of both a tire company and a restaurant guide? ,  Options: [A.michelin B.ford] ,  Search result URL:http://www.businessinsider.com/history-of-the-michelin-guide-2014-10",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Who is also known as Jove? ,  Options: [A.jupiter B.pluto] ,  Search result URL:http://ancienthistory.about.com/od/jupiter/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What are the only two types of mammal that can lay eggs? ,  Options: [A.platypus B.dog] ,  Search result URL:http://www.stlzoo.org/animals/abouttheanimals/mammals/shortbeakedechidna/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What video game, created by Notch, is the best-selling PC game of all-time? ,  Options: [A.sandbox indie B.minecraft] ,  Search result URL:http://geekshizzle.com/2014/07/08/top-10-best-selling-pc-games-of-all-time/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What city's catacombs contain the bones of over six million people? ,  Options: [A.London B.Paris] ,  Search result URL:http://www.startribune.com/paris-catacombs-empire-of-the-dead/65938317/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What country does Waterford crystal come from? ,  Options: [A.Ireland B.Nigeria] ,  Search result URL:http://www.waterfordvisitorcentre.com/content/history-waterford-crystal",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What country is the largest oil producer in Africa? ,  Options: [A.Nigeria B.Republic of Congo] ,  Search result URL:http://www.therichest.com/expensive-lifestyle/location/top-10-oil-producing-countries-in-africa-2013/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What type of natural disaster killed 173 people in Victoria, Australia in 2009? ,  Options: [A.bushfires B.earthquake] ,  Search result URL:http://www.australia.gov.au/about-australia/australian-story/natural-disasters",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What is the most common chemical used in nail polish remover? ,  Options: [A.acetone B.copper] ,  Search result URL:http://www.chemistryislife.com/the-chemistry-of-nail-polish-remover",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What celestial object was visited by the New Horizons spacecraft in 2015? ,  Options: [A.Mars B.pluto] ,  Search result URL:http://www.scienceworldreport.com/articles/43266/20160706/nasas-new-horizons-set-to-explore-more-celestial-objects-beyond-pluto.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In what country is the religion of Shinto commonly practiced? ,  Options: [A.china B.japan] ,  Search result URL:http://religions.findthedata.com/q/40/1462/Where-is-Shinto-practiced",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Smock, post and tower are types of what? ,  Options: [A.house B.windmill] ,  Search result URL:http://www.amanita-photolibrary.co.uk/windmills/index.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What football team did Arsene Wenger manage immediately before Arsenal? ,  Options: [A.arsenal B.Toyota Motor F.C.] ,  Search result URL:http://www.arsenal.com/history/the-managers",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Maine Coon, Munchkin, Oriental Shorthair, Persian, Ragamuffin, Russian Blue, Siamese, Siberian, Snowshoe, Sphynx, Tonkinese and Manx are all breeds of what? ,  Options: [A.cats B.dogs] ,  Search result URL:https://www.pets4you.com/maine-coon.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:In Germany, what is an autobahn? ,  Options: [A.freeway B.farm] ,  Search result URL:http://www.german-way.com/travel-and-tourism/driving-in-europe/driving/autobahn/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Which 2008 Western film starred Ed Harris and Viggo Mortensen as lawmen, Jeremy Irons as a rancher and Renee Zellweger as a piano-playing widow? ,  Options: [A.Appaloosa B.Spiderman],  Search result URL:http://www.imdb.com/title/tt0800308/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What are muslin and chenille? ,  Options: [A.textile B.bibs] ,  Search result URL:http://bebebelladesigns.com/products/muslin-and-minky-bibs",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which of the Queen's horses won the 2013 Ascot Gold Cup? ,  Options: [A.Estimate B.Average] ,  Search result URL:http://www.telegraph.co.uk/sport/horseracing/royal-ascot/10133542/Royal-Ascot-2013-The-Queens-Gold-Cup-win-with-Estimate-is-the-pinnacle-of-her-long-love-affair-with-the-sport.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:If the Staten Island Ferry is to New York, the Star Ferry that was originally called the Kowloon Ferry Company is to what city? ,  Options: [A.New York B.Hong Kong] ,  Search result URL:https://www.facebook.com/pages/Staten-Island-Ferry-Whitehall-Terminal/155703374491428",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What are the table-top mountains found in the Guiana Highlands of South America (especially Venezuela) that inspired Arthur Conan Doyle's The Lost World and also appear prominently in the landscapes of the Pixar hit Up? ,  Options: [A.Tepui B.duck] ,  Search result URL:",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Which Japanese island that has its capital at Sapporo is the traditional home of the Ainu people? ,  Options: [A.Sapporo B.Hokkaido region] ,  Search result URL:https://www.directflights.com.au/Destination.aspx/Sapporo",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:In which year was the Highway Code first published by the government? ,  Options: [A.1931 B.2011] ,  Search result URL:https://www.gov.uk/government/publications/history-of-road-safety-and-the-driving-test",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:In which North Yorkshire town is the Green Howards Museum? ,  Options: [A.Inner Richmond B.North Yorkshire] ,  Search result URL:http://www.yorkshire.com/view/culture/richmond/the-green-howards-museum-1195163",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which 20th century philosopher wrote 'Being And Nothingness' and 'Critique Of Dialectic Reason'? ,  Options: [A.wordsworth B.jean paul] ,  Search result URL:https://www.amazon.co.uk/Critique-Dialectical-Reason-Jean-Paul-Sartre/dp/1844670775",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the name of the A1 Pacific steam locomotive which was completed in 2009 and is the first of its kind built for over 50 years? ,  Options: [A.hurricane B.tornado] ,  Search result URL:https://www.a1steam.com/2009/02/23/new-p3m-steam-locomotive-tornado-to-visit-scotland-for-the-first-time-2/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which other car company owns Seat? ,  Options: [A.Volkswagon B.Ford Motor Company] ,  Search result URL:http://www.consumerreports.org/cro/news/2009/06/car-brands-who-owns-what/index.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the US term for for an area of land of 160 acres(half a mile square)? ,  Options: [A.quarter section B.square mile] ,  Search result URL:http://mathcentral.uregina.ca/QQ/database/QQ.02.06/rosemary1.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Caroline of Brunswick was the queen of which British king? ,  Options: [A.Sam II B.George IV] ,  Search result URL:http://www.historic-uk.com/HistoryUK/HistoryofBritain/Queen-Caroline/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Who was US Attorney General from January 1961 until September 1964 and a Senator for New York from January 1965 until June 1968? ,  Options: [A.Prescilla Rose B.Robert Francis Kennedy] ,  Search result URL:http://www.arlingtoncemetery.net/rfk.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What model of Ford was named after a city in Southern Spain? ,  Options: [A.Granada B.spain] ,  Search result URL:http://www.ford.com/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What did Albert Parkhouse invent that is one of the most stolen items from hotels? ,  Options: [A.mechanical cotton harvesters B.wire coat hanger] ,  Search result URL:https://www.bing.com/cr?IG=CA174A04223D40A5BFD0BDA175D8B76B&CID=0AA8E7188DD968EA309BEEF48CE86914&rd=1&h=vUh2I7_EHWOYHxkL99iTlOndGN003Yo6q2yXYXQhJU4&v=1&r=https%3a%2f%2fen.wikipedia.org%2fwiki%2fHistory_of_Mexican_Americans&p=DevEx,5208.1",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What is the name given to the triangular savoury Indian pasties filled with meat or vegetables and seasoned with herbs and spices? ,  Options: [A.samosas B.dumplings] ,  Search result URL:http://thecitylane.com/the-best-65-dumplings-around-the-world/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What is the bell and blanket technique used for? ,  Options: [A.Wastewater Level Measurement B.To cure bedwetting] ,  Search result URL:http://www.bing.com/cr?IG=7E44A1CA2CAB4074AFB2C63D5CC26E62&CID=11FFA324C2B1628D3DE8AAC8C3806329&rd=1&h=048YLg0VyTQDGLGlh3Jw9SpFXBZKKSlMra4KuMbAMcM&v=1&r=http%3a%2f%2fwww.greyline.com%2fWastewaterLevelMeasurementTechniques.htm&p=DevEx,5173.1",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Chi is the Chinese year of what? ,  Options: [A.cock B.snake] ,  Search result URL:http://www.taichistuff.com/chinese-new-year-2013-year-of-the-snake/",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Who was the snooker player that beat Steve Davis in a world snooker final after being 8 - 0 down? ,  Options: [A.Nigel Bond B.Dennis Taylor],  Search result URL:http://www.worldsnooker.com/players/steve-davis/",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:The Guinness Book of Records was first published in what year? ,  Options: [A.1967 B.1955] ,  Search result URL:http://www.guinnessworldrecords.com/60/through_the_years.html",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:Which city is the home of the Palais du Luxembourg? ,  Options: [A.Paris B.Tokya] ,  Search result URL:http://everycastle.com/Palais-du-Luxembourg.html",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What tune do the bells of Big Ben chime? ,  Options: [A.four notes from handel s messiah B.UK Parliament] ,  Search result URL:http://www.bing.com/cr?IG=D571F5B8F5F440828004E411FB302DDD&CID=3286FD3D67586AB30EA8F4D166696BD3&rd=1&h=lkwKOBbu42cde90jkLXjntJswvqu1bFJ799mxVyiufQ&v=1&r=http%3a%2f%2fwww.parliament.uk%2fabout%2fliving-heritage%2fbuilding%2fpalace%2fbig-ben%2fanniversary-year%2fdownloads%2f&p=DevEx,5112.1",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What Canadian province lies between British Columbia and Saskatchewan? ,  Options: [A.Alberta B.Canada] ,  Search result URL:http://www.worldatlas.com/webimage/countrys/namerica/province/skz.htm",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Question:What does the proofreading notation stet mean? ,  Options: [A.copy editing B.let it stand or ignore indicated edit mark] ,  Search result URL:https://www.bing.com/cr?IG=7E60B98DDFB144B8966D2C1BB6B5CCBC&CID=056659F7F24460EA0530501BF3756153&rd=1&h=YZFV-sjQ1lyz5pJwjEZgnUJUfL401DGTOUTNYayShYE&v=1&r=https%3a%2f%2fpeople.sunyit.edu%2f%7eruss%2fCom310%2fProofreadSymbols.pdf&p=DevEx,5136.1",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:Which actor, who died in Los Angeles on Jue 11, 1979, holds the record as the actor with the most leading parts with 142, and has a marina named for him near the city of Sequim? ,  Options: [A.John Wayne B.Bruce Wayne] ,  Search result URL:http://www.imdb.com/name/nm0000078/bio",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Question:What does “SPF” mean on sunscreen containers? ,  Options: [A.landmass B.sunscreen] ,  Search result URL:http://news.psu.edu/story/141338/2010/06/01/research/probing-question-what-does-spf-rating-sunscreen-mean",
+            "output": [
+                "B"
+            ]
+        }
+    ]
+}
