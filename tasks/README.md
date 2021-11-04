@@ -1552,6 +1552,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
 `task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
 `task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
+`task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
+`task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
+`task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
+`task1648_opus_books_en-sv_translation` | Translation from English to Swedish using opus dataset | Translation
+`task1649_opus_books_en-no_translation`	| Translation from English to Norwegian using opus dataset | Translation
+`task1650_opus_books_en-fi_translation` | Translation from English to Finnish using opus dataset | Translation
+`task1651_opus_books_en-es__translation` | Translation from English to Spanish using opus dataset | Translation
+`task1652_opus_books_ca-en_translation` | Translation from Catalan to English using opus dataset | Translation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
@@ -1563,10 +1571,20 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
 `task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
 `task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
+`task1685_menyo20k_translation` | Language translation from English to Yoruba | Translation  
+`task1686_menyo20k_translation` | Language translation from Yoruba to English| Translation  
+`task1689_qed_amara_translation` | Language translation from English to French| Translation  
+`task1690_qed_amara_translation` | Language translation from French to English | Translation  
+`task1691_qed_amara_translation` | Language translation from English to Spanish | Translation  
+`task1692_qed_amara_translation` | Language translation from Spanish to English | Translation  
 `task1703_ljspeech_textmodification` | Digit to Text in ljspeech | Text Modification 
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1711_poki_text_generation` | Given a title, generate a short poem that should look like written by a kid. | Text Generation
+`task1712_poki_classification` | Given a short poem, classify whether is written by an elementary kid or a high school kid. | Classification
+`task1713_convai3_sentence_generation` | Given a user's request, predict what the user is trying to do. | Sentence Generation
+`task1714_convai3_sentence_generation` | Given a user's intent and computer response, predict what will the user's response will be. | Sentence Generation
 `task1719_civil_comments_url_extraction` | Extraction of Urls| Answer Generation 
 `task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
 `task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
