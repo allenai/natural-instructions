@@ -1552,6 +1552,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
 `task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
 `task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
+`task1641_searchqa_category_classification` | Category Classification on SearchQA questions | Category Classification
+`task1642_searchqa_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
+`task1643_climate_fever_label_generation` | Label Generation on Climate Fever | Label Generation
+`task1644_climate_fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
 `task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
 `task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
 `task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
