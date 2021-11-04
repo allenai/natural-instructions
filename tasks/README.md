@@ -1556,6 +1556,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1642_searchqa_answer_generation` | Answer Generation on SearchQA questions | Answer Generation 
 `task1643_climate_fever_label_generation` | Label Generation on Climate Fever | Label Generation
 `task1644_climate_fever_claim_generation` | Claim Generation on Climate Fever | Claim Generation
+`task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
+`task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
+`task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
+`task1648_opus_books_en-sv_translation` | Translation from English to Swedish using opus dataset | Translation
+`task1649_opus_books_en-no_translation`	| Translation from English to Norwegian using opus dataset | Translation
+`task1650_opus_books_en-fi_translation` | Translation from English to Finnish using opus dataset | Translation
+`task1651_opus_books_en-es__translation` | Translation from English to Spanish using opus dataset | Translation
+`task1652_opus_books_ca-en_translation` | Translation from Catalan to English using opus dataset | Translation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
@@ -1564,6 +1572,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
 `task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
 `task1665_trainglecopa_question_generation` | Generating a Question for the given premise from traingleCOPA dataset | Question Generation
+`task1666_cail2018_answer_generation`| Generating answers (based on cail2018) | Answer Generation
+`task1667_cail2018_answer_generation` | Generating answers (based on cail2018) | Answer Generation
+`task1669_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
+`task1670_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
 `task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
 `task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
 `task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
@@ -1577,6 +1589,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1704_ljspeech_textmodification` | Text to Digit in ljspeech | Text Modification
 `task1705_ljspeech_classification` | Finding Proper Nouns in ljspeech | Classification
 `task1706_ljspeech_classification` | Correct Punctuation in ljspeech| Classification
+`task1711_poki_text_generation` | Given a title, generate a short poem that should look like written by a kid. | Text Generation
+`task1712_poki_classification` | Given a short poem, classify whether is written by an elementary kid or a high school kid. | Classification
+`task1713_convai3_sentence_generation` | Given a user's request, predict what the user is trying to do. | Sentence Generation
+`task1714_convai3_sentence_generation` | Given a user's intent and computer response, predict what will the user's response will be. | Sentence Generation
 `task1719_civil_comments_url_extraction` | Extraction of Urls| Answer Generation 
 `task1720_civil_comments_toxicity_classification` | Classify toxicity | Classification
 `task1721_civil_comments_obscenity_classification` | Classify Obscenity | Classification
