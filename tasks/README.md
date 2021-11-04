@@ -1552,6 +1552,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
 `task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
 `task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
+`task1637_doqa2.1_cooking_text_summarization` | Generating title from text (based on DoQA 2.1 cooking data) | Text Summarization
+`task1638_doqa2.1_movies_text_summarization` | Generating title from text (based on DoQA 2.1 movie data) | Text Summarization
+`task1639_doqa2.1_travel_text_summarization` | Generating title from text (based on DoQA 2.1 travel data) | Text Summarization
+`task1640_aqa1.0_answerable_unanswerable_question_classification` | Classifying questions (based on AQA 1.0) | Classification
 `task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
 `task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
 `task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
