@@ -1568,6 +1568,10 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
 `task1657_gooaq_question_generation`|question generation for a given answer|Question Generation
+`task1658_billsum_summarization` | Generating summary (based on billsum) | Summarization
+`task1659_title_generation` | Generating Title (based on billsum) | Title Generation
+`task1660_super_glue_question_generation` | Generating guestions (based on super_glue) | Question Generation  
+`task1661_super_glue_classification` | Classification (based on super_glue) | Classification
 `task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
 `task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
 `task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
