@@ -86,13 +86,13 @@
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
     - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
     - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
+  - `Reasoning -> Counterfactual Reasoning`
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
-    - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
@@ -176,6 +176,7 @@
   * `Computer Science -> Computer Security`
   * `Computer Science -> Machine Learning`
 * `Computer Security`
+* `Coreference`
 * `Debatepedia`
 * `Dialogue`
 * `Econometrics`
