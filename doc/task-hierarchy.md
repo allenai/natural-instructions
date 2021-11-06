@@ -110,6 +110,17 @@
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
+- `Structured Text Processing`
+  - `Structured Text Processing -> Semantic Parsing`
+    - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
+  - `Structured Text Processing -> Code Summarization`
+  - `Structured Text Processing -> Operation on Primitives`
+    - `Structured Text Processing -> Operation on Primitives: e.g. An unambiguous transform `is applied to all inputs e.g. subtract 1 from every element in the list
+      - `Structured Text Processing -> Operation on Primitives -> Numbers`
+        - `Structured Text Processing -> Operation on Primitives -> Numbers -> List`
+        - `Structured Text Processing -> Operation on Primitives -> Numbers -> Set`
+        - `Structured Text Processing -> Operation on Primitives -> Numbers -> Scalar`
+      - `Structured Text Processing -> Operation on Primitives -> String`
 - `Summarization`
 - `Tabular Text Operation`
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
@@ -139,9 +150,8 @@
   - `Text Generation -> Weblink Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
-    - `Text Modification -> Structured Text Modification -> Logical Operation`: An unambiguous transform is applied to all inputs e.g. subtract 1 from every element in the list
   - `Text Modification -> Style Transfer`
-    `Text Modification -> Style Transfer -> Text Simplification`
+    - `Text Modification -> Style Transfer -> Text Simplification`
   - `Text Modification -> Paraphrasing`
 - `Text Span Selection`
 - `Title Selection`
