@@ -2,7 +2,7 @@
     "Source": [
         "google_wellformed_query(https://huggingface.co/datasets/google_wellformed_query)"
     ],
-    "Definition": "Read the given query and classify it as a 'Good' or 'Bad' query depending on how well the query is formed, 'Bad' being the expected output for a not so well formed query and 'Good' being the expected output for a well formed query.",
+    "Definition": "Read the given query and classify it as a 'Good' or 'Bad' query depending on how well the query is formed, 'Bad' being the expected output for a not so well formed query and 'Good' being the expected output for a well formed query. A query may be wrong based on common sense or general facts, but if it is well formed, you should answer with Good.",
     "Contributors": [
         "Kiran Uday Pai"
     ],
@@ -13,7 +13,7 @@
         {
             "input": "What is the scientific name of the tortoise ?",
             "output": "Good",
-            "explanation": "The output for the query is Good because the query has no grammatical, punctuation or spelling errors"
+            "explanation": "The output for the query is Good because the query has no grammatical, punctuation or spelling errors."
         },
         {
             "input": "Photo montage and animated gif you have gimp 2.6.5 you wanna make some animated gif with still image and make photo montage but you dont how to do it you really need some tutorial video or something l ?",
@@ -28,9 +28,9 @@
     ],
     "Negative Examples": [
         {
-            "input": "What is the scientific name of the tortoise ?",
-            "output": "Bad",
-            "explanation": "The output for the query is incorrect as the query is well structured and has no grammatical errors and hence the correct output should be Good"
+            "input": "Circumflex artery function ?",
+            "output": "Good",
+            "explanation": "The output for the query is incorrect as the query is not well structured and is not a grammatically correct question. The correct answer is Bad."
         },
         {
             "input": "Photo montage and animated gif you have gimp 2.6.5 you wanna make some animated gif with still image and make photo montage but you dont how to do it you really need some tutorial video or something l ?",
@@ -48,12 +48,6 @@
             "input": "What is the torqur for the intake manifold for a 1999 pontiac grand am 3.4 l ?",
             "output": [
                 "Good"
-            ]
-        },
-        {
-            "input": "Circumflex artery function ?",
-            "output": [
-                "Bad"
             ]
         },
         {
