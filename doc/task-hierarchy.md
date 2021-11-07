@@ -126,6 +126,9 @@
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation`
       - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Process Description`
+	  - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation`
+		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> From Scratch`
+		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> Story Completion`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Sentence Generation`
@@ -138,6 +141,7 @@
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
+  - `Text Generation -> Word Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
   - `Text Modification -> Text Simplification`
@@ -192,6 +196,7 @@
 * `History`
   * `History -> 9/11 Reports`
   * `History -> European History`
+* `Human Race` 
 * `Human Sexuality`
 * `Image Caption`
 * `International Law`
@@ -210,6 +215,7 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
+  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -221,6 +227,7 @@
 * `Physics`
 * `Pop Culture`
 * `Prehistory`
+* `Professions`
 * `Psychology`
 * `Public Places`
   * `Public Places -> Restaurants`
