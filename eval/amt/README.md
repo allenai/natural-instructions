@@ -9,3 +9,12 @@ For example:
 ```
  - Step2: follow the steps in `2.run_eval.sh`
  - Step3: evaluate
+
+
+To disqualify a certain user, add them to `genie_disqualification/blocklist.txt` and then:
+
+    amti associate-qual  --file genie_disqualification/blocklist.txt --qual  3090SA10WM5MIHCWNTON1VROMP4CN3 --live 
+
+To list workers that are disqualified:
+
+    amti  associated --qual  3090SA10WM5MIHCWNTON1VROMP4CN3 --status Granted  --live 

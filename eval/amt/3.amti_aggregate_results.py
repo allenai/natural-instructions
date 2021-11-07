@@ -43,6 +43,9 @@ def aggregate_v2(response_file):
                 worker_stats[worker_id] = 0
             worker_stats[worker_id] += 1
 
+            # if worker_id in ['AGMTUCRIVR6KJ', 'A3LS0JK9E4ILY6', 'A2H2CQLGZHGK14', 'A11ECPSFGOMJ0J', 'A1F43YAOACWEMR']:
+            #     continue
+
             file = json_line[f'file']
             instructions = normalize(json_line[f'instructions'])
 
@@ -77,12 +80,15 @@ def aggregate_v2(response_file):
                      f"\t{positive_ex_quality_value}\t{positive_ex_suggestions}\t{positive_examples_appended}" \
                      f"\t{negative_ex_quality_value}\t{negative_ex_suggestions}\t{negative_examples_appended}"
 
-            if len(instruction_suggestions) + len(positive_ex_suggestions) + len(negative_ex_suggestions) > 25:
+            if len(instruction_suggestions) + len(positive_ex_suggestions) + len(negative_ex_suggestions) > 2:
                 if file not in suggestions:
                     suggestions[file] = []
-                suggestions[file].append(f"\n    - regarding instructions: `{instruction_suggestions}`"
-                                         f"\n    - regarding p examples: `{positive_ex_suggestions}`"
-                                         f"\n    - regarding n examples: `{negative_ex_suggestions}`\n")
+                if len(instruction_suggestions.strip()) > 2:
+                    suggestions[file].append(f"    - regarding instructions: `{instruction_suggestions}`")
+                if len(positive_ex_suggestions.strip()) > 2:
+                    suggestions[file].append(f"    - regarding p examples: `{positive_ex_suggestions}`")
+                if len(negative_ex_suggestions.strip()) > 2:
+                    suggestions[file].append(f"    - regarding n examples: `{negative_ex_suggestions}`")
             # instance_input = []
             # instance_output = []
             # instance_prediction = []
@@ -115,4 +121,5 @@ def aggregate_v2(response_file):
 # aggregate_v2("batch-58086c69-62bf-4e91-8741-b68d27e1fd63-start=201_end=300_max_size=5/batch-results.jsonl")
 # aggregate_v2("batch-fc02d066-1e35-4184-b4ea-ba7eca1abcc1_start=301_end=400_max_size=5/batch-results.jsonl")
 # aggregate_v2("batch-4739062e-2141-4f97-9a37-41197abf9a93_start=400_end=600_max_size=5/batch-results.jsonl")
-aggregate_v2("batch-23353cc5-13c1-4af9-94c3-03eb2bacbd0a_start=600_end=850_max_size=5/batch-results.jsonl")
+# aggregate_v2("batch-23353cc5-13c1-4af9-94c3-03eb2bacbd0a_start=600_end=850_max_size=5/batch-results.jsonl")
+aggregate_v2("batch-4ee23f3d-2900-4fef-a0ae-d05bc7d519e8_start=850_end=1200_max_size=5/batch-results.jsonl")
