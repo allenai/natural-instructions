@@ -1,8 +1,8 @@
 {
     "Source": [
-        "Babi"
+        "Babi (https://research.fb.com/downloads/babi/)"
     ],
-    "Definition": "You will be given a passage with enumerared set of facts, a question of form 'Where is <person_name>?' and its answer. The task is to identify a supporting fact that is necessary to answer the question. The output would be corresponding fact number.",
+    "Definition": "You will be given a passage with an enumerated set of facts, a question of form 'Where is <person_name>?', and its answer. The task is to identify a supporting fact that is necessary to answer the question. The output would be the corresponding fact number.",
     "Positive Examples": [
         {
             "input": "Passage: Fact 1- Mary moved to the bathroom. Fact 2- John went to the hallway. Question: Where is Mary? Answer: bathroom",
@@ -35,6 +35,11 @@
             "input": "Passage: Fact 1- Mary moved to the bathroom. Fact 2- John went to the hallway. Question: Where is Mary? Answer: bathroom",
             "output": "Fact 2",
             "explanation": "The question asks about the location of Mary whereas fact 2 mentions about John. Therefore, fact 2 cannot be a supporting fact to answer this question. Correct output should be 'Fact 1' meaning that fact 1- 'Mary moved to the bathroom.' is a supporting fact."
+        },
+        {
+            "input": "Passage: Fact 1- Mary moved to the garden. Fact 2- Daniel journeyed to the bathroom. Fact 3- John travelled to the kitchen. Fact 4- John went back to the bedroom. Fact 5- John moved to the office. Fact 6- Daniel went back to the garden. Fact 7- John went back to the hallway. Fact 8- Mary went to the office. Question: Where is John? Answer: hallway",
+            "output": "Fact 4",
+            "explanation": "The question asks about the location of John. Although fact 3 is about John, John has changed his place according to next facts. The final place of John is determined by fact 7."
         }
     ],
     "Instances": [
@@ -174,12 +179,6 @@
             "input": "Passage: Fact 1- Mary moved to the garden. Fact 2- Daniel journeyed to the bathroom. Fact 3- John travelled to the kitchen. Fact 4- John went back to the bedroom. Fact 5- John moved to the office. Fact 6- Daniel went back to the garden. Question: Where is Daniel? Answer: garden",
             "output": [
                 "Fact 6"
-            ]
-        },
-        {
-            "input": "Passage: Fact 1- Mary moved to the garden. Fact 2- Daniel journeyed to the bathroom. Fact 3- John travelled to the kitchen. Fact 4- John went back to the bedroom. Fact 5- John moved to the office. Fact 6- Daniel went back to the garden. Fact 7- John went back to the hallway. Fact 8- Mary went to the office. Question: Where is John? Answer: hallway",
-            "output": [
-                "Fact 7"
             ]
         },
         {
@@ -5995,7 +5994,9 @@
         "Shailaja Keyur Sampat"
     ],
     "Categories": [
-        "Supporting Fact Identification"
+        "Text Span Selection",
+        "Question Answering -> Multiple Choice Question Answering",
+        "Reasoning -> Commonsense Reasoning -> Physical Reasoning"
     ],
     "Instruction Source": "Section 3 of Paper https://arxiv.org/pdf/1502.05698.pdf",
     "Input_language": [
@@ -6006,5 +6007,8 @@
     ],
     "Instruction_language": [
         "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations -> Spatial Commonsense"
     ]
 }
