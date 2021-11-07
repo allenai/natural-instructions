@@ -10,6 +10,7 @@
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`   
+- `Character Detection`  
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
@@ -18,6 +19,8 @@
     - `Classification -> Verification -> Clarification Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
+		- `Classification -> Verification -> Relevance Verification -> Title Verification`
+		- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
 - `Code Summarization`: Generating natural language description for a piece of code
@@ -27,6 +30,7 @@
   - `Coreference -> Pronoun Disambiguation`
 - `Dialogue Understanding`
 - `Document Understanding`
+- `Emotion Detection`
 - `Entity Detection`
 - `Ethical Judgement`
 - `Fake News Detection`
@@ -48,6 +52,7 @@
   - `Mathematics -> Combinatorics`
   - `Mathematics -> Geometry`
   - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
+- `Motivation Detection`
 - `Named Entity Recognition`
 - `Order Detection`
   - `Order Detection -> Incorrect Order Detection`
@@ -93,6 +98,7 @@
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
+    - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
@@ -180,7 +186,7 @@
   * `Computer Science -> Computer Security`
   * `Computer Science -> Machine Learning`
 * `Computer Security`
-* `Coreference`
+* `Conference`
 * `Debatepedia`
 * `Dialogue`
 * `Econometrics`
