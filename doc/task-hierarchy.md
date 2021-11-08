@@ -10,6 +10,7 @@
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`   
+- `Character Detection`  
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
@@ -18,6 +19,8 @@
     - `Classification -> Verification -> Clarification Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
+		- `Classification -> Verification -> Relevance Verification -> Title Verification`
+		- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
 - `Code Summarization`: Generating natural language description for a piece of code
@@ -27,6 +30,7 @@
   - `Coreference -> Pronoun Disambiguation`
 - `Dialogue Understanding`
 - `Document Understanding`
+- `Emotion Detection`
 - `Entity Detection`
 - `Ethical Judgement`
 - `Fake News Detection`
@@ -48,6 +52,7 @@
   - `Mathematics -> Combinatorics`
   - `Mathematics -> Geometry`
   - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
+- `Motivation Detection`
 - `Named Entity Recognition`
 - `Order Detection`
   - `Order Detection -> Incorrect Order Detection`
@@ -86,13 +91,14 @@
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
     - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
     - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
+  - `Reasoning -> Counterfactual Reasoning`
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Logical Reasoning`
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
-    - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+    - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
@@ -126,6 +132,9 @@
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation`
       - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Process Description`
+	  - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation`
+		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> From Scratch`
+		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> Story Completion`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Sentence Generation`
@@ -138,6 +147,7 @@
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
+  - `Text Generation -> Word Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
   - `Text Modification -> Text Simplification`
@@ -176,6 +186,7 @@
   * `Computer Science -> Computer Security`
   * `Computer Science -> Machine Learning`
 * `Computer Security`
+* `Conference`
 * `Debatepedia`
 * `Dialogue`
 * `Econometrics`
@@ -191,6 +202,7 @@
 * `History`
   * `History -> 9/11 Reports`
   * `History -> European History`
+* `Human Race` 
 * `Human Sexuality`
 * `Image Caption`
 * `International Law`
@@ -209,6 +221,7 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
+  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -220,6 +233,7 @@
 * `Physics`
 * `Pop Culture`
 * `Prehistory`
+* `Professions`
 * `Psychology`
 * `Public Places`
   * `Public Places -> Restaurants`
