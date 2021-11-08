@@ -89,7 +89,7 @@
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
-  - `Reasoning -> Logical Reasoning`
+  - `Reasoning -> Logical Reasoning`: reasoning about AND, OR, XOR, NOT, NOR operations etc.
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
     - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
@@ -119,6 +119,8 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
+  - `Text Comparison -> Relevancy Comparison`
+  - `Text Comparison -> Style Comparison`
 - `Text Generation`
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
@@ -130,8 +132,9 @@
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Sentence Generation`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
-    - `Text Generation -> Sentence Generation -> Story Completion`
-      - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
+    - `Text Generation -> Sentence Generation -> Completion`
+      - `Text Generation -> Sentence Generation -> Completion -> Story`
+        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
       - `Text Generation -> Structured Text Generation -> Table`
