@@ -26,7 +26,9 @@
     - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
     - `Classification -> Verification -> Paraphrase Verification`: Verify whether a text sequence is a paraphrase of another text sequence
     - `Classification -> Verification -> Translation Verification`: Verify whether a text sequence is a translation of another text sequence
-  - `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
+- `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
+- `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
+- `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
 - `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
@@ -148,6 +150,7 @@
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Sentence Generation`
+    - `Text Generation -> Sentence Generation -> Contextual Text Generation`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Story Completion`
       - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
@@ -182,6 +185,7 @@
 * `Business Ethics`
 * `Captions`
     * `Captions -> Image Captions`
+    * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -254,6 +258,7 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
+* `Scientific Research Papers`
 * `School Science Textbooks`
 * `Security: Environmental Security`
 * `Security: National Security`
