@@ -19,7 +19,7 @@
     - `Classification -> Verification -> Clarification Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
-		- `Classification -> Verification -> Relevance Verification -> Title Verification`
+	  	- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
 - `Code Summarization`: Generating natural language description for a piece of code
