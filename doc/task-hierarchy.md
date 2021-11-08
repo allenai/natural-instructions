@@ -94,6 +94,7 @@
     - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
+  - `Reasoning -> Reasoning with Symbols`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Social Interactions`
   - `Reasoning -> Temporal Reasoning`
@@ -121,6 +122,7 @@
         - `Structured Text Processing -> Operation on Primitives -> Numbers -> Set`
         - `Structured Text Processing -> Operation on Primitives -> Numbers -> Scalar`
       - `Structured Text Processing -> Operation on Primitives -> String`
+- `Story Completion`
 - `Summarization`
 - `Tabular Text Operation`
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
@@ -242,6 +244,7 @@
 * `Social Media`
   * `Social Media -> Twitter`
   * `Social Media -> Text Message`
+  * `Social Media -> Reddit`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
