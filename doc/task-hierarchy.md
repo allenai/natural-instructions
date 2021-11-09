@@ -19,7 +19,6 @@
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
 		- `Classification -> Verification -> Relevance Verification -> Title Verification`
-		- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
 - `Command Execution`
@@ -57,6 +56,7 @@
   - `Order Detection -> Incorrect Order Detection`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 - `Parts-of-speech`
+  - `Parts-of-speech -> Recognition`
 - `Question Answering`
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
@@ -214,6 +214,8 @@
 * `Electrical Engineering`
 * `Fiction`
 * `Formal Fallacy`
+* `Game`
+  * `Game -> Card Game`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
@@ -237,8 +239,13 @@
 * `Medical Genetics`
 * `Medicine`
 * `Moral Scenarios`
-* `Movies`
-  * `Movies -> Reviews`
+* `Reviews`
+  * `Reviews -> Movies`
+  * `Reviews -> TripAdvisor` 
+  * `Reviews -> Restaurants `
+  * `Reviews -> Movies`
+  * `Reviews -> Books`
+  * `Reviews -> Electronics and Grocery`
 * `Music`
 * `Narrative`
 * `Natural Science`
