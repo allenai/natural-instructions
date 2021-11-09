@@ -6,7 +6,6 @@
 - If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
 - `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
-- `Abuse Detection`
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`   
@@ -23,7 +22,6 @@
 		- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
-- `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
@@ -42,7 +40,8 @@
     -  `Proofreading -> Spelling Error -> Spelling Error Detection`
   - `Proofreading -> Word Order Error`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
-- `Hate Speech Detection`
+- `Abuse Detection`
+  - `Abuse Detection -> Hate Speech Detection`
 - `Hypernym Discovery`
 - `Intent Detection`
 - `Language Identification`
@@ -57,7 +56,6 @@
 - `Order Detection`
   - `Order Detection -> Incorrect Order Detection`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
-- `Paraphrasing`
 - `Parts-of-speech`
 - `Question Answering`
   - `Question Answering -> Numerical Question Answering`
@@ -96,14 +94,15 @@
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Logical Reasoning`
+    - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
+  - `Reasoning -> Reasoning with Symbols`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Social Interactions`
-  - `Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the freeze today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
     - `Reasoning -> Textual Entailment -> Abductive Reasoning`
@@ -118,8 +117,18 @@
 - `Sentiment Analysis`
 - `Sorting`
 - `Stance Detection`
+- `Structured Text Processing`
+  - `Structured Text Processing -> Semantic Parsing`
+    - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
+  - `Structured Text Processing -> Code Summarization`
+  - `Structured Text Processing -> Operation on Primitives`
+    - `Structured Text Processing -> Operation on Primitives: e.g. An unambiguous transform `is applied to all inputs e.g. subtract 1 from every element in the list
+      - `Structured Text Processing -> Operation on Primitives -> Numbers`
+        - `Structured Text Processing -> Operation on Primitives -> Numbers -> List`
+        - `Structured Text Processing -> Operation on Primitives -> Numbers -> Set`
+        - `Structured Text Processing -> Operation on Primitives -> Numbers -> Scalar`
+      - `Structured Text Processing -> Operation on Primitives -> String`
 - `Story Completion`
-- `Style Transfer`
 - `Summarization`
 - `Tabular Text Operation`
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
@@ -138,6 +147,8 @@
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Sentence Generation`
+    - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
+    - `Text Generation -> Sentence Generation -> Contextual Text Generation`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Story Completion`
       - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
@@ -150,7 +161,9 @@
   - `Text Generation -> Word Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
-  - `Text Modification -> Text Simplification`
+  - `Text Modification -> Style Transfer`
+    - `Text Modification -> Style Transfer -> Text Simplification`
+  - `Text Modification -> Paraphrasing`
 - `Text Span Selection`
 - `Title Selection`
 - `Translation`
@@ -177,6 +190,7 @@
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
 * `Commonsense`
+  * `Commonsense -> Image Caption`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
@@ -204,7 +218,6 @@
   * `History -> European History`
 * `Human Race` 
 * `Human Sexuality`
-* `Image Caption`
 * `International Law`
 * `Jurisprudence`
 * `Justice`
@@ -243,6 +256,8 @@
 * `Security: National Security`
 * `Social Media`
   * `Social Media -> Twitter`
+  * `Social Media -> Text Message`
+  * `Social Media -> Reddit`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
