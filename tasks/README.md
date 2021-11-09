@@ -1546,20 +1546,54 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1609_xquad_en_question_generation` | Generating questions (based on xquad en) | Question Generation
 `task1610_xquad_es_answer_generation` | Generating answers to xquad es (Spanish) questions | Answer Generation
 `task1611_xquad_es_question_generation` | Generating questions (based on xquad es (Spanish)) | Question Generation
+`task1612_sick_label_classification` | Classification of labels correctly to show relation between two sentences (based on the sick dataset)| Classification
+`task1613_sick_given_category_generate_sentence` | Generate a sentence based  that meets the given criteria  (based on the sick dataset) | Sentence Generation
+`task1614_sick_text_modify` | Derive a sentence from the given sentence (based on the sick dataset) | Text modification
+`task1615_sick_tclassify_b_relation_a` | Classify the correct relation between the second and first sentence (based on the sick dataset) | Classification
+`task1616_cc_alligned_translate_eng_tel` | Translate from English to Telugu | Translation
+`task1617_cc_alligned_translate_tel_eng` | Translate from Telugu to English | Translation
+`task1618_cc_alligned_classify_tel_eng` | Classify if a sentence is in Telugu or English Language | Language Classification
+`task1619_menyo20k-mt_en_yo_translation` | Given an English sentence convert it to Yoruba. | Translation
+`task1620_menyo20k-mt_yo_en_translation` | Given a sentence in Yoruba convert it to English. | Translation
+`task1621_menyo20k-mt_en_yo_language_identification` | Given a sentence identify if it is in Yoruba or English. | Language Identification
+`task1622_disfl_qa_text_modication` | Given a disfluent question, convert it to a proper question. | Text Modification
+`task1623_disfl_qa_disfluent_question_classification` | Given a question, predict whether it is disfluent or proper. | Classification
+`task1624_disfl_qa_question_yesno_classification` | Given a context and a question, predict if a question is answerable or not based on the context. | Classification
+`task1625_disfl_qa_asnwer_generation` | Given a context and a question, return an answer to the question based on context. | Answer Generation
 `task1626_copa_hr_question_answering` | Given a sentence and 2 labels, select the correct label | Answer Selection
 `task1627_copa_hr_classification` | Given a question and two label, classify the group in which the choice and the statement are related | Classification
 `task1628_copa_hr_question_answering` | Given a sentence and four label, select the correct label. | Answer Selection 
 `task1629_copa_hr_classification` | Given two statements, classify the relation between them | Classification
 `task1630_openpi_classification` | Given a passage as input, print the output as the category to which the passage belongs | Classification
 `task1631_openpi_answer_generation` | Use the given information to generate a grammatically correct sentence as output | Answer Generation
+`task1637_doqa2.1_cooking_text_summarization` | Generating title from text (based on DoQA 2.1 cooking data) | Text Summarization
+`task1638_doqa2.1_movies_text_summarization` | Generating title from text (based on DoQA 2.1 movie data) | Text Summarization
+`task1639_doqa2.1_travel_text_summarization` | Generating title from text (based on DoQA 2.1 travel data) | Text Summarization
+`task1640_aqa1.0_answerable_unanswerable_question_classification` | Classifying questions (based on AQA 1.0) | Classification
+`task1645_medical_question_pair_dataset_text_classification` | Classification of Medical Question Pair Dataset in two categories | Text Classification
+`task1646_dataset_card_for_catalonia_independence_corpus_text_classification` | Classification of Catalonia Independence Corpus into three categories | Text Classification
+`task1647_opus_books_en-pt_translation` | Translation from English to Portuguese using opus dataset | Translation
+`task1648_opus_books_en-sv_translation` | Translation from English to Swedish using opus dataset | Translation
+`task1649_opus_books_en-no_translation`	| Translation from English to Norwegian using opus dataset | Translation
+`task1650_opus_books_en-fi_translation` | Translation from English to Finnish using opus dataset | Translation
+`task1651_opus_books_en-es__translation` | Translation from English to Spanish using opus dataset | Translation
+`task1652_opus_books_ca-en_translation` | Translation from Catalan to English using opus dataset | Translation
 `task1654_mkb_translation`|Translation of sentence from English to Hindi|Translation
 `task1655_mkb_translation`|Translation of sentence from Hindi to English|Translation 
 `task1656_gooaq_answer_generation`|short_answer generation for given question|Answer_Generation
 `task1657_gooaq_question_generation`|question generation for a given answer|Question Generation
+`task1658_billsum_summarization` | Generating summary (based on billsum) | Summarization
+`task1659_title_generation` | Generating Title (based on billsum) | Title Generation
+`task1660_super_glue_question_generation` | Generating guestions (based on super_glue) | Question Generation  
+`task1661_super_glue_classification` | Classification (based on super_glue) | Classification
 `task1662_cedr_ru_classification`| Generating correct emotion label corresponding to the given Russian text. | Classification
 `task1663_cedr_ru_incorrect_classification` | Generating incorrect emotion label corresponding to the given Russian text. | Incorrect Classification
 `task1664_winobias_text_generation` | Identifying coreferences in a given sentence and generating the set of coreference words in the sentence. | Text Generation
 `task1665_trainglecopa_question_generation` | Generating a Question for the given premise from traingleCOPA dataset | Question Generation
+`task1666_cail2018_answer_generation`| Generating answers (based on cail2018) | Answer Generation
+`task1667_cail2018_answer_generation` | Generating answers (based on cail2018) | Answer Generation
+`task1669_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
+`task1670_md_gender_bias_text_modification` | Modifying text (based on md gender bias) | Text Modification
 `task1676_xquad-ca_translation` | Translate questions from Catalan to English in the XQuAD-ca dataset | Translation
 `task1677_xquad-ca_translation` | Translate questions from English to Catalan in the XQuAD-ca dataset | Translation
 `task1678_mathqa_answer_selection` | Selecting answers to mathqa questions | Answer Selection
