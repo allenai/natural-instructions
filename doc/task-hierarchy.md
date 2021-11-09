@@ -134,6 +134,8 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
+  - `Text Comparison -> Relevancy Comparison`
+  - `Text Comparison -> Style Comparison`
 - `Text Generation`
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
@@ -150,8 +152,9 @@
     - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
-    - `Text Generation -> Sentence Generation -> Story Completion`
-      - `Text Generation -> Sentence Generation -> Story Completion -> Incorrect Story Completion`
+    - `Text Generation -> Sentence Generation -> Completion`
+      - `Text Generation -> Sentence Generation -> Completion -> Story`
+        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
       - `Text Generation -> Structured Text Generation -> Table`
