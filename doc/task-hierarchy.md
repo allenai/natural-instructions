@@ -110,7 +110,7 @@
   - `Reasoning -> Qualitative Reasoning`
   - `Reasoning -> Reasoning with Symbols`
   - `Reasoning -> Reasoning on Actions`
-  - `Reasoning -> Reasoning on Numbers`
+  - `Reasoning -> Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
   - `Reasoning -> Temporal Reasoning`
@@ -134,6 +134,9 @@
   - `Structured Text Processing -> Code Summarization`
   - `Structured Text Processing -> Operation on Primitives`
     - `Structured Text Processing -> Operation on Primitives: e.g. An unambiguous transform `is applied to all inputs e.g. subtract 1 from every element in the list
+      - `Structured Text Processing -> Operation on Primitives -> List`
+	    - `Structured Text Processing -> Operation on Primitives -> List -> Numbers`
+		- `Structured Text Processing -> Operation on Primitives -> List -> String`
       - `Structured Text Processing -> Operation on Primitives -> Numbers`
         - `Structured Text Processing -> Operation on Primitives -> Numbers -> List`
         - `Structured Text Processing -> Operation on Primitives -> Numbers -> Set`
@@ -276,7 +279,6 @@
   * `Social Media -> Reddit`
   * `Social Media -> Twitter`
   * `Social Media -> Text Message`
-  * `Social Media -> Reddit`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
