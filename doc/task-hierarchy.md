@@ -119,6 +119,10 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
+  - `Text Comparison -> Relevancy Comparison`
+    - `Text Comparison -> Relevancy Comparison -> Irrelevant Selection`
+  - `Text Comparison -> Style Comparison`
+  - `Text Comparison -> Semantic Textual Similarity`
 - `Text Generation`
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
