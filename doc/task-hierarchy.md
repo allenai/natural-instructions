@@ -262,11 +262,11 @@
   * `Movies -> Reviews`
 * `Music`
 * `Narrative`
+  * `Narrative -> Personal Narratives`
 * `Natural Science`
   * `Natural Science -> School Science Textbooks`
 * `News`
 * `Nutrition`
-* `Personal Narratives`
 * `Philosophy`
 * `Physics`
 * `Pop Culture`
@@ -290,6 +290,7 @@
 * `US Foreign Policy`
 * `Wikipedia`
 * `World Religions`
+* `Miscellaneous`
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
