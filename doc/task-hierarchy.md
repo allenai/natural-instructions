@@ -26,8 +26,10 @@
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
-- `Dialogue Understanding`
-- `Document Understanding`
+- `Understanding`
+  - `Understanding -> Dialogue Understanding`
+  - `Understanding -> User Query Understanding`
+  - `Understanding -> Document Understanding`
 - `Emotion Detection`
   - `Emotion Detection -> Classification`
 - `Entity Detection`
@@ -87,6 +89,7 @@
     - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+  - `Question Generation -> Clarifying Question`: Compose questions by concating questions in the input
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
