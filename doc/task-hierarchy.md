@@ -47,6 +47,7 @@
 - `Hypernym Discovery`
 - `Intent Detection`
 - `Language Identification`
+  - `Language Identification -> Verification`
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
@@ -154,6 +155,8 @@
   - `Text Generation -> Sentence Generation`
     - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
+	  - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
+	    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
       - `Text Generation -> Sentence Generation -> Completion -> Story`
