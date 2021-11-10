@@ -6,6 +6,7 @@
 - If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
 - `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
+- `Aspect Detection`
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`   
@@ -22,6 +23,7 @@
 		- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
+	- `Classification -> Verification -> Translation Verification`
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
@@ -115,6 +117,7 @@
 - `Semantic Parsing`
   - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
+  - `Sentiment Analysis -> Review Analysis`
 - `Sorting`
 - `Stance Detection`
 - `Structured Text Processing`
@@ -212,6 +215,8 @@
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
 * `Fiction`
+* `Food`
+  * `Food -> Reviews`
 * `Formal Fallacy`
 * `Geography`
 * `Global Facts`
