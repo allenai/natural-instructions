@@ -197,6 +197,7 @@
   - `Text Modification -> Style Transfer`
     - `Text Modification -> Style Transfer -> Text Simplification`
   - `Text Modification -> Paraphrasing`
+  - `Text Modification -> Perturbation`
   - `Text Modification -> Text Simplification`
   - `Text Modification -> Paraphrase Generation`: Generate a paraphrase of the original text
 - `Text Span Selection`
@@ -265,6 +266,7 @@
 * `Justice`
 * `Knowledge Base`
   * `Knowledge Base -> Freebase`
+  * `Knowledge Base -> Wikidata`
 * `Law`
 * `Linguistics`
 * `Literature`
