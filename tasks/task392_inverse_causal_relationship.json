@@ -9,7 +9,7 @@
     "Categories": [
         "Classification"
     ],
-    "Definition": "In this task, you will be given two sentences separated by \"because\". You should decide whether the first sentence can be the result of the second sentence. If you can see a possible causation, answer with \"plausible\", otherwise answer with \"not plausible\".",
+    "Definition": "In this task, you will be given two sentences separated by \"because\". You should decide whether the first sentence can be the result of the second sentence. If you can see a possible cause and effect relationship, answer with \"plausible\", otherwise answer with \"not plausible\".",
     "Positive Examples": [
         {
             "input": "The woman went to the bank because pigs can fly.",
@@ -20,6 +20,11 @@
             "input": "The women went to the bank because she didn't have enough cash on hand",
             "output": "plausible",
             "explanation": "The second sentence can be cause of the first sentence, so the correct answer here is plausible."
+        },
+        {
+            "input": "the boy felt homesick because he had died",
+            "output": "not plausible",
+            "explanation": "Someone can not feel homesick after they are dead."
         }
     ],
     "Negative Examples": [
@@ -27,6 +32,16 @@
             "input": "The woman went to see a lawyer because she was getting a divorce.",
             "output": "not plausible",
             "explanation": "Willing to get a divorce can be a valid cause to see a lawyer, so the correct answer is plausible."
+        },
+        {
+            "input": "a crater formed on the moon because it had to be",
+            "output": "plausible",
+            "explanation": "In the vague and meaningless cases like this, answer with \"not plausible\"."
+        },
+        {
+            "input": "the customer filed a complaint with the store manager because the service was poor",
+            "output": "true",
+            "explanation": "This is a plausible causal relationship, but you should only answer with \"plausible\" and \"not plausible\"."
         }
     ],
     "Instances": [
@@ -34,12 +49,6 @@
             "input": "the boy felt homesick because no one else wanted him",
             "output": [
                 "plausible"
-            ]
-        },
-        {
-            "input": "the boy felt homesick because he had died",
-            "output": [
-                "not plausible"
             ]
         },
         {
@@ -583,12 +592,6 @@
             ]
         },
         {
-            "input": "a crater formed on the moon because it had to be",
-            "output": [
-                "not plausible"
-            ]
-        },
-        {
             "input": "a crater formed on the moon because the earth was full of water",
             "output": [
                 "not plausible"
@@ -716,12 +719,6 @@
         },
         {
             "input": "the customer filed a complaint with the store manager because it didn't fit the description of the store",
-            "output": [
-                "plausible"
-            ]
-        },
-        {
-            "input": "the customer filed a complaint with the store manager because the service was poor",
             "output": [
                 "plausible"
             ]

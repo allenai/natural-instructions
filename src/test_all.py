@@ -5,14 +5,15 @@ from os import listdir
 from os.path import isfile, join
 import argparse
 import re
+import numpy as np
 
 # get the range of task you want to test, if specified in the command line
 parser = argparse.ArgumentParser()
 parser.add_argument("--task",
-                        nargs=2,
-                        type=int,
-                        required=False,
-                        help="The range of task you want to parse")
+                    nargs=2,
+                    type=int,
+                    required=False,
+                    help="The range of task you want to parse")
 
 args = parser.parse_args()
 if args.task:
@@ -20,8 +21,7 @@ if args.task:
     assert begin_task_number > 0, "begin task must be greater than 0"
     assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
 
-
-# make sure that there is no json file in the root directory 
+# make sure that there is no json file in the root directory
 root_files = [f for f in listdir('.') if isfile(join('.', f))]
 for f in root_files:
     assert '.json' not in f, 'looks like there is a JSON file in the main directory???'
@@ -57,6 +57,7 @@ def extract_categories(string):
     """
     return set(re.findall(r'`(.*?)`', string))
 
+
 def dict_raise_on_duplicates(ordered_pairs):
     """Reject duplicate keys."""
     d = {}
@@ -66,6 +67,15 @@ def dict_raise_on_duplicates(ordered_pairs):
         else:
             d[k] = v
     return d
+
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    '''
+    return [ atoi(c) for c in re.split(r'(\d+)', text) ]
 
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
@@ -93,7 +103,7 @@ for i in range(0, len(task_numbers) - 1):
     assert num1 <= num2, f"ERROR: looks like `{num1}` appears before `{num2}`."
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-files.sort()
+files.sort(key=natural_keys)
 
 # make sure anything that gets mentioned in the readme, correspond to an actual file
 task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
@@ -105,7 +115,18 @@ for name in task_names:
 if not args.task:
     begin_task_number, end_task_number = 1, len(files)
 
-for file in files[begin_task_number:end_task_number+1]:
+# TODO: over time, we need to fix the skew of the following tasks
+skew_exclusion = [
+    "027", "150", "021", "050", "022", "020", "019", "052", "1191", "018", "109", "148", "158", "108", "155", "147",
+    "058", "049", "043", "149", "146", "159", "056", "1158", "1179", "1311", "1361", "1366", "1384", "1489", "1491",
+    "1492", "1532", "1536", "161", "162", "163", "200", "202", "209", "224", "228", "229", "243", "245", "248", "264",
+    "265", "280", "302", "922", "909", "907", "900", "892", "838", "823", "585", "573", "566", "528", "526", "527",
+    "525", "503", "375", "646", "622", "682", "621", "903", "921"
+]
+
+contributors = {}
+
+for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
@@ -184,6 +205,19 @@ for file in files[begin_task_number:end_task_number+1]:
                         raise Exception(f" * Looks like we have a repeated example here! "
                                         f"Merge outputs before removing duplicates. :-/ \n {instance}")
 
+            # make sure classes are balanced
+            output = [ins['output'] for ins in instances]
+            # flattens the nested arrays
+            outputs = sum(output, [])
+            value, counts = np.unique(outputs, return_counts=True)
+            # TODO: bring this back when we fix issue #522
+            # assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+            task_number = file.replace("task", "").split("_")[0]
+            if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
+                norm_counts = counts / counts.sum()
+                entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
+                assert entropy > 0.8, f"Looks like this task is heavily skewed!\n   📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}"
+
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
@@ -211,4 +245,14 @@ for file in files[begin_task_number:end_task_number+1]:
                 raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
                                 f'the task file `tasks/README.md`')
 
+            for c in data['Contributors']:
+                if c not in contributors:
+                    contributors[c] = 0
+                contributors[c] += 1
+
 print("Did not find any errors! ✅")
+
+keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
+for author, count in keyvalues:
+    if count >= 25:
+        print(f" ✍️ {author} -> {count}")

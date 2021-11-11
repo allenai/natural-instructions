@@ -3,17 +3,23 @@
         "Mihir Parmar"
     ],
     "Source": [
-        "Logic2Text (Link: https://github.com/czyssrs/Logic2Text)"
+        "Logic2Text (dataset: https://github.com/czyssrs/Logic2Text, paper:https://arxiv.org/abs/2004.14579)"
     ],
     "Categories": [
-        "Structured Text Generation"
+        "Reasoning -> Logical Reasoning",
+        "Text Generation -> Structured Text Generation",
+        "Semantic Parsing"
     ],
-    "Definition": "In this task, you are given a natural language interpretation of commands (consist of logical operations) to select relevant rows from the given table. Your job is to generate command (in terms of logical operations) from given natural language interpretation. Define body (contains a collection of statements that define what the this logical operator does.) of each logical operator between '{}' parenthesis. \n Here are the definitions of logical operators that you can use while generating command: \n 1. count: returns the number of rows in the view \n 2. only: returns whether there is exactly one row in the view \n 3. hop: returns the value under the header column of the row \n 4. and: returns the boolean operation result of two arguments \n 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column \n 6. nth max/nth min: returns the n-th max/n-th min of the values under the header column \n 7. argmax/argmin: returns the row with the max/min value in header column \n 8. nth argmax/nth argmin: returns the row with the n-th max/min value in header column \n 9. eq/not eq: returns if the two arguments are equal \n 10. round eq: returns if the two arguments are roughly equal under certain tolerance \n 11. greater/less: returns if argument 1 is greater/less than argument 2 \n 12. diff: returns the difference between two arguments \n 13. filter eq/not eq: returns the subview whose values under the header column is equal/not equal to argument 3 \n 14. filter greater/less: returns the subview whose values under the header column is greater/less than argument 3 \n 15. filter greater eq /less eq: returns the subview whose values under the header column is greater/less or equal than argument 3 \n 16. filter all: returns the view itself for the case of describing the whole table \n 17. all eq/not eq: returns whether all the values under the header column are equal/not equal to argument 3 \n 18. all greater/less: returns whether all the values under the header column are greater/less than argument 3 \n 19. all greater eq/less eq: returns whether all the values under the header column are greater/less or equal to argument 3 \n 20. most eq/not eq: returns whether most of the values under the header column are equal/not equal to argument 3 \n 21. most greater/less: returns whether most of the values under the header column are greater/less than argument 3 \n 22. most greater eq/less eq: returns whether most of the values under the header column are greater/less or equal to argument 3",
+    "Definition": "In this task, you are given a natural language interpretation of commands (consist of logical operations) to select relevant rows from the given table. Your job is to generate command (in terms of logical operations) from given natural language interpretation. Define body (contains a collection of statements that define what the this logical operator does) of each logical operator between '{}' parenthesis. Here are the definitions of logical operators that you can use while generating command: \n 1. count: returns the number of rows in the view. \n 2. only: returns whether there is exactly one row in the view. \n 3. hop: returns the value under the header column of the row. \n 4. and: returns the boolean operation result of two arguments. \n 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column. \n 6. nth_max/nth_min: returns the n-th max/n-th min of the values under the header column. \n 7. argmax/argmin: returns the row with the max/min value in header column. \n 8. nth_argmax/nth_argmin: returns the row with the n-th max/min value in header column. \n 9. eq/not_eq: returns if the two arguments are equal. \n 10. round_eq: returns if the two arguments are roughly equal under certain tolerance. \n 11. greater/less: returns if the first argument is greater/less than the second argument. \n 12. diff: returns the difference between two arguments. \n 13. filter_eq/ filter_not_eq: returns the subview whose values under the header column is equal/not equal to the third argument. \n 14. filter_greater/filter_less: returns the subview whose values under the header column is greater/less than the third argument. \n 15. filter_greater_eq /filter_less_eq: returns the subview whose values under the header column is greater/less or equal than the third argument. \n 16. filter_all: returns the view itself for the case of describing the whole table \n 17. all_eq/not_eq: returns whether all the values under the header column are equal/not equal to the third argument. \n 18. all_greater/less: returns whether all the values under the header column are greater/less than the third argument. \n 19. all_greater_eq/less_eq: returns whether all the values under the header column are greater/less or equal to the third argument. \n 20. most_eq/not_eq: returns whether most of the values under the header column are equal/not equal to the third argument. \n 21. most_greater/less: returns whether most of the values under the header column are greater/less than the third argument. \n 22. most_greater_eq/less_eq: returns whether most of the values under the header column are greater/less or equal to the third argument.",
+    "Domains": [    
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
     "Positive Examples": [
         {
             "input": "select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
             "output": "eq { hop { nth_argmax { all_rows ; attendance ; 3 } ; competition } ; danish superliga 2005 - 06 }",
-            "explanation": "Here, the generated command using logical operators correctly selects 3rd maximum from given table rows which is mentioned in natural language interpretation."
+            "explanation": "Here, the generated command using logical operators correctly selects third maximum from given table rows which is mentioned in natural language interpretation."
         },
         {
             "input": "select the row whose duration record of all rows is maximum. the actor record of this row is lesley saweard.",
@@ -26,16 +32,16 @@
             "explanation": "Here, the generated command using logical operators correctly indicates the most of the point records that are zero."
         },
         {
-            "input": "select the rows whose acquisition via record fuzzily matches to rookie draft. there is only one such row in the table. the name record of this unqiue row is reynel hugnatan.",
-            "output": "and { only { filter_eq { all_rows ; acquisition via ; rookie draft } } ; eq { hop { filter_eq { all_rows ; acquisition via ; rookie draft } ; name } ; reynel hugnatan } }",
-            "explanation": "Here, the generated command using logical operators correctly selects only one row whose acquisition record fuzzily matches to rookie draft."
+            "input": "the sum of the intake record of all rows is 505 .",
+            "output": "round_eq { sum { all_rows ; intake } ; 505 }",
+            "explanation": "In order to select all the rows, we should use all_rows ; intake, and for calculating the sum of them, we should use sum { all_rows ; intake } ;. Then we check if the sum is 505 using round_eq { sum { all_rows ; intake } ; 505 }."
         }
     ],
     "Negative Examples": [
         {
-            "input": "select the rows whose name of county record fuzzily matches to veszpr\u00e9m. take the area (km square) record of this row. select the rows whose name of county record fuzzily matches to tolna.",
-            "output": "round_eq { avg { filter_eq { all_rows ; country ; united states } ; to par } ; -7.6 }",
-            "explanation": "Given natural language interpretation and generated command are miss matched completely."
+            "input": "select the row whose total record of all rows is 3rd maximum . the club record of this row is maidstone united .",
+            "output": "eq { hop { nth_argmax { all_rows ; total ; 3 } } ; maidstone united }",
+            "explanation": "Given natural language interpretation and generated command are miss matched. We need to choose the club record after selecting the row whose total record of all rows is 3rd maximum."
         },
         {
             "input": "select the row whose goal gain record of all rows is 3rd maximum. the team record of this row is india.",
@@ -114,12 +120,6 @@
             "input": "select the row whose votes record of all rows is maximum . the election record of this row is 1990 .",
             "output": [
                 "eq { hop { argmax { all_rows ; votes } ; election } ; 1990 }"
-            ]
-        },
-        {
-            "input": "the sum of the intake record of all rows is 505 .",
-            "output": [
-                "round_eq { sum { all_rows ; intake } ; 505 }"
             ]
         },
         {
@@ -624,12 +624,6 @@
             "input": "select the rows whose place record fuzzily matches to t2 . the maximum score record of these rows is 73 + 69 = 142 .",
             "output": [
                 "eq { max { filter_eq { all_rows ; place ; t2 } ; score } ; 73 + 69"
-            ]
-        },
-        {
-            "input": "select the row whose total record of all rows is 3rd maximum . the club record of this row is maidstone united .",
-            "output": [
-                "eq { hop { nth_argmax { all_rows ; total ; 3 } ; club } ; maidstone united }"
             ]
         },
         {
