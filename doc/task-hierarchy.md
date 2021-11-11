@@ -153,7 +153,8 @@
 		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> Story Completion`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
-  - `Text Generation -> Named Entity Generation`
+  - `Text Generation -> Semi-Structured Text Generation`
+    - `Text Generation -> Semi-Structured Text Generation -> Named Entity Generation`
   - `Text Generation -> Sentence Generation`
     - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
@@ -237,6 +238,7 @@
 * `Justice`
 * `Law`
 * `Linguistics`
+* `Literature`
 * `Logic`
   * `Logic -> Formal logic`
   * `Logic -> Propositional Logic`
