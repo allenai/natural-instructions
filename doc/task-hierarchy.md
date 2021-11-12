@@ -37,13 +37,16 @@
   - `Detection -> Abuse Detection`
     - `Detection -> Abuse Detection -> Hate Speech Detection`
   - `Detection -> Affect Detection`
-  - `Detection -> Character Detection`
+  - `Detection -> Capability Detection`
   - `Detection -> Cause Detection`
+  - `Detection -> Character Detection`
+  - `Detection -> Desire Detection`
   - `Detection -> Emotion Detection`
     - `Detection -> Emotion Detection -> Classification`
   - `Detection -> Entity Detection`
-    - `Entity Detection -> Extractive`: Extract the entity from the text (open set)
-    - `Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
+    - `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
+    - `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
+	- `Detection -> Entity Detection -> Sentient Entity Detection`
   - `Detection -> Fake News Detection`
   - `Detection -> Intent Detection`
   - `Detection -> Location Detection`
@@ -265,7 +268,6 @@
   * `Economics -> Macroeconomics`
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
-* `Emails`
 * `Fiction`
 * `Food`
 * `Formal Fallacy`
