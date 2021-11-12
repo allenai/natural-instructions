@@ -8,8 +8,7 @@
 ## Task Categories
 - `Author Identification`
 - `Unnatural Language Processing`
-  - `Unnatural Language Processing -> Question Answering`   
-- `Character Detection`  
+  - `Unnatural Language Processing -> Question Answering`     
 - `Classification`
   - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
@@ -19,20 +18,39 @@
 	- `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
-	    - `Classification -> Verification -> Relevance Verification -> Title Verification`
+	  	- `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
+- `Detection`
+  - `Detection -> Abuse Detection`
+    - `Detection -> Abuse Detection -> Hate Speech Detection`
+  - `Detection -> Affect Detection`
+  - `Detection -> Character Detection`
+  - `Detection -> Cause Detection`
+  - `Detection -> Emotion Detection`
+    - `Detection -> Emotion Detection -> Classification`
+	- `Detection -> Emotion Detection -> Emotional Reaction Detection`
+  - `Detection -> Entity Detection`
+  - `Detection -> Fake News Detection`
+  - `Detection -> Intent Detection`
+  - `Detection -> Location Detection`
+  - `Detection -> Motivation Detection`
+  - `Detection -> Need Detection`
+  - `Detection -> Obstacle Detection`
+  - `Detection -> Order Detection`
+    - `Detection -> Order Detection -> Incorrect Order Detection`
+  - `Detection -> Stance Detection`
+    - `Detection -> Stance Detection -> Classification`
+      - `Detection -> Stance Detection -> Classification -> Verification`
+	    - `Detection -> Stance Detection -> Classification -> Stance Correction Verification`
+  - `Detection -> Usage Detection`
 - `Dialogue Understanding`
 - `Document Understanding`
-- `Emotion Detection`
-  - `Emotion Detection -> Classification`
-- `Entity Detection`
 - `Ethical Judgement`
-- `Fake News Detection`
 - `Proofreading`
   - `Proofreading -> Coherence Detection`
 	- `Proofreading -> Coherence Detection -> Word Replacement`
@@ -44,10 +62,7 @@
     -  `Proofreading -> Spelling Error -> Spelling Error Detection`
   - `Proofreading -> Word Order Error`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
-- `Abuse Detection`
-  - `Abuse Detection -> Hate Speech Detection`
 - `Hypernym Discovery`
-- `Intent Detection`
 - `Language Identification`
 - `Mathematics`
   - `Mathematics -> Algebra`
@@ -55,15 +70,11 @@
   - `Mathematics -> Combinatorics`
   - `Mathematics -> Geometry`
   - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
-- `Motivation Detection`
 - `Named Entity Recognition`
-- `Order Detection`
-  - `Order Detection -> Incorrect Order Detection`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 	- `Order Generation -> Arrangement`
 - `Paraphrasing`
 - `Parts-of-speech`
-  - `Parts-of-speech -> Recognition`
 - `Question Answering`
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
@@ -78,6 +89,7 @@
       - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
       - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Open Question Answering`
   - `Question Answering -> Multihop Question Answering`
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
@@ -96,12 +108,14 @@
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
     - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+    - `Reasoning -> Commonsense Reasoning -> Social Situations`
     - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
   - `Reasoning -> Counterfactual Reasoning`
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Ethics`
+  - `Reasoning -> Factual Reasoning`
   - `Reasoning -> Logical Reasoning`
     - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
@@ -112,6 +126,7 @@
   - `Reasoning -> Reasoning with Symbols`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
+  - `Reasoning -> Reasoning on Objects`
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
   - `Reasoning -> Temporal Reasoning`
@@ -127,8 +142,6 @@
   - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
 - `Sorting`
-- `Stance Detection`
-  - `Stance Detection -> Classification`
 - `Structured Text Processing`
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
@@ -149,9 +162,6 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
-  - `Text Comparison -> Relevancy Comparison`
-    - `Text Comparison -> Relevancy Comparison -> Irrelevant Selection`
-  - `Text Comparison -> Semantic Textual Similarity`
   - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Relevancy Comparison`
   - `Text Comparison -> Style Comparison`
@@ -159,6 +169,7 @@
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
+  - `Text Generation -> Explanation Generation`
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation`
       - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Process Description`
@@ -182,6 +193,7 @@
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
+    - `Text Generation -> Word Generation -> Proposition Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
   - `Text Modification -> Style Transfer`
@@ -203,6 +215,7 @@
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
+* `Books`
 * `Business Ethics`
 * `Chemistry`
 * `Code`
@@ -231,12 +244,11 @@
   * `Economics -> Macroeconomics`
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
+* `Emails`
 * `Fiction`
 * `Food`
   * `Food -> Reviews`
 * `Formal Fallacy`
-* `Game`
-  * `Game -> Card Game`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
@@ -261,13 +273,8 @@
 * `Medical Genetics`
 * `Medicine`
 * `Moral Scenarios`
-* `Reviews`
-  * `Reviews -> Movies`
-  * `Reviews -> TripAdvisor` 
-  * `Reviews -> Restaurants `
-  * `Reviews -> Movies`
-  * `Reviews -> Books`
-  * `Reviews -> Electronics and Grocery`
+* `Movies`
+  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
