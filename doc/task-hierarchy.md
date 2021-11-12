@@ -262,6 +262,7 @@
 * `Music`
 * `Narrative`
   * `Narrative -> Personal Narratives`
+  * `Narrative -> Everyday Events`
 * `Natural Science`
   * `Natural Science -> School Science Textbooks`
 * `News`
