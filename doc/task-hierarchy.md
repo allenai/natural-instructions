@@ -249,6 +249,8 @@
 * `Food`
   * `Food -> Reviews`
 * `Formal Fallacy`
+* `Game`
+  * `Game -> Card Game`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
