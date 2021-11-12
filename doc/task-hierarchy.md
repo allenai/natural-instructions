@@ -169,6 +169,7 @@
   - `Text Comparison -> Semantic Textual Similarity`
   - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Style Comparison`
+  - `Text Comparison -> Entailment`
 - `Text Generation`
   - `Text Generation -> Rhyme Generation`
   - `Text Generation -> Command Execution`
