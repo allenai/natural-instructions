@@ -43,6 +43,7 @@
   - `Detection -> Obstacle Detection`
   - `Detection -> Order Detection`
     - `Detection -> Order Detection -> Incorrect Order Detection`
+  - `Detection -> Relation Detection`
   - `Detection -> Stance Detection`
     - `Detection -> Stance Detection -> Classification`
       - `Detection -> Stance Detection -> Classification -> Verification`
@@ -247,7 +248,6 @@
 * `Emails`
 * `Fiction`
 * `Food`
-  * `Food -> Reviews`
 * `Formal Fallacy`
 * `Game`
   * `Game -> Card Game`
@@ -276,7 +276,6 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
-  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -293,6 +292,13 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
+* `Reviews`
+  * `Reviews -> Food`
+  * `Reviews -> TripAdvisor` 
+  * `Reviews -> Restaurants `
+  * `Reviews -> Movies`
+  * `Reviews -> Books`
+  * `Reviews -> Electronics and Grocery`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
