@@ -75,6 +75,7 @@
 - `Parts-of-speech`
   - `Parts-of-speech -> Recognition`
 - `Question Answering`
+  - `Question Answering -> Supporting Fact Generation` 
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
   - `Question Answering -> Contextual Question Answering`
@@ -169,6 +170,7 @@
   - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Style Comparison`
 - `Text Generation`
+  - `Text Generation -> Rhyme Generation`
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
