@@ -17,7 +17,7 @@
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
     - `Classification -> Verification -> Clarification Verification`
-    	- `Classification -> Verification -> Ethical Verification`
+    - `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
 		- `Classification -> Verification -> Relevance Verification -> Title Verification`
@@ -73,6 +73,7 @@
 	- `Order Generation -> Arrangement`
 - `Paraphrasing`
 - `Parts-of-speech`
+  - `Parts-of-speech -> Recognition`
 - `Question Answering`
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
@@ -162,8 +163,10 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
-- `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Relevancy Comparison`
+    - `Text Comparison -> Relevancy Comparison -> Irrelevant Selection`
+  - `Text Comparison -> Semantic Textual Similarity`
+  - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Style Comparison`
 - `Text Generation`
   - `Text Generation -> Command Execution`
@@ -252,6 +255,8 @@
 * `Food`
   * `Food -> Reviews`
 * `Formal Fallacy`
+* `Game`
+  * `Game -> Card Game`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
@@ -300,12 +305,19 @@
 * `Public Relations`
 * `Scientific Research Papers`
 * `School Science Textbooks`
+* `Reviews`
+  * `Reviews -> Food`
+  * `Reviews -> TripAdvisor` 
+  * `Reviews -> Restaurants `
+  * `Reviews -> Movies`
+  * `Reviews -> Books`
+  * `Reviews -> Electronics and Grocery`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
   * `Social Media -> Reddit`
   * `Social Media -> Twitter`
-    * `Social Media -> Text Message`
+  * `Social Media -> Text Message`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
