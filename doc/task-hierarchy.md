@@ -262,7 +262,7 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Reviews`
-  * `Reviews -> Movies`
+  * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
   * `Reviews -> Restaurants `
   * `Reviews -> Movies`
