@@ -77,6 +77,7 @@
       - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
       - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Open Question Answering`
   - `Question Answering -> Multihop Question Answering`
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
@@ -95,12 +96,14 @@
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
     - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+    - `Reasoning -> Commonsense Reasoning -> Social Situations`
     - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
   - `Reasoning -> Counterfactual Reasoning`
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Ethics`
+  - `Reasoning -> Factual Reasoning`
   - `Reasoning -> Logical Reasoning`
     - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
@@ -128,6 +131,8 @@
 - `Sorting`
 - `Stance Detection`
   - `Stance Detection -> Classification`
+    - `Stance Detection -> Classification -> Verification`
+	  - `Stance Detection -> Classification -> Stance Correction Verification`
 - `Structured Text Processing`
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
@@ -155,6 +160,7 @@
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
+  - `Text Generation -> Explanation Generation`
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation`
       - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Process Description`
@@ -178,6 +184,7 @@
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
+    - `Text Generation -> Word Generation -> Proposition Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
   - `Text Modification -> Style Transfer`
@@ -199,6 +206,7 @@
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
+* `Books`
 * `Business Ethics`
 * `Chemistry`
 * `Code`
@@ -227,6 +235,7 @@
   * `Economics -> Macroeconomics`
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
+* `Emails`
 * `Fiction`
 * `Food`
   * `Food -> Reviews`
