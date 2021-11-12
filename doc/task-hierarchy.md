@@ -261,13 +261,8 @@
 * `Medical Genetics`
 * `Medicine`
 * `Moral Scenarios`
-* `Reviews`
-  * `Reviews -> Movies`
-  * `Reviews -> TripAdvisor` 
-  * `Reviews -> Restaurants `
-  * `Reviews -> Movies`
-  * `Reviews -> Books`
-  * `Reviews -> Electronics and Grocery`
+* `Movies`
+  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -284,6 +279,13 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
+* `Reviews`
+  * `Reviews -> Food`
+  * `Reviews -> TripAdvisor` 
+  * `Reviews -> Restaurants `
+  * `Reviews -> Movies`
+  * `Reviews -> Books`
+  * `Reviews -> Electronics and Grocery`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
