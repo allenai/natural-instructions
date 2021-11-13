@@ -729,7 +729,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task719_mmmlu_answer_generation_management` | Answering mutlitple choice questions on management | Answer Generation
 `task720_mmmlu_answer_generation_marketing` | Answering mutlitple choice questions on marketing | Answer Generation
 `task721_mmmlu_answer_generation_medical_genetics` | Answering mutlitple choice questions on medical genetics | Answer Generation
-`task722_mmmlu_answer_generation_miscellaneous` | Answering mutlitple choice questions on miscellaneous | Answer Generation
+`task722_mmmlu_answer_generation_random_topic` | Answering mutlitple choice questions on miscellaneous | Answer Generation
 `task723_mmmlu_answer_generation_moral_disputes` | Answering mutlitple choice questions on moral disputes | Answer Generation
 `task724_mmmlu_answer_generation_moral_scenarios` | Answering mutlitple choice questions on moral scenarios | Answer Generation
 `task725_mmmlu_answer_generation_nutrition` | Answering mutlitple choice questions on nutrition | Answer Generation
