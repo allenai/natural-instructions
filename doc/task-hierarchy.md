@@ -201,7 +201,7 @@
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
-    - `Text Generation -> Word Generation -> Proposition Generation`
+    - `Text Generation -> Word Generation -> Preposition Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
   - `Text Modification -> Style Transfer`
@@ -258,7 +258,6 @@
   * `Economics -> Macroeconomics`
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
-* `Emails`
 * `Fiction`
 * `Food`
 * `Formal Fallacy`

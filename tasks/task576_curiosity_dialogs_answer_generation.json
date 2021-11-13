@@ -11,7 +11,7 @@
         "Text Span Selection",
         "Text Generation -> Sentence Generation -> Contextual Text Generation"
     ],
-    "Definition": "A typical data point consists of dialogs between an user and an assistant, In this task the input is a set of dialogues between a user and an assistant. Every dialogue has a dialogue_act assocciated with it, you need to find the dialogue that has the dialogue act - `inform_response`. The inform_response is the response given to the request_topic / request_aspect, it's basically a response given to a question or an aspect of the human. The different dialgoue acts are  `request_topic`, `inform_response`,`request_aspect`, `request_followup`, `feedback_positive`, `request_other`",
+    "Definition": "In this task, the input is a set of dialogues between a user and an assistant. You need to find the dialogue that is basically a response given to a question or an aspect of the user.",
     "Domains": [
         "Dialogue",
         "Commonsense -> Concepts and Relations -> Social Commonsense"
@@ -20,34 +20,34 @@
         {
             "input": "Hi. I want information about Namibia. \n Nmbia is a country in southern Africa. \n Do you have information about the media there? \n What about it? \n Interesting! What can you tell me about the politics and government?",
             "output": "Nmbia is a country in southern Africa.",
-            "explanation": "It is the information response to the request_topic question mentioned by the human"
+            "explanation": "This is a good example. The output is the response to the question asked by the user."
         },
         {
             "input": "Thanks. Do you know anything about rich Pakistan is in the world? \n Hi. Could you tell me about the culture and society of Pakistan? \n No problem. Yes I would like more information about the culture. \n Sorry i do not have that information available right now would you like to know more about Pakistan's Culture an Society? \n No problem, Around the 3rd millennium BCE, an advanced urban culture was created in the region, with large buildings that still exist today.",
             "output": "No problem, Around the 3rd millennium BCE, an advanced urban culture was created in the region, with large buildings that still exist today.",
-            "explanation": "this is the information response to the request aspect which is used to implement curiosity"
+            "explanation": "The output is the response to the question asked by the user. So, it's correct. "
         },
         {
             "input": "I do not see facts about the languages. I do see that a Portuguese-British naval squadron took French Guiana for the Portuguese Empire in 1809 \n Okay thank you for that. Do you have any information that is interesting to share? \n I do not have access to that information at this time. I do see that in 1964 the French president Charles de Gaulle decided to construct a space-travel base in French Guiana. \n I see that the dominant religion of French Guiana is Roman Catholicism. The Maroons and some Amerindian people maintain their own religions. \n good afternoon. I see that among the military, police, and security forces, they are following the 3rd Foreign Infantry Regiment of Kourou. The 9th Marine Infantry Regiment of Cayenne, the Madeleine. The gendarmerie and the police are divided into 16 brigades to protect everyone!",
             "output": "I see that the dominant religion of French Guiana is Roman Catholicism. The Maroons and some Amerindian people maintain their own religions.",
-            "explanation": "The output is the answer which includes the continuation and explains the data about the second question posed by the human"
+            "explanation": "The output is the answer which includes the continuation and explains the data about the second question asked by the user."
         }
     ],
     "Negative Examples": [
         {
             "input": "Thank you so much for the information. \n What is their main source of income? \n What else can you tell me about their culture? \n How is their economy? \n You are welcome.",
             "output": "How is their economy?",
-            "explanation": "It is a request_aspect because it is a followup to the inform response"
+            "explanation": "The output is not a response to the user's question. So, it's not correct."
         },
         {
             "input": "Wow thank yo so much \n Can yo tell me another interesting fact? \n Can you tell me about their Etymology? \n Hello \n What else can you tell me?",
             "output": "What else can you tell me?",
-            "explanation": "this is a request_other and not a inform_response it is asking a question which is a later question to the request_topic from the assistant"
+            "explanation": "The output is asking a question from the assistant and it's not a response to a question."
         },
         {
             "input": "Thanks! Fun fact! May we switch the topic to geography please? \n Thank you! This is all the information I needed for today. You have a great rest of your evening! \n Okay! Cool! Do you have anymore fun facts you could teach me please? \n You're welcome. You do the same, thanks! \n Sure. I covered most of the information I have regarding that at the beginning, but I can also tell you that the US Department of Agriculture operates the 446 acre US National Arboretum in Northeast Washington.",
             "output": "That's interesting to know thank you! May I her another fact in regard to Washington, D.C. cityscape please?",
-            "explanation": "it is a request_aspect because it is a counter question to the inform_response from the human"
+            "explanation": "The output is asking a question from the assistant and it's not a response to a question."
         }
     ],
     "Instances": [
