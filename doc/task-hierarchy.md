@@ -224,9 +224,6 @@
   * `Biology -> Virology`
 * `Books`
 * `Business Ethics`
-* `Captions`
-    * `Captions -> Image Captions`
-    * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -236,7 +233,9 @@
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
 * `Commonsense`
-  * `Commonsense -> Image Caption`
+  * `Commonsense -> Captions`
+    * `Commonsense -> Captions -> Image Captions`
+    * `Commonsense -> Captions -> Video Captions`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
