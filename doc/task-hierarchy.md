@@ -7,6 +7,7 @@
 - If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
 - `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
+- `Aspect Detection`
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`   
@@ -59,6 +60,7 @@
   - `Hypernym Discovery`
 - `Intent Detection`
 - `Language Identification`
+  - `Language Identification -> Verification`
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
@@ -137,6 +139,7 @@
 - `Semantic Parsing`
   - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
+  - `Sentiment Analysis -> Review Analysis`
   - `Sentiment Analysis -> Sentiment Classification`
   - `Sentiment Analysis -> Entity-based Classification`: Predict the sentiment towards a given entity in the text
   - `Sentiment Analysis -> Entity-based Verification`: Verify whether the predicted sentiment towards a given entity in the text is right or wrong
@@ -183,6 +186,8 @@
   - `Text Generation -> Sentence Generation`
       - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
+	  - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
+	    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
     - `Text Generation -> Sentence Generation -> Completion -> Story`
@@ -253,7 +258,6 @@
 * `Electrical Engineering`
 * `Fiction`
 * `Food`
-  * `Food -> Reviews`
 * `Formal Fallacy`
 * `Game`
   * `Game -> Card Game`
@@ -286,7 +290,6 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
-  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -304,7 +307,6 @@
   * `Public Places -> Restaurants`
 * `Public Relations`
 * `Scientific Research Papers`
-* `School Science Textbooks`
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
