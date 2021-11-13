@@ -235,7 +235,6 @@
 * `Electrical Engineering`
 * `Fiction`
 * `Food`
-  * `Food -> Reviews`
 * `Formal Fallacy`
 * `Geography`
 * `Global Facts`
@@ -262,7 +261,6 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
-  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -279,6 +277,13 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
+* `Reviews`
+  * `Reviews -> Food`
+  * `Reviews -> TripAdvisor` 
+  * `Reviews -> Restaurants `
+  * `Reviews -> Movies`
+  * `Reviews -> Books`
+  * `Reviews -> Electronics and Grocery`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
