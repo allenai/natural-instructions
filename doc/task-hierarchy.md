@@ -1,3 +1,4 @@
+
 # Task Hierarchy
 
 ## Guidelines / FAQs for Contributors:
@@ -17,13 +18,19 @@
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
     - `Classification -> Verification -> Clarification Verification`
+    - `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
-		- `Classification -> Verification -> Relevance Verification -> Title Verification`
-		- `Classification -> Verification -> Relevance Verification -> Title Verification`
+		  - `Classification -> Verification -> Relevance Verification -> Title Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
-	- `Classification -> Verification -> Translation Verification`
+    - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
+    - `Classification -> Verification -> Paraphrase Verification`: Verify whether a text sequence is a paraphrase of another text sequence
+    - `Classification -> Verification -> Translation Verification`: Verify whether a text sequence is a translation of another text sequence
+- `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
+- `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
+- `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
+- `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
@@ -32,6 +39,8 @@
 - `Document Understanding`
 - `Emotion Detection`
 - `Entity Detection`
+  - `Entity Detection -> Extractive`: Extract the entity from the text (open set)
+  - `Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
 - `Ethical Judgement`
 - `Fake News Detection`
 - `Proofreading`
@@ -44,7 +53,7 @@
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Abuse Detection`
   - `Abuse Detection -> Hate Speech Detection`
-- `Hypernym Discovery`
+  - `Hypernym Discovery`
 - `Intent Detection`
 - `Language Identification`
   - `Language Identification -> Verification`
@@ -60,6 +69,7 @@
   - `Order Detection -> Incorrect Order Detection`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 - `Parts-of-speech`
+  - `Parts-of-speech -> Recognition`
 - `Question Answering`
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
@@ -80,9 +90,11 @@
 - `Question Decomposition`
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
-    - `Question Generation -> Contextual Question Generation -> Open Question Generation`
+      - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
+      - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+  - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
@@ -96,14 +108,15 @@
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
+  - `Reasoning -> Ethics`
   - `Reasoning -> Logical Reasoning`
-    - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
+      - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
-  - `Reasoning -> Reasoning with Symbols`
+    - `Reasoning -> Reasoning with Symbols`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Social Interactions`
   - `Reasoning -> Temporal Reasoning`
@@ -119,8 +132,12 @@
   - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
   - `Sentiment Analysis -> Review Analysis`
+  - `Sentiment Analysis -> Sentiment Classification`
+  - `Sentiment Analysis -> Entity-based Classification`: Predict the sentiment towards a given entity in the text
+  - `Sentiment Analysis -> Entity-based Verification`: Verify whether the predicted sentiment towards a given entity in the text is right or wrong
 - `Sorting`
 - `Stance Detection`
+- `Stance Detection -> Classification`
 - `Structured Text Processing`
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
@@ -140,6 +157,9 @@
 - `Text Comparison`
   - `Text Comparison -> Meaning Comparison`
   - `Text Comparison -> Relevancy Comparison`
+    - `Text Comparison -> Relevancy Comparison -> Irrelevant Selection`
+  - `Text Comparison -> Semantic Textual Similarity`
+  - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Style Comparison`
 - `Text Generation`
   - `Text Generation -> Command Execution`
@@ -156,17 +176,18 @@
   - `Text Generation -> Semi-Structured Text Generation`
     - `Text Generation -> Semi-Structured Text Generation -> Named Entity Generation`
   - `Text Generation -> Sentence Generation`
-    - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
+      - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
 	  - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
 	    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
-      - `Text Generation -> Sentence Generation -> Completion -> Story`
+    - `Text Generation -> Sentence Generation -> Completion -> Story`
         - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
       - `Text Generation -> Structured Text Generation -> Table`
+  - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
@@ -177,6 +198,9 @@
   - `Text Modification -> Style Transfer`
     - `Text Modification -> Style Transfer -> Text Simplification`
   - `Text Modification -> Paraphrasing`
+  - `Text Modification -> Perturbation`
+  - `Text Modification -> Text Simplification`
+  - `Text Modification -> Paraphrase Generation`: Generate a paraphrase of the original text
 - `Text Span Selection`
 - `Title Selection`
 - `Translation`
@@ -193,7 +217,11 @@
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
+* `Books`
 * `Business Ethics`
+* `Captions`
+    * `Captions -> Image Captions`
+    * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -225,6 +253,8 @@
 * `Food`
   * `Food -> Reviews`
 * `Formal Fallacy`
+* `Game`
+  * `Game -> Card Game`
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
@@ -233,9 +263,13 @@
   * `History -> European History`
 * `Human Race` 
 * `Human Sexuality`
+* `Image Caption`
 * `International Law`
 * `Jurisprudence`
 * `Justice`
+* `Knowledge Base`
+  * `Knowledge Base -> Freebase`
+  * `Knowledge Base -> Wikidata`
 * `Law`
 * `Linguistics`
 * `Literature`
@@ -250,7 +284,6 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
-  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
 * `Natural Science`
@@ -267,7 +300,14 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
-* `School Science Textbooks`
+* `Scientific Research Papers`
+* `Reviews`
+  * `Reviews -> Food`
+  * `Reviews -> TripAdvisor` 
+  * `Reviews -> Restaurants `
+  * `Reviews -> Movies`
+  * `Reviews -> Books`
+  * `Reviews -> Electronics and Grocery`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
@@ -279,7 +319,9 @@
   * `Sports -> NFL`
 * `Statistics`
 * `Story`
+* `TED Talks`
 * `US Foreign Policy`
+* `Web`
 * `Wikipedia`
 * `World Religions`
 
