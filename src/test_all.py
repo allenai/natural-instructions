@@ -117,10 +117,8 @@ if not args.task:
 
 # TODO: over time, we need to fix the skew of the following tasks
 skew_exclusion = [
-    "027", "150", "018", "109", "148", "158", "108", "155", "147",
-    "058", "049", "043", "149", "146", "159", "056", "1158", "1179", "1311", "1361", "1366", "1384", "1489", "1491",
-    "1492", "1532", "1536", "161", "162", "163", "200", "202", "209", "224", "228", "229", "243", "245", "248",
-    "265", "280", "302", "922", "907", "900", "892", "838", "823", "585", "573", "528", "526", "527",
+    "050", "838", "1489", "150", "265", "027", "202", "200",
+     "280", "302", "922", "907", "900", "892", "823", "585", "573", "528", "526", "527",
     "525", "375", "646", "622", "621", "903", "921"
 ]
 
@@ -216,7 +214,7 @@ for file in files[begin_task_number:end_task_number + 1]:
             if int(task_number) not in [902, 903]:
                 assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
 
-            if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
+            if task_number not in skew_exclusion and len(value) < 15:
                 norm_counts = counts / counts.sum()
                 entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
                 assert entropy > 0.8, f"Looks like this task is heavily skewed!\n   📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}"
