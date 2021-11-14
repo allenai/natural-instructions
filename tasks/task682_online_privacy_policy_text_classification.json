@@ -17,7 +17,7 @@
     "Instruction_language": [
         "English"
     ],
-    "Definition": "Given a part of privacy policy text, classify it into one of these categories: \n (1) First Party Collection/Use (how and why a service provider collects user information), \n (2) Third Party Sharing/Collection (how user information may be shared with or collected by third parties), \n (3) User Choice/Control (choices and control options available to users), \n (4) User Access, Edit, & Deletion (if and how users may access, edit, or delete their information), \n (5) Data Retention (how long user information is stored), \n (6) Data Security (how user information is protected), \n (7) Policy Change (if and how users will be informed about changes to the privacy policy), (8) Do Not Track (if and how Do Not Track signals for online tracking and advertising are honored), (9) International & Specific Audiences (practices that pertain only to a specific group of users (e.g., children, Europeans, or California residents), \n (10) Other (additional sub-labels for introductory or general text, contact information, and practices not covered by the other categories).",
+    "Definition": "Given a part of privacy policy text, classify it into one of these categories: \n (1) First Party Collection/Use (how and why a service provider collects user information), \n (2) Third Party Sharing/Collection (how user information may be shared with or collected by third parties), \n (3) User Choice/Control (choices and control options available to users), \n (4) User Access, Edit, & Deletion (if and how users may access, edit, or delete their information), \n (5) Data Retention (how long user information is stored), \n (6) Data Security (how user information is protected), \n (7) Policy Change (if and how users will be informed about changes to the privacy policy).",
     "Positive Examples": [
         {
             "input": "An unnamed third party does receive information about you not covered by our label scheme for an unspecified purpose.",
@@ -30,11 +30,6 @@
             "explanation": "The given policy text says the site it'self collects information from user for advertising, so this policy should be classified as 'First Party Collection/Use'"
         },
         {
-            "input": "The text introduces the policy, a section, or a group of practices, but it does not mention a specific practice.",
-            "output": "Other",
-            "explanation": "The given policy text is ambiguous and doesn't fall in any of the other categories so we classify it as 'Others'"
-        },
-        {
             "input": "You can opt in for the use of unspecified information by the site, which collects it for an unspecified purpose.",
             "output": "User Choice/Control",
             "explanation": "The given policy text says the user can opt for the use of their information which is a choice given to user, so the text has to be classified as 'User Choice/Control'"
@@ -43,8 +38,8 @@
     "Negative Examples": [
         {
             "input": "The site collects your cookies or tracking elements for an unspecified purpose. Collection happens on the website, and your data is aggregated or anonymized.",
-            "output": "Other",
-            "explanation": "The given policy text says the site it'self collects information from user, so the policy should be classified as 'First Party Collection/Use' and not 'Other"
+            "output": "User Choice/Control",
+            "explanation": "The given policy text says the site it'self collects information from user, so the policy should be classified as 'First Party Collection/Use' and not 'User Choice/Control'"
         },
         {
             "input": "An unnamed third party does receive unspecified information about you for an unspecified purpose. The data is personally identifiable. You can opt in for data collection for the collection or sharing of your information.",
@@ -85,12 +80,6 @@
             "input": "When a change of an unspecified nature is made to the privacy policy, users are notified in an unspecified manner. Users can participate in a process to influence the change.",
             "output": [
                 "Policy Change"
-            ]
-        },
-        {
-            "input": "The text does not fit into our label scheme.",
-            "output": [
-                "Other"
             ]
         },
         {
@@ -280,12 +269,6 @@
             ]
         },
         {
-            "input": "The website ignores Do Not Track headers and the user's Do Not Track preference.",
-            "output": [
-                "Do Not Track"
-            ]
-        },
-        {
             "input": "Another part of the company or institution does receive unspecified information about you for analytics or research.",
             "output": [
                 "Third Party Sharing/Collection"
@@ -460,12 +443,6 @@
             ]
         },
         {
-            "input": "The text describes how to contact the company with questions, concerns, or complaints about the privacy policy.",
-            "output": [
-                "Other"
-            ]
-        },
-        {
             "input": "The site collects your IP address or device IDs for an unspecified purpose. Collection happens in an unspecified way.",
             "output": [
                 "First Party Collection/Use"
@@ -508,12 +485,6 @@
             ]
         },
         {
-            "input": "The text describes a specific data practice that is not covered by our label scheme.",
-            "output": [
-                "Other"
-            ]
-        },
-        {
             "input": "The site collects your generic personal information for a basic service or feature. Collection happens in an unspecified way.",
             "output": [
                 "First Party Collection/Use"
@@ -541,12 +512,6 @@
             "input": "The site collects your unspecified information for an unspecified purpose. Collection happens by other parts of the company or affiliates.",
             "output": [
                 "First Party Collection/Use"
-            ]
-        },
-        {
-            "input": "The policy makes a statement about how data from European users is treated (e.g., Safe Harbor provisions).",
-            "output": [
-                "International and Specific Audiences"
             ]
         },
         {
@@ -820,18 +785,6 @@
             ]
         },
         {
-            "input": "The policy makes a statement about how data from Californian users is treated (e.g., California privacy rights).",
-            "output": [
-                "International and Specific Audiences"
-            ]
-        },
-        {
-            "input": "The policy makes a statement about how data from children is treated.",
-            "output": [
-                "International and Specific Audiences"
-            ]
-        },
-        {
             "input": "The site collects your generic personal information for marketing purposes. Collection happens in an unspecified way, and your data is identifiable. You can opt in for data collection.",
             "output": [
                 "First Party Collection/Use"
@@ -949,12 +902,6 @@
             "input": "The site collects your location information for a basic service or feature. Collection happens in an unspecified way.",
             "output": [
                 "First Party Collection/Use"
-            ]
-        },
-        {
-            "input": "The policy makes a statement about data from a demographic outside of our label scheme.",
-            "output": [
-                "International and Specific Audiences"
             ]
         },
         {
@@ -2311,12 +2258,6 @@
             "input": "The site collects your website activities for a basic service or feature. Collection happens in an unspecified way, and your data is aggregated or anonymized.",
             "output": [
                 "First Party Collection/Use"
-            ]
-        },
-        {
-            "input": "The policy makes specific provisions for international audiences, non-US citizens, or non-European citizens (e.g., about international data transfer).",
-            "output": [
-                "International and Specific Audiences"
             ]
         },
         {
@@ -8011,12 +7952,6 @@
             "input": "The site collects your generic personal information for a purpose outside of our label scheme. Collection happens in an unspecified way, and your data is identifiable.",
             "output": [
                 "First Party Collection/Use"
-            ]
-        },
-        {
-            "input": "The website handles Do Not Track headers in a different way not covered above.",
-            "output": [
-                "Do Not Track"
             ]
         },
         {
