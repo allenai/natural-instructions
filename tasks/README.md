@@ -1016,3 +1016,4 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1503_hatexplain_classification` | Identification of target community in tweet in Hatexplain | Classification
 `task1504_hatexplain_answer_generation` | Passage Selection of offensive or hate speech phrases in tweets is Hatexplain | Answer Generation
 `task1769_12hour_to_24hour_clock` | Given a timestamp in 12-hour format, convert it to 24-hour format | Answer Generation
+`task1770_smallcase_to_uppercase` | Given a string in smallcase, convert it to string in uppercase | Answer Generation
