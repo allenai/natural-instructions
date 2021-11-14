@@ -541,21 +541,21 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task532_europarl_en-es_classification` | Given a English sentence and its corresponding Spanish translation, classify whether it is correct or not. | Classification
 `task533_europarl_es-en_language_identification` | Given a sentence, identify  whether it is in English or Spanish. | Language Identification
 `task534_farstail_entailment` | Given two sentences in Persian, choose whether they agree, disagree, neither with each other. | Classification
-`task535_spl_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
-`task536_spl_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
-`task537_spl_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
-`task538_spl_translation_bu_en` | Language Translate of Dataset Card for ALT from Burmese language to English language while preserving named entities in the original language | Language Translation
-`task539_spl_translation_ma_en` | Language Translate of Dataset Card for ALT from Malay language to English language while preserving named entities in the original language | Language Translation
-`task540_spl_translation_la_en` | Language Translate of Dataset Card for ALT from Laotian language to English language while preserving named entities in the original language | Language Translation
-`task541_spl_translation_kh_en` | Language Translate of Dataset Card for ALT from Khmer language to English language while preserving named entities in the original language | Language Translation
-`task542_spl_translation_ja_en` | Language Translate of Dataset Card for ALT from Japanese language to English language while preserving named entities in the original language | Language Translation
-`task543_spl_translation_bh_en` | Language Translate of Dataset Card for ALT from Bahasa language to English language while preserving named entities in the original language | Language Translation
-`task544_spl_translation_hi_en` | Language Translate of Dataset Card for ALT from Hindi language to English language while preserving named entities in the original language | Language Translation
-`task545_spl_translation_fi_en` | Language Translate of Dataset Card for ALT from Filipino language to English language while preserving named entities in the original language | Language Translation
-`task546_spl_translation_bg_en` | Language Translate of Dataset Card for ALT from Bengali language to English language while preserving named entities in the original language | Language Translation
-`task547_spl_translation_entk_en` | Language Translate of Dataset Card for ALT from English Tokens to English language while preserving named entities in the original language | Language Translation
-`task548_spl_translation_en_ch` | Language Translate of Dataset Card for ALT from English language to Chinese language while preserving named entities in the original language | Language Translation
-`task549_spl_translation_en_vi` | Language Translate of Dataset Card for ALT from English language to Vietnamese language while preserving named entities in the original language | Language Translation
+`task535_alt_translation_ch_en` |  Language Translate of Dataset Card for ALT from Chinese language to English language while preserving named entities in the original language | Language Translation
+`task536_alt_translation_vi_en` | Language Translate of Dataset Card for ALT from Vietnamese language to English language while preserving named entities in the original language | Language Translation
+`task537_alt_translation_th_en` | Language Translate of Dataset Card for ALT from Thai language to English language while preserving named entities in the original language | Language Translation
+`task538_alt_translation_bu_en` | Language Translate of Dataset Card for ALT from Burmese language to English language while preserving named entities in the original language | Language Translation
+`task539_alt_translation_ma_en` | Language Translate of Dataset Card for ALT from Malay language to English language while preserving named entities in the original language | Language Translation
+`task540_alt_translation_la_en` | Language Translate of Dataset Card for ALT from Laotian language to English language while preserving named entities in the original language | Language Translation
+`task541_alt_translation_kh_en` | Language Translate of Dataset Card for ALT from Khmer language to English language while preserving named entities in the original language | Language Translation
+`task542_alt_translation_ja_en` | Language Translate of Dataset Card for ALT from Japanese language to English language while preserving named entities in the original language | Language Translation
+`task543_alt_translation_bh_en` | Language Translate of Dataset Card for ALT from Bahasa language to English language while preserving named entities in the original language | Language Translation
+`task544_alt_translation_hi_en` | Language Translate of Dataset Card for ALT from Hindi language to English language while preserving named entities in the original language | Language Translation
+`task545_alt_translation_fi_en` | Language Translate of Dataset Card for ALT from Filipino language to English language while preserving named entities in the original language | Language Translation
+`task546_alt_translation_bg_en` | Language Translate of Dataset Card for ALT from Bengali language to English language while preserving named entities in the original language | Language Translation
+`task547_alt_translation_entk_en` | Language Translate of Dataset Card for ALT from English Tokens to English language while preserving named entities in the original language | Language Translation
+`task548_alt_translation_en_ch` | Language Translate of Dataset Card for ALT from English language to Chinese language while preserving named entities in the original language | Language Translation
+`task549_alt_translation_en_vi` | Language Translate of Dataset Card for ALT from English language to Vietnamese language while preserving named entities in the original language | Language Translation
 `task550_discofuse_sentence_generation` | Senetence Generation on Dataset Card for DISCOFUSE | Senetence Generation
 `task551_alt_translation_en_th` | Language Translate of Dataset Card for ALT from English language to Thai language while preserving named entities in the original language | Language Translation
 `task552_alt_translation_en_bu` | Language Translate of Dataset Card for ALT from English language to Burmese language while preserving named entities in the original language | Language Translation
@@ -729,7 +729,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task719_mmmlu_answer_generation_management` | Answering mutlitple choice questions on management | Answer Generation
 `task720_mmmlu_answer_generation_marketing` | Answering mutlitple choice questions on marketing | Answer Generation
 `task721_mmmlu_answer_generation_medical_genetics` | Answering mutlitple choice questions on medical genetics | Answer Generation
-`task722_mmmlu_answer_generation_miscellaneous` | Answering mutlitple choice questions on miscellaneous | Answer Generation
+`task722_mmmlu_answer_generation_random_topic` | Answering mutlitple choice questions on miscellaneous | Answer Generation
 `task723_mmmlu_answer_generation_moral_disputes` | Answering mutlitple choice questions on moral disputes | Answer Generation
 `task724_mmmlu_answer_generation_moral_scenarios` | Answering mutlitple choice questions on moral scenarios | Answer Generation
 `task725_mmmlu_answer_generation_nutrition` | Answering mutlitple choice questions on nutrition | Answer Generation
