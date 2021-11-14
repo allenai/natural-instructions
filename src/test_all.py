@@ -216,7 +216,7 @@ for file in files[begin_task_number:end_task_number + 1]:
             if int(task_number) not in [902, 903]:
                 assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
 
-            if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
+            if task_number not in skew_exclusion and len(value) < 15:
                 norm_counts = counts / counts.sum()
                 entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
                 assert entropy > 0.8, f"Looks like this task is heavily skewed!\n   📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}"
