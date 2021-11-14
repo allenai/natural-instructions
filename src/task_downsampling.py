@@ -10,7 +10,7 @@ tasks_path = 'tasks/'
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort()
 
-task_ids_to_downsample = [21]
+task_ids_to_downsample = [585]
 
 for file in files:
     if ".json" in file:
@@ -19,6 +19,8 @@ for file in files:
             task_number = int(file.replace("task", "").split("_")[0])
             if task_number not in task_ids_to_downsample:
                 continue
+            print( " - - - - - - ")
+            print(file)
             data = json.load(f)
             instances = data['Instances']
             output=[ins['output'] for ins in instances]
@@ -27,7 +29,7 @@ for file in files:
             value,counts = np.unique(outputs, return_counts=True)
             norm_counts = counts / counts.sum()
             entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
-            print(f" Before: 📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}")
+            print(f" Before: 📋 classes: {list(value)} \n   📋 Norm_counts: {list(norm_counts)} \n   📋 Distribution of classes: {list(counts)} \n   📊 entropy= {entropy}")
 
             newcounts={}
             min_value=np.min(counts)
@@ -37,19 +39,19 @@ for file in files:
                 output=ins['output'][0]
                 if output not in newcounts:
                     newcounts[output]=0
-                if newcounts[output]<= 3*min_value:
+                if newcounts[output]<= (3 * len(counts)-10)*min_value:
                     new_data['Instances'].append(ins)
                     newcounts[output]+=1
 
             random.shuffle(new_data["Instances"])
 
-            instances = data['Instances']
+            instances = new_data['Instances']
             output=[ins['output'] for ins in instances]
             outputs = sum(output, [])
             value,counts = np.unique(outputs, return_counts=True)
             norm_counts = counts / counts.sum()
             entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
-            print(f" After: 📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}")
+            print(f" After: 📋 classes: {list(value)} \n   📋 Norm_counts: {list(norm_counts)} \n   📋 Distribution of classes: {list(counts)} \n   📊 entropy= {entropy}")
 
         with open(file_path, 'w') as outfile:
             json.dump(new_data, outfile, indent=4,ensure_ascii=False)
