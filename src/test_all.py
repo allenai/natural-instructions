@@ -210,9 +210,12 @@ for file in files[begin_task_number:end_task_number + 1]:
             # flattens the nested arrays
             outputs = sum(output, [])
             value, counts = np.unique(outputs, return_counts=True)
-            # TODO: bring this back when we fix issue #522
-            # assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+            
             task_number = file.replace("task", "").split("_")[0]
+            # TODO: drop this condition 
+            if int(task_number) not in [902, 903]:
+                assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+            
             if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
                 norm_counts = counts / counts.sum()
                 entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
