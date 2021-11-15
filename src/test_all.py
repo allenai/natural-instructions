@@ -120,9 +120,10 @@ skew_exclusion = [
     "050", "838", "1489", "150", "265", "027", "202", "200", "903"
 ]
 
-contributors = {}
-
-for file in files[begin_task_number:end_task_number + 1]:
+contributor_stats = {}
+categories_stats = {}
+domain_stats = {}
+for file in files[0:50 + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
@@ -152,10 +153,18 @@ for file in files[begin_task_number:end_task_number + 1]:
             for c in data['Categories']:
                 if c not in all_categories:
                     print(f'⚠️ WARNING: Did not find category `{c}`')
+
+                if c not in categories_stats:
+                    categories_stats[c] = 0
+                categories_stats[c] += 1
+
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
+                    if c not in domain_stats:
+                        domain_stats[c] = 0
+                    domain_stats[c] += 1
 
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
@@ -245,13 +254,24 @@ for file in files[begin_task_number:end_task_number + 1]:
                                 f'the task file `tasks/README.md`')
 
             for c in data['Contributors']:
-                if c not in contributors:
-                    contributors[c] = 0
-                contributors[c] += 1
+                if c not in contributor_stats:
+                    contributor_stats[c] = 0
+                contributor_stats[c] += 1
 
 print("Did not find any errors! ✅")
 
-keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
+print("\n  - - - - - Contributors >= 25 tasks - - - - - ")
+keyvalues = sorted(list(contributor_stats.items()), key=lambda x: x[1])
 for author, count in keyvalues:
     if count >= 25:
         print(f" ✍️ {author} -> {count}")
+
+print("\n  - - - - - Category Stats - - - - - ")
+keyvalues = sorted(list(categories_stats.items()), key=lambda x: x[1])
+for cat, count in categories_stats.items():
+    print(f" ✍️ {cat} -> {count}")
+
+print("\n  - - - - - Domain Stats - - - - - ")
+keyvalues = sorted(list(domain_stats.items()), key=lambda x: x[1])
+for dom, count in domain_stats.items():
+    print(f" ✍️ {dom} -> {count}")
