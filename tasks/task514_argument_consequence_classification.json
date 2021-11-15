@@ -3,18 +3,27 @@
         "Pegah Alipoormolabashi"
     ],
     "Source": [
-        "Leakage-Adjusted Simulatability: Can Models Generate Non-Trivial Explanations of Their Behavior in Natural Language?",
-        "Unsupervised Stance Detection for Arguments from Consequences"
+        "Leakage-Adjusted Simulatability: Can Models Generate Non-Trivial Explanations of Their Behavior in Natural Language? (paper: https://arxiv.org/pdf/2010.04119.pdf)",
+        "Unsupervised Stance Detection for Arguments from Consequences (paper: https://aclanthology.org/2020.emnlp-main.4.pdf)"
     ],
     "Categories": [
-        "Classification"
+        "Reasoning -> Argument Reasoning",    
+        "Classification -> Verification -> Relevance Verification"
     ],
-    "Definition": "You will be given a topic and an argument. If the argument refers to or suggests a consequence related to that topic, answer with \"yes\", otherwise, answer with \"no\".",
+    "Definition": "You will be given a topic and an argument. Your task is to answer whether the topic and the argument are related or not. A related argument should provide more details about the outcomes of the topic. If the argument refers to or suggests a consequence related to that topic, answer with \"yes\"; otherwise, answer with \"no\".",
+    "Domains": [
+        "Debatepedia"
+    ],
     "Positive Examples": [
         {
             "input": "topic: DC handgun ban\nargument: Worldwide the ownership of handguns has been correlated with higher homicide rates",
             "output": "yes",
-            "explanation": "The argument is refering to homicide rates as a consequence of handgun ownership."
+            "explanation": "The argument is refering to homicide rates as a consequence of handgun ownership. So, the answer should be \"yes\"."
+        },
+        {
+            "input": "topic: Is Wikipedia valuable?\nargument: Wikipedia is losing good editors at an alarming rate.",
+            "output": "no",
+            "explanation": "The argument doesn't answer the question of the title and doesn't provide any consequences for the value of Wikipedia."
         },
         {
             "input": "topic: Solar energy\nargument: Nuclear power is a more potent and efficient source of energy.",
@@ -23,6 +32,11 @@
         }
     ],
     "Negative Examples": [
+        {
+            "input": "topic: Right to bear arms in the US\nargument: In order to form a militia, citizens require guns and a right to own them",
+            "output": "yes",
+            "explanation": "The argument doesn't provide any consequences for the topic. So, the output should be no."
+        },
         {
             "input": "topic: High-speed rail\nargument: High speed rail is a great tourist attraction.",
             "output": "no",
@@ -853,12 +867,6 @@
             ]
         },
         {
-            "input": "topic: Is Wikipedia valuable?\nargument: Wikipedia is losing good editors at an alarming rate.",
-            "output": [
-                "no"
-            ]
-        },
-        {
             "input": "topic: Single-payer universal health care\nargument: Universal health care lowers long-term health costs",
             "output": [
                 "yes"
@@ -1004,12 +1012,6 @@
         },
         {
             "input": "topic: Airport security profiling\nargument: Profiling will help avoid invasive scanners and pat-downs.",
-            "output": [
-                "no"
-            ]
-        },
-        {
-            "input": "topic: Right to bear arms in the US\nargument: In order to form a militia, citizens require guns and a right to own them",
             "output": [
                 "no"
             ]
