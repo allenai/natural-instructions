@@ -123,7 +123,7 @@ skew_exclusion = [
 contributor_stats = {}
 categories_stats = {}
 domain_stats = {}
-for file in files[0:50 + 1]:
+for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
