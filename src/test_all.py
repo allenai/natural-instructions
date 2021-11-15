@@ -117,15 +117,12 @@ if not args.task:
 
 # TODO: over time, we need to fix the skew of the following tasks
 skew_exclusion = [
-    "027", "150", "021", "050", "022", "020", "019", "052", "1191", "018", "109", "148", "158", "108", "155", "147",
-    "058", "049", "043", "149", "146", "159", "056", "1158", "1179", "1311", "1361", "1366", "1384", "1489", "1491",
-    "1492", "1532", "1536", "161", "162", "163", "200", "202", "209", "224", "228", "229", "243", "245", "248", "264",
-    "265", "280", "302", "922", "909", "907", "900", "892", "838", "823", "585", "573", "566", "528", "526", "527",
-    "525", "503", "375", "646", "622", "682", "621", "903", "921"
+    "050", "838", "1489", "150", "265", "027", "202", "200", "903"
 ]
 
-contributors = {}
-
+contributor_stats = {}
+categories_stats = {}
+domain_stats = {}
 for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
@@ -156,10 +153,18 @@ for file in files[begin_task_number:end_task_number + 1]:
             for c in data['Categories']:
                 if c not in all_categories:
                     print(f'⚠️ WARNING: Did not find category `{c}`')
+
+                if c not in categories_stats:
+                    categories_stats[c] = 0
+                categories_stats[c] += 1
+
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
+                    if c not in domain_stats:
+                        domain_stats[c] = 0
+                    domain_stats[c] += 1
 
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
@@ -210,10 +215,13 @@ for file in files[begin_task_number:end_task_number + 1]:
             # flattens the nested arrays
             outputs = sum(output, [])
             value, counts = np.unique(outputs, return_counts=True)
-            # TODO: bring this back when we fix issue #522
-            # assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+            
             task_number = file.replace("task", "").split("_")[0]
-            if task_number not in skew_exclusion and ('Classification' in data['Categories'] or len(value) < 15):
+            # TODO: drop this condition 
+            if int(task_number) not in [902, 903]:
+                assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+
+            if task_number not in skew_exclusion and len(value) < 15:
                 norm_counts = counts / counts.sum()
                 entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
                 assert entropy > 0.8, f"Looks like this task is heavily skewed!\n   📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}"
@@ -246,13 +254,24 @@ for file in files[begin_task_number:end_task_number + 1]:
                                 f'the task file `tasks/README.md`')
 
             for c in data['Contributors']:
-                if c not in contributors:
-                    contributors[c] = 0
-                contributors[c] += 1
+                if c not in contributor_stats:
+                    contributor_stats[c] = 0
+                contributor_stats[c] += 1
 
 print("Did not find any errors! ✅")
 
-keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
+print("\n  - - - - - Contributors >= 25 tasks - - - - - ")
+keyvalues = sorted(list(contributor_stats.items()), key=lambda x: x[1])
 for author, count in keyvalues:
     if count >= 25:
         print(f" ✍️ {author} -> {count}")
+
+print("\n  - - - - - Category Stats - - - - - ")
+keyvalues = sorted(list(categories_stats.items()), key=lambda x: x[1])
+for cat, count in categories_stats.items():
+    print(f" ✍️ {cat} -> {count}")
+
+print("\n  - - - - - Domain Stats - - - - - ")
+keyvalues = sorted(list(domain_stats.items()), key=lambda x: x[1])
+for dom, count in domain_stats.items():
+    print(f" ✍️ {dom} -> {count}")
