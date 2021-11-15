@@ -6,20 +6,21 @@
         "Synthetic"
     ],
     "Categories": [
-        "Answer Geneartion",
-        "Algebra"
+        "Question Answering -> Numerical Question Answering",
+        "Mathematics -> Algebra",
+        "Reasoning -> Numerical Reasoning"
     ],
-    "Definition": "In this task, you need to compute the result by substituing a given value of x in the given polynomial equation. Equation weights are given as a list. For example, equation weights = [6, 4] represent the equation 6x + 4 and equation weights = [1, 3, 4] represent the equation 1x^2 + 3x + 4.",
+    "Definition": "A ploynomial equation is a sum of terms. Here each term is either a constant number, or consists of the variable x raised to a certain power and multiplied by a number. These numbers are called weights. For example, in the polynomial: 2x^2+3x+4, the weights are: 2,3,4. You can present a polynomial with the list of its weights, for example, equation weights = [6, 4] represent the equation 6x + 4 and equation weights = [1, 3, 4] represent the equation 1x^2 + 3x + 4. In this task, you need to compute the result of a polynomial expression by substituing a given value of x in the given polynomial equation. Equation weights are given as a list.",
     "Positive Examples": [
         {
             "input": "x = 3, equation weights = [4, 2]",
             "output": "14",
-            "explanation": "Here, the answer is 14 as 4*3 + 2 = 14."
+            "explanation": "Here, the weights represent the polynomial: 4x + 2, so we should multiply 4 by 3, and add it to 2 which results in (4*3 + 2 =) 14."
         },
         {
-            "input": "x = 2, equation weights = [1, 2, 4]",
-            "output": "12",
-            "explanation": "Here, the answer is 12 as 1*(2^2) + 2*2 + 4 = 12."
+            "input": "x = 2, equation weights = [3, 2, 4]",
+            "output": "20",
+            "explanation": "Here, the weights represent the polynomial: 3x^2 + 2x + 4. To find the result, we should substitute 2 for x to get: 3*(2)^2 + 2*2 + 4, which equals 20."
         }
     ],
     "Negative Examples": [
@@ -27,6 +28,11 @@
             "input": "x = 4, equation weights = [5, 1]",
             "output": "19",
             "explanation": "Here, the answer should have been 21 as 5*4 + 1 = 21 instead of 19."
+        },
+        {
+            "input": "x=5, equation weights = [1,3]",
+            "output": "16",
+            "explanation": "Pay attention to the order of the weights. Here, if we mistakenly create the polynomial as 3x + 1, we will find the result as 16, but the correct way to create the polynomial is: 1x + 3, which results in 8."
         }
     ],
     "Instances": [
@@ -25932,5 +25938,17 @@
                 "31940"
             ]
         }
+    ],
+    "Domains": [
+        "Mathematics"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
     ]
 }

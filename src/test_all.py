@@ -1,13 +1,38 @@
 #!/usr/bin/env python3
+from iso639 import languages
 import json
 from os import listdir
 from os.path import isfile, join
+import argparse
+import re
+import numpy as np
+
+# get the range of task you want to test, if specified in the command line
+parser = argparse.ArgumentParser()
+parser.add_argument("--task",
+                    nargs=2,
+                    type=int,
+                    required=False,
+                    help="The range of task you want to parse")
+
+args = parser.parse_args()
+if args.task:
+    begin_task_number, end_task_number = args.task[0], args.task[1]
+    assert begin_task_number > 0, "begin task must be greater than 0"
+    assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
+
+# make sure that there is no json file in the root directory
+root_files = [f for f in listdir('.') if isfile(join('.', f))]
+for f in root_files:
+    assert '.json' not in f, 'looks like there is a JSON file in the main directory???'
 
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
 
 expected_keys = [
     "Definition",
+    "Input_language",
+    "Output_language",
     "Positive Examples",
     "Negative Examples",
     "Instances",
@@ -16,35 +41,141 @@ expected_keys = [
     'Source'
 ]
 
+language_names = [
+    x.name.replace('(individual language)', '').replace(" languages", "").strip()
+    for x in list(languages)
+]
+
+
+def assert_language_name(name):
+    assert name in language_names, f"Did not find `{name}` among iso639 language names: {language_names}"
+
+
+def extract_categories(string):
+    """
+    Get all the characters between ` and `
+    """
+    return set(re.findall(r'`(.*?)`', string))
+
+
+def dict_raise_on_duplicates(ordered_pairs):
+    """Reject duplicate keys."""
+    d = {}
+    for k, v in ordered_pairs:
+        if k in d:
+            raise ValueError("duplicate key: %r" % (k,))
+        else:
+            d[k] = v
+    return d
+
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    '''
+    return [ atoi(c) for c in re.split(r'(\d+)', text) ]
+
+# TODO: over time, these should be moved up to "expected_keys"
+suggested_keys = [
+    "Domains"
+]
+
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
-files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-files.sort()
+with open("doc/task-hierarchy.md", 'r') as readmef:
+    hierarchy_content_lines = readmef.readlines()
+    hierarchy_content = " ".join(hierarchy_content_lines)
+    all_categories = extract_categories(hierarchy_content)
 
-for file in files:
-    if ".md" not in file:
+# make sure there are no repeated lines in the task file
+task_readme_lines = [x for x in task_readme_content.split("\n") if len(x) > 5]
+if len(set(task_readme_lines)) != len(task_readme_lines):
+    diff = "\n --> ".join([x for x in task_readme_lines if task_readme_lines.count(x) > 1])
+    assert False, f'looks like there are repeated lines in the task readme file?? \n {diff}'
+
+# make sure that the lines are sorted
+task_numbers = [int(line.replace("`task", "").split("_")[0]) for line in task_readme_lines if "`task" in line]
+for i in range(0, len(task_numbers) - 1):
+    num1 = task_numbers[i]
+    num2 = task_numbers[i + 1]
+    assert num1 <= num2, f"ERROR: looks like `{num1}` appears before `{num2}`."
+
+files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
+files.sort(key=natural_keys)
+
+# make sure anything that gets mentioned in the readme, correspond to an actual file
+task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
+for name in task_names:
+    file_name = name + ".json"
+    assert file_name in files, f" Did not find `{file_name}` among {files}"
+
+# test every file (README is skipped)
+if not args.task:
+    begin_task_number, end_task_number = 1, len(files)
+
+# TODO: over time, we need to fix the skew of the following tasks
+skew_exclusion = [
+    "050", "838", "1489", "150", "265", "027", "202", "200", "903"
+]
+
+contributors = {}
+
+for file in files[begin_task_number:end_task_number + 1]:
+    if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
         file_path = tasks_path + file
         with open(file_path, 'r') as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+            except:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f, object_pairs_hook=dict_raise_on_duplicates)
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
-            assert len(data[
-                           'Instances']) > 25, f"there must be at least 25 instances; currently you have {len(data['Instances'])} instances"
-            assert len(data[
-                           'Instances']) <= 6500, f"there must be at most 6.5k instances; currently you have {len(data['Instances'])} instances"
+            for key in suggested_keys:
+                if key not in data:
+                    print(f'⚠️ WARNING: did not find the key: {key}')
 
+            assert len(data['Instances']) > 25, f"there must be at least 25 instances; " \
+                                                f"currently you have {len(data['Instances'])} instances"
+            assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; " \
+                                                   f"currently you have {len(data['Instances'])} instances"
+
+            assert type(data['Definition']) == str, f'Definition must be a str.'
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
-            
+            for c in data['Categories']:
+                if c not in all_categories:
+                    print(f'⚠️ WARNING: Did not find category `{c}`')
+            if "Domains" in data:
+                assert type(data['Domains']) == list, f'Domains must be a list.'
+                for d in data['Domains']:
+                    assert d in hierarchy_content, f'Did not find domain `{d}`'
+
+            assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
+            assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
+            assert type(data['Instruction_language']) == list, f'Output_language must be a list of strings.'
+
+            assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
+            assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
+            assert 'output_language' not in data, f'Found `output_language`, but expected `Output_language`.'
+
+            # make sure we use the standard language names
+            for lang in data['Input_language'] + data['Output_language'] + data['Instruction_language']:
+                assert_language_name(lang)
+
             for x in data['Instances']:
                 for key in ['input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
                 assert type(x['input']) == str, f'the input of instance {x} is not a string'
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
+                assert len(x['input']) > 0, f"looks like an input `{x['input']}` is empty?"
+                assert len(x['output']) > 0, f"looks like an output `{x['output']}` is empty?"
                 for i in x['output']:
                     assert type(i) == str, f'the output is not a string'
             assert len(data['Positive Examples']) > 1, "there must be at least 3 positive example"
@@ -67,27 +198,60 @@ for file in files:
                     try:
                         set_of_instances.remove(instance['input'])
                     except KeyError:
-                        raise Exception(f" * Looks like we have a repeated example here! Merge outputs before removing duplicates. :-/ \n {instance}")
+                        raise Exception(f" * Looks like we have a repeated example here! "
+                                        f"Merge outputs before removing duplicates. :-/ \n {instance}")
 
+            # make sure classes are balanced
+            output = [ins['output'] for ins in instances]
+            # flattens the nested arrays
+            outputs = sum(output, [])
+            value, counts = np.unique(outputs, return_counts=True)
+            
+            task_number = file.replace("task", "").split("_")[0]
+            # TODO: drop this condition 
+            if int(task_number) not in [902, 903]:
+                assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+
+            if task_number not in skew_exclusion and len(value) < 15:
+                norm_counts = counts / counts.sum()
+                entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
+                assert entropy > 0.8, f"Looks like this task is heavily skewed!\n   📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}"
 
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
                 if instance['input'] in examples:
-                    raise Exception(f" * Looks like we have a same example across positive examples and instances! Drop the example from the instances. :-/ \n {instance}")
+                    raise Exception(f" * Looks like we have a same example across positive examples and instances! "
+                                    f"Drop the example from the instances. :-/ \n {instance}")
 
                 assert len(instance['output']) > 0, "all the instances must have at least one output"
 
             true_file = file.replace(".json", "")
             for char in true_file:
                 if char.isupper():
-                    raise Exception(f" * Looks like there is an uppercase letter in `{true_file}`. All letters should be lowercased.")
+                    raise Exception(f" * Looks like there is an uppercase letter in `{true_file}`. "
+                                    f"All letters should be lowercased.")
 
             if file in task_readme_content:
-                raise Exception(f" * Looks like the .json file extension ending is present with the task name in `tasks/README.md` when it should just be `{true_file}`")
+                raise Exception(f" * Looks like the .json file extension ending is "
+                                f"present with the task name in `tasks/README.md` when it should just be `{true_file}`")
 
             if true_file not in task_readme_content:
                 raise Exception(f' * Looks like the task name `{true_file}` is not included '
                                 f'in the task file `tasks/README.md`')
 
+            if task_readme_content.count(true_file) > 1:
+                raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
+                                f'the task file `tasks/README.md`')
+
+            for c in data['Contributors']:
+                if c not in contributors:
+                    contributors[c] = 0
+                contributors[c] += 1
+
 print("Did not find any errors! ✅")
+
+keyvalues = sorted(list(contributors.items()), key=lambda x: x[1])
+for author, count in keyvalues:
+    if count >= 25:
+        print(f" ✍️ {author} -> {count}")

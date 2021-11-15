@@ -3,34 +3,51 @@
         "Yeganeh Kordi"
     ],
     "Source": [
-        "zest (https:\/\/github.com\/allenai\/zest)"
+        "zest (https://github.com/allenai/zest)"
     ],
     "Categories": [
-        "Text Modification"
+        "Question Generation -> Question Composition"
     ],
-    "Definition": "In this task, please combine the questions given in groups in order to write new, natural-sounding questions about domains. \nThings to avoid: 1. Do not write questions that are unnatural / would not be a question someone might normally ask about domains. , 2. Do not write open-ended or subjective questions. \n\nEmphasis & Caution: 1. If you couldn't find the answer to your question from a single Google search, try to write a different question., 2.  You do not have to stick with the original question word for word, but you should try to create a question that combines the main subjects of the question, 3. All the words that are fully capitalized are keywords. For example, in What wars did PRESIDENT initiate as president, the word PRESIDENT is a keyword (which will be replaced with a name of an actual president). Hence, in the combination this keyword should also be used as fully capitalized.",
+    "Definition": "In this task, you are given two questions about a domain. Your task is to combine the main subjects of the questions in order to write a new, natural-sounding question. For example, if the first question is about the tallness of the president and the second question is about his performance at the college, the new question can be about his tallness at college. Try to find the main idea of each question, then combine them; you can use different words or make the subjects negative(i.e., ask about the shortness instead of tallness) in order to combine the subjects. The questions are in three domains: presidents, national parks, and dogs. Each question has a keyword indicating its domain. Keywords are \"this national park\", \"this dog breed\", and \"this president\", which will be replaced with the name of an actual president, a national park, or a breed of dog. Hence, in the new question, this keyword should also be used the same way.  \nThings to avoid: 1. Do not write unnatural questions. (i.e., would not be a question someone might normally ask about domains). , 2. Do not write open-ended or subjective questions. (e.g., questions that can be answered differently by different people.) \n\nEmphasis & Caution: 1. If you couldn't find the answer to your question from a single Google search, try to write a different question., 2.  You do not have to stick with the original question word for word, but you should try to create a question that combines the main subjects of the question.",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Domains": [
+        "Government and Politics"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
     "Positive Examples": [
         {
-            "input": "What college did PRESIDENT attend? Where did PRESIDENT meet his wife?",
-            "output": "Did PRESIDENT meet his wife in college?",
+            "input": "What college did this president attend? Where did this president meet his wife?",
+            "output": "Did this president meet his wife in college?",
             "explanation": "This is a good question. By combining \"meet wife\" and \"college\" we get to a new question."
         },
         {
-            "input": "Is PRESIDENT over 6 feet tall? What college did PRESIDENT attend?",
-            "output": "Was PRESIDENT shorter than six feet when they attended college?",
+            "input": "Is this president over 6 feet tall? What college did this president attend?",
+            "output": "Was this president shorter than six feet when they attended college?",
             "explanation": "In this question, by making \"tall\" in the first question negative and combining it with \"attend at college\" we get to the new question. Note that the new question sounds natural as well."
         },
         {
-            "input": "Is PRESIDENT in favor of abortion? What college did PRESIDENT attend?",
-            "output": "Is PRESIDENT against abortion even though they attended a liberal arts college?",
+            "input": "Is this president in favor of abortion? What college did this president attend?",
+            "output": "Is this president against abortion even though they attended a liberal arts college?",
             "explanation": "In this question, by making \"favor of abortion\" in the first question negative and combining it with \"attend at college\" we get to the new question."
         }
     ],
     "Negative Examples": [
         {
-            "input": "Is PRESIDENT over 6 feet tall? Is PRESIDENT in favor of abortion?",
-            "output": "Does PRESIDENT support abortion and is he taller than 6 feet?",
+            "input": "Is this president over 6 feet tall? Is this president in favor of abortion?",
+            "output": "Does this president support abortion and is he taller than 6 feet?",
             "explanation": "This question is relatively unnatural and is not something someone would usually ask in one sentence."
+        },
+        {
+            "input": "What college did this president attend? Where did this president meet his wife?",
+            "output": "Did president meet his wife in college?",
+            "explanation": "The keywords should be the same as the given question. So the \"president\" should be replaced with \"this president\"."
         }
     ],
     "Instances": [
@@ -50,12 +67,6 @@
             "input": "Is this national park open year around? Does this national park ever close? Are open fires allowed outside of provided fire rings at this national park?",
             "output": [
                 "Are fires ever restricted at this national park?"
-            ]
-        },
-        {
-            "input": "Can this dog breed have black or brown spots? What are the typical coat colors of this dog breed?",
-            "output": [
-                "Are spots common on this dog breed?"
             ]
         },
         {
@@ -772,8 +783,8 @@
         {
             "input": "What kind of fish can be found in the rivers and streams at this national park? What tree is most populous in this national park?",
             "output": [
-              "What is the most common fish at this national park?",
-              "What rivers or trees are there at this national park?"
+                "What is the most common fish at this national park?",
+                "What rivers or trees are there at this national park?"
             ]
         },
         {

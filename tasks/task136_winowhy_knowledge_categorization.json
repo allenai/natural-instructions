@@ -1,4 +1,3 @@
-
 {
     "Contributors": [
         "Xinran Zhao",
@@ -9,22 +8,23 @@
         "winowhy"
     ],
     "Categories": [
-        "Classification"
+        "Classification",
+        "Question Answering -> Multiple Choice Question Answering"
     ],
     "Definition": "In this task you need to indicate the required knowledge type to solve the pronoun coreference relations. Each of the provided inputs contains a sentence with a target pronoun and a question about the knowledge needed to solve the coreference relation between a noun phrase and the target pronoun. The resolution of the pronoun coreference relations typically involves one or multiple following knowledge types about commonsense: First: 'Property', the knowledge about property of objects (e.g., ice is cold). Second: 'Object', the knowledge about objects (e.g., cats have ears). Third: 'Eventuality', the knowledge about eventuality (e.g., 'wake up' happens before 'open eyes'). Forth: 'Spatial', the knowledge about spatial position (e.g., object at the back can be blocked). Fifth: 'Quantity', the knowledge about numbers (e.g., 2 is smaller than 10). Sixth: all other knowledge if above ones are not suitable. Write one or more correct categories. Output 'Others' if there is no category that fits well. ",
     "Positive Examples": [
         {
-            "input": "Sentence: The city councilmen refused the demonstrators a permit because they feared violence. The 'they' refers to the city councilmen. \n Question: What is the knowledge type needed to solve this relation?", 
+            "input": "Sentence: The city councilmen refused the demonstrators a permit because they feared violence. The 'they' refers to the city councilmen. \n Question: What is the knowledge type needed to solve this relation?",
             "output": "Property",
             "explanation": " Knowledge about 'Property' could help solve the relation since we know the city councilmen are more likely to fear than the excited demonstraters."
         },
         {
-            "input": "Sentence: The lawyer asked the witness a question, but he was reluctant to repeat it. The 'he' refers to the lawyer. \n Question: What is the knowledge type needed to solve this relation?", 
+            "input": "Sentence: The lawyer asked the witness a question, but he was reluctant to repeat it. The 'he' refers to the lawyer. \n Question: What is the knowledge type needed to solve this relation?",
             "output": "Object",
             "explanation": "Knowledge about 'Object' could help solve the relation since it is the lawyer who asked the question."
         },
         {
-            "input": "Sentence: The firemen arrived before the police because they were coming from so far away. The 'they' refers to the police. \n Question: What is the knowledge type needed to solve this relation?", 
+            "input": "Sentence: The firemen arrived before the police because they were coming from so far away. The 'they' refers to the police. \n Question: What is the knowledge type needed to solve this relation?",
             "output": "Temporal",
             "explanation": "Knowledge about 'Temporal' could help since solving the relations requires the knowledge about the sequence of arriving the spot."
         },
@@ -34,12 +34,12 @@
             "explanation": "Knowledge about 'Spatial' could help since understanding the sentence requires knowing the change of the relative size in distance."
         },
         {
-            "input": "Sentence: The large ball crashed right through the table because it was made of steel. The 'it' refers to the large ball. \n Question: What is the knowledge type needed to solve this relation?", 
+            "input": "Sentence: The large ball crashed right through the table because it was made of steel. The 'it' refers to the large ball. \n Question: What is the knowledge type needed to solve this relation?",
             "output": "Quantity",
             "explanation": "Knowledge about 'Quantity' could help since the relative vulnerability could be solved by comparing the brittleness between items."
         },
         {
-            "input": "Sentence: Frank felt vindicated when his longtime rival Bill revealed that he was the winner of the competition. The 'he' refers to frank. \n Question: What is the knowledge type needed to solve this relation?", 
+            "input": "Sentence: Frank felt vindicated when his longtime rival Bill revealed that he was the winner of the competition. The 'he' refers to frank. \n Question: What is the knowledge type needed to solve this relation?",
             "output": "Others",
             "explanation": "Since complex knowledge is required and there is fitting categories provided, the anwer is 'Others'."
         }
@@ -51,273 +51,1678 @@
             "explanation": "This is a wrong answer since alpha is not one of the six specified categories. If there is no suitable category, the answer should be 'Others'"
         }
     ],
-    "Instances":[
-        	{"input": "Sentence: The city councilmen refused the demonstrators a permit because they advocated violence. The 'they' refers to the demonstrators. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The trophy doesn't fit into the brown suitcase because it is too large. The 'it' refers to the trophy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: The trophy doesn't fit into the brown suitcase because it is too small. The 'it' refers to the suitcase. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Joan made sure to thank Susan for all the help she had recieved. The 'she' refers to joan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Joan made sure to thank Susan for all the help she had given. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Paul tried to call George on the phone, but he wasn't successful. The 'he' refers to paul. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Paul tried to call George on the phone, but he wasn't available. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: The lawyer asked the witness a question, but he was reluctant to answer it. The 'he' refers to the witness. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Temporal"]},
-			{"input": "Sentence: The delivery truck zoomed by the school bus because it was going so slow. The 'it' refers to the school bus. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Frank felt crushed when his longtime rival Bill revealed that he was the winner of the competition. The 'he' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Others"]},
-			{"input": "Sentence: The man couldn't lift his son because he was so weak. The 'he' refers to the man. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: The man couldn't lift his son because he was so heavy. The 'he' refers to the son. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The large ball crashed right through the table because it was made of styrofoam. The 'it' refers to the table. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: John couldn't see the stage with Billy in front of him because he is so short. The 'he' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: John couldn't see the stage with Billy in front of him because he is so tall. The 'he' refers to billy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Tom threw his schoolbag down to Ray after he reached the top of the stairs. The 'he' refers to tom. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Tom threw his schoolbag down to Ray after he reached the bottom of the stairs. The 'he' refers to ray. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Although they ran at about the same speed, Sue beat Sally because she had such a good start. The 'she' refers to sue. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Although they ran at about the same speed, Sue beat Sally because she had such a bad start. The 'she' refers to sally. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: The sculpture rolled off the shelf because it wasn't anchored. The 'it' refers to the sculpture. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: The sculpture rolled off the shelf because it wasn't level. The 'it' refers to the shelf. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Object"]},
-			{"input": "Sentence: Sam's drawing was hung just above Tina's and it did look much better with another one below it. The 'it' refers to sam's drawing. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Sam's drawing was hung just above Tina's and it did look much better with another one above it. The 'it' refers to tina's drawing. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Spatial"]},
-			{"input": "Sentence: Anna did a lot better than her good friend Lucy on the test because she had studied so hard. The 'she' refers to anna. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Anna did a lot worse than her good friend Lucy on the test because she had studied so hard. The 'she' refers to lucy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: The firemen arrived after the police because they were coming from so far away. The 'they' refers to the firemen. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Frank was upset with Tom because the toaster he had bought from him didn't work. The 'he' refers to frank. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: Frank was upset with Tom because the toaster he had sold him didn't work. The 'he' refers to tom. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Jim yelled at Kevin because he was so upset. The 'he' refers to jim. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Jim comforted Kevin because he was so upset. The 'he' refers to kevin. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Others"]},
-			{"input": "Sentence: The sack of potatoes had been placed above the bag of flour, so it had to be moved first. The 'it' refers to the sack of potatoes. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The sack of potatoes had been placed below the bag of flour, so it had to be moved first. The 'it' refers to the bag of flour. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Pete envies Martin although he is very successful. The 'he' refers to pete. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Pete envies Martin because he is very successful. The 'he' refers to martin. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Others"]},
-			{"input": "Sentence: The older students were bullying the younger ones, so we punished them . The 'them' refers to the older students. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Others"]},
-			{"input": "Sentence: The older students were bullying the younger ones, so we rescued them . The 'them' refers to the younger students. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: I poured water from the bottle into the cup until it was empty. The 'it' refers to the bottle. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: I poured water from the bottle into the cup until it was full. The 'it' refers to the cup. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Susan knows all about Ann's personal problems because she is nosy. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: Susan knows all about Ann's personal problems because she is indiscreet. The 'she' refers to ann. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Sid explained his theory to Mark but he couldn't convince him. The 'he' refers to sid. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Sid explained his theory to Mark but he couldn't understand him. The 'he' refers to mark. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Susan knew that Ann's son had been in a car accident, so she told her about it. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Susan knew that Ann's son had been in a car accident, because she told her about it. The 'she' refers to ann. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Joe's uncle can still beat him at tennis, even though he is 30 years younger. The 'he' refers to joe. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: Joe's uncle can still beat him at tennis, even though he is 30 years older. The 'he' refers to joe's uncle. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: The painting in Mark's living room shows an oak tree. It is to the right of the bookcase. The 'It' refers to the painting. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial", "Others"]},
-			{"input": "Sentence: The painting in Mark's living room shows an oak tree. It is to the right of a house. The 'It' refers to the oak tree. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: There is a gap in the wall. You can see the garden through it . The 'it' refers to the gap. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: There is a gap in the wall. You can see the garden behind it . The 'it' refers to the wall. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: The drain is clogged with hair. It has to be cleaned. The 'It' refers to the drain. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The drain is clogged with hair. It has to be removed. The 'It' refers to the hair. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: My meeting started at 4:00 and I needed to catch the train at 4:30,  so there wasn't much time. Luckily, it was short, so it worked out. The 'it' refers to the meeting. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: My meeting started at 4:00 and I needed to catch the train at 4:30,  so there wasn't much time. Luckily, it was delayed, so it worked out. The 'it' refers to the train. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: There is a pillar between me and the stage, and I can't see around it . The 'it' refers to the pillar. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: There is a pillar between me and the stage, and I can't see it . The 'it' refers to the stage. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: They broadcast an announcement, but a subway came into the  station and I couldn't hear it . The 'it' refers to the announcement. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: They broadcast an announcement, but a subway came into the  station and I couldn't hear over it . The 'it' refers to the subway. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: In the middle of the outdoor concert, the rain started falling, but it continued until 10. The 'it' refers to the concert. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: In the middle of the outdoor concert, the rain started falling, and it continued until 10. The 'it' refers to the rain. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: I used an old rag to clean the knife, and then I put it in the trash. The 'it' refers to the rag. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Others"]},
-			{"input": "Sentence: I used an old rag to clean the knife, and then I put it in the drawer. The 'it' refers to the knife. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Ann asked Mary what time the library closes, because she had forgotten. The 'she' refers to ann. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Others"]},
-			{"input": "Sentence: Ann asked Mary what time the library closes, but she had forgotten. The 'she' refers to mary. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: I took the water bottle out of the backpack so that it would be handy. The 'it' refers to the water bottle. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: I took the water bottle out of the backpack so that it would be lighter. The 'it' refers to the backpack. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I couldn't put the pot on the shelf because it was too tall. The 'it' refers to the pot. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: I couldn't put the pot on the shelf because it was too high. The 'it' refers to the shelf. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: I'm sure that my map will show this building; it is very good. The 'it' refers to the map. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: I'm sure that my map will show this building; it is very famous. The 'it' refers to the building. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Bob paid for Charlie's college education. He is very generous. The 'He' refers to bob. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Bob paid for Charlie's college education. He is very grateful. The 'He' refers to charlie. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Others"]},
-			{"input": "Sentence: Bob paid for Charlie's college education, but now Charlie acts as though it never happened. He is very hurt. The 'He' refers to bob. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Bob paid for Charlie's college education, but now Charlie acts as though it never happened. He is very ungrateful. The 'He' refers to charlie. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, he would have won. The 'he' refers to bob. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, he would have lost. The 'he' refers to adam. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: Adam can't leave work here until Bob arrives to replace him. If Bob had  left home for work on time, he would be gone by this time. The 'he' refers to adam. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Adam can't leave work here until Bob arrives to replace him. If Bob had  left home for work on time, he would be here by this time. The 'he' refers to bob. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal"]},
-			{"input": "Sentence: If the con artist has succeeded in fooling Sam, he would have gotten a lot of money. The 'he' refers to the con artist. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: If the con artist has succeeded in fooling Sam, he would have lost a lot of money. The 'he' refers to sam. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: It was a summer afternoon, and the dog was sitting in the middle of the lawn. After a while, it got up and moved to a spot under the tree,  because it was hot. The 'it' refers to the dog. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: It was a summer afternoon, and the dog was sitting in the middle of the lawn. After a while, it got up and moved to a spot under the tree,  because it was cooler. The 'it' refers to the spot under the tree. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The cat was lying by the mouse hole waiting for the mouse, but it was too impatient. The 'it' refers to the cat. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The cat was lying by the mouse hole waiting for the mouse, but it was too cautious. The 'it' refers to the mouse. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: Anne gave birth to a daughter last month. She is a very charming woman. The 'She' refers to anne. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Anne gave birth to a daughter last month. She is a very charming baby. The 'She' refers to anne's daughter. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Alice tried frantically to stop her daughter from chatting at the party, leaving us to wonder why she was behaving so strangely. The 'she' refers to alice. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal"]},
-			{"input": "Sentence: Alice tried frantically to stop her daughter from barking at the party, leaving us to wonder why she was behaving so strangely. The 'she' refers to alice's daughter. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: I saw Jim yelling at some guy in a military uniform with a huge red  beard. I don't know why he was, but he looked very unhappy. The 'he' refers to jim. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Others"]},
-			{"input": "Sentence: I saw Jim yelling at some guy in a military uniform with a huge red  beard. I don't know who he was, but he looked very unhappy. The 'he' refers to the guy in uniform. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The fish ate the worm. It was hungry. The 'It' refers to the fish. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The fish ate the worm. It was tasty. The 'It' refers to the worm. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I was trying to open the lock with the key, but someone had filled the  keyhole with chewing gum, and I couldn't get it in. The 'it' refers to the key. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Object"]},
-			{"input": "Sentence: I was trying to open the lock with the key, but someone had filled the  keyhole with chewing gum, and I couldn't get it out. The 'it' refers to the chewing gum. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The dog chased the cat, which ran up a tree. It waited at the bottom. The 'It' refers to the dog. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The dog chased the cat, which ran up a tree. It waited at the top. The 'It' refers to the cat. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: In the storm, the tree fell down and crashed through the roof of my  house. Now, I have to get it removed. The 'it' refers to the tree. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: In the storm, the tree fell down and crashed through the roof of my  house. Now, I have to get it repaired. The 'it' refers to the roof. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The customer walked into the bank and stabbed one of the tellers. He was immediately taken to the police station. The 'He' refers to the customer. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The customer walked into the bank and stabbed one of the tellers. He was immediately taken to the hospital. The 'He' refers to the teller. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: John was doing research in the library when he heard a man humming and  whistling. He was very annoyed. The 'He' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: John was doing research in the library when he heard a man humming and  whistling. He was very annoying. The 'He' refers to the man. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Object"]},
-			{"input": "Sentence: John was jogging through the park when he saw a man juggling watermelons. He was very impressed. The 'He' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: John was jogging through the park when he saw a man juggling watermelons. He was very impressive. The 'He' refers to the juggler. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Bob collapsed on the sidewalk. Soon he saw Carl coming to help. He was very ill. The 'He' refers to bob. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Bob collapsed on the sidewalk. Soon he saw Carl coming to help. He was very concerned. The 'He' refers to carl. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are fifteen. The 'they' refers to sam and amy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are snobs. The 'they' refers to amy's parents. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Mark told Pete many lies about himself, which Pete included in his book. He should have been more  truthful. The 'He' refers to mark. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Mark told Pete many lies about himself, which Pete included in his book. He should have been more  skeptical. The 'He' refers to pete. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Joe has sold his house and bought a new one a few miles away. He will be moving out of it on Thursday. The 'it' refers to the old house. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: Joe has sold his house and bought a new one a few miles away. He will be moving into it on Thursday. The 'it' refers to the new house. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Many people start to read Paul's books and can't put them down. They are gripped because Paul writes so well. The 'They' refers to people. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Many people start to read Paul's books and can't put them down. They are popular because Paul writes so well. The 'They' refers to paul's books. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Mary took out her flute and played one of her favorite pieces. She has had it since she was a child. The 'it' refers to the flute. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Mary took out her flute and played one of her favorite pieces. She has loved it since she was a child. The 'it' refers to the piece. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal"]},
-			{"input": "Sentence: Sam pulled up a chair to the piano, but it was broken, so he had to stand instead. The 'it' refers to the chair. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Sam pulled up a chair to the piano, but it was broken, so he had to sing instead. The 'it' refers to the piano. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Since it was raining, I carried the newspaper in my backpack to keep it dry. The 'it' refers to the newspaper. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: Since it was raining, I carried the newspaper over my backpack to keep it dry. The 'it' refers to the backpack. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Sara borrowed the book from the library because she needs it for an article she is working on. She reads it when she gets home from work. The 'it' refers to the book. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Sara borrowed the book from the library because she needs it for an article she is working on. She writes it when she gets home from work. The 'it' refers to the article. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: This morning, Joey built a sand castle on the beach, and put a toy  flag in the highest tower, but this afternoon the tide  knocked it down. The 'it' refers to the sand castle. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Spatial"]},
-			{"input": "Sentence: This morning, Joey built a sand castle on the beach, and put a toy  flag in the highest tower, but this afternoon the wind  knocked it down. The 'it' refers to the flag. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Temporal"]},
-			{"input": "Sentence: Jane knocked on Susan's door, but there was no answer. She was disappointed. The 'She' refers to jane. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: Jane knocked on Susan's door, but there was no answer. She was out. The 'She' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Jane knocked on the door, and Susan answered it. She invited her to come out. The 'She' refers to jane. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Jane knocked on the door, and Susan answered it. She invited her to come in. The 'She' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Sam took French classes from Adam, because he was eager to speak it fluently. The 'he' refers to sam. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Sam took French classes from Adam, because he was known to speak it fluently. The 'he' refers to adam. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: The path to the lake was blocked, so we couldn't use it . The 'it' refers to the path. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The path to the lake was blocked, so we couldn't reach it . The 'it' refers to the lake. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The sun was covered by a thick cloud all morning, but luckily, by the time the picnic started, it was out. The 'it' refers to the sun. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Spatial"]},
-			{"input": "Sentence: The sun was covered by a thick cloud all morning, but luckily, by the time the picnic started, it was gone. The 'it' refers to the cloud. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: We went to the lake, because a shark had been seen at the ocean beach, so it was a safer place to swim. The 'it' refers to the lake. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal", "Others"]},
-			{"input": "Sentence: We went to the lake, because a shark had been seen at the ocean beach, so it was a dangerous place to swim. The 'it' refers to the ocean beach. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Sam tried to paint a picture of shepherds with sheep, but they ended up looking more like golfers. The 'they' refers to the shepherds. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Sam tried to paint a picture of shepherds with sheep, but they ended up looking more like dogs. The 'they' refers to the sheep. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Mary tucked her daughter Anne into bed, so that she could work. The 'she' refers to mary. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Mary tucked her daughter Anne into bed, so that she could sleep. The 'she' refers to mary's daughter. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Fred and Alice had very warm down coats, but they were not prepared for the cold in Alaska. The 'they' refers to fred and alice. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Fred and Alice had very warm down coats, but they were not enough for the cold in Alaska. The 'they' refers to coats. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Thomson visited Cooper's grave in 1765. At that date he had been travelling for five years. The 'he' refers to thomson. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Thomson visited Cooper's grave in 1765. At that date he had been dead for five years. The 'he' refers to cooper. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Jackson was greatly influenced by Arnold, though he lived two centuries later. The 'he' refers to jackson. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Jackson was greatly influenced by Arnold, though he lived two centuries earlier. The 'he' refers to arnold. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: I can't cut that tree down with that axe; it is too thick. The 'it' refers to the tree. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I can't cut that tree down with that axe; it is too small. The 'it' refers to the axe. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: The foxes are getting in at night and attacking the chickens. I shall have to kill them . The 'them' refers to the foxes. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The foxes are getting in at night and attacking the chickens. I shall have to guard them . The 'them' refers to the chickens. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: The foxes are getting in at night and attacking the chickens. They have gotten very bold. The 'They' refers to the foxes. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The foxes are getting in at night and attacking the chickens. They have gotten very nervous. The 'They' refers to the chickens. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Fred covered his eyes with his hands, because the wind was blowing sand around. He opened them when the wind stopped. The 'them' refers to his eyes. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Fred covered his eyes with his hands, because the wind was blowing sand around. He lowered them when the wind stopped. The 'them' refers to his hands. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The actress used to be named Terpsichore, but she changed it to Tina a  few years ago, because she figured it was too hard to pronounce. The 'it' refers to terpsichore. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal", "Spatial", "Others"]},
-			{"input": "Sentence: The actress used to be named Terpsichore, but she changed it to Tina a  few years ago, because she figured it was easier to pronounce. The 'it' refers to tina. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal"]},
-			{"input": "Sentence: Fred watched TV while George went out to buy groceries. After an hour he got up. The 'he' refers to fred. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Fred watched TV while George went out to buy groceries. After an hour he got back. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Fred was supposed to run the dishwasher, but he put it off,  because he wanted to watch TV. But the show turned out to be boring, so he changed his mind and turned it on. The 'it' refers to the dishwasher. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Fred was supposed to run the dishwasher, but he put it off,  because he wanted to watch TV. But the show turned out to be boring, so he changed his mind and turned it off. The 'it' refers to the tv. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Fred is the only man still alive who remembers my great-grandfather. He is a remarkable man. The 'He' refers to fred. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Fred is the only man still alive who remembers my great-grandfather. He was a remarkable man. The 'He' refers to my great-grandfather. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father, he was twelve years old. The 'he' refers to fred. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father, he was twelve months old. The 'he' refers to my father. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: In July, Kamtchatka declared war on Yakutsk. Since Yakutsk's army was much  better equipped and ten times larger, they were defeated within weeks. The 'they' refers to kamtchatka. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: In July, Kamtchatka declared war on Yakutsk. Since Yakutsk's army was much  better equipped and ten times larger, they were victorious within weeks. The 'they' refers to yakutsk. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial"]},
-			{"input": "Sentence: Look! There is a minnow swimming right below that duck! It had better get away to safety fast! The 'It' refers to the minnow. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: Look! There is a shark swimming right below that duck! It had better get away to safety fast! The 'It' refers to the duck. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Archaeologists have concluded that humans lived in Laputa 20,000 years ago. They hunted for evidence on the river banks. The 'They' refers to archaeologists. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Spatial"]},
-			{"input": "Sentence: Archaeologists have concluded that humans lived in Laputa 20,000 years ago. They hunted for deer on the river banks. The 'They' refers to prehistoric humans. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The scientists are studying three species of fish that have recently been found living in the Indian Ocean. They began two years ago. The 'They' refers to the scientists. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: The scientists are studying three species of fish that have recently been found living in the Indian Ocean. They appeared two years ago. The 'They' refers to the fish. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Object"]},
-			{"input": "Sentence: The journalists interviewed the stars of the new movie. They were very persistent, so the interview lasted for a long time. The 'They' refers to the journalists. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The journalists interviewed the stars of the new movie. They were very cooperative, so the interview lasted for a long time. The 'They' refers to the stars. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Object"]},
-			{"input": "Sentence: The police arrested all of the gang members. They were trying to stop the drug trade in the neighborhood. The 'They' refers to the police. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: The police arrested all of the gang members. They were trying to run the drug trade in the neighborhood. The 'They' refers to the gang members. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: I put the cake away in the refrigerator. It has a lot of butter in it. The 'It' refers to the cake. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: I put the cake away in the refrigerator. It has a lot of leftovers in it. The 'It' refers to the refrigerator. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Spatial"]},
-			{"input": "Sentence: Sam broke both his ankles and he's walking with crutches. But a month or so from now they should be better. The 'they' refers to the ankles. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Sam broke both his ankles and he's walking with crutches. But a month or so from now they should be unnecessary. The 'they' refers to the crutches. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. They were very much in the minority. The 'They' refers to the sponsors. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. They were very much in the majority. The 'They' refers to the opponents. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: Everyone really loved the oatmeal cookies; only a few people liked the  chocolate chip cookies. Next time, we should make more of them . The 'them' refers to the oatmeal cookies. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Everyone really loved the oatmeal cookies; only a few people liked the  chocolate chip cookies. Next time, we should make fewer of them . The 'them' refers to the chocolate chip cookies. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: We had hoped to place copies of our newsletter on all the chairs in the auditorium, but there were simply not enough of them . The 'them' refers to copies of the newsletter. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property", "Others"]},
-			{"input": "Sentence: We had hoped to place copies of our newsletter on all the chairs in the auditorium, but there were simply too many of them . The 'them' refers to chairs. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial", "Quantity"]},
-			{"input": "Sentence: I stuck a pin through a carrot. When I pulled the pin out, it left a hole. The 'it' refers to the pin. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Quantity"]},
-			{"input": "Sentence: I stuck a pin through a carrot. When I pulled the pin out, it had a hole. The 'it' refers to the carrot. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: I couldn't find a spoon, so I tried using a pen to stir my  coffee. But that turned out to be a bad idea, because it got full of coffee. The 'it' refers to the pen. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I couldn't find a spoon, so I tried using a pen to stir my  coffee. But that turned out to be a bad idea, because it got full of ink. The 'it' refers to the coffee. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Steve follows Fred's example in everything. He admires him hugely. The 'He' refers to steve. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Steve follows Fred's example in everything. He influences him hugely. The 'He' refers to fred. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: The table won't fit through the doorway because it is too wide. The 'it' refers to the table. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The table won't fit through the doorway because it is too narrow. The 'it' refers to the doorway. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal", "Spatial"]},
-			{"input": "Sentence: Grace was happy to trade me her sweater for my jacket. She thinks it looks dowdy on her. The 'it' refers to the sweater. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Grace was happy to trade me her sweater for my jacket. She thinks it looks great on her. The 'it' refers to the jacket. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: John hired Bill to take care of him . The 'him' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal", "Others"]},
-			{"input": "Sentence: John hired himself out to Bill to take care of him . The 'him' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: John promised Bill to leave, so an hour later he left. The 'he' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: John ordered Bill to leave, so an hour later he left. The 'he' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Sam Goodman's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties he faced in his research. The 'he' refers to goodman. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Sam Goodman's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties he faced in his childhood. The 'he' refers to xenophanes. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Quantity", "Others"]},
-			{"input": "Sentence: Emma's mother had died long ago, and her education had been managed by an excellent woman as governess. The 'her' refers to emma. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Emma's mother had died long ago, and her place had been taken by an excellent woman as governess. The 'her' refers to emma's mother. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Quantity", "Others"]},
-			{"input": "Sentence: Jane knocked on Susan's door but she did not get an answer. The 'she' refers to jane. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Jane knocked on Susan's door but she did not answer. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: Joe paid the detective after he received the final report on the case. The 'he' refers to joe. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal"]},
-			{"input": "Sentence: Joe paid the detective after he delivered the final report on the case. The 'he' refers to the detective. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Beth didn't get angry with Sally, who had cut her off, because she stopped and counted to ten. The 'she' refers to beth. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Beth didn't get angry with Sally, who had cut her off, because she stopped and apologized. The 'she' refers to sally. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Jim signaled the barman and gestured toward his empty glass The 'his' refers to jim. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Jim signaled the barman and gestured toward his bathroom key. The 'his' refers to the barman. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Dan took the rear seat while Bill claimed the front because his \"Dibs!\" was slow. The 'his' refers to dan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Dan took the rear seat while Bill claimed the front because his \"Dibs!\" was quicker. The 'his' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Tom said \"Check\" to Ralph as he moved his bishop. The 'his' refers to tom. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Tom said \"Check\" to Ralph as he took his bishop. The 'his' refers to ralph. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: As Andrea in the crop duster passed over Susan, she could see the landing strip. The 'she' refers to andrea. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: As Andrea in the crop duster passed over Susan, she could see the landing gear. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Tom gave Ralph a lift to school so he wouldn't have to drive alone. The 'he' refers to tom. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Tom gave Ralph a lift to school so he wouldn't have to walk. The 'he' refers to ralph. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Bill passed the half-empty plate to John because he was full. The 'he' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Bill passed the half-empty plate to John because he was hungry. The 'he' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Bill passed the gameboy to John because his turn was over. The 'his' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Others"]},
-			{"input": "Sentence: Bill passed the gameboy to John because his turn was next. The 'his' refers to john. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Spatial"]},
-			{"input": "Sentence: The man lifted the boy onto his shoulders. The 'his' refers to the man. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The man lifted the boy onto his bunk bed. The 'his' refers to the boy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Stretching her back, the woman smiled at the girl. The 'her' refers to the woman. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Patting her back, the woman smiled at the girl. The 'her' refers to the girl. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Billy cried because Toby wouldn't accept his toy. The 'his' refers to billy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Billy cried because Toby wouldn't share his toy. The 'his' refers to toby. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Lily spoke to Donna, breaking her silence. The 'her' refers to lily. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Lily spoke to Donna, breaking her concentration. The 'her' refers to donna. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: When Tommy dropped his ice cream, Timmy giggled, so father gave him a sympathetic look. The 'him' refers to tommy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: When Tommy dropped his ice cream, Timmy giggled, so father gave him a stern look. The 'him' refers to timmy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: As Ollie carried Tommy up the long winding steps, his legs ached. The 'his' refers to ollie. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial", "Quantity"]},
-			{"input": "Sentence: As Ollie carried Tommy up the long winding steps, his legs dangled. The 'his' refers to tommy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: The father carried the sleeping boy in his arms The 'his' refers to the father. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The father carried the sleeping boy in his bassinet. The 'his' refers to the boy. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: The woman held the girl against her chest The 'her' refers to the woman. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: The woman held the girl against her will. The 'her' refers to the girl. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Pam's parents came home and found her having sex with her boyfriend, Paul. They were furious about it. The 'They' refers to pam's parents. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Temporal"]},
-			{"input": "Sentence: Pam's parents came home and found her having sex with her boyfriend, Paul. They were embarrassed about it. The 'They' refers to pam and paul. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Dr. Adams informed Kate that she had retired and presented several options for future treatment. The 'she' refers to dr. adams. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: Dr. Adams informed Kate that she had cancer and presented several options for future treatment. The 'she' refers to kate. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Dan had to stop Bill from toying with the injured bird. He is very compassionate. The 'He' refers to dan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: Dan had to stop Bill from toying with the injured bird. He is very cruel. The 'He' refers to bill. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: George got free tickets to the play, but he gave them to Eric, even though he was particularly eager to see it. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Spatial"]},
-			{"input": "Sentence: George got free tickets to the play, but he gave them to Eric, because he was particularly eager to see it. The 'he' refers to eric. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: George got free tickets to the play, but he gave them to Eric, because he was not particularly eager to see it. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Jane gave Joan candy because she wasn't hungry. The 'she' refers to jane. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Jane gave Joan candy because she was hungry. The 'she' refers to joan. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: I tried to paint a picture of an orchard, with lemons in the lemon trees,  but they came out looking more like light bulbs. The 'they' refers to lemons. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I tried to paint a picture of an orchard, with lemons in the lemon trees,  but they came out looking more like telephone poles. The 'they' refers to lemon trees. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: James asked Robert for a favor but he was refused. The 'he' refers to james. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Quantity"]},
-			{"input": "Sentence: James asked Robert for a favor but he refused. The 'he' refers to robert. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object", "Others"]},
-			{"input": "Sentence: Kirilov ceded the presidency to Shatov because he was less popular. The 'he' refers to kirilov. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: Kirilov ceded the presidency to Shatov because he was more popular. The 'he' refers to shatov. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Property"]},
-			{"input": "Sentence: Emma did not pass the ball to Janie although she saw that she was open. The 'she' refers to emma. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Emma did not pass the ball to Janie although she was open. The 'she' refers to janie. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I put the butterfly wing on the table and it broke. The 'it' refers to the butterfly wing. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: I put the heavy book on the table and it broke. The 'it' refers to the table. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Object"]},
-			{"input": "Sentence: Madonna fired her trainer because she couldn't stand her boyfriend. The 'she' refers to madonna. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Madonna fired her trainer because she slept with her boyfriend. The 'she' refers to the trainer. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Madonna fired her trainer because she slept with her boyfriend. The 'her' refers to madonna. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Others"]},
-			{"input": "Sentence: Madonna fired her trainer because she couldn't stand her boyfriend. The 'her' refers to the trainer. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Others"]},
-			{"input": "Sentence: Carol believed that Rebecca suspected that she had stolen the watch. The 'she' refers to carol. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal"]},
-			{"input": "Sentence: Carol believed that Rebecca regretted that she had stolen the watch. The 'she' refers to rebecca. \n Question: What is the knowledge type needed to solve this relation?", "output": ["Temporal", "Spatial", "Quantity"]}
+    "Instances": [
+        {
+            "input": "Sentence: The city councilmen refused the demonstrators a permit because they advocated violence. The 'they' refers to the demonstrators. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The trophy doesn't fit into the brown suitcase because it is too large. The 'it' refers to the trophy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: The trophy doesn't fit into the brown suitcase because it is too small. The 'it' refers to the suitcase. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Joan made sure to thank Susan for all the help she had recieved. The 'she' refers to joan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Joan made sure to thank Susan for all the help she had given. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Paul tried to call George on the phone, but he wasn't successful. The 'he' refers to paul. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Paul tried to call George on the phone, but he wasn't available. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: The lawyer asked the witness a question, but he was reluctant to answer it. The 'he' refers to the witness. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: The delivery truck zoomed by the school bus because it was going so slow. The 'it' refers to the school bus. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Frank felt crushed when his longtime rival Bill revealed that he was the winner of the competition. The 'he' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The man couldn't lift his son because he was so weak. The 'he' refers to the man. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: The man couldn't lift his son because he was so heavy. The 'he' refers to the son. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The large ball crashed right through the table because it was made of styrofoam. The 'it' refers to the table. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: John couldn't see the stage with Billy in front of him because he is so short. The 'he' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: John couldn't see the stage with Billy in front of him because he is so tall. The 'he' refers to billy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Tom threw his schoolbag down to Ray after he reached the top of the stairs. The 'he' refers to tom. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Tom threw his schoolbag down to Ray after he reached the bottom of the stairs. The 'he' refers to ray. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Although they ran at about the same speed, Sue beat Sally because she had such a good start. The 'she' refers to sue. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Although they ran at about the same speed, Sue beat Sally because she had such a bad start. The 'she' refers to sally. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: The sculpture rolled off the shelf because it wasn't anchored. The 'it' refers to the sculpture. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: The sculpture rolled off the shelf because it wasn't level. The 'it' refers to the shelf. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Sam's drawing was hung just above Tina's and it did look much better with another one below it. The 'it' refers to sam's drawing. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Sam's drawing was hung just above Tina's and it did look much better with another one above it. The 'it' refers to tina's drawing. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Anna did a lot better than her good friend Lucy on the test because she had studied so hard. The 'she' refers to anna. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Anna did a lot worse than her good friend Lucy on the test because she had studied so hard. The 'she' refers to lucy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: The firemen arrived after the police because they were coming from so far away. The 'they' refers to the firemen. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Frank was upset with Tom because the toaster he had bought from him didn't work. The 'he' refers to frank. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: Frank was upset with Tom because the toaster he had sold him didn't work. The 'he' refers to tom. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Jim yelled at Kevin because he was so upset. The 'he' refers to jim. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Jim comforted Kevin because he was so upset. The 'he' refers to kevin. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The sack of potatoes had been placed above the bag of flour, so it had to be moved first. The 'it' refers to the sack of potatoes. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The sack of potatoes had been placed below the bag of flour, so it had to be moved first. The 'it' refers to the bag of flour. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Pete envies Martin although he is very successful. The 'he' refers to pete. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Pete envies Martin because he is very successful. The 'he' refers to martin. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The older students were bullying the younger ones, so we punished them . The 'them' refers to the older students. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The older students were bullying the younger ones, so we rescued them . The 'them' refers to the younger students. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: I poured water from the bottle into the cup until it was empty. The 'it' refers to the bottle. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: I poured water from the bottle into the cup until it was full. The 'it' refers to the cup. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Susan knows all about Ann's personal problems because she is nosy. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: Susan knows all about Ann's personal problems because she is indiscreet. The 'she' refers to ann. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sid explained his theory to Mark but he couldn't convince him. The 'he' refers to sid. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Sid explained his theory to Mark but he couldn't understand him. The 'he' refers to mark. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Susan knew that Ann's son had been in a car accident, so she told her about it. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Susan knew that Ann's son had been in a car accident, because she told her about it. The 'she' refers to ann. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Joe's uncle can still beat him at tennis, even though he is 30 years younger. The 'he' refers to joe. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Joe's uncle can still beat him at tennis, even though he is 30 years older. The 'he' refers to joe's uncle. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: The painting in Mark's living room shows an oak tree. It is to the right of the bookcase. The 'It' refers to the painting. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The painting in Mark's living room shows an oak tree. It is to the right of a house. The 'It' refers to the oak tree. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: There is a gap in the wall. You can see the garden through it . The 'it' refers to the gap. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: There is a gap in the wall. You can see the garden behind it . The 'it' refers to the wall. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: The drain is clogged with hair. It has to be cleaned. The 'It' refers to the drain. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The drain is clogged with hair. It has to be removed. The 'It' refers to the hair. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: My meeting started at 4:00 and I needed to catch the train at 4:30,  so there wasn't much time. Luckily, it was short, so it worked out. The 'it' refers to the meeting. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: My meeting started at 4:00 and I needed to catch the train at 4:30,  so there wasn't much time. Luckily, it was delayed, so it worked out. The 'it' refers to the train. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: There is a pillar between me and the stage, and I can't see around it . The 'it' refers to the pillar. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: There is a pillar between me and the stage, and I can't see it . The 'it' refers to the stage. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: They broadcast an announcement, but a subway came into the  station and I couldn't hear it . The 'it' refers to the announcement. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: They broadcast an announcement, but a subway came into the  station and I couldn't hear over it . The 'it' refers to the subway. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: In the middle of the outdoor concert, the rain started falling, but it continued until 10. The 'it' refers to the concert. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: In the middle of the outdoor concert, the rain started falling, and it continued until 10. The 'it' refers to the rain. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: I used an old rag to clean the knife, and then I put it in the trash. The 'it' refers to the rag. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: I used an old rag to clean the knife, and then I put it in the drawer. The 'it' refers to the knife. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Ann asked Mary what time the library closes, because she had forgotten. The 'she' refers to ann. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Ann asked Mary what time the library closes, but she had forgotten. The 'she' refers to mary. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: I took the water bottle out of the backpack so that it would be handy. The 'it' refers to the water bottle. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: I took the water bottle out of the backpack so that it would be lighter. The 'it' refers to the backpack. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I couldn't put the pot on the shelf because it was too tall. The 'it' refers to the pot. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: I couldn't put the pot on the shelf because it was too high. The 'it' refers to the shelf. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: I'm sure that my map will show this building; it is very good. The 'it' refers to the map. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: I'm sure that my map will show this building; it is very famous. The 'it' refers to the building. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Bob paid for Charlie's college education. He is very generous. The 'He' refers to bob. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Bob paid for Charlie's college education. He is very grateful. The 'He' refers to charlie. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Bob paid for Charlie's college education, but now Charlie acts as though it never happened. He is very hurt. The 'He' refers to bob. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Bob paid for Charlie's college education, but now Charlie acts as though it never happened. He is very ungrateful. The 'He' refers to charlie. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, he would have won. The 'he' refers to bob. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, he would have lost. The 'he' refers to adam. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: Adam can't leave work here until Bob arrives to replace him. If Bob had  left home for work on time, he would be gone by this time. The 'he' refers to adam. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Adam can't leave work here until Bob arrives to replace him. If Bob had  left home for work on time, he would be here by this time. The 'he' refers to bob. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: If the con artist has succeeded in fooling Sam, he would have gotten a lot of money. The 'he' refers to the con artist. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: If the con artist has succeeded in fooling Sam, he would have lost a lot of money. The 'he' refers to sam. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: It was a summer afternoon, and the dog was sitting in the middle of the lawn. After a while, it got up and moved to a spot under the tree,  because it was hot. The 'it' refers to the dog. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: It was a summer afternoon, and the dog was sitting in the middle of the lawn. After a while, it got up and moved to a spot under the tree,  because it was cooler. The 'it' refers to the spot under the tree. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The cat was lying by the mouse hole waiting for the mouse, but it was too impatient. The 'it' refers to the cat. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The cat was lying by the mouse hole waiting for the mouse, but it was too cautious. The 'it' refers to the mouse. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Anne gave birth to a daughter last month. She is a very charming woman. The 'She' refers to anne. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Anne gave birth to a daughter last month. She is a very charming baby. The 'She' refers to anne's daughter. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Alice tried frantically to stop her daughter from chatting at the party, leaving us to wonder why she was behaving so strangely. The 'she' refers to alice. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Alice tried frantically to stop her daughter from barking at the party, leaving us to wonder why she was behaving so strangely. The 'she' refers to alice's daughter. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: I saw Jim yelling at some guy in a military uniform with a huge red  beard. I don't know why he was, but he looked very unhappy. The 'he' refers to jim. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: I saw Jim yelling at some guy in a military uniform with a huge red  beard. I don't know who he was, but he looked very unhappy. The 'he' refers to the guy in uniform. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The fish ate the worm. It was hungry. The 'It' refers to the fish. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The fish ate the worm. It was tasty. The 'It' refers to the worm. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I was trying to open the lock with the key, but someone had filled the  keyhole with chewing gum, and I couldn't get it in. The 'it' refers to the key. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I was trying to open the lock with the key, but someone had filled the  keyhole with chewing gum, and I couldn't get it out. The 'it' refers to the chewing gum. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The dog chased the cat, which ran up a tree. It waited at the bottom. The 'It' refers to the dog. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The dog chased the cat, which ran up a tree. It waited at the top. The 'It' refers to the cat. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: In the storm, the tree fell down and crashed through the roof of my  house. Now, I have to get it removed. The 'it' refers to the tree. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: In the storm, the tree fell down and crashed through the roof of my  house. Now, I have to get it repaired. The 'it' refers to the roof. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The customer walked into the bank and stabbed one of the tellers. He was immediately taken to the police station. The 'He' refers to the customer. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The customer walked into the bank and stabbed one of the tellers. He was immediately taken to the hospital. The 'He' refers to the teller. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: John was doing research in the library when he heard a man humming and  whistling. He was very annoyed. The 'He' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: John was doing research in the library when he heard a man humming and  whistling. He was very annoying. The 'He' refers to the man. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: John was jogging through the park when he saw a man juggling watermelons. He was very impressed. The 'He' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: John was jogging through the park when he saw a man juggling watermelons. He was very impressive. The 'He' refers to the juggler. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Bob collapsed on the sidewalk. Soon he saw Carl coming to help. He was very ill. The 'He' refers to bob. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Bob collapsed on the sidewalk. Soon he saw Carl coming to help. He was very concerned. The 'He' refers to carl. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are fifteen. The 'they' refers to sam and amy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are snobs. The 'they' refers to amy's parents. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Mark told Pete many lies about himself, which Pete included in his book. He should have been more  truthful. The 'He' refers to mark. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Mark told Pete many lies about himself, which Pete included in his book. He should have been more  skeptical. The 'He' refers to pete. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Joe has sold his house and bought a new one a few miles away. He will be moving out of it on Thursday. The 'it' refers to the old house. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Joe has sold his house and bought a new one a few miles away. He will be moving into it on Thursday. The 'it' refers to the new house. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Many people start to read Paul's books and can't put them down. They are gripped because Paul writes so well. The 'They' refers to people. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Many people start to read Paul's books and can't put them down. They are popular because Paul writes so well. The 'They' refers to paul's books. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Mary took out her flute and played one of her favorite pieces. She has had it since she was a child. The 'it' refers to the flute. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Mary took out her flute and played one of her favorite pieces. She has loved it since she was a child. The 'it' refers to the piece. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sam pulled up a chair to the piano, but it was broken, so he had to stand instead. The 'it' refers to the chair. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Sam pulled up a chair to the piano, but it was broken, so he had to sing instead. The 'it' refers to the piano. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Since it was raining, I carried the newspaper in my backpack to keep it dry. The 'it' refers to the newspaper. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Since it was raining, I carried the newspaper over my backpack to keep it dry. The 'it' refers to the backpack. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Sara borrowed the book from the library because she needs it for an article she is working on. She reads it when she gets home from work. The 'it' refers to the book. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sara borrowed the book from the library because she needs it for an article she is working on. She writes it when she gets home from work. The 'it' refers to the article. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: This morning, Joey built a sand castle on the beach, and put a toy  flag in the highest tower, but this afternoon the tide  knocked it down. The 'it' refers to the sand castle. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: This morning, Joey built a sand castle on the beach, and put a toy  flag in the highest tower, but this afternoon the wind  knocked it down. The 'it' refers to the flag. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on Susan's door, but there was no answer. She was disappointed. The 'She' refers to jane. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on Susan's door, but there was no answer. She was out. The 'She' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on the door, and Susan answered it. She invited her to come out. The 'She' refers to jane. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on the door, and Susan answered it. She invited her to come in. The 'She' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Sam took French classes from Adam, because he was eager to speak it fluently. The 'he' refers to sam. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sam took French classes from Adam, because he was known to speak it fluently. The 'he' refers to adam. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The path to the lake was blocked, so we couldn't use it . The 'it' refers to the path. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The path to the lake was blocked, so we couldn't reach it . The 'it' refers to the lake. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The sun was covered by a thick cloud all morning, but luckily, by the time the picnic started, it was out. The 'it' refers to the sun. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The sun was covered by a thick cloud all morning, but luckily, by the time the picnic started, it was gone. The 'it' refers to the cloud. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: We went to the lake, because a shark had been seen at the ocean beach, so it was a safer place to swim. The 'it' refers to the lake. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: We went to the lake, because a shark had been seen at the ocean beach, so it was a dangerous place to swim. The 'it' refers to the ocean beach. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sam tried to paint a picture of shepherds with sheep, but they ended up looking more like golfers. The 'they' refers to the shepherds. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Sam tried to paint a picture of shepherds with sheep, but they ended up looking more like dogs. The 'they' refers to the sheep. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Mary tucked her daughter Anne into bed, so that she could work. The 'she' refers to mary. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Mary tucked her daughter Anne into bed, so that she could sleep. The 'she' refers to mary's daughter. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Fred and Alice had very warm down coats, but they were not prepared for the cold in Alaska. The 'they' refers to fred and alice. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Fred and Alice had very warm down coats, but they were not enough for the cold in Alaska. The 'they' refers to coats. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Thomson visited Cooper's grave in 1765. At that date he had been travelling for five years. The 'he' refers to thomson. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Thomson visited Cooper's grave in 1765. At that date he had been dead for five years. The 'he' refers to cooper. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Jackson was greatly influenced by Arnold, though he lived two centuries later. The 'he' refers to jackson. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Jackson was greatly influenced by Arnold, though he lived two centuries earlier. The 'he' refers to arnold. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: I can't cut that tree down with that axe; it is too thick. The 'it' refers to the tree. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I can't cut that tree down with that axe; it is too small. The 'it' refers to the axe. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: The foxes are getting in at night and attacking the chickens. I shall have to kill them . The 'them' refers to the foxes. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The foxes are getting in at night and attacking the chickens. I shall have to guard them . The 'them' refers to the chickens. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The foxes are getting in at night and attacking the chickens. They have gotten very bold. The 'They' refers to the foxes. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The foxes are getting in at night and attacking the chickens. They have gotten very nervous. The 'They' refers to the chickens. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Fred covered his eyes with his hands, because the wind was blowing sand around. He opened them when the wind stopped. The 'them' refers to his eyes. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Fred covered his eyes with his hands, because the wind was blowing sand around. He lowered them when the wind stopped. The 'them' refers to his hands. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The actress used to be named Terpsichore, but she changed it to Tina a  few years ago, because she figured it was too hard to pronounce. The 'it' refers to terpsichore. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal",
+                "Spatial",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: The actress used to be named Terpsichore, but she changed it to Tina a  few years ago, because she figured it was easier to pronounce. The 'it' refers to tina. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Fred watched TV while George went out to buy groceries. After an hour he got up. The 'he' refers to fred. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Fred watched TV while George went out to buy groceries. After an hour he got back. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Fred was supposed to run the dishwasher, but he put it off,  because he wanted to watch TV. But the show turned out to be boring, so he changed his mind and turned it on. The 'it' refers to the dishwasher. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Fred was supposed to run the dishwasher, but he put it off,  because he wanted to watch TV. But the show turned out to be boring, so he changed his mind and turned it off. The 'it' refers to the tv. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Fred is the only man still alive who remembers my great-grandfather. He is a remarkable man. The 'He' refers to fred. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Fred is the only man still alive who remembers my great-grandfather. He was a remarkable man. The 'He' refers to my great-grandfather. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father, he was twelve years old. The 'he' refers to fred. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father, he was twelve months old. The 'he' refers to my father. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: In July, Kamtchatka declared war on Yakutsk. Since Yakutsk's army was much  better equipped and ten times larger, they were defeated within weeks. The 'they' refers to kamtchatka. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: In July, Kamtchatka declared war on Yakutsk. Since Yakutsk's army was much  better equipped and ten times larger, they were victorious within weeks. The 'they' refers to yakutsk. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Look! There is a minnow swimming right below that duck! It had better get away to safety fast! The 'It' refers to the minnow. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: Look! There is a shark swimming right below that duck! It had better get away to safety fast! The 'It' refers to the duck. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Archaeologists have concluded that humans lived in Laputa 20,000 years ago. They hunted for evidence on the river banks. The 'They' refers to archaeologists. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Archaeologists have concluded that humans lived in Laputa 20,000 years ago. They hunted for deer on the river banks. The 'They' refers to prehistoric humans. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The scientists are studying three species of fish that have recently been found living in the Indian Ocean. They began two years ago. The 'They' refers to the scientists. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: The scientists are studying three species of fish that have recently been found living in the Indian Ocean. They appeared two years ago. The 'They' refers to the fish. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The journalists interviewed the stars of the new movie. They were very persistent, so the interview lasted for a long time. The 'They' refers to the journalists. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The journalists interviewed the stars of the new movie. They were very cooperative, so the interview lasted for a long time. The 'They' refers to the stars. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The police arrested all of the gang members. They were trying to stop the drug trade in the neighborhood. The 'They' refers to the police. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: The police arrested all of the gang members. They were trying to run the drug trade in the neighborhood. The 'They' refers to the gang members. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: I put the cake away in the refrigerator. It has a lot of butter in it. The 'It' refers to the cake. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: I put the cake away in the refrigerator. It has a lot of leftovers in it. The 'It' refers to the refrigerator. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Sam broke both his ankles and he's walking with crutches. But a month or so from now they should be better. The 'they' refers to the ankles. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Sam broke both his ankles and he's walking with crutches. But a month or so from now they should be unnecessary. The 'they' refers to the crutches. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. They were very much in the minority. The 'They' refers to the sponsors. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. They were very much in the majority. The 'They' refers to the opponents. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: Everyone really loved the oatmeal cookies; only a few people liked the  chocolate chip cookies. Next time, we should make more of them . The 'them' refers to the oatmeal cookies. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Everyone really loved the oatmeal cookies; only a few people liked the  chocolate chip cookies. Next time, we should make fewer of them . The 'them' refers to the chocolate chip cookies. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: We had hoped to place copies of our newsletter on all the chairs in the auditorium, but there were simply not enough of them . The 'them' refers to copies of the newsletter. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: We had hoped to place copies of our newsletter on all the chairs in the auditorium, but there were simply too many of them . The 'them' refers to chairs. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial",
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: I stuck a pin through a carrot. When I pulled the pin out, it left a hole. The 'it' refers to the pin. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: I stuck a pin through a carrot. When I pulled the pin out, it had a hole. The 'it' refers to the carrot. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: I couldn't find a spoon, so I tried using a pen to stir my  coffee. But that turned out to be a bad idea, because it got full of coffee. The 'it' refers to the pen. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I couldn't find a spoon, so I tried using a pen to stir my  coffee. But that turned out to be a bad idea, because it got full of ink. The 'it' refers to the coffee. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Steve follows Fred's example in everything. He admires him hugely. The 'He' refers to steve. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Steve follows Fred's example in everything. He influences him hugely. The 'He' refers to fred. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: The table won't fit through the doorway because it is too wide. The 'it' refers to the table. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The table won't fit through the doorway because it is too narrow. The 'it' refers to the doorway. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Grace was happy to trade me her sweater for my jacket. She thinks it looks dowdy on her. The 'it' refers to the sweater. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Grace was happy to trade me her sweater for my jacket. She thinks it looks great on her. The 'it' refers to the jacket. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: John hired Bill to take care of him . The 'him' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: John hired himself out to Bill to take care of him . The 'him' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: John promised Bill to leave, so an hour later he left. The 'he' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: John ordered Bill to leave, so an hour later he left. The 'he' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Sam Goodman's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties he faced in his research. The 'he' refers to goodman. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Sam Goodman's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties he faced in his childhood. The 'he' refers to xenophanes. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Quantity",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Emma's mother had died long ago, and her education had been managed by an excellent woman as governess. The 'her' refers to emma. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Emma's mother had died long ago, and her place had been taken by an excellent woman as governess. The 'her' refers to emma's mother. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Quantity",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on Susan's door but she did not get an answer. The 'she' refers to jane. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Jane knocked on Susan's door but she did not answer. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: Joe paid the detective after he received the final report on the case. The 'he' refers to joe. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Joe paid the detective after he delivered the final report on the case. The 'he' refers to the detective. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Beth didn't get angry with Sally, who had cut her off, because she stopped and counted to ten. The 'she' refers to beth. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Beth didn't get angry with Sally, who had cut her off, because she stopped and apologized. The 'she' refers to sally. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Jim signaled the barman and gestured toward his empty glass The 'his' refers to jim. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Jim signaled the barman and gestured toward his bathroom key. The 'his' refers to the barman. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Dan took the rear seat while Bill claimed the front because his \"Dibs!\" was slow. The 'his' refers to dan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Dan took the rear seat while Bill claimed the front because his \"Dibs!\" was quicker. The 'his' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Tom said \"Check\" to Ralph as he moved his bishop. The 'his' refers to tom. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Tom said \"Check\" to Ralph as he took his bishop. The 'his' refers to ralph. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: As Andrea in the crop duster passed over Susan, she could see the landing strip. The 'she' refers to andrea. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: As Andrea in the crop duster passed over Susan, she could see the landing gear. The 'she' refers to susan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Tom gave Ralph a lift to school so he wouldn't have to drive alone. The 'he' refers to tom. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Tom gave Ralph a lift to school so he wouldn't have to walk. The 'he' refers to ralph. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the half-empty plate to John because he was full. The 'he' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the half-empty plate to John because he was hungry. The 'he' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the gameboy to John because his turn was over. The 'his' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Bill passed the gameboy to John because his turn was next. The 'his' refers to john. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The man lifted the boy onto his shoulders. The 'his' refers to the man. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The man lifted the boy onto his bunk bed. The 'his' refers to the boy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Stretching her back, the woman smiled at the girl. The 'her' refers to the woman. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Patting her back, the woman smiled at the girl. The 'her' refers to the girl. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Billy cried because Toby wouldn't accept his toy. The 'his' refers to billy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Billy cried because Toby wouldn't share his toy. The 'his' refers to toby. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Lily spoke to Donna, breaking her silence. The 'her' refers to lily. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Lily spoke to Donna, breaking her concentration. The 'her' refers to donna. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: When Tommy dropped his ice cream, Timmy giggled, so father gave him a sympathetic look. The 'him' refers to tommy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: When Tommy dropped his ice cream, Timmy giggled, so father gave him a stern look. The 'him' refers to timmy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: As Ollie carried Tommy up the long winding steps, his legs ached. The 'his' refers to ollie. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial",
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: As Ollie carried Tommy up the long winding steps, his legs dangled. The 'his' refers to tommy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: The father carried the sleeping boy in his arms The 'his' refers to the father. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The father carried the sleeping boy in his bassinet. The 'his' refers to the boy. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: The woman held the girl against her chest The 'her' refers to the woman. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: The woman held the girl against her will. The 'her' refers to the girl. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Pam's parents came home and found her having sex with her boyfriend, Paul. They were furious about it. The 'They' refers to pam's parents. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Pam's parents came home and found her having sex with her boyfriend, Paul. They were embarrassed about it. The 'They' refers to pam and paul. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Dr. Adams informed Kate that she had retired and presented several options for future treatment. The 'she' refers to dr. adams. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: Dr. Adams informed Kate that she had cancer and presented several options for future treatment. The 'she' refers to kate. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Dan had to stop Bill from toying with the injured bird. He is very compassionate. The 'He' refers to dan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: Dan had to stop Bill from toying with the injured bird. He is very cruel. The 'He' refers to bill. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: George got free tickets to the play, but he gave them to Eric, even though he was particularly eager to see it. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Spatial"
+            ]
+        },
+        {
+            "input": "Sentence: George got free tickets to the play, but he gave them to Eric, because he was particularly eager to see it. The 'he' refers to eric. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: George got free tickets to the play, but he gave them to Eric, because he was not particularly eager to see it. The 'he' refers to george. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Jane gave Joan candy because she wasn't hungry. The 'she' refers to jane. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Jane gave Joan candy because she was hungry. The 'she' refers to joan. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: I tried to paint a picture of an orchard, with lemons in the lemon trees,  but they came out looking more like light bulbs. The 'they' refers to lemons. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I tried to paint a picture of an orchard, with lemons in the lemon trees,  but they came out looking more like telephone poles. The 'they' refers to lemon trees. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: James asked Robert for a favor but he was refused. The 'he' refers to james. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Quantity"
+            ]
+        },
+        {
+            "input": "Sentence: James asked Robert for a favor but he refused. The 'he' refers to robert. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Kirilov ceded the presidency to Shatov because he was less popular. The 'he' refers to kirilov. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: Kirilov ceded the presidency to Shatov because he was more popular. The 'he' refers to shatov. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Property"
+            ]
+        },
+        {
+            "input": "Sentence: Emma did not pass the ball to Janie although she saw that she was open. The 'she' refers to emma. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Emma did not pass the ball to Janie although she was open. The 'she' refers to janie. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I put the butterfly wing on the table and it broke. The 'it' refers to the butterfly wing. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: I put the heavy book on the table and it broke. The 'it' refers to the table. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Object"
+            ]
+        },
+        {
+            "input": "Sentence: Madonna fired her trainer because she couldn't stand her boyfriend. The 'she' refers to madonna. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Madonna fired her trainer because she slept with her boyfriend. The 'she' refers to the trainer. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Madonna fired her trainer because she slept with her boyfriend. The 'her' refers to madonna. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Madonna fired her trainer because she couldn't stand her boyfriend. The 'her' refers to the trainer. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Others"
+            ]
+        },
+        {
+            "input": "Sentence: Carol believed that Rebecca suspected that she had stolen the watch. The 'she' refers to carol. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal"
+            ]
+        },
+        {
+            "input": "Sentence: Carol believed that Rebecca regretted that she had stolen the watch. The 'she' refers to rebecca. \n Question: What is the knowledge type needed to solve this relation?",
+            "output": [
+                "Temporal",
+                "Spatial",
+                "Quantity"
+            ]
+        }
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
     ]
-}  
+}

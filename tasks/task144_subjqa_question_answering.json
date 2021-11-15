@@ -1,5 +1,5 @@
 {
-    "Definition": "You will be given a review about a book, an item, a place or a movie. After that, a question is given that you should answer using a certain span of the review. Your answer should be from the review itself and should not contain extra words, and should not be a combination of different spans. See the examples for clarification.",
+    "Definition": "You will be given a review about a book, an item, a place or a movie. After that, a question is given that you should answer using a certain span of the review. Your answer should be from the review itself and should not contain extra words, and should not be a combination of different spans. If there's no direct answer to the question, answer with a part of the text that is the most relevant to the question. See the examples for clarification.",
     "Positive Examples": [
         {
             "input": "review: I had a smaller headset that went on the ear. After a 8 - 10 hour workday, my ears were throbbing red and painfully sore. With this headset, I can go the same shift and not feel any pain on my ear. They may feel a little on the heavy side, but if you adjust the head phone cups just right and stretch them, you will not have any problems.Quality and sound, words cannot explain. Its so clear and loud, the headset holds in the sound. When I am on a call or listening to music, I do not hear nothing else, but what's coming in through the headset.\nquestion: Does the headset block sounds from outside?",
@@ -17,7 +17,7 @@
             "explanation": "The selected span is a correct answer to the question, although the whole sentence containing it would be a correct answer too."
         },
         {
-            "input": "review: My friend and I both ordered the Siam Noodles based on the waitresses' recommendation. I had the veggie version while she got hers with chicken. We were extremely happy with our choice. The sauce was a peanut and coconut milk combination straight from heaven. The dish was the perfect amount of spicy. My friend wasn't too excited by the chicken but the sauce was too yummy to complain about. We topped the meal of with the mango and sticky rice which was absolutely divine. However, the evening took a turn for the crappy when they started cleaning up the restaurant and putting chairs up on tables around as as we were still eating out meal. We weren't notified that the restaurant was closed and the staff was quite rude about the whole thing. I would still go back as the food was great but I wouldn't go there to have a nice long meal. Maybe even do takeout to avoid the rude staff.\nquestion: How did the employees of the restaurant behave?",
+            "input": "review: My friend and I both ordered the Siam Noodles based on the waitresses' recommendation. I had the veggie version while she got hers with chicken. We were extremely happy with our choice. The sauce was a peanut and coconut milk combination straight from heaven. The dish was the perfect amount of spicy. My friend wasn't too excited by the chicken but the sauce was too yummy to complain about. We topped the meal off with the mango and sticky rice which was absolutely divine. However, the evening took a turn for the crappy when they started cleaning up the restaurant and putting chairs up on tables around as as we were still eating out meal. We weren't notified that the restaurant was closed and the staff was quite rude about the whole thing. I would still go back as the food was great but I wouldn't go there to have a nice long meal. Maybe even do takeout to avoid the rude staff.\nquestion: How did the employees of the restaurant behave?",
             "output": "the staff was quite rude about the whole thing.",
             "explanation": "Again, you can see here that the answer of the question may not share any words with the question and still be the correct answer."
         }
@@ -36,7 +36,7 @@
         {
             "input": "review: This was one of the best thriller/psychological suspense/family saga/mystery I have ever read. Ms Flynn has a terrific ability for description and development of very interesting characters.  She puts you right there in the middle of the story. I couldn't put it down.  It has twists and turns and a double ending. As much as I enjoyed this book, there was much dark and depressing elements of the story that I cannot forget.  I'll wait awhile before I read Dark Places, the only other novel I have left to read that she has written. It's not that I don't want to read it. I just want go save it and let the novel just finished digest a bit.  Actually looking forward to Dark Places. Hoping she will have another novel published soon. She is one writer that I intend to keep reading. I did read Gone Girl last year and loved it. But somehow it did not have the same kind of experience for me. It was a great novel but very different . Highly recommend this if you like real psychological thrillers. And some parts require a strong stomach. But so filled with dysfunction and disordered lives that are wonderfully written, no matter how difficult it may be to read. It is a unique kind of book. Not for children and adolescents in my opinion. Some very heavy material and necessary but ugly descriptions of things better left for mature adults. It all comes together and leaves you breathless.\nquestion: Who is a proper audience of this book?",
             "output": "children and adolescents",
-            "explanation": "The given output is a part of the answer, but is clearly wrong. You should be wary when choosing a subset of the whole answer span, as it may totally flip the meaning."
+            "explanation": "The given output is a part of the answer, but is clearly wrong. You should be wary when choosing a part of the whole answer span, as it may totally flip the meaning."
         },
         {
             "input": "review: The keyboard fits well for my hands and my wrists receive less pressure using it. The mouse is stable and comfortable to use for big hands. Recommend.\nquestion: How comfortable is the mouse?",
@@ -51,7 +51,8 @@
         "Pegah Alipoormolabashi"
     ],
     "Categories": [
-        "Answer Generation"
+        "Text Span Selection",
+        "Question Answering -> Contextual Question Answering -> Extractive"
     ],
     "Instances": [
         {
@@ -4107,5 +4108,22 @@
                 "but the security is really good there"
             ]
         }
+    ],
+    "Domains": [
+        "Reviews -> Movies",
+        "Reviews -> TripAdvisor",
+        "Reviews -> Restaurants",
+        "Reviews -> Movies",
+        "Reviews -> Books",
+        "Reviews -> Electronics and Grocery"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
     ]
 }

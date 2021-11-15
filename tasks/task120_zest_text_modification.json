@@ -3,48 +3,61 @@
         "Yeganeh Kordi"
     ],
     "Source": [
-        "zest (https:\/\/github.com\/allenai\/zest)"
+        "zest (https://github.com/allenai/zest)"
     ],
     "Categories": [
+        "Question Generation -> Contextual Question Generation",
         "Text Modification"
     ],
-    "Definition": "Please change the meaning of the following question by changing as few words as possible. Create different questions that have the same output format (i.e. if the question has a yes/no answer so should yours, etc.). \n\nEmphasis & Caution: 1. All the questions should be written so that your new question will have a different answer than the original would, 2. Leave the original sentence the same as much as possible, changing only the meaning of the question, 3. Try to write specific questions that are not too easy. 4. Make your questions specific and concrete rather than open-ended or subjective, 5. Your questions should change the original question as little as possible, 6. All the words that are fully capitalized are keywords. For example, in What wars did PRESIDENT initiate as president, the word PRESIDENT is a keyword (which will be replaced with a name of an actual president). Hence, in the modification this keyword should also be used as fully capitalized.",
+    "Definition": "Please change the meaning of the following question by changing as few words as possible. Create different questions with the same output format (i.e., if the given question has a yes/no answer, so should yours, etc.). The questions are in three domains: presidents, national parks, and dogs. Each question has a keyword indicating its domain. Keywords are \"this national park\", \"this dog breed\", and \"this president\", which will be replaced with the name of an actual president, a national park, or a breed of dog. Hence, in the changed questions, this keyword should also be used the same way. \n\nEmphasis & Caution: 1. All the questions should be written so that your new question will have a different answer than the original, 2. Leave the original sentence the same as much as possible, changing only the meaning of the question, 3. Try to write specific questions that are not too easy. 4. Make your questions specific and concrete rather than open-ended or subjective(e.g., questions that can be answered differently by different people.), 5. Your questions should change the original question as little as possible.",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Domains": [
+        "Government and Politics"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
     "Positive Examples": [
         {
-            "input": "What wars did PRESIDENT initiate as president",
-            "output": "What executive orders did PRESIDENT initiate?",
+            "input": "What wars did this president initiate as president?",
+            "output": "What executive orders did this president initiate?",
             "explanation": "This question changed the answer only by changing the phrase \"wars\"."
         },
         {
-            "input": "What wars did PRESIDENT initiate as president",
-            "output": "What wars were already happening when PRESIDENT was inagurated?",
+            "input": "What wars did this president initiate as president?",
+            "output": "What wars were already happening when this president was inagurated?",
             "explanation": "This question changes the answer, it's close to the original question, and it keeps the formatting"
         },
         {
-            "input": "Did PRESIDENT serve in the military?",
-            "output": "Did PRESIDENT serve more than one term?",
-            "explanation": "This question only changes the phrase \"the military\", amd keeps the formatting."
+            "input": "Did this president serve in the military?",
+            "output": "Did this president serve more than one term?",
+            "explanation": "This question only changes the phrase \"the military\", and keeps the formatting."
         }
     ],
     "Negative Examples": [
         {
-            "input": "Did PRESIDENT serve in the military?",
-            "output": "What wars did PRESIDENT initiate as president",
+            "input": "Did president serve in the military?",
+            "output": "What wars did president initiate as president",
             "explanation": "The question should have the same type of answer as the original, which is a yes/no question."
         },
         {
-            "input": "Did PRESIDENT serve in the military?",
-            "output": "Did PRESIDENT have a grandparent in politics?",
+            "input": "Did president serve in the military?",
+            "output": "Did president have a grandparent in politics?",
             "explanation": "This question changes too much from the original question."
         },
         {
-            "input": "What wars did PRESIDENT initiate as president",
-            "output": "Did PRESIDENT serve in the military?",
+            "input": "What wars did president initiate as president?",
+            "output": "Did president serve in the military?",
             "explanation": "The question should have the same type of answer as the original - a specific output, not a yes/no question."
         },
         {
-            "input": "What wars did PRESIDENT initiate as president",
-            "output": "What kind of hobbies does PRESIDENT have?",
+            "input": "What wars did president initiate as president?",
+            "output": "What kind of hobbies does president have?",
             "explanation": "This is a bad question because This question changes too much from the original question."
         }
     ],

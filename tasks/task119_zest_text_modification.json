@@ -3,49 +3,61 @@
         "Yeganeh Kordi"
     ],
     "Source": [
-        "zest (https:\/\/github.com\/allenai\/zest)"
+        "zest (https://github.com/allenai/zest)"
     ],
     "Categories": [
-        "Text Modification"
+        "Text Modification -> Paraphrasing"
     ],
-    "Definition": "Paraphrase the given questions to have different wording. Your paraphrased questions should have the same answer as the original question. Try to change the sentence as much as possible using synonyms and/or rearranging the structure of the sentence. \nThings to avoid: 1. Do not write questions that compare or involve multiple domains, 2. Do not write open-ended or subjective questions. \n\nEmphasis & Caution: 1. Make your questions specific and concrete, 2. The question should have the same type of answer as the original, 3.All the words that are fully capitalized are keywords. For example, in What wars did PRESIDENT initiate as president, the word PRESIDENT is a keyword (which will be replaced with a name of an actual president). Hence, in the paraphrasing this keyword should also be used as fully capitalized.",
+    "Definition": "Paraphrase the given questions to have different wording. Your paraphrased questions should have the same answer as the original question. Try to change the sentence as much as possible using synonyms and/or rearranging the structure of the sentence. The questions are in three domains: presidents, national parks, and dogs. Each question has a keyword indicating its domain. Keywords are \"this national park\", \"this dog breed\", and \"this president\", which will be replaced with the name of an actual president, a national park, or a breed of dog. Hence, in paraphrasing, this keyword should also be used the same way. \nThings to avoid: 1. Do not write questions that compare or involve multiple domains, 2. Do not write open-ended or subjective questions(e.g., questions that can be answered differently by different people.) \n\n Emphasis & Caution: 1. Make your questions specific and concrete, 2. Your question should have the same type of answer as the original question(e.g., if the question is extractive, the paraphrased question should be extractive as well.)",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Domains": [
+        "Government and Politics"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
     "Positive Examples": [
         {
-            "input": "Does DOG BREED have short legs compared to the rest of its body?",
-            "output": "Is the body of DOG BREED large compared to its legs?",
+            "input": "Does this dog breed have short legs compared to the rest of its body?",
+            "output": "Is the body of this dog breed large compared to its legs?",
             "explanation": "The output has the same meaning and same answer as the original sentence. We changed the first sentence by rearranging the structure of the sentence. "
         },
         {
-            "input": "Does DOG BREED have short legs compared to the rest of its body?",
-            "output": "Are the legs of DOG BREED proportionally shorter than its body?",
+            "input": "Does this dog breed have short legs compared to the rest of its body?",
+            "output": "Are the legs of this dog breed proportionally shorter than its body?",
             "explanation": "The original sentence is changed by using synonyms and rearranging the structure of the sentence. Also, it keeps the meaning and answer."
         },
         {
-            "input": "Does DOG BREED have an average life expectancy range that can be more than 12 years?",
-            "output": "Does the DOG BREED have a lifespan of more than 12 years?",
+            "input": "Does this dog breed have an average life expectancy range that can be more than 12 years?",
+            "output": "Does this dog breed have a lifespan of more than 12 years?",
             "explanation": "The \"average life expectancy range\" is replaced with \"lifespan\" and it keeps the original meaning. "
         }
     ],
     "Negative Examples": [
         {
-            "input": "Does DOG BREED get taller than 2 feet?",
-            "output": "Is DOG BREED tall?",
+            "input": "Does this dog breed get taller than 2 feet?",
+            "output": "Is this dog breed tall?",
             "explanation": "This question is vague because it didn't specify tallness. Make your questions specific and concrete rather than open-ended or subjective."
         },
         {
-            "input": "Is DOG BREED bigger than 12 inches?",
-            "output": "Which DOG BREED is the biggest?",
-            "explanation": "Do not write questions that compare domains"
+            "input": "Is this dog breed bigger than 12 inches?",
+            "output": "Is this dog breed the biggest?",
+            "explanation": "Do not write questions that compare domains."
         },
         {
-            "input": "Does DOG BREED have short legs compared to the rest of its body?",
-            "output": "What size legs does DOG BREED have?",
-            "explanation": "The question should have the same type of answer as the original"
+            "input": "Does this dog breed have short legs compared to the rest of its body?",
+            "output": "What size legs does this dog breed have?",
+            "explanation": "The question should have the same type of answer as the original."
         },
         {
-            "input": "Does DOG BREED have short legs compared to the rest of its body?",
-            "output": "Does DOG BREED have a large muzzle?",
-            "explanation": "This is a bad question because the question should have the same meaning as the given sentence"
+            "input": "Does this dog breed have short legs compared to the rest of its body?",
+            "output": "Does this dog breed have a large muzzle?",
+            "explanation": "This is a bad question because the question should have the same meaning as the given sentence."
         }
     ],
     "Instances": [
@@ -479,12 +491,6 @@
             "input": "Does this dog breed get along well with other dogs?",
             "output": [
                 "Is this dog breed friendly with other dogs?"
-            ]
-        },
-        {
-            "input": "Does this dog breed have an average life expectancy range that can be more than 12 years?",
-            "output": [
-                "Does this dog breed usually live for 12 years or more?"
             ]
         },
         {
