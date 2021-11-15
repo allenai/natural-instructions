@@ -5,14 +5,15 @@ from os import listdir
 from os.path import isfile, join
 import argparse
 import re
+import numpy as np
 
 # get the range of task you want to test, if specified in the command line
 parser = argparse.ArgumentParser()
 parser.add_argument("--task",
-                        nargs=2,
-                        type=int,
-                        required=False,
-                        help="The range of task you want to parse")
+                    nargs=2,
+                    type=int,
+                    required=False,
+                    help="The range of task you want to parse")
 
 args = parser.parse_args()
 if args.task:
@@ -20,8 +21,7 @@ if args.task:
     assert begin_task_number > 0, "begin task must be greater than 0"
     assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
 
-
-# make sure that there is no json file in the root directory 
+# make sure that there is no json file in the root directory
 root_files = [f for f in listdir('.') if isfile(join('.', f))]
 for f in root_files:
     assert '.json' not in f, 'looks like there is a JSON file in the main directory???'
@@ -57,6 +57,7 @@ def extract_categories(string):
     """
     return set(re.findall(r'`(.*?)`', string))
 
+
 def dict_raise_on_duplicates(ordered_pairs):
     """Reject duplicate keys."""
     d = {}
@@ -66,6 +67,15 @@ def dict_raise_on_duplicates(ordered_pairs):
         else:
             d[k] = v
     return d
+
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    '''
+    return [ atoi(c) for c in re.split(r'(\d+)', text) ]
 
 # TODO: over time, these should be moved up to "expected_keys"
 suggested_keys = [
@@ -93,7 +103,7 @@ for i in range(0, len(task_numbers) - 1):
     assert num1 <= num2, f"ERROR: looks like `{num1}` appears before `{num2}`."
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-files.sort()
+files.sort(key=natural_keys)
 
 # make sure anything that gets mentioned in the readme, correspond to an actual file
 task_names = [line.split("`")[1] for line in task_readme_lines if '`' in line]
@@ -105,7 +115,15 @@ for name in task_names:
 if not args.task:
     begin_task_number, end_task_number = 1, len(files)
 
-for file in files[begin_task_number:end_task_number+1]:
+# TODO: over time, we need to fix the skew of the following tasks
+skew_exclusion = [
+    "050", "838", "1489", "150", "265", "027", "202", "200", "903"
+]
+
+contributor_stats = {}
+categories_stats = {}
+domain_stats = {}
+for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
         assert '.json' in file, 'the file does not seem to have a .json in it: ' + file
@@ -135,10 +153,18 @@ for file in files[begin_task_number:end_task_number+1]:
             for c in data['Categories']:
                 if c not in all_categories:
                     print(f'⚠️ WARNING: Did not find category `{c}`')
+
+                if c not in categories_stats:
+                    categories_stats[c] = 0
+                categories_stats[c] += 1
+
             if "Domains" in data:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
+                    if c not in domain_stats:
+                        domain_stats[c] = 0
+                    domain_stats[c] += 1
 
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
@@ -184,6 +210,22 @@ for file in files[begin_task_number:end_task_number+1]:
                         raise Exception(f" * Looks like we have a repeated example here! "
                                         f"Merge outputs before removing duplicates. :-/ \n {instance}")
 
+            # make sure classes are balanced
+            output = [ins['output'] for ins in instances]
+            # flattens the nested arrays
+            outputs = sum(output, [])
+            value, counts = np.unique(outputs, return_counts=True)
+            
+            task_number = file.replace("task", "").split("_")[0]
+            # TODO: drop this condition 
+            if int(task_number) not in [902, 903]:
+                assert len(value) > 1, f" Looks like all the instances are mapped to a single output: {value}"
+
+            if task_number not in skew_exclusion and len(value) < 15:
+                norm_counts = counts / counts.sum()
+                entropy = -(norm_counts * np.log(norm_counts) / np.log(len(value))).sum()
+                assert entropy > 0.8, f"Looks like this task is heavily skewed!\n   📋 classes: {value} \n   📋 Norm_counts: {norm_counts} \n   📋 Distribution of classes: {counts} \n   📊 entropy= {entropy}"
+
             # Make sure there are no examples repeated across instances and positive examples
             examples = [ex['input'] for ex in data['Positive Examples']]
             for instance in instances:
@@ -211,4 +253,25 @@ for file in files[begin_task_number:end_task_number+1]:
                 raise Exception(f' * Looks like the task name `{true_file}` is repeated in '
                                 f'the task file `tasks/README.md`')
 
+            for c in data['Contributors']:
+                if c not in contributor_stats:
+                    contributor_stats[c] = 0
+                contributor_stats[c] += 1
+
 print("Did not find any errors! ✅")
+
+print("\n  - - - - - Contributors >= 25 tasks - - - - - ")
+keyvalues = sorted(list(contributor_stats.items()), key=lambda x: x[1])
+for author, count in keyvalues:
+    if count >= 25:
+        print(f" ✍️ {author} -> {count}")
+
+print("\n  - - - - - Category Stats - - - - - ")
+keyvalues = sorted(list(categories_stats.items()), key=lambda x: x[1])
+for cat, count in categories_stats.items():
+    print(f" ✍️ {cat} -> {count}")
+
+print("\n  - - - - - Domain Stats - - - - - ")
+keyvalues = sorted(list(domain_stats.items()), key=lambda x: x[1])
+for dom, count in domain_stats.items():
+    print(f" ✍️ {dom} -> {count}")

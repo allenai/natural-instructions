@@ -6,9 +6,13 @@
         "Story Cloze (Dataset - https://cs.rochester.edu/nlp/rocstories/) (Paper - https://aclanthology.org/2020.latechclfl-1.19.pdf)"
     ],
     "Categories": [
-        "Sentence Generation"
+        "Text Generation -> Sentence Generation -> Story Completion",
+        "Order Detection"        
     ],
-    "Definition": "In this task, you're given four sentences of a story written in natural language in which one part is missing. Your job is to predict the position and missing part of the story and return in the following format: <position, missing part>.",
+    "Definition": "In this task, you're given four sentences of a story written in natural language in which one part is missing. Your job is to predict the position and missing part of the story and return in the following format: position, missing part. The missing part is a sentence that completes the story, and the position is the number of the missing sentence in the new story.",
+    "Domains": [
+        "Story"
+    ],
     "Positive Examples": [
         {
             "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: He is happy now.",
@@ -16,24 +20,29 @@
             "explanation": "As mentioned in fourth sentence, he is happy now; so, the incident turned a new leaf to Rick's life."
         },
         {
+            "input": "Sentence1: Nya had been asked on a paintball trip with friends. Sentence2: But she went anyways, hoping to have fun. Sentence3: She shot paintballs at her friends and laughed the whole time. Sentence4: She loved it so much she planned a trip for the next week.",
+            "output": "2, She was nervous about going.",
+            "explanation": "The \"But\" in the sentence2 indicates that there is a missing part there. \"She was nervous about going.\" can complete this story."
+        },
+        {
             "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was.",
             "output": "5, Sarah decided that she preferred her home over Europe.",
-            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different in Europe; she must have preferred her home over Europe."
+            "explanation": "The story seems to be coherent, so the missing part should be the last sentence. As mentioned in fourth sentence, Sarah didn't like that everything was different in Europe; she must have preferred her home over Europe."
         }
     ],
     "Negative Examples": [
         {
             "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: He is happy now.",
             "output": "The incident caused him to turn a new leaf.",
-            "explanation": "Output should also provide position of missing part."
+            "explanation": "The output should also provide position of missing part."
         },
         {
-            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n (A) The brownies are so delicious Laverne eats two of them. (B) Laverne doesn't go to her friend's party.",
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious.",
             "output": "She decides to bake a batch of brownies., 2",
             "explanation": "In the output, position of missing part should be first and then missing part."
         },
         {
-            "input": "Sentence1: She had finally saved enough for the trip. Sentence2: She landed in Spain and traveled east across the continent. Sentence3: She didn't like how different everything was. Sentencce4: Sarah decided that she preferred her home over Europe.",
+            "input": "Sentence1: She had finally saved enough for the trip. Sentence2: She landed in Spain and traveled east across the continent. Sentence3: She didn't like how different everything was. Sentence4: Sarah decided that she preferred her home over Europe.",
             "output": "0, Sarah had been dreaming of visiting Europe for years.",
             "explanation": "Missing part is correct, however, output should return 1 for the position because position (index) of missing part starts from 1 (not 0)."
         }
@@ -289,12 +298,6 @@
             "input": "Sentence1: Nya had been asked on a paintball trip with friends. Sentence2: She was nervous about going. Sentence3: But she went anyways, hoping to have fun. Sentence4: She loved it so much she planned a trip for the next week.",
             "output": [
                 "4, She shot paintballs at her friends and laughed the whole time."
-            ]
-        },
-        {
-            "input": "Sentence1: Nya had been asked on a paintball trip with friends. Sentence2: But she went anyways, hoping to have fun. Sentence3: She shot paintballs at her friends and laughed the whole time. Sentence4: She loved it so much she planned a trip for the next week.",
-            "output": [
-                "2, She was nervous about going."
             ]
         },
         {
