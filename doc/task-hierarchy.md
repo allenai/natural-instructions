@@ -7,6 +7,7 @@
 - If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
 - `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
+- `Aspect Detection`
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`   
@@ -60,6 +61,7 @@
   - `Hypernym Discovery`
 - `Intent Detection`
 - `Language Identification`
+  - `Language Identification -> Verification`
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
@@ -89,6 +91,7 @@
       - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Abstractive`
       - `Question Answering -> Incorrect Answer Generation -> Contextual Question Answering -> Extractive`
     - `Question Answering -> Incorrect Answer Generation -> Multiple Choice Answer Generation`
+	- `Question Answering -> Incorrect Answer Generation -> Open Question Answering`
   - `Question Answering -> Multihop Question Answering`
   - `Question Answering -> Multiple Choice Question Answering`
   - `Question Answering -> Open Question Answering`
@@ -109,12 +112,14 @@
   - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
     - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
     - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+    - `Reasoning -> Commonsense Reasoning -> Social Situations`
     - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
   - `Reasoning -> Counterfactual Reasoning`
   - `Reasoning -> Cross-document Reasoning`
   - `Reasoning -> Deductive Reasoning`
   - `Reasoning -> Discrete Reasoning`
-    - `Reasoning -> Ethics`
+  - `Reasoning -> Ethics`
+  - `Reasoning -> Factual Reasoning`
   - `Reasoning -> Logical Reasoning`
       - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
@@ -139,12 +144,15 @@
 - `Semantic Parsing`
   - `Semantic Parsing -> Program Synthesis`
 - `Sentiment Analysis`
+  - `Sentiment Analysis -> Review Analysis`
   - `Sentiment Analysis -> Sentiment Classification`
   - `Sentiment Analysis -> Entity-based Classification`: Predict the sentiment towards a given entity in the text
   - `Sentiment Analysis -> Entity-based Verification`: Verify whether the predicted sentiment towards a given entity in the text is right or wrong
 - `Sorting`
 - `Stance Detection`
-- `Stance Detection -> Classification`
+  - `Stance Detection -> Classification`
+    - `Stance Detection -> Classification -> Verification`
+	    - `Stance Detection -> Classification -> Stance Correction Verification`
 - `Structured Text Processing`
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
@@ -174,6 +182,7 @@
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
+  - `Text Generation -> Explanation Generation`
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation`
       - `Text Generation -> Long Text Generation -> Contextual Text Generation -> Process Description`
@@ -185,6 +194,8 @@
   - `Text Generation -> Sentence Generation`
       - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
+	  - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
+	    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
     - `Text Generation -> Sentence Generation -> Completion -> Story`
@@ -197,6 +208,7 @@
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
+    - `Text Generation -> Word Generation -> Preposition Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
   - `Text Modification -> Style Transfer`
@@ -255,7 +267,6 @@
 * `Electrical Engineering`
 * `Fiction`
 * `Food`
-  * `Food -> Reviews`
 * `Formal Fallacy`
 * `Game`
   * `Game -> Card Game`
@@ -288,7 +299,6 @@
 * `Medicine`
 * `Moral Scenarios`
 * `Movies`
-  * `Movies -> Reviews`
 * `Music`
 * `Narrative`
   * `Narrative -> Personal Narratives`
@@ -307,7 +317,6 @@
   * `Public Places -> Restaurants`
 * `Public Relations`
 * `Scientific Research Papers`
-* `School Science Textbooks`
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
