@@ -67,6 +67,7 @@
   - `Mathematics -> Combinatorics`
   - `Mathematics -> Geometry`
   - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
+  - `Mathematics -> Statistics`
 - `Motivation Detection`
 - `Named Entity Recognition`
 - `Order Detection`
@@ -136,7 +137,7 @@
     - `Reasoning -> Textual Entailment -> Analogical Reasoning`
     - `Reasoning -> Textual Entailment -> Deductive Reasoning`
     - `Reasoning -> Textual Entailment -> Inductive Reasoning`
-- `Relation Prediction`
+- `Relation Prediction` : Predict the relation between entities(relations are not given in the task)
 - `Relevancy Estimation`
 - `Role Labelling`
 - `Semantic Parsing`
@@ -200,8 +201,10 @@
         - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
+	  - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
-        - `Text Generation -> Summary Generation`
+  - `Text Generation -> Subject Generation`
+  - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
