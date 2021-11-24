@@ -96,6 +96,7 @@
       - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+    - `Question Generation -> Question Composition -> Generate from Answers`
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
