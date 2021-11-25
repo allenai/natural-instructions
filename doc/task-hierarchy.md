@@ -314,6 +314,7 @@
 * `Mathematics`
 * `Medical Genetics`
 * `Medicine`
+* `Miscellaneous`
 * `Moral Scenarios`
 * `Movies`
 * `Music`
