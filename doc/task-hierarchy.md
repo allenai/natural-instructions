@@ -314,6 +314,7 @@
 * `Movies`
 * `Music`
 * `Narrative`
+  * `Narrative -> Everyday Events`
 * `Natural Science`
   * `Natural Science -> School Science Textbooks`
 * `News`
