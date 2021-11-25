@@ -27,9 +27,9 @@
     - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
     - `Classification -> Verification -> Paraphrase Verification`: Verify whether a text sequence is a paraphrase of another text sequence
     - `Classification -> Verification -> Translation Verification`: Verify whether a text sequence is a translation of another text sequence
-- `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
-- `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
-- `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
+  - `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
+  - `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
+  - `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
 - `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
@@ -59,6 +59,10 @@
   - `Abuse Detection -> Hate Speech Detection`
   - `Hypernym Discovery`
 - `Intent Detection`
+- `Identification`
+  - `Identification -> Object Identification`
+  - `Identification -> Predicate Identification`
+  - `Identification -> Subject Identification`
 - `Language Identification`
   - `Language Identification -> Verification`
 - `Mathematics`
@@ -127,10 +131,12 @@
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
     - `Reasoning -> Reasoning with Symbols`
+  - `Reasoning -> Quantitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
+  - `Reasoning -> Scientific Reasoning`
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
     - `Reasoning -> Textual Entailment -> Abductive Reasoning`
@@ -190,6 +196,7 @@
 		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> Story Completion`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Number Generation`
   - `Text Generation -> Sentence Generation`
       - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
@@ -203,7 +210,6 @@
       - `Text Generation -> Structured Text Generation -> Code`
 	  - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
-  - `Text Generation -> Subject Generation`
   - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
@@ -225,6 +231,7 @@
 
 ## Domain
 * `Accounting`
+* `Animals`
 * `Anthropology`
 * `Architecture`
 * `Art`
@@ -259,6 +266,7 @@
   * `Computer Science -> Machine Learning`
 * `Computer Security`
 * `Conference`
+* `Countries`
 * `Debatepedia`
 * `Dialogue`
 * `Econometrics`
