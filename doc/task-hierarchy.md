@@ -85,6 +85,7 @@
 - `Parts-of-speech`
   - `Parts-of-speech -> Recognition`
 - `Question Answering`
+  - `Question Answering -> Supporting Fact Generation` 
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
   - `Question Answering -> Contextual Question Answering`
@@ -109,6 +110,8 @@
     - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+    - `Question Generation -> Question Composition -> Generate from Answers`
+  - `Question Generation -> Clarifying Question`: Ask clarifying question to get more information
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
@@ -186,7 +189,9 @@
   - `Text Comparison -> Semantic Textual Similarity`
   - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Style Comparison`
+  - `Text Comparison -> Entailment`
 - `Text Generation`
+  - `Text Generation -> Rhyme Generation`
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
@@ -246,9 +251,6 @@
   * `Biology -> Virology`
 * `Books`
 * `Business Ethics`
-* `Captions`
-    * `Captions -> Image Captions`
-    * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -258,7 +260,9 @@
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
 * `Commonsense`
-  * `Commonsense -> Image Caption`
+  * `Commonsense -> Captions`
+    * `Commonsense -> Captions -> Image Captions`
+    * `Commonsense -> Captions -> Video Captions`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
