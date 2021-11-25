@@ -65,12 +65,10 @@
 	      - `Detection -> Stance Detection -> Classification -> Stance Correction Verification`
   - `Detection -> Usage Detection`
 - `Dialogue Understanding`
+  - `Dialogue Understanding -> User Query Understanding`
 - `Document Understanding`
 - `Ethical Judgement`
 - `Proofreading`
-  - `Proofreading -> Coherence Detection`
-	- `Proofreading -> Coherence Detection -> Word Replacement`
-	- `Proofreading -> Coherence Detection -> Sentence Swapping`
   - `Proofreading -> Grammar Error`
     -  `Proofreading -> Grammar Error -> Grammar Error Correction`
     -  `Proofreading -> Grammar Error -> Grammar Error Detection`
@@ -89,10 +87,9 @@
   - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
 - `Named Entity Recognition`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
-	- `Order Generation -> Arrangement`
-- `Paraphrasing`
 - `Parts-of-speech`
 - `Question Answering`
+  - `Question Answering -> Supporting Fact Generation` 
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
   - `Question Answering -> Contextual Question Answering`
@@ -114,9 +111,11 @@
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
       - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
-    - `Question Generation -> Contextual Question Generation -> Open Question Generation`
+      - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
+    - `Question Generation -> Question Composition -> Generate from Answers`
+  - `Question Generation -> Clarifying Question`: Ask clarifying question to get more information
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
@@ -138,7 +137,7 @@
       - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
-    - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+    - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
     - `Reasoning -> Reasoning with Symbols`
@@ -170,9 +169,6 @@
   - `Structured Text Processing -> Code Summarization`
   - `Structured Text Processing -> Operation on Primitives`
     - `Structured Text Processing -> Operation on Primitives: e.g. An unambiguous transform `is applied to all inputs e.g. subtract 1 from every element in the list
-      - `Structured Text Processing -> Operation on Primitives -> List`
-	    - `Structured Text Processing -> Operation on Primitives -> List -> Numbers`
-		- `Structured Text Processing -> Operation on Primitives -> List -> String`
       - `Structured Text Processing -> Operation on Primitives -> Numbers`
         - `Structured Text Processing -> Operation on Primitives -> Numbers -> List`
         - `Structured Text Processing -> Operation on Primitives -> Numbers -> Set`
@@ -184,9 +180,15 @@
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
 - `Text Comparison`
+  - `Text Comparison -> Meaning Comparison`
+  - `Text Comparison -> Relevancy Comparison`
+    - `Text Comparison -> Relevancy Comparison -> Irrelevant Selection`
+  - `Text Comparison -> Semantic Textual Similarity`
   - `Text Comparison -> Sentiment Comparison`
   - `Text Comparison -> Style Comparison`
+  - `Text Comparison -> Entailment`
 - `Text Generation`
+  - `Text Generation -> Rhyme Generation`
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
@@ -199,6 +201,8 @@
 		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> Story Completion`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Semi-Structured Text Generation`
+    - `Text Generation -> Semi-Structured Text Generation -> Named Entity Generation`
   - `Text Generation -> Sentence Generation`
       - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
@@ -211,11 +215,12 @@
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
       - `Text Generation -> Structured Text Generation -> Table`
-        - `Text Generation -> Summary Generation`
+  - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
+    - `Text Generation -> Word Generation -> Transition Word Generation`
     - `Text Generation -> Word Generation -> Preposition Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
@@ -243,9 +248,6 @@
   * `Biology -> Virology`
 * `Books`
 * `Business Ethics`
-* `Captions`
-    * `Captions -> Image Captions`
-    * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -255,7 +257,9 @@
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
 * `Commonsense`
-  * `Commonsense -> Image Caption`
+  * `Commonsense -> Captions`
+    * `Commonsense -> Captions -> Image Captions`
+    * `Commonsense -> Captions -> Video Captions`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
@@ -309,11 +313,12 @@
 * `Movies`
 * `Music`
 * `Narrative`
+  * `Narrative -> Personal Narratives`
+  * `Narrative -> Everyday Events`
 * `Natural Science`
   * `Natural Science -> School Science Textbooks`
 * `News`
 * `Nutrition`
-* `Personal Narratives`
 * `Philosophy`
 * `Physics`
 * `Pop Culture`
@@ -334,9 +339,9 @@
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
-  * `Social Media -> Reddit`
   * `Social Media -> Twitter`
   * `Social Media -> Text Message`
+  * `Social Media -> Reddit`
 * `Sociology`
 * `Sports`
   * `Sports -> NFL`
@@ -347,6 +352,7 @@
 * `Web`
 * `Wikipedia`
 * `World Religions`
+* `Miscellaneous`
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
