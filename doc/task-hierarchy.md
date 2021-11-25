@@ -36,6 +36,7 @@
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
 - `Dialogue Understanding`
+  - `Dialogue Understanding -> User Query Understanding`
 - `Document Understanding`
 - `Emotion Detection`
 - `Entity Detection`
@@ -97,6 +98,7 @@
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
     - `Question Generation -> Question Composition -> Generate from Answers`
+  - `Question Generation -> Clarifying Question`: Ask clarifying question to get more information
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
@@ -295,11 +297,12 @@
 * `Movies`
 * `Music`
 * `Narrative`
+  * `Narrative -> Personal Narratives`
+  * `Narrative -> Everyday Events`
 * `Natural Science`
   * `Natural Science -> School Science Textbooks`
 * `News`
 * `Nutrition`
-* `Personal Narratives`
 * `Philosophy`
 * `Physics`
 * `Pop Culture`
@@ -333,6 +336,7 @@
 * `Web`
 * `Wikipedia`
 * `World Religions`
+* `Miscellaneous`
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
