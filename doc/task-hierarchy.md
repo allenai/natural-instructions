@@ -35,6 +35,9 @@
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
+- `Detection`
+  - `Detection -> Abuse Detection`
+    - `Detection -> Abuse Detection -> Hate Speech Detection`
 - `Dialogue Understanding`
   - `Dialogue Understanding -> User Query Understanding`
 - `Document Understanding`
@@ -185,6 +188,7 @@
 		- `Text Generation -> Long Text Generation -> Contextual Text Generation -> Story Generation -> Story Completion`
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
+  - `Text Generation -> Number Generation`
   - `Text Generation -> Semi-Structured Text Generation`
     - `Text Generation -> Semi-Structured Text Generation -> Named Entity Generation`
   - `Text Generation -> Sentence Generation`
@@ -227,6 +231,7 @@
 * `Astronomy`
 * `Biology`
   * `Biology -> Anatomy`
+  * `Biology -> Bioinformatics`
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
@@ -269,6 +274,7 @@
 * `Geography`
 * `Global Facts`
 * `Government and Politics`
+* `Healthcare`
 * `History`
   * `History -> 9/11 Reports`
   * `History -> European History`
@@ -316,7 +322,7 @@
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
-  * `Reviews -> Restaurants `
+  * `Reviews -> Restaurants`
   * `Reviews -> Movies`
   * `Reviews -> Books`
   * `Reviews -> Electronics and Grocery`
