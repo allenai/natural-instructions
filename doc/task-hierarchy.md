@@ -18,6 +18,7 @@
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
     - `Classification -> Verification -> Clarification Verification`
+    - `Classification -> Verification -> Entailment Verification`
     - `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
@@ -27,14 +28,16 @@
     - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
     - `Classification -> Verification -> Paraphrase Verification`: Verify whether a text sequence is a paraphrase of another text sequence
     - `Classification -> Verification -> Translation Verification`: Verify whether a text sequence is a translation of another text sequence
-- `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
-- `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
-- `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
+  - `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
+  - `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
+  - `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
 - `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
+- `Detection`
+  - `Detection -> Relation Detection`
 - `Dialogue Understanding`
   - `Dialogue Understanding -> User Query Understanding`
 - `Document Understanding`
@@ -195,9 +198,11 @@
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
     - `Text Generation -> Sentence Generation -> Completion -> Story`
-        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+      - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+    - `Text Generation -> Sentence Generation -> Summary Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
+      - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
   - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
@@ -293,6 +298,7 @@
 * `Mathematics`
 * `Medical Genetics`
 * `Medicine`
+* `Miscellaneous`
 * `Moral Scenarios`
 * `Movies`
 * `Music`
@@ -336,7 +342,6 @@
 * `Web`
 * `Wikipedia`
 * `World Religions`
-* `Miscellaneous`
 
 ## Language
 - https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes: ISO language name column
