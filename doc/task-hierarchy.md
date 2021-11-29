@@ -21,7 +21,8 @@
     - `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
-		- `Classification -> Verification -> Relevance Verification -> Title Verification`
+	  - `Classification -> Verification -> Relevance Verification -> Title Verification`
+	  - `Classification -> Verification -> Relevance Verification -> Category Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
     - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
@@ -205,6 +206,8 @@
     - `Text Generation -> Long Text Generation -> Paragraph Generation`
     - `Text Generation -> Long Text Generation -> Review Generation`
   - `Text Generation -> Number Generation`
+  - `Text Generation -> Semi-Structured Text Generation`
+    - `Text Generation -> Semi-Structured Text Generation -> Named Entity Generation`
   - `Text Generation -> Sentence Generation`
       - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
@@ -223,6 +226,8 @@
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
+    - `Text Generation -> Word Generation -> Abbrevation Generation`
+    - `Text Generation -> Word Generation -> Transition Word Generation`
     - `Text Generation -> Word Generation -> Preposition Generation`
 - `Text Modification`
   - `Text Modification -> Structured Text Modification`
