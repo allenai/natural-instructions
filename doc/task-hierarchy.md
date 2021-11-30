@@ -10,10 +10,9 @@
 - `Aspect Detection`
 - `Author Identification`
 - `Unnatural Language Processing`
-  - `Unnatural Language Processing -> Question Answering`   
-- `Character Detection`  
+  - `Unnatural Language Processing -> Question Answering`     
 - `Classification`
-  - `Classification -> Verification`: Verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not
+  - `Classification -> Verification`: Verification is a sub-category for classification and it is used for binary classifications. The task is to verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not. In the verification tasks, the potential outputs are mentioned in the definition.
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
@@ -22,8 +21,8 @@
     - `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
-	  - `Classification -> Verification -> Relevance Verification -> Title Verification`
-	  - `Classification -> Verification -> Relevance Verification -> Category Verification`
+      - `Classification -> Verification -> Relevance Verification -> Title Verification`
+      - `Classification -> Verification -> Relevance Verification -> Category Verification`
     - `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
     - `Classification -> Verification -> Summary Verification`
     - `Classification -> Verification -> Statement Verification`: Verify whether a text statement is true or false
@@ -37,18 +36,41 @@
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
-- `Detection`
+- `Detection` : Detection tasks are to find something in the input. For example, detecting the entities in a review or detecting the motivation of something. Detection tasks can be text generation, classification, etc., and possible outputs are not necessarily given in the definition.
+  - `Detection -> Abuse Detection`
+    - `Detection -> Abuse Detection -> Hate Speech Detection`
+  - `Detection -> Affect Detection`
+  - `Detection -> Capability Detection`
+  - `Detection -> Cause Detection`
+  - `Detection -> Character Detection`
+  - `Detection -> Desire Detection`
+  - `Detection -> Emotion Detection`
+    - `Detection -> Emotion Detection -> Classification`
+  - `Detection -> Entity Detection`
+    - `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
+    - `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
+    - `Detection -> Entity Detection -> Sentient Entity Detection`
+  - `Detection -> Fake News Detection`
+  - `Detection -> Intent Detection`
+  - `Detection -> Location Detection`
+  - `Detection -> Motivation Detection`
+  - `Detection -> Need Detection`
+  - `Detection -> Obstacle Detection`
+  - `Detection -> Order Detection`
+    - `Detection -> Order Detection -> Incorrect Order Detection`
+  - `Detection -> Reaction Detection`
+    - `Detection -> Reaction Detection -> Emotional Reaction Detection`
+  - `Detection -> Relation Detection`
+  - `Detection -> Stance Detection`
+    - `Detection -> Stance Detection -> Classification`
+      - `Detection -> Stance Detection -> Classification -> Verification`
+	      - `Detection -> Stance Detection -> Classification -> Stance Correction Verification`
+  - `Detection -> Usage Detection`
   - `Detection -> Entity Detection`
   - `Detection -> Relation Detection`
 - `Dialogue Understanding`
 - `Document Understanding`
-- `Emotion Detection`
-  - `Emotion Detection -> Classification`
-- `Entity Detection`
-  - `Entity Detection -> Extractive`: Extract the entity from the text (open set)
-  - `Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
 - `Ethical Judgement`
-- `Fake News Detection`
 - `Proofreading`
   - `Proofreading -> Coherence Detection`
 	- `Proofreading -> Coherence Detection -> Word Replacement`
@@ -60,10 +82,7 @@
     -  `Proofreading -> Spelling Error -> Spelling Error Detection`
   - `Proofreading -> Word Order Error`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
-- `Abuse Detection`
-  - `Abuse Detection -> Hate Speech Detection`
-  - `Hypernym Discovery`
-- `Intent Detection`
+- `Hypernym Discovery`
 - `Identification`
   - `Identification -> Object Identification`
   - `Identification -> Predicate Identification`
@@ -77,15 +96,11 @@
   - `Mathematics -> Geometry`
   - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
   - `Mathematics -> Statistics`
-- `Motivation Detection`
 - `Named Entity Recognition`
-- `Order Detection`
-  - `Order Detection -> Incorrect Order Detection`
 - `Order Generation`: Given a set of elements, find their order (e.g. monotonically increasing/decreasing numbers, increasing/decreasing size in case of objects)
 	- `Order Generation -> Arrangement`
 - `Paraphrasing`
 - `Parts-of-speech`
-  - `Parts-of-speech -> Recognition`
 - `Question Answering`
   - `Question Answering -> Supporting Fact Generation` 
   - `Question Answering -> Numerical Question Answering`
@@ -142,6 +157,7 @@
   - `Reasoning -> Quantitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
+  - `Reasoning -> Reasoning on Objects`
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
   - `Reasoning -> Scientific Reasoning`
@@ -162,10 +178,6 @@
   - `Sentiment Analysis -> Entity-based Classification`: Predict the sentiment towards a given entity in the text
   - `Sentiment Analysis -> Entity-based Verification`: Verify whether the predicted sentiment towards a given entity in the text is right or wrong
 - `Sorting`
-- `Stance Detection`
-  - `Stance Detection -> Classification`
-    - `Stance Detection -> Classification -> Verification`
-	    - `Stance Detection -> Classification -> Stance Correction Verification`
 - `Structured Text Processing`
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
