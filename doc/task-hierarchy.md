@@ -18,6 +18,7 @@
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
     - `Classification -> Verification -> Clarification Verification`
+    - `Classification -> Verification -> Entailment Verification`
     - `Classification -> Verification -> Ethical Verification`
     - `Classification -> Verification -> Grammar Verification`: Verify whether a text is grammatical
     - `Classification -> Verification -> Relevance Verification`
@@ -216,10 +217,11 @@
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
     - `Text Generation -> Sentence Generation -> Completion -> Story`
-        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+      - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+    - `Text Generation -> Sentence Generation -> Summary Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
-	  - `Text Generation -> Structured Text Generation -> List`
+	    - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
   - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
