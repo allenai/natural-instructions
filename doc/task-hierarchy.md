@@ -301,6 +301,7 @@
   * `Economics -> Macroeconomics`
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
+* `English Exams`
 * `Fiction`
 * `Food`
 * `Formal Fallacy`
