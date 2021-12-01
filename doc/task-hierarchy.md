@@ -39,7 +39,7 @@
 - `Detection` : Detection tasks are to find something in the input. For example, detecting the entities in a review or detecting the motivation of something. Detection tasks can be text generation, classification, etc., and possible outputs are not necessarily given in the definition.
   - `Detection -> Abuse Detection`
     - `Detection -> Abuse Detection -> Hate Speech Detection`
-  - `Detection -> Abuse Detection -> Stereotype Detection`
+  - `Detection -> Stereotype Detection`
   - `Detection -> Affect Detection`
   - `Detection -> Capability Detection`
   - `Detection -> Cause Detection`
@@ -279,10 +279,10 @@
   * `Code -> Repo`
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
+* `Captions`
+  * `Captions -> Image Captions`
+  * `Captions -> Video Captions`
 * `Commonsense`
-  * `Commonsense -> Captions`
-    * `Commonsense -> Captions -> Image Captions`
-    * `Commonsense -> Captions -> Video Captions`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
