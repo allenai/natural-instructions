@@ -39,6 +39,7 @@
 - `Detection` : Detection tasks are to find something in the input. For example, detecting the entities in a review or detecting the motivation of something. Detection tasks can be text generation, classification, etc., and possible outputs are not necessarily given in the definition.
   - `Detection -> Abuse Detection`
     - `Detection -> Abuse Detection -> Hate Speech Detection`
+  - `Detection -> Abuse Detection -> Stereotype Detection`
   - `Detection -> Affect Detection`
   - `Detection -> Capability Detection`
   - `Detection -> Cause Detection`
