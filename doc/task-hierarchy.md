@@ -355,7 +355,6 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
-* `Scientific Research Papers`
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
@@ -363,6 +362,7 @@
   * `Reviews -> Movies`
   * `Reviews -> Books`
   * `Reviews -> Electronics and Grocery`
+* `Scientific Research Papers`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
@@ -373,6 +373,7 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `Stereotypes`
 * `Story`
 * `TED Talks`
 * `US Foreign Policy`
