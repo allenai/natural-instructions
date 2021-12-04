@@ -6,14 +6,15 @@
         "Measuring Massive Multitask Language Understanding tasks"
     ],
     "Categories": [
-        "Question Answering"
+        "Question Answering -> Multiple Choice Question Answering",
+        "Question Answering -> Contextual Question Answering -> Missing Knowledge"
     ],
     "Definition": "You are given a question on college chemistry. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"), out of which only one is correct. You need to answer the question by selecting the correct option. You should only answer with the choice letter, not the whole answer.",
     "Positive Examples": [
         {
-            "input": "The rate, r, of a zero-order chemical reaction A → B can be expressed as which of the following?\n(A)r = k ln[A] (B)r = k [A]^2 (C)r = k [A] (D)r = k",
+            "input": "The rate, r, of a zero-order chemical reaction A \u2192 B can be expressed as which of the following?\n(A)r = k ln[A] (B)r = k [A]^2 (C)r = k [A] (D)r = k",
             "output": "D",
-            "explanation": "The rate, r, of a zero-order chemical reaction A → B can be expressed as r = k"
+            "explanation": "The rate, r, of a zero-order chemical reaction A \u2192 B can be expressed as r = k"
         },
         {
             "input": "Infrared (IR) spectroscopy is useful for determining certain aspects of the structure of organic molecules because\n(A)all molecular bonds absorb IR radiation (B)IR peak intensities are related to molecular mass (C)most organic functional groups absorb in a characteristic region of the IR spectrum (D)each element absorbs at a characteristic wavelength",
@@ -23,7 +24,7 @@
     ],
     "Negative Examples": [
         {
-            "input": "The rate, r, of a zero-order chemical reaction A → B can be expressed as which of the following?\n(A)r = k ln[A] (B)r = k [A]^2 (C)r = k [A] (D)r = k",
+            "input": "The rate, r, of a zero-order chemical reaction A \u2192 B can be expressed as which of the following?\n(A)r = k ln[A] (B)r = k [A]^2 (C)r = k [A] (D)r = k",
             "output": "I dont know.",
             "explanation": "Do not generate anything else apart from one of the following characters: 'A', 'B, 'C', 'D'."
         },
@@ -31,6 +32,11 @@
             "input": "Infrared (IR) spectroscopy is useful for determining certain aspects of the structure of organic molecules because\n(A)all molecular bonds absorb IR radiation (B)IR peak intensities are related to molecular mass (C)most organic functional groups absorb in a characteristic region of the IR spectrum (D)each element absorbs at a characteristic wavelength",
             "output": "B,C",
             "explanation": "Only one of the following options ('A', 'B', 'C', 'D') is allowed to be the answer. Multiple options can not be correct. The correct answer here would have been 'C'."
+        },
+        {
+            "input": "What is the NMR frequency of 31P in a 20.0 T magnetic field?\n(A)54.91 MHz (B)239.2 MHz (C)345.0 MHz (D)2167 MHz",
+            "output": "D",
+            "explanation": "The NMR frequency of 31P in a 20.0 T magnetic field is 345.0 MHz, hence the correct answer should be 'C'."
         }
     ],
     "Instances": [
@@ -38,12 +44,6 @@
             "input": "The 13C spectrum of which isomer of C6H14 has lines with five distinct chemical shifts?\n(A)hexane (B)2-methylpentane (C)3-methylpentane (D)2,3-dimethylbutane",
             "output": [
                 "B"
-            ]
-        },
-        {
-            "input": "What is the NMR frequency of 31P in a 20.0 T magnetic field?\n(A)54.91 MHz (B)239.2 MHz (C)345.0 MHz (D)2167 MHz",
-            "output": [
-                "C"
             ]
         },
         {
@@ -89,13 +89,13 @@
             ]
         },
         {
-            "input": "Which of the following must be true about a binary liquid mixture that obeys Raoult’s law?\nI. The partial pressure of each component at equilibrium is proportional to its mole fraction in the liquid mixture.\nII. The volume of the mixture is equal to the sum of the volumes of each component before mixing.\nIII. Intermolecular interactions in the mixture are identical to intermolecular interactions in the pure components.\n(A)I only (B)III only (C)I and III only (D)I, II, and III",
+            "input": "Which of the following must be true about a binary liquid mixture that obeys Raoult\u2019s law?\nI. The partial pressure of each component at equilibrium is proportional to its mole fraction in the liquid mixture.\nII. The volume of the mixture is equal to the sum of the volumes of each component before mixing.\nIII. Intermolecular interactions in the mixture are identical to intermolecular interactions in the pure components.\n(A)I only (B)III only (C)I and III only (D)I, II, and III",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "3 Cl−(aq) + 4 CrO_4^2−(aq) + 23 H+(aq) → 3 HClO2(aq) + 4 Cr3+(aq) + 10 H2O(l). In the reaction shown above, Cl−(aq) behaves as\n(A)an acid (B)a base (C)a catalyst (D)a reducing agent",
+            "input": "3 Cl\u2212(aq) + 4 CrO_4^2\u2212(aq) + 23 H+(aq) \u2192 3 HClO2(aq) + 4 Cr3+(aq) + 10 H2O(l). In the reaction shown above, Cl\u2212(aq) behaves as\n(A)an acid (B)a base (C)a catalyst (D)a reducing agent",
             "output": [
                 "D"
             ]
@@ -107,7 +107,7 @@
             ]
         },
         {
-            "input": "Which one of the following statements is true:\n(A)Large and positive g shifts are observed when the LUMO – HOMO gap is small and λ is positive. (B)Large deviations in g occurs when the energy difference between the SOMO and lowest lying excited state is large. (C)A large deviation of g from ge is expected when λ is large and the energy difference between the SOMO and the lowest lying excited state is small. (D)A small deviation of g from ge is expected when λ is small and positive.",
+            "input": "Which one of the following statements is true:\n(A)Large and positive g shifts are observed when the LUMO \u2013 HOMO gap is small and \u03bb is positive. (B)Large deviations in g occurs when the energy difference between the SOMO and lowest lying excited state is large. (C)A large deviation of g from ge is expected when \u03bb is large and the energy difference between the SOMO and the lowest lying excited state is small. (D)A small deviation of g from ge is expected when \u03bb is small and positive.",
             "output": [
                 "C"
             ]
@@ -125,13 +125,13 @@
             ]
         },
         {
-            "input": "What is the strength (B1) of a 13C 90° pulse of duration 1 μs?\n(A)3.72 mT (B)5.18 mT (C)17.0 mT (D)23.3 mT",
+            "input": "What is the strength (B1) of a 13C 90\u00b0 pulse of duration 1 \u03bcs?\n(A)3.72 mT (B)5.18 mT (C)17.0 mT (D)23.3 mT",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "In the vibrational-rotational spectrum of a diatomic molecule, the R-branch of the spectrum is the result of which of the following transitions?\n(A)ΔJ = 0; Δu = 0 (B)ΔJ = 1; Δu = 0 (C)ΔJ = 2; Δu = 0 (D)ΔJ = 1; Δu = 1",
+            "input": "In the vibrational-rotational spectrum of a diatomic molecule, the R-branch of the spectrum is the result of which of the following transitions?\n(A)\u0394J = 0; \u0394u = 0 (B)\u0394J = 1; \u0394u = 0 (C)\u0394J = 2; \u0394u = 0 (D)\u0394J = 1; \u0394u = 1",
             "output": [
                 "D"
             ]
@@ -155,7 +155,7 @@
             ]
         },
         {
-            "input": "Which of the following is classified as a conjugate acid-base pair?\n(A)HCl / NaOH (B)H3O+ / H2O (C)O2 / H2O (D)H+ / Cl−",
+            "input": "Which of the following is classified as a conjugate acid-base pair?\n(A)HCl / NaOH (B)H3O+ / H2O (C)O2 / H2O (D)H+ / Cl\u2212",
             "output": [
                 "B"
             ]
@@ -167,31 +167,31 @@
             ]
         },
         {
-            "input": "On the basis of oxidation-reduction potential, which of the following is most likely to occur?\n(A)Al(s) + 3 NaNO3(aq) 3 Na(s) + Al(NO3)3(aq) (B)Zn(s) + 2 Ag(NO3)(aq) → 2 Ag(s) + Zn(NO3)2(aq) (C)Pb(s) + Ca(NO3)2(aq) → Ca(s) + Pb(NO3)2(aq) (D)Pb(s) + 2 LiNO3(aq) → 2 Li(s) + Pb(NO3)2(aq)",
+            "input": "On the basis of oxidation-reduction potential, which of the following is most likely to occur?\n(A)Al(s) + 3 NaNO3(aq) 3 Na(s) + Al(NO3)3(aq) (B)Zn(s) + 2 Ag(NO3)(aq) \u2192 2 Ag(s) + Zn(NO3)2(aq) (C)Pb(s) + Ca(NO3)2(aq) \u2192 Ca(s) + Pb(NO3)2(aq) (D)Pb(s) + 2 LiNO3(aq) \u2192 2 Li(s) + Pb(NO3)2(aq)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Predict the number of lines in the EPR spectrum of a solution of 13C-labelled methyl radical (13CH3•), assuming the lines do not overlap.\n(A)4 (B)3 (C)6 (D)24",
+            "input": "Predict the number of lines in the EPR spectrum of a solution of 13C-labelled methyl radical (13CH3\u2022), assuming the lines do not overlap.\n(A)4 (B)3 (C)6 (D)24",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "What is the magnetic moment of 205Tl?\n(A)[ɣ (205TI = 1.569 x 108 T-1 s-1, I = ½] (B)0.717 x 10^-26 J T-1 (C)0.827 x 10^-26 J T-1 (D)1.433 x 10^-26 J T-1",
+            "input": "What is the magnetic moment of 205Tl?\n(A)[\u0263 (205TI = 1.569 x 108 T-1 s-1, I = \u00bd] (B)0.717 x 10^-26 J T-1 (C)0.827 x 10^-26 J T-1 (D)1.433 x 10^-26 J T-1",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Calculate spin density on the central carbon atom of malonic acid radical (•CH(COOH)2) if the hyperfine value for the α-hydrogen atom is 21.9 G.\n(A)0.95 (B)0.85 (C)0.15 (D)0.65",
+            "input": "Calculate spin density on the central carbon atom of malonic acid radical (\u2022CH(COOH)2) if the hyperfine value for the \u03b1-hydrogen atom is 21.9 G.\n(A)0.95 (B)0.85 (C)0.15 (D)0.65",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Which of the following experimental observations were explained by Planck’s quantum theory?\n(A)Blackbody radiation curves (B)Emission spectra of diatomic molecules (C)Electron diffraction patterns (D)Temperature dependence of reaction rates",
+            "input": "Which of the following experimental observations were explained by Planck\u2019s quantum theory?\n(A)Blackbody radiation curves (B)Emission spectra of diatomic molecules (C)Electron diffraction patterns (D)Temperature dependence of reaction rates",
             "output": [
                 "A"
             ]
@@ -215,13 +215,13 @@
             ]
         },
         {
-            "input": "A single line is seen in the 31P spectrum of a solution of sodium phosphate. The 31P chemical shifts of H2PO4‾ and HPO42– are 3.42 ppm and 5.82 ppm respectively. What is the chemical shift when the pH of the solution equals the pKa of H2PO4‾?\n(A)3.41 ppm (B)3.98 ppm (C)4.33 ppm (D)4.62 ppm",
+            "input": "A single line is seen in the 31P spectrum of a solution of sodium phosphate. The 31P chemical shifts of H2PO4\u203e and HPO42\u2013 are 3.42 ppm and 5.82 ppm respectively. What is the chemical shift when the pH of the solution equals the pKa of H2PO4\u203e?\n(A)3.41 ppm (B)3.98 ppm (C)4.33 ppm (D)4.62 ppm",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "At 25°C, the maximum amount of PbI2 that can be dissolved in 1.00 L of pure water is 1.0 mmol. Assuming complete dissociation, the solubility product, K_sp, for lead iodide at 25°C is\n(A)1.0 × 10^−3 (B)1.0 × 10^−6 (C)1.0 × 10^−9 (D)4.0 × 10^−9",
+            "input": "At 25\u00b0C, the maximum amount of PbI2 that can be dissolved in 1.00 L of pure water is 1.0 mmol. Assuming complete dissociation, the solubility product, K_sp, for lead iodide at 25\u00b0C is\n(A)1.0 \u00d7 10^\u22123 (B)1.0 \u00d7 10^\u22126 (C)1.0 \u00d7 10^\u22129 (D)4.0 \u00d7 10^\u22129",
             "output": [
                 "D"
             ]
@@ -317,7 +317,7 @@
             ]
         },
         {
-            "input": "The dissociation energy for a hydrogen-bromine bond is defined as the change in enthalpy, DH, for which of the following reactions?\n(A)2 HBr(g) → H2(g) + Br2(l) (B)HBr(g) → H+(g) + Br−(g) (C)H(g) + Br(g) → HBr(g) (D)HBr(g) → H(g) + Br(g)",
+            "input": "The dissociation energy for a hydrogen-bromine bond is defined as the change in enthalpy, DH, for which of the following reactions?\n(A)2 HBr(g) \u2192 H2(g) + Br2(l) (B)HBr(g) \u2192 H+(g) + Br\u2212(g) (C)H(g) + Br(g) \u2192 HBr(g) (D)HBr(g) \u2192 H(g) + Br(g)",
             "output": [
                 "D"
             ]
@@ -353,7 +353,7 @@
             ]
         },
         {
-            "input": "The Rydberg equation v = R_H(1/n_1^2 - 1/n_2^2) accurately predicts the UV-visible emission spectrum of the hydrogen atom. A form of the Rydberg equation may also be used to predict the UV-visible emission for all of the following EXCEPT\n(A)hydride ion, H− (B)deuterium atom, D (C)tritium atom, T (D)helium cation, He+",
+            "input": "The Rydberg equation v = R_H(1/n_1^2 - 1/n_2^2) accurately predicts the UV-visible emission spectrum of the hydrogen atom. A form of the Rydberg equation may also be used to predict the UV-visible emission for all of the following EXCEPT\n(A)hydride ion, H\u2212 (B)deuterium atom, D (C)tritium atom, T (D)helium cation, He+",
             "output": [
                 "A"
             ]
@@ -377,13 +377,13 @@
             ]
         },
         {
-            "input": "Calculate the relative occupancies of the α and β spin energy levels for a radical species with g = 2.05, at L- and W-band frequencies (take TS = 300 K).\n(A)Nα/Nβ = 0.9800 at L-band; Nα/Nβ = 0.9509 at W-band (B)Nα/Nβ = 0.9950 at L-band; Nα/Nβ = 0.9609 at W-band (C)Nα/Nβ = 0.9910 at L-band; Nα/Nβ = 0.9709 at W-band (D)Nα/Nβ = 0.9850 at L-band; Nα/Nβ = 0.9809 at W-band",
+            "input": "Calculate the relative occupancies of the \u03b1 and \u03b2 spin energy levels for a radical species with g = 2.05, at L- and W-band frequencies (take TS = 300 K).\n(A)N\u03b1/N\u03b2 = 0.9800 at L-band; N\u03b1/N\u03b2 = 0.9509 at W-band (B)N\u03b1/N\u03b2 = 0.9950 at L-band; N\u03b1/N\u03b2 = 0.9609 at W-band (C)N\u03b1/N\u03b2 = 0.9910 at L-band; N\u03b1/N\u03b2 = 0.9709 at W-band (D)N\u03b1/N\u03b2 = 0.9850 at L-band; N\u03b1/N\u03b2 = 0.9809 at W-band",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "What is the maximum value of the z-component of the spin angular momentum of 43Ca? [I = 7⁄2]\n(A)3.691 x 10^-34 J s (B)4.185 x 10^-34 J s (C)5.493 x 10^-34 J s (D)8.370 x 10^-34 J s",
+            "input": "What is the maximum value of the z-component of the spin angular momentum of 43Ca? [I = 7\u20442]\n(A)3.691 x 10^-34 J s (B)4.185 x 10^-34 J s (C)5.493 x 10^-34 J s (D)8.370 x 10^-34 J s",
             "output": [
                 "A"
             ]
@@ -431,13 +431,13 @@
             ]
         },
         {
-            "input": "The equilibrium populations of the 1H energy levels of a molecule are nα = nαeq and nβ = nβeq. What are the populations after a 5.0 μs pulse when B1 = 4.697 mT?\n(A)nα = nβeq and nβ = nαeq (B)nα = nαeq and nβ = nβeq (C)nα = ½(nαeq + nβeq) and nβ = ½(nαeq + nβeq) (D)nα = nαeq + nβeq and nβ = nαeq + nβeq",
+            "input": "The equilibrium populations of the 1H energy levels of a molecule are n\u03b1 = n\u03b1eq and n\u03b2 = n\u03b2eq. What are the populations after a 5.0 \u03bcs pulse when B1 = 4.697 mT?\n(A)n\u03b1 = n\u03b2eq and n\u03b2 = n\u03b1eq (B)n\u03b1 = n\u03b1eq and n\u03b2 = n\u03b2eq (C)n\u03b1 = \u00bd(n\u03b1eq + n\u03b2eq) and n\u03b2 = \u00bd(n\u03b1eq + n\u03b2eq) (D)n\u03b1 = n\u03b1eq + n\u03b2eq and n\u03b2 = n\u03b1eq + n\u03b2eq",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "The strongest base in liquid ammonia is\n(A)NH3 (B)NH2− (C)NH4+ (D)N2H4",
+            "input": "The strongest base in liquid ammonia is\n(A)NH3 (B)NH2\u2212 (C)NH4+ (D)N2H4",
             "output": [
                 "B"
             ]
@@ -461,13 +461,13 @@
             ]
         },
         {
-            "input": "The rotational correlation time of a spherical object of radius r immersed in a liquid with viscosity η is given by the Stokes equation: τc = 4πηr3/3kBT. A small molecule with relative molecular mass Mr = 100 in water at 298 K has τc = 50 ps. Assuming that Mr is proportional to the molecular volume, estimate τc for a small protein with Mr = 8400.\n(A)420 ns (B)42 ns (C)4.2 ns (D)420 ps",
+            "input": "The rotational correlation time of a spherical object of radius r immersed in a liquid with viscosity \u03b7 is given by the Stokes equation: \u03c4c = 4\u03c0\u03b7r3/3kBT. A small molecule with relative molecular mass Mr = 100 in water at 298 K has \u03c4c = 50 ps. Assuming that Mr is proportional to the molecular volume, estimate \u03c4c for a small protein with Mr = 8400.\n(A)420 ns (B)42 ns (C)4.2 ns (D)420 ps",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "The magnetic moment (μI) of an unknown nuclide is 2.884 x 10^-27 J T-1. Given the nuclear spin is known to be 1, identify the unknown nuclide.\n(A)14N (B)2H (C)19F (D)6Li",
+            "input": "The magnetic moment (\u03bcI) of an unknown nuclide is 2.884 x 10^-27 J T-1. Given the nuclear spin is known to be 1, identify the unknown nuclide.\n(A)14N (B)2H (C)19F (D)6Li",
             "output": [
                 "B"
             ]
@@ -491,7 +491,7 @@
             ]
         },
         {
-            "input": "When the following equation is balanced, which of the following is true?\n__ MnO4− + __ I− + __ H+ <-> __ Mn2+ + __ IO3− + __ H2O\n(A)The I− : IO3− ratio is 3:1. (B)The MnO4- : I- ratio is 6:5. (C)The MnO4- : Mn2+ ratio is 3:1. (D)The H+ : I− ratio is 2:1.",
+            "input": "When the following equation is balanced, which of the following is true?\n__ MnO4\u2212 + __ I\u2212 + __ H+ <-> __ Mn2+ + __ IO3\u2212 + __ H2O\n(A)The I\u2212 : IO3\u2212 ratio is 3:1. (B)The MnO4- : I- ratio is 6:5. (C)The MnO4- : Mn2+ ratio is 3:1. (D)The H+ : I\u2212 ratio is 2:1.",
             "output": [
                 "B"
             ]
@@ -503,7 +503,7 @@
             ]
         },
         {
-            "input": "The equation ΔH = ΔU + PΔV is applicable\n(A)always (B)only for constant pressure processes (C)only for constant temperature processes (D)only for constant volume processes",
+            "input": "The equation \u0394H = \u0394U + P\u0394V is applicable\n(A)always (B)only for constant pressure processes (C)only for constant temperature processes (D)only for constant volume processes",
             "output": [
                 "B"
             ]
@@ -521,7 +521,7 @@
             ]
         },
         {
-            "input": "Exact solutions of the Schrödinger equation CANNOT be obtained for a\n(A)simple harmonic oscillator (B)particle in a one-dimensional box (C)rigid rotor (D)helium atom",
+            "input": "Exact solutions of the Schr\u00f6dinger equation CANNOT be obtained for a\n(A)simple harmonic oscillator (B)particle in a one-dimensional box (C)rigid rotor (D)helium atom",
             "output": [
                 "D"
             ]
@@ -533,31 +533,31 @@
             ]
         },
         {
-            "input": "For EDTA titrations, the analyte solution and the titrant solution are both buffered at the same pH for which of the following reasons?\nI. The conditional formation constant is affected by pH.\nII. The fraction of EDTA in the fully deprotonated Y4− form varies with pH.\nIII. When EDTA reacts to form a metal complex, H+ is a product in most cases.\n(A)I only (B)I and II only (C)I and III only (D)I, II, and III",
+            "input": "For EDTA titrations, the analyte solution and the titrant solution are both buffered at the same pH for which of the following reasons?\nI. The conditional formation constant is affected by pH.\nII. The fraction of EDTA in the fully deprotonated Y4\u2212 form varies with pH.\nIII. When EDTA reacts to form a metal complex, H+ is a product in most cases.\n(A)I only (B)I and II only (C)I and III only (D)I, II, and III",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "The amplitude of a free induction decay drops to 25% of its initial intensity after 1.0 s. Assuming exponential relaxation and Ω = 0, determine the value of T2.\n(A)0.721 s (B)0.750 s (C)1.386 s (D)1.661 s",
+            "input": "The amplitude of a free induction decay drops to 25% of its initial intensity after 1.0 s. Assuming exponential relaxation and \u03a9 = 0, determine the value of T2.\n(A)0.721 s (B)0.750 s (C)1.386 s (D)1.661 s",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "In fluorescence spectroscopy, the quantum yield (Φ_f) is best defined as the\n(A)rate of fluorescence emission (B)number of photons emitted (C)number of photons emitted, divided by the number of photons absorbed (D)number of excitation photons impinging on the sample, divided by the number of photons absorbed",
+            "input": "In fluorescence spectroscopy, the quantum yield (\u03a6_f) is best defined as the\n(A)rate of fluorescence emission (B)number of photons emitted (C)number of photons emitted, divided by the number of photons absorbed (D)number of excitation photons impinging on the sample, divided by the number of photons absorbed",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "A silyl radical bearing an Si-H· fragment has a g value of 2.0033 and a pair of lines separated by 15.5 MHz. Express the splitting in units of mT, Gauss and cm-1.\n(A)15.5 MHz = 11.104 mT = 27.201 Gauss = 0.862 x 10^-4 cm-1 (B)15.5 MHz = 7.352 mT = 10.104 Gauss = 18.39 x 10^-4 cm-1 (C)15.5 MHz = 1.55 mT = 0.562 Gauss = 31.0 x 10^-4 cm-1 (D)15.5 MHz = 0.553 mT = 5.530 Gauss = 5.17 x 10^-4 cm-1",
+            "input": "A silyl radical bearing an Si-H\u00b7 fragment has a g value of 2.0033 and a pair of lines separated by 15.5 MHz. Express the splitting in units of mT, Gauss and cm-1.\n(A)15.5 MHz = 11.104 mT = 27.201 Gauss = 0.862 x 10^-4 cm-1 (B)15.5 MHz = 7.352 mT = 10.104 Gauss = 18.39 x 10^-4 cm-1 (C)15.5 MHz = 1.55 mT = 0.562 Gauss = 31.0 x 10^-4 cm-1 (D)15.5 MHz = 0.553 mT = 5.530 Gauss = 5.17 x 10^-4 cm-1",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Calculate the spin angular momentum of 43Ca. [I = 7⁄2]\n(A)2.166 x 10^-34 J s (B)3.691 x 10^-34 J s (C)4.185 x 10^-34 J s (D)5.493 x 10^-34 J s",
+            "input": "Calculate the spin angular momentum of 43Ca. [I = 7\u20442]\n(A)2.166 x 10^-34 J s (B)3.691 x 10^-34 J s (C)4.185 x 10^-34 J s (D)5.493 x 10^-34 J s",
             "output": [
                 "C"
             ]
@@ -569,7 +569,7 @@
             ]
         },
         {
-            "input": "During a delay, spins with an offset frequency Ω = 250 rad s-1 precess through an angle of 60°. How long is the delay?\n(A)4.19 ms (B)26.3 ms (C)240 ms (D)1510 ms",
+            "input": "During a delay, spins with an offset frequency \u03a9 = 250 rad s-1 precess through an angle of 60\u00b0. How long is the delay?\n(A)4.19 ms (B)26.3 ms (C)240 ms (D)1510 ms",
             "output": [
                 "A"
             ]
@@ -581,13 +581,13 @@
             ]
         },
         {
-            "input": "All proteins absorb electromagnetic radiation of wavelength around 190 nm, which corresponds to a π → π* excitation in the protein molecule. In which region of the spectrum is this wavelength found?\n(A)X-ray (B)Ultraviolet (C)Visible (D)Infrared",
+            "input": "All proteins absorb electromagnetic radiation of wavelength around 190 nm, which corresponds to a \u03c0 \u2192 \u03c0* excitation in the protein molecule. In which region of the spectrum is this wavelength found?\n(A)X-ray (B)Ultraviolet (C)Visible (D)Infrared",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Calculate the magnetic moment (μI) of a 13C nucleus.\n(A)6.1445 x 10^-27 J T-1 (B)3.1445 x 10^-27 J T-1 (C)9.1445 x 10^-27 J T-1 (D)1.1445 x 10^-28 J T-1",
+            "input": "Calculate the magnetic moment (\u03bcI) of a 13C nucleus.\n(A)6.1445 x 10^-27 J T-1 (B)3.1445 x 10^-27 J T-1 (C)9.1445 x 10^-27 J T-1 (D)1.1445 x 10^-28 J T-1",
             "output": [
                 "C"
             ]
@@ -599,13 +599,13 @@
             ]
         },
         {
-            "input": "Predict the hyperfine value for the EPR spectrum of fully deuteriated benzene radical anion C6D6•-.\n(A)0.375 mT (B)3.75 G (C)2.35 mT (D)0.58 G",
+            "input": "Predict the hyperfine value for the EPR spectrum of fully deuteriated benzene radical anion C6D6\u2022-.\n(A)0.375 mT (B)3.75 G (C)2.35 mT (D)0.58 G",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "An electron and a proton are placed in a 1.0 T magnetic field at 300 K. What is the ratio of the equilibrium polarizations: |pe / pH| ?\n(A)[|ɣe| = 1.761 x 10^11 T^-1 s^-1] (B)820 (C)658 (D)329",
+            "input": "An electron and a proton are placed in a 1.0 T magnetic field at 300 K. What is the ratio of the equilibrium polarizations: |pe / pH| ?\n(A)[|\u0263e| = 1.761 x 10^11 T^-1 s^-1] (B)820 (C)658 (D)329",
             "output": [
                 "B"
             ]
@@ -617,7 +617,7 @@
             ]
         },
         {
-            "input": "What is the ratio of line intensities in the EPR spectrum of the t-Bu radical (CH3)3C•?\n(A)1:19:36:84:126:126:84:36:19:1 (B)1:9:36:84:126:126:84:36:9:1 (C)1:9:35:82:120:120:82:35:9:1 (D)1:8:28:56:70:56:28:8:1",
+            "input": "What is the ratio of line intensities in the EPR spectrum of the t-Bu radical (CH3)3C\u2022?\n(A)1:19:36:84:126:126:84:36:19:1 (B)1:9:36:84:126:126:84:36:9:1 (C)1:9:35:82:120:120:82:35:9:1 (D)1:8:28:56:70:56:28:8:1",
             "output": [
                 "D"
             ]
@@ -635,7 +635,7 @@
             ]
         },
         {
-            "input": "Estimate the β-hyperfine value for the cyclobutyl radical (C4H7•) assuming the radical is flat and the HCH angle is 115°.\n(A)4.6 mT (B)27 G (C)5.4 mT (D)3.8 mT",
+            "input": "Estimate the \u03b2-hyperfine value for the cyclobutyl radical (C4H7\u2022) assuming the radical is flat and the HCH angle is 115\u00b0.\n(A)4.6 mT (B)27 G (C)5.4 mT (D)3.8 mT",
             "output": [
                 "A"
             ]
@@ -647,7 +647,7 @@
             ]
         },
         {
-            "input": "The Henry’s law constant for CO2 dissolved in water at 25°C is 30.0 atm M^−1. The concentration of dissolved CO2 in a vessel pressurized with 2.0 atm of CO2 is\n(A)1.5 M (B)0.15 M (C)0.067 M (D)0.015 M",
+            "input": "The Henry\u2019s law constant for CO2 dissolved in water at 25\u00b0C is 30.0 atm M^\u22121. The concentration of dissolved CO2 in a vessel pressurized with 2.0 atm of CO2 is\n(A)1.5 M (B)0.15 M (C)0.067 M (D)0.015 M",
             "output": [
                 "C"
             ]
@@ -659,7 +659,7 @@
             ]
         },
         {
-            "input": "The 1H spectrum of a mixture of dimethylsulphoxide (DMSO) and acetonitrile (AN) contains lines with relative intensities α and 3α, respectively. What is the ratio of the two concentrations, [DMSO]:[AN]?\n(A)1:1 (B)1:3 (C)1:6 (D)2:3",
+            "input": "The 1H spectrum of a mixture of dimethylsulphoxide (DMSO) and acetonitrile (AN) contains lines with relative intensities \u03b1 and 3\u03b1, respectively. What is the ratio of the two concentrations, [DMSO]:[AN]?\n(A)1:1 (B)1:3 (C)1:6 (D)2:3",
             "output": [
                 "C"
             ]
@@ -677,7 +677,7 @@
             ]
         },
         {
-            "input": "Predict the number of lines in the EPR spectrum of a solution of dimethylnitroxide (CH3)2NO• assuming the lines do not overlap.\n(A)21 (B)3 (C)7 (D)24",
+            "input": "Predict the number of lines in the EPR spectrum of a solution of dimethylnitroxide (CH3)2NO\u2022 assuming the lines do not overlap.\n(A)21 (B)3 (C)7 (D)24",
             "output": [
                 "B"
             ]
@@ -689,7 +689,7 @@
             ]
         },
         {
-            "input": "A PO3- radical produces a pair of lines separated by 280 MHz with giso = 2.005. Calculate the expected resonant field positions of both lines in the X-band EPR spectrum (ν = 9.5 GHz).\n(A)Bres for mI = -½ = 325.0 mT; Bres for mI = +½ = 335.0 mT (B)Bres for mI = -½ = 123.5 mT; Bres for mI = +½ = 124.5 mT. (C)Bres for mI = -½ = 333.5 mT; Bres for mI = +½ = 343.5 mT. (D)Bres for mI = -½ = 0.218 mT; Bres for mI = +½ = 0.418 mT.",
+            "input": "A PO3- radical produces a pair of lines separated by 280 MHz with giso = 2.005. Calculate the expected resonant field positions of both lines in the X-band EPR spectrum (\u03bd = 9.5 GHz).\n(A)Bres for mI = -\u00bd = 325.0 mT; Bres for mI = +\u00bd = 335.0 mT (B)Bres for mI = -\u00bd = 123.5 mT; Bres for mI = +\u00bd = 124.5 mT. (C)Bres for mI = -\u00bd = 333.5 mT; Bres for mI = +\u00bd = 343.5 mT. (D)Bres for mI = -\u00bd = 0.218 mT; Bres for mI = +\u00bd = 0.418 mT.",
             "output": [
                 "D"
             ]
