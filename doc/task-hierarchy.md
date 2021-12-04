@@ -65,6 +65,7 @@
     - `Detection -> Stance Detection -> Classification`
       - `Detection -> Stance Detection -> Classification -> Verification`
 	      - `Detection -> Stance Detection -> Classification -> Stance Correction Verification`
+  - `Detection -> Toxicity Detection`
   - `Detection -> Usage Detection`
   - `Detection -> Entity Detection`
   - `Detection -> Relation Detection`
