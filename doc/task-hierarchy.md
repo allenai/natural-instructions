@@ -39,8 +39,9 @@
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
 - `Detection` : Detection tasks are to find something in the input. For example, detecting the entities in a review or detecting the motivation of something. Detection tasks can be text generation, classification, etc., and possible outputs are not necessarily given in the definition.
-  - `Detection -> Abuse Detection`
-    - `Detection -> Abuse Detection -> Hate Speech Detection`
+  - `Detection -> Toxicity Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection -> Hate Speech Detection`
   - `Detection -> Affect Detection`
   - `Detection -> Capability Detection`
   - `Detection -> Cause Detection`
@@ -68,7 +69,6 @@
     - `Detection -> Stance Detection -> Classification`
       - `Detection -> Stance Detection -> Classification -> Verification`
 	      - `Detection -> Stance Detection -> Classification -> Stance Correction Verification`
-  - `Detection -> Toxicity Detection`
   - `Detection -> Usage Detection`
   - `Detection -> Entity Detection`
   - `Detection -> Relation Detection`
@@ -188,7 +188,7 @@
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
   - `Structured Text Processing -> Code Summarization`
-    - `Structured Text Processing -> Operation on Primitives`: e.g. An unambiguous transform `is applied to all inputs e.g. subtract 1 from every element in the list
+    - `Structured Text Processing -> Operation on Primitives`: e.g. An unambiguous transform is applied to all inputs e.g. subtract 1 from every element in the list
       - `Structured Text Processing -> Operation on Primitives -> List`
 	    - `Structured Text Processing -> Operation on Primitives -> List -> Numbers`
 		- `Structured Text Processing -> Operation on Primitives -> List -> String`
