@@ -6,7 +6,8 @@
         "Measuring Massive Multitask Language Understanding tasks"
     ],
     "Categories": [
-        "Question Answering"
+        "Question Answering -> Multiple Choice Question Answering",
+        "Question Answering -> Contextual Question Answering -> Missing Knowledge"
     ],
     "Definition": "You are given a question on high school biology. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"), out of which only one is correct. You need to answer the question by selecting the correct option. You should only answer with the choice letter, not the whole answer.",
     "Positive Examples": [
@@ -31,6 +32,11 @@
             "input": "Which of the changes below following the start codon in an mRNA would most likely have the greatest deleterious effect?\n(A)a deletion of a single nucleotide (B)a deletion of a nucleotide triplet (C)a single nucleotide substitution of the nucleotide occupying the first codon position (D)a single nucleotide substitution of the nucleotide occupying the third codon position",
             "output": "B,C",
             "explanation": "Only one of the following options ('A', 'B', 'C', 'D') is allowed to be the answer. Multiple options can not be correct. The correct answer here would have been 'A'."
+        },
+        {
+            "input": "All of the following organs in the digestive system secrete digestive enzymes EXCEPT the\n(A)mouth (B)stomach (C)gall bladder (D)small intestine",
+            "output": "D",
+            "explanation": "Gall bladder does not secrete digestive enzymes, whereas mouth, stomach, and small intestine do. Hence the correct answer should be 'C'."
         }
     ],
     "Instances": [
@@ -42,12 +48,6 @@
         },
         {
             "input": "Which of the following is correct about organisms that are the first to colonize a habitat undergoing ecological succession?\n(A)They are the fiercest competitors in the area. (B)They maintain the habitat as it is for their own kind. (C)They change the habitat in a way that makes it more habitable for other organisms. (D)They are small invertebrates.",
-            "output": [
-                "C"
-            ]
-        },
-        {
-            "input": "All of the following organs in the digestive system secrete digestive enzymes EXCEPT the\n(A)mouth (B)stomach (C)gall bladder (D)small intestine",
             "output": [
                 "C"
             ]
@@ -83,7 +83,7 @@
             ]
         },
         {
-            "input": "Which of the following reactions occurs in the forward direction during glycolysis but in the reverse direction during fermentation?\n(A)pyruvate → lactate (B)pyruvate → ethanol (C)NAD+ + H+ + 2e- → NADH (D)ADP + P → ATP",
+            "input": "Which of the following reactions occurs in the forward direction during glycolysis but in the reverse direction during fermentation?\n(A)pyruvate \u2192 lactate (B)pyruvate \u2192 ethanol (C)NAD+ + H+ + 2e- \u2192 NADH (D)ADP + P \u2192 ATP",
             "output": [
                 "C"
             ]
@@ -107,7 +107,7 @@
             ]
         },
         {
-            "input": "The nucleotide sequence of a DNA molecule is 5′-C-A-T-3′. A mRNA molecule with a complementary codon is transcribed from the DNA in the process of protein synthesis a tRNA pairs with a mRNA codon. What is the nucleotide sequence of the tRNA anticodon?\n(A)5′-G-T-A-3′ (B)5′-G-U-A-3′ (C)5′-C-A-U-3′ (D)5-′U-A-C-3′",
+            "input": "The nucleotide sequence of a DNA molecule is 5\u2032-C-A-T-3\u2032. A mRNA molecule with a complementary codon is transcribed from the DNA in the process of protein synthesis a tRNA pairs with a mRNA codon. What is the nucleotide sequence of the tRNA anticodon?\n(A)5\u2032-G-T-A-3\u2032 (B)5\u2032-G-U-A-3\u2032 (C)5\u2032-C-A-U-3\u2032 (D)5-\u2032U-A-C-3\u2032",
             "output": [
                 "C"
             ]
@@ -293,7 +293,7 @@
             ]
         },
         {
-            "input": "In animal cells, which of the following represents the most likely pathway that a secretory protein takes as it is synthesized in a cell?\n(A)Plasma membrane–Golgi apparatus–ribosome–secretory vesicle–rough ER (B)Ribosome–Golgi apparatus–rough ER–secretory vesicle–plasma membrane (C)Plasma membrane–Golgi apparatus–ribosome–secretory vesicle–rough ER (D)Ribosome–rough ER–Golgi apparatus–secretory vesicle–plasma membrane",
+            "input": "In animal cells, which of the following represents the most likely pathway that a secretory protein takes as it is synthesized in a cell?\n(A)Plasma membrane\u2013Golgi apparatus\u2013ribosome\u2013secretory vesicle\u2013rough ER (B)Ribosome\u2013Golgi apparatus\u2013rough ER\u2013secretory vesicle\u2013plasma membrane (C)Plasma membrane\u2013Golgi apparatus\u2013ribosome\u2013secretory vesicle\u2013rough ER (D)Ribosome\u2013rough ER\u2013Golgi apparatus\u2013secretory vesicle\u2013plasma membrane",
             "output": [
                 "D"
             ]
@@ -485,7 +485,7 @@
             ]
         },
         {
-            "input": "High fructose corn syrup (HFCS) is a sweetener containing fructose that is derived from corn starch and often added to soft drinks. Which of the following reactions would most likely be involved in the production of HFCS? (The letter \"n\" indicates multiple copies of a molecule in a polymer.)\n(A)(glucose)n → polysaccharide (B)sucrose → fructose + glucose (C)glucose → fructose (D)starch → (fructose)n",
+            "input": "High fructose corn syrup (HFCS) is a sweetener containing fructose that is derived from corn starch and often added to soft drinks. Which of the following reactions would most likely be involved in the production of HFCS? (The letter \"n\" indicates multiple copies of a molecule in a polymer.)\n(A)(glucose)n \u2192 polysaccharide (B)sucrose \u2192 fructose + glucose (C)glucose \u2192 fructose (D)starch \u2192 (fructose)n",
             "output": [
                 "C"
             ]
@@ -557,7 +557,7 @@
             ]
         },
         {
-            "input": "On Andros Islands in the Bahamas, populations of mosquito fish, Gambusia hubbsi, colonized a series of ponds. These ponds are no longer connected. However, the environments are very similar except that some ponds contain predatory fish, while others do not. In high predation ponds, selection has favored the evolution of a body shape that enables rapid bursts of speed. In low predation ponds, another body type is favored—one that is well-suited to swim for long periods of time.\n(A)Reproductive isolation caused geographic isolation. (B)Reproductive isolation was not complete. (C)Allopatric isolation brought about reproductive isolation. (D)Sympatric isolation brought about reproductive isolation.",
+            "input": "On Andros Islands in the Bahamas, populations of mosquito fish, Gambusia hubbsi, colonized a series of ponds. These ponds are no longer connected. However, the environments are very similar except that some ponds contain predatory fish, while others do not. In high predation ponds, selection has favored the evolution of a body shape that enables rapid bursts of speed. In low predation ponds, another body type is favored\u2014one that is well-suited to swim for long periods of time.\n(A)Reproductive isolation caused geographic isolation. (B)Reproductive isolation was not complete. (C)Allopatric isolation brought about reproductive isolation. (D)Sympatric isolation brought about reproductive isolation.",
             "output": [
                 "C"
             ]
@@ -569,7 +569,7 @@
             ]
         },
         {
-            "input": "A mutation in a bacterial enzyme changed a previously polar amino acid into a nonpolar amino acid. This amino acid was located at a site distant from the enzyme’s active site. How might this mutation alter the enzyme’s substrate specificity?\n(A)By changing the enzyme’s pH optimum (B)By changing the enzyme’s location in the cell (C)By changing the shape of the protein (D)An amino acid change away from the active site cannot alter the enzyme’s substrate specificity.",
+            "input": "A mutation in a bacterial enzyme changed a previously polar amino acid into a nonpolar amino acid. This amino acid was located at a site distant from the enzyme\u2019s active site. How might this mutation alter the enzyme\u2019s substrate specificity?\n(A)By changing the enzyme\u2019s pH optimum (B)By changing the enzyme\u2019s location in the cell (C)By changing the shape of the protein (D)An amino acid change away from the active site cannot alter the enzyme\u2019s substrate specificity.",
             "output": [
                 "C"
             ]
@@ -839,7 +839,7 @@
             ]
         },
         {
-            "input": "Which of the following is a property that is shared by Zika fever‚ West Nile fever‚ and malaria?\n(A)The diseases are caused by viruses. (B)The diseases occur only in individuals who visit or live in tropical countries. (C)The pathogens that cause the diseases have developed resistance to antibiotics. (D)The pathogens that cause the diseases are primarily transmitted by the bite of an infected mosquito.",
+            "input": "Which of the following is a property that is shared by Zika fever\u201a West Nile fever\u201a and malaria?\n(A)The diseases are caused by viruses. (B)The diseases occur only in individuals who visit or live in tropical countries. (C)The pathogens that cause the diseases have developed resistance to antibiotics. (D)The pathogens that cause the diseases are primarily transmitted by the bite of an infected mosquito.",
             "output": [
                 "D"
             ]
@@ -875,7 +875,7 @@
             ]
         },
         {
-            "input": "Which of the following is the most likely benefit of periodic natural wildfires in some forest ecosystems?\n(A)The fires remove dead and decaying plant matter, reducing the risk of more intense and destructive fires. (B)The fires leach nutrients from the soil‚ preventing the germination of plants that might compete with native species. (C)The fires drive off herbivores whose plant-based diets reduce the amount of vegetation. (D)The fires dry out the soil and decrease the chance of flooding after heavy rains.",
+            "input": "Which of the following is the most likely benefit of periodic natural wildfires in some forest ecosystems?\n(A)The fires remove dead and decaying plant matter, reducing the risk of more intense and destructive fires. (B)The fires leach nutrients from the soil\u201a preventing the germination of plants that might compete with native species. (C)The fires drive off herbivores whose plant-based diets reduce the amount of vegetation. (D)The fires dry out the soil and decrease the chance of flooding after heavy rains.",
             "output": [
                 "A"
             ]
@@ -1001,7 +1001,7 @@
             ]
         },
         {
-            "input": "Imagine an organism whose 2n = 96. Meiosis would leave this organism’s cells with how many chromosomes?\n(A)192 (B)96 (C)48 (D)24",
+            "input": "Imagine an organism whose 2n = 96. Meiosis would leave this organism\u2019s cells with how many chromosomes?\n(A)192 (B)96 (C)48 (D)24",
             "output": [
                 "C"
             ]
@@ -1115,7 +1115,7 @@
             ]
         },
         {
-            "input": "Which of the following statements describes the structural level of a protein that is least affected by hydrogen bonding?\n(A)Primary structure depends on the sequence of amino acids. (B)Tertiary structure has a shape dependent on the interactions of side chains of amino acids. (C)Quaternary structure results from the aggregation of more than one polypeptide unit. (D)An α-helix is an example of a secondary structure of a polypeptide.",
+            "input": "Which of the following statements describes the structural level of a protein that is least affected by hydrogen bonding?\n(A)Primary structure depends on the sequence of amino acids. (B)Tertiary structure has a shape dependent on the interactions of side chains of amino acids. (C)Quaternary structure results from the aggregation of more than one polypeptide unit. (D)An \u03b1-helix is an example of a secondary structure of a polypeptide.",
             "output": [
                 "A"
             ]

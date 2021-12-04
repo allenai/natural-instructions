@@ -6,7 +6,9 @@
         "Measuring Massive Multitask Language Understanding tasks"
     ],
     "Categories": [
-        "Question Answering"
+        "Question Answering -> Multiple Choice Question Answering",
+        "Question Answering -> Contextual Question Answering -> Missing Knowledge",
+        "Mathematics"
     ],
     "Definition": "You are given a question on formal logic. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"), out of which only one is correct. You need to answer the question by selecting the correct option. You should only answer with the choice letter, not the whole answer.",
     "Positive Examples": [
@@ -31,59 +33,64 @@
             "input": "Select the best translation into predicate logic. David teaches Chris. (c: Chris; d: David; Txy: x teaches y)\n(A)Tdc (B)Tcd (C)Tcc (D)dTc",
             "output": "B,C",
             "explanation": "Only one of the following options ('A', 'B', 'C', 'D') is allowed to be the answer. Multiple options can not be correct. The correct answer here would have been 'A'."
+        },
+        {
+            "input": "Select the best translation into predicate logic.George borrows Hector's lawnmower. (g: George; h: Hector; l: Hector's lawnmower; Bxyx: x borrows y from z)\n(A)Blgh (B)Bhlg (C)Bglh (D)Bghl",
+            "output": "A",
+            "explanation": "The best translation is Bglh, hence the correct answer should be 'C'."
         }
     ],
     "Instances": [
         {
-            "input": "Select the best translation into predicate logic. Kevin is introduced to José by Wilma. (j: José; k: Kevin; w: Wilma; Ixyz: x introduces y to z)\n(A)Iwjk (B)Ijkw (C)Ikjw (D)Iwkj",
+            "input": "Select the best translation into predicate logic. Kevin is introduced to Jos\u00e9 by Wilma. (j: Jos\u00e9; k: Kevin; w: Wilma; Ixyz: x introduces y to z)\n(A)Iwjk (B)Ijkw (C)Ikjw (D)Iwkj",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: Abdul and Cleopatra are Egyptian.\n(A)Ea • Ec (B)Ea • c (C)Ae ∨ Ce (D)Ex • Ey",
+            "input": "Select the best translation into predicate logic: Abdul and Cleopatra are Egyptian.\n(A)Ea \u2022 Ec (B)Ea \u2022 c (C)Ae \u2228 Ce (D)Ex \u2022 Ey",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n(~M ⊃ ~N) ∨ (O ≡ N) and (~M · N) · [(~O ∨ ~N) · (O ∨ N)]\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n(~M \u2283 ~N) \u2228 (O \u2261 N) and (~M \u00b7 N) \u00b7 [(~O \u2228 ~N) \u00b7 (O \u2228 N)]\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: No people drive on Mars.\n(A)~Pd (B)(∀x)(Px ∨ ~Dx) (C)(∀x)(Px ⊃ ~Dx) (D)~Dp",
+            "input": " Select the best translation into predicate logic: No people drive on Mars.\n(A)~Pd (B)(\u2200x)(Px \u2228 ~Dx) (C)(\u2200x)(Px \u2283 ~Dx) (D)~Dp",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n(G ∨ ~H) ⊃ G and ~G ≡ (~H · G)\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n(G \u2228 ~H) \u2283 G and ~G \u2261 (~H \u00b7 G)\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~K ≡ L / (K · L) ∨ (K · ~L)\n(A)Valid (B)Invalid. Counterexample when K and L are true (C)Invalid. Counterexample when K is true and L is false (D)Invalid. Counterexample when L is true and K is false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~K \u2261 L / (K \u00b7 L) \u2228 (K \u00b7 ~L)\n(A)Valid (B)Invalid. Counterexample when K and L are true (C)Invalid. Counterexample when K is true and L is false (D)Invalid. Counterexample when L is true and K is false",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\nA ⊃ (~B ∨ C)\nC ⊃ D\nA ∨ (B · ~D)\nA ≡ (B ⊃ D)\n(A)Inconsistent (B)Consistent. Consistent valuation when A and D are true and B and C are false (C)Consistent. Consistent valuation when A, B, and D are true and C is false (D)Consistent. Consistent valuation when C and D are true and A and B are false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\nA \u2283 (~B \u2228 C)\nC \u2283 D\nA \u2228 (B \u00b7 ~D)\nA \u2261 (B \u2283 D)\n(A)Inconsistent (B)Consistent. Consistent valuation when A and D are true and B and C are false (C)Consistent. Consistent valuation when A, B, and D are true and C is false (D)Consistent. Consistent valuation when C and D are true and A and B are false",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (∀x){(Lx • Ax) ⊃ (∃y)[(Hy • ~Ly) • Bxy]}\n(A)All large apartments are bigger than all houses that are not large. (B)Some house that is not large is bigger than all large apartments. (C)Any apartment bigger than a house that is not large is large. (D)Every large apartment is bigger than some house that is not large.",
+            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (\u2200x){(Lx \u2022 Ax) \u2283 (\u2203y)[(Hy \u2022 ~Ly) \u2022 Bxy]}\n(A)All large apartments are bigger than all houses that are not large. (B)Some house that is not large is bigger than all large apartments. (C)Any apartment bigger than a house that is not large is large. (D)Every large apartment is bigger than some house that is not large.",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(K · L) ⊃ M\nN ⊃ ~M\nN ∨ K / L ⊃ K\n(A)Valid (B)Invalid. Counterexample when L, M, and N are true and K is false (C)Invalid. Counterexample when L and M are true and K and N are false (D)Invalid. Counterexample when L and N are true and K and M are false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(K \u00b7 L) \u2283 M\nN \u2283 ~M\nN \u2228 K / L \u2283 K\n(A)Valid (B)Invalid. Counterexample when L, M, and N are true and K is false (C)Invalid. Counterexample when L and M are true and K and N are false (D)Invalid. Counterexample when L and N are true and K and M are false",
             "output": [
                 "D"
             ]
@@ -101,13 +108,13 @@
             ]
         },
         {
-            "input": " Select the best English interpretation of the given arguments in predicate logic.\n(∃x)(Cx • Ox)\n(∀x)[(~Cx ⊃ ~Bx) ⊃ ~Og]\t/ ~Og\n(A)Some cookies have oatmeal. If something's not being a cookie entails that it doesn't have chocolate chips, then this cookie doesn't have oatmeal. So this cookie doesn't have oatmeal. (B)Some cookies have oatmeal. If something is not a cookie and does not have chocolate chips, it doesn't have oatmeal. So this cookie doesn't have oatmeal. (C)Some cookies have oatmeal. If something doesn't have oatmeal, then it is not a cookie and it doesn't have chocolate chips. So this cookie doesn't have oatmeal. (D)Some cookies have oatmeal. If something's not having chocolate chips entails that it is not a cookie, then it doesn't have oatmeal. So this cookie doesn't have oatmeal.",
+            "input": " Select the best English interpretation of the given arguments in predicate logic.\n(\u2203x)(Cx \u2022 Ox)\n(\u2200x)[(~Cx \u2283 ~Bx) \u2283 ~Og]\t/ ~Og\n(A)Some cookies have oatmeal. If something's not being a cookie entails that it doesn't have chocolate chips, then this cookie doesn't have oatmeal. So this cookie doesn't have oatmeal. (B)Some cookies have oatmeal. If something is not a cookie and does not have chocolate chips, it doesn't have oatmeal. So this cookie doesn't have oatmeal. (C)Some cookies have oatmeal. If something doesn't have oatmeal, then it is not a cookie and it doesn't have chocolate chips. So this cookie doesn't have oatmeal. (D)Some cookies have oatmeal. If something's not having chocolate chips entails that it is not a cookie, then it doesn't have oatmeal. So this cookie doesn't have oatmeal.",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nI ≡ ~J\nI ∨ J / I\n(A)Valid (B)Invalid. Counterexample when I and J are true (C)Invalid. Counterexample when I is true and J is false (D)Invalid. Counterexample when J is true and I is false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nI \u2261 ~J\nI \u2228 J / I\n(A)Valid (B)Invalid. Counterexample when I and J are true (C)Invalid. Counterexample when I is true and J is false (D)Invalid. Counterexample when J is true and I is false",
             "output": [
                 "D"
             ]
@@ -119,25 +126,25 @@
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n~O ⊃ P and O ∨ P\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n~O \u2283 P and O \u2228 P\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(A ∨ B) ⊃ C\nC ⊃ ~D / D ⊃ A\n(A)Valid (B)Invalid. Counterexample when B, C, and D are true and A is false (C)Invalid. Counterexample when B and D are true and A and C are false (D)Invalid. Counterexample when A, B, and C are false and D is true",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(A \u2228 B) \u2283 C\nC \u2283 ~D / D \u2283 A\n(A)Valid (B)Invalid. Counterexample when B, C, and D are true and A is false (C)Invalid. Counterexample when B and D are true and A and C are false (D)Invalid. Counterexample when A, B, and C are false and D is true",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nA married couple can report their combined income and deduct their combined allowable expenses on one return provided that only one had income or they did not live together all year.\n(A)(R • D) ⊃ (I ∨ ~L) (B)(I ∨ ~L) ⊃ (R • D) (C)R • [(I ⊃ D) ∨ ~L] (D)~(I ∨ L) ⊃ (R • D)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nA married couple can report their combined income and deduct their combined allowable expenses on one return provided that only one had income or they did not live together all year.\n(A)(R \u2022 D) \u2283 (I \u2228 ~L) (B)(I \u2228 ~L) \u2283 (R \u2022 D) (C)R \u2022 [(I \u2283 D) \u2228 ~L] (D)~(I \u2228 L) \u2283 (R \u2022 D)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. All jellybeans are sweeter than all fruit. (Fx: x is a fruit; Jx: x is a jellybean; Sxy: x is sweeter than y)\n(A)(∀x)[Fx ⊃ (∀y)(Jy ⊃ Sxy)] (B)(∀x)(∀y)[(Fx • Jy) • Sxy] (C)(∀x)(∀y)[Sxy ⊃ (Fy • Jx)] (D)(∀x)[Jx ⊃ (∀y)(Fy ⊃ Sxy)]",
+            "input": " Select the best translation into predicate logic. All jellybeans are sweeter than all fruit. (Fx: x is a fruit; Jx: x is a jellybean; Sxy: x is sweeter than y)\n(A)(\u2200x)[Fx \u2283 (\u2200y)(Jy \u2283 Sxy)] (B)(\u2200x)(\u2200y)[(Fx \u2022 Jy) \u2022 Sxy] (C)(\u2200x)(\u2200y)[Sxy \u2283 (Fy \u2022 Jx)] (D)(\u2200x)[Jx \u2283 (\u2200y)(Fy \u2283 Sxy)]",
             "output": [
                 "D"
             ]
@@ -149,85 +156,85 @@
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\nP ≡ Q\n~Q ≡ R\nR ≡ P\nS ≡ ~P\nS ≡ R\n(A)Inconsistent (B)Consistent. Consistent valuation when P and Q are true and R and S are false (C)Consistent. Consistent valuation when P, Q, R, and S are true (D)Consistent. Consistent valuation when R and S are true and P and Q are false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\nP \u2261 Q\n~Q \u2261 R\nR \u2261 P\nS \u2261 ~P\nS \u2261 R\n(A)Inconsistent (B)Consistent. Consistent valuation when P and Q are true and R and S are false (C)Consistent. Consistent valuation when P, Q, R, and S are true (D)Consistent. Consistent valuation when R and S are true and P and Q are false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is not a necessary condition for France's subsidizing agriculture, or China promotes human rights if South Africa supplies diamonds.\n(A)(~F ⊃ E) ∨ (C ≡ ~S) (B)(~E ⊃ F) ∨ (C ⊃ S) (C)(~F ⊃ E) ∨ (C ≡ S) (D)~(F ⊃ E) ∨ (S ⊃ C)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is not a necessary condition for France's subsidizing agriculture, or China promotes human rights if South Africa supplies diamonds.\n(A)(~F \u2283 E) \u2228 (C \u2261 ~S) (B)(~E \u2283 F) \u2228 (C \u2283 S) (C)(~F \u2283 E) \u2228 (C \u2261 S) (D)~(F \u2283 E) \u2228 (S \u2283 C)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. All planets are smaller than Jupiter. (j: Jupiter; Px: x is a planet; Sxy: x is smaller than y)\n(A)(∃x)(Px • Sxj) (B)(∀x)(Px • Sxj) (C)(∀x)(Px ⊃ Sjx) (D)(∀x)(Px ⊃ Sxj)",
+            "input": " Select the best translation into predicate logic. All planets are smaller than Jupiter. (j: Jupiter; Px: x is a planet; Sxy: x is smaller than y)\n(A)(\u2203x)(Px \u2022 Sxj) (B)(\u2200x)(Px \u2022 Sxj) (C)(\u2200x)(Px \u2283 Sjx) (D)(\u2200x)(Px \u2283 Sxj)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nSince the university raised tuition, the president approved of it and the board didn't prevent it.\n(A)(P • ~B) ⊃ U (B)(U ⊃ P) • B (C)U ⊃ (P • ~B) (D)U ⊃ (P ∨ ~B)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nSince the university raised tuition, the president approved of it and the board didn't prevent it.\n(A)(P \u2022 ~B) \u2283 U (B)(U \u2283 P) \u2022 B (C)U \u2283 (P \u2022 ~B) (D)U \u2283 (P \u2228 ~B)",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's not importing beef is a necessary condition for France's subsidizing agriculture, or China promotes human rights if and only if South Africa doesn't supply diamonds.\n(A)(F ⊃ ~E) ∨ (C ≡ ~S) (B)(~E ⊃ F) ∨ (C ⊃ ~S) (C)~(F ⊃ E) ∨ (~S ⊃ C) (D)(F ⊃ E) ∨ (C ≡ ~S)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's not importing beef is a necessary condition for France's subsidizing agriculture, or China promotes human rights if and only if South Africa doesn't supply diamonds.\n(A)(F \u2283 ~E) \u2228 (C \u2261 ~S) (B)(~E \u2283 F) \u2228 (C \u2283 ~S) (C)~(F \u2283 E) \u2228 (~S \u2283 C) (D)(F \u2283 E) \u2228 (C \u2261 ~S)",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~A · ~B\n(A ∨ C) ∨ B / C\n(A)Valid (B)Invalid. Counterexample when A and B are true and C is false (C)Invalid. Counterexample when A is true and B and C are false (D)Invalid. Counterexample when B is true and A and C are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~A \u00b7 ~B\n(A \u2228 C) \u2228 B / C\n(A)Valid (B)Invalid. Counterexample when A and B are true and C is false (C)Invalid. Counterexample when A is true and B and C are false (D)Invalid. Counterexample when B is true and A and C are false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic.Some robbers steal money from a bank. (Bx: x is a bank; Mx: x is money; Rx: x is a robber; Sxyz: x steals y from z)\n(A)(∃x){Bx • (∃y)[Ry • (∀z)(Mz ⊃ Syzx)]} (B)(∃x)(∃y)(∃z)[(Rx • By) • (Mz • Syxz)] (C)(∃x){Rx ⊃ (∃y)[My ⊃ (∃z)(Bz ⊃ Sxyz)]} (D)(∃x){Rx • (∃y)[My • (∃z)(Bz • Sxyz)]}",
+            "input": " Select the best translation into predicate logic.Some robbers steal money from a bank. (Bx: x is a bank; Mx: x is money; Rx: x is a robber; Sxyz: x steals y from z)\n(A)(\u2203x){Bx \u2022 (\u2203y)[Ry \u2022 (\u2200z)(Mz \u2283 Syzx)]} (B)(\u2203x)(\u2203y)(\u2203z)[(Rx \u2022 By) \u2022 (Mz \u2022 Syxz)] (C)(\u2203x){Rx \u2283 (\u2203y)[My \u2283 (\u2203z)(Bz \u2283 Sxyz)]} (D)(\u2203x){Rx \u2022 (\u2203y)[My \u2022 (\u2203z)(Bz \u2022 Sxyz)]}",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n~[(G ⊃ H) ∨ ~H] and ~G ⊃ G\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n~[(G \u2283 H) \u2228 ~H] and ~G \u2283 G\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\nD ≡ E\nF ∨ D\n~E · ~F\n(A)Inconsistent (B)Consistent. Consistent valuation when D, E, and F are true (C)Consistent. Consistent valuation when D and E are true and F is false (D)Consistent. Consistent valuation when D and F are true and E is false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\nD \u2261 E\nF \u2228 D\n~E \u00b7 ~F\n(A)Inconsistent (B)Consistent. Consistent valuation when D, E, and F are true (C)Consistent. Consistent valuation when D and E are true and F is false (D)Consistent. Consistent valuation when D and F are true and E is false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: All first-year students take a swim test.\n(A)(∀x)(Sx ⊃ Fx) (B)(∀x)(Fx ⊃ Sx) (C)(∀x)(Fx ∨ Sx) (D)(∀x)(Fx ≡ Sx)",
+            "input": " Select the best translation into predicate logic: All first-year students take a swim test.\n(A)(\u2200x)(Sx \u2283 Fx) (B)(\u2200x)(Fx \u2283 Sx) (C)(\u2200x)(Fx \u2228 Sx) (D)(\u2200x)(Fx \u2261 Sx)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\nE ⊃ ~F\n~F ⊃ G\n~G\n(A)E ⊃ F (B)F ⊃ G (C)G ⊃ E (D)~~F",
+            "input": "Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\nE \u2283 ~F\n~F \u2283 G\n~G\n(A)E \u2283 F (B)F \u2283 G (C)G \u2283 E (D)~~F",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nA ⊃ ~B and B ⊃ A\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nA \u2283 ~B and B \u2283 A\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: Johnny came late.\n(A)jL (B)Lj (C)Cj ∨ Lj (D)Lx",
+            "input": "Select the best translation into predicate logic: Johnny came late.\n(A)jL (B)Lj (C)Cj \u2228 Lj (D)Lx",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: If Delilah is in New York City, then Juana is in Bogota or Layla is in San Juan.\n(A)Nd ⊃ (Bj • Sl) (B)Dn ≡ (Bx • Ly) (C)Nd ≡ (Bj • Sl) (D)Nd ⊃ (Bj ∨ Sl)",
+            "input": "Select the best translation into predicate logic: If Delilah is in New York City, then Juana is in Bogota or Layla is in San Juan.\n(A)Nd \u2283 (Bj \u2022 Sl) (B)Dn \u2261 (Bx \u2022 Ly) (C)Nd \u2261 (Bj \u2022 Sl) (D)Nd \u2283 (Bj \u2228 Sl)",
             "output": [
                 "D"
             ]
@@ -239,61 +246,61 @@
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~C ⊃ D\nD ⊃ C / C\n(A)Valid (B)Invalid. Counterexample when C and D are true (C)Invalid. Counterexample when C is true and D is false (D)Invalid. Counterexample when D is true and C is false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~C \u2283 D\nD \u2283 C / C\n(A)Valid (B)Invalid. Counterexample when C and D are true (C)Invalid. Counterexample when C is true and D is false (D)Invalid. Counterexample when D is true and C is false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(A ∨ B) ∨ C\n~C\n~A ⊃ B\n(A)Inconsistent (B)Consistent. Consistent valuation when A and B are true and C is false (C)Consistent. Consistent valuation when A and C are true and B is false (D)Consistent. Consistent valuation when B and C are true and A is false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(A \u2228 B) \u2228 C\n~C\n~A \u2283 B\n(A)Inconsistent (B)Consistent. Consistent valuation when A and B are true and C is false (C)Consistent. Consistent valuation when A and C are true and B is false (D)Consistent. Consistent valuation when B and C are true and A is false",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n~(A ⊃ B) • (B ⊃ ~E)\n(A)It's not the case that Marina's reading a Percy Jackson book entails that Izzy plays Minecraft, but Izzy's playing Minecraft does entail that Ashleigh doesn't stop by. (B)If Marina doesn't read a Percy Jackson book, then Izzy plays Minecraft, which entails that Ashleigh doesn't stop by. (C)Marina's reading a Percy Jackson book does not entail that Izzy plays Minecraft, but Izzy plays Minecraft provided that Ashleigh doesn't stop by. (D)It's not true that Marina reads a Percy Jackson book only when Izzy plays Minecraft, but Izzy plays Minecraft only when Ashleigh stops by.",
+            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n~(A \u2283 B) \u2022 (B \u2283 ~E)\n(A)It's not the case that Marina's reading a Percy Jackson book entails that Izzy plays Minecraft, but Izzy's playing Minecraft does entail that Ashleigh doesn't stop by. (B)If Marina doesn't read a Percy Jackson book, then Izzy plays Minecraft, which entails that Ashleigh doesn't stop by. (C)Marina's reading a Percy Jackson book does not entail that Izzy plays Minecraft, but Izzy plays Minecraft provided that Ashleigh doesn't stop by. (D)It's not true that Marina reads a Percy Jackson book only when Izzy plays Minecraft, but Izzy plays Minecraft only when Ashleigh stops by.",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: All robots are artifacts.\n(A)(∀x)(Ax ∨ Rx) (B)(∀x)(Ax • Rx) (C)(∀x)(Rx ⊃ Ax) (D)(∀x)(Rx • Ax)",
+            "input": " Select the best translation into predicate logic: All robots are artifacts.\n(A)(\u2200x)(Ax \u2228 Rx) (B)(\u2200x)(Ax \u2022 Rx) (C)(\u2200x)(Rx \u2283 Ax) (D)(\u2200x)(Rx \u2022 Ax)",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic. José introduces Wilma to Kevin. (j: José; k: Kevin; w: Wilma; Ixyz: x introduces y to z)\n(A)Iwkj (B)Ijwk (C)Iwjk (D)Ijkw",
+            "input": "Select the best translation into predicate logic. Jos\u00e9 introduces Wilma to Kevin. (j: Jos\u00e9; k: Kevin; w: Wilma; Ixyz: x introduces y to z)\n(A)Iwkj (B)Ijwk (C)Iwjk (D)Ijkw",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nI ≡ ~H and ~(~I ≡ H)\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nI \u2261 ~H and ~(~I \u2261 H)\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~S ∨ T\n~S · U\n~T ∨ U / T · U\n(A)Valid (B)Invalid. Counterexample when S, T, and U are true (C)Invalid. Counterexample when S and U are true and T is false (D)Invalid. Counterexample when U is true and S and T are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~S \u2228 T\n~S \u00b7 U\n~T \u2228 U / T \u00b7 U\n(A)Valid (B)Invalid. Counterexample when S, T, and U are true (C)Invalid. Counterexample when S and U are true and T is false (D)Invalid. Counterexample when U is true and S and T are false",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nT ∨ U\nW · T / U\n(A)Valid (B)Invalid. Counterexample when T and W are true and U is false (C)Invalid. Counterexample when T is true and W and U are false (D)Invalid. Counterexample when W is true and T and U are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nT \u2228 U\nW \u00b7 T / U\n(A)Valid (B)Invalid. Counterexample when T and W are true and U is false (C)Invalid. Counterexample when T is true and W and U are false (D)Invalid. Counterexample when W is true and T and U are false",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nDoctors are helpful unless their patients are rude.\n(A)H ≡ R (B)H • R (C)H ∨ ~R (D)H ∨ R",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nDoctors are helpful unless their patients are rude.\n(A)H \u2261 R (B)H \u2022 R (C)H \u2228 ~R (D)H \u2228 R",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nE ⊃ (F ∨ ~G)\nF ⊃ (~E ∨ ~G) / ~(E ≡ F)\n(A)Valid (B)Invalid. Counterexample when E, F, and G are true (C)Invalid. Counterexample when E and F are true and G is false (D)Invalid. Counterexample when E, F, and G are false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nE \u2283 (F \u2228 ~G)\nF \u2283 (~E \u2228 ~G) / ~(E \u2261 F)\n(A)Valid (B)Invalid. Counterexample when E, F, and G are true (C)Invalid. Counterexample when E and F are true and G is false (D)Invalid. Counterexample when E, F, and G are false",
             "output": [
                 "C"
             ]
@@ -305,13 +312,13 @@
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nA person is considered to have lived with you for all of the present year if the person was born or died in the present year and your home was this person's home for the entire time this person was alive.\n(A)[(B ∨ D) • H] ⊃ L (B)[L ⊃ (B ∨ D)] • H (C)L ⊃ [(B ∨ D) • H] (D)(B ∨ D • H) ⊃ L",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nA person is considered to have lived with you for all of the present year if the person was born or died in the present year and your home was this person's home for the entire time this person was alive.\n(A)[(B \u2228 D) \u2022 H] \u2283 L (B)[L \u2283 (B \u2228 D)] \u2022 H (C)L \u2283 [(B \u2228 D) \u2022 H] (D)(B \u2228 D \u2022 H) \u2283 L",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nC ⊃ (D ∨ C) and C · ~D\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nC \u2283 (D \u2228 C) and C \u00b7 ~D\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "C"
             ]
@@ -323,49 +330,49 @@
             ]
         },
         {
-            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\n~E ⊃ ~F\nG ⊃ F\nH ∨ ~E\nH ⊃ I\n~I\n(A)E ⊃ F (B)F ⊃ G (C)H ⊃ ~E (D)~H",
+            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\n~E \u2283 ~F\nG \u2283 F\nH \u2228 ~E\nH \u2283 I\n~I\n(A)E \u2283 F (B)F \u2283 G (C)H \u2283 ~E (D)~H",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. All children go to some school. (Cx: x is a child; Sx: x is a school; Gxy: x goes to y)\n(A)(∀x)(∃y)[(Cx • Sy) • Gxy) (B)(∀x)[Sx ⊃ (∃y)(Cy • Gxy)] (C)(∀x)[Cx ⊃ (∃y)(Sy • Gxy)] (D)(∀x)[Sx • (∃y)(Cy • Gxy)]",
+            "input": " Select the best translation into predicate logic. All children go to some school. (Cx: x is a child; Sx: x is a school; Gxy: x goes to y)\n(A)(\u2200x)(\u2203y)[(Cx \u2022 Sy) \u2022 Gxy) (B)(\u2200x)[Sx \u2283 (\u2203y)(Cy \u2022 Gxy)] (C)(\u2200x)[Cx \u2283 (\u2203y)(Sy \u2022 Gxy)] (D)(\u2200x)[Sx \u2022 (\u2203y)(Cy \u2022 Gxy)]",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nH ≡ (I · ~J)\nK ≡ ~H\n~(K ⊃ J) / I ≡ J\n(A)Valid (B)Invalid. Counterexample when I, H, and K are true and J is false (C)Invalid. Counterexample when I and H are true and J and K are false (D)Invalid. Counterexample when K is true and I, H, and J are false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nH \u2261 (I \u00b7 ~J)\nK \u2261 ~H\n~(K \u2283 J) / I \u2261 J\n(A)Valid (B)Invalid. Counterexample when I, H, and K are true and J is false (C)Invalid. Counterexample when I and H are true and J and K are false (D)Invalid. Counterexample when K is true and I, H, and J are false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: Cecilia breaks my heart if, and only if, Maria is either a problem or a girl.\n(A)Bc ≡ (Pm ∨ Gm) (B)Bc ≡ (Pm • Gm) (C)Bc ⊃ (Pm ∨ Gm) (D)Cb ⊃ (Pm • Gm)",
+            "input": "Select the best translation into predicate logic: Cecilia breaks my heart if, and only if, Maria is either a problem or a girl.\n(A)Bc \u2261 (Pm \u2228 Gm) (B)Bc \u2261 (Pm \u2022 Gm) (C)Bc \u2283 (Pm \u2228 Gm) (D)Cb \u2283 (Pm \u2022 Gm)",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nE ⊃ (F · E) and ~E · F\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\nE \u2283 (F \u00b7 E) and ~E \u00b7 F\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nH ≡ (~I ∨ J)\nH ∨ ~J / ~I\n(A)Valid (B)Invalid. Counterexample when H, I, and J are false (C)Invalid. Counterexample when H and I are true and J is false (D)Invalid. Counterexample when I is true and H and J are false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nH \u2261 (~I \u2228 J)\nH \u2228 ~J / ~I\n(A)Valid (B)Invalid. Counterexample when H, I, and J are false (C)Invalid. Counterexample when H and I are true and J is false (D)Invalid. Counterexample when I is true and H and J are false",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (∀x){Ax ⊃ (∀y)[(Hy • Ly) ⊃ ∼Bxy]}\n(A)All apartments are not bigger than some large house. (B)No apartment is bigger than any large house. (C)All large houses are not bigger than some apartment. (D)No large house is bigger than all apartments.",
+            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (\u2200x){Ax \u2283 (\u2200y)[(Hy \u2022 Ly) \u2283 \u223cBxy]}\n(A)All apartments are not bigger than some large house. (B)No apartment is bigger than any large house. (C)All large houses are not bigger than some apartment. (D)No large house is bigger than all apartments.",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~X ⊃ Y\nY ⊃ Z\n~Z / ~X\n(A)Valid (B)Invalid. Counterexample when X, Y, and Z are true (C)Invalid. Counterexample when Y and Z are true and Z is false (D)Invalid. Counterexample when X is true and Y and Z are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~X \u2283 Y\nY \u2283 Z\n~Z / ~X\n(A)Valid (B)Invalid. Counterexample when X, Y, and Z are true (C)Invalid. Counterexample when Y and Z are true and Z is false (D)Invalid. Counterexample when X is true and Y and Z are false",
             "output": [
                 "D"
             ]
@@ -377,67 +384,67 @@
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nP ⊃ Q\nQ · R / ~P · R\n(A)Valid (B)Invalid. Counterexample when P, R, and Q are true (C)Invalid. Counterexample when P and Q are true and R is false (D)Invalid. Counterexample when R and Q are true and P is false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nP \u2283 Q\nQ \u00b7 R / ~P \u00b7 R\n(A)Valid (B)Invalid. Counterexample when P, R, and Q are true (C)Invalid. Counterexample when P and Q are true and R is false (D)Invalid. Counterexample when R and Q are true and P is false",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(E ⊃ F) ⊃ G\n(~E ∨ F) ≡ (H ∨ I)\nI ⊃ (J ⊃ ~H)\n~G ⊃ ~J\n(A)Inconsistent (B)Consistent. Consistent valuation when E is true and F, G, H, I, and J are false (C)Consistent. Consistent valuation when E and H are true and F, G, I, and J are false (D)Consistent. Consistent valuation when E and I are true and F, G, H, and J are false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(E \u2283 F) \u2283 G\n(~E \u2228 F) \u2261 (H \u2228 I)\nI \u2283 (J \u2283 ~H)\n~G \u2283 ~J\n(A)Inconsistent (B)Consistent. Consistent valuation when E is true and F, G, H, I, and J are false (C)Consistent. Consistent valuation when E and H are true and F, G, I, and J are false (D)Consistent. Consistent valuation when E and I are true and F, G, H, and J are false",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. All kings are luckier than all paupers. (Kx: x is a king; Px: x is a pauper; Lxy: x is luckier than y)\n(A)(∀x)[Kx ⊃ (∀y)(Py ⊃ Lxy)] (B)(∀x)[Kx ⊃ (∀y)(Lxy ⊃ Py)] (C)(∀x)(∀y)[(Kx • Py) ⊃ Lyx] (D)(∀x)[(Kx • (∀y)(Py)) ⊃ Lxy]",
+            "input": " Select the best translation into predicate logic. All kings are luckier than all paupers. (Kx: x is a king; Px: x is a pauper; Lxy: x is luckier than y)\n(A)(\u2200x)[Kx \u2283 (\u2200y)(Py \u2283 Lxy)] (B)(\u2200x)[Kx \u2283 (\u2200y)(Lxy \u2283 Py)] (C)(\u2200x)(\u2200y)[(Kx \u2022 Py) \u2283 Lyx] (D)(\u2200x)[(Kx \u2022 (\u2200y)(Py)) \u2283 Lxy]",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n(A ∨ ~E) ≡ (D • ~B)\n(A)Either Marina reading a Percy Jackson book or Ashleigh not stopping by is a necessary condition for both Russell making dinner and Izzy not playing Minecraft. (B)Either Marina reading a Percy Jackson book or Ashleigh not stopping by is a necessary and sufficient condition for Russell making dinner and Izzy playing Minecraft. (C)Marina reads a Percy Jackson book unless Ashleigh stops by if, and only if, both Russell makes dinner and Izzy doesn't play Minecraft. (D)Either Marina reads a Percy Jackson book or Ashleigh does not stop by just in case both Russell makes dinner and Izzy doesn't play Minecraft.",
+            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n(A \u2228 ~E) \u2261 (D \u2022 ~B)\n(A)Either Marina reading a Percy Jackson book or Ashleigh not stopping by is a necessary condition for both Russell making dinner and Izzy not playing Minecraft. (B)Either Marina reading a Percy Jackson book or Ashleigh not stopping by is a necessary and sufficient condition for Russell making dinner and Izzy playing Minecraft. (C)Marina reads a Percy Jackson book unless Ashleigh stops by if, and only if, both Russell makes dinner and Izzy doesn't play Minecraft. (D)Either Marina reads a Percy Jackson book or Ashleigh does not stop by just in case both Russell makes dinner and Izzy doesn't play Minecraft.",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: Some students work hard.\n(A)(∃x)(Wx ∨ Sx) (B)(∃x)(Sx ∨ Wx) (C)(∃x)(Sx • Wx) (D)(∃x)(Sx ⊃ Wx)",
+            "input": " Select the best translation into predicate logic: Some students work hard.\n(A)(\u2203x)(Wx \u2228 Sx) (B)(\u2203x)(Sx \u2228 Wx) (C)(\u2203x)(Sx \u2022 Wx) (D)(\u2203x)(Sx \u2283 Wx)",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given arguments in predicate logic.\nDh ⊃ ~Pt\n(∀x)Px ∨ (∀x)Mx\n~Mb\t/ ~Dh\n(A)If my headache is dualist state, then your tickle is a physical state. Either everything is physical or everything is mental. But my broken toe is not a mental state. So my headache is not a dualist state. (B)If my headache is dualist state, then your tickle is not a physical state. Either everything is physical or everything is mental. But my broken toe is not a mental state. So my headache is not a dualist state. (C)If my headache is dualist state, then your tickle is not a physical state. If everything is physical then everything is mental. But my broken toe is not a mental state. So my headache is not a dualist state. (D)If my headache is dualist state, then your tickle is not a physical state. Everything is either physical or mental. But my broken toe is not a mental state. So my headache is not a dualist state.",
+            "input": " Select the best English interpretation of the given arguments in predicate logic.\nDh \u2283 ~Pt\n(\u2200x)Px \u2228 (\u2200x)Mx\n~Mb\t/ ~Dh\n(A)If my headache is dualist state, then your tickle is a physical state. Either everything is physical or everything is mental. But my broken toe is not a mental state. So my headache is not a dualist state. (B)If my headache is dualist state, then your tickle is not a physical state. Either everything is physical or everything is mental. But my broken toe is not a mental state. So my headache is not a dualist state. (C)If my headache is dualist state, then your tickle is not a physical state. If everything is physical then everything is mental. But my broken toe is not a mental state. So my headache is not a dualist state. (D)If my headache is dualist state, then your tickle is not a physical state. Everything is either physical or mental. But my broken toe is not a mental state. So my headache is not a dualist state.",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf either Harry enrolls or George does not enroll, then Jim enrolls.\n(A)H ∨ (~G ⊃ J) (B)~(H ∨ G) ⊃ J (C)(H ∨ ~G) ⊃ J (D)(H ⊃ ~G) ∨ J",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf either Harry enrolls or George does not enroll, then Jim enrolls.\n(A)H \u2228 (~G \u2283 J) (B)~(H \u2228 G) \u2283 J (C)(H \u2228 ~G) \u2283 J (D)(H \u2283 ~G) \u2228 J",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. Some CEO is wealthier than everyone. (Cx: x is a CEO; Px: x is a person; Wxy: x is wealthier than y)\n(A)(∃x)[Cx • (∀y)(Py • Wxy)] (B)(∃x)[Cx ⊃ (∀y)(Py ⊃ Wxy)] (C)(∃x)[Cx • (∀y)(Py ⊃ Wxy)] (D)(∀x)[Px ⊃ (∃y)(Cy ⊃ Wxy)]",
+            "input": " Select the best translation into predicate logic. Some CEO is wealthier than everyone. (Cx: x is a CEO; Px: x is a person; Wxy: x is wealthier than y)\n(A)(\u2203x)[Cx \u2022 (\u2200y)(Py \u2022 Wxy)] (B)(\u2203x)[Cx \u2283 (\u2200y)(Py \u2283 Wxy)] (C)(\u2203x)[Cx \u2022 (\u2200y)(Py \u2283 Wxy)] (D)(\u2200x)[Px \u2283 (\u2203y)(Cy \u2283 Wxy)]",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n~(J ∨ K) · L and (L ⊃ J) · K\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
+            "input": " Construct a complete truth table for the following pairs of propositions. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.\n~(J \u2228 K) \u00b7 L and (L \u2283 J) \u00b7 K\n(A)Logically equivalent (B)Contradictory (C)Neither logically equivalent nor contradictory, but consistent (D)Inconsistent",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(G ≡ H) · ~I\n~G ∨ (~H ∨ I) / G\n(A)Valid (B)Invalid. Counterexample when H and I are true and G is false (C)Invalid. Counterexample when H is true and I and G are false (D)Invalid. Counterexample when H, I, and G are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(G \u2261 H) \u00b7 ~I\n~G \u2228 (~H \u2228 I) / G\n(A)Valid (B)Invalid. Counterexample when H and I are true and G is false (C)Invalid. Counterexample when H is true and I and G are false (D)Invalid. Counterexample when H, I, and G are false",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic:: Some blue herons migrate.\n(A)(∀x)[(Hx • Bx) • Mx] (B)(∃x)[(Hx • Bx) ⊃ Mx] (C)(∀x)[(Hx • Bx) ⊃ Mx] (D)(∃x)[(Hx • Bx) • Mx]",
+            "input": " Select the best translation into predicate logic:: Some blue herons migrate.\n(A)(\u2200x)[(Hx \u2022 Bx) \u2022 Mx] (B)(\u2203x)[(Hx \u2022 Bx) \u2283 Mx] (C)(\u2200x)[(Hx \u2022 Bx) \u2283 Mx] (D)(\u2203x)[(Hx \u2022 Bx) \u2022 Mx]",
             "output": [
                 "D"
             ]
@@ -461,7 +468,7 @@
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~G ⊃ H\n~H / G\n(A)Valid (B)Invalid. Counterexample when G and H are true (C)Invalid. Counterexample when G is true and H is false (D)Invalid. Counterexample when H is true and G is false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~G \u2283 H\n~H / G\n(A)Valid (B)Invalid. Counterexample when G and H are true (C)Invalid. Counterexample when G is true and H is false (D)Invalid. Counterexample when H is true and G is false",
             "output": [
                 "A"
             ]
@@ -473,103 +480,103 @@
             ]
         },
         {
-            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n(~A ∨ ~B) ⊃ C\n(A)If neither Marina reads a Percy Jackson book nor Izzy plays Minecraft, then Emily stops working. (B)If it's not the case that both Marina reads a Percy Jackson book and Izzy plays Minecraft, then Emily stops working. (C)Either Marina not reading a Percy Jackson book or Izzy not playing Minecraft entails that Emily stops working. (D)Emily stopping working is a sufficient condition for either Marina not reading a Percy Jackson book or Izzy not playing Minecraft.",
+            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n(~A \u2228 ~B) \u2283 C\n(A)If neither Marina reads a Percy Jackson book nor Izzy plays Minecraft, then Emily stops working. (B)If it's not the case that both Marina reads a Percy Jackson book and Izzy plays Minecraft, then Emily stops working. (C)Either Marina not reading a Percy Jackson book or Izzy not playing Minecraft entails that Emily stops working. (D)Emily stopping working is a sufficient condition for either Marina not reading a Percy Jackson book or Izzy not playing Minecraft.",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n(~B • E) ⊃ D\n(A)If it's not the case that both Izzy plays Minecraft and Ashleigh stops by then Russell makes dinner. (B)If it's both not the case that Izzy plays Minecraft and Ashleigh stops by then Russell makes dinner. (C)Izzy playing Minecraft and Ashleigh stopping by entails that Russell makes dinner. (D)Russell's making dinner is a sufficient condition for Izzy not playing Minecraft and Ashleigh stopping by.",
+            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n(~B \u2022 E) \u2283 D\n(A)If it's not the case that both Izzy plays Minecraft and Ashleigh stops by then Russell makes dinner. (B)If it's both not the case that Izzy plays Minecraft and Ashleigh stops by then Russell makes dinner. (C)Izzy playing Minecraft and Ashleigh stopping by entails that Russell makes dinner. (D)Russell's making dinner is a sufficient condition for Izzy not playing Minecraft and Ashleigh stopping by.",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nThe restaurant serves pie or cheesecake or ice cream for dessert.\n(A)P ∨ (C ∨ I) (B)(P ∨ C) ∨ I (C)P ∨ C ∨ I (D)Options A and B",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nThe restaurant serves pie or cheesecake or ice cream for dessert.\n(A)P \u2228 (C \u2228 I) (B)(P \u2228 C) \u2228 I (C)P \u2228 C \u2228 I (D)Options A and B",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nTurtles live long lives and are happy creatures, unless they are injured.\n(A)(L • H) ≡ I (B)(L • H) ∨ I (C)L • (H ∨ I) (D)L • (H ⊃ R)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nTurtles live long lives and are happy creatures, unless they are injured.\n(A)(L \u2022 H) \u2261 I (B)(L \u2022 H) \u2228 I (C)L \u2022 (H \u2228 I) (D)L \u2022 (H \u2283 R)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\nA ⊃ (B • C)\n~(B • C)\nA ∨ (D ∨ B)\n(A)A (B)~A (C)B (D)~B",
+            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\nA \u2283 (B \u2022 C)\n~(B \u2022 C)\nA \u2228 (D \u2228 B)\n(A)A (B)~A (C)B (D)~B",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: Not all lobsters are red.\n(A)~(∀x)(Lx ⊃ Rx) (B)~(∃x)(Lx ⊃ Rx) (C)~(∃x)(Lx • Rx) (D)~(∀x)(Lx • Rx)",
+            "input": " Select the best translation into predicate logic: Not all lobsters are red.\n(A)~(\u2200x)(Lx \u2283 Rx) (B)~(\u2203x)(Lx \u2283 Rx) (C)~(\u2203x)(Lx \u2022 Rx) (D)~(\u2200x)(Lx \u2022 Rx)",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. Some firefighters rescue victims from danger. (Dx: x is danger; Fx: x is a firefighter; Vx: x is a victim; Rxyz: x rescues y from z)\n(A)(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]} (B)(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]} (C)(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]} (D)(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]}",
+            "input": " Select the best translation into predicate logic. Some firefighters rescue victims from danger. (Dx: x is danger; Fx: x is a firefighter; Vx: x is a victim; Rxyz: x rescues y from z)\n(A)(\u2203x){Fx \u2022 (\u2200y)[Dy \u2283 (\u2203z)(Vz \u2022 Rxyz)]} (B)(\u2203x){Fx \u2022 (\u2203y)[Vy \u2022 (\u2203z)(Dz \u2022 Rxyz)]} (C)(\u2203x){Fx \u2022 (\u2203y)(\u2203z)[(Vy \u2022 Dz) \u2022 Rxzy]} (D)(\u2200x){Fx \u2283 (\u2203y)[Vy . (\u2203z)(Dz \u2022 Rxyz)]}",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: No artifacts are people.\n(A)~Pa (B)(∀x)(Ax ⊃ ~Px) (C)~Ap (D)(∀x)(Ax • ~Px)",
+            "input": " Select the best translation into predicate logic: No artifacts are people.\n(A)~Pa (B)(\u2200x)(Ax \u2283 ~Px) (C)~Ap (D)(\u2200x)(Ax \u2022 ~Px)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(T · ~U) ⊃ ~W\n~W ⊃ X\n~Z ⊃ W\n~(X · Z) / T ⊃ U\n(A)Valid (B)Invalid. Counterexample when T, X, and Z are true and U and W are false (C)Invalid. Counterexample when T and X are true and U, W, and Z are false (D)Invalid. Counterexample when T, W, and Z are true and U and X are false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(T \u00b7 ~U) \u2283 ~W\n~W \u2283 X\n~Z \u2283 W\n~(X \u00b7 Z) / T \u2283 U\n(A)Valid (B)Invalid. Counterexample when T, X, and Z are true and U and W are false (C)Invalid. Counterexample when T and X are true and U, W, and Z are false (D)Invalid. Counterexample when T, W, and Z are true and U and X are false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nA ⊃ (~B ≡ C)\nB ≡ D\n~C ≡ ~D / ~A\n(A)Valid (B)Invalid. Counterexample when A, B, and D are true and C is false (C)Invalid. Counterexample when A and B are true and C and D are false (D)Invalid. Counterexample when A, C, and D are true and B is false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nA \u2283 (~B \u2261 C)\nB \u2261 D\n~C \u2261 ~D / ~A\n(A)Valid (B)Invalid. Counterexample when A, B, and D are true and C is false (C)Invalid. Counterexample when A and B are true and C and D are false (D)Invalid. Counterexample when A, C, and D are true and B is false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(O ≡ P) ∨ P / P ∨ ~O\n(A)Valid (B)Invalid. Counterexample when O and P are true (C)Invalid. Counterexample when O is true and P is false (D)Invalid. Counterexample when P is true and O is false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n(O \u2261 P) \u2228 P / P \u2228 ~O\n(A)Valid (B)Invalid. Counterexample when O and P are true (C)Invalid. Counterexample when O is true and P is false (D)Invalid. Counterexample when P is true and O is false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (∀x)[Ax ⊃ (∃y)(Hy • Bxy)]\n(A)Every apartment is bigger than some house. (B)Every house is bigger than all apartments. (C)Every house is bigger than some apartment. (D)Some house is bigger than every apartment.",
+            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (\u2200x)[Ax \u2283 (\u2203y)(Hy \u2022 Bxy)]\n(A)Every apartment is bigger than some house. (B)Every house is bigger than all apartments. (C)Every house is bigger than some apartment. (D)Some house is bigger than every apartment.",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~(M ≡ ~N)\nM / N\n(A)Valid (B)Invalid. Counterexample when M and N are true (C)Invalid. Counterexample when M is true and N is false (D)Invalid. Counterexample when N is true and M is false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~(M \u2261 ~N)\nM / N\n(A)Valid (B)Invalid. Counterexample when M and N are true (C)Invalid. Counterexample when M is true and N is false (D)Invalid. Counterexample when N is true and M is false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nE ⊃ F\nG ⊃ ~F / ~G ∨ ~E\n(A)Valid (B)Invalid. Counterexample when E, F, and G are true (C)Invalid. Counterexample when E and G are true and F is false (D)Invalid. Counterexample when F and G are true and E is false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nE \u2283 F\nG \u2283 ~F / ~G \u2228 ~E\n(A)Valid (B)Invalid. Counterexample when E, F, and G are true (C)Invalid. Counterexample when E and G are true and F is false (D)Invalid. Counterexample when F and G are true and E is false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\n(N ⊃ ~O) ⊃ (O ∨ Q)\nP ⊃ (N ⊃ ~O)\nN ⊃ P\n(A)P (B)N ⊃ ~O (C)O ∨ Q (D)~P",
+            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\n(N \u2283 ~O) \u2283 (O \u2228 Q)\nP \u2283 (N \u2283 ~O)\nN \u2283 P\n(A)P (B)N \u2283 ~O (C)O \u2228 Q (D)~P",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf Beth rides her bike, she gets to work earlier.\n(A)B ⊃ W (B)W ⊃ B (C)B ≡ W (D)Both A and B",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf Beth rides her bike, she gets to work earlier.\n(A)B \u2283 W (B)W \u2283 B (C)B \u2261 W (D)Both A and B",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nElliott likes to skateboard or he likes to write songs and to play them.\n(A)S ∨ (W • P) (B)(S ∨ W) ∨ P (C)S • (W ∨ P) (D)(S • W) ∨ P",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nElliott likes to skateboard or he likes to write songs and to play them.\n(A)S \u2228 (W \u2022 P) (B)(S \u2228 W) \u2228 P (C)S \u2022 (W \u2228 P) (D)(S \u2022 W) \u2228 P",
             "output": [
                 "A"
             ]
@@ -593,7 +600,7 @@
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: Some folks are lucky.\n(A)(∃x)(Fx • Lx) (B)Fl (C)Lf (D)(∀x)(Fx • Lx)",
+            "input": " Select the best translation into predicate logic: Some folks are lucky.\n(A)(\u2203x)(Fx \u2022 Lx) (B)Fl (C)Lf (D)(\u2200x)(Fx \u2022 Lx)",
             "output": [
                 "A"
             ]
@@ -605,91 +612,91 @@
             ]
         },
         {
-            "input": " Select the best English interpretation of the given arguments in predicate logic.\nDm\n(∀x)(Wx ⊃ ~Dx)\n(∀x)Wx ∨ Ag\t/ (∃x)Ax\n(A)Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball. (B)Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball. (C)Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball. (D)Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.",
+            "input": " Select the best English interpretation of the given arguments in predicate logic.\nDm\n(\u2200x)(Wx \u2283 ~Dx)\n(\u2200x)Wx \u2228 Ag\t/ (\u2203x)Ax\n(A)Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball. (B)Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball. (C)Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball. (D)Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a sufficient condition for France's subsidizing agriculture or China's promoting human rights is a necessary condition for South Africa's supplying diamonds.\n(A)(E ⊃ F) ∨ (S ⊃ C) (B)(F ⊃ E) ∨ (C ⊃ S) (C)(E ⊃ F) ∨ (C ⊃ S) (D)(F ⊃ E) ∨ (S ⊃ C)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a sufficient condition for France's subsidizing agriculture or China's promoting human rights is a necessary condition for South Africa's supplying diamonds.\n(A)(E \u2283 F) \u2228 (S \u2283 C) (B)(F \u2283 E) \u2228 (C \u2283 S) (C)(E \u2283 F) \u2228 (C \u2283 S) (D)(F \u2283 E) \u2228 (S \u2283 C)",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nQ ≡ R\n~(S ∨ Q) / R\n(A)Valid (B)Invalid. Counterexample when Q and S are true and R is false (C)Invalid. Counterexample when Q is true and S and R are false (D)Invalid. Counterexample when Q, S, and R are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nQ \u2261 R\n~(S \u2228 Q) / R\n(A)Valid (B)Invalid. Counterexample when Q and S are true and R is false (C)Invalid. Counterexample when Q is true and S and R are false (D)Invalid. Counterexample when Q, S, and R are false",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nP ⊃ (Q ∨ R)\n(Q · S) ⊃ ~P\n~(~Q ∨ R) / ~P\n(A)Valid (B)Invalid. Counterexample when P, Q, R, and S are true (C)Invalid. Counterexample when P and Q are true and R and S are false (D)Invalid. Counterexample when P, R, and S are true and Q is false",
+            "input": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nP \u2283 (Q \u2228 R)\n(Q \u00b7 S) \u2283 ~P\n~(~Q \u2228 R) / ~P\n(A)Valid (B)Invalid. Counterexample when P, Q, R, and S are true (C)Invalid. Counterexample when P and Q are true and R and S are false (D)Invalid. Counterexample when P, R, and S are true and Q is false",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nDylan likes neither math nor science.\n(A)M ∨ S (B)~(M • S) (C)~(M ∨ S) (D)~M ∨ ~S",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nDylan likes neither math nor science.\n(A)M \u2228 S (B)~(M \u2022 S) (C)~(M \u2228 S) (D)~M \u2228 ~S",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: Ms. Jackson lent me some sugar, but neither Janet nor Latoya did.\n(A)Lm ∨ ~(Jl ∨ Ll) (B)Lm • ~(Lj • Ll) (C)Lm • ~(Lj ∨ Ll) (D)Lm ∨ ~(Lj • Ll)",
+            "input": " Select the best translation into predicate logic: Ms. Jackson lent me some sugar, but neither Janet nor Latoya did.\n(A)Lm \u2228 ~(Jl \u2228 Ll) (B)Lm \u2022 ~(Lj \u2022 Ll) (C)Lm \u2022 ~(Lj \u2228 Ll) (D)Lm \u2228 ~(Lj \u2022 Ll)",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: Caroline is sweet if, and only if, Janet is engaged to Brad.\n(A)Cs ⊃ Ej (B)Sc ≡ Ej (C)sC ≡ eJ (D)Sx ≡ Jy",
+            "input": "Select the best translation into predicate logic: Caroline is sweet if, and only if, Janet is engaged to Brad.\n(A)Cs \u2283 Ej (B)Sc \u2261 Ej (C)sC \u2261 eJ (D)Sx \u2261 Jy",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nJ ≡ ~K\nJ ∨ L\n~K / L\n(A)Valid (B)Invalid. Counterexample when J and K are true and L is false (C)Invalid. Counterexample when J is true and K and L are false (D)Invalid. Counterexample when K is true and J and L are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nJ \u2261 ~K\nJ \u2228 L\n~K / L\n(A)Valid (B)Invalid. Counterexample when J and K are true and L is false (C)Invalid. Counterexample when J is true and K and L are false (D)Invalid. Counterexample when K is true and J and L are false",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: If Eileen plays fiddle then Sherri sings.\n(A)Fe ∨ Ss (B)eF ⊃ Ss (C)Fe ∨ Es (D)Fe ⊃ Ss",
+            "input": "Select the best translation into predicate logic: If Eileen plays fiddle then Sherri sings.\n(A)Fe \u2228 Ss (B)eF \u2283 Ss (C)Fe \u2228 Es (D)Fe \u2283 Ss",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a necessary condition for France's subsidizing agriculture or China's promoting human rights is not a sufficient condition for South Africa's supplying diamonds.\n(A)(E ≡ F) ∨ ~(C ≡ S) (B)(E ≡ F) ∨ (~C ⊃ S) (C)(E ⊃ F) ∨ ~(C ⊃ S) (D)(F ⊃ E) ∨ ~(C ⊃ S)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a necessary condition for France's subsidizing agriculture or China's promoting human rights is not a sufficient condition for South Africa's supplying diamonds.\n(A)(E \u2261 F) \u2228 ~(C \u2261 S) (B)(E \u2261 F) \u2228 (~C \u2283 S) (C)(E \u2283 F) \u2228 ~(C \u2283 S) (D)(F \u2283 E) \u2228 ~(C \u2283 S)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: Some athletes don't get injured.\n(A)~Ia (B)(∃x)(Ax • ~Ix) (C)~Ai (D)(∃x)(Ix ∨ ~Ax)",
+            "input": " Select the best translation into predicate logic: Some athletes don't get injured.\n(A)~Ia (B)(\u2203x)(Ax \u2022 ~Ix) (C)~Ai (D)(\u2203x)(Ix \u2228 ~Ax)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n~C ∨ D\n(A)If Emily doesn't stop working then Russell makes dinner. (B)Emily stops working unless Russell makes dinner. (C)Emily stops working unless Russell doesn't make dinner. (D)Emily doesn't stop working unless Russell makes dinner.",
+            "input": " Use the following key to translate the given formula of PL to natural, English sentences.\nA: Marina reads a Percy Jackson book.\nB: Izzy plays Minecraft.\nC: Emily stops working.\nD: Russell makes dinner.\nE: Ashleigh stops by.\n~C \u2228 D\n(A)If Emily doesn't stop working then Russell makes dinner. (B)Emily stops working unless Russell makes dinner. (C)Emily stops working unless Russell doesn't make dinner. (D)Emily doesn't stop working unless Russell makes dinner.",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nBrittany likes fish and lizards, but not cats.\n(A)F • L • ~C (B)(F • L) • ~C (C)(F • L) ∨ ~C (D)C • (F • L)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nBrittany likes fish and lizards, but not cats.\n(A)F \u2022 L \u2022 ~C (B)(F \u2022 L) \u2022 ~C (C)(F \u2022 L) \u2228 ~C (D)C \u2022 (F \u2022 L)",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~E ∨ F\n~F / E\n(A)Valid (B)Invalid. Counterexample when E and F are true (C)Invalid. Counterexample when E is true and F is false (D)Invalid. Counterexample when E and F are false",
+            "input": "Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\n~E \u2228 F\n~F / E\n(A)Valid (B)Invalid. Counterexample when E and F are true (C)Invalid. Counterexample when E is true and F is false (D)Invalid. Counterexample when E and F are false",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nD ⊃ (~E ⊃ F)\n~D ⊃ E\n~E / F\n(A)Valid (B)Invalid. Counterexample when D and E are true and F is false (C)Invalid. Counterexample when D is true and E and F are false (D)Invalid. Counterexample when E is true and D and F are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nD \u2283 (~E \u2283 F)\n~D \u2283 E\n~E / F\n(A)Valid (B)Invalid. Counterexample when D and E are true and F is false (C)Invalid. Counterexample when D is true and E and F are false (D)Invalid. Counterexample when E is true and D and F are false",
             "output": [
                 "A"
             ]
@@ -707,13 +714,13 @@
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(T ⊃ U) ⊃ (W ⊃ U)\nT ⊃ ~(U ⊃ X)\n(T ⊃ ~X) ⊃ W\n(A)Inconsistent (B)Consistent. Consistent valuation when U, W, and X are true and T is false (C)Consistent. Consistent valuation when W and X are true and T and U are false (D)Consistent. Consistent valuation when T and U are true and W and X are false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(T \u2283 U) \u2283 (W \u2283 U)\nT \u2283 ~(U \u2283 X)\n(T \u2283 ~X) \u2283 W\n(A)Inconsistent (B)Consistent. Consistent valuation when U, W, and X are true and T is false (C)Consistent. Consistent valuation when W and X are true and T and U are false (D)Consistent. Consistent valuation when T and U are true and W and X are false",
             "output": [
                 "B"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. Some animals are neglected by cruel people. (Ax: x is an animal; Cx: x is cruel; Px: x is a person; Nxy: x neglects y)\n(A)(∃x)[(Ax • Cx) • (∃y)(Py • Nyx)] (B)(∃x)[(Cx • Px) • (∃y)(Ay • Nxy)] (C)(∃x)[(Ax • Px) • (∃y)(Cy • Nxy)] (D)(∃x)(∃y){[(Ax • Cy) • Py] • Nxy)]}",
+            "input": " Select the best translation into predicate logic. Some animals are neglected by cruel people. (Ax: x is an animal; Cx: x is cruel; Px: x is a person; Nxy: x neglects y)\n(A)(\u2203x)[(Ax \u2022 Cx) \u2022 (\u2203y)(Py \u2022 Nyx)] (B)(\u2203x)[(Cx \u2022 Px) \u2022 (\u2203y)(Ay \u2022 Nxy)] (C)(\u2203x)[(Ax \u2022 Px) \u2022 (\u2203y)(Cy \u2022 Nxy)] (D)(\u2203x)(\u2203y){[(Ax \u2022 Cy) \u2022 Py] \u2022 Nxy)]}",
             "output": [
                 "B"
             ]
@@ -725,7 +732,7 @@
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nL ⊃ [(M ∨ ~N) ⊃ O]\n(N ⊃ O) ⊃ (~P ⊃ Q)\nR ⊃ ~Q / L ⊃ (R ⊃ P)\n(A)Valid (B)Invalid. Counterexample when L, M, O, Q, and R are true and N and P are false (C)Invalid. Counterexample when L, N, O, Q, and R are true and M and P are false (D)Invalid. Counterexample when L, N, and R are true and M, O, P, and Q are false",
+            "input": " Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nL \u2283 [(M \u2228 ~N) \u2283 O]\n(N \u2283 O) \u2283 (~P \u2283 Q)\nR \u2283 ~Q / L \u2283 (R \u2283 P)\n(A)Valid (B)Invalid. Counterexample when L, M, O, Q, and R are true and N and P are false (C)Invalid. Counterexample when L, N, O, Q, and R are true and M and P are false (D)Invalid. Counterexample when L, N, and R are true and M, O, P, and Q are false",
             "output": [
                 "D"
             ]
@@ -737,31 +744,31 @@
             ]
         },
         {
-            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nM ∨ N\n~M · O / N\n(A)Valid (B)Invalid. Counterexample when M and O are true and N is false (C)Invalid. Counterexample when M is true and O and N are false (D)Invalid. Counterexample when O is true and M and N are false",
+            "input": " Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nM \u2228 N\n~M \u00b7 O / N\n(A)Valid (B)Invalid. Counterexample when M and O are true and N is false (C)Invalid. Counterexample when M is true and O and N are false (D)Invalid. Counterexample when O is true and M and N are false",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a necessary condition for France's subsidizing agriculture or China promotes human rights given that South Africa doesn't supply diamonds.\n(A)(E ⊃ F) ∨ (C ≡ ~S) (B)(F ⊃ E) ∨ (~S ≡ C) (C)(E ⊃ F) ∨ (S ⊃~C) (D)(F ⊃ E) ∨ (~S ⊃ C)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a necessary condition for France's subsidizing agriculture or China promotes human rights given that South Africa doesn't supply diamonds.\n(A)(E \u2283 F) \u2228 (C \u2261 ~S) (B)(F \u2283 E) \u2228 (~S \u2261 C) (C)(E \u2283 F) \u2228 (S \u2283~C) (D)(F \u2283 E) \u2228 (~S \u2283 C)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEverybody loves Raymond, or not.\n(A)L (B)~L (C)L • ~L (D)L ∨ ~L",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEverybody loves Raymond, or not.\n(A)L (B)~L (C)L \u2022 ~L (D)L \u2228 ~L",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best translation into predicate logic. All birds live in some nest. (Bx: x is a bird; Nx: x is a nest; Lxy: x lives in y)\n(A)(∀x)(∀y)[(Bx • Ny) ⊃ Lxy] (B)(∀x)[Bx ⊃ (∃y)(Ny • Lxy)] (C)(∀x)[(∃y)(Ny • Bx) ⊃ Lxy] (D)(∀x)(∃y)[(Bx • Ny) ⊃ Lxy]",
+            "input": " Select the best translation into predicate logic. All birds live in some nest. (Bx: x is a bird; Nx: x is a nest; Lxy: x lives in y)\n(A)(\u2200x)(\u2200y)[(Bx \u2022 Ny) \u2283 Lxy] (B)(\u2200x)[Bx \u2283 (\u2203y)(Ny \u2022 Lxy)] (C)(\u2200x)[(\u2203y)(Ny \u2022 Bx) \u2283 Lxy] (D)(\u2200x)(\u2203y)[(Bx \u2022 Ny) \u2283 Lxy]",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\n(A ∨ B) ⊃ (C ∨ D)\nA ∨ B\n~C\n(A)~A ∨ ~B (B)~~C (C)C ∨ D (D)(A ∨ B) ⊃ D",
+            "input": "Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\n(A \u2228 B) \u2283 (C \u2228 D)\nA \u2228 B\n~C\n(A)~A \u2228 ~B (B)~~C (C)C \u2228 D (D)(A \u2228 B) \u2283 D",
             "output": [
                 "C"
             ]
@@ -773,25 +780,25 @@
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n~N ≡ (O · P)\n~O ⊃ Q\nN · ~Q\n(A)Inconsistent (B)Consistent. Consistent valuation when N, O, and P are true and Q is false (C)Consistent. Consistent valuation when N and O are true and P and Q are false (D)Consistent. Consistent valuation when N and P are true and O and Q are false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n~N \u2261 (O \u00b7 P)\n~O \u2283 Q\nN \u00b7 ~Q\n(A)Inconsistent (B)Consistent. Consistent valuation when N, O, and P are true and Q is false (C)Consistent. Consistent valuation when N and O are true and P and Q are false (D)Consistent. Consistent valuation when N and P are true and O and Q are false",
             "output": [
                 "C"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nPablo will go to the store if, and only if, his brother drives him and pays for gas.\n(A)(P ≡ D) ≡ G (B)(D • G) ⊃ P (C)P ⊃ (D • G) (D)P ≡ (D • G)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nPablo will go to the store if, and only if, his brother drives him and pays for gas.\n(A)(P \u2261 D) \u2261 G (B)(D \u2022 G) \u2283 P (C)P \u2283 (D \u2022 G) (D)P \u2261 (D \u2022 G)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: Either Taylor or Eric is a latte boy.\n(A)Lt ∨ Le (B)Lx ∨ Ly (C)tL ∨ eL (D)Tl ⊃ El",
+            "input": "Select the best translation into predicate logic: Either Taylor or Eric is a latte boy.\n(A)Lt \u2228 Le (B)Lx \u2228 Ly (C)tL \u2228 eL (D)Tl \u2283 El",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given arguments in predicate logic.\nWn ∨ Wm\n(∀x)[Lx ⊃ (Dx ⊃ ~Wx)]\nLn • Dn\t/ ~(∀x)~Wx\n(A)Either Nancy or Marvin are at work. All lawyers are not at work if they are out to dinner. Nancy is a lawyer and out to dinner. So not everything is not at work. (B)Either Nancy or Marvin are at work. All lawyers are out to dinner if they are not at work. Nancy is a lawyer and out to dinner. So not everything is not at work. (C)Either Nancy or Marvin are at work. All lawyers are out to dinner if they are not at work. Nancy is a lawyer and out to dinner. So not everything is at work. (D)Either Nancy or Marvin are at work. All lawyers are not at work if they are out to dinner. Nancy is a lawyer and out to dinner. So not everything is at work.",
+            "input": " Select the best English interpretation of the given arguments in predicate logic.\nWn \u2228 Wm\n(\u2200x)[Lx \u2283 (Dx \u2283 ~Wx)]\nLn \u2022 Dn\t/ ~(\u2200x)~Wx\n(A)Either Nancy or Marvin are at work. All lawyers are not at work if they are out to dinner. Nancy is a lawyer and out to dinner. So not everything is not at work. (B)Either Nancy or Marvin are at work. All lawyers are out to dinner if they are not at work. Nancy is a lawyer and out to dinner. So not everything is not at work. (C)Either Nancy or Marvin are at work. All lawyers are out to dinner if they are not at work. Nancy is a lawyer and out to dinner. So not everything is at work. (D)Either Nancy or Marvin are at work. All lawyers are not at work if they are out to dinner. Nancy is a lawyer and out to dinner. So not everything is at work.",
             "output": [
                 "A"
             ]
@@ -815,25 +822,25 @@
             ]
         },
         {
-            "input": " Which of the following propositions is not an immediate (one-step) consequence in PL of the given premises?\nI ⊃ (J ≡ K)\n(J ≡ K) ⊃ (L ∨ M)\nI ⊃ ~L\n(A)~L (B)J ≡ K (C)I ⊃ (L ∨ M) (D)~L ⊃ (J ≡ K)",
+            "input": " Which of the following propositions is not an immediate (one-step) consequence in PL of the given premises?\nI \u2283 (J \u2261 K)\n(J \u2261 K) \u2283 (L \u2228 M)\nI \u2283 ~L\n(A)~L (B)J \u2261 K (C)I \u2283 (L \u2228 M) (D)~L \u2283 (J \u2261 K)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a sufficient condition for France's subsidizing agriculture, or China doesn't promote human rights when and only when South Africa supplies diamonds.\n(A)(E ⊃ F) ∨ (~C ⊃ S) (B)(F ⊃ E) ∨ (S ⊃ ~C (C)(E ⊃ F) ∨ ~(S ≡ C) (D)(E ⊃ F) ∨ (~C ≡ S)",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nEither England's importing beef is a sufficient condition for France's subsidizing agriculture, or China doesn't promote human rights when and only when South Africa supplies diamonds.\n(A)(E \u2283 F) \u2228 (~C \u2283 S) (B)(F \u2283 E) \u2228 (S \u2283 ~C (C)(E \u2283 F) \u2228 ~(S \u2261 C) (D)(E \u2283 F) \u2228 (~C \u2261 S)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " S Select the best translation into predicate logic. Some kind people help some endangered species. (Ex: x is endangered; Kx: x is kind; Px: x is a person; Sx: x is a species; Hxy: x helps y)\n(A)(∃x){(Kx • Px) • (∃y)[(Ey • Sy) • Hxy]} (B)(∃x)(∃y){[(Kx • Sx) • (Ey • Py)] • Hxy} (C)(∃x)(∃y){[(Kx • Sx) • (Ey • Py)] • Hyx} (D)(∃x)(∃y){[(Kx • Px) • (Ey • Sy)] ⊃ Hxy}",
+            "input": " S Select the best translation into predicate logic. Some kind people help some endangered species. (Ex: x is endangered; Kx: x is kind; Px: x is a person; Sx: x is a species; Hxy: x helps y)\n(A)(\u2203x){(Kx \u2022 Px) \u2022 (\u2203y)[(Ey \u2022 Sy) \u2022 Hxy]} (B)(\u2203x)(\u2203y){[(Kx \u2022 Sx) \u2022 (Ey \u2022 Py)] \u2022 Hxy} (C)(\u2203x)(\u2203y){[(Kx \u2022 Sx) \u2022 (Ey \u2022 Py)] \u2022 Hyx} (D)(\u2203x)(\u2203y){[(Kx \u2022 Px) \u2022 (Ey \u2022 Sy)] \u2283 Hxy}",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf either George enrolls or Harry enrolls, then Ira does not enroll.\n(A)(G ⊃ H) ∨ I (B)(G ∨ H) ⊃ I (C)(G ⊃ H) ∨ ~I (D)(G ∨ H) ⊃ ~I",
+            "input": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf either George enrolls or Harry enrolls, then Ira does not enroll.\n(A)(G \u2283 H) \u2228 I (B)(G \u2228 H) \u2283 I (C)(G \u2283 H) \u2228 ~I (D)(G \u2228 H) \u2283 ~I",
             "output": [
                 "D"
             ]
@@ -845,19 +852,19 @@
             ]
         },
         {
-            "input": " Select the best translation into predicate logic: No senior graduates without a major.\n(A)(∀x)(Sx ⊃ ~Gx) (B)~(∀x)(Sx ⊃ Gx) (C)(∀x)( ~Sx ⊃ ~Gx) (D)(∀x) ~(Sx ⊃ ~Gx)",
+            "input": " Select the best translation into predicate logic: No senior graduates without a major.\n(A)(\u2200x)(Sx \u2283 ~Gx) (B)~(\u2200x)(Sx \u2283 Gx) (C)(\u2200x)( ~Sx \u2283 ~Gx) (D)(\u2200x) ~(Sx \u2283 ~Gx)",
             "output": [
                 "A"
             ]
         },
         {
-            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\nU ⊃ W\nW ⊃ (X ≡ ~Y)\n(X ≡ ~Y) ⊃ Z\n~Z\n(A)U ⊃ Z (B)U ∨ W (C)~W (D)~(X ≡ ~Y)",
+            "input": " Which of the following propositions is an immediate (one-step) consequence in PL of the given premises?\nU \u2283 W\nW \u2283 (X \u2261 ~Y)\n(X \u2261 ~Y) \u2283 Z\n~Z\n(A)U \u2283 Z (B)U \u2228 W (C)~W (D)~(X \u2261 ~Y)",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (∃x)[Hx • (∀y)(Ay ⊃ Bxy)]\n(A)Some houses are smaller than all apartments. (B)Every house is bigger than every apartment. (C)Some apartment is smaller than every house. (D)Some houses are bigger than every apartment.",
+            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (\u2203x)[Hx \u2022 (\u2200y)(Ay \u2283 Bxy)]\n(A)Some houses are smaller than all apartments. (B)Every house is bigger than every apartment. (C)Some apartment is smaller than every house. (D)Some houses are bigger than every apartment.",
             "output": [
                 "D"
             ]
@@ -869,7 +876,7 @@
             ]
         },
         {
-            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(G ≡ H) ⊃ H\n~H ∨ I\nG · ~I\n(A)Inconsistent (B)Consistent. Consistent valuation when G, H, and I are true (C)Consistent. Consistent valuation when G and H are true and I is false (D)Consistent. Consistent valuation when G is true and H and I are false",
+            "input": " Use indirect truth tables to determine whether each set of propositions is consistent. If the set is consistent, choose an option with a consistent valuation. (There may be other consistent valuations.)\n(G \u2261 H) \u2283 H\n~H \u2228 I\nG \u00b7 ~I\n(A)Inconsistent (B)Consistent. Consistent valuation when G, H, and I are true (C)Consistent. Consistent valuation when G and H are true and I is false (D)Consistent. Consistent valuation when G is true and H and I are false",
             "output": [
                 "D"
             ]
@@ -881,13 +888,13 @@
             ]
         },
         {
-            "input": "Select the best translation into predicate logic: Leroy is bad only if DJ Khaled shouts his name.\n(A)Sk ≡ Bl (B)Bl ≡ Sk (C)Bx ⊃ Sy (D)Bl ⊃ Sk",
+            "input": "Select the best translation into predicate logic: Leroy is bad only if DJ Khaled shouts his name.\n(A)Sk \u2261 Bl (B)Bl \u2261 Sk (C)Bx \u2283 Sy (D)Bl \u2283 Sk",
             "output": [
                 "D"
             ]
         },
         {
-            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (∃x)[(Ax • Lx) • (∃y)(Hy • Bxy)]\n(A)Some large houses are bigger than some apartments. (B)Some houses are bigger than all large apartments. (C)Some large apartments are bigger than some houses. (D)Some houses are bigger thatn some large apartments.",
+            "input": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (\u2203x)[(Ax \u2022 Lx) \u2022 (\u2203y)(Hy \u2022 Bxy)]\n(A)Some large houses are bigger than some apartments. (B)Some houses are bigger than all large apartments. (C)Some large apartments are bigger than some houses. (D)Some houses are bigger thatn some large apartments.",
             "output": [
                 "C"
             ]
