@@ -52,6 +52,7 @@
     - `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
     - `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
     - `Detection -> Entity Detection -> Sentient Entity Detection`
+  - `Detection -> Event Detection`
   - `Detection -> Fake News Detection`
   - `Detection -> Intent Detection`
   - `Detection -> Location Detection`
