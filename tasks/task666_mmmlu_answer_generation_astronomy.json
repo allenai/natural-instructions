@@ -6,9 +6,10 @@
         "Measuring Massive Multitask Language Understanding tasks"
     ],
     "Categories": [
-        "Question Answering"
+        "Question Answering -> Contextual Question Answering -> Missing Knowledge",
+        "Classification -> Verification"
     ],
-    "Definition": "You are given a question on astronomy. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"), out of which only one is correct. You need to answer the question by selecting the correct option. You should only answer with the choice letter, not the whole answer.",
+    "Definition": "You are given a question on astronomy. Astronomy is a natural science that studies celestial objects and phenomena. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"), out of which only one is correct. You need to answer the question by selecting the correct option. You should only answer with the choice letter, not the whole answer.",
     "Positive Examples": [
         {
             "input": "What is true for a type-Ia (\"type one-a\") supernova?\n(A)This type occurs in binary systems. (B)This type occurs in young galaxies. (C)This type produces gamma-ray bursts. (D)This type produces high amounts of X-rays.",
@@ -31,6 +32,11 @@
             "input": "If you know both the actual brightness of an object and its apparent brightness from your location then with no other information you can estimate:\n(A)Its speed relative to you (B)Its composition (C)Its size (D)Its distance from you",
             "output": "B,C",
             "explanation": "Only one of the following options ('A', 'B', 'C', 'D') is allowed to be the answer. Multiple options can not be correct. The correct answer here would have been 'D'."
+        },
+        {
+            "input": "Which of the following moons is NOT one of the Galilean moons?\n(A)Ganymede (B)Callisto (C)Europa (D)Dione",
+            "output": "B",
+            "explanation": "Ganymede, Callisto, and Europa are all Galilean moons, whereas Dione is not. Hence the correct answer should be 'D'."
         }
     ],
     "Instances": [
@@ -59,13 +65,13 @@
             ]
         },
         {
-            "input": "Why did Ptolemy have the planets orbiting Earth on ‘circles upon circles’ in his model of the universe?\n(A)To explain why more distant planets take longer to make a circuit through the constellations of the zodiac. (B)To explain the fact that planets sometimes appear to move westward rather than eastward relative to the stars in our sky. (C)To explain why the Greeks were unable to detect stellar paralax. (D)To properly account for the varying distances of the planets from Earth.",
+            "input": "Why did Ptolemy have the planets orbiting Earth on \u2018circles upon circles\u2019 in his model of the universe?\n(A)To explain why more distant planets take longer to make a circuit through the constellations of the zodiac. (B)To explain the fact that planets sometimes appear to move westward rather than eastward relative to the stars in our sky. (C)To explain why the Greeks were unable to detect stellar paralax. (D)To properly account for the varying distances of the planets from Earth.",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "As the life of a star progresses heavy elements are produced. The elements form layers around the star in this order (starting from the outer layer):\n(A)H → He → Li → N → O → Si → Fe (B)H → He → C → O → Ne → Si → Fe (C)H → He → Li → O → Ne → Si → Fe (D)H → He → C → N → O → Si → Fe",
+            "input": "As the life of a star progresses heavy elements are produced. The elements form layers around the star in this order (starting from the outer layer):\n(A)H \u2192 He \u2192 Li \u2192 N \u2192 O \u2192 Si \u2192 Fe (B)H \u2192 He \u2192 C \u2192 O \u2192 Ne \u2192 Si \u2192 Fe (C)H \u2192 He \u2192 Li \u2192 O \u2192 Ne \u2192 Si \u2192 Fe (D)H \u2192 He \u2192 C \u2192 N \u2192 O \u2192 Si \u2192 Fe",
             "output": [
                 "B"
             ]
@@ -86,12 +92,6 @@
             "input": "Where is the crater from the impact that is believed to be responsible for the mass extinction of dinosaurs 65 million years ago?\n(A)Tunguska Siberia. (B)Chicxulub Crater Yucatan Peninsula in Mexico. (C)Quebec Canada. (D)Meteor Crater in Arizona.",
             "output": [
                 "B"
-            ]
-        },
-        {
-            "input": "Which of the following moons is NOT one of the Galilean moons?\n(A)Ganymede (B)Callisto (C)Europa (D)Dione",
-            "output": [
-                "D"
             ]
         },
         {
@@ -155,7 +155,7 @@
             ]
         },
         {
-            "input": "You’ve made a scientific theory that there is an attractive force between all objects. When will your theory be proven to be correct?\n(A)The first time you drop a bowling ball and it falls to the ground proving your hypothesis. (B)After you’ve repeated your experiment many times. (C)You can never prove your theory to be correct only “yet to be proven wrong”. (D)When you and many others have tested the hypothesis.",
+            "input": "You\u2019ve made a scientific theory that there is an attractive force between all objects. When will your theory be proven to be correct?\n(A)The first time you drop a bowling ball and it falls to the ground proving your hypothesis. (B)After you\u2019ve repeated your experiment many times. (C)You can never prove your theory to be correct only \u201cyet to be proven wrong\u201d. (D)When you and many others have tested the hypothesis.",
             "output": [
                 "C"
             ]
@@ -203,7 +203,7 @@
             ]
         },
         {
-            "input": "Previous IAAC rounds featured Proxima/Alpha Centauri as closes star(system) to the Earth. Which one is the second closest star(system)?\n(A)Wolf 359 (B)Sirius (C)61 Cygni (D)Barnard’s Star",
+            "input": "Previous IAAC rounds featured Proxima/Alpha Centauri as closes star(system) to the Earth. Which one is the second closest star(system)?\n(A)Wolf 359 (B)Sirius (C)61 Cygni (D)Barnard\u2019s Star",
             "output": [
                 "D"
             ]
@@ -311,7 +311,7 @@
             ]
         },
         {
-            "input": "Besides large astronomical objects astrophysicists are also interested in small particles from space. Which one of these particles has the weakest interactions with other particles?\n(A)µ Muons (B)Antiparticles (C)ν Neutrinos (D)π Pions",
+            "input": "Besides large astronomical objects astrophysicists are also interested in small particles from space. Which one of these particles has the weakest interactions with other particles?\n(A)\u00b5 Muons (B)Antiparticles (C)\u03bd Neutrinos (D)\u03c0 Pions",
             "output": [
                 "C"
             ]
@@ -335,7 +335,7 @@
             ]
         },
         {
-            "input": "The so-called “bigfoot” on Mars was actually a rock that was about 5 cm tall. It had an angular size of about 0.5 degrees (~30 pixels). How far away was this rock from the rover?\n(A)About 6 meters (B)About 6 feet (C)About 10 meters (D)About 10 feet",
+            "input": "The so-called \u201cbigfoot\u201d on Mars was actually a rock that was about 5 cm tall. It had an angular size of about 0.5 degrees (~30 pixels). How far away was this rock from the rover?\n(A)About 6 meters (B)About 6 feet (C)About 10 meters (D)About 10 feet",
             "output": [
                 "A"
             ]
@@ -359,7 +359,7 @@
             ]
         },
         {
-            "input": "You observe the visible spectrum of a star viewed through a cloud of cool hydrogen gas.\n(A)You see only the star’s blackbody spectrum. (B)You see the star’s blackbody spectrum with absorption lines due to hydrogen. (C)You see only emission lines characteristic of hydrogen. (D)You see only emission lines characteristic of the star’s composition.",
+            "input": "You observe the visible spectrum of a star viewed through a cloud of cool hydrogen gas.\n(A)You see only the star\u2019s blackbody spectrum. (B)You see the star\u2019s blackbody spectrum with absorption lines due to hydrogen. (C)You see only emission lines characteristic of hydrogen. (D)You see only emission lines characteristic of the star\u2019s composition.",
             "output": [
                 "B"
             ]
@@ -419,7 +419,7 @@
             ]
         },
         {
-            "input": "Why is the Mars Exploration Rover Spirit currently tilted towards the north?\n(A)Because it’s climbing up a big hill. (B)Because it’s in the southern hemisphere where it is winter now. (C)Because it’s in the northern hemisphere where it is winter now. (D)Because one of its wheels broke.",
+            "input": "Why is the Mars Exploration Rover Spirit currently tilted towards the north?\n(A)Because it\u2019s climbing up a big hill. (B)Because it\u2019s in the southern hemisphere where it is winter now. (C)Because it\u2019s in the northern hemisphere where it is winter now. (D)Because one of its wheels broke.",
             "output": [
                 "B"
             ]
@@ -479,7 +479,7 @@
             ]
         },
         {
-            "input": "What does the astronomical term ecliptic describe?\n(A)The path of the Sun in the sky throughout a year. (B)The axial tilt of the Earth throughout a year. (C)The movement of the stars due to Earth’s rotation. (D)The central line through the axis of rotation.",
+            "input": "What does the astronomical term ecliptic describe?\n(A)The path of the Sun in the sky throughout a year. (B)The axial tilt of the Earth throughout a year. (C)The movement of the stars due to Earth\u2019s rotation. (D)The central line through the axis of rotation.",
             "output": [
                 "A"
             ]
@@ -503,7 +503,7 @@
             ]
         },
         {
-            "input": "Which of the following statements about sidereal and solar days is not true?\n(A)The time it takes for the Sun to make one circuit of our sky is one solar day. (B)A solar day is 4 minutes longer than a sidereal day. (C)A solar day represents more than 360° of rotation for the earth. (D)The time it takes for the Moon to make one circuit of our sky is one solar day.",
+            "input": "Which of the following statements about sidereal and solar days is not true?\n(A)The time it takes for the Sun to make one circuit of our sky is one solar day. (B)A solar day is 4 minutes longer than a sidereal day. (C)A solar day represents more than 360\u00b0 of rotation for the earth. (D)The time it takes for the Moon to make one circuit of our sky is one solar day.",
             "output": [
                 "D"
             ]
@@ -533,7 +533,7 @@
             ]
         },
         {
-            "input": "What is the correct numerical value and unit of the Boltzmann constant?\n(A)1.38 × 10−21 m^3 · kg · s^−2 · K^−1 (B)1.38 × 10−22 m^2 · kg · s^−3 · K^−1 (C)1.38 × 10−23 m^2 · kg · s^−2 · K^−1 (D)1.38 × 10−24 m^2 · kg · s^−2 · K^−2",
+            "input": "What is the correct numerical value and unit of the Boltzmann constant?\n(A)1.38 \u00d7 10\u221221 m^3 \u00b7 kg \u00b7 s^\u22122 \u00b7 K^\u22121 (B)1.38 \u00d7 10\u221222 m^2 \u00b7 kg \u00b7 s^\u22123 \u00b7 K^\u22121 (C)1.38 \u00d7 10\u221223 m^2 \u00b7 kg \u00b7 s^\u22122 \u00b7 K^\u22121 (D)1.38 \u00d7 10\u221224 m^2 \u00b7 kg \u00b7 s^\u22122 \u00b7 K^\u22122",
             "output": [
                 "C"
             ]
@@ -617,7 +617,7 @@
             ]
         },
         {
-            "input": "All of the following have been cited as evidence for the Giant Impact Hypothesis except:\n(A)The relative size of the Moon to the size of Earth is large compared to most planets and their moon. (B)Most rocks on the Moon’s surface are older than those on the Earth’s surface. (C)The Moon has a much smaller iron core than the Earth even considering its size. (D)The Moon was once entirely molten.",
+            "input": "All of the following have been cited as evidence for the Giant Impact Hypothesis except:\n(A)The relative size of the Moon to the size of Earth is large compared to most planets and their moon. (B)Most rocks on the Moon\u2019s surface are older than those on the Earth\u2019s surface. (C)The Moon has a much smaller iron core than the Earth even considering its size. (D)The Moon was once entirely molten.",
             "output": [
                 "B"
             ]
@@ -629,7 +629,7 @@
             ]
         },
         {
-            "input": "A comet’s tail points in the following direction:\n(A)away from the Sun (B)towards the Sun (C)in the direction of movement (D)against the direction of movement",
+            "input": "A comet\u2019s tail points in the following direction:\n(A)away from the Sun (B)towards the Sun (C)in the direction of movement (D)against the direction of movement",
             "output": [
                 "A"
             ]
@@ -659,7 +659,7 @@
             ]
         },
         {
-            "input": "When traveling north from the United States into Canada you’ll see the North Star (Polaris) getting _________.\n(A)Brighter (B)Dimmer (C)Higher in the sky (D)Lower in the sky",
+            "input": "When traveling north from the United States into Canada you\u2019ll see the North Star (Polaris) getting _________.\n(A)Brighter (B)Dimmer (C)Higher in the sky (D)Lower in the sky",
             "output": [
                 "C"
             ]
@@ -743,7 +743,7 @@
             ]
         },
         {
-            "input": "If you lived on Venus what phases of the Earth would you see? (Assume your telescope can see through Venus’s thick clouds…)\n(A)New first quarter full third quarter (B)Waning crescent New Waxing crescent (C)Waxing gibbous Full Waning gibbous (D)New only",
+            "input": "If you lived on Venus what phases of the Earth would you see? (Assume your telescope can see through Venus\u2019s thick clouds\u2026)\n(A)New first quarter full third quarter (B)Waning crescent New Waxing crescent (C)Waxing gibbous Full Waning gibbous (D)New only",
             "output": [
                 "C"
             ]
@@ -761,7 +761,7 @@
             ]
         },
         {
-            "input": "Where are the Trojan asteroids located?\n(A)in the center of the asteroid belt (B)on orbits that cross Earth's orbit (C)surrounding Jupiter (D)along Jupiter's orbit 60° ahead of and behind Jupiter",
+            "input": "Where are the Trojan asteroids located?\n(A)in the center of the asteroid belt (B)on orbits that cross Earth's orbit (C)surrounding Jupiter (D)along Jupiter's orbit 60\u00b0 ahead of and behind Jupiter",
             "output": [
                 "D"
             ]
@@ -887,13 +887,13 @@
             ]
         },
         {
-            "input": "How do we know how old the Earth is?\n(A)From the layering of materials within the Earth. (B)From fossils of ancient life. (C)From the cratering history of Earth’s surface. (D)From radioactive dating of rocks and meteorites.",
+            "input": "How do we know how old the Earth is?\n(A)From the layering of materials within the Earth. (B)From fossils of ancient life. (C)From the cratering history of Earth\u2019s surface. (D)From radioactive dating of rocks and meteorites.",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Which statement about an atom is not true:\n(A)The nucleus contains most of the atom’s mass but almost none of its volume. (B)A neutral atom always has equal numbers of electrons and protons. (C)A neutral atom always has equal numbers of neutrons and protons. (D)The electrons can only orbit at particular energy levels.",
+            "input": "Which statement about an atom is not true:\n(A)The nucleus contains most of the atom\u2019s mass but almost none of its volume. (B)A neutral atom always has equal numbers of electrons and protons. (C)A neutral atom always has equal numbers of neutrons and protons. (D)The electrons can only orbit at particular energy levels.",
             "output": [
                 "C"
             ]
@@ -953,7 +953,7 @@
             ]
         },
         {
-            "input": "20000 years from now ...\n(A)The Moon will be closer to the Earth and the Earth’s day will be longer. (B)The Moon will be closer to the Earth and the Earth’s day will be shorter. (C)The Moon will be further from the Earth and the Earth’s day will be longer. (D)The Moon will be further from the Earth and the Earth’s day will be shorter.",
+            "input": "20000 years from now ...\n(A)The Moon will be closer to the Earth and the Earth\u2019s day will be longer. (B)The Moon will be closer to the Earth and the Earth\u2019s day will be shorter. (C)The Moon will be further from the Earth and the Earth\u2019s day will be longer. (D)The Moon will be further from the Earth and the Earth\u2019s day will be shorter.",
             "output": [
                 "C"
             ]
@@ -965,7 +965,7 @@
             ]
         },
         {
-            "input": "Most people use C°(degree Celsius) to measure everyday temperatures. Astronomers prefer to use K (Kelvin) to measure temperatures. Approximately how many Kelvin are 25 C°?\n(A)200 Kelvin (B)250 Kelvin (C)300 Kelvin (D)350 Kelvin",
+            "input": "Most people use C\u00b0(degree Celsius) to measure everyday temperatures. Astronomers prefer to use K (Kelvin) to measure temperatures. Approximately how many Kelvin are 25 C\u00b0?\n(A)200 Kelvin (B)250 Kelvin (C)300 Kelvin (D)350 Kelvin",
             "output": [
                 "C"
             ]
@@ -1013,7 +1013,7 @@
             ]
         },
         {
-            "input": "The Milky Way is part of a giant supercluster with a diameter of 160 Mpc. What is the name of this supercluster?\n(A)Virgo (B)Laniakea (C)Sculptor (D)Boötes",
+            "input": "The Milky Way is part of a giant supercluster with a diameter of 160 Mpc. What is the name of this supercluster?\n(A)Virgo (B)Laniakea (C)Sculptor (D)Bo\u00f6tes",
             "output": [
                 "B"
             ]
