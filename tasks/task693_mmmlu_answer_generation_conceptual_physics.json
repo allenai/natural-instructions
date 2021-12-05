@@ -6,14 +6,15 @@
         "Measuring Massive Multitask Language Understanding tasks"
     ],
     "Categories": [
-        "Question Answering"
+        "Question Answering -> Multiple Choice Question Answering",
+        "Question Answering -> Contextual Question Answering -> Missing Knowledge"
     ],
     "Definition": "You are given a question on conceptual physics. You are also given 4 answer options (associated with \"A\", \"B\", \"C\", \"D\"), out of which only one is correct. You need to answer the question by selecting the correct option. You should only answer with the choice letter, not the whole answer.",
     "Positive Examples": [
         {
-            "input": "A 10-N force at an angle 45° above the horizontal has a horizontal component of about\n(A)7 N (B)5 N (C)10 N (D)12 N",
+            "input": "A 10-N force at an angle 45\u00b0 above the horizontal has a horizontal component of about\n(A)7 N (B)5 N (C)10 N (D)12 N",
             "output": "A",
-            "explanation": "A 10-N force at an angle 45° above the horizontal has a horizontal component of about 7 N"
+            "explanation": "A 10-N force at an angle 45\u00b0 above the horizontal has a horizontal component of about 7 N"
         },
         {
             "input": "A completely submerged object always displaces its own\n(A)weight of fluid. (B)volume of fluid. (C)density of fluid. (D)All of these.",
@@ -23,7 +24,7 @@
     ],
     "Negative Examples": [
         {
-            "input": "A 10-N force at an angle 45° above the horizontal has a horizontal component of about\n(A)7 N (B)5 N (C)10 N (D)12 N",
+            "input": "A 10-N force at an angle 45\u00b0 above the horizontal has a horizontal component of about\n(A)7 N (B)5 N (C)10 N (D)12 N",
             "output": "I dont know.",
             "explanation": "Do not generate anything else apart from one of the following characters: 'A', 'B, 'C', 'D'."
         },
@@ -31,6 +32,11 @@
             "input": "A completely submerged object always displaces its own\n(A)weight of fluid. (B)volume of fluid. (C)density of fluid. (D)All of these.",
             "output": "B,C",
             "explanation": "Only one of the following options ('A', 'B', 'C', 'D') is allowed to be the answer. Multiple options can not be correct. The correct answer here would have been 'B'."
+        },
+        {
+            "input": "The pressure at the bottom of a pond does NOT depend on the\n(A)acceleration due to gravity. (B)water density. (C)depth of the pond. (D)surface area of the pond.",
+            "output": "A",
+            "explanation": "The pressure at the bottom of any water body like a pond depends on the water density, the depth of the pond, and the acceleration due to gravity. It does not depend on the surface area of the pond, hence the correct answer should be 'D'."
         }
     ],
     "Instances": [
@@ -38,12 +44,6 @@
             "input": "When a ball at rest hangs by a single vertical string tension in the string is mg. If the ball is made to move in amhorizontal circle so that the string describes a cone string tension\n(A)is mg (B)is greater than mg always (C)is less than mg always (D)may be greater or less than mg depending on the speed of the ball",
             "output": [
                 "B"
-            ]
-        },
-        {
-            "input": "The pressure at the bottom of a pond does NOT depend on the\n(A)acceleration due to gravity. (B)water density. (C)depth of the pond. (D)surface area of the pond.",
-            "output": [
-                "D"
             ]
         },
         {
@@ -71,7 +71,7 @@
             ]
         },
         {
-            "input": "According to general relativity,\n(A)mass distorts spacetime. (B)gravity affects clocks. (C)light can’t escape from a black hole. (D)All of these.",
+            "input": "According to general relativity,\n(A)mass distorts spacetime. (B)gravity affects clocks. (C)light can\u2019t escape from a black hole. (D)All of these.",
             "output": [
                 "D"
             ]
@@ -125,19 +125,19 @@
             ]
         },
         {
-            "input": "The redness of a sunrise or sunset is due mostly to light that hasn’t been\n(A)absorbed (B)transmitted (C)scattered (D)polarized",
+            "input": "The redness of a sunrise or sunset is due mostly to light that hasn\u2019t been\n(A)absorbed (B)transmitted (C)scattered (D)polarized",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "A 10-Ω resistor carries 10 A. The voltage across the resistor is\n(A)0 (B)more than 0 but less than 10 V (C)10 V (D)more than 10 V",
+            "input": "A 10-\u03a9 resistor carries 10 A. The voltage across the resistor is\n(A)0 (B)more than 0 but less than 10 V (C)10 V (D)more than 10 V",
             "output": [
                 "D"
             ]
         },
         {
-            "input": "Hot sand cools off faster at night than does vegetation. Compared with vegetation, sand’s specific heat capacity is\n(A)lower (B)higher (C)about the same (D)Can’t say",
+            "input": "Hot sand cools off faster at night than does vegetation. Compared with vegetation, sand\u2019s specific heat capacity is\n(A)lower (B)higher (C)about the same (D)Can\u2019t say",
             "output": [
                 "A"
             ]
@@ -161,7 +161,7 @@
             ]
         },
         {
-            "input": "A principal source of the Earth’s internal energy is\n(A)tidal friction. (B)gravitational pressure. (C)radioactivity. (D)solar radiation.",
+            "input": "A principal source of the Earth\u2019s internal energy is\n(A)tidal friction. (B)gravitational pressure. (C)radioactivity. (D)solar radiation.",
             "output": [
                 "C"
             ]
@@ -263,7 +263,7 @@
             ]
         },
         {
-            "input": "Planck’s constant can be found by dividing the energy of a photon by its\n(A)wavelength (B)frequency (C)amplitude (D)None of these",
+            "input": "Planck\u2019s constant can be found by dividing the energy of a photon by its\n(A)wavelength (B)frequency (C)amplitude (D)None of these",
             "output": [
                 "B"
             ]
@@ -293,7 +293,7 @@
             ]
         },
         {
-            "input": "Einstein’s second postulate tells us that the speed of light\n(A)depends on one’s frame of reference. (B)is a constant in all frames of reference. (C)provides accurate clocks. (D)slows in a transparent medium.",
+            "input": "Einstein\u2019s second postulate tells us that the speed of light\n(A)depends on one\u2019s frame of reference. (B)is a constant in all frames of reference. (C)provides accurate clocks. (D)slows in a transparent medium.",
             "output": [
                 "B"
             ]
@@ -311,7 +311,7 @@
             ]
         },
         {
-            "input": "According to Hooke’s law, if you hang by a tree branch and note how much it bends, then hanging with twice the weight produces\n(A)half the bend. (B)the same bend if the branch doesn’t break. (C)twice the bend. (D)4 times the bend.",
+            "input": "According to Hooke\u2019s law, if you hang by a tree branch and note how much it bends, then hanging with twice the weight produces\n(A)half the bend. (B)the same bend if the branch doesn\u2019t break. (C)twice the bend. (D)4 times the bend.",
             "output": [
                 "C"
             ]
@@ -335,7 +335,7 @@
             ]
         },
         {
-            "input": "General relativity predicts that\n(A)light leaving the Sun is slowed by gravity. (B)light passing the Sun is deflected. (C)a clock on the Sun’s surface runs faster than on Earth. (D)All of these.",
+            "input": "General relativity predicts that\n(A)light leaving the Sun is slowed by gravity. (B)light passing the Sun is deflected. (C)a clock on the Sun\u2019s surface runs faster than on Earth. (D)All of these.",
             "output": [
                 "D"
             ]
@@ -359,7 +359,7 @@
             ]
         },
         {
-            "input": "When a diver points a flashlight upward toward the surface of the water at an angle 20° from the normal, the beam of light\n(A)totally internally reflects (B)passes into the air above (C)is absorbed (D)None of these",
+            "input": "When a diver points a flashlight upward toward the surface of the water at an angle 20\u00b0 from the normal, the beam of light\n(A)totally internally reflects (B)passes into the air above (C)is absorbed (D)None of these",
             "output": [
                 "B"
             ]
@@ -437,7 +437,7 @@
             ]
         },
         {
-            "input": "Temperature is generally proportional to a substance’s\n(A)thermal energy. (B)vibrational kinetic energy. (C)average translational kinetic energy. (D)rotational kinetic energy.",
+            "input": "Temperature is generally proportional to a substance\u2019s\n(A)thermal energy. (B)vibrational kinetic energy. (C)average translational kinetic energy. (D)rotational kinetic energy.",
             "output": [
                 "C"
             ]
@@ -461,13 +461,13 @@
             ]
         },
         {
-            "input": "Regelation occurs due to water’s\n(A)high specific heat (B)open-structured ice crystals (C)high rate of expansion (D)slight tendency to freeze when its temperature is lowered",
+            "input": "Regelation occurs due to water\u2019s\n(A)high specific heat (B)open-structured ice crystals (C)high rate of expansion (D)slight tendency to freeze when its temperature is lowered",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "The second law of thermodynamics tells us that heat doesn’t flow from\n(A)hot to cold ever (B)cold to hot ever (C)hot to cold without external energy (D)cold to hot without external energy",
+            "input": "The second law of thermodynamics tells us that heat doesn\u2019t flow from\n(A)hot to cold ever (B)cold to hot ever (C)hot to cold without external energy (D)cold to hot without external energy",
             "output": [
                 "D"
             ]
@@ -479,13 +479,13 @@
             ]
         },
         {
-            "input": "From quantum mechanics we learn that a radioactive nucleus is governed by\n(A)Newton’s laws (B)probability (C)certainty (D)no laws at all",
+            "input": "From quantum mechanics we learn that a radioactive nucleus is governed by\n(A)Newton\u2019s laws (B)probability (C)certainty (D)no laws at all",
             "output": [
                 "B"
             ]
         },
         {
-            "input": "According to the correspondence principle,\n(A)new theory must agree with old theory where they overlap. (B)Newton’s mechanics is as valid as Einstein’s mechanics. (C)relativity equations apply to high speeds while Newton’s equations apply to low speeds. (D)special relativity and general relativity are two sides of the same coin.",
+            "input": "According to the correspondence principle,\n(A)new theory must agree with old theory where they overlap. (B)Newton\u2019s mechanics is as valid as Einstein\u2019s mechanics. (C)relativity equations apply to high speeds while Newton\u2019s equations apply to low speeds. (D)special relativity and general relativity are two sides of the same coin.",
             "output": [
                 "A"
             ]
@@ -509,7 +509,7 @@
             ]
         },
         {
-            "input": "When you buy a pipe in a hardware store, the water isn’t included. When you buy copper wire, electrons\n(A)must be supplied by you (B)are included in the wire (C)may fall out—hence insulation (D)None of these",
+            "input": "When you buy a pipe in a hardware store, the water isn\u2019t included. When you buy copper wire, electrons\n(A)must be supplied by you (B)are included in the wire (C)may fall out\u2014hence insulation (D)None of these",
             "output": [
                 "B"
             ]
@@ -605,7 +605,7 @@
             ]
         },
         {
-            "input": "When food is exposed to gamma radiation, the food\n(A)becomes slightly radioactive (B)doesn’t become radioactive (C)will spoil faster (D)should be avoided",
+            "input": "When food is exposed to gamma radiation, the food\n(A)becomes slightly radioactive (B)doesn\u2019t become radioactive (C)will spoil faster (D)should be avoided",
             "output": [
                 "B"
             ]
@@ -647,13 +647,13 @@
             ]
         },
         {
-            "input": "The lowest possible temperature is absolute zero, at\n(A)0 kelvin (B)−273°C (C)Both are the same (D)None of these",
+            "input": "The lowest possible temperature is absolute zero, at\n(A)0 kelvin (B)\u2212273\u00b0C (C)Both are the same (D)None of these",
             "output": [
                 "C"
             ]
         },
         {
-            "input": "A satellite in Earth orbit is above Earth’s\n(A)atmosphere (B)gravitational field (C)Both (D)Neither",
+            "input": "A satellite in Earth orbit is above Earth\u2019s\n(A)atmosphere (B)gravitational field (C)Both (D)Neither",
             "output": [
                 "A"
             ]
@@ -791,7 +791,7 @@
             ]
         },
         {
-            "input": "If you travel at high speed, then compared with your friends who “stay at home,” you are\n(A)older. (B)younger. (C)neither younger nor older. (D)longer.",
+            "input": "If you travel at high speed, then compared with your friends who \u201cstay at home,\u201d you are\n(A)older. (B)younger. (C)neither younger nor older. (D)longer.",
             "output": [
                 "B"
             ]
@@ -803,7 +803,7 @@
             ]
         },
         {
-            "input": "Most of the radiation in Earth’s biosphere is\n(A)natural background radiation (B)the result of military activities (C)from nuclear power plants (D)in the form of cosmic rays",
+            "input": "Most of the radiation in Earth\u2019s biosphere is\n(A)natural background radiation (B)the result of military activities (C)from nuclear power plants (D)in the form of cosmic rays",
             "output": [
                 "A"
             ]
@@ -839,7 +839,7 @@
             ]
         },
         {
-            "input": "In a hydraulic press operation, the output piston cannot\n(A)move farther than the input piston (B)exceed the force input (C)exceed the input piston’s speed (D)produce increased energy",
+            "input": "In a hydraulic press operation, the output piston cannot\n(A)move farther than the input piston (B)exceed the force input (C)exceed the input piston\u2019s speed (D)produce increased energy",
             "output": [
                 "D"
             ]
@@ -851,7 +851,7 @@
             ]
         },
         {
-            "input": "The greenish-blue color of ocean water is due mostly to light that hasn’t been\n(A)absorbed (B)reflected (C)scattered (D)refracted",
+            "input": "The greenish-blue color of ocean water is due mostly to light that hasn\u2019t been\n(A)absorbed (B)reflected (C)scattered (D)refracted",
             "output": [
                 "A"
             ]
@@ -863,7 +863,7 @@
             ]
         },
         {
-            "input": "Which of these temperatures is likely when a container of water at 20°C is mixed with water at 28°C?\n(A)19°C (B)22°C (C)30°C (D)Higher than 30°C",
+            "input": "Which of these temperatures is likely when a container of water at 20\u00b0C is mixed with water at 28\u00b0C?\n(A)19\u00b0C (B)22\u00b0C (C)30\u00b0C (D)Higher than 30\u00b0C",
             "output": [
                 "B"
             ]
@@ -917,7 +917,7 @@
             ]
         },
         {
-            "input": "When wind speeds up as it blows over the top of a hill, atmospheric pressure there\n(A)increases (B)decreases (C)isn’t affected (D)reduces to zero",
+            "input": "When wind speeds up as it blows over the top of a hill, atmospheric pressure there\n(A)increases (B)decreases (C)isn\u2019t affected (D)reduces to zero",
             "output": [
                 "B"
             ]
@@ -1019,13 +1019,13 @@
             ]
         },
         {
-            "input": "The flight of a blimp best illustrates\n(A)Archimedes’ principle (B)Pascal’s principle (C)Bernoulli’s principle (D)Boyle’s law",
+            "input": "The flight of a blimp best illustrates\n(A)Archimedes\u2019 principle (B)Pascal\u2019s principle (C)Bernoulli\u2019s principle (D)Boyle\u2019s law",
             "output": [
                 "A"
             ]
         },
         {
-            "input": "When the shadow of the Moon falls on Earth, we have a\n(A)lunar eclipse. (B)solar eclipse. (C)solar eclipse if it’s daytime and lunar eclipse if it’s nighttime. (D)very dangerous event.",
+            "input": "When the shadow of the Moon falls on Earth, we have a\n(A)lunar eclipse. (B)solar eclipse. (C)solar eclipse if it\u2019s daytime and lunar eclipse if it\u2019s nighttime. (D)very dangerous event.",
             "output": [
                 "B"
             ]
@@ -1043,7 +1043,7 @@
             ]
         },
         {
-            "input": "According to four-dimensional geometry, the angles of a triangle add to 180°\n(A)always. (B)sometimes. (C)never. (D)on planet Earth only.",
+            "input": "According to four-dimensional geometry, the angles of a triangle add to 180\u00b0\n(A)always. (B)sometimes. (C)never. (D)on planet Earth only.",
             "output": [
                 "B"
             ]
@@ -1079,7 +1079,7 @@
             ]
         },
         {
-            "input": "The metal detectors people walk through at airports operate via\n(A)Ohm’s law (B)Faraday’s law (C)Coulomb’s law (D)Newton’s laws",
+            "input": "The metal detectors people walk through at airports operate via\n(A)Ohm\u2019s law (B)Faraday\u2019s law (C)Coulomb\u2019s law (D)Newton\u2019s laws",
             "output": [
                 "B"
             ]
