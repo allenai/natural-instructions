@@ -161,6 +161,7 @@
   - `Reasoning -> Reasoning on Objects`
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
+  - `Reasoning -> Relational Reasoning`
   - `Reasoning -> Scientific Reasoning`
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
@@ -229,8 +230,8 @@
 	    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
-    - `Text Generation -> Sentence Generation -> Completion -> Story`
-      - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+      - `Text Generation -> Sentence Generation -> Completion -> Story`
+        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
     - `Text Generation -> Sentence Generation -> Summary Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
@@ -271,6 +272,9 @@
   * `Biology -> Virology`
 * `Books`
 * `Business Ethics`
+* `Captions`
+  * `Captions -> Image Captions`
+  * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
