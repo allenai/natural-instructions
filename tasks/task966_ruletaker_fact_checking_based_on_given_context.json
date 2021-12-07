@@ -2,37 +2,40 @@
     "Source": [
         "Ruletaker, https://allenai.org/data/ruletaker"
     ],
-        "Input_language": ["English"],
-    "Output_language": ["English"],
-    "Instruction_language": ["English"],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
     "Definition": "Given a text paragraph and a fact, generate 'True' if the fact can be inferred/concluded from the paragraph, otherwise generate 'False'. The input passage contains as set of logical statements so the fact can be marked either 'True' or 'False' if the relavant info regarding the fact is present in the given passage. If the Fact can't be marked True or False from the given paragraph, mark it as False. Don't use knowledge outside the given paragraph to check the fact.",
-  
-    "Positive Examples": [ 
+    "Positive Examples": [
         {
             "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Fact: Anne is rough.",
             "output": "True",
-            "explanation" : "From the given paragraph, we can infer that 'Anne is rough'"
+            "explanation": "From the given paragraph, we can infer that 'Anne is rough'"
         },
         {
             "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Fact: Anne is not young.",
             "output": "False",
             "explanation": "From the given paragraph particulary this parts 'Anne is rough' and 'Rough people are young', we can infer that Anne is young. So, the Fact 'Anne is not young' is indeed False"
         }
-    ], 
-  
-    "Negative Examples": [ 
+    ],
+    "Negative Examples": [
         {
             "input": "Paragraph: Harry is kind. Harry is white. Harry is round. If someone is furry then they are white. If someone is green and kind then they are round. If someone is green then they are blue. If someone is not white and not furry then they are not kind. Harry is quiet. If someone is green and not round then they are furry. If someone is green then they are furry. Harry is furry. If someone is not kind then they are not green. Harry is blue. Harry is green. If someone is green then they are quiet.     Fact: Harry is green.",
-            "output":"False",
+            "output": "False",
             "explanation": "From the given paragraph, we can infer that Harry is indeed green. So, this is a bad example."
         },
         {
             "input": "Paragraph: Harry is kind. Harry is white. Harry is round. If someone is furry then they are white. If someone is green and kind then they are round. If someone is green then they are blue. If someone is not white and not furry then they are not kind. Harry is quiet. If someone is green and not round then they are furry. If someone is green then they are furry. Harry is furry. If someone is not kind then they are not green. Harry is blue. Harry is green. If someone is green then they are quiet.     Fact: Harry is not white.",
-            "output":"True",
+            "output": "True",
             "explanation": "From the given paragraph, we can infer that Harry is white. So, this is a bad example."
         }
     ],
-
     "Instances": [
         {
             "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Question: Anne is rough.",
@@ -1835,7 +1838,12 @@
             ]
         }
     ],
-    "Categories" : ["Fact checking given context"],
-    "Contributors": ["Surya Singulur"]
-
+    "Categories": [
+        "Classification -> Verification",
+        "Reasoning -> Multihop Reasoning",
+        "Reasoning -> Factual Reasoning"
+    ],
+    "Contributors": [
+        "Surya Singulur"
+    ]
 }
