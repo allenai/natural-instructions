@@ -42,6 +42,7 @@
   - `Detection -> Toxicity Detection`
     - `Detection -> Toxicity Detection -> Abuse Detection`
     - `Detection -> Toxicity Detection -> Abuse Detection -> Hate Speech Detection`
+  - `Detection -> Stereotype Detection`
   - `Detection -> Affect Detection`
   - `Detection -> Capability Detection`
   - `Detection -> Cause Detection`
@@ -166,6 +167,7 @@
   - `Reasoning -> Reasoning on Objects`
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
+  - `Reasoning -> Relational Reasoning`
   - `Reasoning -> Scientific Reasoning`
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
@@ -233,8 +235,8 @@
     - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
-    - `Text Generation -> Sentence Generation -> Completion -> Story`
-    - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+      - `Text Generation -> Sentence Generation -> Completion -> Story`
+        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
     - `Text Generation -> Sentence Generation -> Summary Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
@@ -275,6 +277,9 @@
   * `Biology -> Virology`
 * `Books`
 * `Business Ethics`
+* `Captions`
+  * `Captions -> Image Captions`
+  * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -283,10 +288,10 @@
   * `Code -> Repo`
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
+* `Captions`
+  * `Captions -> Image Captions`
+  * `Captions -> Video Captions`
 * `Commonsense`
-  * `Commonsense -> Captions`
-    * `Commonsense -> Captions -> Image Captions`
-    * `Commonsense -> Captions -> Video Captions`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
     * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
@@ -305,6 +310,7 @@
   * `Economics -> Macroeconomics`
   * `Economics -> Microeconomics`
 * `Electrical Engineering`
+* `English Exams`
 * `Fiction`
 * `Food`
 * `Formal Fallacy`
@@ -358,7 +364,6 @@
 * `Public Places`
   * `Public Places -> Restaurants`
 * `Public Relations`
-* `Scientific Research Papers`
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
@@ -366,6 +371,7 @@
   * `Reviews -> Movies`
   * `Reviews -> Books`
   * `Reviews -> Electronics and Grocery`
+* `Scientific Research Papers`
 * `Security: Environmental Security`
 * `Security: National Security`
 * `Social Media`
@@ -376,6 +382,7 @@
 * `Sports`
   * `Sports -> NFL`
 * `Statistics`
+* `Stereotypes`
 * `Story`
 * `TED Talks`
 * `US Foreign Policy`
