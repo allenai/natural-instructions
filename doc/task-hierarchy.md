@@ -288,9 +288,6 @@
   * `Code -> Repo`
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
-* `Captions`
-  * `Captions -> Image Captions`
-  * `Captions -> Video Captions`
 * `Commonsense`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
@@ -325,7 +322,6 @@
   * `History -> European History`
 * `Human Race` 
 * `Human Sexuality`
-* `Image Caption`
 * `International Law`
 * `Jurisprudence`
 * `Justice`
