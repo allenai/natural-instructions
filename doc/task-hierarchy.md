@@ -272,6 +272,7 @@
 * `Astronomy`
 * `Biology`
   * `Biology -> Anatomy`
+  * `Biology -> Bioinformatics`
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
@@ -363,7 +364,7 @@
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
-  * `Reviews -> Restaurants `
+  * `Reviews -> Restaurants`
   * `Reviews -> Movies`
   * `Reviews -> Books`
   * `Reviews -> Electronics and Grocery`

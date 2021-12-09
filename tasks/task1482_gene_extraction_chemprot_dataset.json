@@ -3,17 +3,27 @@
         "Ishani Mondal"
     ],
     "Source": [
-        "https://paperswithcode.com/dataset/chemprot"
+        "ChemProt Corpus https://paperswithcode.com/dataset/chemprot"
     ],
     "Categories": [
-        "Entity Detection"
+        "Detection -> Entity Detection",
+        "Named Entity Recognition",
+        "Text Span Selection"
     ],
-    "Definition": "In this task, you are given a sentence from the ChemProt Corpus. You are expected to list the tokens that mention the names of genes or proteins. You should list the tokens in the same order that they appear in the text. If no target entities are mentioned, just output \"not found\".",
+  	"Domains":[
+  	    "Biology -> Bioinformatics"
+    ],
+    "Definition": "In this task, you are given a sentence. You are expected to recognize the name of gene or protein. Although there might be several correct answers, you need to write one of them.",
     "Positive Examples": [
         {
             "input": "Sox - 4 is important for very early B - cell differentiation , while TCF - 1 / LEF - 1 play a crucial role in early thymocyte development ",
             "output": "TCF - 1",
             "explanation": "The gene, TCF - 1 has been tagged as protein since it plays a crucial role in early thymocyte development."
+        },
+        {
+            "input": "Inhibition of cPLA2 translocation and leukotriene C4 secretion by fluticasone propionate in exogenously activated human eosinophils.",
+            "output": "cPLA2",
+            "explanation": "The gene, cPLA2 has been tagged as protein."
         },
         {
             "input": "The NF - kappaB / Rel family represents one signal transduction pathway induced during such activation .",
@@ -25,7 +35,7 @@
         {
             "input": "Sox - 4 is important for very early B - cell differentiation , while TCF - 1 / LEF - 1 play a crucial role in early thymocyte development",
             "output": "thymocyte",
-            "explanation": "Thymocytes are the immune cells present in the thymus, before it undergoes transformation into a T cell. Therefore, it should not be tagged as gene."
+            "explanation": "Thymocytes are the immune cells present in the thymus, before it undergoes transformation into a T cell. Therefore, it should not be tagged as gene. The correct answer is TCF - 1."
         },
         {
             "input": "O5257 shows homology with the SAS2 protein and another hypothetical protein from yeast .",
@@ -43,12 +53,6 @@
         "English"
     ],
     "Instances": [
-        {
-            "input": "Inhibition of cPLA2 translocation and leukotriene C4 secretion by fluticasone propionate in exogenously activated human eosinophils.",
-            "output": [
-                "cPLA2"
-            ]
-        },
         {
             "input": "Desipramine treatment decreases 3H-nisoxetine binding and norepinephrine transporter mRNA in SK-N-SHSY5Y cells.",
             "output": [
