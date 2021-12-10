@@ -6,49 +6,42 @@
         "HANS : https://arxiv.org/abs/1902.01007"
     ],
     "Categories": [
-        "Answer Generation"
+        "Text Generation -> Sentence Generation -> Contextual Text Generation",
+        "Text Modification -> Perturbation"
     ],
     "Input_language": ["English"],
     "Output_language": ["English"],
     "Instruction_language": ["English"],
-    "Definition": "In this task, given a premise statement, generate another sentence that is **not** concluded form the input premise. The generated sentence must be fluent and should use the same subjects/objects from the input premise.",
+    "Definition": "In this task, you are given a premise sentence. Your task is to write a new sentence by substituting the subject and object (i.e., the input's subject should be output's object and vice versa.). The generated sentence must be fluent and shouldn't change the voice (i.e., passive or active) of the input.",
+    "Domains": [
+        "Reviews -> Movies",
+        "Movies"
+    ],
     "Positive Examples": [
         {
-            "input": "The athlete investigated in the office resigned .",
-            "output": "The athlete investigated.",
-            "explanation": "The sentence is not concluded from the premise, although it uses the verbs and nouns from the premise. This is a good example."
+            "input": "The doctors supported the scientist .",
+            "output": "The scientist supported the doctors .",
+            "explanation": "The output uses the verbs and nouns from the premise and changes the object with the subject. This is a good example."
         },
         {
-            "input": "The actors were believed by the professor .",
-            "output": "The actors believed .",
-            "explanation": "The sentence is not concluded from the premise, although it uses the verbs and nouns from the premise. This is a good example."
+            "input": "The athletes introduced the tourist .",
+            "output": "The tourist introduced the athletes .",
+            "explanation": "The output uses the verbs and nouns from the premise and changes the object with the subject. This is a good example."
         }
     ],
     "Negative Examples": [
         {
             "input": "The judge encouraged the athlete .",
             "output": "The athlete was encouraged by the judge .",
-            "explanation": "The answer is directly concluded from the premise, thus it is not a correct answer."
+            "explanation": "The output changes the voice of the input, thus it is not a correct answer."
         },
         {
             "input": "The lawyers called the judge.",
             "output": "The judge was called by the people .",
-            "explanation": "The sentence doesn't use the objects/subjects from the given premise. This is not a correct answer."
+            "explanation": "The output doesn't use the subject from the given premise. This is not a correct answer."
         }
     ],
     "Instances": [
-        {
-            "input": "The doctors supported the scientist .",
-            "output": [
-                "The scientist supported the doctors ."
-            ]
-        },
-        {
-            "input": "The athletes introduced the tourist .",
-            "output": [
-                "The tourist introduced the athletes ."
-            ]
-        },
         {
             "input": "The secretaries introduced the judges .",
             "output": [

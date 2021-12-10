@@ -1,8 +1,14 @@
 {
-    "Contributors": ["Ujjwala Anantheswaran"],
-    "Source": ["CFQ/MCD1"],
+    "Contributors": [
+        "Ujjwala Anantheswaran"
+    ],
+    "Source": [
+        "CFQ/MCD1"
+    ],
     "Categories": [
-        "Classification -> Verification -> Claim Verification"
+        "Structured Text Processing -> Code Summarization",
+        "Question Answering -> Open Question Answering",
+        "Question Decomposition"
     ],
     "Input_language": [
         "English"
@@ -18,24 +24,24 @@
         {
             "input": "Query: SELECT DISTINCT ?x0 WHERE {\n?x0 a ns:people.person .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses ?x1 .\n?x1 ns:people.person.gender ns:m.05zppz .\n?x1 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M2 .\nFILTER ( ?x0 != ?x1 ) .\nFILTER ( ?x1 != M2 )\n} Question: Who did M2 's male spouse marry",
             "output": "1",
-            "explanation":"Query correctly extracts data for male spouse of M2"
+            "explanation": "Query correctly extracts data for male spouse of M2"
         },
         {
             "input": "Query: SELECT count(*) WHERE {\n?x0 ns:organization.organization_founder.organizations_founded M0 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\nM1 ns:film.film.directed_by M3 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies M2 .\nM4 ns:film.film.directed_by M3 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.produced_by|ns:film.film.production_companies M2\n} Question: Were M1 and M4 produced by M2 , executive produced by M0 's employee and founder , and directed by M3",
             "output": "1",
-            "explanation":"Query finds producer, executive producer, and director of M1 and M4, and checks if they are respectively M2, M0's employee and founder, and M3"
+            "explanation": "Query finds producer, executive producer, and director of M1 and M4, and checks if they are respectively M2, M0's employee and founder, and M3"
         }
     ],
     "Negative Examples": [
         {
             "input": "Query: SELECT count(*) WHERE {\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M0 .\nM1 ns:film.film.directed_by M3 .\nM1 ns:film.film.executive_produced_by ?x0 .\nM1 ns:film.film.produced_by|ns:film.film.production_companies M2 .\nM4 ns:film.film.directed_by M3 .\nM4 ns:film.film.executive_produced_by ?x0 .\nM4 ns:film.film.produced_by|ns:film.film.production_companies M2\n} Question: Were M1 and M4 produced by M2 , executive produced by M0 's employee and founder , and directed by M3",
             "output": "0",
-            "explanation":"Query does not check for M0's founder being executive producer of M1 and M4"
+            "explanation": "Query does not check for M0's founder being executive producer of M1 and M4"
         },
         {
             "input": "Query: SELECT count(*) WHERE {\n?x0 ns:film.editor.film ?x1 .\n?x0 ns:people.person.nationality ns:m.0d0vqn .\n?x1 ns:film.film.prequel ?x2 .\n?x2 ns:film.film.prequel M1 .\nFILTER ( M2 != ?x0 ) .\nM2 ns:people.person.gender ns:m.05zppz .\nM2 ns:people.person.sibling_s/ns:people.sibling_relationship.sibling|ns:fictional_universe.fictional_character.siblings/ns:fictional_universe.sibling_relationship_of_fictional_characters.siblings ?x0\n} Question: Was a film 's prequel edited by M0",
             "output": "0",
-            "explanation":"Question does not include nationality segment of query or prequel editor attribute."
+            "explanation": "Question does not include nationality segment of query or prequel editor attribute."
         }
     ],
     "Instances": [

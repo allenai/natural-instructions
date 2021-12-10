@@ -6,19 +6,24 @@
     "synthetic"
   ],
   "Categories": [
-    "Answer Generation"
+    "Text Generation -> Command Execution -> Code Execution",
+    "Text Modification -> Style Transfer",
+    "Mathematics -> Arithmetic"
   ],
-  "Definition": "You are given a time in 24-Hours format and you need to convert it to time in 12-Hours format. Note that, 00:00 Hrs in 24-Hours format is 12:00 AM in 12-Hours format and 12:00 Hrs in 24-Hours format would be 12:00 PM in 12-Hours format.",
+  "Definition": "You are given a time in 24-Hours format, and you need to convert it to time in the 12-Hours format. For a 24-Hours format time larger than 12:00, subtract 12 hours from the given time, then add 'PM'.  For example, if you have 14:30 hours, subtract 12 hours, and the result is 2:30 PM. If the 24-Hours format time is less than or equal to 12:00, add 'AM'. For example, say you have 10:15 hours, add the 'AM' to the end, here we get 10:15 AM. Note that 00:00 Hrs in 24-Hours format is 12:00 AM in 12-Hours format and 12:00 Hrs in 24-Hours format would be 12:00 PM in 12-Hours format.",
+  "Domains": [
+    "Commonsense -> Concepts and Relations"
+  ],
   "Positive Examples": [
     {
       "input": "19:00 Hrs",
       "output": "07:00 PM",
-      "explanation": " The operation (time-in-24 hours)%12 gives us time in 12-Hours format where % is the remainder operation. Also, if (time-in-24 hours)<12, the output will be in AM else PM. Since 19:00%12=07:00 and 19:00>12,the output 07:00 PM is correct."
+      "explanation": "For a 24-Hours format time larger than 12:00, we should subtract 12 hours from the given time, then add 'PM'. So, the output is correct."
     },
     {
       "input": "11:50 Hrs",
       "output": "11:50 AM",
-      "explanation": "The operation (time-in-24 hours)%12 gives us time in 12-Hours format where % is the remainder operation. Also, if (time-in-24 hours)< 12, the output will be in AM else PM. Since 11:50%12=11:50 and 11:50<12, the output 11.50 AM is correct."
+      "explanation": "The given time is less than 12:00. So, we should just add 'AM', and the output is correct."
     }
   ],
   "Negative Examples": [

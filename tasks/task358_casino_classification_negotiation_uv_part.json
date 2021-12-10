@@ -6,12 +6,13 @@
         "casino (https://aclanthology.org/2021.naacl-main.254.pdf)"
     ],
     "Categories": [
-        "Classification"
+        "Classification",
+        "Dialogue Understanding"
     ],
     "Definition": "The input is taken from a negotiation between two participants who take the role of campsite neighbors and negotiate for Food, Water, and Firewood packages, based on their individual preferences and requirements. Given an utterance and recent dialogue context containing past 3 utterances (wherever available), output Yes if the utterance contains the uv-part strategy, otherwise output No. uv-part is a selfish negotiation strategy. It is used to undermine the requirements of the opponent. For instance, suggesting that the opponent would not need more firewood since they already have the basic supplies or a suggestion that there might be a store near the campsite where the opponent can get the supplies instead.",
     "Positive Examples": [
         {
-            "input": "Context: 'Well maybe we can work something out between us.  Our food and water was in the bags they loss so I really need those.  Do you think you could make do with 1 food and some water?' 'I really need 2 foods. I can do with 1 water or if you are in a giving mood then maybe I can have 2 waters? \ud83d\ude42' 'Looks like we both really need the food.  If you get 2 food I would need 1 food, 2 water and 3 firewood. '\nUtterance: 'Since you will get all the fire would do you think I could have 2 foods and 2 waters. You would get 1 food, 1 water, and 3 firewood. \ud83d\ude42 You seem like you are a great outdoor person that I would think you would be able to catch some fish to cook with the firewood. \ud83d\ude42'",
+            "input": "Context: 'Well maybe we can work something out between us.  Our food and water was in the bags they loss so I really need those.  Do you think you could make do with 1 food and some water?' 'I really need 2 foods. I can do with 1 water or if you are in a giving mood then maybe I can have 2 waters? 🙂' 'Looks like we both really need the food.  If you get 2 food I would need 1 food, 2 water and 3 firewood. '\nUtterance: 'Since you will get all the fire would do you think I could have 2 foods and 2 waters. You would get 1 food, 1 water, and 3 firewood. 🙂 You seem like you are a great outdoor person that I would think you would be able to catch some fish to cook with the firewood. 🙂'",
             "output": "Yes",
             "explanation": "Correct. The participant tries to undermine their opponent's needs by mentioning that the opponent can just fish for food."
         },
@@ -28,7 +29,7 @@
             "explanation": "The utterance simply shows agreement, without undermining the opponent's needs. The correct answer is 'No'."
         },
         {
-            "input": "Context: 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set \ud83d\ude42' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.' 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f'\nUtterance: 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them'",
+            "input": "Context: 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set 🙂' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.' 'my people feel like they need 1 extra of something or else they will throw a fit ☹️'\nUtterance: 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them'",
             "output": "No",
             "explanation": "This is wrong since the participant tries to undervalue their opponent's preferences by saying that they will be ok with the deal where the kids get extra firewood. So the correct answer would be 'Yes'."
         }
@@ -41,7 +42,7 @@
             ]
         },
         {
-            "input": "Context: 'Then you get two food and no firewood here.\ud83d\ude2e' 'You mean you can't let up one firewood for me?' 'Not this time, I really need all the firewood and food is a large need for my family of 8. We need the firewood to cook all our meals from the animals we hunt since we are short on food.'\nUtterance: 'But these are only additional packages\u2639\ufe0f'",
+            "input": "Context: 'Then you get two food and no firewood here.😮' 'You mean you can't let up one firewood for me?' 'Not this time, I really need all the firewood and food is a large need for my family of 8. We need the firewood to cook all our meals from the animals we hunt since we are short on food.'\nUtterance: 'But these are only additional packages☹️'",
             "output": [
                 "Yes"
             ]
@@ -71,7 +72,7 @@
             ]
         },
         {
-            "input": "Context: 'I would like 2 of the firewood. What do you think? ' 'I don't need wood as I am usually warm so I think we can work out a deal. I like to have more water and I usually get thirsty.' 'That sounds good to me. \ud83d\ude42 I think we can make a good deal.'\nUtterance: 'I can give you 3 wood packages if I can get 3 water and 2 food. So you will receive 3 wood and 1 food. What do you think?'",
+            "input": "Context: 'I would like 2 of the firewood. What do you think? ' 'I don't need wood as I am usually warm so I think we can work out a deal. I like to have more water and I usually get thirsty.' 'That sounds good to me. 🙂 I think we can make a good deal.'\nUtterance: 'I can give you 3 wood packages if I can get 3 water and 2 food. So you will receive 3 wood and 1 food. What do you think?'",
             "output": [
                 "No"
             ]
@@ -83,7 +84,7 @@
             ]
         },
         {
-            "input": "Context: 'That's amazing!!!  So here is the deal...I'll give you the 2 firewood packages so you can sleep under the stars tonight.  In return I'll have to keep 2 water packages and 2 food packages since I won't be able to cook all of this fish and I still have a family to feed.  ' 'I'm glad you understand my problem. But I really need those 3 firewood packages. I'd be happy to give you 2 water packages and all the food in exchange.' 'Initially you were willing to take the 2 packages of firewood. If you have all three I won't be able to cook any of this fish and it will all go to waste. \u2639\ufe0f'\nUtterance: 'Didn't you bring any firewood at all with you?'",
+            "input": "Context: 'That's amazing!!!  So here is the deal...I'll give you the 2 firewood packages so you can sleep under the stars tonight.  In return I'll have to keep 2 water packages and 2 food packages since I won't be able to cook all of this fish and I still have a family to feed.  ' 'I'm glad you understand my problem. But I really need those 3 firewood packages. I'd be happy to give you 2 water packages and all the food in exchange.' 'Initially you were willing to take the 2 packages of firewood. If you have all three I won't be able to cook any of this fish and it will all go to waste. ☹️'\nUtterance: 'Didn't you bring any firewood at all with you?'",
             "output": [
                 "Yes"
             ]
@@ -107,13 +108,13 @@
             ]
         },
         {
-            "input": "Context: 'how am i supposed to stay alive with one package of food and water im fat lol' 'I don't think you that fat, your lipids will help you stay warm and full out there, haha' 'Im not as good at you at foraginf for food and water i probably dont have the experience as you do being in the outdoors and living off the land.\ud83d\ude42'\nUtterance: 'With the extra firewood, you can hunt for fish and other animals outside to thrive'",
+            "input": "Context: 'how am i supposed to stay alive with one package of food and water im fat lol' 'I don't think you that fat, your lipids will help you stay warm and full out there, haha' 'Im not as good at you at foraginf for food and water i probably dont have the experience as you do being in the outdoors and living off the land.🙂'\nUtterance: 'With the extra firewood, you can hunt for fish and other animals outside to thrive'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I am really bad at cooking so will probably need an extra good just because I'll ruin one of the 3.  Plus Im bringing 2 dogs they can eat the bad food I make \ud83d\ude2e  I dont plan on hiking much so how bought I keep all 3 foods, and you keep all 3 waters and we can split the firewood.  2 for me, 1 for you. Great deal!' 'i too i am bad at cooking and i will spend a longer time in the woods so i will need atleast 2 foods, 2 firewood and 1 water' 'But I have more mouths to feed here so I will give you one of the foods, but then need 2 firewood and then take back 1 of the waters.  '\nUtterance: 'your dogs could probably hunt for something for you guys. and i would be in the would for a very long time '",
+            "input": "Context: 'I am really bad at cooking so will probably need an extra good just because I'll ruin one of the 3.  Plus Im bringing 2 dogs they can eat the bad food I make 😮  I dont plan on hiking much so how bought I keep all 3 foods, and you keep all 3 waters and we can split the firewood.  2 for me, 1 for you. Great deal!' 'i too i am bad at cooking and i will spend a longer time in the woods so i will need atleast 2 foods, 2 firewood and 1 water' 'But I have more mouths to feed here so I will give you one of the foods, but then need 2 firewood and then take back 1 of the waters.  '\nUtterance: 'your dogs could probably hunt for something for you guys. and i would be in the would for a very long time '",
             "output": [
                 "Yes"
             ]
@@ -149,7 +150,7 @@
             ]
         },
         {
-            "input": "Context: 'Hi. Can you help me get supplies for my camping trip?\ud83d\ude42' 'Hello fellow camper! I'm pretty sure I can help you. \ud83d\ude42'\nUtterance: 'Okay, great! What do you need the most?'",
+            "input": "Context: 'Hi. Can you help me get supplies for my camping trip?🙂' 'Hello fellow camper! I'm pretty sure I can help you. 🙂'\nUtterance: 'Okay, great! What do you need the most?'",
             "output": [
                 "No"
             ]
@@ -161,7 +162,7 @@
             ]
         },
         {
-            "input": "Context: 'Well, I would rather not. I might starve if I don't have all 3 packages of food \u2639\ufe0f' 'how much firewood do you need' 'I would like 2'\nUtterance: 'I will  be happy to let you have 3 packs of food , but I need 2 packs of firewood'",
+            "input": "Context: 'Well, I would rather not. I might starve if I don't have all 3 packages of food ☹️' 'how much firewood do you need' 'I would like 2'\nUtterance: 'I will  be happy to let you have 3 packs of food , but I need 2 packs of firewood'",
             "output": [
                 "No"
             ]
@@ -173,7 +174,7 @@
             ]
         },
         {
-            "input": "Context: 'Hey! For the camping trip it would be awesome if I could have 3 packages of food. My friend is gluten and dairy free and we need as many options as possible for her. '\nUtterance: 'Aww I'm sorry to hear that, it sounds like it might be better to have her bring her own food. I'll be bringing my teenage son so it would be awesome to get any extra food for him that I can. You know how they be! \ud83d\ude42'",
+            "input": "Context: 'Hey! For the camping trip it would be awesome if I could have 3 packages of food. My friend is gluten and dairy free and we need as many options as possible for her. '\nUtterance: 'Aww I'm sorry to hear that, it sounds like it might be better to have her bring her own food. I'll be bringing my teenage son so it would be awesome to get any extra food for him that I can. You know how they be! 🙂'",
             "output": [
                 "Yes"
             ]
@@ -191,19 +192,19 @@
             ]
         },
         {
-            "input": "Context: 'Hi! I am interesting in claiming all 3 of the water, as well as 2 firewood and 1 food. Does this work for you?' 'No I need more firewood' 'Okay, can I ask why the firewood is important for you? \ud83d\ude42'\nUtterance: 'You can find more wood in the forest but I'm going somewhere where there's not a loot of trees \u2639\ufe0f'",
+            "input": "Context: 'Hi! I am interesting in claiming all 3 of the water, as well as 2 firewood and 1 food. Does this work for you?' 'No I need more firewood' 'Okay, can I ask why the firewood is important for you? 🙂'\nUtterance: 'You can find more wood in the forest but I'm going somewhere where there's not a loot of trees ☹️'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'Haha, I know but I am in the same situation! \u2639\ufe0f and since I am getting less food I feel like it is fair I get on more firewood since I truly need that \ud83d\ude42' 'Some extra water for coffee might keep us warm, would you consider taking 1 food, 2 wood, 1 water?' 'Sure I can do that \ud83d\ude42'\nUtterance: 'I think we have a deal!!'",
+            "input": "Context: 'Haha, I know but I am in the same situation! ☹️ and since I am getting less food I feel like it is fair I get on more firewood since I truly need that 🙂' 'Some extra water for coffee might keep us warm, would you consider taking 1 food, 2 wood, 1 water?' 'Sure I can do that 🙂'\nUtterance: 'I think we have a deal!!'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I do need some food. I would like to get at least 1 food. You can still get 3 firewood.' 'I could use water as well, so I could get 1 water, 2 food and 2 firewood' 'I am good at making fire and have a starter so I can give up all the wood.'\nUtterance: 'I still need 1 water, don't have a water purify kit. \u2639\ufe0f'",
+            "input": "Context: 'I do need some food. I would like to get at least 1 food. You can still get 3 firewood.' 'I could use water as well, so I could get 1 water, 2 food and 2 firewood' 'I am good at making fire and have a starter so I can give up all the wood.'\nUtterance: 'I still need 1 water, don't have a water purify kit. ☹️'",
             "output": [
                 "No"
             ]
@@ -221,7 +222,7 @@
             ]
         },
         {
-            "input": "Context: 'I would be open to that if you could give me three packages of water \ud83d\ude42' 'Hmmm...I'm pretty muddy due to clumsiness, so I may need one extra. I could give you two waters and all of the firewood. What do you think? \ud83d\ude42' 'So are you suggesting that I would get 2 waters, 3 firewood, and no food?'\nUtterance: 'Right! Well, beyond the food you already have. '",
+            "input": "Context: 'I would be open to that if you could give me three packages of water 🙂' 'Hmmm...I'm pretty muddy due to clumsiness, so I may need one extra. I could give you two waters and all of the firewood. What do you think? 🙂' 'So are you suggesting that I would get 2 waters, 3 firewood, and no food?'\nUtterance: 'Right! Well, beyond the food you already have. '",
             "output": [
                 "Yes"
             ]
@@ -233,7 +234,7 @@
             ]
         },
         {
-            "input": "Context: 'Hello \ud83d\ude42' 'Hello!'\nUtterance: 'Which item do you need the most?'",
+            "input": "Context: 'Hello 🙂' 'Hello!'\nUtterance: 'Which item do you need the most?'",
             "output": [
                 "No"
             ]
@@ -275,25 +276,25 @@
             ]
         },
         {
-            "input": "Context: 'Your two youngest kids are working? How old is everyone? If there's a lot of people, it will be easier to split up the duties and get things done. My son's 3 years old so as much as he's eager to help, there's not much he can do lol.' 'Ha Ha...no my too youngest have hardly been anywhere because of us adults working,  I have teens (17, 15), tweens (13) and littles (10, 7). We 3 boys and 3 girls. We have a 21 year old but he's in a band so h can't go. They all pitch in anytime. They eat a lot so they have to cook from scratch at home. Awww 3 is so adorable...that's when they are sure they can do and will work so hard! ' 'Home cooking's the best, yumyums! We're planning on doing a lot of fishing since my son's been in love with fishing toys and is currently in love with eating fish (he hasn't gotten tired of eating it every night for dinner). We're thinking of cooking what we catch every night. Do you have any activities planned for your camping trip?'\nUtterance: 'Fishing is so fun! \ud83d\ude42 We really don't have a plan... so many people, so many opinions. If you'll be fishing and eating your catch, you'll probably need more firewood than food. And with the filters, you will need some extra water, especially for your little guy. So would you agree that you take 2 firewood packages, 1 food package and 1 extra water. '",
+            "input": "Context: 'Your two youngest kids are working? How old is everyone? If there's a lot of people, it will be easier to split up the duties and get things done. My son's 3 years old so as much as he's eager to help, there's not much he can do lol.' 'Ha Ha...no my too youngest have hardly been anywhere because of us adults working,  I have teens (17, 15), tweens (13) and littles (10, 7). We 3 boys and 3 girls. We have a 21 year old but he's in a band so h can't go. They all pitch in anytime. They eat a lot so they have to cook from scratch at home. Awww 3 is so adorable...that's when they are sure they can do and will work so hard! ' 'Home cooking's the best, yumyums! We're planning on doing a lot of fishing since my son's been in love with fishing toys and is currently in love with eating fish (he hasn't gotten tired of eating it every night for dinner). We're thinking of cooking what we catch every night. Do you have any activities planned for your camping trip?'\nUtterance: 'Fishing is so fun! 🙂 We really don't have a plan... so many people, so many opinions. If you'll be fishing and eating your catch, you'll probably need more firewood than food. And with the filters, you will need some extra water, especially for your little guy. So would you agree that you take 2 firewood packages, 1 food package and 1 extra water. '",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'That makes total sense.  I will let you keep all 3 of the water packages.  If I take the extra firewood for all 3 packages then I can probably boil a lot of the water to get the harmful bacteria out.  I really appreciate your generosity \ud83d\ude42.  ' 'No problem.\ud83d\ude42  So I will keep the 3 packages of water and, since I am giving you all 3 packages of the firewood I will take back the 1 food package and keep all 3 of the food packages.' 'I would still like at least 1 package of the food please.  There has been a lot of rain in the area, but I think some poisonous mushrooms maybe prevalent in the area, so to be extra cautious I would like a little spare food on hand.'\nUtterance: 'You don't have to eat the poison mushrooms. You can catch some fish from the river or hunt for small animals.  You have all of the firewood so cooking the food should not be a problem.'",
+            "input": "Context: 'That makes total sense.  I will let you keep all 3 of the water packages.  If I take the extra firewood for all 3 packages then I can probably boil a lot of the water to get the harmful bacteria out.  I really appreciate your generosity 🙂.  ' 'No problem.🙂  So I will keep the 3 packages of water and, since I am giving you all 3 packages of the firewood I will take back the 1 food package and keep all 3 of the food packages.' 'I would still like at least 1 package of the food please.  There has been a lot of rain in the area, but I think some poisonous mushrooms maybe prevalent in the area, so to be extra cautious I would like a little spare food on hand.'\nUtterance: 'You don't have to eat the poison mushrooms. You can catch some fish from the river or hunt for small animals.  You have all of the firewood so cooking the food should not be a problem.'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'hi there\ud83d\ude42' 'Hello. How are you today? \ud83d\ude42' 'Pretty good!  I am looking forward to going on this camping trip with my family.'\nUtterance: 'Same here! We had a couple bumps in the road though, as our freezer stopped working so all our food went bad \u2639\ufe0f'",
+            "input": "Context: 'hi there🙂' 'Hello. How are you today? 🙂' 'Pretty good!  I am looking forward to going on this camping trip with my family.'\nUtterance: 'Same here! We had a couple bumps in the road though, as our freezer stopped working so all our food went bad ☹️'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hello there. I am as well. What items were you looking for specifically?\ud83d\ude42' 'I am looking for one of each. Food I am especially looking for.' 'That sounds pretty reasonable as I am in need of firewood the most. Would it be most reasonable to each take what we need most and split the water down the middle?'\nUtterance: 'Yes, it would.'",
+            "input": "Context: 'Hello there. I am as well. What items were you looking for specifically?🙂' 'I am looking for one of each. Food I am especially looking for.' 'That sounds pretty reasonable as I am in need of firewood the most. Would it be most reasonable to each take what we need most and split the water down the middle?'\nUtterance: 'Yes, it would.'",
             "output": [
                 "No"
             ]
@@ -311,7 +312,7 @@
             ]
         },
         {
-            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42' 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?' 'Food is the item of greatest value to you?'\nUtterance: 'It is! What do you think?'",
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.🙂' 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?' 'Food is the item of greatest value to you?'\nUtterance: 'It is! What do you think?'",
             "output": [
                 "No"
             ]
@@ -323,7 +324,7 @@
             ]
         },
         {
-            "input": "Context: 'Can you help out? I can easily dehydrated can you give all the water packages to me?' 'I can spare a little as I am currently taking medication that requires me to drink a lot. I can give you 2 bottles of water if you can give me 3 firewood' 'I can't give you all the 3 firewood. We can share them. I can give you 1 firewood? Because I am too scared about dark. \u2639\ufe0f'\nUtterance: 'I could give you 1 water for 1 firewood, most of my firewood got wet so is almost useless . Would you perhaps except some food for another unit of firewood?'",
+            "input": "Context: 'Can you help out? I can easily dehydrated can you give all the water packages to me?' 'I can spare a little as I am currently taking medication that requires me to drink a lot. I can give you 2 bottles of water if you can give me 3 firewood' 'I can't give you all the 3 firewood. We can share them. I can give you 1 firewood? Because I am too scared about dark. ☹️'\nUtterance: 'I could give you 1 water for 1 firewood, most of my firewood got wet so is almost useless . Would you perhaps except some food for another unit of firewood?'",
             "output": [
                 "No"
             ]
@@ -353,7 +354,7 @@
             ]
         },
         {
-            "input": "Context: 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?' 'Is there anyway you will go with that I get two firewood? I need food the most but since you get most of that can I get most of the firewood? So 1 food, 2 firewood, and 2 water for me?' 'You drive a hard bargain. I could really use that firewood. It's going to get cold tonight and these sleeping bags are not worth the price I paid ;)'\nUtterance: 'Haha, I know but I am in the same situation! \u2639\ufe0f and since I am getting less food I feel like it is fair I get on more firewood since I truly need that \ud83d\ude42'",
+            "input": "Context: 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?' 'Is there anyway you will go with that I get two firewood? I need food the most but since you get most of that can I get most of the firewood? So 1 food, 2 firewood, and 2 water for me?' 'You drive a hard bargain. I could really use that firewood. It's going to get cold tonight and these sleeping bags are not worth the price I paid ;)'\nUtterance: 'Haha, I know but I am in the same situation! ☹️ and since I am getting less food I feel like it is fair I get on more firewood since I truly need that 🙂'",
             "output": [
                 "Yes"
             ]
@@ -371,43 +372,43 @@
             ]
         },
         {
-            "input": "Context: 'I would be OK with two packages of water.' 'Good. 2 packages of wood for me. 1 for you. 2 packages of water for you, and one for me. How should we divide the food?' 'I will take 2 packages of food and 1 for you.'\nUtterance: '\ud83d\ude2eI thought you didn't need so much food, because of your diet....'",
+            "input": "Context: 'I would be OK with two packages of water.' 'Good. 2 packages of wood for me. 1 for you. 2 packages of water for you, and one for me. How should we divide the food?' 'I will take 2 packages of food and 1 for you.'\nUtterance: '😮I thought you didn't need so much food, because of your diet....'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'Sorry to bother you, I don't need anything other than food package. So better you could give me 2 food package and take 3 water and fire wood. Please consider this deal.' 'No i absolutely need 2 food packages. So if you cannot agree to take 1 food 2 water and 2 firewood i will walk away.  If you have children with you would would also need water which you are not asking for. ' 'Yes I too have children so only I am considering 2 food package, 1 water is enough for me and I dont need any firewood. So please accept this deal'\nUtterance: '\ud83d\ude21 I am walking away if i cannot get 2 food packages 1 water and 1 firewood. That leaves you with 1 food 2 waters and 2 firewoods. This is a good deal for you concidering that you havent been asking for water for your children until i mentioned that you need water for you children. Do you agree??'",
+            "input": "Context: 'Sorry to bother you, I don't need anything other than food package. So better you could give me 2 food package and take 3 water and fire wood. Please consider this deal.' 'No i absolutely need 2 food packages. So if you cannot agree to take 1 food 2 water and 2 firewood i will walk away.  If you have children with you would would also need water which you are not asking for. ' 'Yes I too have children so only I am considering 2 food package, 1 water is enough for me and I dont need any firewood. So please accept this deal'\nUtterance: '😡 I am walking away if i cannot get 2 food packages 1 water and 1 firewood. That leaves you with 1 food 2 waters and 2 firewoods. This is a good deal for you concidering that you havent been asking for water for your children until i mentioned that you need water for you children. Do you agree??'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: '\u2639\ufe0fOh, that sounds awful. Are you sure you need all three packages of firewood?' 'I might be able to get by with just two... I'm on a diet though, so I don't need as much food.' 'That's a relief. I actually have a friend joining me and they don't have their own food supply. I don't have enough for two people.'\nUtterance: 'You can all the food if you need it.\ud83d\ude42'",
+            "input": "Context: '☹️Oh, that sounds awful. Are you sure you need all three packages of firewood?' 'I might be able to get by with just two... I'm on a diet though, so I don't need as much food.' 'That's a relief. I actually have a friend joining me and they don't have their own food supply. I don't have enough for two people.'\nUtterance: 'You can all the food if you need it.🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: \nUtterance: 'Hello there \ud83d\ude42'",
+            "input": "Context: \nUtterance: 'Hello there 🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'HI. I'd love to get 2 additional packs of firewood. The weather forecast was for much warmer weather here and I just didn't bring enough with me. I also left my additional sweatshirt at home. I'd be happy to give you one additional water and two of food.  \ud83d\ude42\ud83d\ude42' 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.'\nUtterance: 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. \u2639\ufe0f'",
+            "input": "Context: 'HI. I'd love to get 2 additional packs of firewood. The weather forecast was for much warmer weather here and I just didn't bring enough with me. I also left my additional sweatshirt at home. I'd be happy to give you one additional water and two of food.  🙂🙂' 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.'\nUtterance: 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. ☹️'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'How are you enjoying the camping trip so far?' 'Hi. It\u2019s great, but very cold here. How about you? '\nUtterance: 'Yes the cold is hard to adjust to I can't seem to shake the chill.'",
+            "input": "Context: 'How are you enjoying the camping trip so far?' 'Hi. It’s great, but very cold here. How about you? '\nUtterance: 'Yes the cold is hard to adjust to I can't seem to shake the chill.'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Great! What extra supplies would you like to bring?' 'Since it's hot there, I get thirsty and dry real quick. \ud83d\ude21' 'Oh ok, well I plan on bringing some juice, beer and other drinks. So I could spare some extra water. And I am pretty good at fishing, so I won't need much food either'\nUtterance: 'How nice of you. I certain we can work something out. \ud83d\ude42'",
+            "input": "Context: 'Great! What extra supplies would you like to bring?' 'Since it's hot there, I get thirsty and dry real quick. 😡' 'Oh ok, well I plan on bringing some juice, beer and other drinks. So I could spare some extra water. And I am pretty good at fishing, so I won't need much food either'\nUtterance: 'How nice of you. I certain we can work something out. 🙂'",
             "output": [
                 "No"
             ]
@@ -425,13 +426,13 @@
             ]
         },
         {
-            "input": "Context: 'okay so just to be clear you get 2 foods and me 1. I get 2 firewood and you 1 and i get 2 water and you 1? Is that correct? do we have a deal?' 'On water I have not agreed. I will take 2 It will be fair\u2639\ufe0f' 'okay thats fine. Deal?'\nUtterance: 'deal\ud83d\ude42'",
+            "input": "Context: 'okay so just to be clear you get 2 foods and me 1. I get 2 firewood and you 1 and i get 2 water and you 1? Is that correct? do we have a deal?' 'On water I have not agreed. I will take 2 It will be fair☹️' 'okay thats fine. Deal?'\nUtterance: 'deal🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I need an extra supply of food, as I exercise a lot! \ud83d\ude42' 'Hmmm.  And the firewood?' 'I get cold easily. I need the firewood to get warm. I might catch a cold.\ud83d\ude42'\nUtterance: 'I think water should be your priority.  You have food and firewood also in your basics.  I will let you have the 3 water but I will need the 3 Firewood and the 3 Food.  I have a medical condition.'",
+            "input": "Context: 'I need an extra supply of food, as I exercise a lot! 🙂' 'Hmmm.  And the firewood?' 'I get cold easily. I need the firewood to get warm. I might catch a cold.🙂'\nUtterance: 'I think water should be your priority.  You have food and firewood also in your basics.  I will let you have the 3 water but I will need the 3 Firewood and the 3 Food.  I have a medical condition.'",
             "output": [
                 "Yes"
             ]
@@ -455,19 +456,19 @@
             ]
         },
         {
-            "input": "Context: 'All my girls have brought canteens. I must have enough firewood if they will earn their badge. You can have one, but I won't be able to make due without 2.' 'I could manage with one firewood and two foods, but if you have canteens for everyone, may I then have all three waters? I had planned to collect water from the river, but I'm worried I may get sick.' 'you pointed out that we will need more!  \ud83d\ude2e i will take 2 waters'\nUtterance: 'I didn't know you had supplied everyone with water before the trip. I was merely trying to look out for your needs, but you said you didn't need them!'",
+            "input": "Context: 'All my girls have brought canteens. I must have enough firewood if they will earn their badge. You can have one, but I won't be able to make due without 2.' 'I could manage with one firewood and two foods, but if you have canteens for everyone, may I then have all three waters? I had planned to collect water from the river, but I'm worried I may get sick.' 'you pointed out that we will need more!  😮 i will take 2 waters'\nUtterance: 'I didn't know you had supplied everyone with water before the trip. I was merely trying to look out for your needs, but you said you didn't need them!'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I do.  I have been looking everything over and feel this won't be to hard to come to an agreement' 'Well my camp places a premium on water.  How would you feel about for me: 2 water, 1 food, 1 firewood?' 'I think we're on the right track.  I am bring my 2 kids with me and they eat everything in sight.'\nUtterance: 'Would they be okay with 2 food?  Otherwise can give you an extra and I can take either an additional water or firewood \ud83d\ude42'",
+            "input": "Context: 'I do.  I have been looking everything over and feel this won't be to hard to come to an agreement' 'Well my camp places a premium on water.  How would you feel about for me: 2 water, 1 food, 1 firewood?' 'I think we're on the right track.  I am bring my 2 kids with me and they eat everything in sight.'\nUtterance: 'Would they be okay with 2 food?  Otherwise can give you an extra and I can take either an additional water or firewood 🙂'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'Hello! And happy camping! \ud83d\ude42 To start off, I am thinking that I will need at least 3 firewood, 2 water and 1 food. Last time my axe broke and we ran out of wood! What do you think/need?' 'I also was really needing some firewood. It's supposed to get pretty cold at night where we are camping and I need to make sure I can keep my kids warm.'\nUtterance: 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly \u2639\ufe0f'",
+            "input": "Context: 'Hello! And happy camping! 🙂 To start off, I am thinking that I will need at least 3 firewood, 2 water and 1 food. Last time my axe broke and we ran out of wood! What do you think/need?' 'I also was really needing some firewood. It's supposed to get pretty cold at night where we are camping and I need to make sure I can keep my kids warm.'\nUtterance: 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly ☹️'",
             "output": [
                 "No"
             ]
@@ -485,7 +486,7 @@
             ]
         },
         {
-            "input": "Context: 'Okay, so you can take all the firewood and I take all the food. I will also need at least two waters because I had a limited supply at home.\ud83d\ude42' 'no, i will need 2 water because i need to drink it and there not much water around me' 'Please work with me. I will need plenty water to make it to the top of the mountain.'\nUtterance: 'i am already giving you all 3 food which i also need to eat'",
+            "input": "Context: 'Okay, so you can take all the firewood and I take all the food. I will also need at least two waters because I had a limited supply at home.🙂' 'no, i will need 2 water because i need to drink it and there not much water around me' 'Please work with me. I will need plenty water to make it to the top of the mountain.'\nUtterance: 'i am already giving you all 3 food which i also need to eat'",
             "output": [
                 "No"
             ]
@@ -509,7 +510,7 @@
             ]
         },
         {
-            "input": "Context: 'Hello, I would really like to get most of the water and firewood packages.' 'You can have most of the water and firewood if I can have most of the food. I would like to get two of the firewood so I have a nice fire to come back to after searching for a source of water.' 'How about I take all off the water, 1 firewood and 1 food package? \ud83d\ude42'\nUtterance: 'You can have all of the water if I can have all of the food. I promise that I will bring you back food. I am really good at foraging and I know all about what is edible in a forest \ud83d\ude42 I want to have two packages of firewood so that I can have a roaring and hot fire going when I come back from being out all day. I am sure that I will find some fish to catch at my water source! \ud83d\ude42 I'll bring some to back to share with you!'",
+            "input": "Context: 'Hello, I would really like to get most of the water and firewood packages.' 'You can have most of the water and firewood if I can have most of the food. I would like to get two of the firewood so I have a nice fire to come back to after searching for a source of water.' 'How about I take all off the water, 1 firewood and 1 food package? 🙂'\nUtterance: 'You can have all of the water if I can have all of the food. I promise that I will bring you back food. I am really good at foraging and I know all about what is edible in a forest 🙂 I want to have two packages of firewood so that I can have a roaring and hot fire going when I come back from being out all day. I am sure that I will find some fish to catch at my water source! 🙂 I'll bring some to back to share with you!'",
             "output": [
                 "Yes"
             ]
@@ -521,19 +522,19 @@
             ]
         },
         {
-            "input": "Context: 'I don't want to be too hungry either but I think perhaps I might need an extra water to compensate for the lack of food.' 'Since I am giving you all of the firewood that you said was most important to you, I feel I should get at least the same amount of items as you, especially since you are getting exactly the firewood you want. I will need to stick to three waters and two food.' 'The firewood is most important to me to be sure. However, if you get more food and all of the water I could end up going hungry.\u2639\ufe0f'\nUtterance: 'Well I would be happy to exchange you one of your firewood for the one water you need. That way you won't go thirsty.'",
+            "input": "Context: 'I don't want to be too hungry either but I think perhaps I might need an extra water to compensate for the lack of food.' 'Since I am giving you all of the firewood that you said was most important to you, I feel I should get at least the same amount of items as you, especially since you are getting exactly the firewood you want. I will need to stick to three waters and two food.' 'The firewood is most important to me to be sure. However, if you get more food and all of the water I could end up going hungry.☹️'\nUtterance: 'Well I would be happy to exchange you one of your firewood for the one water you need. That way you won't go thirsty.'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I think having 3 packages of firewood will help! you can always boil water from a  fresh spring \ud83d\ude42' 'That's true! Thank you so much for the advice, I am definitely new to this camping thing \ud83d\ude42 Well I think 3 foods, 2 waters for you sounds like a good deal. Firewood will definitely be needed on our trip! \ud83d\ude42' 'Thank you so much!! Camping is so much fun! you will love it!'\nUtterance: 'Thank you, I hope you have a wonderful time with your kiddos. \ud83d\ude42'",
+            "input": "Context: 'I think having 3 packages of firewood will help! you can always boil water from a  fresh spring 🙂' 'That's true! Thank you so much for the advice, I am definitely new to this camping thing 🙂 Well I think 3 foods, 2 waters for you sounds like a good deal. Firewood will definitely be needed on our trip! 🙂' 'Thank you so much!! Camping is so much fun! you will love it!'\nUtterance: 'Thank you, I hope you have a wonderful time with your kiddos. 🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I get tired to easy so I probably won't be much fun at a bonfire \u2639\ufe0f. I really do appreciate the offer though. I would think the extra food would do you more good for your party. ' 'The extra food would be appreciated.  How about if I take just two each of the firewood and food, and you can have the remainder, plus all of the water?' 'I am just concerned that only 1 firewood might make it so I'm too cold to function. '\nUtterance: 'If you boil the water above the fire, it will provide additional heat over time.  You would also be able to make tea, which would warm you up from the inside as well, better than any fire would.  That would probably be most beneficial to you.  I really do need the 2 firewood if there's any chance of making a bonfire for my party.'",
+            "input": "Context: 'I get tired to easy so I probably won't be much fun at a bonfire ☹️. I really do appreciate the offer though. I would think the extra food would do you more good for your party. ' 'The extra food would be appreciated.  How about if I take just two each of the firewood and food, and you can have the remainder, plus all of the water?' 'I am just concerned that only 1 firewood might make it so I'm too cold to function. '\nUtterance: 'If you boil the water above the fire, it will provide additional heat over time.  You would also be able to make tea, which would warm you up from the inside as well, better than any fire would.  That would probably be most beneficial to you.  I really do need the 2 firewood if there's any chance of making a bonfire for my party.'",
             "output": [
                 "Yes"
             ]
@@ -557,13 +558,13 @@
             ]
         },
         {
-            "input": "Context: 'I have more water than I need. How is your water supply?' 'I could use some more water as I get dehydrated easily. Since you have enough, I could give you and extra package of food for your water.' 'That sounds like a deal, what would you like to do as far as the firewood goes?'\nUtterance: 'I really need to keep warm with my not so good sleeping bag.\u2639\ufe0f I would be willing to do this. I get two packages of firewood and three packages of water and I will give you two packages of food and one package of firewood. You have plenty of water so you will not miss that.. '",
+            "input": "Context: 'I have more water than I need. How is your water supply?' 'I could use some more water as I get dehydrated easily. Since you have enough, I could give you and extra package of food for your water.' 'That sounds like a deal, what would you like to do as far as the firewood goes?'\nUtterance: 'I really need to keep warm with my not so good sleeping bag.☹️ I would be willing to do this. I get two packages of firewood and three packages of water and I will give you two packages of food and one package of firewood. You have plenty of water so you will not miss that.. '",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'Hi! I'm most interested in acquiring firewood, since I don't want my fire to burn out on the trip. What are you looking for?' 'I am also looking for firewood. Since I was a child i have always enjoyed camp fires. They mean a lot to me' 'Okay so we can think about splitting the firewood. \ud83d\ude42 I'm also interested in water because I plan to do a lot of activities like hiking and kayaking, so it will be helpful for me to be able to hydrate more.'\nUtterance: 'That is okay. What about i get 2 packages of firewood and then you get 2 packages of water. Is that okay with you?'",
+            "input": "Context: 'Hi! I'm most interested in acquiring firewood, since I don't want my fire to burn out on the trip. What are you looking for?' 'I am also looking for firewood. Since I was a child i have always enjoyed camp fires. They mean a lot to me' 'Okay so we can think about splitting the firewood. 🙂 I'm also interested in water because I plan to do a lot of activities like hiking and kayaking, so it will be helpful for me to be able to hydrate more.'\nUtterance: 'That is okay. What about i get 2 packages of firewood and then you get 2 packages of water. Is that okay with you?'",
             "output": [
                 "No"
             ]
@@ -575,13 +576,13 @@
             ]
         },
         {
-            "input": "Context: 'That sounds good to me. \ud83d\ude42 I think we can make a good deal.' 'I can give you 3 wood packages if I can get 3 water and 2 food. So you will receive 3 wood and 1 food. What do you think?' 'I would like 2 wood, 1 water and 1 food. You would get 1 wood, 2 water and 2 food.'\nUtterance: 'I don't need any wood. Do you have any alternatives?'",
+            "input": "Context: 'That sounds good to me. 🙂 I think we can make a good deal.' 'I can give you 3 wood packages if I can get 3 water and 2 food. So you will receive 3 wood and 1 food. What do you think?' 'I would like 2 wood, 1 water and 1 food. You would get 1 wood, 2 water and 2 food.'\nUtterance: 'I don't need any wood. Do you have any alternatives?'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: '\ud83d\ude42 Well let me counter it, more beneficial to both of us, you will get 1 water, 2 food and 2 firewood as I can easily find firewood in the forest.  The water due to my dry mouth illness, I need the most \u2639\ufe0f' 'Oh yes excuse me, I got confused, if you need water for me it's okay to give you the water you need.' 'Okay so my offer is good for you and me? \ud83d\ude42'\nUtterance: ', Yes, I agree with that offer.\ud83d\ude42'",
+            "input": "Context: '🙂 Well let me counter it, more beneficial to both of us, you will get 1 water, 2 food and 2 firewood as I can easily find firewood in the forest.  The water due to my dry mouth illness, I need the most ☹️' 'Oh yes excuse me, I got confused, if you need water for me it's okay to give you the water you need.' 'Okay so my offer is good for you and me? 🙂'\nUtterance: ', Yes, I agree with that offer.🙂'",
             "output": [
                 "No"
             ]
@@ -593,43 +594,43 @@
             ]
         },
         {
-            "input": "Context: 'You don't need this water to swim.  You can take two of the food if you're worried about food.  I will take two water and two firewood since I have a large family to nourish and keep warm.  Your initial suggestion of 3  waters and firewood is laughable.  Please provide a realistic compromise.' 'If I take two waters, 1 firewood, and 2 food supplies, this will help me during the trip. It seems as if you are more skilled than I am on a camping trip. Please consider my request\u2639\ufe0f' 'LOL - not a chance.  You're going to have to give me more than that.  I am more skilled and thus need firewood.  How about this...I will take 3 firewood and 2 food.  You can take all the water because you're so non-skilled in the wilderness. I am going to hunt for my food, but again I have a large family.  I am not considering your request  at all.  We will need to come to a decision relatively soon.'\nUtterance: 'I understand your preferences. If I take all of the water, 1 firewood, and 2 food your family will still have the opportunity to have a good camping trip and I can learn to survive on this trip. Please consider my request again.\u2639\ufe0f'",
+            "input": "Context: 'You don't need this water to swim.  You can take two of the food if you're worried about food.  I will take two water and two firewood since I have a large family to nourish and keep warm.  Your initial suggestion of 3  waters and firewood is laughable.  Please provide a realistic compromise.' 'If I take two waters, 1 firewood, and 2 food supplies, this will help me during the trip. It seems as if you are more skilled than I am on a camping trip. Please consider my request☹️' 'LOL - not a chance.  You're going to have to give me more than that.  I am more skilled and thus need firewood.  How about this...I will take 3 firewood and 2 food.  You can take all the water because you're so non-skilled in the wilderness. I am going to hunt for my food, but again I have a large family.  I am not considering your request  at all.  We will need to come to a decision relatively soon.'\nUtterance: 'I understand your preferences. If I take all of the water, 1 firewood, and 2 food your family will still have the opportunity to have a good camping trip and I can learn to survive on this trip. Please consider my request again.☹️'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I'm not really worried about the firewood \u2639\ufe0f What about I take 2 foods, and you can have the 2 waters? ' 'And 3 firewood then, that will be fine with me.' 'Give me 1 firewood, and we'll have a deal? '\nUtterance: 'Ok, for you. We have a deal.'",
+            "input": "Context: 'I'm not really worried about the firewood ☹️ What about I take 2 foods, and you can have the 2 waters? ' 'And 3 firewood then, that will be fine with me.' 'Give me 1 firewood, and we'll have a deal? '\nUtterance: 'Ok, for you. We have a deal.'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I am good, thank you.  What are your preferences? I really need the extra food packages.  We are doing a lot of hiking and mountain biking and there are no grocery stores for at least 50 miles.\ud83d\ude42' 'Oh wow that is quite a lot of hiking! I think we will be hanging out a lot overnight and so I am looking for more firewood if possible. My kids can't hike very far and want to do more with smores and marshmellows. ' 'I can work with that.  I am willing to give you all of the firewood.  We are in a hot climate and won't need too much.  Being in a hot climate and with a lot of exercise, I am hoping to take the three water packages. '\nUtterance: 'Thank you for that. I'm happy to give you the food packages as well as we shouldn't need extras. Being around the fire, we are going to be hot as well and dehydrated. I say let's try and split the waters. '",
+            "input": "Context: 'I am good, thank you.  What are your preferences? I really need the extra food packages.  We are doing a lot of hiking and mountain biking and there are no grocery stores for at least 50 miles.🙂' 'Oh wow that is quite a lot of hiking! I think we will be hanging out a lot overnight and so I am looking for more firewood if possible. My kids can't hike very far and want to do more with smores and marshmellows. ' 'I can work with that.  I am willing to give you all of the firewood.  We are in a hot climate and won't need too much.  Being in a hot climate and with a lot of exercise, I am hoping to take the three water packages. '\nUtterance: 'Thank you for that. I'm happy to give you the food packages as well as we shouldn't need extras. Being around the fire, we are going to be hot as well and dehydrated. I say let's try and split the waters. '",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: ' I appreciate your willingness to discuss this, so we both get a fair deal. I would really like if I get 3 food, 1 water, and 1 firewood. Then you would get 2 water and 2 firewood. You said that you really need water and food, so I think that would work best for both of us to get what we need most. What do you think? \ud83d\ude42' 'Np, problem, water is high in demand on my end with the amount of kiddos I am taking. Water is my main concern, will you be okay with 3 Foods, 2 Firewoods and no water?' 'I would really like 3 food, 1 water, and 1 firewood if possible. Would you agree to that instead?'\nUtterance: 'If you were me would you be happy with 0 Foods, 2 waters, and 2 Firewoods? when water is your priority? maybe we can make it even, your highest priority is Food and mine is water? you can have all firewood? I will be shorten out on everything except the water and youll get 3 foods and 3 firewoods, while i only get 3 waters?'",
+            "input": "Context: ' I appreciate your willingness to discuss this, so we both get a fair deal. I would really like if I get 3 food, 1 water, and 1 firewood. Then you would get 2 water and 2 firewood. You said that you really need water and food, so I think that would work best for both of us to get what we need most. What do you think? 🙂' 'Np, problem, water is high in demand on my end with the amount of kiddos I am taking. Water is my main concern, will you be okay with 3 Foods, 2 Firewoods and no water?' 'I would really like 3 food, 1 water, and 1 firewood if possible. Would you agree to that instead?'\nUtterance: 'If you were me would you be happy with 0 Foods, 2 waters, and 2 Firewoods? when water is your priority? maybe we can make it even, your highest priority is Food and mine is water? you can have all firewood? I will be shorten out on everything except the water and youll get 3 foods and 3 firewoods, while i only get 3 waters?'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I could really use the firewood too, it will be very cold where we are going. Since it will be cold, we will not be drinking much water. How about 2 firewood for you, 3 food for me?, ' 'May I ask how many are going camping with you, i would agree, but the needs of children are different than adults. I will need at least 1 food, to ensure I have enough for the kids. ' 'We will have 50 adults with us. How about 2 firewood, 1 food, 1 water for you?\ud83d\ude42'\nUtterance: 'lots of work for the both of us, at least you will have lots of help on you end. I accept the 2 firewood specially if you have elderly with you. will you be okay if give me 2 foods? '",
+            "input": "Context: 'I could really use the firewood too, it will be very cold where we are going. Since it will be cold, we will not be drinking much water. How about 2 firewood for you, 3 food for me?, ' 'May I ask how many are going camping with you, i would agree, but the needs of children are different than adults. I will need at least 1 food, to ensure I have enough for the kids. ' 'We will have 50 adults with us. How about 2 firewood, 1 food, 1 water for you?🙂'\nUtterance: 'lots of work for the both of us, at least you will have lots of help on you end. I accept the 2 firewood specially if you have elderly with you. will you be okay if give me 2 foods? '",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I am okay with that deal. What is your opinion?' 'sounds good. I will go ahead and put it in on my end' 'Okay. I will give you 1 food, 2 water and 2 firewood'\nUtterance: 'I am so glad we could work something out\ud83d\ude42'",
+            "input": "Context: 'I am okay with that deal. What is your opinion?' 'sounds good. I will go ahead and put it in on my end' 'Okay. I will give you 1 food, 2 water and 2 firewood'\nUtterance: 'I am so glad we could work something out🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly \u2639\ufe0f' 'What if I got 3 foods and 2 waters. and you got 3 firewood and 1 water. If I could get a little more food that doesn't need to be cooked over the fire I might be able to get by. And I'll need to buy more water so I don't have to boil it since I won't have much firewood. ' 'I would say that sounds like a good deal! I am a little worried about water though, there aren't any sources of water where we are going. Hmm..'\nUtterance: 'I think having 3 packages of firewood will help! you can always boil water from a  fresh spring \ud83d\ude42'",
+            "input": "Context: 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly ☹️' 'What if I got 3 foods and 2 waters. and you got 3 firewood and 1 water. If I could get a little more food that doesn't need to be cooked over the fire I might be able to get by. And I'll need to buy more water so I don't have to boil it since I won't have much firewood. ' 'I would say that sounds like a good deal! I am a little worried about water though, there aren't any sources of water where we are going. Hmm..'\nUtterance: 'I think having 3 packages of firewood will help! you can always boil water from a  fresh spring 🙂'",
             "output": [
                 "Yes"
             ]
@@ -641,31 +642,31 @@
             ]
         },
         {
-            "input": "Context: 'I can't wait \ud83d\ude42 Let's talk about these supplies. I've got hungry mouths to feed, Can I take the food and you can have half the firewood and all the water?' 'Hmm, I need food too. I am willing to split. I will give you 2 food since you claimed it first. Can I have 2 waters then?' 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?'\nUtterance: 'Is there anyway you will go with that I get two firewood? I need food the most but since you get most of that can I get most of the firewood? So 1 food, 2 firewood, and 2 water for me?'",
+            "input": "Context: 'I can't wait 🙂 Let's talk about these supplies. I've got hungry mouths to feed, Can I take the food and you can have half the firewood and all the water?' 'Hmm, I need food too. I am willing to split. I will give you 2 food since you claimed it first. Can I have 2 waters then?' 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?'\nUtterance: 'Is there anyway you will go with that I get two firewood? I need food the most but since you get most of that can I get most of the firewood? So 1 food, 2 firewood, and 2 water for me?'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I believe there won't be any convenience stores around to buy food, And I plan on staying out longer than you so I will need more food to last me, Do you need food or water more?' 'How do you know you are staying longer than me? I haven't even said how long I am staying! I am also with a big group.  \u2639\ufe0f\u2639\ufe0f  I need food the most, and I would like to take at least 2 extra waters.  I could possibly give up one of the food packages if you could part with 2 firewood.  Without extra food, I would have to do some fishing and cook the fish.' 'No. I won't part with any firewood because I can't stand being cold, and you can have 2 foods if you have a larger group if you give me 1 water. \ud83d\ude42\ud83d\ude42'\nUtterance: 'Sorry, that's not going to work for me.  \u2639\ufe0f You have a water purifier? Doesn't sound like extra water is necessary.  I am in a hot, dry climate.  I can give up all the firewood to you, if you can leave me the three packages of food.  I would also like 2 waters.  '",
+            "input": "Context: 'I believe there won't be any convenience stores around to buy food, And I plan on staying out longer than you so I will need more food to last me, Do you need food or water more?' 'How do you know you are staying longer than me? I haven't even said how long I am staying! I am also with a big group.  ☹️☹️  I need food the most, and I would like to take at least 2 extra waters.  I could possibly give up one of the food packages if you could part with 2 firewood.  Without extra food, I would have to do some fishing and cook the fish.' 'No. I won't part with any firewood because I can't stand being cold, and you can have 2 foods if you have a larger group if you give me 1 water. 🙂🙂'\nUtterance: 'Sorry, that's not going to work for me.  ☹️ You have a water purifier? Doesn't sound like extra water is necessary.  I am in a hot, dry climate.  I can give up all the firewood to you, if you can leave me the three packages of food.  I would also like 2 waters.  '",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'hello' 'Hey! How are you? My bestie and I were going to be going on a camping trip, but my other friends heard about it and wanted to come along so we're going to need more supplies than I initially though which has got me a little worried. \u2639\ufe0f' 'Yes!!! I need some water pretty bad.  I am good on food because I fish and I have been able to catch some catfish from the lake.  How about I take 2 water 2 firewood and 1 food'\nUtterance: 'I need a lot of food, because of how many people are coming now (like 3 times as many). Also, there's only one stream in the area and it's really far from our campsite, so it would be super inconvenient to have to hike there everyday to refill our canteens. We are in a forest though, so we should be good for wood. Since you can easily fish, what if I take 3 food and 2 water? You can keep all the firewood. \ud83d\ude42'",
+            "input": "Context: 'hello' 'Hey! How are you? My bestie and I were going to be going on a camping trip, but my other friends heard about it and wanted to come along so we're going to need more supplies than I initially though which has got me a little worried. ☹️' 'Yes!!! I need some water pretty bad.  I am good on food because I fish and I have been able to catch some catfish from the lake.  How about I take 2 water 2 firewood and 1 food'\nUtterance: 'I need a lot of food, because of how many people are coming now (like 3 times as many). Also, there's only one stream in the area and it's really far from our campsite, so it would be super inconvenient to have to hike there everyday to refill our canteens. We are in a forest though, so we should be good for wood. Since you can easily fish, what if I take 3 food and 2 water? You can keep all the firewood. 🙂'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I recently bought two new puppies, and they are coming on the trip. I could really use the extra water for them!' 'Awww. That sounds reasonable to me. I'm hoping to have a birthday dinner for my dad on the trip, so I'd appreciate some more food and a little more firewood.' 'Happy birthday to your dad!! You can have all of the food if I can have all of the water. \ud83d\ude42'\nUtterance: 'That'",
+            "input": "Context: 'I recently bought two new puppies, and they are coming on the trip. I could really use the extra water for them!' 'Awww. That sounds reasonable to me. I'm hoping to have a birthday dinner for my dad on the trip, so I'd appreciate some more food and a little more firewood.' 'Happy birthday to your dad!! You can have all of the food if I can have all of the water. 🙂'\nUtterance: 'That'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'If I take two waters, 1 firewood, and 2 food supplies, this will help me during the trip. It seems as if you are more skilled than I am on a camping trip. Please consider my request\u2639\ufe0f' 'LOL - not a chance.  You're going to have to give me more than that.  I am more skilled and thus need firewood.  How about this...I will take 3 firewood and 2 food.  You can take all the water because you're so non-skilled in the wilderness. I am going to hunt for my food, but again I have a large family.  I am not considering your request  at all.  We will need to come to a decision relatively soon.' 'I understand your preferences. If I take all of the water, 1 firewood, and 2 food your family will still have the opportunity to have a good camping trip and I can learn to survive on this trip. Please consider my request again.\u2639\ufe0f'\nUtterance: 'Ok - you're not being reasonable at all.  If you're so incompetent at going camping, maybe you should stay home and I can take all the supplies. How's that for an excellent offer?  All for me and 0 for you.'",
+            "input": "Context: 'If I take two waters, 1 firewood, and 2 food supplies, this will help me during the trip. It seems as if you are more skilled than I am on a camping trip. Please consider my request☹️' 'LOL - not a chance.  You're going to have to give me more than that.  I am more skilled and thus need firewood.  How about this...I will take 3 firewood and 2 food.  You can take all the water because you're so non-skilled in the wilderness. I am going to hunt for my food, but again I have a large family.  I am not considering your request  at all.  We will need to come to a decision relatively soon.' 'I understand your preferences. If I take all of the water, 1 firewood, and 2 food your family will still have the opportunity to have a good camping trip and I can learn to survive on this trip. Please consider my request again.☹️'\nUtterance: 'Ok - you're not being reasonable at all.  If you're so incompetent at going camping, maybe you should stay home and I can take all the supplies. How's that for an excellent offer?  All for me and 0 for you.'",
             "output": [
                 "Yes"
             ]
@@ -677,13 +678,13 @@
             ]
         },
         {
-            "input": "Context: 'Ah yes, you'll definitely need some extra wood then! It's also pretty cold here, especially during the night. But I would definitely be willing to let you take 2 firewood in exchange for 3 food. We have a lot of people going and will be out in the middle of nowhere.' 'We can definitely work something out. I'll be sure it'll benefit you more than me. \ud83d\ude42' 'Oh, well that's really nice of you. What do you propose?'\nUtterance: 'You'll get 3 food and 2 water, and I'll take 3 firewood and 1 water. \ud83d\ude42'",
+            "input": "Context: 'Ah yes, you'll definitely need some extra wood then! It's also pretty cold here, especially during the night. But I would definitely be willing to let you take 2 firewood in exchange for 3 food. We have a lot of people going and will be out in the middle of nowhere.' 'We can definitely work something out. I'll be sure it'll benefit you more than me. 🙂' 'Oh, well that's really nice of you. What do you propose?'\nUtterance: 'You'll get 3 food and 2 water, and I'll take 3 firewood and 1 water. 🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I'm sorry to hear that you are not doing well.  I've also have some issues.  On the way up to the camp site, all of my clean water spilled in the car.  I was really hoping to be able to get all of the available water.  Why aren't you well?  I hope it's not serious.  \u2639\ufe0f' 'Oh, that's terrible.  I'm sorry that happened.  I need the water for my child.  They seem dehydrated and disoriented.  My husband has also caught a cold and has been having chills.  I thought the extra firewood would help him feel better.' 'Oh my gosh.  You are not having an easy trip.  If your children are dehydrated and disoriented, perhaps you should get them to emergency care immediately.  I would like to provide you will all of the water in the meantime, but that would leave me with none at all.  I wouldn't have your husband out of the tent with chills.  Perhaps you should keep him bundled in your cabin.  I forgot my portable propane grill - so I would need some firewood.  How about I take 2 waters, 1 firewood and all of the food?'\nUtterance: 'Oh dear, you spilled your water and forgot your grill?  You mentioned that you had a car.  Perhaps you could take a quick drive to grab some extra water.  For now, I definitely agree that you need 1 extra water and 1 firewood.  I will need 2 of the extra food portions though.  How does that sound? '",
+            "input": "Context: 'I'm sorry to hear that you are not doing well.  I've also have some issues.  On the way up to the camp site, all of my clean water spilled in the car.  I was really hoping to be able to get all of the available water.  Why aren't you well?  I hope it's not serious.  ☹️' 'Oh, that's terrible.  I'm sorry that happened.  I need the water for my child.  They seem dehydrated and disoriented.  My husband has also caught a cold and has been having chills.  I thought the extra firewood would help him feel better.' 'Oh my gosh.  You are not having an easy trip.  If your children are dehydrated and disoriented, perhaps you should get them to emergency care immediately.  I would like to provide you will all of the water in the meantime, but that would leave me with none at all.  I wouldn't have your husband out of the tent with chills.  Perhaps you should keep him bundled in your cabin.  I forgot my portable propane grill - so I would need some firewood.  How about I take 2 waters, 1 firewood and all of the food?'\nUtterance: 'Oh dear, you spilled your water and forgot your grill?  You mentioned that you had a car.  Perhaps you could take a quick drive to grab some extra water.  For now, I definitely agree that you need 1 extra water and 1 firewood.  I will need 2 of the extra food portions though.  How does that sound? '",
             "output": [
                 "Yes"
             ]
@@ -713,13 +714,13 @@
             ]
         },
         {
-            "input": "Context: 'How about I get 3 firewood, and you get 2 food AND water? We both win with that, I think.' 'So now you need 3 firewood with 1 food. Am I correct?\ud83d\ude42' 'Yes, that sounds fair to me. Although I would be willing to take a water if you're offering it, I am not quite as lucky with water. \u2639\ufe0f'\nUtterance: 'How It will be. you already told that, you have lot of food with you. So can you please think how it will be. you can take all 3 firewood with 1 water and I will take all 3 foods packages and 2 water.'",
+            "input": "Context: 'How about I get 3 firewood, and you get 2 food AND water? We both win with that, I think.' 'So now you need 3 firewood with 1 food. Am I correct?🙂' 'Yes, that sounds fair to me. Although I would be willing to take a water if you're offering it, I am not quite as lucky with water. ☹️'\nUtterance: 'How It will be. you already told that, you have lot of food with you. So can you please think how it will be. you can take all 3 firewood with 1 water and I will take all 3 foods packages and 2 water.'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'That will be very unfair of you. How am i going to survive without water or food?' 'You have food and water, this is just extra supplies' 'I know but with my condition i may not make it, especially without more water.\ud83d\ude2e'\nUtterance: 'you can make water by boiling water with all that extra firewood you got'",
+            "input": "Context: 'That will be very unfair of you. How am i going to survive without water or food?' 'You have food and water, this is just extra supplies' 'I know but with my condition i may not make it, especially without more water.😮'\nUtterance: 'you can make water by boiling water with all that extra firewood you got'",
             "output": [
                 "Yes"
             ]
@@ -731,7 +732,7 @@
             ]
         },
         {
-            "input": "Context: 'I would want to keep at least one packet of food for myself, unless you want to just swap 3 firewoods for 3 packets of food, to keep it simple?' 'I like your plan.  It is simple. I will agree to that.' 'So all that is left is water, i guess i should atleast drink alot of it if i wont eat much haha \ud83d\ude42'\nUtterance: 'For sure, and you will need some way to put out the fire. \ud83d\ude2e'",
+            "input": "Context: 'I would want to keep at least one packet of food for myself, unless you want to just swap 3 firewoods for 3 packets of food, to keep it simple?' 'I like your plan.  It is simple. I will agree to that.' 'So all that is left is water, i guess i should atleast drink alot of it if i wont eat much haha 🙂'\nUtterance: 'For sure, and you will need some way to put out the fire. 😮'",
             "output": [
                 "No"
             ]
@@ -749,13 +750,13 @@
             ]
         },
         {
-            "input": "Context: 'I could use some more water as I get dehydrated easily. Since you have enough, I could give you and extra package of food for your water.' 'That sounds like a deal, what would you like to do as far as the firewood goes?' 'I really need to keep warm with my not so good sleeping bag.\u2639\ufe0f I would be willing to do this. I get two packages of firewood and three packages of water and I will give you two packages of food and one package of firewood. You have plenty of water so you will not miss that.. '\nUtterance: 'This sounds good to me, unless you would be able to part with three packages of food?'",
+            "input": "Context: 'I could use some more water as I get dehydrated easily. Since you have enough, I could give you and extra package of food for your water.' 'That sounds like a deal, what would you like to do as far as the firewood goes?' 'I really need to keep warm with my not so good sleeping bag.☹️ I would be willing to do this. I get two packages of firewood and three packages of water and I will give you two packages of food and one package of firewood. You have plenty of water so you will not miss that.. '\nUtterance: 'This sounds good to me, unless you would be able to part with three packages of food?'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'We do have a fire to start, but we are very hungry. Diabetics can eat less food because of the small meals. Don't lie to me.' '\ud83d\ude21my type of diabetes needs many meals otherwise my insulin levels will be low' 'I am diabetic also.'\nUtterance: 'your type maybe needs wild fruits which you can easily gather\ud83d\ude42'",
+            "input": "Context: 'We do have a fire to start, but we are very hungry. Diabetics can eat less food because of the small meals. Don't lie to me.' '😡my type of diabetes needs many meals otherwise my insulin levels will be low' 'I am diabetic also.'\nUtterance: 'your type maybe needs wild fruits which you can easily gather🙂'",
             "output": [
                 "Yes"
             ]
@@ -773,7 +774,7 @@
             ]
         },
         {
-            "input": "Context: 'Hi there! I am excited to share these additional camping supplies with you!'\nUtterance: 'Yes, same here! I'm glad that we all have our own basic necessities, but extra is always wonderful. \ud83d\ude42 What are you most interested in?'",
+            "input": "Context: 'Hi there! I am excited to share these additional camping supplies with you!'\nUtterance: 'Yes, same here! I'm glad that we all have our own basic necessities, but extra is always wonderful. 🙂 What are you most interested in?'",
             "output": [
                 "No"
             ]
@@ -791,13 +792,13 @@
             ]
         },
         {
-            "input": "Context: 'I think we are getting very close to a good deal. Would you be willing to give me ONE firewood in case the stuff I have gets wet?' 'I strongly agree and shall we call it a deal now? \ud83d\ude42' 'Like I said, we are close but I really would feel better with just one of the firewood. I'm afraid of not being able to build a fire. If you really need the firewood, however, then I would take one additional item of EITHER the water or food instead.'\nUtterance: 'And like I said, I strongly agree and you can have ONE firewood now. Deal close ?'",
+            "input": "Context: 'I think we are getting very close to a good deal. Would you be willing to give me ONE firewood in case the stuff I have gets wet?' 'I strongly agree and shall we call it a deal now? 🙂' 'Like I said, we are close but I really would feel better with just one of the firewood. I'm afraid of not being able to build a fire. If you really need the firewood, however, then I would take one additional item of EITHER the water or food instead.'\nUtterance: 'And like I said, I strongly agree and you can have ONE firewood now. Deal close ?'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hello, lets get things started. How would you like to split items?' 'Hello! Hope your after noon is going well! I have 2 kids so I feel like the water is the most important for them. Need to keep they hydrated, ya know? \ud83d\ude42'\nUtterance: 'I also need water with my medical condition I have to take lots of meds. I can give you extra firewood so you can boil more water easily.'",
+            "input": "Context: 'Hello, lets get things started. How would you like to split items?' 'Hello! Hope your after noon is going well! I have 2 kids so I feel like the water is the most important for them. Need to keep they hydrated, ya know? 🙂'\nUtterance: 'I also need water with my medical condition I have to take lots of meds. I can give you extra firewood so you can boil more water easily.'",
             "output": [
                 "Yes"
             ]
@@ -809,7 +810,7 @@
             ]
         },
         {
-            "input": "Context: 'I understand where you're coming from but I'm afraid that is not acceptable.  My family's comfort is my top priority and I will be needing at least 2 firewoods to make sure they are kept warm.  I would also request some extra water. ' 'I need a minimum of 2 firewood. You can have 2 water. I would now like 2 food.' 'It seems we both have a big need for firewood. \ud83d\ude2e If you insist on 2 firewood, then I insist on getting 2 water AND 2 food along with 1 firewood.'\nUtterance: 'I insist on 2 firewood \ud83d\ude42. I would be happy to let you have 2 water. Are you sure you need 2 food?'",
+            "input": "Context: 'I understand where you're coming from but I'm afraid that is not acceptable.  My family's comfort is my top priority and I will be needing at least 2 firewoods to make sure they are kept warm.  I would also request some extra water. ' 'I need a minimum of 2 firewood. You can have 2 water. I would now like 2 food.' 'It seems we both have a big need for firewood. 😮 If you insist on 2 firewood, then I insist on getting 2 water AND 2 food along with 1 firewood.'\nUtterance: 'I insist on 2 firewood 🙂. I would be happy to let you have 2 water. Are you sure you need 2 food?'",
             "output": [
                 "Yes"
             ]
@@ -821,13 +822,13 @@
             ]
         },
         {
-            "input": "Context: 'HI. I'd love to get 2 additional packs of firewood. The weather forecast was for much warmer weather here and I just didn't bring enough with me. I also left my additional sweatshirt at home. I'd be happy to give you one additional water and two of food.  \ud83d\ude42\ud83d\ude42' 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.' 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. \u2639\ufe0f'\nUtterance: 'I am here with my family and we love to eat fish.\ud83d\ude42  Maybe if you spend tonight sleeping in your car or camper I can keep the fire wood. In exchange I will give you the 2 additional food packages and all 3 of the water packages. It's only for 1 night.'",
+            "input": "Context: 'HI. I'd love to get 2 additional packs of firewood. The weather forecast was for much warmer weather here and I just didn't bring enough with me. I also left my additional sweatshirt at home. I'd be happy to give you one additional water and two of food.  🙂🙂' 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.' 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. ☹️'\nUtterance: 'I am here with my family and we love to eat fish.🙂  Maybe if you spend tonight sleeping in your car or camper I can keep the fire wood. In exchange I will give you the 2 additional food packages and all 3 of the water packages. It's only for 1 night.'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'HI, my heater hasn't arrived yet and we are in need of extra firewood. Plus, we're camping where there is 6 months of darkness, in Sweden. \ud83d\ude2e' 'hi turker i will be needing firewood as well because i need to keep warm while i camp.i suggest i take 2 firewood, 1 water and 1 food while you can have 1 firewood, 2 water and two foods' 'I can take 2 firewoods, you can take all the food and most of the water. So, I am offering you all the food and water.\ud83d\ude42'\nUtterance: 'I suggest you look at my offer because you can get hungry and also need water.i really need the firewood as well'",
+            "input": "Context: 'HI, my heater hasn't arrived yet and we are in need of extra firewood. Plus, we're camping where there is 6 months of darkness, in Sweden. 😮' 'hi turker i will be needing firewood as well because i need to keep warm while i camp.i suggest i take 2 firewood, 1 water and 1 food while you can have 1 firewood, 2 water and two foods' 'I can take 2 firewoods, you can take all the food and most of the water. So, I am offering you all the food and water.🙂'\nUtterance: 'I suggest you look at my offer because you can get hungry and also need water.i really need the firewood as well'",
             "output": [
                 "Yes"
             ]
@@ -839,7 +840,7 @@
             ]
         },
         {
-            "input": "Context: 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.' 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. \u2639\ufe0f' 'I am here with my family and we love to eat fish.\ud83d\ude42  Maybe if you spend tonight sleeping in your car or camper I can keep the fire wood. In exchange I will give you the 2 additional food packages and all 3 of the water packages. It's only for 1 night.'\nUtterance: 'Why would you want to give up all that water? You're going to need extra water for your family to drink. All the sodium in the fish is going to make you all thirsty!'",
+            "input": "Context: 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.' 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. ☹️' 'I am here with my family and we love to eat fish.🙂  Maybe if you spend tonight sleeping in your car or camper I can keep the fire wood. In exchange I will give you the 2 additional food packages and all 3 of the water packages. It's only for 1 night.'\nUtterance: 'Why would you want to give up all that water? You're going to need extra water for your family to drink. All the sodium in the fish is going to make you all thirsty!'",
             "output": [
                 "Yes"
             ]
@@ -863,7 +864,7 @@
             ]
         },
         {
-            "input": "Context: 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f' 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them' 'Okay if they get 3 water they are good with that allotment for the others'\nUtterance: 'I think taking 1 extra water, for safety purposes will be OK for us and your group will get that.  I am going to submit a GREAT offer that is mutually beneficial.  '",
+            "input": "Context: 'my people feel like they need 1 extra of something or else they will throw a fit ☹️' 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them' 'Okay if they get 3 water they are good with that allotment for the others'\nUtterance: 'I think taking 1 extra water, for safety purposes will be OK for us and your group will get that.  I am going to submit a GREAT offer that is mutually beneficial.  '",
             "output": [
                 "No"
             ]
@@ -875,25 +876,25 @@
             ]
         },
         {
-            "input": "Context: 'I need prefer water the most since my mouth is dry a lot. I need 3 water, 1 firewood ,and 0 food packages' 'yeah you are right, but water is essential for all !\u2639\ufe0f, you must consider that too' 'I agree water is needed. I can do 2 water 2 firewood and 0 food'\nUtterance: 'you consider me giving one of your water package and collect food package, if you are lucky you can get liquid foods too\ud83d\ude42'",
+            "input": "Context: 'I need prefer water the most since my mouth is dry a lot. I need 3 water, 1 firewood ,and 0 food packages' 'yeah you are right, but water is essential for all !☹️, you must consider that too' 'I agree water is needed. I can do 2 water 2 firewood and 0 food'\nUtterance: 'you consider me giving one of your water package and collect food package, if you are lucky you can get liquid foods too🙂'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'no, at the most i can do is i get 2 water, 2 food and 0 firewood or I get 1 water, 3 food and 1 firewood' 'But you get everything you wanted. You said you needed 3 water, I offered it to you.' 'but i can't give you 3 food and 3 firewood, thats 6 items vs the 3 water'\nUtterance: 'Sure you can.  If you really want water the most, why would you care about the rest as much?\ud83d\ude2e'",
+            "input": "Context: 'no, at the most i can do is i get 2 water, 2 food and 0 firewood or I get 1 water, 3 food and 1 firewood' 'But you get everything you wanted. You said you needed 3 water, I offered it to you.' 'but i can't give you 3 food and 3 firewood, thats 6 items vs the 3 water'\nUtterance: 'Sure you can.  If you really want water the most, why would you care about the rest as much?😮'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'No problem\ud83d\ude42, i would be fine with 1 water, 1 food,and 3 firewood.' 'That works for me. Glad we could hammer out a deal. \ud83d\ude42 What are you using all the firewood for?' 'so just to be clear that 1 water 1 food and 2 firewoods, and probably have a bon fire.'\nUtterance: 'Correct We will take 2 food, 2 water and 1 firewood. Very cool.'",
+            "input": "Context: 'No problem🙂, i would be fine with 1 water, 1 food,and 3 firewood.' 'That works for me. Glad we could hammer out a deal. 🙂 What are you using all the firewood for?' 'so just to be clear that 1 water 1 food and 2 firewoods, and probably have a bon fire.'\nUtterance: 'Correct We will take 2 food, 2 water and 1 firewood. Very cool.'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'That would be awesome.. I'm looking forward to it.  Glad we could come up to such an amicable and easy arrangement \ud83d\ude42' 'Indeed, glad we could agree without any fuss. Sure I could catch you some fish too \ud83d\ude42' 'Rock on.. we love fish.. well at least I do \ud83d\ude42  Not sure about everyone else.. but if not, oh well, more fish for me \ud83d\ude42'\nUtterance: 'Well if they don't like fish more for us :) So we are 100% agreed now?'",
+            "input": "Context: 'That would be awesome.. I'm looking forward to it.  Glad we could come up to such an amicable and easy arrangement 🙂' 'Indeed, glad we could agree without any fuss. Sure I could catch you some fish too 🙂' 'Rock on.. we love fish.. well at least I do 🙂  Not sure about everyone else.. but if not, oh well, more fish for me 🙂'\nUtterance: 'Well if they don't like fish more for us :) So we are 100% agreed now?'",
             "output": [
                 "No"
             ]
@@ -911,7 +912,7 @@
             ]
         },
         {
-            "input": "Context: 'I still don't think that is too fair though, since you would be getting 6/9 of the extra items and I would only be getting 3... I'm not an avid camper so I need extra amenities to make sure I survive haha. I am flexible on the water though - maybe we can compromise there. I am fine with you having all of the wood. Maybe we could give you 3 firewood, 1 food, and 1 water?' 'That sounds very fair to me. Thank you for being understanding. \ud83d\ude42' 'Definitely! I am glad we could come to an agreement. Do you like to camp a lot? Or hike?'\nUtterance: 'I love to camp! Especially when there is enough firewood! It is a great (and inexpensive) activity for me I get a lot of enjoyment out of. Hopefully you will become an avid camper after this trip!'",
+            "input": "Context: 'I still don't think that is too fair though, since you would be getting 6/9 of the extra items and I would only be getting 3... I'm not an avid camper so I need extra amenities to make sure I survive haha. I am flexible on the water though - maybe we can compromise there. I am fine with you having all of the wood. Maybe we could give you 3 firewood, 1 food, and 1 water?' 'That sounds very fair to me. Thank you for being understanding. 🙂' 'Definitely! I am glad we could come to an agreement. Do you like to camp a lot? Or hike?'\nUtterance: 'I love to camp! Especially when there is enough firewood! It is a great (and inexpensive) activity for me I get a lot of enjoyment out of. Hopefully you will become an avid camper after this trip!'",
             "output": [
                 "No"
             ]
@@ -923,7 +924,7 @@
             ]
         },
         {
-            "input": "Context: 'I prefer firewood because I will get cold at night. I forgot blankets \u2639\ufe0f' 'Would it work for you, then, to give me the three food and three water, and I can give you all of the firewood?' 'No. Because I brought a water purifier but don't plan on hunting or fishing. So I'd be willing to give up all the water but I want 2 of the food.'\nUtterance: 'I see.  I also greatly need the extra food, as I indicated. Perhaps there are some convenience or grocery stores near your campground--you might then purchase extra food there and not have to carry it with you on your trip?  '",
+            "input": "Context: 'I prefer firewood because I will get cold at night. I forgot blankets ☹️' 'Would it work for you, then, to give me the three food and three water, and I can give you all of the firewood?' 'No. Because I brought a water purifier but don't plan on hunting or fishing. So I'd be willing to give up all the water but I want 2 of the food.'\nUtterance: 'I see.  I also greatly need the extra food, as I indicated. Perhaps there are some convenience or grocery stores near your campground--you might then purchase extra food there and not have to carry it with you on your trip?  '",
             "output": [
                 "Yes"
             ]
@@ -947,13 +948,13 @@
             ]
         },
         {
-            "input": "Context: 'I totally understand that. And it's pretty important, lol ' 'It sure is..So how much food do you need for the trip? Do you need firewood to cook the food? Thank you for understanding my issues. \ud83d\ude42' 'I definitely need the food the most. I'm definitely not a \"hunter\", so if I were to run out, I'd be in pretty sad shape. I do need the firewood for both cooking, and keeping warm. It gets cold at night where we're going. How about youself?'\nUtterance: 'Well since we were already given a few supplies before this deal, I was wondering if you could give me all 3 water, and I could give you all the firewood and 2 of the food packages. I only say all the water because we already have some and my medical condition sucks. lol I wish we could camp together! we seem to be a good match. lol! \ud83d\ude42'",
+            "input": "Context: 'I totally understand that. And it's pretty important, lol ' 'It sure is..So how much food do you need for the trip? Do you need firewood to cook the food? Thank you for understanding my issues. 🙂' 'I definitely need the food the most. I'm definitely not a \"hunter\", so if I were to run out, I'd be in pretty sad shape. I do need the firewood for both cooking, and keeping warm. It gets cold at night where we're going. How about youself?'\nUtterance: 'Well since we were already given a few supplies before this deal, I was wondering if you could give me all 3 water, and I could give you all the firewood and 2 of the food packages. I only say all the water because we already have some and my medical condition sucks. lol I wish we could camp together! we seem to be a good match. lol! 🙂'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'How's it going?  If it's alright with you, you can have all of the water and I'll take all of the firewood.  We can work out a deal on the food as well.' 'I have circulatory issued due to a heart condition and cold quickly. I would appreciate if I could get at least 2 of the firewood. You can have 2 of the food so you won't get hungry. \ud83d\ude42'\nUtterance: 'I was planning on building a big bonfire for the evening.  There'd be plenty of room if you wanted to join for warmth.  I'm a bit hungry and would appreciate the extra food.  You can have all of the water if you'd like.  If you warm it by the bonfire, it may be useful to soak in to improve your circulation.'",
+            "input": "Context: 'How's it going?  If it's alright with you, you can have all of the water and I'll take all of the firewood.  We can work out a deal on the food as well.' 'I have circulatory issued due to a heart condition and cold quickly. I would appreciate if I could get at least 2 of the firewood. You can have 2 of the food so you won't get hungry. 🙂'\nUtterance: 'I was planning on building a big bonfire for the evening.  There'd be plenty of room if you wanted to join for warmth.  I'm a bit hungry and would appreciate the extra food.  You can have all of the water if you'd like.  If you warm it by the bonfire, it may be useful to soak in to improve your circulation.'",
             "output": [
                 "Yes"
             ]
@@ -965,19 +966,19 @@
             ]
         },
         {
-            "input": "Context: 'I can get you one package of water and food, will that work?' 'how am i supposed to stay alive with one package of food and water im fat lol' 'I don't think you that fat, your lipids will help you stay warm and full out there, haha'\nUtterance: 'Im not as good at you at foraginf for food and water i probably dont have the experience as you do being in the outdoors and living off the land.\ud83d\ude42'",
+            "input": "Context: 'I can get you one package of water and food, will that work?' 'how am i supposed to stay alive with one package of food and water im fat lol' 'I don't think you that fat, your lipids will help you stay warm and full out there, haha'\nUtterance: 'Im not as good at you at foraginf for food and water i probably dont have the experience as you do being in the outdoors and living off the land.🙂'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'okay\ud83d\ude42 is it cold so you want firewood?' 'Yes, I get cold easy. Thanks a lot!' 'sure, i have a lot of people coming thats why i need food'\nUtterance: 'No problems with that. I am glad we could make a deal. To summarize, you will have 3 of food and 1 of firewood while I will have 3 of water and 2 of Firewood.'",
+            "input": "Context: 'okay🙂 is it cold so you want firewood?' 'Yes, I get cold easy. Thanks a lot!' 'sure, i have a lot of people coming thats why i need food'\nUtterance: 'No problems with that. I am glad we could make a deal. To summarize, you will have 3 of food and 1 of firewood while I will have 3 of water and 2 of Firewood.'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'How about this it think it will work out better for us and you snice you need fire wood too. You get 3 food and 2 firewood and and I get 3 water and 1 firewood. \ud83d\ude42\ud83d\ude42' 'I really don't want to be without water, how about 2 water and 2 firewood for the 3 packages of food?' 'I just want to make sure I understand you I get 2 waters and 2 firewood and 0 food. '\nUtterance: 'That's right. Since you would be getting food from your sister, while I am camping alone, you would be getting more food pretty soon. '",
+            "input": "Context: 'How about this it think it will work out better for us and you snice you need fire wood too. You get 3 food and 2 firewood and and I get 3 water and 1 firewood. 🙂🙂' 'I really don't want to be without water, how about 2 water and 2 firewood for the 3 packages of food?' 'I just want to make sure I understand you I get 2 waters and 2 firewood and 0 food. '\nUtterance: 'That's right. Since you would be getting food from your sister, while I am camping alone, you would be getting more food pretty soon. '",
             "output": [
                 "Yes"
             ]
@@ -989,49 +990,49 @@
             ]
         },
         {
-            "input": "Context: 'I am looking for food, me and the kiddos need to eat many snacks for energy while exploring hiking trails. What about?' 'Okay, that makes sense. I really need water. I am willing to trade you all 3 of the food if you will give me all of the water. What do you think?' 'I think that sounds okay but I need at least one water please?'\nUtterance: 'If you want one water you can only have 2 foods. Do you really need the water? It sounds like food is a much more important item to you\ud83d\ude42'",
+            "input": "Context: 'I am looking for food, me and the kiddos need to eat many snacks for energy while exploring hiking trails. What about?' 'Okay, that makes sense. I really need water. I am willing to trade you all 3 of the food if you will give me all of the water. What do you think?' 'I think that sounds okay but I need at least one water please?'\nUtterance: 'If you want one water you can only have 2 foods. Do you really need the water? It sounds like food is a much more important item to you🙂'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'No problem.\ud83d\ude42  So I will keep the 3 packages of water and, since I am giving you all 3 packages of the firewood I will take back the 1 food package and keep all 3 of the food packages.' 'I would still like at least 1 package of the food please.  There has been a lot of rain in the area, but I think some poisonous mushrooms maybe prevalent in the area, so to be extra cautious I would like a little spare food on hand.' 'You don't have to eat the poison mushrooms. You can catch some fish from the river or hunt for small animals.  You have all of the firewood so cooking the food should not be a problem.'\nUtterance: 'I won't willingly eat the poisonous mushrooms, but it could be very hard to tell the difference from safe and toxic ones.  I understand you will be staying in your area for a few extra days, but can you catch fish or hunt for small animals in your area too?'",
+            "input": "Context: 'No problem.🙂  So I will keep the 3 packages of water and, since I am giving you all 3 packages of the firewood I will take back the 1 food package and keep all 3 of the food packages.' 'I would still like at least 1 package of the food please.  There has been a lot of rain in the area, but I think some poisonous mushrooms maybe prevalent in the area, so to be extra cautious I would like a little spare food on hand.' 'You don't have to eat the poison mushrooms. You can catch some fish from the river or hunt for small animals.  You have all of the firewood so cooking the food should not be a problem.'\nUtterance: 'I won't willingly eat the poisonous mushrooms, but it could be very hard to tell the difference from safe and toxic ones.  I understand you will be staying in your area for a few extra days, but can you catch fish or hunt for small animals in your area too?'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'No I can't do without a food for me.  We can wrap this up if you take 2 food and a water. \ud83d\ude42\ud83d\ude42' 'How about I get 2 food, 1 water, and 1 firewood then?' 'Ok. I cab agree to that.  '\nUtterance: 'Ok. Thank you!'",
+            "input": "Context: 'No I can't do without a food for me.  We can wrap this up if you take 2 food and a water. 🙂🙂' 'How about I get 2 food, 1 water, and 1 firewood then?' 'Ok. I cab agree to that.  '\nUtterance: 'Ok. Thank you!'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Water if very important to me as well. I'm on a medication where I get dehydrated very quickly and I need to make sure that I'm properly hydrated at all times. ' 'Well that is going to be a problem then because I have a medical condition too. How can we meet in the middle? I get 2 water, 2 food and no firewood?' 'I really need that water. I'm going camping in the desert where firewood will be vital for me as well. How about I take 2 water, 2 firewood and you get 1 water, 1 firewood and all the extra food?'\nUtterance: 'That works. Deal\ud83d\ude42'",
+            "input": "Context: 'Water if very important to me as well. I'm on a medication where I get dehydrated very quickly and I need to make sure that I'm properly hydrated at all times. ' 'Well that is going to be a problem then because I have a medical condition too. How can we meet in the middle? I get 2 water, 2 food and no firewood?' 'I really need that water. I'm going camping in the desert where firewood will be vital for me as well. How about I take 2 water, 2 firewood and you get 1 water, 1 firewood and all the extra food?'\nUtterance: 'That works. Deal🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'you pointed out that we will need more!  \ud83d\ude2e i will take 2 waters' 'I didn't know you had supplied everyone with water before the trip. I was merely trying to look out for your needs, but you said you didn't need them!' 'I am giving you a lot of food. You are being unreasonable and backtracking. You are getting some of everything with my offers, and there are only two of you.'\nUtterance: 'You said you only needed one food package and two bundles of firewood for your group together tonight and had plenty of everything else. You're the one insisting you need more now. This is my son's first camping trip and we're bound to lose supplies and waste them. Your group is trained and prepared.'",
+            "input": "Context: 'you pointed out that we will need more!  😮 i will take 2 waters' 'I didn't know you had supplied everyone with water before the trip. I was merely trying to look out for your needs, but you said you didn't need them!' 'I am giving you a lot of food. You are being unreasonable and backtracking. You are getting some of everything with my offers, and there are only two of you.'\nUtterance: 'You said you only needed one food package and two bundles of firewood for your group together tonight and had plenty of everything else. You're the one insisting you need more now. This is my son's first camping trip and we're bound to lose supplies and waste them. Your group is trained and prepared.'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'I am most interested in water! My husband and I are traveling with our newborn and we need as much water as possible!\ud83d\ude42' 'Ah, I see! I am in the same boat. We are camping somewhere where there is no source of water and it's very hot. Hm, let's see how to go about this' 'what else is a priority for you?'\nUtterance: 'Firewood is definitely important as well! Last time I went camping we ran out pretty fast, so I want to be extra prepared. \ud83d\ude42'",
+            "input": "Context: 'I am most interested in water! My husband and I are traveling with our newborn and we need as much water as possible!🙂' 'Ah, I see! I am in the same boat. We are camping somewhere where there is no source of water and it's very hot. Hm, let's see how to go about this' 'what else is a priority for you?'\nUtterance: 'Firewood is definitely important as well! Last time I went camping we ran out pretty fast, so I want to be extra prepared. 🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hello.' 'Hello there, fellow camper!  \ud83d\ude42'\nUtterance: 'I would like 3 packages of food, 2 packages of firewood, and 1 package of water.'",
+            "input": "Context: 'Hello.' 'Hello there, fellow camper!  🙂'\nUtterance: 'I would like 3 packages of food, 2 packages of firewood, and 1 package of water.'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hi there. How are you?'\nUtterance: 'hi i am good how about yourself\ud83d\ude42'",
+            "input": "Context: 'Hi there. How are you?'\nUtterance: 'hi i am good how about yourself🙂'",
             "output": [
                 "No"
             ]
@@ -1085,13 +1086,13 @@
             ]
         },
         {
-            "input": "Context: 'Hello. \ud83d\ude42 What item did you need a little extra of?' 'Thank you for asking, I would really like some extra fire wood as I usually get cold and scared at night so I can keep a fire going.' 'I'd be willing to give you all my firewood if you could give me all the water.'\nUtterance: 'I do need at least one extra water bottle in case the fire goes out of control, but I am willing to forgo any food as I can forage for food.'",
+            "input": "Context: 'Hello. 🙂 What item did you need a little extra of?' 'Thank you for asking, I would really like some extra fire wood as I usually get cold and scared at night so I can keep a fire going.' 'I'd be willing to give you all my firewood if you could give me all the water.'\nUtterance: 'I do need at least one extra water bottle in case the fire goes out of control, but I am willing to forgo any food as I can forage for food.'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hello! And happy camping! \ud83d\ude42 To start off, I am thinking that I will need at least 3 firewood, 2 water and 1 food. Last time my axe broke and we ran out of wood! What do you think/need?' 'I also was really needing some firewood. It's supposed to get pretty cold at night where we are camping and I need to make sure I can keep my kids warm.' 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly \u2639\ufe0f'\nUtterance: 'What if I got 3 foods and 2 waters. and you got 3 firewood and 1 water. If I could get a little more food that doesn't need to be cooked over the fire I might be able to get by. And I'll need to buy more water so I don't have to boil it since I won't have much firewood. '",
+            "input": "Context: 'Hello! And happy camping! 🙂 To start off, I am thinking that I will need at least 3 firewood, 2 water and 1 food. Last time my axe broke and we ran out of wood! What do you think/need?' 'I also was really needing some firewood. It's supposed to get pretty cold at night where we are camping and I need to make sure I can keep my kids warm.' 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly ☹️'\nUtterance: 'What if I got 3 foods and 2 waters. and you got 3 firewood and 1 water. If I could get a little more food that doesn't need to be cooked over the fire I might be able to get by. And I'll need to buy more water so I don't have to boil it since I won't have much firewood. '",
             "output": [
                 "No"
             ]
@@ -1103,7 +1104,7 @@
             ]
         },
         {
-            "input": "Context: 'Well my sister and her husband are celebrating their anniversary this weekend so we volunteered to watch her daughters. We decided it would be fun to take her kids and ours camping! What about you? \ud83d\ude42' 'That is really nice of you! I hope they have fun! My family had this trip planned for quite awhile. We have an extra person with us because my son begged me for his friend to come. I couldn't say no. \ud83d\ude42' 'I have definitely been there before! With taking all the kids I'm worried about them getting dehydrated. I also have a 7 month old that needs water to make her bottles! I was hoping to get 3 extra packaged of water for sure. '\nUtterance: 'That is one of my fears as well. Does you seven month old breast feed? I am hoping for the water as well. I would love to give them to you if I had extra. Is there anything else you need?'",
+            "input": "Context: 'Well my sister and her husband are celebrating their anniversary this weekend so we volunteered to watch her daughters. We decided it would be fun to take her kids and ours camping! What about you? 🙂' 'That is really nice of you! I hope they have fun! My family had this trip planned for quite awhile. We have an extra person with us because my son begged me for his friend to come. I couldn't say no. 🙂' 'I have definitely been there before! With taking all the kids I'm worried about them getting dehydrated. I also have a 7 month old that needs water to make her bottles! I was hoping to get 3 extra packaged of water for sure. '\nUtterance: 'That is one of my fears as well. Does you seven month old breast feed? I am hoping for the water as well. I would love to give them to you if I had extra. Is there anything else you need?'",
             "output": [
                 "Yes"
             ]
@@ -1121,7 +1122,7 @@
             ]
         },
         {
-            "input": "Context: 'Yes. Can you help me to give some extra fodd?' 'I am willing to give you the good, though it would help us--we have a large group.  I really would like to take the water.  We are camping out in a primitive campsite with no running water.' 'Ya sure. '\nUtterance: 'Sorry for the type--I meant 'food' not 'good'.\ud83d\ude42'",
+            "input": "Context: 'Yes. Can you help me to give some extra fodd?' 'I am willing to give you the good, though it would help us--we have a large group.  I really would like to take the water.  We are camping out in a primitive campsite with no running water.' 'Ya sure. '\nUtterance: 'Sorry for the type--I meant 'food' not 'good'.🙂'",
             "output": [
                 "No"
             ]
@@ -1235,7 +1236,7 @@
             ]
         },
         {
-            "input": "Context: 'Could I get 1 package of the water just to be entirely safe?? I really appreciate the 2 packages of firewood as it has been very wet and rainy where I will be going.  There will be a lot of standing water, so my chances for having safe water to drink might be a little iffy.' 'Well I planned on spending a few extra days here at this camping site with my family so the extra water will really come in handy for me over the next few days.  I can offer you an extra package of firewood to keep the 3 packages of water.' 'That makes total sense.  I will let you keep all 3 of the water packages.  If I take the extra firewood for all 3 packages then I can probably boil a lot of the water to get the harmful bacteria out.  I really appreciate your generosity \ud83d\ude42.  '\nUtterance: 'No problem.\ud83d\ude42  So I will keep the 3 packages of water and, since I am giving you all 3 packages of the firewood I will take back the 1 food package and keep all 3 of the food packages.'",
+            "input": "Context: 'Could I get 1 package of the water just to be entirely safe?? I really appreciate the 2 packages of firewood as it has been very wet and rainy where I will be going.  There will be a lot of standing water, so my chances for having safe water to drink might be a little iffy.' 'Well I planned on spending a few extra days here at this camping site with my family so the extra water will really come in handy for me over the next few days.  I can offer you an extra package of firewood to keep the 3 packages of water.' 'That makes total sense.  I will let you keep all 3 of the water packages.  If I take the extra firewood for all 3 packages then I can probably boil a lot of the water to get the harmful bacteria out.  I really appreciate your generosity 🙂.  '\nUtterance: 'No problem.🙂  So I will keep the 3 packages of water and, since I am giving you all 3 packages of the firewood I will take back the 1 food package and keep all 3 of the food packages.'",
             "output": [
                 "No"
             ]
@@ -1253,7 +1254,7 @@
             ]
         },
         {
-            "input": "Context: 'oh nooo, that's terrible. do they know where they left them?' 'I think they went to Chicago.  I really needing replace our lost water and sleeping bags.  I see there are some extra supplies to share.  I could really use the water and firwood.  \ud83d\ude42' 'oh yeah, you definitely do. we have all of our stuff and mostly wanted to hike and have picnics during our camping trip '\nUtterance: 'Great. If you mainly doing picnics do you want 3 Food?   I could use the the supplies.  \ud83d\ude42'",
+            "input": "Context: 'oh nooo, that's terrible. do they know where they left them?' 'I think they went to Chicago.  I really needing replace our lost water and sleeping bags.  I see there are some extra supplies to share.  I could really use the water and firwood.  🙂' 'oh yeah, you definitely do. we have all of our stuff and mostly wanted to hike and have picnics during our camping trip '\nUtterance: 'Great. If you mainly doing picnics do you want 3 Food?   I could use the the supplies.  🙂'",
             "output": [
                 "Yes"
             ]
@@ -1271,19 +1272,19 @@
             ]
         },
         {
-            "input": "Context: 'Oh no, that's not good.  I still have some left over, but we're running out of firewood to use to heat it.' 'Seems like we are in the same boat, the bear tore our tent to shreds so we are sleeping outside and it is cold\u2639\ufe0f' 'Sounds like a rough camping trip.  It has been pretty cold lately.'\nUtterance: 'Is it possible I could have 3 food since I have none and 2 Firewood to stay warm and you can have 1 Firewood and 3 Water?'",
+            "input": "Context: 'Oh no, that's not good.  I still have some left over, but we're running out of firewood to use to heat it.' 'Seems like we are in the same boat, the bear tore our tent to shreds so we are sleeping outside and it is cold☹️' 'Sounds like a rough camping trip.  It has been pretty cold lately.'\nUtterance: 'Is it possible I could have 3 food since I have none and 2 Firewood to stay warm and you can have 1 Firewood and 3 Water?'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'Hello.  I'm actually not doing too well.  There have been a few problems and I will need some of the extra packages.  I'll need two of the waters, 2 of the firewood and 2 of the food.' 'I'm sorry to hear that you are not doing well.  I've also have some issues.  On the way up to the camp site, all of my clean water spilled in the car.  I was really hoping to be able to get all of the available water.  Why aren't you well?  I hope it's not serious.  \u2639\ufe0f' 'Oh, that's terrible.  I'm sorry that happened.  I need the water for my child.  They seem dehydrated and disoriented.  My husband has also caught a cold and has been having chills.  I thought the extra firewood would help him feel better.'\nUtterance: 'Oh my gosh.  You are not having an easy trip.  If your children are dehydrated and disoriented, perhaps you should get them to emergency care immediately.  I would like to provide you will all of the water in the meantime, but that would leave me with none at all.  I wouldn't have your husband out of the tent with chills.  Perhaps you should keep him bundled in your cabin.  I forgot my portable propane grill - so I would need some firewood.  How about I take 2 waters, 1 firewood and all of the food?'",
+            "input": "Context: 'Hello.  I'm actually not doing too well.  There have been a few problems and I will need some of the extra packages.  I'll need two of the waters, 2 of the firewood and 2 of the food.' 'I'm sorry to hear that you are not doing well.  I've also have some issues.  On the way up to the camp site, all of my clean water spilled in the car.  I was really hoping to be able to get all of the available water.  Why aren't you well?  I hope it's not serious.  ☹️' 'Oh, that's terrible.  I'm sorry that happened.  I need the water for my child.  They seem dehydrated and disoriented.  My husband has also caught a cold and has been having chills.  I thought the extra firewood would help him feel better.'\nUtterance: 'Oh my gosh.  You are not having an easy trip.  If your children are dehydrated and disoriented, perhaps you should get them to emergency care immediately.  I would like to provide you will all of the water in the meantime, but that would leave me with none at all.  I wouldn't have your husband out of the tent with chills.  Perhaps you should keep him bundled in your cabin.  I forgot my portable propane grill - so I would need some firewood.  How about I take 2 waters, 1 firewood and all of the food?'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'we want to explore the animals in the area birds and just enjoy all the nice views.' 'Cool, that sounds very nice and relaxing \ud83d\ude42. It kinda sounds like my husband, he likes to do things like these with no concrete plan and just decides on the spot what he wants to do. The only problem with it is that he dumps all the planning on me so I have to make sure I have extra of ANY possible idea he has.' 'Yes we always get stuck making the plans so can I have 2 firewood and you get 2 food and 2 water? Please respond a little faster with your messages that would be very nice'\nUtterance: 'Unfortunately, I need the firewood to make campfires. Since you are planning to cook a romantic camping meal, don't you need food?'",
+            "input": "Context: 'we want to explore the animals in the area birds and just enjoy all the nice views.' 'Cool, that sounds very nice and relaxing 🙂. It kinda sounds like my husband, he likes to do things like these with no concrete plan and just decides on the spot what he wants to do. The only problem with it is that he dumps all the planning on me so I have to make sure I have extra of ANY possible idea he has.' 'Yes we always get stuck making the plans so can I have 2 firewood and you get 2 food and 2 water? Please respond a little faster with your messages that would be very nice'\nUtterance: 'Unfortunately, I need the firewood to make campfires. Since you are planning to cook a romantic camping meal, don't you need food?'",
             "output": [
                 "Yes"
             ]
@@ -1331,13 +1332,13 @@
             ]
         },
         {
-            "input": "Context: 'Same here. I'll go ahead and list some of what I need and you let me know if you will need the same as well. I need some extra water for our camping trip as well as some additional food. ' 'That sounds reasonable. I don't particularly need the food because I see that as more of a luxury but I could really use some more water. It's supposed to get really really hot on the weekend. \ud83d\ude2e' 'I hear that. What do you think of if I take 3 of the food supplies and you can have two waters? '\nUtterance: 'That sounds like a fair compromise. I can get food by hunting animals, old school style. That would give you 4 total items. In that case it's only fair if I take all 3 of the firewood. 4 for me and 4 for you sounds like a good deal to me. \ud83d\ude42'",
+            "input": "Context: 'Same here. I'll go ahead and list some of what I need and you let me know if you will need the same as well. I need some extra water for our camping trip as well as some additional food. ' 'That sounds reasonable. I don't particularly need the food because I see that as more of a luxury but I could really use some more water. It's supposed to get really really hot on the weekend. 😮' 'I hear that. What do you think of if I take 3 of the food supplies and you can have two waters? '\nUtterance: 'That sounds like a fair compromise. I can get food by hunting animals, old school style. That would give you 4 total items. In that case it's only fair if I take all 3 of the firewood. 4 for me and 4 for you sounds like a good deal to me. 🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I could manage with one firewood and two foods, but if you have canteens for everyone, may I then have all three waters? I had planned to collect water from the river, but I'm worried I may get sick.' 'you pointed out that we will need more!  \ud83d\ude2e i will take 2 waters' 'I didn't know you had supplied everyone with water before the trip. I was merely trying to look out for your needs, but you said you didn't need them!'\nUtterance: 'I am giving you a lot of food. You are being unreasonable and backtracking. You are getting some of everything with my offers, and there are only two of you.'",
+            "input": "Context: 'I could manage with one firewood and two foods, but if you have canteens for everyone, may I then have all three waters? I had planned to collect water from the river, but I'm worried I may get sick.' 'you pointed out that we will need more!  😮 i will take 2 waters' 'I didn't know you had supplied everyone with water before the trip. I was merely trying to look out for your needs, but you said you didn't need them!'\nUtterance: 'I am giving you a lot of food. You are being unreasonable and backtracking. You are getting some of everything with my offers, and there are only two of you.'",
             "output": [
                 "Yes"
             ]
@@ -1355,7 +1356,7 @@
             ]
         },
         {
-            "input": "Context: 'That may be possible.... \ud83d\ude42 What did you have in mind for the food replacement? ' 'You can have all the water if we can have all the food?' 'I dont think I am okay with that \u2639\ufe0f. Food is essential to our groups morale when camping. We would like 1 additional food preferably.'\nUtterance: 'Well you guys did say you did not care much about large fires. What if you gave all the firewood in replace for the water and you can still keep 1 food?'",
+            "input": "Context: 'That may be possible.... 🙂 What did you have in mind for the food replacement? ' 'You can have all the water if we can have all the food?' 'I dont think I am okay with that ☹️. Food is essential to our groups morale when camping. We would like 1 additional food preferably.'\nUtterance: 'Well you guys did say you did not care much about large fires. What if you gave all the firewood in replace for the water and you can still keep 1 food?'",
             "output": [
                 "Yes"
             ]
@@ -1367,19 +1368,19 @@
             ]
         },
         {
-            "input": "Context: 'Didn't you bring any firewood at all with you?' 'Yes, but the firewood I have will be used to keep us warm tonight.  Like you mentioned before it will be a bit chilly tonight.' 'Ahh, I forgot about that. OK. I'll take 2 packages of firewood, give you 2 waters, and 1 food packages as you do have some fish to cook and I don't. Do we have a deal?'\nUtterance: 'OK, we have a deal.\ud83d\ude42'",
+            "input": "Context: 'Didn't you bring any firewood at all with you?' 'Yes, but the firewood I have will be used to keep us warm tonight.  Like you mentioned before it will be a bit chilly tonight.' 'Ahh, I forgot about that. OK. I'll take 2 packages of firewood, give you 2 waters, and 1 food packages as you do have some fish to cook and I don't. Do we have a deal?'\nUtterance: 'OK, we have a deal.🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: \nUtterance: 'I would really like some extra firewood to keep the chill off on those cold  nights.\ud83d\ude42'",
+            "input": "Context: \nUtterance: 'I would really like some extra firewood to keep the chill off on those cold  nights.🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I'm doing well! How are you?' 'I am doing quite well myself. Why are you camping today?' 'Well my sister and her husband are celebrating their anniversary this weekend so we volunteered to watch her daughters. We decided it would be fun to take her kids and ours camping! What about you? \ud83d\ude42'\nUtterance: 'That is really nice of you! I hope they have fun! My family had this trip planned for quite awhile. We have an extra person with us because my son begged me for his friend to come. I couldn't say no. \ud83d\ude42'",
+            "input": "Context: 'I'm doing well! How are you?' 'I am doing quite well myself. Why are you camping today?' 'Well my sister and her husband are celebrating their anniversary this weekend so we volunteered to watch her daughters. We decided it would be fun to take her kids and ours camping! What about you? 🙂'\nUtterance: 'That is really nice of you! I hope they have fun! My family had this trip planned for quite awhile. We have an extra person with us because my son begged me for his friend to come. I couldn't say no. 🙂'",
             "output": [
                 "No"
             ]
@@ -1397,31 +1398,31 @@
             ]
         },
         {
-            "input": "Context: 'I have a medical condition that causes my veins to close up when I get too cold. I will thus need the 3 firewood.'\nUtterance: '\u2639\ufe0fOh, that sounds awful. Are you sure you need all three packages of firewood?'",
+            "input": "Context: 'I have a medical condition that causes my veins to close up when I get too cold. I will thus need the 3 firewood.'\nUtterance: '☹️Oh, that sounds awful. Are you sure you need all three packages of firewood?'",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'We will likely also need to take water too. Need to be able to wash up.' 'That is fair, I also will need a good bit of firewood to keep warm as the campsite is in a colder area.' 'We dont care much for campfires. Leaves your cloths smelling for days!'\nUtterance: 'Alright so I think we can make a fair deal here where we both will be happy \ud83d\ude42'",
+            "input": "Context: 'We will likely also need to take water too. Need to be able to wash up.' 'That is fair, I also will need a good bit of firewood to keep warm as the campsite is in a colder area.' 'We dont care much for campfires. Leaves your cloths smelling for days!'\nUtterance: 'Alright so I think we can make a fair deal here where we both will be happy 🙂'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I am going to be camping for a couple of weeks, so I will need quite a bit. I also realized some additional water would be good, because I have some meals that need me to boil water. Maybe you can have 2 firewood in exchange for me having one of your waters? Then you would still have plenty of water, but also plenty of firewood \ud83d\ude42' 'So sorry, I just realized you did not agree to the 3 waters in exchange of 3 foods. if you want a water, i will also will need one food. just to make things more fair on my end. If not i am looking at 2 waters, 0 foods, and 1 firewood. But i am willing to compromise for 3 waters, 1 firewood, and 0 foods. and you'll get 3 foods, 2 firewoods, and 0 waters, what do you think?' ' I appreciate your willingness to discuss this, so we both get a fair deal. I would really like if I get 3 food, 1 water, and 1 firewood. Then you would get 2 water and 2 firewood. You said that you really need water and food, so I think that would work best for both of us to get what we need most. What do you think? \ud83d\ude42'\nUtterance: 'Np, problem, water is high in demand on my end with the amount of kiddos I am taking. Water is my main concern, will you be okay with 3 Foods, 2 Firewoods and no water?'",
+            "input": "Context: 'I am going to be camping for a couple of weeks, so I will need quite a bit. I also realized some additional water would be good, because I have some meals that need me to boil water. Maybe you can have 2 firewood in exchange for me having one of your waters? Then you would still have plenty of water, but also plenty of firewood 🙂' 'So sorry, I just realized you did not agree to the 3 waters in exchange of 3 foods. if you want a water, i will also will need one food. just to make things more fair on my end. If not i am looking at 2 waters, 0 foods, and 1 firewood. But i am willing to compromise for 3 waters, 1 firewood, and 0 foods. and you'll get 3 foods, 2 firewoods, and 0 waters, what do you think?' ' I appreciate your willingness to discuss this, so we both get a fair deal. I would really like if I get 3 food, 1 water, and 1 firewood. Then you would get 2 water and 2 firewood. You said that you really need water and food, so I think that would work best for both of us to get what we need most. What do you think? 🙂'\nUtterance: 'Np, problem, water is high in demand on my end with the amount of kiddos I am taking. Water is my main concern, will you be okay with 3 Foods, 2 Firewoods and no water?'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'I can give you 2 waters and 1 food, but I really need more firewood. I ran out last time and I don't want to go through that again! How about you take 2 waters, 1 food, and 1 firewood? ' 'I feel like we are almost there I hunt so im ok with the one food; why would  I only get one firewood?' 'I just want to make sure that I don't run out. I will have my kids with me and need to make sure they don't get too cold \ud83d\ude42'\nUtterance: 'Understandable I am an avid outdoorsmen; Starting firewood is hard and can also be dangerous; how about you give me the two I will only use one you get one and I will be able to secure more within a few hours. '",
+            "input": "Context: 'I can give you 2 waters and 1 food, but I really need more firewood. I ran out last time and I don't want to go through that again! How about you take 2 waters, 1 food, and 1 firewood? ' 'I feel like we are almost there I hunt so im ok with the one food; why would  I only get one firewood?' 'I just want to make sure that I don't run out. I will have my kids with me and need to make sure they don't get too cold 🙂'\nUtterance: 'Understandable I am an avid outdoorsmen; Starting firewood is hard and can also be dangerous; how about you give me the two I will only use one you get one and I will be able to secure more within a few hours. '",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Context: 'Ok, so you must prefer water and food over firewood. We might have lucked out as far as our priorities go!\ud83d\ude42' 'Yes pretty much that sounds like we can work something out' 'Would you be willing to let me have all the firewood and you could take 2 of the food and 2 of the water?'\nUtterance: 'No I can't do that unfortunately./'",
+            "input": "Context: 'Ok, so you must prefer water and food over firewood. We might have lucked out as far as our priorities go!🙂' 'Yes pretty much that sounds like we can work something out' 'Would you be willing to let me have all the firewood and you could take 2 of the food and 2 of the water?'\nUtterance: 'No I can't do that unfortunately./'",
             "output": [
                 "No"
             ]
@@ -1445,7 +1446,7 @@
             ]
         },
         {
-            "input": "Context: 'I just want to make sure that I don't run out. I will have my kids with me and need to make sure they don't get too cold \ud83d\ude42' 'Understandable I am an avid outdoorsmen; Starting firewood is hard and can also be dangerous; how about you give me the two I will only use one you get one and I will be able to secure more within a few hours. ' 'Are you sure that you would be able to get more firewood on your own?'\nUtterance: 'Yes and as a return ill give you 70 percent of what I get-- So with me managing the firewood for you, you will get more time with the kids.'",
+            "input": "Context: 'I just want to make sure that I don't run out. I will have my kids with me and need to make sure they don't get too cold 🙂' 'Understandable I am an avid outdoorsmen; Starting firewood is hard and can also be dangerous; how about you give me the two I will only use one you get one and I will be able to secure more within a few hours. ' 'Are you sure that you would be able to get more firewood on your own?'\nUtterance: 'Yes and as a return ill give you 70 percent of what I get-- So with me managing the firewood for you, you will get more time with the kids.'",
             "output": [
                 "Yes"
             ]
@@ -1457,7 +1458,7 @@
             ]
         },
         {
-            "input": "Context: 'We could do without the water as well. I'm willing to trade you 3 firewood for 3 food and 2 waters' 'We need some firewood too, though! \u2639\ufe0f Let's try to make a deal that benefits us both! \ud83d\ude42 Could I have 1 firewood, 3 food, and 3 waters?' 'I meant I would give you my firewood, what would you trade in return?'\nUtterance: 'Oh sorry for the confusion. \ud83d\ude2e In that case, thank you for the generosity! \ud83d\ude42 How about if I have 3 firewood, 1 food, and 1 water?'",
+            "input": "Context: 'We could do without the water as well. I'm willing to trade you 3 firewood for 3 food and 2 waters' 'We need some firewood too, though! ☹️ Let's try to make a deal that benefits us both! 🙂 Could I have 1 firewood, 3 food, and 3 waters?' 'I meant I would give you my firewood, what would you trade in return?'\nUtterance: 'Oh sorry for the confusion. 😮 In that case, thank you for the generosity! 🙂 How about if I have 3 firewood, 1 food, and 1 water?'",
             "output": [
                 "No"
             ]
@@ -1487,7 +1488,7 @@
             ]
         },
         {
-            "input": "Context: 'I get really sweaty when I hike, so I really need to get at least 2 of the waters.' 'My friend is joining me tomorrow so there will be two of us. I really need the extra water so we both can stay hydrated. You can have all the food and 2 of the firewood packs if I get 2 of the water packs. \ud83d\ude42' 'I understand, but I don't need any extra firewood.  You could have 2 food, 3 firewood, and 1 water?\ud83d\ude42'\nUtterance: 'Well I am going to have to think about this deal. Perhaps I can contact my friend and see if he can get some extra water. He is a big eater so the food may come in handy. '",
+            "input": "Context: 'I get really sweaty when I hike, so I really need to get at least 2 of the waters.' 'My friend is joining me tomorrow so there will be two of us. I really need the extra water so we both can stay hydrated. You can have all the food and 2 of the firewood packs if I get 2 of the water packs. 🙂' 'I understand, but I don't need any extra firewood.  You could have 2 food, 3 firewood, and 1 water?🙂'\nUtterance: 'Well I am going to have to think about this deal. Perhaps I can contact my friend and see if he can get some extra water. He is a big eater so the food may come in handy. '",
             "output": [
                 "No"
             ]
@@ -1499,7 +1500,7 @@
             ]
         },
         {
-            "input": "Context: 'I can give you 2 packages of water.  I think there is plenty of water, so I do not need extra water.\ud83d\ude42' 'What are you going to use your water for?  And thank you.' 'In case I do no feel like going to other places to get water.  It would be nice to have extra water.'\nUtterance: 'I see, and do you have a way to bring the water with you?'",
+            "input": "Context: 'I can give you 2 packages of water.  I think there is plenty of water, so I do not need extra water.🙂' 'What are you going to use your water for?  And thank you.' 'In case I do no feel like going to other places to get water.  It would be nice to have extra water.'\nUtterance: 'I see, and do you have a way to bring the water with you?'",
             "output": [
                 "Yes"
             ]
@@ -1541,13 +1542,13 @@
             ]
         },
         {
-            "input": "Context: 'Firewood is my second priority. Can I have 2 of firewood?' 'okay\ud83d\ude42 is it cold so you want firewood?' 'Yes, I get cold easy. Thanks a lot!'\nUtterance: 'sure, i have a lot of people coming thats why i need food'",
+            "input": "Context: 'Firewood is my second priority. Can I have 2 of firewood?' 'okay🙂 is it cold so you want firewood?' 'Yes, I get cold easy. Thanks a lot!'\nUtterance: 'sure, i have a lot of people coming thats why i need food'",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Context: 'It should be a good weekedn for it.  Unfortuately the air;ine loss our luggage with the sleeping bags and food.  Not a good start for us with my mother-in-law along for the first time.  My wife and her is down getting trail maps while I sort out keeping warm tonight and feed after some hiking.' 'Oh no! That sounds like a problem. I have four kids so I can relate about the concerns for staying warm and having enough food.' 'I see they have some supplies here to share between the camp sites.  Maybe we can divide up the supplies so it works for both of us.  I can really use 2 wood and 2 food.  What about yourself?\ud83d\ude42'\nUtterance: 'I think food is pretty important for you, so I'm ok with you having 2 food and I'll take 1 food. Since you get more food I think it's only fair I get 2 firewood while you take 1. You can collect more firewood along the way. I didn't have room to pack firewood either with our smaller car.'",
+            "input": "Context: 'It should be a good weekedn for it.  Unfortuately the air;ine loss our luggage with the sleeping bags and food.  Not a good start for us with my mother-in-law along for the first time.  My wife and her is down getting trail maps while I sort out keeping warm tonight and feed after some hiking.' 'Oh no! That sounds like a problem. I have four kids so I can relate about the concerns for staying warm and having enough food.' 'I see they have some supplies here to share between the camp sites.  Maybe we can divide up the supplies so it works for both of us.  I can really use 2 wood and 2 food.  What about yourself?🙂'\nUtterance: 'I think food is pretty important for you, so I'm ok with you having 2 food and I'll take 1 food. Since you get more food I think it's only fair I get 2 firewood while you take 1. You can collect more firewood along the way. I didn't have room to pack firewood either with our smaller car.'",
             "output": [
                 "Yes"
             ]
@@ -1559,7 +1560,7 @@
             ]
         },
         {
-            "input": "Context: 'I completely understand, thank you for compromising with water and food. Wished we had 4 firewoods to divide and share it equaly, may I ask how long will you be camping for? Im afraid I need 2 firewoods as well, maybe we can see who has the greater need? ' 'I am going to be camping for a couple of weeks, so I will need quite a bit. I also realized some additional water would be good, because I have some meals that need me to boil water. Maybe you can have 2 firewood in exchange for me having one of your waters? Then you would still have plenty of water, but also plenty of firewood \ud83d\ude42' 'So sorry, I just realized you did not agree to the 3 waters in exchange of 3 foods. if you want a water, i will also will need one food. just to make things more fair on my end. If not i am looking at 2 waters, 0 foods, and 1 firewood. But i am willing to compromise for 3 waters, 1 firewood, and 0 foods. and you'll get 3 foods, 2 firewoods, and 0 waters, what do you think?'\nUtterance: ' I appreciate your willingness to discuss this, so we both get a fair deal. I would really like if I get 3 food, 1 water, and 1 firewood. Then you would get 2 water and 2 firewood. You said that you really need water and food, so I think that would work best for both of us to get what we need most. What do you think? \ud83d\ude42'",
+            "input": "Context: 'I completely understand, thank you for compromising with water and food. Wished we had 4 firewoods to divide and share it equaly, may I ask how long will you be camping for? Im afraid I need 2 firewoods as well, maybe we can see who has the greater need? ' 'I am going to be camping for a couple of weeks, so I will need quite a bit. I also realized some additional water would be good, because I have some meals that need me to boil water. Maybe you can have 2 firewood in exchange for me having one of your waters? Then you would still have plenty of water, but also plenty of firewood 🙂' 'So sorry, I just realized you did not agree to the 3 waters in exchange of 3 foods. if you want a water, i will also will need one food. just to make things more fair on my end. If not i am looking at 2 waters, 0 foods, and 1 firewood. But i am willing to compromise for 3 waters, 1 firewood, and 0 foods. and you'll get 3 foods, 2 firewoods, and 0 waters, what do you think?'\nUtterance: ' I appreciate your willingness to discuss this, so we both get a fair deal. I would really like if I get 3 food, 1 water, and 1 firewood. Then you would get 2 water and 2 firewood. You said that you really need water and food, so I think that would work best for both of us to get what we need most. What do you think? 🙂'",
             "output": [
                 "Yes"
             ]
@@ -1571,7 +1572,7 @@
             ]
         },
         {
-            "input": "Context: 'Hi.  I am looking at possibly taking 3 of the food packages, 2 of the water packages and one of the firewood.  ' 'Hi. Why do you need so many food packages?' 'Well, I have two teenage boys who will be with me.  In normal circumstances they go through a lot of food.  While camping, hiking and kayaking I know we will need plenty to keep their energy level high to do everything.\ud83d\ude42'\nUtterance: 'Well I will definitely need 2 packages of food and 2 of firewood for survival.'",
+            "input": "Context: 'Hi.  I am looking at possibly taking 3 of the food packages, 2 of the water packages and one of the firewood.  ' 'Hi. Why do you need so many food packages?' 'Well, I have two teenage boys who will be with me.  In normal circumstances they go through a lot of food.  While camping, hiking and kayaking I know we will need plenty to keep their energy level high to do everything.🙂'\nUtterance: 'Well I will definitely need 2 packages of food and 2 of firewood for survival.'",
             "output": [
                 "No"
             ]
@@ -1591,5 +1592,8 @@
     ],
     "Instruction_language": [
         "English"
+    ],
+    "Domains": [
+        "Dialogue"
     ]
 }

@@ -1,8 +1,14 @@
 {
-    "Contributors": ["Ujjwala Anantheswaran"],
-    "Source": ["CFQ/MCD1"],
+    "Contributors": [
+        "Ujjwala Anantheswaran"
+    ],
+    "Source": [
+        "CFQ/MCD1"
+    ],
     "Categories": [
-        "Structured Text Generation"
+        "Text Generation -> Structured Text Generation -> Table",
+        "Question Answering -> Open Question Answering",
+        "Question Decomposition"
     ],
     "Input_language": [
         "English"
@@ -23,19 +29,19 @@
         {
             "input": "Did M3 's employee direct , produce , write , and executive produce M0 , M1 , and M2",
             "output": "SELECT count(*) WHERE {\n?x0 ns:film.director.film M0 .\n?x0 ns:film.director.film M1 .\n?x0 ns:film.director.film M2 .\n?x0 ns:film.producer.films_executive_produced M0 .\n?x0 ns:film.producer.films_executive_produced M1 .\n?x0 ns:film.producer.films_executive_produced M2 .\n?x0 ns:film.producer.film|ns:film.production_company.films M0 .\n?x0 ns:film.producer.film|ns:film.production_company.films M1 .\n?x0 ns:film.producer.film|ns:film.production_company.films M2 .\n?x0 ns:film.writer.film M0 .\n?x0 ns:film.writer.film M1 .\n?x0 ns:film.writer.film M2 .\n?x0 ns:people.person.employment_history/ns:business.employment_tenure.company M3\n}",
-            "explanation":"The query correctly compares if there exists an employee of M3 who is also present in the producer, writer and director attributes for M0 to M2"
+            "explanation": "The query correctly compares if there exists an employee of M3 who is also present in the producer, writer and director attributes for M0 to M2"
         }
     ],
     "Negative Examples": [
         {
             "input": "Did M0 's writer , editor , cinematographer , producer , and director marry and influence M1",
             "output": "SELECT count(*) WHERE {\n?x0 ns:film.editor.film M0 .\n?x0 ns:film.producer.film|ns:film.production_company.films M0 .\n?x0 ns:film.writer.film M0 .\n?x0 ns:influence.influence_node.influenced M1 .\n?x0 ns:people.person.spouse_s/ns:people.marriage.spouse|ns:fictional_universe.fictional_character.married_to/ns:fictional_universe.marriage_of_fictional_characters.spouses M1 .\nFILTER ( ?x0 != M1 )\n}",
-            "explanation":"Query does not check if person was cinematographer and director for M0"
+            "explanation": "Query does not check if person was cinematographer and director for M0"
         },
         {
             "input": "Did M0 's writer and director marry a actor , marry M4 , and influence M1 , M2 , and M3",
             "output": "SELECT count(*) WHERE {\n?x0 ns:film.cinematographer.film M4 .\n?x0 ns:film.director.film M0 .\n?x0 ns:film.director.film M1 .\n?x0 ns:film.director.film M2 .\n?x0 ns:film.director.film M3 .\n?x0 ns:film.film_art_director.films_art_directed M4 .\n?x0 ns:film.writer.film M0 .\n?x0 ns:film.writer.film M1 .\n?x0 ns:film.writer.film M2 .\n?x0 ns:film.writer.film M3\n}",
-            "explanation":"Query treats M4, M1 as movies, not persons and extracts incorrect attributes"
+            "explanation": "Query treats M4, M1 as movies, not persons and extracts incorrect attributes"
         }
     ],
     "Instances": [

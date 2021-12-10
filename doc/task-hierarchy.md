@@ -13,6 +13,7 @@
   - `Unnatural Language Processing -> Question Answering`     
 - `Classification`
   - `Classification -> Verification`: Verification is a sub-category for classification and it is used for binary classifications. The task is to verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not. In the verification tasks, the potential outputs are mentioned in the definition.
+    - `Classification -> Verification -> Question Correctness Verification`
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
     - `Classification -> Verification -> Answer Verification`: Verify whether a text answers the question
     - `Classification -> Verification -> Claim Verification`
@@ -31,14 +32,16 @@
   - `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
   - `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
   - `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
+  - `Classification -> Topic Classification`
 - `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
 - `Detection` : Detection tasks are to find something in the input. For example, detecting the entities in a review or detecting the motivation of something. Detection tasks can be text generation, classification, etc., and possible outputs are not necessarily given in the definition.
-  - `Detection -> Abuse Detection`
-    - `Detection -> Abuse Detection -> Hate Speech Detection`
+  - `Detection -> Toxicity Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection -> Hate Speech Detection`
   - `Detection -> Stereotype Detection`
   - `Detection -> Affect Detection`
   - `Detection -> Capability Detection`
@@ -51,6 +54,7 @@
     - `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
     - `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
     - `Detection -> Entity Detection -> Sentient Entity Detection`
+  - `Detection -> Event Detection`
   - `Detection -> Fake News Detection`
   - `Detection -> Intent Detection`
   - `Detection -> Location Detection`
@@ -102,6 +106,7 @@
 	- `Order Generation -> Arrangement`
 - `Paraphrasing`
 - `Parts-of-speech`
+  - `Parts-of-speech -> Incorrect`
 - `Question Answering`
   - `Question Answering -> Supporting Fact Generation` 
   - `Question Answering -> Numerical Question Answering`
@@ -131,6 +136,7 @@
     - `Question Generation -> Question Composition -> Generate from Answers`
   - `Question Generation -> Clarifying Question`: Ask clarifying question to get more information
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
+  - `Question Generation -> Unanswerable Question Generation`
 - `Reasoning`
   - `Reasoning -> Abductive Reasoning`
   - `Reasoning -> Analogical Reasoning`
@@ -161,6 +167,7 @@
   - `Reasoning -> Reasoning on Objects`
   - `Reasoning -> Reasoning on Strings`
   - `Reasoning -> Reasoning on Social Interactions`
+  - `Reasoning -> Relational Reasoning`
   - `Reasoning -> Scientific Reasoning`
   - `Reasoning -> Temporal Reasoning`
   - `Reasoning -> Textual Entailment`
@@ -183,8 +190,7 @@
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
   - `Structured Text Processing -> Code Summarization`
-  - `Structured Text Processing -> Operation on Primitives`
-    - `Structured Text Processing -> Operation on Primitives: e.g. An unambiguous transform `is applied to all inputs e.g. subtract 1 from every element in the list
+    - `Structured Text Processing -> Operation on Primitives`: e.g. An unambiguous transform is applied to all inputs e.g. subtract 1 from every element in the list
       - `Structured Text Processing -> Operation on Primitives -> List`
 	    - `Structured Text Processing -> Operation on Primitives -> List -> Numbers`
 		- `Structured Text Processing -> Operation on Primitives -> List -> String`
@@ -223,18 +229,18 @@
   - `Text Generation -> Semi-Structured Text Generation`
     - `Text Generation -> Semi-Structured Text Generation -> Named Entity Generation`
   - `Text Generation -> Sentence Generation`
-      - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
+    - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
-	  - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
-	    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
+    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
+    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
-    - `Text Generation -> Sentence Generation -> Completion -> Story`
-      - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
+      - `Text Generation -> Sentence Generation -> Completion -> Story`
+        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
     - `Text Generation -> Sentence Generation -> Summary Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
       - `Text Generation -> Structured Text Generation -> Code`
-	    - `Text Generation -> Structured Text Generation -> List`
+      - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
   - `Text Generation -> Summary Generation`
   - `Text Generation -> Title Generation`
@@ -266,11 +272,15 @@
 * `Astronomy`
 * `Biology`
   * `Biology -> Anatomy`
+  * `Biology -> Bioinformatics`
   * `Biology -> Clinical Knowledge`
   * `Biology -> Human Biology`
   * `Biology -> Virology`
 * `Books`
 * `Business Ethics`
+* `Captions`
+  * `Captions -> Image Captions`
+  * `Captions -> Video Captions`
 * `Chemistry`
 * `Code`
   * `Code -> Language`
@@ -279,9 +289,6 @@
   * `Code -> Repo`
     * `Code -> Repo -> Github`
     * `Code -> Repo -> Stack Overflow`
-* `Captions`
-  * `Captions -> Image Captions`
-  * `Captions -> Video Captions`
 * `Commonsense`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
@@ -316,7 +323,6 @@
   * `History -> European History`
 * `Human Race` 
 * `Human Sexuality`
-* `Image Caption`
 * `International Law`
 * `Jurisprudence`
 * `Justice`
@@ -358,7 +364,7 @@
 * `Reviews`
   * `Reviews -> Food`
   * `Reviews -> TripAdvisor` 
-  * `Reviews -> Restaurants `
+  * `Reviews -> Restaurants`
   * `Reviews -> Movies`
   * `Reviews -> Books`
   * `Reviews -> Electronics and Grocery`
