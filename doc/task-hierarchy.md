@@ -131,6 +131,7 @@
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
       - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
     - `Question Generation -> Contextual Question Generation -> Open Question Generation`
+  - `Question Generation -> Option Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
     - `Question Generation -> Question Composition -> Generate from Answers`
@@ -259,6 +260,7 @@
   - `Text Modification -> Text Simplification`
   - `Text Modification -> Paraphrase Generation`: Generate a paraphrase of the original text
 - `Text Span Selection`
+  - `Text Span Selection -> Incorrect`
 - `Title Selection`
 - `Translation`
 - `Word Sense Disambiguation`
