@@ -161,7 +161,7 @@
     - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
   - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
   - `Reasoning -> Qualitative Reasoning`
-    - `Reasoning -> Reasoning with Symbols`
+  - `Reasoning -> Reasoning with Symbols`
   - `Reasoning -> Quantitative Reasoning`
   - `Reasoning -> Reasoning on Actions`
   - `Reasoning -> Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
@@ -232,8 +232,8 @@
   - `Text Generation -> Sentence Generation`
     - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
-    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
-    - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
+      - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
+      - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Completion`
       - `Text Generation -> Sentence Generation -> Completion -> Story`
