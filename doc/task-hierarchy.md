@@ -368,6 +368,7 @@
   * `Reviews -> TripAdvisor` 
   * `Reviews -> Restaurants`
   * `Reviews -> Movies`
+  * `Reviews -> Music`
   * `Reviews -> Books`
   * `Reviews -> Electronics and Grocery`
 * `Scientific Research Papers`
