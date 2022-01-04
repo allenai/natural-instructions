@@ -11,7 +11,7 @@
     "Domains": [
         "News"
     ],
-    "Definition": "You will be given a context and a verb separated with a \n, and you have to answer if the given verb is static or not. We say a verb is static if it is about an event that doesn't change. The output should be \"Yes\" if the verb is static and \"No\" otherwise.",
+    "Definition": "You will be given a context and a verb separated with a newline character, and you have to answer if the given verb is static or not. We say a verb is static if it is about an event that doesn't change or it happens regularly. The output should be \"Yes\" if the verb is static and \"No\" otherwise.",
     "Positive Examples": [
         {
             "input": "New York (is) on the east coast. \n Verb: is",
@@ -21,8 +21,13 @@
         {
             "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , (killing) dozens of people , witnesses said . \n Verb: killing",
             "output": "No",
-            "explanation": "In this sentence, killing is not a static event."
-        }
+            "explanation": "In this example, killing is not static because it's restricted to a specific period."
+        },
+        {
+            "input": "He cannot decide for himself . The one that (decides) for him is me , his father . ''  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this example, his father always decides for him, and it happens regularly. So, it's a static verb."
+        }    
     ],
     "Negative Examples": [
         {
@@ -33,16 +38,15 @@
         {
             "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down. \n Verb: released",
             "output": "Yes",
-            "explanation": "In this sentence, \"released\" happened in the past and it's not static."
-        }
+            "explanation": "In this example, \"released\" happened in the past and it's not static."
+        },
+        {
+            "input": "\" We were pleased that England and New Zealand knew about it , and we thought that 's where it would stop . \" He also talked about his \" second job \" as the group 's cameraman , and having to wear four pairs of gloves to (work) the clockwork camera .  \n Verb: work",
+            "output": "No",
+            "explanation": "In this example, \"work\" happens regularly. So, the answer is incorrect, and it's static."
+        }    
     ],
     "Instances": [
-        {
-            "input": "He cannot decide for himself . The one that (decides) for him is me , his father . ''  \n Verb: decides",
-            "output": [
-                "Yes"
-            ]
-        },
         {
             "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands . At least 82 were (killed) and more than 1,700 injured , officials said as dawn broke Saturday .  \n Verb: killed",
             "output": [
@@ -452,12 +456,6 @@
             ]
         },
         {
-            "input": "\" We were pleased that England and New Zealand knew about it , and we thought that 's where it would stop . \" He also talked about his \" second job \" as the group 's cameraman , and having to wear four pairs of gloves to (work) the clockwork camera .  \n Verb: work",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
             "input": "`` This appears to have been a very well-coordinated , very well-planned attack _ clearly not the work of amateurs , '' U.S. National Security Council spokesman P.J. Crowley said in Washington . No one has (claimed) responsibility .  \n Verb: claimed",
             "output": [
                 "No"
@@ -566,7 +564,7 @@
             ]
         },
         {
-            "input": "On May 6 , James Kopp , 44 , was charged with the slaying . Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward , they do n't know where he (is) .  \n Verb: is",
+            "input": "On May 6 , James Kopp , 44 , was charged with the slaying . Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward , they don't know where he (is) .  \n Verb: is",
             "output": [
                 "Yes"
             ]

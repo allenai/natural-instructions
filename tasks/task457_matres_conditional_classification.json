@@ -11,18 +11,23 @@
     "Domains": [
         "News"
     ],
-    "Definition": "You will be given a context and a verb separated with a \n, and you have to answer if the given verb implies a hypothetical, or condition or not. We say a verb is hypothetical if it involves or is based on a suggested idea or theory. A verb is conditional if something is essential to the appearance or occurrence of something else. The output should be \"Yes\" if the verb is conditional or hypothetical and \"No\" otherwise.",
+    "Definition": "You will be given a context and a verb separated with a newline character, and you have to answer if the given verb implies a hypothetical, or condition or not. We say a verb is hypothetical if it involves or is based on a suggested idea or theory. A verb is conditional if it is in conditional sentences and something is essential to the appearance or occurrence of something else. Note that an event that happened in the past or it is happening now cannot be conditional. The output should be \"Yes\" if the verb is conditional or hypothetical and \"No\" otherwise.",
     "Positive Examples": [
         {
-            "input": "Some analysts say he appeared to be relying on a smaller and smaller circle of close advisers and relatives . If that 's true , the narrowing of his support would make it easier for someone to (push) him aside from within .  \n Verb: push",
+            "input": "Some analysts say he appeared to be relying on a smaller and smaller circle of close advisers and relatives. If that's true, the narrowing of his support would make it easier for someone to (push) him aside from within .  \n Verb: push",
             "output": "Yes",
-            "explanation": "This is a good example.\"Push\" is conditional."
+            "explanation": "This is a good example.\"Push\" is conditional, and the sentence is a conditional sentence."
         },
         {
-            "input": "In Washington today, the Federal Aviation Administration (released)air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
             "output": "No",
             "explanation": "In this sentence, the releasing event happened in the past, and it's not conditional or hypothetical."
-        }
+        },
+        {
+            "input": "They were talking when the bomb went off , killing 247 people and wounding more than 5,000 others . On Wednesday , Bushnell and Kimotho met again to (finish) their discussion , Bushnell told Kenya Television .  \n Verb: finish",
+            "output": "No",
+            "explanation": "Based on this example, they want to finish their discussion, and \"finish\" is not conditional. So, it's not conditional or hypothetical."
+        }    
     ],
     "Negative Examples": [
         {
@@ -33,16 +38,15 @@
         {
             "input": "The Miami relatives thus far have refused to sign the document , and in recent days said they would not turn Elian over to his father if he came to the United States . Earlier , they had said they would (give) the boy to Gonzalez if he made the trip .  \n Verb: give",
             "output": "No",
-            "explanation": "In this sentence, \"give\" happens if he made the trip, so it is not conditional."
-        }
+            "explanation": "In this sentence, \"give\" happens if he made the trip, so it is conditional."
+        },
+        {
+            "input": "Trustcorp Inc. will (become) Society Bank amp Trust when its merger is completed with Society Corp. of Cleveland , the bank said .  \n Verb: become",
+            "output": "No",
+            "explanation": "In this sentence, \"become\" is conditional. Because it can only happen if its merger is completed."
+        }    
     ],
     "Instances": [
-        {
-            "input": "They were talking when the bomb went off , killing 247 people and wounding more than 5,000 others . On Wednesday , Bushnell and Kimotho met again to (finish) their discussion , Bushnell told Kenya Television .  \n Verb: finish",
-            "output": [
-                "No"
-            ]
-        },
         {
             "input": "The official said the hair was in a cap that authorities found very near the location from which the sniper is thought to have fired the rifle bullet that killed Slepian as he stood in the kitchen of his home in the Buffalo suburb of Amherst , N.Y . But The Buffalo News reported Friday that the hair (was) in a packet , with at least two bullets , that was found buried in the ground more than 50 feet from a tree where police believe the sniper stood and fired .  \n Verb: was",
             "output": [
@@ -1757,12 +1761,6 @@
             "input": "The search for Kopp was recently extended to Mexico . Meantime , FBI agents and Metropolitan Police officers assigned to a joint terrorism task force here (scanned) the crowd of anti-abortion protesters at the annual March for Life on Capitol Hill , because Kopp has been either a participant in or arrested at this march in each of the last three years , according to another law enforcement official ,  \n Verb: scanned",
             "output": [
                 "No"
-            ]
-        },
-        {
-            "input": "Trustcorp Inc. will (become) Society Bank amp Trust when its merger is completed with Society Corp. of Cleveland , the bank said .  \n Verb: become",
-            "output": [
-                "Yes"
             ]
         },
         {

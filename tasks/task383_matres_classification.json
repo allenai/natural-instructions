@@ -9,7 +9,7 @@
         "Reasoning -> Temporal Reasoning",
         "Classification"
     ],
-    "Definition": "You will be given a context and a verb separated with a \n, and you have to answer if the given verb can be anchored in time or not. We say a verb can be anchored in the real timeline if and only if a verb happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise.",
+    "Definition": "You will be given a context and a verb separated with a newline character, and you have to answer if the given verb can be anchored in time or not. We say a verb can be anchored in the real timeline if and only if a verb happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise.",
     "Positive Examples": [
         {
             "input": "It was followed by Denmark , Norway , Germany , France , Greece , Luxembourg , Spain , Britain , the United States , Iceland , Belgium , Italy , Portugal and Turkey . NATO decided at last year 's Madrid summit to (invite) the three eastern European countries to start accession talks .  \n Verb: invite",
@@ -20,7 +20,17 @@
             "input": "In Washington today, the Federal Aviation Administration (released)air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
             "output": "Yes",
             "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
-        }
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial . U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued , but she said that in a case like this , potential charges would be abortion-related violence , the use of a firearm in an act of violence , crossing state lines to commit a crime , and , if the suspect 's act was (tied) to an organization , violation of the so-called RICO statutes , which prohibit an organized criminal enterprise .  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+      {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+      }
     ],
     "Negative Examples": [
         {
@@ -29,24 +39,17 @@
             "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
         },
         {
-            "input": "Another suspect is awaiting extradition from Britain . The FBI says Bin Laden (is) the leader of a terrorist organization known as Al-Aqeda , `` The Base . ''  \n Verb :is",
+            "input": "`` Nobody talks to Fidel , because he doesn't listen , '' Juanita Castro said . `` He talks and he (decides) . ''  \n Verb: decides",
             "output": "Yes",
-            "explanation": "In this sentence, \"is\" is not anchorable."
-        }
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward , they do n't know where he is . `` It 's very frustrating (knowing) that he 's out there , '' said Ms. Buckham .  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }    
     ],
     "Instances": [
-        {
-            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial . U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued , but she said that in a case like this , potential charges would be abortion-related violence , the use of a firearm in an act of violence , crossing state lines to commit a crime , and , if the suspect 's act was (tied) to an organization , violation of the so-called RICO statutes , which prohibit an organized criminal enterprise .  \n Verb: tied",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "`` Nobody talks to Fidel , because he does n't listen , '' Juanita Castro said . `` He talks and he (decides) . ''  \n Verb: decides",
-            "output": [
-                "No"
-            ]
-        },
         {
             "input": "It was likely to be opposed by Elian 's Miami relatives , who are fighting to keep the boy in the United States and who have said they think Gonzalez is being controlled by Fidel Castro 's government . Gonzalez also wrote to Attorney General Janet Reno earlier this week , demanding that Elian be returned to him and saying he does not recognize the courts (hearing) the custody battle .  \n Verb: hearing",
             "output": [
@@ -151,12 +154,6 @@
         },
         {
             "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , killing dozens of people , witnesses said . The American ambassador to Kenya was among hundreds (injured) , a local TV said .  \n Verb: injured",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "To get him . Nothing more , '' she (said) .  \n Verb: said",
             "output": [
                 "Yes"
             ]
@@ -2179,12 +2176,6 @@
         },
         {
             "input": "Kopp vanished after the shooting , and the car was found abandoned at the Newark , N.J. , airport in December . Officials said DNA test results showed a likelihood that a strand of hair discovered behind Slepian 's home (came) from Kopp .  \n Verb: came",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward , they do n't know where he is . `` It 's very frustrating (knowing) that he 's out there , '' said Ms. Buckham .  \n Verb: knowing",
             "output": [
                 "Yes"
             ]

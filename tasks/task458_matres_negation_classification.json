@@ -11,18 +11,23 @@
     "Domains": [
         "News"
     ],
-    "Definition": "You will be given a context and a verb separated with a \n, and you have to answer if the given verb is a negation or not. A verb is a negation if it causes something not to exist, not happen, or to have no effect. The output should be \"Yes\" if the verb is a negation and \"No\" otherwise.",
+    "Definition": "You will be given a context and a verb separated with a newline character, and you have to answer if the given verb is a negation or not. A verb is a negation if it is not going to exist, not happen, or has no effect. The output should be \"Yes\" if the verb is a negation and \"No\" otherwise.",
     "Positive Examples": [
         {
             "input": "'' Only the government of the United States can decide if it prefers this variant , '' continued the letter , which Castro read on a state television station broadcast . Gonzalez for months refused requests by Elian's Miami relatives to go to the United States to (claim) the boy .  \n Verb: claim",
             "output": "Yes",
-            "explanation": "This is a good example. Gonzalez refused to \"claim\" the boy, So the claim didn't happen and it's a negation."
+            "explanation": "This is a good example. Gonzalez refused to \"claim\" the boy. So, the claim didn't happen and it's a negation."
         },
         {
-            "input": "In Washington today, the Federal Aviation Administration (released)air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
             "output": "No",
             "explanation": "In this sentence, the releasing event happened in the past, and it's not a negation."
-        }
+        },
+        {
+            "input": "Nobody hurried her up . No one (held) her back .  \n Verb: held",
+            "output": "Yes",
+            "explanation": "In this example, No one held her back. So \"held\" didn't happened and it's a negation."
+        }    
     ],
     "Negative Examples": [
         {
@@ -34,6 +39,11 @@
             "input": "He insisted that the NGO law \" will not change our position at all \" . \" We won't (refuse) foreign donations , nor will we register as a 'foreign agent' , \" he said .  \n Verb: refuse",
             "output": "No",
             "explanation": "In this sentence, \"refuse\" won't happen, so it's a negation."
+        },
+        {
+            "input": "`` Hungary has come home . We (are) back in the family , '' said Hungarian Foreign Minister Janos Martonyi .  \n Verb: are",
+            "output": "Yes",
+            "explanation": "In this example, they are back in the family. So \"are\" is happening now, and it's not a negation."
         }
     ],
     "Instances": [
@@ -71,12 +81,6 @@
             "input": "DAR ES SALAAM , Tanzania ( AP ) _ Tanzania expelled five Iraqis and a Libyan who were questioned by the FBI and police in connection of the bombing of two U.S. embassies in East Africa last month , a newspaper (reported) Friday .  \n Verb: reported",
             "output": [
                 "No"
-            ]
-        },
-        {
-            "input": "Nobody hurried her up . No one (held) her back .  \n Verb: held",
-            "output": [
-                "Yes"
             ]
         },
         {
@@ -3603,12 +3607,6 @@
         },
         {
             "input": "DAR ES SALAAM , Tanzania ( AP ) _ Tanzania (expelled) five Iraqis and a Libyan who were questioned by the FBI and police in connection of the bombing of two U.S. embassies in East Africa last month , a newspaper reported Friday .  \n Verb: expelled",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "`` Hungary has come home . We (are) back in the family , '' said Hungarian Foreign Minister Janos Martonyi .  \n Verb: are",
             "output": [
                 "No"
             ]
