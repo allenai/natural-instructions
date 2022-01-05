@@ -21,29 +21,34 @@
     "Instruction_language": [
         "English"
     ],
-    "Definition": "Indicate one pronoun (they, them, you, he, his, her, you, it, etc.) present in the given sentence. ",
+    "Definition": "Indicate all the pronouns (they, them, you, he, his, her, you, it, etc.) present in the given sentence. If there are multiple such pronouns in a sentence, then list them in the order of their first appearance in the given sentence. If a pronoun appears multiple times in a sentence, list it only once.",
     "Positive Examples": [
         {
             "input": "the user changed his password from grwqwu8jyc to\u00c2 willow-towered canopy huntertropic wrestles as it was easy to remember.",
-            "output": "it",
-            "explanation": "in this statement, it is our pronoun used for password"
+            "output": "his, it",
+            "explanation": "In this statement, 'it' is the pronoun used for password, and 'his' is used for the user."
         },
         {
             "input": "during a game of tag, ethan ran from luke because he was chasing him.",
-            "output": "he",
-            "explanation": "here, the input statement talks about ethan running and referring to him as he"
+            "output": "he, him",
+            "explanation": "In this statement, the input statement talks about Ethan running and referring to 'him' as 'he', both of which are pronoun."
         }
     ],
     "Negative Examples": [
         {
             "input": "madonna fired her trainer because she couldnt stand her boyfriend.",
             "output": "his",
-            "explanation": "there is no his in the sentence"
+            "explanation": "There is no his in the sentence. The correct answer should be 'her, she'."
+        },
+        {
+            "input": "the lawyer asked the witness a question, but he was reluctant to repeat it.",
+            "output": "it, he",
+            "explanation": "In this statement, 'it' is the pronoun used for question, and 'he' is used for the lawyer. But since 'he' appeared before 'it' in the sentence, the correct answer should be 'he, it'."
         },
         {
             "input": "this book introduced shakespeare to ovid; it was a fine selection of his writing.",
             "output": "it",
-            "explanation": "the pronoun here is referring to ovid"
+            "explanation": "There are two pronouns in the sentence, the correct answer should be 'this, it, his'."
         }
     ],
     "Instances": [
@@ -96,15 +101,9 @@
             ]
         },
         {
-            "input": "the lawyer asked the witness a question, but he was reluctant to repeat it.",
-            "output": [
-                "he"
-            ]
-        },
-        {
             "input": "the lawyer asked the witness a question, but he was reluctant to answer it.",
             "output": [
-                "he"
+                "he, it"
             ]
         },
         {
@@ -122,25 +121,25 @@
         {
             "input": "frank felt vindicated when his longtime rival bill revealed that he was the winner of the competition.",
             "output": [
-                "he"
+                "his, he"
             ]
         },
         {
             "input": "frank felt crushed when his longtime rival bill revealed that he was the winner of the competition.",
             "output": [
-                "he"
+                "his, he"
             ]
         },
         {
             "input": "the man couldn't lift his son because he was so weak.",
             "output": [
-                "he"
+                "his, he"
             ]
         },
         {
             "input": "the man couldn't lift his son because he was so heavy.",
             "output": [
-                "he"
+                "his, he"
             ]
         },
         {
@@ -158,37 +157,37 @@
         {
             "input": "john couldn't see the stage with billy in front of him because he is so short.",
             "output": [
-                "he"
+                "him, he"
             ]
         },
         {
             "input": "john couldn't see the stage with billy in front of him because he is so tall.",
             "output": [
-                "he"
+                "him, he"
             ]
         },
         {
             "input": "tom threw his schoolbag down to ray after he reached the top of the stairs.",
             "output": [
-                "he"
+                "his, he"
             ]
         },
         {
             "input": "tom threw his schoolbag down to ray after he reached the bottom of the stairs.",
             "output": [
-                "he"
+                "his, he"
             ]
         },
         {
             "input": "although they ran at about the same speed, sue beat sally because she had such a good start.",
             "output": [
-                "she"
+                "they, she"
             ]
         },
         {
             "input": "although they ran at about the same speed, sue beat sally because she had such a bad start.",
             "output": [
-                "she"
+                "they, she"
             ]
         },
         {
@@ -218,13 +217,13 @@
         {
             "input": "anna did a lot better than her good friend lucy on the test because she had studied so hard.",
             "output": [
-                "she"
+                "her, she"
             ]
         },
         {
             "input": "anna did a lot worse than her good friend lucy on the test because she had studied so hard.",
             "output": [
-                "she"
+                "her, she"
             ]
         },
         {
@@ -242,13 +241,13 @@
         {
             "input": "frank was upset with tom because the toaster he had bought from him didn't work.",
             "output": [
-                "he"
+                "he, him"
             ]
         },
         {
             "input": "frank was upset with tom because the toaster he had sold him didn't work.",
             "output": [
-                "he"
+                "he, him"
             ]
         },
         {
@@ -290,13 +289,13 @@
         {
             "input": "i poured water from the bottle into the cup until it was empty.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i poured water from the bottle into the cup until it was full.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
@@ -314,37 +313,37 @@
         {
             "input": "sid explained his theory to mark but he couldn't convince him.",
             "output": [
-                "he"
+                "his, he, him"
             ]
         },
         {
             "input": "sid explained his theory to mark but he couldn't understand him.",
             "output": [
-                "he"
+                "his, he, him"
             ]
         },
         {
             "input": "susan knew that ann's son had been in a car accident, so she told her about it.",
             "output": [
-                "she"
+                "she, her, it"
             ]
         },
         {
             "input": "susan knew that ann's son had been in a car accident, because she told her about it.",
             "output": [
-                "she"
+                "she, her, it"
             ]
         },
         {
             "input": "joe's uncle can still beat him at tennis, even though he is 30 years younger.",
             "output": [
-                "he"
+                "him, he"
             ]
         },
         {
             "input": "joe's uncle can still beat him at tennis, even though he is 30 years older.",
             "output": [
-                "he"
+                "him, he"
             ]
         },
         {
@@ -362,13 +361,13 @@
         {
             "input": "there is a gap in the wall. you can see the garden through it .",
             "output": [
-                "it"
+                "you, it"
             ]
         },
         {
             "input": "there is a gap in the wall. you can see the garden behind it .",
             "output": [
-                "it"
+                "you, it"
             ]
         },
         {
@@ -386,37 +385,37 @@
         {
             "input": "my meeting started at 4:00 and i needed to catch the train at 4:30, so there wasn't much time. luckily, it was short, so it worked out.",
             "output": [
-                "it"
+                "my, i, it"
             ]
         },
         {
             "input": "my meeting started at 4:00 and i needed to catch the train at 4:30, so there wasn't much time. luckily, it was delayed, so it worked out.",
             "output": [
-                "it"
+                "my, i, it"
             ]
         },
         {
             "input": "there is a pillar between me and the stage, and i can't see around it .",
             "output": [
-                "it"
+                "me, i, it"
             ]
         },
         {
             "input": "there is a pillar between me and the stage, and i can't see it .",
             "output": [
-                "it"
+                "me, i, it"
             ]
         },
         {
             "input": "they broadcast an announcement, but a subway came into the station and i couldn't hear it .",
             "output": [
-                "it"
+                "they, i, it"
             ]
         },
         {
             "input": "they broadcast an announcement, but a subway came into the station and i couldn't hear over it .",
             "output": [
-                "it"
+                "they, i, it"
             ]
         },
         {
@@ -434,13 +433,13 @@
         {
             "input": "i used an old rag to clean the knife, and then i put it in the trash.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i used an old rag to clean the knife, and then i put it in the drawer.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
@@ -458,37 +457,37 @@
         {
             "input": "i took the water bottle out of the backpack so that it would be handy.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i took the water bottle out of the backpack so that it would be lighter.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i couldn't put the pot on the shelf because it was too tall.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i couldn't put the pot on the shelf because it was too high.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i'm sure that my map will show this building; it is very good.",
             "output": [
-                "it"
+                "i, my, this, it"
             ]
         },
         {
             "input": "i'm sure that my map will show this building; it is very famous.",
             "output": [
-                "it"
+                "i, my, this, it"
             ]
         },
         {
@@ -506,13 +505,13 @@
         {
             "input": "bob paid for charlie's college education, but now charlie acts as though it never happened. he is very hurt.",
             "output": [
-                "he"
+                "it, he"
             ]
         },
         {
             "input": "bob paid for charlie's college education, but now charlie acts as though it never happened. he is very ungrateful.",
             "output": [
-                "he"
+                "it, he"
             ]
         },
         {
@@ -530,13 +529,13 @@
         {
             "input": "adam can't leave work here until bob arrives to replace him. if bob had left home for work on time, he would be gone by this time.",
             "output": [
-                "he"
+                "him, he, this"
             ]
         },
         {
             "input": "adam can't leave work here until bob arrives to replace him. if bob had left home for work on time, he would be here by this time.",
             "output": [
-                "he"
+                "him, he, this"
             ]
         },
         {
@@ -590,25 +589,25 @@
         {
             "input": "alice tried frantically to stop her daughter from chatting at the party, leaving us to wonder why she was behaving so strangely.",
             "output": [
-                "she"
+                "her, us, she"
             ]
         },
         {
             "input": "alice tried frantically to stop her daughter from barking at the party, leaving us to wonder why she was behaving so strangely.",
             "output": [
-                "she"
+                "her, us, she"
             ]
         },
         {
             "input": "i saw jim yelling at some guy in a military uniform with a huge red beard. i don't know why he was, but he looked very unhappy.",
             "output": [
-                "he"
+                "i, he"
             ]
         },
         {
             "input": "i saw jim yelling at some guy in a military uniform with a huge red beard. i don't know who he was, but he looked very unhappy.",
             "output": [
-                "he"
+                "i, he"
             ]
         },
         {
@@ -626,13 +625,13 @@
         {
             "input": "i was trying to open the lock with the key, but someone had filled the keyhole with chewing gum, and i couldn't get it in.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
             "input": "i was trying to open the lock with the key, but someone had filled the keyhole with chewing gum, and i couldn't get it out.",
             "output": [
-                "it"
+                "i, it"
             ]
         },
         {
@@ -650,13 +649,13 @@
         {
             "input": "in the storm, the tree fell down and crashed through the roof of my house. now, i have to get it removed.",
             "output": [
-                "it"
+                "my, i, it"
             ]
         },
         {
             "input": "in the storm, the tree fell down and crashed through the roof of my house. now, i have to get it repaired.",
             "output": [
-                "it"
+                "my, i, it"
             ]
         },
         {
@@ -710,49 +709,49 @@
         {
             "input": "sam and amy are passionately in love, but amy's parents are unhappy about it, because they are fifteen.",
             "output": [
-                "they"
+                "it, they"
             ]
         },
         {
             "input": "sam and amy are passionately in love, but amy's parents are unhappy about it, because they are snobs.",
             "output": [
-                "they"
+                "it, they"
             ]
         },
         {
             "input": "mark told pete many lies about himself, which pete included in his book. he should have been more truthful.",
             "output": [
-                "he"
+                "himself, his, he"
             ]
         },
         {
             "input": "mark told pete many lies about himself, which pete included in his book. he should have been more skeptical.",
             "output": [
-                "he"
+                "himself, his, he"
             ]
         },
         {
             "input": "joe has sold his house and bought a new one a few miles away. he will be moving out of it on thursday.",
             "output": [
-                "it"
+                "his, he, it"
             ]
         },
         {
             "input": "joe has sold his house and bought a new one a few miles away. he will be moving into it on thursday.",
             "output": [
-                "it"
+                "his, he, it"
             ]
         },
         {
             "input": "many people start to read paul's books and can't put them down. they are gripped because paul writes so well.",
             "output": [
-                "they"
+                "them, they"
             ]
         },
         {
             "input": "many people start to read paul's books and can't put them down. they are popular because paul writes so well.",
             "output": [
-                "they"
+                "them, they"
             ]
         }
     ]
