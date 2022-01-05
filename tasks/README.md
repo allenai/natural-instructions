@@ -1387,7 +1387,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1409_dart_text_generation` | Generating sentences based on DART RDF relationships | Sentence Generation
 `task1410_dart_relationship_extraction` | Extracting RDF relationships from DART sentences | Relationship Extraction
 `task1411_dart_subject_identification` | Given a sentence (from DART), identify the subject of the sentence | Token Classification
-`task1412_dart_predicate_identification` | Given a sentence (from DART), identify the predicate of the sentence | Token Classification
 `task1413_dart_object_identification` | Given a sentence (from DART), identify the object of the sentence | Token Classificationn
 `task1414_ajgt_twitter_ar_classification` | Classify Arabic tweets (based on `ajgt_twitter_ar`) as having positive or negative sentiment | Sentiment Analysis
 `task1415_youtube_caption_corrections_grammar_correction` | Given a set of closed captions (from `youtube_caption_corrections`), produce a grammatically correct version of those captions | Grammar Error Correction
