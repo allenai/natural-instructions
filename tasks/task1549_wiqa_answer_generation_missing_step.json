@@ -1,7 +1,15 @@
 {
-    "Contributors" : ["Hadi Mazboudi"],
-    "Source": ["wiqa"],
-    "Categories": ["Answer Generation"],
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "Categories": [
+        "Reasoning -> Temporal Reasoning",
+        "Reasoning -> Qualitative Reasoning",
+        "Text Generation -> Sentence Generation -> Completion"
+    ],
     "Input_language": [
         "English"
     ],
@@ -14,401 +22,588 @@
     "Definition": "Given a list of steps and an additional step, determine where the step fits into the original list of steps. A correct answer, correctly places the given step into the set of steps so that it creates a new plausible set of steps. Output must be formatted as 'After step n', where n is the step number after which the given additional step is to be inserted.",
     "Positive Examples": [
         {
-            "input" : "Steps: (1) Solar radiation reaches Earth's atmosphere (2) Some is reflected back into space (3) The rest of the energy is absorbed by land and oceans, heating the Earth (4) Some of this heat is trapped by greenhouse gases in the atmosphere (5) Human activities such as burning fuel are increasing the amount of greenhouses gases (6) This causes more heat radiation to stay trapped in our atmosphere (7) The Earth's temperature rises  \nWhere does the following step fit into the given list of steps: Heat radiates from Earth to space ",
+            "input": "Steps: (1) Solar radiation reaches Earth's atmosphere (2) Some is reflected back into space (3) The rest of the energy is absorbed by land and oceans, heating the Earth (4) Some of this heat is trapped by greenhouse gases in the atmosphere (5) Human activities such as burning fuel are increasing the amount of greenhouses gases (6) This causes more heat radiation to stay trapped in our atmosphere (7) The Earth's temperature rises  \nWhere does the following step fit into the given list of steps: Heat radiates from Earth to space ",
             "output": " After step 3. ",
             "explanation": "The correct answer is 'After step 3'. The given step is 'Heat radiates from Earth to Space'. Step 3 introduces a new concept of generated heat. Step 4 mentions that the heat is trapped into the atmosphere. In order for the heat to get to the atmosphere, the heat must radiate from Earth to space. Therefore, the correct answer is 'After step 3.'"
         },
         {
-            "input" : "Steps: (1) Rock begins as magma from a volcano (2) The magma cools (3) Crystals form and the magma become igneous rocks (4) The igneous rocks break down into sediment (5) If subjected to heat and/or pressure from plate-tectonic activity the sedimentary rocks become metamorphic rock (6) The metamorphic rocks melt (7) Become magma again.  \nWhere does the following step fit into the given list of steps: Become sedimentary rocks ",
+            "input": "Steps: (1) Rock begins as magma from a volcano (2) The magma cools (3) Crystals form and the magma become igneous rocks (4) The igneous rocks break down into sediment (5) If subjected to heat and/or pressure from plate-tectonic activity the sedimentary rocks become metamorphic rock (6) The metamorphic rocks melt (7) Become magma again.  \nWhere does the following step fit into the given list of steps: Become sedimentary rocks ",
             "output": " After step 4. ",
             "explanation": "The correct answer is 'After step 4'. Step 4 mentions rocks breaking down into sediment. Sediment makes up sedimentary rock. Sedimentary rocks are mentioned in step 5. The creation of sedimentary rocks must be inbetween step 4 and 5. Therefore, the step should be after step 4."
         },
         {
-            "input" : "Steps: (1) Someone is infected with bacteria (2) The dividing bacteria begin to make toxins (3) Those toxins damage your cells (4) Disease symptoms may begin.  \nWhere does the following step fit into the given list of steps: That bacteria begins to grow and reproduce inside the cells ",
+            "input": "Steps: (1) Someone is infected with bacteria (2) The dividing bacteria begin to make toxins (3) Those toxins damage your cells (4) Disease symptoms may begin.  \nWhere does the following step fit into the given list of steps: That bacteria begins to grow and reproduce inside the cells ",
             "output": " After step 1. ",
-            "explanation": "The step, 'That bacteria begins to grow and reproduce inside the cells' refers to a bacteria that has already been introduced based on how it is referred to as 'that bacteria'. This means it has to be after step 1. Step 2 describes a bacteria that is deviding that has already been introduced. Therefore, the 'That bacteria begins to grow and reproduce inside the cells' must be after step 1." 
+            "explanation": "The step, 'That bacteria begins to grow and reproduce inside the cells' refers to a bacteria that has already been introduced based on how it is referred to as 'that bacteria'. This means it has to be after step 1. Step 2 describes a bacteria that is deviding that has already been introduced. Therefore, the 'That bacteria begins to grow and reproduce inside the cells' must be after step 1."
         }
     ],
     "Negative Examples": [
         {
-            "input" : "Steps: (1) Water from the surface seeps below the soil (2) The water comes into contact with the rock below (3) The rock over the years carves through the rock (4) The space in the rock becomes larger and forms into a cave  \nWhere does the following step fit into the given list of steps: As more rather rushes through the cave becomes a cavern. ",
+            "input": "Steps: (1) Water from the surface seeps below the soil (2) The water comes into contact with the rock below (3) The rock over the years carves through the rock (4) The space in the rock becomes larger and forms into a cave  \nWhere does the following step fit into the given list of steps: As more rather rushes through the cave becomes a cavern. ",
             "output": " After step 15. ",
             "explanation": "This answer is incorrect because step 15 is out of bounds for the given set of steps. The answer must refer to a step that is between 1 and 4, because there are only 4 steps in this process"
         },
         {
-            "input" : "Steps: (1) Carbon dioxide passes through stomata in the leaves (2) Water is absorbed through roots (3) Chloroplast cells in leaves contain chlorophyll (4) Chlorophyll absorbs energy from sunlight (5) Energy splits water molecules into hydrogen and oxygen (6) Oxygen gets released into atmosphere (7) Glucose is food for plants.  \nWhere does the following step fit into the given list of steps: Hydrogen and carbon dioxide used to create glucose ",
+            "input": "Steps: (1) Carbon dioxide passes through stomata in the leaves (2) Water is absorbed through roots (3) Chloroplast cells in leaves contain chlorophyll (4) Chlorophyll absorbs energy from sunlight (5) Energy splits water molecules into hydrogen and oxygen (6) Oxygen gets released into atmosphere (7) Glucose is food for plants.  \nWhere does the following step fit into the given list of steps: Hydrogen and carbon dioxide used to create glucose ",
             "output": " After step 2. ",
             "explanation": "This answer is incorrect because the given step, 'Hydrogen and carbon dioxide used to create glucose', refers to hydrogen and carbon dioxide. The list of steps describes how hydrogen is created in step 5, so the given step cannot be before step 5. Therefore, the answer 'after step 2' is incorrect"
         }
     ],
     "Instances": [
         {
-            "input" : "Steps: (1) A tree produces seeds (2) The seeds are dispersed by wind, animals, etc (3) The seeds reach the ground (4) Grow into new trees (5) These new trees produce seeds  \nWhere does the following step fit into the given list of steps: The process repeats itself over and over ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) A tree produces seeds (2) The seeds are dispersed by wind, animals, etc (3) The seeds reach the ground (4) Grow into new trees (5) These new trees produce seeds  \nWhere does the following step fit into the given list of steps: The process repeats itself over and over ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) Water in the clouds becomes very cold (2) The cold water forms ice crystals (3) Form snowflakes (4) The snowflakes fall to the ground.  \nWhere does the following step fit into the given list of steps: The ice crystals grow by absorbing surrounding water droplets ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Water in the clouds becomes very cold (2) The cold water forms ice crystals (3) Form snowflakes (4) The snowflakes fall to the ground.  \nWhere does the following step fit into the given list of steps: The ice crystals grow by absorbing surrounding water droplets ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Coal is loaded into the firebox (2) The boiler produces steam under high pressure (3) The steam generated in the boiler flows down into a cylinder (4) Just ahead of the wheels, pushing a tight-fitting plunger, the piston (5) As the piston pushes, the crank and connecting rod turn the locomotive&#x27;s wheels and power the train along (6) An outlet valve opens and the piston pushes the steam back through the cylinder and out up the locomotive&#x27;s chimney  \nWhere does the following step fit into the given list of steps: The piston is connected to one or more of the locomotive&#x27;s wheels through a kind of arm-elbow-shoulder joint called a crank and connecting rod ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Coal is loaded into the firebox (2) The boiler produces steam under high pressure (3) The steam generated in the boiler flows down into a cylinder (4) Just ahead of the wheels, pushing a tight-fitting plunger, the piston (5) As the piston pushes, the crank and connecting rod turn the locomotive&#x27;s wheels and power the train along (6) An outlet valve opens and the piston pushes the steam back through the cylinder and out up the locomotive&#x27;s chimney  \nWhere does the following step fit into the given list of steps: The piston is connected to one or more of the locomotive&#x27;s wheels through a kind of arm-elbow-shoulder joint called a crank and connecting rod ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) Put the aluminum can into a recycle bin (2) The cans are transported to a facility (3) The cans are shredded by a machine (4) The cans are heated to 1400 degrees to melt them (5) The molds are flattened and rolled into sheets to reuse.  \nWhere does the following step fit into the given list of steps: The molten metal is poured into molds ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Put the aluminum can into a recycle bin (2) The cans are transported to a facility (3) The cans are shredded by a machine (4) The cans are heated to 1400 degrees to melt them (5) The molds are flattened and rolled into sheets to reuse.  \nWhere does the following step fit into the given list of steps: The molten metal is poured into molds ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) The salt water is heated (2) As the saltwater is heated the water becomes a gas (3) The salt particles sink to the bottom of the container (4) Allowed to cool (5) The salt particles are left behind in the first container (6) The second container contains fresh water.  \nWhere does the following step fit into the given list of steps: Gaseous water is piped into another container ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) The salt water is heated (2) As the saltwater is heated the water becomes a gas (3) The salt particles sink to the bottom of the container (4) Allowed to cool (5) The salt particles are left behind in the first container (6) The second container contains fresh water.  \nWhere does the following step fit into the given list of steps: Gaseous water is piped into another container ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) The flu virus has receptors, which are like viral Velcro, on the surface of the virus particle (2) The receptors will lock onto a target cell using these chemical receptors on the surface, which docks onto the cell surface (3) The receptors  then go into the cell (4) The receptors take it over and make it produce thousands or in some cases millions of copies of new viruses (5) The copies come streaming out of the cell (6) The copies infect other cells to make more viruses, or they escape from the body and infect a new victim  \nWhere does the following step fit into the given list of steps: The receptors use it like a factory ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) The flu virus has receptors, which are like viral Velcro, on the surface of the virus particle (2) The receptors will lock onto a target cell using these chemical receptors on the surface, which docks onto the cell surface (3) The receptors  then go into the cell (4) The receptors take it over and make it produce thousands or in some cases millions of copies of new viruses (5) The copies come streaming out of the cell (6) The copies infect other cells to make more viruses, or they escape from the body and infect a new victim  \nWhere does the following step fit into the given list of steps: The receptors use it like a factory ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) There is a fetus in the womb (2) They are born and are a baby (3) The baby grows into a child (4) Puberty turns the child into an adolescent (5) An adult becomes an elderly person (6) The elderly person dies.  \nWhere does the following step fit into the given list of steps: The adolescent becomes an adult ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) There is a fetus in the womb (2) They are born and are a baby (3) The baby grows into a child (4) Puberty turns the child into an adolescent (5) An adult becomes an elderly person (6) The elderly person dies.  \nWhere does the following step fit into the given list of steps: The adolescent becomes an adult ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) Acid rain makes waters acidic (2) Causes them to absorb aluminum from soil (3) Fish and their eggs die (4) Frogs and plants die (5) Insects and other wildlife die (6) The ecosystem is out of balance, causing further problems  \nWhere does the following step fit into the given list of steps: The water runs off from the soil into lakes, streams, etc ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Acid rain makes waters acidic (2) Causes them to absorb aluminum from soil (3) Fish and their eggs die (4) Frogs and plants die (5) Insects and other wildlife die (6) The ecosystem is out of balance, causing further problems  \nWhere does the following step fit into the given list of steps: The water runs off from the soil into lakes, streams, etc ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) The human body takes a breath inward (2) Air is transported to the lungs (3) Air reaches the alveoli, the smallest air sacs in the lungs (4) In the alveoli, air passes into the blood within small capillaries (5) The gaseous oxygen in the air dissolves into the capillary blood (6) The dissolved oxygen is picked-up by red blood cells (7) Red blood cells circulate throughout the body and reach the various tissues (8) Within small capillaries, the heme release the oxygen (9) The oxygen can then reach the cells within the tissue  \nWhere does the following step fit into the given list of steps: The red blood cells bind the oxygen via a protein called heme ",
-            "output": [" After step 6. "]
+            "input": "Steps: (1) The human body takes a breath inward (2) Air is transported to the lungs (3) Air reaches the alveoli, the smallest air sacs in the lungs (4) In the alveoli, air passes into the blood within small capillaries (5) The gaseous oxygen in the air dissolves into the capillary blood (6) The dissolved oxygen is picked-up by red blood cells (7) Red blood cells circulate throughout the body and reach the various tissues (8) Within small capillaries, the heme release the oxygen (9) The oxygen can then reach the cells within the tissue  \nWhere does the following step fit into the given list of steps: The red blood cells bind the oxygen via a protein called heme ",
+            "output": [
+                " After step 6. "
+            ]
         },
         {
-            "input" : "Steps: (1) Networks of trees start forming (2) The dead material provides nutrients for more trees (3) The rising trees provide shelter (4) And more organisms begin to thrive (5) The ecosystem known as a forest is made.  \nWhere does the following step fit into the given list of steps: The trees die off ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Networks of trees start forming (2) The dead material provides nutrients for more trees (3) The rising trees provide shelter (4) And more organisms begin to thrive (5) The ecosystem known as a forest is made.  \nWhere does the following step fit into the given list of steps: The trees die off ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Mix pancake mix with water (2) Heat a griddle (3) Pour a circle of batter in the griddle (4) When most of the bubbles pop on the surface, flip (5) Apply butter, syrup and enjoy  \nWhere does the following step fit into the given list of steps: Cook to desired color ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Mix pancake mix with water (2) Heat a griddle (3) Pour a circle of batter in the griddle (4) When most of the bubbles pop on the surface, flip (5) Apply butter, syrup and enjoy  \nWhere does the following step fit into the given list of steps: Cook to desired color ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) Waves hit the coast (2) Waves have energy that pushes the water and sediment (3) The sediment can help erode land like sandpaper (4) Water washes the sediment back  \nWhere does the following step fit into the given list of steps: Some sediment is left as sand. ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Waves hit the coast (2) Waves have energy that pushes the water and sediment (3) The sediment can help erode land like sandpaper (4) Water washes the sediment back  \nWhere does the following step fit into the given list of steps: Some sediment is left as sand. ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) The earth develops cracks deep beneath the surface (2) The cracks get very long and big in some places (3) The earth places pressure against the rocks on both sides of the cracks (4) The pressure causes the rocks to press against each other very hard (5) The cracks continue to develop (6) The pressure and movement around the cracks causes the rocks to crumble in some places (7) A lot of energy is released (8) The energy causes seismic waves (9) The seismic waves move the earth in an earthquake.  \nWhere does the following step fit into the given list of steps: The earth moves against itself on both sides of the cracks ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) The earth develops cracks deep beneath the surface (2) The cracks get very long and big in some places (3) The earth places pressure against the rocks on both sides of the cracks (4) The pressure causes the rocks to press against each other very hard (5) The cracks continue to develop (6) The pressure and movement around the cracks causes the rocks to crumble in some places (7) A lot of energy is released (8) The energy causes seismic waves (9) The seismic waves move the earth in an earthquake.  \nWhere does the following step fit into the given list of steps: The earth moves against itself on both sides of the cracks ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) The saliva breaks down the chemicals in the food a bit, which helps make the food mushy and easy to swallow (2) Your tongue helps out, pushing the food around while you chew with your teeth (3) The esophagus moves food from the back of your throat to your stomach (4) Strong muscles in the walls of the stomach and gastric juices break down food in your stomach  \nWhere does the following step fit into the given list of steps: Your stomach moves the food into the intestines to complete digestion ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) The saliva breaks down the chemicals in the food a bit, which helps make the food mushy and easy to swallow (2) Your tongue helps out, pushing the food around while you chew with your teeth (3) The esophagus moves food from the back of your throat to your stomach (4) Strong muscles in the walls of the stomach and gastric juices break down food in your stomach  \nWhere does the following step fit into the given list of steps: Your stomach moves the food into the intestines to complete digestion ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) Magma is formed when rock melts inside the Earth&#x27;s crust (2) Magma rises (3) Collects inside magma chambers underneath a volcano (4) Pressure builds in the magma chambers as they fill (5) Gain energy for eruption (6) Some of the energy is converted into seismic activity (earthquakes) (7) If the magma building in the volcano is thick and sticky it will trap gases (8) Results in an explosive eruption when the pressure becomes too intense (9) The magma results in a low-pressure, slow-moving flow of magma instead of a violent eruption  \nWhere does the following step fit into the given list of steps: If the magma is thin and runs ",
-            "output": [" After step 8. "]
+            "input": "Steps: (1) Magma is formed when rock melts inside the Earth&#x27;s crust (2) Magma rises (3) Collects inside magma chambers underneath a volcano (4) Pressure builds in the magma chambers as they fill (5) Gain energy for eruption (6) Some of the energy is converted into seismic activity (earthquakes) (7) If the magma building in the volcano is thick and sticky it will trap gases (8) Results in an explosive eruption when the pressure becomes too intense (9) The magma results in a low-pressure, slow-moving flow of magma instead of a violent eruption  \nWhere does the following step fit into the given list of steps: If the magma is thin and runs ",
+            "output": [
+                " After step 8. "
+            ]
         },
         {
-            "input" : "Steps: (1) The gravity of the sun pulls its mass inward (2) The pressure forces atoms of hydrogen to fuse together in nuclear reactions (3) The energy from the reactions gives off different kinds of light (4) The light travels to the Earth.  \nWhere does the following step fit into the given list of steps: There is a lot of pressure on the Sun ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) The gravity of the sun pulls its mass inward (2) The pressure forces atoms of hydrogen to fuse together in nuclear reactions (3) The energy from the reactions gives off different kinds of light (4) The light travels to the Earth.  \nWhere does the following step fit into the given list of steps: There is a lot of pressure on the Sun ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Prophase, the chromosomes become visible (2) Centrioles separate to move to opposite poles (3) Metaphase, the chromosomes line up in the center (4) Anaphase, the chromatids separate (5) Are pulled apart (6) Telophase, the chromosomes gather at opposite poles (7) Two new nuclear membranes form (8) The cell membranes pinch  \nWhere does the following step fit into the given list of steps: Divide into two individual cells ",
-            "output": [" After step 8. "]
+            "input": "Steps: (1) Prophase, the chromosomes become visible (2) Centrioles separate to move to opposite poles (3) Metaphase, the chromosomes line up in the center (4) Anaphase, the chromatids separate (5) Are pulled apart (6) Telophase, the chromosomes gather at opposite poles (7) Two new nuclear membranes form (8) The cell membranes pinch  \nWhere does the following step fit into the given list of steps: Divide into two individual cells ",
+            "output": [
+                " After step 8. "
+            ]
         },
         {
-            "input" : "Steps: (1) A conducting metal, like copper, is wrapped around a piece of metal (2) An electrical source, like a battery, produces an electrical current (3) The electrical current creates a magnetic field around the wire, magnetizing the metal (4) The magnetic field can be turned on and off by starting or stopping the electricity source  \nWhere does the following step fit into the given list of steps: The electrical current flows through the wire ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) A conducting metal, like copper, is wrapped around a piece of metal (2) An electrical source, like a battery, produces an electrical current (3) The electrical current creates a magnetic field around the wire, magnetizing the metal (4) The magnetic field can be turned on and off by starting or stopping the electricity source  \nWhere does the following step fit into the given list of steps: The electrical current flows through the wire ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Food enters the body (2) Food begins to be processed by the digestive system (3) The pancreas releases enzymes to aid digestion (4) Digested food affects the amount of sugar in the blood (5) The pancreas releases one hormone to lower the blood sugar (glucose) level  \nWhere does the following step fit into the given list of steps: The pancreas releases another hormone to raisethe blood sugar (glucose) level. ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) Food enters the body (2) Food begins to be processed by the digestive system (3) The pancreas releases enzymes to aid digestion (4) Digested food affects the amount of sugar in the blood (5) The pancreas releases one hormone to lower the blood sugar (glucose) level  \nWhere does the following step fit into the given list of steps: The pancreas releases another hormone to raisethe blood sugar (glucose) level. ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) A butterfly lays an egg (2) A larvae matures inside of the egg (3) The caterpillar hatches from the egg (4) The caterpillar spins a coccoon around itself and forms into a pupa (5) The butterfly forms inside of the coccoon (6) The mature butterfly emerges from the coccoon (7) The butterfly mates (8) The female butterfly lays eggs.  \nWhere does the following step fit into the given list of steps: The caterpillar eats and grows ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) A butterfly lays an egg (2) A larvae matures inside of the egg (3) The caterpillar hatches from the egg (4) The caterpillar spins a coccoon around itself and forms into a pupa (5) The butterfly forms inside of the coccoon (6) The mature butterfly emerges from the coccoon (7) The butterfly mates (8) The female butterfly lays eggs.  \nWhere does the following step fit into the given list of steps: The caterpillar eats and grows ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) A virus enters a host body (2) The virus has receptors that lock onto a target cell (3) The virus uses the cell like a factory to make new copies of the virus (4) The new copies of the virus leave the cell (5) Infect other cells (6) The host gets sick as its cells are damaged.  \nWhere does the following step fit into the given list of steps: The virus enters the cell ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) A virus enters a host body (2) The virus has receptors that lock onto a target cell (3) The virus uses the cell like a factory to make new copies of the virus (4) The new copies of the virus leave the cell (5) Infect other cells (6) The host gets sick as its cells are damaged.  \nWhere does the following step fit into the given list of steps: The virus enters the cell ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) You take a tray (2) Add water into the tray (3) The water molecules begin to slow down (4) The water becomes ice (5) The ice cubes are ready.  \nWhere does the following step fit into the given list of steps: You insert the tray into a freezer ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) You take a tray (2) Add water into the tray (3) The water molecules begin to slow down (4) The water becomes ice (5) The ice cubes are ready.  \nWhere does the following step fit into the given list of steps: You insert the tray into a freezer ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) A man and woman mate (2) Embryo is C (3) Embryo grows and develops into a fetus inside the woman&#x27;s womb (4) The fetus is born (5) In the teenage years the human experiences puberty (6) Reaches sexual maturity (7) At 18 the human becomes an adult (8) Adult may procreate continuing the cycle.  \nWhere does the following step fit into the given list of steps: Begins to grow and develop through infancy and childhood ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) A man and woman mate (2) Embryo is C (3) Embryo grows and develops into a fetus inside the woman&#x27;s womb (4) The fetus is born (5) In the teenage years the human experiences puberty (6) Reaches sexual maturity (7) At 18 the human becomes an adult (8) Adult may procreate continuing the cycle.  \nWhere does the following step fit into the given list of steps: Begins to grow and develop through infancy and childhood ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) The oxygen passes through the bronchial tubes to the lungs (2) The oxygen is moved into the bloodstream (3) Circulates through the body (4) The cells in the body exchange the oxygen with carbon dioxide (5) The bloodstream carries the carbon dioxide back to the lungs (6) The lungs expel the carbon dioxide through the nose and mouth.  \nWhere does the following step fit into the given list of steps: A person breathes in oxygen ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The oxygen passes through the bronchial tubes to the lungs (2) The oxygen is moved into the bloodstream (3) Circulates through the body (4) The cells in the body exchange the oxygen with carbon dioxide (5) The bloodstream carries the carbon dioxide back to the lungs (6) The lungs expel the carbon dioxide through the nose and mouth.  \nWhere does the following step fit into the given list of steps: A person breathes in oxygen ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) The rain seeps into the wood surface (2) It permeates the wood (3) When rain evaporates it leaves the wood (4) It takes the finish of the wood with it (5) The wood begins to lose it's luster (6) It begins to look bad (7) It has pieces of paint missing from the rain (8) It gets worse when it rains (9) It eventually will have no paint left.  \nWhere does the following step fit into the given list of steps: Rain falls on wood ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The rain seeps into the wood surface (2) It permeates the wood (3) When rain evaporates it leaves the wood (4) It takes the finish of the wood with it (5) The wood begins to lose it's luster (6) It begins to look bad (7) It has pieces of paint missing from the rain (8) It gets worse when it rains (9) It eventually will have no paint left.  \nWhere does the following step fit into the given list of steps: Rain falls on wood ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Batteries are put in a flashlight (2) The flashlight is turned on (3) Two contact strips touch one another (4) A circuit is completed between the batteries and the lamp (5) The lamp in the flashlight begins to glow (6) The reflector in the flashlight directs the lamp's beam (7) A straight beam of light is generated (8) The circuit is broken (9) The beam is no longer visible.  \nWhere does the following step fit into the given list of steps: The flashlight is turned off ",
-            "output": [" After step 7. "]
+            "input": "Steps: (1) Batteries are put in a flashlight (2) The flashlight is turned on (3) Two contact strips touch one another (4) A circuit is completed between the batteries and the lamp (5) The lamp in the flashlight begins to glow (6) The reflector in the flashlight directs the lamp's beam (7) A straight beam of light is generated (8) The circuit is broken (9) The beam is no longer visible.  \nWhere does the following step fit into the given list of steps: The flashlight is turned off ",
+            "output": [
+                " After step 7. "
+            ]
         },
         {
-            "input" : "Steps: (1) The bird picks a tree (2) The bird collects twigs and other refuse (3) The bird makes sides with twigs and other things (4) The bird adds softer material to the inside (5) The nest is done.  \nWhere does the following step fit into the given list of steps: The bird makes a flat base with twigs ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) The bird picks a tree (2) The bird collects twigs and other refuse (3) The bird makes sides with twigs and other things (4) The bird adds softer material to the inside (5) The nest is done.  \nWhere does the following step fit into the given list of steps: The bird makes a flat base with twigs ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) A large rocky area is formed (2) The rocky area has a higher elevation than the surrounding areas (3) Water from precipitation falls in the area (4) The water forms a stream (5) The stream flows towards lower elevation (6) The river continues to flow along the same path for a long time (7) The river erodes the rocky area that it touches (8) The eroded area cuts deeply into the rock.  \nWhere does the following step fit into the given list of steps: The stream becomes a river ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) A large rocky area is formed (2) The rocky area has a higher elevation than the surrounding areas (3) Water from precipitation falls in the area (4) The water forms a stream (5) The stream flows towards lower elevation (6) The river continues to flow along the same path for a long time (7) The river erodes the rocky area that it touches (8) The eroded area cuts deeply into the rock.  \nWhere does the following step fit into the given list of steps: The stream becomes a river ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) A photovoltaic cell is created with two layers of semiconductor material (2) The top layer are &#x27;doped&#x27; with impurities to allow a negative charge (3) The bottom layer are &#x27;doped&#x27; to allow for a positive charge (4) This produces an electric field that allows electrons to flow from negative to positve (5) Sunlight enters the cell (6) Energy from sunlight knocks electrons loose in both fields (7) This prevents the flow of electrons from negative to positive (8) Give the cells owner a flow of electricity.  \nWhere does the following step fit into the given list of steps: Adding an external circuit allows the exchange to continue ",
-            "output": [" After step 7. "]
+            "input": "Steps: (1) A photovoltaic cell is created with two layers of semiconductor material (2) The top layer are &#x27;doped&#x27; with impurities to allow a negative charge (3) The bottom layer are &#x27;doped&#x27; to allow for a positive charge (4) This produces an electric field that allows electrons to flow from negative to positve (5) Sunlight enters the cell (6) Energy from sunlight knocks electrons loose in both fields (7) This prevents the flow of electrons from negative to positive (8) Give the cells owner a flow of electricity.  \nWhere does the following step fit into the given list of steps: Adding an external circuit allows the exchange to continue ",
+            "output": [
+                " After step 7. "
+            ]
         },
         {
-            "input" : "Steps: (1) Ocean water pulls sand off of beaches (2) Ocean water breaks rocks off of cliffs (3) Ocean water carries sand and rocks into the ocean (4) Sand and rocks go to other land or the bottom of the ocean.  \nWhere does the following step fit into the given list of steps: Ocean waves hit land ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Ocean water pulls sand off of beaches (2) Ocean water breaks rocks off of cliffs (3) Ocean water carries sand and rocks into the ocean (4) Sand and rocks go to other land or the bottom of the ocean.  \nWhere does the following step fit into the given list of steps: Ocean waves hit land ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) An airline reservation is made (2) The passenger arrives early at the airport (3) The luggage is checked (4) The passenger waits in line (5) The passenger shows their identification and gets a boarding pass (6) The passenger goes to their gate (7) The passenger gets in line when it's time to board (8) The plane arrives at the destination (9) The passenger gets off the plane at their destination.  \nWhere does the following step fit into the given list of steps: The person boards the plane ",
-            "output": [" After step 7. "]
+            "input": "Steps: (1) An airline reservation is made (2) The passenger arrives early at the airport (3) The luggage is checked (4) The passenger waits in line (5) The passenger shows their identification and gets a boarding pass (6) The passenger goes to their gate (7) The passenger gets in line when it's time to board (8) The plane arrives at the destination (9) The passenger gets off the plane at their destination.  \nWhere does the following step fit into the given list of steps: The person boards the plane ",
+            "output": [
+                " After step 7. "
+            ]
         },
         {
-            "input" : "Steps: (1) Limestone is located under the soil (2) Rain picks up carbon dioxide as it falls to earth (3) The carbon dioxide in the rain washes through the soil (4) The carbon dioxide turns into acid (5) The acid in the rain gets to the limestone below the soil (6) The acid dissolves the limestone (7) Acid continues to erode the limestone with more rain over time (8) The eroded limestone sometimes forms caves.  \nWhere does the following step fit into the given list of steps: The rain falls on the soil over the limestone ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Limestone is located under the soil (2) Rain picks up carbon dioxide as it falls to earth (3) The carbon dioxide in the rain washes through the soil (4) The carbon dioxide turns into acid (5) The acid in the rain gets to the limestone below the soil (6) The acid dissolves the limestone (7) Acid continues to erode the limestone with more rain over time (8) The eroded limestone sometimes forms caves.  \nWhere does the following step fit into the given list of steps: The rain falls on the soil over the limestone ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) The bat sends out sound waves from their mouth or nose (2) Echoes are produced (3) The echo returns to the bat&#x27;s ears (4) The bat hears the echo (5) The bat can figure out where the object is located.  \nWhere does the following step fit into the given list of steps: The sound waves hit an object ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) The bat sends out sound waves from their mouth or nose (2) Echoes are produced (3) The echo returns to the bat&#x27;s ears (4) The bat hears the echo (5) The bat can figure out where the object is located.  \nWhere does the following step fit into the given list of steps: The sound waves hit an object ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Green is a color that gathers sunlight easily (2) Sunlight is gathered by the leaves of the plant (3) The glucose travels the plant (4) The plant uses that glucose as energy to grow.  \nWhere does the following step fit into the given list of steps: The sunlight is broken down into glucose through photosynthesis ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Green is a color that gathers sunlight easily (2) Sunlight is gathered by the leaves of the plant (3) The glucose travels the plant (4) The plant uses that glucose as energy to grow.  \nWhere does the following step fit into the given list of steps: The sunlight is broken down into glucose through photosynthesis ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Adult mushrooms produce spores (2) Release them into the air by process of sporulation (3) Spores are carried by the wind (4) Land in a hospitable growing environment (5) The mushroom starts growing (6) The adult mushroom produce spores of its own to repeat the process.  \nWhere does the following step fit into the given list of steps: The spores germinate into the soil ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Adult mushrooms produce spores (2) Release them into the air by process of sporulation (3) Spores are carried by the wind (4) Land in a hospitable growing environment (5) The mushroom starts growing (6) The adult mushroom produce spores of its own to repeat the process.  \nWhere does the following step fit into the given list of steps: The spores germinate into the soil ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) The oil is transported to stores (2) Oil is purchased by homeowners (3) Oil is placed into a stove in the house (4) The oil is lit on fire, and burns for a long time (5) The warm air off of the oil travels through the house  \nWhere does the following step fit into the given list of steps: Oil is gathered through mining operations ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The oil is transported to stores (2) Oil is purchased by homeowners (3) Oil is placed into a stove in the house (4) The oil is lit on fire, and burns for a long time (5) The warm air off of the oil travels through the house  \nWhere does the following step fit into the given list of steps: Oil is gathered through mining operations ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) You eat food (2) Sugars from food enter your bloodstream (3) Insulin helps turn sugars into energy (4) Insulin helps your body store the energy in fat, muscle and liver cells  \nWhere does the following step fit into the given list of steps: Your stomach digests the food ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) You eat food (2) Sugars from food enter your bloodstream (3) Insulin helps turn sugars into energy (4) Insulin helps your body store the energy in fat, muscle and liver cells  \nWhere does the following step fit into the given list of steps: Your stomach digests the food ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Items are collected (2) The items are sorted (3) Trash is removed from everything else (4) Goes to a landfill (5) The items go into a baler machine for each kind of material (6) The bales are shipped to manufacturers to use to make products.  \nWhere does the following step fit into the given list of steps: They come out as bales ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) Items are collected (2) The items are sorted (3) Trash is removed from everything else (4) Goes to a landfill (5) The items go into a baler machine for each kind of material (6) The bales are shipped to manufacturers to use to make products.  \nWhere does the following step fit into the given list of steps: They come out as bales ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) Grass and small plants grow in an area (2) These plants die (3) The soil becomes more fertile (4) Larger plants are able to be supported (5) Trees eventually grow.  \nWhere does the following step fit into the given list of steps: The soil gains organic material ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Grass and small plants grow in an area (2) These plants die (3) The soil becomes more fertile (4) Larger plants are able to be supported (5) Trees eventually grow.  \nWhere does the following step fit into the given list of steps: The soil gains organic material ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) The remains of the plant are buried very fast in sediment (2) The soft parts of the plant decay (3) The hard parts of the plant are replaced with minerals (4) The sediment turns into rock (5) The rock erodes (6) The fossil appears on the surface of the ground.  \nWhere does the following step fit into the given list of steps: A plant dies ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The remains of the plant are buried very fast in sediment (2) The soft parts of the plant decay (3) The hard parts of the plant are replaced with minerals (4) The sediment turns into rock (5) The rock erodes (6) The fossil appears on the surface of the ground.  \nWhere does the following step fit into the given list of steps: A plant dies ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) A larva is born (2) The caterpillar eats constantly until it grows bigger (3) The caterpillar starts to form a cocoon around itself (4) After some time the cocoon hatches (5) And a butterfly is born.  \nWhere does the following step fit into the given list of steps: The caterpillar becomes a pupa ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) A larva is born (2) The caterpillar eats constantly until it grows bigger (3) The caterpillar starts to form a cocoon around itself (4) After some time the cocoon hatches (5) And a butterfly is born.  \nWhere does the following step fit into the given list of steps: The caterpillar becomes a pupa ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) A star burns in space (2) Eventually it burns all its hydrogen (3) Becomes a red giant (4) Once the red giant burns itself out (5) The core of the star collapses (6) The gasses will start to disperse (7) A white dwarf has been formed.  \nWhere does the following step fit into the given list of steps: Only the core is left ",
-            "output": [" After step 6. "]
+            "input": "Steps: (1) A star burns in space (2) Eventually it burns all its hydrogen (3) Becomes a red giant (4) Once the red giant burns itself out (5) The core of the star collapses (6) The gasses will start to disperse (7) A white dwarf has been formed.  \nWhere does the following step fit into the given list of steps: Only the core is left ",
+            "output": [
+                " After step 6. "
+            ]
         },
         {
-            "input" : "Steps: (1) Waves hit the coast (2) Waves have energy that pushes the water and sediment (3) Water washes the sediment back (4) Some sediment is left as sand.  \nWhere does the following step fit into the given list of steps: The sediment can help erode land like sandpaper ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Waves hit the coast (2) Waves have energy that pushes the water and sediment (3) Water washes the sediment back (4) Some sediment is left as sand.  \nWhere does the following step fit into the given list of steps: The sediment can help erode land like sandpaper ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) In this stage the chromosomes become visible and the centrioles separate and move to opposite poles of the cell (2) In prophase the chromosomes become visible and the centrioles separate and move to opposite poles of the cell (3) In metaphase the chromosomes line up across the center of the cell and become connected to the spindle fiber at their centromere (4) In anaphase the sister chromatids separate into individual chromosomes and are pulled apart (5) During telophase the chromosomes gather at opposite ends of the cell and lose their distinct rod-like shapes (6) Two new nuclear membranes then form around each of the two regions of DNA and the spindle fibers disappear.  \nWhere does the following step fit into the given list of steps: Prophase is the first and longest stage of mitosis ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) In this stage the chromosomes become visible and the centrioles separate and move to opposite poles of the cell (2) In prophase the chromosomes become visible and the centrioles separate and move to opposite poles of the cell (3) In metaphase the chromosomes line up across the center of the cell and become connected to the spindle fiber at their centromere (4) In anaphase the sister chromatids separate into individual chromosomes and are pulled apart (5) During telophase the chromosomes gather at opposite ends of the cell and lose their distinct rod-like shapes (6) Two new nuclear membranes then form around each of the two regions of DNA and the spindle fibers disappear.  \nWhere does the following step fit into the given list of steps: Prophase is the first and longest stage of mitosis ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Dead organic material accumulates on the bottom of oceans, riverbeds or swamps, mixing with mud and sand (2) Over time, more sediment piles on top (3) The resulting heat and pressure transforms the organic layer into a dark and waxy substance known as kerogen (4) The molecules break up into shorter and lighter molecules composed almost solely of carbon and hydrogen atoms (5) It will turn into either petroleum or natural gas  \nWhere does the following step fit into the given list of steps: Left alone, the kerogen molecules eventually crack ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) Dead organic material accumulates on the bottom of oceans, riverbeds or swamps, mixing with mud and sand (2) Over time, more sediment piles on top (3) The resulting heat and pressure transforms the organic layer into a dark and waxy substance known as kerogen (4) The molecules break up into shorter and lighter molecules composed almost solely of carbon and hydrogen atoms (5) It will turn into either petroleum or natural gas  \nWhere does the following step fit into the given list of steps: Left alone, the kerogen molecules eventually crack ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) Light energy is absorbed by chlorophyll in a plant (2) The plant uses nutrients in the soil (3) The plant uses carbon dioxide in the air to produce glucose (4) The plant uses the glucose to give itself energy (5) Oxygen is released as a by product.  \nWhere does the following step fit into the given list of steps: The light energy is used to convert carbon dioxide ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Light energy is absorbed by chlorophyll in a plant (2) The plant uses nutrients in the soil (3) The plant uses carbon dioxide in the air to produce glucose (4) The plant uses the glucose to give itself energy (5) Oxygen is released as a by product.  \nWhere does the following step fit into the given list of steps: The light energy is used to convert carbon dioxide ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) A plant dies (2) The remains of the plant are buried very fast in sediment (3) The soft parts of the plant decay (4) The hard parts of the plant are replaced with minerals (5) The rock erodes (6) The fossil appears on the surface of the ground.  \nWhere does the following step fit into the given list of steps: The sediment turns into rock ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) A plant dies (2) The remains of the plant are buried very fast in sediment (3) The soft parts of the plant decay (4) The hard parts of the plant are replaced with minerals (5) The rock erodes (6) The fossil appears on the surface of the ground.  \nWhere does the following step fit into the given list of steps: The sediment turns into rock ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) The oxygen travels to the lungs through the windpipe (2) The air sacs in the lungs send the oxygen into the blood stream (3) The carbon dioxide in the blood stream is transferred to the air sacs (4) The lungs expel through the nose or mouth back into the environment.  \nWhere does the following step fit into the given list of steps: You breathe oxygen into your body through the nose or mouth ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The oxygen travels to the lungs through the windpipe (2) The air sacs in the lungs send the oxygen into the blood stream (3) The carbon dioxide in the blood stream is transferred to the air sacs (4) The lungs expel through the nose or mouth back into the environment.  \nWhere does the following step fit into the given list of steps: You breathe oxygen into your body through the nose or mouth ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Acid rain leaches aluminum from clay particles in soil (2) Acid rain dissolves minerals and nutrients in soil (3) Washes them away so plants can&#x27;t benefit from them (4) PH in soil and water gets affected which can kill plants and animals (5) Acid rain in fog at higher elevations can strip foliage off trees.  \nWhere does the following step fit into the given list of steps: Aluminum flows into streams and lakes ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Acid rain leaches aluminum from clay particles in soil (2) Acid rain dissolves minerals and nutrients in soil (3) Washes them away so plants can&#x27;t benefit from them (4) PH in soil and water gets affected which can kill plants and animals (5) Acid rain in fog at higher elevations can strip foliage off trees.  \nWhere does the following step fit into the given list of steps: Aluminum flows into streams and lakes ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Sunlight passes through the glass into the greenhouse (2) The absorbed sunlight is converted to heat (3) The heat cannot escape the glass (4) The heat is trapped in the greenhouse (5) The hot air rises (6) The colder air at the top is pushed to the bottom (7) The colder air is then warmed by the floor and the plants.  \nWhere does the following step fit into the given list of steps: The plants and floor absorb the the sunlight ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Sunlight passes through the glass into the greenhouse (2) The absorbed sunlight is converted to heat (3) The heat cannot escape the glass (4) The heat is trapped in the greenhouse (5) The hot air rises (6) The colder air at the top is pushed to the bottom (7) The colder air is then warmed by the floor and the plants.  \nWhere does the following step fit into the given list of steps: The plants and floor absorb the the sunlight ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) A virus enters a host body (2) The virus enters the cell (3) The virus uses the cell like a factory to make new copies of the virus (4) The new copies of the virus leave the cell (5) Infect other cells (6) The host gets sick as its cells are damaged.  \nWhere does the following step fit into the given list of steps: The virus has receptors that lock onto a target cell ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) A virus enters a host body (2) The virus enters the cell (3) The virus uses the cell like a factory to make new copies of the virus (4) The new copies of the virus leave the cell (5) Infect other cells (6) The host gets sick as its cells are damaged.  \nWhere does the following step fit into the given list of steps: The virus has receptors that lock onto a target cell ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Sugar enters the body (2) The pancreas (3) Insulin lower sugar levels (4) Bloo sugar goes back to normal.  \nWhere does the following step fit into the given list of steps: Bloodstream ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Sugar enters the body (2) The pancreas (3) Insulin lower sugar levels (4) Bloo sugar goes back to normal.  \nWhere does the following step fit into the given list of steps: Bloodstream ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Food is put into mouth (2) Food is chewed and mixed with saliva (spit) (3) Food travels down the esophagus (throat) (4) Food travels into the stomach (5) Acid in the stomach breaks the food down further (6) Food travels into the small intestine (7) Nutrients from food are absorbed into the blood stream (8) Most of the remaining material is now waste (9) The waste is eventually removed from the body.  \nWhere does the following step fit into the given list of steps: Food travels into the large intestine ",
-            "output": [" After step 7. "]
+            "input": "Steps: (1) Food is put into mouth (2) Food is chewed and mixed with saliva (spit) (3) Food travels down the esophagus (throat) (4) Food travels into the stomach (5) Acid in the stomach breaks the food down further (6) Food travels into the small intestine (7) Nutrients from food are absorbed into the blood stream (8) Most of the remaining material is now waste (9) The waste is eventually removed from the body.  \nWhere does the following step fit into the given list of steps: Food travels into the large intestine ",
+            "output": [
+                " After step 7. "
+            ]
         },
         {
-            "input" : "Steps: (1) The animal eats large quantities of food that will be stored as fat (2) Winter comes and the animal finds a place to hibernate (3) Over a period of days, the animal&#x27;s heart rate and breathing rate drop slowly (4) Electrical activity in the brain almost ceases completely, though some areas remain active  \nWhere does the following step fit into the given list of steps: The animal has entered hibernation mode ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) The animal eats large quantities of food that will be stored as fat (2) Winter comes and the animal finds a place to hibernate (3) Over a period of days, the animal&#x27;s heart rate and breathing rate drop slowly (4) Electrical activity in the brain almost ceases completely, though some areas remain active  \nWhere does the following step fit into the given list of steps: The animal has entered hibernation mode ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) A forest fire starts (2) The trees and plants burn (3) The animals lose their homes (4) If the animals can not escape, they may die from smoke inhalation (5) The plants that provide food are gone  \nWhere does the following step fit into the given list of steps: The animals have little to eat ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) A forest fire starts (2) The trees and plants burn (3) The animals lose their homes (4) If the animals can not escape, they may die from smoke inhalation (5) The plants that provide food are gone  \nWhere does the following step fit into the given list of steps: The animals have little to eat ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) The trees die off (2) The dead material provides nutrients for more trees (3) The rising trees provide shelter (4) And more organisms begin to thrive (5) The ecosystem known as a forest is made.  \nWhere does the following step fit into the given list of steps: Networks of trees start forming ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The trees die off (2) The dead material provides nutrients for more trees (3) The rising trees provide shelter (4) And more organisms begin to thrive (5) The ecosystem known as a forest is made.  \nWhere does the following step fit into the given list of steps: Networks of trees start forming ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) A mine is excavated in the side of a mountain (2) Miners enter the mine (3) Miners remove the coal from the mine (4) The coal is placed into carts or on a conveyor belt (5) The coal is moved up to the surface (6) The coal is loaded onto a truck  \nWhere does the following step fit into the given list of steps: The truck takes the coal to a power station. ",
-            "output": [" After step 6. "]
+            "input": "Steps: (1) A mine is excavated in the side of a mountain (2) Miners enter the mine (3) Miners remove the coal from the mine (4) The coal is placed into carts or on a conveyor belt (5) The coal is moved up to the surface (6) The coal is loaded onto a truck  \nWhere does the following step fit into the given list of steps: The truck takes the coal to a power station. ",
+            "output": [
+                " After step 6. "
+            ]
         },
         {
-            "input" : "Steps: (1) Carbon dioxide enters the leaves through the stomates by diffusion (2) Energy harvested through light reaction is stored by forming ATP (3) Carbon dioxide and energy from ATP are used to create sugar (4) Oxygen exits the leaves through the stomata by diffusion (5) The plant reuses the water or the water exits through the stomata as water vapor.  \nWhere does the following step fit into the given list of steps: Water is transported to the leaves in the xylem ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Carbon dioxide enters the leaves through the stomates by diffusion (2) Energy harvested through light reaction is stored by forming ATP (3) Carbon dioxide and energy from ATP are used to create sugar (4) Oxygen exits the leaves through the stomata by diffusion (5) The plant reuses the water or the water exits through the stomata as water vapor.  \nWhere does the following step fit into the given list of steps: Water is transported to the leaves in the xylem ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Magma rises through cracks in the Earth&#x27;s crust (2) The pressure causes plates to move (3) The lava from the eruption cools to form new crust (4) After several eruptions, the rock builds up and a volcano forms  \nWhere does the following step fit into the given list of steps: Magma explodes to the surface ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Magma rises through cracks in the Earth&#x27;s crust (2) The pressure causes plates to move (3) The lava from the eruption cools to form new crust (4) After several eruptions, the rock builds up and a volcano forms  \nWhere does the following step fit into the given list of steps: Magma explodes to the surface ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) When water freezes it becomes 10% bigger, or takes up 10% more space (2) The force of the pressure exerted on the rock surrounding it is enough to wedge the walls of the crack farther apart, thus expanding and deepening the crack (3) Clay expends when wet like ice does (4) This causes rock to break apart (5) Some plants like mosses and lichens are capable of growing without soil on bare rock (6) When they do this their roots penetrate pores and crevices and cause rocks to split apart as the roots force their way down through the rocks  \nWhere does the following step fit into the given list of steps: As water expands it puts great pressure on the walls of anything containing it, including any rocks which happen to be surrounding it ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) When water freezes it becomes 10% bigger, or takes up 10% more space (2) The force of the pressure exerted on the rock surrounding it is enough to wedge the walls of the crack farther apart, thus expanding and deepening the crack (3) Clay expends when wet like ice does (4) This causes rock to break apart (5) Some plants like mosses and lichens are capable of growing without soil on bare rock (6) When they do this their roots penetrate pores and crevices and cause rocks to split apart as the roots force their way down through the rocks  \nWhere does the following step fit into the given list of steps: As water expands it puts great pressure on the walls of anything containing it, including any rocks which happen to be surrounding it ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Blood carried into kidney by the renal artery (2) Nephrons in the kidney filter the blood (3) Become urine (4) Ureters carry urine out of the kidneys.  \nWhere does the following step fit into the given list of steps: The waste that is filtered out mixes with water ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Blood carried into kidney by the renal artery (2) Nephrons in the kidney filter the blood (3) Become urine (4) Ureters carry urine out of the kidneys.  \nWhere does the following step fit into the given list of steps: The waste that is filtered out mixes with water ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Animals and plants die in soft soil or mud (2) Sediment builds up over the remains (3) The remains decompose, leaving only trace amounts (4) A fossil is formed  \nWhere does the following step fit into the given list of steps: The remaining parts over the years are replaced with mineral ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) Animals and plants die in soft soil or mud (2) Sediment builds up over the remains (3) The remains decompose, leaving only trace amounts (4) A fossil is formed  \nWhere does the following step fit into the given list of steps: The remaining parts over the years are replaced with mineral ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) The coffee pot is filled with water (2) Water is poured into the well of the machine (3) A filter is placed in the basket (4) Ground coffee is measured into the filter (5) Turning on the machine starts the water heating (6) The hot water rises up (7) The water drops into the ground coffee (8) The coffee drips into the pot from the basket.  \nWhere does the following step fit into the given list of steps: The hot water passes through the grounds ",
-            "output": [" After step 7. "]
+            "input": "Steps: (1) The coffee pot is filled with water (2) Water is poured into the well of the machine (3) A filter is placed in the basket (4) Ground coffee is measured into the filter (5) Turning on the machine starts the water heating (6) The hot water rises up (7) The water drops into the ground coffee (8) The coffee drips into the pot from the basket.  \nWhere does the following step fit into the given list of steps: The hot water passes through the grounds ",
+            "output": [
+                " After step 7. "
+            ]
         },
         {
-            "input" : "Steps: (1) Put water in an ice cube tray (2) Put the ice cube tray in the freezer (3) Take the ice cube tray out of the freezer (4) Bend the tray slightly to get the ice cubes out and into a drink.  \nWhere does the following step fit into the given list of steps: Wait 5 to 6 hours ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Put water in an ice cube tray (2) Put the ice cube tray in the freezer (3) Take the ice cube tray out of the freezer (4) Bend the tray slightly to get the ice cubes out and into a drink.  \nWhere does the following step fit into the given list of steps: Wait 5 to 6 hours ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) The nuclei of some atoms have too few or too many neutrons (2) The atoms become unstable (3) The atoms split (4) In alpha decay, two protons and two neutrons are released from the atom (5) In beta decay, a neutron changes into a proton and an electron (6) The electron is released  \nWhere does the following step fit into the given list of steps: The proton joins the nucleus of the atom ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) The nuclei of some atoms have too few or too many neutrons (2) The atoms become unstable (3) The atoms split (4) In alpha decay, two protons and two neutrons are released from the atom (5) In beta decay, a neutron changes into a proton and an electron (6) The electron is released  \nWhere does the following step fit into the given list of steps: The proton joins the nucleus of the atom ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) Human beings burn fossil fuels (oil, gas, etc.) (2) The make-up of the atmosphere changes (3) Some energy from the sun cannot escape back through the changed atmosphere (4) The earth begins to heat because of the extra trapped energy (5) Human beings cut down trees (6) Human beings do not re-plant the trees (7) Trees cannot help take the extra carbon dioxide from the atmosphere (8) The extra trapped energy starts to change the earth&#x27;s short term weather (9) Eventually the long-term climate patterns start to change  \nWhere does the following step fit into the given list of steps: Carbon dioxide from the burning fossil fuels enter the atmosphere ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Human beings burn fossil fuels (oil, gas, etc.) (2) The make-up of the atmosphere changes (3) Some energy from the sun cannot escape back through the changed atmosphere (4) The earth begins to heat because of the extra trapped energy (5) Human beings cut down trees (6) Human beings do not re-plant the trees (7) Trees cannot help take the extra carbon dioxide from the atmosphere (8) The extra trapped energy starts to change the earth&#x27;s short term weather (9) Eventually the long-term climate patterns start to change  \nWhere does the following step fit into the given list of steps: Carbon dioxide from the burning fossil fuels enter the atmosphere ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) The cold water forms ice crystals (2) The ice crystals grow by absorbing surrounding water droplets (3) Form snowflakes (4) The snowflakes fall to the ground.  \nWhere does the following step fit into the given list of steps: Water in the clouds becomes very cold ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The cold water forms ice crystals (2) The ice crystals grow by absorbing surrounding water droplets (3) Form snowflakes (4) The snowflakes fall to the ground.  \nWhere does the following step fit into the given list of steps: Water in the clouds becomes very cold ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) The butterfly starts as an egg (2) The egg hatches to form a larva, also called a caterpillar (3) The caterpillar then forms itself into a pupa, or chrysalis (4) The caterpillar in the chrysalis begins change, a process called mmetaphorphosis (5) The caterpillar completes its metamorphosis and has turned into a butterfly (6) The adult butterfly emerges out of the chrysalis and flys away!  \nWhere does the following step fit into the given list of steps: The carterpillar molts (loses its skin) many times as it grows ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) The butterfly starts as an egg (2) The egg hatches to form a larva, also called a caterpillar (3) The caterpillar then forms itself into a pupa, or chrysalis (4) The caterpillar in the chrysalis begins change, a process called mmetaphorphosis (5) The caterpillar completes its metamorphosis and has turned into a butterfly (6) The adult butterfly emerges out of the chrysalis and flys away!  \nWhere does the following step fit into the given list of steps: The carterpillar molts (loses its skin) many times as it grows ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Plants and animals long ago died (2) They are buried under layers of soil (3) Pressure builds over time (4) The remains liquefy  \nWhere does the following step fit into the given list of steps: The carbon atoms rearrange to become a new substance. ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Plants and animals long ago died (2) They are buried under layers of soil (3) Pressure builds over time (4) The remains liquefy  \nWhere does the following step fit into the given list of steps: The carbon atoms rearrange to become a new substance. ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) The pollution negatively affects the water quality (2) The pollution negatively affects the health of plants and animals (3) The plants and animals have shorter, less healthy lives (4) The plants and animals do not reproduce very well (5) The number of plants and animals decreases over time (6) The quality of water gets worse and worse as there are no plants or animals to clean it (7) Eventually there is nothing living in the water and it is unusable  \nWhere does the following step fit into the given list of steps: Pollution enters natural water sources such as rivers and lakes ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) The pollution negatively affects the water quality (2) The pollution negatively affects the health of plants and animals (3) The plants and animals have shorter, less healthy lives (4) The plants and animals do not reproduce very well (5) The number of plants and animals decreases over time (6) The quality of water gets worse and worse as there are no plants or animals to clean it (7) Eventually there is nothing living in the water and it is unusable  \nWhere does the following step fit into the given list of steps: Pollution enters natural water sources such as rivers and lakes ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) The human body takes a breath inward (2) Air is transported to the lungs (3) Air reaches the alveoli, the smallest air sacs in the lungs (4) In the alveoli, air passes into the blood within small capillaries (5) The dissolved oxygen is picked-up by red blood cells (6) The red blood cells bind the oxygen via a protein called heme (7) Red blood cells circulate throughout the body and reach the various tissues (8) Within small capillaries, the heme release the oxygen (9) The oxygen can then reach the cells within the tissue  \nWhere does the following step fit into the given list of steps: The gaseous oxygen in the air dissolves into the capillary blood ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) The human body takes a breath inward (2) Air is transported to the lungs (3) Air reaches the alveoli, the smallest air sacs in the lungs (4) In the alveoli, air passes into the blood within small capillaries (5) The dissolved oxygen is picked-up by red blood cells (6) The red blood cells bind the oxygen via a protein called heme (7) Red blood cells circulate throughout the body and reach the various tissues (8) Within small capillaries, the heme release the oxygen (9) The oxygen can then reach the cells within the tissue  \nWhere does the following step fit into the given list of steps: The gaseous oxygen in the air dissolves into the capillary blood ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) A mushroom gives off gills lined with basidia (2) The basidia gives off spores (3) The spores germinate (4) The spores create Hyphae (5) They join with Mycelium (6) A hyphal knot forms in the ground (7) A primordia shoots out of the ground (8) A mushroom cap is formed.  \nWhere does the following step fit into the given list of steps: Multiple Hyphae meet and converge ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) A mushroom gives off gills lined with basidia (2) The basidia gives off spores (3) The spores germinate (4) The spores create Hyphae (5) They join with Mycelium (6) A hyphal knot forms in the ground (7) A primordia shoots out of the ground (8) A mushroom cap is formed.  \nWhere does the following step fit into the given list of steps: Multiple Hyphae meet and converge ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) A man and woman mate (2) Embryo is C (3) Embryo grows and develops into a fetus inside the woman&#x27;s womb (4) The fetus is born (5) Begins to grow and develop through infancy and childhood (6) In the teenage years the human experiences puberty (7) At 18 the human becomes an adult (8) Adult may procreate continuing the cycle.  \nWhere does the following step fit into the given list of steps: Reaches sexual maturity ",
-            "output": [" After step 6. "]
+            "input": "Steps: (1) A man and woman mate (2) Embryo is C (3) Embryo grows and develops into a fetus inside the woman&#x27;s womb (4) The fetus is born (5) Begins to grow and develop through infancy and childhood (6) In the teenage years the human experiences puberty (7) At 18 the human becomes an adult (8) Adult may procreate continuing the cycle.  \nWhere does the following step fit into the given list of steps: Reaches sexual maturity ",
+            "output": [
+                " After step 6. "
+            ]
         },
         {
-            "input" : "Steps: (1) Food is taken into the mouth (2) The food is chewed (3) Saliva mixes with the food and starts breaking it down (4) The chewed food travels down the esophagus to the stomach (5) The stomach secretes acid (6) Grinds and mixes the food (7) The food moves to the small intestine (8) The small intestine uses enzymes to further break down the food (9) The food is expelled from the body.  \nWhere does the following step fit into the given list of steps: The food passes into the colon ",
-            "output": [" After step 8. "]
+            "input": "Steps: (1) Food is taken into the mouth (2) The food is chewed (3) Saliva mixes with the food and starts breaking it down (4) The chewed food travels down the esophagus to the stomach (5) The stomach secretes acid (6) Grinds and mixes the food (7) The food moves to the small intestine (8) The small intestine uses enzymes to further break down the food (9) The food is expelled from the body.  \nWhere does the following step fit into the given list of steps: The food passes into the colon ",
+            "output": [
+                " After step 8. "
+            ]
         },
         {
-            "input" : "Steps: (1) Boil salt water (2) The water will turn into water vapor (3) Collect the water vapor (4) The water vapor will turn into liquid water (5) The salt will be separated from the water.  \nWhere does the following step fit into the given list of steps: Allow the water vapor to cool ",
-            "output": [" After step 3. "]
+            "input": "Steps: (1) Boil salt water (2) The water will turn into water vapor (3) Collect the water vapor (4) The water vapor will turn into liquid water (5) The salt will be separated from the water.  \nWhere does the following step fit into the given list of steps: Allow the water vapor to cool ",
+            "output": [
+                " After step 3. "
+            ]
         },
         {
-            "input" : "Steps: (1) The liver takes in blood from the rest of the body (2) The liver uses enzymes to clean the blood (3) The liver creates bile from the items filtered (4) The liver takes energy and stores it as glycogen (5) The bile is sent to the intestines.  \nWhere does the following step fit into the given list of steps: The cleaned blood is expelled ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) The liver takes in blood from the rest of the body (2) The liver uses enzymes to clean the blood (3) The liver creates bile from the items filtered (4) The liver takes energy and stores it as glycogen (5) The bile is sent to the intestines.  \nWhere does the following step fit into the given list of steps: The cleaned blood is expelled ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) A person takes in oxygen through their nose or mouth (2) The oxygen travels into the body (3) Carbon dioxide is produced by the glucose breakdown (4) The carbon dioxide is exhaled out of the body through the nose or mouth.  \nWhere does the following step fit into the given list of steps: Breaks down into glucose ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) A person takes in oxygen through their nose or mouth (2) The oxygen travels into the body (3) Carbon dioxide is produced by the glucose breakdown (4) The carbon dioxide is exhaled out of the body through the nose or mouth.  \nWhere does the following step fit into the given list of steps: Breaks down into glucose ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Bacteria start to divide and grow (2) The uncontrolled growth takes away resources from other cells (3) Other cells cannot function properly (4) We feel unwell (5) The growth and division of bacteria produce toxins (6) Toxins harm the body (7) The body tries to react to the toxins (8) The body&#x27;s natural defenses can sometimes cause us to feel unwell.  \nWhere does the following step fit into the given list of steps: Bacteria enter the body ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Bacteria start to divide and grow (2) The uncontrolled growth takes away resources from other cells (3) Other cells cannot function properly (4) We feel unwell (5) The growth and division of bacteria produce toxins (6) Toxins harm the body (7) The body tries to react to the toxins (8) The body&#x27;s natural defenses can sometimes cause us to feel unwell.  \nWhere does the following step fit into the given list of steps: Bacteria enter the body ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Oxygen moves from the lungs into the bloodstream (2) Air is pushed through the vocal chords (3) A person talks (4) Other air is pushed out of the lungs into the environment.  \nWhere does the following step fit into the given list of steps: Air is pulled into the lungs ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Oxygen moves from the lungs into the bloodstream (2) Air is pushed through the vocal chords (3) A person talks (4) Other air is pushed out of the lungs into the environment.  \nWhere does the following step fit into the given list of steps: Air is pulled into the lungs ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Bloodstream (2) Cells in the body are attacked (3) Cells are killed (4) Different kinds of sickness are formed.  \nWhere does the following step fit into the given list of steps: Bacteria enters the body ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Bloodstream (2) Cells in the body are attacked (3) Cells are killed (4) Different kinds of sickness are formed.  \nWhere does the following step fit into the given list of steps: Bacteria enters the body ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) A person breathes in oxygen (2) The oxygen is moved into the bloodstream (3) Circulates through the body (4) The cells in the body exchange the oxygen with carbon dioxide (5) The bloodstream carries the carbon dioxide back to the lungs (6) The lungs expel the carbon dioxide through the nose and mouth.  \nWhere does the following step fit into the given list of steps: The oxygen passes through the bronchial tubes to the lungs ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) A person breathes in oxygen (2) The oxygen is moved into the bloodstream (3) Circulates through the body (4) The cells in the body exchange the oxygen with carbon dioxide (5) The bloodstream carries the carbon dioxide back to the lungs (6) The lungs expel the carbon dioxide through the nose and mouth.  \nWhere does the following step fit into the given list of steps: The oxygen passes through the bronchial tubes to the lungs ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Water is transported to the leaves in the xylem (2) Energy harvested through light reaction is stored by forming ATP (3) Carbon dioxide and energy from ATP are used to create sugar (4) Oxygen exits the leaves through the stomata by diffusion (5) The plant reuses the water or the water exits through the stomata as water vapor.  \nWhere does the following step fit into the given list of steps: Carbon dioxide enters the leaves through the stomates by diffusion ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Water is transported to the leaves in the xylem (2) Energy harvested through light reaction is stored by forming ATP (3) Carbon dioxide and energy from ATP are used to create sugar (4) Oxygen exits the leaves through the stomata by diffusion (5) The plant reuses the water or the water exits through the stomata as water vapor.  \nWhere does the following step fit into the given list of steps: Carbon dioxide enters the leaves through the stomates by diffusion ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Air goes into the lungs (2) Oxygen diffuses from alveoli in the lungs to the bloodstream (3) Hemoglobin in red blood cells attaches to the oxygen (4) Red blood cells carry oxygen all around the body (5) Oxygen diffuses into cells from capillaries.  \nWhere does the following step fit into the given list of steps: The lungs remove oxygen from the air ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Air goes into the lungs (2) Oxygen diffuses from alveoli in the lungs to the bloodstream (3) Hemoglobin in red blood cells attaches to the oxygen (4) Red blood cells carry oxygen all around the body (5) Oxygen diffuses into cells from capillaries.  \nWhere does the following step fit into the given list of steps: The lungs remove oxygen from the air ",
+            "output": [
+                " After step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) An animal eats a lot of food to fatten up (2) The animal finds or builds a suitable place to hibernate where they can stay warm and protected (3) Their heart rate and breathing slow down to conserve energy (4) They emerge from the den when the weather is warming up again.  \nWhere does the following step fit into the given list of steps: The animal moves into their den ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) An animal eats a lot of food to fatten up (2) The animal finds or builds a suitable place to hibernate where they can stay warm and protected (3) Their heart rate and breathing slow down to conserve energy (4) They emerge from the den when the weather is warming up again.  \nWhere does the following step fit into the given list of steps: The animal moves into their den ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Enters the lungs (2) The oxygen fills the sacs in your lungs (3) Carbon dioxide is removed from the lungs and exhaled (4) The oxygen is pass throughout your body.  \nWhere does the following step fit into the given list of steps: Air is taken through the mouth ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Enters the lungs (2) The oxygen fills the sacs in your lungs (3) Carbon dioxide is removed from the lungs and exhaled (4) The oxygen is pass throughout your body.  \nWhere does the following step fit into the given list of steps: Air is taken through the mouth ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Food is squeezed down the esophagus when you swallow (2) Acid and enzyme in the stomach break the food down (3) Releases nutrients (4) Food then pumped into small intestine (5) Fluid and enzymes from liver and pancreas pumped into small intestine (6) Help break food into smallest molecules (7) Nutrients pass through wall of small intestine (8) Nutrients absorbed into blood stream (9) Unused materials passed into large intestine to become fecal matter.  \nWhere does the following step fit into the given list of steps: An enzyme in saliva begins to break down carbohydrates ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) Food is squeezed down the esophagus when you swallow (2) Acid and enzyme in the stomach break the food down (3) Releases nutrients (4) Food then pumped into small intestine (5) Fluid and enzymes from liver and pancreas pumped into small intestine (6) Help break food into smallest molecules (7) Nutrients pass through wall of small intestine (8) Nutrients absorbed into blood stream (9) Unused materials passed into large intestine to become fecal matter.  \nWhere does the following step fit into the given list of steps: An enzyme in saliva begins to break down carbohydrates ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Solar radiation reaches Earth's atmosphere (2) Some is reflected back into space (3) The rest of the energy is absorbed by land and oceans, heating the Earth (4) Heat radiates from Earth to space (5) Some of this heat is trapped by greenhouse gases in the atmosphere (6) This causes more heat radiation to stay trapped in our atmosphere (7) The Earth's temperature rises  \nWhere does the following step fit into the given list of steps: Human activities such as burning fuel are increasing the amount of greenhouses gases ",
-            "output": [" After step 5. "]
+            "input": "Steps: (1) Solar radiation reaches Earth's atmosphere (2) Some is reflected back into space (3) The rest of the energy is absorbed by land and oceans, heating the Earth (4) Heat radiates from Earth to space (5) Some of this heat is trapped by greenhouse gases in the atmosphere (6) This causes more heat radiation to stay trapped in our atmosphere (7) The Earth's temperature rises  \nWhere does the following step fit into the given list of steps: Human activities such as burning fuel are increasing the amount of greenhouses gases ",
+            "output": [
+                " After step 5. "
+            ]
         },
         {
-            "input" : "Steps: (1) Water from the surface seeps below the soil (2) The water comes into contact with the rock below (3) The rock over the years carves through the rock (4) The space in the rock becomes larger and forms into a cave  \nWhere does the following step fit into the given list of steps: As more rather rushes through the cave becomes a cavern. ",
-            "output": [" After step 4. "]
+            "input": "Steps: (1) Water from the surface seeps below the soil (2) The water comes into contact with the rock below (3) The rock over the years carves through the rock (4) The space in the rock becomes larger and forms into a cave  \nWhere does the following step fit into the given list of steps: As more rather rushes through the cave becomes a cavern. ",
+            "output": [
+                " After step 4. "
+            ]
         },
         {
-            "input" : "Steps: (1) Sunlight shines on plants (2) Cells with chlorophyll in them capture the light energy (3) Plants absorb carbon dioxide through their stoma (4) Plants absorb water through their roots and other parts of themselves (5) Plants absorb minerals through their roots (6) Plants convert these inputs into sugars (7) Sugars can be used as energy sources (8) Excess water and oxygen are released through stoma and other parts of the plant.  \nWhere does the following step fit into the given list of steps: Oxygen and water are also produced ",
-            "output": [" After step 7. "]
+            "input": "Steps: (1) Sunlight shines on plants (2) Cells with chlorophyll in them capture the light energy (3) Plants absorb carbon dioxide through their stoma (4) Plants absorb water through their roots and other parts of themselves (5) Plants absorb minerals through their roots (6) Plants convert these inputs into sugars (7) Sugars can be used as energy sources (8) Excess water and oxygen are released through stoma and other parts of the plant.  \nWhere does the following step fit into the given list of steps: Oxygen and water are also produced ",
+            "output": [
+                " After step 7. "
+            ]
         },
         {
-            "input" : "Steps: (1) These pores are called stomata (2) Water is absorbed by the roots (3) It passes through vessels in the stem on its way to the leaves (4) Sunlight is absorbed by a green chemical in the leaves.  \nWhere does the following step fit into the given list of steps: Carbon dioxide from the air passes through small pores (holes) in the leaves ",
-            "output": [" Before step 1. "]
+            "input": "Steps: (1) These pores are called stomata (2) Water is absorbed by the roots (3) It passes through vessels in the stem on its way to the leaves (4) Sunlight is absorbed by a green chemical in the leaves.  \nWhere does the following step fit into the given list of steps: Carbon dioxide from the air passes through small pores (holes) in the leaves ",
+            "output": [
+                " Before step 1. "
+            ]
         },
         {
-            "input" : "Steps: (1) Living organisms in the sea die (2) The matter forms on the sea floor (3) After many years the matter is compressed and heated (4) The result is that crude oil forms.  \nWhere does the following step fit into the given list of steps: Layers of sediment form above the matter compressing it ",
-            "output": [" After step 2. "]
+            "input": "Steps: (1) Living organisms in the sea die (2) The matter forms on the sea floor (3) After many years the matter is compressed and heated (4) The result is that crude oil forms.  \nWhere does the following step fit into the given list of steps: Layers of sediment form above the matter compressing it ",
+            "output": [
+                " After step 2. "
+            ]
         },
         {
-            "input" : "Steps: (1) Plates on the Earth&#x27;s crust move slowly past each other (2) When the force is large enough, the crust breaks (3) The stress is released as energy (4) The energy moves through the Earth in the form of waves (5) We feel the earthquake  \nWhere does the following step fit into the given list of steps: As the plates move, they exert a great force ",
-            "output": [" After step 1. "]
+            "input": "Steps: (1) Plates on the Earth&#x27;s crust move slowly past each other (2) When the force is large enough, the crust breaks (3) The stress is released as energy (4) The energy moves through the Earth in the form of waves (5) We feel the earthquake  \nWhere does the following step fit into the given list of steps: As the plates move, they exert a great force ",
+            "output": [
+                " After step 1. "
+            ]
         }
+    ],
+    "Domains": [
+        "Natural Science"
     ]
 }

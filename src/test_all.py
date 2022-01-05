@@ -117,7 +117,7 @@ if not args.task:
 
 # TODO: over time, we need to fix the skew of the following tasks
 skew_exclusion = [
-    "050", "838", "1489", "150", "265", "027", "202", "200"
+    "050", "838", "1489", "150", "265", "027"
 ]
 
 contributor_stats = {}
@@ -169,6 +169,8 @@ for file in files[begin_task_number:end_task_number + 1]:
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
             assert type(data['Instruction_language']) == list, f'Output_language must be a list of strings.'
+            assert all((lan in data['Definition']) for lan in data['Input_language'] if
+                       lan != 'English'), f'Definition must contain non-English tasks language.'
 
             assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
             assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
