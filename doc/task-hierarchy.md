@@ -7,7 +7,6 @@
 - If a subcategory (e.g. `Question Answering -> Contextual Question Answering -> Extractive`) is mentioned, don't mention its parent category (`Question Answering -> Contextual Question Answering`)
 - `src/auto_add_domain.py` is helpful for adding domains for all tasks in any particular dataset
 ## Task Categories
-- `Aspect Detection`
 - `Author Identification`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`     
@@ -39,9 +38,10 @@
   - `Coreference -> Entity Coreference`
   - `Coreference -> Pronoun Disambiguation`
 - `Detection` : Detection tasks are to find something in the input. For example, detecting the entities in a review or detecting the motivation of something. Detection tasks can be text generation, classification, etc., and possible outputs are not necessarily given in the definition.
+  - `Detection -> Aspect Detection`
   - `Detection -> Toxicity Detection`
     - `Detection -> Toxicity Detection -> Abuse Detection`
-    - `Detection -> Toxicity Detection -> Abuse Detection -> Hate Speech Detection`
+	  - `Detection -> Toxicity Detection -> Abuse Detection -> Hate Speech Detection`
   - `Detection -> Stereotype Detection`
   - `Detection -> Affect Detection`
   - `Detection -> Capability Detection`
@@ -69,7 +69,7 @@
   - `Detection -> Stance Detection`
     - `Detection -> Stance Detection -> Classification`
       - `Detection -> Stance Detection -> Classification -> Verification`
-	      - `Detection -> Stance Detection -> Classification -> Stance Correction Verification`
+	    - `Detection -> Stance Detection -> Classification -> Verification -> Stance Correction Verification`
   - `Detection -> Usage Detection`
   - `Detection -> Entity Detection`
   - `Detection -> Relation Detection`
@@ -83,6 +83,7 @@
   - `Proofreading -> Grammar Error`
     -  `Proofreading -> Grammar Error -> Grammar Error Correction`
     -  `Proofreading -> Grammar Error -> Grammar Error Detection`
+    -  `Proofreading -> Grammar Error -> Grammar Error Generation`
   - `Proofreading -> Spelling Error`
     -  `Proofreading -> Spelling Error -> Spelling Error Detection`
   - `Proofreading -> Word Order Error`
@@ -92,8 +93,8 @@
   - `Identification -> Object Identification`
   - `Identification -> Predicate Identification`
   - `Identification -> Subject Identification`
-- `Language Identification`
-  - `Language Identification -> Verification`
+  - `Identification -> Language Identification`
+    - `Identification -> Language Identification -> Verification`
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
@@ -108,7 +109,6 @@
 - `Parts-of-speech`
   - `Parts-of-speech -> Incorrect`
 - `Question Answering`
-  - `Question Answering -> Supporting Fact Generation` 
   - `Question Answering -> Numerical Question Answering`
   - `Question Answering -> Commonsense Question Answering`
   - `Question Answering -> Contextual Question Answering`
@@ -130,7 +130,7 @@
 - `Question Generation`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
       - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
-    - `Question Generation -> Contextual Question Generation -> Open Question Generation`
+      - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Option Generation`
   - `Question Generation -> Fill in the Blank`
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
@@ -154,8 +154,9 @@
   - `Reasoning -> Discrete Reasoning`
   - `Reasoning -> Ethics`
   - `Reasoning -> Factual Reasoning`
+  - `Reasoning -> Grammatical Reasoning`
   - `Reasoning -> Logical Reasoning`
-      - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
+    - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
   - `Reasoning -> Multihop Reasoning`
   - `Reasoning -> Numerical Reasoning`
     - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
@@ -217,6 +218,7 @@
   - `Text Generation -> Command Execution`
     - `Text Generation -> Command Execution -> Code Execution`
     - `Text Generation -> Command Execution -> Natural Language Instruction Execution`
+  - `Text Generation -> Dialogue Generation`
   - `Text Generation -> Explanation Generation`
   - `Text Generation -> Long Text Generation`
     - `Text Generation -> Long Text Generation -> Contextual Text Generation`
@@ -244,6 +246,7 @@
       - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
   - `Text Generation -> Summary Generation`
+    - `Text Generation -> Summary Generation -> Incorrect Summary Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
   - `Text Generation -> Weblink Generation`
@@ -258,7 +261,6 @@
   - `Text Modification -> Paraphrasing`
   - `Text Modification -> Perturbation`
   - `Text Modification -> Text Simplification`
-  - `Text Modification -> Paraphrase Generation`: Generate a paraphrase of the original text
 - `Text Span Selection`
   - `Text Span Selection -> Incorrect`
 - `Title Selection`
