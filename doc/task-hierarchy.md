@@ -92,8 +92,8 @@
   - `Identification -> Object Identification`
   - `Identification -> Predicate Identification`
   - `Identification -> Subject Identification`
-- `Language Identification`
-  - `Language Identification -> Verification`
+  - `Identification -> Language Identification`
+    - `Identification -> Language Identification -> Verification`
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
