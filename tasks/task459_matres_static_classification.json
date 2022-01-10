@@ -11,7 +11,7 @@
     "Domains": [
         "News"
     ],
-    "Definition": "You will be given a context and a verb separated with a \n, and you have to answer if the given verb is static or not. We say a verb is static if it is about an event that doesn't change. The output should be \"Yes\" if the verb is static and \"No\" otherwise.",
+    "Definition": "You will be given a context and a verb separated with a newline character, and you have to answer if the given verb is static or not. We say a verb is static if it is about an event that doesn't change or it happens regularly. The output should be \"Yes\" if the verb is static and \"No\" otherwise.",
     "Positive Examples": [
         {
             "input": "New York (is) on the east coast. \n Verb: is",
@@ -19,9 +19,14 @@
             "explanation": "This is a good example. New York always is on the east coast."
         },
         {
-            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , (killing) dozens of people , witnesses said . \n Verb: killing",
+            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, (killing) dozens of people, witnesses said. \n Verb: killing",
             "output": "No",
-            "explanation": "In this sentence, killing is not a static event."
+            "explanation": "In this example, killing is not static because it's restricted to a specific period."
+        },
+        {
+            "input": "He cannot decide for himself. The one that (decides) for him is me, his father.  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this example, his father always decides for him, and it happens regularly. So, it's a static verb."
         }
     ],
     "Negative Examples": [
@@ -33,156 +38,155 @@
         {
             "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down. \n Verb: released",
             "output": "Yes",
-            "explanation": "In this sentence, \"released\" happened in the past and it's not static."
+            "explanation": "In this example, \"released\" happened in the past and it's not static."
+        },
+        {
+            "input": "\" We were pleased that England and New Zealand knew about it, and we thought that's where it would stop. \" He also talked about his \" second job \" as the group's cameraman, and having to wear four pairs of gloves to (work) the clockwork camera.  \n Verb: work",
+            "output": "No",
+            "explanation": "In this example, \"work\" happens regularly. So, the answer is incorrect, and it's static."
         }
     ],
     "Instances": [
         {
-            "input": "He cannot decide for himself . The one that (decides) for him is me , his father . ''  \n Verb: decides",
+            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands. At least 82 were (killed) and more than 1,700 injured, officials said as dawn broke Saturday.  \n Verb: killed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Philippine President Joseph Estrada on Tuesday condemned the bombings of the U.S. embassies in Kenya and Tanzania and offered condolences to the victims and their families.  We extend our heartfelt sympathies to the victims of these outrages and to their families in Kenya, Tanzania and the United States,  Estrada (said) in a statement.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "The almost simultaneous attacks Aug. 7 at the U.S. embassies in Nairobi, Kenya, and Dar es Salaam, Tanzania, killed 257 people and injured more than 5,500.  The incidents of Aug. 7 underscore that terrorists know no boundaries, and that the suppression of international terrorism, the arrest, the conviction and the punishment of its perpetrators are essential to the maintenance of international peace and security,  (said) the U.S. Deputy Ambassador Peter Burleigh.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "UNITED NATIONS ( AP ) _ The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in (finding) those responsible.  \n Verb: finding",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "The NATO summit, she said, would produce an initiative that  responds to the grave threat posed by weapons of mass destruction and their means of delivery.  In Kosovo, where the Yugoslav leader, Slobodan Milosevic, is resisting the deployment of NATO-led troops, including 4,000 U.S. soldiers, Albright insisted that NATO (was) the best tool to enforce a peace settlement.  \n Verb: was",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands . At least 82 were (killed) and more than 1,700 injured , officials said as dawn broke Saturday .  \n Verb: killed",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "Philippine President Joseph Estrada on Tuesday condemned the bombings of the U.S. embassies in Kenya and Tanzania and offered condolences to the victims and their families . `` We extend our heartfelt sympathies to the victims of these outrages and to their families in Kenya , Tanzania and the United States , '' Estrada (said) in a statement .  \n Verb: said",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "The almost simultaneous attacks Aug. 7 at the U.S. embassies in Nairobi , Kenya , and Dar es Salaam , Tanzania , killed 257 people and injured more than 5,500 . `` The incidents of Aug. 7 underscore that terrorists know no boundaries , and that the suppression of international terrorism , the arrest , the conviction and the punishment of its perpetrators are essential to the maintenance of international peace and security , '' (said) the U.S. Deputy Ambassador Peter Burleigh .  \n Verb: said",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "UNITED NATIONS ( AP ) _ The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in (finding) those responsible .  \n Verb: finding",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "The NATO summit , she said , would produce an initiative that `` responds to the grave threat posed by weapons of mass destruction and their means of delivery . '' In Kosovo , where the Yugoslav leader , Slobodan Milosevic , is resisting the deployment of NATO-led troops , including 4,000 U.S. soldiers , Albright insisted that NATO (was) the best tool to enforce a peace settlement .  \n Verb: was",
+            "input": "This more extensive set of tests could enable officials to declare an absolute match between the two hair strands, the first law enforcement official said.  Ultimately, we would need to have a hair taken directly from Kopp himself to establish conclusively the hair from scene (is) his,  the official added.  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "This more extensive set of tests could enable officials to declare an absolute match between the two hair strands , the first law enforcement official said . `` Ultimately , we would need to have a hair taken directly from Kopp himself to establish conclusively the hair from scene (is) his , '' the official added .  \n Verb: is",
+            "input": "NAIROBI, Kenya ( AP ) _ Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, killing dozens of people, witnesses (said).  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Another reason was the location _ a quiet tree-lined neighborhood. The embassy away from the center of Dar es Salaam, Tanzania's laid-back capital of (swaying) palms and sparse traffic, is largely free from the congestion that plagues most other major African cities.  \n Verb: swaying",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands. At least 82 were killed and more than 1,700 injured, officials said as dawn (broke) Saturday.  \n Verb: broke",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Philippine President Joseph Estrada on Tuesday condemned the bombings of the U.S. embassies in Kenya and Tanzania and offered condolences to the victims and their families.  We (extend) our heartfelt sympathies to the victims of these outrages and to their families in Kenya, Tanzania and the United States,  Estrada said in a statement.  \n Verb: extend",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "It was definitely a bomb,  said a U.S. Embassy official in Nairobi, who refused to identify himself.  You can see a huge crater behind the building, and a bomb went off at the embassy in Tanzania at the same time,  he (said).  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "It was definitely a bomb,  said a U.S. Embassy official in Nairobi, who refused to identify himself.  You can (see) a huge crater behind the building, and a bomb went off at the embassy in Tanzania at the same time,  he said.  \n Verb: see",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "Six of the pediatric deaths were reported in the last week, and it's possible there will be more, said the CDC's Dr. Michael Jhung said Friday. Roughly 100 children (die) in an average flu season.  \n Verb: die",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "NAIROBI , Kenya ( AP ) _ Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , killing dozens of people , witnesses (said) .  \n Verb: said",
+            "input": "It was definitely a bomb,  said a U.S. Embassy official in Nairobi, who refused to identify himself.  You can see a huge crater behind the building, and a bomb (went) off at the embassy in Tanzania at the same time,  he said.  \n Verb: went",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Another reason was the location _ a quiet tree-lined neighborhood . The embassy away from the center of Dar es Salaam , Tanzania 's laid-back capital of (swaying) palms and sparse traffic , is largely free from the congestion that plagues most other major African cities .  \n Verb: swaying",
+            "input": "NAIROBI, Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania (blew) apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands.  \n Verb: blew",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands . At least 82 were killed and more than 1,700 injured , officials said as dawn (broke) Saturday .  \n Verb: broke",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "Philippine President Joseph Estrada on Tuesday condemned the bombings of the U.S. embassies in Kenya and Tanzania and offered condolences to the victims and their families . `` We (extend) our heartfelt sympathies to the victims of these outrages and to their families in Kenya , Tanzania and the United States , '' Estrada said in a statement .  \n Verb: extend",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "`` It was definitely a bomb , '' said a U.S. Embassy official in Nairobi , who refused to identify himself . `` You can see a huge crater behind the building , and a bomb went off at the embassy in Tanzania at the same time , '' he (said) .  \n Verb: said",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "`` It was definitely a bomb , '' said a U.S. Embassy official in Nairobi , who refused to identify himself . `` You can (see) a huge crater behind the building , and a bomb went off at the embassy in Tanzania at the same time , '' he said .  \n Verb: see",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "Six of the pediatric deaths were reported in the last week , and it 's possible there will be more , said the CDC 's Dr. Michael Jhung said Friday . Roughly 100 children (die) in an average flu season .  \n Verb: die",
+            "input": "A decade ago, the military planning of Poland, Hungary and the Czech Republic was built around the possibility of a ground assault toward the west. As NATO allies, the goal (is) much smaller armies capable of meeting a variety of contingencies.  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "`` It was definitely a bomb , '' said a U.S. Embassy official in Nairobi , who refused to identify himself . `` You can see a huge crater behind the building , and a bomb (went) off at the embassy in Tanzania at the same time , '' he said .  \n Verb: went",
+            "input": "UNITED NATIONS ( AP ) _ The Security Council (condemned) the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible.  \n Verb: condemned",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "NAIROBI , Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania (blew) apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands .  \n Verb: blew",
+            "input": "Before the arrival of Keep, which Google launched this week, there was no default note-taking app for Android. It was a glaring hole, considering that Apple's iPhone (has) built-in Notes and Reminders apps that can be powered by Siri.  \n Verb: has",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Amid reports that thousands of Iraqi soldiers had surrendered, administration aides were also upbeat in private, with one even talking of victory within a week. But even continued military success (carries) political and diplomatic risks for President Bush and the U.S. The allied rejection of the last-minute Soviet-led diplomatic effort to avoid the ground war enabled Mr. Bush to seize the initiative from an Iraq seemingly bent on dictating peace terms.  \n Verb: carries",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "And it stresses that every nation  has the duty to refrain from organizing, instigating, assisting or participating in terrorist acts in another state.  The almost simultaneous attacks Aug. 7 at the U.S. embassies in Nairobi, Kenya, and Dar es Salaam, Tanzania, (killed) 257 people and injured more than 5,500.  \n Verb: killed",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "A decade ago , the military planning of Poland , Hungary and the Czech Republic was built around the possibility of a ground assault toward the west . As NATO allies , the goal (is) much smaller armies capable of meeting a variety of contingencies .  \n Verb: is",
+            "input": "For now, though, that would be a theoretical advantage since the authorities have admitted they have no idea where Kopp is. Clark said there was  no question  that the finding of the rifle (was) important in his decision to seek an indictment.  \n Verb: was",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "UNITED NATIONS ( AP ) _ The Security Council (condemned) the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible .  \n Verb: condemned",
+            "input": "NAIROBI, Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers (cleared) with cranes, blow torches and bare hands.  \n Verb: cleared",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Before the arrival of Keep , which Google launched this week , there was no default note-taking app for Android . It was a glaring hole , considering that Apple 's iPhone (has) built-in Notes and Reminders apps that can be powered by Siri .  \n Verb: has",
+            "input": "\" If I were choosing the people of tomorrow, I would have chosen the people who are now on the board, \" he said. A Reuters spokesman said the departure (reflects) \" no change in strategy or profits. \"  \n Verb: reflects",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Amid reports that thousands of Iraqi soldiers had surrendered , administration aides were also upbeat in private , with one even talking of victory within a week . But even continued military success (carries) political and diplomatic risks for President Bush and the U.S. The allied rejection of the last-minute Soviet-led diplomatic effort to avoid the ground war enabled Mr. Bush to seize the initiative from an Iraq seemingly bent on dictating peace terms .  \n Verb: carries",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "And it stresses that every nation `` has the duty to refrain from organizing , instigating , assisting or participating in terrorist acts in another state . '' The almost simultaneous attacks Aug. 7 at the U.S. embassies in Nairobi , Kenya , and Dar es Salaam , Tanzania , (killed) 257 people and injured more than 5,500 .  \n Verb: killed",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "For now , though , that would be a theoretical advantage since the authorities have admitted they have no idea where Kopp is . Clark said there was `` no question '' that the finding of the rifle (was) important in his decision to seek an indictment .  \n Verb: was",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "NAIROBI , Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers (cleared) with cranes , blow torches and bare hands .  \n Verb: cleared",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "\" If I were choosing the people of tomorrow , I would have chosen the people who are now on the board , \" he said . A Reuters spokesman said the departure (reflects) \" no change in strategy or profits . \"  \n Verb: reflects",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "The American ambassador to Kenya was among hundreds injured , a local TV said . `` It was definitely a bomb , '' (said) a U.S. Embassy official in Nairobi , who refused to identify himself .  \n Verb: said",
+            "input": "The American ambassador to Kenya was among hundreds injured, a local TV said.  It was definitely a bomb,  (said) a U.S. Embassy official in Nairobi, who refused to identify himself.  \n Verb: said",
             "output": [
                 "No"
             ]
@@ -194,445 +198,439 @@
             ]
         },
         {
-            "input": "\" Fight them , \" he urged Iraqis in a radio address . \" All Iraqis , fight them with all the power you (have) , and all struggle for everything . \"  \n Verb: have",
+            "input": "\" Fight them, \" he urged Iraqis in a radio address. \" All Iraqis, fight them with all the power you (have), and all struggle for everything. \"  \n Verb: have",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "At least 82 were killed and more than 1,700 injured , officials said as dawn broke Saturday . Dozens of people were still missing , however , and the death toll was (expected) to rise , they said .  \n Verb: expected",
+            "input": "At least 82 were killed and more than 1,700 injured, officials said as dawn broke Saturday. Dozens of people were still missing, however, and the death toll was (expected) to rise, they said.  \n Verb: expected",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The American ambassador to Kenya was among hundreds injured , a local TV said . `` It was definitely a bomb , '' said a U.S. Embassy official in Nairobi , who (refused) to identify himself .  \n Verb: refused",
+            "input": "The American ambassador to Kenya was among hundreds injured, a local TV said.  It was definitely a bomb,  said a U.S. Embassy official in Nairobi, who (refused) to identify himself.  \n Verb: refused",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The blast in Nairobi occurred at about 10:35 a.m . ( 0735 GMT ) Friday , (toppling) a crowded building toward the embassy and a street packed with cars , trucks and buses .  \n Verb: toppling",
+            "input": "The blast in Nairobi occurred at about 10:35 a.m. ( 0735 GMT ) Friday, (toppling) a crowded building toward the embassy and a street packed with cars, trucks and buses.  \n Verb: toppling",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The source for the Tanzanian figures is the U.S. Embassy in Dar es Salaam . KENYA : Total Dead : 192 Americans : 12 Injured : 4,877 Hospitalized : 542 Treated and (discharged) : 4,257  \n Verb: discharged",
+            "input": "The source for the Tanzanian figures is the U.S. Embassy in Dar es Salaam. KENYA : Total Dead : 192 Americans : 12 Injured : 4,877 Hospitalized : 542 Treated and (discharged) : 4,257  \n Verb: discharged",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "In a touch of symbolism , the ceremony took place at the Harry S. Truman Library . It was during the Truman presidency that the North Atlantic Treaty Organization was founded to halt the westward (spread) of Soviet-led communism .  \n Verb: spread",
+            "input": "In a touch of symbolism, the ceremony took place at the Harry S. Truman Library. It was during the Truman presidency that the North Atlantic Treaty Organization was founded to halt the westward (spread) of Soviet-led communism.  \n Verb: spread",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Kopp 's stepmother , who married Kopp 's father when Kopp was in his 30s , said Thursday from her home in Irving , Texas : `` I would like to see him come forward and clear his name if he 's not guilty , and if he 's guilty , to contact a priest and make his amends with society , face what he did . '' Kopp (is) now the second anti-abortion activist being sought by the FBI as a suspect in a fatal attack .  \n Verb: is",
+            "input": "Kopp's stepmother, who married Kopp's father when Kopp was in his 30s, said Thursday from her home in Irving, Texas :  I would like to see him come forward and clear his name if he's not guilty, and if he's guilty, to contact a priest and make his amends with society, face what he did.  Kopp (is) now the second anti-abortion activist being sought by the FBI as a suspect in a fatal attack.  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "It strongly condemns the `` terrorist bomb attacks . '' And it stresses that every nation `` has the duty to refrain from organizing , instigating , (assisting) or participating in terrorist acts in another state . ''  \n Verb: assisting",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it stresses that every nation  has the duty to refrain from organizing, instigating, (assisting) or participating in terrorist acts in another state.   \n Verb: assisting",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "It strongly condemns the `` terrorist bomb attacks . '' And it stresses that every nation `` has the duty to refrain from organizing , instigating , assisting or (participating) in terrorist acts in another state . ''  \n Verb: participating",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it stresses that every nation  has the duty to refrain from organizing, instigating, assisting or (participating) in terrorist acts in another state.   \n Verb: participating",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands . At least 82 were killed and more than 1,700 injured , officials (said) as dawn broke Saturday .  \n Verb: said",
+            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands. At least 82 were killed and more than 1,700 injured, officials (said) as dawn broke Saturday.  \n Verb: said",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "NAIROBI , Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , (trapping) people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands .  \n Verb: trapping",
+            "input": "NAIROBI, Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, (trapping) people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands.  \n Verb: trapping",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "( 0735 GMT ) Friday , toppling a crowded building toward the embassy and a street packed with cars , trucks and buses . At least 75 people were (killed) and 1,643 wounded there , Red Cross and ambulance officials said .  \n Verb: killed",
+            "input": "( 0735 GMT ) Friday, toppling a crowded building toward the embassy and a street packed with cars, trucks and buses. At least 75 people were (killed) and 1,643 wounded there, Red Cross and ambulance officials said.  \n Verb: killed",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "DAR ES SALAAM , Tanzania ( AP ) _ The bomb outside the U.S. Embassy in Tanzania was so powerful that it (shook) furniture in homes a mile away .  \n Verb: shook",
+            "input": "DAR ES SALAAM, Tanzania ( AP ) _ The bomb outside the U.S. Embassy in Tanzania was so powerful that it (shook) furniture in homes a mile away.  \n Verb: shook",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "`` We are worried not only about his prolonged kidnapping , '' Juan Miguel Gonzalez wrote in a letter published on the front page of the Communist Party daily Granma . `` We (lack) direct information about the concrete conditions to which he is subjected in his daily life . ''  \n Verb: lack",
+            "input": "We are worried not only about his prolonged kidnapping,  Juan Miguel Gonzalez wrote in a letter published on the front page of the Communist Party daily Granma.  We (lack) direct information about the concrete conditions to which he is subjected in his daily life.   \n Verb: lack",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "She says security under the fundamentalist Taleban government is better , but everything else is worse . Women do not become victims of armed attack , but they do not have the right to (work) .  \n Verb: work",
+            "input": "She says security under the fundamentalist Taleban government is better, but everything else is worse. Women do not become victims of armed attack, but they do not have the right to (work).  \n Verb: work",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Fidelity 's junk fund has fallen 2.08 % this year through Oct. 19 , Lipper says ; the Vanguard fund rose 1.84 % ; and the T. Rowe Price fund edged up 0.66 % . People who (remain) in junk funds now could get hit again , some analysts and fund specialists say .  \n Verb: remain",
+            "input": "Fidelity's junk fund has fallen 2.08 % this year through Oct. 19, Lipper says ; the Vanguard fund rose 1.84 % ; and the T. Rowe Price fund edged up 0.66 %. People who (remain) in junk funds now could get hit again, some analysts and fund specialists say.  \n Verb: remain",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "At least 82 were killed and more than 1,700 injured , officials said as dawn broke Saturday . Dozens of people were still (missing) , however , and the death toll was expected to rise , they said .  \n Verb: missing",
+            "input": "At least 82 were killed and more than 1,700 injured, officials said as dawn broke Saturday. Dozens of people were still (missing), however, and the death toll was expected to rise, they said.  \n Verb: missing",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "A resolution , co-sponsored by Kenya , Tanzania and the United States and unanimously adopted , `` expresses its deep sorrow , sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time . '' It strongly (condemns) the `` terrorist bomb attacks . ''  \n Verb: condemns",
+            "input": "A resolution, co-sponsored by Kenya, Tanzania and the United States and unanimously adopted,  expresses its deep sorrow, sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time.  It strongly (condemns) the  terrorist bomb attacks.   \n Verb: condemns",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "`` No cause is so great that it can justify wanton murder and maiming of the innocent . '' In all , the bombings in Kenya and Tanzania last week (claimed) at least 217 lives and injured nearly 5,000 .  \n Verb: claimed",
+            "input": "No cause is so great that it can justify wanton murder and maiming of the innocent.  In all, the bombings in Kenya and Tanzania last week (claimed) at least 217 lives and injured nearly 5,000.  \n Verb: claimed",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "MIAMI _ Even miles away from sign-waving demonstrators who keep vigil outside the tiny house in Little Havana where Elian Gonzalez lives with his great-uncle , talk about the standoff between Elian 's Miami relatives and Immigration and Naturalization Service officials pours hot and quick from coffee stands on Calle Ocho and any other place Cuban Americans (gather) .  \n Verb: gather",
+            "input": "MIAMI _ Even miles away from sign-waving demonstrators who keep vigil outside the tiny house in Little Havana where Elian Gonzalez lives with his great-uncle, talk about the standoff between Elian's Miami relatives and Immigration and Naturalization Service officials pours hot and quick from coffee stands on Calle Ocho and any other place Cuban Americans (gather).  \n Verb: gather",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "NAIROBI , Kenya ( AP ) _ Suspected bombs (exploded) outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , killing dozens of people , witnesses said .  \n Verb: exploded",
+            "input": "NAIROBI, Kenya ( AP ) _ Suspected bombs (exploded) outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, killing dozens of people, witnesses said.  \n Verb: exploded",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "\" Hallelujah , \" exclaimed Albright , a daughter of Czechoslovakia , who as a child fled her native land and later became a U.S. citizen . Ahead of the ceremony , NATO Secretary-General Javier Solana said that the accession of the three countries ... \" (is) perhaps the clearest demonstration of the fact that Europe is growing closer together . \"  \n Verb: is",
+            "input": "\" Hallelujah, \" exclaimed Albright, a daughter of Czechoslovakia, who as a child fled her native land and later became a U.S. citizen. Ahead of the ceremony, NATO Secretary-General Javier Solana said that the accession of the three countries... \" (is) perhaps the clearest demonstration of the fact that Europe is growing closer together. \"  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "MANILA , Philippines ( AP ) _ Philippine President Joseph Estrada on Tuesday (condemned) the bombings of the U.S. embassies in Kenya and Tanzania and offered condolences to the victims and their families .  \n Verb: condemned",
+            "input": "MANILA, Philippines ( AP ) _ Philippine President Joseph Estrada on Tuesday (condemned) the bombings of the U.S. embassies in Kenya and Tanzania and offered condolences to the victims and their families.  \n Verb: condemned",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Integra , which owns and operates hotels , said that Hallwood Group Inc. has agreed to exercise any rights that are n't exercised by other shareholders . Hallwood , a Cleveland merchant bank , (owns) about 11 % of Integra .  \n Verb: owns",
+            "input": "Integra, which owns and operates hotels, said that Hallwood Group Inc. has agreed to exercise any rights that are n't exercised by other shareholders. Hallwood, a Cleveland merchant bank, (owns) about 11 % of Integra.  \n Verb: owns",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "The issue is expected to dominate a NATO summit set for Washington in April . NATO 's mission has changed dramatically since its founding in 1949 , a time when the West (was) intent on halting the westward spread of Soviet-led communism -- a threat Winston Churchill warned about in his famous `` Iron Curtain '' speech delivered on March 5 , 1946 , at Westminster College in Fulton , Mo. , 130 miles east of here .  \n Verb: was",
+            "input": "The issue is expected to dominate a NATO summit set for Washington in April. NATO's mission has changed dramatically since its founding in 1949, a time when the West (was) intent on halting the westward spread of Soviet-led communism -- a threat Winston Churchill warned about in his famous  Iron Curtain  speech delivered on March 5, 1946, at Westminster College in Fulton, Mo., 130 miles east of here.  \n Verb: was",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Police kept watch outside and about 25 undercover police were scattered throughout the crowd . `` Security (is) tight , '' said Marilynn Buckham , of Buffalo Gyn Womanservices , a sponsor of the ceremony .  \n Verb: is",
+            "input": "Police kept watch outside and about 25 undercover police were scattered throughout the crowd.  Security (is) tight,  said Marilynn Buckham, of Buffalo Gyn Womanservices, a sponsor of the ceremony.  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "The bomb outside the U.S. Embassy in Tanzania was so powerful that it shook furniture in homes a mile away . But the solid construction of the Israeli-built embassy may have (prevented) the carnage of a similar bomb in Kenya , an official said Saturday .  \n Verb: prevented",
+            "input": "The bomb outside the U.S. Embassy in Tanzania was so powerful that it shook furniture in homes a mile away. But the solid construction of the Israeli-built embassy may have (prevented) the carnage of a similar bomb in Kenya, an official said Saturday.  \n Verb: prevented",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "( 0735 GMT ) Friday , toppling a crowded building toward the embassy and a street packed with cars , trucks and buses . At least 75 people were killed and 1,643 (wounded) there , Red Cross and ambulance officials said .  \n Verb: wounded",
+            "input": "( 0735 GMT ) Friday, toppling a crowded building toward the embassy and a street packed with cars, trucks and buses. At least 75 people were killed and 1,643 (wounded) there, Red Cross and ambulance officials said.  \n Verb: wounded",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "At least 82 were killed and more than 1,700 injured , officials said as dawn broke Saturday . Dozens of people were still missing , however , and the death toll was expected to (rise) , they said .  \n Verb: rise",
+            "input": "At least 82 were killed and more than 1,700 injured, officials said as dawn broke Saturday. Dozens of people were still missing, however, and the death toll was expected to (rise), they said.  \n Verb: rise",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "But those restrictions are at least imposed by the normal give and take of political and judicial struggle in a democracy . What (is) outrageous is the attempt to shut down abortions by illegal means _ by shooting the doctors or bombing the clinics or harassing the women seeking to exercise their constitutional right .  \n Verb: is",
+            "input": "But those restrictions are at least imposed by the normal give and take of political and judicial struggle in a democracy. What (is) outrageous is the attempt to shut down abortions by illegal means _ by shooting the doctors or bombing the clinics or harassing the women seeking to exercise their constitutional right.  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "`` No cause is so great that it can justify wanton murder and maiming of the innocent . '' In all , the bombings in Kenya and Tanzania last week claimed at least 217 lives and (injured) nearly 5,000 .  \n Verb: injured",
+            "input": "No cause is so great that it can justify wanton murder and maiming of the innocent.  In all, the bombings in Kenya and Tanzania last week claimed at least 217 lives and (injured) nearly 5,000.  \n Verb: injured",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Reports in Kenya said the components of the bomb that exploded in Nairobi were transported by road from Tanzania to Kenya . The East African nations (share) a long and mostly unguarded border .  \n Verb: share",
+            "input": "Reports in Kenya said the components of the bomb that exploded in Nairobi were transported by road from Tanzania to Kenya. The East African nations (share) a long and mostly unguarded border.  \n Verb: share",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses , trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes , blow torches and bare hands . At least 82 were killed and more than 1,700 (injured) , officials said as dawn broke Saturday .  \n Verb: injured",
+            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands. At least 82 were killed and more than 1,700 (injured), officials said as dawn broke Saturday.  \n Verb: injured",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible . A resolution , co-sponsored by Kenya , Tanzania and the United States and unanimously (adopted) , `` expresses its deep sorrow , sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time . ''  \n Verb: adopted",
+            "input": "The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible. A resolution, co-sponsored by Kenya, Tanzania and the United States and unanimously (adopted),  expresses its deep sorrow, sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time.   \n Verb: adopted",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The government yields none of its legal or moral authority in the case if it gives the relatives and their supporters time to reflect and to look for a gentler resolution . As a matter of law , compassion and common sense , the government is entitled to reunite Elian with his father , and it has the power to (enforce) that right , despite the bluster of Miami 's demagogic political leaders .  \n Verb: enforce",
+            "input": "The government yields none of its legal or moral authority in the case if it gives the relatives and their supporters time to reflect and to look for a gentler resolution. As a matter of law, compassion and common sense, the government is entitled to reunite Elian with his father, and it has the power to (enforce) that right, despite the bluster of Miami's demagogic political leaders.  \n Verb: enforce",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "At least 82 were killed and more than 1,700 injured , officials said as dawn broke Saturday . Dozens of people were still missing , however , and the death toll was expected to rise , they (said) .  \n Verb: said",
+            "input": "At least 82 were killed and more than 1,700 injured, officials said as dawn broke Saturday. Dozens of people were still missing, however, and the death toll was expected to rise, they (said).  \n Verb: said",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "It strongly condemns the `` terrorist bomb attacks . '' And it stresses that every nation `` has the duty to refrain from (organizing) , instigating , assisting or participating in terrorist acts in another state . ''  \n Verb: organizing",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it stresses that every nation  has the duty to refrain from (organizing), instigating, assisting or participating in terrorist acts in another state.   \n Verb: organizing",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The bomb outside the U.S. Embassy in Tanzania was so powerful that it shook furniture in homes a mile away . But the solid construction of the Israeli-built embassy may have prevented the carnage of a similar bomb in Kenya , an official (said) Saturday .  \n Verb: said",
+            "input": "The bomb outside the U.S. Embassy in Tanzania was so powerful that it shook furniture in homes a mile away. But the solid construction of the Israeli-built embassy may have prevented the carnage of a similar bomb in Kenya, an official (said) Saturday.  \n Verb: said",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The source for the Tanzanian figures is the U.S. Embassy in Dar es Salaam . KENYA : Total Dead : 192 Americans : 12 (Injured) : 4,877 Hospitalized : 542 Treated and discharged : 4,257  \n Verb: Injured",
+            "input": "The source for the Tanzanian figures is the U.S. Embassy in Dar es Salaam. KENYA : Total Dead : 192 Americans : 12 (Injured) : 4,877 Hospitalized : 542 Treated and discharged : 4,257  \n Verb: Injured",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "MANILA , Philippines ( AP ) _ Philippine President Joseph Estrada on Tuesday condemned the bombings of the U.S. embassies in Kenya and Tanzania and (offered) condolences to the victims and their families .  \n Verb: offered",
+            "input": "MANILA, Philippines ( AP ) _ Philippine President Joseph Estrada on Tuesday condemned the bombings of the U.S. embassies in Kenya and Tanzania and (offered) condolences to the victims and their families.  \n Verb: offered",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , killing dozens of people , witnesses said . The American ambassador to Kenya was among hundreds (injured) , a local TV said .  \n Verb: injured",
+            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, killing dozens of people, witnesses said. The American ambassador to Kenya was among hundreds (injured), a local TV said.  \n Verb: injured",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "( 0735 GMT ) Friday , toppling a crowded building toward the embassy and a street packed with cars , trucks and buses . At least 75 people were killed and 1,643 wounded there , Red Cross and ambulance officials (said) .  \n Verb: said",
+            "input": "( 0735 GMT ) Friday, toppling a crowded building toward the embassy and a street packed with cars, trucks and buses. At least 75 people were killed and 1,643 wounded there, Red Cross and ambulance officials (said).  \n Verb: said",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "It strongly condemns the `` terrorist bomb attacks . '' And it (stresses) that every nation `` has the duty to refrain from organizing , instigating , assisting or participating in terrorist acts in another state . ''  \n Verb: stresses",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it (stresses) that every nation  has the duty to refrain from organizing, instigating, assisting or participating in terrorist acts in another state.   \n Verb: stresses",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "\" We were pleased that England and New Zealand knew about it , and we thought that 's where it would stop . \" He also talked about his \" second job \" as the group 's cameraman , and having to wear four pairs of gloves to (work) the clockwork camera .  \n Verb: work",
+            "input": "This appears to have been a very well-coordinated, very well-planned attack _ clearly not the work of amateurs,  U.S. National Security Council spokesman P.J. Crowley said in Washington. No one has (claimed) responsibility.  \n Verb: claimed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "The American ambassador to Kenya was among hundreds injured, a local TV said.  It was definitely a bomb,  said a U.S. Embassy official in Nairobi, who refused to (identify) himself.  \n Verb: identify",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday, turning busy streets in two African capitals into bloody piles of concrete and knots of steel.  This appears to have been a very well-coordinated, very well-planned attack _ clearly not the work of amateurs,  U.S. National Security Council spokesman P.J. Crowley (said) in Washington.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "input": "FBI officials said they were not certain whether Stauber or Gingrich had been involved in antiabortion activities. The two men are believed to (live) in the Cleveland area.  \n Verb: live",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "`` This appears to have been a very well-coordinated , very well-planned attack _ clearly not the work of amateurs , '' U.S. National Security Council spokesman P.J. Crowley said in Washington . No one has (claimed) responsibility .  \n Verb: claimed",
+            "input": "NAIROBI, Kenya ( AP ) _ Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, (killing) dozens of people, witnesses said.  \n Verb: killing",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The American ambassador to Kenya was among hundreds injured , a local TV said . `` It was definitely a bomb , '' said a U.S. Embassy official in Nairobi , who refused to (identify) himself .  \n Verb: identify",
+            "input": "\" If you find sound, healthy companies in Japan, they are not for sale, \" said George Watanabe, a management-consultant at Tokyo-based Asia Advisory Services Inc. Statistics on acquisitions by foreigners vary in detail, because unlike Sansui, which is listed on the Tokyo and Osaka stock exchanges, most of the Japanese companies (acquired) by foreigners are privately held.  \n Verb: acquired",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "CBS News first reported last night that the tomb may contain the remains of Air Force pilot Michael Blassie. There was a suspicion the body (was) Blassie because his uniform and ID card were found near the body in Vietnam.  \n Verb: was",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Dozens of people were still missing, however, and the death toll was expected to rise, they said. The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday, (turning) busy streets in two African capitals into bloody piles of concrete and knots of steel.  \n Verb: turning",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday , turning busy streets in two African capitals into bloody piles of concrete and knots of steel . `` This appears to have been a very well-coordinated , very well-planned attack _ clearly not the work of amateurs , '' U.S. National Security Council spokesman P.J. Crowley (said) in Washington .  \n Verb: said",
+            "input": "The Aug. 7, 1998, bombings killed more than 200 people, including 12 Americans. It (is) the largest reward the government has ever offered for a fugitive.  \n Verb: is",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Another suspect is awaiting extradition from Britain. The FBI says Bin Laden (is) the leader of a terrorist organization known as Al-Aqeda,  The Base.   \n Verb: is",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "\" No matter how long it takes or where it takes us, we will pursue terrorists until the cases are solved and justice is done, \" Clinton said in his weekly radio address. \" To turn our backs on those (taking) risks for peace, to weaken our opposition to terrorism -- that would give terrorism a victory it must not and will not have, \" the president said.  \n Verb: taking",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Lamen Khalifa Fhimah and Abdel Basset Ali al-Megrahi are charged with murder, conspiracy to commit murder and violations of international aviation safety laws. Bin Laden and Kopp (are) the 455th and 456th persons to be placed on the FBI's most wanted list, which began in 1950.  \n Verb: are",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "Arson and bombings at clinics have become so common that many no longer make the national news. It (is) bad enough that conservatives in Congress and in state legislatures are working to dismantle reproductive rights by banning certain procedures, such as so-called partial birth abortion, and by requiring waiting periods and parental consent before an abortion can be obtained.  \n Verb: is",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "More than 16,000 dead pigs have been found floating in rivers that provide drinking water to Shanghai. A haze akin to volcanic fumes cloaked the capital, causing convulsive (coughing) and obscuring the portrait of Mao Zedong on the gate to the Forbidden City.  \n Verb: coughing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "We shall prove that new members can indeed add to the weight of the alliance,  he said. The location for Friday's ceremony was chosen by Albright, who as secretary of state (is) the depository of NATO's accession accords.  \n Verb: is",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "input": "We extend our heartfelt sympathies to the victims of these outrages and to their families in Kenya, Tanzania and the United States,  Estrada said in a statement.  No cause is so great that it can justify wanton murder and (maiming) of the innocent.   \n Verb: maiming",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "FBI officials said they were not certain whether Stauber or Gingrich had been involved in antiabortion activities . The two men are believed to (live) in the Cleveland area .  \n Verb: live",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "NAIROBI , Kenya ( AP ) _ Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , (killing) dozens of people , witnesses said .  \n Verb: killing",
+            "input": "UNITED NATIONS ( AP ) _ The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and (called) on all states to cooperate with authorities in finding those responsible.  \n Verb: called",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "\" If you find sound , healthy companies in Japan , they are not for sale , \" said George Watanabe , a management-consultant at Tokyo-based Asia Advisory Services Inc . Statistics on acquisitions by foreigners vary in detail , because unlike Sansui , which is listed on the Tokyo and Osaka stock exchanges , most of the Japanese companies (acquired) by foreigners are privately held .  \n Verb: acquired",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "CBS News first reported last night that the tomb may contain the remains of Air Force pilot Michael Blassie . There was a suspicion the body (was) Blassie because his uniform and ID card were found near the body in Vietnam .  \n Verb: was",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "Dozens of people were still missing , however , and the death toll was expected to rise , they said . The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday , (turning) busy streets in two African capitals into bloody piles of concrete and knots of steel .  \n Verb: turning",
+            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, killing dozens of people, witnesses said. The American ambassador to Kenya was among hundreds injured, a local TV (said).  \n Verb: said",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "The Aug. 7 , 1998 , bombings killed more than 200 people , including 12 Americans . It (is) the largest reward the government has ever offered for a fugitive .  \n Verb: is",
+            "input": "On May 6, James Kopp, 44, was charged with the slaying. Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he (is).  \n Verb: is",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Another suspect is awaiting extradition from Britain . The FBI says Bin Laden (is) the leader of a terrorist organization known as Al-Aqeda , `` The Base . ''  \n Verb: is",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "\" No matter how long it takes or where it takes us , we will pursue terrorists until the cases are solved and justice is done , \" Clinton said in his weekly radio address . \" To turn our backs on those (taking) risks for peace , to weaken our opposition to terrorism -- that would give terrorism a victory it must not and will not have , \" the president said .  \n Verb: taking",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "Lamen Khalifa Fhimah and Abdel Basset Ali al-Megrahi are charged with murder , conspiracy to commit murder and violations of international aviation safety laws . Bin Laden and Kopp (are) the 455th and 456th persons to be placed on the FBI 's most wanted list , which began in 1950 .  \n Verb: are",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "Arson and bombings at clinics have become so common that many no longer make the national news . It (is) bad enough that conservatives in Congress and in state legislatures are working to dismantle reproductive rights by banning certain procedures , such as so-called partial birth abortion , and by requiring waiting periods and parental consent before an abortion can be obtained .  \n Verb: is",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "More than 16,000 dead pigs have been found floating in rivers that provide drinking water to Shanghai . A haze akin to volcanic fumes cloaked the capital , causing convulsive (coughing) and obscuring the portrait of Mao Zedong on the gate to the Forbidden City .  \n Verb: coughing",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "`` We shall prove that new members can indeed add to the weight of the alliance , '' he said . The location for Friday 's ceremony was chosen by Albright , who as secretary of state (is) the depository of NATO 's accession accords .  \n Verb: is",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "`` We extend our heartfelt sympathies to the victims of these outrages and to their families in Kenya , Tanzania and the United States , '' Estrada said in a statement . `` No cause is so great that it can justify wanton murder and (maiming) of the innocent . ''  \n Verb: maiming",
+            "input": "The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible. A resolution, co-sponsored by Kenya, Tanzania and the United States and unanimously adopted,  (expresses) its deep sorrow, sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time.   \n Verb: expresses",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "UNITED NATIONS ( AP ) _ The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and (called) on all states to cooperate with authorities in finding those responsible .  \n Verb: called",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it stresses that every nation  has the duty to (refrain) from organizing, instigating, assisting or participating in terrorist acts in another state.   \n Verb: refrain",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday , killing dozens of people , witnesses said . The American ambassador to Kenya was among hundreds injured , a local TV (said) .  \n Verb: said",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it stresses that every nation  has the duty to refrain from organizing, (instigating), assisting or participating in terrorist acts in another state.   \n Verb: instigating",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "On May 6 , James Kopp , 44 , was charged with the slaying . Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward , they do n't know where he (is) .  \n Verb: is",
+            "input": "In New York Stock Exchange composite trading yesterday, Intelogic shares rose 37.5 cents to close at $2.75. Mr. Edelman declined to specify what prompted the recent moves, saying they are (meant) only to benefit shareholders when \" the company is on a roll. \"  \n Verb: meant",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible . A resolution , co-sponsored by Kenya , Tanzania and the United States and unanimously adopted , `` (expresses) its deep sorrow , sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time . ''  \n Verb: expresses",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "It strongly condemns the `` terrorist bomb attacks . '' And it stresses that every nation `` has the duty to (refrain) from organizing , instigating , assisting or participating in terrorist acts in another state . ''  \n Verb: refrain",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "It strongly condemns the `` terrorist bomb attacks . '' And it stresses that every nation `` has the duty to refrain from organizing , (instigating) , assisting or participating in terrorist acts in another state . ''  \n Verb: instigating",
-            "output": [
-                "No"
-            ]
-        },
-        {
-            "input": "In New York Stock Exchange composite trading yesterday , Intelogic shares rose 37.5 cents to close at $2.75 . Mr. Edelman declined to specify what prompted the recent moves , saying they are (meant) only to benefit shareholders when \" the company is on a roll . \"  \n Verb: meant",
+            "input": "Kavan said the Czech Republic would no longer become \" the powerless victim of a foreign invasion. \" Martonyi called Hunragy's admission in NATO \" (returning) to her natural habitat, \" saying : \" It has been our manifest destiny to rejoin those with whom we share the same values, interests and goals. \"  \n Verb: returning",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Kavan said the Czech Republic would no longer become \" the powerless victim of a foreign invasion . \" Martonyi called Hunragy 's admission in NATO \" (returning) to her natural habitat , \" saying : \" It has been our manifest destiny to rejoin those with whom we share the same values , interests and goals . \"  \n Verb: returning",
-            "output": [
-                "Yes"
-            ]
-        },
-        {
-            "input": "The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday , turning busy streets in two African capitals into bloody piles of concrete and knots of steel . `` This (appears) to have been a very well-coordinated , very well-planned attack _ clearly not the work of amateurs , '' U.S. National Security Council spokesman P.J. Crowley said in Washington .  \n Verb: appears",
+            "input": "The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday, turning busy streets in two African capitals into bloody piles of concrete and knots of steel.  This (appears) to have been a very well-coordinated, very well-planned attack _ clearly not the work of amateurs,  U.S. National Security Council spokesman P.J. Crowley said in Washington.  \n Verb: appears",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "On Monday , Spitzer called for Vacco to revive that unit immediately , vowing that he would do so on his first day in office if elected . Goldstein , who said it was `` thoroughly , thoroughly possible '' that the issue would surface in Spitzer 's advertisements , defended the use of the issue by noting that the attorney general (has) direct impact on the issue of clinic access .  \n Verb: has",
+            "input": "On Monday, Spitzer called for Vacco to revive that unit immediately, vowing that he would do so on his first day in office if elected. Goldstein, who said it was  thoroughly, thoroughly possible  that the issue would surface in Spitzer's advertisements, defended the use of the issue by noting that the attorney general (has) direct impact on the issue of clinic access.  \n Verb: has",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "Steve Hurst has that . The US military buildup in the Persian gulf continues apace , more planes (headed) from the united states and senior officials say Iraq 's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop building biological and chemical weapons .  \n Verb: headed",
+            "input": "Steve Hurst has that. The US military buildup in the Persian gulf continues apace, more planes (headed) from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop building biological and chemical weapons.  \n Verb: headed",
             "output": [
                 "Yes"
             ]
         },
         {
-            "input": "And it stresses that every nation `` has the duty to refrain from organizing , instigating , assisting or participating in terrorist acts in another state . '' The almost simultaneous attacks Aug. 7 at the U.S. embassies in Nairobi , Kenya , and Dar es Salaam , Tanzania , killed 257 people and (injured) more than 5,500 .  \n Verb: injured",
+            "input": "And it stresses that every nation  has the duty to refrain from organizing, instigating, assisting or participating in terrorist acts in another state.  The almost simultaneous attacks Aug. 7 at the U.S. embassies in Nairobi, Kenya, and Dar es Salaam, Tanzania, killed 257 people and (injured) more than 5,500.  \n Verb: injured",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "UNITED NATIONS ( AP ) _ The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to (cooperate) with authorities in finding those responsible .  \n Verb: cooperate",
+            "input": "UNITED NATIONS ( AP ) _ The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to (cooperate) with authorities in finding those responsible.  \n Verb: cooperate",
             "output": [
                 "No"
             ]
         },
         {
-            "input": "In a televised address Friday , President Arpad Gencz described the entry as \" a historic event \" which proves the credibility and the realistic approaches of the country 's foreign policy . Among the first three former Warsaw Pact countries to accede to NATO on Friday (were) also Poland and the Czech Republic .  \n Verb: were",
+            "input": "In a televised address Friday, President Arpad Gencz described the entry as \" a historic event \" which proves the credibility and the realistic approaches of the country's foreign policy. Among the first three former Warsaw Pact countries to accede to NATO on Friday (were) also Poland and the Czech Republic.  \n Verb: were",
             "output": [
                 "Yes"
             ]
