@@ -162,9 +162,9 @@ for file in files[begin_task_number:end_task_number + 1]:
                 assert type(data['Domains']) == list, f'Domains must be a list.'
                 for d in data['Domains']:
                     assert d in hierarchy_content, f'Did not find domain `{d}`'
-                    if c not in domain_stats:
-                        domain_stats[c] = 0
-                    domain_stats[c] += 1
+                    if d not in domain_stats:
+                        domain_stats[d] = 0
+                    domain_stats[d] += 1
 
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
