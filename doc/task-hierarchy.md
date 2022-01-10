@@ -294,7 +294,7 @@
 * `Commonsense`
   * `Commonsense -> Concepts and Relations`
     * `Commonsense -> Concepts and Relations -> Physical Commonsense`: a context involving two physical objects with contrasting properties, usage, locations, etc.
-    * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two same gender people with contrasting attributes, emotions, social roles, etc.
+    * `Commonsense -> Concepts and Relations -> Social Commonsense`: a situation involving two people with contrasting attributes, emotions, social roles, etc.
     * `Commonsense -> Concepts and Relations -> Spatial Commonsense`
   * `Commonsense -> Stories`
 * `Computer Science`
