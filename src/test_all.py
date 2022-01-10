@@ -117,7 +117,7 @@ if not args.task:
 
 # TODO: over time, we need to fix the skew of the following tasks
 skew_exclusion = [
-    "050", "838", "1489", "150", "265", "027"
+    "050", "838", "150", "265"
 ]
 
 contributor_stats = {}
