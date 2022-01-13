@@ -1425,6 +1425,31 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1451_drug_dose_extraction` | Given a sentence and a drug from the ADE dataset, return the list of tokens that mentions of dose of that particular drug. | Entity Detection
 `task1452_location_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of locations/places. | Entity Detection
 `task1453_person_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of person names. | Entity Detection
+`task1454_conceptnet_form_of` | Given a tuple of two terms, determine whether the First term is an inflected form of the Second term or not. Classification | Sociology	| English	| English
+`task1455_conceptnet_derived_from` | Given a tuple of two terms, determine whether the First term is derived from the Second term or not. Classification | Sociology	| English	| English
+`task1456_conceptnet_has_context` | Given a tuple of two terms, determine whether the First term is used in the context of the Second term or not. Classification | Sociology	| English	| English
+`task1457_conceptnet_is_a` | Given a tuple of two terms, determine whether the First term is a subtype or specific instance of the Second term or not. Classification | Sociology	| English	| English
+`task1458_conceptnet_synonym` | Given a tuple of two terms, determine whether the First term has the same meaning as that of the Second term or not. Classification | Sociology	| English	| English
+`task1459_conceptnet_used_for` | Given a tuple of two terms, determine whether the First term is used for the Second term or not. Classification | Sociology	| English	| English
+`task1460_conceptnet_similar_to` | Given a tuple of two terms, determine whether the First term is similar to the Second term or not. Classification | Sociology	| English	| English
+`task1461_conceptnet_at_location` | Given a tuple of two terms, determine whether the First term is typically located at the Second term or not. Classification | Sociology	| English	| English
+`task1462_conceptnet_has_subevent` | Given a tuple of two terms, determine whether the Second term is an event that happens as a subevent of the First term or not. Classification | Sociology	| English	| English
+`task1463_conceptnet_has_prerequisite` | Given a tuple of two terms, determine whether the Second term needs to happen in order for the First term or not. Classification | Sociology	| English	| English
+`task1464_conceptnet_capable_of` | Given a tuple of two terms, determine whether the First term can typically be done by the Second term or not. Classification | Sociology	| English	| English
+`task1465_conceptnet_antonym` | Given a tuple of two terms, determine whether the First term has the opposite meaning of the Second term or not. Classification | Sociology	| English	| English
+`task1466_conceptnet_causes` | Given a tuple of two terms, determine whether the First term is an event that causes the event the Second term or not. Classification | Sociology	| English	| English
+`task1467_conceptnet_part_of` | Given a tuple of two terms, determine whether the First term is a part of the Second term or not. Classification | Sociology	| English	| English
+`task1468_conceptnet_motivated_by_goal` | Given a tuple of two terms, determine whether the First term is a step towards accomplising the goal the Second term or not. Classification | Sociology	| English	| English
+`task1469_conceptnet_has_property` | Given a tuple of two terms, determine whether the Second term is a property of the First term or not. Classification | Sociology	| English	| English
+`task1470_conceptnet_receives_action` | Given a tuple of two terms, determine whether the Second term can be done to the First term or not. Classification | Sociology	| English	| English
+`task1471_conceptnet_has_a` | Given a tuple of two terms, determine whether the Second term belongs to the First term or not. Classification | Sociology	| English	| English
+`task1472_conceptnet_causes_desire` | Given a tuple of two terms, determine whether the First term makes someone want to do the Second term or not. Classification | Sociology	| English	| English
+`task1473_conceptnet_has_first_subevent` | Given a tuple of two terms, determine whether the First term is an event that begins with subevent the Second term or not. Classification | Sociology	| English	| English
+`task1474_conceptnet_desires` | Given a tuple of two terms, determine whether the First term is an entity that typically wants the Second term or not. Classification | Sociology	| English	| English
+`task1475_conceptnet_has_last_subevent` | Given a tuple of two terms, determine whether the First term is an event that ends with subevent the Second term or not. Classification | Sociology	| English	| English
+`task1476_conceptnet_defined_as` | Given a tuple of two terms, determine whether the Second term is a more explanatory version of the First term or not. Classification | Sociology	| English	| English
+`task1477_conceptnet_made_of` | Given a tuple of two terms, determine whether the First term is made of the Second term or not. Classification | Sociology	| English	| English
+`task1478_conceptnet_created_by` | Given a tuple of two terms, determine whether the First term is created by the Second term or not. Classification | Sociology	| English	| English
 `task1479_organization_entity_extraction_btc_corpus` | Given a sentence from the BTC dataset, return the list of tokens that mentions of companies or organizations. | Entity Detection
 `task1480_gene_extraction_jnlpba_dataset` | Given a sentence from the JNLPBA dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
 `task1481_gene_extraction_bc2gm_dataset` | Given a sentence from the BC2GM dataset, return the list of tokens that mentions of genes or proteins. | Entity Detection
