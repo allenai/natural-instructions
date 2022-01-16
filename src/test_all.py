@@ -213,7 +213,7 @@ for file in files[begin_task_number:end_task_number + 1]:
                                         f"Merge outputs before removing duplicates. :-/ \n {instance}")
                                         
             # Make sure there are no link in instances
-            url_reg  = r'[a-z]*[:.]+\S+'
+            url_reg  = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
             instances = data['Instances']    
             for instance in instances:
                 ck_url = re.findall(url_reg, instance['input'])
