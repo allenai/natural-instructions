@@ -216,9 +216,9 @@ for file in files[begin_task_number:end_task_number + 1]:
             url_reg  = r'[a-z]*[:.]+\S+'
             instances = data['Instances']    
             for instance in instances:
-                ck_url = re.search(url_reg, instance['input'])
+                ck_url = re.findall(url_reg, instance['input'])
                 if ck_url:
-                    assert f"Looks like there is a link in the input: {instance['input']}"
+                    print(f'⚠️ WARNING: Looks like there is a link in the input: {ck_url}')
                     break
                     
             # make sure classes are balanced
