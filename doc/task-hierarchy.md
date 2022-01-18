@@ -44,7 +44,7 @@
   - `Detection -> Effect Detection`
   - `Detection -> Emotion Detection`
     - `Detection -> Emotion Detection -> Classification`
-	- `Detection -> Emotion Detection -> Incorrect Classification`
+   	- `Detection -> Emotion Detection -> Incorrect Classification`
   - `Detection -> Entity Detection`
 	- `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
 	- `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
