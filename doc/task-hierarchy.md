@@ -30,7 +30,6 @@
 	- `Classification -> Verification -> Sufficient Information Verification`: Verify whether a text contains sufficient information to answer a question
 	- `Classification -> Verification -> Summary Verification`
 	- `Classification -> Verification -> Translation Verification`: Verify whether a text sequence is a translation of another text sequence
-- `Code Summarization`: Generating natural language description for a piece of code
 - `Command Execution`
 - `Coreference`
   - `Coreference -> Entity Coreference`
@@ -200,6 +199,7 @@
   - `Structured Text Processing -> Semantic Parsing`
     - `Structured Text Processing -> Semantic Parsing -> Program Synthesis`
 - `Summarization`
+  - `Summarization -> Code Summarization`: Generating natural language description for a piece of code
 - `Tabular Text Operation`
   - `Tabular Text Operation -> Column Matching`: Given two sets in the input, generate a mapping between them e.g. given a set of countries and their capitals in the input, generate an output that maps countries to capitals.
   - `Tabular Text Operation -> Question Answering`
