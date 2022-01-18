@@ -12,6 +12,7 @@
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`     
 - `Classification`
+  - `Classification -> Incorrect Classification`
   - `Classification -> Verification`: Verification is a sub-category for classification and it is used for binary classifications. The task is to verify whether a given descriptive attribute applies to a given text or not (binary output) e.g. if the paragraph contains offensive content or not. In the verification tasks, the potential outputs are mentioned in the definition.
     - `Classification -> Verification -> Question Correctness Verification`
     - `Classification -> Verification -> Answer Correctness Verification`: Verify whether the answer is correct
@@ -42,14 +43,18 @@
   - `Detection -> Toxicity Detection`
     - `Detection -> Toxicity Detection -> Abuse Detection`
     - `Detection -> Toxicity Detection -> Abuse Detection -> Hate Speech Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection -> Violence Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection -> Sexism Detection`
+    - `Detection -> Toxicity Detection -> Abuse Detection ->  Religious Abuse Detection`
   - `Detection -> Stereotype Detection`
-  - `Detection -> Affect Detection`
+  - `Detection -> Effect Detection`
   - `Detection -> Capability Detection`
   - `Detection -> Cause Detection`
   - `Detection -> Character Detection`
   - `Detection -> Desire Detection`
   - `Detection -> Emotion Detection`
     - `Detection -> Emotion Detection -> Classification`
+    - `Detection -> Emotion Detection -> Incorrect Classification`
   - `Detection -> Entity Detection`
     - `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
     - `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
