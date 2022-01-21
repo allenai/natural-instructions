@@ -9,7 +9,6 @@
 ## Task Categories   
 - `Classification`
   - `Classification -> Answer Type Classification`: Classify a text that contains a question to the type of answer that is expected (e.g., multiple choice, extractive, abstractive etc.) 
-  - `Classification -> Incorrect Classification`
   - `Classification -> Intent Classification`: Classify a text to a pre-defined set of intent classes  
   - `Classification -> Pairwise Classification`: Classify a pair of text sequences to a target class
   - `Classification -> Topic Classification`
@@ -43,7 +42,6 @@
   - `Detection -> Effect Detection`
   - `Detection -> Emotion Detection`
     - `Detection -> Emotion Detection -> Classification`
-   	- `Detection -> Emotion Detection -> Incorrect Classification`
   - `Detection -> Entity Detection`
 	- `Detection -> Entity Detection -> Classification`: Classify the text to a pre-defined set of entities (closed set)
 	- `Detection -> Entity Detection -> Extractive`: Extract the entity from the text (open set)
@@ -56,7 +54,6 @@
   - `Detection -> Need Detection`
   - `Detection -> Obstacle Detection`
   - `Detection -> Order Detection`
-	- `Detection -> Order Detection -> Incorrect Order Detection`
   - `Detection -> Reaction Detection`
 	- `Detection -> Reaction Detection -> Emotional Reaction Detection`
   - `Detection -> Relation Detection`
@@ -82,6 +79,7 @@
   - `Identification -> Object Identification`: identifying the object of a sentence
   - `Identification -> Predicate Identification`: identifying the predicate of a sentence
   - `Identification -> Subject Identification`: identifying the subject of a sentence
+- `Incorrect generation`
 - `Mathematics`
   - `Mathematics -> Algebra`
   - `Mathematics -> Arithmetic`
@@ -90,9 +88,7 @@
   - `Mathematics -> Geometry`
   - `Mathematics -> Statistics`
 - `Named Entity Recognition`
-- `Paraphrasing`
 - `Parts-of-speech`
-  - `Parts-of-speech -> Incorrect`
 - `Proofreading`
   - `Proofreading -> Coherence Detection`
 	- `Proofreading -> Coherence Detection -> Sentence Swapping`
@@ -173,8 +169,6 @@
     - `Reasoning -> Textual Entailment -> Analogical Reasoning`
     - `Reasoning -> Textual Entailment -> Deductive Reasoning`
     - `Reasoning -> Textual Entailment -> Inductive Reasoning`
-- `Relation Prediction` : Predict the relation between entities(relations are not given in the task)
-- `Relevancy Estimation`
 - `Role Labelling`
 - `Semantic Parsing`
   - `Semantic Parsing -> Program Synthesis`
@@ -183,7 +177,6 @@
   - `Sentiment Analysis -> Entity-based Verification`: Verify whether the predicted sentiment towards a given entity in the text is right or wrong
   - `Sentiment Analysis -> Review Analysis`
   - `Sentiment Analysis -> Sentiment Classification`
-- `Sorting`
 - `Story Completion`
 - `Structured Text Processing`
   - `Structured Text Processing -> Code Summarization`
@@ -234,10 +227,8 @@
     - `Text Generation -> Sentence Generation -> Code Summarization`: Generating natural language description for a piece of code
     - `Text Generation -> Sentence Generation -> Completion`
       - `Text Generation -> Sentence Generation -> Completion -> Story`
-        - `Text Generation -> Sentence Generation -> Completion -> Story -> Incorrect`
     - `Text Generation -> Sentence Generation -> Contextual Text Generation`
       - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Coherent Text Generation`
-      - `Text Generation -> Sentence Generation -> Contextual Text Generation -> Incorrect`
     - `Text Generation -> Sentence Generation -> Explanation Generation`
     - `Text Generation -> Sentence Generation -> Summary Generation`
   - `Text Generation -> Structured Text Generation`: Generate structured text in the output e.g. a task that converts questions in natural language to SQL queries
@@ -245,10 +236,8 @@
       - `Text Generation -> Structured Text Generation -> List`
       - `Text Generation -> Structured Text Generation -> Table`
   - `Text Generation -> Summary Generation`
-    - `Text Generation -> Summary Generation -> Incorrect Summary Generation`
   - `Text Generation -> Title Generation`
   - `Text Generation -> Topic Generation`
-  - `Text Generation -> Weblink Generation`
   - `Text Generation -> Word Generation`
     - `Text Generation -> Word Generation -> Abbrevation Generation`
     - `Text Generation -> Word Generation -> Preposition Generation`
@@ -261,9 +250,7 @@
     - `Text Modification -> Style Transfer -> Text Simplification`
   - `Text Modification -> Text Simplification`
 - `Text Span Selection`
-  - `Text Span Selection -> Incorrect`
 - `Title Selection`
-- `Translation`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`  
 - `Word Sense Disambiguation`
