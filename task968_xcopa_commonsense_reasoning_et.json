@@ -1,0 +1,3639 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "XCOPA (\"https://arxiv.org/abs/2005.00333\")"
+    ],
+    "Categories": [
+        "Classification -> Verification",
+        "Reasoning -> Commonsense Reasoning",
+        "Detection -> Cause Detection"
+    ],
+    "Definition": "In this task you are given a premise and two alternatives in Estonian you must choose the alternative that is more plausibly the cause or effect of the situation described by the premise. The input format is \"premise\n(1)alternative_1(2)alternative_2\", the output should either be \"1\" or \"2\" based on your judgment.",
+    "Input_language": [
+        "Estonian"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Domains": [
+        "Personal Narratives"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Ese oli mullikilesse m\u00e4ssitud.\n(1)See oli \u00f5rn.(2)See oli v\u00e4ike.",
+            "output": "1",
+            "explanation": "The first alternative makes more sense because you put object in bubble wrap if they are delicate."
+        },
+        {
+            "input": "Ma t\u00fchjendasin oma taskud.\n(1)Ma leidsin pileti t\u00fcki.(2)Ma leidsin relva.",
+            "output": "1",
+            "explanation": "The first alternative makes more sense because finding a ticket in your pocket is more common than finding a gun."
+        },
+        {
+            "input": "Termiidid tungisid majja sisse.\n(1)Termiidid kadusid majast.(2)Termiidid s\u00f5id l\u00e4bi majas oleva puidu.",
+            "output": "2",
+            "explanation": "The second alternative makes more sense because termites do eat wood."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Ese oli mullikilesse m\u00e4ssitud.\n(1)See oli \u00f5rn.(2)See oli v\u00e4ike.",
+            "output": "2",
+            "explanation": "The second alternative makes less sense than the first one."
+        },
+        {
+            "input": "Termiidid tungisid majja sisse.\n(1)Termiidid kadusid majast.(2)Termiidid s\u00f5id l\u00e4bi majas oleva puidu.",
+            "output": "1",
+            "explanation": "In this example both sentences make sense but the second one is more likely to be the effect of the premise."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Reisidjad j\u00f5udsid piirini.\n(1)Piirikontroll kontrollis nende passe.(2)Piirikontroll s\u00fc\u00fcdistas neid smuugeldamises.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kontor oli kinni.\n(1)Oli puhkus.(2)Oli suvi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdrukul sai energia otsa.\n(1)Ta m\u00e4ngis kabet.(2)Ta h\u00fcppas h\u00fcppen\u00f6\u00f6riga.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine kaotas oma koha j\u00e4rjekorras.\n(1)Veel inimesi liitus j\u00e4rjekorraga.(2)Ta astus j\u00e4rjekorrast v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk hoidis oma nina kinni.\n(1)Beebi ilastas oma p\u00f5lle peale.(2)Beebi tegi oma m\u00e4hkme t\u00e4is.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "B\u00e4nd m\u00e4ngis oma hittlugu.\n(1)Publik plaksutas muusikaga kaasa.(2)Publik kuulas vaikuses.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk tahtis oma matemaatika\u00f5petajat t\u00e4nada.\n(1)T\u00fcdruk j\u00e4eti peale tunde.(2)T\u00fcdruk t\u00f5i \u00f5petajale \u00f5una.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "V\u00e4ikesed matkajad olid hirmul.\n(1)Laagrivanem r\u00e4\u00e4kis neile \u00f5udusjuttu.(2)Nad grillisid l\u00f5kkel vahukomme.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees l\u00f5i pea \u00e4ra.\n(1)Tal l\u00e4ks m\u00f5te sassi.(2)Ta sai peap\u00f5rutuse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u0161ekk, mille kirjutasin, ei l\u00e4inud l\u00e4bi.\n(1)Mu pangakonto oli t\u00fchi.(2)Ma sain palgat\u00f5usu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe e-postkast oli r\u00e4mpsposti t\u00e4is.\n(1)Ta kustutas r\u00e4mpsposti.(2)Ta saatis laiali massimeili.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Meremees pandi karantiini.\n(1)Ta puutus haigusega kokku.(2)Ta paranes haigusest.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk j\u00e4ttis koodi meelde.\n(1)Ta luges seda endale ette.(2)Ta unustas selle \u00fcles kirjutada.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma valasin vett klaasi.\n(1)Vesi kustutas mu janu.(2)Klaas sai t\u00e4is.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees oli vaikselt, kui tema s\u00f5ber r\u00e4\u00e4kimise l\u00f5petas.\n(1)Ta tahtis oma s\u00f5pra toetada.(2)Ta m\u00f5tles oma s\u00f5bra s\u00f5nadele.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5nnetus oli minu s\u00fc\u00fc.\n(1)Ma tundsin end s\u00fc\u00fcdi.(2)Ma esitasin s\u00fc\u00fcdistuse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kett lagunes t\u00fckkideks.\n(1)Kett oli kummi \u00fcmber m\u00e4ssitud.(2)Ketis oli katkine l\u00fcli.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Paarike otsustas kompromissile minna.\n(1)Nad v\u00e4sisid vaidlemisest.(2)Nad v\u00e4ltisid probleemi arutamist.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine otsustas riigiametisse kandideerida.\n(1)Ta palkas kampaaniam\u00e4ned\u017eeri.(2)Ta tunnistas kohtus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees n\u00e4gi ette, et tema reisi ajal tuleb k\u00fclm ilm.\n(1)Ta pakkis soojad riided oma kohvrisse.(2)Ta reisis suure kohvriga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5pilane teadis k\u00fcsimusele vastust.\n(1)Ta t\u00f5stis oma k\u00e4e.(2)Ta viilis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe silmad jooksid vett.\n(1)Talle l\u00e4ks tolm silma.(2)Ta pani kaitseprillid oma silmadele.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "M\u00e4ngija v\u00f5itis viis m\u00e4ngu j\u00e4rjest.\n(1)Vastane s\u00fc\u00fcdistas teda sohitegemises.(2)Vastasel oli temast kahju.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5petaja rebis \u00f5pilase eksami pooleks.\n(1)Ta tabas \u00f5pilase spikerdamast.(2)\u00d5pilase vastused olid valed.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma tegin pausi, et r\u00e4\u00e4kimine l\u00f5petada.\n(1)Mul l\u00e4sk h\u00e4\u00e4l \u00e4ra.(2)Mul sai \u00f5hk otsa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "K\u00fclmutatud toit sulas \u00fcles.\n(1)Ma panin selle mikrolaineahju.(2)Ma katsin selle plastik kilega.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00f6\u00f6taja teeskles haigust.\n(1)Tal olid k\u00f5hukrambid.(2)Ta tahtis vaba p\u00e4eva.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk maandus basseinis.\n(1)Ta jooksis basseini tekil.(2)Ta h\u00fcppas h\u00fcppelaualt alla.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Filmipiletid m\u00fc\u00fcsid v\u00e4lja.\n(1)See oli filmi esilinastus.(2)Film sai kehvad arvustused.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees v\u00f5ttis kaalust alla.\n(1)Inimesed isoleerisid ta.(2)Inimesed tegid talle komplimente.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruku k\u00e4ed l\u00e4ksid villi.\n(1)Ta tr\u00fckkis kirja.(2)Ta ronis k\u00f6it m\u00f6\u00f6da \u00fcles.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tsirkuseartist \u017eongl\u00f6\u00f6ris \u00fcherattalisega s\u00f5ites.\n(1)Public h\u00f5iskas imestuses.(2)Akrobaat kiikus trapetsil.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu kannatlikkus katkes.\n(1)Ootasin oma s\u00f5bra j\u00e4rel.(2)Mu s\u00f5ber saabus \u00f5igeaegselt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "S\u00f5divad riigid tahtsid rahu.\n(1)Nad arendasid tuumarelvad.(2)Nad r\u00e4\u00e4kisid lepingu osas l\u00e4bi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees v\u00f5ttis unerohtu.\n(1)Ta muutus uimaseks.(2)Tal t\u00f5usis palavik.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine k\u00f5ndis diivanile otsa.\n(1)Diivanijalg tuli lahti.(2)Ta sai p\u00f5lvele sinika.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss pigistas \u00f5hupalli.\n(1)\u00d5hupall l\u00e4ks katki.(2)\u00d5hupall lendas \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Reisijad registeerisid end oma hotellituppa.\n(1)Nad pakkisid oma kohvrid lahti.(2)Nad l\u00e4ksid lennujaama.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma v\u00f5tsin virsikust ampsu.\n(1)Virisik sai mujutud.(2)Mahl purskas v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu k\u00e4ed hakkasid kleepuma.\n(1)Ma s\u00f5in s\u00f5\u00f5rikut.(2)Ma olin maiasmokk.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma l\u00fckkasin ust.\n(1)Uks avanes.(2)Uks oli lukus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Aktivistid boikoteerisid toodet.\n(1)Tooteid testiti kvaliteedi tagamiseks.(2)Tooted olid valmistatud lapst\u00f6\u00f6j\u00f5udu kasutades.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma puurisin seina augu.\n(1)Hiir roomas august v\u00e4lja.(2)Tolm lendas august v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine tundis oma \u00f5e vastu kadedust.\n(1)Ta \u00f5de oli \u00f5nnelik.(2)Ta \u00f5de lahutas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma ajasin veini omale s\u00e4rgi peale.\n(1)Ma panin p\u00f5lle ette.(2)Ma vahetasin s\u00e4rki.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kassapidaja avas kassaaparaadi.\n(1)Ostja otsis oma rahakotti l\u00e4bi.(2)Ostja ulatas talle raha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00e4navamuusik erutas rahvast.\n(1)Inimesed andsid talle peenraha.(2)Ta saatis rahva laiali.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "V\u00e4ike poiss nuttis oma lapsehoidjale.\n(1)Ta igatses oma vanemaid.(2)Oli sn\u00e4kiaeg.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Piloodi radar avastas tormi.\n(1)Piloot navigeeris tormist eemale.(2)Piloot s\u00f5itis l\u00e4bi tormi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Puu heitis oma lehed.\n(1)Lehed muutsid v\u00e4rvi.(2)Lehed kogunesid maha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss oli \u00fcleannetus tujus.\n(1)Ta otsustas oma \u00f5ega kaardim\u00e4ngu m\u00e4ngida.(2)Ta otsustas oma \u00f5ele vingerpussi m\u00e4ngida.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps kaebas, et ta peab tualettruumi minema.\n(1)Ta isa andis talle joomiseks limonaadi.(2)Ta isa peatas bensiinijaamas auto.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps puistas kalatoitu akvaariumisse.\n(1)Kalad h\u00fcppasid akvaariumist v\u00e4lja.(2)Kalad ujusid toidu suunas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naise poliitilised vaated muutusid.\n(1)Ta vahetas oma erakondlikku kuuluvust.(2)Ta osales protestis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vannitoa kraanikauss oli umbes.\n(1)Ma keerasin kraani lahti.(2)Ma kallasin \u00e4ravoolu puhastusvahendit sinna sisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Reisija tuli rongi pealt maha.\n(1)Rong saabus jaama.(2)Rong andis vilet.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees vajutas \u00fcmbrikul oleva niiske kleepriba peale.\n(1)Ta pani \u00fcmbrikule margi.(2)Ta pitseeris \u00fcmbriku kinni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "S\u00f5brad kaotasid \u00fchenduse.\n(1)Nad nautisid \u00fcksteise seltsi.(2)Nad kolisid eri linnadesse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Raamatupidaja haldas firma rahalisi vahendeid valesti.\n(1)Ta vallandati oma t\u00f6\u00f6kohalt.(2)Ta l\u00e4ks emapuhkusele.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma vaatasin kella.\n(1)Ma kuulsin kella tiksumist.(2)Ma thatsin keelaaega kontrollida.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mul l\u00e4ks k\u00e4si krampi.\n(1)Ma kirjutasin essee k\u00e4sitsi.(2)Mu naine ja mina hoidsime k\u00e4est kinni.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Polt pinguldus.\n(1)Ma vahetasin poldi v\u00e4lja.(2)Ma p\u00f6\u00f6rasin mutriv\u00f5tit.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Paarike allkirjastas korteri \u00fc\u00fcrilepingu.\n(1)Paar kolis korterisse sisse.(2)Linn tunnistas korteri k\u00f5lbmatuks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine istus v\u00e4ljas verandal.\n(1)Ta tahtis p\u00e4ikeseloojangut vaadata.(2)Ta arvas, et n\u00e4gi \u00e4ikest.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees kandis vees p\u00e4\u00e4stevesti.\n(1)Ta ei osanud ujuda.(2)Vesi oli madal.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine tegi tekstit\u00f6\u00f6tlusseadmes tr\u00fckivea.\n(1)Ta kustutas dokumendi.(2)Ta vajutas tagasisammuklahvi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk uhkustas oma s\u00f5brale.\n(1)Ta sai halva hinde.(2)Ta v\u00f5itis v\u00f5istluse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Muru oli mudane.\n(1)\u00d6\u00f6 l\u00e4bi sadas.(2)See oli umbrohtu t\u00e4is.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine magas sisse.\n(1)Ta veetis \u00f6\u00f6 hotellis.(2)Ta unustas \u00e4ratuskella panna.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees pani p\u00e4ikesekreemi peale.\n(1)Ta istus varjus.(2)Ta l\u00e4ks randa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Teadlased t\u00f5estasid teooria.\n(1)Teadlased v\u00f5tisd teooria tagasi.(2)\u00dcksikisikud aktsepteerisid teooria.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "F\u00e4nnid m\u00e4ngul h\u00fc\u00fcdsid halvakspanevalt.\n(1)M\u00e4ng l\u00e4ks lisaajale.(2)Kohtunik tegi halva otsuse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma sisestasin oma luku kombinatsiooni.\n(1)Ma keerasin luku kinni.(2)Lukk avanes.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Rahvas intensiivistus.\n(1)Isa andis pojale natuke raha.(2)Isa krabas oma poja k\u00e4est.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lumi blokeeris sisses\u00f5iduteed.\n(1)Ma tegin lumest lumepalli.(2)Ma k\u00fchveldasin lume tee pealt \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kajakis\u00f5itjad aerutasid oma aerudega.\n(1)Kajakk j\u00f5udis kaldale.(2)Kajakk s\u00f5itis tabas lainet.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk kaotas oma ratta \u00fcle kontrolli.\n(1)Ta lasi lenkstangist lahti.(2)Ta s\u00f5itis aeda sisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma panin puhuri t\u00f6\u00f6le.\n(1)Mu nahale pritsis vett.(2)Ma tundsin, kuidas k\u00fclm \u00f5hk minust \u00fcle l\u00e4ks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Surfarid naasesid randa.\n(1)Nad olid l\u00e4bi ligunenud.(2)Nad n\u00e4gid haid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma t\u00f5mbasin vanni \u00e4ravoolukorki.\n(1)Vesi voolas vannist \u00e4ra.(2)Vesi pritsis p\u00f5randale.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees tundis end naise petmise p\u00e4rast s\u00fc\u00fcdi.\n(1)Ta s\u00fc\u00fcdistas teda truudusetuses.(2)Ta tunnistas oma truudusetust talle.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tr\u00fckiv\u00e4rv postril m\u00e4\u00e4ris.\n(1)Ma ootasin, kuni tr\u00fckiv\u00e4rv kuivab.(2)Ma ajasin vett postri peale.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps \u00e4rkas karjudes \u00fcles.\n(1)Ta n\u00e4gi \u00f5udusunen\u00e4gu.(2)Ta tegi voodi m\u00e4rjaks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss pani oma jalad lauale.\n(1)Ta isa istus laua taha maha.(2)Ta isa pidas talle loengu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu s\u00f5ber p\u00f6\u00f6ras pea minu poole.\n(1)Ma h\u00f5ikasin ta nime.(2)Ma lehvitasin oma k\u00e4si.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Valitsus surus oma kodanikke alla.\n(1)Kodanikud korraldasid \u00fclest\u00f5usu.(2)Kodanikud registreerisid h\u00e4\u00e4letama.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss oli metsa eksinud.\n(1)Ta pani telgi p\u00fcsti.(2)Ta h\u00fc\u00fcdis abi j\u00e4rele.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine reisis v\u00e4lismaale.\n(1)Ta tahtis joonistama \u00f5ppida.(2)Ta tahtis teiste kultuuride kohta \u00f5ppida.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees oli oma t\u00f6\u00f6kaaslase peale kade.\n(1)Ta t\u00f6\u00f6kaaslane edutati.(2)Ta t\u00f6\u00f6kaaslane t\u00f6\u00f6tas hilja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees n\u00e4gi tulnukaid.\n(1)Ta n\u00e4gi viirastusi.(2)Ta mediteeris.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe juuksed muutusid blondiks.\n(1)Ta pani neisse valgendit.(2)Ta pani neisse shampooni.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kunstnik l\u00f5i uue t\u00f6\u00f6.\n(1)Ta kritiseeris oma eelnevat t\u00f6\u00f6d.(2)Ta tundis inspiratsioonihoogu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poeg kolis kodust \u00e4ra.\n(1)Ta vabastati s\u00f5jav\u00e4est.(2)Ta l\u00e4ks k\u00f5rgkooli.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Raamatud kukkusid raamaturiilust v\u00e4lja.\n(1)Riiulid olid tolmuga kaetud.(2)Maav\u00e4rin raputas raamaturiiulit.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu kodus l\u00e4ks elekter \u00e4ra.\n(1)Ma panin lambi p\u00f5lema.(2)Ma l\u00e4htestasin automaatkorgi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Me s\u00f5itsime Ameerika m\u00e4gedel.\n(1)See tundus hirmus.(2)See tundus l\u00f5bus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kotit\u00e4is popkorni hakkas praksuma.\n(1)Ma kallasin v\u00f5id kotti.(2)Ma kuumutasin seda mikrolaineahjus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Puu kukkus elektriliinile.\n(1)Naabruskonnas l\u00e4ks elekter \u00e4ra.(2)Ilmateade ennustas tugevaid tuuli.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Esineja tegi poliitiliselt ebakorrektseid kommentaare.\n(1)Ta t\u00fc\u00fctas publikut.(2)Ta solvas publikut.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma torkasin ennast oraga.\n(1)Mu n\u00e4olt tilkus higipiisk.(2)Mu s\u00f5rmel moodustus veretilk.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kala hulpis akvaariumi pinnal.\n(1)Ta oli n\u00e4ljane.(2)Ta oli surnud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mehe h\u00e4\u00e4l k\u00f5las k\u00e4he.\n(1)Tal oli k\u00fclmetus.(2)Ta j\u00e4ttis suitsetamise maha.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Liftiuksed avanesid.\n(1)Lift j\u00f5udis m\u00e4\u00e4ratud korrusele.(2)Lift j\u00e4i korruste vahel kinni.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Teismeline hiilis majast v\u00e4lja.\n(1)Ta valetas oma vanematele.(2)Ta vanemad panid ta koduaresti.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vannituba ujutas \u00fcle.\n(1)Tualett ajas \u00fcle.(2)Boiler l\u00e4ks katki.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kutsikas p\u00fcsis omaniku l\u00e4hedal.\n(1)Omanik pani kutsikale kaelarihma.(2)Omanik hoidis kutsikat jalutusrihma otsas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees n\u00e4gi oma peegeldust.\n(1)Ta seisis laialivalguva puu all.(2)Ta seisis rahuliku j\u00e4rve \u00e4\u00e4res.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma magasin oma t\u00fcdruks\u00f5bra telefonik\u00f5ne maha.\n(1)Ma helistasin talle tagasi.(2)Ma sain temaga \u00f5htus\u00f6\u00f6giks kokku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Perekond otsis naabruskonna l\u00e4bi.\n(1)Nende koer jooksis kodust \u00e4ra.(2)Kallid ehted olid nende kodust kadunud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma n\u00e4gin oma hinge\u00f5hku, kui ma v\u00e4lja hindasin.\n(1)Ilm oli jahe.(2)Mul oli rinnus kitsas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00f6\u00f6tajad moodustasid \u00fchingu.\n(1)Nad tahtsid paremaid t\u00f6\u00f6tingimusi.(2)Nende t\u00f6\u00f6andja t\u00f5stis nende palku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma k\u00fcpsetasin \u00f5unapiruka.\n(1)M\u00e4danev l\u00f5hn t\u00e4itis k\u00f6\u00f6gi.(2)Soe aroom t\u00e4itis k\u00f6\u00f6gi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naisel oli raske k\u00f5ndida.\n(1)Ta kandis k\u00f5rgeid kontsi.(2)Ta v\u00f5ttis oma kingad \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Veepotist t\u00f5usis aur.\n(1)Vesi kees.(2)Ma katsin poti.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00f5ik mu sokid olid pesus.\n(1)Ma kandsin sandaale.(2)Ma kandsin saapaid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poliitiku argumenti peeti absurdseks.\n(1)Ta kaotas valijate toetuse.(2)Teda s\u00fc\u00fcdistati korruptsioonis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00f5ik panid paarikese kihlumist pahaks.\n(1)Paar j\u00e4i rasedaks.(2)Paar p\u00f5genes.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hoone p\u00fchendati miljon\u00e4rile.\n(1)Miljon\u00e4r tahtis, et hoone lammutataks.(2)Miljon\u00e4r panustas selle ehitamiseks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "M\u00fc\u00fcja s\u00fc\u00fc\u00fcdistas t\u00fcdrukut varastamises.\n(1)M\u00fc\u00fcja n\u00e4gi, kuidas t\u00fcdruk kaupa oma k\u00e4ekotti pani.(2)M\u00fc\u00fcja aitas t\u00fcdrukul leida k\u00e4ekotti, mis talle meeldis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Riik kuulutas naabruses asuvale territooriumile s\u00f5ja.\n(1)S\u00f5durid saadeti v\u00e4lja v\u00f5itlema.(2)S\u00f5durid taas\u00fchinesid oma peredega.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kohus toetas vastuoluliset kohtuotsust.\n(1)Kohtuhoone ees puhkes m\u00e4ss.(2)Paarike vahetas kohtuhoone ees vandeid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk haistis midagi p\u00f5lemas.\n(1)Ta v\u00f5ttis k\u00fcpsised purgist v\u00e4lja.(2)Ta j\u00e4ttis k\u00fcpsised ahju.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vihma kallas alla.\n(1)Torm l\u00e4ks halvemaks.(2)Ma tormasin, et sisse j\u00f5uda.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hoone evakueeriti.\n(1)Lift l\u00f5petas t\u00f6\u00f6tamise.(2)Tulekahjualarm l\u00e4ks t\u00f6\u00f6le.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Isa pani poja alkoholismi pahaks.\n(1)Isa ostis pojale \u00f5lle.(2)Isa viskas oma poja kodust v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kohtunik l\u00e4ks trepist \u00fcles oma kontorisse.\n(1)Sekret\u00e4r l\u00e4ks selleks p\u00e4evaks koju.(2)Lift oli katki.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees sai oma s\u00f5bra peale pahaseks.\n(1)Ta s\u00f5ber katkestas teda.(2)Ta s\u00f5ber ostis talle l\u00f5una.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk andis oma raha kassapidajale.\n(1)Kassapidaja andis t\u00fcdrukule vahetusraha.(2)Kassapidaja unustas t\u00fcdrukule t\u0161eki anda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine pandi ratastooli.\n(1)Ta j\u00e4i \u00f5nnetuses halvatuks.(2)Ta sisenes haiglasse kanderaamil.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kodanikud heiskasid oma kodudel riigilipu.\n(1)Riik t\u00e4histas oma iseseisvust.(2)Riik seisis silmitsi majanduslike raskustega.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tiim kaotas turniiri.\n(1)Nad valmistasid oma f\u00e4nnidele pettumuse.(2)Nad inspireerisid oma f\u00e4nne.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu s\u00f5ber juhtis t\u00e4helepanu sellele, et mul oli toit hammaste vahel.\n(1)Ma tundsin piinlikkust.(2)Ma tundsin uhkust.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss kukkus oma ajaloo eksami l\u00e4bi.\n(1)Ta pani tunnis t\u00e4hele.(2)Ta unustas \u00f5ppida.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kesklinna hoone varises kokku.\n(1)Linna tabas maav\u00e4rin.(2)Kuritegevus linnas kasvas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe t\u00fcdruks\u00f5ber j\u00e4ttis ta maha.\n(1)Ta palus, et ta ta tagasi v\u00f5taks.(2)Ta tutvustas teda oma vanematele.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kaks last kummardusid \u00fcheaegselt, et maast pall v\u00f5tta.\n(1)Pall veeres \u00e4ra.(2)Nad l\u00f5id pead kokku.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Pesukaru tuhnis pr\u00fcgikasti l\u00e4bi.\n(1)Pr\u00fcgikastis oi pappi.(2)Pr\u00fcgikastil oli kaas pealt \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss teritas pliiatsit.\n(1)See oli odav.(2)See oli n\u00fcri.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kassapidaja keeldus naisele kleidi raha tagasi maksmast.\n(1)Ta kaotas oma t\u0161eki \u00e4ra.(2)Kleit ei istunud talle.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kriimustus mu nahal oli s\u00fcgav.\n(1)See paranes kiiresti.(2)See j\u00e4ttis armi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees sai rongis reisijatelt imelikke pilke.\n(1)Ta vaatas maha.(2)Ta r\u00e4\u00e4kis endaga.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps j\u00e4ttis puru p\u00f5randale.\n(1)Sipelgad roomasid puru juurde.(2)Laps pani leiva \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine ulatas oma \u00f5ele salvr\u00e4tiku.\n(1)Naise \u00f5de pani k\u00e4ed risti.(2)Naise \u00f5de hakkas nutma.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees v\u00f5ttis m\u00fcnti.\n(1)Ta huuled olid l\u00f5henenud.(2)Ta muretses halva hinge\u00f5hu p\u00e4rast.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Paarike lahkus etendusele vara.\n(1)Nad aimasid, et teatri \u00fcmber on tihe liiklus.(2)Nad said juhised teatrisse minemiseks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine j\u00e4i t\u00f6\u00f6lt koju.\n(1)Ta \u00fclemus kiitis teda.(2)Ta t\u00f6\u00f6kaaslane v\u00f5ttis tema vahetuse \u00fcle.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees allkirjastas aktivisti petitsiooni.\n(1)Ta toetas nende \u00fcritust.(2)Ta tembeldas nad hulluks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "N\u00e4itleja s\u00fcda peksis enne etendust.\n(1)Tal oli lavahirm.(2)Ta j\u00e4ttis oma ridu meelde.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma olin eksinud.\n(1)Ma lugesin oma sularaha \u00fcre.(2)Ma voltisin kaardi lahti.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "K\u00fcps puuvili rippus p\u00e4ikse k\u00e4es.\n(1)See s\u00f6\u00f6di \u00e4ra.(2)See t\u00f5mbus krimpsu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Auto l\u00e4ks katki.\n(1)Ma keerasin s\u00fc\u00fcdet.(2)Mootor kuumenes \u00fcle.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees tegi oma seljale haiget.\n(1)Ta l\u00e4ks ps\u00fchhiaatri juurde.(2)Ta j\u00e4i m\u00f5neks p\u00e4evaks voodisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma tegin kaminasse tule.\n(1)Mul olid k\u00fcttepuud otsas.(2)Majas oli k\u00fclm.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine l\u00f5petas s\u00f6rkimise.\n(1)Tal  l\u00e4ks k\u00fclg krampi.(2)Ta sai uue j\u00f5upuhangu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma koputasin oma naabri uksele.\n(1)Mu naaber kutsus mind sisse.(2)Mu naaber l\u00e4ks kodust \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine ohkas frustreeritult.\n(1)Ta abikaasa ei m\u00f5istnud ta muresid.(2)Ta abikaasa suudles teda h\u00fcvastij\u00e4tuks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5petaja kiitis \u00f5pilast.\n(1)\u00d5pilane vastas k\u00fcsimustele \u00f5igesti.(2)\u00d5pilane kahtles, kas k\u00fcsimusele vastata.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naisel said munad otsa.\n(1)Ta l\u00e4ks farmi.(2)Ta l\u00e4ks supermarketisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma kohtusin vana s\u00f5braga.\n(1)Ma avaldasin talle saladuse.(2)Ma tegin talle kalli.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine v\u00e4ltis j\u00e4rve minemist.\n(1)Ta p\u00fc\u00fcdis kala.(2)See n\u00e4gi saastunud v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilane ilmus klassi l\u00e4bim\u00e4rjana.\n(1)Ta vihmavari oli katki.(2)Ta ratas oli \u00e4ra varastatud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kursor liikus arvutiekraanil.\n(1)Kasutaja klikkis hiirega.(2)Kasutaja liigutas hiirt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Juht tegi \u00fcmbers\u00f5idu.\n(1)Peateel oli \u00f5nnetus.(2)Ta j\u00e4rgnes tema ees s\u00f5itvale veokile.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma riputasin m\u00e4rjad linad \u00f5ue pesun\u00f6\u00f6rile.\n(1)Linad kuivasid.(2)Linad m\u00e4\u00e4rdusid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine pani p\u00e4ikeseprillid ette.\n(1)P\u00e4ike oli ere.(2)Ta p\u00fc\u00fcdis taksot.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees silmitses \u00f6ist taevast.\n(1)Ta soovis, et oleks suvi.(2)Ta arvas, et see oli ilus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma tundsin end rampv\u00e4sinult.\n(1)Ma l\u00e4ksin varakult voodisse.(2)Ma olin terve \u00f6\u00f6 \u00fcleval.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees l\u00e4ks juuksuri juurde.\n(1)Ta kasvatas oma juukseid v\u00e4lja.(2)Ta juuksed olid pikaks kasvanud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss tegi oma uuele klassikaaslasele kurjasid tempe.\n(1)Poiss tervitas oma uut klassikaaslast.(2)Poisile ei meeldinud uus klassikaaslane.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma ihaldasin klaasi piima.\n(1)Ma s\u00f5in k\u00fcpsiseid.(2)Ma k\u00fcpsetasin leiba.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hakkas sadama.\n(1)Juht pani esituled p\u00f5lema.(2)Juht pani tagurpidik\u00e4igu sisse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hoone parkimisplats oli t\u00fchi.\n(1)Ma parkisin \u00fcle tee.(2)Ma parkisin sissep\u00e4\u00e4su juude.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kirjanik ei pidanud mustandi esitamise t\u00e4htajast kinni.\n(1)Tal oli kirjaniku blokk.(2)Ta redigeeris mustandit.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Partner katkestas mu k\u00f5ne.\n(1)Ma tahtsin \u00fclevaatajaga r\u00e4\u00e4kida.(2)Ma andsin oma eraldusnumbri.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Tuul puhus lahtisest aknast sisse.\n(1)Uksekell helises.(2)Kardinad liikusid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu majas l\u00e4ks elekter \u00e4ra.\n(1)Ma v\u00f5tsin lambi seinast v\u00e4lja.(2)Ma p\u00f5letasin kaitsme l\u00e4bi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00f5stja r\u00f6hatas.\n(1)Ta painutas peegli ees oma muskleid.(2)Ta t\u00f5stis kangi oma pea kohale.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilane proovis peast arvutada.\n(1)Ta v\u00f5ttis kalkulaatori v\u00e4lja.(2)Ta sattus segadusse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tita j\u00e4i magama.\n(1)Isa vahetas tita m\u00e4hkmeid.(2)Isa kiigutas titat tasakesi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk viskas poissi veepommiga.\n(1)Pois sai peap\u00f5rutuse.(2)Poiss sai l\u00e4bim\u00e4rjaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Fotograaf unustas kaamera v\u00e4lku kasutada.\n(1)Pildid tulid udused.(2)K\u00f5ik keeldusid pildil naeratamast.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma \u00fctlesin s\u00fcnnip\u00e4evakutse \u00e4ra.\n(1)Ma oli \u00fcksik.(2)Ma olin linnast v\u00e4ljas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma tegin trenni.\n(1)Ma tundsin end energiliselt.(2)Ma kartsin.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma pigistasin niisket svammi.\n(1)See imas vett sisse.(2)Vesi n\u00f5rgus sellest v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Puhkajad l\u00e4ksid praamiga puhkekeskusse.\n(1)Puhkekeskus oli broneeritud.(2)Puhkekeskus oli saare peal.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Teismeline tegi t\u00e4toveeringu.\n(1)Ta kartis n\u00f5elu.(2)Ta tahtis m\u00e4ssata.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "V\u00f5\u00f5ras auto parkis mu maja ees.\n(1)Ma muutusin kahtlustavaks.(2)Ma kutsusin politsei.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kurjategija andis end \u00fcles.\n(1)T\u00f5endid segasid ta asjasse.(2)Tema vastu ei olnud t\u00f5endeid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Turske mees otsustas kaalus alla v\u00f5tta.\n(1)Ta l\u00f5petas magusa s\u00f6\u00f6mise.(2)Ta v\u00e4ltis kofeiini.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk astus j\u00e4\u00e4le.\n(1)Ta libises.(2)Ta v\u00e4rises.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naisel olid r\u00f5ngad silmade all.\n(1)Ta oli terve \u00f6\u00f6 \u00fcleval.(2)Ta pani oma poja magama.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Laava voolas vulkaanist.\n(1)Vulkaan purskas.(2)Vulkaan oli uinunud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine pani kingad jalga.\n(1)Ta teadis k\u00f5iki peol.(2)Ta tahtis peolt lahkuda.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma maksin tolliputka teenindajale.\n(1)Ta lasi mind tolliputkast l\u00e4bi.(2)Ta pidas mind tolliputkas kinni.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Juhataja l\u00e4ks pankrotti.\n(1)Ta m\u00fc\u00fcs oma firma atsiaid.(2)Ta raiskas oma varanduse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees l\u00e4ks arsti juurde.\n(1)Arst oli puhkusel.(2)Mees tundis end haiglaselt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma v\u00e4ljusin oma magamistoast akna kaudu.\n(1)Maja p\u00f5les.(2)Maja oli t\u00fchi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poisi s\u00f5rmed l\u00e4ksid kortsu.\n(1)Ta oli pikalt du\u0161i all.(2)Ta m\u00e4\u00e4ris oma k\u00e4si seebiga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma s\u00fclitasin piima v\u00e4lja.\n(1)Piim maitses hapu.(2)Mu suu oli kuiv.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma j\u00e4in bussist maha.\n(1)Ma j\u00f5udsin vara t\u00f6\u00f6le.(2)Ma j\u00e4in t\u00f6\u00f6le hiljaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Veok p\u00f5rkas autoga kokku.\n(1)Veok kiirendas.(2)Auto purunes.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "V\u00f5istkond sahkerdas, et neil v\u00f5istlusel paremini l\u00e4heks.\n(1)Nad v\u00f5itsid.(2)Nad langesid v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Sooda pudel sisises.\n(1)Ma p\u00f6\u00f6rasin pudeli \u00fcmber.(2)Ma keerasin korgi maha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss oli oma majast v\u00e4lja lukustatud.\n(1)Ta roomas l\u00e4bi lahtise akna.(2)Ta ronis \u00fcles katusele.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Uksekell helises.\n(1)K\u00fclaline koputas uksekoputit.(2)Naine piilus l\u00e4bi ukse v\u00f5tmeaugu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees tegi oma \u00fclikonna plekiliseks.\n(1)Ta lasi selle keemiliselt puhastada.(2)Ta riputas selle oma kappi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk pigistas hambapastatuubi.\n(1)Hambapasta purskas joana tuubist v\u00e4lja.(2)T\u00fcdruk s\u00fclitas hambapasta v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Eraisikud surmad s\u00f5jas t\u00f5usid h\u00fcppeliselt.\n(1)Patsifistid korraldasid protesti.(2)Patsifistid pidasid paraadi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk t\u00f5mbas \u00e4kitselt paela oma peast.\n(1)Ta sidus paela.(2)Pael n\u00e4gi lapsik v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees k\u00e4is iluoperatsioonil.\n(1)Ta vananes.(2)Ta n\u00e4gi noorem v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Munast tuli beebikana v\u00e4lja.\n(1)Muna koorus.(2)Ma l\u00f5in muna katki.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vang n\u00e4lgis.\n(1)Ta suri.(2)Ta p\u00f5genes.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees kaotas redelil tasakaalu.\n(1)Ta ronis redelist \u00fcles.(2)Ta kukkus redelilt alla.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps krooksus.\n(1)Ta v\u00f5ttis s\u00f5\u00f5mu soodat.(2)Ta avas soodapurgi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00fclm tuulet\u00f5mbus tuli aknast sisse.\n(1)Ma l\u00f5\u00f5gastusin.(2)Ma v\u00e4risesin.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilane sai kolled\u017eisse minemiseks stipendiumi.\n(1)Ta klassikaaslased austasid teda.(2)Ta sai h\u00e4id hindeid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk viskas poisi \u00fcle nalja.\n(1)Ta elas tema naabermajas.(2)Ta oli temasse armunud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "N\u00e4ljane hulkur varastas s\u00fc\u00fca.\n(1)Ta s\u00fctitas kaastunnet.(2)Tal ei olnud raha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma helistasin oma s\u00f5brale, et lobiseda.\n(1)Ma tahtsin privaatsust.(2)Ma tundsin \u00fcksindust.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees ulatas mulle oma k\u00e4e.\n(1)Ma surusin ta k\u00e4tt.(2)Ma andsin talle k\u00f5rvakiilu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma kummardusin.\n(1)Ilutulestik lasti \u00f5hku.(2)Lendav taldrik lendas mu pea suunas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk n\u00e4ris k\u00fc\u00fcsi.\n(1)Ta oli mures.(2)Ta oli \u00fcllatunud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma p\u00f6\u00f6rasin kalendris lehte.\n(1)Ma m\u00e4rkisin kohtumise kalendrisse.(2)Oli uue kuu algus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees avastas, et ta naisel oli af\u00e4\u00e4r.\n(1)Ta lasi oma advokaadi lahti.(2)Ta andis lahutuse sisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk viskas kummipalli maha.\n(1)Pall p\u00f5rkas.(2)Pall helendas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk tegi oma eksamil vea.\n(1)Ta aimas vastust.(2)Ta kustutas oma vastuse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "M\u00e4ngija n\u00fcgis oma vastast.\n(1)Ta vastane p\u00fc\u00fcdis s\u00f6\u00f6du.(2)Ta vastane kukkus maha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma noppisin taime k\u00fcljest tomateid.\n(1)Need olid k\u00fcpsed.(2)Ma kastsin neid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees tahtis romantiliselt k\u00e4ituda.\n(1)Ta s\u00f5i oma ekst\u00fcdrukuga l\u00f5unat.(2)Ta ostis oma t\u00fcdrukule \u0161okolaadikomme.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Elavh\u00f5be termomeetris t\u00f5usis.\n(1)Ma kukutasin termomeetri maha.(2)Ilm l\u00e4ks soojemaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nornaado liikus l\u00e4bi linna.\n(1)Kohtuhoone katus puhuti pealt.(2)Maantee muutus ohtlikult j\u00e4iseks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5pilane sai kodu\u00f5petajalt tunde.\n(1)Ta hinded paranesid.(2)Ta spikerdas eksamil.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma tundsin end mugavalt.\n(1)Ma p\u00f5lvitasin maas.(2)Ma keerasin end teki sisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma poleerisin kivi.\n(1)See muutus libedaks.(2)See muutus s\u00e4ravaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma lisasin kohvile suhkrut.\n(1)Kohv l\u00f5hnas tugevalt.(2)Kohv maitses magus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees paigutas pabereid \u00fcmber.\n(1)Ta sai  paberi l\u00f5ikehaava.(2)Ta rebis paberid ribadeks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma l\u00f5in haamriga naela.\n(1)Nael l\u00e4ks vajus puidu sisse.(2)Nael l\u00e4ks rooste.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kala n\u00e4kkas.\n(1)Kalamees vinnas kala v\u00e4lja.(2)Kalamees viskas uuesti ridva vette.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Teismelisel oli piinlik kooli minna.\n(1)Tal oli vistrik.(2)Tal v\u00f5eti breketid \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu n\u00e4oilme l\u00f5i s\u00e4rama.\n(1)Ma sain h\u00e4id uudiseid.(2)Ma kaotasin oma kannatuse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma p\u00fchkisin oma k\u00e4ed r\u00e4tikuga.\n(1)R\u00e4tik oli m\u00e4rg.(2)Mu k\u00e4ed olid m\u00e4rjad.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees kaotas taburetil tasakaalu.\n(1)Taburet ta all vabises.(2)Ta kukutas taburetile v\u00e4rvi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Meeskonna liikmed ajasid s\u00fc\u00fcd \u00fcksteise kaela.\n(1)Nad kaotasid m\u00e4ngu.(2)Nende treener j\u00e4ttis treeningu \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma palusin adestust.\n(1)Ma kahetsesin oma viga.(2)Ma saavutasin oma eesm\u00e4rgi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naisel hakkas oma kohtingukaaslasega igav.\n(1)Ta k\u00fcsis tema kohta k\u00fcsimusi.(2)Ta r\u00e4\u00e4kis lakkamatult endast.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk naeratas vilksamisi.\n(1)Ta p\u00f5sed l\u00e4ksid punakaks.(2)Ta naerulohud ilmusid n\u00e4htavale.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vaenlase laev lendas \u00f5hku.\n(1)See l\u00e4ks \u00fcle miini.(2)See seilas sadamasse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees torkas oma jalga.\n(1)Ta k\u00f5ndis lompi.(2)Ta astus klaasikildude peale.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Detektiivid otsisid kuriteopaigalt s\u00f5rmej\u00e4lgi.\n(1)Nad avastasid m\u00f5rvari identiteedi.(2)Nad leidsid kuriteopaigast relva.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Maanteel oli tihe liiklus.\n(1)Ma tegin \u00fcmbers\u00f5idu.(2)Ma palusin, et mind \u00e4ra visataks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Riigi majandus langes.\n(1)Paljud inimesed j\u00e4id haigeks.(2)Paljud inimesed seisid silmitsi t\u00f6\u00f6tusega.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00dclek\u00e4iguraja valvur puhus laste peale vilet.\n(1)Nad olid k\u00f5ndimas l\u00e4henevasse liiklusesse.(2)Ta tundis neid oma naabruskonnast \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma p\u00f6\u00f6ritasin oma s\u00f5bra peale silmi.\n(1)Ta r\u00e4\u00e4kis mulle t\u00f5tt.(2)Ta tegi sarkastilise m\u00e4rkuse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Autol sai bensiin otsa.\n(1)Juht oli abitult tee peal.(2)Juht v\u00f5ttis h\u00e4\u00e4letaja peale.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine hakkas s\u00fcnnitama.\n(1)Tita s\u00fcndis.(2)Naisel oli hommikune iiveldus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe m\u00fcts puhuti \u00e4ra.\n(1)Ta v\u00f5ttis oma m\u00fctsi \u00e4ra.(2)\u00d5ues oli tuuline.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk k\u00e4is klassikaaslase s\u00fcnnip\u00e4evapeol.\n(1)Ta sai kutse.(2)Ta ostis kingituse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poisi otsmik oli kuum.\n(1)Ta ema kraadis teda.(2)Ta ema viis ta parki.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees pihustas end odekolonniga.\n(1)Ta tahtis oma kohtingukaaslasele muljet avaldada.(2)Ta pani oma juustesse geeli.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Majas l\u00e4ks elekter \u00e4ra.\n(1)Ma otsisin taskulampi.(2)Ma v\u00f5tsin labida k\u00e4tte.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Pere kolis suuremasse majja.\n(1)Poeg l\u00f5petas keskkooli.(2)Ema s\u00fcnnitas kaksikud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Maratonijooksja hoidis rahulikku tempot.\n(1)Ta tahtis oma energiat kokku hoida.(2)Ta n\u00e4gi fini\u0161ijoont.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss l\u00f5i m\u00fc\u00fcgiautomaati jalaga.\n(1)M\u00fc\u00fcgiautomaat s\u00fclitas ta vahetusraha v\u00e4lja.(2)Kr\u00f5psukott oli kinni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu s\u00f5bra koer suri.\n(1)Ma p\u00f6\u00f6ritasin tema peale silmi.(2)Ma tegin talle kalli.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00c4rimehe krediitkaart l\u00fckati tagasi.\n(1)Ta kirjutas v\u00f5lakirja.(2)Ta maksis sularahas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees vandus.\n(1)Ta l\u00f5ikas oma k\u00fc\u00fcsi.(2)Ta l\u00f5i oma varba \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees tundis oma vene \u00fcle uhkust.\n(1)Ta vend vaidles nende vanematega.(2)Ta vend sai \u00f5igusteduskonda sisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk tahtis p\u00e4ikeses\u00fcsteemi kohta \u00f5ppida.\n(1)Ta l\u00e4ks raamatukokku.(2)Ta vaatas t\u00e4hti.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poster j\u00e4i seinale kinni.\n(1)Ma paigutasin postri ukse kohale.(2)Ma panin kleeplinti postri tagak\u00fcljele.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Klient kiitis arhitekti hoone plaanid heaks.\n(1)Arhitekst konsTrueeris hoone.(2)Arhitekt kohandas plaane.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees kukutas oma lusika maha.\n(1)Ta k\u00e4ed v\u00e4risesid.(2)Ta limpsis lusikat.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Firma tegevdirector astus tagasi.\n(1)Juhatus l\u00f5petas firma tegevuse.(2)Juhatus leidis talle asenduse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma j\u00e4in loengusse hiljaks.\n(1)Ma istusin tagaritta.(2)Ma l\u00e4henesin poodiumile.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees sai vangist v\u00e4lja.\n(1)Ta pere maksis ta kautsjoni.(2)Ta r\u00fcndas kaasvangi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Pere kaotas k\u00f5ik oma asjad.\n(1)Nad m\u00fc\u00fcsid oma maja.(2)Maja l\u00e4ks p\u00f5lema.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma trampisin alumiiniumpurgil.\n(1)Purk taast\u00f6\u00f6deldi.(2)Purk litsuti laiaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk \u00fchines v\u00e4itlusmeeskonnaga.\n(1)Ta \u00f5ppis arvutit kasutama.(2)Ta \u00f5ppis suhtlusoskusi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu tuju paranes.\n(1)Ma kuulasin muusikat.(2)Ma pesin n\u00f5ud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Heategevusorganisatsioon seadis eesm\u00e4rgiks raha koguda.\n(1)Nad toitsid kodutuid.(2)Nad korraldasid oksjoni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ameerika m\u00e4gede rong s\u00f6\u00f6stis j\u00e4rsust langusest alla.\n(1)Reisida itsitasid.(2)Reisijad karjusid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma olin maruvihane.\n(1)Ma kontrollisin majast lahkudes postkasti.(2)Ma l\u00f5in majast lahkudes ukse pauguga kinni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees tahtis p\u00e4ikeset\u00f5usu vaadata.\n(1)Ta reisis p\u00f5hja.(2)Ta t\u00f5usis vara.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma voltisin paberit.\n(1)Ma taast\u00f6\u00f6tlesin paberit.(2)Paber kortsus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Riik elas looduskatastroofi \u00fcle.\n(1)Teiset riikide juhid moodustasid liidu.(2)Teiste riikide juhid saatsid h\u00e4daabi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poisi riided olid l\u00e4bim\u00e4rjad.\n(1)Ta ronis basseinist v\u00e4lja.(2)Ta kukkus basseini.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilane kiirustas raamatu l\u00f5petamisega.\n(1)See tuli raamatukokku tagasi viia.(2)Ta laenas selle s\u00f5bralt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kurjategija hukati.\n(1)Ta pandi vangi.(2)Ta pani toime m\u00f5rva.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "P\u00e4ikesevalgus kandus ruumi.\n(1)Ma t\u00f5mbasin kardinad eest.(2)Ma tegi ukse lukust lahti.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma sikutasid petise juukseid.\n(1)Ta parukas tuli \u00e4ra.(2)Ta j\u00e4i kiilaks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Toimetaja muutis k\u00e4sikirjas lause s\u00f5nastust.\n(1)Ta leidis, et k\u00e4sikiri oli m\u00f5juv.(2)Ta pidas lauset ebaselgeks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine pani oma krediitkaardi konto kinni.\n(1)Ta avastas, et ta kaart oli kadunud.(2)Ta avastas, et ta kaart oli aegunud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees ja naine armusid.\n(1)Nad k\u00e4isid k\u00f5rgkoolis.(2)Nad abiellusid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Muusika oli liiga \u00e4hmane, et kuulda.\n(1)Ma keerasin vol\u00fc\u00fcmi juurde.(2)Ma komponeerisin oma enda laulu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poisi juuksed hoidsid p\u00fcsti.\n(1)T\u00fcdruk sasis neid.(2)T\u00fcdruk t\u00f5mbas neid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Putukas l\u00f6mastati.\n(1)Ma pihustasin endale putukat\u00f5rjevahendit peale.(2)Ma astusin putukale peale.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma avasin oma silmad.\n(1)Ma \u00e4rkasin.(2)Ma l\u00f5\u00f5gastusin.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu naabri muusika oli k\u00f5rvulukustav.\n(1)Ma palusin tal see vaiksemaks panna.(2)Ma palusin talt CD'd laenuks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe pere elas vaesuses.\n(1)Ta oli oma teenituga kokkuhoidlik.(2)Ta teenis alla miinimumpalga.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilane l\u00f5petas \u00fclikooli.\n(1)Ta otsis t\u00f6\u00f6d.(2)Ta alustas hobiga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kunstnik segas kollase ja sinise v\u00e4rvi.\n(1)V\u00e4rv pritsis igale poole.(2)V\u00e4rv muutus roheliseks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma vahetasin vestlusteemat.\n(1)Mul said otsa asjad, millest r\u00e4\u00e4kida.(2)Vestlus muutus pingeliseks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu vend sai haiglast v\u00e4lja.\n(1)Ma v\u00f5tsin ta soojalt kodus vastu.(2)Ma kohtlesin teda k\u00fclmalt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Eesriie t\u00f5usis.\n(1)N\u00e4idendi avastseen algas.(2)N\u00e4idendi n\u00e4itlejad lahkusid lavalt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Pantvang alistus inimr\u00f6\u00f6vija k\u00e4skudele.\n(1)Inimr\u00f6\u00f6vija \u00e4hvardas pantvangile haiget teha.(2)Inimr\u00f6\u00f6vija j\u00e4ttis pantvangi omapead.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00f5min kajas \u00fcle lava.\n(1)Muusik koputas jalaga vastu maas.(2)Muusik l\u00f5i tagus trummi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vanemad kiirustasid oma lapse magamistuppa.\n(1)Laps \u00e4rkas \u00f5udusunen\u00e4o pealt karjudes \u00fcles.(2)Laps kartis oma voodi alla vaadata.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine suhtles viipekeeles.\n(1)Ta s\u00fcndis enneaegselt.(2)Ta s\u00fcndis kurdina.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Piirkonnas ilmnes p\u00f5ud.\n(1)Vesi muutus saastatuks.(2)Saak h\u00e4vis.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kass jahtis lindu.\n(1)Lind lendas \u00e4ra.(2)Lind p\u00fc\u00fcdis ussikese kinni.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk vahetas kooli.\n(1)Koolist oli suveks vabadus.(2)Ta kolis uude linna.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tehase omanik keeldus t\u00f6\u00f6tajate palka t\u00f5stmast.\n(1)Omanik nimetas ametisse uue juhataja.(2)T\u00f6\u00f6tajad streikisid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Juht seisis vastu oma riigi ekstremistidele.\n(1)Ekstremistid m\u00f5jutasid teda.(2)Ekstramistid m\u00f5rvasid ta.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma k\u00f5ndisin paljajalu rannal.\n(1)Liiv j\u00e4i mu jalgade k\u00fclge.(2)Lained laksusid m\u00f6\u00f6da kallast.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma \u00e4rkasin keset \u00f6\u00f6d k\u00fclmatunde peale \u00fcles.\n(1)Ma panin dressip\u00fcksid jalga.(2)Ma j\u00f5in klaasi vett.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ema vaigistas oma poega.\n(1)Ta poeg irvitas.(2)Ta poeg vingus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu p\u00fckstesse rebenes auk.\n(1)Ma panin oma p\u00fckste luku kinni.(2)Ma kukkusin asfaltil pikali.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss kandis breketeid.\n(1)Ta sai hambaugu.(2)Ta hambad muutusid sirgeks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma tegin eile j\u00f5usaalis trenni.\n(1)Ma \u00e4rkasin t\u00e4na \u00fcles lihasvaluga.(2)Ma \u00e4rkasin t\u00e4na \u00fcles valusa kurguga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdrukud sosistasid l\u00f5unalauas omavahel edasi-tagasi.\n(1)Teised \u00f5pilased istusid l\u00f5unalauda maha.(2)Teised \u00f5pilased l\u00f5unalauas tundsid end k\u00f5rvalej\u00e4etult.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps maandus batuudile.\n(1)Ta lendas tagasi \u00fcles \u00f5hku.(2)Ta otsustas saltod proovida.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma panin kirja kirjakasti.\n(1)Postkontor toimetas kirja kohale.(2)Postkontor vaatas kirja kiiresti l\u00e4bi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hasartm\u00e4ngur oli enesekindel.\n(1)Ta vedas kihla kogu oma raha peale.(2)Ta l\u00e4ks koju pankrotis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Metsatulekahju levis.\n(1)Tuuled muutusid tugevamaks.(2)S\u00fc\u00fctajad tabati.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Lapsel tuli p\u00f5lve pealt nahk maha.\n(1)Ta ema saatis ta oma tuppa.(2)Ta ema pani sideme ta haavale.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees elas surmava haiguse \u00fcle.\n(1)Ta allkirjastas oma testamendi.(2)Talle siirdati elund.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma v\u00f5tsin lonksu k\u00f5rvetavat kohvi.\n(1)Ma hammustasin keelde.(2)Ma p\u00f5letasin oma keele.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Toimetaja lasi kirjaniku lahti.\n(1)Kirjanik v\u00e4ltis oma lugudes eelarvamusi.(2)Kirjanik ei pidanud olulisest t\u00e4htajast kinni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma tundsin end rampv\u00e4sinult.\n(1)Ma magasin terve p\u00e4eva.(2)Ma \u00f5ppisin terve p\u00e4eva.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Arst pani patsiendile diagnoosi.\n(1)Ta tuvastas patsiendi s\u00fcmptomid.(2)Ta kirjutas patsiendile tabletid v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma kratsisin oma nahka.\n(1)See oli higine.(2)See s\u00fcgeles.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mehele tehti erakorraline operatsioon.\n(1)Ta kaotas kannatuse.(2)Tal oli s\u00fcdamerabandus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mehe k\u00e4elihased olid punnis.\n(1)Ta painutas oma k\u00e4si.(2)Ta h\u00f5\u00f5rus oma k\u00e4si.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees kergitas kulmu.\n(1)Ta oli \u00fcllatunud.(2)Ta tundis end heidutatult.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma andestasin kolleegile ta eksituse.\n(1)Ma uskusin, et ta soovis head.(2)Ma uskusin, et ta teeb heal ja halval vahet.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees j\u00e4ttis suitsetamise maha.\n(1)Ta hakkas rohkem trenni tegema.(2)Ta hakkas varem \u00e4rkama.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine l\u00f5i oma r\u00fcndajale vastu nina.\n(1)R\u00fcndaja keha muutus elutuks.(2)R\u00fcndaja hakkas veritsema.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nool ei tabanud m\u00e4rklaua keskkohta.\n(1)Mehe sihtimine oli m\u00f6\u00f6da.(2)Mees kaotas m\u00e4ngu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Maja omanik palus, et parasiitide t\u00f5rjuja ta majja tuleks.\n(1)Ta avastas keldrist rotid.(2)Ta pidas oma toas sipelgafarmi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma pakkusin oma k\u00fclalisele v\u00e4lja, et l\u00e4heksime v\u00e4lja \u00f5htust s\u00f6\u00f6ma.\n(1)Ma olin liiga v\u00e4sinud, et midagi valmistada.(2)Mu k\u00fclaline j\u00e4i lubatuks kauemaks minu juurde.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk sattus peale, kui ta vend ta p\u00e4evikud luges.\n(1)Ta hakkas p\u00e4evikut peitma.(2)Ta ostis omale uue p\u00e4eviku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naisel j\u00e4i \u00fc\u00fcrirahast puudu.\n(1)Ta tegi t\u00f6\u00f6l \u00fcletunde.(2)Ta tuli t\u00f6\u00f6lt \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Laps t\u00f5mbas k\u00e4e k\u00e4hku tagasi.\n(1)Ta l\u00e4ks kuumale pliidile vastu.(2)Ta patsutas kutsika pead.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Firma tahtis klientide rahulolu m\u00f5\u00f5ta.\n(1)Nad pakkusid uutele klientidele allahindlust.(2)Nad saatsid klientidele k\u00fcsimustiku laiali.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Puup\u00f5randale tulid kriimud.\n(1)Poiss viskas padjad diivani pealt maha.(2)Poiss vedas tooli m\u00f6\u00f6da p\u00f5randat.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma varjasin oma n\u00e4gu.\n(1)Mu vaenlane m\u00f5nitas mind.(2)Mu vaenlane ajas rusika p\u00fcsti.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kuulus kuju p\u00f5les maha.\n(1)See sai v\u00e4lgutabamuse.(2)Inimesed tulid seda austama.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma j\u00e4tsin puuvilja lauale.\n(1)Puuvili levitas seemneid.(2)K\u00e4rbsed kihasid puuvilja \u00fcmber.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Baleriin t\u00f5mbas sideme \u00e4ra.\n(1)Ta sirutas oma varbad v\u00e4lja.(2)Ta v\u00e4\u00e4nas oma h\u00fcppeliigese v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lapsel tulid kingapaelad lahti.\n(1)Ta \u00f5ppis, kuidas neid siduda.(2)Ta jooksis m\u00e4nguvaljakul ringi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Raamat k\u00fctkestas mind.\n(1)Ma viisin raamatu tagasi.(2)Ma kaotasin ajataju.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees uskus sarnastesse asjadesse nagu tema vanemad.\n(1)Ta vanemad m\u00f5jutasid teda.(2)Ta vanemad t\u00f5ukasid ta \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Auto aeglustas tasapisi kuni peatumiseni.\n(1)Sel sai bensiin otsa.(2)Juht uinus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees s\u00f5i p\u00e4ikese k\u00e4es j\u00e4\u00e4tist.\n(1)J\u00e4\u00e4tis kaotas oma maitse.(2)J\u00e4\u00e4tis tilkus koonuse otsast.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma riputasin kunsti tuppa.\n(1)Vaip n\u00e4gi must v\u00e4lja.(2)Seinad tundusid paljad.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma lahkusin t\u00f6\u00f6lt vara.\n(1)Mul oli peavalu.(2)Mu \u00fclemus korraldas koosoleku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kutsikas tegi vaiba t\u00e4is.\n(1)Omanik riidles kutsikaga.(2)Omanik andis kutsikale maiust.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma vabandasin oma s\u00f5bra ees.\n(1)Mu s\u00f5ber andestas mulle.(2)Mu s\u00f5ber l\u00e4ks marru.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees paistis rahva hulgast silma.\n(1)Ta kandis seljakotti.(2)Ta kandis neoonvesti.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Tunnistaja valetas vande all.\n(1)Ta l\u00f5petas oma tunnistuse.(2)Teda s\u00fc\u00fcdistati valetunnistuse andmises.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine v\u00e4rvis oma juuksed \u00e4ra.\n(1)Ta tahtis uut moodi v\u00e4lja n\u00e4ha.(2)Ta tahtis sisse sulanduda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Immigrandid j\u00e4id riigis ebaseaduslikult resideerumisega vahele.\n(1)Nad leidsid t\u00f6\u00f6.(2)Nad saadeti riigist v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Avalik esineja viskas nalja.\n(1)Publik naeris.(2)Publik t\u00f5usis p\u00fcsti.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma vaatasin p\u00e4iksesse.\n(1)P\u00e4ike pimestas mind.(2)P\u00e4ike p\u00e4evitas mu nahka.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mul oli igav.\n(1)Ma m\u00fchatasin.(2)Ma haigutasin.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Steiki oli raske l\u00f5igata.\n(1)Nuga oli n\u00fcri.(2)Steil oli toores.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine kuulutas v\u00e4lja pankroti.\n(1)Ta sai alimente.(2)Tal oli hiigelsuur v\u00f5lg.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu s\u00f5bra korteris p\u00f5lesid tuled.\n(1)Ma tundsin huvi, et kas ta on v\u00e4ljas.(2)Ma otsustasin talle k\u00fclla minna.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma panin lille oma nina alla.\n(1)Lille kroonlehed tulid \u00e4ra.(2)Ma tundsid lillel\u00f5hna.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine tundis end nostalgiliselt.\n(1)Ta kohtas lapsep\u00f5lves\u00f5pra.(2)Ta karjus oma laste peale.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5pilane l\u00fckkas kirjat\u00f6\u00f6d edasi.\n(1)Ta esitas kirjat\u00f6\u00f6 vara.(2)Ta esitas poolelioleva kirjat\u00f6\u00f6.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu auto l\u00e4ks katki.\n(1)Ma l\u00e4ksin kaubanduskeskusesse.(2)Ma helistasin mehaanikule.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma heitsin m\u00e4rkuse k\u00f5rvale.\n(1)See oli anon\u00fc\u00fcmne.(2)See oli illegaalne.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lind laksutas oma tiibu.\n(1)Ta mnes.(2)Ta t\u00f5usis \u00fclespoole.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma parkisin sisses\u00f5iduteel.\n(1)Garaa\u017e oli lahti.(2)Garaa\u017e oli t\u00e4is.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kurjategija suunas oma relva ohvri peale.\n(1)Kurjategija pani relva maha.(2)Ohver t\u00f5stis k\u00e4ed \u00fcles.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma ootasin pikisilmi n\u00e4dalavahetust.\n(1)Mul oli plaanis oma onu matustele minna.(2)Mul oli plaanis oma s\u00f5bra pulma minna.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma kaotasin ajataju.\n(1)Ma unistasin.(2)Mul iiveldas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Dokument printis loetamatult.\n(1)Printeris oli v\u00e4he tinti.(2)Printeris oli paber otsas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Staadion m\u00e4ngis riigh\u00fcmni.\n(1)F\u00e4nnid p\u00f6\u00f6rasid lipu poole.(2)F\u00e4nnid tormasid v\u00e4ljakule.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Dipp maitses mage.\n(1)Ma serveerisin seda.(2)Ma panin soola juurde.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma panin paberr\u00e4tiku mahal\u00e4inud vedeliku peale.\n(1)R\u00e4tik imas vett sisse.(2)Mahal\u00e4inud vedelik j\u00e4ttis kleepuva j\u00e4lje.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naisele segati poole raamatu lugemise pealt vahele.\n(1)Ta pani j\u00e4rjehoidja oma lehek\u00fclje vahale.(2)Ta luges raamatu uuesti.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Lennuk sattus turbulentsi.\n(1)Mees pani oma turvav\u00f6\u00f6 kinni.(2)Mees vaatas aknast v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss v\u00f5patas.\n(1)T\u00fcdruk ignoreeris teda.(2)T\u00fcdruk torkas teda.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Arstid andsid patsiendile tehisj\u00e4seme.\n(1)Nad amputeerisid ta jala.(2)Nad j\u00e4lgisid tema elut\u00e4htsaid organeid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss n\u00e4pistas t\u00fcdruku \u00f5lga.\n(1)Ta kehitas tema suunas \u00f5lgu.(2)Ta t\u00f5mbas oma k\u00e4e tema juurest \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma k\u00fcsisin oma s\u00f5bralt n\u00f5u.\n(1)Mulle hindasin tema arvamust.(2)Ma teadsin, et tal on \u00f5igus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss astus mutta.\n(1)Muda j\u00e4i ta kinga k\u00fclge kinni.(2)Muda tabas teda n\u00e4kku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Linnas sadas m\u00f5ned tollid lund maha.\n(1)Koolid sulgesid.(2)Inimesed peitsid end maa alla.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00f6\u00f6taja vahetus l\u00f5ppes.\n(1)Ta l\u00e4ks selleks p\u00e4evaks koju.(2)Ta \u00e4hvardas oma t\u00f6\u00f6lt lahkuda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Puu kahjustas maja.\n(1)Puu kukkus katusele.(2)Puu varjutas tagaaeda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Puit l\u00e4ks pooleks.\n(1)Ma kuhjasin puud kaminasse.(2)Ma l\u00f5in kirve puusse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Perekond \u00f5nnitles paarikest.\n(1)Paarike teatas, et nad lahutavad.(2)Paarike teatas, et nad saavad lapse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk saatis poisile s\u00f5brap\u00e4eva kaardi.\n(1)Ta meeldis talle.(2)Ta suudles teda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma noogutasin oma s\u00f5bra avalduse peale pead.\n(1)Ma olin segaduses.(2)Ma n\u00f5ustusin temaga.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "S\u00f5brad viskasid kulli ja kirja.\n(1)Nad tahtsid leida kompromissi.(2)Nad tahtsid teha ausa otsuse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Taimer k\u00f6\u00f6gis hakkas t\u00f6\u00f6\u00f6le.\n(1)Mees pakkis toidukaubad k\u00fclmikusse lahti.(2)Mees v\u00f5ttis pitsa ahjust v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine seadis ambitsioonika eesm\u00e4rgi.\n(1)Ta logeles.(2)Ta tegi k\u00f5vasti t\u00f6\u00f6d.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "J\u00f5ukas mees suri vanadusse.\n(1)Ta poeg sattus juriidilistesse probleemidesse.(2)Ta poeg p\u00e4ris ta varanduse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine trampis leekidel.\n(1)Leegid kustusid.(2)Leekidest t\u00f5usis suitsu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naise auto oli t\u00f6\u00f6kojas.\n(1)Ta autojuhiload peatati.(2)Ta sattus auto\u00f5nnetusse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma ei kuulnud oma \u00e4ratuskella.\n(1)Ma tegin hommikus\u00f6\u00f6ki.(2)Ma magasin hommikus\u00f6\u00f6gi maha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Avaliku elu tegelane tuli limusiinist v\u00e4lja.\n(1)Kaamerad v\u00e4lgutasid tema suunas.(2)Ta pere osales pressikonverentsil.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine logeles vannis.\n(1)Vannivesi muutus leigeks.(2)Vannivesi voolas vannist v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00f5rgkooli \u00f5pilased tahtsid kohtuda teiste \u00f5pilastega \u00fclikoolilinnakus.\n(1)Nad \u00fchinesid korporatsiooniga.(2)Nad v\u00f5tsid inseneeria p\u00f5hiaineks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma t\u00f5stsin diivanipadjad \u00fcles.\n(1)Ma otsisin lahtist vahetusraha.(2)Ma paigutasin elutuba \u00fcmber.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Herilane lenda poisi poole.\n(1)Poiss jooksis \u00e4ra.(2)Poiss korjas lille.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine m\u00f5isteti v\u00e4\u00e4rteos s\u00fc\u00fcdi.\n(1)Talle m\u00f5isteti \u00fcldkasulik t\u00f6\u00f6.(2)Ta m\u00e4\u00e4rati surma.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma segasin suhkrut kuuma teesse.\n(1)Tee auras.(2)Suhkur sulas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Veteran lonkas.\n(1)Ta oli s\u00f5tta v\u00e4rvatud.(2)Ta oli lahingus vigastada saanud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Kurjategija jooksis politsei eest \u00e4ra.\n(1)Politsei tegeles ohvriga.(2)Politsei j\u00e4litas kurjategijat.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "S\u00fclearvuti ei l\u00e4inud t\u00f6\u00f6le.\n(1)Ma kukutasin selle maha.(2)Ma laadisin seda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naisel sai kapis ruum otsa.\n(1)Ta soetas laialdase riidevaliku.(2)Ta voltis oma pesu kokku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe s\u00fcda oli murtud.\n(1)Ta naine s\u00fcnnitas.(2)Ta naine j\u00e4ttis ta maha.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees omandas kraadi.\n(1)Ta muutus kvalifitseerituks t\u00f6\u00f6 jaoks, mida ta tahtis.(2)Ta t\u00f6\u00f6pakkumine t\u00fchistati.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe h\u00e4\u00e4l kandus selgelt \u00fcle auditoorimi.\n(1)Ta tervitas publikut.(2)Ta r\u00e4\u00e4kis mikrofoni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma viskasin m\u00fcndi purskkaevu.\n(1)M\u00fcnt vajus p\u00f5hja.(2)M\u00fcnt l\u00e4ks pooleks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "M\u00e4ngija l\u00f5i palli augu suunas.\n(1)Pall l\u00e4ks auku.(2)Pall t\u00f5mbus tagasi m\u00e4ngija juurde.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma hingasin p\u00f6\u00f6ningul olevat tolmu sisse.\n(1)Ma luksusin.(2)Ma aevastasin.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poe kassapidaja kutsus turvat\u00f6\u00f6taja.\n(1)Klient kasutas valeraha.(2)Klient j\u00e4ttis esituled sisse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma viisin pr\u00fcgi v\u00e4lja.\n(1)Pr\u00fcgi pani k\u00f6\u00f6gi halvasti l\u00f5hnama.(2)Ma viskasin kogemata oma poenimekirja \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Pere l\u00e4ks loomaaeda.\n(1)Lapsed imetlesid loomi.(2)Lapsed ajasid loomi taga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehe hingamine oli vali.\n(1)Ta neerud \u00fctlesid \u00fcles.(2)Ta kopsud olid ummistunud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mul oli kontserdile \u00fcleliigne pilet.\n(1)Ma k\u00fcsisin oma s\u00f5bralt juhiseid toimumispaika.(2)Ma k\u00fcsisin oma s\u00f5bralt, kas talle pakuks minemine huvi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Maja \u00f5hukonditsioneer l\u00e4ks katki.\n(1)Ma t\u00f5in tekid v\u00e4lja.(2)Ma avasin aknad.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poisi selg valutas.\n(1)Ta seljakott oli lahti.(2)Ta seljakott oli raske.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma ostsin oma emale kingituse.\n(1)Ma k\u00fcptsetasin talle koogi.(2)Oli tema s\u00fcnnip\u00e4ev.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Nartsissid aias h\u00e4vitati.\n(1)Mesilane n\u00f5elas aednikku.(2)Oravad kaevasid sibulad \u00fcles.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma s\u00fc\u00fctasin tiku.\n(1)Leek kustus.(2)Tikk tekitas leegi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Vaidlevad osapooled j\u00f5udsid lahenduseni.\n(1)Nad ei tahtnud kohtus vaielda.(2)Nad tahtsid omavahelist suhet parandada.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Lapsed saadeti lastekodusse.\n(1)Nende vanemad surid.(2)Nende vanemad hellitasid nad \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Meteoriit langes ookeanisse.\n(1)Tekkis tsunaami.(2)Rahet hakkas sadama.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Matkaja kohtus m\u00fcrgise maoga.\n(1)Ta muutus deh\u00fcdreerituks.(2)Ta paanitses.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ahi l\u00e4ks kuumaks.\n(1)Ma panin ahju t\u00f6\u00f6le.(2)Ma panin roa ahju.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma pigistasin sidruniviilu.\n(1)Sidrun l\u00e4ks hallitama.(2)Sidrun pritsis.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Riik avastas uue maa-ala.\n(1)Riik h\u00fclgas maa.(2)Riik koloniseeris maa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Klaas kukkus laualt maha.\n(1)See purunes kildudeks \u00fcle kogu p\u00f5randa.(2)See maandus riidekuhja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Laud k\u00f5ikus.\n(1)P\u00f5rand oli ebatasane.(2)P\u00f5rand oli libe.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Isa tabas oma poja valetamas.\n(1)Ta poeg tunnistas t\u00f5e \u00fcles.(2)Isa usaldas oma poega.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees pea tuikas valust.\n(1)Ta v\u00f5ttis k\u00f6hasiirupit.(2)Ta v\u00f5ttis aspirini.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Rong aeglustas.\n(1)Ta l\u00e4henes jaamale.(2)Ta oli graafikust maas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees tegi teraapia l\u00e4bi.\n(1)Vaimuhaigus oli neil perekonnas.(2)Tal diagnoositi depressioon.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine haaras oma k\u00f5rist.\n(1)Ta neelas oma toidu alla.(2)Ta l\u00e4mbus oma toidu k\u00e4es.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naisel oli kurk valus.\n(1)Ta h\u00e4\u00e4l k\u00f5las kriipiv.(2)Ta r\u00e4\u00e4kis aktsendiga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Koer silmitses laual olevat mahlast steiki.\n(1)Ta ilastas.(2)Ta heitis pikali.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naise \u00e4ri saavutas edu.\n(1)Ta vallandas oma t\u00f6\u00f6tajad.(2)Ta sai j\u00f5ukaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilased lahkusid klassiruumist.\n(1)Kell helises.(2)\u00d5petaja andis kodut\u00f6\u00f6d.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine v\u00e4itis, et n\u00e4gi tonti.\n(1)Ta tuttavad v\u00e4ljendasid skeptitsismi.(2)Ta tuttavad seostasid end temaga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees kaotas oma kuulmise.\n(1)Ta peaaegu uppus ookeanis.(2)Ta sai peaaegu plahvatuses surma.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Laps lasi \u00f5hupallin\u00f6\u00f6rist lahti.\n(1)\u00d5hupall l\u00e4ks \u00f5hust t\u00fchjaks.(2)\u00d5hupall t\u00f5usis \u00f5hku.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees kaotas k\u00f5nev\u00f5ime.\n(1)Tal oli insult.(2)Ta hingas s\u00fcgavalt sisse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine komistas k\u00f5nniteel.\n(1)Tsemendis oli m\u00f5ra.(2)Ta kuulis oma nime h\u00fc\u00fctavat.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees h\u00fcppas basseini pommi.\n(1)Vetelp\u00e4\u00e4stja h\u00fcppas talle j\u00e4rgi.(2)Mees kastis vetelp\u00e4\u00e4stja l\u00e4bim\u00e4rjaks.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma v\u00f5tsin antibiootikume.\n(1)Mu infektsioon taandus.(2)Mu infektsioon levis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Valgusfoor l\u00e4ks kollaseks.\n(1)Juht vajutas pidurit.(2)Juht lasi signaali.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Plastn\u00f5u sulas.\n(1)Ma leotasin n\u00f5ud soojas vees.(2)Ma panin n\u00f5u kuumale pliidile.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Auto sai m\u00f5lgitud.\n(1)Juht s\u00f5itis vastu telefoniposti.(2)Juht s\u00f5itis punase tule alt l\u00e4bi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss \u00f5ppis terve \u00f6\u00f6.\n(1)Ta j\u00e4ttis eksami vahele.(2)Ta sai eksamist l\u00e4bi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Noor poiss klammerdus basseini\u00e4\u00e4re k\u00fclge.\n(1)Ta kartis ujuma \u00f5ppimist.(2)Vetelp\u00e4\u00e4stja oli t\u00f6\u00f6l.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma panin oma k\u00e4e oma rinnale.\n(1)Ma tundsin oma s\u00fcdamel\u00f6\u00f6ke.(2)Mu pulss kiirenes.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu kontori k\u00f5rvalhoone oli ehitamisel.\n(1)Mu kontor oli \u00fclerahvastatud.(2)Mu kontor oli l\u00e4rmakas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Pere tahtis oma uusi naabreid tundma \u00f5ppida.\n(1)Nad kutsusid naabrid \u00f5htus\u00f6\u00f6gile.(2)Nad lehvitasid naabritele oma aiast.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vesi pritsis basseinist \u00fcles.\n(1)Ujuja sukeldus basseini.(2)Ujuja hulpis basseinis.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma hammustasin arbuusiviilu.\n(1)Ma neelasin kogemata seemne alla.(2)Ma murdsin kogemata oma hamba.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss komistas.\n(1)Ta jope oli eest lahti.(2)Ta kingapaelad olid lahti.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine pani k\u00f5rvatropid k\u00f5rva.\n(1)Teda segas l\u00e4rm.(2)Ta tegi omale k\u00f5rvaaugud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma t\u00e4itsin oma veepudeli uuesti.\n(1)Ma j\u00f5in kogu vee selles \u00e4ra.(2)Ma hoidsin seda k\u00fclmikus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Telesaade oli tsenseeritud.\n(1)See sisaldas vulgaarset k\u00f5nepruuki.(2)Sellel oli keeruline s\u00fc\u017eee.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Laev hukkus.\n(1)Meeskond uppus.(2)Meeskond kohtus piraatidega.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss oli m\u00f5istatusest h\u00e4mmeldunud.\n(1)Ta lahendas m\u00f5istatuse.(2)Ta palus vihjet.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Telefon helises.\n(1)Mees pani telefoni \u00e4ra.(2)Mees v\u00f5ttis telefoni vastu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine j\u00f5llitas mind.\n(1)Ma kallistasin teda.(2)Ma tundsin ebamugavust.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Grupp lahkus muuseumist.\n(1)Nad tegin eksponaatidest pilti.(2)Nad vaatasid k\u00f5ik eksponaadid \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees alustas minuga vaidlust.\n(1)Mu s\u00f5ber tutvustas mind mehele.(2)Mu s\u00f5ber astus minu kaitseks v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu rattakumm oli t\u00fchi.\n(1)Ma pumpasin \u00f5hku kummi.(2)Ma vahetasin rattal k\u00e4ike.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk n\u00e4gi kahvatu v\u00e4lja.\n(1)Ta ise luges talle loo.(2)Ta ise katsus ta otsmikku.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Pastaks sai t\u00fchjaks.\n(1)Ma kasutasin pliiatsit.(2)Ma allkirjastasin oma nime.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehele ei antud laenu.\n(1)Ta oli v\u00f5lgades.(2)Ta alustas \u00e4ri.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk j\u00e4i koolist koju.\n(1)Tal olid tuuler\u00f5uged.(2)Ta nautis matemaatika \u00f5ppimist.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Pr\u00fcgikott oli t\u00e4is.\n(1)Ma viisin selle pr\u00fcgikonteinerisse.(2)Ma viskasin selle kraanikausist alla.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma t\u00f5mbasin vaiba tolmuimejaga \u00fcle.\n(1)Mu toakaaslane ajas pun\u0161i maha.(2)Mu koer ajas karva.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees kaotas kannatuse.\n(1)Ta sulges oma arvuti.(2)Ta viskas tooli toa teise otsa.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk viskas oksakese l\u00f5kkesse.\n(1)Oksake p\u00f5les.(2)Tuli kustus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees tuli du\u0161i alt \u00e4ra.\n(1)Kuum vesi oli otsas.(2)Ta ei leidnud r\u00e4tikut.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Vanemad tahtsid, et nende lapsed l\u00e4heksid k\u00f5rgkooli.\n(1)Nad panid \u00f5ppemaksu tarbeks hoiufondi k\u00f5rvale.(2)Nad julgustasid lapsi \u00f5ues m\u00e4ngima.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees sidus oma kingapaelad lahti.\n(1)Ta kingad l\u00f5dvenesid.(2)Ta kingad muutusid l\u00e4bikantuks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees s\u00f5i poole eelroast.\n(1)Ta pani j\u00e4\u00e4gid k\u00fclmkappi.(2)Ta salvestas retsepti.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu h\u00fcppeliiges oli paistes.\n(1)Ma panin sellele j\u00e4\u00e4d peale.(2)Ma m\u00e4\u00e4risin sellele kreemi peale.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu kontori uks oli lahti.\n(1)Ma r\u00e4\u00e4kisin oma laua juures oma kolleegidega.(2)Ma kuulsin pealt saalis toimuvat vestlust.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma pidin j\u00e4rjekorras ootama.\n(1)Ma v\u00f5tsin istet.(2)Ma sirvisin ajakirja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees lajatas k\u00e4rbsele.\n(1)K\u00e4rbes sumises minema.(2)K\u00e4rbes j\u00e4i liikumatuks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees kirjutas testamendi.\n(1)Ta oli suremas.(2)Ta oli lesk.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Jooksja tajus konkurenti endale j\u00e4rele j\u00f5udmas.\n(1)Ta katkestas v\u00f5istluse.(2)Ta kiirendas oma tempot.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma m\u00f5tlesin hoolikalt probleemile.\n(1)Ma k\u00fcsisin n\u00f5u.(2)Ma m\u00f5tlesin lahenduse v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Reisija k\u00f5ndis v\u00e4riseval rippsillal.\n(1)Ta tundis hirmu.(2)Ta tundis ekstaasi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees aimas meeskonna v\u00f5itu ette.\n(1)Ta sai oma s\u00f5pradega kokku, et m\u00e4ngu vaadata.(2)Ta vedas oma s\u00f5pradega kihla.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poiss ei suutnud uinuda.\n(1)Ta pani omale \u00e4ratuskella.(2)Ta luges lambaid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees keeras kraani lahti.\n(1)Tualett t\u00e4itus veega.(2)Tilast voolas vett.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk leidis oma helveste seest putuka.\n(1)Ta kallas piima kaussi.(2)Ta kaotas oma isu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine j\u00e4i pensionile.\n(1)Ta sai oma pensioni k\u00e4tte.(2)Ta maksis oma h\u00fcpoteegi \u00e4ra.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma tahtsin energiat s\u00e4ilitada.\n(1)Ma p\u00fchkisin t\u00fchjas toas p\u00f5randa.(2)Ma kustutasin t\u00fchjas toas tule.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Hamburgeri liha pruunistus.\n(1)Kokk k\u00fclmutas selle.(2)Kokk grillis seda.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma kahtlesin m\u00fc\u00fcgimehe kauba kiitmises.\n(1)Ma l\u00fckkasin ta pakkumise tagasi.(2)Ta veenis mind toodet ostma.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma otsustasin \u00f6\u00f6seks koju j\u00e4\u00e4da.\n(1)Ilmateade ennustas tormi.(2)Mu s\u00f5brad k\u00e4isid peale, et l\u00e4heksin v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu silmad muutusid punaseks ja pundunuks.\n(1)Ma nutsin.(2)Ma naersin.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00fc\u00fcnlaleek kustus.\n(1)Ma puhusin tahu peale.(2)Ma panin tiku tahu juurde.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees j\u00f5i peol k\u00f5vasti.\n(1)Tal oli j\u00e4rgmine p\u00e4ev peavalu.(2)Tal oli j\u00e4rgmine p\u00e4ev nohu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Keeglipall l\u00f5i keeglikurikad \u00fcmber.\n(1)Mees veeretas keeglipalli m\u00f6\u00f6da keeglirada.(2)Mees kukutas keeglipalli endale jala peale.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kogukond sai mehe surmast teada.\n(1)Ta perekond mattis ta kalmistule.(2)Tema j\u00e4relh\u00fc\u00fce ilmus ajalehes.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu arvuti jooksis kokku.\n(1)Ma installeerisin uued k\u00f5larid.(2)Ma kaotasin k\u00f5ik oma andmed.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine astus oma t\u00f6\u00f6kohalt tagasi.\n(1)Ta p\u00fcrgis firmas juhtiva rolli poole.(2)Ta arvastas, et ta \u00fclemused k\u00e4itusid ebaeetiliselt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "M\u00e4ngija p\u00fc\u00fcdis palli kinni.\n(1)Ta tiimikaaslane viskas selle talle.(2)Tema vastane p\u00fc\u00fcdis seda vahelt haarata.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kohtunik tagus haamriga.\n(1)Kohtusaalis puhkes k\u00e4ra.(2)Vandekohus teatas oma otsuse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine pagendas lapsed oma kinnisvaralt.\n(1)Lapsed l\u00f5id palli tema aeda.(2)Lapsed trampisid l\u00e4bi ta aia.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Inimr\u00f6\u00f6vlid vabastasid pantvangid.\n(1)Nad v\u00f5tsid lunaraha vastu.(2)Nad p\u00f5genesid vangist.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Koka silmad jooksid vett.\n(1)Tal said sibulad otsa.(2)Ta hakkis sibulat.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine hoidis oma s\u00f5rme k\u00fclma vee all.\n(1)Ta p\u00f5letas oma s\u00f5rma r\u00f6striga.(2)Ta pani deemants\u00f5rmuse oma s\u00f5rme.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5pilane kirjutas s\u00f5na valesti.\n(1)\u00d5petaja parandas teda.(2)\u00d5petaja l\u00fckkas ta tagasi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma taasleidsin oma rahu suurest vihahoost.\n(1)Mu s\u00fcda peksis.(2)Ma hingasin s\u00fcgavalt sisse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma panin oma k\u00e4ed jooksva kraani alla.\n(1)Seep tuli mu k\u00e4telt maha.(2)Vesi pritsis mulle n\u00e4kku.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees riietus oma parimasse \u00fclikonda.\n(1)Tal oli kohtumine olulise kliendiga.(2)Ta naine ostis talle uue lipsu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees tunnistas \u00fcles oma armastuse naise vastu.\n(1)Naine \u00fctles talle \u00e4ra.(2)Naine kadestas teda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Juhil oli kumm katki.\n(1)Ta \u00fcletas kiirust.(2)Ta s\u00f5itis \u00fcle naela.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu vaade filmiekraanile oli blokeeritud.\n(1)Paarike minu taga sosistas.(2)Pikk inimene istus minu ees.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Juht pani auto esituled p\u00f5lema.\n(1)Ta kuulis \u00e4ikest.(2)P\u00e4ike loojus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk keeldus oma k\u00f6\u00f6givilju s\u00f6\u00f6mast.\n(1)Ta isa \u00fctles talle, et ta jooks oma piima.(2)Ta isa v\u00f5ttis ta magustoidu \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine kattis oma suu k\u00e4ega.\n(1)Ta hindas v\u00e4lja.(2)Ta aevastas.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Sekret\u00e4r pani helistaja ootele.\n(1)Helistaja telefon kaotas levi.(2)Helistaja ootas liinil.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine k\u00f5ndis karkudega.\n(1)Ta raseeris oma jalgu.(2)Ta murdis oma jala.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma k\u00f6hatasin.\n(1)Ma hingasin suitsu sisse.(2)Ma madaldasin oma h\u00e4\u00e4lt.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kell l\u00f5i.\n(1)Oli t\u00e4istund.(2)Tund n\u00e4is venivat.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Kokk l\u00f5i muna kausi\u00e4\u00e4re pihta.\n(1)Muna pragunes.(2)Muna m\u00e4danes.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Politsei otsis seaduserikkuja auto l\u00e4bi.\n(1)Nad proovisid \u00fclestunnistust v\u00e4lja meelitada.(2)Nad otsisid illegaalseid narkootikume.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Paarike s\u00f5itis talveks l\u00f5unasse.\n(1)Nad olid pensionil.(2)Nad olid lahutatud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees tundis kohustust \u00fcritusel osaleda.\n(1)Ta \u00fctles oma s\u00f5bra kutse \u00e4ra.(2)Ta lubas oma s\u00f5brale, et ta l\u00e4heb.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Pruut l\u00f5i enne pulmi araks.\n(1)Pulmak\u00fclalised t\u00f5id kingitusi.(2)Ta j\u00e4ttis pulmad \u00e4ra.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees j\u00e4i vanaks.\n(1)Ta juuksed muutusid halliks.(2)Ta m\u00fc\u00fcs oma asjad maha.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "S\u00f5brad otsustasid oma hamburgerit jagada.\n(1)Nad l\u00f5ikasid hamburgeri pooleks.(2)Nad tellisid friikartuleid koos hamburgeriga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma keerasin korgi limonaadipudelilt maha.\n(1)Limonaad kihises.(2)Limonaad lekkis v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Paar \u00f5pilast olid \u00f5petaja l\u00e4bivaatuse all.\n(1)M\u00f5lemad \u00f5pilased said suurep\u00e4raseid hindeid.(2)Nende \u00fclesande vastused olid identsed.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "\u00d5pilane kiirustas, et \u00f5igeks ajaks kooli j\u00f5uda.\n(1)Ta unustas oma kodut\u00f6\u00f6 koju.(2)Ta v\u00f5ttis oma l\u00f5una kooli kaasa.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ajakirjanik kirjutas humanitaari elust biograafia.\n(1)Ajakirjanikul oli keeruline humanitaari intervjueerida.(2)Ajakirjanikku intrigeeris humanitaari t\u00f6\u00f6.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees hakkas kiriku autoriteedile vastu.\n(1)Ta annetas kirikule raha.(2)Ta heideti kogudusest v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naise juuksed kukkusid ta n\u00e4ole.\n(1)Ta pani nad klambriga kinni.(2)Ta m\u00e4\u00e4ris \u0161ampooni endale juustesse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "S\u00f5rmus j\u00e4i mu s\u00f5rme kinni.\n(1)Mu s\u00f5rm paistetas.(2)Ma murdsin oma k\u00fc\u00fcne.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma t\u00f5mbasin kummipaela.\n(1)See paiskus ruumi teise otsa.(2)See venis.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma surusin oma k\u00e4e m\u00e4rga tsementi.\n(1)Mu k\u00e4ej\u00e4lg kuivas tsementi.(2)Tsement m\u00f5ranes.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu nahk muutus t\u00e4piliseks.\n(1)Ma l\u00e4ksin oma aias vastu m\u00fcrgipuud.(2)Ma juurisin m\u00fcrgipuu oma aiast v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu ajakirjatellimus aegus.\n(1)Ma viskasin uue numbri \u00e4ra.(2)Ma ei saanud enam uusi numbreid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Detektiiv paljastas anomaalia juhtumis.\n(1)Ta vormistas l\u00f5plikult oma teooria.(2)Ta praakis oma teooria v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poisil tuli jonnihoog.\n(1)Ta vend v\u00f5ttis ta m\u00e4nguasja talt \u00e4ra.(2)Ta jagas oma m\u00e4nguasju oma vennaga.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Laps \u00f5ppis lugema.\n(1)Ta l\u00e4ks kooli.(2)Ta j\u00e4ttis koolis klassi vahele.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Poiss j\u00e4ttis \u00f5htus\u00f6\u00f6gi vahele.\n(1)Ta ema tegi ta lemmiktoitu.(2)Ta s\u00f5i suure l\u00f5unas\u00f6\u00f6gi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine kuhjas oma s\u00f5bra meelitustega \u00fcle.\n(1)Ta tahtis oma s\u00f5bralt teenet paluda.(2)Talle k\u00e4is oma s\u00f5bra vingumine n\u00e4rvidele.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu p\u00fcksitaskust oli v\u00f5ti kadunud.\n(1)Taskus oli auk.(2)P\u00fcksid olid uued.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees minestas.\n(1)Ta tegi uinaku.(2)Ta jooksis maratoni.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees kaotas v\u00f5istluse.\n(1)V\u00f5istlust saboteeriti.(2)Ta heidutas oma vastaseid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ema kutsus kiirabi.\n(1)Ta poeg kaotas oma kassi \u00e4ra.(2)Ta poeg kukkus voodist v\u00e4lja.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Juht vajutas k\u00f5vasti pidurit.\n(1)P\u00f5der ilmus teele.(2)Auto raadio l\u00f5petas m\u00e4ngimise.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Lukk avanes.\n(1)Ma keerasin luku v\u00f5tit.(2)Ma tegin v\u00f5tmest koopia.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma panin kummikindad k\u00e4tte.\n(1)Ma valmistusin oma k\u00e4si pesema.(2)Ma valmistusin vannituba koristama.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Loomaliik muutus ohustatuks.\n(1)Nende elupaik h\u00e4vitati.(2)Nende kiskjad surid v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mehele tundus, et naine n\u00e4eb teistsugune v\u00e4lja.\n(1)Naine l\u00f5ikas juukseid.(2)Naine kandis k\u00e4ev\u00f5ru.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5pilane unustas oma kodut\u00f6\u00f6d teha.\n(1)Ta m\u00f5tles v\u00e4lja vabanduse, mida \u00f5petajale \u00f6elda.(2)\u00d5petaja edutas ta j\u00e4rgmisse klassi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Koer haukus.\n(1)Kass logeles diivanil.(2)Uksel k\u00f5las koputus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Teatati plaan asendada kohalik park kaubanduskeskusega.\n(1)Keskkonnakaitsjaid alustasid petitsiooni.(2)Keskkonnakaitsjad tootsid dokumentaalfilmi.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Paarike oli teineteise n\u00e4gemise \u00fcle \u00f5nnelik.\n(1)Nad suudlesid.(2)Nad puhkasid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine palus mehel lahkuda.\n(1)Ta solvas teda.(2)Ta t\u00e4nas teda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Puuoks maandus j\u00f5kke.\n(1)Oks liikus allavoolu.(2)J\u00f5e vool muutus tugevamaks.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "\u00d5petaja andis \u00f5pilastele kodut\u00f6\u00f6.\n(1)\u00d5pilased saatsid kirju.(2)\u00d5pilased \u00e4gisesid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Aastaaeg muutus suvest talveks.\n(1)Inimesed evakueerisid oma kodud.(2)Lehed langesid puudelt.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Poliitikut s\u00fc\u00fcdistati pettuses.\n(1)Ta tegi valmiskampaania tagasivalimiseks.(2)Ta k\u00f5rvaldati ametist.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma l\u00fckkasin vagunit.\n(1)Vagunis olnud asjad kukkusid v\u00e4lja.(2)Vaguni rattad tiirlesid edasipidi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lobist veenis legislatuuri seaduseeln\u00f5ud toetama.\n(1)President vetos seaduseeln\u00f5ud.(2)Legislatuur v\u00f5ttis seaduseeln\u00f5u vastu.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mu kapp oli sassis.\n(1)Ma tegin selle korda.(2)Ma dekoreerisin seda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma olin kaua \u00fcleval.\n(1)Mul olid sel \u00f6\u00f6l elavad unen\u00e4od.(2)Ma olin hommikul v\u00e4sinud.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mehe tasku k\u00f5lises, kui ta k\u00f5ndis.\n(1)Ta tasku oli m\u00fcnte t\u00e4is.(2)Ta n\u00f5elus augu oma taskus kinni.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "K\u00f5ik klassiruumis p\u00f6\u00f6rasid, et \u00f5pilast j\u00f5llitada.\n(1)\u00d5pilase telefon helises.(2)\u00d5pilane tegi m\u00e4rkmeid.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Hobune perutas.\n(1)K\u00e4rbes hammustas hobust.(2)Ratsutaja silitas hobust.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ehetevargad saadi k\u00e4tte.\n(1)Varastatud ehted tagastati nende omanikele.(2)Varastatud ehete v\u00e4\u00e4rtus arvutati v\u00e4lja.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Rahva seas puhkes poliitiline v\u00e4givald.\n(1)Paljud kodanikud kolisid \u00fcmber parlamendihoonesse.(2)Paljud kodanikud l\u00e4ksid teistele aladele varjupaika.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine arreteeriti.\n(1)Ta pani end taastusravisse kirja.(2)Ta pani r\u00fcnnaku toime.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine luges ajalehte.\n(1)Ta avastas valimiste tulemused.(2)Ta h\u00e4\u00e4letas valimistel.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Haige laps k\u00f6his oma s\u00f5bra peale.\n(1)Ta s\u00f5ber j\u00e4i haigeks.(2)Ta s\u00f5ber aevastas.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Paarike kihlus.\n(1)Nad plaanisid pulma.(2)Nad veetsind m\u00f5nda aega lahus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Naine v\u00f5ttis \u00fchendust kinnisvaramaakleriga.\n(1)Naine plaanis korterit osta.(2)Naisel oli vaja oma maja koristada.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mees v\u00f5itis lotoga.\n(1)Ta sai rikkaks.(2)Ta oli raha v\u00f5lgu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma panin k\u00fc\u00fcnla p\u00f5lema.\n(1)Vaha tilkus k\u00fc\u00fcnalt m\u00f6\u00f6da alla.(2)Vaha k\u00fc\u00fcnlal k\u00f5vastus.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Ma veetsin p\u00e4eva basseini \u00e4\u00e4res.\n(1)Ma v\u00e4\u00e4nasin oma h\u00fcppeliigese v\u00e4lja.(2)Mu n\u00e4gu sai p\u00e4ikesep\u00f5letuse.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Mees sai parkimistrahvi.\n(1)Ta parkis t\u00e4naval paralleelselt.(2)Ta parkimism\u00f5\u00f5tur aegus.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine sai kuulsaks.\n(1)Fotograafid k\u00e4isid tal j\u00e4rel.(2)Ta perekond v\u00e4ltis teda.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "T\u00fcdruk tahtis k\u00f5rvar\u00f5ngaid kanda.\n(1)Ta tegi k\u00f5rvadess augud.(2)Ta tegi t\u00e4toveeringu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Mu k\u00f5rvad vilisesid.\n(1)Ma k\u00e4isin muuseumis.(2)Ma k\u00e4isin kontserdil.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Ma tegin oma maja korda.\n(1)Ma olin t\u00f6\u00f6sse uppunud.(2)Ma ootasin k\u00fclalisi.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Lennufirma kahjustas mu pagasit.\n(1)Nad pakkusid mulle kompensatsiooni.(2)Nad t\u00fchistasid mu lennu.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "input": "Arvutit oli kallis parandada.\n(1)Ma lasin selle \u00e4ra parandada.(2)Ma ostsin uue.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "input": "Naine oli halvas tujus.\n(1)Ta lobises oma s\u00f5brannaga.(2)Ta palus oma s\u00f5bral end rahule j\u00e4tta.",
+            "output": [
+                "2"
+            ]
+        }
+    ]
+}

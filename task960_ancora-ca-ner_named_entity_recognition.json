@@ -1,0 +1,925 @@
+{
+    "Source": [
+        "BSC-TeMU/ancora-ca-ner"
+    ],
+    "Definition": "Given the following Catalan sentence, indicate the name entities (i.e., the real-world objects such as a person, location, organization, etc. that can be denoted with a proper name) such as 'New York Times'.  For each words of a named-entity, indicate their type 'LOC' or 'ORG' or 'PER', where 'LOC' indicates a location entity (such as 'New York City', 'ORG' indicates the token of an organization (such as 'Amazon'), 'PER' indicates the tokens of a person entity (such as 'Jeff Bezos'). Named entities with other types should be indicated with 'MISC'. To indicate boundaries of an entity, use IOB (Inside-Output-Begin) prefixes. The B- prefix before a tag indicates that the word is the beginning of a named entity. The I- prefix indicates that the word is inside a bigger chunk. For example, you can break 'New York' to 'New' and 'York.' and tag them as 'B-LOC' and 'I-LOC'. Any token that doesn't belong to a named entity must be tagged with 'O'. ",
+    "Input_language": [
+        "Catalan"
+    ],
+    "Output_language": [
+        "Catalan"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gaireb\u00e9 la totalitat de la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .",
+            "output": "Una (O) setantena (O) de (O) treballadors (O) de (O) Fomento (B-ORG) de (I-ORG) Construcciones (I-ORG) y (I-ORG) Contratas (I-ORG) a (O) Manresa (B-LOC) , (O) gaireb\u00e9 (O) la (O) totalitat (O) de (O) la (O) plantilla (O) , (O) s' (O) han (O) manifestat (O) aquest (O) migdia (O) pels (O) carrers (O) de (O) la (O) ciutat (O) . (O)",
+            "explanation": "We split the sentence into single words or punctuation and then assigned correct tags to each token as per the definition. We assigned 30 correct tags to the given sentence."
+        },
+        {
+            "input": "Aquests contenidors nom\u00e9s estaran instal.lats mentre duri la vaga .",
+            "output": "Aquests (O) contenidors (O) nom\u00e9s (O) estaran (O) instal\u00b7lats (O) mentre (O) duri (O) la (O) vaga (O) . (O)",
+            "explanation": "We split the sentence into single words or punctuation and then assigned correct tags to each token as per the definition. We assigned nine correct tags to the given sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "D' una banda , s' ha fet una bustiada informativa sobre els dies que hi haur\u00e0 recollida de deixalles .",
+            "output": "D' (I-LOC) una (O) banda (O) , (O) s' (O) ha (O) fet (O) una (O) bustiada (O) informativa (O) sobre (O) els (O) dies (O) que (O) hi (O) haur\u00e0 (O) recollida (O) de (O) deixalles (O) . (O)",
+            "explanation": "The output is not correct as per the definition. We had assigned the 'I-LOC' tag to the 'D'' token when it should be 'O' because it doesn't belong to any bigger chunk."
+        },
+        {
+            "input": "Els treballadors han iniciat aquesta matinada una vaga indefinida dels serveis de neteja vi\u00e0ria i recollida d' escombraries .",
+            "output": "Els (O)",
+            "explanation": "This is a bad example because we need to predict tags to 19 tokens, but we have only predicted one."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Amb la protesta reclamen que l' empresa vari\u00ef la seva actitud i accedeixi a la negociaci\u00f3 del conveni i denuncien l' actitud ' prepotent ' de l' Ajuntament de Manresa .",
+            "output": [
+                "Amb (O) la (O) protesta (O) reclamen (O) que (O) l' (O) empresa (O) vari\u00ef (O) la (O) seva (O) actitud (O) i (O) accedeixi (O) a (O) la (O) negociaci\u00f3 (O) del (O) conveni (O) i (O) denuncien (O) l' (O) actitud (O) ' (O) prepotent (O) ' (O) de (O) l' (O) Ajuntament (B-ORG) de (I-ORG) Manresa (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "L' aturada s' ha convocat amb car\u00e0cter indefinit .",
+            "output": [
+                "L' (O) aturada (O) s' (O) ha (O) convocat (O) amb (O) car\u00e0cter (O) indefinit (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tot i que ahir hi va haver una reuni\u00f3 de darrera hora , no es va aconseguir acostar posicions , de manera que els treballadors han decidit anar a la vaga .",
+            "output": [
+                "Tot (O) i (O) que (O) ahir (O) hi (O) va (O) haver (O) una (O) reuni\u00f3 (O) de (O) darrera (O) hora (O) , (O) no (O) es (O) va (O) aconseguir (O) acostar (O) posicions (O) , (O) de (O) manera (O) que (O) els (O) treballadors (O) han (O) decidit (O) anar (O) a (O) la (O) vaga (O) . (O)"
+            ]
+        },
+        {
+            "input": "A m\u00e9s de l' aturada i amb la finalitat de donar a con\u00e8ixer les seves demandes al conjunt de la ciutat , la plantilla ha sortit avui al carrer en una manifestaci\u00f3 que ha anat des de la Bonavista fins a l' Ajuntament .",
+            "output": [
+                "A (O) m\u00e9s (O) de (O) l' (O) aturada (O) i (O) amb (O) la (O) finalitat (O) de (O) donar (O) a (O) con\u00e8ixer (O) les (O) seves (O) demandes (O) al (O) conjunt (O) de (O) la (O) ciutat (O) , (O) la (O) plantilla (O) ha (O) sortit (O) avui (O) al (O) carrer (O) en (O) una (O) manifestaci\u00f3 (O) que (O) ha (O) anat (O) des (O) de (O) la (O) Bonavista (B-LOC) fins (O) a (O) l' (O) Ajuntament (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "La protesta ha aplegat una setantena d' empleats , gaireb\u00e9 el total de la plantilla , que \u00e9s de 80 treballadors .",
+            "output": [
+                "La (O) protesta (O) ha (O) aplegat (O) una (O) setantena (O) d' (O) empleats (O) , (O) gaireb\u00e9 (O) el (O) total (O) de (O) la (O) plantilla (O) , (O) que (O) \u00e9s (O) de (O) 80 (O) treballadors (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els serveis m\u00ednims que ha decretat la direcci\u00f3 general de Relacions Laborals del departament de Treball de la Generalitat estableixen que la recollida d' escombraries es continuar\u00e0 fent di\u00e0riament als hospitals , als centres assistencials , mercats i escoles amb servei de menjador .",
+            "output": [
+                "Els (O) serveis (O) m\u00ednims (O) que (O) ha (O) decretat (O) la (O) direcci\u00f3 (O) general (O) de (O) Relacions (B-ORG) Laborals (I-ORG) del (O) departament (O) de (O) Treball (B-ORG) de (O) la (O) Generalitat (B-ORG) estableixen (O) que (O) la (O) recollida (O) d' (O) escombraries (O) es (O) continuar\u00e0 (O) fent (O) di\u00e0riament (O) als (O) hospitals (O) , (O) als (O) centres (O) assistencials (O) , (O) mercats (O) i (O) escoles (O) amb (O) servei (O) de (O) menjador (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tamb\u00e9 garanteixen que el primer dia de recollida de serveis m\u00ednims ser\u00e0 a partir de les sis de la matinada del dilluns 4 de juny i que a partir d' aquest dia es faran cada 72 hores .",
+            "output": [
+                "Tamb\u00e9 (O) garanteixen (O) que (O) el (O) primer (O) dia (O) de (O) recollida (O) de (O) serveis (O) m\u00ednims (O) ser\u00e0 (O) a (O) partir (O) de (O) les (O) sis (O) de (O) la (O) matinada (O) del (O) dilluns (O) 4 (O) de (O) juny (O) i (O) que (O) a (O) partir (O) d' (O) aquest (O) dia (O) es (O) faran (O) cada (O) 72 (O) hores (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' Ajuntament de Manresa ha posat en funcionament tot un seguit de mesures , la majoria informatives , que tenen com a finalitat minimitzar els efectes de la vaga .",
+            "output": [
+                "L' (O) Ajuntament (B-ORG) de (I-ORG) Manresa (I-ORG) ha (O) posat (O) en (O) funcionament (O) tot (O) un (O) seguit (O) de (O) mesures (O) , (O) la (O) majoria (O) informatives (O) , (O) que (O) tenen (O) com (O) a (O) finalitat (O) minimitzar (O) els (O) efectes (O) de (O) la (O) vaga (O) . (O)"
+            ]
+        },
+        {
+            "input": "En aquesta bustiada tamb\u00e9 es demana la col\u00b7laboraci\u00f3 ciutadana per a evitar que les deixalles s' acumulin al carrer i s' informa que la vaga no afectar\u00e0 la recollida selectiva .",
+            "output": [
+                "En (O) aquesta (O) bustiada (O) tamb\u00e9 (O) es (O) demana (O) la (O) col\u00b7laboraci\u00f3 (O) ciutadana (O) per (O) a (O) evitar (O) que (O) les (O) deixalles (O) s' (O) acumulin (O) al (O) carrer (O) i (O) s' (O) informa (O) que (O) la (O) vaga (O) no (O) afectar\u00e0 (O) la (O) recollida (O) selectiva (O) . (O)"
+            ]
+        },
+        {
+            "input": "La bustiada es complementa amb r\u00e8tols recordatoris als portals de les cases i amb adhesius als contenidors .",
+            "output": [
+                "La (O) bustiada (O) es (O) complementa (O) amb (O) r\u00e8tols (O) recordatoris (O) als (O) portals (O) de (O) les (O) cases (O) i (O) amb (O) adhesius (O) als (O) contenidors (O) . (O)"
+            ]
+        },
+        {
+            "input": "Paral\u00b7lelament a les accions informatives i per a reduir els efectes de l' aturada , l' Ajuntament instal\u00b7lar\u00e0 22 contenidors de recollida de brossa m\u00e9s als carrers del Nucli Antic on la recollida encara es fa porta a porta .",
+            "output": [
+                "Paral\u00b7lelament (O) a (O) les (O) accions (O) informatives (O) i (O) per (O) a (O) reduir (O) els (O) efectes (O) de (O) l' (O) aturada (O) , (O) l' (O) Ajuntament (B-ORG) instal\u00b7lar\u00e0 (O) 22 (O) contenidors (O) de (O) recollida (O) de (O) brossa (O) m\u00e9s (O) als (O) carrers (O) del (O) Nucli (B-LOC) Antic (I-LOC) on (O) la (O) recollida (O) encara (O) es (O) fa (O) porta (O) a (O) porta (O) . (O)"
+            ]
+        },
+        {
+            "input": "Pel que fa als establiments comercials com bars , restaurants o de venda d' aliments entre avui i dem\u00e0 s' habilitaran 8 zones preparades amb contenidors d' obra perqu\u00e8 aquests establiments , que generen un volum important de brossa , puguin dipositar les escombraries en indrets apartats .",
+            "output": [
+                "Pel (O) que (O) fa (O) als (O) establiments (O) comercials (O) com (O) bars (O) , (O) restaurants (O) o (O) de (O) venda (O) d' (O) aliments (O) entre (O) avui (O) i (O) dem\u00e0 (O) s' (O) habilitaran (O) 8 (O) zones (O) preparades (O) amb (O) contenidors (O) d' (O) obra (O) perqu\u00e8 (O) aquests (O) establiments (O) , (O) que (O) generen (O) un (O) volum (O) important (O) de (O) brossa (O) , (O) puguin (O) dipositar (O) les (O) escombraries (O) en (O) indrets (O) apartats (O) . (O)"
+            ]
+        },
+        {
+            "input": "Alhora , mentre duri la vaga l' abocador de Bufalvent acceptar\u00e0 la brossa dels ve\u00efns o comerciants que decideixin dur -la directament .",
+            "output": [
+                "Alhora (O) , (O) mentre (O) duri (O) la (O) vaga (O) l' (O) abocador (O) de (O) Bufalvent (B-LOC) acceptar\u00e0 (O) la (O) brossa (O) dels (O) ve\u00efns (O) o (O) comerciants (O) que (O) decideixin (O) dur (O) -la (O) directament (O) . (O)"
+            ]
+        },
+        {
+            "input": "El secretari general d' ERC , Josep-Llu\u00eds Carod-Rovira , ha participat aquest migdia en un acte , davant la Delegaci\u00f3 d' Hisenda de Tarragona , per reclamar un finan\u00e7ament just per a Catalunya .",
+            "output": [
+                "El (O) secretari (O) general (O) d' (O) ERC (B-ORG) , (O) Josep-Llu\u00eds (B-PER) Carod-Rovira (I-PER) , (O) ha (O) participat (O) aquest (O) migdia (O) en (O) un (O) acte (O) , (O) davant (O) la (O) Delegaci\u00f3 (B-LOC) d' (I-LOC) Hisenda (I-LOC) de (O) Tarragona (B-LOC) , (O) per (O) reclamar (O) un (O) finan\u00e7ament (O) just (O) per (O) a (O) Catalunya (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "Carod-Rovira ha dit que ' Catalunya esponsoritza Espanya ' , ja que cada catal\u00e0 aporta cada any 220.000 pessetes a Madrid que mai no tornen .",
+            "output": [
+                "Carod-Rovira (B-PER) ha (O) dit (O) que (O) ' (O) Catalunya (B-ORG) esponsoritza (O) Espanya (B-ORG) ' (O) , (O) ja (O) que (O) cada (O) catal\u00e0 (O) aporta (O) cada (O) any (O) 220.000 (O) pessetes (O) a (O) Madrid (B-ORG) que (O) mai (O) no (O) tornen (O) . (O)"
+            ]
+        },
+        {
+            "input": "El l\u00edder d' ERC ha dit que el sistema de finan\u00e7ament actual perjudica les classes populars i el teixit productiu .",
+            "output": [
+                "El (O) l\u00edder (O) d' (O) ERC (B-ORG) ha (O) dit (O) que (O) el (O) sistema (O) de (O) finan\u00e7ament (O) actual (O) perjudica (O) les (O) classes (O) populars (O) i (O) el (O) teixit (O) productiu (O) . (O)"
+            ]
+        },
+        {
+            "input": "En el cas dels empresaris , segons Carod , la situaci\u00f3 \u00e9s de clar greuge comparatiu amb altres comunitats aut\u00f2nomes , ja que ' aqu\u00ed no poden tenir acc\u00e9s a s\u00f2l industrial , ni a la concessi\u00f3 de cr\u00e8dits tous , ni al suport per a la renovaci\u00f3 de maquin\u00e0ria , tal i com fan els governs aut\u00f2noms de Gal\u00edcia , Castella-la Manxa o Andalusia ' , la qual cosa ' fa que se 'n ressenti la modernitzaci\u00f3 general del pa\u00eds ' .",
+            "output": [
+                "En (O) el (O) cas (O) dels (O) empresaris (O) , (O) segons (O) Carod (B-PER) , (O) la (O) situaci\u00f3 (O) \u00e9s (O) de (O) clar (O) greuge (O) comparatiu (O) amb (O) altres (O) comunitats (O) aut\u00f2nomes (O) , (O) ja (O) que (O) ' (O) aqu\u00ed (O) no (O) poden (O) tenir (O) acc\u00e9s (O) a (O) s\u00f2l (O) industrial (O) , (O) ni (O) a (O) la (O) concessi\u00f3 (O) de (O) cr\u00e8dits (O) tous (O) , (O) ni (O) al (O) suport (O) per (O) a (O) la (O) renovaci\u00f3 (O) de (O) maquin\u00e0ria (O) , (O) tal (O) i (O) com (O) fan (O) els (O) governs (O) aut\u00f2noms (O) de (O) Gal\u00edcia (B-LOC) , (O) Castella-la (B-LOC) Manxa (I-LOC) o (O) Andalusia (B-LOC) ' (O) , (O) la (O) qual (O) cosa (O) ' (O) fa (O) que (O) se (O) 'n (O) ressenti (O) la (O) modernitzaci\u00f3 (O) general (O) del (O) pa\u00eds (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Davant d' aquesta situaci\u00f3 ' insostenible ' , ERC proposa el concert econ\u00f2mic , un sistema ' legal ' , que \u00e9s vigent a dues comunitats aut\u00f2nomes .",
+            "output": [
+                "Davant (O) d' (O) aquesta (O) situaci\u00f3 (O) ' (O) insostenible (O) ' (O) , (O) ERC (B-ORG) proposa (O) el (O) concert (O) econ\u00f2mic (O) , (O) un (O) sistema (O) ' (O) legal (O) ' (O) , (O) que (O) \u00e9s (O) vigent (O) a (O) dues (O) comunitats (O) aut\u00f2nomes (O) . (O)"
+            ]
+        },
+        {
+            "input": "Aquesta situaci\u00f3 , segons Carod , ' \u00e9s l' ideal mentre formem part de l' Estat ' .",
+            "output": [
+                "Aquesta (O) situaci\u00f3 (O) , (O) segons (O) Carod (B-PER) , (O) ' (O) \u00e9s (O) l' (O) ideal (O) mentre (O) formem (O) part (O) de (O) l' (O) Estat (B-ORG) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "El pol\u00edtic republic\u00e0 ha dit que ' nom\u00e9s ser\u00e0 just un sistema de finan\u00e7ament que faci tornar una de cada tres pessetes que regalem a Madrid ' , aix\u00f2 \u00e9s , 220.000 pessetes per ciutad\u00e0 .",
+            "output": [
+                "El (O) pol\u00edtic (O) republic\u00e0 (O) ha (O) dit (O) que (O) ' (O) nom\u00e9s (O) ser\u00e0 (O) just (O) un (O) sistema (O) de (O) finan\u00e7ament (O) que (O) faci (O) tornar (O) una (O) de (O) cada (O) tres (O) pessetes (O) que (O) regalem (O) a (O) Madrid (B-ORG) ' (O) , (O) aix\u00f2 (O) \u00e9s (O) , (O) 220.000 (O) pessetes (O) per (O) ciutad\u00e0 (O) . (O)"
+            ]
+        },
+        {
+            "input": "Carod-Rovira ha comparat la situaci\u00f3 de Catalunya i Espanya amb la d' Alemanya respecte d' Europa .",
+            "output": [
+                "Carod-Rovira (B-PER) ha (O) comparat (O) la (O) situaci\u00f3 (O) de (O) Catalunya (B-LOC) i (O) Espanya (B-LOC) amb (O) la (O) d' (O) Alemanya (B-LOC) respecte (O) d' (O) Europa (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "' Els alemanys fan d' esp\u00f2nsors d' Europa com els catalans ho fem d' Espanya , i a sobre ens titllen d' insolidaris ' , ha afegit .",
+            "output": [
+                "' (O) Els (O) alemanys (O) fan (O) d' (O) esp\u00f2nsors (O) d' (O) Europa (B-LOC) com (O) els (O) catalans (O) ho (O) fem (O) d' (O) Espanya (B-LOC) , (O) i (O) a (O) sobre (O) ens (O) titllen (O) d' (O) insolidaris (O) ' (O) , (O) ha (O) afegit (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' acte d' ERC fet avui a Tarragona i en altres punts de Catalunya t\u00e9 per objectiu ' conscienciar la ciutadania que un millor finan\u00e7ament vol dir m\u00e9s escoles , m\u00e9s hospitals , m\u00e9s carreteres , m\u00e9s transport , m\u00e9s cultura , m\u00e9s acc\u00e9s a la societat de la informaci\u00f3 , i , en definitiva , m\u00e9s benestar i m\u00e9s llibertat ' .",
+            "output": [
+                "L' (O) acte (O) d' (O) ERC (B-ORG) fet (O) avui (O) a (O) Tarragona (B-LOC) i (O) en (O) altres (O) punts (O) de (O) Catalunya (B-LOC) t\u00e9 (O) per (O) objectiu (O) ' (O) conscienciar (O) la (O) ciutadania (O) que (O) un (O) millor (O) finan\u00e7ament (O) vol (O) dir (O) m\u00e9s (O) escoles (O) , (O) m\u00e9s (O) hospitals (O) , (O) m\u00e9s (O) carreteres (O) , (O) m\u00e9s (O) transport (O) , (O) m\u00e9s (O) cultura (O) , (O) m\u00e9s (O) acc\u00e9s (O) a (O) la (O) societat (O) de (O) la (O) informaci\u00f3 (O) , (O) i (O) , (O) en (O) definitiva (O) , (O) m\u00e9s (O) benestar (O) i (O) m\u00e9s (O) llibertat (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els alcaldes de Sallent , Balsareny i S\u00faria i el president del Consell Comarcal del Bages han manifestat avui preocupaci\u00f3 pel futur incert de les mines de potassa .",
+            "output": [
+                "Els (O) alcaldes (O) de (O) Sallent (B-LOC) , (O) Balsareny (B-LOC) i (O) S\u00faria (B-LOC) i (O) el (O) president (O) del (O) Consell (B-ORG) Comarcal (I-ORG) del (O) Bages (B-LOC) han (O) manifestat (O) avui (O) preocupaci\u00f3 (O) pel (O) futur (O) incert (O) de (O) les (O) mines (O) de (O) potassa (O) . (O)"
+            ]
+        },
+        {
+            "input": "De l' entrevista amb els dirigents de les mines , l' \u00fanica informaci\u00f3 que es va facilitar sobre el pla de viabilitat que s' est\u00e0 elaborant \u00e9s que es preveuen inversions i que no hi ha cap previsi\u00f3 d' ampliar la plantilla , actualment integrada per uns 1.300 treballadors directes .",
+            "output": [
+                "De (O) l' (O) entrevista (O) amb (O) els (O) dirigents (O) de (O) les (O) mines (O) , (O) l' (O) \u00fanica (O) informaci\u00f3 (O) que (O) es (O) va (O) facilitar (O) sobre (O) el (O) pla (O) de (O) viabilitat (O) que (O) s' (O) est\u00e0 (O) elaborant (O) \u00e9s (O) que (O) es (O) preveuen (O) inversions (O) i (O) que (O) no (O) hi (O) ha (O) cap (O) previsi\u00f3 (O) d' (O) ampliar (O) la (O) plantilla (O) , (O) actualment (O) integrada (O) per (O) uns (O) 1.300 (O) treballadors (O) directes (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els responsables d' aquestes institucions han mantingut contactes amb els representants dels treballadors i tamb\u00e9 amb la direcci\u00f3 de l' empresa propiet\u00e0ria de les mines , Iberpotash , per con\u00e8ixer de prop la situaci\u00f3 .",
+            "output": [
+                "Els (O) responsables (O) d' (O) aquestes (O) institucions (O) han (O) mantingut (O) contactes (O) amb (O) els (O) representants (O) dels (O) treballadors (O) i (O) tamb\u00e9 (O) amb (O) la (O) direcci\u00f3 (O) de (O) l' (O) empresa (O) propiet\u00e0ria (O) de (O) les (O) mines (O) , (O) Iberpotash (B-ORG) , (O) per (O) con\u00e8ixer (O) de (O) prop (O) la (O) situaci\u00f3 (O) . (O)"
+            ]
+        },
+        {
+            "input": "En el decurs de la trobada , Iberpotash ha justificat els seus arguments a partir de l' an\u00e0lisi que s' ha fet internament i l' ha avalada amb el contingut d' una consultoria externa que ha encarregat , de la qual no n' ha fet p\u00fablic cap detall .",
+            "output": [
+                "En (O) el (O) decurs (O) de (O) la (O) trobada (O) , (O) Iberpotash (B-ORG) ha (O) justificat (O) els (O) seus (O) arguments (O) a (O) partir (O) de (O) l' (O) an\u00e0lisi (O) que (O) s' (O) ha (O) fet (O) internament (O) i (O) l' (O) ha (O) avalada (O) amb (O) el (O) contingut (O) d' (O) una (O) consultoria (O) externa (O) que (O) ha (O) encarregat (O) , (O) de (O) la (O) qual (O) no (O) n' (O) ha (O) fet (O) p\u00fablic (O) cap (O) detall (O) . (O)"
+            ]
+        },
+        {
+            "input": "La poca precisi\u00f3 en les explicacions d' Iberpotash \u00e9s un dels motius de la preocupaci\u00f3 que han manifestat avui els alcaldes i el president del Consell Comarcal del Bages .",
+            "output": [
+                "La (O) poca (O) precisi\u00f3 (O) en (O) les (O) explicacions (O) d' (O) Iberpotash (B-ORG) \u00e9s (O) un (O) dels (O) motius (O) de (O) la (O) preocupaci\u00f3 (O) que (O) han (O) manifestat (O) avui (O) els (O) alcaldes (O) i (O) el (O) president (O) del (O) Consell (B-ORG) Comarcal (I-ORG) del (O) Bages (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "En aquest sentit han anunciat que han demanat una entrevista amb el conseller d' Ind\u00fastria , Antoni Subir\u00e0 , per a tractar aquest tema .",
+            "output": [
+                "En (O) aquest (O) sentit (O) han (O) anunciat (O) que (O) han (O) demanat (O) una (O) entrevista (O) amb (O) el (O) conseller (O) d' (O) Ind\u00fastria (B-ORG) , (O) Antoni (B-PER) Subir\u00e0 (I-PER) , (O) per (O) a (O) tractar (O) aquest (O) tema (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons el president del Consell Comarcal , Agust\u00ed Red\u00f3 , la mineria , que ocupa directament unes 1.300 persones , \u00e9s un sector estrat\u00e8gic al Bages i per tant , el Consell ha d' assumir les seves responsabilitats i exercir com a mitjancer en el cas que hi hagi situacions conflictives que amenacin una part important de la societat del Bages .",
+            "output": [
+                "Segons (O) el (O) president (O) del (O) Consell (B-ORG) Comarcal (I-ORG) , (O) Agust\u00ed (B-PER) Red\u00f3 (I-PER) , (O) la (O) mineria (O) , (O) que (O) ocupa (O) directament (O) unes (O) 1.300 (O) persones (O) , (O) \u00e9s (O) un (O) sector (O) estrat\u00e8gic (O) al (O) Bages (B-LOC) i (O) per (O) tant (O) , (O) el (O) Consell (B-ORG) ha (O) d' (O) assumir (O) les (O) seves (O) responsabilitats (O) i (O) exercir (O) com (O) a (O) mitjancer (O) en (O) el (O) cas (O) que (O) hi (O) hagi (O) situacions (O) conflictives (O) que (O) amenacin (O) una (O) part (O) important (O) de (O) la (O) societat (O) del (O) Bages (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "En la reuni\u00f3 amb el conseller d' Ind\u00fastria , els representants institucionals del Bages demanaran informaci\u00f3 sobre les condicions en les quals es va efectuar l' operaci\u00f3 de privatitzaci\u00f3 de les mines .",
+            "output": [
+                "En (O) la (O) reuni\u00f3 (O) amb (O) el (O) conseller (O) d' (O) Ind\u00fastria (B-ORG) , (O) els (O) representants (O) institucionals (O) del (O) Bages (B-LOC) demanaran (O) informaci\u00f3 (O) sobre (O) les (O) condicions (O) en (O) les (O) quals (O) es (O) va (O) efectuar (O) l' (O) operaci\u00f3 (O) de (O) privatitzaci\u00f3 (O) de (O) les (O) mines (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons l' alcalde de S\u00faria , Antoni Juli\u00e1n , no \u00e9s normal que fins ara no s' hagin donat a con\u00e8ixer quins compromisos va adquirir l' empresa a l' hora de comprar una propietat p\u00fablica .",
+            "output": [
+                "Segons (O) l' (O) alcalde (O) de (O) S\u00faria (B-LOC) , (O) Antoni (B-PER) Juli\u00e1n (I-PER) , (O) no (O) \u00e9s (O) normal (O) que (O) fins (O) ara (O) no (O) s' (O) hagin (O) donat (O) a (O) con\u00e8ixer (O) quins (O) compromisos (O) va (O) adquirir (O) l' (O) empresa (O) a (O) l' (O) hora (O) de (O) comprar (O) una (O) propietat (O) p\u00fablica (O) . (O)"
+            ]
+        },
+        {
+            "input": "Abans de la trobada amb la direcci\u00f3 d' Iberpotash , els alcaldes i el president del Consell s' havien reunit amb els representants dels treballadors .",
+            "output": [
+                "Abans (O) de (O) la (O) trobada (O) amb (O) la (O) direcci\u00f3 (O) d' (O) Iberpotash (B-ORG) , (O) els (O) alcaldes (O) i (O) el (O) president (O) del (O) Consell (B-ORG) s' (O) havien (O) reunit (O) amb (O) els (O) representants (O) dels (O) treballadors (O) . (O)"
+            ]
+        },
+        {
+            "input": "En aquesta trobada , els comit\u00e8s han expressat la seva desconfian\u00e7a perqu\u00e8 no han detectat que s' hagin fet inversions ni millores en les explotacions .",
+            "output": [
+                "En (O) aquesta (O) trobada (O) , (O) els (O) comit\u00e8s (O) han (O) expressat (O) la (O) seva (O) desconfian\u00e7a (O) perqu\u00e8 (O) no (O) han (O) detectat (O) que (O) s' (O) hagin (O) fet (O) inversions (O) ni (O) millores (O) en (O) les (O) explotacions (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tot i aix\u00ed , la principal preocupaci\u00f3 dels sindicats fa refer\u00e8ncia a les conseq\u00fc\u00e8ncies que pot tenir en la plantilla el pla de viabilitat .",
+            "output": [
+                "Tot (O) i (O) aix\u00ed (O) , (O) la (O) principal (O) preocupaci\u00f3 (O) dels (O) sindicats (O) fa (O) refer\u00e8ncia (O) a (O) les (O) conseq\u00fc\u00e8ncies (O) que (O) pot (O) tenir (O) en (O) la (O) plantilla (O) el (O) pla (O) de (O) viabilitat (O) . (O)"
+            ]
+        },
+        {
+            "input": "En aquest sentit , el vicepresident primer del Consell Comarcal del Bages , Ezequiel Mart\u00ednez , ha reclamat que si hi ha voluntat de reduir plantilles , cal que aix\u00f2 es faci amb ' responsabilitat ' per la import\u00e0ncia del sector a la comarca .",
+            "output": [
+                "En (O) aquest (O) sentit (O) , (O) el (O) vicepresident (O) primer (O) del (O) Consell (B-ORG) Comarcal (I-ORG) del (O) Bages (B-LOC) , (O) Ezequiel (B-PER) Mart\u00ednez (I-PER) , (O) ha (O) reclamat (O) que (O) si (O) hi (O) ha (O) voluntat (O) de (O) reduir (O) plantilles (O) , (O) cal (O) que (O) aix\u00f2 (O) es (O) faci (O) amb (O) ' (O) responsabilitat (O) ' (O) per (O) la (O) import\u00e0ncia (O) del (O) sector (O) a (O) la (O) comarca (O) . (O)"
+            ]
+        },
+        {
+            "input": "La Cambra de Comer\u00e7 proposa dinamitzar el sector tur\u00edstic andorr\u00e0 amb la creaci\u00f3 d' un petit parc tem\u00e0tic , un casino , un camp de golf , un palau de congressos i un centre d' oci familiar .",
+            "output": [
+                "La (O) Cambra (B-ORG) de (I-ORG) Comer\u00e7 (I-ORG) proposa (O) dinamitzar (O) el (O) sector (O) tur\u00edstic (O) andorr\u00e0 (O) amb (O) la (O) creaci\u00f3 (O) d' (O) un (O) petit (O) parc (O) tem\u00e0tic (O) , (O) un (O) casino (O) , (O) un (O) camp (O) de (O) golf (O) , (O) un (O) palau (O) de (O) congressos (O) i (O) un (O) centre (O) d' (O) oci (O) familiar (O) . (O)"
+            ]
+        },
+        {
+            "input": "El president de la Cambra de Comer\u00e7 , Ramon Cierco , espera que el sector rebi amb bons ulls aquestes propostes que sorgeixen d' un informe encarregat per la corporaci\u00f3 .",
+            "output": [
+                "El (O) president (O) de (O) la (O) Cambra (B-ORG) de (I-ORG) Comer\u00e7 (I-ORG) , (O) Ramon (B-PER) Cierco (I-PER) , (O) espera (O) que (O) el (O) sector (O) rebi (O) amb (O) bons (O) ulls (O) aquestes (O) propostes (O) que (O) sorgeixen (O) d' (O) un (O) informe (O) encarregat (O) per (O) la (O) corporaci\u00f3 (O) . (O)"
+            ]
+        },
+        {
+            "input": "La Cambra de comer\u00e7 d' Andorra estudia augmentar i diversificar l' oferta tur\u00edstica del pa\u00eds amb els projectes d' un petit parc tem\u00e0tic , un casino , un camp de golf , un palau de congressos i centres d' oci familiar i nocturn .",
+            "output": [
+                "La (O) Cambra (B-ORG) de (O) comer\u00e7 (O) d' (O) Andorra (B-LOC) estudia (O) augmentar (O) i (O) diversificar (O) l' (O) oferta (O) tur\u00edstica (O) del (O) pa\u00eds (O) amb (O) els (O) projectes (O) d' (O) un (O) petit (O) parc (O) tem\u00e0tic (O) , (O) un (O) casino (O) , (O) un (O) camp (O) de (O) golf (O) , (O) un (O) palau (O) de (O) congressos (O) i (O) centres (O) d' (O) oci (O) familiar (O) i (O) nocturn (O) . (O)"
+            ]
+        },
+        {
+            "input": "Les propostes l\u00fadiques provenen d' un estudi encarregat per la Cambra a una empresa de Barcelona i presentat aquest dijous a la tarda al Com\u00fa d' Escaldes davant el ministre de Turisme i un centenar de representants del m\u00f3n hoteler i tur\u00edstic andorr\u00e0 .",
+            "output": [
+                "Les (O) propostes (O) l\u00fadiques (O) provenen (O) d' (O) un (O) estudi (O) encarregat (O) per (O) la (O) Cambra (B-ORG) a (O) una (O) empresa (O) de (O) Barcelona (B-LOC) i (O) presentat (O) aquest (O) dijous (O) a (O) la (O) tarda (O) al (O) Com\u00fa (B-LOC) d' (I-LOC) Escaldes (I-LOC) davant (O) el (O) ministre (O) de (O) Turisme (B-ORG) i (O) un (O) centenar (O) de (O) representants (O) del (O) m\u00f3n (O) hoteler (O) i (O) tur\u00edstic (O) andorr\u00e0 (O) . (O)"
+            ]
+        },
+        {
+            "input": "Per tal d' aconseguir l' adaptaci\u00f3 dels projectes a les necessitats i possibilitats del pa\u00eds , l' empresa barcelonina Iniciatives Socioculturals ha estudiat la realitat andorrana amb enquestes a representants de diversos sectors econ\u00f2mics .",
+            "output": [
+                "Per (O) tal (O) d' (O) aconseguir (O) l' (O) adaptaci\u00f3 (O) dels (O) projectes (O) a (O) les (O) necessitats (O) i (O) possibilitats (O) del (O) pa\u00eds (O) , (O) l' (O) empresa (O) barcelonina (O) Iniciatives (B-ORG) Socioculturals (I-ORG) ha (O) estudiat (O) la (O) realitat (O) andorrana (O) amb (O) enquestes (O) a (O) representants (O) de (O) diversos (O) sectors (O) econ\u00f2mics (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els projectes es dirigeixen sobretot al turisme de qualitat i infantil i pretenen acabar amb l' estacionalitat , segons ha explicat el director de l' informe , Josep Munn\u00e9 , que ha dirigit grans projectes l\u00fadics com el Maremagnum o el Bar\u00e7a 2000 .",
+            "output": [
+                "Els (O) projectes (O) es (O) dirigeixen (O) sobretot (O) al (O) turisme (O) de (O) qualitat (O) i (O) infantil (O) i (O) pretenen (O) acabar (O) amb (O) l' (O) estacionalitat (O) , (O) segons (O) ha (O) explicat (O) el (O) director (O) de (O) l' (O) informe (O) , (O) Josep (B-PER) Munn\u00e9 (I-PER) , (O) que (O) ha (O) dirigit (O) grans (O) projectes (O) l\u00fadics (O) com (O) el (O) Maremagnum (B-LOC) o (O) el (O) Bar\u00e7a (B-MISC) 2000 (I-MISC) . (O)"
+            ]
+        },
+        {
+            "input": "El president de la cambra de comer\u00e7 , Ramon Cierco , espera que Andorra rebi amb bons ulls els projectes per a un nou turisme .",
+            "output": [
+                "El (O) president (O) de (O) la (O) cambra (O) de (O) comer\u00e7 (O) , (O) Ramon (B-PER) Cierco (I-PER) , (O) espera (O) que (O) Andorra (B-LOC) rebi (O) amb (O) bons (O) ulls (O) els (O) projectes (O) per (O) a (O) un (O) nou (O) turisme (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' estudi planteja tamb\u00e9 propostes sobre gesti\u00f3 comercial dels camps de neu , diverses ofertes de turisme de la natura , i fins i tot un producte de formaci\u00f3 de postgrau sobre el sector tur\u00edstic o gesti\u00f3 d' infraestructures d' hivern .",
+            "output": [
+                "L' (O) estudi (O) planteja (O) tamb\u00e9 (O) propostes (O) sobre (O) gesti\u00f3 (O) comercial (O) dels (O) camps (O) de (O) neu (O) , (O) diverses (O) ofertes (O) de (O) turisme (O) de (O) la (O) natura (O) , (O) i (O) fins (O) i (O) tot (O) un (O) producte (O) de (O) formaci\u00f3 (O) de (O) postgrau (O) sobre (O) el (O) sector (O) tur\u00edstic (O) o (O) gesti\u00f3 (O) d' (O) infraestructures (O) d' (O) hivern (O) . (O)"
+            ]
+        },
+        {
+            "input": "El Grup Socialistes-Ciutadans pel Canvi ( SCC ) ha presentat una proposici\u00f3 no de llei al Parlament on insta el Govern de la Generalitat a obrir una oficina del Departament d' Agricultura , Ramaderia i Pesca ( DARP ) a Prats de Llu\u00e7an\u00e8s ( Osona ) ' apropant aquest servei a la poblaci\u00f3 ' .",
+            "output": [
+                "El (O) Grup (B-ORG) Socialistes-Ciutadans (I-ORG) pel (I-ORG) Canvi (I-ORG) ( (O) SCC (B-ORG) ) (O) ha (O) presentat (O) una (O) proposici\u00f3 (O) no (O) de (O) llei (O) al (O) Parlament (B-ORG) on (O) insta (O) el (O) Govern (B-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) a (O) obrir (O) una (O) oficina (O) del (O) Departament (B-ORG) d' (I-ORG) Agricultura (I-ORG) , (I-ORG) Ramaderia (I-ORG) i (I-ORG) Pesca (I-ORG) ( (O) DARP (B-ORG) ) (O) a (O) Prats (B-LOC) de (I-LOC) Llu\u00e7an\u00e8s (I-LOC) ( (O) Osona (B-LOC) ) (O) ' (O) apropant (O) aquest (O) servei (O) a (O) la (O) poblaci\u00f3 (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "La proposici\u00f3 no de llei de SCC demana que aquesta oficina doni tamb\u00e9 servei als municipis propers del Bergued\u00e0 i El Bages .",
+            "output": [
+                "La (O) proposici\u00f3 (O) no (O) de (O) llei (O) de (O) SCC (B-ORG) demana (O) que (O) aquesta (O) oficina (O) doni (O) tamb\u00e9 (O) servei (O) als (O) municipis (O) propers (O) del (O) Bergued\u00e0 (B-LOC) i (O) El (B-LOC) Bages (I-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "Aix\u00ed mateix , es demana una major dotaci\u00f3 de personal fix a l' oficina comarcal del DARP de Vic ( Osona ) i que es busquin les solucions m\u00e9s adients per disposar d' un espai adequat on poder treballar i atendre c\u00f2modament els usuaris .",
+            "output": [
+                "Aix\u00ed (O) mateix (O) , (O) es (O) demana (O) una (O) major (O) dotaci\u00f3 (O) de (O) personal (O) fix (O) a (O) l' (O) oficina (O) comarcal (O) del (O) DARP (B-ORG) de (O) Vic (B-LOC) ( (O) Osona (B-LOC) ) (O) i (O) que (O) es (O) busquin (O) les (O) solucions (O) m\u00e9s (O) adients (O) per (O) disposar (O) d' (O) un (O) espai (O) adequat (O) on (O) poder (O) treballar (O) i (O) atendre (O) c\u00f2modament (O) els (O) usuaris (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons SCC , l' oficina comarcal del DARP de Vic gestiona aproximadament el 50 per cent del cens ramader de la demarcaci\u00f3 de Barcelona .",
+            "output": [
+                "Segons (O) SCC (B-ORG) , (O) l' (O) oficina (O) comarcal (O) del (O) DARP (B-ORG) de (O) Vic (B-LOC) gestiona (O) aproximadament (O) el (O) 50 (O) per (O) cent (O) del (O) cens (O) ramader (O) de (O) la (O) demarcaci\u00f3 (O) de (O) Barcelona (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "Actualment hi treballen 21 persones , que gestionen els processos administratius del sector ramader .",
+            "output": [
+                "Actualment (O) hi (O) treballen (O) 21 (O) persones (O) , (O) que (O) gestionen (O) els (O) processos (O) administratius (O) del (O) sector (O) ramader (O) . (O)"
+            ]
+        },
+        {
+            "input": "A m\u00e9s , segons SCC , el sector del bov\u00ed actualment requereix d' uns processos de control i identificaci\u00f3 del bestiar ( DIB ) que afegits a altres gestions fan que d' un temps en\u00e7\u00e0 els usuaris es queixin de les llargues cues que s' originen i de les llargues estones d' espera .",
+            "output": [
+                "A (O) m\u00e9s (O) , (O) segons (O) SCC (B-ORG) , (O) el (O) sector (O) del (O) bov\u00ed (O) actualment (O) requereix (O) d' (O) uns (O) processos (O) de (O) control (O) i (O) identificaci\u00f3 (O) del (O) bestiar (O) ( (O) DIB (B-MISC) ) (O) que (O) afegits (O) a (O) altres (O) gestions (O) fan (O) que (O) d' (O) un (O) temps (O) en\u00e7\u00e0 (O) els (O) usuaris (O) es (O) queixin (O) de (O) les (O) llargues (O) cues (O) que (O) s' (O) originen (O) i (O) de (O) les (O) llargues (O) estones (O) d' (O) espera (O) . (O)"
+            ]
+        },
+        {
+            "input": "En aquest sentit , SCC considera que les solucions per pal\u00b7liar aquests problemes passen per dotar l' oficina de m\u00e9s personal per atendre els usuaris , m\u00e9s espai , ja que una quarta part de l' edifici est\u00e0 ocupada pels Guardes Forestals , i per obrir una nova oficina del DARP a Prats de Llu\u00e7an\u00e8s , on actualment hi ha una subunitat .",
+            "output": [
+                "En (O) aquest (O) sentit (O) , (O) SCC (B-ORG) considera (O) que (O) les (O) solucions (O) per (O) pal\u00b7liar (O) aquests (O) problemes (O) passen (O) per (O) dotar (O) l' (O) oficina (O) de (O) m\u00e9s (O) personal (O) per (O) atendre (O) els (O) usuaris (O) , (O) m\u00e9s (O) espai (O) , (O) ja (O) que (O) una (O) quarta (O) part (O) de (O) l' (O) edifici (O) est\u00e0 (O) ocupada (O) pels (O) Guardes (B-ORG) Forestals (I-ORG) , (O) i (O) per (O) obrir (O) una (O) nova (O) oficina (O) del (O) DARP (B-ORG) a (O) Prats (B-LOC) de (I-LOC) Llu\u00e7an\u00e8s (I-LOC) , (O) on (O) actualment (O) hi (O) ha (O) una (O) subunitat (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els pagesos de la fruita seca tornaran a mobilitzar -se , el proper 16 de juny a Madrid , en un nou acte de protesta per pressionar la Uni\u00f3 Europea i aconseguir la continu\u00eftat de les ajudes al sector .",
+            "output": [
+                "Els (O) pagesos (O) de (O) la (O) fruita (O) seca (O) tornaran (O) a (O) mobilitzar (O) -se (O) , (O) el (O) proper (O) 16 (O) de (O) juny (O) a (O) Madrid (B-LOC) , (O) en (O) un (O) nou (O) acte (O) de (O) protesta (O) per (O) pressionar (O) la (O) Uni\u00f3 (B-ORG) Europea (I-ORG) i (O) aconseguir (O) la (O) continu\u00eftat (O) de (O) les (O) ajudes (O) al (O) sector (O) . (O)"
+            ]
+        },
+        {
+            "input": "El sindicat Uni\u00f3 de Pagesos va convocar anit unes 500 persones en una nova assemblea , on es va explicar en quin punt es troben les negociacions i va convidar els assistents a participar a la manifestaci\u00f3 de Madrid .",
+            "output": [
+                "El (O) sindicat (O) Uni\u00f3 (B-ORG) de (I-ORG) Pagesos (I-ORG) va (O) convocar (O) anit (O) unes (O) 500 (O) persones (O) en (O) una (O) nova (O) assemblea (O) , (O) on (O) es (O) va (O) explicar (O) en (O) quin (O) punt (O) es (O) troben (O) les (O) negociacions (O) i (O) va (O) convidar (O) els (O) assistents (O) a (O) participar (O) a (O) la (O) manifestaci\u00f3 (O) de (O) Madrid (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "La mobilitzaci\u00f3 es far\u00e0 nom\u00e9s tres dies abans del Consell de Ministres d' Agricultura europeus del mes de juny , on previsiblement podria sortir un nou acord que renovi un any m\u00e9s la pr\u00f2rroga de les subvencions a la fruita seca .",
+            "output": [
+                "La (O) mobilitzaci\u00f3 (O) es (O) far\u00e0 (O) nom\u00e9s (O) tres (O) dies (O) abans (O) del (O) Consell (B-MISC) de (I-MISC) Ministres (I-MISC) d' (I-MISC) Agricultura (I-MISC) europeus (I-MISC) del (O) mes (O) de (O) juny (O) , (O) on (O) previsiblement (O) podria (O) sortir (O) un (O) nou (O) acord (O) que (O) renovi (O) un (O) any (O) m\u00e9s (O) la (O) pr\u00f2rroga (O) de (O) les (O) subvencions (O) a (O) la (O) fruita (O) seca (O) . (O)"
+            ]
+        },
+        {
+            "input": "El sindicalista Josep Su\u00f1\u00e9 reconeixia anit que hi ha cert optimisme al sector al voltant d' una sortida positiva a la crisi , per\u00f2 que ' mentre no hi hagi res , cal continuar pressionant ' .",
+            "output": [
+                "El (O) sindicalista (O) Josep (B-PER) Su\u00f1\u00e9 (I-PER) reconeixia (O) anit (O) que (O) hi (O) ha (O) cert (O) optimisme (O) al (O) sector (O) al (O) voltant (O) d' (O) una (O) sortida (O) positiva (O) a (O) la (O) crisi (O) , (O) per\u00f2 (O) que (O) ' (O) mentre (O) no (O) hi (O) hagi (O) res (O) , (O) cal (O) continuar (O) pressionant (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Uni\u00f3 de Pagesos va demanar als assistents que participin a la manifestaci\u00f3 de Madrid .",
+            "output": [
+                "Uni\u00f3 (B-ORG) de (I-ORG) Pagesos (I-ORG) va (O) demanar (O) als (O) assistents (O) que (O) participin (O) a (O) la (O) manifestaci\u00f3 (O) de (O) Madrid (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "Per aconseguir el m\u00e0xim de participaci\u00f3 possible , el sindicat posar\u00e0 autobusos a disposici\u00f3 dels pagesos que hi vulguin anar .",
+            "output": [
+                "Per (O) aconseguir (O) el (O) m\u00e0xim (O) de (O) participaci\u00f3 (O) possible (O) , (O) el (O) sindicat (O) posar\u00e0 (O) autobusos (O) a (O) disposici\u00f3 (O) dels (O) pagesos (O) que (O) hi (O) vulguin (O) anar (O) . (O)"
+            ]
+        },
+        {
+            "input": "Cal remarcar que en aquesta nova manifestaci\u00f3 hi participaran organitzacions agr\u00e0ries d' arreu de l' Estat .",
+            "output": [
+                "Cal (O) remarcar (O) que (O) en (O) aquesta (O) nova (O) manifestaci\u00f3 (O) hi (O) participaran (O) organitzacions (O) agr\u00e0ries (O) d' (O) arreu (O) de (O) l' (O) Estat (B-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "Esquerra Republicana de Catalunya ( ERC ) es proposa dur el Pla Hidrol\u00f2gic Nacional ( PHN ) al Consell Consultiu de la Generalitat perqu\u00e8 estudi\u00ef si \u00e9s constitucional .",
+            "output": [
+                "Esquerra (B-ORG) Republicana (I-ORG) de (I-ORG) Catalunya (I-ORG) ( (O) ERC (B-ORG) ) (O) es (O) proposa (O) dur (O) el (O) Pla (B-MISC) Hidrol\u00f2gic (I-MISC) Nacional (I-MISC) ( (O) PHN (B-MISC) ) (O) al (O) Consell (B-ORG) Consultiu (I-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) perqu\u00e8 (O) estudi\u00ef (O) si (O) \u00e9s (O) constitucional (O) . (O)"
+            ]
+        },
+        {
+            "input": "El secretari general d' ERC , Josep Llu\u00eds Carod-Rovira , ha dit que espera comptar amb la complicitat dels altres grups al Parlament per tirar endavant aquesta iniciativa un cop el PHN quedi definitivament aprovat .",
+            "output": [
+                "El (O) secretari (O) general (O) d' (O) ERC (B-ORG) , (O) Josep (B-PER) Llu\u00eds (I-PER) Carod-Rovira (I-PER) , (O) ha (O) dit (O) que (O) espera (O) comptar (O) amb (O) la (O) complicitat (O) dels (O) altres (O) grups (O) al (O) Parlament (B-ORG) per (O) tirar (O) endavant (O) aquesta (O) iniciativa (O) un (O) cop (O) el (O) PHN (B-MISC) quedi (O) definitivament (O) aprovat (O) . (O)"
+            ]
+        },
+        {
+            "input": "Carod s' ha reunit aquest vespre amb els representants de la Plataforma en Defensa de l' Ebre , a qui ha expressat el seu suport en la lluita contra els transvasaments .",
+            "output": [
+                "Carod (B-PER) s' (O) ha (O) reunit (O) aquest (O) vespre (O) amb (O) els (O) representants (O) de (O) la (O) Plataforma (B-ORG) en (I-ORG) Defensa (I-ORG) de (I-ORG) l' (I-ORG) Ebre (I-ORG) , (O) a (O) qui (O) ha (O) expressat (O) el (O) seu (O) suport (O) en (O) la (O) lluita (O) contra (O) els (O) transvasaments (O) . (O)"
+            ]
+        },
+        {
+            "input": "El l\u00edder republic\u00e0 ha dit que ' hi ha motius suficients per considerar que el Pla Hidrol\u00f2gic \u00e9s inconstitucional ' , per la qual cosa es proposar\u00e0 al Parlament de Catalunya de dur -lo al Consell Consultiu de la Generalitat .",
+            "output": [
+                "El (O) l\u00edder (O) republic\u00e0 (O) ha (O) dit (O) que (O) ' (O) hi (O) ha (O) motius (O) suficients (O) per (O) considerar (O) que (O) el (O) Pla (B-MISC) Hidrol\u00f2gic (I-MISC) \u00e9s (O) inconstitucional (O) ' (O) , (O) per (O) la (O) qual (O) cosa (O) es (O) proposar\u00e0 (O) al (O) Parlament (B-ORG) de (I-ORG) Catalunya (I-ORG) de (O) dur (O) -lo (O) al (O) Consell (B-ORG) Consultiu (I-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "Per tal que aquesta iniciativa prosperi , Carod espera comptar ' amb la complicitat d' altres grups pol\u00edtics ' .",
+            "output": [
+                "Per (O) tal (O) que (O) aquesta (O) iniciativa (O) prosperi (O) , (O) Carod (B-PER) espera (O) comptar (O) ' (O) amb (O) la (O) complicitat (O) d' (O) altres (O) grups (O) pol\u00edtics (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Al marge de reunir -se amb els representants de la Plataforma , el secretari general d' ERC ha dictat aquest vespre una confer\u00e8ncia a Tortosa , on ha exposat la seva visi\u00f3 de quin ha de ser el futur de les Terres de l' Ebre .",
+            "output": [
+                "Al (O) marge (O) de (O) reunir (O) -se (O) amb (O) els (O) representants (O) de (O) la (O) Plataforma (B-ORG) , (O) el (O) secretari (O) general (O) d' (O) ERC (B-ORG) ha (O) dictat (O) aquest (O) vespre (O) una (O) confer\u00e8ncia (O) a (O) Tortosa (B-LOC) , (O) on (O) ha (O) exposat (O) la (O) seva (O) visi\u00f3 (O) de (O) quin (O) ha (O) de (O) ser (O) el (O) futur (O) de (O) les (O) Terres (B-LOC) de (I-LOC) l' (I-LOC) Ebre (I-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "En la seva opini\u00f3 , el Govern de la Generalitat ' ha d' adoptar mesures pressupost\u00e0ries i administratives per aconseguir un aut\u00e8ntic desenvolupament econ\u00f2mic d' aquestes comarques per tal d' aconseguir la seva modernitzaci\u00f3 ' .",
+            "output": [
+                "En (O) la (O) seva (O) opini\u00f3 (O) , (O) el (O) Govern (B-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) ' (O) ha (O) d' (O) adoptar (O) mesures (O) pressupost\u00e0ries (O) i (O) administratives (O) per (O) aconseguir (O) un (O) aut\u00e8ntic (O) desenvolupament (O) econ\u00f2mic (O) d' (O) aquestes (O) comarques (O) per (O) tal (O) d' (O) aconseguir (O) la (O) seva (O) modernitzaci\u00f3 (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Carod ha afegit que ' cal que la resta de Catalunya conegui m\u00e9s aquestes comarques i assumeixi la seva cultura com a pr\u00f2pia incorporant -la a l' univers sentimental de Catalunya ' .",
+            "output": [
+                "Carod (B-PER) ha (O) afegit (O) que (O) ' (O) cal (O) que (O) la (O) resta (O) de (O) Catalunya (B-LOC) conegui (O) m\u00e9s (O) aquestes (O) comarques (O) i (O) assumeixi (O) la (O) seva (O) cultura (O) com (O) a (O) pr\u00f2pia (O) incorporant (O) -la (O) a (O) l' (O) univers (O) sentimental (O) de (O) Catalunya (B-LOC) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "El Tribunal Suprem ( TS ) ha confirmat la condemna a quatre anys d' inhabilitaci\u00f3 especial i una multa de 3,6 milions de pessetes per a quatre veterinaris gironins , per haver -se beneficiat dels c\u00e0rrecs p\u00fablics que desenvolupaven i la seva relaci\u00f3 amb les empreses c\u00e0rniques de la zona en oferir -los serveis particulars .",
+            "output": [
+                "El (O) Tribunal (B-ORG) Suprem (I-ORG) ( (O) TS (B-ORG) ) (O) ha (O) confirmat (O) la (O) condemna (O) a (O) quatre (O) anys (O) d' (O) inhabilitaci\u00f3 (O) especial (O) i (O) una (O) multa (O) de (O) 3,6 (O) milions (O) de (O) pessetes (O) per (O) a (O) quatre (O) veterinaris (O) gironins (O) , (O) per (O) haver (O) -se (O) beneficiat (O) dels (O) c\u00e0rrecs (O) p\u00fablics (O) que (O) desenvolupaven (O) i (O) la (O) seva (O) relaci\u00f3 (O) amb (O) les (O) empreses (O) c\u00e0rniques (O) de (O) la (O) zona (O) en (O) oferir (O) -los (O) serveis (O) particulars (O) . (O)"
+            ]
+        },
+        {
+            "input": "La sent\u00e8ncia , a la qual ha tingut acc\u00e9s Intra-ACN , desestima els recursos interposats pels processats , Albert Bram\u00f3n , president del Col\u00b7legi de Veterinaris de Girona en el moment dels fets , i Josefina J. , Pere C. i Mateu B. , que actuaven com a inspectors veterinaris de la Generalitat , i que van ser condemnats per l' Audi\u00e8ncia de Girona per un delicte de negociacions prohibides a funcionaris .",
+            "output": [
+                "La (O) sent\u00e8ncia (O) , (O) a (O) la (O) qual (O) ha (O) tingut (O) acc\u00e9s (O) Intra-ACN (B-ORG) , (O) desestima (O) els (O) recursos (O) interposats (O) pels (O) processats (O) , (O) Albert (B-PER) Bram\u00f3n (I-PER) , (O) president (O) del (O) Col\u00b7legi (B-ORG) de (I-ORG) Veterinaris (I-ORG) de (I-ORG) Girona (I-ORG) en (O) el (O) moment (O) dels (O) fets (O) , (O) i (O) Josefina (B-PER) J. (I-PER) , (O) Pere (B-PER) C. (I-PER) i (O) Mateu (B-PER) B. (I-PER) , (O) que (O) actuaven (O) com (O) a (O) inspectors (O) veterinaris (O) de (O) la (O) Generalitat (B-ORG) , (O) i (O) que (O) van (O) ser (O) condemnats (O) per (O) l' (O) Audi\u00e8ncia (B-ORG) de (I-ORG) Girona (I-ORG) per (O) un (O) delicte (O) de (O) negociacions (O) prohibides (O) a (O) funcionaris (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els funcionaris s' encarregaven del control de la higiene de les empreses c\u00e0rniques de La Garrotxa , i per aquest motiu feien visites peri\u00f2diques i anal\u00edtiques .",
+            "output": [
+                "Els (O) funcionaris (O) s' (O) encarregaven (O) del (O) control (O) de (O) la (O) higiene (O) de (O) les (O) empreses (O) c\u00e0rniques (O) de (O) La (B-LOC) Garrotxa (I-LOC) , (O) i (O) per (O) aquest (O) motiu (O) feien (O) visites (O) peri\u00f2diques (O) i (O) anal\u00edtiques (O) . (O)"
+            ]
+        },
+        {
+            "input": "Aprofitant aquest fet , els processats van constituir l' any 1991 una empresa dedicada a la planificaci\u00f3 i a l' anal\u00edtica de mat\u00e8ries primeres , i van utilitzar les visites oficials per oferir els serveis i captar els empresaris que inspeccionaven .",
+            "output": [
+                "Aprofitant (O) aquest (O) fet (O) , (O) els (O) processats (O) van (O) constituir (O) l' (O) any (O) 1991 (O) una (O) empresa (O) dedicada (O) a (O) la (O) planificaci\u00f3 (O) i (O) a (O) l' (O) anal\u00edtica (O) de (O) mat\u00e8ries (O) primeres (O) , (O) i (O) van (O) utilitzar (O) les (O) visites (O) oficials (O) per (O) oferir (O) els (O) serveis (O) i (O) captar (O) els (O) empresaris (O) que (O) inspeccionaven (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons el Tribunal Suprem , ' \u00e9s clar que els acusats van actuar en connexi\u00f3 amb el c\u00e0rrec oficial i van intentar i van arribar a obtenir un avantatge o inter\u00e8s privat ' .",
+            "output": [
+                "Segons (O) el (O) Tribunal (B-ORG) Suprem (I-ORG) , (O) ' (O) \u00e9s (O) clar (O) que (O) els (O) acusats (O) van (O) actuar (O) en (O) connexi\u00f3 (O) amb (O) el (O) c\u00e0rrec (O) oficial (O) i (O) van (O) intentar (O) i (O) van (O) arribar (O) a (O) obtenir (O) un (O) avantatge (O) o (O) inter\u00e8s (O) privat (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Pel que fa al coneixement de la il\u00b7licitud de la seva acci\u00f3 , l' alt tribunal sost\u00e9 que ' \u00e9s evident que s\u00f3n universitaris , amb un est\u00e0ndard de coneixements d' acord amb la seva especialitat ' i afegeix que ' des d' aquesta realitat no \u00e9s acceptable defensar que no tenien la consci\u00e8ncia de la il\u00b7licitud de la seva acci\u00f3 , ja que aix\u00f2 forma part del nivell mitj\u00e0 de coneixements i sensibilitats atribu\u00efdes a la generalitat de persones que estan en aquesta situaci\u00f3 ' .",
+            "output": [
+                "Pel (O) que (O) fa (O) al (O) coneixement (O) de (O) la (O) il\u00b7licitud (O) de (O) la (O) seva (O) acci\u00f3 (O) , (O) l' (O) alt (O) tribunal (O) sost\u00e9 (O) que (O) ' (O) \u00e9s (O) evident (O) que (O) s\u00f3n (O) universitaris (O) , (O) amb (O) un (O) est\u00e0ndard (O) de (O) coneixements (O) d' (O) acord (O) amb (O) la (O) seva (O) especialitat (O) ' (O) i (O) afegeix (O) que (O) ' (O) des (O) d' (O) aquesta (O) realitat (O) no (O) \u00e9s (O) acceptable (O) defensar (O) que (O) no (O) tenien (O) la (O) consci\u00e8ncia (O) de (O) la (O) il\u00b7licitud (O) de (O) la (O) seva (O) acci\u00f3 (O) , (O) ja (O) que (O) aix\u00f2 (O) forma (O) part (O) del (O) nivell (O) mitj\u00e0 (O) de (O) coneixements (O) i (O) sensibilitats (O) atribu\u00efdes (O) a (O) la (O) generalitat (O) de (O) persones (O) que (O) estan (O) en (O) aquesta (O) situaci\u00f3 (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "D' altra banda , el Suprem ent\u00e9n que no \u00e9s acceptable que els recurrents desconeguessin la normativa , per la seva professi\u00f3 i condici\u00f3 de funcionaris p\u00fablics de la Generalitat .",
+            "output": [
+                "D' (O) altra (O) banda (O) , (O) el (O) Suprem (B-ORG) ent\u00e9n (O) que (O) no (O) \u00e9s (O) acceptable (O) que (O) els (O) recurrents (O) desconeguessin (O) la (O) normativa (O) , (O) per (O) la (O) seva (O) professi\u00f3 (O) i (O) condici\u00f3 (O) de (O) funcionaris (O) p\u00fablics (O) de (O) la (O) Generalitat (B-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "Les antigues instal\u00b7lacions de l' IES Gabriel i Ferrater , de Reus , que s\u00f3n propietat de la Diputaci\u00f3 de Tarragona , seran , amb tota probabilitat , la futura seu de l' Escola Oficial d' Idiomes .",
+            "output": [
+                "Les (O) antigues (O) instal\u00b7lacions (O) de (O) l' (O) IES (B-LOC) Gabriel (I-LOC) i (I-LOC) Ferrater (I-LOC) , (O) de (O) Reus (B-LOC) , (O) que (O) s\u00f3n (O) propietat (O) de (O) la (O) Diputaci\u00f3 (B-ORG) de (I-ORG) Tarragona (I-ORG) , (O) seran (O) , (O) amb (O) tota (O) probabilitat (O) , (O) la (O) futura (O) seu (O) de (O) l' (O) Escola (B-ORG) Oficial (I-ORG) d' (I-ORG) Idiomes (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "L' oferiment d' aquest empla\u00e7ament per part del President de la Diputaci\u00f3 de Tarragona , Josep Marin\u00e9 , respon a la petici\u00f3 feta per la consellera d' Ensenyament de la Generalitat , Carme-Laura Gil , en el sentit de demanar uns empla\u00e7aments per situar -hi la nova escola d' idiomes .",
+            "output": [
+                "L' (O) oferiment (O) d' (O) aquest (O) empla\u00e7ament (O) per (O) part (O) del (O) President (B-PER) de (I-PER) la (I-PER) Diputaci\u00f3 (I-PER) de (I-PER) Tarragona (I-PER) , (O) Josep (B-PER) Marin\u00e9 (I-PER) , (O) respon (O) a (O) la (O) petici\u00f3 (O) feta (O) per (O) la (O) consellera (O) d' (O) Ensenyament (B-ORG) de (O) la (O) Generalitat (B-ORG) , (O) Carme-Laura (B-PER) Gil (I-PER) , (O) en (O) el (O) sentit (O) de (O) demanar (O) uns (O) empla\u00e7aments (O) per (O) situar (O) -hi (O) la (O) nova (O) escola (O) d' (O) idiomes (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' Hospital Arnau de Vilanova ha detectat avui un nou cas de colonitzaci\u00f3 d' un bacteri en un pacient ingressat en una Unitat de Cures Intensives del centre .",
+            "output": [
+                "L' (O) Hospital (B-ORG) Arnau (I-ORG) de (I-ORG) Vilanova (I-ORG) ha (O) detectat (O) avui (O) un (O) nou (O) cas (O) de (O) colonitzaci\u00f3 (O) d' (O) un (O) bacteri (O) en (O) un (O) pacient (O) ingressat (O) en (O) una (O) Unitat (B-LOC) de (I-LOC) Cures (I-LOC) Intensives (I-LOC) del (O) centre (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons ha explicat el conseller de Sanitat , Eduard Rius , que aquesta tarda ha visitat La Seu d' Urgell , el pacient ja estava infectat abans d' entrar a l' hospital per\u00f2 es procedir\u00e0 igualment a desinfectar tota la zona .",
+            "output": [
+                "Segons (O) ha (O) explicat (O) el (O) conseller (O) de (O) Sanitat (B-ORG) , (O) Eduard (B-LOC) Rius (I-LOC) , (O) que (O) aquesta (O) tarda (O) ha (O) visitat (O) La (B-LOC) Seu (I-LOC) d' (I-LOC) Urgell (I-LOC) , (O) el (O) pacient (O) ja (O) estava (O) infectat (O) abans (O) d' (O) entrar (O) a (O) l' (O) hospital (O) per\u00f2 (O) es (O) procedir\u00e0 (O) igualment (O) a (O) desinfectar (O) tota (O) la (O) zona (O) . (O)"
+            ]
+        },
+        {
+            "input": "Precisament ahir va entrar en funcionament una de les unitats de cures intensives de l' hospital despr\u00e9s que s' hagu\u00e9s de desinfectar en detectar -se la pres\u00e8ncia d' un brot infecci\u00f3s a principis del mes de maig que va afectar 12 malalts .",
+            "output": [
+                "Precisament (O) ahir (O) va (O) entrar (O) en (O) funcionament (O) una (O) de (O) les (O) unitats (O) de (O) cures (O) intensives (O) de (O) l' (O) hospital (O) despr\u00e9s (O) que (O) s' (O) hagu\u00e9s (O) de (O) desinfectar (O) en (O) detectar (O) -se (O) la (O) pres\u00e8ncia (O) d' (O) un (O) brot (O) infecci\u00f3s (O) a (O) principis (O) del (O) mes (O) de (O) maig (O) que (O) va (O) afectar (O) 12 (O) malalts (O) . (O)"
+            ]
+        },
+        {
+            "input": "D' aquests pacients , quatre encara romanen en la tercera de les unitats mentre que tres van morir per\u00f2 no a causa del bacteri sin\u00f3 pels motius que havien provocat el seu ingr\u00e9s en la unitat .",
+            "output": [
+                "D' (O) aquests (O) pacients (O) , (O) quatre (O) encara (O) romanen (O) en (O) la (O) tercera (O) de (O) les (O) unitats (O) mentre (O) que (O) tres (O) van (O) morir (O) per\u00f2 (O) no (O) a (O) causa (O) del (O) bacteri (O) sin\u00f3 (O) pels (O) motius (O) que (O) havien (O) provocat (O) el (O) seu (O) ingr\u00e9s (O) en (O) la (O) unitat (O) . (O)"
+            ]
+        },
+        {
+            "input": "El 25 % dels futurs usuaris del Tren d' Alta Velocitat ( TAV ) de la regi\u00f3 metropolitana de Barcelona utilitzar\u00e0 l' estaci\u00f3 del Vall\u00e8s per agafar el tren , segons un estudi que ha fet l' Ajuntament de Terrassa .",
+            "output": [
+                "El (O) 25 (O) % (O) dels (O) futurs (O) usuaris (O) del (O) Tren (B-MISC) d' (I-MISC) Alta (I-MISC) Velocitat (I-MISC) ( (O) TAV (B-MISC) ) (O) de (O) la (O) regi\u00f3 (O) metropolitana (O) de (O) Barcelona (B-LOC) utilitzar\u00e0 (O) l' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) per (O) agafar (O) el (O) tren (O) , (O) segons (O) un (O) estudi (O) que (O) ha (O) fet (O) l' (O) Ajuntament (B-ORG) de (I-ORG) Terrassa (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "L' alcalde de Terrassa , Manuel Royes , ha presentat avui els resultats d' aquest estudi sobre la capacitat d' atracci\u00f3 de viatgers de la futura estaci\u00f3 de ferrocarril d' alta velocitat del Vall\u00e8s .",
+            "output": [
+                "L' (O) alcalde (O) de (O) Terrassa (B-LOC) , (O) Manuel (B-PER) Royes (I-PER) , (O) ha (O) presentat (O) avui (O) els (O) resultats (O) d' (O) aquest (O) estudi (O) sobre (O) la (O) capacitat (O) d' (O) atracci\u00f3 (O) de (O) viatgers (O) de (O) la (O) futura (O) estaci\u00f3 (O) de (O) ferrocarril (O) d' (O) alta (O) velocitat (O) del (O) Vall\u00e8s (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "L' estudi ha estat realitzat amb la col\u00b7laboraci\u00f3 de la Diputaci\u00f3 de Barcelona .",
+            "output": [
+                "L' (O) estudi (O) ha (O) estat (O) realitzat (O) amb (O) la (O) col\u00b7laboraci\u00f3 (O) de (O) la (O) Diputaci\u00f3 (B-ORG) de (I-ORG) Barcelona (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "L' estaci\u00f3 del tren d' alta velocitat del Vall\u00e8s est\u00e0 previst que entri en servei l' any 2004 .",
+            "output": [
+                "L' (O) estaci\u00f3 (O) del (O) tren (O) d' (O) alta (O) velocitat (O) del (O) Vall\u00e8s (B-LOC) est\u00e0 (O) previst (O) que (O) entri (O) en (O) servei (O) l' (O) any (O) 2004 (O) . (O)"
+            ]
+        },
+        {
+            "input": "Estar\u00e0 situada a la zona de Ca n' Ametller a Sant Cugat del Vall\u00e8s , al costat mateix de l' Hospital General de Catalunya .",
+            "output": [
+                "Estar\u00e0 (O) situada (O) a (O) la (O) zona (O) de (O) Ca (B-LOC) n' (I-LOC) Ametller (I-LOC) a (O) Sant (B-LOC) Cugat (I-LOC) del (I-LOC) Vall\u00e8s (I-LOC) , (O) al (O) costat (O) mateix (O) de (O) l' (O) Hospital (B-LOC) General (I-LOC) de (I-LOC) Catalunya (I-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "L' estudi s' ha fet amb els objectius de con\u00e8ixer quina ser\u00e0 la demanda de l' estaci\u00f3 del Vall\u00e8s , quina oferta de trens haur\u00e0 de tenir , d' on procedir\u00e0 aquesta demanda i quines mesures cal adoptar per a facilitar l' acc\u00e9s al nou equipament .",
+            "output": [
+                "L' (O) estudi (O) s' (O) ha (O) fet (O) amb (O) els (O) objectius (O) de (O) con\u00e8ixer (O) quina (O) ser\u00e0 (O) la (O) demanda (O) de (O) l' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) , (O) quina (O) oferta (O) de (O) trens (O) haur\u00e0 (O) de (O) tenir (O) , (O) d' (O) on (O) procedir\u00e0 (O) aquesta (O) demanda (O) i (O) quines (O) mesures (O) cal (O) adoptar (O) per (O) a (O) facilitar (O) l' (O) acc\u00e9s (O) al (O) nou (O) equipament (O) . (O)"
+            ]
+        },
+        {
+            "input": "En concret , sobre la demanda de l' estaci\u00f3 , l' informe recull que actualment a la Regi\u00f3 Metropolitana de Barcelona es produeixen 50 milions de despla\u00e7aments a l' any , tant d' entrada com de sortida .",
+            "output": [
+                "En (O) concret (O) , (O) sobre (O) la (O) demanda (O) de (O) l' (O) estaci\u00f3 (O) , (O) l' (O) informe (O) recull (O) que (O) actualment (O) a (O) la (O) Regi\u00f3 (B-LOC) Metropolitana (I-LOC) de (I-LOC) Barcelona (I-LOC) es (O) produeixen (O) 50 (O) milions (O) de (O) despla\u00e7aments (O) a (O) l' (O) any (O) , (O) tant (O) d' (O) entrada (O) com (O) de (O) sortida (O) . (O)"
+            ]
+        },
+        {
+            "input": "D' aquests viatges , el 67 % es fan en vehicle privat , el 12 % en tren i la resta en avi\u00f3 i altres mitjans de transport .",
+            "output": [
+                "D' (O) aquests (O) viatges (O) , (O) el (O) 67 (O) % (O) es (O) fan (O) en (O) vehicle (O) privat (O) , (O) el (O) 12 (O) % (O) en (O) tren (O) i (O) la (O) resta (O) en (O) avi\u00f3 (O) i (O) altres (O) mitjans (O) de (O) transport (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tanmateix i amb l' entrada en funcionament de l' estaci\u00f3 del Vall\u00e8s del Tren d' Alta Velocitat i la seva consolidaci\u00f3 , per a l' any 2010 l' \u00fas del vehicle privat baixaria a un 43 % , el del tren de gran velocitat seria del 46 % , mentre que el d' avi\u00f3 i altres mitjans es quedaria en un 11 % .",
+            "output": [
+                "Tanmateix (O) i (O) amb (O) l' (O) entrada (O) en (O) funcionament (O) de (O) l' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) del (O) Tren (B-MISC) d' (I-MISC) Alta (I-MISC) Velocitat (I-MISC) i (O) la (O) seva (O) consolidaci\u00f3 (O) , (O) per (O) a (O) l' (O) any (O) 2010 (O) l' (O) \u00fas (O) del (O) vehicle (O) privat (O) baixaria (O) a (O) un (O) 43 (O) % (O) , (O) el (O) del (O) tren (O) de (O) gran (O) velocitat (O) seria (O) del (O) 46 (O) % (O) , (O) mentre (O) que (O) el (O) d' (O) avi\u00f3 (O) i (O) altres (O) mitjans (O) es (O) quedaria (O) en (O) un (O) 11 (O) % (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' estudi tamb\u00e9 reflecteix que un 25 % dels viatgers de la Regi\u00f3 Metropolitana preferirien l' estaci\u00f3 del Vall\u00e8s per fer els seus despla\u00e7aments .",
+            "output": [
+                "L' (O) estudi (O) tamb\u00e9 (O) reflecteix (O) que (O) un (O) 25 (O) % (O) dels (O) viatgers (O) de (O) la (O) Regi\u00f3 (B-LOC) Metropolitana (I-LOC) preferirien (O) l' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) per (O) fer (O) els (O) seus (O) despla\u00e7aments (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' estaci\u00f3 del Vall\u00e8s captar\u00e0 5,2 milions de viatges , quantitat que suposa una quarta part del nombre de despla\u00e7aments realitzats amb el tren d' alta velocitat .",
+            "output": [
+                "L' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) captar\u00e0 (O) 5,2 (O) milions (O) de (O) viatges (O) , (O) quantitat (O) que (O) suposa (O) una (O) quarta (O) part (O) del (O) nombre (O) de (O) despla\u00e7aments (O) realitzats (O) amb (O) el (O) tren (O) d' (O) alta (O) velocitat (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tamb\u00e9 es considera que l' estaci\u00f3 del Vall\u00e8s del tren d' alta velocitat descongestionar\u00e0 els accessos a Barcelona per carretera .",
+            "output": [
+                "Tamb\u00e9 (O) es (O) considera (O) que (O) l' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) del (O) tren (O) d' (O) alta (O) velocitat (O) descongestionar\u00e0 (O) els (O) accessos (O) a (O) Barcelona (B-LOC) per (O) carretera (O) . (O)"
+            ]
+        },
+        {
+            "input": "En relaci\u00f3 a l' oferta de trens que haur\u00e0 de tenir la futura estaci\u00f3 , l' informe assegura que haurien de funcionar cada dia 60 trens en cada sentit de la marxa , 24 amb destinaci\u00f3 dins de Catalunya i 36 trens amb destinaci\u00f3 fora de Catalunya , incidint especialment en una alta freq\u00fc\u00e8ncia de pas en hores punta .",
+            "output": [
+                "En (O) relaci\u00f3 (O) a (O) l' (O) oferta (O) de (O) trens (O) que (O) haur\u00e0 (O) de (O) tenir (O) la (O) futura (O) estaci\u00f3 (O) , (O) l' (O) informe (O) assegura (O) que (O) haurien (O) de (O) funcionar (O) cada (O) dia (O) 60 (O) trens (O) en (O) cada (O) sentit (O) de (O) la (O) marxa (O) , (O) 24 (O) amb (O) destinaci\u00f3 (O) dins (O) de (O) Catalunya (B-LOC) i (O) 36 (O) trens (O) amb (O) destinaci\u00f3 (O) fora (O) de (O) Catalunya (B-LOC) , (O) incidint (O) especialment (O) en (O) una (O) alta (O) freq\u00fc\u00e8ncia (O) de (O) pas (O) en (O) hores (O) punta (O) . (O)"
+            ]
+        },
+        {
+            "input": "Sobre els accessos , l' estaci\u00f3 del Vall\u00e8s tindr\u00e0 una bona connexi\u00f3 per tren suburb\u00e0 , gr\u00e0cies a les l\u00ednies de l' actual Metro del Vall\u00e8s de Ferrocarrils de la Generalitat i la l\u00ednia C-5 de Rodalies Renfe , la qual s' ha de construir properament .",
+            "output": [
+                "Sobre (O) els (O) accessos (O) , (O) l' (O) estaci\u00f3 (O) del (O) Vall\u00e8s (B-LOC) tindr\u00e0 (O) una (O) bona (O) connexi\u00f3 (O) per (O) tren (O) suburb\u00e0 (O) , (O) gr\u00e0cies (O) a (O) les (O) l\u00ednies (O) de (O) l' (O) actual (O) Metro (B-MISC) del (I-MISC) Vall\u00e8s (I-MISC) de (O) Ferrocarrils (B-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) i (O) la (O) l\u00ednia (O) C-5 (O) de (O) Rodalies (B-ORG) Renfe (I-ORG) , (O) la (O) qual (O) s' (O) ha (O) de (O) construir (O) properament (O) . (O)"
+            ]
+        },
+        {
+            "input": "No obstant , es considera que caldr\u00e0 millorar els accessos per autob\u00fas , implantant noves l\u00ednies o modificant les ja existents .",
+            "output": [
+                "No (O) obstant (O) , (O) es (O) considera (O) que (O) caldr\u00e0 (O) millorar (O) els (O) accessos (O) per (O) autob\u00fas (O) , (O) implantant (O) noves (O) l\u00ednies (O) o (O) modificant (O) les (O) ja (O) existents (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tamb\u00e9 s' haur\u00e0 de preveure inicialment un aparcament per a mil cotxes , ampliable en el futur .",
+            "output": [
+                "Tamb\u00e9 (O) s' (O) haur\u00e0 (O) de (O) preveure (O) inicialment (O) un (O) aparcament (O) per (O) a (O) mil (O) cotxes (O) , (O) ampliable (O) en (O) el (O) futur (O) . (O)"
+            ]
+        },
+        {
+            "input": "El conseller de Pol\u00edtica Territorial i Obres P\u00fabliques de la Generalitat , Pere Macias , l' abat de Montserrat , Josep Maria Soler , i el president de Ferrocarrils de la Generalitat , Antoni Herce , han inaugurat avui la remodelaci\u00f3 del funicular de la Santa Cova de Montserrat , que va quedar totalment inutilitzat a causa dels aiguats de fa un any .",
+            "output": [
+                "El (O) conseller (O) de (O) Pol\u00edtica (B-ORG) Territorial (I-ORG) i (I-ORG) Obres (I-ORG) P\u00fabliques (I-ORG) de (O) la (O) Generalitat (B-ORG) , (O) Pere (B-PER) Macias (I-PER) , (O) l' (O) abat (O) de (O) Montserrat (B-LOC) , (O) Josep (B-PER) Maria (I-PER) Soler (I-PER) , (O) i (O) el (O) president (O) de (O) Ferrocarrils (B-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) , (O) Antoni (B-PER) Herce (I-PER) , (O) han (O) inaugurat (O) avui (O) la (O) remodelaci\u00f3 (O) del (O) funicular (O) de (O) la (O) Santa (B-LOC) Cova (I-LOC) de (O) Montserrat (B-LOC) , (O) que (O) va (O) quedar (O) totalment (O) inutilitzat (O) a (O) causa (O) dels (O) aiguats (O) de (O) fa (O) un (O) any (O) . (O)"
+            ]
+        },
+        {
+            "input": "Amb la posada en funcionament del funicular es completen les obres en infraestructures malmeses a Montserrat a causa dels aiguats .",
+            "output": [
+                "Amb (O) la (O) posada (O) en (O) funcionament (O) del (O) funicular (O) es (O) completen (O) les (O) obres (O) en (O) infraestructures (O) malmeses (O) a (O) Montserrat (B-LOC) a (O) causa (O) dels (O) aiguats (O) . (O)"
+            ]
+        },
+        {
+            "input": "La remodelaci\u00f3 ha costat 110 milions de pessetes .",
+            "output": [
+                "La (O) remodelaci\u00f3 (O) ha (O) costat (O) 110 (O) milions (O) de (O) pessetes (O) . (O)"
+            ]
+        },
+        {
+            "input": "La posada en funcionament del funicular ha requerit fer de nou els vehicles , que ara s\u00f3n panor\u00e0mics com els del funicular de Sant Joan .",
+            "output": [
+                "La (O) posada (O) en (O) funcionament (O) del (O) funicular (O) ha (O) requerit (O) fer (O) de (O) nou (O) els (O) vehicles (O) , (O) que (O) ara (O) s\u00f3n (O) panor\u00e0mics (O) com (O) els (O) del (O) funicular (O) de (O) Sant (B-LOC) Joan (I-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "La intervenci\u00f3 ha consistit tamb\u00e9 en la rehabilitaci\u00f3 dels edificis i de les infraestructures de l' entorn .",
+            "output": [
+                "La (O) intervenci\u00f3 (O) ha (O) consistit (O) tamb\u00e9 (O) en (O) la (O) rehabilitaci\u00f3 (O) dels (O) edificis (O) i (O) de (O) les (O) infraestructures (O) de (O) l' (O) entorn (O) . (O)"
+            ]
+        },
+        {
+            "input": "A m\u00e9s , s' ha aprofitat per a situar una exposici\u00f3 a l' estaci\u00f3 superior sobre el projecte del nou cremallera i dues m\u00e9s a l' estaci\u00f3 inferior sobre la hist\u00f2ria de la Santa Cova i sobre els funiculars .",
+            "output": [
+                "A (O) m\u00e9s (O) , (O) s' (O) ha (O) aprofitat (O) per (O) a (O) situar (O) una (O) exposici\u00f3 (O) a (O) l' (O) estaci\u00f3 (O) superior (O) sobre (O) el (O) projecte (O) del (O) nou (O) cremallera (O) i (O) dues (O) m\u00e9s (O) a (O) l' (O) estaci\u00f3 (O) inferior (O) sobre (O) la (O) hist\u00f2ria (O) de (O) la (O) Santa (B-LOC) Cova (I-LOC) i (O) sobre (O) els (O) funiculars (O) . (O)"
+            ]
+        },
+        {
+            "input": "En l' acte d' inauguraci\u00f3 , el president de Ferrocarrils de la Generalitat , Antoni Herce , ha posat de relleu que un cop reparats els dos funiculars , el repte pendent en mat\u00e8ria de transports a Montserrat \u00e9s el nou cremallera , que permetr\u00e0 donar resposta a les necessitats dels m\u00e9s de 2 milions de visitants que cada any pugen al monestir .",
+            "output": [
+                "En (O) l' (O) acte (O) d' (O) inauguraci\u00f3 (O) , (O) el (O) president (O) de (O) Ferrocarrils (B-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) , (O) Antoni (B-PER) Herce (I-PER) , (O) ha (O) posat (O) de (O) relleu (O) que (O) un (O) cop (O) reparats (O) els (O) dos (O) funiculars (O) , (O) el (O) repte (O) pendent (O) en (O) mat\u00e8ria (O) de (O) transports (O) a (O) Montserrat (B-LOC) \u00e9s (O) el (O) nou (O) cremallera (O) , (O) que (O) permetr\u00e0 (O) donar (O) resposta (O) a (O) les (O) necessitats (O) dels (O) m\u00e9s (O) de (O) 2 (O) milions (O) de (O) visitants (O) que (O) cada (O) any (O) pugen (O) al (O) monestir (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons Herce , el cremallera ser\u00e0 un servei de qualitat , respectu\u00f3s amb el medi ambient i silenci\u00f3s , tal i com ' requereix l' entorn ' .",
+            "output": [
+                "Segons (O) Herce (B-PER) , (O) el (O) cremallera (O) ser\u00e0 (O) un (O) servei (O) de (O) qualitat (O) , (O) respectu\u00f3s (O) amb (O) el (O) medi (O) ambient (O) i (O) silenci\u00f3s (O) , (O) tal (O) i (O) com (O) ' (O) requereix (O) l' (O) entorn (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Per al conseller de Pol\u00edtica Territorial , Pere Macias , la reobertura del funicular suposa la superaci\u00f3 de la riuada de fa un any .",
+            "output": [
+                "Per (O) al (O) conseller (O) de (O) Pol\u00edtica (B-ORG) Territorial (I-ORG) , (O) Pere (B-PER) Macias (I-PER) , (O) la (O) reobertura (O) del (O) funicular (O) suposa (O) la (O) superaci\u00f3 (O) de (O) la (O) riuada (O) de (O) fa (O) un (O) any (O) . (O)"
+            ]
+        },
+        {
+            "input": "De la seva banda , l' abat de Montserrat , Josep Maria Soler , ha posat de relleu que el funicular facilitar\u00e0 l' acc\u00e9s dels pelegrins , dels amants de l' art que visiten el cam\u00ed de la Santa Cova i tamb\u00e9 dels amants de la natura .",
+            "output": [
+                "De (O) la (O) seva (O) banda (O) , (O) l' (O) abat (O) de (O) Montserrat (B-LOC) , (O) Josep (B-PER) Maria (I-PER) Soler (I-PER) , (O) ha (O) posat (O) de (O) relleu (O) que (O) el (O) funicular (O) facilitar\u00e0 (O) l' (O) acc\u00e9s (O) dels (O) pelegrins (O) , (O) dels (O) amants (O) de (O) l' (O) art (O) que (O) visiten (O) el (O) cam\u00ed (O) de (O) la (O) Santa (B-LOC) Cova (I-LOC) i (O) tamb\u00e9 (O) dels (O) amants (O) de (O) la (O) natura (O) . (O)"
+            ]
+        },
+        {
+            "input": "El funicular de la Santa Cova fa un recorregut de 232 metres , d' un desnivell de 118 i d' un pendent m\u00e0xim del 56,5 per cent .",
+            "output": [
+                "El (O) funicular (O) de (O) la (O) Santa (B-LOC) Cova (I-LOC) fa (O) un (O) recorregut (O) de (O) 232 (O) metres (O) , (O) d' (O) un (O) desnivell (O) de (O) 118 (O) i (O) d' (O) un (O) pendent (O) m\u00e0xim (O) del (O) 56,5 (O) per (O) cent (O) . (O)"
+            ]
+        },
+        {
+            "input": "El trajecte del viatge dura tres minuts .",
+            "output": [
+                "El (O) trajecte (O) del (O) viatge (O) dura (O) tres (O) minuts (O) . (O)"
+            ]
+        },
+        {
+            "input": "Les dues noves cabines panor\u00e0miques , amb capacitat per a 60 persones , estan dotades amb les m\u00e9s modernes tecnologies de seguretat i confort , com portes autom\u00e0tiques el\u00e8ctriques , calefacci\u00f3 i cabines de conducci\u00f3 independents .",
+            "output": [
+                "Les (O) dues (O) noves (O) cabines (O) panor\u00e0miques (O) , (O) amb (O) capacitat (O) per (O) a (O) 60 (O) persones (O) , (O) estan (O) dotades (O) amb (O) les (O) m\u00e9s (O) modernes (O) tecnologies (O) de (O) seguretat (O) i (O) confort (O) , (O) com (O) portes (O) autom\u00e0tiques (O) el\u00e8ctriques (O) , (O) calefacci\u00f3 (O) i (O) cabines (O) de (O) conducci\u00f3 (O) independents (O) . (O)"
+            ]
+        },
+        {
+            "input": "S\u00f3n cabines espaioses i estan adaptades a persones de mobilitat redu\u00efda .",
+            "output": [
+                "S\u00f3n (O) cabines (O) espaioses (O) i (O) estan (O) adaptades (O) a (O) persones (O) de (O) mobilitat (O) redu\u00efda (O) . (O)"
+            ]
+        },
+        {
+            "input": "Aquest funicular es va inaugurar l' any 1929 per a transportar els pelegrins que anaven a la Santa Cova o al Rosari monumental , amb obres de Josep Puig i Cadafalch , Antoni Gaud\u00ed o Josep Llimona .",
+            "output": [
+                "Aquest (O) funicular (O) es (O) va (O) inaugurar (O) l' (O) any (O) 1929 (O) per (O) a (O) transportar (O) els (O) pelegrins (O) que (O) anaven (O) a (O) la (O) Santa (B-LOC) Cova (I-LOC) o (O) al (O) Rosari (B-LOC) monumental (O) , (O) amb (O) obres (O) de (O) Josep (B-PER) Puig (I-PER) i (I-PER) Cadafalch (I-PER) , (O) Antoni (B-PER) Gaud\u00ed (I-PER) o (O) Josep (B-PER) Llimona (I-PER) . (O)"
+            ]
+        },
+        {
+            "input": "L' \u00faltim any que va funcionar abans dels aiguats , el 1999 , va transportar 128.000 viatgers .",
+            "output": [
+                "L' (O) \u00faltim (O) any (O) que (O) va (O) funcionar (O) abans (O) dels (O) aiguats (O) , (O) el (O) 1999 (O) , (O) va (O) transportar (O) 128.000 (O) viatgers (O) . (O)"
+            ]
+        },
+        {
+            "input": "El Funicular de la Santa Cova ha estat durant un any sense funcionar arran dels treballs de reparaci\u00f3 iniciats despr\u00e9s dels aiguats de l' any passat .",
+            "output": [
+                "El (O) Funicular (B-MISC) de (I-MISC) la (I-MISC) Santa (I-MISC) Cova (I-MISC) ha (O) estat (O) durant (O) un (O) any (O) sense (O) funcionar (O) arran (O) dels (O) treballs (O) de (O) reparaci\u00f3 (O) iniciats (O) despr\u00e9s (O) dels (O) aiguats (O) de (O) l' (O) any (O) passat (O) . (O)"
+            ]
+        },
+        {
+            "input": "El funicular , que estava a l' estaci\u00f3 inferior en el moment de la forta pluja , va quedar pr\u00e0cticament destru\u00eft .",
+            "output": [
+                "El (O) funicular (O) , (O) que (O) estava (O) a (O) l' (O) estaci\u00f3 (O) inferior (O) en (O) el (O) moment (O) de (O) la (O) forta (O) pluja (O) , (O) va (O) quedar (O) pr\u00e0cticament (O) destru\u00eft (O) . (O)"
+            ]
+        },
+        {
+            "input": "Aquesta no era la primera vegada que el funicular de la Santa Cova es veia afectat per una cat\u00e0strofe natural .",
+            "output": [
+                "Aquesta (O) no (O) era (O) la (O) primera (O) vegada (O) que (O) el (O) funicular (O) de (O) la (O) Santa (B-LOC) Cova (I-LOC) es (O) veia (O) afectat (O) per (O) una (O) cat\u00e0strofe (O) natural (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' any 1994 tamb\u00e9 es va haver de tancar arran dels incendis forestals que van afectar la muntanya .",
+            "output": [
+                "L' (O) any (O) 1994 (O) tamb\u00e9 (O) es (O) va (O) haver (O) de (O) tancar (O) arran (O) dels (O) incendis (O) forestals (O) que (O) van (O) afectar (O) la (O) muntanya (O) . (O)"
+            ]
+        },
+        {
+            "input": "A m\u00e9s del funicular de la Santa Cova , Ferrocarrils de la Generalitat tamb\u00e9 gestiona el funicular de Sant Joan , que va ser totalment remodelat l' any 1997 i que tamb\u00e9 es va veure afectat pels aiguats , tot i que la reparaci\u00f3 va ser m\u00e9s senzilla .",
+            "output": [
+                "A (O) m\u00e9s (O) del (O) funicular (O) de (O) la (O) Santa (B-LOC) Cova (I-LOC) , (O) Ferrocarrils (B-ORG) de (I-ORG) la (I-ORG) Generalitat (I-ORG) tamb\u00e9 (O) gestiona (O) el (O) funicular (O) de (O) Sant (B-LOC) Joan (I-LOC) , (O) que (O) va (O) ser (O) totalment (O) remodelat (O) l' (O) any (O) 1997 (O) i (O) que (O) tamb\u00e9 (O) es (O) va (O) veure (O) afectat (O) pels (O) aiguats (O) , (O) tot (O) i (O) que (O) la (O) reparaci\u00f3 (O) va (O) ser (O) m\u00e9s (O) senzilla (O) . (O)"
+            ]
+        },
+        {
+            "input": "La demarcaci\u00f3 de Tarragona t\u00e9 33 municipis que encara no disposen de Pla General d' Ordenaci\u00f3 Urbana ( PGOU ) , segons dades facilitades pel conseller de Pol\u00edtica Territorial , Pere Macias , en resposta a una pregunta parlament\u00e0ria del diputat d' ERC Jaume Oliveras .",
+            "output": [
+                "La (O) demarcaci\u00f3 (O) de (O) Tarragona (B-LOC) t\u00e9 (O) 33 (O) municipis (O) que (O) encara (O) no (O) disposen (O) de (O) Pla (B-MISC) General (I-MISC) d' (I-MISC) Ordenaci\u00f3 (I-MISC) Urbana (I-MISC) ( (O) PGOU (B-MISC) ) (O) , (O) segons (O) dades (O) facilitades (O) pel (O) conseller (O) de (O) Pol\u00edtica (B-ORG) Territorial (I-ORG) , (O) Pere (B-PER) Macias (I-PER) , (O) en (O) resposta (O) a (O) una (O) pregunta (O) parlament\u00e0ria (O) del (O) diputat (O) d' (O) ERC (B-ORG) Jaume (B-PER) Oliveras (I-PER) . (O)"
+            ]
+        },
+        {
+            "input": "Macias ha assenyalat que la Comissi\u00f3 d' Urbanisme de Tarragona va dictar l' any 1979 unes Normes Subsidi\u00e0ries i Complement\u00e0ries de Planejament per aplicar de manera directa a 117 municipis de la demarcaci\u00f3 de Tarragona , com a instrument d' ordenaci\u00f3 , perqu\u00e8 no disposaven en aquell moment d' un PGOU o b\u00e9 de Normes Subsidi\u00e0ries de planejament municipal .",
+            "output": [
+                "Macias (B-PER) ha (O) assenyalat (O) que (O) la (O) Comissi\u00f3 (B-ORG) d' (I-ORG) Urbanisme (I-ORG) de (O) Tarragona (B-LOC) va (O) dictar (O) l' (O) any (O) 1979 (O) unes (O) Normes (B-MISC) Subsidi\u00e0ries (I-MISC) i (I-MISC) Complement\u00e0ries (I-MISC) de (I-MISC) Planejament (I-MISC) per (O) aplicar (O) de (O) manera (O) directa (O) a (O) 117 (O) municipis (O) de (O) la (O) demarcaci\u00f3 (O) de (O) Tarragona (B-LOC) , (O) com (O) a (O) instrument (O) d' (O) ordenaci\u00f3 (O) , (O) perqu\u00e8 (O) no (O) disposaven (O) en (O) aquell (O) moment (O) d' (O) un (O) PGOU (B-MISC) o (O) b\u00e9 (O) de (O) Normes (B-MISC) Subsidi\u00e0ries (I-MISC) de (O) planejament (O) municipal (O) . (O)"
+            ]
+        },
+        {
+            "input": "En l' actualitat , segons el conseller , d' aquells 117 resten nom\u00e9s 33 municipis sense planejament general .",
+            "output": [
+                "En (O) l' (O) actualitat (O) , (O) segons (O) el (O) conseller (O) , (O) d' (O) aquells (O) 117 (O) resten (O) nom\u00e9s (O) 33 (O) municipis (O) sense (O) planejament (O) general (O) . (O)"
+            ]
+        },
+        {
+            "input": "Aquests s\u00f3n Els Garidells , Mont-ral , Nulles , Vallmoll ( Alt Camp ) , L' Arbol\u00ed , L' Argentera ( Baix Camp ) , Tivenys ( Baix Ebre ) , Llorac , Les Piles , Pontils , Sarral , Vallfogona de Riucorb , ( Conca de Barber\u00e0 ) , Mas de Barberans , Masdenverge ( Montsi\u00e0 ) , La Bisbal de Falset , Cabassers , Cap\u00e7anes , La Figuera , Gratallops , El Lloar , Margalef , Poboleda , Porrera , Pradell de Teixeta , La Torre de Fontaubella , Torroja de Priorat , Ulldemolins , La Vilella Alta ( Priorat ) , La Palma d' Ebre ( Ribera d' Ebre ) , Bot , Caseres , La Pobla de Massaluca , Prat de Comte ( Terra Alta ) .",
+            "output": [
+                "Aquests (O) s\u00f3n (O) Els (B-LOC) Garidells (I-LOC) , (O) Mont-ral (B-LOC) , (O) Nulles (B-LOC) , (O) Vallmoll (B-LOC) ( (O) Alt (B-LOC) Camp (I-LOC) ) (O) , (O) L' (B-LOC) Arbol\u00ed (I-LOC) , (O) L' (B-LOC) Argentera (I-LOC) ( (O) Baix (B-LOC) Camp (I-LOC) ) (O) , (O) Tivenys (B-LOC) ( (O) Baix (B-LOC) Ebre (I-LOC) ) (O) , (O) Llorac (B-LOC) , (O) Les (B-LOC) Piles (I-LOC) , (O) Pontils (B-LOC) , (O) Sarral (B-LOC) , (O) Vallfogona (B-LOC) de (I-LOC) Riucorb (I-LOC) , (O) ( (O) Conca (B-LOC) de (I-LOC) Barber\u00e0 (I-LOC) ) (O) , (O) Mas (B-LOC) de (I-LOC) Barberans (I-LOC) , (O) Masdenverge (B-LOC) ( (O) Montsi\u00e0 (B-LOC) ) (O) , (O) La (B-LOC) Bisbal (I-LOC) de (I-LOC) Falset (I-LOC) , (O) Cabassers (B-LOC) , (O) Cap\u00e7anes (B-LOC) , (O) La (B-LOC) Figuera (I-LOC) , (O) Gratallops (B-LOC) , (O) El (B-LOC) Lloar (I-LOC) , (O) Margalef (B-LOC) , (O) Poboleda (B-LOC) , (O) Porrera (B-LOC) , (O) Pradell (B-LOC) de (I-LOC) Teixeta (I-LOC) , (O) La (B-LOC) Torre (I-LOC) de (I-LOC) Fontaubella (I-LOC) , (O) Torroja (B-LOC) de (I-LOC) Priorat (I-LOC) , (O) Ulldemolins (B-LOC) , (O) La (B-LOC) Vilella (I-LOC) Alta (I-LOC) ( (O) Priorat (B-LOC) ) (O) , (O) La (B-LOC) Palma (I-LOC) d' (I-LOC) Ebre (I-LOC) ( (O) Ribera (B-LOC) d' (I-LOC) Ebre (I-LOC) ) (O) , (O) Bot (B-LOC) , (O) Caseres (B-LOC) , (O) La (B-LOC) Pobla (I-LOC) de (I-LOC) Massaluca (I-LOC) , (O) Prat (B-LOC) de (I-LOC) Comte (I-LOC) ( (O) Terra (B-LOC) Alta (I-LOC) ) (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tots ells tenen en curs la redacci\u00f3 o la tramitaci\u00f3 de les corresponents Normes Subsidi\u00e0ries municipals .",
+            "output": [
+                "Tots (O) ells (O) tenen (O) en (O) curs (O) la (O) redacci\u00f3 (O) o (O) la (O) tramitaci\u00f3 (O) de (O) les (O) corresponents (O) Normes (B-MISC) Subsidi\u00e0ries (I-MISC) municipals (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' empresa promotora Garraf Mediterr\u00e0nia SA i Pirelli Cables y Sistemas SA , en col\u00b7laboraci\u00f3 amb l' Ajuntament de Vilanova i la Geltr\u00fa , han convocat el concurs d' idees de l' anomenat ' Espai Pirelli ' per seleccionar , a partir del dia 8 de juny i durant els propers mesos , les propostes urban\u00edstiques , arquitect\u00f2niques i mediambientals que serviran de base per a la redacci\u00f3 del futur Pla Especial de Reforma Interior ( PERI ) dels terrenys que ara ocupa Pirelli a Vilanova .",
+            "output": [
+                "L' (O) empresa (O) promotora (O) Garraf (B-ORG) Mediterr\u00e0nia (I-ORG) SA (I-ORG) i (O) Pirelli (B-ORG) Cables (I-ORG) y (I-ORG) Sistemas (I-ORG) SA (I-ORG) , (O) en (O) col\u00b7laboraci\u00f3 (O) amb (O) l' (O) Ajuntament (B-ORG) de (I-ORG) Vilanova (I-ORG) i (I-ORG) la (I-ORG) Geltr\u00fa (I-ORG) , (O) han (O) convocat (O) el (O) concurs (O) d' (O) idees (O) de (O) l' (O) anomenat (O) ' (O) Espai (B-LOC) Pirelli (I-LOC) ' (O) per (O) seleccionar (O) , (O) a (O) partir (O) del (O) dia (O) 8 (O) de (O) juny (O) i (O) durant (O) els (O) propers (O) mesos (O) , (O) les (O) propostes (O) urban\u00edstiques (O) , (O) arquitect\u00f2niques (O) i (O) mediambientals (O) que (O) serviran (O) de (O) base (O) per (O) a (O) la (O) redacci\u00f3 (O) del (O) futur (O) Pla (B-MISC) Especial (I-MISC) de (I-MISC) Reforma (I-MISC) Interior (I-MISC) ( (O) PERI (B-MISC) ) (O) dels (O) terrenys (O) que (O) ara (O) ocupa (O) Pirelli (B-ORG) a (O) Vilanova (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "La transformaci\u00f3 immobili\u00e0ria de l' actual f\u00e0brica de Pirelli , amb una superf\u00edcie de 10 hect\u00e0rees , comportar\u00e0 una inversi\u00f3 de 25.000 milions de pessetes .",
+            "output": [
+                "La (O) transformaci\u00f3 (O) immobili\u00e0ria (O) de (O) l' (O) actual (O) f\u00e0brica (O) de (O) Pirelli (B-ORG) , (O) amb (O) una (O) superf\u00edcie (O) de (O) 10 (O) hect\u00e0rees (O) , (O) comportar\u00e0 (O) una (O) inversi\u00f3 (O) de (O) 25.000 (O) milions (O) de (O) pessetes (O) . (O)"
+            ]
+        },
+        {
+            "input": "La transformaci\u00f3 de l' Espai Pirelli ser\u00e0 una de les operacions immobili\u00e0ries m\u00e9s importants a Catalunya .",
+            "output": [
+                "La (O) transformaci\u00f3 (O) de (O) l' (O) Espai (B-LOC) Pirelli (I-LOC) ser\u00e0 (O) una (O) de (O) les (O) operacions (O) immobili\u00e0ries (O) m\u00e9s (O) importants (O) a (O) Catalunya (B-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "D' altra banda , l' alcalde de Vilanova i la Geltr\u00fa , Sixte Moral , ha destacat que el desenvolupament immobiliari d' aquesta superf\u00edcie ' \u00e9s una operaci\u00f3 fonamental i estrat\u00e8gica no nom\u00e9s per a Vilanova , sin\u00f3 per a tota la comarca , ja que contribuir\u00e0 a l' estimulaci\u00f3 del desenvolupament de l' anomenat Eix Diagonal , b\u00e0sic per a la vertebraci\u00f3 de les comarques interiors de Catalunya ' .",
+            "output": [
+                "D' (O) altra (O) banda (O) , (O) l' (O) alcalde (O) de (O) Vilanova (B-LOC) i (I-LOC) la (I-LOC) Geltr\u00fa (I-LOC) , (O) Sixte (B-PER) Moral (I-PER) , (O) ha (O) destacat (O) que (O) el (O) desenvolupament (O) immobiliari (O) d' (O) aquesta (O) superf\u00edcie (O) ' (O) \u00e9s (O) una (O) operaci\u00f3 (O) fonamental (O) i (O) estrat\u00e8gica (O) no (O) nom\u00e9s (O) per (O) a (O) Vilanova (B-LOC) , (O) sin\u00f3 (O) per (O) a (O) tota (O) la (O) comarca (O) , (O) ja (O) que (O) contribuir\u00e0 (O) a (O) l' (O) estimulaci\u00f3 (O) del (O) desenvolupament (O) de (O) l' (O) anomenat (O) Eix (B-LOC) Diagonal (I-LOC) , (O) b\u00e0sic (O) per (O) a (O) la (O) vertebraci\u00f3 (O) de (O) les (O) comarques (O) interiors (O) de (O) Catalunya (B-LOC) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' Espai Pirelli , compta amb una superf\u00edcie de 10 hect\u00e0rees i suposar\u00e0 una inversi\u00f3 aproximada de 25.000 milions de pessetes .",
+            "output": [
+                "L' (O) Espai (B-LOC) Pirelli (I-LOC) , (O) compta (O) amb (O) una (O) superf\u00edcie (O) de (O) 10 (O) hect\u00e0rees (O) i (O) suposar\u00e0 (O) una (O) inversi\u00f3 (O) aproximada (O) de (O) 25.000 (O) milions (O) de (O) pessetes (O) . (O)"
+            ]
+        },
+        {
+            "input": "El 65 per cent es destinar\u00e0 a equipaments p\u00fablics , vialitat i zones verdes , mentre que el 35 per cent restant ser\u00e0 de titularitat privada .",
+            "output": [
+                "El (O) 65 (O) per (O) cent (O) es (O) destinar\u00e0 (O) a (O) equipaments (O) p\u00fablics (O) , (O) vialitat (O) i (O) zones (O) verdes (O) , (O) mentre (O) que (O) el (O) 35 (O) per (O) cent (O) restant (O) ser\u00e0 (O) de (O) titularitat (O) privada (O) . (O)"
+            ]
+        },
+        {
+            "input": "El passat 4 de desembre , el ple de l' Ajuntament de Vilanova va aprovar per unanimitat el conveni de col\u00b7laboraci\u00f3 urban\u00edstic subscrit amb Pirelli Cables y Sistemas SA en relaci\u00f3 als terrenys que ocupa la seva f\u00e0brica i el dia 29 del mateix mes , aquesta empresa i Garraf Mediterr\u00e0nia SA arribaven a un acord per a la compravenda de l' esmentada finca .",
+            "output": [
+                "El (O) passat (O) 4 (O) de (O) desembre (O) , (O) el (O) ple (O) de (O) l' (O) Ajuntament (B-ORG) de (I-ORG) Vilanova (I-ORG) va (O) aprovar (O) per (O) unanimitat (O) el (O) conveni (O) de (O) col\u00b7laboraci\u00f3 (O) urban\u00edstic (O) subscrit (O) amb (O) Pirelli (B-ORG) Cables (I-ORG) y (I-ORG) Sistemas (I-ORG) SA (I-ORG) en (O) relaci\u00f3 (O) als (O) terrenys (O) que (O) ocupa (O) la (O) seva (O) f\u00e0brica (O) i (O) el (O) dia (O) 29 (O) del (O) mateix (O) mes (O) , (O) aquesta (O) empresa (O) i (O) Garraf (B-ORG) Mediterr\u00e0nia (I-ORG) SA (I-ORG) arribaven (O) a (O) un (O) acord (O) per (O) a (O) la (O) compravenda (O) de (O) l' (O) esmentada (O) finca (O) . (O)"
+            ]
+        },
+        {
+            "input": "La promotora Garraf Mediterr\u00e0nia SA \u00e9s una societat participada per les empreses promotores Qualitat Promocions SCCL ; Qualitat Obres SL ; i Raiding SA ; a m\u00e9s de les entitats financeres Caixa Manresa i Caixa de Sabadell .",
+            "output": [
+                "La (O) promotora (O) Garraf (B-ORG) Mediterr\u00e0nia (I-ORG) SA (I-ORG) \u00e9s (O) una (O) societat (O) participada (O) per (O) les (O) empreses (O) promotores (O) Qualitat (B-ORG) Promocions (I-ORG) SCCL (I-ORG) ; (O) Qualitat (B-ORG) Obres (I-ORG) SL (I-ORG) ; (O) i (O) Raiding (B-ORG) SA (I-ORG) ; (O) a (O) m\u00e9s (O) de (O) les (O) entitats (O) financeres (O) Caixa (B-ORG) Manresa (I-ORG) i (O) Caixa (B-ORG) de (I-ORG) Sabadell (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "L' Institut Catal\u00e0 del S\u00f2l ( Incasol ) mant\u00e9 el comprom\u00eds de destinar 18.402.516 pessetes a les obres de cobertura del torrent de Ca n' Alzamora a Rub\u00ed ( Vall\u00e8s Occidental ) , segons ha confirmat el conseller de Medi Ambient , Felip Puig , en resposta a una pregunta parlament\u00e0ria del diputat d' ERC Joan Ridao .",
+            "output": [
+                "L' (O) Institut (B-ORG) Catal\u00e0 (I-ORG) del (I-ORG) S\u00f2l (I-ORG) ( (O) Incasol (B-ORG) ) (O) mant\u00e9 (O) el (O) comprom\u00eds (O) de (O) destinar (O) 18.402.516 (O) pessetes (O) a (O) les (O) obres (O) de (O) cobertura (O) del (O) torrent (O) de (O) Ca (B-LOC) n' (I-LOC) Alzamora (I-LOC) a (O) Rub\u00ed (B-LOC) ( (O) Vall\u00e8s (B-LOC) Occidental (I-LOC) ) (O) , (O) segons (O) ha (O) confirmat (O) el (O) conseller (O) de (O) Medi (B-ORG) Ambient (I-ORG) , (O) Felip (B-PER) Puig (I-PER) , (O) en (O) resposta (O) a (O) una (O) pregunta (O) parlament\u00e0ria (O) del (O) diputat (O) d' (O) ERC (B-ORG) Joan (B-PER) Ridao (I-PER) . (O)"
+            ]
+        },
+        {
+            "input": "Puig ha assegurat que l' Incasol mant\u00e9 el comprom\u00eds d' abonar l' import del projecte quan s' executin les obres de cobriment .",
+            "output": [
+                "Puig (B-PER) ha (O) assegurat (O) que (O) l' (O) Incasol (B-ORG) mant\u00e9 (O) el (O) comprom\u00eds (O) d' (O) abonar (O) l' (O) import (O) del (O) projecte (O) quan (O) s' (O) executin (O) les (O) obres (O) de (O) cobriment (O) . (O)"
+            ]
+        },
+        {
+            "input": "Tot i amb aix\u00f2 , ha afegit , actualment l' Ag\u00e8ncia Catalana de l' Aigua ( ACA ) no t\u00e9 coneixement que hagi entrat en les seves depend\u00e8ncies la sol\u00b7licitud d' autoritzaci\u00f3 per fer -les , ni per part de l' Ajuntament ni de l' Institut Catal\u00e0 del S\u00f2l .",
+            "output": [
+                "Tot (O) i (O) amb (O) aix\u00f2 (O) , (O) ha (O) afegit (O) , (O) actualment (O) l' (O) Ag\u00e8ncia (B-ORG) Catalana (I-ORG) de (I-ORG) l' (I-ORG) Aigua (I-ORG) ( (O) ACA (B-ORG) ) (O) no (O) t\u00e9 (O) coneixement (O) que (O) hagi (O) entrat (O) en (O) les (O) seves (O) depend\u00e8ncies (O) la (O) sol\u00b7licitud (O) d' (O) autoritzaci\u00f3 (O) per (O) fer (O) -les (O) , (O) ni (O) per (O) part (O) de (O) l' (O) Ajuntament (B-ORG) ni (O) de (O) l' (O) Institut (B-ORG) Catal\u00e0 (I-ORG) del (I-ORG) S\u00f2l (I-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "El conseller ha assenyalat que tampoc es t\u00e9 coneixement que s' hagi demanat formalment la realitzaci\u00f3 de les obres a la pr\u00f2pia ACA .",
+            "output": [
+                "El (O) conseller (O) ha (O) assenyalat (O) que (O) tampoc (O) es (O) t\u00e9 (O) coneixement (O) que (O) s' (O) hagi (O) demanat (O) formalment (O) la (O) realitzaci\u00f3 (O) de (O) les (O) obres (O) a (O) la (O) pr\u00f2pia (O) ACA (B-ORG) . (O)"
+            ]
+        },
+        {
+            "input": "L' Ajuntament de Rub\u00ed , a principis de 1998 , va demanar a l' Incasol una soluci\u00f3 t\u00e8cnica per resoldre el problema de la pudor procedent del Torrent de Ca n' Alzamora en el tram que transcorre a cel obert , a prop del barri Torre de la Llebre .",
+            "output": [
+                "L' (O) Ajuntament (B-ORG) de (I-ORG) Rub\u00ed (I-ORG) , (O) a (O) principis (O) de (O) 1998 (O) , (O) va (O) demanar (O) a (O) l' (O) Incasol (B-ORG) una (O) soluci\u00f3 (O) t\u00e8cnica (O) per (O) resoldre (O) el (O) problema (O) de (O) la (O) pudor (O) procedent (O) del (O) Torrent (B-LOC) de (I-LOC) Ca (I-LOC) n' (I-LOC) Alzamora (I-LOC) en (O) el (O) tram (O) que (O) transcorre (O) a (O) cel (O) obert (O) , (O) a (O) prop (O) del (O) barri (O) Torre (B-LOC) de (I-LOC) la (I-LOC) Llebre (I-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "L' Incasol , d' acord amb els serveis t\u00e8cnics municipals , va redactar un projecte que va ser tram\u00e8s a l' Ajuntament l' 11 de maig de 1998 i que la Comissi\u00f3 de Govern del consistori va aprovar el 8 de juny seg\u00fcent , a condici\u00f3 que , per una despesa pressupost\u00e0ria equivalent , se substitu\u00eds l' escullera de la darrera part del torrent per una prolongaci\u00f3 del col\u00b7lector formada per un calaix de formig\u00f3 .",
+            "output": [
+                "L' (O) Incasol (B-ORG) , (O) d' (O) acord (O) amb (O) els (O) serveis (O) t\u00e8cnics (O) municipals (O) , (O) va (O) redactar (O) un (O) projecte (O) que (O) va (O) ser (O) tram\u00e8s (O) a (O) l' (O) Ajuntament (B-ORG) l' (O) 11 (O) de (O) maig (O) de (O) 1998 (O) i (O) que (O) la (O) Comissi\u00f3 (B-ORG) de (I-ORG) Govern (I-ORG) del (O) consistori (O) va (O) aprovar (O) el (O) 8 (O) de (O) juny (O) seg\u00fcent (O) , (O) a (O) condici\u00f3 (O) que (O) , (O) per (O) una (O) despesa (O) pressupost\u00e0ria (O) equivalent (O) , (O) se (O) substitu\u00eds (O) l' (O) escullera (O) de (O) la (O) darrera (O) part (O) del (O) torrent (O) per (O) una (O) prolongaci\u00f3 (O) del (O) col\u00b7lector (O) formada (O) per (O) un (O) calaix (O) de (O) formig\u00f3 (O) . (O)"
+            ]
+        },
+        {
+            "input": "El pressupost total de les obres era de 18.402.516 pessetes i , d' acord amb el projecte de l' Incasol , inclo\u00efa el tractament paisatg\u00edstic i no el cobriment del torrent .",
+            "output": [
+                "El (O) pressupost (O) total (O) de (O) les (O) obres (O) era (O) de (O) 18.402.516 (O) pessetes (O) i (O) , (O) d' (O) acord (O) amb (O) el (O) projecte (O) de (O) l' (O) Incasol (B-ORG) , (O) inclo\u00efa (O) el (O) tractament (O) paisatg\u00edstic (O) i (O) no (O) el (O) cobriment (O) del (O) torrent (O) . (O)"
+            ]
+        },
+        {
+            "input": "Davant la persist\u00e8ncia de problemes de pudors , el mes de setembre de 1998 , al marge del projecte , es van remodelar els mecanismes de captaci\u00f3 d' aig\u00fces fecals , amb la qual cosa es va resoldre .",
+            "output": [
+                "Davant (O) la (O) persist\u00e8ncia (O) de (O) problemes (O) de (O) pudors (O) , (O) el (O) mes (O) de (O) setembre (O) de (O) 1998 (O) , (O) al (O) marge (O) del (O) projecte (O) , (O) es (O) van (O) remodelar (O) els (O) mecanismes (O) de (O) captaci\u00f3 (O) d' (O) aig\u00fces (O) fecals (O) , (O) amb (O) la (O) qual (O) cosa (O) es (O) va (O) resoldre (O) . (O)"
+            ]
+        },
+        {
+            "input": "Segons Puig , ' aix\u00ed ho va recon\u00e8ixer el regidor de l' \u00c0rea d' Urbanisme en un escrit de data 6 d' octubre de 1998 , en el qual tamb\u00e9 demanava a l' Incasol que continu\u00e9s el projecte que s' havia aprovat l' anterior mes de juny ' .",
+            "output": [
+                "Segons (O) Puig (B-PER) , (O) ' (O) aix\u00ed (O) ho (O) va (O) recon\u00e8ixer (O) el (O) regidor (O) de (O) l' (O) \u00c0rea (B-ORG) d' (I-ORG) Urbanisme (I-ORG) en (O) un (O) escrit (O) de (O) data (O) 6 (O) d' (O) octubre (O) de (O) 1998 (O) , (O) en (O) el (O) qual (O) tamb\u00e9 (O) demanava (O) a (O) l' (O) Incasol (B-ORG) que (O) continu\u00e9s (O) el (O) projecte (O) que (O) s' (O) havia (O) aprovat (O) l' (O) anterior (O) mes (O) de (O) juny (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Per aquest motiu , segons Puig , no es va considerar oport\u00fa cobrir una part del torrent amb un calaix de formig\u00f3 perqu\u00e8 la quantitat a destinar , 18.402.516 pessetes , solament permetia fer el 10 per cent de l' obra , ' la qual cosa no tenia cap sentit ni des del punt de vista econ\u00f2mic ni des del t\u00e8cnic ' .",
+            "output": [
+                "Per (O) aquest (O) motiu (O) , (O) segons (O) Puig (B-PER) , (O) no (O) es (O) va (O) considerar (O) oport\u00fa (O) cobrir (O) una (O) part (O) del (O) torrent (O) amb (O) un (O) calaix (O) de (O) formig\u00f3 (O) perqu\u00e8 (O) la (O) quantitat (O) a (O) destinar (O) , (O) 18.402.516 (O) pessetes (O) , (O) solament (O) permetia (O) fer (O) el (O) 10 (O) per (O) cent (O) de (O) l' (O) obra (O) , (O) ' (O) la (O) qual (O) cosa (O) no (O) tenia (O) cap (O) sentit (O) ni (O) des (O) del (O) punt (O) de (O) vista (O) econ\u00f2mic (O) ni (O) des (O) del (O) t\u00e8cnic (O) ' (O) . (O)"
+            ]
+        },
+        {
+            "input": "Un incendi que s' ha declarat aquesta tarda al costat de la via del tren al terme municipal de Vinaixa , ha provocat l' aturada de dos trens regionals en ambdues direccions .",
+            "output": [
+                "Un (O) incendi (O) que (O) s' (O) ha (O) declarat (O) aquesta (O) tarda (O) al (O) costat (O) de (O) la (O) via (O) del (O) tren (O) al (O) terme (O) municipal (O) de (O) Vinaixa (B-LOC) , (O) ha (O) provocat (O) l' (O) aturada (O) de (O) dos (O) trens (O) regionals (O) en (O) ambdues (O) direccions (O) . (O)"
+            ]
+        },
+        {
+            "input": "Aquesta situaci\u00f3 ha durat dues hores .",
+            "output": [
+                "Aquesta (O) situaci\u00f3 (O) ha (O) durat (O) dues (O) hores (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' incendi s' ha declarat a les 15:55 hores i s' ha perllongat durant dues hores .",
+            "output": [
+                "L' (O) incendi (O) s' (O) ha (O) declarat (O) a (O) les (O) 15:55 (O) hores (O) i (O) s' (O) ha (O) perllongat (O) durant (O) dues (O) hores (O) . (O)"
+            ]
+        },
+        {
+            "input": "Els dos trens que s' han vist afectats han estat el regional Lleida-Barcelona , que ha patit un retard de 20 minuts , i el regional Barcelona-Lleida , amb un retard de dues hores .",
+            "output": [
+                "Els (O) dos (O) trens (O) que (O) s' (O) han (O) vist (O) afectats (O) han (O) estat (O) el (O) regional (O) Lleida-Barcelona (B-LOC) , (O) que (O) ha (O) patit (O) un (O) retard (O) de (O) 20 (O) minuts (O) , (O) i (O) el (O) regional (O) Barcelona-Lleida (B-LOC) , (O) amb (O) un (O) retard (O) de (O) dues (O) hores (O) . (O)"
+            ]
+        },
+        {
+            "input": "L' incendi tamb\u00e9 ha obligat a desviar per la via de Casp dos trens de llarg recorregut que feien el trajecte Barcelona-Pa\u00eds Basc .",
+            "output": [
+                "L' (O) incendi (O) tamb\u00e9 (O) ha (O) obligat (O) a (O) desviar (O) per (O) la (O) via (O) de (O) Casp (B-LOC) dos (O) trens (O) de (O) llarg (O) recorregut (O) que (O) feien (O) el (O) trajecte (O) Barcelona-Pa\u00eds (B-LOC) Basc (I-LOC) . (O)"
+            ]
+        },
+        {
+            "input": "Fonts de Bombers han confirmat que en l' apagada del foc hi han intervingut quatre cotxes dels parcs de Mollerussa , Les Borges Blanques , Montblanc i Lleida , dos dels quals ja s' han retirat i els altres dos romanien hores d' ara humitejant la zona .",
+            "output": [
+                "Fonts (O) de (O) Bombers (B-ORG) han (O) confirmat (O) que (O) en (O) l' (O) apagada (O) del (O) foc (O) hi (O) han (O) intervingut (O) quatre (O) cotxes (O) dels (O) parcs (O) de (O) Mollerussa (B-LOC) , (O) Les (B-LOC) Borges (I-LOC) Blanques (I-LOC) , (O) Montblanc (B-LOC) i (O) Lleida (B-LOC) , (O) dos (O) dels (O) quals (O) ja (O) s' (O) han (O) retirat (O) i (O) els (O) altres (O) dos (O) romanien (O) hores (O) d' (O) ara (O) humitejant (O) la (O) zona (O) . (O)"
+            ]
+        },
+        {
+            "input": "El Grup Municipal d' IC-V-LP presentar\u00e0 una moci\u00f3 al Ple demanant que s' adeq\u00fci les platges de Tarragona a les persones minusv\u00e0lides .",
+            "output": [
+                "El (O) Grup (B-ORG) Municipal (I-ORG) d' (I-ORG) IC-V-LP (I-ORG) presentar\u00e0 (O) una (O) moci\u00f3 (O) al (O) Ple (B-ORG) demanant (O) que (O) s' (O) adeq\u00fci (O) les (O) platges (O) de (O) Tarragona (B-LOC) a (O) les (O) persones (O) minusv\u00e0lides (O) . (O)"
+            ]
+        }
+    ],
+    "Categories": [
+        "Detection -> Entity Detection -> Extractive",
+        "Named Entity Recognition",
+        "Text Generation -> Semi-Structured Text Generation -> Named Entity Generation"
+    ],
+    "Contributors": [
+        "Surya Singulur"
+    ]
+}

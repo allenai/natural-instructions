@@ -1,0 +1,936 @@
+{
+    "Source": [
+        "BSC-TeMU/ancora-ca-ner"
+    ],
+    "Definition": "You are given an unfinished Catalan sentence, and you need to predict the rest of it.",
+    "Input_language": [
+        "Catalan"
+    ],
+    "Output_language": [
+        "Catalan"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gaireb\u00e9 la totalitat de",
+            "output": "la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .",
+            "explanation": "This is original sentence 'Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gaireb\u00e9 la totalitat de la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .'. So, given 'Una setantena de treballadors de Fomento de Construcciones y Contratas a Manresa , gaireb\u00e9 la totalitat de', we have correctly generated 'la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat .' completeting the sentence"
+        },
+        {
+            "input": "Els treballadors han",
+            "output": "iniciat aquesta matinada una vaga indefinida dels serveis de neteja vi\u00e0ria i recollida d' escombraries .",
+            "explanation": "This is original sentence 'Els treballadors han iniciat aquesta matinada una vaga indefinida dels serveis de neteja vi\u00e0ria i recollida d' escombraries.'. So, given 'Els treballadors han', we have correctly generated 'iniciat aquesta matinada una vaga indefinida dels serveis de neteja vi\u00e0ria i recollida d' escombraries .' completeting the sentence"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Si us",
+            "output": "Salut",
+            "explanation": "This is a bad example because we need to predict 'Si us plau .' to complete the sentence, but we have predicted 'Salut'"
+        },
+        {
+            "input": "L' aturada s' ha",
+            "output": "yes",
+            "explanation": "This is a bad example because we need to predict 'convocat amb car\u00e0cter indefinit .' to complete the sentence, but we have predicted 'yes'"
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Una setantena de treballadors de Fomento de",
+            "output": [
+                "Construcciones y Contratas a Manresa , gaireb\u00e9 la totalitat de la plantilla , s' han manifestat aquest migdia pels carrers de la ciutat ."
+            ]
+        },
+        {
+            "input": "Els treballadors han iniciat aquesta matinada una vaga indefinida dels serveis de neteja vi\u00e0ria i recollida d'",
+            "output": [
+                "escombraries ."
+            ]
+        },
+        {
+            "input": "Amb la protesta reclamen que l' empresa vari\u00ef la seva actitud i accedeixi a la negociaci\u00f3 del conveni i denuncien l' actitud ' prepotent ' de",
+            "output": [
+                "l' Ajuntament de Manresa ."
+            ]
+        },
+        {
+            "input": "Tot i que ahir hi va haver una reuni\u00f3 de darrera hora",
+            "output": [
+                ", no es va aconseguir acostar posicions , de manera que els treballadors han decidit anar a la vaga ."
+            ]
+        },
+        {
+            "input": "A m\u00e9s de l' aturada i amb la finalitat de donar a con\u00e8ixer les seves demandes al conjunt de la ciutat , la plantilla ha sortit avui al carrer en una manifestaci\u00f3 que ha anat",
+            "output": [
+                "des de la Bonavista fins a l' Ajuntament ."
+            ]
+        },
+        {
+            "input": "La protesta ha aplegat una setantena d' empleats , gaireb\u00e9 el total de la plantilla , que",
+            "output": [
+                "\u00e9s de 80 treballadors ."
+            ]
+        },
+        {
+            "input": "Els serveis m\u00ednims que ha decretat la direcci\u00f3 general de Relacions Laborals del departament de Treball de la Generalitat estableixen que la recollida d' escombraries es continuar\u00e0 fent di\u00e0riament als hospitals",
+            "output": [
+                ", als centres assistencials , mercats i escoles amb servei de menjador ."
+            ]
+        },
+        {
+            "input": "Tamb\u00e9 garanteixen que el primer dia de recollida de serveis m\u00ednims ser\u00e0 a partir de les sis de la matinada del dilluns 4 de juny i",
+            "output": [
+                "que a partir d' aquest dia es faran cada 72 hores ."
+            ]
+        },
+        {
+            "input": "L' Ajuntament de Manresa ha",
+            "output": [
+                "posat en funcionament tot un seguit de mesures , la majoria informatives , que tenen com a finalitat minimitzar els efectes de la vaga ."
+            ]
+        },
+        {
+            "input": "D' una banda , s' ha fet una",
+            "output": [
+                "bustiada informativa sobre els dies que hi haur\u00e0 recollida de deixalles ."
+            ]
+        },
+        {
+            "input": "En aquesta bustiada tamb\u00e9 es demana la col\u00b7laboraci\u00f3 ciutadana per a evitar que les deixalles s'",
+            "output": [
+                "acumulin al carrer i s' informa que la vaga no afectar\u00e0 la recollida selectiva ."
+            ]
+        },
+        {
+            "input": "La bustiada es complementa amb r\u00e8tols recordatoris als portals de les cases",
+            "output": [
+                "i amb adhesius als contenidors ."
+            ]
+        },
+        {
+            "input": "Paral\u00b7lelament a les accions informatives i per a reduir els efectes de l' aturada , l' Ajuntament instal\u00b7lar\u00e0",
+            "output": [
+                "22 contenidors de recollida de brossa m\u00e9s als carrers del Nucli Antic on la recollida encara es fa porta a porta ."
+            ]
+        },
+        {
+            "input": "Aquests contenidors nom\u00e9s estaran instal\u00b7lats mentre duri la",
+            "output": [
+                "vaga ."
+            ]
+        },
+        {
+            "input": "Pel que fa als establiments comercials com bars , restaurants o de venda d' aliments entre avui i dem\u00e0 s' habilitaran 8 zones preparades amb contenidors d' obra perqu\u00e8 aquests establiments , que generen un volum important de brossa , puguin dipositar les",
+            "output": [
+                "escombraries en indrets apartats ."
+            ]
+        },
+        {
+            "input": "Alhora , mentre duri la vaga l' abocador de Bufalvent acceptar\u00e0",
+            "output": [
+                "la brossa dels ve\u00efns o comerciants que decideixin dur -la directament ."
+            ]
+        },
+        {
+            "input": "El secretari general d' ERC , Josep-Llu\u00eds Carod-Rovira , ha participat aquest migdia en un acte , davant la Delegaci\u00f3",
+            "output": [
+                "d' Hisenda de Tarragona , per reclamar un finan\u00e7ament just per a Catalunya ."
+            ]
+        },
+        {
+            "input": "Carod-Rovira ha dit que ' Catalunya esponsoritza Espanya ' ,",
+            "output": [
+                "ja que cada catal\u00e0 aporta cada any 220.000 pessetes a Madrid que mai no tornen ."
+            ]
+        },
+        {
+            "input": "El l\u00edder d' ERC ha dit que el sistema de finan\u00e7ament actual perjudica les classes populars i",
+            "output": [
+                "el teixit productiu ."
+            ]
+        },
+        {
+            "input": "En el cas dels empresaris , segons Carod , la situaci\u00f3 \u00e9s de clar greuge comparatiu amb altres comunitats aut\u00f2nomes , ja que ' aqu\u00ed no poden tenir acc\u00e9s a s\u00f2l industrial , ni a la concessi\u00f3 de cr\u00e8dits tous , ni al suport per a la renovaci\u00f3 de maquin\u00e0ria , tal i com fan els governs aut\u00f2noms de Gal\u00edcia",
+            "output": [
+                ", Castella-la Manxa o Andalusia ' , la qual cosa ' fa que se 'n ressenti la modernitzaci\u00f3 general del pa\u00eds ' ."
+            ]
+        },
+        {
+            "input": "Davant d' aquesta situaci\u00f3 ' insostenible",
+            "output": [
+                "' , ERC proposa el concert econ\u00f2mic , un sistema ' legal ' , que \u00e9s vigent a dues comunitats aut\u00f2nomes ."
+            ]
+        },
+        {
+            "input": "Aquesta situaci\u00f3 , segons Carod , ' \u00e9s l' ideal mentre formem part",
+            "output": [
+                "de l' Estat ' ."
+            ]
+        },
+        {
+            "input": "El pol\u00edtic republic\u00e0 ha",
+            "output": [
+                "dit que ' nom\u00e9s ser\u00e0 just un sistema de finan\u00e7ament que faci tornar una de cada tres pessetes que regalem a Madrid ' , aix\u00f2 \u00e9s , 220.000 pessetes per ciutad\u00e0 ."
+            ]
+        },
+        {
+            "input": "Carod-Rovira ha comparat la situaci\u00f3 de Catalunya i Espanya",
+            "output": [
+                "amb la d' Alemanya respecte d' Europa ."
+            ]
+        },
+        {
+            "input": "' Els alemanys fan d' esp\u00f2nsors d' Europa com els catalans ho fem d' Espanya , i a sobre ens titllen",
+            "output": [
+                "d' insolidaris ' , ha afegit ."
+            ]
+        },
+        {
+            "input": "L' acte d' ERC fet avui a Tarragona i en altres punts de Catalunya t\u00e9 per objectiu ' conscienciar la ciutadania que un millor finan\u00e7ament vol dir m\u00e9s escoles , m\u00e9s hospitals , m\u00e9s carreteres , m\u00e9s transport , m\u00e9s cultura , m\u00e9s acc\u00e9s a la societat de la informaci\u00f3",
+            "output": [
+                ", i , en definitiva , m\u00e9s benestar i m\u00e9s llibertat ' ."
+            ]
+        },
+        {
+            "input": "Els alcaldes",
+            "output": [
+                "de Sallent , Balsareny i S\u00faria i el president del Consell Comarcal del Bages han manifestat avui preocupaci\u00f3 pel futur incert de les mines de potassa ."
+            ]
+        },
+        {
+            "input": "De l' entrevista amb els dirigents de les mines , l' \u00fanica informaci\u00f3 que es va facilitar sobre el pla de viabilitat que s' est\u00e0",
+            "output": [
+                "elaborant \u00e9s que es preveuen inversions i que no hi ha cap previsi\u00f3 d' ampliar la plantilla , actualment integrada per uns 1.300 treballadors directes ."
+            ]
+        },
+        {
+            "input": "Els responsables d' aquestes institucions han mantingut contactes amb els representants dels treballadors i tamb\u00e9 amb la direcci\u00f3 de l' empresa propiet\u00e0ria de les mines , Iberpotash",
+            "output": [
+                ", per con\u00e8ixer de prop la situaci\u00f3 ."
+            ]
+        },
+        {
+            "input": "En el decurs de la trobada , Iberpotash ha justificat els seus arguments a partir de l' an\u00e0lisi que s' ha fet internament i l' ha avalada amb el contingut d' una consultoria externa que ha",
+            "output": [
+                "encarregat , de la qual no n' ha fet p\u00fablic cap detall ."
+            ]
+        },
+        {
+            "input": "La poca precisi\u00f3 en les explicacions d' Iberpotash \u00e9s un dels motius de la preocupaci\u00f3 que han",
+            "output": [
+                "manifestat avui els alcaldes i el president del Consell Comarcal del Bages ."
+            ]
+        },
+        {
+            "input": "En aquest",
+            "output": [
+                "sentit han anunciat que han demanat una entrevista amb el conseller d' Ind\u00fastria , Antoni Subir\u00e0 , per a tractar aquest tema ."
+            ]
+        },
+        {
+            "input": "Segons el president del Consell Comarcal , Agust\u00ed Red\u00f3",
+            "output": [
+                ", la mineria , que ocupa directament unes 1.300 persones , \u00e9s un sector estrat\u00e8gic al Bages i per tant , el Consell ha d' assumir les seves responsabilitats i exercir com a mitjancer en el cas que hi hagi situacions conflictives que amenacin una part important de la societat del Bages ."
+            ]
+        },
+        {
+            "input": "En la reuni\u00f3 amb el conseller d' Ind\u00fastria , els representants institucionals del Bages demanaran informaci\u00f3 sobre les condicions en les quals es va",
+            "output": [
+                "efectuar l' operaci\u00f3 de privatitzaci\u00f3 de les mines ."
+            ]
+        },
+        {
+            "input": "Segons l' alcalde de S\u00faria , Antoni Juli\u00e1n , no \u00e9s normal que fins ara no s' hagin donat a con\u00e8ixer",
+            "output": [
+                "quins compromisos va adquirir l' empresa a l' hora de comprar una propietat p\u00fablica ."
+            ]
+        },
+        {
+            "input": "Abans de la trobada amb la direcci\u00f3 d' Iberpotash , els",
+            "output": [
+                "alcaldes i el president del Consell s' havien reunit amb els representants dels treballadors ."
+            ]
+        },
+        {
+            "input": "En aquesta trobada , els comit\u00e8s han expressat la seva desconfian\u00e7a perqu\u00e8 no",
+            "output": [
+                "han detectat que s' hagin fet inversions ni millores en les explotacions ."
+            ]
+        },
+        {
+            "input": "Tot i aix\u00ed , la principal preocupaci\u00f3 dels sindicats",
+            "output": [
+                "fa refer\u00e8ncia a les conseq\u00fc\u00e8ncies que pot tenir en la plantilla el pla de viabilitat ."
+            ]
+        },
+        {
+            "input": "En aquest sentit , el vicepresident primer del Consell Comarcal del Bages , Ezequiel Mart\u00ednez , ha reclamat que si hi ha voluntat de reduir plantilles , cal que aix\u00f2 es faci amb ' responsabilitat ' per la import\u00e0ncia del",
+            "output": [
+                "sector a la comarca ."
+            ]
+        },
+        {
+            "input": "La Cambra de Comer\u00e7 proposa dinamitzar el sector tur\u00edstic andorr\u00e0 amb la creaci\u00f3 d' un petit parc tem\u00e0tic , un casino , un camp de golf , un palau de congressos",
+            "output": [
+                "i un centre d' oci familiar ."
+            ]
+        },
+        {
+            "input": "El president de la Cambra de Comer\u00e7 , Ramon Cierco , espera que el sector rebi amb bons",
+            "output": [
+                "ulls aquestes propostes que sorgeixen d' un informe encarregat per la corporaci\u00f3 ."
+            ]
+        },
+        {
+            "input": "La Cambra de comer\u00e7 d' Andorra estudia",
+            "output": [
+                "augmentar i diversificar l' oferta tur\u00edstica del pa\u00eds amb els projectes d' un petit parc tem\u00e0tic , un casino , un camp de golf , un palau de congressos i centres d' oci familiar i nocturn ."
+            ]
+        },
+        {
+            "input": "Les propostes l\u00fadiques provenen d' un estudi encarregat per la Cambra a una empresa de Barcelona i presentat aquest dijous a la tarda al Com\u00fa d' Escaldes davant el ministre de Turisme i un centenar de representants",
+            "output": [
+                "del m\u00f3n hoteler i tur\u00edstic andorr\u00e0 ."
+            ]
+        },
+        {
+            "input": "Per tal d' aconseguir l' adaptaci\u00f3 dels projectes a les necessitats i possibilitats del pa\u00eds , l' empresa barcelonina Iniciatives Socioculturals ha estudiat la realitat andorrana amb enquestes a representants de diversos sectors",
+            "output": [
+                "econ\u00f2mics ."
+            ]
+        },
+        {
+            "input": "Els projectes es dirigeixen sobretot al turisme de qualitat i infantil i pretenen acabar amb l' estacionalitat , segons ha explicat el director de l' informe , Josep Munn\u00e9 , que ha dirigit",
+            "output": [
+                "grans projectes l\u00fadics com el Maremagnum o el Bar\u00e7a 2000 ."
+            ]
+        },
+        {
+            "input": "El president de la cambra de comer\u00e7 , Ramon Cierco , espera que Andorra rebi amb bons ulls els projectes",
+            "output": [
+                "per a un nou turisme ."
+            ]
+        },
+        {
+            "input": "L' estudi planteja tamb\u00e9 propostes sobre gesti\u00f3",
+            "output": [
+                "comercial dels camps de neu , diverses ofertes de turisme de la natura , i fins i tot un producte de formaci\u00f3 de postgrau sobre el sector tur\u00edstic o gesti\u00f3 d' infraestructures d' hivern ."
+            ]
+        },
+        {
+            "input": "El Grup Socialistes-Ciutadans pel Canvi ( SCC ) ha presentat una proposici\u00f3 no de llei al Parlament on",
+            "output": [
+                "insta el Govern de la Generalitat a obrir una oficina del Departament d' Agricultura , Ramaderia i Pesca ( DARP ) a Prats de Llu\u00e7an\u00e8s ( Osona ) ' apropant aquest servei a la poblaci\u00f3 ' ."
+            ]
+        },
+        {
+            "input": "La proposici\u00f3 no de llei de SCC demana que aquesta oficina doni tamb\u00e9 servei als municipis propers",
+            "output": [
+                "del Bergued\u00e0 i El Bages ."
+            ]
+        },
+        {
+            "input": "Aix\u00ed mateix , es demana una major dotaci\u00f3 de personal fix a l' oficina comarcal del DARP de",
+            "output": [
+                "Vic ( Osona ) i que es busquin les solucions m\u00e9s adients per disposar d' un espai adequat on poder treballar i atendre c\u00f2modament els usuaris ."
+            ]
+        },
+        {
+            "input": "Segons SCC , l' oficina comarcal del DARP de Vic gestiona",
+            "output": [
+                "aproximadament el 50 per cent del cens ramader de la demarcaci\u00f3 de Barcelona ."
+            ]
+        },
+        {
+            "input": "Actualment hi treballen 21 persones , que",
+            "output": [
+                "gestionen els processos administratius del sector ramader ."
+            ]
+        },
+        {
+            "input": "A m\u00e9s , segons SCC , el sector del bov\u00ed actualment requereix d' uns processos de control i identificaci\u00f3 del bestiar ( DIB ) que afegits a altres gestions fan que d' un temps en\u00e7\u00e0 els usuaris es queixin de les llargues cues que",
+            "output": [
+                "s' originen i de les llargues estones d' espera ."
+            ]
+        },
+        {
+            "input": "En",
+            "output": [
+                "aquest sentit , SCC considera que les solucions per pal\u00b7liar aquests problemes passen per dotar l' oficina de m\u00e9s personal per atendre els usuaris , m\u00e9s espai , ja que una quarta part de l' edifici est\u00e0 ocupada pels Guardes Forestals , i per obrir una nova oficina del DARP a Prats de Llu\u00e7an\u00e8s , on actualment hi ha una subunitat ."
+            ]
+        },
+        {
+            "input": "Els pagesos de la fruita seca tornaran a mobilitzar -se , el proper 16 de juny a Madrid , en un nou acte de protesta per pressionar la Uni\u00f3 Europea i aconseguir la continu\u00eftat de les ajudes al",
+            "output": [
+                "sector ."
+            ]
+        },
+        {
+            "input": "El sindicat Uni\u00f3 de Pagesos va convocar anit unes 500 persones en una nova assemblea ,",
+            "output": [
+                "on es va explicar en quin punt es troben les negociacions i va convidar els assistents a participar a la manifestaci\u00f3 de Madrid ."
+            ]
+        },
+        {
+            "input": "La mobilitzaci\u00f3 es far\u00e0 nom\u00e9s tres dies abans del Consell de Ministres d' Agricultura europeus del mes de juny , on",
+            "output": [
+                "previsiblement podria sortir un nou acord que renovi un any m\u00e9s la pr\u00f2rroga de les subvencions a la fruita seca ."
+            ]
+        },
+        {
+            "input": "El sindicalista Josep Su\u00f1\u00e9 reconeixia anit que hi ha cert optimisme al sector",
+            "output": [
+                "al voltant d' una sortida positiva a la crisi , per\u00f2 que ' mentre no hi hagi res , cal continuar pressionant ' ."
+            ]
+        },
+        {
+            "input": "Uni\u00f3 de Pagesos va demanar als assistents que participin a la manifestaci\u00f3 de",
+            "output": [
+                "Madrid ."
+            ]
+        },
+        {
+            "input": "Per aconseguir el m\u00e0xim de participaci\u00f3 possible , el sindicat posar\u00e0 autobusos a",
+            "output": [
+                "disposici\u00f3 dels pagesos que hi vulguin anar ."
+            ]
+        },
+        {
+            "input": "Cal remarcar",
+            "output": [
+                "que en aquesta nova manifestaci\u00f3 hi participaran organitzacions agr\u00e0ries d' arreu de l' Estat ."
+            ]
+        },
+        {
+            "input": "Esquerra Republicana de Catalunya ( ERC ) es proposa dur el Pla Hidrol\u00f2gic Nacional ( PHN",
+            "output": [
+                ") al Consell Consultiu de la Generalitat perqu\u00e8 estudi\u00ef si \u00e9s constitucional ."
+            ]
+        },
+        {
+            "input": "El secretari general d' ERC , Josep Llu\u00eds Carod-Rovira , ha dit que espera comptar",
+            "output": [
+                "amb la complicitat dels altres grups al Parlament per tirar endavant aquesta iniciativa un cop el PHN quedi definitivament aprovat ."
+            ]
+        },
+        {
+            "input": "Carod s' ha reunit aquest vespre amb els representants de la Plataforma en Defensa de l' Ebre , a qui ha expressat el seu suport en la",
+            "output": [
+                "lluita contra els transvasaments ."
+            ]
+        },
+        {
+            "input": "El l\u00edder republic\u00e0 ha dit que ' hi ha motius suficients per considerar que el Pla Hidrol\u00f2gic \u00e9s inconstitucional '",
+            "output": [
+                ", per la qual cosa es proposar\u00e0 al Parlament de Catalunya de dur -lo al Consell Consultiu de la Generalitat ."
+            ]
+        },
+        {
+            "input": "Per tal que aquesta iniciativa prosperi , Carod espera comptar ' amb la complicitat d' altres grups pol\u00edtics",
+            "output": [
+                "' ."
+            ]
+        },
+        {
+            "input": "Al marge de reunir -se amb els representants de la Plataforma , el secretari general d' ERC ha dictat aquest vespre una confer\u00e8ncia a Tortosa , on ha exposat la seva visi\u00f3 de quin ha de ser el futur de",
+            "output": [
+                "les Terres de l' Ebre ."
+            ]
+        },
+        {
+            "input": "En la seva opini\u00f3 , el Govern de la Generalitat",
+            "output": [
+                "' ha d' adoptar mesures pressupost\u00e0ries i administratives per aconseguir un aut\u00e8ntic desenvolupament econ\u00f2mic d' aquestes comarques per tal d' aconseguir la seva modernitzaci\u00f3 ' ."
+            ]
+        },
+        {
+            "input": "Carod ha afegit que ' cal que la resta de Catalunya conegui m\u00e9s aquestes comarques i assumeixi la seva",
+            "output": [
+                "cultura com a pr\u00f2pia incorporant -la a l' univers sentimental de Catalunya ' ."
+            ]
+        },
+        {
+            "input": "El Tribunal Suprem ( TS ) ha confirmat la condemna a quatre anys d' inhabilitaci\u00f3 especial i una multa de 3,6 milions de pessetes per a quatre veterinaris gironins , per haver -se beneficiat dels",
+            "output": [
+                "c\u00e0rrecs p\u00fablics que desenvolupaven i la seva relaci\u00f3 amb les empreses c\u00e0rniques de la zona en oferir -los serveis particulars ."
+            ]
+        },
+        {
+            "input": "La sent\u00e8ncia , a la qual ha tingut acc\u00e9s Intra-ACN , desestima els recursos interposats pels processats , Albert Bram\u00f3n , president del Col\u00b7legi de Veterinaris de Girona en el moment dels fets , i Josefina J. , Pere C. i Mateu B. , que actuaven com a inspectors veterinaris de la Generalitat ,",
+            "output": [
+                "i que van ser condemnats per l' Audi\u00e8ncia de Girona per un delicte de negociacions prohibides a funcionaris ."
+            ]
+        },
+        {
+            "input": "Els funcionaris s' encarregaven del control de",
+            "output": [
+                "la higiene de les empreses c\u00e0rniques de La Garrotxa , i per aquest motiu feien visites peri\u00f2diques i anal\u00edtiques ."
+            ]
+        },
+        {
+            "input": "Aprofitant aquest fet , els processats van constituir l' any 1991 una empresa dedicada a la planificaci\u00f3 i a l' anal\u00edtica de mat\u00e8ries primeres , i",
+            "output": [
+                "van utilitzar les visites oficials per oferir els serveis i captar els empresaris que inspeccionaven ."
+            ]
+        },
+        {
+            "input": "Segons el Tribunal Suprem , ' \u00e9s clar que els acusats van",
+            "output": [
+                "actuar en connexi\u00f3 amb el c\u00e0rrec oficial i van intentar i van arribar a obtenir un avantatge o inter\u00e8s privat ' ."
+            ]
+        },
+        {
+            "input": "Pel que fa al coneixement de la il\u00b7licitud de la seva acci\u00f3 , l' alt tribunal sost\u00e9 que ' \u00e9s evident que s\u00f3n universitaris , amb un est\u00e0ndard de coneixements d' acord amb la seva especialitat ' i afegeix que ' des d' aquesta realitat no \u00e9s acceptable defensar que no tenien la consci\u00e8ncia de la il\u00b7licitud de la seva acci\u00f3 , ja que aix\u00f2 forma part del nivell mitj\u00e0 de coneixements i sensibilitats atribu\u00efdes a la generalitat de persones que",
+            "output": [
+                "estan en aquesta situaci\u00f3 ' ."
+            ]
+        },
+        {
+            "input": "D' altra banda , el Suprem ent\u00e9n que no \u00e9s acceptable que els recurrents desconeguessin la normativa",
+            "output": [
+                ", per la seva professi\u00f3 i condici\u00f3 de funcionaris p\u00fablics de la Generalitat ."
+            ]
+        },
+        {
+            "input": "Les antigues instal\u00b7lacions de l' IES Gabriel i Ferrater ,",
+            "output": [
+                "de Reus , que s\u00f3n propietat de la Diputaci\u00f3 de Tarragona , seran , amb tota probabilitat , la futura seu de l' Escola Oficial d' Idiomes ."
+            ]
+        },
+        {
+            "input": "L' oferiment d' aquest empla\u00e7ament per part del President de la Diputaci\u00f3 de Tarragona , Josep Marin\u00e9 , respon a la petici\u00f3 feta per la consellera d' Ensenyament de la Generalitat ,",
+            "output": [
+                "Carme-Laura Gil , en el sentit de demanar uns empla\u00e7aments per situar -hi la nova escola d' idiomes ."
+            ]
+        },
+        {
+            "input": "L' Hospital Arnau de Vilanova ha detectat avui un nou cas de colonitzaci\u00f3 d' un bacteri en un pacient ingressat en una Unitat",
+            "output": [
+                "de Cures Intensives del centre ."
+            ]
+        },
+        {
+            "input": "Segons ha explicat",
+            "output": [
+                "el conseller de Sanitat , Eduard Rius , que aquesta tarda ha visitat La Seu d' Urgell , el pacient ja estava infectat abans d' entrar a l' hospital per\u00f2 es procedir\u00e0 igualment a desinfectar tota la zona ."
+            ]
+        },
+        {
+            "input": "Precisament ahir va entrar en funcionament una de les unitats de cures intensives",
+            "output": [
+                "de l' hospital despr\u00e9s que s' hagu\u00e9s de desinfectar en detectar -se la pres\u00e8ncia d' un brot infecci\u00f3s a principis del mes de maig que va afectar 12 malalts ."
+            ]
+        },
+        {
+            "input": "D' aquests pacients ,",
+            "output": [
+                "quatre encara romanen en la tercera de les unitats mentre que tres van morir per\u00f2 no a causa del bacteri sin\u00f3 pels motius que havien provocat el seu ingr\u00e9s en la unitat ."
+            ]
+        },
+        {
+            "input": "El 25 % dels futurs usuaris del Tren d' Alta Velocitat ( TAV ) de la regi\u00f3 metropolitana de Barcelona utilitzar\u00e0 l' estaci\u00f3 del Vall\u00e8s per agafar el tren , segons un estudi que ha fet",
+            "output": [
+                "l' Ajuntament de Terrassa ."
+            ]
+        },
+        {
+            "input": "L' alcalde de Terrassa , Manuel Royes , ha presentat avui els resultats d' aquest estudi sobre la capacitat d' atracci\u00f3 de viatgers de la futura",
+            "output": [
+                "estaci\u00f3 de ferrocarril d' alta velocitat del Vall\u00e8s ."
+            ]
+        },
+        {
+            "input": "L' estudi ha",
+            "output": [
+                "estat realitzat amb la col\u00b7laboraci\u00f3 de la Diputaci\u00f3 de Barcelona ."
+            ]
+        },
+        {
+            "input": "L' estaci\u00f3 del tren d' alta velocitat",
+            "output": [
+                "del Vall\u00e8s est\u00e0 previst que entri en servei l' any 2004 ."
+            ]
+        },
+        {
+            "input": "Estar\u00e0",
+            "output": [
+                "situada a la zona de Ca n' Ametller a Sant Cugat del Vall\u00e8s , al costat mateix de l' Hospital General de Catalunya ."
+            ]
+        },
+        {
+            "input": "L' estudi s' ha fet amb els objectius de con\u00e8ixer quina ser\u00e0 la",
+            "output": [
+                "demanda de l' estaci\u00f3 del Vall\u00e8s , quina oferta de trens haur\u00e0 de tenir , d' on procedir\u00e0 aquesta demanda i quines mesures cal adoptar per a facilitar l' acc\u00e9s al nou equipament ."
+            ]
+        },
+        {
+            "input": "En concret , sobre la demanda de l' estaci\u00f3 , l' informe recull que actualment a la Regi\u00f3 Metropolitana de Barcelona es produeixen 50 milions de despla\u00e7aments a l' any",
+            "output": [
+                ", tant d' entrada com de sortida ."
+            ]
+        },
+        {
+            "input": "D' aquests viatges , el 67 % es fan en",
+            "output": [
+                "vehicle privat , el 12 % en tren i la resta en avi\u00f3 i altres mitjans de transport ."
+            ]
+        },
+        {
+            "input": "Tanmateix i amb l' entrada en funcionament de l' estaci\u00f3 del Vall\u00e8s del Tren d' Alta Velocitat i la seva consolidaci\u00f3 , per a l' any 2010 l' \u00fas del vehicle privat baixaria a un 43 % , el",
+            "output": [
+                "del tren de gran velocitat seria del 46 % , mentre que el d' avi\u00f3 i altres mitjans es quedaria en un 11 % ."
+            ]
+        },
+        {
+            "input": "L'",
+            "output": [
+                "estudi tamb\u00e9 reflecteix que un 25 % dels viatgers de la Regi\u00f3 Metropolitana preferirien l' estaci\u00f3 del Vall\u00e8s per fer els seus despla\u00e7aments ."
+            ]
+        },
+        {
+            "input": "L' estaci\u00f3 del",
+            "output": [
+                "Vall\u00e8s captar\u00e0 5,2 milions de viatges , quantitat que suposa una quarta part del nombre de despla\u00e7aments realitzats amb el tren d' alta velocitat ."
+            ]
+        },
+        {
+            "input": "Tamb\u00e9 es",
+            "output": [
+                "considera que l' estaci\u00f3 del Vall\u00e8s del tren d' alta velocitat descongestionar\u00e0 els accessos a Barcelona per carretera ."
+            ]
+        },
+        {
+            "input": "En relaci\u00f3 a l' oferta de trens que haur\u00e0 de tenir la futura estaci\u00f3 , l' informe assegura que haurien de funcionar cada dia 60 trens en cada sentit de la marxa , 24 amb destinaci\u00f3 dins de Catalunya i 36 trens amb destinaci\u00f3 fora de Catalunya",
+            "output": [
+                ", incidint especialment en una alta freq\u00fc\u00e8ncia de pas en hores punta ."
+            ]
+        },
+        {
+            "input": "Sobre els accessos , l' estaci\u00f3 del Vall\u00e8s tindr\u00e0 una bona connexi\u00f3 per tren suburb\u00e0 , gr\u00e0cies a les l\u00ednies de l' actual Metro",
+            "output": [
+                "del Vall\u00e8s de Ferrocarrils de la Generalitat i la l\u00ednia C-5 de Rodalies Renfe , la qual s' ha de construir properament ."
+            ]
+        },
+        {
+            "input": "No obstant , es considera que caldr\u00e0 millorar els accessos per autob\u00fas , implantant noves l\u00ednies o modificant les",
+            "output": [
+                "ja existents ."
+            ]
+        },
+        {
+            "input": "Tamb\u00e9 s'",
+            "output": [
+                "haur\u00e0 de preveure inicialment un aparcament per a mil cotxes , ampliable en el futur ."
+            ]
+        },
+        {
+            "input": "El conseller de Pol\u00edtica Territorial i Obres P\u00fabliques de la Generalitat , Pere Macias , l' abat de Montserrat , Josep Maria Soler , i el president de Ferrocarrils de la Generalitat , Antoni Herce , han inaugurat avui la remodelaci\u00f3 del funicular de la Santa Cova de Montserrat , que va quedar totalment inutilitzat a causa dels aiguats de",
+            "output": [
+                "fa un any ."
+            ]
+        },
+        {
+            "input": "Amb la posada en funcionament del funicular",
+            "output": [
+                "es completen les obres en infraestructures malmeses a Montserrat a causa dels aiguats ."
+            ]
+        },
+        {
+            "input": "La remodelaci\u00f3 ha costat",
+            "output": [
+                "110 milions de pessetes ."
+            ]
+        },
+        {
+            "input": "La posada en funcionament del funicular ha requerit fer de nou els vehicles , que ara s\u00f3n panor\u00e0mics com els del funicular",
+            "output": [
+                "de Sant Joan ."
+            ]
+        },
+        {
+            "input": "La intervenci\u00f3 ha consistit tamb\u00e9 en la rehabilitaci\u00f3 dels edificis i de",
+            "output": [
+                "les infraestructures de l' entorn ."
+            ]
+        },
+        {
+            "input": "A m\u00e9s , s' ha aprofitat per a situar una exposici\u00f3 a l' estaci\u00f3 superior sobre el projecte del nou cremallera i dues m\u00e9s a l' estaci\u00f3 inferior sobre la hist\u00f2ria",
+            "output": [
+                "de la Santa Cova i sobre els funiculars ."
+            ]
+        },
+        {
+            "input": "En l' acte d' inauguraci\u00f3 , el president de Ferrocarrils de la Generalitat , Antoni Herce , ha posat de relleu que un cop reparats els dos funiculars , el repte pendent en mat\u00e8ria de transports a Montserrat \u00e9s",
+            "output": [
+                "el nou cremallera , que permetr\u00e0 donar resposta a les necessitats dels m\u00e9s de 2 milions de visitants que cada any pugen al monestir ."
+            ]
+        },
+        {
+            "input": "Segons Herce , el cremallera ser\u00e0 un servei de qualitat , respectu\u00f3s amb el medi",
+            "output": [
+                "ambient i silenci\u00f3s , tal i com ' requereix l' entorn ' ."
+            ]
+        },
+        {
+            "input": "Per al conseller de Pol\u00edtica Territorial , Pere Macias , la reobertura del funicular",
+            "output": [
+                "suposa la superaci\u00f3 de la riuada de fa un any ."
+            ]
+        },
+        {
+            "input": "De la seva",
+            "output": [
+                "banda , l' abat de Montserrat , Josep Maria Soler , ha posat de relleu que el funicular facilitar\u00e0 l' acc\u00e9s dels pelegrins , dels amants de l' art que visiten el cam\u00ed de la Santa Cova i tamb\u00e9 dels amants de la natura ."
+            ]
+        },
+        {
+            "input": "El funicular de la Santa Cova fa un recorregut de 232 metres , d' un desnivell de 118 i d' un",
+            "output": [
+                "pendent m\u00e0xim del 56,5 per cent ."
+            ]
+        },
+        {
+            "input": "El trajecte del viatge dura tres",
+            "output": [
+                "minuts ."
+            ]
+        },
+        {
+            "input": "Les dues noves cabines panor\u00e0miques ,",
+            "output": [
+                "amb capacitat per a 60 persones , estan dotades amb les m\u00e9s modernes tecnologies de seguretat i confort , com portes autom\u00e0tiques el\u00e8ctriques , calefacci\u00f3 i cabines de conducci\u00f3 independents ."
+            ]
+        },
+        {
+            "input": "S\u00f3n",
+            "output": [
+                "cabines espaioses i estan adaptades a persones de mobilitat redu\u00efda ."
+            ]
+        },
+        {
+            "input": "Aquest funicular es va inaugurar l' any 1929 per a transportar els pelegrins que anaven a la Santa Cova o al Rosari monumental , amb obres de",
+            "output": [
+                "Josep Puig i Cadafalch , Antoni Gaud\u00ed o Josep Llimona ."
+            ]
+        },
+        {
+            "input": "El Funicular de la Santa Cova ha estat durant un any sense funcionar arran dels treballs de reparaci\u00f3 iniciats despr\u00e9s dels aiguats de l' any",
+            "output": [
+                "passat ."
+            ]
+        },
+        {
+            "input": "El funicular , que estava",
+            "output": [
+                "a l' estaci\u00f3 inferior en el moment de la forta pluja , va quedar pr\u00e0cticament destru\u00eft ."
+            ]
+        },
+        {
+            "input": "Aquesta no era la primera vegada que el funicular de la Santa Cova es veia afectat per una",
+            "output": [
+                "cat\u00e0strofe natural ."
+            ]
+        },
+        {
+            "input": "L' any 1994 tamb\u00e9 es va haver de",
+            "output": [
+                "tancar arran dels incendis forestals que van afectar la muntanya ."
+            ]
+        },
+        {
+            "input": "A m\u00e9s del funicular de la Santa Cova , Ferrocarrils de la Generalitat",
+            "output": [
+                "tamb\u00e9 gestiona el funicular de Sant Joan , que va ser totalment remodelat l' any 1997 i que tamb\u00e9 es va veure afectat pels aiguats , tot i que la reparaci\u00f3 va ser m\u00e9s senzilla ."
+            ]
+        },
+        {
+            "input": "La demarcaci\u00f3 de Tarragona t\u00e9 33 municipis que encara no disposen de Pla General d' Ordenaci\u00f3 Urbana ( PGOU ) , segons dades facilitades pel conseller de Pol\u00edtica Territorial , Pere Macias , en resposta a una",
+            "output": [
+                "pregunta parlament\u00e0ria del diputat d' ERC Jaume Oliveras ."
+            ]
+        },
+        {
+            "input": "Macias ha assenyalat que la Comissi\u00f3 d' Urbanisme de Tarragona va dictar l' any 1979",
+            "output": [
+                "unes Normes Subsidi\u00e0ries i Complement\u00e0ries de Planejament per aplicar de manera directa a 117 municipis de la demarcaci\u00f3 de Tarragona , com a instrument d' ordenaci\u00f3 , perqu\u00e8 no disposaven en aquell moment d' un PGOU o b\u00e9 de Normes Subsidi\u00e0ries de planejament municipal ."
+            ]
+        },
+        {
+            "input": "En l' actualitat , segons el conseller , d' aquells 117 resten nom\u00e9s 33",
+            "output": [
+                "municipis sense planejament general ."
+            ]
+        },
+        {
+            "input": "Aquests s\u00f3n Els Garidells , Mont-ral , Nulles , Vallmoll ( Alt Camp ) , L' Arbol\u00ed , L' Argentera ( Baix Camp ) , Tivenys ( Baix Ebre ) , Llorac , Les Piles , Pontils , Sarral , Vallfogona de Riucorb , ( Conca de Barber\u00e0 ) , Mas de Barberans , Masdenverge ( Montsi\u00e0 ) , La Bisbal de Falset , Cabassers , Cap\u00e7anes , La Figuera , Gratallops , El Lloar , Margalef , Poboleda , Porrera , Pradell de Teixeta , La Torre de Fontaubella , Torroja de Priorat , Ulldemolins , La Vilella Alta ( Priorat ) , La Palma d' Ebre (",
+            "output": [
+                "Ribera d' Ebre ) , Bot , Caseres , La Pobla de Massaluca , Prat de Comte ( Terra Alta ) ."
+            ]
+        },
+        {
+            "input": "Tots",
+            "output": [
+                "ells tenen en curs la redacci\u00f3 o la tramitaci\u00f3 de les corresponents Normes Subsidi\u00e0ries municipals ."
+            ]
+        },
+        {
+            "input": "L' empresa promotora Garraf Mediterr\u00e0nia SA i Pirelli Cables",
+            "output": [
+                "y Sistemas SA , en col\u00b7laboraci\u00f3 amb l' Ajuntament de Vilanova i la Geltr\u00fa , han convocat el concurs d' idees de l' anomenat ' Espai Pirelli ' per seleccionar , a partir del dia 8 de juny i durant els propers mesos , les propostes urban\u00edstiques , arquitect\u00f2niques i mediambientals que serviran de base per a la redacci\u00f3 del futur Pla Especial de Reforma Interior ( PERI ) dels terrenys que ara ocupa Pirelli a Vilanova ."
+            ]
+        },
+        {
+            "input": "La transformaci\u00f3 immobili\u00e0ria de l' actual f\u00e0brica de Pirelli , amb una superf\u00edcie de 10 hect\u00e0rees , comportar\u00e0 una inversi\u00f3",
+            "output": [
+                "de 25.000 milions de pessetes ."
+            ]
+        },
+        {
+            "input": "La transformaci\u00f3 de l' Espai Pirelli ser\u00e0 una de les operacions immobili\u00e0ries",
+            "output": [
+                "m\u00e9s importants a Catalunya ."
+            ]
+        },
+        {
+            "input": "D' altra banda , l' alcalde de Vilanova i la Geltr\u00fa , Sixte Moral , ha destacat que el desenvolupament immobiliari d' aquesta superf\u00edcie ' \u00e9s una operaci\u00f3 fonamental i estrat\u00e8gica no nom\u00e9s per a",
+            "output": [
+                "Vilanova , sin\u00f3 per a tota la comarca , ja que contribuir\u00e0 a l' estimulaci\u00f3 del desenvolupament de l' anomenat Eix Diagonal , b\u00e0sic per a la vertebraci\u00f3 de les comarques interiors de Catalunya ' ."
+            ]
+        },
+        {
+            "input": "L' Espai Pirelli , compta amb una superf\u00edcie de 10",
+            "output": [
+                "hect\u00e0rees i suposar\u00e0 una inversi\u00f3 aproximada de 25.000 milions de pessetes ."
+            ]
+        },
+        {
+            "input": "El 65 per cent es destinar\u00e0 a equipaments p\u00fablics , vialitat i zones verdes ,",
+            "output": [
+                "mentre que el 35 per cent restant ser\u00e0 de titularitat privada ."
+            ]
+        },
+        {
+            "input": "El passat 4 de desembre , el ple de l' Ajuntament de Vilanova va aprovar per unanimitat el conveni de col\u00b7laboraci\u00f3 urban\u00edstic subscrit amb Pirelli Cables y Sistemas SA en relaci\u00f3 als terrenys que ocupa la seva f\u00e0brica i",
+            "output": [
+                "el dia 29 del mateix mes , aquesta empresa i Garraf Mediterr\u00e0nia SA arribaven a un acord per a la compravenda de l' esmentada finca ."
+            ]
+        },
+        {
+            "input": "La promotora Garraf Mediterr\u00e0nia SA \u00e9s una societat participada per les empreses",
+            "output": [
+                "promotores Qualitat Promocions SCCL ; Qualitat Obres SL ; i Raiding SA ; a m\u00e9s de les entitats financeres Caixa Manresa i Caixa de Sabadell ."
+            ]
+        },
+        {
+            "input": "L' Institut Catal\u00e0 del S\u00f2l ( Incasol ) mant\u00e9 el comprom\u00eds de destinar 18.402.516 pessetes a les obres de cobertura del torrent de Ca n' Alzamora a Rub\u00ed ( Vall\u00e8s Occidental ) , segons ha confirmat el conseller de Medi Ambient , Felip Puig , en",
+            "output": [
+                "resposta a una pregunta parlament\u00e0ria del diputat d' ERC Joan Ridao ."
+            ]
+        },
+        {
+            "input": "Puig ha assegurat",
+            "output": [
+                "que l' Incasol mant\u00e9 el comprom\u00eds d' abonar l' import del projecte quan s' executin les obres de cobriment ."
+            ]
+        },
+        {
+            "input": "Tot i",
+            "output": [
+                "amb aix\u00f2 , ha afegit , actualment l' Ag\u00e8ncia Catalana de l' Aigua ( ACA ) no t\u00e9 coneixement que hagi entrat en les seves depend\u00e8ncies la sol\u00b7licitud d' autoritzaci\u00f3 per fer -les , ni per part de l' Ajuntament ni de l' Institut Catal\u00e0 del S\u00f2l ."
+            ]
+        },
+        {
+            "input": "El conseller ha assenyalat que tampoc es t\u00e9 coneixement que s' hagi demanat formalment la realitzaci\u00f3 de les obres a",
+            "output": [
+                "la pr\u00f2pia ACA ."
+            ]
+        },
+        {
+            "input": "L' Ajuntament de Rub\u00ed , a principis de 1998 , va demanar a l' Incasol una soluci\u00f3 t\u00e8cnica per resoldre el problema de la pudor procedent del Torrent de Ca n'",
+            "output": [
+                "Alzamora en el tram que transcorre a cel obert , a prop del barri Torre de la Llebre ."
+            ]
+        },
+        {
+            "input": "L' Incasol , d' acord amb els serveis t\u00e8cnics municipals , va redactar un projecte que va ser tram\u00e8s a l' Ajuntament l' 11 de maig de 1998 i que la Comissi\u00f3 de Govern del consistori va aprovar el 8 de juny seg\u00fcent , a condici\u00f3 que , per una despesa pressupost\u00e0ria equivalent , se substitu\u00eds l' escullera de la darrera part del torrent per una prolongaci\u00f3 del col\u00b7lector formada",
+            "output": [
+                "per un calaix de formig\u00f3 ."
+            ]
+        },
+        {
+            "input": "El pressupost total de les obres era de 18.402.516 pessetes i , d' acord amb el projecte de l' Incasol , inclo\u00efa el tractament paisatg\u00edstic i no el",
+            "output": [
+                "cobriment del torrent ."
+            ]
+        },
+        {
+            "input": "Davant la persist\u00e8ncia de problemes de pudors , el mes de setembre de 1998 , al marge del projecte , es van remodelar els mecanismes de captaci\u00f3 d' aig\u00fces fecals , amb la qual cosa es va",
+            "output": [
+                "resoldre ."
+            ]
+        },
+        {
+            "input": "Segons Puig , ' aix\u00ed ho va recon\u00e8ixer",
+            "output": [
+                "el regidor de l' \u00c0rea d' Urbanisme en un escrit de data 6 d' octubre de 1998 , en el qual tamb\u00e9 demanava a l' Incasol que continu\u00e9s el projecte que s' havia aprovat l' anterior mes de juny ' ."
+            ]
+        },
+        {
+            "input": "Per aquest motiu , segons Puig , no es va considerar oport\u00fa cobrir una part del torrent",
+            "output": [
+                "amb un calaix de formig\u00f3 perqu\u00e8 la quantitat a destinar , 18.402.516 pessetes , solament permetia fer el 10 per cent de l' obra , ' la qual cosa no tenia cap sentit ni des del punt de vista econ\u00f2mic ni des del t\u00e8cnic ' ."
+            ]
+        },
+        {
+            "input": "Un incendi que s' ha declarat",
+            "output": [
+                "aquesta tarda al costat de la via del tren al terme municipal de Vinaixa , ha provocat l' aturada de dos trens regionals en ambdues direccions ."
+            ]
+        },
+        {
+            "input": "Aquesta situaci\u00f3",
+            "output": [
+                "ha durat dues hores ."
+            ]
+        },
+        {
+            "input": "L' incendi s' ha",
+            "output": [
+                "declarat a les 15:55 hores i s' ha perllongat durant dues hores ."
+            ]
+        },
+        {
+            "input": "Els dos trens que s' han vist afectats han estat el regional Lleida-Barcelona , que ha patit un retard de 20 minuts ,",
+            "output": [
+                "i el regional Barcelona-Lleida , amb un retard de dues hores ."
+            ]
+        },
+        {
+            "input": "L' incendi tamb\u00e9",
+            "output": [
+                "ha obligat a desviar per la via de Casp dos trens de llarg recorregut que feien el trajecte Barcelona-Pa\u00eds Basc ."
+            ]
+        },
+        {
+            "input": "Fonts de Bombers han confirmat que en l' apagada del foc hi han intervingut quatre cotxes dels parcs de Mollerussa , Les Borges Blanques , Montblanc i Lleida , dos",
+            "output": [
+                "dels quals ja s' han retirat i els altres dos romanien hores d' ara humitejant la zona ."
+            ]
+        },
+        {
+            "input": "El Grup Municipal d' IC-V-LP presentar\u00e0 una moci\u00f3 al Ple demanant que s' adeq\u00fci",
+            "output": [
+                "les platges de Tarragona a les persones minusv\u00e0lides ."
+            ]
+        }
+    ],
+    "Categories": [
+        "Reasoning -> Abductive Reasoning",
+        "Text Generation -> Sentence Generation -> Completion"
+    ],
+    "Contributors": [
+        "Surya Singulur"
+    ]
+}

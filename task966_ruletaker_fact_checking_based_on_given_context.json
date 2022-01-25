@@ -1,0 +1,1848 @@
+{
+    "Source": [
+        "Ruletaker, https://allenai.org/data/ruletaker"
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Definition": "Given a text paragraph and a fact, generate 'True' if the fact can be inferred/concluded from the paragraph, otherwise generate 'False'. The input passage contains as set of logical statements so the fact can be marked either 'True' or 'False' if the relavant info regarding the fact is present in the given passage. If the Fact can't be marked True or False from the given paragraph, mark it as False. Don't use knowledge outside the given paragraph to check the fact.",
+    "Positive Examples": [
+        {
+            "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Fact: Anne is rough.",
+            "output": "True",
+            "explanation": "From the given paragraph, we can infer that 'Anne is rough'"
+        },
+        {
+            "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Fact: Anne is not young.",
+            "output": "False",
+            "explanation": "From the given paragraph particulary this parts 'Anne is rough' and 'Rough people are young', we can infer that Anne is young. So, the Fact 'Anne is not young' is indeed False"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Paragraph: Harry is kind. Harry is white. Harry is round. If someone is furry then they are white. If someone is green and kind then they are round. If someone is green then they are blue. If someone is not white and not furry then they are not kind. Harry is quiet. If someone is green and not round then they are furry. If someone is green then they are furry. Harry is furry. If someone is not kind then they are not green. Harry is blue. Harry is green. If someone is green then they are quiet.     Fact: Harry is green.",
+            "output": "False",
+            "explanation": "From the given paragraph, we can infer that Harry is indeed green. So, this is a bad example."
+        },
+        {
+            "input": "Paragraph: Harry is kind. Harry is white. Harry is round. If someone is furry then they are white. If someone is green and kind then they are round. If someone is green then they are blue. If someone is not white and not furry then they are not kind. Harry is quiet. If someone is green and not round then they are furry. If someone is green then they are furry. Harry is furry. If someone is not kind then they are not green. Harry is blue. Harry is green. If someone is green then they are quiet.     Fact: Harry is not white.",
+            "output": "True",
+            "explanation": "From the given paragraph, we can infer that Harry is white. So, this is a bad example."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Question: Anne is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is rough. Cold people are rough. If Anne is green then Anne is blue. Rough people are young. Anne is blue. If someone is rough and furry then they are blue. All young people are cold. If someone is rough and nice then they are green. Anne is young.     Question: Anne is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is kind. Harry is white. Harry is round. If someone is furry then they are white. If someone is green and kind then they are round. If someone is green then they are blue. If someone is not white and not furry then they are not kind. Harry is quiet. If someone is green and not round then they are furry. If someone is green then they are furry. Harry is furry. If someone is not kind then they are not green. Harry is blue. Harry is green. If someone is green then they are quiet.     Question: Harry is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is kind. Harry is white. Harry is round. If someone is furry then they are white. If someone is green and kind then they are round. If someone is green then they are blue. If someone is not white and not furry then they are not kind. Harry is quiet. If someone is green and not round then they are furry. If someone is green then they are furry. Harry is furry. If someone is not kind then they are not green. Harry is blue. Harry is green. If someone is green then they are quiet.     Question: Harry is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is cold. Furry, kind things are smart. All cold, smart things are kind. Gary is smart. If something is smart and furry then it is cold. If something is kind and round then it is nice. Gary is round. All cold things are round. Gary is big. Gary is furry. Gary is kind. Gary is nice. If Gary is kind then Gary is round. If something is furry and cold then it is kind. Nice, furry things are round.     Question: Gary is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is cold. Furry, kind things are smart. All cold, smart things are kind. Gary is smart. If something is smart and furry then it is cold. If something is kind and round then it is nice. Gary is round. All cold things are round. Gary is big. Gary is furry. Gary is kind. Gary is nice. If Gary is kind then Gary is round. If something is furry and cold then it is kind. Nice, furry things are round.     Question: Gary is not smart.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is green. Erin is smart. Charlie is quiet. Bob is not green. Gary is big. If Charlie is not smart then Charlie is furry. Bob is quiet. Gary is smart. Charlie is cold. All quiet people are smart. Bob is smart. If Charlie is quiet and Charlie is not cold then Charlie is furry. Charlie is furry.     Question: Bob is quiet.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is green. Erin is smart. Charlie is quiet. Bob is not green. Gary is big. If Charlie is not smart then Charlie is furry. Bob is quiet. Gary is smart. Charlie is cold. All quiet people are smart. Bob is smart. If Charlie is quiet and Charlie is not cold then Charlie is furry. Charlie is furry.     Question: Gary is not green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is nice. The cat is not red. The cat is blue. If someone is red then they are not young.     Question: The cat is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is nice. The cat is not red. The cat is blue. If someone is red then they are not young.     Question: The cat is red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something needs the squirrel and it eats the squirrel then the squirrel does not see the bald eagle. The tiger does not eat the squirrel. The bald eagle needs the tiger. If something is green and it does not need the bald eagle then the bald eagle sees the squirrel. If something needs the squirrel and it does not need the bald eagle then it does not see the tiger. If something does not see the tiger then the tiger sees the squirrel. The squirrel is green. If something eats the tiger then it eats the squirrel. If something eats the tiger and it eats the squirrel then the tiger eats the bald eagle.     Question: The bald eagle needs the tiger.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something needs the squirrel and it eats the squirrel then the squirrel does not see the bald eagle. The tiger does not eat the squirrel. The bald eagle needs the tiger. If something is green and it does not need the bald eagle then the bald eagle sees the squirrel. If something needs the squirrel and it does not need the bald eagle then it does not see the tiger. If something does not see the tiger then the tiger sees the squirrel. The squirrel is green. If something eats the tiger then it eats the squirrel. If something eats the tiger and it eats the squirrel then the tiger eats the bald eagle.     Question: The tiger eats the squirrel.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is smart. Gary is furry. If something is blue then it is red. Charlie is smart. All blue, white things are rough. If something is white and smart then it is red. Bob is red. Blue, rough things are furry. White, red things are big. All blue things are smart.     Question: Charlie is smart.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is smart. Gary is furry. If something is blue then it is red. Charlie is smart. All blue, white things are rough. If something is white and smart then it is red. Bob is red. Blue, rough things are furry. White, red things are big. All blue things are smart.     Question: Fiona is not smart.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat eats the cow. The rabbit is nice. If something visits the cow and it is rough then the cow likes the cat. The rabbit does not visit the cat. The cow is big. The rabbit does not like the cat. If something is nice and rough then it visits the cat. The cat is cold. If something is cold and it likes the cow then the cow is not big. If something visits the cat and the cat does not eat the cow then it is not cold. If the cow eats the rabbit then the rabbit is nice. If the rabbit is nice then the rabbit eats the cat. If something is big and it visits the cat then it eats the cow. The cow eats the cat. The cat is rough. If something does not eat the rabbit and it does not eat the cow then it visits the cow. The rabbit likes the cow. The cat does not visit the rabbit.     Question: The cat is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat eats the cow. The rabbit is nice. If something visits the cow and it is rough then the cow likes the cat. The rabbit does not visit the cat. The cow is big. The rabbit does not like the cat. If something is nice and rough then it visits the cat. The cat is cold. If something is cold and it likes the cow then the cow is not big. If something visits the cat and the cat does not eat the cow then it is not cold. If the cow eats the rabbit then the rabbit is nice. If the rabbit is nice then the rabbit eats the cat. If something is big and it visits the cat then it eats the cow. The cow eats the cat. The cat is rough. If something does not eat the rabbit and it does not eat the cow then it visits the cow. The rabbit likes the cow. The cat does not visit the rabbit.     Question: The rabbit visits the cat.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If Dave is not young then Dave is quiet. Fiona is blue. Dave is blue. If someone is not cold and not blue then they are not white. If someone is white and smart then they are not cold. Erin is round.     Question: Dave is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If Dave is not young then Dave is quiet. Fiona is blue. Dave is blue. If someone is not cold and not blue then they are not white. If someone is white and smart then they are not cold. Erin is round.     Question: Erin is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle visits the mouse. The mouse sees the bald eagle. If someone visits the bald eagle and the bald eagle is big then the bald eagle likes the mouse. The mouse likes the bald eagle. If someone sees the mouse and the mouse sees the bald eagle then they are rough.     Question: The mouse sees the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle visits the mouse. The mouse sees the bald eagle. If someone visits the bald eagle and the bald eagle is big then the bald eagle likes the mouse. The mouse likes the bald eagle. If someone sees the mouse and the mouse sees the bald eagle then they are rough.     Question: The mouse does not like the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is kind. If someone is young and not cold then they are rough. Anne is rough. Harry is not furry. All red people are kind. Erin is furry. Erin is kind. Harry is rough. Harry is kind. Bob is rough. Bob is cold. If someone is red and kind then they are not rough. Harry is not cold. Harry is blue. Anne is cold.     Question: Erin is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is kind. If someone is young and not cold then they are rough. Anne is rough. Harry is not furry. All red people are kind. Erin is furry. Erin is kind. Harry is rough. Harry is kind. Bob is rough. Bob is cold. If someone is red and kind then they are not rough. Harry is not cold. Harry is blue. Anne is cold.     Question: Anne is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is cold then it is not nice. All big things are cold. The bear is young. If the bear is young and the bear is not cold then the bear is rough. The bear is cold. The bear is rough. All big things are cold. All big things are not young. If something is not young and not big then it is cold.     Question: The bear is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is cold then it is not nice. All big things are cold. The bear is young. If the bear is young and the bear is not cold then the bear is rough. The bear is cold. The bear is rough. All big things are cold. All big things are not young. If something is not young and not big then it is cold.     Question: The bear is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is red and it chases the bald eagle then it eats the cat. If something sees the cat and it sees the bald eagle then the cat eats the bald eagle. The bald eagle is red. The bald eagle sees the cat. The cat eats the bald eagle. The cat sees the bald eagle. The cat chases the bald eagle. The bald eagle is cold. The cat is young. The bald eagle eats the cat. The bald eagle chases the cat. The cat is red. The cat is big. If something is cold and it chases the cat then the cat is big. If something eats the bald eagle and the bald eagle chases the cat then the bald eagle is big. The bald eagle is green. The bald eagle is big. If something sees the bald eagle then the bald eagle eats the cat. The cat is green. The bald eagle is young. If the bald eagle sees the cat and the cat is young then the bald eagle eats the cat. The cat is cold.     Question: The cat is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is red and it chases the bald eagle then it eats the cat. If something sees the cat and it sees the bald eagle then the cat eats the bald eagle. The bald eagle is red. The bald eagle sees the cat. The cat eats the bald eagle. The cat sees the bald eagle. The cat chases the bald eagle. The bald eagle is cold. The cat is young. The bald eagle eats the cat. The bald eagle chases the cat. The cat is red. The cat is big. If something is cold and it chases the cat then the cat is big. If something eats the bald eagle and the bald eagle chases the cat then the bald eagle is big. The bald eagle is green. The bald eagle is big. If something sees the bald eagle then the bald eagle eats the cat. The cat is green. The bald eagle is young. If the bald eagle sees the cat and the cat is young then the bald eagle eats the cat. The cat is cold.     Question: The bald eagle does not see the cat.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is white. If someone is red then they are blue. Fiona is green. Fiona is round. If someone is blue and round then they are young. Fiona is blue. Fiona is young. All nice people are young. Nice people are blue. Fiona is red. Young people are green. If Fiona is blue then Fiona is nice. Fiona is nice.     Question: Fiona is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is white. If someone is red then they are blue. Fiona is green. Fiona is round. If someone is blue and round then they are young. Fiona is blue. Fiona is young. All nice people are young. Nice people are blue. Fiona is red. Young people are green. If Fiona is blue then Fiona is nice. Fiona is nice.     Question: Fiona is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is furry. Bob is rough. Bob is smart. Bob is red. Bob is quiet. Bob is white. Bob is nice. Rough, smart people are white.     Question: Bob is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is furry. Bob is rough. Bob is smart. Bob is red. Bob is quiet. Bob is white. Bob is nice. Rough, smart people are white.     Question: Bob is not smart.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog visits the squirrel. The squirrel chases the dog. If something is young then it chases the squirrel. The dog is round. The dog is green. If the dog is round and the dog likes the squirrel then the squirrel likes the dog. The squirrel is green. The dog likes the squirrel. The squirrel likes the dog.     Question: The dog is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog visits the squirrel. The squirrel chases the dog. If something is young then it chases the squirrel. The dog is round. The dog is green. If the dog is round and the dog likes the squirrel then the squirrel likes the dog. The squirrel is green. The dog likes the squirrel. The squirrel likes the dog.     Question: The squirrel is not green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse visits the dog. The dog visits the mouse. The mouse is big. The dog is big. If the dog visits the mouse then the dog needs the mouse. The mouse is red. The dog is young. If something is young and it visits the dog then it likes the dog. The mouse likes the dog. The mouse needs the dog. The dog likes the mouse. The mouse is green. The dog needs the mouse. The mouse is young. The mouse is kind. The dog is red. The dog is kind. The dog is green.     Question: The mouse is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse visits the dog. The dog visits the mouse. The mouse is big. The dog is big. If the dog visits the mouse then the dog needs the mouse. The mouse is red. The dog is young. If something is young and it visits the dog then it likes the dog. The mouse likes the dog. The mouse needs the dog. The dog likes the mouse. The mouse is green. The dog needs the mouse. The mouse is young. The mouse is kind. The dog is red. The dog is kind. The dog is green.     Question: The mouse is not kind.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is green then it is quiet. Erin is cold. All cold, white things are young. Erin is quiet. Erin is white. Erin is nice. Erin is round. All white things are green. Quiet things are green. Erin is young. All round, white things are nice. Erin is green. If something is quiet then it is nice.     Question: Erin is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is green then it is quiet. Erin is cold. All cold, white things are young. Erin is quiet. Erin is white. Erin is nice. Erin is round. All white things are green. Quiet things are green. Erin is young. All round, white things are nice. Erin is green. If something is quiet then it is nice.     Question: Erin is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is nice. Cold, white things are young. All rough things are red. Dave is nice. Fiona is white.     Question: Fiona is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is nice. Cold, white things are young. All rough things are red. Dave is nice. Fiona is white.     Question: Dave is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is rough. Anne is nice. Gary is white. Gary is nice. Gary is furry. Harry is not round. Anne is furry. Harry is not rough. Harry is green. Gary is round. Gary is green. Harry is furry. Harry is nice. Harry is not big. Anne is white. Gary is big. If Gary is white and Gary is rough then Gary is round.     Question: Harry is not round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is rough. Anne is nice. Gary is white. Gary is nice. Gary is furry. Harry is not round. Anne is furry. Harry is not rough. Harry is green. Gary is round. Gary is green. Harry is furry. Harry is nice. Harry is not big. Anne is white. Gary is big. If Gary is white and Gary is rough then Gary is round.     Question: Gary is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is round. Bob is smart. Bob is green. Big people are round. All big, red people are smart. Charlie is green. Blue people are red. Bob is red. Charlie is red. Charlie is big. All big people are quiet. Bob is round. If someone is blue and quiet then they are green. All green, blue people are not round. If someone is smart then they are quiet. Charlie is not blue. Bob is big. If someone is round and not red then they are green. Charlie is smart. Charlie is quiet.     Question: Charlie is big.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is round. Bob is smart. Bob is green. Big people are round. All big, red people are smart. Charlie is green. Blue people are red. Bob is red. Charlie is red. Charlie is big. All big people are quiet. Bob is round. If someone is blue and quiet then they are green. All green, blue people are not round. If someone is smart then they are quiet. Charlie is not blue. Bob is big. If someone is round and not red then they are green. Charlie is smart. Charlie is quiet.     Question: Charlie is blue.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is cold and not smart then they are round. If someone is big and not round then they are not smart. Anne is quiet. Anne is blue. If Anne is blue and Anne is not quiet then Anne is round. If someone is round and not blue then they are cold. All cold, big people are quiet. Anne is smart. If Anne is blue then Anne is kind.     Question: Anne is smart.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is cold and not smart then they are round. If someone is big and not round then they are not smart. Anne is quiet. Anne is blue. If Anne is blue and Anne is not quiet then Anne is round. If someone is round and not blue then they are cold. All cold, big people are quiet. Anne is smart. If Anne is blue then Anne is kind.     Question: Anne is not quiet.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse is red. If something needs the mouse then it likes the mouse. The bald eagle is kind. The mouse is kind. The bald eagle needs the mouse. The bald eagle is cold. If something eats the bald eagle and the bald eagle likes the mouse then the mouse needs the bald eagle. The bald eagle is nice. The mouse is green. The bald eagle is green. The mouse is nice. The bald eagle likes the mouse. The mouse needs the bald eagle. The mouse is cold. If something is red and it eats the mouse then it needs the bald eagle. The bald eagle is red. The bald eagle eats the mouse. The mouse likes the bald eagle. The mouse eats the bald eagle.     Question: The mouse is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse is red. If something needs the mouse then it likes the mouse. The bald eagle is kind. The mouse is kind. The bald eagle needs the mouse. The bald eagle is cold. If something eats the bald eagle and the bald eagle likes the mouse then the mouse needs the bald eagle. The bald eagle is nice. The mouse is green. The bald eagle is green. The mouse is nice. The bald eagle likes the mouse. The mouse needs the bald eagle. The mouse is cold. If something is red and it eats the mouse then it needs the bald eagle. The bald eagle is red. The bald eagle eats the mouse. The mouse likes the bald eagle. The mouse eats the bald eagle.     Question: The mouse does not need the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit visits the cat. If the bear visits the cat then the cat is red. The cat is cold. If someone sees the cat and they see the rabbit then the rabbit visits the bear. The cat sees the bear. If someone visits the rabbit and they see the rabbit then the rabbit sees the bear. The rabbit sees the cat. The bear chases the cat. The cat chases the bear. The rabbit is red. The bear is young. The rabbit is nice. The bear chases the rabbit. The bear visits the rabbit. If someone visits the rabbit then they are red. The cat is blue. If someone chases the rabbit then the rabbit is young. The bear is red. If someone visits the bear and they visit the rabbit then the bear sees the cat. The rabbit sees the bear. If someone chases the rabbit and they are blue then they are young. The rabbit chases the cat. The cat is red. If someone visits the bear and the bear is cold then they see the rabbit.     Question: The bear is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit visits the cat. If the bear visits the cat then the cat is red. The cat is cold. If someone sees the cat and they see the rabbit then the rabbit visits the bear. The cat sees the bear. If someone visits the rabbit and they see the rabbit then the rabbit sees the bear. The rabbit sees the cat. The bear chases the cat. The cat chases the bear. The rabbit is red. The bear is young. The rabbit is nice. The bear chases the rabbit. The bear visits the rabbit. If someone visits the rabbit then they are red. The cat is blue. If someone chases the rabbit then the rabbit is young. The bear is red. If someone visits the bear and they visit the rabbit then the bear sees the cat. The rabbit sees the bear. If someone chases the rabbit and they are blue then they are young. The rabbit chases the cat. The cat is red. If someone visits the bear and the bear is cold then they see the rabbit.     Question: The cat is not blue.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is not kind. Bob is not furry. If someone is furry and not young then they are not white. Charlie is furry. Bob is kind. Fiona is not kind. Bob is young. Fiona is white. Bob is smart. Anne is not red. Charlie is not green. Bob is green. Fiona is smart. Fiona is not green. Fiona is not red. Bob is not red. If someone is furry and not white then they are not green. Anne is white.     Question: Fiona is not kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is not kind. Bob is not furry. If someone is furry and not young then they are not white. Charlie is furry. Bob is kind. Fiona is not kind. Bob is young. Fiona is white. Bob is smart. Anne is not red. Charlie is not green. Bob is green. Fiona is smart. Fiona is not green. Fiona is not red. Bob is not red. If someone is furry and not white then they are not green. Anne is white.     Question: Anne is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is quiet. Harry is young. If someone is not kind then they are cold. Bob is young. Fiona is white.     Question: Harry is young.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is quiet. Harry is young. If someone is not kind then they are cold. Bob is young. Fiona is white.     Question: Anne is not quiet.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow eats the dog. If someone does not chase the mouse then the mouse is not kind. The cow needs the dog. The dog is not cold. The mouse needs the cow. The mouse needs the dog. If someone chases the cat and the cat is kind then they chase the mouse. If someone is round then they chase the cow. If the cow eats the cat then the cat does not chase the cow. The cat is green. If someone is green then they need the cat. If the dog eats the cat then the dog eats the cow. The mouse chases the cow. The mouse is not round. The mouse is cold. The dog does not need the cat. If the mouse eats the cat and the cat eats the dog then the dog is kind. If someone chases the cat and they chase the dog then they eat the mouse.     Question: The mouse is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow eats the dog. If someone does not chase the mouse then the mouse is not kind. The cow needs the dog. The dog is not cold. The mouse needs the cow. The mouse needs the dog. If someone chases the cat and the cat is kind then they chase the mouse. If someone is round then they chase the cow. If the cow eats the cat then the cat does not chase the cow. The cat is green. If someone is green then they need the cat. If the dog eats the cat then the dog eats the cow. The mouse chases the cow. The mouse is not round. The mouse is cold. The dog does not need the cat. If the mouse eats the cat and the cat eats the dog then the dog is kind. If someone chases the cat and they chase the dog then they eat the mouse.     Question: The cow does not need the dog.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is kind. Erin is kind. Anne is young. Erin is cold. Anne is smart. All red, smart people are cold. Erin is quiet. Red people are smart. If someone is cold then they are quiet. Erin is smart.     Question: Erin is smart.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is kind. Erin is kind. Anne is young. Erin is cold. Anne is smart. All red, smart people are cold. Erin is quiet. Red people are smart. If someone is cold then they are quiet. Erin is smart.     Question: Anne is not kind.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is blue. If Harry is blue then Harry is green. Erin is round. Green, blue people are round. Harry is red. If someone is green and red then they are round. Bob is round.     Question: Bob is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is blue. If Harry is blue then Harry is green. Erin is round. Green, blue people are round. Harry is red. If someone is green and red then they are round. Bob is round.     Question: Harry is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Big people are young. Fiona is cold. If someone is not kind and not green then they are not cold. All green people are not round. Anne is young. Anne is big. Fiona is young. Anne is kind. If Anne is not kind then Anne is round. Fiona is kind. If someone is not furry then they are not green. Fiona is big. Anne is cold. Anne is not round. Fiona is round. If someone is kind and not young then they are round.     Question: Fiona is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Big people are young. Fiona is cold. If someone is not kind and not green then they are not cold. All green people are not round. Anne is young. Anne is big. Fiona is young. Anne is kind. If Anne is not kind then Anne is round. Fiona is kind. If someone is not furry then they are not green. Fiona is big. Anne is cold. Anne is not round. Fiona is round. If someone is kind and not young then they are round.     Question: Anne is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is big. If the bald eagle is nice then the bald eagle is cold. The bald eagle is nice. The bald eagle is not red. The bald eagle is not green. The bald eagle is cold.     Question: The bald eagle is not green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is big. If the bald eagle is nice then the bald eagle is cold. The bald eagle is nice. The bald eagle is not red. The bald eagle is not green. The bald eagle is cold.     Question: The bald eagle is green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If Gary is not red then Gary is rough. White, big people are blue. If Harry is big then Harry is not white. All kind, blue people are red. All red people are cold. Gary is red. Harry is rough. Anne is big. If someone is rough then they are not kind. If someone is not white then they are rough. If Gary is big and Gary is not kind then Gary is not blue.     Question: Anne is big.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If Gary is not red then Gary is rough. White, big people are blue. If Harry is big then Harry is not white. All kind, blue people are red. All red people are cold. Gary is red. Harry is rough. Anne is big. If someone is rough then they are not kind. If someone is not white then they are rough. If Gary is big and Gary is not kind then Gary is not blue.     Question: Harry is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse is cold. The mouse is big. If someone is big then they are kind. Green people are cold. If someone is green and red then they are big. If the mouse is green then the mouse is red. The mouse is green. All cold, kind people are red. The mouse is red. The mouse is kind. If someone is big then they are kind. If someone is green then they are cold. If someone is big and green then they are kind.     Question: The mouse is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse is cold. The mouse is big. If someone is big then they are kind. Green people are cold. If someone is green and red then they are big. If the mouse is green then the mouse is red. The mouse is green. All cold, kind people are red. The mouse is red. The mouse is kind. If someone is big then they are kind. If someone is green then they are cold. If someone is big and green then they are kind.     Question: The mouse is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is green then they are kind. If someone is blue then they are not green. If the cat is cold and the cat is not kind then the cat is blue. All cold, green people are not kind. If someone is kind then they are not cold. If the cat is kind then the cat is blue. The cat is blue. If someone is not round then they are not cold. If someone is not blue then they are not round.     Question: The cat is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is green then they are kind. If someone is blue then they are not green. If the cat is cold and the cat is not kind then the cat is blue. All cold, green people are not kind. If someone is kind then they are not cold. If the cat is kind then the cat is blue. The cat is blue. If someone is not round then they are not cold. If someone is not blue then they are not round.     Question: The cat is not blue.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If Harry is cold and Harry is nice then Harry is rough. Dave is blue. If someone is nice then they are blue. Harry is round. All rough people are cold. All cold, rough people are nice. Nice people are white. Blue people are cold. Erin is cold. Rough, cold people are red. If someone is cold and round then they are nice. Anne is blue.     Question: Harry is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If Harry is cold and Harry is nice then Harry is rough. Dave is blue. If someone is nice then they are blue. Harry is round. All rough people are cold. All cold, rough people are nice. Nice people are white. Blue people are cold. Erin is cold. Rough, cold people are red. If someone is cold and round then they are nice. Anne is blue.     Question: Harry is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit does not need the lion. If the rabbit visits the bear then the bear visits the dog. If someone is green and not round then they need the rabbit. If someone needs the dog then they are red. The lion is red. The dog needs the rabbit. The lion needs the rabbit. The bear is cold. The lion eats the bear. If someone eats the bear and the bear eats the dog then the dog visits the lion. The lion visits the rabbit. The bear is red. If someone needs the dog and they are not cold then they need the rabbit. If someone visits the rabbit and they do not visit the lion then the rabbit is round. If someone is round and not red then they need the dog. The lion is cold. The lion eats the dog. The rabbit does not eat the lion. The bear does not need the dog. If someone does not eat the rabbit then they are red.     Question: The lion is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit does not need the lion. If the rabbit visits the bear then the bear visits the dog. If someone is green and not round then they need the rabbit. If someone needs the dog then they are red. The lion is red. The dog needs the rabbit. The lion needs the rabbit. The bear is cold. The lion eats the bear. If someone eats the bear and the bear eats the dog then the dog visits the lion. The lion visits the rabbit. The bear is red. If someone needs the dog and they are not cold then they need the rabbit. If someone visits the rabbit and they do not visit the lion then the rabbit is round. If someone is round and not red then they need the dog. The lion is cold. The lion eats the dog. The rabbit does not eat the lion. The bear does not need the dog. If someone does not eat the rabbit then they are red.     Question: The dog does not need the rabbit.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Erin is rough. Erin is smart. Erin is nice. Quiet things are smart. If Charlie is furry then Charlie is white. Charlie is furry. Fiona is nice. Fiona is furry. Charlie is quiet.     Question: Charlie is furry.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Erin is rough. Erin is smart. Erin is nice. Quiet things are smart. If Charlie is furry then Charlie is white. Charlie is furry. Fiona is nice. Fiona is furry. Charlie is quiet.     Question: Fiona is not furry.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Round people are not nice. If someone is round and not kind then they are green. Anne is green. Fiona is not rough. If someone is nice and not blue then they are green. Erin is blue. Fiona is not round. Anne is not nice. If someone is round and not kind then they are blue. Erin is rough. Erin is green. Erin is smart. Anne is not kind. If Erin is rough and Erin is nice then Erin is smart. Round, green people are not rough. Anne is blue.     Question: Anne is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Round people are not nice. If someone is round and not kind then they are green. Anne is green. Fiona is not rough. If someone is nice and not blue then they are green. Erin is blue. Fiona is not round. Anne is not nice. If someone is round and not kind then they are blue. Erin is rough. Erin is green. Erin is smart. Anne is not kind. If Erin is rough and Erin is nice then Erin is smart. Round, green people are not rough. Anne is blue.     Question: Fiona is rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow chases the mouse. If someone chases the cow and they eat the cat then they chase the mouse. The cow is not big. The cow does not chase the bear. The cow is blue. The bear does not eat the cat. The bear needs the mouse. The cow chases the cat. The cow is not kind. If the cat chases the bear then the bear eats the mouse. The cow needs the mouse. The mouse chases the bear. The mouse eats the cat. The bear is big. The mouse needs the cow. The cat needs the cow. The bear is kind.     Question: The bear is big.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow chases the mouse. If someone chases the cow and they eat the cat then they chase the mouse. The cow is not big. The cow does not chase the bear. The cow is blue. The bear does not eat the cat. The bear needs the mouse. The cow chases the cat. The cow is not kind. If the cat chases the bear then the bear eats the mouse. The cow needs the mouse. The mouse chases the bear. The mouse eats the cat. The bear is big. The mouse needs the cow. The cat needs the cow. The bear is kind.     Question: The cow is big.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog is nice. The rabbit sees the bald eagle. The rabbit is not red. The dog visits the rabbit. If something is blue then it is nice. The bald eagle eats the rabbit. The dog visits the bald eagle. The rabbit eats the dog. The bald eagle is nice. The bald eagle sees the dog. The bald eagle visits the dog. The rabbit visits the dog. The dog eats the rabbit. The dog is round. If something visits the rabbit then it is round. The dog is red. The dog sees the rabbit.     Question: The rabbit sees the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog is nice. The rabbit sees the bald eagle. The rabbit is not red. The dog visits the rabbit. If something is blue then it is nice. The bald eagle eats the rabbit. The dog visits the bald eagle. The rabbit eats the dog. The bald eagle is nice. The bald eagle sees the dog. The bald eagle visits the dog. The rabbit visits the dog. The dog eats the rabbit. The dog is round. If something visits the rabbit then it is round. The dog is red. The dog sees the rabbit.     Question: The bald eagle does not eat the rabbit.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is not nice and not blue then it is not furry. If Fiona is not rough then Fiona is big. Fiona is not nice. Fiona is big. Blue things are big. Fiona is young. If Fiona is green and Fiona is big then Fiona is nice. If Fiona is not big then Fiona is nice. If something is green and not blue then it is furry. If something is nice and furry then it is blue. If something is big and nice then it is not green.     Question: Fiona is young.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is not nice and not blue then it is not furry. If Fiona is not rough then Fiona is big. Fiona is not nice. Fiona is big. Blue things are big. Fiona is young. If Fiona is green and Fiona is big then Fiona is nice. If Fiona is not big then Fiona is nice. If something is green and not blue then it is furry. If something is nice and furry then it is blue. If something is big and nice then it is not green.     Question: Fiona is nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If Fiona is red and Fiona is kind then Fiona is green. Harry is red. If Fiona is blue and Fiona is rough then Fiona is green. All furry people are red. Harry is nice. Dave is rough. Fiona is nice. All rough people are furry. Harry is rough. Dave is red. Fiona is kind. Harry is furry. Dave is nice. Dave is furry. Dave is kind. Fiona is blue. All blue people are green. Dave is blue. Fiona is red. Dave is green. All blue people are red. Harry is green.     Question: Harry is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If Fiona is red and Fiona is kind then Fiona is green. Harry is red. If Fiona is blue and Fiona is rough then Fiona is green. All furry people are red. Harry is nice. Dave is rough. Fiona is nice. All rough people are furry. Harry is rough. Dave is red. Fiona is kind. Harry is furry. Dave is nice. Dave is furry. Dave is kind. Fiona is blue. All blue people are green. Dave is blue. Fiona is red. Dave is green. All blue people are red. Harry is green.     Question: Harry is not furry.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion visits the cat. The dog visits the lion. The bald eagle is big. If someone visits the dog and they chase the cat then the dog chases the lion. If someone eats the cat and the cat visits the bald eagle then the cat eats the dog. If someone is big then they chase the cat. The cat visits the bald eagle.     Question: The lion visits the cat.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion visits the cat. The dog visits the lion. The bald eagle is big. If someone visits the dog and they chase the cat then the dog chases the lion. If someone eats the cat and the cat visits the bald eagle then the cat eats the dog. If someone is big then they chase the cat. The cat visits the bald eagle.     Question: The lion does not visit the cat.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is red. All big people are furry. Dave is white. Young, white people are not green. If someone is white and not green then they are furry. If Gary is round then Gary is not red. If someone is not round and not white then they are red. If someone is green and not white then they are big. Gary is red. Gary is furry. Fiona is white. If Bob is young then Bob is red. If someone is young then they are white. Bob is red. Gary is not green.     Question: Gary is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is red. All big people are furry. Dave is white. Young, white people are not green. If someone is white and not green then they are furry. If Gary is round then Gary is not red. If someone is not round and not white then they are red. If someone is green and not white then they are big. Gary is red. Gary is furry. Fiona is white. If Bob is young then Bob is red. If someone is young then they are white. Bob is red. Gary is not green.     Question: Gary is green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is nice. If something is not round then it is nice. Anne is round. All nice, quiet things are blue. Anne is quiet. Erin is not smart. Erin is round. Anne is not smart. Anne is big. Erin is not quiet. Anne is blue. Anne is green. If something is round and not blue then it is not green.     Question: Erin is not quiet.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is nice. If something is not round then it is nice. Anne is round. All nice, quiet things are blue. Anne is quiet. Erin is not smart. Erin is round. Anne is not smart. Anne is big. Erin is not quiet. Anne is blue. Anne is green. If something is round and not blue then it is not green.     Question: Erin is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is white. Anne is white. Dave is nice. Anne is furry. Erin is furry. Anne is green. Dave is kind. Gary is red. Gary is kind. Anne is red. Dave is green. Anne is cold. Erin is white. Dave is red. If something is green then it is nice. Dave is furry. Gary is nice. Kind things are red.     Question: Anne is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is white. Anne is white. Dave is nice. Anne is furry. Erin is furry. Anne is green. Dave is kind. Gary is red. Gary is kind. Anne is red. Dave is green. Anne is cold. Erin is white. Dave is red. If something is green then it is nice. Dave is furry. Gary is nice. Kind things are red.     Question: Anne is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is cold. If someone is big and not cold then they are rough. The cat is big. If someone is young and not red then they are rough. The cat is red. The cat is not young. The cat is not rough. If someone is cold then they are red.     Question: The cat is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is cold. If someone is big and not cold then they are rough. The cat is big. If someone is young and not red then they are rough. The cat is red. The cat is not young. The cat is not rough. If someone is cold then they are red.     Question: The cat is not big.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse is not round. The squirrel needs the lion. The mouse is cold. If something is kind then it chases the cat. The squirrel likes the mouse. The lion chases the mouse. The lion chases the squirrel. The mouse needs the cat. The mouse does not like the lion. The squirrel needs the mouse. The cat does not like the squirrel. If something chases the cat and it needs the mouse then the cat likes the squirrel. If something is not young then it needs the squirrel. If something chases the cat then the cat does not chase the mouse. If something needs the lion then the lion needs the cat. The lion needs the cat. The mouse needs the squirrel. If something likes the cat then the cat is young. The cat needs the squirrel. The cat needs the mouse. The lion does not like the mouse.     Question: The lion chases the mouse.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse is not round. The squirrel needs the lion. The mouse is cold. If something is kind then it chases the cat. The squirrel likes the mouse. The lion chases the mouse. The lion chases the squirrel. The mouse needs the cat. The mouse does not like the lion. The squirrel needs the mouse. The cat does not like the squirrel. If something chases the cat and it needs the mouse then the cat likes the squirrel. If something is not young then it needs the squirrel. If something chases the cat then the cat does not chase the mouse. If something needs the lion then the lion needs the cat. The lion needs the cat. The mouse needs the squirrel. If something likes the cat then the cat is young. The cat needs the squirrel. The cat needs the mouse. The lion does not like the mouse.     Question: The squirrel does not like the mouse.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is white. If something is big and not cold then it is not quiet. If Gary is not cold and Gary is not quiet then Gary is not big. Dave is young. If something is rough and young then it is big. If something is big and quiet then it is red. If something is red then it is not cold. All cold things are rough. Dave is rough. Harry is big. Gary is rough. Harry is rough. Dave is red.     Question: Gary is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is white. If something is big and not cold then it is not quiet. If Gary is not cold and Gary is not quiet then Gary is not big. Dave is young. If something is rough and young then it is big. If something is big and quiet then it is red. If something is red then it is not cold. All cold things are rough. Dave is rough. Harry is big. Gary is rough. Harry is rough. Dave is red.     Question: Gary is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is rough then it is big. Gary is kind. Erin is rough. Erin is red. Gary is green. Gary is blue. Erin is blue. If Gary is rough then Gary is green. All kind things are blue. All quiet things are big. Bob is blue. Bob is rough. If something is green and blue then it is quiet. Bob is green. Red, quiet things are blue. Bob is big.     Question: Gary is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is rough then it is big. Gary is kind. Erin is rough. Erin is red. Gary is green. Gary is blue. Erin is blue. If Gary is rough then Gary is green. All kind things are blue. All quiet things are big. Bob is blue. Bob is rough. If something is green and blue then it is quiet. Bob is green. Red, quiet things are blue. Bob is big.     Question: Erin is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is kind and round then it is cold. Dave is kind. Dave is young. If something is white and kind then it is rough. Dave is cold. Dave is rough. Harry is cold. Erin is cold. Erin is young. Erin is rough. Harry is blue. Erin is blue. Erin is kind. Harry is round. Harry is young. Erin is white. Erin is round. Harry is kind.     Question: Erin is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is kind and round then it is cold. Dave is kind. Dave is young. If something is white and kind then it is rough. Dave is cold. Dave is rough. Harry is cold. Erin is cold. Erin is young. Erin is rough. Harry is blue. Erin is blue. Erin is kind. Harry is round. Harry is young. Erin is white. Erin is round. Harry is kind.     Question: Erin is not kind.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is white. Charlie is kind. Dave is red. Charlie is white. Dave is quiet. If Charlie is blue then Charlie is kind. Dave is rough. Fiona is kind. Charlie is red. All young, rough things are white. Quiet, blue things are red. Erin is rough. If something is young and kind then it is quiet. If something is white then it is red. Fiona is quiet. Red, kind things are blue.     Question: Fiona is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is white. Charlie is kind. Dave is red. Charlie is white. Dave is quiet. If Charlie is blue then Charlie is kind. Dave is rough. Fiona is kind. Charlie is red. All young, rough things are white. Quiet, blue things are red. Erin is rough. If something is young and kind then it is quiet. If something is white then it is red. Fiona is quiet. Red, kind things are blue.     Question: Dave is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is nice. Harry is not smart. Harry is cold. Bob is nice. Bob is not cold. If someone is not young then they are green. Bob is white. Harry is young. Harry is green. Bob is young. Harry is white. Bob is smart. Harry is red. If someone is smart and young then they are not cold. Bob is green. Bob is not red. If someone is young and not white then they are red.     Question: Harry is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is nice. Harry is not smart. Harry is cold. Bob is nice. Bob is not cold. If someone is not young then they are green. Bob is white. Harry is young. Harry is green. Bob is young. Harry is white. Bob is smart. Harry is red. If someone is smart and young then they are not cold. Bob is green. Bob is not red. If someone is young and not white then they are red.     Question: Bob is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something likes the rabbit then it is cold. The mouse does not eat the rabbit. The rabbit is not red. If something sees the rabbit and the rabbit is cold then the rabbit does not see the mouse.     Question: The mouse does not eat the rabbit.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something likes the rabbit then it is cold. The mouse does not eat the rabbit. The rabbit is not red. If something sees the rabbit and the rabbit is cold then the rabbit does not see the mouse.     Question: The mouse eats the rabbit.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog does not need the lion. The lion is red. The dog is not red. The lion is cold. The lion is blue. The dog is green. If the lion is blue and the lion is cold then the lion eats the dog. The dog eats the lion. The dog likes the lion. If the lion eats the dog and the lion is not rough then the lion needs the dog. The dog is not cold. The lion does not like the dog. The dog is rough. The lion needs the dog. The dog is blue. The lion is green. The lion eats the dog. The lion is not rough.     Question: The lion is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog does not need the lion. The lion is red. The dog is not red. The lion is cold. The lion is blue. The dog is green. If the lion is blue and the lion is cold then the lion eats the dog. The dog eats the lion. The dog likes the lion. If the lion eats the dog and the lion is not rough then the lion needs the dog. The dog is not cold. The lion does not like the dog. The dog is rough. The lion needs the dog. The dog is blue. The lion is green. The lion eats the dog. The lion is not rough.     Question: The dog is not blue.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The squirrel is cold. The squirrel is blue. If the squirrel is round then the squirrel is big. The squirrel is young.     Question: The squirrel is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The squirrel is cold. The squirrel is blue. If the squirrel is round then the squirrel is big. The squirrel is young.     Question: The squirrel is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit is round. Green, blue people are nice. The rabbit is blue. Kind people are round. All green people are not kind. If someone is green then they are blue. The rabbit is nice. The rabbit is not kind. If someone is not nice then they are blue. The rabbit is green. If the rabbit is not nice and the rabbit is not green then the rabbit is kind. If the rabbit is nice and the rabbit is round then the rabbit is blue. If someone is blue and not round then they are nice.     Question: The rabbit is not kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit is round. Green, blue people are nice. The rabbit is blue. Kind people are round. All green people are not kind. If someone is green then they are blue. The rabbit is nice. The rabbit is not kind. If someone is not nice then they are blue. The rabbit is green. If the rabbit is not nice and the rabbit is not green then the rabbit is kind. If the rabbit is nice and the rabbit is round then the rabbit is blue. If someone is blue and not round then they are nice.     Question: The rabbit is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Erin is white. If something is blue then it is smart. If something is white and young then it is smart. Erin is smart. If something is white and blue then it is green. If something is young then it is white. Blue things are white. If something is white then it is blue. Erin is blue. All rough things are white. If Erin is blue then Erin is rough.     Question: Erin is white.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Erin is white. If something is blue then it is smart. If something is white and young then it is smart. Erin is smart. If something is white and blue then it is green. If something is young then it is white. Blue things are white. If something is white then it is blue. Erin is blue. All rough things are white. If Erin is blue then Erin is rough.     Question: Erin is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Blue, cold people are kind. Fiona is round. If Fiona is green then Fiona is blue. All kind people are cold. Nice, cold people are green. All nice, blue people are round. Kind people are cold.     Question: Fiona is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Blue, cold people are kind. Fiona is round. If Fiona is green then Fiona is blue. All kind people are cold. Nice, cold people are green. All nice, blue people are round. Kind people are cold.     Question: Fiona is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is white. All nice, cold things are quiet. Dave is nice. Dave is cold. Dave is quiet. Dave is red. Dave is round. If something is furry and red then it is round. Dave is furry.     Question: Dave is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is white. All nice, cold things are quiet. Dave is nice. Dave is cold. Dave is quiet. Dave is red. Dave is round. If something is furry and red then it is round. Dave is furry.     Question: Dave is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is not big. The bald eagle sees the bear. The cow eats the lion. The cow sees the bear. The cow does not visit the bald eagle. If something eats the bear then it visits the bald eagle. The bear eats the lion. The bald eagle is green. If the cow is round and something does not visit the cow then it does not see the bald eagle. The lion visits the bald eagle. The lion eats the cow. The bald eagle eats the bear.     Question: The bald eagle sees the bear.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is not big. The bald eagle sees the bear. The cow eats the lion. The cow sees the bear. The cow does not visit the bald eagle. If something eats the bear then it visits the bald eagle. The bear eats the lion. The bald eagle is green. If the cow is round and something does not visit the cow then it does not see the bald eagle. The lion visits the bald eagle. The lion eats the cow. The bald eagle eats the bear.     Question: The lion does not eat the cow.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is rough. Anne is quiet. Anne is cold. Dave is blue. Bob is cold. Smart things are cold. Bob is kind. All cold, white things are rough. Dave is white. If something is kind and rough then it is smart. Anne is rough. Dave is smart. Dave is cold.     Question: Dave is smart.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is rough. Anne is quiet. Anne is cold. Dave is blue. Bob is cold. Smart things are cold. Bob is kind. All cold, white things are rough. Dave is white. If something is kind and rough then it is smart. Anne is rough. Dave is smart. Dave is cold.     Question: Dave is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is not green and not cold then they are white. Charlie is cold. Charlie is not quiet. Charlie is round. Charlie is red. Charlie is green. If someone is nice then they are green. White, nice people are green. If someone is quiet and not cold then they are green. Charlie is nice. If someone is not round then they are not nice. All white, green people are not quiet. Charlie is white. If someone is not nice then they are quiet. If Charlie is round then Charlie is white.     Question: Charlie is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is not green and not cold then they are white. Charlie is cold. Charlie is not quiet. Charlie is round. Charlie is red. Charlie is green. If someone is nice then they are green. White, nice people are green. If someone is quiet and not cold then they are green. Charlie is nice. If someone is not round then they are not nice. All white, green people are not quiet. Charlie is white. If someone is not nice then they are quiet. If Charlie is round then Charlie is white.     Question: Charlie is quiet.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something chases the cow and it is nice then it needs the tiger. The tiger visits the cow. If something chases the tiger then the tiger needs the bald eagle. If something visits the bald eagle and the bald eagle chases the cow then the cow visits the tiger. If something needs the bald eagle then it is green. The bald eagle is red. The cow chases the bald eagle. If the cow chases the bald eagle then the cow needs the tiger. If something is young and cold then it needs the cow.     Question: The tiger visits the cow.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something chases the cow and it is nice then it needs the tiger. The tiger visits the cow. If something chases the tiger then the tiger needs the bald eagle. If something visits the bald eagle and the bald eagle chases the cow then the cow visits the tiger. If something needs the bald eagle then it is green. The bald eagle is red. The cow chases the bald eagle. If the cow chases the bald eagle then the cow needs the tiger. If something is young and cold then it needs the cow.     Question: The cow does not chase the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The squirrel needs the dog. The tiger sees the squirrel. The dog is cold. The squirrel is blue. The squirrel is cold. The bear needs the dog. The squirrel is rough. If someone is rough and cold then they chase the bear. If someone needs the tiger then they see the dog. The dog sees the bear. The dog sees the squirrel. The squirrel sees the bear. The squirrel needs the bear. The bear sees the squirrel. If the squirrel is cold and the squirrel chases the tiger then the squirrel is rough. The bear chases the tiger. The squirrel needs the tiger. The dog needs the bear. The squirrel chases the bear.     Question: The dog is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The squirrel needs the dog. The tiger sees the squirrel. The dog is cold. The squirrel is blue. The squirrel is cold. The bear needs the dog. The squirrel is rough. If someone is rough and cold then they chase the bear. If someone needs the tiger then they see the dog. The dog sees the bear. The dog sees the squirrel. The squirrel sees the bear. The squirrel needs the bear. The bear sees the squirrel. If the squirrel is cold and the squirrel chases the tiger then the squirrel is rough. The bear chases the tiger. The squirrel needs the tiger. The dog needs the bear. The squirrel chases the bear.     Question: The squirrel does not chase the bear.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is not rough then it is red. Gary is young. Charlie is rough. Erin is kind. Charlie is not cold. If something is rough and smart then it is not red. Erin is cold. Harry is not young. Gary is rough.     Question: Charlie is not cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is not rough then it is red. Gary is young. Charlie is rough. Erin is kind. Charlie is not cold. If something is rough and smart then it is not red. Erin is cold. Harry is not young. Gary is rough.     Question: Harry is young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is nice and white then it is cold. Harry is rough. Harry is round. Dave is white. Dave is rough. All cold, rough things are round. Harry is blue. If Harry is round then Harry is kind. Harry is kind. Dave is blue. Harry is white. Dave is round. All nice things are cold. All white, nice things are rough. Dave is nice. Dave is cold. Harry is nice. If something is cold then it is white.     Question: Harry is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is nice and white then it is cold. Harry is rough. Harry is round. Dave is white. Dave is rough. All cold, rough things are round. Harry is blue. If Harry is round then Harry is kind. Harry is kind. Dave is blue. Harry is white. Dave is round. All nice things are cold. All white, nice things are rough. Dave is nice. Dave is cold. Harry is nice. If something is cold then it is white.     Question: Dave is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something chases the bald eagle then it is kind. If the bald eagle is red and the bald eagle is not kind then the bald eagle needs the dog. The rabbit needs the dog. The bald eagle needs the rabbit. If something is not red then it sees the dog. The dog does not see the bald eagle.     Question: The dog does not see the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something chases the bald eagle then it is kind. If the bald eagle is red and the bald eagle is not kind then the bald eagle needs the dog. The rabbit needs the dog. The bald eagle needs the rabbit. If something is not red then it sees the dog. The dog does not see the bald eagle.     Question: The dog sees the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle does not eat the lion. If something sees the lion and the lion is nice then it is not green. The dog eats the bald eagle. The mouse is green. The lion does not chase the bald eagle. The dog is nice. The bald eagle does not see the mouse. The lion is green. The dog eats the lion. The lion does not see the bald eagle. The bald eagle sees the lion. The bald eagle eats the dog. The lion sees the mouse. The dog chases the mouse. The dog does not see the bald eagle. The dog sees the mouse.     Question: The bald eagle eats the dog.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle does not eat the lion. If something sees the lion and the lion is nice then it is not green. The dog eats the bald eagle. The mouse is green. The lion does not chase the bald eagle. The dog is nice. The bald eagle does not see the mouse. The lion is green. The dog eats the lion. The lion does not see the bald eagle. The bald eagle sees the lion. The bald eagle eats the dog. The lion sees the mouse. The dog chases the mouse. The dog does not see the bald eagle. The dog sees the mouse.     Question: The bald eagle does not see the lion.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is rough. Anne is furry. Anne is nice. Gary is white. Anne is kind. Anne is rough. Anne is white. Gary is kind. Gary is big. Gary is nice. Gary is red. Anne is big. Rough things are white. Anne is red. Gary is furry.     Question: Anne is white.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is rough. Anne is furry. Anne is nice. Gary is white. Anne is kind. Anne is rough. Anne is white. Gary is kind. Gary is big. Gary is nice. Gary is red. Anne is big. Rough things are white. Anne is red. Gary is furry.     Question: Anne is not kind.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If the bald eagle likes the rabbit and the bald eagle eats the rabbit then the rabbit chases the bald eagle. The rabbit eats the bald eagle. If the rabbit eats the lion then the rabbit is blue. If something chases the lion and it likes the lion then the lion chases the bald eagle. If the rabbit eats the bald eagle then the rabbit chases the lion. If something chases the bald eagle then it is round. The bald eagle likes the lion. The lion likes the rabbit. If something is blue and round then it likes the bald eagle.     Question: The rabbit eats the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If the bald eagle likes the rabbit and the bald eagle eats the rabbit then the rabbit chases the bald eagle. The rabbit eats the bald eagle. If the rabbit eats the lion then the rabbit is blue. If something chases the lion and it likes the lion then the lion chases the bald eagle. If the rabbit eats the bald eagle then the rabbit chases the lion. If something chases the bald eagle then it is round. The bald eagle likes the lion. The lion likes the rabbit. If something is blue and round then it likes the bald eagle.     Question: The bald eagle does not like the lion.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse likes the bear. The mouse is round. The bear likes the mouse. The rabbit is cold. If something is green and cold then it likes the mouse. The bear chases the rabbit. The rabbit chases the bear. The mouse sees the rabbit. The bear sees the rabbit. If something sees the bear then the bear sees the rabbit. The rabbit likes the bear. The bear chases the mouse. The mouse is nice. The rabbit is round. If something is young and it likes the rabbit then the rabbit chases the bear. The mouse is young. The rabbit likes the mouse. If something sees the mouse then the mouse is green. The bear is green. If something is cold and round then it is green. The rabbit sees the mouse. If something sees the mouse then the mouse sees the bear.     Question: The rabbit likes the mouse.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The mouse likes the bear. The mouse is round. The bear likes the mouse. The rabbit is cold. If something is green and cold then it likes the mouse. The bear chases the rabbit. The rabbit chases the bear. The mouse sees the rabbit. The bear sees the rabbit. If something sees the bear then the bear sees the rabbit. The rabbit likes the bear. The bear chases the mouse. The mouse is nice. The rabbit is round. If something is young and it likes the rabbit then the rabbit chases the bear. The mouse is young. The rabbit likes the mouse. If something sees the mouse then the mouse is green. The bear is green. If something is cold and round then it is green. The rabbit sees the mouse. If something sees the mouse then the mouse sees the bear.     Question: The mouse is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is green. The mouse needs the bald eagle. The mouse likes the bald eagle. The bald eagle is young. The bald eagle needs the bear. The cat is red. The cat needs the bald eagle. The bear is big. The bald eagle likes the cat. The mouse is green. The bear likes the mouse. The bear visits the mouse. The bald eagle is red. The cat is nice. The mouse needs the bear. The mouse likes the cat. If the cat likes the bald eagle then the bald eagle visits the cat.     Question: The bald eagle is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is green. The mouse needs the bald eagle. The mouse likes the bald eagle. The bald eagle is young. The bald eagle needs the bear. The cat is red. The cat needs the bald eagle. The bear is big. The bald eagle likes the cat. The mouse is green. The bear likes the mouse. The bear visits the mouse. The bald eagle is red. The cat is nice. The mouse needs the bear. The mouse likes the cat. If the cat likes the bald eagle then the bald eagle visits the cat.     Question: The bald eagle is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The squirrel is young. The bald eagle visits the tiger. The tiger sees the bald eagle. The cat sees the bald eagle. If something chases the tiger then it is blue.     Question: The tiger sees the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The squirrel is young. The bald eagle visits the tiger. The tiger sees the bald eagle. The cat sees the bald eagle. If something chases the tiger then it is blue.     Question: The bald eagle does not visit the tiger.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is not round then they are nice. Nice, green people are young. The bald eagle is not nice. If the bald eagle is nice then the bald eagle is kind. The bald eagle is kind. Young, nice people are not green. The bald eagle is green. The bald eagle is young. If the bald eagle is young then the bald eagle is round. If someone is not kind then they are not round. All young people are kind. If the bald eagle is kind then the bald eagle is green. The bald eagle is round.     Question: The bald eagle is young.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is not round then they are nice. Nice, green people are young. The bald eagle is not nice. If the bald eagle is nice then the bald eagle is kind. The bald eagle is kind. Young, nice people are not green. The bald eagle is green. The bald eagle is young. If the bald eagle is young then the bald eagle is round. If someone is not kind then they are not round. All young people are kind. If the bald eagle is kind then the bald eagle is green. The bald eagle is round.     Question: The bald eagle is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is big. All cold people are big. Charlie is cold. Charlie is green. All cold people are white.     Question: Charlie is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is big. All cold people are big. Charlie is cold. Charlie is green. All cold people are white.     Question: Charlie is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit likes the lion. The dog likes the bear. The lion eats the bear. If someone does not like the bear and they do not eat the lion then the bear does not visit the lion. The bear visits the rabbit.     Question: The rabbit likes the lion.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit likes the lion. The dog likes the bear. The lion eats the bear. If someone does not like the bear and they do not eat the lion then the bear does not visit the lion. The bear visits the rabbit.     Question: The dog does not like the bear.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is young. Harry is furry. Dave is round. All kind things are young. Gary is kind. All round, quiet things are green. Dave is young. Gary is furry. Dave is green. Anne is big. Harry is green. Harry is quiet. Harry is big. If something is round and green then it is young. Harry is kind.     Question: Harry is quiet.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is young. Harry is furry. Dave is round. All kind things are young. Gary is kind. All round, quiet things are green. Dave is young. Gary is furry. Dave is green. Anne is big. Harry is green. Harry is quiet. Harry is big. If something is round and green then it is young. Harry is kind.     Question: Harry is not big.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is not red. If Fiona is big and Fiona is not red then Fiona is young. Fiona is rough. Erin is rough. Erin is young. Charlie is nice. Charlie is red. If Fiona is quiet and Fiona is rough then Fiona is big. Charlie is not young. If something is green and not nice then it is rough.     Question: Charlie is not young.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is not red. If Fiona is big and Fiona is not red then Fiona is young. Fiona is rough. Erin is rough. Erin is young. Charlie is nice. Charlie is red. If Fiona is quiet and Fiona is rough then Fiona is big. Charlie is not young. If something is green and not nice then it is rough.     Question: Charlie is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The tiger eats the bald eagle. The bear visits the lion. The bald eagle is nice. The tiger likes the lion. The tiger is green. The bald eagle visits the lion. The tiger eats the lion. The tiger is not rough. The tiger likes the bear. The lion visits the bald eagle. The bald eagle likes the lion. The bald eagle is green. If the tiger visits the bear and someone does not like the tiger then they eat the bear.     Question: The tiger eats the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The tiger eats the bald eagle. The bear visits the lion. The bald eagle is nice. The tiger likes the lion. The tiger is green. The bald eagle visits the lion. The tiger eats the lion. The tiger is not rough. The tiger likes the bear. The lion visits the bald eagle. The bald eagle likes the lion. The bald eagle is green. If the tiger visits the bear and someone does not like the tiger then they eat the bear.     Question: The lion does not visit the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is cold and it likes the cat then the cat eats the bear. If something likes the cat and the cat is not young then it is kind. If something is big then it does not eat the bear. The bear eats the cat. If something is nice then it eats the bear. The squirrel likes the cat. The cat likes the squirrel. If something eats the squirrel then the squirrel is young. If something likes the squirrel and the squirrel eats the cat then the cat does not like the bear.     Question: The cat likes the squirrel.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is cold and it likes the cat then the cat eats the bear. If something likes the cat and the cat is not young then it is kind. If something is big then it does not eat the bear. The bear eats the cat. If something is nice then it eats the bear. The squirrel likes the cat. The cat likes the squirrel. If something eats the squirrel then the squirrel is young. If something likes the squirrel and the squirrel eats the cat then the cat does not like the bear.     Question: The cat does not like the squirrel.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: All young, cold things are rough. If something is furry then it is young. If something is cold and rough then it is smart. If something is furry and smart then it is round. Erin is green. All green things are rough. Bob is cold. All young, green things are round. Anne is furry. Charlie is rough. All cold things are rough. All round, young things are furry.     Question: Anne is furry.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: All young, cold things are rough. If something is furry then it is young. If something is cold and rough then it is smart. If something is furry and smart then it is round. Erin is green. All green things are rough. Bob is cold. All young, green things are round. Anne is furry. Charlie is rough. All cold things are rough. All round, young things are furry.     Question: Bob is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear is nice. The bear is not young. If the bear is red then the bear is round. All rough, young people are red. The bear is round. The bear is red. The bear is rough. If the bear is nice then the bear is not young. If the bear is young then the bear is not red. If the bear is round then the bear is rough. If someone is round and not young then they are nice. All round, nice people are not young. If the bear is rough and the bear is red then the bear is nice.     Question: The bear is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear is nice. The bear is not young. If the bear is red then the bear is round. All rough, young people are red. The bear is round. The bear is red. The bear is rough. If the bear is nice then the bear is not young. If the bear is young then the bear is not red. If the bear is round then the bear is rough. If someone is round and not young then they are nice. All round, nice people are not young. If the bear is rough and the bear is red then the bear is nice.     Question: The bear is young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is young. Gary is cold. Anne is round. Green people are smart. Round, cold people are young. Gary is green. Anne is kind. Anne is red. Gary is kind. Anne is smart. Gary is round. Gary is young. Gary is smart. Gary is red. Anne is green. Anne is cold.     Question: Anne is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Anne is young. Gary is cold. Anne is round. Green people are smart. Round, cold people are young. Gary is green. Anne is kind. Anne is red. Gary is kind. Anne is smart. Gary is round. Gary is young. Gary is smart. Gary is red. Anne is green. Anne is cold.     Question: Gary is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow does not eat the rabbit. If something eats the cow and the cow eats the rabbit then it does not see the rabbit. If something eats the rabbit and it is red then the rabbit eats the cow. The rabbit likes the cow. If something is kind and it does not see the cow then it eats the rabbit. The cow sees the rabbit.     Question: The cow does not eat the rabbit.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow does not eat the rabbit. If something eats the cow and the cow eats the rabbit then it does not see the rabbit. If something eats the rabbit and it is red then the rabbit eats the cow. The rabbit likes the cow. If something is kind and it does not see the cow then it eats the rabbit. The cow sees the rabbit.     Question: The rabbit does not like the cow.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion needs the squirrel. If something does not eat the squirrel then it likes the lion. The mouse does not need the squirrel. If something is big then it likes the squirrel. The cow needs the squirrel. If something needs the cow then it likes the cow. The mouse needs the cow. The lion is red. If something needs the mouse then the mouse is big. The squirrel is red. If something eats the squirrel then the squirrel is young. The lion likes the squirrel. The lion needs the cow. The lion needs the mouse. If something likes the squirrel then the squirrel eats the cow. If something needs the mouse then it needs the lion. The squirrel is not kind. The mouse eats the cow. The mouse likes the squirrel. If something does not like the lion then it is young.     Question: The lion is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion needs the squirrel. If something does not eat the squirrel then it likes the lion. The mouse does not need the squirrel. If something is big then it likes the squirrel. The cow needs the squirrel. If something needs the cow then it likes the cow. The mouse needs the cow. The lion is red. If something needs the mouse then the mouse is big. The squirrel is red. If something eats the squirrel then the squirrel is young. The lion likes the squirrel. The lion needs the cow. The lion needs the mouse. If something likes the squirrel then the squirrel eats the cow. If something needs the mouse then it needs the lion. The squirrel is not kind. The mouse eats the cow. The mouse likes the squirrel. If something does not like the lion then it is young.     Question: The mouse does not need the cow.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is cold. Bob is blue. Red, cold people are round. Bob is quiet. Bob is red. Bob is young. Bob is furry. Bob is round.     Question: Bob is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is cold. Bob is blue. Red, cold people are round. Bob is quiet. Bob is red. Bob is young. Bob is furry. Bob is round.     Question: Bob is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something visits the cat and it is rough then it chases the cat. The cat is cold. The dog needs the cat. The cat visits the dog. The dog is cold. The cat is green. The cat chases the dog. The cat is rough. If the dog visits the cat and the cat is green then the cat visits the dog. The cat is red. The cat is kind. The dog is green. The dog visits the cat. The dog is red. The dog is kind. The dog chases the cat. The dog is rough. The cat needs the dog.     Question: The dog is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something visits the cat and it is rough then it chases the cat. The cat is cold. The dog needs the cat. The cat visits the dog. The dog is cold. The cat is green. The cat chases the dog. The cat is rough. If the dog visits the cat and the cat is green then the cat visits the dog. The cat is red. The cat is kind. The dog is green. The dog visits the cat. The dog is red. The dog is kind. The dog chases the cat. The dog is rough. The cat needs the dog.     Question: The dog is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is furry. Fiona is cold. All blue things are cold. Harry is cold. Fiona is not kind. Furry, cold things are not kind. Rough things are big. Harry is not furry. All smart things are cold. Fiona is rough. Harry is big. If Fiona is cold then Fiona is smart. Fiona is smart. Harry is kind. If something is not rough then it is kind. Harry is rough. Harry is smart. Harry is not blue. Charlie is blue. If something is not kind then it is furry. All blue things are smart. Fiona is big. Fiona is blue.     Question: Harry is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is furry. Fiona is cold. All blue things are cold. Harry is cold. Fiona is not kind. Furry, cold things are not kind. Rough things are big. Harry is not furry. All smart things are cold. Fiona is rough. Harry is big. If Fiona is cold then Fiona is smart. Fiona is smart. Harry is kind. If something is not rough then it is kind. Harry is rough. Harry is smart. Harry is not blue. Charlie is blue. If something is not kind then it is furry. All blue things are smart. Fiona is big. Fiona is blue.     Question: Fiona is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is rough. If someone is kind and red then they are rough. Bob is white. Bob is round. If someone is young then they are red. Bob is young. Bob is green. Bob is red. Bob is kind.     Question: Bob is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is rough. If someone is kind and red then they are rough. Bob is white. Bob is round. If someone is young then they are red. Bob is young. Bob is green. Bob is red. Bob is kind.     Question: Bob is not green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something sees the bear then the bear is green. If the tiger sees the bear and the bear visits the tiger then the tiger likes the cow. If the cow sees the tiger then the tiger is nice. The rabbit sees the cow. If something sees the bear then the bear visits the rabbit. If something sees the cow and the cow visits the tiger then it sees the tiger. If something is green then it sees the cow. If something is cold and it visits the cow then it visits the rabbit. The tiger visits the rabbit. The cow visits the tiger. The bear visits the tiger. If something sees the cow and the cow sees the tiger then the tiger sees the bear.     Question: The rabbit sees the cow.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something sees the bear then the bear is green. If the tiger sees the bear and the bear visits the tiger then the tiger likes the cow. If the cow sees the tiger then the tiger is nice. The rabbit sees the cow. If something sees the bear then the bear visits the rabbit. If something sees the cow and the cow visits the tiger then it sees the tiger. If something is green then it sees the cow. If something is cold and it visits the cow then it visits the rabbit. The tiger visits the rabbit. The cow visits the tiger. The bear visits the tiger. If something sees the cow and the cow sees the tiger then the tiger sees the bear.     Question: The tiger does not visit the rabbit.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is not round then it is nice. The dog is young. If something is round and not young then it is not rough. If something is rough and not young then it is red. If something is rough and nice then it is not round. The dog is not nice. All round things are rough. The dog is rough. The dog is red. The dog is round. If something is young and not rough then it is red.     Question: The dog is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is not round then it is nice. The dog is young. If something is round and not young then it is not rough. If something is rough and not young then it is red. If something is rough and nice then it is not round. The dog is not nice. All round things are rough. The dog is rough. The dog is red. The dog is round. If something is young and not rough then it is red.     Question: The dog is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The tiger likes the cat. The dog likes the tiger. If something is round and rough then it is not red. If the dog likes the cat and the cat likes the dog then the dog is green. The cat visits the dog. If the dog is not green then the dog visits the cat.     Question: The cat visits the dog.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The tiger likes the cat. The dog likes the tiger. If something is round and rough then it is not red. If the dog likes the cat and the cat likes the dog then the dog is green. The cat visits the dog. If the dog is not green then the dog visits the cat.     Question: The dog does not like the tiger.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle needs the dog. The dog is not blue. If someone is green then they do not need the bald eagle. If someone is red and they need the dog then they are not big. If someone needs the dog then they are green.     Question: The dog is not blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle needs the dog. The dog is not blue. If someone is green then they do not need the bald eagle. If someone is red and they need the dog then they are not big. If someone needs the dog then they are green.     Question: The bald eagle does not need the dog.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: All nice things are cold. Erin is rough. Erin is quiet. Erin is round. If something is nice then it is quiet. Erin is nice. Erin is blue. Erin is furry. Erin is cold. If something is cold then it is quiet.     Question: Erin is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: All nice things are cold. Erin is rough. Erin is quiet. Erin is round. If something is nice then it is quiet. Erin is nice. Erin is blue. Erin is furry. Erin is cold. If something is cold then it is quiet.     Question: Erin is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear is rough. The bear needs the cow. The cow needs the bear. The bear chases the cow. The cow is not round. The cow is not rough. The cow chases the bear. The bear is not red. The cow is not green. The bear is green. The cow is young. The bear is young. If the bear is red and someone does not like the bear then the bear needs the cow. The bear does not like the cow. The cow likes the bear. The cow is red. If someone does not like the bear and they do not need the cow then the bear chases the cow.     Question: The cow is not round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear is rough. The bear needs the cow. The cow needs the bear. The bear chases the cow. The cow is not round. The cow is not rough. The cow chases the bear. The bear is not red. The cow is not green. The bear is green. The cow is young. The bear is young. If the bear is red and someone does not like the bear then the bear needs the cow. The bear does not like the cow. The cow likes the bear. The cow is red. If someone does not like the bear and they do not need the cow then the bear chases the cow.     Question: The cow is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion needs the squirrel. If something chases the lion then it needs the lion. If something chases the lion then it does not chase the squirrel. If something does not like the lion then it chases the squirrel. If the squirrel chases the lion and the lion likes the squirrel then the lion is round. The lion likes the squirrel. If something likes the squirrel and it chases the lion then the squirrel needs the lion. If something needs the squirrel then the squirrel likes the lion. The squirrel chases the lion.     Question: The lion needs the squirrel.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion needs the squirrel. If something chases the lion then it needs the lion. If something chases the lion then it does not chase the squirrel. If something does not like the lion then it chases the squirrel. If the squirrel chases the lion and the lion likes the squirrel then the lion is round. The lion likes the squirrel. If something likes the squirrel and it chases the lion then the squirrel needs the lion. If something needs the squirrel then the squirrel likes the lion. The squirrel chases the lion.     Question: The lion does not need the squirrel.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is not rough. If someone is cold and not round then they are young. The bald eagle is round. The bald eagle is young. The bald eagle is kind. The bald eagle is cold. If someone is rough then they are young. All rough people are kind.     Question: The bald eagle is not rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is not rough. If someone is cold and not round then they are young. The bald eagle is round. The bald eagle is young. The bald eagle is kind. The bald eagle is cold. If someone is rough then they are young. All rough people are kind.     Question: The bald eagle is rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is round. All round people are cold. The cat is cold. Blue, rough people are cold. Cold, blue people are young. Rough, cold people are blue. If someone is blue and young then they are cold. The cat is young. Round people are rough. The cat is rough. The cat is blue.     Question: The cat is round.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is round. All round people are cold. The cat is cold. Blue, rough people are cold. Cold, blue people are young. Rough, cold people are blue. If someone is blue and young then they are cold. The cat is young. Round people are rough. The cat is rough. The cat is blue.     Question: The cat is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is quiet then it is red. Anne is furry. Anne is not blue. Fiona is blue. Fiona is kind. Charlie is not red. If something is furry and quiet then it is round. If something is kind and not quiet then it is not red. Anne is red. Fiona is quiet.     Question: Fiona is kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is quiet then it is red. Anne is furry. Anne is not blue. Fiona is blue. Fiona is kind. Charlie is not red. If something is furry and quiet then it is round. If something is kind and not quiet then it is not red. Anne is red. Fiona is quiet.     Question: Anne is not furry.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle chases the tiger. The tiger chases the bald eagle. The dog visits the tiger. The dog is rough. The tiger visits the dog. The bald eagle is kind. The tiger likes the bald eagle. If the dog is round and the dog is kind then the dog visits the tiger. If something is kind then it visits the bald eagle.     Question: The dog is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle chases the tiger. The tiger chases the bald eagle. The dog visits the tiger. The dog is rough. The tiger visits the dog. The bald eagle is kind. The tiger likes the bald eagle. If the dog is round and the dog is kind then the dog visits the tiger. If something is kind then it visits the bald eagle.     Question: The tiger does not like the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is blue then they are young. The lion is rough. The lion is kind. The lion is young. If someone is rough and cold then they are blue. If the lion is kind and the lion is young then the lion is rough. Cold people are young. If the lion is rough then the lion is young. If someone is young then they are kind. The lion is cold. If someone is kind then they are rough. Rough, young people are kind. The lion is blue.     Question: The lion is cold.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is blue then they are young. The lion is rough. The lion is kind. The lion is young. If someone is rough and cold then they are blue. If the lion is kind and the lion is young then the lion is rough. Cold people are young. If the lion is rough then the lion is young. If someone is young then they are kind. The lion is cold. If someone is kind then they are rough. Rough, young people are kind. The lion is blue.     Question: The lion is not blue.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle eats the lion. The bear needs the bald eagle. The bald eagle needs the bear. The lion eats the bald eagle. The bald eagle is young. The bear chases the bald eagle. The bear is big. If something eats the bald eagle then the bald eagle needs the lion. The bald eagle is big. The bald eagle needs the lion. The bear is rough. The bear is blue. The bald eagle is rough.     Question: The bear is big.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle eats the lion. The bear needs the bald eagle. The bald eagle needs the bear. The lion eats the bald eagle. The bald eagle is young. The bear chases the bald eagle. The bear is big. If something eats the bald eagle then the bald eagle needs the lion. The bald eagle is big. The bald eagle needs the lion. The bear is rough. The bear is blue. The bald eagle is rough.     Question: The bear is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is not red. Gary is rough. If something is big and nice then it is kind. Gary is white.     Question: Gary is white.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is not red. Gary is rough. If something is big and nice then it is kind. Gary is white.     Question: Gary is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something visits the squirrel and it eats the squirrel then the squirrel eats the bear. The bear is blue. If something eats the bear then the bear is kind. The squirrel is big. The bear visits the squirrel. If something visits the squirrel and the squirrel visits the bear then it eats the squirrel. If something eats the bear then it is kind. If something eats the squirrel and it is big then the squirrel eats the bear. The bear eats the squirrel. The squirrel needs the bear. The bear is red. The squirrel is rough. If something eats the squirrel and the squirrel is rough then the squirrel is blue. The bear needs the squirrel. The bear is rough. The bear is kind. If the bear visits the squirrel then the squirrel needs the bear. If the bear eats the squirrel then the squirrel visits the bear.     Question: The bear is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something visits the squirrel and it eats the squirrel then the squirrel eats the bear. The bear is blue. If something eats the bear then the bear is kind. The squirrel is big. The bear visits the squirrel. If something visits the squirrel and the squirrel visits the bear then it eats the squirrel. If something eats the bear then it is kind. If something eats the squirrel and it is big then the squirrel eats the bear. The bear eats the squirrel. The squirrel needs the bear. The bear is red. The squirrel is rough. If something eats the squirrel and the squirrel is rough then the squirrel is blue. The bear needs the squirrel. The bear is rough. The bear is kind. If the bear visits the squirrel then the squirrel needs the bear. If the bear eats the squirrel then the squirrel visits the bear.     Question: The bear is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is nice. Harry is rough. Harry is cold. Harry is furry. Harry is blue. Harry is big. Harry is young. If Harry is big then Harry is furry. All nice people are big.     Question: Harry is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is nice. Harry is rough. Harry is cold. Harry is furry. Harry is blue. Harry is big. Harry is young. If Harry is big then Harry is furry. All nice people are big.     Question: Harry is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: All red things are young. The mouse is not nice. Cold, red things are young. The mouse is cold. Kind, cold things are not nice. Red, cold things are not kind. Nice things are red. The mouse is not kind. The mouse is red. The mouse is young. Young, cold things are not nice.     Question: The mouse is not kind.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: All red things are young. The mouse is not nice. Cold, red things are young. The mouse is cold. Kind, cold things are not nice. Red, cold things are not kind. Nice things are red. The mouse is not kind. The mouse is red. The mouse is young. Young, cold things are not nice.     Question: The mouse is nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is young. Harry is green. Harry is round. Harry is smart. Charlie is not smart. Charlie is big. Nice people are not round. If Charlie is big and Charlie is not nice then Charlie is green. Charlie is nice. If someone is nice and not young then they are smart.     Question: Charlie is young.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Charlie is young. Harry is green. Harry is round. Harry is smart. Charlie is not smart. Charlie is big. Nice people are not round. If Charlie is big and Charlie is not nice then Charlie is green. Charlie is nice. If someone is nice and not young then they are smart.     Question: Harry is not green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something needs the tiger then the tiger likes the cat. The cat eats the tiger. If something likes the cat and the cat likes the tiger then the tiger eats the cat. If something is rough then it needs the cat. The tiger eats the cat. If something likes the cat then the cat needs the tiger. If something eats the cat and the cat eats the tiger then it likes the cat. If something eats the tiger then the tiger is big.     Question: The tiger eats the cat.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something needs the tiger then the tiger likes the cat. The cat eats the tiger. If something likes the cat and the cat likes the tiger then the tiger eats the cat. If something is rough then it needs the cat. The tiger eats the cat. If something likes the cat then the cat needs the tiger. If something eats the cat and the cat eats the tiger then it likes the cat. If something eats the tiger then the tiger is big.     Question: The tiger does not eat the cat.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is young. Bob is young. Bob is red. Harry is blue. Bob is blue. Harry is round. Harry is red. Bob is furry. Harry is furry. Bob is rough. Bob is smart. If Harry is rough and Harry is smart then Harry is round. Harry is rough. Harry is smart. Bob is round.     Question: Harry is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is young. Bob is young. Bob is red. Harry is blue. Bob is blue. Harry is round. Harry is red. Bob is furry. Harry is furry. Bob is rough. Bob is smart. If Harry is rough and Harry is smart then Harry is round. Harry is rough. Harry is smart. Bob is round.     Question: Bob is not furry.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: All nice, blue things are white. Charlie is green. If Dave is blue and Dave is furry then Dave is red. Fiona is blue. Dave is nice.     Question: Dave is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: All nice, blue things are white. Charlie is green. If Dave is blue and Dave is furry then Dave is red. Fiona is blue. Dave is nice.     Question: Charlie is not green.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Erin is furry. Erin is smart. Erin is white. Dave is furry. Dave is white. Dave is green. Dave is smart. All smart, big people are rough. Dave is kind. If someone is green and furry then they are rough. Erin is big. Erin is green. Dave is big. Dave is rough.     Question: Dave is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Erin is furry. Erin is smart. Erin is white. Dave is furry. Dave is white. Dave is green. Dave is smart. All smart, big people are rough. Dave is kind. If someone is green and furry then they are rough. Erin is big. Erin is green. Dave is big. Dave is rough.     Question: Dave is not white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is rough and white then it is big. Nice things are round. All rough, furry things are smart. If Bob is smart then Bob is nice. Bob is nice. Round things are nice. If Bob is round then Bob is nice. Bob is big. Bob is smart. Bob is rough. Bob is round. Bob is white. Bob is furry.     Question: Bob is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something is rough and white then it is big. Nice things are round. All rough, furry things are smart. If Bob is smart then Bob is nice. Bob is nice. Round things are nice. If Bob is round then Bob is nice. Bob is big. Bob is smart. Bob is rough. Bob is round. Bob is white. Bob is furry.     Question: Bob is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: All cold things are young. Anne is quiet. Anne is cold. Anne is white. All big, white things are young. If Anne is cold and Anne is big then Anne is rough. Anne is green. If something is white then it is rough. Anne is young. If something is young then it is big. Anne is big. If something is quiet and cold then it is rough. Anne is rough.     Question: Anne is quiet.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: All cold things are young. Anne is quiet. Anne is cold. Anne is white. All big, white things are young. If Anne is cold and Anne is big then Anne is rough. Anne is green. If something is white then it is rough. Anne is young. If something is young then it is big. Anne is big. If something is quiet and cold then it is rough. Anne is rough.     Question: Anne is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: All blue people are young. Erin is green. Harry is kind. Dave is red. If Charlie is white then Charlie is blue. If someone is rough and young then they are red. Kind, red people are white. If someone is green and not red then they are blue. Charlie is not white. If someone is not red then they are not white.     Question: Erin is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: All blue people are young. Erin is green. Harry is kind. Dave is red. If Charlie is white then Charlie is blue. If someone is rough and young then they are red. Kind, red people are white. If someone is green and not red then they are blue. Charlie is not white. If someone is not red then they are not white.     Question: Charlie is white.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit chases the mouse. If something needs the rabbit and it does not chase the squirrel then the rabbit likes the squirrel. The squirrel needs the rabbit. The mouse needs the rabbit.     Question: The squirrel needs the rabbit.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The rabbit chases the mouse. If something needs the rabbit and it does not chase the squirrel then the rabbit likes the squirrel. The squirrel needs the rabbit. The mouse needs the rabbit.     Question: The rabbit does not chase the mouse.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is kind. The bald eagle eats the rabbit. The bald eagle needs the rabbit. The rabbit is blue. The bald eagle is big. The cat is big. The rabbit needs the bald eagle. The cat chases the rabbit. If something needs the cat then the cat does not eat the rabbit. The rabbit chases the bald eagle. The bald eagle needs the cat. The bald eagle is not red. If the bald eagle chases the rabbit and the bald eagle does not need the cat then the bald eagle needs the rabbit. If the rabbit is blue and the rabbit eats the bald eagle then the bald eagle is not kind. The rabbit eats the cat. The cat needs the rabbit. The bald eagle is kind. The cat is red.     Question: The bald eagle is not red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is kind. The bald eagle eats the rabbit. The bald eagle needs the rabbit. The rabbit is blue. The bald eagle is big. The cat is big. The rabbit needs the bald eagle. The cat chases the rabbit. If something needs the cat then the cat does not eat the rabbit. The rabbit chases the bald eagle. The bald eagle needs the cat. The bald eagle is not red. If the bald eagle chases the rabbit and the bald eagle does not need the cat then the bald eagle needs the rabbit. If the rabbit is blue and the rabbit eats the bald eagle then the bald eagle is not kind. The rabbit eats the cat. The cat needs the rabbit. The bald eagle is kind. The cat is red.     Question: The bald eagle is not big.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone needs the rabbit and they visit the rabbit then the rabbit is blue. If the cat visits the rabbit and the cat is blue then the cat eats the rabbit. The dog needs the cat. The rabbit needs the dog. The cat needs the rabbit.     Question: The rabbit needs the dog.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone needs the rabbit and they visit the rabbit then the rabbit is blue. If the cat visits the rabbit and the cat is blue then the cat eats the rabbit. The dog needs the cat. The rabbit needs the dog. The cat needs the rabbit.     Question: The dog does not need the cat.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is big and young then they are cold. All nice people are round. The dog is young. If someone is big then they are young.     Question: The dog is young.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is big and young then they are cold. All nice people are round. The dog is young. If someone is big then they are young.     Question: The dog is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Round things are furry. Anne is nice. Anne is kind. Bob is white. If Anne is white then Anne is kind. Erin is cold. Erin is furry. Erin is round. Erin is big. Anne is cold. Bob is kind. If Anne is furry then Anne is round. Charlie is furry.     Question: Anne is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Round things are furry. Anne is nice. Anne is kind. Bob is white. If Anne is white then Anne is kind. Erin is cold. Erin is furry. Erin is round. Erin is big. Anne is cold. Bob is kind. If Anne is furry then Anne is round. Charlie is furry.     Question: Charlie is not furry.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is kind. The bald eagle chases the squirrel. The squirrel is rough. If something chases the squirrel then the squirrel is kind. The bald eagle needs the squirrel. The bald eagle is rough. If something eats the squirrel then the squirrel chases the bald eagle. The squirrel eats the bald eagle. The bald eagle eats the squirrel. The squirrel is kind. The squirrel is round. The squirrel is big. The bald eagle is nice. The bald eagle is big. The squirrel is nice. The squirrel needs the bald eagle. The bald eagle is round. The squirrel chases the bald eagle.     Question: The bald eagle chases the squirrel.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is kind. The bald eagle chases the squirrel. The squirrel is rough. If something chases the squirrel then the squirrel is kind. The bald eagle needs the squirrel. The bald eagle is rough. If something eats the squirrel then the squirrel chases the bald eagle. The squirrel eats the bald eagle. The bald eagle eats the squirrel. The squirrel is kind. The squirrel is round. The squirrel is big. The bald eagle is nice. The bald eagle is big. The squirrel is nice. The squirrel needs the bald eagle. The bald eagle is round. The squirrel chases the bald eagle.     Question: The bald eagle is not round.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If Dave is nice and Dave is blue then Dave is round. Dave is kind. Harry is not furry. Dave is blue. If something is kind and not red then it is quiet. All furry things are blue. If something is nice and red then it is kind. Dave is red. Bob is round. Harry is red. If something is kind and not furry then it is blue. Harry is nice. Harry is kind. Bob is not nice. If something is furry and not nice then it is red. Bob is kind. Harry is round. Bob is blue. Bob is furry. Dave is round. Bob is red.     Question: Dave is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If Dave is nice and Dave is blue then Dave is round. Dave is kind. Harry is not furry. Dave is blue. If something is kind and not red then it is quiet. All furry things are blue. If something is nice and red then it is kind. Dave is red. Bob is round. Harry is red. If something is kind and not furry then it is blue. Harry is nice. Harry is kind. Bob is not nice. If something is furry and not nice then it is red. Bob is kind. Harry is round. Bob is blue. Bob is furry. Dave is round. Bob is red.     Question: Bob is nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone visits the mouse then the mouse is young. The tiger is young. The squirrel sees the mouse. The mouse needs the squirrel. The rabbit visits the mouse. The squirrel sees the tiger. The tiger needs the mouse. The mouse sees the rabbit. The squirrel is red. If someone sees the rabbit and they visit the rabbit then the rabbit sees the tiger. If someone visits the mouse and they see the rabbit then the rabbit visits the tiger. The mouse is young. The squirrel is young. The squirrel is nice. The squirrel visits the rabbit. The rabbit needs the squirrel. The rabbit needs the mouse. If someone sees the rabbit and they visit the tiger then they need the tiger. If the mouse is young then the mouse visits the tiger. The squirrel sees the rabbit. The tiger is kind. If someone is red and big then they see the tiger.     Question: The rabbit needs the squirrel.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone visits the mouse then the mouse is young. The tiger is young. The squirrel sees the mouse. The mouse needs the squirrel. The rabbit visits the mouse. The squirrel sees the tiger. The tiger needs the mouse. The mouse sees the rabbit. The squirrel is red. If someone sees the rabbit and they visit the rabbit then the rabbit sees the tiger. If someone visits the mouse and they see the rabbit then the rabbit visits the tiger. The mouse is young. The squirrel is young. The squirrel is nice. The squirrel visits the rabbit. The rabbit needs the squirrel. The rabbit needs the mouse. If someone sees the rabbit and they visit the tiger then they need the tiger. If the mouse is young then the mouse visits the tiger. The squirrel sees the rabbit. The tiger is kind. If someone is red and big then they see the tiger.     Question: The squirrel does not see the mouse.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear needs the lion. The bear needs the tiger. The bear likes the lion. The tiger is big. The tiger eats the bear. The lion eats the bear. The tiger needs the bear. The tiger is rough. The bear eats the lion. If the tiger needs the bear and the bear needs the lion then the tiger likes the lion. The lion eats the tiger. The tiger eats the lion. The bear likes the tiger. The bear is rough. The bear eats the tiger. The lion likes the tiger. If the lion eats the tiger and the lion needs the tiger then the tiger needs the lion.     Question: The lion eats the tiger.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear needs the lion. The bear needs the tiger. The bear likes the lion. The tiger is big. The tiger eats the bear. The lion eats the bear. The tiger needs the bear. The tiger is rough. The bear eats the lion. If the tiger needs the bear and the bear needs the lion then the tiger likes the lion. The lion eats the tiger. The tiger eats the lion. The bear likes the tiger. The bear is rough. The bear eats the tiger. The lion likes the tiger. If the lion eats the tiger and the lion needs the tiger then the tiger needs the lion.     Question: The bear does not like the tiger.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is red. Bob is young. All red, round things are young. Erin is blue. Bob is not furry. Bob is blue. Erin is quiet. Anne is furry. Gary is not rough. Erin is furry. If something is not rough then it is not round. Gary is furry.     Question: Anne is furry.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is red. Bob is young. All red, round things are young. Erin is blue. Bob is not furry. Bob is blue. Erin is quiet. Anne is furry. Gary is not rough. Erin is furry. If something is not rough then it is not round. Gary is furry.     Question: Gary is not furry.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is red. The bald eagle is kind. The bald eagle is rough. If someone is not rough and not cold then they are not red. If someone is cold then they are rough. All blue people are red. If the bald eagle is rough and the bald eagle is not kind then the bald eagle is cold. If someone is blue and red then they are cold. The bald eagle is cold. Rough people are cold. If the bald eagle is cold and the bald eagle is blue then the bald eagle is rough. The bald eagle is blue. If someone is red and not blue then they are cold.     Question: The bald eagle is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is red. The bald eagle is kind. The bald eagle is rough. If someone is not rough and not cold then they are not red. If someone is cold then they are rough. All blue people are red. If the bald eagle is rough and the bald eagle is not kind then the bald eagle is cold. If someone is blue and red then they are cold. The bald eagle is cold. Rough people are cold. If the bald eagle is cold and the bald eagle is blue then the bald eagle is rough. The bald eagle is blue. If someone is red and not blue then they are cold.     Question: The bald eagle is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is not white. If Erin is white then Erin is not rough. Bob is kind. Anne is red. Erin is quiet. Charlie is kind. Erin is rough. Anne is blue. Charlie is blue. Bob is red. Charlie is rough.     Question: Erin is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Bob is not white. If Erin is white then Erin is not rough. Bob is kind. Anne is red. Erin is quiet. Charlie is kind. Erin is rough. Anne is blue. Charlie is blue. Bob is red. Charlie is rough.     Question: Erin is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow is round. All big things are red. The cow is nice. The cow is kind. The cow is big. All big, nice things are red. The cow is red. Red, kind things are big. If the cow is nice and the cow is kind then the cow is red. Round, nice things are kind. If something is nice then it is kind.     Question: The cow is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cow is round. All big things are red. The cow is nice. The cow is kind. The cow is big. All big, nice things are red. The cow is red. Red, kind things are big. If the cow is nice and the cow is kind then the cow is red. Round, nice things are kind. If something is nice then it is kind.     Question: The cow is not kind.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If Bob is cold then Bob is blue. Bob is green. Bob is nice. Bob is furry. Bob is kind. All round, green people are furry. Blue people are furry. Bob is blue. Bob is cold. Bob is round.     Question: Bob is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If Bob is cold then Bob is blue. Bob is green. Bob is nice. Bob is furry. Bob is kind. All round, green people are furry. Blue people are furry. Bob is blue. Bob is cold. Bob is round.     Question: Bob is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone needs the lion then they see the squirrel. If someone visits the squirrel then the squirrel visits the cat. If someone needs the bear then the bear needs the squirrel. The squirrel is big. If the lion is big then the lion does not visit the bear. The squirrel needs the bear. The cat needs the squirrel. The bear visits the cat. The squirrel does not see the lion. If the bear is nice and someone does not visit the bear then they see the squirrel. The bear sees the lion. The cat does not need the lion. The lion is nice. The cat visits the lion. The bear needs the squirrel. If someone is not nice then they are rough. The squirrel sees the bear. The cat sees the bear. The bear is big. The lion is cold. The lion does not need the bear. The cat is big.     Question: The squirrel needs the bear.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone needs the lion then they see the squirrel. If someone visits the squirrel then the squirrel visits the cat. If someone needs the bear then the bear needs the squirrel. The squirrel is big. If the lion is big then the lion does not visit the bear. The squirrel needs the bear. The cat needs the squirrel. The bear visits the cat. The squirrel does not see the lion. If the bear is nice and someone does not visit the bear then they see the squirrel. The bear sees the lion. The cat does not need the lion. The lion is nice. The cat visits the lion. The bear needs the squirrel. If someone is not nice then they are rough. The squirrel sees the bear. The cat sees the bear. The bear is big. The lion is cold. The lion does not need the bear. The cat is big.     Question: The squirrel does not need the bear.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear eats the squirrel. If someone needs the squirrel then the squirrel is nice. If someone sees the bear and the bear sees the bald eagle then the bald eagle is nice. The bald eagle is red. The squirrel sees the bald eagle.     Question: The bald eagle is red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bear eats the squirrel. If someone needs the squirrel then the squirrel is nice. If someone sees the bear and the bear sees the bald eagle then the bald eagle is nice. The bald eagle is red. The squirrel sees the bald eagle.     Question: The bear does not eat the squirrel.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone visits the tiger and they like the dog then they need the dog. If someone is red then they are rough. If someone visits the dog and the dog needs the bear then they visit the tiger. The tiger needs the lion. The dog likes the tiger. If someone needs the tiger then the tiger is rough. If someone visits the tiger and the tiger needs the bear then the bear visits the dog. The lion visits the tiger. The bear needs the lion. If someone is rough then they like the dog.     Question: The tiger needs the lion.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone visits the tiger and they like the dog then they need the dog. If someone is red then they are rough. If someone visits the dog and the dog needs the bear then they visit the tiger. The tiger needs the lion. The dog likes the tiger. If someone needs the tiger then the tiger is rough. If someone visits the tiger and the tiger needs the bear then the bear visits the dog. The lion visits the tiger. The bear needs the lion. If someone is rough then they like the dog.     Question: The bear does not need the lion.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog likes the bald eagle. The dog eats the bear. The dog is round. The dog sees the bald eagle. The bald eagle likes the cow. The bear is round. If someone is rough then they see the cow. The bald eagle sees the dog. The cow is nice. The bear likes the bald eagle. The dog eats the bald eagle.     Question: The dog eats the bear.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The dog likes the bald eagle. The dog eats the bear. The dog is round. The dog sees the bald eagle. The bald eagle likes the cow. The bear is round. If someone is rough then they see the cow. The bald eagle sees the dog. The cow is nice. The bear likes the bald eagle. The dog eats the bald eagle.     Question: The dog does not like the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The tiger is not kind. The cow is red. The cow does not chase the tiger. The bear is round. If something is rough and it visits the bear then the bear needs the cow. The tiger chases the cow. The tiger is rough. The tiger does not need the cow. The tiger is round. The bear chases the tiger. If something visits the bear then it is red. The bear is kind. If something visits the cow then it visits the bear. The bear needs the tiger. The tiger visits the cow. The bear is nice. The tiger is nice. The cow chases the bear.     Question: The tiger chases the cow.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The tiger is not kind. The cow is red. The cow does not chase the tiger. The bear is round. If something is rough and it visits the bear then the bear needs the cow. The tiger chases the cow. The tiger is rough. The tiger does not need the cow. The tiger is round. The bear chases the tiger. If something visits the bear then it is red. The bear is kind. If something visits the cow then it visits the bear. The bear needs the tiger. The tiger visits the cow. The bear is nice. The tiger is nice. The cow chases the bear.     Question: The tiger is kind.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion is not round. If something is round and not rough then it is not young. The lion is nice. The lion is not rough. All rough things are nice. All round things are not young. The lion is not red. The lion is young.     Question: The lion is not red.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion is not round. If something is round and not rough then it is not young. The lion is nice. The lion is not rough. All rough things are nice. All round things are not young. The lion is not red. The lion is young.     Question: The lion is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is nice. If something is cold and round then it is nice. Cold things are round. If something is round and rough then it is big. All cold things are big. If something is rough then it is round. The cat is rough. The cat is big. All cold things are nice. The cat is round. Big things are rough. If the cat is rough and the cat is cold then the cat is round. The cat is cold.     Question: The cat is nice.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is nice. If something is cold and round then it is nice. Cold things are round. If something is round and rough then it is big. All cold things are big. If something is rough then it is round. The cat is rough. The cat is big. All cold things are nice. The cat is round. Big things are rough. If the cat is rough and the cat is cold then the cat is round. The cat is cold.     Question: The cat is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is red. If something is big and it sees the rabbit then the rabbit is big. The rabbit likes the cat. If something is big and kind then it sees the rabbit. If something needs the cat then it is big. If something sees the rabbit and it needs the rabbit then the rabbit is cold. If something sees the cat then the cat needs the rabbit. If something likes the cat then the cat likes the rabbit. If something sees the rabbit and it needs the cat then the rabbit likes the cat. If the cat sees the rabbit then the cat likes the rabbit.     Question: The rabbit likes the cat.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is red. If something is big and it sees the rabbit then the rabbit is big. The rabbit likes the cat. If something is big and kind then it sees the rabbit. If something needs the cat then it is big. If something sees the rabbit and it needs the rabbit then the rabbit is cold. If something sees the cat then the cat needs the rabbit. If something likes the cat then the cat likes the rabbit. If something sees the rabbit and it needs the cat then the rabbit likes the cat. If the cat sees the rabbit then the cat likes the rabbit.     Question: The cat is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is blue. The mouse likes the rabbit. If something eats the cow and the cow eats the cat then it chases the cow. The rabbit is round. If the cat is nice then the cat is blue. If something eats the rabbit and the rabbit is green then it is green. If the mouse eats the cow then the cow is round. The cow is nice. If something chases the cat and the cat eats the cow then it eats the mouse. If the rabbit eats the cow then the cow eats the mouse.     Question: The cat is blue.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat is blue. The mouse likes the rabbit. If something eats the cow and the cow eats the cat then it chases the cow. The rabbit is round. If the cat is nice then the cat is blue. If something eats the rabbit and the rabbit is green then it is green. If the mouse eats the cow then the cow is round. The cow is nice. If something chases the cat and the cat eats the cow then it eats the mouse. If the rabbit eats the cow then the cow eats the mouse.     Question: The cow is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is rough. The dog does not chase the cat. The cat is rough. If the cat does not visit the bald eagle and the cat does not visit the dog then the dog is kind. If the bald eagle visits the cat and the bald eagle does not visit the squirrel then the squirrel likes the bald eagle. If something likes the dog then it is rough. If something likes the cat and the cat likes the dog then it is not kind. If something chases the cat then the cat chases the bald eagle. If something likes the dog and it is not rough then the dog chases the bald eagle. If something likes the dog and the dog is kind then the dog likes the squirrel. If something likes the cat and it likes the squirrel then it does not chase the bald eagle. The squirrel visits the bald eagle.     Question: The cat is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle is rough. The dog does not chase the cat. The cat is rough. If the cat does not visit the bald eagle and the cat does not visit the dog then the dog is kind. If the bald eagle visits the cat and the bald eagle does not visit the squirrel then the squirrel likes the bald eagle. If something likes the dog then it is rough. If something likes the cat and the cat likes the dog then it is not kind. If something chases the cat then the cat chases the bald eagle. If something likes the dog and it is not rough then the dog chases the bald eagle. If something likes the dog and the dog is kind then the dog likes the squirrel. If something likes the cat and it likes the squirrel then it does not chase the bald eagle. The squirrel visits the bald eagle.     Question: The squirrel does not visit the bald eagle.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is big. Dave is smart. Bob is big. If Bob is nice and Bob is not big then Bob is rough.     Question: Dave is smart.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Dave is big. Dave is smart. Bob is big. If Bob is nice and Bob is not big then Bob is rough.     Question: Bob is not big.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is cold. If someone is nice then they are cold. All smart, quiet people are round. If someone is round then they are cold. Harry is nice. Erin is cold. Harry is quiet. All round, big people are cold. Harry is green. Erin is smart. Dave is green. Green people are quiet. Harry is round. Nice, green people are quiet. Fiona is nice. If someone is round then they are cold. Erin is big. If Harry is quiet and Harry is nice then Harry is green. Dave is nice. Erin is green.     Question: Dave is green.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Fiona is cold. If someone is nice then they are cold. All smart, quiet people are round. If someone is round then they are cold. Harry is nice. Erin is cold. Harry is quiet. All round, big people are cold. Harry is green. Erin is smart. Dave is green. Green people are quiet. Harry is round. Nice, green people are quiet. Fiona is nice. If someone is round then they are cold. Erin is big. If Harry is quiet and Harry is nice then Harry is green. Dave is nice. Erin is green.     Question: Erin is not cold.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is nice then they are green. If someone is not white then they are round. If someone is green and not white then they are big. If someone is not kind then they are not quiet. If Erin is white then Erin is not kind. Dave is nice. If someone is big and nice then they are not quiet. Erin is not big.     Question: Erin is not big.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If someone is nice then they are green. If someone is not white then they are round. If someone is green and not white then they are big. If someone is not kind then they are not quiet. If Erin is white then Erin is not kind. Dave is nice. If someone is big and nice then they are not quiet. Erin is not big.     Question: Dave is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat eats the tiger. The lion needs the tiger. The tiger needs the cat. The lion eats the tiger. The tiger eats the cat. The cat needs the lion. The cat likes the lion. The cat is green. The tiger is nice. The cat likes the tiger. The lion is blue. If the tiger likes the lion and the tiger eats the cat then the lion eats the cat. The lion needs the cat. The cat is big. The tiger is blue. The lion likes the tiger. The cat is nice.     Question: The lion needs the cat.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The cat eats the tiger. The lion needs the tiger. The tiger needs the cat. The lion eats the tiger. The tiger eats the cat. The cat needs the lion. The cat likes the lion. The cat is green. The tiger is nice. The cat likes the tiger. The lion is blue. If the tiger likes the lion and the tiger eats the cat then the lion eats the cat. The lion needs the cat. The cat is big. The tiger is blue. The lion likes the tiger. The cat is nice.     Question: The cat does not need the lion.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is red. Harry is rough. Gary is rough. If Gary is not kind then Gary is not nice. Gary is nice. Harry is furry. If someone is furry and nice then they are rough. Harry is not green. Harry is red. Gary is white. Gary is kind. If someone is rough and not white then they are not green. All furry, red people are kind. If someone is red then they are rough. Harry is not white. Harry is nice. Gary is furry. Harry is kind. Gary is green. If Harry is not rough and Harry is not kind then Harry is red.     Question: Gary is rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is red. Harry is rough. Gary is rough. If Gary is not kind then Gary is not nice. Gary is nice. Harry is furry. If someone is furry and nice then they are rough. Harry is not green. Harry is red. Gary is white. Gary is kind. If someone is rough and not white then they are not green. All furry, red people are kind. If someone is red then they are rough. Harry is not white. Harry is nice. Gary is furry. Harry is kind. Gary is green. If Harry is not rough and Harry is not kind then Harry is red.     Question: Gary is not nice.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is furry. Harry is not round. Harry is green. Harry is kind. Harry is red. Harry is big. If someone is rough and not green then they are not round. Harry is rough.     Question: Harry is furry.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Harry is furry. Harry is not round. Harry is green. Harry is kind. Harry is red. Harry is big. If someone is rough and not green then they are not round. Harry is rough.     Question: Harry is not red.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Rough people are not nice. The bear is nice. If someone is red and kind then they are rough. The bear is not rough. The bear is red. The bear is not kind. The bear is not green. If the bear is not red then the bear is kind.     Question: The bear is not rough.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Rough people are not nice. The bear is nice. If someone is red and kind then they are rough. The bear is not rough. The bear is red. The bear is not kind. The bear is not green. If the bear is not red then the bear is kind.     Question: The bear is rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is not furry. Bob is big. Harry is young. Fiona is furry. If something is big and furry then it is not quiet. If something is cold and not furry then it is young. Gary is nice. Harry is not furry. Gary is quiet. Gary is blue. If something is not blue then it is nice. Gary is young. Fiona is not cold. Gary is big. Bob is blue. Gary is cold. Harry is blue. Harry is not quiet. Bob is nice.     Question: Gary is not furry.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: Gary is not furry. Bob is big. Harry is young. Fiona is furry. If something is big and furry then it is not quiet. If something is cold and not furry then it is young. Gary is nice. Harry is not furry. Gary is quiet. Gary is blue. If something is not blue then it is nice. Gary is young. Fiona is not cold. Gary is big. Bob is blue. Gary is cold. Harry is blue. Harry is not quiet. Bob is nice.     Question: Gary is not young.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion visits the dog. The dog is green. The cat sees the lion. The bear eats the dog. If the bear eats the lion then the bear visits the lion.     Question: The lion visits the dog.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The lion visits the dog. The dog is green. The cat sees the lion. The bear eats the dog. If the bear eats the lion then the bear visits the lion.     Question: The lion does not visit the dog.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: If something likes the bald eagle and it likes the squirrel then the squirrel chases the bald eagle. If something likes the bald eagle then the bald eagle chases the squirrel. If something needs the bald eagle then the bald eagle chases the squirrel. The bald eagle is rough. The squirrel likes the bald eagle.     Question: The squirrel likes the bald eagle.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: If something likes the bald eagle and it likes the squirrel then the squirrel chases the bald eagle. If something likes the bald eagle then the bald eagle chases the squirrel. If something needs the bald eagle then the bald eagle chases the squirrel. The bald eagle is rough. The squirrel likes the bald eagle.     Question: The bald eagle is not rough.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle does not eat the tiger. If something sees the mouse then it is not kind. The bald eagle visits the mouse. The tiger sees the mouse. The cat eats the mouse. The mouse is not big. The tiger does not eat the mouse. The cat is nice. The cat does not see the tiger. The tiger visits the mouse. The bald eagle visits the tiger.     Question: The tiger does not eat the mouse.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paragraph: The bald eagle does not eat the tiger. If something sees the mouse then it is not kind. The bald eagle visits the mouse. The tiger sees the mouse. The cat eats the mouse. The mouse is not big. The tiger does not eat the mouse. The cat is nice. The cat does not see the tiger. The tiger visits the mouse. The bald eagle visits the tiger.     Question: The tiger eats the mouse.",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Categories": [
+        "Classification -> Verification",
+        "Reasoning -> Factual Reasoning"
+    ],
+    "Contributors": [
+        "Surya Singulur"
+    ]
+}
