@@ -1,0 +1,455 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+    <HTMLContent>
+        <![CDATA[
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+    <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet"/>
+    <title></title>
+</head>
+<body>
+<style>
+    body {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        color: #444444;
+        font-size: 12pt;
+        background-color: #FAFAFA;
+    }
+
+    mark {
+        background-color: #cafad5;
+        color: black;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    ul {
+        text-align: left;
+        list-style-position: inside;
+    }
+
+    label {
+        padding-right: 20pt;
+     }
+
+    textarea {
+        font-size: 18px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #submitButton {
+        font-size: 20pt;
+        color: white;
+        background-color: green;
+        border: 2px solid #336600;
+        padding: 3px;
+    }
+
+    table {
+        border-spacing: 5px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    .hoverTable td {
+        padding: 7px;
+        border: #4e95f4 0.2px solid;
+    }
+
+    /* Define the default color for all the table rows */
+    .hoverTable tr {
+        background: #ffffff;
+    }
+
+    /* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+        background-color: #ffff99;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .column {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 5px;
+      float: left;
+      width: 44%;
+      background-color: #d9e8ff;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .row {
+        margin: 5px;
+        padding: 5px;
+     }
+
+    hr {
+        display: block; height: 1px;
+        border: 0; border-top: 1px solid black;
+        margin: 1em 0; padding: 0;
+    }
+
+</style>
+<div class="container">
+    <h3 align="center">Welcome and thank you for your participation!</h3>
+    <h2 align="left"><u>Instructions and Examples</u></h2>
+    <div id="introduction" style="width:1000px; margin:0 auto;">
+        <p>
+            The main purpose of this task is to get your feedback on the quality of the provided instructions below.
+            We use this feedback to improve the quality of the provided instructions for the next round.
+            Please read the instructions and tells us what you think. You can tell us about: (1) typos (2) ambiguous or odd phrasings (3) what can be added/changed to make the task easier to understand.
+            Feel free to be as critical as you want about the instructions.
+        </p>
+        <p>
+            <b>Instructions: </b> {{instructions}}
+        </p>
+        <br>
+        <button onclick="myFunction()">Click here to hide/show positive examples</button>
+        <div id="myDIV">
+        <div style=" background: aliceblue; margin: 10px">
+            <h3>Positive (Desirable) Examples</h3>
+            Here are examples of desirable behaviors for this task:
+            <hr/>
+            <div id="positive_examples" class="examples" style="width:1024px; margin:0 auto; display:block;"> </div>
+        </div>
+        </div>
+
+        <br>
+        <button onclick="myFunction2()">Click here to hide/show negative examples</button>
+        <div id="myDIV2">
+        <div style=" background: mistyrose; margin: 10px">
+            <h3>Negative (Undesirable) Examples</h3>
+            Here are several negative examples (undesirable outputs) for this task:
+            <hr/>
+            <div id="negative_examples" class="examples" style="width:1024px; margin:0 auto; display:block;"> </div>
+        </div>
+        </div>
+        <br>
+
+        Great! You are now ready to start the following examples!
+    </div>
+
+    <br><br>
+
+    <p>
+
+    <h2 align="left"><u>Your Task</u></h2>
+    <div style="width:1024px;margin:0 auto">
+        <div style="position:-webkit-sticky;position:sticky;top:0;background-color:white;padding:10px">
+            <form name='mturk_form' method='POST' id='mturk_form' action='/mturk/externalSubmit'>
+
+                <br>
+                <div class="row" id='row0'>
+                    <p>
+                        First, please tell us how we can improve the above instructions.
+                        <b>We expect you to provide suggestions to improve the instructions for every few HITs.</b>
+                        So, please do not leave them empty all the time.
+                        If the instructions are impeccable, leave the boxes empty (and avoid unconstructive feedback such as "it's good", "nothing", etc.)
+                    </p>
+                    <br>
+                    <b>Instruction quality: </b> <br>
+                        <b>Q1:</b> What did you think about the quality of the task definition?  <br>
+                        <font color="red">(Avoid putting random/garbage text here. Consistent random responses will result in being blocked. Better leave this box empty instead of writing something irrelevant. We bonus those workers with constructive feedback for improving the instructions.)</font>
+                        <br>
+                        <div>
+                            <input type="radio" name="instruction_quality_q1" id="instruction_quality_q11" value="1.0" required>
+                            <label for="instruction_quality_q11"><font color="blue">pretty good</font></label>
+
+                            <input type="radio" name="instruction_quality_q1" id="instruction_quality_q12" value="0.66">
+                            <label for="instruction_quality_q12"><font color="blue">okay</font></label>
+
+                            <input type="radio" name="instruction_quality_q1" id="instruction_quality_q13" value="0.33">
+                            <label for="instruction_quality_q13"><font color="blue">weak</font></label>
+
+                            <input type="radio" name="instruction_quality_q1" id="instruction_quality_q14" value="0.0">
+                            <label for="instruction_quality_q14"><font color="blue">confusing</font></label>
+                        </div>
+
+                        <b>Q2:</b> What can be improved in the instructions, if any? (please indicate any typos, lack of clarities or any other issues)
+                        <!-- <p><input type="text" name="instruction_quality_q2" size="90"></p> -->
+
+                        <p><textarea id="instruction_quality_q2" name="instruction_quality_q2" rows="4" cols="50"></textarea></p>
+
+                </div>
+                <hr/>
+                <div class="row" id='row0'>
+                    <b>Positive examples quality: </b> <br>
+                        <b>Q1:</b> What did you think about the quality of the provided positive examples?  <br>
+
+                        <div>
+                            <input type="radio" name="positive_example_quality_q1" id="positive_example_quality_q11" value="1.0" required>
+                            <label for="positive_example_quality_q11"><font color="blue">pretty good</font></label>
+
+                            <input type="radio" name="positive_example_quality_q1" id="positive_example_quality_q12" value="0.66">
+                            <label for="positive_example_quality_q12"><font color="blue">okay</font></label>
+
+                            <input type="radio" name="positive_example_quality_q1" id="positive_example_quality_q13" value="0.33">
+                            <label for="positive_example_quality_q13"><font color="blue">weak</font></label>
+
+                            <input type="radio" name="positive_example_quality_q1" id="positive_example_quality_q14" value="0.0">
+                            <label for="positive_example_quality_q14"><font color="blue">confusing</font></label>
+                        </div>
+
+                        <b>Q2:</b> What can be improved about the positive examples, if any? (please indicate any typos, lack of clarities or any other issues)
+                        <!-- <p><input type="text" name="positive_example_quality_q2" size="90"></p> -->
+                        <p><textarea id="positive_example_quality_q2" name="positive_example_quality_q2" rows="4" cols="50"></textarea></p>
+                </div>
+                <hr/>
+                <div class="row" id='row0'>
+                    <b>Negative examples quality: </b> <br>
+                        <b>Q1:</b> What did you think about the quality of the provided negative examples?  <br>
+
+                        <div>
+                            <input type="radio" name="negative_example_quality_q1" id="negative_example_quality_q11" value="1.0" required>
+                            <label for="negative_example_quality_q11"><font color="blue">pretty good</font></label>
+
+                            <input type="radio" name="negative_example_quality_q1" id="negative_example_quality_q12" value="0.66">
+                            <label for="negative_example_quality_q12"><font color="blue">okay</font></label>
+
+                            <input type="radio" name="negative_example_quality_q1" id="negative_example_quality_q13" value="0.33">
+                            <label for="negative_example_quality_q13"><font color="blue">weak</font></label>
+
+                            <input type="radio" name="negative_example_quality_q1" id="negative_example_quality_q14" value="0.0">
+                            <label for="negative_example_quality_q14"><font color="blue">confusing</font></label>
+                        </div>
+
+                        <b>Q2:</b> What can be improved about the negative examples, if any? (please indicate any typos, lack of clarities or any other issues)
+                        <!-- <p><input type="text" name="negative_example_quality_q2" size="90"></p> -->
+                        <p><textarea id="negative_example_quality_q2" name="negative_example_quality_q2" rows="4" cols="50"></textarea></p>
+                </div>
+                <hr/>
+
+
+                <div class="row" id='row0_candidates_gr' style="text-align: center;">
+                    <font style="color: red"> Now please answer the following inputs, according to the provided instructions above. </font>
+                </div>
+
+                <div id='instances_div'></div>
+
+                <hr/>
+                <p>
+                    <span>
+                        Please direct any comments, feedback, issues or questions
+                        to this email address:
+                        <a href="mailto:danielk@allenai.org">danielk@allenai.org</a>
+                    </span>
+                </p>
+                <input type="hidden" id="file" name="file" value="{{file}}">
+                <input type="hidden" id="instructions" name="instructions" value="{{instructions}}">
+
+                <div id="hidden_variables"> </div>
+
+                <br>
+                <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+                <p><input type='submit' id='submitButton' value='Submit'/></p>
+            </form>
+            <script language='Javascript'>turkSetAssignmentID();</script>
+        </div>
+        <hr>
+    </div>
+</div>
+<script>
+    // negative
+    var negative_ex_inputs = [
+        "{{negative_ex_0_input}}",
+        "{{negative_ex_1_input}}",
+        "{{negative_ex_2_input}}",
+    ]
+
+    var negative_ex_outputs = [
+        "{{negative_ex_0_output}}",
+        "{{negative_ex_1_output}}",
+        "{{negative_ex_2_output}}",
+    ]
+
+    var negative_ex_explanations = [
+        "{{negative_ex_0_explanation}}",
+        "{{negative_ex_1_explanation}}",
+        "{{negative_ex_2_explanation}}",
+    ]
+
+    // sometimes we don't have 3 negative examples
+    neg_ex_len = negative_ex_inputs.filter((element) => {
+      return element.length > 3;
+    });
+    neg_ex_len = neg_ex_len.length
+    if (neg_ex_len > 0 && neg_ex_len < 5) {
+        negative_ex_inputs = negative_ex_inputs.slice(0,neg_ex_len)
+        negative_ex_outputs = negative_ex_outputs.slice(0,neg_ex_len)
+        negative_ex_explanations = negative_ex_explanations.slice(0,neg_ex_len)
+    }
+
+    // positive
+    var positive_ex_inputs = [
+        "{{positive_ex_0_input}}",
+        "{{positive_ex_1_input}}",
+        "{{positive_ex_2_input}}",
+        "{{positive_ex_3_input}}",
+        "{{positive_ex_4_input}}",
+    ]
+
+    var positive_ex_outputs = [
+        "{{positive_ex_0_output}}",
+        "{{positive_ex_1_output}}",
+        "{{positive_ex_2_output}}",
+        "{{positive_ex_3_output}}",
+        "{{positive_ex_4_output}}",
+    ]
+
+    var positive_ex_explanations = [
+        "{{positive_ex_0_explanation}}",
+        "{{positive_ex_1_explanation}}",
+        "{{positive_ex_2_explanation}}",
+        "{{positive_ex_3_explanation}}",
+        "{{positive_ex_4_explanation}}",
+    ]
+
+    // sometimes we don't have 5 positive examples
+    pos_ex_len = positive_ex_inputs.filter((element) => {
+      return element.length > 3;
+    });
+    pos_ex_len = pos_ex_len.length
+    if (pos_ex_len > 0 && pos_ex_len < 5) {
+        positive_ex_inputs = positive_ex_inputs.slice(0,pos_ex_len)
+        positive_ex_outputs = positive_ex_outputs.slice(0,pos_ex_len)
+        positive_ex_explanations = positive_ex_explanations.slice(0,pos_ex_len)
+    }
+
+    var instance_inputs = [
+        "{{instance_0_input}}",
+        "{{instance_1_input}}",
+    ]
+
+    var instance_outputs = [
+        "{{instance_0_output}}",
+        "{{instance_1_output}}",
+    ]
+
+        positive_ex_inputs.forEach(function(ins, x){
+            var ex = `<h4>Example ${x+1}: </h4>
+                    <b>Input:</b> ${positive_ex_inputs[x]} <br>
+                    <br>
+                    <b>Output:</b> ${positive_ex_outputs[x]} <br>
+                    <br>
+                    <b>Explanation of the example:</b> ${positive_ex_explanations[x]} <br>
+                    <hr/>`;
+
+            $(`#positive_examples`).append(ex);
+        });
+
+        negative_ex_inputs.forEach(function(ins, x){
+            var ex = `<h4>Example ${x+1}: </h4>
+                    <b>Input:</b> ${negative_ex_inputs[x]} <br>
+                    <br>
+                    <b>Output:</b> ${negative_ex_outputs[x]} <br>
+                    <br>
+                    <b>Explanation of the example:</b> ${negative_ex_explanations[x]} <br>
+                    <hr/>`;
+            $(`#negative_examples`).append(ex);
+        });
+
+        instance_inputs.forEach(function(ins, x){
+            var ins = `
+                    <b>Input:</b> ${instance_inputs[x]} <br>
+                    <br>
+                    Now, given the above input, write an appropriate <b>output:</b>
+                    <p><textarea id="annotated_instance_${x}_output" name="annotated_instance_${x}_output" rows="4" cols="50"></textarea></p>
+                    <br>
+                    <hr/>`;
+
+            $(`#instances_div`).append(ins);
+        });
+
+
+        instance_inputs.forEach(function(ins, x){
+            var y = `<input type="hidden" id="instance_${x}_input" name="instance_${x}_input" value="${instance_inputs[x]}">`;
+            $(`#hidden_variables`).append(y);
+
+            var y = `<input type="hidden" id="instance_${x}_output" name="instance_${x}_output" value="${instance_outputs[x]}">`;
+            $(`#hidden_variables`).append(y);
+        });
+
+        negative_ex_inputs.forEach(function(ins, x){
+            // negative
+            var y = `<input type="hidden" id="negative_ex_${x}_input" name="negative_ex_${x}_input" value="${negative_ex_inputs[x]}">`;
+            $(`#hidden_variables`).append(y);
+
+            var y = `<input type="hidden" id="negative_ex_${x}_output" name="negative_ex_${x}_output" value="${negative_ex_outputs[x]}">`;
+            $(`#hidden_variables`).append(y);
+
+            var y = `<input type="hidden" id="negative_ex_${x}_explanation" name="negative_ex_${x}_explanation" value="${negative_ex_explanations[x]}">`;
+            $(`#hidden_variables`).append(y);
+        });
+
+        positive_ex_inputs.forEach(function(ins, x){
+            // positive
+            var y = `<input type="hidden" id="positive_ex_${x}_input" name="positive_ex_${x}_input" value="${positive_ex_inputs[x]}">`;
+            $(`#hidden_variables`).append(y);
+
+            var y = `<input type="hidden" id="positive_ex_${x}_output" name="positive_ex_${x}_output" value="${positive_ex_outputs[x]}">`;
+            $(`#hidden_variables`).append(y);
+
+            var y = `<input type="hidden" id="positive_ex_${x}_explanation" name="positive_ex_${x}_explanation" value="${positive_ex_explanations[x]}">`;
+            $(`#hidden_variables`).append(y);
+        });
+
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function myFunction2() {
+      var x = document.getElementById("myDIV2");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+</script>
+</body>
+</html>
+        ]]>
+    </HTMLContent>
+    <FrameHeight>450</FrameHeight>
+</HTMLQuestion>
