@@ -43,9 +43,6 @@ def aggregate_v2(response_file):
                 worker_stats[worker_id] = 0
             worker_stats[worker_id] += 1
 
-            # if worker_id in ['AGMTUCRIVR6KJ', 'A3LS0JK9E4ILY6', 'A2H2CQLGZHGK14', 'A11ECPSFGOMJ0J', 'A1F43YAOACWEMR']:
-            #     continue
-
             file = json_line[f'file']
             instructions = normalize(json_line[f'instructions'])
 
@@ -123,4 +120,5 @@ def aggregate_v2(response_file):
 # aggregate_v2("batch-4739062e-2141-4f97-9a37-41197abf9a93_start=400_end=600_max_size=5/batch-results.jsonl")
 # aggregate_v2("batch-23353cc5-13c1-4af9-94c3-03eb2bacbd0a_start=600_end=850_max_size=5/batch-results.jsonl")
 # aggregate_v2("batch-4ee23f3d-2900-4fef-a0ae-d05bc7d519e8_start=850_end=1200_max_size=5/batch-results.jsonl")
-aggregate_v2("batch-13abedb3-9788-4118-8a23-89978a941638_start=1200_end=1536_max_size=5/batch-results.jsonl")
+# aggregate_v2("batch-13abedb3-9788-4118-8a23-89978a941638_start=1200_end=1536_max_size=5/batch-results.jsonl")
+aggregate_v2("batch-eb1b61cd-36e7-4fdf-b8e1-fedd3c77245f_start=1540_end=1726_max_size=5/batch-results.jsonl")
