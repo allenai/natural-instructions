@@ -276,7 +276,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task267_concatenate_and_reverse_all_elements_from_index_i_to_j` | Given a list concatenate and then mirror/reverse all the elements starting from ith element and ending at jth element | Answer Generation
 `task268_casehold_legal_answer_generation` | Given a prompt from a judicial decision and multiple potential holdings, choose the correct option. | Answer Generation
 `task269_csrg_counterfactual_story_generation` | Given premise, initial context with ending, and counterfactul context, generate new story ending supporting counterfactual. | Answer generation
-`task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. 
+`task270_csrg_counterfactual_context_generation` | Given premise, initial context with ending, and new counterfactul ending, generate counterfactual context which supports the new story ending. | Answer generation
 `task271_europarl_translation`| Translate a sentence in Bulgarian to English. | Translation
 `task272_europarl_translation`| Translate a sentence in English to Bulgarian. | Translation
 `task273_europarl_classification`| Given a sentence in Bulgarian and its corresponding English translation, verify that the translation is correct. | Classification
