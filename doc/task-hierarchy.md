@@ -120,6 +120,7 @@
   - `Question Answering -> Open Question Answering`
 - `Question Generation`
   - `Question Generation -> Clarifying Question`: Ask clarifying question to get more information
+  - `Question Generation -> Commonsense Question`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
       - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
       - `Question Generation -> Contextual Question Generation -> Open Question Generation`
