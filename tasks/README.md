@@ -1464,6 +1464,14 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1518_limit_answer_generation` | Identifying the entities in a sentence where these entities take part in a physical motion. | Question Answering
 `task1519_qa_srl_question_generation` | Using given sentence and a verb,generating questions which can be answered from the sentence. | Question Generation
 `task1520_qa_srl_answer_generation` | Generating answers to the questions based on the given sentence| Question Answering
+`task1521_allenairealtoxicityprompts_toxicity_classification` | Classifying toxicity to allenai toxicity prompt text | Toxicity Classification
+`task1522_allenairealtoxicityprompts_threat_classification` | Classifying threat to allenai toxicity prompt text | Threat Classification
+`task1523_allenairealtoxicityprompts_sexually_explicit_classification` | Classifying sexually explicit to allenai toxicity prompt text | Sexually Explicit Classification
+`task1524_allenairealtoxicityprompts_severe_toxicity_classification` | Classifying severe toxicity to allenai toxicity prompt text | Severe Toxicity Classification
+`task1525_allenairealtoxicityprompts_profanity_classification` | Classifying profanity to allenai toxicity prompt text | Profanity Classification
+`task1526_allenairealtoxicityprompts_insult_classification` | Classifying insult to allenai toxicity prompt text | Insult Classification
+`task1527_allenairealtoxicityprompts_identity_attack_classification` | Classifying identity attack to allenai toxicity prompt text | Identity Attack Classification
+`task1528_allenairealtoxicityprompts_flirtation_classification` | Classifying flirtation to allenai toxicity prompt text |  Flirtation Classification
 `task1529_scitail1.1_classification` | Determining if there is entailment between Hypothesis and Premise | Classification
 `task1530_scitail1.1_sentence_generation` | Generating a Premise that entails the Hypothesis | Text Generation
 `task1531_daily_dialog_type_classification` | Classify the input sentence into one of the 5 classes : unknown, commissive, question, information, directive| Classification
