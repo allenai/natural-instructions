@@ -252,6 +252,7 @@
   - `Text Modification -> Text Simplification`
 - `Text Span Selection`
 - `Title Selection`
+- `Translation`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`  
 - `Word Sense Disambiguation`
