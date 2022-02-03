@@ -125,6 +125,7 @@
       - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
       - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank` 
+  - `Question Generation -> Multiple Choice Question Generation` 
   - `Question Generation -> Option Generation`
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
