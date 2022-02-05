@@ -1495,8 +1495,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1559_blimp_binary_classification`	| Classifying sentences (based on Blimp)	| Classification -> Verification,Reasoning -> Grammatical Reasoning	| Linguistics	| English	| English
 `task1560_blimp_binary_classification`	| Classifying sentences (based on Blimp)	| Classification -> Verification,Reasoning -> Grammatical Reasoning	| Linguistics	| English	| English
 `task1561_clickbait_new_bg_summarization`	| Providing a title summary to passage from Clickbait_new_bg dataset	| Summarization,Text Generation -> Title Generation	| News	| Bulgarian	| Bulgarian
-`task1562_clickbait_new_bg_answer_generation`	| Generating fake news score from passage in Clickbait_new_bg dataset	| Detection -> Fake News Detection,Classification	| News	| Bulgarian	| English
-`task1563_clickbait_new_bg_answer_generation`	| Generating click bait score from passage in Clickbait_new_bg dataset	| Text Generation -> Number Generation,Reasoning -> Factual Reasoning	| News	| Bulgarian	| English
 `task1564_triviaqa_answer_generation`	| Generating answers to questions in TriviaQA dataset	| Question Answering -> Open Question Answering	| Web,Wikipedia	| English	| English
 `task1565_triviaqa_classification`	| Finding answer to multiple choice questions in TriviaQA dataset	| Question Answering -> Multiple Choice Question Answering,Question Answering -> Open Question Answering	| Web,Wikipedia	| English	| English
 `task1566_propara_structured_text_generation`	| Generate entities from given text	| Detection -> Entity Detection -> Extractive,Text Generation -> Structured Text Generation,Document Understanding	| Natural Science	| English	| English
