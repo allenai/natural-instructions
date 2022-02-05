@@ -120,10 +120,12 @@
   - `Question Answering -> Open Question Answering`
 - `Question Generation`
   - `Question Generation -> Clarifying Question`: Ask clarifying question to get more information
+  - `Question Generation -> Commonsense Question`
   - `Question Generation -> Contextual Question Generation`: Generate questions based on given context e.g. a task to create a question based on a paragraph.
       - `Question Generation -> Contextual Question Generation -> Generate from an Answer`
       - `Question Generation -> Contextual Question Generation -> Open Question Generation`
   - `Question Generation -> Fill in the Blank` 
+  - `Question Generation -> Multiple Choice Question Generation` 
   - `Question Generation -> Option Generation`
   - `Question Generation -> Paraphrase Question Generation`: Generate a question as a paraphrase of the original question
   - `Question Generation -> Question Composition`: Compose questions by concating questions in the input
@@ -251,6 +253,7 @@
   - `Text Modification -> Text Simplification`
 - `Text Span Selection`
 - `Title Selection`
+- `Translation`
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`  
 - `Word Sense Disambiguation`
