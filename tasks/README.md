@@ -451,7 +451,6 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task442_com_qa_paraphrase_question_generation`	| Generating paraphrases of com_qa questions	| Text Modification -> Paraphrase Generation,Question Generation -> Paraphrase Question Generation	| Web	| English	| English
 `task443_com_qa_ans_question_generation`	| Generating questions for com_qa answers	| Question Generation -> Contextual Question Generation -> Generate from an Answer	| Web	| English	| English
 `task444_com_qa_question_paraphrases_answer_generation`	| Generating answers for com_qa question paraphrases	| Question Answering -> Open Question Answering	| Web	| English	| English
-`task445_com_qa_wikipedia_answer_generation`	| Generating wikipedia links for com_qa questions	| Question Answering -> Open Question Answering,Weblink Generation	| Web	| English	| English
 `task446_opus_paracrawl_en_so_translation`	| Translating English text to Somali	| Translation	| Web	| English	| Somali
 `task447_opus_paracrawl_classification`	| Generating the language of the text	| Language Identification	| Web	| French,English,Dutch,Somali,Tagalog	| English
 `task448_opus_paracrawl_en_tl_translation`	| Translating English text to Tagalog	| Translation	| Web	| English	| Tagalog
