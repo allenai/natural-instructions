@@ -44,15 +44,15 @@ if __name__ == "__main__":
         if ".json" in file:
             file_path = tasks_path + file
             # open each json file
-            with open(file_path, 'r+') as f:
+            with open(file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 if "Domains" in data and "Input_language" in data and "Output_language" in data: 
                     task_name = path.splitext(file)[0]
                     new_fields = {
-                        "category": data["Categories"][0],
-                        "domains": data["Domains"][0],
-                        "input_language": data["Input_language"][0],
-                        "output_language": data["Output_language"][0]
+                        "category": ", ".join(data["Categories"]),
+                        "domains": ", ".join(data["Domains"]),
+                        "input_language": ", ".join(data["Input_language"]),
+                        "output_language": ", ".join(data["Output_language"])
                     }
                     modify_task_line(task_name, lines, new_fields)
                     update_readme(readme_path, lines)
