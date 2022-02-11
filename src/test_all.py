@@ -38,6 +38,7 @@ expected_keys = [
     "Instances",
     'Contributors',
     'Categories',
+    'Domains',
     'Source'
 ]
 
@@ -77,10 +78,6 @@ def natural_keys(text):
     '''
     return [ atoi(c) for c in re.split(r'(\d+)', text) ]
 
-# TODO: over time, these should be moved up to "expected_keys"
-suggested_keys = [
-    "Domains"
-]
 
 with open("tasks/README.md", 'r') as readmef:
     task_readme_content = " ".join(readmef.readlines())
@@ -137,9 +134,6 @@ for file in files[begin_task_number:end_task_number + 1]:
             for key in expected_keys:
                 assert key in data, f'did not find the key: {key}'
 
-            for key in suggested_keys:
-                if key not in data:
-                    print(f'⚠️ WARNING: did not find the key: {key}')
 
             assert len(data['Instances']) > 25, f"there must be at least 25 instances; " \
                                                 f"currently you have {len(data['Instances'])} instances"
@@ -151,8 +145,7 @@ for file in files[begin_task_number:end_task_number + 1]:
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
             for c in data['Categories']:
-                if c not in all_categories:
-                    print(f'⚠️ WARNING: Did not find category `{c}`')
+                assert c in all_categories, f'Did not find category `{c}`'
 
                 if c not in categories_stats:
                     categories_stats[c] = 0
