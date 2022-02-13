@@ -6,11 +6,10 @@
         "Logic2Text (dataset: https://github.com/czyssrs/Logic2Text, paper:https://arxiv.org/abs/2004.14579)"
     ],
     "Categories": [
-        "Classification",
-        "Reasoning -> Logical Reasoning"
+        "Classification"
     ],
     "Definition": "In this task, you are given commands (in terms of logical operations) to select relevant rows from the given table. Your job is to classify the command into one of these seven categories: (1) majority, (2) unique, (3) superlative, (4) count, (5) comparative, (6) aggregation, and (7) ordinal. \n Here are the defications of each category: \n 1. majority: Describing the majority values (most or all) over one column, with the scope of all table rows or a subset of rows \n 2. unique: Describing one unique row, regarding one column, with the scope of all table rows or a subset of rows \n 3. Superlative: Describing the maximum or minimum value in a column, with the scope of all table rows or a subset of rows \n 4. Ordinal: Describing the n-th maximum or minimum value in a column, with the scope of all table rows or a subset of rows \n 5. Comparative: Comparing two rows in the table, regarding their values in one column \n 6. Count: counting some rows in the table based on the values in one column, with the scope of all table rows or a subset of rows \n 7. Aggregation: Describing the sum or average value over a column, with the scope of all table rows or a subset of rows. \n Here are the definitions of logical operators for understanding of command: \n 1. count: returns the number of rows in the view. \n 2. only: returns whether there is exactly one row in the view. \n 3. hop: returns the value under the header column of the row. \n 4. and: returns the boolean operation result of two arguments. \n 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column. \n 6. nth_max/nth_min: returns the n-th max/n-th min of the values under the header column. \n 7. argmax/argmin: returns the row with the max/min value in header column. \n 8. nth_argmax/nth_argmin: returns the row with the n-th max/min value in header column. \n 9. eq/not_eq: returns if the two arguments are equal. \n 10. round_eq: returns if the two arguments are roughly equal under certain tolerance. \n 11. greater/less: returns if the first argument is greater/less than the second argument. \n 12. diff: returns the difference between two arguments. \n 13. filter_eq/ filter_not_eq: returns the subview whose values under the header column is equal/not equal to the third argument. \n 14. filter_greater/filter_less: returns the subview whose values under the header column is greater/less than the third argument. \n 15. filter_greater_eq /filter_less_eq: returns the subview whose values under the header column is greater/less or equal than the third argument. \n 16. filter_all: returns the view itself for the case of describing the whole table \n 17. all_eq/not_eq: returns whether all the values under the header column are equal/not equal to the third argument. \n 18. all_greater/less: returns whether all the values under the header column are greater/less than the third argument. \n 19. all_greater_eq/less_eq: returns whether all the values under the header column are greater/less or equal to the third argument. \n 20. most_eq/not_eq: returns whether most of the values under the header column are equal/not equal to the third argument. \n 21. most_greater/less: returns whether most of the values under the header column are greater/less than the third argument. \n 22. most_greater_eq/less_eq: returns whether most of the values under the header column are greater/less or equal to the third argument.",
-    "Domains": [    
+    "Domains": [
         "Wikipedia",
         "Logic -> Propositional Logic"
     ],
@@ -525,7 +524,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; number of episodes ; 3 } ; english title ( chinese title ) } ; journey to the west ii \u897f\u904a\u8a18 ( \u8cb3 ) }",
+            "input": "eq { hop { nth_argmax { all_rows ; number of episodes ; 3 } ; english title ( chinese title ) } ; journey to the west ii 西遊記 ( 貳 ) }",
             "output": [
                 "ordinal"
             ]
@@ -615,7 +614,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; inhabitants ; 0 } } ; eq { hop { filter_eq { all_rows ; inhabitants ; 0 } ; name } ; l\u00edtla d\u00edmun } }",
+            "input": "and { only { filter_eq { all_rows ; inhabitants ; 0 } } ; eq { hop { filter_eq { all_rows ; inhabitants ; 0 } ; name } ; lítla dímun } }",
             "output": [
                 "unique"
             ]
@@ -633,7 +632,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; team 2 ; stade quimp\u00e9rois ( d2 ) } ; score } ; hop { filter_eq { all_rows ; team 2 ; rc lens ( d1 ) } ; score } }",
+            "input": "greater { hop { filter_eq { all_rows ; team 2 ; stade quimpérois ( d2 ) } ; score } ; hop { filter_eq { all_rows ; team 2 ; rc lens ( d1 ) } ; score } }",
             "output": [
                 "comparative"
             ]
@@ -1119,7 +1118,7 @@
             ]
         },
         {
-            "input": "and { only { filter_greater { filter_less { all_rows ; played ; 114 } ; average ; 1.0 } } ; eq { hop { filter_greater { filter_less { all_rows ; played ; 114 } ; average ; 1.0 } ; team } ; hurac\u00e1n } }",
+            "input": "and { only { filter_greater { filter_less { all_rows ; played ; 114 } ; average ; 1.0 } } ; eq { hop { filter_greater { filter_less { all_rows ; played ; 114 } ; average ; 1.0 } ; team } ; huracán } }",
             "output": [
                 "unique"
             ]
@@ -1209,7 +1208,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; points } ; artist } ; andr\u00e9 claveau }",
+            "input": "eq { hop { argmax { all_rows ; points } ; artist } ; andré claveau }",
             "output": [
                 "superlative"
             ]
@@ -1395,7 +1394,7 @@
             ]
         },
         {
-            "input": "and { eq { nth_min { filter_eq { all_rows ; venue ; municipal stadium , pozna\u0144 } ; date ; 3 } ; 14 june 2012 } ; eq { hop { nth_argmin { filter_eq { all_rows ; venue ; municipal stadium , pozna\u0144 } ; date ; 3 } ; date } ; 14 june 2012 } }",
+            "input": "and { eq { nth_min { filter_eq { all_rows ; venue ; municipal stadium , poznań } ; date ; 3 } ; 14 june 2012 } ; eq { hop { nth_argmin { filter_eq { all_rows ; venue ; municipal stadium , poznań } ; date ; 3 } ; date } ; 14 june 2012 } }",
             "output": [
                 "ordinal"
             ]
@@ -1425,7 +1424,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { all_rows ; date of appointment ; 1 } ; team } ; acad\u00e9mica de coimbra }",
+            "input": "eq { hop { nth_argmin { all_rows ; date of appointment ; 1 } ; team } ; académica de coimbra }",
             "output": [
                 "ordinal"
             ]
@@ -1683,7 +1682,7 @@
             ]
         },
         {
-            "input": "and { greater { hop { filter_eq { all_rows ; project ; \u00f6zhan canayd\u0131n project } ; capacity } ; hop { filter_eq { all_rows ; project ; faruk s\u00fcren project } ; capacity } } ; and { eq { hop { filter_eq { all_rows ; project ; \u00f6zhan canayd\u0131n project } ; capacity } ; 52652 } ; eq { hop { filter_eq { all_rows ; project ; faruk s\u00fcren project } ; capacity } ; 40482 } } }",
+            "input": "and { greater { hop { filter_eq { all_rows ; project ; özhan canaydın project } ; capacity } ; hop { filter_eq { all_rows ; project ; faruk süren project } ; capacity } } ; and { eq { hop { filter_eq { all_rows ; project ; özhan canaydın project } ; capacity } ; 52652 } ; eq { hop { filter_eq { all_rows ; project ; faruk süren project } ; capacity } ; 40482 } } }",
             "output": [
                 "comparative"
             ]
@@ -2253,7 +2252,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { filter_eq { all_rows ; debut in europe ; 1995 } ; games } ; player } ; ra\u00e3l }",
+            "input": "eq { hop { argmax { filter_eq { all_rows ; debut in europe ; 1995 } ; games } ; player } ; raãl }",
             "output": [
                 "superlative"
             ]
@@ -2265,7 +2264,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; vote percentage } ; player } ; hamit alt\u0131ntop }",
+            "input": "eq { hop { argmax { all_rows ; vote percentage } ; player } ; hamit altıntop }",
             "output": [
                 "superlative"
             ]
@@ -2769,7 +2768,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; country ; spain } } ; eq { hop { filter_eq { all_rows ; country ; spain } ; player } ; jos\u00e9 mar\u00eda olaz\u00e1bal } }",
+            "input": "and { only { filter_eq { all_rows ; country ; spain } } ; eq { hop { filter_eq { all_rows ; country ; spain } ; player } ; josé maría olazábal } }",
             "output": [
                 "unique"
             ]
@@ -2829,7 +2828,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; province ; santiago de cuba } ; density } ; hop { filter_eq { all_rows ; province ; pinar del r\u00edo } ; density } }",
+            "input": "greater { hop { filter_eq { all_rows ; province ; santiago de cuba } ; density } ; hop { filter_eq { all_rows ; province ; pinar del río } ; density } }",
             "output": [
                 "comparative"
             ]
@@ -3327,7 +3326,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; wins ; 2 } ; club } ; rcd espa\u00f1ol }",
+            "input": "eq { hop { nth_argmax { all_rows ; wins ; 2 } ; club } ; rcd español }",
             "output": [
                 "ordinal"
             ]
@@ -3795,7 +3794,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; points } ; team } ; palestra it\u00e1lia - sp }",
+            "input": "eq { hop { argmax { all_rows ; points } ; team } ; palestra itália - sp }",
             "output": [
                 "superlative"
             ]
@@ -4011,13 +4010,13 @@
             ]
         },
         {
-            "input": "round_eq { avg { all_rows ; top speed ( in operation ) \uff08 km / h \uff09 } ; 106.33 }",
+            "input": "round_eq { avg { all_rows ; top speed ( in operation ) （ km / h ） } ; 106.33 }",
             "output": [
                 "aggregation"
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; wins ; 7 } } ; eq { hop { filter_eq { all_rows ; wins ; 7 } ; driver } ; s\u00e9bastien loeb } }",
+            "input": "and { only { filter_eq { all_rows ; wins ; 7 } } ; eq { hop { filter_eq { all_rows ; wins ; 7 } ; driver } ; sébastien loeb } }",
             "output": [
                 "unique"
             ]
@@ -4539,7 +4538,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; 2nd leg ; 4 } } ; and { eq { hop { filter_eq { all_rows ; 2nd leg ; 4 } ; team 1 } ; rabotni\u010dki } ; eq { hop { filter_eq { all_rows ; 2nd leg ; 4 } ; team 2 } ; ilinden } } }",
+            "input": "and { only { filter_eq { all_rows ; 2nd leg ; 4 } } ; and { eq { hop { filter_eq { all_rows ; 2nd leg ; 4 } ; team 1 } ; rabotnički } ; eq { hop { filter_eq { all_rows ; 2nd leg ; 4 } ; team 2 } ; ilinden } } }",
             "output": [
                 "unique"
             ]
@@ -4719,7 +4718,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; elevation ( m ) ; 2 } ; peak } ; sn\u00f8hetta }",
+            "input": "eq { hop { nth_argmax { all_rows ; elevation ( m ) ; 2 } ; peak } ; snøhetta }",
             "output": [
                 "ordinal"
             ]
@@ -4983,7 +4982,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; county ; oppland } } ; eq { hop { filter_eq { all_rows ; county ; oppland } ; name } ; galdh\u00f8piggen } }",
+            "input": "and { only { filter_eq { all_rows ; county ; oppland } } ; eq { hop { filter_eq { all_rows ; county ; oppland } ; name } ; galdhøpiggen } }",
             "output": [
                 "unique"
             ]
@@ -5031,7 +5030,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; score ; 70 } ; country ; denmark } } ; eq { hop { filter_eq { filter_eq { all_rows ; score ; 70 } ; country ; denmark } ; player } ; s\u00f8ren kjeldsen } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; score ; 70 } ; country ; denmark } } ; eq { hop { filter_eq { filter_eq { all_rows ; score ; 70 } ; country ; denmark } ; player } ; søren kjeldsen } }",
             "output": [
                 "unique"
             ]
@@ -5055,7 +5054,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; 1st leg ; 0-0 } } ; and { eq { hop { filter_eq { all_rows ; 1st leg ; 0-0 } ; team 1 } ; s\u00e3o paulo } ; eq { hop { filter_eq { all_rows ; 1st leg ; 0-0 } ; team 2 } ; nacional } } }",
+            "input": "and { only { filter_eq { all_rows ; 1st leg ; 0-0 } } ; and { eq { hop { filter_eq { all_rows ; 1st leg ; 0-0 } ; team 1 } ; são paulo } ; eq { hop { filter_eq { all_rows ; 1st leg ; 0-0 } ; team 2 } ; nacional } } }",
             "output": [
                 "unique"
             ]
@@ -5067,7 +5066,7 @@
             ]
         },
         {
-            "input": "most_eq { all_rows ; horse ; yp\u00e4j\u00e4 karuso }",
+            "input": "most_eq { all_rows ; horse ; ypäjä karuso }",
             "output": [
                 "majority"
             ]
@@ -5133,7 +5132,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; armour ( inch ) ; 10 } } ; eq { hop { filter_eq { all_rows ; armour ( inch ) ; 10 } ; warship } ; manco c\u00e1pac } }",
+            "input": "and { only { filter_eq { all_rows ; armour ( inch ) ; 10 } } ; eq { hop { filter_eq { all_rows ; armour ( inch ) ; 10 } ; warship } ; manco cápac } }",
             "output": [
                 "unique"
             ]
@@ -5691,7 +5690,7 @@
             ]
         },
         {
-            "input": "most_eq { filter_eq { all_rows ; team classification ; relax - gam } ; sprints classification ; v\u00edctor hugo pe\u00f1a }",
+            "input": "most_eq { filter_eq { all_rows ; team classification ; relax - gam } ; sprints classification ; víctor hugo peña }",
             "output": [
                 "majority"
             ]
@@ -5895,7 +5894,7 @@
             ]
         },
         {
-            "input": "eq { count { filter_eq { all_rows ; candidate ; kalevi kivist\u00f6 } } ; 2 }",
+            "input": "eq { count { filter_eq { all_rows ; candidate ; kalevi kivistö } } ; 2 }",
             "output": [
                 "count"
             ]
@@ -5943,7 +5942,7 @@
             ]
         },
         {
-            "input": "eq { diff { hop { filter_eq { all_rows ; incumbent ; james o'connor } ; first elected } ; hop { filter_eq { all_rows ; incumbent ; henry garland dupr\u00e9 } ; first elected } } ; 10 }",
+            "input": "eq { diff { hop { filter_eq { all_rows ; incumbent ; james o'connor } ; first elected } ; hop { filter_eq { all_rows ; incumbent ; henry garland dupré } ; first elected } } ; 10 }",
             "output": [
                 "comparative"
             ]
@@ -6915,7 +6914,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; team ; v\u00e9lez s\u00e1rsfield } ; points } ; hop { filter_eq { all_rows ; team ; newell 's old boys } ; points } }",
+            "input": "greater { hop { filter_eq { all_rows ; team ; vélez sársfield } ; points } ; hop { filter_eq { all_rows ; team ; newell 's old boys } ; points } }",
             "output": [
                 "comparative"
             ]
@@ -7509,7 +7508,7 @@
             ]
         },
         {
-            "input": "eq { diff { hop { filter_eq { all_rows ; winner ; sergio rivero } ; year } ; hop { filter_eq { all_rows ; winner ; vicente segu\u00ed porres } ; year } } ; 2 years }",
+            "input": "eq { diff { hop { filter_eq { all_rows ; winner ; sergio rivero } ; year } ; hop { filter_eq { all_rows ; winner ; vicente seguí porres } ; year } } ; 2 years }",
             "output": [
                 "comparative"
             ]
@@ -7533,7 +7532,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; elevation ( m ) } ; peak } ; galdh\u00f8piggen }",
+            "input": "eq { hop { argmax { all_rows ; elevation ( m ) } ; peak } ; galdhøpiggen }",
             "output": [
                 "superlative"
             ]
@@ -7617,7 +7616,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; time / retired ; off course } } ; eq { hop { filter_eq { all_rows ; time / retired ; off course } ; driver } ; gast\u00f3n mazzacane } }",
+            "input": "and { only { filter_eq { all_rows ; time / retired ; off course } } ; eq { hop { filter_eq { all_rows ; time / retired ; off course } ; driver } ; gastón mazzacane } }",
             "output": [
                 "unique"
             ]
@@ -7713,7 +7712,7 @@
             ]
         },
         {
-            "input": "and { less { hop { filter_eq { all_rows ; club ; mar\u00edtimo } ; 2004 - 2005 season } ; hop { filter_eq { all_rows ; club ; nacional } ; 2004 - 2005 season } } ; and { eq { hop { filter_eq { all_rows ; club ; mar\u00edtimo } ; city } ; funchal } ; eq { hop { filter_eq { all_rows ; club ; nacional } ; city } ; funchal } } }",
+            "input": "and { less { hop { filter_eq { all_rows ; club ; marítimo } ; 2004 - 2005 season } ; hop { filter_eq { all_rows ; club ; nacional } ; 2004 - 2005 season } } ; and { eq { hop { filter_eq { all_rows ; club ; marítimo } ; city } ; funchal } ; eq { hop { filter_eq { all_rows ; club ; nacional } ; city } ; funchal } } }",
             "output": [
                 "comparative"
             ]
@@ -7809,7 +7808,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; 1st leg ; 1 - 1 } ; 2nd leg ; 1 - 1 } } ; eq { hop { filter_eq { filter_eq { all_rows ; 1st leg ; 1 - 1 } ; 2nd leg ; 1 - 1 } ; team 1 } ; atl\u00e9tico mineiro } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; 1st leg ; 1 - 1 } ; 2nd leg ; 1 - 1 } } ; eq { hop { filter_eq { filter_eq { all_rows ; 1st leg ; 1 - 1 } ; 2nd leg ; 1 - 1 } ; team 1 } ; atlético mineiro } }",
             "output": [
                 "unique"
             ]
@@ -8073,7 +8072,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; governorate ; piotrk\u00f3w governorate } ; population , in thousands , ( 1905 ) } ; hop { filter_eq { all_rows ; governorate ; p\u0142ock governorate } ; population , in thousands , ( 1905 ) } }",
+            "input": "greater { hop { filter_eq { all_rows ; governorate ; piotrków governorate } ; population , in thousands , ( 1905 ) } ; hop { filter_eq { all_rows ; governorate ; płock governorate } ; population , in thousands , ( 1905 ) } }",
             "output": [
                 "comparative"
             ]
@@ -8265,7 +8264,7 @@
             ]
         },
         {
-            "input": "and { eq { nth_min { all_rows ; place ; 4 } ; 4th } ; eq { hop { nth_argmin { all_rows ; place ; 4 } ; artist } ; javiera mu\u00f1oz } }",
+            "input": "and { eq { nth_min { all_rows ; place ; 4 } ; 4th } ; eq { hop { nth_argmin { all_rows ; place ; 4 } ; artist } ; javiera muñoz } }",
             "output": [
                 "ordinal"
             ]
@@ -8493,7 +8492,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; power } ; city of license } ; gasp\u00e9 }",
+            "input": "eq { hop { argmin { all_rows ; power } ; city of license } ; gaspé }",
             "output": [
                 "superlative"
             ]
@@ -8835,7 +8834,7 @@
             ]
         },
         {
-            "input": "only { filter_eq { all_rows ; venue ; reykjav\u00edk } }",
+            "input": "only { filter_eq { all_rows ; venue ; reykjavík } }",
             "output": [
                 "unique"
             ]
@@ -9111,7 +9110,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; lost ; 0 } } ; eq { hop { filter_eq { all_rows ; lost ; 0 } ; team } ; s\u00e3o paulo } }",
+            "input": "and { only { filter_eq { all_rows ; lost ; 0 } } ; eq { hop { filter_eq { all_rows ; lost ; 0 } ; team } ; são paulo } }",
             "output": [
                 "unique"
             ]
@@ -9177,7 +9176,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; name ; alfred pfaff } ; goals } ; hop { filter_eq { all_rows ; name ; lothar sch\u00e4mer } ; goals } }",
+            "input": "greater { hop { filter_eq { all_rows ; name ; alfred pfaff } ; goals } ; hop { filter_eq { all_rows ; name ; lothar schämer } ; goals } }",
             "output": [
                 "comparative"
             ]
@@ -9225,7 +9224,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; year established } ; members } ; university of t\u00fcbingen }",
+            "input": "eq { hop { argmin { all_rows ; year established } ; members } ; university of tübingen }",
             "output": [
                 "superlative"
             ]
@@ -9417,7 +9416,7 @@
             ]
         },
         {
-            "input": "eq { count { filter_eq { all_rows ; opponent in the final ; \u00e1gnes sz\u00e1vay } } ; 2 }",
+            "input": "eq { count { filter_eq { all_rows ; opponent in the final ; ágnes szávay } } ; 2 }",
             "output": [
                 "count"
             ]
@@ -9663,7 +9662,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; ties played ; 2 } ; player } ; dovydas \u0161akinis }",
+            "input": "eq { hop { nth_argmax { all_rows ; ties played ; 2 } ; player } ; dovydas šakinis }",
             "output": [
                 "ordinal"
             ]
@@ -10041,7 +10040,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; goal difference ; 0 } } ; eq { hop { filter_eq { all_rows ; goal difference ; 0 } ; club } ; c\u00f3rdoba cf } }",
+            "input": "and { only { filter_eq { all_rows ; goal difference ; 0 } } ; eq { hop { filter_eq { all_rows ; goal difference ; 0 } ; club } ; córdoba cf } }",
             "output": [
                 "unique"
             ]
@@ -10599,7 +10598,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { all_rows ; foundation ; 2 } ; organization } ; r\u00e0dio televisi\u00f3 valenciana ( rtvv ) }",
+            "input": "eq { hop { nth_argmin { all_rows ; foundation ; 2 } ; organization } ; ràdio televisió valenciana ( rtvv ) }",
             "output": [
                 "ordinal"
             ]
@@ -11001,7 +11000,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; wins ; 2 } ; team } ; cerro porte\u00f1o }",
+            "input": "eq { hop { nth_argmax { all_rows ; wins ; 2 } ; team } ; cerro porteño }",
             "output": [
                 "ordinal"
             ]
@@ -11331,7 +11330,7 @@
             ]
         },
         {
-            "input": "and { only { filter_not_eq { all_rows ; nationality ; united states } } ; eq { hop { filter_not_eq { all_rows ; nationality ; united states } ; player } ; aleksandar radojevi\u00e4 \u2021 } }",
+            "input": "and { only { filter_not_eq { all_rows ; nationality ; united states } } ; eq { hop { filter_not_eq { all_rows ; nationality ; united states } ; player } ; aleksandar radojeviä ‡ } }",
             "output": [
                 "unique"
             ]
@@ -11457,7 +11456,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; rank ; chief justice } } ; eq { hop { filter_eq { all_rows ; rank ; chief justice } ; name } ; federico hern\u00e1ndez denton } }",
+            "input": "and { only { filter_eq { all_rows ; rank ; chief justice } } ; eq { hop { filter_eq { all_rows ; rank ; chief justice } ; name } ; federico hernández denton } }",
             "output": [
                 "unique"
             ]
@@ -11673,7 +11672,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { filter_greater { all_rows ; snatch ; 150 } ; bodyweight } ; name } ; herbys m\u00e1rquez ( ven ) }",
+            "input": "eq { hop { argmax { filter_greater { all_rows ; snatch ; 150 } ; bodyweight } ; name } ; herbys márquez ( ven ) }",
             "output": [
                 "superlative"
             ]
@@ -12027,7 +12026,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; number of episodes } ; english title ( chinese title ) } ; secret of the heart \u5929\u5730\u8c6a\u60c5 }",
+            "input": "eq { hop { argmax { all_rows ; number of episodes } ; english title ( chinese title ) } ; secret of the heart 天地豪情 }",
             "output": [
                 "superlative"
             ]
@@ -12141,7 +12140,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; number of seasons in liga mx } ; club } ; am\u00e9rica }",
+            "input": "eq { hop { argmax { all_rows ; number of seasons in liga mx } ; club } ; américa }",
             "output": [
                 "superlative"
             ]
@@ -12555,7 +12554,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; ceased to be duchess ; husband 's execution } } ; eq { hop { filter_eq { all_rows ; ceased to be duchess ; husband 's execution } ; name } ; louise marie ad\u00e9la\u00efde de bourbon } }",
+            "input": "and { only { filter_eq { all_rows ; ceased to be duchess ; husband 's execution } } ; eq { hop { filter_eq { all_rows ; ceased to be duchess ; husband 's execution } ; name } ; louise marie adélaïde de bourbon } }",
             "output": [
                 "unique"
             ]
@@ -12855,7 +12854,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; driver / passenger ; dani\u00e3l willemsen / sven verbrugge 1 } ; points } ; hop { filter_eq { all_rows ; driver / passenger ; janis daiders / lauris daiders } ; points } }",
+            "input": "greater { hop { filter_eq { all_rows ; driver / passenger ; daniãl willemsen / sven verbrugge 1 } ; points } ; hop { filter_eq { all_rows ; driver / passenger ; janis daiders / lauris daiders } ; points } }",
             "output": [
                 "comparative"
             ]
@@ -13215,7 +13214,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; president ; jo\u00e3o havelange } ; took office } ; hop { filter_eq { all_rows ; president ; sepp blatter } ; took office } }",
+            "input": "less { hop { filter_eq { all_rows ; president ; joão havelange } ; took office } ; hop { filter_eq { all_rows ; president ; sepp blatter } ; took office } }",
             "output": [
                 "comparative"
             ]
@@ -13299,7 +13298,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; goals } ; player } ; dario vido\u0161i\u0107 }",
+            "input": "eq { hop { argmax { all_rows ; goals } ; player } ; dario vidošić }",
             "output": [
                 "superlative"
             ]
@@ -13467,7 +13466,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; country ; norway } } ; eq { hop { filter_eq { all_rows ; country ; norway } ; name } ; h\u00e5logaland bridge } }",
+            "input": "and { only { filter_eq { all_rows ; country ; norway } } ; eq { hop { filter_eq { all_rows ; country ; norway } ; name } ; hålogaland bridge } }",
             "output": [
                 "unique"
             ]
@@ -13521,7 +13520,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; points } ; team } ; sportivo luque\u00f1o }",
+            "input": "eq { hop { argmin { all_rows ; points } ; team } ; sportivo luqueño }",
             "output": [
                 "superlative"
             ]
@@ -13545,7 +13544,7 @@
             ]
         },
         {
-            "input": "and { only { filter_greater { all_rows ; towns / villages ; 350 } } ; eq { hop { filter_greater { all_rows ; towns / villages ; 350 } ; name of county } ; borsod - aba\u00faj - zempl\u00e9n } }",
+            "input": "and { only { filter_greater { all_rows ; towns / villages ; 350 } } ; eq { hop { filter_greater { all_rows ; towns / villages ; 350 } ; name of county } ; borsod - abaúj - zemplén } }",
             "output": [
                 "unique"
             ]
@@ -13707,7 +13706,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; club ; sporting de gij\u00f3n } ; points } ; hop { filter_eq { all_rows ; club ; c\u00e1diz cf } ; points } }",
+            "input": "greater { hop { filter_eq { all_rows ; club ; sporting de gijón } ; points } ; hop { filter_eq { all_rows ; club ; cádiz cf } ; points } }",
             "output": [
                 "comparative"
             ]
@@ -13827,13 +13826,13 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; venue ; bursa atat\u00fcrk stadium } ; capacity } ; hop { filter_eq { all_rows ; venue ; \u015f\u00fckr\u00fc saraco\u011flu stadium } ; capacity } }",
+            "input": "less { hop { filter_eq { all_rows ; venue ; bursa atatürk stadium } ; capacity } ; hop { filter_eq { all_rows ; venue ; şükrü saracoğlu stadium } ; capacity } }",
             "output": [
                 "comparative"
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; average ratings } ; romaji title } ; my \u2606 boss my \u2606 hero }",
+            "input": "eq { hop { argmax { all_rows ; average ratings } ; romaji title } ; my ☆ boss my ☆ hero }",
             "output": [
                 "superlative"
             ]
@@ -14907,7 +14906,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; ship ; l\u00fctzow } ; total } ; hop { filter_eq { all_rows ; ship ; seydlitz } ; total } }",
+            "input": "greater { hop { filter_eq { all_rows ; ship ; lützow } ; total } ; hop { filter_eq { all_rows ; ship ; seydlitz } ; total } }",
             "output": [
                 "comparative"
             ]
@@ -15249,7 +15248,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; 2004 - 05 pts } ; team } ; v\u00e9lez s\u00e1rsfield }",
+            "input": "eq { hop { argmax { all_rows ; 2004 - 05 pts } ; team } ; vélez sársfield }",
             "output": [
                 "superlative"
             ]
@@ -15453,7 +15452,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; goalkeeper ; mat\u00edas garavano } ; goals } ; hop { filter_eq { all_rows ; goalkeeper ; \u00e1lvaro campos } ; goals } }",
+            "input": "greater { hop { filter_eq { all_rows ; goalkeeper ; matías garavano } ; goals } ; hop { filter_eq { all_rows ; goalkeeper ; álvaro campos } ; goals } }",
             "output": [
                 "comparative"
             ]
@@ -16083,7 +16082,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; pole position ; mika h\u00e4kkinen } ; winning driver ; damon hill } } ; eq { hop { filter_eq { filter_eq { all_rows ; pole position ; mika h\u00e4kkinen } ; winning driver ; damon hill } ; round } ; 13 } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; pole position ; mika häkkinen } ; winning driver ; damon hill } } ; eq { hop { filter_eq { filter_eq { all_rows ; pole position ; mika häkkinen } ; winning driver ; damon hill } ; round } ; 13 } }",
             "output": [
                 "unique"
             ]
@@ -16143,7 +16142,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; points ; 2 } ; artist } ; darius pranckevi\u010dius and violeta valskyt\u0117 }",
+            "input": "eq { hop { nth_argmax { all_rows ; points ; 2 } ; artist } ; darius pranckevičius and violeta valskytė }",
             "output": [
                 "ordinal"
             ]
@@ -16209,7 +16208,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; university ; mcgill university } ; founded } ; hop { filter_eq { all_rows ; university ; universit\u00e9 de sherbrooke } ; founded } }",
+            "input": "less { hop { filter_eq { all_rows ; university ; mcgill university } ; founded } ; hop { filter_eq { all_rows ; university ; université de sherbrooke } ; founded } }",
             "output": [
                 "comparative"
             ]
@@ -16467,7 +16466,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; partner ; sergio gald\u00f3s } } ; eq { hop { filter_eq { all_rows ; partner ; sergio gald\u00f3s } ; tournament } ; panama city } }",
+            "input": "and { only { filter_eq { all_rows ; partner ; sergio galdós } } ; eq { hop { filter_eq { all_rows ; partner ; sergio galdós } ; tournament } ; panama city } }",
             "output": [
                 "unique"
             ]
@@ -16509,7 +16508,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; points } ; artist } ; grethe & j\u00f8rgen ingmann }",
+            "input": "eq { hop { argmax { all_rows ; points } ; artist } ; grethe & jørgen ingmann }",
             "output": [
                 "superlative"
             ]
@@ -16533,7 +16532,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { all_rows ; rank ; 3 } ; name } ; matuzal\u00e9m }",
+            "input": "eq { hop { nth_argmin { all_rows ; rank ; 3 } ; name } ; matuzalém }",
             "output": [
                 "ordinal"
             ]
@@ -16941,7 +16940,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; year born } ; player } ; adam w\u00f3jcik }",
+            "input": "eq { hop { argmin { all_rows ; year born } ; player } ; adam wójcik }",
             "output": [
                 "superlative"
             ]
@@ -16953,7 +16952,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; result ; won } } ; and { eq { hop { filter_eq { all_rows ; result ; won } ; year } ; 1996 } ; eq { hop { filter_eq { all_rows ; result ; won } ; group } ; c\u00e9sar awards } } }",
+            "input": "and { only { filter_eq { all_rows ; result ; won } } ; and { eq { hop { filter_eq { all_rows ; result ; won } ; year } ; 1996 } ; eq { hop { filter_eq { all_rows ; result ; won } ; group } ; césar awards } } }",
             "output": [
                 "unique"
             ]
@@ -17271,7 +17270,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; stadium capacity ; 2 } ; university } ; universit\u00e9 laval }",
+            "input": "eq { hop { nth_argmax { all_rows ; stadium capacity ; 2 } ; university } ; université laval }",
             "output": [
                 "ordinal"
             ]
@@ -17331,7 +17330,7 @@
             ]
         },
         {
-            "input": "most_eq { filter_eq { all_rows ; competition ; 1994 fifa world cup qualification } ; venue ; estadio cuscatl\u00e1n , san salvador , el salvador }",
+            "input": "most_eq { filter_eq { all_rows ; competition ; 1994 fifa world cup qualification } ; venue ; estadio cuscatlán , san salvador , el salvador }",
             "output": [
                 "majority"
             ]
@@ -18381,7 +18380,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; athlete ; mayra gonz\u00e1lez } ; time } ; hop { filter_eq { all_rows ; athlete ; camila vargas } ; time } }",
+            "input": "less { hop { filter_eq { all_rows ; athlete ; mayra gonzález } ; time } ; hop { filter_eq { all_rows ; athlete ; camila vargas } ; time } }",
             "output": [
                 "comparative"
             ]
@@ -18741,7 +18740,7 @@
             ]
         },
         {
-            "input": "most_eq { all_rows ; venue ; estadio cuscatl\u00e1n , san salvador , el salvador }",
+            "input": "most_eq { all_rows ; venue ; estadio cuscatlán , san salvador , el salvador }",
             "output": [
                 "majority"
             ]
@@ -18795,7 +18794,7 @@
             ]
         },
         {
-            "input": "eq { count { filter_eq { all_rows ; partner ; helena sukov\u00e1 } } ; 3 }",
+            "input": "eq { count { filter_eq { all_rows ; partner ; helena suková } } ; 3 }",
             "output": [
                 "count"
             ]
@@ -18873,7 +18872,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; type ; trade } } ; eq { hop { filter_eq { all_rows ; type ; trade } ; name } ; pel\u00e9 } }",
+            "input": "and { only { filter_eq { all_rows ; type ; trade } } ; eq { hop { filter_eq { all_rows ; type ; trade } ; name } ; pelé } }",
             "output": [
                 "unique"
             ]
@@ -18951,7 +18950,7 @@
             ]
         },
         {
-            "input": "and { only { filter_greater { all_rows ; revenues ; 10000 koku } } ; eq { hop { filter_greater { all_rows ; revenues ; 10000 koku } ; name } ; \u014doka tadatomo ( \u5927\u5ca1\u5fe0\u8207 ) } }",
+            "input": "and { only { filter_greater { all_rows ; revenues ; 10000 koku } } ; eq { hop { filter_greater { all_rows ; revenues ; 10000 koku } ; name } ; ōoka tadatomo ( 大岡忠與 ) } }",
             "output": [
                 "unique"
             ]
@@ -18993,7 +18992,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; matches ; 2 } ; goalkeeper } ; joel rodr\u00edguez }",
+            "input": "eq { hop { nth_argmax { all_rows ; matches ; 2 } ; goalkeeper } ; joel rodríguez }",
             "output": [
                 "ordinal"
             ]
@@ -19173,7 +19172,7 @@
             ]
         },
         {
-            "input": "and { only { filter_less { all_rows ; population ( 2006 ) ; 1000 } } ; eq { hop { filter_less { all_rows ; population ( 2006 ) ; 1000 } ; name } ; saint - andr\u00e9 } }",
+            "input": "and { only { filter_less { all_rows ; population ( 2006 ) ; 1000 } } ; eq { hop { filter_less { all_rows ; population ( 2006 ) ; 1000 } ; name } ; saint - andré } }",
             "output": [
                 "unique"
             ]
@@ -19197,7 +19196,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; points ; 6 } ; difference ; -10 } } ; eq { hop { filter_eq { filter_eq { all_rows ; points ; 6 } ; difference ; -10 } ; team } ; am\u00e3rica } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; points ; 6 } ; difference ; -10 } } ; eq { hop { filter_eq { filter_eq { all_rows ; points ; 6 } ; difference ; -10 } ; team } ; amãrica } }",
             "output": [
                 "unique"
             ]
@@ -19389,7 +19388,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; played } ; manager } ; juan carlos ch\u00e1vez }",
+            "input": "eq { hop { argmax { all_rows ; played } ; manager } ; juan carlos chávez }",
             "output": [
                 "superlative"
             ]
@@ -19611,7 +19610,7 @@
             ]
         },
         {
-            "input": "eq { min { filter_eq { all_rows ; men 's singles ; kevin cord\u00f3n } ; year } ; 2009 }",
+            "input": "eq { min { filter_eq { all_rows ; men 's singles ; kevin cordón } ; year } ; 2009 }",
             "output": [
                 "superlative"
             ]
@@ -19935,7 +19934,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; points } ; team } ; sc internacional de s\u00e3o paulo }",
+            "input": "eq { hop { argmax { all_rows ; points } ; team } ; sc internacional de são paulo }",
             "output": [
                 "superlative"
             ]
@@ -20301,7 +20300,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; name ; v\u00edctor vald\u00e9s } ; games } ; hop { filter_eq { all_rows ; name ; joan segarra } ; games } }",
+            "input": "greater { hop { filter_eq { all_rows ; name ; víctor valdés } ; games } ; hop { filter_eq { all_rows ; name ; joan segarra } ; games } }",
             "output": [
                 "comparative"
             ]
@@ -20583,7 +20582,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; total } ; name } ; ivo laku\u010ds ( lat ) }",
+            "input": "eq { hop { argmax { all_rows ; total } ; name } ; ivo lakučs ( lat ) }",
             "output": [
                 "superlative"
             ]
@@ -21513,7 +21512,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; agg } ; team 1 } ; canon yaound\u00e9 }",
+            "input": "eq { hop { argmax { all_rows ; agg } ; team 1 } ; canon yaoundé }",
             "output": [
                 "superlative"
             ]
@@ -21801,7 +21800,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; capacity } ; club } ; standard li\u00e8ge }",
+            "input": "eq { hop { argmax { all_rows ; capacity } ; club } ; standard liège }",
             "output": [
                 "superlative"
             ]
@@ -22317,7 +22316,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; goals ; ( 1 ) } } ; eq { hop { filter_eq { all_rows ; goals ; ( 1 ) } ; player } ; dario vido\u0161i\u0107 } }",
+            "input": "and { only { filter_eq { all_rows ; goals ; ( 1 ) } } ; eq { hop { filter_eq { all_rows ; goals ; ( 1 ) } ; player } ; dario vidošić } }",
             "output": [
                 "unique"
             ]
@@ -22401,7 +22400,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; location ; bras\u00edlia } ; total passengers } ; hop { filter_eq { all_rows ; location ; salvador } ; total passengers } }",
+            "input": "greater { hop { filter_eq { all_rows ; location ; brasília } ; total passengers } ; hop { filter_eq { all_rows ; location ; salvador } ; total passengers } }",
             "output": [
                 "comparative"
             ]
@@ -22461,7 +22460,7 @@
             ]
         },
         {
-            "input": "eq { diff { hop { filter_eq { all_rows ; singer ; pedro migu\u00e9is } ; points } ; hop { filter_eq { all_rows ; singer ; jo\u00e3o portugal } ; points } } ; 20 }",
+            "input": "eq { diff { hop { filter_eq { all_rows ; singer ; pedro miguéis } ; points } ; hop { filter_eq { all_rows ; singer ; joão portugal } ; points } } ; 20 }",
             "output": [
                 "comparative"
             ]
@@ -22545,7 +22544,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; driver ; kenny br\u00e4ck } ; time / retired } ; hop { filter_eq { all_rows ; driver ; jimmy vasser } ; time / retired } }",
+            "input": "less { hop { filter_eq { all_rows ; driver ; kenny bräck } ; time / retired } ; hop { filter_eq { all_rows ; driver ; jimmy vasser } ; time / retired } }",
             "output": [
                 "comparative"
             ]
@@ -23409,7 +23408,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { filter_less { all_rows ; average annual rainfall ( mm ) ; 100 } ; average annual runoff ( mm ) ; 1 } ; administrative region } ; i - tarapac\u00e1 }",
+            "input": "eq { hop { nth_argmax { filter_less { all_rows ; average annual rainfall ( mm ) ; 100 } ; average annual runoff ( mm ) ; 1 } ; administrative region } ; i - tarapacá }",
             "output": [
                 "ordinal"
             ]
@@ -23583,7 +23582,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { all_rows ; date of departure ; 2 } ; outgoing manager } ; jos\u00e9 trejo }",
+            "input": "eq { hop { nth_argmin { all_rows ; date of departure ; 2 } ; outgoing manager } ; josé trejo }",
             "output": [
                 "ordinal"
             ]
@@ -23787,7 +23786,7 @@
             ]
         },
         {
-            "input": "eq { count { filter_eq { all_rows ; current club ; bot tur\u00f3w } } ; 3 }",
+            "input": "eq { count { filter_eq { all_rows ; current club ; bot turów } } ; 3 }",
             "output": [
                 "count"
             ]
@@ -23835,7 +23834,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; draws } ; club } ; real avil\u00e9s cf }",
+            "input": "eq { hop { argmax { all_rows ; draws } ; club } ; real avilés cf }",
             "output": [
                 "superlative"
             ]
@@ -23991,7 +23990,7 @@
             ]
         },
         {
-            "input": "and { eq { max { all_rows ; date } ; 31 may 2011 } ; eq { hop { argmax { all_rows ; date } ; album } ; l'un n'emp\u00e3\u00aache pas l'autre } }",
+            "input": "and { eq { max { all_rows ; date } ; 31 may 2011 } ; eq { hop { argmax { all_rows ; date } ; album } ; l'un n'empãªche pas l'autre } }",
             "output": [
                 "superlative"
             ]
@@ -24135,7 +24134,7 @@
             ]
         },
         {
-            "input": "and { only { filter_greater { filter_eq { all_rows ; year ; 2008 } ; length ; 5:00 } } ; eq { hop { filter_greater { filter_eq { all_rows ; year ; 2008 } ; length ; 5:00 } ; music video } ; umbrella ( feat younha ) ( \uc6b0\uc0b0 ) } }",
+            "input": "and { only { filter_greater { filter_eq { all_rows ; year ; 2008 } ; length ; 5:00 } } ; eq { hop { filter_greater { filter_eq { all_rows ; year ; 2008 } ; length ; 5:00 } ; music video } ; umbrella ( feat younha ) ( 우산 ) } }",
             "output": [
                 "unique"
             ]
@@ -25233,7 +25232,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; points ; 16 } } ; eq { hop { filter_eq { all_rows ; points ; 16 } ; team } ; ec s\u00e3o caetano } }",
+            "input": "and { only { filter_eq { all_rows ; points ; 16 } } ; eq { hop { filter_eq { all_rows ; points ; 16 } ; team } ; ec são caetano } }",
             "output": [
                 "unique"
             ]
@@ -25353,7 +25352,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; seconds } ; name } ; kerstin j\u00fcrgens - szymkowiak }",
+            "input": "eq { hop { argmax { all_rows ; seconds } ; name } ; kerstin jürgens - szymkowiak }",
             "output": [
                 "superlative"
             ]
@@ -25731,7 +25730,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; 2012 club ; vk primorje rijeka } } ; eq { hop { filter_eq { all_rows ; 2012 club ; vk primorje rijeka } ; name } ; xavier garc\u00eda } }",
+            "input": "and { only { filter_eq { all_rows ; 2012 club ; vk primorje rijeka } } ; eq { hop { filter_eq { all_rows ; 2012 club ; vk primorje rijeka } ; name } ; xavier garcía } }",
             "output": [
                 "unique"
             ]
@@ -25755,7 +25754,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; goals } ; player } ; mehmet y\u0131lmaz }",
+            "input": "eq { hop { argmin { all_rows ; goals } ; player } ; mehmet yılmaz }",
             "output": [
                 "superlative"
             ]
@@ -25815,7 +25814,7 @@
             ]
         },
         {
-            "input": "eq { diff { hop { filter_eq { all_rows ; horse name ; c p west } ; lengths behind } ; hop { filter_eq { all_rows ; horse name ; hard spun } ; lengths behind } } ; 1\u00a01/2 }",
+            "input": "eq { diff { hop { filter_eq { all_rows ; horse name ; c p west } ; lengths behind } ; hop { filter_eq { all_rows ; horse name ; hard spun } ; lengths behind } } ; 1 1/2 }",
             "output": [
                 "comparative"
             ]
@@ -25833,7 +25832,7 @@
             ]
         },
         {
-            "input": "most_eq { all_rows ; european cup ; fiba kora\u0107 cup }",
+            "input": "most_eq { all_rows ; european cup ; fiba korać cup }",
             "output": [
                 "majority"
             ]
@@ -26349,7 +26348,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; kit maker ; erre\u00e0 } } ; eq { hop { filter_eq { all_rows ; kit maker ; erre\u00e0 } ; team } ; middlesbrough } }",
+            "input": "and { only { filter_eq { all_rows ; kit maker ; erreà } } ; eq { hop { filter_eq { all_rows ; kit maker ; erreà } ; team } ; middlesbrough } }",
             "output": [
                 "unique"
             ]
@@ -26499,7 +26498,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; 2nd run } ; name } ; art\u016brs matisons ( lat ) }",
+            "input": "eq { hop { argmax { all_rows ; 2nd run } ; name } ; artūrs matisons ( lat ) }",
             "output": [
                 "superlative"
             ]
@@ -26547,7 +26546,7 @@
             ]
         },
         {
-            "input": "and { eq { min { all_rows ; place } ; 1 } ; eq { hop { argmin { all_rows ; place } ; dancers } ; katja koukkula & jussi v\u00e4\u00e4n\u00e4nen } }",
+            "input": "and { eq { min { all_rows ; place } ; 1 } ; eq { hop { argmin { all_rows ; place } ; dancers } ; katja koukkula & jussi väänänen } }",
             "output": [
                 "superlative"
             ]
@@ -26895,7 +26894,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; top goalscorer ; tom\u00e1\u0161 jun } } ; eq { hop { filter_eq { all_rows ; top goalscorer ; tom\u00e1\u0161 jun } ; season } ; 2004 - 05 } }",
+            "input": "and { only { filter_eq { all_rows ; top goalscorer ; tomáš jun } } ; eq { hop { filter_eq { all_rows ; top goalscorer ; tomáš jun } ; season } ; 2004 - 05 } }",
             "output": [
                 "unique"
             ]
@@ -26985,7 +26984,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { all_rows ; qual 1 ; 2 } ; name } ; s\u00e9bastien bourdais }",
+            "input": "eq { hop { nth_argmin { all_rows ; qual 1 ; 2 } ; name } ; sébastien bourdais }",
             "output": [
                 "ordinal"
             ]
@@ -27465,7 +27464,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; floors ; 3 } ; name } ; h\u00f4tel loews le concorde }",
+            "input": "eq { hop { nth_argmax { all_rows ; floors ; 3 } ; name } ; hôtel loews le concorde }",
             "output": [
                 "ordinal"
             ]
@@ -27807,7 +27806,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; lost } ; team } ; lp\u017c zielona g\u00f3ra }",
+            "input": "eq { hop { argmax { all_rows ; lost } ; team } ; lpż zielona góra }",
             "output": [
                 "superlative"
             ]
@@ -27837,7 +27836,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { filter_eq { all_rows ; medal ; gold } ; games ; 2 } ; event } ; men 's \u00e9p\u00e9e }",
+            "input": "eq { hop { nth_argmin { filter_eq { all_rows ; medal ; gold } ; games ; 2 } ; event } ; men 's épée }",
             "output": [
                 "ordinal"
             ]
@@ -28143,7 +28142,7 @@
             ]
         },
         {
-            "input": "and { eq { nth_min { all_rows ; year ; 2 } ; 1994 } ; eq { hop { nth_argmin { all_rows ; year ; 2 } ; men 's singles } ; juraj brestovsk\u00fd } }",
+            "input": "and { eq { nth_min { all_rows ; year ; 2 } ; 1994 } ; eq { hop { nth_argmin { all_rows ; year ; 2 } ; men 's singles } ; juraj brestovský } }",
             "output": [
                 "ordinal"
             ]
@@ -28323,7 +28322,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; type ; gravity } ; drainage basin ( km square ) ; 0.0 } } ; eq { hop { filter_eq { filter_eq { all_rows ; type ; gravity } ; drainage basin ( km square ) ; 0.0 } ; location } ; morc\u00edn } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; type ; gravity } ; drainage basin ( km square ) ; 0.0 } } ; eq { hop { filter_eq { filter_eq { all_rows ; type ; gravity } ; drainage basin ( km square ) ; 0.0 } ; location } ; morcín } }",
             "output": [
                 "unique"
             ]
@@ -28371,7 +28370,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; height ; 3 } ; player } ; caner pek\u015fen }",
+            "input": "eq { hop { nth_argmax { all_rows ; height ; 3 } ; player } ; caner pekşen }",
             "output": [
                 "ordinal"
             ]
@@ -28515,7 +28514,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; team ; courage comp\u00e9tition } ; laps ; 52 } } ; eq { hop { filter_eq { filter_eq { all_rows ; team ; courage comp\u00e9tition } ; laps ; 52 } ; year } ; 2005 } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; team ; courage compétition } ; laps ; 52 } } ; eq { hop { filter_eq { filter_eq { all_rows ; team ; courage compétition } ; laps ; 52 } ; year } ; 2005 } }",
             "output": [
                 "unique"
             ]
@@ -28755,7 +28754,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; goalkeeper ; igor etxebarrieta } ; matches } ; hop { filter_eq { all_rows ; goalkeeper ; daniel gim\u00e9nez } ; matches } }",
+            "input": "less { hop { filter_eq { all_rows ; goalkeeper ; igor etxebarrieta } ; matches } ; hop { filter_eq { all_rows ; goalkeeper ; daniel giménez } ; matches } }",
             "output": [
                 "comparative"
             ]
@@ -28905,7 +28904,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; points ; 17 } } ; eq { hop { filter_eq { all_rows ; points ; 17 } ; team } ; ant\u00e1rtica } }",
+            "input": "and { only { filter_eq { all_rows ; points ; 17 } } ; eq { hop { filter_eq { all_rows ; points ; 17 } ; team } ; antártica } }",
             "output": [
                 "unique"
             ]
@@ -28941,7 +28940,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; team 1 ; as saint - \u00e9tienne ( d1 ) } ; score } ; hop { filter_eq { all_rows ; team 1 ; girondins de bordeaux ( d1 ) } ; score } }",
+            "input": "greater { hop { filter_eq { all_rows ; team 1 ; as saint - étienne ( d1 ) } ; score } ; hop { filter_eq { all_rows ; team 1 ; girondins de bordeaux ( d1 ) } ; score } }",
             "output": [
                 "comparative"
             ]
@@ -29241,7 +29240,7 @@
             ]
         },
         {
-            "input": "and { only { filter_less { all_rows ; prize money ( usd ) ; 25000 } } ; eq { hop { filter_less { all_rows ; prize money ( usd ) ; 25000 } ; name } ; jan kode\u00e5 \u00a1 } }",
+            "input": "and { only { filter_less { all_rows ; prize money ( usd ) ; 25000 } } ; eq { hop { filter_less { all_rows ; prize money ( usd ) ; 25000 } ; name } ; jan kodeå ¡ } }",
             "output": [
                 "unique"
             ]
@@ -29259,7 +29258,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; pole position ; mattias ekstr\u00f6m } ; date } ; hop { filter_eq { all_rows ; pole position ; oliver jarvis } ; date } }",
+            "input": "less { hop { filter_eq { all_rows ; pole position ; mattias ekström } ; date } ; hop { filter_eq { all_rows ; pole position ; oliver jarvis } ; date } }",
             "output": [
                 "comparative"
             ]
@@ -29817,7 +29816,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; incumbent ; ren\u00e9 louis derouen } ; first elected } ; hop { filter_eq { all_rows ; incumbent ; bolivar e kemp } ; first elected } }",
+            "input": "greater { hop { filter_eq { all_rows ; incumbent ; rené louis derouen } ; first elected } ; hop { filter_eq { all_rows ; incumbent ; bolivar e kemp } ; first elected } }",
             "output": [
                 "comparative"
             ]
@@ -29835,7 +29834,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; nat ; ury } } ; eq { hop { filter_eq { all_rows ; nat ; ury } ; name } ; garc\u00eda } }",
+            "input": "and { only { filter_eq { all_rows ; nat ; ury } } ; eq { hop { filter_eq { all_rows ; nat ; ury } ; name } ; garcía } }",
             "output": [
                 "unique"
             ]
@@ -29889,7 +29888,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; goals ; 23 } } ; eq { hop { filter_eq { all_rows ; goals ; 23 } ; player } ; mehmet y\u0131lmaz } }",
+            "input": "and { only { filter_eq { all_rows ; goals ; 23 } } ; eq { hop { filter_eq { all_rows ; goals ; 23 } ; player } ; mehmet yılmaz } }",
             "output": [
                 "unique"
             ]
@@ -30231,7 +30230,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; total ( kg ) ; 3 } ; name } ; soraya jim\u00e9nez ( mex ) }",
+            "input": "eq { hop { nth_argmax { all_rows ; total ( kg ) ; 3 } ; name } ; soraya jiménez ( mex ) }",
             "output": [
                 "ordinal"
             ]
@@ -30243,7 +30242,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_greater { all_rows ; points ; 10 } ; lost ; 2 } } ; eq { hop { filter_eq { filter_greater { all_rows ; points ; 10 } ; lost ; 2 } ; team } ; stal gorz\u00f3w wlkp } }",
+            "input": "and { only { filter_eq { filter_greater { all_rows ; points ; 10 } ; lost ; 2 } } ; eq { hop { filter_eq { filter_greater { all_rows ; points ; 10 } ; lost ; 2 } ; team } ; stal gorzów wlkp } }",
             "output": [
                 "unique"
             ]
@@ -30297,7 +30296,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; density square ; 1 } ; municipality } ; malm\u00f6 }",
+            "input": "eq { hop { nth_argmax { all_rows ; density square ; 1 } ; municipality } ; malmö }",
             "output": [
                 "ordinal"
             ]
@@ -31119,7 +31118,7 @@
             ]
         },
         {
-            "input": "eq { count { filter_eq { filter_eq { all_rows ; country ; r\u00e9union } ; airport ; roland garros airport } } ; 1 }",
+            "input": "eq { count { filter_eq { filter_eq { all_rows ; country ; réunion } ; airport ; roland garros airport } } ; 1 }",
             "output": [
                 "count"
             ]
@@ -31143,7 +31142,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; opponent ; sabrina gole\u0161 } } ; eq { hop { filter_eq { all_rows ; opponent ; sabrina gole\u0161 } ; date } ; 23 april 1984 } }",
+            "input": "and { only { filter_eq { all_rows ; opponent ; sabrina goleš } } ; eq { hop { filter_eq { all_rows ; opponent ; sabrina goleš } ; date } ; 23 april 1984 } }",
             "output": [
                 "unique"
             ]
@@ -31353,7 +31352,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; shot % } ; skip } ; anna kube\u0161kov\u00e1 }",
+            "input": "eq { hop { argmin { all_rows ; shot % } ; skip } ; anna kubešková }",
             "output": [
                 "superlative"
             ]
@@ -31509,7 +31508,7 @@
             ]
         },
         {
-            "input": "eq { count { filter_eq { filter_eq { all_rows ; axle arrangement ; 2 \u2032 b n2v } ; axle arrangement ; 2 \u2032 b n2v } } ; 3 }",
+            "input": "eq { count { filter_eq { filter_eq { all_rows ; axle arrangement ; 2 ′ b n2v } ; axle arrangement ; 2 ′ b n2v } } ; 3 }",
             "output": [
                 "count"
             ]
@@ -32205,7 +32204,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; opponent in the final ; christ\u00edna papad\u00e1ki } ; date } ; hop { filter_eq { all_rows ; opponent in the final ; julia vakulenko } ; date } }",
+            "input": "less { hop { filter_eq { all_rows ; opponent in the final ; christína papadáki } ; date } ; hop { filter_eq { all_rows ; opponent in the final ; julia vakulenko } ; date } }",
             "output": [
                 "comparative"
             ]
@@ -32451,7 +32450,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; successor ; bob livingston ( r ) } ; date successor seated } ; hop { filter_eq { all_rows ; successor ; robert garc\u00eda ( d ) } ; date successor seated } }",
+            "input": "less { hop { filter_eq { all_rows ; successor ; bob livingston ( r ) } ; date successor seated } ; hop { filter_eq { all_rows ; successor ; robert garcía ( d ) } ; date successor seated } }",
             "output": [
                 "comparative"
             ]
@@ -32463,7 +32462,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmin { all_rows ; year erected } ; statue } ; general jos\u00e9 gervasio artigas }",
+            "input": "eq { hop { argmin { all_rows ; year erected } ; statue } ; general josé gervasio artigas }",
             "output": [
                 "superlative"
             ]
@@ -32727,7 +32726,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; club ; landskrona bois } ; first season of current spell } ; hop { filter_eq { all_rows ; club ; \u00e4ngelholms ff } ; first season of current spell } }",
+            "input": "less { hop { filter_eq { all_rows ; club ; landskrona bois } ; first season of current spell } ; hop { filter_eq { all_rows ; club ; ängelholms ff } ; first season of current spell } }",
             "output": [
                 "comparative"
             ]
@@ -32799,7 +32798,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; reason for change ; contested election } } ; eq { hop { filter_eq { all_rows ; reason for change ; contested election } ; vacator } ; jos\u00e3 m gallegos ( d ) } }",
+            "input": "and { only { filter_eq { all_rows ; reason for change ; contested election } } ; eq { hop { filter_eq { all_rows ; reason for change ; contested election } ; vacator } ; josã m gallegos ( d ) } }",
             "output": [
                 "unique"
             ]
@@ -33087,7 +33086,7 @@
             ]
         },
         {
-            "input": "and { only { filter_greater { filter_eq { all_rows ; laps ; 64 } ; points ; 30 } } ; eq { hop { filter_greater { filter_eq { all_rows ; laps ; 64 } ; points ; 30 } ; driver } ; s\u00e9bastien bourdais } }",
+            "input": "and { only { filter_greater { filter_eq { all_rows ; laps ; 64 } ; points ; 30 } } ; eq { hop { filter_greater { filter_eq { all_rows ; laps ; 64 } ; points ; 30 } ; driver } ; sébastien bourdais } }",
             "output": [
                 "unique"
             ]
@@ -33153,7 +33152,7 @@
             ]
         },
         {
-            "input": "most_eq { all_rows ; location ; bayam\u00f3n , puerto rico }",
+            "input": "most_eq { all_rows ; location ; bayamón , puerto rico }",
             "output": [
                 "majority"
             ]
@@ -33171,7 +33170,7 @@
             ]
         },
         {
-            "input": "eq { min { filter_eq { all_rows ; conductor ; karl b\u00f6hm } ; year } ; 1960 }",
+            "input": "eq { min { filter_eq { all_rows ; conductor ; karl böhm } ; year } ; 1960 }",
             "output": [
                 "superlative"
             ]
@@ -33333,7 +33332,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; club ; ud salamanca } ; goal difference } ; hop { filter_eq { all_rows ; club ; cp m\u00e9rida } ; goal difference } }",
+            "input": "greater { hop { filter_eq { all_rows ; club ; ud salamanca } ; goal difference } ; hop { filter_eq { all_rows ; club ; cp mérida } ; goal difference } }",
             "output": [
                 "comparative"
             ]
@@ -33843,7 +33842,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; nat ; slovakia } } ; eq { hop { filter_eq { all_rows ; nat ; slovakia } ; name } ; filip \u0161ebo } }",
+            "input": "and { only { filter_eq { all_rows ; nat ; slovakia } } ; eq { hop { filter_eq { all_rows ; nat ; slovakia } ; name } ; filip šebo } }",
             "output": [
                 "unique"
             ]
@@ -33897,7 +33896,7 @@
             ]
         },
         {
-            "input": "most_eq { all_rows ; original beechwood bunny tale / source material ; teleplay by val\u00e9rie baranski }",
+            "input": "most_eq { all_rows ; original beechwood bunny tale / source material ; teleplay by valérie baranski }",
             "output": [
                 "majority"
             ]
@@ -33957,7 +33956,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; points ; 2 } ; club } ; c\u00e1diz cf }",
+            "input": "eq { hop { nth_argmax { all_rows ; points ; 2 } ; club } ; cádiz cf }",
             "output": [
                 "ordinal"
             ]
@@ -34431,7 +34430,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmax { all_rows ; points ; 2 } ; song } ; f\u00fcr alle }",
+            "input": "eq { hop { nth_argmax { all_rows ; points ; 2 } ; song } ; für alle }",
             "output": [
                 "ordinal"
             ]
@@ -34863,7 +34862,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; peak ; store lenangstind } ; elevation ( m ) } ; hop { filter_eq { all_rows ; peak ; galdh\u00f8piggen } ; elevation ( m ) } }",
+            "input": "less { hop { filter_eq { all_rows ; peak ; store lenangstind } ; elevation ( m ) } ; hop { filter_eq { all_rows ; peak ; galdhøpiggen } ; elevation ( m ) } }",
             "output": [
                 "comparative"
             ]
@@ -34983,7 +34982,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; incoming manager ; dar\u00edo franco } ; date hired } ; hop { filter_eq { all_rows ; incoming manager ; octavio becerril } ; date hired } }",
+            "input": "less { hop { filter_eq { all_rows ; incoming manager ; darío franco } ; date hired } ; hop { filter_eq { all_rows ; incoming manager ; octavio becerril } ; date hired } }",
             "output": [
                 "comparative"
             ]
@@ -35217,7 +35216,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { filter_eq { all_rows ; general classification ; igor ant\u00f3n } ; winner ; markus fothen } } ; eq { hop { filter_eq { filter_eq { all_rows ; general classification ; igor ant\u00f3n } ; winner ; markus fothen } ; stage } ; 5 } }",
+            "input": "and { only { filter_eq { filter_eq { all_rows ; general classification ; igor antón } ; winner ; markus fothen } } ; eq { hop { filter_eq { filter_eq { all_rows ; general classification ; igor antón } ; winner ; markus fothen } ; stage } ; 5 } }",
             "output": [
                 "unique"
             ]
@@ -36357,7 +36356,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; manner of departure ; signed by fc fredericia } } ; eq { hop { filter_eq { all_rows ; manner of departure ; signed by fc fredericia } ; team } ; fc hj\u00f8rring } }",
+            "input": "and { only { filter_eq { all_rows ; manner of departure ; signed by fc fredericia } } ; eq { hop { filter_eq { all_rows ; manner of departure ; signed by fc fredericia } ; team } ; fc hjørring } }",
             "output": [
                 "unique"
             ]
@@ -36813,7 +36812,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; population } ; municipality } ; malm\u00f6 }",
+            "input": "eq { hop { argmax { all_rows ; population } ; municipality } ; malmö }",
             "output": [
                 "superlative"
             ]
@@ -36909,7 +36908,7 @@
             ]
         },
         {
-            "input": "and { only { filter_less { all_rows ; wins ; 5 } } ; eq { hop { filter_less { all_rows ; wins ; 5 } ; club } ; jfc olimps r\u012bga } }",
+            "input": "and { only { filter_less { all_rows ; wins ; 5 } } ; eq { hop { filter_less { all_rows ; wins ; 5 } ; club } ; jfc olimps rīga } }",
             "output": [
                 "unique"
             ]
@@ -37011,7 +37010,7 @@
             ]
         },
         {
-            "input": "less { hop { filter_eq { all_rows ; ring name ; ikioi sh\u014dta } ; debut } ; hop { filter_eq { all_rows ; ring name ; tochinoshin tsuyoshi } ; debut } }",
+            "input": "less { hop { filter_eq { all_rows ; ring name ; ikioi shōta } ; debut } ; hop { filter_eq { all_rows ; ring name ; tochinoshin tsuyoshi } ; debut } }",
             "output": [
                 "comparative"
             ]
@@ -37089,7 +37088,7 @@
             ]
         },
         {
-            "input": "greater { hop { filter_eq { all_rows ; competition ; 2014 world cup qualifier } ; goal } ; hop { filter_eq { all_rows ; competition ; 2011 copa am\u00e9rica } ; goal } }",
+            "input": "greater { hop { filter_eq { all_rows ; competition ; 2014 world cup qualifier } ; goal } ; hop { filter_eq { all_rows ; competition ; 2011 copa américa } ; goal } }",
             "output": [
                 "comparative"
             ]
@@ -37443,7 +37442,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; club ; pro recco } } ; eq { hop { filter_eq { all_rows ; club ; pro recco } ; name v t e } ; predrag joki\u0107 } }",
+            "input": "and { only { filter_eq { all_rows ; club ; pro recco } } ; eq { hop { filter_eq { all_rows ; club ; pro recco } ; name v t e } ; predrag jokić } }",
             "output": [
                 "unique"
             ]
@@ -37461,7 +37460,7 @@
             ]
         },
         {
-            "input": "and { eq { hop { argmax { all_rows ; 1st leg } ; team 1 } ; flamengo } ; eq { hop { argmax { all_rows ; 1st leg } ; team 2 } ; am\u00e9rica } }",
+            "input": "and { eq { hop { argmax { all_rows ; 1st leg } ; team 1 } ; flamengo } ; eq { hop { argmax { all_rows ; 1st leg } ; team 2 } ; américa } }",
             "output": [
                 "superlative"
             ]
@@ -37929,7 +37928,7 @@
             ]
         },
         {
-            "input": "eq { hop { nth_argmin { all_rows ; pick ; 1 } ; player } ; toni st\u00e3hl }",
+            "input": "eq { hop { nth_argmin { all_rows ; pick ; 1 } ; player } ; toni stãhl }",
             "output": [
                 "ordinal"
             ]
@@ -38037,7 +38036,7 @@
             ]
         },
         {
-            "input": "eq { hop { argmax { all_rows ; points } ; driver / passenger } ; dani\u00e3l willemsen / sven verbrugge 1 }",
+            "input": "eq { hop { argmax { all_rows ; points } ; driver / passenger } ; daniãl willemsen / sven verbrugge 1 }",
             "output": [
                 "superlative"
             ]
@@ -38637,7 +38636,7 @@
             ]
         },
         {
-            "input": "and { only { filter_eq { all_rows ; date of appointment ; 3 november 2008 } } ; eq { hop { filter_eq { all_rows ; date of appointment ; 3 november 2008 } ; outgoing manager } ; osman \u00f6zdemir } }",
+            "input": "and { only { filter_eq { all_rows ; date of appointment ; 3 november 2008 } } ; eq { hop { filter_eq { all_rows ; date of appointment ; 3 november 2008 } ; outgoing manager } ; osman özdemir } }",
             "output": [
                 "unique"
             ]
@@ -39041,5 +39040,8 @@
     ],
     "Instruction_language": [
         "English"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
     ]
 }
