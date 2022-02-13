@@ -2,6 +2,7 @@ import json
 from os import listdir, path
 from os.path import isfile, join
 import argparse
+import re
 """
 Script for adding the "Reasoning" field for all the tasks of a given dataset.
 """
@@ -21,9 +22,18 @@ if args.task:
     assert begin_task_number > 0, "begin task must be greater than 0"
     assert end_task_number > begin_task_number, "please specify a range of task you would like to test; i.e. the end task number must be greater than beginning task number"
 
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    '''
+    return [ atoi(c) for c in re.split(r'(\d+)', text) ]
+
 
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
-files.sort()
+files.sort(key=natural_keys)
 for file in files[begin_task_number:end_task_number + 1]: 
     if ".json" in file:
         print(f" --> adding reasoning to file: {file}")
