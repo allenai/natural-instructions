@@ -9,10 +9,20 @@
         "Text Generation -> Structured Text Generation -> Code",
         "Semantic Parsing -> Program Synthesis"
     ],
+    "Reasoning": [],
+    "Definition": "In this task you are expected to write an SQL query that will return the data asked for in the question. An SQL query works by selecting data from a table where certain conditions apply. A table contains columns where every row in that table must have a value for each column. Every table has a primary key that uniquely identifies each row, usually an id. To choose which columns are returned you specify that after the \"SELECT\" statement. Next, you use a \"FROM\" statement to specify what tables you want to select the data from. When you specify a table you can rename it with the \"AS\" statement. You can reference that table by whatever name follows the \"AS\" statement. If you want to select data from multiple tables you need to use the \"JOIN\" statement. This will join the tables together by pairing a row in one table with every row in the other table (Cartesian Product). To limit the number of rows returned you should use the \"ON\" statement. This will only return rows where the condition specified after the statement is true, this is usually an equals operator with primary keys. You can also use the \"WHERE\" statement to specify that only rows with column values statisfying a certain condition, should be returned. The \"GROUP BY\" statement will group rows together that have equal column values for whatever columns follows the statement. The \"HAVING\" statement will return groups that statisfy whatever condition follows the statement. Any column(s) being returned from grouped rows must either be an aggregate function, (AVG, MAX, COUNT, SUM, ...) of a column, or the column(s) that the data was grouped by. To sort the returned data you can use the \"ORDER BY\" command which will order the data by whatever aggregate function or column follows the statement. The \"DESC\" statement will sort in descending order and the \"ASC\" statement will sort in ascending order. Finally, you can use the \"LIMIT\" statement to return a certain number of rows. When \"*\" is used in an SQL statement every column is returned. For example, SELECT * FROM table WHERE attribute = 1, will select every column from rows with the attribute column equal to 1.",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
     "Domains": [
         "Code -> Language -> SQL"
     ],
-    "Definition": "In this task you are expected to write an SQL query that will return the data asked for in the question. An SQL query works by selecting data from a table where certain conditions apply. A table contains columns where every row in that table must have a value for each column. Every table has a primary key that uniquely identifies each row, usually an id. To choose which columns are returned you specify that after the \"SELECT\" statement. Next, you use a \"FROM\" statement to specify what tables you want to select the data from. When you specify a table you can rename it with the \"AS\" statement. You can reference that table by whatever name follows the \"AS\" statement. If you want to select data from multiple tables you need to use the \"JOIN\" statement. This will join the tables together by pairing a row in one table with every row in the other table (Cartesian Product). To limit the number of rows returned you should use the \"ON\" statement. This will only return rows where the condition specified after the statement is true, this is usually an equals operator with primary keys. You can also use the \"WHERE\" statement to specify that only rows with column values statisfying a certain condition, should be returned. The \"GROUP BY\" statement will group rows together that have equal column values for whatever columns follows the statement. The \"HAVING\" statement will return groups that statisfy whatever condition follows the statement. Any column(s) being returned from grouped rows must either be an aggregate function, (AVG, MAX, COUNT, SUM, ...) of a column, or the column(s) that the data was grouped by. To sort the returned data you can use the \"ORDER BY\" command which will order the data by whatever aggregate function or column follows the statement. The \"DESC\" statement will sort in descending order and the \"ASC\" statement will sort in ascending order. Finally, you can use the \"LIMIT\" statement to return a certain number of rows. When \"*\" is used in an SQL statement every column is returned. For example, SELECT * FROM table WHERE attribute = 1, will select every column from rows with the attribute column equal to 1.",
     "Positive Examples": [
         {
             "input": "Find the id and city of the student address with the highest average monthly rental.",
@@ -583,7 +593,7 @@
             ]
         },
         {
-            "input": "Give me Brazil\u2019s population and life expectancies.",
+            "input": "Give me Brazil’s population and life expectancies.",
             "output": [
                 "SELECT Population ,  LifeExpectancy FROM country WHERE Name  =  \"Brazil\""
             ]
@@ -751,7 +761,7 @@
             ]
         },
         {
-            "input": "What is the total population and average area of countries in the continent of North America whose area is bigger than 3000\uff1f",
+            "input": "What is the total population and average area of countries in the continent of North America whose area is bigger than 3000？",
             "output": [
                 "SELECT sum(Population) ,  avg(SurfaceArea) FROM country WHERE Continent  =  \"North America\" AND SurfaceArea  >  3000"
             ]
@@ -2569,7 +2579,7 @@
             ]
         },
         {
-            "input": "How long is the people\u2019s average life expectancy in Central Africa?",
+            "input": "How long is the people’s average life expectancy in Central Africa?",
             "output": [
                 "SELECT avg(LifeExpectancy) FROM country WHERE Region  =  \"Central Africa\""
             ]
@@ -3871,7 +3881,7 @@
             ]
         },
         {
-            "input": "What is the checking balance of the account whose owner\u2019s name contains the substring \u2018ee\u2019?",
+            "input": "What is the checking balance of the account whose owner’s name contains the substring ‘ee’?",
             "output": [
                 "SELECT T2.balance FROM accounts AS T1 JOIN checking AS T2 ON T1.custid  =  T2.custid WHERE T1.name LIKE '%ee%'"
             ]
@@ -3907,7 +3917,7 @@
             ]
         },
         {
-            "input": "Find the checking balance and saving balance in the Brown\u2019s account.",
+            "input": "Find the checking balance and saving balance in the Brown’s account.",
             "output": [
                 "SELECT T2.balance ,  T3.balance FROM accounts AS T1 JOIN checking AS T2 ON T1.custid  =  T2.custid JOIN savings AS T3 ON T1.custid  =  T3.custid WHERE T1.name  =  'Brown'"
             ]
@@ -5005,7 +5015,7 @@
             ]
         },
         {
-            "input": "display the employee number and name( first name and last name ) for all employees who work in a department with any employee whose name contains a \u2019T\u2019.",
+            "input": "display the employee number and name( first name and last name ) for all employees who work in a department with any employee whose name contains a ’T’.",
             "output": [
                 "SELECT employee_id ,  first_name ,  last_name FROM employees WHERE department_id IN ( SELECT department_id FROM employees WHERE first_name LIKE '%T%' )"
             ]
@@ -5689,7 +5699,7 @@
             ]
         },
         {
-            "input": "Find the names of users whose emails contain \u2018superstar\u2019 or \u2018edu\u2019.",
+            "input": "Find the names of users whose emails contain ‘superstar’ or ‘edu’.",
             "output": [
                 "SELECT name FROM user_profiles WHERE email LIKE '%superstar%' OR email LIKE '%edu%'"
             ]
@@ -12234,14 +12244,5 @@
                 "SELECT Festival_Name FROM festival_detail ORDER BY YEAR DESC LIMIT 3"
             ]
         }
-    ],
-    "Input_language": [
-        "English"
-    ],
-    "Output_language": [
-        "English"
-    ],
-    "Instruction_language": [
-        "English"
     ]
 }

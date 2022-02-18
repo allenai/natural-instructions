@@ -8,55 +8,77 @@
     ],
     "Categories": [
         "Question Answering -> Contextual Question Answering",
-        "Classification -> Verification -> Answer Verification",
-        "Reasoning -> Multihop Reasoning"
+        "Classification -> Verification -> Answer Verification"
+    ],
+    "Reasoning": [
+        "Multihop Reasoning"
     ],
     "Definition": "In this task, your goal is to judge a correct answer to a given a question based on an associated paragraph and decide if it is a good correct answer or not. A good correct answer is the one that correctly and completely answers the question. A bad correct answer addresses the question only partially or incorrectly. If you think the given correct answer is good, indicate it by responding \"Yes\". Otherwise respond \"No\".\nThings to avoid: -\nEmphasis & Caution: There are only 2 types of responses possible: \"Yes\" and \"No\".",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News",
+        "Wikipedia",
+        "Law",
+        "Justice",
+        "History",
+        "History -> 9/11 Reports",
+        "Anthropology",
+        "School Science Textbooks",
+        "Fiction"
+    ],
     "Positive Examples": [
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: almost twenty.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: almost twenty.",
             "output": "Yes.",
             "explanation": "Obama was born in 1961. His mother was born in 1942 and 1961-1942=19. Since the given correct answer answers the question fully, it is a good correct answer and so it is labelled with \"Yes\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: 20.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: 20.",
             "output": "No.",
             "explanation": "Obama was born in 1961. His mother was born in 1942 and 1961-1942=19. Since the given correct answer (20) incorrectly answers the given question, it is a bad correct answer which is indicated with the response \"No\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: older than twenty.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: older than twenty.",
             "output": "No.",
             "explanation": "Obama was born in 1961. His mother was born in 1942 and 1961-1942=19. Since the given correct answer (\"older than twenty\" ) incorrectly answers the given question, it is a bad correct answer which is indicated with the response \"No\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Hawaii.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Hawaii.",
             "output": "Yes.",
             "explanation": "Ann is Obama's mother (Sent 4). She must have been there when Obama was born (Sent 1). Obama was born in Hawaii (Sent 2). Since the given correct answer answers the question fully, it is a good correct answer and so it has been labelled with \"Yes\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Honolulu.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Honolulu.",
             "output": "Yes.",
             "explanation": "Ann is Obama's mother (Sent 4). She must have been there when Obama was born (Sent 1). Obama was born in Hawaii (Sent 2). Hawaii is also in Honolulu. Since the given correct answer answers the question fully, it is a good correct answer and so it has been labelled with \"Yes\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Kansas.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Kansas.",
             "output": "No.",
             "explanation": "Ann is Obama's mother (Sent 4). She must have been there when Obama was born (Sent 1). Obama was born in Hawaii (Sent 2). Since the given correct answer (\"Kansas\" ) incorrectly answers the given question, it is a bad correct answer which is indicated with the response \"No\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Scottland.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: Where was Ann living in August, 1961? Correct Answer: Scottland.",
             "output": "No.",
             "explanation": "Ann is Obama's mother (Sent 4). She must have been there when Obama was born (Sent 1). Obama was born in Hawaii (Sent 2). Since the given correct answer (\"Scottland\" ) incorrectly answers the given question, it is a bad correct answer which is indicated with the response \"No\"."
         }
     ],
     "Negative Examples": [
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: almost twenty.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: almost twenty.",
             "output": "Good.",
             "explanation": "Your response should only be \"yes\" or \"no\" based on whether the given correct answer is good or bad. The correct response here would have been a \"Yes\"."
         },
         {
-            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapi\u02bbolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: 20.",
+            "input": "Paragraph- Sent 1: Obama was born on August 4, 1961, at Kapiʻolani Maternity & Gynecological Hospital in Honolulu, Hawaii.\nSent 2: He is the only President to have been born in Hawaii.\nSent 3: He was born to a white mother and a black father.\nSent 4: His mother, Ann Dunham (1942-1995), was born in Wichita, Kansas, of mostly English descent, with some German, Irish, Scottish, Swiss, and Welsh ancestry. Question: How old was Obama's mother when he was born? Correct Answer: 20.",
             "output": "19.",
             "explanation": "The correct response here would have been a \"No\" as the given \"correct answer\" does not address the given question correctly. You should not answer the question. Instead, your response should only be \"yes\" or \"no\"."
         }
@@ -9129,7 +9151,7 @@
             ]
         },
         {
-            "input": "Paragraph- Sent 1: `` The Octopus , '' a masked crime lord , is bent on crippling the nation with a wave of terror .\nSent 2: He starts with the transportation system and then moves onto industry .\nSent 3: He demands tribute from railroad magnates and other captains of industry .\nSent 4: Richard Wentworth , an amateur criminologist who is friendly with the police , is secretly `` The Spider , '' a masked vigilante equally determined to wipe the Octopus and his gang off the face of the earth .\nSent 5: Pleasant and smiling in civilian life , Wentworth is often ruthless as the Spider , slinging two guns against the public enemies who attack him .\nSent 6: Wentworth also masquerades as affable underworld lowlife Blinky McQuade .\nSent 7: Disguised as McQuade , Wentworth can infiltrate gangland at the hired-gun level and keep current on the gang 's plans .\nSent 8: The only people who know Wentworth 's other identities are his assistants Jackson and Ram Singh , his butler Jenkins , and his fianc e Nita .\nSent 9: The Octopus was a villain in a single issue pulp believed to have been written by Norvell Page who wrote most of The Spider pulp stories .\nSent 10: He is garbed completely in white and is only ever seen sitting in a chair .\nSent 11: Unlike the pulps , The Spider is garbed in a lightweight full length costume with web-like markings on it which resemble Spiderman 's costume .\nSent 12: The serial follows the standard formula of fights , shoot-outs , Wentworth 's friends being kidnapped at various times and having to be rescued .\nSent 13: Each chapter ends with The Spider or his friends in deep trouble , often about to be killed , but the effect is spoiled by a trailer for the next episode which shows them in full health and fighting the villains . \nQuestion: Who knows the spider's  other identity and why? \nCorrect Answer: His assistants Jackson and Ram Singh, his butler Jenkins and his fianc\u00e9 Nita.",
+            "input": "Paragraph- Sent 1: `` The Octopus , '' a masked crime lord , is bent on crippling the nation with a wave of terror .\nSent 2: He starts with the transportation system and then moves onto industry .\nSent 3: He demands tribute from railroad magnates and other captains of industry .\nSent 4: Richard Wentworth , an amateur criminologist who is friendly with the police , is secretly `` The Spider , '' a masked vigilante equally determined to wipe the Octopus and his gang off the face of the earth .\nSent 5: Pleasant and smiling in civilian life , Wentworth is often ruthless as the Spider , slinging two guns against the public enemies who attack him .\nSent 6: Wentworth also masquerades as affable underworld lowlife Blinky McQuade .\nSent 7: Disguised as McQuade , Wentworth can infiltrate gangland at the hired-gun level and keep current on the gang 's plans .\nSent 8: The only people who know Wentworth 's other identities are his assistants Jackson and Ram Singh , his butler Jenkins , and his fianc e Nita .\nSent 9: The Octopus was a villain in a single issue pulp believed to have been written by Norvell Page who wrote most of The Spider pulp stories .\nSent 10: He is garbed completely in white and is only ever seen sitting in a chair .\nSent 11: Unlike the pulps , The Spider is garbed in a lightweight full length costume with web-like markings on it which resemble Spiderman 's costume .\nSent 12: The serial follows the standard formula of fights , shoot-outs , Wentworth 's friends being kidnapped at various times and having to be rescued .\nSent 13: Each chapter ends with The Spider or his friends in deep trouble , often about to be killed , but the effect is spoiled by a trailer for the next episode which shows them in full health and fighting the villains . \nQuestion: Who knows the spider's  other identity and why? \nCorrect Answer: His assistants Jackson and Ram Singh, his butler Jenkins and his fiancé Nita.",
             "output": [
                 "No."
             ]
@@ -10970,25 +10992,5 @@
                 "Yes."
             ]
         }
-    ],
-    "Input_language": [
-        "English"
-    ],
-    "Output_language": [
-        "English"
-    ],
-    "Instruction_language": [
-        "English"
-    ],
-    "Domains": [
-        "News",
-        "Wikipedia",
-        "Law",
-        "Justice",
-        "History",
-        "History -> 9/11 Reports",
-        "Anthropology",
-        "School Science Textbooks",
-        "Fiction"
     ]
 }
