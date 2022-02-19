@@ -36,10 +36,11 @@ expected_keys = [
     "Positive Examples",
     "Negative Examples",
     "Instances",
-    'Contributors',
-    'Categories',
-    'Domains',
-    'Source'
+    "Contributors",
+    "Categories",
+    "Domains",
+    "Source",
+    "Reasoning"
 ]
 
 language_names = [
@@ -119,6 +120,7 @@ skew_exclusion = [
 
 contributor_stats = {}
 categories_stats = {}
+reasoning_stats = {}
 domain_stats = {}
 for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
@@ -144,21 +146,27 @@ for file in files[begin_task_number:end_task_number + 1]:
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
+            assert type(data['Reasoning']) == list, f'Reasoning must be a list.'
+            assert type(data['Domains']) == list, f'Domains must be a list.'
+            
             for c in data['Categories']:
                 assert c in all_categories, f'Did not find category `{c}`'
-
                 if c not in categories_stats:
                     categories_stats[c] = 0
                 categories_stats[c] += 1
 
-            if "Domains" in data:
-                assert type(data['Domains']) == list, f'Domains must be a list.'
-                for d in data['Domains']:
-                    assert d in hierarchy_content, f'Did not find domain `{d}`'
-                    if d not in domain_stats:
-                        domain_stats[d] = 0
-                    domain_stats[d] += 1
+            for d in data['Domains']:
+                assert d in hierarchy_content, f'Did not find domain `{d}`'
+                if d not in domain_stats:
+                    domain_stats[d] = 0
+                domain_stats[d] += 1
 
+            for r in data['Reasoning']:
+                assert r in hierarchy_content, f'Did not find reasoning `{r}`'
+                if r not in reasoning_stats:
+                    reasoning_stats[r] = 0
+                reasoning_stats[r] += 1
+                
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
             assert type(data['Instruction_language']) == list, f'Output_language must be a list of strings.'
@@ -279,3 +287,8 @@ print("\n  - - - - - Domain Stats - - - - - ")
 keyvalues = sorted(list(domain_stats.items()), key=lambda x: x[1])
 for dom, count in domain_stats.items():
     print(f" ✍️ {dom} -> {count}")
+
+print("\n  - - - - - Reasoning Stats - - - - - ")
+keyvalues = sorted(list(reasoning_stats.items()), key=lambda x: x[1])
+for res, count in reasoning_stats.items():
+    print(f" ✍️ {res} -> {count}")
