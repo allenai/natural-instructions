@@ -132,45 +132,6 @@
     - `Question Generation -> Question Composition -> Generate from Answers`
   - `Question Generation -> Question Decomposition` 
   - `Question Generation -> Unanswerable Question Generation`
-- `Reasoning`
-  - `Reasoning -> Abductive Reasoning`
-  - `Reasoning -> Analogical Reasoning`
-  - `Reasoning -> Argument Reasoning`
-  - `Reasoning -> Causal Reasoning`
-  - `Reasoning -> Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
-    - `Reasoning -> Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
-    - `Reasoning -> Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
-    - `Reasoning -> Commonsense Reasoning -> Social Situations`
-    - `Reasoning -> Commonsense Reasoning -> Spatial Reasoning`
-  - `Reasoning -> Counterfactual Reasoning`
-  - `Reasoning -> Cross-document Reasoning`
-  - `Reasoning -> Deductive Reasoning`
-  - `Reasoning -> Discrete Reasoning`
-  - `Reasoning -> Ethics`
-  - `Reasoning -> Factual Reasoning`
-  - `Reasoning -> Grammatical Reasoning`
-  - `Reasoning -> Logical Reasoning`
-    - `Reasoning -> Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
-  - `Reasoning -> Multihop Reasoning`
-  - `Reasoning -> Numerical Reasoning`
-    - `Reasoning -> Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
-  - `Reasoning -> Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
-  - `Reasoning -> Qualitative Reasoning`
-  - `Reasoning -> Quantitative Reasoning`
-  - `Reasoning -> Reasoning on Actions`
-  - `Reasoning -> Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
-  - `Reasoning -> Reasoning on Objects`
-  - `Reasoning -> Reasoning on Social Interactions`
-  - `Reasoning -> Reasoning on Strings`
-  - `Reasoning -> Reasoning with Symbols`
-  - `Reasoning -> Relational Reasoning`
-  - `Reasoning -> Scientific Reasoning`
-  - `Reasoning -> Temporal Reasoning`
-  - `Reasoning -> Textual Entailment`
-    - `Reasoning -> Textual Entailment -> Abductive Reasoning`
-    - `Reasoning -> Textual Entailment -> Analogical Reasoning`
-    - `Reasoning -> Textual Entailment -> Deductive Reasoning`
-    - `Reasoning -> Textual Entailment -> Inductive Reasoning`
 - `Role Labelling`
 - `Semantic Parsing`
   - `Semantic Parsing -> Program Synthesis`
@@ -257,6 +218,46 @@
 - `Unnatural Language Processing`
   - `Unnatural Language Processing -> Question Answering`  
 - `Word Sense Disambiguation`
+
+## Reasoning
+- `Abductive Reasoning`
+- `Analogical Reasoning`
+- `Argument Reasoning`
+- `Causal Reasoning`
+- `Commonsense Reasoning`: Tasks related to activities humans do in daily life e.g. eating breakfast in the morning, sleeping during night etc.
+  - `Commonsense Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+  - `Commonsense Reasoning -> Physical Reasoning`: Tasks involving physical interactions with objects e.g. a knife (and not a paper) is used to cut objects
+  - `Commonsense Reasoning -> Social Situations`
+  - `Commonsense Reasoning -> Spatial Reasoning`
+- `Counterfactual Reasoning`
+- `Cross-document Reasoning`
+- `Deductive Reasoning`
+- `Discrete Reasoning`
+- `Ethics`
+- `Factual Reasoning`
+- `Grammatical Reasoning`
+- `Logical Reasoning`
+  - `Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
+- `Multihop Reasoning`
+- `Numerical Reasoning`
+  - `Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
+- `Planning`: Tasks which need some sort of planning e.g. how to go to Hawaii?
+- `Qualitative Reasoning`
+- `Quantitative Reasoning`
+- `Reasoning on Actions`
+- `Reasoning on Numbers`: When inputs are numbers, e.g. finding the maximum of a list
+- `Reasoning on Objects`
+- `Reasoning on Social Interactions`
+- `Reasoning on Strings`
+- `Reasoning with Symbols`
+- `Relational Reasoning`
+- `Scientific Reasoning`
+- `Temporal Reasoning`
+- `Textual Entailment`
+  - `Textual Entailment -> Abductive Reasoning`
+  - `Textual Entailment -> Analogical Reasoning`
+  - `Textual Entailment -> Deductive Reasoning`
+  - `Textual Entailment -> Inductive Reasoning`
 
 ## Domain
 * `Accounting`
