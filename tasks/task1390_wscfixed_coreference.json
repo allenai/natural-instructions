@@ -1,0 +1,3948 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "SuperGLUE  wsc.fixed (dataset: https://huggingface.co/datasets/super_glue)"
+    ],
+    "Categories": [
+        "Classification -> Verification",
+        "Coreference -> Pronoun Disambiguation"
+    ],
+    "Reasoning": [
+		"Commonsense Reasoning"
+    ],
+    "Definition": "You are given a context, a pronoun, and a noun in this task. The given pronoun is shown in the context within parentheses. You should determine if the pronoun refers to the given noun or not. Please answer with \"True\" and \"False\".",
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Fiction",
+		"Books"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sam pulled up a chair to the piano , but (it) was broken, so he had to sing instead. <sep> Pronoun:it <sep> Noun: the piano",
+            "output": "True",
+            "explanation": "This is a good example. In this context, he had to sing after recognizing it was broken. So, it refers to the piano."
+        },
+        {
+            "input": "Fred covered his eyes with his hands , because the wind was blowing sand around. He lowered (them) when the wind stopped. <sep> Pronoun:them <sep> Noun: his eyes",
+            "output": "False",
+            "explanation": "In this example, he lowered his hands when the wind stopped. So, them refer to his hands, and the output should be \"False\"."
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave (her) knitting and needlework when she was able to do it, and when she was ill she sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:her <sep> Noun: Nelly",
+            "output": "True",
+            "explanation": "In this example, her refers to Nelly. So, the given noun is correct, and the output should be \"True\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Jim yelled at Kevin because (he) was so upset. <sep> Pronoun:he <sep> Noun: Kevin",
+            "output": "True",
+            "explanation": "In this example, he refers to Jim. So, kevin is incorrect, and the output should be \"False\"."
+        },
+        {
+            "input": "Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen (them) and come back quickly to tell the news. <sep> Pronoun:them <sep> Noun: Arthur and Celeste",
+            "output": "False",
+            "explanation": "In this example, them refer to Arthur and Celeste. So, the output should be \"True\"."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "Carol believed that Rebecca regretted that (she) had stolen the watch. <sep> Pronoun:she <sep> Noun: Rebecca",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Lily spoke to Donna , breaking (her) concentration. <sep> Pronoun:her <sep> Noun: Donna",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "It is not easy to space buttonholes exactly the same distance apart, and it is very difficult to cut them precisely the right size . The tiniest slip of the scissors will make the hole too large, and even one thread uncut will leave (it) too small. <sep> Pronoun:it <sep> Noun: the scissors",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I sat there feeling rather like a chappie I'd once read about in a book , who murdered another cove and hid the body under the dining-room table , and then had to be the life and soul of a dinner party, with (it) there all the time. <sep> Pronoun:it <sep> Noun: life and soul",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The politicians far away in Washington could not know the settlers so they must make rules to regulate (them) . <sep> Pronoun:them <sep> Noun: politicians",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom gave Ralph a lift to school so (he) wouldn't have to drive alone. <sep> Pronoun:he <sep> Noun: Tom",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Frank was upset with Tom because the toaster (he) had sold him didn't work. <sep> Pronoun:he <sep> Noun: Tom",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when she was able to do it, and when she was ill (she) sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:she <sep> Noun: mistress",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. He heard him calling for the captain , promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all (his) crew had best stay in the cabin until the work was over. <sep> Pronoun:his <sep> Noun: Mark",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The man lifted the boy onto (his) shoulders. <sep> Pronoun:his <sep> Noun: the boy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "George got free tickets to the play, but he gave them to Eric , because (he) was particularly eager to see it. <sep> Pronoun:he <sep> Noun: Eric",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Dan had to stop Bill from toying with the injured bird. (He) is very compassionate. <sep> Pronoun:He <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John hired (him) self out to Bill to take care of him . <sep> Pronoun:him <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Adam can't leave work here until Bob arrives to replace him. If Bob had left home for work on time, (he) would be here by this time. <sep> Pronoun:he <sep> Noun: Bob",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that (he) was, he did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Madonna fired her trainer because (she) couldn't stand her boyfriend. <sep> Pronoun:she <sep> Noun: Madonna",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The large ball crashed right through the table because (it) was made of steel. <sep> Pronoun:it <sep> Noun: The large ball",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "While Nancy and Ellen counted the silverware, Mrs. Smith hastened upstairs. In a few minutes she returned and one look at (her) stricken face told the girls that the precious map was gone. <sep> Pronoun:her <sep> Noun: Ellen",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The firemen arrived before the police because (they) were coming from so far away. <sep> Pronoun:they <sep> Noun: the police",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Adam can't leave work here until Bob arrives to replace him. If Bob had left home for work on time, (he) would be here by this time. <sep> Pronoun:he <sep> Noun: Adam",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Equally swoon-worthy is C.K. Dexter Haven , a pallid young dandy holding a jade-handled walking stick, with a poodle asleep at (his) feet <sep> Pronoun:his <sep> Noun: Haven",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sam took French classes from Adam , because (he) was eager to speak it fluently. <sep> Pronoun:he <sep> Noun: Adam",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The fish ate the worm . (It) was hungry. <sep> Pronoun:It <sep> Noun: The fish",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The first place that I can well remember was a large pleasant meadow with a pond of clear water in (it) . Some shady trees leaned over <sep> Pronoun:it <sep> Noun: meadow",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Tommy dropped his ice cream, Timmy giggled, so father gave (him) a sympathetic look. <sep> Pronoun:him <sep> Noun: Timmy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The painting in Mark's living room shows an oak tree. (It) is to the right of the bookcase. <sep> Pronoun:It <sep> Noun: The painting",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mama came over and sat down beside Alice . Gently (she) stroked her hair and let the child weep. <sep> Pronoun:she <sep> Noun: Alice",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I asked Dave to get me my sweater from the other side of the yacht . While he was gone, I rested my arm on the rail over there and suddenly (it) gave way. <sep> Pronoun:it <sep> Noun: rail",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I sat there feeling rather like a chappie I'd once read about in a book , who murdered another cove and hid the body under the dining-room table , and then had to be the life and soul of a dinner party, with (it) there all the time. <sep> Pronoun:it <sep> Noun: table",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I tried to paint a picture of an orchard, with lemons in the lemon trees , but (they) came out looking more like light bulbs. <sep> Pronoun:they <sep> Noun: lemon trees",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "In the storm, the tree fell down and crashed through the roof of my house. Now, I have to get (it) removed. <sep> Pronoun:it <sep> Noun: the roof",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Thomson visited Cooper 's grave in 1765. At that date (he) had been dead for five years. <sep> Pronoun:he <sep> Noun: Thomson",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The stable was very roomy, with four good stalls; a large swinging window opened into the yard , which made (it) pleasant and airy. <sep> Pronoun:it <sep> Noun: window",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Stretching (her) back, the woman smiled at the girl . <sep> Pronoun:her <sep> Noun: the girl",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that (he) no longer requires his financial support. <sep> Pronoun:he <sep> Noun: Chester",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The user changed his password from \" GrWQWu8JyC \" to \" willow-towered Canopy Huntertropic wrestles \" as (it) was easy to remember. <sep> Pronoun:it <sep> Noun: GrWQWu8JyC",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The woman held the girl against (her) will. <sep> Pronoun:her <sep> Noun: The woman",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from (him) . <sep> Pronoun:him <sep> Noun: the government official",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The boy continued to whip the pony , and eventually the pony threw him over. John laughed out quite loud. \"Good for (him,\") he said. <sep> Pronoun:him <sep> Noun: boy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Kirilov ceded the presidency to Shatov because (he) was less popular. <sep> Pronoun:he <sep> Noun: Shatov",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening (it) . <sep> Pronoun:it <sep> Noun: album",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education, but now Charlie acts as though it never happened. (He) is very hurt. <sep> Pronoun:He <sep> Noun: Bob",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Then he took a piece of iron the shape of the horse horse's foot , and clapped (it) on, and drove some nails through the shoe quite into its hoof, so that the shoe was firmly on <sep> Pronoun:it <sep> Noun: shape",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After a somewhat lengthy conversation, Nancy convinced the housekeeper that there was no immediate cause for alarm. (She) did not mention the incident at the Hamilton bus station, knowing it would only add to Mrs. Gruen’s uneasiness. <sep> Pronoun:She <sep> Noun: the housekeeper",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The sculpture rolled off the shelf because (it) wasn't level. <sep> Pronoun:it <sep> Noun: The sculpture",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom gave Ralph a lift to school so (he) wouldn't have to drive alone. <sep> Pronoun:he <sep> Noun: Ralph",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tatyana knew that Grandma always enjoyed serving an abundance of food to (her) guests. Now Tatyana watched as Grandma gathered Tatyana 's small mother into a wide, scrawny embrace and then propelled her to the table, lifting her shawl from her shoulders, seating her in the place of honor, and saying simply: \"There's plenty.\" <sep> Pronoun:her <sep> Noun: Grandma",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Dan had to stop Bill from toying with the injured bird. (He) is very cruel. <sep> Pronoun:He <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "As Ollie carried Tommy up the long winding steps, (his) legs dangled. <sep> Pronoun:his <sep> Noun: Ollie",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We saw a boy trying to leap a pony over a gate; the pony would not take the leap, and the boy cut him with the whip, but (he) only turned to one side. <sep> Pronoun:he <sep> Noun: pony",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Since Chester was dependent on Uncle Vernon , he couldn't very well marry without (his) approval <sep> Pronoun:his <sep> Noun: Chester",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, he felt (him) all over, and shook his head; one of his legs was broken. <sep> Pronoun:him <sep> Noun: the black horse",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mary tucked her daughter Anne into bed, so that (she) could sleep. <sep> Pronoun:she <sep> Noun: Mary",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mama came over and sat down beside Alice . Gently she stroked (her) hair and let the child weep. <sep> Pronoun:her <sep> Noun: Mama",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sara borrowed the book from the library because she needs (it) for an article she is working on. She reads it when she gets home from work. <sep> Pronoun:it <sep> Noun: the book",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sara borrowed the book from the library because she needs it for an article she is working on. She writes (it) when she gets home from work. <sep> Pronoun:it <sep> Noun: the book",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John ordered Bill to leave, so an hour later (he) left. <sep> Pronoun:he <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Emma Emma's mother had died long ago, and (her) education had been managed by an excellent woman as governess. <sep> Pronoun:her <sep> Noun: Emma's mother",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "As Andrea in the crop duster passed over Susan , (she) could see the landing strip. <sep> Pronoun:she <sep> Noun: Andrea",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John was jogging through the park when he saw a man juggling watermelons. (He) was very impressive. <sep> Pronoun:He <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, (he) did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:he <sep> Noun: the master",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joe paid the detective after (he) delivered the final report on the case. <sep> Pronoun:he <sep> Noun: the detective",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "James asked Robert for a favor but (he) refused. <sep> Pronoun:he <sep> Noun: James",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob collapsed on the sidewalk. Soon he saw Carl coming to help. (He) was very concerned. <sep> Pronoun:He <sep> Noun: Carl",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Patting (her) back, the woman smiled at the girl . <sep> Pronoun:her <sep> Noun: the woman",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Although they ran at about the same speed, Sue beat Sally because (she) had such a good start. <sep> Pronoun:she <sep> Noun: Sue",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but (he) was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise. <sep> Pronoun:he <sep> Noun: Dick",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "It is not easy to space buttonholes exactly the same distance apart, and it is very difficult to cut them precisely the right size . The tiniest slip of the scissors will make the hole too large, and even one thread uncut will leave (it) too small. <sep> Pronoun:it <sep> Noun: the right size",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The pony behaved well, sir, and showed no vice; but at last he just threw up his heels and tipped the young gentleman into the thorn hedge. He wanted me to help (him) out, but I hope you will excuse me, sir, I did not feel inclined to do so. <sep> Pronoun:him <sep> Noun: pony",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bill passed the half-empty plate to John because (he) was hungry. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Although they ran at about the same speed, Sue beat Sally because (she) had such a bad start. <sep> Pronoun:she <sep> Noun: Sue",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The city councilmen refused the demonstrators a permit because (they) feared violence. <sep> Pronoun:they <sep> Noun: the demonstrators",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "George got free tickets to the play, but he gave them to Eric , even though (he) was particularly eager to see it. <sep> Pronoun:he <sep> Noun: Eric",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I poured water from the bottle into the cup until (it) was full. <sep> Pronoun:it <sep> Noun: the bottle",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I was trying to open the lock with the key , but someone had filled the keyhole with chewing gum, and I couldn't get (it) out. <sep> Pronoun:it <sep> Noun: the key",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. He heard (him) calling for the captain, promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all his crew had best stay in the cabin until the work was over. <sep> Pronoun:him <sep> Noun: Mark",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The delivery truck zoomed by the school bus because (it) was going so slow. <sep> Pronoun:it <sep> Noun: The delivery truck",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "George got free tickets to the play, but he gave them to Eric , even though (he) was particularly eager to see it. <sep> Pronoun:he <sep> Noun: George",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "While Nancy and Ellen counted the silverware, Mrs. Smith hastened upstairs. In a few minutes she returned and one look at (her) stricken face told the girls that the precious map was gone. <sep> Pronoun:her <sep> Noun: Nancy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Tommy dropped his ice cream, Timmy giggled, so father gave (him) a stern look. <sep> Pronoun:him <sep> Noun: Tommy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Anna did a lot worse than her good friend Lucy on the test because (she) had studied so hard. <sep> Pronoun:she <sep> Noun: Lucy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joe paid the detective after (he) received the final report on the case. <sep> Pronoun:he <sep> Noun: Joe",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The Wainwrights treated Mr. Crowley like a prince until he made his will in their favor; then they treated him like dirt. Folks said he died just to be rid of (their) everlasting nagging. <sep> Pronoun:their <sep> Noun: Wainwrights",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Since Chester was dependent on Uncle Vernon , (he) couldn't very well marry without his approval <sep> Pronoun:he <sep> Noun: Uncle Vernon",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education, but now Charlie acts as though it never happened. (He) is very ungrateful. <sep> Pronoun:He <sep> Noun: Bob",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that (he) is longing for a fine suit. As he likes to make people happy, he gives him his wallet. <sep> Pronoun:he <sep> Noun: old man",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. (His) old coachman is getting feeble, and he wants a man to work with him and get into his ways, who would be able, when the old man was pensioned off, to step into his place. <sep> Pronoun:His <sep> Noun: new groom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam Goodman 's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties (he) faced in his childhood. <sep> Pronoun:he <sep> Noun: Goodman",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "During a game of tag, Ethan ran from Luke because (he) was \"it\". <sep> Pronoun:he <sep> Noun: Luke",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The man lifted the boy onto (his) bunk bed. <sep> Pronoun:his <sep> Noun: The man",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when she was able to do it, and when (she) was ill she sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:she <sep> Noun: mistress",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The table won't fit through the doorway because (it) is too wide. <sep> Pronoun:it <sep> Noun: The table",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jane knocked on the door, and Susan answered it. (She) invited her to come out. <sep> Pronoun:She <sep> Noun: Jane",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The sun was covered by a thick cloud all morning, but luckily, by the time the picnic started, (it) was out. <sep> Pronoun:it <sep> Noun: The sun",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "In the storm, the tree fell down and crashed through the roof of my house. Now, I have to get (it) removed. <sep> Pronoun:it <sep> Noun: the tree",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joan made sure to thank Susan for all the help (she) had given. <sep> Pronoun:she <sep> Noun: Joan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "At the Loebner competition the judges couldn't figure out which respondents were the chatbots because (they) were so stupid. <sep> Pronoun:they <sep> Noun: the chatbots",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Even before they reached town , they could hear a sound like corn popping. Dora asked what (it) was, and Dad said it was firecrackers. <sep> Pronoun:it <sep> Noun: sound",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "In July, Kamtchatka declared war on Yakutsk . Since Yakutsk 's army was much better equipped and ten times larger, (they) were defeated within weeks. <sep> Pronoun:they <sep> Noun: Yakutsk",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. His old coachman is getting feeble, and he wants a man to work with him and get into his ways, who would be able, when the old man was pensioned off, to step into (his) place <sep> Pronoun:his <sep> Noun: old coachman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Even before they reached town , they could hear a sound like corn popping. Dora asked what (it) was, and Dad said it was firecrackers. <sep> Pronoun:it <sep> Noun: corn",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam's drawing was hung just above Tina's and (it) did look much better with another one below it. <sep> Pronoun:it <sep> Noun: Sam's drawing",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The older students were bullying the younger ones, so we punished (them) . <sep> Pronoun:them <sep> Noun: The older students",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The man couldn't lift his son because (he) was so heavy. <sep> Pronoun:he <sep> Noun: The man",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on the door, and Susan answered it. (She) invited her to come in. <sep> Pronoun:She <sep> Noun: Jane",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam pulled up a chair to the piano , but (it) was broken, so he had to stand instead. <sep> Pronoun:it <sep> Noun: the piano",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit (him) so hard that he roared with the pain and surprise. <sep> Pronoun:him <sep> Noun: the master",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I tried to paint a picture of an orchard, with lemons in the lemon trees , but (they) came out looking more like light bulbs. <sep> Pronoun:they <sep> Noun: lemons",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sam Goodman 's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties (he) faced in his research. <sep> Pronoun:he <sep> Noun: Xenophanes",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sid explained his theory to Mark but (he) couldn't understand him. <sep> Pronoun:he <sep> Noun: Sid",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John couldn't see the stage with Billy in front of him because (he) is so tall. <sep> Pronoun:he <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Kirilov ceded the presidency to Shatov because (he) was more popular. <sep> Pronoun:he <sep> Noun: Kirilov",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam Goodman 's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties (he) faced in his childhood. <sep> Pronoun:he <sep> Noun: Xenophanes",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have them back, but they scold (them) just the same because they ran away. <sep> Pronoun:them <sep> Noun: mothers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The city councilmen refused the demonstrators a permit because (they) feared violence. <sep> Pronoun:they <sep> Noun: The city councilmen",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "At the Loebner competition the judges couldn't figure out which respondents were the chatbots because (they) were so advanced. <sep> Pronoun:they <sep> Noun: the judges",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paul tried to call George on the phone, but (he) wasn't available. <sep> Pronoun:he <sep> Noun: George",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father , (he) was twelve months old. <sep> Pronoun:he <sep> Noun: my father",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Dr. Adams informed Kate that (she) had retired and presented several options for future treatment. <sep> Pronoun:she <sep> Noun: Kate",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I stuck a pin through a carrot. When I pulled the pin out, (it) had a hole. <sep> Pronoun:it <sep> Noun: the pin",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Frank was upset with Tom because the toaster (he) had sold him didn't work. <sep> Pronoun:he <sep> Noun: Frank",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "What about the time you cut up tulip bulbs in the hamburgers because you thought (they) were onions? <sep> Pronoun:they <sep> Noun: tulip bulbs",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Tatyana reached the cabin, her mother was sleeping. (She) was careful not to disturb her, undressing and climbing back into her berth. <sep> Pronoun:She <sep> Noun: mother",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The boy continued to whip the pony , and eventually the pony threw him over. John laughed out quite loud. \"Served (him) right,\" he said. <sep> Pronoun:him <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I put the heavy book on the table and (it) broke. <sep> Pronoun:it <sep> Noun: the table",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Tom said \"Check\" to Ralph as he moved (his) bishop. <sep> Pronoun:his <sep> Noun: Tom",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. (They) were very much in the minority. <sep> Pronoun:They <sep> Noun: the sponsors",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Madonna fired her trainer because she couldn't stand (her) boyfriend. <sep> Pronoun:her <sep> Noun: Madonna",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen (them) and come back quickly to tell the news. <sep> Pronoun:them <sep> Noun: the elephants",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, he felt him all over, and shook his head; one of (his) legs was broken. <sep> Pronoun:his <sep> Noun: the black horse",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The storekeepers stayed in town to run their stores and lived in the rooms behind (them) . <sep> Pronoun:them <sep> Noun: stores",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, (he) gives him his wallet. <sep> Pronoun:he <sep> Noun: old man",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Anne gave birth to a daughter last month. (She) is a very charming baby. <sep> Pronoun:She <sep> Noun: Anne",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jim signaled the barman and gestured toward (his) empty glass <sep> Pronoun:his <sep> Noun: Jim",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The trophy doesn't fit into the brown suitcase because (it) is too small. <sep> Pronoun:it <sep> Noun: The trophy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John couldn't see the stage with Billy in front of him because (he) is so short. <sep> Pronoun:he <sep> Noun: John",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "All the buttons up the back of Dora 's plaid dress were buttoned outside-in. Maude should have thought to button her up; but no, she had left poor little Dora to do the best (she) could, alone. <sep> Pronoun:she <sep> Noun: Dora",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I saw Jim yelling at some guy in a military uniform with a huge red beard. I don't know who (he) was, but he looked very unhappy. <sep> Pronoun:he <sep> Noun: Jim",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I took the water bottle out of the backpack so that (it) would be handy. <sep> Pronoun:it <sep> Noun: the water bottle",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge (he) jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise. <sep> Pronoun:he <sep> Noun: Dick",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. (He) needed to get him to finish his work, because his work was beautiful <sep> Pronoun:He <sep> Noun: Mark",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. He heard (him) calling for the captain, promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all his crew had best stay in the cabin until the work was over. <sep> Pronoun:him <sep> Noun: Mr. Singer",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when she was able to do it, and when (she) was ill she sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:she <sep> Noun: Nelly",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Billy cried because Toby wouldn't share (his) toy. <sep> Pronoun:his <sep> Noun: Toby",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door, but there was no answer. (She) was disappointed. <sep> Pronoun:She <sep> Noun: Jane",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The politicians far away in Washington could not know the settlers so (they) must make rules to regulate them. <sep> Pronoun:they <sep> Noun: politicians",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sam's drawing was hung just above Tina's and (it) did look much better with another one above it. <sep> Pronoun:it <sep> Noun: Sam's drawing",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "During a game of tag, Ethan ran from Luke because (he) was \"it\". <sep> Pronoun:he <sep> Noun: Ethan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit (him) so hard that he roared with the pain and surprise. <sep> Pronoun:him <sep> Noun: Dick",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The city councilmen refused the demonstrators a permit because (they) advocated violence. <sep> Pronoun:they <sep> Noun: The city councilmen",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred watched TV while George went out to buy groceries. After an hour (he) got back. <sep> Pronoun:he <sep> Noun: Fred",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We went to the lake , because a shark had been seen at the ocean beach , so (it) was a safer place to swim. <sep> Pronoun:it <sep> Noun: the lake",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Emma did not pass the ball to Janie although (she) was open. <sep> Pronoun:she <sep> Noun: Emma",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The boy continued to whip the pony , and eventually the pony threw him over. John laughed out quite loud. \"Good for (him,\") he said. <sep> Pronoun:him <sep> Noun: pony",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Then he took a piece of iron the shape of the horse horse's foot , and clapped (it) on, and drove some nails through the shoe quite into its hoof, so that the shoe was firmly on <sep> Pronoun:it <sep> Noun: horse's foot",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Well satisfied with (his) purchases and feeling very elegant indeed, Babar goes to the photographer to have his picture taken. <sep> Pronoun:his <sep> Noun: the photographer",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw (him) so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: the master",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "It was a summer afternoon, and the dog was sitting in the middle of the lawn. After a while, it got up and moved to a spot under the tree, because (it) was cooler. <sep> Pronoun:it <sep> Noun: the dog",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Kirilov ceded the presidency to Shatov because (he) was more popular. <sep> Pronoun:he <sep> Noun: Shatov",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Larry , a timid teen-ager, lives with his widowed mother in a Brooklyn housing project. Larry Larry's father , a gang leader, was shot to death; his father's disciple, Antonio , takes Larry under (his) wing, and quickly molds him into a drug runner. <sep> Pronoun:his <sep> Noun: Larry's father",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John hired Bill to take care of (him) . <sep> Pronoun:him <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The cat was lying by the mouse hole waiting for the mouse , but (it) was too impatient. <sep> Pronoun:it <sep> Noun: the mouse",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have them back, but (they) scold them just the same because they ran away. <sep> Pronoun:they <sep> Noun: Arthur and Celeste",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The journalists interviewed the stars of the new movie. (They) were very cooperative, so the interview lasted for a long time. <sep> Pronoun:They <sep> Noun: the stars",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I poured water from the bottle into the cup until (it) was full. <sep> Pronoun:it <sep> Noun: the cup",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that (he) had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him. <sep> Pronoun:he <sep> Noun: the government official",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Thomson visited Cooper 's grave in 1765. At that date (he) had been dead for five years. <sep> Pronoun:he <sep> Noun: Cooper",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "My master and mistress decided to pay a visit to some friends who lived about forty-six miles from our home, and James was to drive (them) . <sep> Pronoun:them <sep> Noun: some friends",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man still alive who remembers my great-grandfather . (He) was a remarkable man. <sep> Pronoun:He <sep> Noun: Fred",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Many people start to read Paul's books and can't put them down. (They) are popular because Paul writes so well. <sep> Pronoun:They <sep> Noun: Paul's books",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "As Ollie carried Tommy up the long winding steps, (his) legs ached. <sep> Pronoun:his <sep> Noun: Ollie",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and (their) mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news. <sep> Pronoun:their <sep> Noun: the elephants",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The boy continued to whip the pony , and eventually the pony threw him over. John laughed out quite loud. \"Served (him) right,\" he said. <sep> Pronoun:him <sep> Noun: boy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The politicians far away in Washington could not know the settlers so they must make rules to regulate (them) . <sep> Pronoun:them <sep> Noun: settlers",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. He needed to get him to finish his work, because (his) work was beautiful <sep> Pronoun:his <sep> Noun: Mark",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As (he) likes to make people happy, he gives him his wallet. <sep> Pronoun:he <sep> Noun: Babar",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Dan took the rear seat while Bill claimed the front because (his) \"Dibs!\" was quicker. <sep> Pronoun:his <sep> Noun: Dan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Ann asked Mary what time the library closes, but (she) had forgotten. <sep> Pronoun:she <sep> Noun: Ann",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The dog chased the cat , which ran up a tree. (It) waited at the top. <sep> Pronoun:It <sep> Noun: The dog",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The path to the lake was blocked, so we couldn't use (it) . <sep> Pronoun:it <sep> Noun: the lake",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bernard , who had not told the government official that (he) was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him. <sep> Pronoun:he <sep> Noun: the government official",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, (he) felt him all over, and shook his head; one of his legs was broken. <sep> Pronoun:he <sep> Noun: the black horse",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Everyone really loved the oatmeal cookies ; only a few people liked the chocolate chip cookies . Next time, we should make more of (them) . <sep> Pronoun:them <sep> Noun: the oatmeal cookies",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The sun was covered by a thick cloud all morning, but luckily, by the time the picnic started, (it) was gone. <sep> Pronoun:it <sep> Noun: The sun",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The lawyer asked the witness a question, but (he) was reluctant to answer it. <sep> Pronoun:he <sep> Noun: The lawyer",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave (her) knitting and needlework when she was able to do it, and when she was ill she sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:her <sep> Noun: mistress",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Well satisfied with his purchases and feeling very elegant indeed, Babar goes to the photographer to have (his) picture taken. <sep> Pronoun:his <sep> Noun: the photographer",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Then Dad figured out how much the man owed the store; to that he added the man 's board-bill at the cook-shanty. (He) subtracted that amount from the man 's wages, and made out his check <sep> Pronoun:He <sep> Noun: the man",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Men had the right to keep their sons working for them until (they) were 21 years of age. <sep> Pronoun:they <sep> Noun: Men",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Susan knows all about Ann 's personal problems because (she) is indiscreet. <sep> Pronoun:she <sep> Noun: Ann",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark heard Steve 's feet going down the ladder. The door of the shop closed after (him) . He ran to look out the window. <sep> Pronoun:him <sep> Noun: Steve",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joe Joe's uncle can still beat him at tennis, even though (he) is 30 years younger. <sep> Pronoun:he <sep> Noun: Joe",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Fred was supposed to run the dishwasher , but he put (it) off, because he wanted to watch TV. But the show turned out to be boring, so he changed his mind and turned it off. <sep> Pronoun:it <sep> Noun: the dishwasher",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, (he) would have lost. <sep> Pronoun:he <sep> Noun: Adam",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. (He) needed to get him to finish his work, because his work was beautiful <sep> Pronoun:He <sep> Noun: Mr. Schmidt",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives (him) his wallet. <sep> Pronoun:him <sep> Noun: old man",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The path to the lake was blocked, so we couldn't reach (it) . <sep> Pronoun:it <sep> Noun: The path",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The sack of potatoes had been placed above the bag of flour , so (it) had to be moved first. <sep> Pronoun:it <sep> Noun: The sack of potatoes",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "James asked Robert for a favor but (he) was refused. <sep> Pronoun:he <sep> Noun: James",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John promised Bill to leave, so an hour later (he) left. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father , (he) was twelve years old. <sep> Pronoun:he <sep> Noun: my father",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tatyana managed two guitars and a bag , and still could point out the Freemans : \"Isn't it nice that (they) have come, Mama!\" <sep> Pronoun:they <sep> Noun: two guitars and a bag",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "George got free tickets to the play, but he gave them to Eric , because (he) was not particularly eager to see it. <sep> Pronoun:he <sep> Noun: Eric",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam took French classes from Adam , because (he) was known to speak it fluently. <sep> Pronoun:he <sep> Noun: Adam",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Anna did a lot better than her good friend Lucy on the test because (she) had studied so hard. <sep> Pronoun:she <sep> Noun: Anna",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John hired Bill to take care of (him) . <sep> Pronoun:him <sep> Noun: John",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Tatyana reached the cabin, her mother was sleeping. She was careful not to disturb her, undressing and climbing back into (her) berth. <sep> Pronoun:her <sep> Noun: Tatyana",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Although they ran at about the same speed, Sue beat Sally because (she) had such a bad start. <sep> Pronoun:she <sep> Noun: Sally",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. He heard him calling for the captain , promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all (his) crew had best stay in the cabin until the work was over. <sep> Pronoun:his <sep> Noun: Mr. Singer",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jim signaled the barman and gestured toward (his) bathroom key. <sep> Pronoun:his <sep> Noun: Jim",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Equally swoon-worthy is C.K. Dexter Haven , a pallid young dandy holding a jade-handled walking stick, with a poodle asleep at (his) feet <sep> Pronoun:his <sep> Noun: poodle",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When my parents died, I was not earning enough to keep myself or my crippled sister Nelly , and without our kind mistress , we would have gone to the poorhouse. Nelly calls (her) her angel and she has good right to do so. her <sep> Pronoun:her <sep> Noun: mistress",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education, but now Charlie acts as though it never happened. (He) is very hurt. <sep> Pronoun:He <sep> Noun: Charlie",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Then he took a piece of iron the shape of the horse horse's foot , and clapped (it) on, and drove some nails through the shoe quite into its hoof, so that the shoe was firmly on <sep> Pronoun:it <sep> Noun: piece of iron",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Susan knew that Ann 's son had been in a car accident, so (she) told her about it. <sep> Pronoun:she <sep> Noun: Ann",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Although they ran at about the same speed, Sue beat Sally because (she) had such a good start. <sep> Pronoun:she <sep> Noun: Sally",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Anne gave birth to a daughter last month. (She) is a very charming woman. <sep> Pronoun:She <sep> Noun: Anne",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give (him) any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Beth didn't get angry with Sally , who had cut her off, because (she) stopped and apologized. <sep> Pronoun:she <sep> Noun: Sally",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As (he) likes to make people happy, he gives him his wallet. <sep> Pronoun:he <sep> Noun: old man",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Since it was raining, I carried the newspaper in my backpack to keep (it) dry. <sep> Pronoun:it <sep> Noun: the newspaper",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The delivery truck zoomed by the school bus because (it) was going so fast. <sep> Pronoun:it <sep> Noun: the school bus",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Frank felt vindicated when his longtime rival Bill revealed that (he) was the winner of the competition. <sep> Pronoun:he <sep> Noun: Frank",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "There is a pillar between me and the stage , and I can't see around (it) . <sep> Pronoun:it <sep> Noun: the stage",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I asked Dave to get me my sweater from the other side of the yacht . While he was gone, I rested my arm on the rail over there and suddenly (it) gave way. <sep> Pronoun:it <sep> Noun: arm",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred and Alice had very warm down coats , but (they) were not prepared for the cold in Alaska. <sep> Pronoun:they <sep> Noun: coats",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bernard , who had not told the government official that (he) was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him. <sep> Pronoun:he <sep> Noun: Bernard",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jane knocked on the door, and Susan answered it. (She) invited her to come out. <sep> Pronoun:She <sep> Noun: Susan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jackson was greatly influenced by Arnold , though (he) lived two centuries later. <sep> Pronoun:he <sep> Noun: Jackson",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that (they) had to be denied so many things because he couldn't afford them. <sep> Pronoun:they <sep> Noun: faces",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man still alive who remembers my great-grandfather . (He) is a remarkable man. <sep> Pronoun:He <sep> Noun: Fred",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The woman held the girl against (her) chest <sep> Pronoun:her <sep> Noun: the girl",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom threw his schoolbag down to Ray after (he) reached the top of the stairs. <sep> Pronoun:he <sep> Noun: Ray",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives him (his) wallet. <sep> Pronoun:his <sep> Noun: Babar",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The table was piled high with food , and on the floor beside (it) there were crocks, baskets, and a five-quart pail of milk. <sep> Pronoun:it <sep> Noun: floor",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark heard Steve 's feet going down the ladder. The door of the shop closed after him. (He) ran to look out the window. <sep> Pronoun:He <sep> Noun: Steve",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Ovid ; it was a major influence on (his) writing. <sep> Pronoun:his <sep> Noun: Shakespeare",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When my parents died, I was not earning enough to keep myself or my crippled sister Nelly , and without our kind mistress , we would have gone to the poorhouse. Nelly calls (her) her angel and she has good right to do so. her <sep> Pronoun:her <sep> Noun: Nelly",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education, but now Charlie acts as though it never happened. (He) is very ungrateful. <sep> Pronoun:He <sep> Noun: Charlie",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Emma did not pass the ball to Janie although (she) was open. <sep> Pronoun:she <sep> Noun: Janie",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Stretching (her) back, the woman smiled at the girl . <sep> Pronoun:her <sep> Noun: the woman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Archaeologists have concluded that humans lived in Laputa 20,000 years ago. (They) hunted for evidence on the river banks. <sep> Pronoun:They <sep> Noun: Archaeologists",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "If the con artist has succeeded in fooling Sam , (he) would have lost a lot of money. <sep> Pronoun:he <sep> Noun: the con artist",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, (he) gives him his wallet. <sep> Pronoun:he <sep> Noun: Babar",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We went to the lake , because a shark had been seen at the ocean beach , so (it) was a safer place to swim. <sep> Pronoun:it <sep> Noun: the ocean beach",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Susan knew that Ann 's son had been in a car accident, because (she) told her about it. <sep> Pronoun:she <sep> Noun: Ann",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, he felt him all over, and shook his head; one of (his) legs was broken. <sep> Pronoun:his <sep> Noun: Mr. Bond",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jim yelled at Kevin because (he) was so upset. <sep> Pronoun:he <sep> Noun: Jim",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. (They) are very happy to have them back, but they scold them just the same because they ran away. <sep> Pronoun:They <sep> Noun: Arthur and Celeste",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jim comforted Kevin because (he) was so upset. <sep> Pronoun:he <sep> Noun: Kevin",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Of one thing Mark was sure. Harry knew much less than (he) did. <sep> Pronoun:he <sep> Noun: Harry",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The woman held the girl against (her) will. <sep> Pronoun:her <sep> Noun: the girl",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "If the con artist has succeeded in fooling Sam , (he) would have gotten a lot of money. <sep> Pronoun:he <sep> Noun: the con artist",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bill passed the gameboy to John because (his) turn was next. <sep> Pronoun:his <sep> Noun: John",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Do you suppose that Peter is responsible for the captain ’s illness? Maybe (he) bribed the cook to put something in his food. <sep> Pronoun:he <sep> Noun: Peter",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bill passed the gameboy to John because (his) turn was next. <sep> Pronoun:his <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The dog chased the cat , which ran up a tree. (It) waited at the bottom. <sep> Pronoun:It <sep> Noun: the cat",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We went to the lake , because a shark had been seen at the ocean beach , so (it) was a dangerous place to swim. <sep> Pronoun:it <sep> Noun: the lake",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The table won't fit through the doorway because (it) is too narrow. <sep> Pronoun:it <sep> Noun: the doorway",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joe Joe's uncle can still beat him at tennis, even though (he) is 30 years younger. <sep> Pronoun:he <sep> Noun: Joe's uncle",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom gave Ralph a lift to school so (he) wouldn't have to walk. <sep> Pronoun:he <sep> Noun: Ralph",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bill passed the gameboy to John because (his) turn was over. <sep> Pronoun:his <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The Wainwrights treated Mr. Crowley like a prince until he made his will in their favor; then they treated him like dirt. Folks said he died just to be rid of (their) everlasting nagging. <sep> Pronoun:their <sep> Noun: Folks",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark told Pete many lies about himself, which Pete included in his book. (He) should have been more truthful. <sep> Pronoun:He <sep> Noun: Pete",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Pete envies Martin because (he) is very successful. <sep> Pronoun:he <sep> Noun: Pete",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . I shall have to kill (them) . <sep> Pronoun:them <sep> Noun: the chickens",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After a somewhat lengthy conversation, Nancy convinced the housekeeper that there was no immediate cause for alarm. (She) did not mention the incident at the Hamilton bus station, knowing it would only add to Mrs. Gruen’s uneasiness. <sep> Pronoun:She <sep> Noun: Nancy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Beth didn't get angry with Sally , who had cut her off, because (she) stopped and counted to ten. <sep> Pronoun:she <sep> Noun: Beth",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. His old coachman is getting feeble, and he wants a man to work with him and get into (his) ways, who would be able, when the old man was pensioned off, to step into his place. <sep> Pronoun:his <sep> Noun: new groom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford (them) . <sep> Pronoun:them <sep> Noun: things",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Emma did not pass the ball to Janie although (she) saw that she was open. <sep> Pronoun:she <sep> Noun: Janie",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "James asked Robert for a favor but (he) refused. <sep> Pronoun:he <sep> Noun: Robert",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Susan knows all about Ann 's personal problems because (she) is nosy. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Goethe ; it was a major influence on (his) writing. <sep> Pronoun:his <sep> Noun: Goethe",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The customer walked into the bank and stabbed one of the tellers. (He) was immediately taken to the police station. <sep> Pronoun:He <sep> Noun: The customer",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. He heard him calling for the captain , promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all (his) crew had best stay in the cabin until the work was over. <sep> Pronoun:his <sep> Noun: the captain",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The pony behaved well, sir, and showed no vice; but at last he just threw up his heels and tipped the young gentleman into the thorn hedge. (He) wanted me to help him out, but I hope you will excuse me, sir, I did not feel inclined to do so. <sep> Pronoun:He <sep> Noun: young gentleman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "We saw a boy trying to leap a pony over a gate; the pony would not take the leap, and the boy cut him with the whip, but (he) only turned to one side. <sep> Pronoun:he <sep> Noun: boy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Lionel is holding captive a scientist, Dr. Vardi , who has invented a device that turns animals invisible; Lionel plans to use it on Geoffrey and send (him) to steal nuclear material from an army vault. <sep> Pronoun:him <sep> Noun: Lionel",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that (he) no longer requires his financial support. <sep> Pronoun:he <sep> Noun: Mr. Moncrieff",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The large ball crashed right through the table because (it) was made of steel. <sep> Pronoun:it <sep> Noun: the table",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The drain is clogged with hair. (It) has to be removed. <sep> Pronoun:It <sep> Noun: The drain",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives him (his) wallet. <sep> Pronoun:his <sep> Noun: old man",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires (his) financial support. <sep> Pronoun:his <sep> Noun: Edward",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Dan had to stop Bill from toying with the injured bird. (He) is very compassionate. <sep> Pronoun:He <sep> Noun: Dan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mama came over and sat down beside Alice . Gently she stroked (her) hair and let the child weep. <sep> Pronoun:her <sep> Noun: Alice",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The user changed his password from \" GrWQWu8JyC \" to \" willow-towered Canopy Huntertropic wrestles \" as (it) was easy to remember. <sep> Pronoun:it <sep> Noun: willow-towered Canopy Huntertropic wrestles",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge (he) jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise. <sep> Pronoun:he <sep> Noun: the master",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The customer walked into the bank and stabbed one of the tellers. (He) was immediately taken to the hospital. <sep> Pronoun:He <sep> Noun: The customer",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I couldn't put the pot on the shelf because (it) was too high. <sep> Pronoun:it <sep> Noun: the shelf",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Frank was upset with Tom because the toaster (he) had bought from him didn't work. <sep> Pronoun:he <sep> Noun: Tom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John was jogging through the park when he saw a man juggling watermelons. (He) was very impressed. <sep> Pronoun:He <sep> Noun: John",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Thomson visited Cooper 's grave in 1765. At that date (he) had been travelling for five years. <sep> Pronoun:he <sep> Noun: Cooper",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Joe Joe's uncle can still beat him at tennis, even though (he) is 30 years older. <sep> Pronoun:he <sep> Noun: Joe",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Dan had to stop Bill from toying with the injured bird. (He) is very cruel. <sep> Pronoun:He <sep> Noun: Dan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door, but there was no answer. (She) was out. <sep> Pronoun:She <sep> Noun: Jane",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Goethe ; it was a major influence on (his) writing. <sep> Pronoun:his <sep> Noun: Shakespeare",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Ann asked Mary what time the library closes, but (she) had forgotten. <sep> Pronoun:she <sep> Noun: Mary",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John hired (him) self out to Bill to take care of him . <sep> Pronoun:him <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The donkey wished a wart on its hind leg would disappear, and (it) did. <sep> Pronoun:it <sep> Noun: donkey",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch (them) . They are very happy to have them back, but they scold them just the same because they ran away. them . <sep> Pronoun:them <sep> Noun: mothers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam took French classes from Adam , because (he) was eager to speak it fluently. <sep> Pronoun:he <sep> Noun: Sam",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The signs over the shops' doors had pictures that indicated what work was done inside. Although more and more people were learning how to read, each artisan still had signs, not wishing to lose a possible patron merely because (he) happened to be illiterate. <sep> Pronoun:he <sep> Noun: patron",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The path to the lake was blocked, so we couldn't use (it) . <sep> Pronoun:it <sep> Noun: The path",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Carol believed that Rebecca suspected that (she) had stolen the watch. <sep> Pronoun:she <sep> Noun: Rebecca",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give (him) any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: the master",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, (he) did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The journalists interviewed the stars of the new movie. (They) were very cooperative, so the interview lasted for a long time. <sep> Pronoun:They <sep> Noun: The journalists",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The dog chased the cat , which ran up a tree. (It) waited at the bottom. <sep> Pronoun:It <sep> Noun: The dog",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I put the butterfly wing on the table and (it) broke. <sep> Pronoun:it <sep> Noun: the table",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "It was a summer afternoon, and the dog was sitting in the middle of the lawn. After a while, it got up and moved to a spot under the tree, because (it) was hot. <sep> Pronoun:it <sep> Noun: the dog",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The pony behaved well, sir, and showed no vice; but at last he just threw up his heels and tipped the young gentleman into the thorn hedge. (He) wanted me to help him out, but I hope you will excuse me, sir, I did not feel inclined to do so. <sep> Pronoun:He <sep> Noun: pony",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Madonna fired her trainer because (she) slept with her boyfriend. <sep> Pronoun:she <sep> Noun: Madonna",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred covered his eyes with his hands , because the wind was blowing sand around. He opened (them) when the wind stopped. <sep> Pronoun:them <sep> Noun: his hands",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I asked Dave to get me my sweater from the other side of the yacht . While he was gone, I rested my arm on the rail over there and suddenly (it) gave way. <sep> Pronoun:it <sep> Noun: sweater",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I put the cake away in the refrigerator . (It) has a lot of leftovers in it. <sep> Pronoun:It <sep> Noun: the cake",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have them back, but they scold (them) just the same because they ran away. <sep> Pronoun:them <sep> Noun: Arthur and Celeste",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because (they) are snobs. <sep> Pronoun:they <sep> Noun: Amy's parents",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Alice looked for her friend Jade in the crowd. Since (she) always wears a red turban, Alice spotted her quickly. <sep> Pronoun:she <sep> Noun: Alice",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, (he) would have lost. <sep> Pronoun:he <sep> Noun: Bob",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father , (he) was twelve years old. <sep> Pronoun:he <sep> Noun: Fred",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Fred and Alice had very warm down coats , but (they) were not enough for the cold in Alaska. <sep> Pronoun:they <sep> Noun: Fred and Alice",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom threw his schoolbag down to Ray after (he) reached the bottom of the stairs. <sep> Pronoun:he <sep> Noun: Ray",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Pete envies Martin although (he) is very successful. <sep> Pronoun:he <sep> Noun: Martin",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Then he took a piece of iron the shape of the horse horse's foot , and clapped (it) on, and drove some nails through the shoe quite into its hoof, so that the shoe was firmly on <sep> Pronoun:it <sep> Noun: horse",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred watched TV while George went out to buy groceries. After an hour (he) got back. <sep> Pronoun:he <sep> Noun: George",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because (they) are fifteen. <sep> Pronoun:they <sep> Noun: Sam and Amy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows (his) business. His old coachman is getting feeble, and he wants a man to work with him and get into his ways, who would be able, when the old man was pensioned off, to step into his place <sep> Pronoun:his <sep> Noun: new groom",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Dan took the rear seat while Bill claimed the front because (his) \"Dibs!\" was quicker. <sep> Pronoun:his <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When they had eventually calmed down a bit , and had gotten home, Mr. Farley put the magic pebble in an iron safe . Some day they might want to (use) it , but really for now, what more could they wish for? <sep> Pronoun:it <sep> Noun: safe",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Lily spoke to Donna , breaking (her) silence. <sep> Pronoun:her <sep> Noun: Lily",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Tom said \"Check\" to Ralph as he took (his) bishop. <sep> Pronoun:his <sep> Noun: Ralph",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "In the storm, the tree fell down and crashed through the roof of my house. Now, I have to get (it) repaired. <sep> Pronoun:it <sep> Noun: the roof",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "During a game of tag, Ethan chased Luke because (he) was \"it\". <sep> Pronoun:he <sep> Noun: Luke",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that (they) had to be denied so many things because he couldn't afford them. <sep> Pronoun:they <sep> Noun: children",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob collapsed on the sidewalk. Soon he saw Carl coming to help. (He) was very ill. <sep> Pronoun:He <sep> Noun: Bob",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . (They) have gotten very nervous. <sep> Pronoun:They <sep> Noun: the chickens",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Do you suppose that Peter is responsible for the captain ’s illness? Maybe (he) bribed the cook to put something in his food. <sep> Pronoun:he <sep> Noun: the captain",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Anna did a lot worse than her good friend Lucy on the test because (she) had studied so hard. <sep> Pronoun:she <sep> Noun: Anna",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and (their) mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news. <sep> Pronoun:their <sep> Noun: Arthur and Celeste",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The actress used to be named Terpsichore , but she changed it to Tina a few years ago, because she figured (it) was too hard to pronounce. <sep> Pronoun:it <sep> Noun: Terpsichore",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The city councilmen refused the demonstrators a permit because (they) advocated violence. <sep> Pronoun:they <sep> Noun: the demonstrators",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I put the cake away in the refrigerator . (It) has a lot of butter in it. <sep> Pronoun:It <sep> Noun: the refrigerator",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We went to the lake , because a shark had been seen at the ocean beach , so (it) was a dangerous place to swim. <sep> Pronoun:it <sep> Noun: the ocean beach",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The older students were bullying the younger ones, so we rescued (them) . <sep> Pronoun:them <sep> Noun: The older students",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "My master and mistress decided to pay a visit to some friends who lived about forty-six miles from our home, and James was to drive (them) . <sep> Pronoun:them <sep> Noun: master and mistress",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Beth didn't get angry with Sally , who had cut her off, because (she) stopped and apologized. <sep> Pronoun:she <sep> Noun: Beth",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Many people start to read Paul's books and can't put them down. (They) are popular because Paul writes so well. <sep> Pronoun:They <sep> Noun: people",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from (him) . <sep> Pronoun:him <sep> Noun: anyone",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark told Pete many lies about himself, which Pete included in his book. (He) should have been more skeptical. <sep> Pronoun:He <sep> Noun: Mark",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The trophy doesn't fit into the brown suitcase because (it) is too large. <sep> Pronoun:it <sep> Noun: The trophy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "My meeting started at 4:00 and I needed to catch the train at 4:30, so there wasn't much time. Luckily, (it) was short, so it worked out. <sep> Pronoun:it <sep> Noun: the train",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane gave Joan candy because (she) was hungry. <sep> Pronoun:she <sep> Noun: Jane",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, (he) felt him all over, and shook his head; one of his legs was broken. <sep> Pronoun:he <sep> Noun: Mr. Bond",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The firemen arrived before the police because (they) were coming from so far away. <sep> Pronoun:they <sep> Noun: The firemen",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Emma did not pass the ball to Janie although (she) saw that she was open. <sep> Pronoun:she <sep> Noun: Emma",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The storekeepers stayed in town to run their stores and lived in the rooms behind (them) . <sep> Pronoun:them <sep> Noun: storekeepers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but (he) was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise. <sep> Pronoun:he <sep> Noun: the master",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joan made sure to thank Susan for all the help (she) had given. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Pam's parents came home and found her having sex with her boyfriend, Paul. (They) were furious about it. <sep> Pronoun:They <sep> Noun: Pam's parents",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and (their) mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news. <sep> Pronoun:their <sep> Noun: their mothers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Of one thing Mark was sure. Harry knew much less than (he) did. <sep> Pronoun:he <sep> Noun: Mark",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Ovid ; it was a major influence on (his) writing. <sep> Pronoun:his <sep> Noun: Ovid",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "If the con artist has succeeded in fooling Sam , (he) would have gotten a lot of money. <sep> Pronoun:he <sep> Noun: Sam",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The sculpture rolled off the shelf because (it) wasn't anchored. <sep> Pronoun:it <sep> Noun: The sculpture",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Alice looked for her friend Jade in the crowd. Since (she) always wears a red turban, Alice spotted her quickly. <sep> Pronoun:she <sep> Noun: Jade",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark told Pete many lies about himself, which Pete included in his book. (He) should have been more skeptical. <sep> Pronoun:He <sep> Noun: Pete",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Tatyana managed two guitars and a bag , and still could point out the Freemans : \"Isn't it nice that (they) have come, Mama!\" <sep> Pronoun:they <sep> Noun: the Freemans",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Thomson visited Cooper 's grave in 1765. At that date (he) had been travelling for five years. <sep> Pronoun:he <sep> Noun: Thomson",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Always before, Larry had helped Dad with his work. But (he) could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office. <sep> Pronoun:he <sep> Noun: Dad",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jim comforted Kevin because (he) was so upset. <sep> Pronoun:he <sep> Noun: Jim",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man still alive who remembers my great-grandfather . (He) was a remarkable man. <sep> Pronoun:He <sep> Noun: my great-grandfather",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door but (she) did not get an answer. <sep> Pronoun:she <sep> Noun: Jane",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Many people start to read Paul's books and can't put them down. (They) are gripped because Paul writes so well. <sep> Pronoun:They <sep> Noun: Paul's books",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "What about the time you cut up tulip bulbs in the hamburgers because you thought (they) were onions? <sep> Pronoun:they <sep> Noun: hamburgers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford (them) . <sep> Pronoun:them <sep> Noun: faces",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "It is not easy to space buttonholes exactly the same distance apart, and it is very difficult to cut them precisely the right size . The tiniest slip of the scissors will make the hole too large, and even one thread uncut will leave (it) too small. <sep> Pronoun:it <sep> Noun: slip",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because (they) are fifteen. <sep> Pronoun:they <sep> Noun: Amy's parents",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in (her) favorite photo album. Today she had to hunt for a button, so she put the album on a chair without even opening it. <sep> Pronoun:her <sep> Noun: Mama",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have them back, but they scold them just the same because (they) ran away. <sep> Pronoun:they <sep> Noun: Arthur and Celeste",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sid explained his theory to Mark but (he) couldn't convince him. <sep> Pronoun:he <sep> Noun: Mark",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane gave Joan candy because (she) was hungry. <sep> Pronoun:she <sep> Noun: Joan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mama came over and sat down beside Alice . Gently (she) stroked her hair and let the child weep. <sep> Pronoun:she <sep> Noun: Mama",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have them back, but (they) scold them just the same because they ran away. <sep> Pronoun:they <sep> Noun: mothers",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The father carried the sleeping boy in (his) bassinet. <sep> Pronoun:his <sep> Noun: The father",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Adam can't leave work here until Bob arrives to replace him. If Bob had left home for work on time, (he) would be gone by this time. <sep> Pronoun:he <sep> Noun: Bob",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Goethe ; it was a fine selection of (his) writing. <sep> Pronoun:his <sep> Noun: Shakespeare",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires (his) financial support. <sep> Pronoun:his <sep> Noun: Chester",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "There is a pillar between me and the stage , and I can't see (it) . <sep> Pronoun:it <sep> Noun: the stage",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Alice tried frantically to stop her daughter from barking at the party, leaving us to wonder why (she) was behaving so strangely. <sep> Pronoun:she <sep> Noun: Alice",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The scientists are studying three species of fish that have recently been found living in the Indian Ocean. (They) began two years ago. <sep> Pronoun:They <sep> Noun: The scientists",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jackson was greatly influenced by Arnold , though (he) lived two centuries later. <sep> Pronoun:he <sep> Noun: Arnold",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred watched TV while George went out to buy groceries. After an hour (he) got up. <sep> Pronoun:he <sep> Noun: George",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Tatyana reached the cabin, her mother was sleeping. She was careful not to disturb her, undressing and climbing back into (her) berth. <sep> Pronoun:her <sep> Noun: mother",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have (them) back, but they scold them just the same because they ran away. <sep> Pronoun:them <sep> Noun: mothers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam Goodman 's biography of the Spartan general Xenophanes conveys a vivid sense of the difficulties (he) faced in his research. <sep> Pronoun:he <sep> Noun: Goodman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The firemen arrived after the police because (they) were coming from so far away. <sep> Pronoun:they <sep> Noun: The firemen",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paul tried to call George on the phone, but (he) wasn't available. <sep> Pronoun:he <sep> Noun: Paul",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tatyana knew that Grandma always enjoyed serving an abundance of food to (her) guests. Now Tatyana watched as Grandma gathered Tatyana 's small mother into a wide, scrawny embrace and then propelled her to the table, lifting her shawl from her shoulders, seating her in the place of honor, and saying simply: \"There's plenty.\" <sep> Pronoun:her <sep> Noun: Tatyana",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I put the butterfly wing on the table and (it) broke. <sep> Pronoun:it <sep> Noun: the butterfly wing",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I couldn't put the pot on the shelf because (it) was too high. <sep> Pronoun:it <sep> Noun: the pot",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Susan knows all about Ann 's personal problems because (she) is indiscreet. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when she was able to do it, and when she was ill (she) sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:she <sep> Noun: Nelly",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening (it) . <sep> Pronoun:it <sep> Noun: living room",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I stuck a pin through a carrot. When I pulled the pin out, (it) left a hole. <sep> Pronoun:it <sep> Noun: the pin",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The sack of potatoes had been placed below the bag of flour , so (it) had to be moved first. <sep> Pronoun:it <sep> Noun: the bag of flour",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The fish ate the worm . (It) was tasty. <sep> Pronoun:It <sep> Noun: the worm",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The father carried the sleeping boy in (his) arms <sep> Pronoun:his <sep> Noun: The father",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "As Ollie carried Tommy up the long winding steps, (his) legs ached. <sep> Pronoun:his <sep> Noun: Tommy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The signs over the shops' doors had pictures that indicated what work was done inside. Although more and more people were learning how to read, each artisan still had signs, not wishing to lose a possible patron merely because (he) happened to be illiterate. <sep> Pronoun:he <sep> Noun: artisan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred and Alice had very warm down coats , but (they) were not enough for the cold in Alaska. <sep> Pronoun:they <sep> Noun: coats",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The table was piled high with food , and on the floor beside (it) there were crocks, baskets, and a five-quart pail of milk. <sep> Pronoun:it <sep> Noun: food",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "As Andrea in the crop duster passed over Susan , (she) could see the landing gear. <sep> Pronoun:she <sep> Noun: Andrea",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "In the storm, the tree fell down and crashed through the roof of my house. Now, I have to get (it) repaired. <sep> Pronoun:it <sep> Noun: the tree",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "At the Loebner competition the judges couldn't figure out which respondents were the chatbots because (they) were so advanced. <sep> Pronoun:they <sep> Noun: the chatbots",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The actress used to be named Terpsichore , but she changed it to Tina a few years ago, because she figured (it) was easier to pronounce. <sep> Pronoun:it <sep> Noun: Tina",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Paul tried to call George on the phone, but (he) wasn't successful. <sep> Pronoun:he <sep> Noun: George",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The first place that I can well remember was a large pleasant meadow with a pond of clear water in (it) . Some shady trees leaned over <sep> Pronoun:it <sep> Noun: pond",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education. (He) is very generous. <sep> Pronoun:He <sep> Noun: Charlie",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We had hoped to place copies of our newsletter on all the chairs in the auditorium, but there were simply not enough of (them) . <sep> Pronoun:them <sep> Noun: chairs",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Dr. Adams informed Kate that (she) had cancer and presented several options for future treatment. <sep> Pronoun:she <sep> Noun: Kate",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The fish ate the worm . (It) was tasty. <sep> Pronoun:It <sep> Noun: The fish",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Anna did a lot better than her good friend Lucy on the test because (she) had studied so hard. <sep> Pronoun:she <sep> Noun: Lucy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The firemen arrived after the police because (they) were coming from so far away. <sep> Pronoun:they <sep> Noun: the police",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I used an old rag to clean the knife , and then I put (it) in the trash. <sep> Pronoun:it <sep> Noun: the knife",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob collapsed on the sidewalk. Soon he saw Carl coming to help. (He) was very ill. <sep> Pronoun:He <sep> Noun: Carl",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Alice tried frantically to stop her daughter from chatting at the party, leaving us to wonder why (she) was behaving so strangely. <sep> Pronoun:she <sep> Noun: Alice",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Tom said \"Check\" to Ralph as he took (his) bishop. <sep> Pronoun:his <sep> Noun: Tom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The police arrested all of the gang members . (They) were trying to run the drug trade in the neighborhood. <sep> Pronoun:They <sep> Noun: The police",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Carol believed that Rebecca regretted that (she) had stolen the watch. <sep> Pronoun:she <sep> Noun: Carol",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, he felt (him) all over, and shook his head; one of his legs was broken. <sep> Pronoun:him <sep> Noun: Mr. Bond",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Susan knows all about Ann 's personal problems because (she) is nosy. <sep> Pronoun:she <sep> Noun: Ann",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The sculpture rolled off the shelf because (it) wasn't anchored. <sep> Pronoun:it <sep> Noun: the shelf",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob collapsed on the sidewalk. Soon he saw Carl coming to help. (He) was very concerned. <sep> Pronoun:He <sep> Noun: Bob",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "So Mark slept. It was daylight when he woke with Warren 's hand upon (his) shoulder. <sep> Pronoun:his <sep> Noun: Warren",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that (he) had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him. <sep> Pronoun:he <sep> Noun: Bernard",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John was doing research in the library when he heard a man humming and whistling. (He) was very annoying. <sep> Pronoun:He <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Billy cried because Toby wouldn't accept (his) toy. <sep> Pronoun:his <sep> Noun: Billy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Everyone really loved the oatmeal cookies ; only a few people liked the chocolate chip cookies . Next time, we should make fewer of (them) . <sep> Pronoun:them <sep> Noun: the oatmeal cookies",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I took the water bottle out of the backpack so that (it) would be handy. <sep> Pronoun:it <sep> Noun: the backpack",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The fish ate the worm . (It) was hungry. <sep> Pronoun:It <sep> Noun: the worm",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom said \"Check\" to Ralph as he moved (his) bishop. <sep> Pronoun:his <sep> Noun: Ralph",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . I shall have to kill (them) . <sep> Pronoun:them <sep> Noun: The foxes",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Lionel is holding captive a scientist, Dr. Vardi , who has invented a device that turns animals invisible; Lionel plans to use it on Geoffrey and send (him) to steal nuclear material from an army vault. <sep> Pronoun:him <sep> Noun: Geoffrey",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education. (He) is very grateful. <sep> Pronoun:He <sep> Noun: Bob",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door, but there was no answer. (She) was out. <sep> Pronoun:She <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . I shall have to guard (them) . <sep> Pronoun:them <sep> Noun: The foxes",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The lawyer asked the witness a question, but (he) was reluctant to repeat it. <sep> Pronoun:he <sep> Noun: The lawyer",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw (him) so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. (He) heard him calling for the captain, promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all his crew had best stay in the cabin until the work was over <sep> Pronoun:He <sep> Noun: Mark",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The user changed his password from \" GrWQWu8JyC \" to \" willow-towered Canopy Huntertropic wrestles \" as (it) was easy to forget. <sep> Pronoun:it <sep> Noun: willow-towered Canopy Huntertropic wrestles",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Lily spoke to Donna , breaking (her) silence. <sep> Pronoun:her <sep> Noun: Donna",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark heard Steve 's feet going down the ladder. The door of the shop closed after (him) . He ran to look out the window. <sep> Pronoun:him <sep> Noun: Mark",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Frank felt vindicated when his longtime rival Bill revealed that (he) was the winner of the competition. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . I shall have to guard (them) . <sep> Pronoun:them <sep> Noun: the chickens",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Joe paid the detective after (he) delivered the final report on the case. <sep> Pronoun:he <sep> Noun: Joe",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John was doing research in the library when he heard a man humming and whistling. (He) was very annoyed. <sep> Pronoun:He <sep> Noun: John",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Adam can't leave work here until Bob arrives to replace him. If Bob had left home for work on time, (he) would be gone by this time. <sep> Pronoun:he <sep> Noun: Adam",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The table won't fit through the doorway because (it) is too narrow. <sep> Pronoun:it <sep> Noun: The table",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door but (she) did not answer. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The sculpture rolled off the shelf because (it) wasn't level. <sep> Pronoun:it <sep> Noun: the shelf",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Tatyana reached the cabin, (her) mother was sleeping. She was careful not to disturb her , undressing and climbing back into her berth. <sep> Pronoun:her <sep> Noun: Tatyana",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, (he) would have won. <sep> Pronoun:he <sep> Noun: Bob",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John couldn't see the stage with Billy in front of him because (he) is so short. <sep> Pronoun:he <sep> Noun: Billy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Since Chester was dependent on Uncle Vernon , he couldn't very well marry without (his) approval <sep> Pronoun:his <sep> Noun: Uncle Vernon",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. His old coachman is getting feeble, and he wants a man to work with him and get into his ways, who would be able, when the old man was pensioned off, to step into (his) place <sep> Pronoun:his <sep> Noun: Sir Clifford",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Paul tried to call George on the phone, but (he) wasn't successful. <sep> Pronoun:he <sep> Noun: Paul",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The journalists interviewed the stars of the new movie. (They) were very persistent, so the interview lasted for a long time. <sep> Pronoun:They <sep> Noun: The journalists",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Tommy dropped his ice cream, Timmy giggled, so father gave (him) a stern look. <sep> Pronoun:him <sep> Noun: Timmy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Carol believed that Rebecca suspected that (she) had stolen the watch. <sep> Pronoun:she <sep> Noun: Carol",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Kirilov ceded the presidency to Shatov because (he) was less popular. <sep> Pronoun:he <sep> Noun: Kirilov",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The table won't fit through the doorway because (it) is too wide. <sep> Pronoun:it <sep> Noun: the doorway",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door but (she) did not answer. <sep> Pronoun:she <sep> Noun: Jane",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The delivery truck zoomed by the school bus because (it) was going so slow. <sep> Pronoun:it <sep> Noun: the school bus",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I saw Jim yelling at some guy in a military uniform with a huge red beard. I don't know why (he) was, but he looked very unhappy. <sep> Pronoun:he <sep> Noun: Jim",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "During a game of tag, Ethan chased Luke because (he) was \"it\". <sep> Pronoun:he <sep> Noun: Ethan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "As Ollie carried Tommy up the long winding steps, (his) legs dangled. <sep> Pronoun:his <sep> Noun: Tommy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch (them) . They are very happy to have them back, but they scold them just the same because they ran away. them . <sep> Pronoun:them <sep> Noun: Arthur and Celeste",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The storekeepers stayed in town to run their stores and lived in the rooms behind (them) . <sep> Pronoun:them <sep> Noun: rooms",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane gave Joan candy because (she) wasn't hungry. <sep> Pronoun:she <sep> Noun: Jane",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Do you suppose that Peter is responsible for the captain ’s illness? Maybe he bribed the cook to put something in (his) food. <sep> Pronoun:his <sep> Noun: Peter",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . (They) have gotten very nervous. <sep> Pronoun:They <sep> Noun: The foxes",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Joe Joe's uncle can still beat him at tennis, even though (he) is 30 years older. <sep> Pronoun:he <sep> Noun: Joe's uncle",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have them back, but they scold them just the same because (they) ran away. <sep> Pronoun:they <sep> Noun: mothers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The actress used to be named Terpsichore , but she changed it to Tina a few years ago, because she figured (it) was too hard to pronounce. <sep> Pronoun:it <sep> Noun: Tina",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Lily spoke to Donna , breaking (her) concentration. <sep> Pronoun:her <sep> Noun: Lily",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "In the middle of the outdoor concert, the rain started falling, but (it) continued until 10. <sep> Pronoun:it <sep> Noun: the rain",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening (it) . <sep> Pronoun:it <sep> Noun: chair",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that (his) boss at the railroad company would not want anyone but him to work in the office. <sep> Pronoun:his <sep> Noun: Larry",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "John promised Bill to leave, so an hour later (he) left. <sep> Pronoun:he <sep> Noun: John",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album. Today (she) had to hunt for a button, so she put the album on a chair without even opening it. <sep> Pronoun:she <sep> Noun: Mama",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "We had hoped to place copies of our newsletter on all the chairs in the auditorium, but there were simply too many of (them) . <sep> Pronoun:them <sep> Noun: chairs",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Larry , a timid teen-ager, lives with his widowed mother in a Brooklyn housing project. Larry Larry's father , a gang leader, was shot to death; his father's disciple, Antonio , takes Larry under (his) wing, and quickly molds him into a drug runner. <sep> Pronoun:his <sep> Noun: Larry",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Tatyana reached the cabin, (her) mother was sleeping. She was careful not to disturb her , undressing and climbing back into her berth. <sep> Pronoun:her <sep> Noun: mother",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Ovid ; it was a fine selection of (his) writing. <sep> Pronoun:his <sep> Noun: Ovid",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Fred and Alice had very warm down coats , but (they) were not prepared for the cold in Alaska. <sep> Pronoun:they <sep> Noun: Fred and Alice",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. (They) are very happy to have them back, but they scold them just the same because they ran away. <sep> Pronoun:They <sep> Noun: mothers",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bill passed the gameboy to John because (his) turn was over. <sep> Pronoun:his <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed (him) the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: the master",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. His old coachman is getting feeble, and he wants a man to work with him and get into his ways, who would be able, when the old man was pensioned off, to step into (his) place <sep> Pronoun:his <sep> Noun: new groom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The sack of potatoes had been placed below the bag of flour , so (it) had to be moved first. <sep> Pronoun:it <sep> Noun: The sack of potatoes",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when she was able to do it, and when she was ill she sent (her) dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:her <sep> Noun: Nelly",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Always before, Larry had helped Dad with his work. But he could not help (him) now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office. <sep> Pronoun:him <sep> Noun: Dad",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob paid for Charlie 's college education. (He) is very generous. <sep> Pronoun:He <sep> Noun: Bob",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Grant worked hard to harvest his beans so he and his family would have enough to eat that winter, His friend Henry let him stack them in his barn where they would dry. Later, he and Tatyana would shell them and cook them for (their) Sunday dinners. <sep> Pronoun:their <sep> Noun: he and Tatyana",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The path to the lake was blocked, so we couldn't reach (it) . <sep> Pronoun:it <sep> Noun: the lake",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Since Chester was dependent on Uncle Vernon , (he) couldn't very well marry without his approval <sep> Pronoun:he <sep> Noun: Chester",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Alice looked for her friend Jade in the crowd. Since (she) always has good luck, Alice spotted her quickly. <sep> Pronoun:she <sep> Noun: Jade",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The sack of potatoes had been placed above the bag of flour , so (it) had to be moved first. <sep> Pronoun:it <sep> Noun: the bag of flour",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "No one joins Facebook to be sad and lonely. But a new study from the University of Wisconsin psychologist George Lincoln argues that that's exactly how (it) makes us feel. <sep> Pronoun:it <sep> Noun: Facebook",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "All the buttons up the back of Dora 's plaid dress were buttoned outside-in. Maude should have thought to button her up; but no, she had left poor little Dora to do the best (she) could, alone. <sep> Pronoun:she <sep> Noun: Maude",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The journalists interviewed the stars of the new movie. (They) were very persistent, so the interview lasted for a long time. <sep> Pronoun:They <sep> Noun: the stars",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives (him) his wallet. <sep> Pronoun:him <sep> Noun: Babar",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. His old coachman is getting feeble, and he wants a man to work with him and get into (his) ways, who would be able, when the old man was pensioned off, to step into his place. <sep> Pronoun:his <sep> Noun: Sir Clifford",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Emma's mother had died long ago, and (her) place had been taken by an excellent woman as governess. <sep> Pronoun:her <sep> Noun: Emma's mother",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford (them) . <sep> Pronoun:them <sep> Noun: children",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane gave Joan candy because (she) wasn't hungry. <sep> Pronoun:she <sep> Noun: Joan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Always before, Larry had helped Dad with his work. But (he) could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office. <sep> Pronoun:he <sep> Noun: Larry",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "It is not easy to space buttonholes exactly the same distance apart, and it is very difficult to cut them precisely the right size . The tiniest slip of the scissors will make the hole too large, and even one thread uncut will leave (it) too small. <sep> Pronoun:it <sep> Noun: the hole",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The police arrested all of the gang members . (They) were trying to stop the drug trade in the neighborhood. <sep> Pronoun:They <sep> Noun: The police",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The actress used to be named Terpsichore , but she changed it to Tina a few years ago, because she figured (it) was easier to pronounce. <sep> Pronoun:it <sep> Noun: Terpsichore",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Goethe ; it was a fine selection of (his) writing. <sep> Pronoun:his <sep> Noun: Goethe",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Lionel is holding captive a scientist, Dr. Vardi , who has invented a device that turns animals invisible; Lionel plans to use it on Geoffrey and send (him) to steal nuclear material from an army vault. <sep> Pronoun:him <sep> Noun: Dr. Vardi",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires (his) financial support. <sep> Pronoun:his <sep> Noun: Mr. Moncrieff",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I used an old rag to clean the knife , and then I put (it) in the drawer. <sep> Pronoun:it <sep> Noun: the knife",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "A man's life and a horse's life are worth more than some foxes' tails ; al least (they) ought to be. <sep> Pronoun:they <sep> Noun: foxes' tails",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred covered his eyes with his hands , because the wind was blowing sand around. He lowered (them) when the wind stopped. <sep> Pronoun:them <sep> Noun: his hands",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Susan knew that Ann 's son had been in a car accident, because (she) told her about it. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred watched TV while George went out to buy groceries. After an hour (he) got up. <sep> Pronoun:he <sep> Noun: Fred",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I sat there feeling rather like a chappie I'd once read about in a book , who murdered another cove and hid the body under the dining-room table , and then had to be the life and soul of a dinner party, with (it) there all the time. <sep> Pronoun:it <sep> Noun: book",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man still alive who remembers my great-grandfather . (He) is a remarkable man. <sep> Pronoun:He <sep> Noun: my great-grandfather",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Grant worked hard to harvest his beans so he and his family would have enough to eat that winter, His friend Henry let him stack (them) in his barn where they would dry. Later, he and Tatyana would shell them and cook them for their Sunday dinners. <sep> Pronoun:them <sep> Noun: beans",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Dr. Adams informed Kate that (she) had cancer and presented several options for future treatment. <sep> Pronoun:she <sep> Noun: Dr. Adams",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The man lifted the boy onto (his) shoulders. <sep> Pronoun:his <sep> Noun: The man",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Susan knew that Ann 's son had been in a car accident, so (she) told her about it. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Pam's parents came home and found her having sex with her boyfriend, Paul. (They) were embarrassed about it. <sep> Pronoun:They <sep> Noun: Pam's parents",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "In July, Kamtchatka declared war on Yakutsk . Since Yakutsk 's army was much better equipped and ten times larger, (they) were victorious within weeks. <sep> Pronoun:they <sep> Noun: Yakutsk",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, he felt him all over, and shook (his) head; one of his legs was broken. <sep> Pronoun:his <sep> Noun: Mr. Bond",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The large ball crashed right through the table because (it) was made of styrofoam. <sep> Pronoun:it <sep> Noun: the table",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Sid explained his theory to Mark but (he) couldn't convince him. <sep> Pronoun:he <sep> Noun: Sid",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening (it) . <sep> Pronoun:it <sep> Noun: button",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Even before they reached town , they could hear a sound like corn popping. Dora asked what (it) was, and Dad said it was firecrackers. <sep> Pronoun:it <sep> Noun: town",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The boy continued to whip the pony , and eventually the pony threw him over. John laughed out quite loud. \"Good for (him,\") he said. <sep> Pronoun:him <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sergeant Holmes asked the girls to describe the intruder . Nancy not only provided the policeman with an excellent description of the heavyset thirty-year-old prowler, but drew a rough sketch of (his) face. <sep> Pronoun:his <sep> Noun: the intruder",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The user changed his password from \" GrWQWu8JyC \" to \" willow-towered Canopy Huntertropic wrestles \" as (it) was easy to forget. <sep> Pronoun:it <sep> Noun: GrWQWu8JyC",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Fred was supposed to run the dishwasher , but he put it off, because he wanted to watch TV. But the show turned out to be boring, so he changed his mind and turned (it) on. <sep> Pronoun:it <sep> Noun: the dishwasher",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "If the con artist has succeeded in fooling Sam , (he) would have lost a lot of money. <sep> Pronoun:he <sep> Noun: Sam",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "This book introduced Shakespeare to Ovid ; it was a fine selection of (his) writing. <sep> Pronoun:his <sep> Noun: Shakespeare",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Tatyana reached the cabin, her mother was sleeping. (She) was careful not to disturb her, undressing and climbing back into her berth. <sep> Pronoun:She <sep> Noun: Tatyana",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mr. Taylor was a man of uncertain temper and his general tendency was to think that David was a poor chump and that whatever step he took in any direction on his own account was just another proof of (his) innate idiocy, <sep> Pronoun:his <sep> Noun: Mr. Taylor",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Joe paid the detective after (he) received the final report on the case. <sep> Pronoun:he <sep> Noun: the detective",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that (he) roared with the pain and surprise. <sep> Pronoun:he <sep> Noun: the master",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I sallied out for a bit of food , more to pass the time than because I wanted (it) . <sep> Pronoun:it <sep> Noun: food",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jackson was greatly influenced by Arnold , though (he) lived two centuries earlier. <sep> Pronoun:he <sep> Noun: Jackson",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mary tucked her daughter Anne into bed, so that (she) could work. <sep> Pronoun:she <sep> Noun: Mary",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The police arrested all of the gang members . (They) were trying to stop the drug trade in the neighborhood. <sep> Pronoun:They <sep> Noun: the gang members",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door but (she) did not get an answer. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jim signaled the barman and gestured toward (his) empty glass <sep> Pronoun:his <sep> Noun: the barman",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The stable was very roomy, with four good stalls; a large swinging window opened into the yard , which made (it) pleasant and airy. <sep> Pronoun:it <sep> Noun: stable",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Frank felt crushed when his longtime rival Bill revealed that (he) was the winner of the competition. <sep> Pronoun:he <sep> Noun: Frank",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give him any more punishment of that kind, but set (him) up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I sat there feeling rather like a chappie I'd once read about in a book , who murdered another cove and hid the body under the dining-room table , and then had to be the life and soul of a dinner party, with (it) there all the time. <sep> Pronoun:it <sep> Noun: body",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The cat was lying by the mouse hole waiting for the mouse , but (it) was too cautious. <sep> Pronoun:it <sep> Noun: the mouse",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I poured water from the bottle into the cup until (it) was empty. <sep> Pronoun:it <sep> Noun: the cup",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I put the heavy book on the table and (it) broke. <sep> Pronoun:it <sep> Noun: the heavy book",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Pete envies Martin because (he) is very successful. <sep> Pronoun:he <sep> Noun: Martin",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The mothers of Arthur and Celeste have come to the town to fetch them. They are very happy to have (them) back, but they scold them just the same because they ran away. <sep> Pronoun:them <sep> Noun: Arthur and Celeste",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Bob was playing cards with Adam and was way ahead. If Adam hadn't had a sudden run of good luck, (he) would have won. <sep> Pronoun:he <sep> Noun: Adam",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The lawyer asked the witness a question, but (he) was reluctant to repeat it. <sep> Pronoun:he <sep> Noun: the witness",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The stable was very roomy, with four good stalls; a large swinging window opened into the yard , which made (it) pleasant and airy. <sep> Pronoun:it <sep> Noun: yard",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Steve follows Fred 's example in everything. (He) influences him hugely. <sep> Pronoun:He <sep> Noun: Steve",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mark told Pete many lies about himself, which Pete included in his book. (He) should have been more truthful. <sep> Pronoun:He <sep> Noun: Mark",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "As Andrea in the crop duster passed over Susan , (she) could see the landing gear. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when (she) was able to do it, and when she was ill she sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:she <sep> Noun: mistress",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Dr. Adams informed Kate that (she) had retired and presented several options for future treatment. <sep> Pronoun:she <sep> Noun: Dr. Adams",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Frank felt crushed when his longtime rival Bill revealed that (he) was the winner of the competition. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when she was able to do it, and when she was ill she sent (her) dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:her <sep> Noun: mistress",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Our mistress hired a room for my crippled sister Nelly , and she gave her knitting and needlework when (she) was able to do it, and when she was ill she sent her dinners and many nice comfortable things and was like a mother to her. <sep> Pronoun:she <sep> Noun: Nelly",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Archaeologists have concluded that humans lived in Laputa 20,000 years ago. (They) hunted for deer on the river banks. <sep> Pronoun:They <sep> Noun: Archaeologists",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The boy continued to whip the pony , and eventually the pony threw him over. John laughed out quite loud. \"Served (him) right,\" he said. <sep> Pronoun:him <sep> Noun: pony",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. (His) old coachman is getting feeble, and he wants a man to work with him and get into his ways, who would be able, when the old man was pensioned off, to step into his place. <sep> Pronoun:His <sep> Noun: Sir Clifford",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "No one joins Facebook to be sad and lonely. But a new study from the University of Wisconsin psychologist George Lincoln argues that that's exactly how (it) makes us feel. <sep> Pronoun:it <sep> Noun: study",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I poured water from the bottle into the cup until (it) was empty. <sep> Pronoun:it <sep> Noun: the bottle",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Emma Emma's mother had died long ago, and (her) education had been managed by an excellent woman as governess. <sep> Pronoun:her <sep> Noun: Emma",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jane knocked on Susan 's door, but there was no answer. (She) was disappointed. <sep> Pronoun:She <sep> Noun: Susan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Steve follows Fred 's example in everything. (He) admires him hugely. <sep> Pronoun:He <sep> Noun: Fred",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Jane knocked on the door, and Susan answered it. (She) invited her to come in. <sep> Pronoun:She <sep> Noun: Susan",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "George got free tickets to the play, but he gave them to Eric , because (he) was particularly eager to see it. <sep> Pronoun:he <sep> Noun: George",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Alice looked for her friend Jade in the crowd. Since (she) always has good luck, Alice spotted her quickly. <sep> Pronoun:she <sep> Noun: Alice",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Tom gave Ralph a lift to school so (he) wouldn't have to walk. <sep> Pronoun:he <sep> Noun: Tom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Bill passed the half-empty plate to John because (he) was full. <sep> Pronoun:he <sep> Noun: John",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Fred is the only man alive who still remembers my father as an infant. When Fred first saw my father , (he) was twelve months old. <sep> Pronoun:he <sep> Noun: Fred",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Larry , a timid teen-ager, lives with his widowed mother in a Brooklyn housing project. Larry Larry's father , a gang leader, was shot to death; his father's disciple, Antonio , takes Larry under (his) wing, and quickly molds him into a drug runner. <sep> Pronoun:his <sep> Noun: Antonio",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark heard Steve 's feet going down the ladder. The door of the shop closed after him. (He) ran to look out the window. <sep> Pronoun:He <sep> Noun: Mark",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Dan took the rear seat while Bill claimed the front because (his) \"Dibs!\" was slow. <sep> Pronoun:his <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The cat was lying by the mouse hole waiting for the mouse , but (it) was too cautious. <sep> Pronoun:it <sep> Noun: The cat",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that (his) boss at the railroad company would not want anyone but him to work in the office. <sep> Pronoun:his <sep> Noun: Dad",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Ann asked Mary what time the library closes, because (she) had forgotten. <sep> Pronoun:she <sep> Noun: Mary",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The donkey wished a wart on its hind leg would disappear, and (it) did. <sep> Pronoun:it <sep> Noun: wart",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Ann asked Mary what time the library closes, because (she) had forgotten. <sep> Pronoun:she <sep> Noun: Ann",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "John ordered Bill to leave, so an hour later (he) left. <sep> Pronoun:he <sep> Noun: Bill",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Pete envies Martin although (he) is very successful. <sep> Pronoun:he <sep> Noun: Pete",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Tom threw his schoolbag down to Ray after (he) reached the bottom of the stairs. <sep> Pronoun:he <sep> Noun: Tom",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam took French classes from Adam , because (he) was known to speak it fluently. <sep> Pronoun:he <sep> Noun: Sam",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sergeant Holmes asked the girls to describe the intruder . Nancy not only provided the policeman with an excellent description of the heavyset thirty-year-old prowler, but drew a rough sketch of (his) face. <sep> Pronoun:his <sep> Noun: Sergeant Holmes",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Always before, Larry had helped Dad with his work. But he could not help (him) now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office. <sep> Pronoun:him <sep> Noun: Larry",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When the sponsors of the bill got to the town hall, they were surprised to find that the room was full of opponents. (They) were very much in the majority. <sep> Pronoun:They <sep> Noun: the sponsors",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The large ball crashed right through the table because (it) was made of styrofoam. <sep> Pronoun:it <sep> Noun: The large ball",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The cat was lying by the mouse hole waiting for the mouse , but (it) was too impatient. <sep> Pronoun:it <sep> Noun: The cat",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Grant worked hard to harvest his beans so he and his family would have enough to eat that winter, His friend Henry let him stack them in his barn where they would dry. Later, he and Tatyana would shell them and cook them for (their) Sunday dinners. <sep> Pronoun:their <sep> Noun: beans",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "So Mark slept. It was daylight when he woke with Warren 's hand upon (his) shoulder. <sep> Pronoun:his <sep> Noun: Mark",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The pony behaved well, sir, and showed no vice; but at last he just threw up his heels and tipped the young gentleman into the thorn hedge. He wanted me to help (him) out, but I hope you will excuse me, sir, I did not feel inclined to do so. <sep> Pronoun:him <sep> Noun: young gentleman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . (They) have gotten very bold. <sep> Pronoun:They <sep> Noun: the chickens",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "When Tommy dropped his ice cream, Timmy giggled, so father gave (him) a sympathetic look. <sep> Pronoun:him <sep> Noun: Tommy",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed (him) the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that he was, he did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:him <sep> Noun: Bill",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The woman held the girl against (her) chest <sep> Pronoun:her <sep> Noun: The woman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Everyone really loved the oatmeal cookies ; only a few people liked the chocolate chip cookies . Next time, we should make more of (them) . <sep> Pronoun:them <sep> Noun: the chocolate chip cookies",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Since it was raining, I carried the newspaper over my backpack to keep (it) dry. <sep> Pronoun:it <sep> Noun: the newspaper",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I asked Dave to get me my sweater from the other side of the yacht . While he was gone, I rested my arm on the rail over there and suddenly (it) gave way. <sep> Pronoun:it <sep> Noun: yacht",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Do you suppose that Peter is responsible for the captain ’s illness? Maybe he bribed the cook to put something in (his) food. <sep> Pronoun:his <sep> Noun: the captain",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "I put the cake away in the refrigerator . (It) has a lot of leftovers in it. <sep> Pronoun:It <sep> Noun: the refrigerator",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Billy cried because Toby wouldn't accept (his) toy. <sep> Pronoun:his <sep> Noun: Toby",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen (them) and come back quickly to tell the news. <sep> Pronoun:them <sep> Noun: their mothers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. He needed to get him to finish his work, because (his) work was beautiful <sep> Pronoun:his <sep> Noun: Mr. Schmidt",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "When Mr. Bond , the veterinarian, came to look at the black horse that lay groaning on the grass, he felt him all over, and shook (his) head; one of his legs was broken. <sep> Pronoun:his <sep> Noun: the black horse",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "A man's life and a horse's life are worth more than some foxes' tails ; al least (they) ought to be. <sep> Pronoun:they <sep> Noun: A man's life and a horse's life",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The politicians far away in Washington could not know the settlers so (they) must make rules to regulate them. <sep> Pronoun:they <sep> Noun: settlers",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The table was piled high with food , and on the floor beside (it) there were crocks, baskets, and a five-quart pail of milk. <sep> Pronoun:it <sep> Noun: table",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Emma's mother had died long ago, and (her) place had been taken by an excellent woman as governess. <sep> Pronoun:her <sep> Noun: Emma",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "After I saw Bill catching flies and pulling off their wings, I boxed his ears. I showed the master the flies, some crushed and some crawling about helpless, and I showed him the wings on the window sill. I never saw him so angry before; but as Bill was still howling and whining, like the coward that (he) was, he did not give him any more punishment of that kind, but set him up on a stool for the rest of the afternoon, and said that he should not go out to play for that week. <sep> Pronoun:he <sep> Noun: the master",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Steve follows Fred 's example in everything. (He) admires him hugely. <sep> Pronoun:He <sep> Noun: Steve",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Beth didn't get angry with Sally , who had cut her off, because (she) stopped and counted to ten. <sep> Pronoun:she <sep> Noun: Sally",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sir Clifford wants me to find him a new groom , about twenty or twenty-one, who knows his business. His old coachman is getting feeble, and he wants a man to work with him and get into (his) ways, who would be able, when the old man was pensioned off, to step into his place. <sep> Pronoun:his <sep> Noun: old coachman",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Mark was close to Mr. Singer 's heels. (He) heard him calling for the captain, promising him, in the jargon everyone talked that night, that not one thing should be damaged on the ship except only the ammunition, but the captain and all his crew had best stay in the cabin until the work was over <sep> Pronoun:He <sep> Noun: Mr. Singer",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The foxes are getting in at night and attacking the chickens . (They) have gotten very bold. <sep> Pronoun:They <sep> Noun: The foxes",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Jackson was greatly influenced by Arnold , though (he) lived two centuries earlier. <sep> Pronoun:he <sep> Noun: Arnold",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "The dog chased the cat , which ran up a tree. (It) waited at the top. <sep> Pronoun:It <sep> Noun: the cat",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Billy cried because Toby wouldn't share (his) toy. <sep> Pronoun:his <sep> Noun: Billy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "As Andrea in the crop duster passed over Susan , (she) could see the landing strip. <sep> Pronoun:she <sep> Noun: Susan",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The donkey wished a wart on its hind leg would disappear, and (it) did. <sep> Pronoun:it <sep> Noun: leg",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "I sallied out for a bit of food , more to pass the time than because I wanted (it) . <sep> Pronoun:it <sep> Noun: time",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because (they) are snobs. <sep> Pronoun:they <sep> Noun: Sam and Amy",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Tom threw his schoolbag down to Ray after (he) reached the top of the stairs. <sep> Pronoun:he <sep> Noun: Tom",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "Steve follows Fred 's example in everything. (He) influences him hugely. <sep> Pronoun:He <sep> Noun: Fred",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "My meeting started at 4:00 and I needed to catch the train at 4:30, so there wasn't much time. Luckily, (it) was delayed, so it worked out. <sep> Pronoun:it <sep> Noun: the train",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "input": "James asked Robert for a favor but (he) was refused. <sep> Pronoun:he <sep> Noun: Robert",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "The scientists are studying three species of fish that have recently been found living in the Indian Ocean. (They) appeared two years ago. <sep> Pronoun:They <sep> Noun: The scientists",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "input": "Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that (he) no longer requires his financial support. <sep> Pronoun:he <sep> Noun: Edward",
+            "output": [
+                "True"
+            ]
+        }
+    ]
+}
