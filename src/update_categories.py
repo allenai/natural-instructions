@@ -5,7 +5,8 @@ import argparse
 import re
 
 """
-Script for updating the categories, domains, and reasoning field for all the tasks.
+Script for sparsifying the categories, domains, and reasoning fields.
+In order to run the experiments with fewer general high-frequency categories instead of fine-grained ones.
 """
 
 tasks_path = 'tasks/'
@@ -37,13 +38,13 @@ def natural_keys(text):
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort(key=natural_keys)
 
-with open('doc/categories.json', 'r', encoding='utf-8') as f:
+with open('doc/categories_map', 'r', encoding='utf-8') as f:
     category_map = json.load(f)
 
-with open('doc/domains.json', 'r', encoding='utf-8') as f:
+with open('doc/domains_map.json', 'r', encoding='utf-8') as f:
     domain_map = json.load(f)
     
-with open('doc/reasonings.json', 'r', encoding='utf-8') as f:
+with open('doc/reasonings_map.json', 'r', encoding='utf-8') as f:
     reasoning_map = json.load(f)
     
 for file in files[begin_task_number:end_task_number + 1]: 
