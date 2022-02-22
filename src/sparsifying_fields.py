@@ -38,7 +38,11 @@ def natural_keys(text):
 files = [f for f in listdir(tasks_path) if isfile(join(tasks_path, f))]
 files.sort(key=natural_keys)
 
-with open('doc/categories_map', 'r', encoding='utf-8') as f:
+# test every file (README is skipped)
+if not args.task:
+    begin_task_number, end_task_number = 1, len(files)
+    
+with open('doc/categories_map.json', 'r', encoding='utf-8') as f:
     category_map = json.load(f)
 
 with open('doc/domains_map.json', 'r', encoding='utf-8') as f:
