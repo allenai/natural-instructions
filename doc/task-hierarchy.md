@@ -70,7 +70,6 @@
   - `Detection -> Usage Detection`
 - `Dialogue Understanding`
 - `Document Understanding`
-- `Ethical Judgement`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hypernym Discovery`
 - `Identification`
@@ -80,13 +79,6 @@
   - `Identification -> Predicate Identification`: identifying the predicate of a sentence
   - `Identification -> Subject Identification`: identifying the subject of a sentence
 - `Incorrect generation`
-- `Mathematics`
-  - `Mathematics -> Algebra`
-  - `Mathematics -> Arithmetic`
-  - `Mathematics -> Combinatorics`
-  - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
-  - `Mathematics -> Geometry`
-  - `Mathematics -> Statistics`
 - `Named Entity Recognition`
 - `Parts-of-speech`
 - `Proofreading`
@@ -233,11 +225,19 @@
 - `Cross-document Reasoning`
 - `Deductive Reasoning`
 - `Discrete Reasoning`
+- `Ethical Judgement`
 - `Ethics`
 - `Factual Reasoning`
 - `Grammatical Reasoning`
 - `Logical Reasoning`
   - `Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
+- `Mathematics`
+  - `Mathematics -> Algebra`
+  - `Mathematics -> Arithmetic`
+  - `Mathematics -> Combinatorics`
+  - `Mathematics -> Counting`: Count an attribute of input e.g. a task to count number of vowels in a given word
+  - `Mathematics -> Geometry`
+  - `Mathematics -> Statistics`
 - `Multihop Reasoning`
 - `Numerical Reasoning`
   - `Numerical Reasoning -> Numerical Commonsense Reasoning`: Tasks which requires numerical commonsense knowledge e.g. a car has 4 wheels.
