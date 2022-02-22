@@ -55,7 +55,7 @@ Or if you're comfortable with json files, here is how it would look like:
   "Source": [""],
   "Categories": [""],
   "Reasoning": [""],
-  "Definition": "",
+  "Definition": [""],
   "Input_language": [""], 
   "Output_language": [""],
   "Instruction_language": [""],  
