@@ -142,7 +142,7 @@ for file in files[begin_task_number:end_task_number + 1]:
             assert len(data['Instances']) <= 6500, f"there must be at most 6.5k instances; " \
                                                    f"currently you have {len(data['Instances'])} instances"
 
-            assert type(data['Definition']) == str, f'Definition must be a str.'
+            assert type(data['Definition']) == list, f'Definition must be a list of strings.'
             assert type(data['Source']) == list, f'Sources must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
@@ -166,12 +166,14 @@ for file in files[begin_task_number:end_task_number + 1]:
                 if r not in reasoning_stats:
                     reasoning_stats[r] = 0
                 reasoning_stats[r] += 1
-                
+
+            for d in data['Definition']:
+                assert type(d) == str, f'Each definition must be a string.'
+                assert all((lan in d) for lan in data['Input_language'] if
+                       lan != 'English'), f'Definition must contain non-English tasks language.'
             assert type(data['Input_language']) == list, f'Input_language must be a list of strings.'
             assert type(data['Output_language']) == list, f'Output_language must be a list of strings.'
             assert type(data['Instruction_language']) == list, f'Output_language must be a list of strings.'
-            assert all((lan in data['Definition']) for lan in data['Input_language'] if
-                       lan != 'English'), f'Definition must contain non-English tasks language.'
 
             assert 'instruction_language' not in data, f'Found `instruction_language`, but expected `Instruction_language`.'
             assert 'input_language' not in data, f'Found `input_language`, but expected `Input_language`.'
