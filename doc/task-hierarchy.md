@@ -234,7 +234,6 @@
 - `Deductive Reasoning`
 - `Discrete Reasoning`
 - `Ethics`
-- `Factual Reasoning`
 - `Grammatical Reasoning`
 - `Logical Reasoning`
   - `Logical Reasoning -> Reasoning with Symbols`: Tasks where symbols represent various things e.g. if X is the number of apples in the fridge today morning and Y is the number remaining after I ate a few apples, X-Y is the number of apples I ate.
