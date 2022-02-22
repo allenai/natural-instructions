@@ -70,7 +70,6 @@
   - `Detection -> Usage Detection`
 - `Dialogue Understanding`
 - `Document Understanding`
-- `Ethical Judgement`
 - `Hallucination`: Given a context, generate imaginary content e.g. given a sentence, generate a story/poem.
 - `Hypernym Discovery`
 - `Identification`
@@ -226,6 +225,7 @@
 - `Cross-document Reasoning`
 - `Deductive Reasoning`
 - `Discrete Reasoning`
+- `Ethical Judgement`
 - `Ethics`
 - `Factual Reasoning`
 - `Grammatical Reasoning`
