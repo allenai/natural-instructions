@@ -13,6 +13,8 @@ def update_definitions(tasks_path):
             with open(file) as f:
                 data = json.load(f)
             definition = data['Definition']
+            if type(definition) == list:
+                    continue
             data['Definition'] = [definition]
             with open(file, 'w') as o:
                 dump = json.dumps(data, indent = 4, ensure_ascii=False)
