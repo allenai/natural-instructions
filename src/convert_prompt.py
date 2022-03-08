@@ -78,7 +78,6 @@ def create_task(dataset, dataset_name, dataset_prompts):
                     "input": result[0],
                     "output": [result[1]]
                 })        
-        print('saving')
         save_json(data, dataset_name, prompt_name)
 
         
@@ -99,7 +98,6 @@ def save_json(data, dataset_name, prompt_name):
         result["Instances"].append({"input": k, "output": v})
     with open(f"tasks/task_{dataset_name}_{prompt_name}.json", 'w' , encoding="utf-8") as outfile:
         json.dump(result, outfile, indent=4,ensure_ascii=False)     
-    print('saved')
 
         
 if not args.dataset:
