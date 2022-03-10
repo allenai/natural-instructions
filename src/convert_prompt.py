@@ -39,15 +39,19 @@ if args.subset:
 
 def get_dataset(dataset_name):
     dataset = load_dataset(dataset_name, split="train")
+    cap = min(6500, len(dataset))
+    samples = random.choices(dataset, k=cap)
     # Load prompts for this dataset
     dataset_prompts = DatasetTemplates(dataset_name)   
-    return dataset, dataset_prompts
+    return samples, dataset_prompts
 
 def get_subset(dataset_name, subset_name):
     dataset = load_dataset(dataset_name,subset_name, split="train")
+    cap = min(6500, len(dataset))
+    samples = random.choices(dataset, k=cap)
     # Load prompts for this dataset and subset
     dataset_prompts = DatasetTemplates(f"{dataset_name}/{subset_name}")
-    return dataset, dataset_prompts
+    return samples, dataset_prompts
         
 def create_task(dataset, dataset_name, dataset_prompts):
     """
@@ -59,6 +63,8 @@ def create_task(dataset, dataset_name, dataset_prompts):
         prompt = dataset_prompts[prompt_name]
         # Apply the prompt to the dataset
         data = {}
+        data["Prompt Name"] = [prompt_name]
+        data["Prompt id"] = [id]
         data["Contributors"] = []
         data["Source"] = [dataset_name]
         data["Categories"] = []
@@ -71,7 +77,7 @@ def create_task(dataset, dataset_name, dataset_prompts):
         data["Positive Examples"] = []
         data["Negative Examples"] = []
         data["Instances"] = []
-        for i in range(min(6500,len(dataset))):
+        for i in range(len(dataset)):
             result = prompt.apply(dataset[i])
             if len(result)==2:
                 data["Instances"].append({
