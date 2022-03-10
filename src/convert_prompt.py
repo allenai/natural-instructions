@@ -30,6 +30,12 @@ parser.add_argument("--subset",
                     required=False,
                     help="The subset you want to convert")
                     
+parser.add_argument("--sample",
+                    nargs=1,
+                    type=int,
+                    required=False,
+                    help="Number of samples from the dataset")
+                    
 args = parser.parse_args()
 if args.dataset:
     dataset_name = args.dataset[0]
@@ -37,14 +43,23 @@ if args.dataset:
 if args.subset:
     subset_name = args.subset[0]
 
+if args.sample:
+    sample_num = args.sample[0]
+    
 def get_dataset(dataset_name):
     dataset = load_dataset(dataset_name, split="train")
+    if args.sample:
+        cap = min(sample_num, len(dataset))
+        dataset = random.choices(dataset, k = cap)
     # Load prompts for this dataset
     dataset_prompts = DatasetTemplates(dataset_name)   
     return dataset, dataset_prompts
 
 def get_subset(dataset_name, subset_name):
     dataset = load_dataset(dataset_name,subset_name, split="train")
+    if args.sample:
+        cap = min(sample_num, len(dataset))
+        dataset = random.choices(dataset, k = cap)
     # Load prompts for this dataset and subset
     dataset_prompts = DatasetTemplates(f"{dataset_name}/{subset_name}")
     return dataset, dataset_prompts
@@ -59,6 +74,8 @@ def create_task(dataset, dataset_name, dataset_prompts):
         prompt = dataset_prompts[prompt_name]
         # Apply the prompt to the dataset
         data = {}
+        data["Prompt Name"] = [prompt_name]
+        data["Prompt id"] = [id]
         data["Contributors"] = []
         data["Source"] = [dataset_name]
         data["Categories"] = []
@@ -71,7 +88,7 @@ def create_task(dataset, dataset_name, dataset_prompts):
         data["Positive Examples"] = []
         data["Negative Examples"] = []
         data["Instances"] = []
-        for i in range(min(6500,len(dataset))):
+        for i in range(len(dataset)):
             result = prompt.apply(dataset[i])
             if len(result)==2:
                 data["Instances"].append({
