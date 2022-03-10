@@ -30,6 +30,12 @@ parser.add_argument("--subset",
                     required=False,
                     help="The subset you want to convert")
                     
+parser.add_argument("--sample",
+                    nargs=1,
+                    type=int,
+                    required=False,
+                    help="Number of samples from the dataset")
+                    
 args = parser.parse_args()
 if args.dataset:
     dataset_name = args.dataset[0]
@@ -37,21 +43,26 @@ if args.dataset:
 if args.subset:
     subset_name = args.subset[0]
 
+if args.sample:
+    sample_num = args.sample[0]
+    
 def get_dataset(dataset_name):
     dataset = load_dataset(dataset_name, split="train")
-    cap = min(6500, len(dataset))
-    samples = random.choices(dataset, k=cap)
+    if args.sample:
+        cap = min(sample_num, len(dataset))
+        dataset = random.choices(dataset, k = cap)
     # Load prompts for this dataset
     dataset_prompts = DatasetTemplates(dataset_name)   
-    return samples, dataset_prompts
+    return dataset, dataset_prompts
 
 def get_subset(dataset_name, subset_name):
     dataset = load_dataset(dataset_name,subset_name, split="train")
-    cap = min(6500, len(dataset))
-    samples = random.choices(dataset, k=cap)
+    if args.sample:
+        cap = min(sample_num, len(dataset))
+        dataset = random.choices(dataset, k = cap)
     # Load prompts for this dataset and subset
     dataset_prompts = DatasetTemplates(f"{dataset_name}/{subset_name}")
-    return samples, dataset_prompts
+    return dataset, dataset_prompts
         
 def create_task(dataset, dataset_name, dataset_prompts):
     """
