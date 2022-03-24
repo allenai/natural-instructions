@@ -29,6 +29,7 @@ for f in root_files:
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
 
+#TODO: We need to add URL here after updating the tasks
 expected_keys = [
     "Definition",
     "Input_language",
