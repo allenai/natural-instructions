@@ -53,6 +53,7 @@ Or if you're comfortable with json files, here is how it would look like:
 {
   "Contributors": [""],
   "Source": [""],
+  "URL": [""],
   "Categories": [""],
   "Reasoning": [""],
   "Definition": [""],
