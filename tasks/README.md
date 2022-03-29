@@ -1598,3 +1598,8 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task1724_civil_comments_insult_classification`	| Classify Insult	| Classification -> Verification, Detection -> Toxicity Detection -> Abuse Detection, Reasoning -> Commonsense Reasoning -> Social Situations	| Dialogue, Social Media	| English	| English
 `task1725_civil_comments_severtoxicity_classification`	| Classify Severe Toxicity	| Classification -> Verification, Detection -> Toxicity Detection -> Abuse Detection, Reasoning -> Commonsense Reasoning -> Social Situations	| Dialogue, Social Media	| English	| English
 `task1726_mathqa_correct_answer_generation`	| Generate correct answers for math questions	| Question Answering -> Numerical Question Answering, Reasoning -> Quantitative Reasoning, Reasoning -> Scientific Reasoning, Mathematics -> Combinatorics, Mathematics -> Arithmetic	| Mathematics	| English	| English
+`task1727_wiqa_what_is_the_effect` | Find the effect of an event on another event, based on an introduced process | 
+`task1728_web_nlg_data_to_text` | Generate a textual description of a set of data triples. | 
+`task1729_personachat_generate_next` | Generate the next utterance in a conversation | 
+`task1730_personachat_choose_next` | Choose the next utterance in a conversation from four candidates |
+`task1731_quartz_question_answering` | Choose an answer to the given question based on the paragraph |
