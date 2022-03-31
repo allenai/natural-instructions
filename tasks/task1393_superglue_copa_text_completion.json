@@ -1,0 +1,3039 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "copa"
+    ],
+    "URL": [
+        "http://people.ict.usc.edu/~gordon/copa.html"
+    ],	
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [
+        "Causal Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a premise sentence, two possible options and a question word. Each option is a possible cause or a possible effects of the premise sentence, accompanied by a simple question disambiguating between the two instance types(cause or effect). Find the best option and answer with \"A\" or \"B\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+		"Web"
+    ],
+    "Positive Examples": [
+        {
+            "input": "The animal species became endangered. (A) Their habitat was destroyed. (B) Their predators went extinct., Question: cause",
+            "output": "A",
+            "explanation": "The question word is cause, so we should find the possible cause of the premise. Option A can be the cause of the premise, and the output should be \"A\"."
+        },
+        {
+            "input": "The bar closed. (A) It was crowded. (B) It was 3 AM., Question: cause",
+            "output": "B",
+            "explanation": "The bar was closed bacause it was 3 AM. So the output should be \"B\"."
+        },
+        {
+            "input": "The man was lost. (A) He asked for directions. (B) He drew a map., Question: effect",
+            "output": "A",
+            "explanation": "We are looking for the effect of the premise. The plausible effect of the man being lost can be asking for directions. So, the output should be \"A\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The woman was arrested. (A) She checked into rehab. (B) She committed assault., Question: cause",
+            "output": "B",
+            "explanation": "We are looking for the cause of the premise. The plausible cause of the woman being arrested can be committing assault. So, the correct output should be \"B\"."
+        },
+        {
+            "input": "The man was lost. (A) He asked for directions. (B) He drew a map., Question: effect",
+            "output": "He asked for directions.",
+            "explanation": "The output should be \"A\" or \"B\" and other answers are not acceptable."
+        }
+    ],
+    "Instances": [
+        {
+            "input": "The man became disabled. (A) His family offered him financial support. (B) His family cut off contact with him., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The football coach lost his voice after the game. (A) He yelled whenever a player fumbled the ball. (B) He whistled whenever a player scored a touchdown., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man drank heavily at the party. (A) He had a headache the next day. (B) He had a runny nose the next day., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The child kicked the stack of blocks. (A) The stack towered over the boy's head. (B) The blocks scattered all over the rug., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy's hands were shaking. (A) He planned to ask the girl out. (B) His palms were cold and sweaty., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman filed a restraining order against the man. (A) The man called her. (B) The man stalked her., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "We ordered a pizza. (A) The pizza was delivered. (B) The pizza got cold., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The employee missed work. (A) Her family got in touch with her. (B) There was a death in her family., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman deleted the email. (A) The sender tried to solicit money from her. (B) The sender requested a response from her., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The climbers reached the peak of the mountain. (A) They encountered an avalanche. (B) They congratulated each other., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy lost hold of the bar of soap. (A) The bar was slippery. (B) The bar emitted a fragrance., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The gardener pulled the weeds. (A) The weeds came out of the soil. (B) The weeds produced seeds., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man fainted. (A) He took a nap. (B) He ran a marathon., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman received a diploma. (A) She enrolled in college. (B) She graduated from college., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl went down the hill on her bike. (A) Her bike swerved. (B) Her bike sped up., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man threw his empty can onto the street. (A) He was jumped from behind. (B) He was fined for littering., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The toddler started crying. (A) Her parents took away her toy. (B) Her parents gave her a toy., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman repaired her faucet. (A) The faucet was leaky. (B) The faucet was turned off., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The milk stayed cold. (A) It was pasteurized. (B) I stored it in the refrigerator., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My flight got delayed. (A) Tornadoes were sighted in the area. (B) I was held up at airport security., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman visited her family. (A) She distrusted them. (B) She missed them., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man wanted to save money. (A) He withdrew money from his savings account. (B) He cut back on making frivolous purchases., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The sick child coughed on his friend. (A) His friend got sick. (B) His friend sneezed., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I put coins in the washing machine at the laundromat. (A) The machine powered on. (B) I ran out of laundry detergent., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman spotted her friend from across the room. (A) The woman waved. (B) The woman escaped., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I put shoes on. (A) The floor contained broken glass. (B) The paint on the walls was wet., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The gardener wanted his plants to flourish. (A) He planted a variety of seeds. (B) He put fertilizer in the soil., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I spit out my chewing gum. (A) I blew a bubble with the gum. (B) The gum lost its flavor., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman complimented the man. (A) He sneezed. (B) He blushed., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My stomach growled. (A) I forgot to eat breakfast. (B) I was full from breakfast., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman got away with the crime. (A) Her accomplice was apprehended. (B) She destroyed the evidence., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman awakened. (A) She took sleeping pills. (B) Her husband was snoring., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The journalist wrote a biography about the humanitarian's life. (A) The humanitarian was difficult for the journalist to interview. (B) The journalist was intrigued by the humanitarian's work., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The police closed the investigation. (A) They apprehended the suspect. (B) The victim recovered., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The doctor x-rayed the patient's arm. (A) He discovered that the patient's arm was broken. (B) He put the patient's arm in a cast., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl met her favorite actor. (A) She went to see his new film. (B) She asked him for his autograph., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The clock stopped ticking. (A) I took extra time to get ready. (B) The clock showed the wrong time., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The city re-elected the mayor. (A) The city cut its budget. (B) The mayor fulfilled his promises., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man was bitten by mosquitoes. (A) He went camping in the woods. (B) He fell asleep on his couch., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The vehicles travelled slowly. (A) It was cloudy. (B) It was foggy., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The school principal implemented a dress code. (A) Students protested the decision. (B) Students were expelled from school., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl received a trophy. (A) She won a spelling bee. (B) She made a new friend., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My ears were ringing. (A) I went to a museum. (B) I went to a concert., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The hospital sent the patient home. (A) The patient's symptoms cleared up. (B) The patient's family visited him., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The librarian located the book in the stacks. (A) I requested the librarian's help. (B) The book was checked out., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The jewelry thieves were caught. (A) The stolen jewelry was returned to its owners. (B) The cost of the stolen jewelry was calculated., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My body cast a shadow over the grass. (A) The sun was rising. (B) The grass was cut., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The boy skipped dinner. (A) His mother cooked his favorite meal. (B) He ate a big lunch., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The service at the restaurant was slow. (A) There were many empty tables. (B) The restaurant was crowded., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl was angry with her friend. (A) The girl spread a rumor about her friend. (B) The girl told a secret to her friend., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The children knocked over a lamp. (A) They had a pillow fight. (B) They jumped on the bed., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man defied the authorities of the church. (A) He donated money to the church. (B) He was excommunicated from the church., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman's ring slipped off in the shower. (A) The woman polished the ring. (B) The ring went down the drain., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man removed his coat. (A) He entered the house. (B) He loosened his tie., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman felt reluctant to switch careers. (A) She made a lot of money in her current occupation. (B) She endured a lot of stress in her current occupation., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman covered her ears. (A) The fire alarm blared. (B) The woman smelled smoke., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The parents left their children with a babysitter. (A) Their youngest child started attending preschool. (B) They made plans to celebrate their anniversary., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The bananas ripened. (A) We squeezed them. (B) We ate them., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The hamburger meat browned. (A) The cook froze it. (B) The cook grilled it., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My friend was recovering from surgery. (A) I dropped her off at the hospital. (B) I brought her a card and flowers., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The lock opened. (A) I turned the key in the lock. (B) I made a duplicate of the key., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The driver honked her horn. (A) Another car swerved into her lane. (B) She made a right turn at the light., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The child learned how to read. (A) He began attending school. (B) He skipped a grade in school., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The archeologist dug up the site. (A) She excavated ancient artifacts. (B) She read about the site's history., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The runner wore shorts. (A) The forecast predicted high temperatures. (B) She planned to run along the beach., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The driver got a flat tire. (A) He went over the speed limit. (B) He ran over a nail., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The friends' dinnertime conversation turned to politics. (A) The conversation quieted down. (B) A debate erupted., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The mother suspected that her son was lying. (A) He refused to talk to her. (B) He avoided making eye contact with her., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman asked the man to leave. (A) He insulted her. (B) He thanked her., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The retail shop shut down. (A) Its sales were lagging. (B) It renewed its lease., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl found a bug in her cereal. (A) She poured milk in the bowl. (B) She lost her appetite., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The father put his daughter in her stroller. (A) She learned to walk. (B) He was tired of carrying her., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I made a resolution to eat a healthy diet. (A) I attended a yoga class. (B) I bought fruits and vegetables., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman had an infection. (A) She took antibiotics. (B) She washed her hands., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man begged for forgiveness. (A) The woman took pity on him. (B) The woman joked around with him., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The swimmer won the race. (A) She received a gold medal. (B) Her team lost the meet., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman wanted to be a doctor. (A) She visited the hospital. (B) She went to medical school., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man drank water with his meal. (A) His meal was cold. (B) His meal was spicy., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman shivered as she got out the pool. (A) She wrapped herself in a towel. (B) She poured herself some lemonade., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I ran the ice cube under warm water. (A) The ice cube stuck to my fingers. (B) The ice cube vanished., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Our group's conversation gradually lulled to silence. (A) I felt awkward. (B) I became enraged., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The DJ turned the music on. (A) People left the party. (B) People began to dance., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman ran her finger under cold water. (A) She burned her finger on the toaster. (B) She put a diamond ring on her finger., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I spent the day at the pool. (A) I sprained my ankle. (B) My face got sunburned., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The fussy baby calmed down. (A) The parents shook a rattle in front of the baby. (B) The parents picked out a name for the baby., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I stayed up late. (A) I had vivid dreams that night. (B) I was tired in the morning., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy turned the lid on the jar. (A) The jar became warm. (B) The lid came off., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The vandals threw a rock at the window. (A) The window cracked. (B) The window fogged up., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The teenager ran away from home. (A) He relied on his parents. (B) His parents abused him., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman's eyeglasses fogged up. (A) She reclined by the pool. (B) She entered the sauna., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I got distracted from my conversation with the woman. (A) Everyone in the room was talking. (B) The woman was telling a funny story., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The scientist conducted an experiment. (A) She validated her theory. (B) She fabricated her data., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman gave the man her phone number. (A) She was attracted to him. (B) She was repulsed by him., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The customer filed a complaint with the store manager. (A) The sales associate undercharged the customer. (B) The sales associate acted rude to the customer., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The company lost money. (A) Its products received positive consumer reviews. (B) Some of its products were manufactured defectively., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Air pollution in the city worsened. (A) Factories increased their production. (B) Factories shut down., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I learned how to play the board game. (A) My friend explained the rules to me. (B) My friend got the rules wrong., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I misplaced my wallet. (A) I retrieved my phone. (B) I retraced my steps., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The mother called an ambulance. (A) Her son lost his cat. (B) Her son fell out of his bed., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The cat purred. (A) It scratched me. (B) I petted it., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman was summoned for jury duty. (A) She contacted her lawyer. (B) She cancelled her appointments., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl gasped. (A) Her friend stuck an ice cube down her back. (B) Her friend gave her a pat on the back., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My daughter suffered an allergy attack. (A) I encouraged her to take deep breaths. (B) I took her to the emergency room., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The police eliminated the woman from the list of suspects. (A) The police interrogated her. (B) Her alibi checked out., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The teacher caught the student chewing gum. (A) The gum stuck to the student's shoe. (B) The student spit out the gum., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The photo albums collected dust in the attic. (A) They remained untouched for years. (B) The family reminisced over the photos., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The egg splattered. (A) I dropped it. (B) I boiled it., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man took notice of the woman. (A) He caught a whiff of her perfume. (B) He had his back turned to her., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl shared her lunch with her friend. (A) Her friend forgot to bring his lunch. (B) Her friend sat next to her at lunch., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My favorite song came on the radio. (A) I covered my ears. (B) I sang along to it., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I rubbed sandpaper on the wood. (A) The wood became smooth. (B) The wood became sticky., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The friends' debate dragged on interminably. (A) The friends saw eye to eye. (B) The friends were splitting hairs., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The seamstress pushed the threaded needle into the fabric. (A) The thread wrapped around the needle. (B) The thread went through the fabric., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I wrote a thank-you note to my grandmother. (A) She became forgetful. (B) She sent me a gift., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I was confused by the professor's lecture. (A) I paid attention to the professor. (B) I asked the professor questions., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The smoke alarm went off. (A) I lit a candle. (B) I burnt my dinner., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The competition ended. (A) The teams got pumped up. (B) The teams shook hands., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The speaker disarmed her debate opponent. (A) The speaker congratulated her opponent. (B) The speaker won the debate., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman lavished her friend with flattery. (A) She wanted to ask her friend for a favor. (B) She was irritated with her friend's whining., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man's pocket jingled as he walked. (A) His pocket was filled with coins. (B) He sewed the hole in his pocket., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The boy pushed his sister. (A) His sister tattled on him. (B) They played hide and seek., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man threw out the bread. (A) It was fresh. (B) It was stale., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman and her boyfriend got into a fight. (A) They stopped seeing each other. (B) They planned a vacation together., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man wanted to get revenge on his enemy. (A) The man framed his enemy for a crime. (B) The man declared a truce with his enemy., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The driver turned on the car's headlights. (A) He heard thunder. (B) The sun went down., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman had a religious awakening. (A) She began going to church. (B) She began travelling abroad., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "A burglar broke into the house. (A) The homeowners were asleep. (B) The security alarm went off., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My car was towed. (A) I parked illegally. (B) I jumped the battery., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The judge pounded the gavel. (A) The courtroom broke into uproar. (B) The jury announced its verdict., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I lingered in bed upon awakening. (A) I was hungry. (B) It was Saturday., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The horse bucked. (A) A fly bit the horse. (B) The rider stroked the horse., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Air leaked out of the beach ball. (A) It was inflated. (B) There was a hole in it., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My foot went numb. (A) I put my shoes on. (B) I shook my foot., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The engine of the airplane was faulty. (A) The airplane crashed. (B) The pilot made an error., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The dog barked. (A) The cat lounged on the couch. (B) A knock sounded at the door., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The baby was wailing in his crib. (A) The mother picked up the baby. (B) The baby crawled to the mother., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "A water pipe in the house burst. (A) The water was unsanitary. (B) The pipe froze., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I botched the job interview. (A) The interviewer asked difficult questions. (B) I anticipated the interviewer's questions., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The boy found the television show boring. (A) He recorded it. (B) He shut it off., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The vase broke. (A) I stenciled it. (B) I glued it back together., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The book was deemed inappropriate for children. (A) Schools banned it from its libraries. (B) Teachers required students to read it., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman dangled the biscuit above the dog. (A) The dog jumped up. (B) The dog scratched its fur., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The student misspelled the word. (A) The teacher corrected her. (B) The teacher dismissed her., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I held the door for the woman entering behind me. (A) The door slammed shut. (B) The woman thanked me., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I doubted the salesman's pitch. (A) I turned his offer down. (B) He persuaded me to buy the product., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman contacted the real estate agent. (A) The woman planned to buy a condo. (B) The woman needed to clean her house., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl felt dizzy. (A) She lost her balance. (B) She did stretches., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I chugged the pitcher of water. (A) I walked upstairs. (B) I ran five miles., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man received a parking ticket. (A) He parallel parked on the street. (B) The parking meter expired., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I needed to get cash. (A) I went to the bank. (B) I bought a wallet., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man signed the document. (A) The transaction was voided. (B) The transaction became official., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My skin broke out into a rash. (A) I brushed against poison ivy in my yard. (B) I eradicated the poison ivy from my yard., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Several witnesses of the crime testified against the suspect. (A) The suspect was acquitted. (B) The suspect was convicted., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The screen on the laptop went black. (A) The laptop's warranty expired. (B) The laptop's battery died., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man got a discount on his groceries. (A) He greeted the cashier. (B) He used a coupon., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy's mouth stung. (A) He ate a pepper. (B) He blew out the candle., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I went to bed. (A) It was a clear night. (B) It was late., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man urgently leaped out of bed. (A) He wanted to shut off the alarm clock. (B) He wanted to iron his pants before work., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The product was heavily advertised. (A) Consumers recognized the product. (B) The product became outdated., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Political violence broke out in the nation. (A) Many citizens relocated to the capitol. (B) Many citizens took refuge in other territories., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man took a shower. (A) He was sweaty from working out. (B) He opened a new bar of soap., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The bride got cold feet before the wedding. (A) The wedding guests brought gifts. (B) She called the wedding off., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man caught his shirtsleeve on the rungs of the fence. (A) He hopped the fence. (B) The sleeve ripped., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The driver pulled over to the side of the road. (A) He went through an intersection. (B) He noticed a stranded vehicle., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The stranger cried out to me in a foreign language. (A) I stared blankly at him. (B) I stopped to chat with him., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman's makeup smeared. (A) She brushed her hair. (B) She wiped her eyes., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman hit a midlife crisis. (A) She retired. (B) She went sky diving., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The young woman was denied entrance into the bar. (A) Her friends stood her up. (B) She forgot her ID., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man lost the competition. (A) The competition was sabotaged. (B) He intimidated his competitors., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The photographer got the child to smile. (A) The photographer quickly snapped the child's photo. (B) The photographer quickly changed the child's pose., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The police officer dropped the gun. (A) The gun recoiled. (B) The gun went off., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The driver slammed on his brakes. (A) A deer appeared on the road. (B) The car radio shut off., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The motorcyclist twisted the throttle. (A) The motorcycle coasted to a halt. (B) The motorcycle shot forward., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The terrorist set off the bomb. (A) The bomb exploded. (B) The bomb was deactivated., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman felt ashamed of scar on her face. (A) She explained the scar to strangers. (B) She hid the scar with makeup., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The customer came into the boutique. (A) She left her wallet at home. (B) The window display caught her eye., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My stomach hurt. (A) I jogged on the treadmill. (B) I ate birthday cake., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy got a black eye. (A) The bully mocked the boy. (B) The bully punched the boy., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy climbed the tree. (A) A cat got stuck in the tree. (B) A bird built a nest in the tree., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The driver rotated the steering wheel. (A) The car halted. (B) The car turned., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "It got dark outside. (A) Snowflakes began to fall from the sky. (B) The moon became visible in the sky., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman was deemed mentally ill. (A) She was sent to a psychiatric institution. (B) She sought a career as a psychiatrist., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The teacher took roll. (A) She identified the students that were absent. (B) She gave her students a pop quiz., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The bowling ball knocked over the bowling pins. (A) The man rolled the bowling ball down the alley. (B) The man dropped the bowling ball on his foot., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The police officer pulled over the celebrity. (A) The celebrity offered the officer a bribe. (B) The celebrity sued the police officer., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I put ice cubes in the hot soup. (A) The soup cooled down. (B) The soup became thick., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman presented her brother with a gift. (A) Her brother refused to accept the gift. (B) Her brother unwrapped the gift., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The couple travelled south for the winter. (A) They were retired. (B) They were separated., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "A man cut in front of me in the long line. (A) I confronted him. (B) I smiled at him., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The clock chimed. (A) It was the top of the hour. (B) The hour seemed to drag on., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The sun emerged from the clouds. (A) The woman glanced at her watch. (B) The woman took her sweater off., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl refused to eat her vegetables. (A) Her father told her to drink her milk. (B) Her father took away her dessert., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "We found empty seats in the theatre. (A) The film began. (B) We sat down., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man had an attack of conscience. (A) He manipulated his friend. (B) He admitted his indiscretion., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man fell unconscious. (A) The assailant struck the man in the head. (B) The assailant took the man's wallet., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My mailbox was overflowing with letters. (A) The lid on the mailbox broke. (B) I went on vacation for two weeks., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I rubbed the soap between my hands. (A) The soap foamed. (B) My hands went numb., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman was in a bad mood. (A) She engaged in small talk with her friend. (B) She told her friend to leave her alone., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The child caught a life-threatening illness. (A) She didn't get vaccinated. (B) She was adopted., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Cars moved to the shoulder of the road. (A) The traffic light turned green. (B) A screaming ambulance approached., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The homeowners disliked their nosy neighbors. (A) They built a fence around their property. (B) They hosted a barbeque in their backyard., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I planted the seeds in the soil. (A) I watered the soil. (B) The seeds sprouted., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The patient was dehydrated. (A) The nurse tested his reflexes. (B) The nurse gave him an IV., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl found the missing puzzle piece. (A) She completed the puzzle. (B) She took apart the puzzle., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man held his breath. (A) He went underwater. (B) He treaded water., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The shirt shrunk. (A) I poured bleach on it. (B) I put it in the dryer., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The mother needed help looking after her children. (A) She sent the children to daycare. (B) She gave up custody of the children., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman felt compelled to help someone in need. (A) She donated blood. (B) She wrote a poem., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The parents recognized their daughter's creativity. (A) They taught her how to ride a bike. (B) They encouraged her to become an artist., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The coach gave his player a high five. (A) The player got a penalty. (B) The player scored a point., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I burst into a fit of laughter. (A) My teeth began to chatter. (B) My eyes welled up with tears., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I clumsily bumped into the stranger. (A) I ran away. (B) I apologized to him., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The couple got engaged. (A) They planned a wedding. (B) They took some time apart., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The navy bombed the ship. (A) The ship crashed into the pier. (B) The ship's debris sunk in the sea., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The putrid odor filled the room. (A) I clamped my hand over my nose. (B) I put the rubber gloves on., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I moved to a new city. (A) I found a better-paying job. (B) My son was born., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "A group of teenagers crashed the party. (A) The host of the party kicked them out. (B) The host of the party invited them in., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I avoided giving a straight answer to the question. (A) The question made me uncomfortable. (B) I wanted to be honest., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The scientist gained recognition. (A) She discovered a new species. (B) She received tenure at the university., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The company's profits started to level off. (A) It increased its marketing efforts for new products. (B) It moved its headquarters to a suburban location., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I received a package in the mail. (A) The package triggered my curiosity. (B) I took the package to the post office., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The truck crashed into the motorcycle on the bridge. (A) The motorcyclist died. (B) The bridge collapsed., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman became famous. (A) Photographers followed her. (B) Her family avoided her., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The hunter ran out of ammunition. (A) He reloaded the gun. (B) He aimed at the deer., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The fans in the stadium cheered. (A) The game ended in a tie. (B) The player scored., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I approached the man. (A) He looked busy. (B) He looked familiar., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I wanted to lighten the mood of the conversation. (A) I remained quiet. (B) I told a joke., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man went into denial about the tragedy. (A) He got over it easily. (B) He refused to talk about it., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "A crater formed on the moon. (A) A comet passed by the moon. (B) A comet collided with the moon., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl applied the scissors to the paper. (A) The paper sliced apart. (B) The paper crinkled., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The investigators deemed the man's death a suicide. (A) He left a note. (B) He had children., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The glasses on the table spilled. (A) The child drew on the table. (B) The child yanked the tablecloth., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The audience booed the comedian off the stage. (A) He told a racist joke. (B) He entertained the audience., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The trip took a long time. (A)  The driver talked the whole way. (B) The driver made a wrong turn., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man uncovered incriminating evidence against his enemy. (A) The man avoided his enemy. (B) The man blackmailed his enemy., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy tuned the radio. (A) The station was playing rock music. (B) The station was coming in with static., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The inside of the train went dark. (A) The train travelled through a tunnel. (B) The train ran off the tracks., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The student's answer on the exam was incorrect. (A) The teacher added bonus points to the student's grade. (B) The teacher subtracted points off the student's grade., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The grape juice fermented. (A) The juice turned to wine. (B) The juice evaporated., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The water in the teapot started to boil. (A) The teapot cooled. (B) The teapot whistled., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The chandelier shattered on the floor. (A) The chandelier dropped from the ceiling. (B) The chandelier's lights flickered on and off., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The benefactor requested to stay anonymous. (A) He wanted to maintain his privacy. (B) He supported the cause behind his donation., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I coughed. (A) I inhaled smoke. (B) I lowered my voice., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The security guard replayed the surveillance footage. (A) The surveillance camera was out of focus. (B) He noticed some suspicious activity., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman hummed to herself. (A) She was nervous. (B) She was in a good mood., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The student flaunted his test grade to his classmates. (A) He received a perfect score. (B) He feigned interest in the class., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman fanned herself with her hand. (A) She installed the air conditioner in the room. (B) The air conditioner in the room broke., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The cook's eyes watered. (A) He ran out of onions. (B) He cut an onion., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man lifted the heavy box. (A) He put out his back. (B) He scratched his back., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The lobbyist persuaded the legislature to support the bill. (A) The president vetoed the bill. (B) The legislature passed the bill., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man read the cartoon in the newspaper. (A) He sipped coffee. (B) He chuckled., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The pair of students came under scrutiny by the teacher. (A) The students both received excellent grades. (B) Their responses on the assignment were identical., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man's watch was broken. (A) He waited at the bus stop. (B) He asked a stranger for the time., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman exaggerated the details of the story. (A) She wanted attention. (B) She felt shy., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The book became a huge bestseller. (A) It was adapted into a movie. (B) The author faded into obscurity., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman took her family on vacation. (A) Her husband got laid off. (B) She received a salary bonus., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I slipped on the floor. (A) The tile was wet. (B) The tile was cracked., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man turned on the faucet. (A) The toilet filled with water. (B) Water flowed from the spout., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The room was dim. (A) I opened the blinds. (B) I washed the windows., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I excused myself from the group. (A) I turned off my phone. (B) My phone rang., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The stain came out of the shirt. (A) I patched the shirt. (B) I bleached the shirt., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The chair squeaked. (A) The man carried the chair to his office. (B) The man scooted the chair closer to his desk., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl desired her parent's approval. (A) She ran away from home. (B) She obeyed her parent's rules., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman read the newspaper. (A) She discovered the outcome of the election. (B) She casted a vote in the election., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I tossed the ball upwards. (A) The ball rolled across the ground. (B) The ball hit the ceiling., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The nurse prepared the needle for the patient's injection. (A) The patient bled. (B) The patient tensed up., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The mother scolded her daughter. (A) Her daughter burped at the kitchen table. (B) Her daughter set the kitchen table., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The children ran through the sprinkler. (A) They ate popsicles. (B) They were hot., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman refused a second beer. (A) She was the designated driver for the night. (B) She was familiar with the bartender., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I dabbed the floor with a paper towel. (A) I spilled juice on the floor. (B) The floor was permanently stained., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman sensed a pleasant smell. (A) She remembered to take her medication. (B) She was reminded of her childhood., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The politician was convicted of fraud. (A) He campaigned for re-election. (B) He was removed from office., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My feet were blistered. (A) I went hiking. (B) I went swimming., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I finished a page of the book. (A) I ripped out the next page. (B) I turned to the next page., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I poured water on my sleeping friend. (A) My friend awoke. (B) My friend snored., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The key was missing from my pants pocket. (A) The pocket had a hole. (B) The pants were new., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl pushed her friend. (A) Her friend choked. (B) Her friend fell over., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The window was opaque. (A) The glass was stained. (B) The blinds were open., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman covered her mouth with her hand. (A) She exhaled. (B) She sneezed., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The clay hardened. (A) The potter rolled the clay into a ball. (B) The potter put the clay in the oven., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy threw a temper tantrum. (A) His brother took his toys from him. (B) He shared his toys with his brother., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The skier slipped on the slope. (A) She dropped her ski poles. (B) She hit a patch of ice., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The print on the brochure was tiny. (A) The man put his glasses on. (B) The man retrieved a pen from his pocket., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman won the lottery. (A) She bought a yacht. (B) She joined a church., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The family postponed the barbeque. (A) The forecast called for storms. (B) It was a holiday weekend., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl handed down her clothes to her younger sister. (A) The clothes were tattered. (B) She outgrew the clothes., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The rain subsided. (A) I went for a walk. (B) I browsed the internet., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The administrator cleared her throat. (A) The meeting was postponed. (B) The meeting commenced., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy wanted to be muscular. (A) He lifted weights. (B) He played computer games., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My knees buckled on the stairs. (A) I caught myself on the railing. (B) The railing came loose from the wall., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The doctors amputated the patient's leg. (A) It was badly bruised. (B) It was severely infected., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man made an error in his calculations. (A) He checked his work. (B) His work was hasty., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl pushed herself off the top of the slide. (A) She glided down the slide. (B) She crawled up the slide., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The flame on the candle went out. (A) I blew on the wick. (B) I put a match to the wick., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man confessed his love for the woman. (A) The woman rejected him. (B) The woman envied him., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The tree branch landed in the river. (A) The branch moved downstream. (B) The river's current became stronger., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The politician lost the election. (A) He ran negative campaign ads. (B) No one voted for him., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The host cancelled the party. (A) She was certain she had the flu. (B) She worried she would catch the flu., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I twisted the cap off the soda bottle. (A) The soda fizzed. (B) The soda leaked out., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man woke up with a toothache. (A) He missed an appointment with the dentist. (B) He made an appointment with the dentist., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The computer was expensive to fix. (A) I got it repaired. (B) I bought a new one., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The fugitive hid from the police. (A) The police dropped the case. (B) The fugitive remained at large., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The mother became eye level with her son. (A) She squatted down. (B) She held his hand., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The boy giggled uncontrollably. (A) His brother tickled him. (B) His brother kicked him., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The family took their dog to the veterinarian. (A) The dog chewed on a bone. (B) The dog injured his paw., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man felt thankful to be alive. (A) He was cured of cancer. (B) His wife was diagnosed with cancer., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man felt obligated to attend the event. (A) He turned down his friend's invitation to go. (B) He promised his friend that he would go., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy felt homesick. (A) He went away to camp. (B) He bickered with his sister., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The driver got pulled over by the police. (A) He was parking. (B) He was speeding., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The cup of tea was scalding hot. (A) I blew on it. (B) I poured it out., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman banished the children from her property. (A) The children hit a ball into her yard. (B) The children trampled through her garden., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The airline mishandled my luggage. (A) They offered me compensation. (B) They cancelled my flight., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man's eye became infected. (A) He went blind. (B) He put on glasses., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My jaw dropped open. (A) I was unhappy. (B) I was shocked., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I ran out of breath. (A) I climbed several flights of stairs. (B) I read several chapters of the book., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man grew old. (A) His hair turned gray. (B) He sold his belongings., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The magnet attracted the paperclip. (A) The paperclip dropped from the magnet. (B) The paperclip stuck to the magnet., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman felt an electric shock. (A) She grabbed the doorknob. (B) She pounded on the door., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl politely declined the hamburger. (A) She was a vegetarian. (B) She liked fast food., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The cowgirl threw her lasso towards the horse. (A) The lasso grabbed onto the horse. (B) The horse trotted into the barn., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The rocket flew up into the sky. (A) The girl launched it. (B) The girl designed it., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The soldiers were concealed in the brush. (A) They were armed with rifles. (B) They wore camouflage uniforms., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I tipped the bottle. (A) The liquid in the bottle froze. (B) The liquid in the bottle poured out., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man revealed personal information to the therapist. (A) He trusted the therapist. (B) He disagreed with the therapist., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The teenager grew taller than his father. (A) He went through a growth spurt. (B) He joined the basketball team., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The executive decided not to hire the applicant. (A) The applicant failed a background check. (B) The applicant had experience for the job., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man closed the book. (A) He finished reading it. (B) It provoked him to think., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The player caught the ball. (A) Her teammate threw it to her. (B) Her opponent tried to intercept it., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl came across an unfamiliar word in her textbook. (A) She looked the term up in the dictionary. (B) She chucked the textbook across the room., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man needed coins to fill the parking meter. (A) He searched under his car seats for loose change. (B) He begged people on the street for loose change., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Marine life diminished. (A) Boats sailed through the ocean. (B) Oil spilled into the ocean., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The police handcuffed the suspect. (A) The police called for backup. (B) The suspect resisted arrest., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I pushed the wagon. (A) The objects in the wagon fell out. (B) The wagon wheels spun forward., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl made a wish. (A) She saw a black cat. (B) She saw a shooting star., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boat capsized. (A) The captain raised the sail. (B) It was caught in a hurricane., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy painted a picture for his mother. (A) His mother hung the picture on the wall. (B) His mother sold the picture to a gallery., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My friend paid for my ticket. (A) I sought a refund. (B) I paid her back., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The customer thought the souvenir was overpriced. (A) The vender sold it to him. (B) He bargained with the vendor., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The skydiver glided safely to the ground. (A) She opened her parachute. (B) She jumped out of the plane., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman's hair fell in her face. (A) She pulled her hair back with a clip. (B) She lathered shampoo into her hair., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The team lost the game. (A) Their best player was injured. (B) Their coach pumped them up., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The patient underwent the risky medical procedure. (A) The procedure was costly. (B) Specialists recommended the procedure., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I tidied up my house. (A) I was swamped with work. (B) I was expecting company., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man hated his new haircut. (A) He wore a hat. (B) He grew a beard., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I scrubbed the stain on the floor. (A) I got rid of the stain. (B) I got dirt on the floor., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I saw a woman getting robbed on the street. (A) I called 911. (B) I hailed a cab., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman was mistaken for her sister. (A) The woman was close with her sister. (B) The woman looked like her sister., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The computer crashed. (A) I backed up my files. (B) I downloaded a virus., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The detective flashed his badge to the police officer. (A) The police officer confiscated the detective's badge. (B) The police officer let the detective enter the crime scene., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The student was in a rush to get to school on time. (A) He left his assignment at home. (B) He brought his lunch to school., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The skunk sprayed the dog. (A) The dog emitted a foul smell. (B) The skunk roamed the woods., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The detective revealed an anomaly in the case. (A) He finalized his theory. (B) He scrapped his theory., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I ironed my shirt. (A) It was clean. (B) It was wrinkled., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman resigned from her job. (A) She aspired to hold an executive position in the firm. (B) She believed her superiors were acting unethically., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I put my hands under the running faucet. (A) The soap rinsed off my hands. (B) The water splashed in my face., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man grieved. (A) His wife criticized him. (B) His mother passed away., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl performed in a dance recital. (A) Her parents showed her how to dance. (B) Her parents came to watch the recital., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl wanted to make her mother happy. (A) The girl ate the cookies her mother baked. (B) The girl picked a flower for her mother., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boaters set off a flare. (A) Their boat drifted to shore. (B) Their boat was rescued., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man broke his toe. (A) He got a hole in his sock. (B) He dropped a hammer on his foot., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman was wrongly convicted for the crime. (A) The jury was fair. (B) She was framed., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The button on my shirt fell off. (A) I sewed the button back on. (B) I glued the button back on., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman hired a lawyer. (A) She decided to sue her employer. (B) She decided to run for office., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl wanted to wear earrings. (A) She got her ears pierced. (B) She got a tattoo., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The bodybuilder lifted weights. (A) The gym closed. (B) Her muscles became fatigued., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man looked at his watch. (A) He realized he forgot something. (B) He realized he was early., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The chef pressed down on the dough. (A) The dough crumbled. (B) The dough flattened., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The child became immune to the disease. (A) He avoided exposure to the disease. (B) He received the vaccine for the disease., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The physician misdiagnosed the patient. (A) The patient filed a malpractice lawsuit against the physician. (B) The patient disclosed confidential information to the physician., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I flipped the light switch up and down. (A) The light faded. (B) The light flickered., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The leader received praise. (A) He fought poverty. (B) He raised taxes., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I drank from the water fountain. (A) I was thirsty. (B) I felt nauseous., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I stood on one foot. (A) My balance wavered. (B) I kneeled down., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman stayed away from public places. (A) She was contagious. (B) She was intoxicated., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The pharmaceutical company recalled the drug. (A) Users reported dangerous side effects. (B) Users got refills on their prescriptions., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The friends decided to share the hamburger. (A) They cut the hamburger in half. (B) They ordered fries with the hamburger., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man contemplated the painting. (A) He felt in awe. (B) He collapsed., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My computer crashed. (A) I installed new speakers. (B) I lost all my data., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man dressed in his best suit. (A) He scheduled a meeting with an important client. (B) His wife bought him a new tie., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The secretary put the caller on hold. (A) The caller's phone lost reception. (B) The caller waited on the line., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "A fistfight broke out in the hall of the school. (A) The principal suspended the students involved. (B) The principal called off classes for the day., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The dust came off the desk. (A) I wiped the desk with a cloth. (B) I removed the books from the desk., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The bird couldn't fly. (A) It migrated for the winter. (B) It injured its wing., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy mimicked his older brother. (A) The boy looked up to his older brother. (B) The boy wrestled with his older brother., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The shop was closed. (A) The owner was helping customers. (B) The shop was undergoing renovation., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The car looked filthy. (A) The owner took it to the car wash. (B) He owner took it in for a paint job., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The photograph faded. (A) It was fake. (B) It was old., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy filled the bucket with sand. (A) He was collecting seashells in the sand. (B) He was building a sand castle., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The teacher assigned homework to the students. (A) The students passed notes. (B) The students groaned., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The cook stirred the ingredients in the bowl. (A) The ingredients melted. (B) The ingredients blended together., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I hung up the phone. (A) The caller said goodbye to me. (B) The caller identified himself to me., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man gained weight. (A) He got his suit altered. (B) He got his shoes shined., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman spoke with a foreign accent. (A) She came from a wealthy family. (B) She migrated from another country., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman retired. (A) She received her pension. (B) She paid off her mortgage., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl wanted to demonstrate proper etiquette. (A) She threw away her napkin after eating. (B) She put her napkin on her lap before eating., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The papers were disorganized. (A) I made photocopies of them. (B) I put them into alphabetical order., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The car stopped at the crosswalk. (A) The pedestrian crossed the road. (B) The pedestrian waited on the sidewalk., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The women met for coffee. (A) The cafe reopened in a new location. (B) They wanted to catch up with each other., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The father shut off the children's television. (A) It was bedtime for the children. (B) The children were watching cartoons., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I put my plate in the sink. (A) I finished eating. (B) I skipped dinner., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman betrayed her friend. (A) Her friend sent her a greeting card. (B) Her friend cut off contact with her., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman's date wanted to look like a gentleman. (A) He opened the door for her. (B) He asked her if she liked sushi., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I lit the candle. (A) Wax dripped off the candle. (B) The wax on the candle hardened., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman upgraded her computer hardware. (A) She deleted old files on the computer. (B) She installed new software on the computer., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy was afraid to go to bed. (A) He turned on his nightlight. (B) He watched a horror movie., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man dropped food on the floor. (A) His dog jumped up on him. (B) His dog ran over to eat the food., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The host served dinner to his guests. (A) His guests were gracious. (B) His guests went hungry., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The documents contained important information. (A) I paper clipped them together. (B) I kept them in a secure place., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man craved a cigarette. (A) His family urged him to quit smoking. (B) He was addicted to nicotine., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The bureau drawers were cluttered. (A) I threw away unnecessary contents. (B) I locked the drawers shut., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I pushed the gas pedal. (A) The car accelerated. (B) The car door opened., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I jumped instinctively in fright. (A) I sensed someone approaching me from behind. (B) I heard people chuckling in the adjacent room., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "Plans were announced to replace a local park with a shopping mall. (A) Environmentalists started a petition. (B) Environmentalists produced a documentary., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The mirror in the bathroom fogged up. (A) The girl turned on the fan. (B) The girl applied her makeup., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The boy read the novel aloud to his grandfather. (A) His grandfather was deaf. (B) His grandfather was blind., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The chef hit the egg on the side of the bowl. (A) The egg cracked. (B) The egg rotted., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man won the lottery. (A) He became rich. (B) He owed money., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The community learned of the man's death. (A) His family buried him in the cemetery. (B) His obituary appeared in the newspaper., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I clenched the candy wrapper in my fist. (A) The wrapper crinkled. (B) The wrapper ripped., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The crowd gave the band a standing ovation. (A) The band signed autographs. (B) The band reappeared on the stage., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I pressed my hand into the wet cement. (A) My handprint dried in the cement. (B) Cracks emerged in the cement., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl had a phobia of dogs. (A) She rescued an abandoned dog. (B) She was bitten by a dog., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The student forgot to do her assignment. (A) She made up an excuse to tell the teacher. (B) The teacher promoted her to the next grade., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The baby pulled the mother's hair. (A) The baby burped. (B) The mother grimaced., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The bully stuck his foot out in front of his classmate. (A) The bully picked up his classmate. (B) The bully's classmate tripped., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I applied pressure to the cut on my arm. (A) It healed. (B) It stopped bleeding., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The spy discovered the enemy's location. (A) The spy bugged the enemy's phone. (B) The spy was hired by the government., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man slid the razor across his chin. (A) His stubble grew. (B) His stubble disappeared., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I wanted to conserve energy. (A) I swept the floor in the unoccupied room. (B) I shut off the light in the unoccupied room., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The ocean tide was dangerous. (A) The swimmers put on more sunscreen. (B) The swimmers returned towards the shore., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I packed up my belongings. (A) I was hunting for a new apartment. (B) I was moving out of my apartment., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The authorities vowed to protect the identity of the crime victim. (A) The victim struggled to recall details about the crime. (B) They withheld the victim's name from the public., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The parents forbade their children from watching the movie.  (A) The movie was rated R. (B) The movie was animated., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man closed the umbrella. (A) He got out of the car. (B) He approached the building., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The police searched the offender's car. (A) They were trying to elicit a confession. (B) They were looking for illegal drugs., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The child disobeyed her parents. (A) Her parents hugged her. (B) Her parents punished her., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman wrote a check to the gas company. (A) She preferred paying by cash. (B) She received her monthly bill., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman pressed down on the piano key. (A) A sound played. (B) The key got stuck., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The student received detention. (A) He talked back to the teacher. (B) The teacher graded his homework., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I regained composure from my fit of anger. (A) My heart pounded. (B) I took deep breaths., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The patient went into a coma. (A) He suffered emotional trauma. (B) He suffered brain damage., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The bartender refused to serve the patron. (A) The patron was alone. (B) The patron was drunk., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The group overlooked the woman's faux pas. (A) The woman was relieved. (B) The woman apologized., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The seasons changed from summer to autumn. (A) People evacuated their homes. (B) Leaves fell from the trees., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The host of the trivia show called on the contestant for an answer. (A) The contestant was in the lead. (B) The contestant rang the buzzer., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I decided to stay home for the night. (A) The forecast called for storms. (B) My friends urged me to go out., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman's purse was missing. (A) It contained a lot of junk. (B) She left it unsupervised., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The clouds looked dark. (A) I brought my laptop to work. (B) I brought my umbrella to work., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy had trouble buttoning his shirt. (A) He refused to wear the shirt. (B) He asked his mother for help., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The woman walked with crutches. (A) She shaved her legs. (B) She broke her leg., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The couple was happy to see each other. (A) They kissed. (B) They rested., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man went away for the weekend. (A) He wanted to relax. (B) He felt content., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman tolerated her friend's difficult behavior. (A) The woman knew her friend was going through a hard time. (B) The woman felt that her friend took advantage of her kindness., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman suffered amnesia. (A) She had an allergic reaction. (B) She got into a car accident., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The farmland needed irrigation. (A) A canal was constructed. (B) A flood occurred., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I came upon a puddle on the sidewalk. (A) I leapt over the puddle. (B) I played in the puddle., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My eyes became red and puffy. (A) I was sobbing. (B) I was laughing., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The rider fell to the ground. (A) The bull bucked the rider. (B) The bull chased the rider., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The surfer caught the wave. (A) The wave carried her to the shore. (B) She paddled her board into the ocean., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The celebrity wore sunglasses. (A) She wanted to thank her fans. (B) She wanted to avoid recognition., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I put rubber gloves on. (A) I was preparing to wash my hands. (B) I was preparing to clean the bathroom., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The tenant misplaced his keys to his apartment. (A) His landlord unlocked the door. (B) His landlord repaired the door., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The elderly woman suffered a stroke. (A) The woman's daughter came over to clean her house. (B) The woman's daughter moved in to take care of her., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "Everyone in the class turned to stare at the student. (A) The student's phone rang. (B) The student took notes., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The police aimed their weapons at the fugitive. (A) The fugitive fell to the ground. (B) The fugitive dropped his gun., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The kidnappers released the hostage. (A) They accepted ransom money. (B) They escaped from jail., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My breath smelled of garlic. (A) I wiped my mouth. (B) I brushed my teeth., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The waistband on my pants was loose. (A) I put on a belt. (B) I put on a hat., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The ring on my finger got stuck. (A) My finger swelled. (B) I chipped my fingernail., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The tenants were evicted from the apartment. (A) They neglected to pay their rent. (B) They got along with their landlord., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The woman felt lonely. (A) She renovated her kitchen. (B) She adopted a cat., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The balloon expanded. (A) I blew into it. (B) I pricked it., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The flashlight was dead. (A) I took it apart. (B) I replaced the batteries., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The turtle hid in its shell. (A) It ate a fish. (B) It detected a predator., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The boy murmured his reply to his mother. (A) His mother told him to whisper. (B) His mother told him to speak up., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man had lipstick on his cheek. (A) The woman kissed him. (B) The woman made him blush., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I pushed the pendulum. (A) It slowed to a stop. (B) It swung back and forth., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The man perceived that the woman looked different. (A) The woman got her hair cut. (B) The woman wore a bracelet., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My grandmother passed away. (A) My family held a funeral. (B) My family held a reunion., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The fortune teller's revelations were convincing. (A) She received many returning customers. (B) Many customers asked for refunds., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The security guard tackled the man. (A) The man reached into his pocket. (B) The man displayed a weapon., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I drank a cup of coffee. (A) My yawning ceased. (B) I nodded off to sleep., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My subscription to the magazine expired. (A) I discarded the new issue. (B) I stopped receiving new issues., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "I pulled the rubber band. (A) It flung across the room. (B) It stretched., Question: effect",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "My view of the movie screen was blocked. (A) The couple behind me was whispering. (B) A tall person was sitting in front of me., Question: cause",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "input": "The girl's mouth ached. (A) She lost a tooth. (B) She swallowed her gum., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The army surrendered the battle. (A) They were outnumbered. (B) They stormed the city., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The guests of the party hid behind the couch. (A) It was a surprise party. (B) It was a birthday party., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The pond froze over for the winter. (A) People skated on the pond. (B) People brought boats to the pond., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The shopper wondered about the cost of the item. (A) He checked its price tag. (B) He decided to buy it., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The toddler became cranky. (A) Her mother put her down for a nap. (B) Her mother fixed her hair into pigtails., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "I scratched my skin. (A) My itch went away. (B) My scar faded., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The girl stared at herself in the mirror. (A) She felt self-conscious. (B) The mirror was smudged., Question: cause",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The offender violated parole. (A) She was sent back to jail. (B) She stole money from a church., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "My closet was messy. (A) I organized it. (B) I decorated it., Question: effect",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "input": "The man's clothes fit loosely. (A) He bought them on sale. (B) He lost weight., Question: cause",
+            "output": [
+                "B"
+            ]
+        }
+    ]
+}
