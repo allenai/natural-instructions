@@ -123,6 +123,8 @@ contributor_stats = {}
 categories_stats = {}
 reasoning_stats = {}
 domain_stats = {}
+tasks_count = 0
+number_of_instances = 0
 for file in files[begin_task_number:end_task_number + 1]:
     if ".json" in file:
         print(f" --> testing file: {file}")
@@ -150,6 +152,7 @@ for file in files[begin_task_number:end_task_number + 1]:
             assert type(data['Reasoning']) == list, f'Reasoning must be a list.'
             assert type(data['Domains']) == list, f'Domains must be a list.'
             
+            number_of_instances = number_of_instances + len(data['Instances'])
             for c in data['Categories']:
                 assert c in all_categories, f'Did not find category `{c}`'
                 if c not in categories_stats:
@@ -272,6 +275,7 @@ for file in files[begin_task_number:end_task_number + 1]:
                 if c not in contributor_stats:
                     contributor_stats[c] = 0
                 contributor_stats[c] += 1
+            tasks_count = tasks_count + 1
 
 print("Did not find any errors! ✅")
 
@@ -295,3 +299,7 @@ print("\n  - - - - - Reasoning Stats - - - - - ")
 keyvalues = sorted(list(reasoning_stats.items()), key=lambda x: x[1])
 for res, count in reasoning_stats.items():
     print(f" ✍️ {res} -> {count}")
+
+print("\n  - - - - - Instances Stats - - - - - ")
+average_number_of_instances = number_of_instances / tasks_count
+print(f" ✍️ Average number of Instances -> {average_number_of_instances}")
