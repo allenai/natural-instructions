@@ -29,7 +29,6 @@ for f in root_files:
 # read all the tasks and make sure that they're following the right pattern
 tasks_path = 'tasks/'
 
-#TODO: We need to add URL here after updating the tasks
 expected_keys = [
     "Definition",
     "Input_language",
@@ -41,6 +40,7 @@ expected_keys = [
     "Categories",
     "Domains",
     "Source",
+    "URL",
     "Reasoning"
 ]
 
@@ -147,6 +147,7 @@ for file in files[begin_task_number:end_task_number + 1]:
 
             assert type(data['Definition']) == list, f'Definition must be a list of strings.'
             assert type(data['Source']) == list, f'Sources must be a list.'
+            assert type(data['URL']) == list, f'URL must be a list.'
             assert type(data['Contributors']) == list, f'Contributors must be a list.'
             assert type(data['Categories']) == list, f'Categories must be a list.'
             assert type(data['Reasoning']) == list, f'Reasoning must be a list.'
