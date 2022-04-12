@@ -182,7 +182,7 @@ if __name__ == '__main__':
         help='if specified, we will use the tasks in our default test categories (12 categories in total),'
              'and `start` and `end` will be ignored. '
     )
-    parser.add_argument('--num_instances_per_task', type=int, help='how many instances to use in this evaluation. '
+    parser.add_argument('--num_instances_per_task', type=int, help='how many instances per task to use in this evaluation. '
                                              '100 should be enough for reliable estimates.')
     args = parser.parse_args()
 
