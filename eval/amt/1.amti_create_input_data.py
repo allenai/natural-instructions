@@ -1,7 +1,7 @@
 '''
 Given a task file, it creates a single file for crowd annotations (the input to AMTI).
-For example: python 1.amti_create_input_data.py --start  5 --end 20 --eval_count 10
-Or you can create for all the default test tasks: python 1.amti_create_input_data.py --process_default_test_tasks --eval_count 20
+For example: python 1.amti_create_input_data.py --start  5 --end 20 --num_instances_per_task 10
+Or you can create for all the default test tasks: python 1.amti_create_input_data.py --process_default_test_tasks --num_instances_per_task 20
 '''
 import json
 import random
@@ -30,8 +30,8 @@ for f in files:
     task_ids_to_file[id] = f
 
 
-def process_tasks_from_start_to_end(start, end, max_count):
-    fout = open(f"start={start}_end={end}_max_size={max_count}.jsonl", "w")
+def process_tasks_from_start_to_end(start, end, num_instances_per_task):
+    fout = open(f"start={start}_end={end}_max_size={num_instances_per_task}.jsonl", "w")
     for idx in range(start, end + 1):
         if idx not in task_ids_to_file:
             continue
@@ -60,7 +60,7 @@ def process_tasks_from_start_to_end(start, end, max_count):
         n = 2
         chunks = [instances[i:i + n] for i in range(0, len(instances), n)]
         for i, chunk in enumerate(chunks):
-            if i * n > int(max_count):
+            if i * n > int(num_instances_per_task):
                 break
             map = {
                 'file': normalize(file),
@@ -87,7 +87,7 @@ def process_tasks_from_start_to_end(start, end, max_count):
             fout.write(json.dumps(map) + "\n")
 
 
-def process_default_test_tasks(max_count):
+def process_default_test_tasks(num_instances_per_task):
     default_test_categories = [
         "Textual Entailment",
         "Cause Effect Classification",
@@ -102,7 +102,7 @@ def process_default_test_tasks(max_count):
         "Data to Text",
         "Grammar Error Correction"
     ]
-    fout = open(f"default_test_tasks_max_size={max_count}.jsonl", "w")
+    fout = open(f"default_test_tasks_inst_num={num_instances_per_task}.jsonl", "w")
 
     for file in files:
         json_content = read_file(file)
@@ -121,14 +121,14 @@ def process_default_test_tasks(max_count):
                 label_to_instances[output] = []
             label_to_instances[output].append(inst)
         test_instances = [] 
-        while len(test_instances) < max_count and len(test_instances) < len(json_content["Instances"]):
+        while len(test_instances) < num_instances_per_task and len(test_instances) < len(json_content["Instances"]):
             for label in label_to_instances:
                 if not label_to_instances[label]:
                     continue
                 inst = random.choice(label_to_instances[label])
                 test_instances.append(inst)
                 label_to_instances[label].remove(inst)
-                if len(test_instances) == max_count:
+                if len(test_instances) == num_instances_per_task:
                     break
 
         positive_examples = json_content['Positive Examples']
@@ -146,7 +146,7 @@ def process_default_test_tasks(max_count):
         n = 2
         chunks = [instances[i:i + n] for i in range(0, len(instances), n)]
         for i, chunk in enumerate(chunks):
-            if i * n > int(max_count):
+            if i * n > int(num_instances_per_task):
                 break
             map = {
                 'file': normalize(file),
@@ -182,7 +182,7 @@ if __name__ == '__main__':
         help='if specified, we will use the tasks in our default test categories (12 categories in total),'
              'and `start` and `end` will be ignored. '
     )
-    parser.add_argument('--eval_count', type=int, help='how many instances to use in this evaluation. '
+    parser.add_argument('--num_instances_per_task', type=int, help='how many instances to use in this evaluation. '
                                              '100 should be enough for reliable estimates.')
     args = parser.parse_args()
 
@@ -190,9 +190,9 @@ if __name__ == '__main__':
     print(f" * start task id: {args.start}")
     print(f" * end task id: {args.end}")
     print(f" * process default test tasks: {args.process_default_test_tasks}")
-    print(f" * count of samples from each task: {args.eval_count}")
+    print(f" * number of instances from each task: {args.num_instances_per_task}")
 
     if args.process_default_test_tasks:
-        process_default_test_tasks(args.eval_count)
+        process_default_test_tasks(args.num_instances_per_task)
     else:
-        process_tasks_from_start_to_end(args.start, args.end, args.eval_count)
+        process_tasks_from_start_to_end(args.start, args.end, args.num_instances_per_task)
