@@ -1,4 +1,4 @@
-# A Repository of Language Instructions for NLP Tasks 
+# A Repository of Language Instructions for NLP Tasks
 
 **TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
 Check the [releases](https://github.com/allenai/natural-instructions-expansion/releases) for the summary of the latest changes and additions to the tasks.  
