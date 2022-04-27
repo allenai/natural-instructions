@@ -16,7 +16,7 @@
         "Commonsense Reasoning"
     ],
     "Definition": [
-        "You're given a fill-in-the-blank question where the answer is PersonX. You need to minimally change the given question so that the answer flips to PersonY. This task typically involves replacing one word i.e. the 'trigger word' with its antonym (e.g. changing from \"sympathetic\" to \"stern\"). You should not change any content in the given question beyond a word or two i.e. the trigger word/phrase. PersonX and PersonY should not be equally likely to fill the blank. For your question, PersonY should be a well-agreed answer to fill in the blank. Your generations should NOT contain potentially explicit, offensive, or adult content. Do not use the names of real people (e.g., Donald Trump, Putin, etc.) in your question. Avoid repeating the same style or phrase in generating your modified question e.g. this task can be always solved using a simple negation i.e. by adding not, never, etc. Instead, try to increase the word diversity. Your question must contain at least 15 and at most 30 words. Your question must have at least 70% overlapping words with the given question. You must utilize the given context word while writing the question. Your question must contain only one blank. Make sure that PersonX and PersonY have the same gender. In your question, PersonX and PersonY should be used only ONCE and PersonX should appear earlier than PersonY."
+        "You're given a fill-in-the-blank question where the answer is PersonX. You need to minimally change the given question so that the answer flips to PersonY. This task typically involves replacing one word i.e., the 'trigger word' with its antonym (e.g., changing from \"sympathetic\" to \"stern\"). You should not change any content in the given question beyond a word or two i.e. the trigger word/phrase. PersonX and PersonY should not be equally likely to fill the blank. For your question, PersonY should be a well-agreed answer to fill in the blank. Your generations should NOT contain potentially explicit, offensive, or adult content. Do not use the names of real people or generic names (e.g., Donald Trump, John Doe, etc.) in your question. Avoid repeating the same style or phrase in generating your modified question e.g. this task can be always solved using a simple negation i.e. by adding not, never, etc. Instead, try to increase the word diversity. Your question must contain at least 15 and at most 30 words. Your question must have at least 70% overlapping words with the given question. You must utilize the given context word while writing the question. Your question must contain only one blank. Make sure that PersonX and PersonY have the same gender. In your question, PersonX and PersonY should be used only ONCE and PersonX should appear earlier than PersonY. Although there are many correct answers, you only need to write one of them."
     ],
     "Input_language": [
         "English"
@@ -83,6 +83,11 @@
             "input": "Context word: dropped. \nQuestion: When PersonX dropped his ice cream, PersonY giggled, so father gave _ a sympathetic look. \nAnswer: PersonX.",
             "output": "When PersonX dropped his ice cream in front of Usain Bolt who is the other person. _ gave a sympathetic look.",
             "explanation": "The problem here is that it involves using name of a real person \"Usain Bolt\". Do not use names of real people (e.g., Donald Trump, Putin, etc.) in your question."
+        },
+        {
+            "input": "Context Word: cakes. \nQuestion: The cakes were given to PersonX but not PersonY because _ had his birthday that day. \nAnswer: PersonX",
+            "output": "The tasks were given to PersonX but not PersonY because _ had his birthday that day.",
+            "explanation": "The problem here is that it changes the context word. Note that you must utilize the given context word while writing the question."
         }
     ],
     "Instances": [
@@ -1128,12 +1133,6 @@
             "input": "Context Word: travel. \nQuestion: PersonX was more likely to travel to a foreign country than PersonY, because _ had an adventurous spirit. \nAnswer: PersonX",
             "output": [
                 "PersonX was more likely to travel to a foreign country than PersonY, because _ did not have an adventurous spirit."
-            ]
-        },
-        {
-            "input": "Context Word: cakes. \nQuestion: The cakes were given to PersonX but not PersonY because _ had his birthday that day. \nAnswer: PersonX",
-            "output": [
-                "The cakes were withheld from PersonX but not PersonY because _ had his birthday that day."
             ]
         },
         {
