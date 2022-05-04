@@ -90,7 +90,7 @@ We would appreciate any external contributions! 🙏 You can contribute in a var
     * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
        * To only test the formatting of a range of tasks, run `> python src/test_all.py --task <begin_task_number> <end_task_number>`. For example, running `> python src/test_all.py --task 5 10` will run the test from task005 to task010.
 
-If you want to use Natural Instruction v1, here's the code: [link](https://github.com/allenai/natural-instructions-v1)
+If you want to use Natural Instructions v1, here's the code: [link](https://github.com/allenai/natural-instructions-v1)
 
 Feel free to cite us
 
