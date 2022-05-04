@@ -94,9 +94,11 @@ If you want to use Natural Instructions v1, here's the code: [link](https://gith
 
 Feel free to cite us
 
+```bibtex
 @article{wangmishra2022benchmarkinggeneralization,
   title={Benchmarking Generalization via In-Context Instructions on 1,600+ Language Tasks},
   author={Wang, Yizhong and Mishra, Swaroop and Alipoormolabashi, Pegah and Kordi, Yeganeh and others},
   journal={arXiv},
   year={2022}
 }
+```
