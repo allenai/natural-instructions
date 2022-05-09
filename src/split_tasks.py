@@ -3,6 +3,7 @@ import glob
 import random
 import json 
 import os
+
 """
 Script for splitting tasks into the train/test set for standard evaluation setup.
 More info for the evaluation setup can be found in `./splits/README.md`.
@@ -10,6 +11,7 @@ You can run this with the following commands to generate the files for English t
 >>> python src/split_tasks.py --track default --output splits/default
 >>> python src/split_tasks.py --track xlingual --output splits/xlingual
 """
+
 
 test_categories = [
     "Textual Entailment",
