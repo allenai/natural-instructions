@@ -10,7 +10,7 @@ The `train_tasks.txt` should be used for your modeling, from which you can also 
 
 The `test_tasks.txt` contains the tasks for evaluation. We manually selected 12 categories of tasks for evaluation. They cover diverse varieties, such as those at word, sentence, and document levels, in both classiﬁcation and generation format. **Note:** You are supposed to use them only for reporting the performance. When you get the predictions, you are welcome to submit your predictions to our leaderboard (We will release the submission instructions soon)!
 
-The `excluded_tasks.txt` contains all the tasks that are sourced from the same dataset as any testing task, but not in the 12 evaluation categories. To avoid data leakage, we don't use them for modeling purposes.
+The `excluded_tasks.txt` contains all the tasks that are excluded from both training and testing (e.g., non-English tasks for the default track). Specifically, we exclude tasks that are sourced from the same dataset as any testing task, in order to avoid potential data leakage.
 
 ## Cross-lingual Track
 
