@@ -292,6 +292,8 @@ for split_name in ["default", "xlingual"]:
         assert task in train_tasks + test_tasks + excluded_tasks, f" Task {task} is missing in the {split_name} split."
     # make sure there is no overlap between test and train task names in the splits files.
     assert len(set(train_tasks) & set(test_tasks)) == 0, f" {split_name} split has overlap tasks in the train & test sets."
+    assert len(set(train_tasks) & set(excluded_tasks)) == 0, f" {split_name} split has overlap tasks in the train & excluded sets."
+    assert len(set(test_tasks) & set(excluded_tasks)) == 0, f" {split_name} split has overlap tasks in the test & excluded sets."
 
 print("Did not find any errors! ✅")
 
