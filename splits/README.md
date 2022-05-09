@@ -22,4 +22,8 @@ The cross-lingual track is mainly used for testing whether a model can even foll
 
 Since we have 119 / 35 test tasks for the English / xlingual tracks respectively and each task might have at most 6.5K instances, evaluation on all these instances will become very slow and unnecessary.
 
-For an efﬁcient evaluation, we selected 100 instances from each task to do the testing. These instances are also selected with label balancing (valid mainly for classification tasks). You can find this subset of testing instances in each test task's json files, indicated by ``"Instances Subset for Testing"``, while the `"Instances"` field is a superset. We will only evaluate model's performance on these testing instances.
+For an efﬁcient evaluation, we selected 100 instances from each task to do the testing. These instances are also selected with label balancing if possible (valid mainly for classification tasks). See [`src/reorder_instances_for_testing.py`](src/reorder_instances_for_testing.py) for details. For reproducibility, these 100 instances are put at the begining of the `Instances` field. We will only evaluate model's performance on these testing instances. You can get them by slicing the `Instances` list:
+
+```python
+test_instances = task_json["Instances"][:100]
+```
