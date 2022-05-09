@@ -1,6 +1,8 @@
 # Evaluation Setup of Natural Instruction V2
 
-To facilitate research on cross-task generalization, we split out tasks into two subsets: one for training and one for testing. Users can use the training tasks for any modeling purpose, while the testing tasks should be used to evaluate the model's ability to solve new tasks by following instruction.
+Here we describe the evaluation setup used in [our paper](https://arxiv.org/abs/2204.07705) which can be used for reproducing our experiments or extending them. The target setup of the study is a cross-task generalization, i.e., training on a subset of tasks and evaluating on the remaining unseen ones. To do so, we split out tasks into two subsets: one for training and one for testing. Users can use the training tasks for any modeling purpose, while the testing tasks should be used to evaluate and compare different models.
+
+Moreover, because of the multilingual nature of Natural Instruction V2, we are able to evaluate the model’s generalization to unseen tasks not only in English but also in other languages. Therefore, we create two evaluation tracks: one for cross-task generalization within English, and the other for cross-lingual cross-task generalization.
 
 ## English Track
 
@@ -14,7 +16,7 @@ The `excluded_tasks.txt` contains all the tasks that are excluded from both trai
 
 ## Cross-lingual Track
 
-A more ambitious goal for general-purpose model is to follow instructions to do new tasks even in other languages. To facilitate this goal, we introduce another cross-lingual split, with only non-English tasks in the `test_tasks.txt`.
+The cross-lingual track is mainly used for testing whether a model can even follow instructions to do a new task in other languages (i.e., cross-lingual cross-task generalization). To facilitate this goal, we include only non-English tasks in the `test_tasks.txt`, which also belongs to the 12 evaluation categories. Some non-English tasks in other categories (e.g., translation) are added to the `train_tasks.txt`.
 
 ## Testing Instances
 
