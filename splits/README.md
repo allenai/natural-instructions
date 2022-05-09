@@ -14,7 +14,7 @@ The `excluded_tasks.txt` contains all the tasks that are excluded from both trai
 
 ## Cross-lingual Track
 
-A more ambious goal for general-purpose model is to follow instructions to do new tasks even in other languages. To facilitate this goal, we introduce another cross-lingual split, with only non-English tasks in the `test_tasks.txt`.
+A more ambitious goal for general-purpose model is to follow instructions to do new tasks even in other languages. To facilitate this goal, we introduce another cross-lingual split, with only non-English tasks in the `test_tasks.txt`.
 
 ## Testing Instances
 
