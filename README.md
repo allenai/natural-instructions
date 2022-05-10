@@ -6,14 +6,14 @@ If you have any suggestions to improve the data, let us know. We're looking for 
 
 ### News Bulletin
 
- - *April 2022:* A [paper]( https://arxiv.org/abs/2204.07705) on our data is out! 
- - *June 2021:* we initiated this repository with 61 tasks! 
- - *Sept 2021*: general [call for contributions](https://medium.com/ai2-blog/call-for-contributions-a-community-driven-repository-of-natural-language-instructions-9d3f24d5a9db) is out! 
- - *October 15, 2021:* the goal date for the our v2 dataset. 
-   - The community have contributed over 1500 tasks!! 🎉   
-   - We are working on cleaning up the new tasks and publishing a paper summarizing our new findings! 
-   - You can still submit new tasks! The new tasks will be part of the future data releases.   
-
+- *May 2022:* We released the Tk-Instruct model trained on our data. Check out the [code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-).
+- *April 2022:* A [paper]( https://arxiv.org/abs/2204.07705) on our data is out!
+- *October 15, 2021:* the goal date for the our v2 dataset.
+  - The community have contributed over 1500 tasks!! 🎉
+  - We are working on cleaning up the new tasks and publishing a paper summarizing our new findings!
+  - You can still submit new tasks! The new tasks will be part of the future data releases.
+- *Sept 2021*: general [call for contributions](https://medium.com/ai2-blog/call-for-contributions-a-community-driven-repository-of-natural-language-instructions-9d3f24d5a9db) is out!
+- *June 2021:* we initiated this repository with 61 tasks!
 
 ## Background 
 ### Why define tasks in natural language?
@@ -91,6 +91,14 @@ We would appreciate any external contributions! 🙏 You can contribute in a var
     * Add your task to [our list of tasks](tasks/README.md).
     * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
        * To only test the formatting of a range of tasks, run `> python src/test_all.py --task <begin_task_number> <end_task_number>`. For example, running `> python src/test_all.py --task 5 10` will run the test from task005 to task010.
+
+## Benchmarking cross-task generalization
+
+As is introduced in our [paper](https://arxiv.org/abs/2204.07705), this dataset can be used for systematic study of cross-task generalization, i.e., training on a subset of tasks and evaluating on the remaining unseen ones. To make the comparison among different methods easider, we create an official split [here](splits/), as is described in the paper. You can follow the instructions to set up your experiments.
+
+We also released our [code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-) for reproducibility and future research.
+
+## Misc.
 
 If you want to use Natural Instructions v1, here's the code: [link](https://github.com/allenai/natural-instructions-v1)
 
