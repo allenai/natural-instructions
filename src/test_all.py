@@ -278,6 +278,23 @@ for file in files[begin_task_number:end_task_number + 1]:
                 contributor_stats[c] += 1
             tasks_count = tasks_count + 1
 
+# test the the official splits
+for split_name in ["default", "xlingual"]:
+    train_tasks = [l.strip() for l in open(f"splits/{split_name}/train_tasks.txt")]
+    test_tasks = [l.strip() for l in open(f"splits/{split_name}/test_tasks.txt")]
+    excluded_tasks = [l.strip() for l in open(f"splits/{split_name}/excluded_tasks.txt")]
+
+    # make east task in the split actually exists
+    for task in train_tasks + test_tasks + excluded_tasks:
+        assert task in task_names, f" Task {task} doesn't exist, but it's included in the {split_name} split."
+    # make sure each task appears in the split 
+    for task in task_names:
+        assert task in train_tasks + test_tasks + excluded_tasks, f" Task {task} is missing in the {split_name} split."
+    # make sure there is no overlap between test and train task names in the splits files.
+    assert len(set(train_tasks) & set(test_tasks)) == 0, f" {split_name} split has overlap tasks in the train & test sets."
+    assert len(set(train_tasks) & set(excluded_tasks)) == 0, f" {split_name} split has overlap tasks in the train & excluded sets."
+    assert len(set(test_tasks) & set(excluded_tasks)) == 0, f" {split_name} split has overlap tasks in the test & excluded sets."
+
 print("Did not find any errors! ✅")
 
 print("\n  - - - - - Contributors >= 25 tasks - - - - - ")
