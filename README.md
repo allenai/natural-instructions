@@ -94,7 +94,7 @@ We would appreciate any external contributions! 🙏 You can contribute in a var
 
 ## Benchmarking cross-task generalization
 
-As is introduced in our [paper](https://arxiv.org/abs/2204.07705), this dataset can be used for systematic study of cross-task generalization, i.e., training on a subset of tasks and evaluating on the remaining unseen ones. To make the comparison among different methods easider, we create an official split [here](splits/), as is described in the paper. You can follow the instructions to set up your experiments.
+As is introduced in our [paper](https://arxiv.org/abs/2204.07705), this dataset can be used for systematic study of cross-task generalization, i.e., training on a subset of tasks and evaluating on the remaining unseen ones. To make the comparison among different methods easier, we create an official split [here](splits/), as is described in the paper. You can follow the instructions to set up your experiments.
 
 We also released our [experiment code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-) for reproducibility and future research.
 
