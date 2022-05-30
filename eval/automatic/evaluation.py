@@ -10,7 +10,7 @@ def rouge(prediction, ground_truth):
     score = rouge_metric.compute(
         predictions=[prediction],
         references=[ground_truth],
-        **{'use_agregator': False, 'use_stemmer': True, 'rouge_types': ['rougeL']}
+        **{'use_aggregator': False, 'use_stemmer': True, 'rouge_types': ['rougeL']}
     )
     return score['rougeL'][0].fmeasure
 
