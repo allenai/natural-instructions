@@ -188,9 +188,12 @@ for file in files[begin_task_number:end_task_number + 1]:
             for lang in data['Input_language'] + data['Output_language'] + data['Instruction_language']:
                 assert_language_name(lang)
 
+            instance_ids = set()
             for x in data['Instances']:
-                for key in ['input', 'output']:
+                for key in ['id', 'input', 'output']:
                     assert key in x, f'expected the key {key} in {x}'
+                assert x['id'] not in instance_ids, f'found duplicate instance id: {x["id"]}'
+                instance_ids.add(x['id'])
                 assert type(x['input']) == str, f'the input of instance {x} is not a string'
                 assert type(x['output']) == list, f'the output of instance {x} is not a list'
                 assert len(x['input']) > 0, f"looks like an input `{x['input']}` is empty?"
