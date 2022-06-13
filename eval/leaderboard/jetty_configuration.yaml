@@ -1,0 +1,35 @@
+{
+  "inputFile": "predictions.jsonl",
+  "outputFile": "metrics.json",
+  "spec": {
+    "image": {
+      "beaker": "Yizhongw03/natural-instructions-evaluator"
+    },
+    "arguments": [
+     "python",
+      "/app/evaluation.py",
+      "--prediction_file",
+      "/input/predictions.jsonl",
+      "--reference_file",
+      "/data/test_references.jsonl",
+      "--output_file",
+      "/output/metrics.json"
+    ],
+    "datasets": [
+      {
+        "mountPath": "/data",
+        "source": {
+          "beaker": "Yizhongw03/natural_instructions_test_data"
+        }
+      }
+    ],
+    "result": {
+      "path": "/output"
+    },
+    "context": {
+      "cluster": "leaderboard/CPU"
+    }
+  },
+  "beakerUser": "leaderboard",
+  "beakerWorkspace": "leaderboard/jetty"
+}
