@@ -14,5 +14,10 @@ svn export https://github.com/google-research/google-research/trunk/rouge rouge
 Then, you can evaluate your prediction output as follows:
 
 ```bash
-python evaluation.py --prediction_file=prediction.jsonl --reference_file=reference.txt
+python evaluation.py --prediction_file=predictions.jsonl --reference_file=references.jsonl
 ```
+
+Each line of `predictions.jsonl` should correspond to a json object that contains `id` and `prediction` fields. `reference.jsonl` should have `id`, `references`, `task_id`, `task_category` and `track` in each line. To produce the reference file of our official test set, you can run the script in [`eval/automatic/leaderboard/create_reference_file.py`](eval/automatic/leaderboard/create_reference_file.py) as follows:
+
+```bash
+python eval/automatic/leaderboard/create_reference_file.py
