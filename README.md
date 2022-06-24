@@ -6,7 +6,7 @@ If you have any suggestions to improve the data, let us know. We're looking for 
 
 ### News Bulletin
 
-- *May 2022:* We released the Tk-Instruct model trained on our data. Check out the [code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-).
+- *May 2022:* We released the several models trained on our data. Check out the [code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-).
 - *April 2022:* A [paper]( https://arxiv.org/abs/2204.07705) on our data is out!
 - *October 15, 2021:* the goal date for the our v2 dataset.
   - The community have contributed over 1500 tasks!! 🎉
