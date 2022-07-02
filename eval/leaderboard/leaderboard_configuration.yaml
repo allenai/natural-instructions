@@ -1,0 +1,273 @@
+# Optional: Whether to allow users to see the test / blind scores of their
+# submissions prior to publishing results. This should only be enabled
+# if you're not concerned about overfitting. Defaults to false.
+show_unpublished_scores: true
+
+# Optional: If true, then the 7-day publishing "speed bump" is disabled,
+# allowing successful submissions to be published without delay.
+#
+# This can be enabled temporarily to backfill a leaderboard with established
+# results before making it public, and disabled after backfilling is complete.
+#
+# Enabling this for public Leaderboards is possible, making it easier
+# to publish results. Please note that it makes overfitting a model to
+# the blind labels easy. So if you enable this for your leaderboard, either
+# trust your submitters, or pay attention to incoming submissions to recognize
+# people gaming the system.
+disable_publish_speed_bump: true
+
+# Optional: A ranking chart is displayed under the submissions, showing the
+# performance of the primary metric over time. These values change the y-axis
+# range, which defaults to 0.0 - 1.0.
+ranking_chart_min: 0
+ranking_chart_max: 100
+
+# Required: The configuration for reading results from the evaluator
+evaluator:
+
+  # Required: The metrics we expect from your evaluator.
+  #
+  # You must define the primary metric. This is named outside this YAML configuration,
+  # on the edit page of your Leaderboard; see https://leaderboard.allenai.org/admin.
+  #
+  # After your evaluator runs, we ingest its values into Leaderboard's DB. During this
+  # ingestion we require certain things:
+  #
+  # - The primary metric must be produce by your evaluator, unless you marked it as being
+  #   supplemental. (See below for more about supplemental metrics.)
+  # - If you declare a metric as supplemental, it cannot be provided by the evaluator.
+  # - Other metrics you specify here are optional; if they are not produced by the evaluator,
+  #   then they will appear as gaps in the leaderboard table (or "n/a" on the submission
+  #   details page.)
+  # - If your evaluator produces metrics not listed here, they will be ignored
+  #   without causing problems.
+  # - Your evaluator must succeed (exit code 0) according to Jetty.
+  #
+  # If your evaluator fails to meet the above requirements, the submission will appear as
+  # "failed" to the user. ReViz can look up the reason for the failure.
+  metrics:
+      # Required: A unique identifier for the metric.
+    - key: rougeL_default_track
+      # Required: The name to be displayed in the UI for the metric.
+      display_name: "ROUGE-L (Default Track)"
+      # Optional: Description will be used if listing the metrics and in tooltips
+      # You can also add newlines where you want them to appear in the tooltip by using '\n'
+      description: "ROUGE-L score between the model's prediction and the gold references. Default Track is for the English Tasks."
+    - key: rougeL_xlingual_track
+      display_name: "ROUGE-L (Xlingual Track)"
+      description: "ROUGE-L score between the model's prediction and the gold references. Xlingual Track is for the non-English Tasks."
+
+# Required: A description of the table of scores to show.
+metrics_table:
+
+  # Required: A list of columns to display.
+  columns:
+
+      # Required: Column name that is displayed on the page.
+    - name: ROUGE-L (Default Track)
+
+      # Optional: A description of the column. This appears as a tooltip when
+      # hovering over the column.
+      description: Default Track is for the English Tasks.
+
+      # Required: A rendering component to use when displaying the column.
+      # These renderers are implemented:
+      #
+      # * The renderer "simple" displays just one metric plainly.
+      # * The renderer "error" displays a metric with two error values (one positive
+      #   and one negative) in the superscript and subscript.
+      # * The renderer "range" displays a metric with two values -
+      #   one in the superscript and subscript.
+      renderer: "simple"
+
+      # Required: A list of metric keys to look up metric values and provide to
+      # the rendering component. 
+      #
+      # * For renderer "simple", only one metric key is needed.
+      #
+      # * For renderer "error", three metrics are needed: a score, an upper
+      #   error and a lower error. For example, if the score is 0.847, the
+      #   upper error is 0.15, and the lower error is 0.23, then this renderer
+      #   will render these three metrics like this:
+      #     
+      #             +0.15
+      #       0.847
+      #             -0.23
+      #
+      metric_keys: ["rougeL_default_track"]
+    - name: ROUGE-L (Xlingual Track)
+      description:  Xlingual Track is for the non-English Tasks.
+      renderer: simple
+      metric_keys: ["rougeL_xlingual_track"]
+
+# Required: Information that impacts the display of your leaderboard in the UI
+metadata:
+  # Optional: The groups your leaderboard belongs to. Valid ids are "darpa" and
+  # "ai2". If you don't enter a value here, the leaderboard won't be displayed
+  # anywhere in the UI.
+  tag_ids:
+    - ai2
+
+  # Required: The logo for your leaderboard. It should reside in the file
+  # ui/src/assets/images/leaderboard/ID/logo.svg where ID is the identifier of
+  # this board. To create a logo, contact the ReViz team: reviz@allenai.org.
+  logo: /assets/images/leaderboard/genie_natural_instructions/logo.svg
+
+  # Required: An abbreviation identifying your leaderboard.
+  #
+  # Please think of an interesting name. For example, YRLDRBRD or XGQCCTvN are
+  # bad names because they're not pronouncible nor memorable , while something
+  # like QASC or ARC or DROP are better.
+  short_name: Natural Instructions
+
+  # Required: The fully qualified leaderboard name.
+  long_name: "Natural Instructions: A Leaderbaord for Benchmarking Learning from Instructions"
+
+  # Required: A paragraph describing your leaderboard. Markdown is not
+  # supported in this field.
+  description: >
+    The goal of Natural-Instructions project is to provide a good quality benchmark for measuring generalization to unseen tasks. 
+    This generalization hinges upon (and benefits from) understanding and reasoning with natural language instructions that 
+    plainly and completely describe a task (traditionally defined as mapping an input string to an output string). 
+    Models equipped with "understanding" language instructions, should successfully solve any unseen task, if they are provided 
+    with the task instructions.
+
+  # Required: An example question from your leaderboard. This field supports
+  # markdown.
+  example: |
+    **Definition**: The input is taken from a negotiation between two participants who take the role of campsite neighbors and negotiate for Food, 
+    Water, and Firewood packages, based on their individual preferences and requirements. Given an utterance and recent dialogue context 
+    containing past 3 utterances (wherever available), output Yes if the utterance contains the small-talk strategy, otherwise output No. 
+    small-talk is a cooperative negotiation strategy. It is used for discussing topics apart from the negotiation, in an attempt to build 
+    a rapport with the opponent. For example, discussing how the opponent is doing during the pandemic or sharing excitement for the camping trip.
+    
+    **Input**: Context: 'Okay, that makes sense. I really need water. I am willing to trade you all 3 of the food if you will give me all of the 
+    water. What do you think?' 'I think that sounds okay but I need at least one water please?' 
+    'If you want one water you can only have 2 foods. Do you really need the water? It sounds like food is a much more important item to you🙂' 
+    Utterance: 'Ok I will take 3 food and 3 firewood and you can all 3 water? 🙂'
+    
+    **Expected Output**: No
+
+  # Required: Instructions for getting the datasets associated with your
+  # leaderboard.  This field supports markdown.
+  getting_the_data: |
+    You can get the Natural Instructions data [here](https://github.com/allenai/natural-instructions/releases). 
+    To participate this benchmark, you are supposed to follow our official train/test setup described [here](https://github.com/allenai/natural-instructions/tree/master/splits),
+    and only use the tasks in `train_tasks.txt` for modeling purpose.
+
+  # Required: An explanation of how scores are calculated. This field supports
+  # markdown.
+  scoring: |
+    We ROUGE-L score as our aggregated metric for comparing different models. 
+    ROUGE-L score is computed between your model's prediction and the gold references.
+
+  # Required: An explanation of what user submissions should look like. This
+  # field supports markdown.
+  predictions_format: |
+    Your predictions should be output as jsonl in a single file, with a line per
+    prediction, like so:
+      ```
+      {"id": "task020-8916b24a83b04aaa8594a93446091ec5", "prediction": "Yes"}
+      {"id": "task640-0094066e49e64971a69080be4d61c4d3", "prediction": "neutral"}
+      {"id": "task102-96273466e8d34ef897e848f9d2bd2c71", "prediction": "Skier skis down the slope."}
+      ```
+    `id` will be used to match the testing instances. Although we have two tracks (default English track and the xlingual track), 
+    you should submit your predictions for both track in a single file and our system will automatically calculate the scores for each track. 
+    You can also submit the predictions of a single track, or part of the test set. Missing predictions will be regarded as an empty string.
+
+    Check out our evaluation script [here](https://github.com/allenai/natural-instructions/blob/master/eval/automatic/evaluation.py).
+
+  # Required: A freeform list of example models. Markdown is supported in this field.
+  example_models: |
+      We provide Tk-Instruct model as described in our [paper](https://arxiv.org/abs/2204.07705), and the code can be accessed [here](https://github.com/yizhongw/Tk-Instruct).
+
+  # Required: Metadata about the affiliated team at AI2
+  team:
+    # Required: The team's name
+    name: AllenNLP
+    # Optional: A short paragraph describing the team.
+    description:
+      The AllenNLP team envisions language-centered AI that equitably serves humanity. 
+      We work to improve NLP systems' performance and accountability, and advance scientific methodologies for evaluating and understanding those systems. 
+      We deliver high-impact research of our own and masterfully-engineered open-source tools to accelerate NLP research around the world.
+  # Required: A short description of your leaderboard's purpose. This field
+  # supports markdown.
+  purpose:
+    Natural Instructions is intended to test model's capability in following instructions to solve unseen tasks. 
+    We set up this leaderboard for the community for easily track the latest progress and compare different methods.
+
+  # # Optional: Rules specific to this leaderboard. If not provided, the default
+  # # rules are displayed. This field supports markdown.
+  # custom_rules: |
+  #   * Don't do this.
+  #   * Don't do that.
+  #   * Do this.
+
+  # Optional display precision for metrics (default is 4)
+  # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+  metric_precision: 4
+
+  # Optional: If True end users can enter text into a search box to filter the displayed metrics 
+  # using a regular expression.
+  show_column_filter: true
+
+  # Optional: Set of terms to use for auto complete when filtering metric
+  # columns
+  # metric_filter_suggestions:
+  #   - "*Avg|.*NQA"
+  #   - "Avg\\."
+  #   - "aNLG"
+  #   - "NQA"
+
+  # Optional: A filter that is set by default when the user views the table
+  # default_column_filter: "*Avg|.*NQA"
+
+  # Optional: Array of chart definitions to compare multiple metrics of each
+  # submission
+  # metric_chart_configs:
+  #     # Description shown under the chart
+  #   - caption: "This is a caption under the chart, to explain what it is."
+  #     # Ordinal x values
+  #     categories:
+  #         # Key tot he metric to chart
+  #       - metric_key: metric2
+  #         # Optional: label to use in the chart for this category, defaults to
+  #         # the metrics displayName
+  #         display_name: "Foo"
+  #       - metric_key: metric3
+  #         display_name: "Bar"
+  #       - metric_key: metric4
+  #         display_name: "Baz"
+  #     # Optional: Number of series to show on the chart
+  #     max_series_to_show: 9
+  #     # Metric to sort and filter by
+  #     series_order_metric: "accuracy"
+  #     # chart properties are passed directly to plotly
+  #     # (https://plot.ly/javascript/)
+  #     chart:
+  #       # Type of chart: bar | scatter
+  #       type: "scatter"
+  #       # Optional: Mode of points: lines | markers | markers+lines
+  #       mode: "lines+markers"
+  #       # Optional: Chart layout info
+  #       layout:
+  #         # Optional: should we display a legend
+  #         showlegend: true
+  #         # Optional: Y axis info
+  #         yaxis:
+  #           # Optional: Y axis label
+  #           title: "Label for the y-axis"
+  #           # Optional: Y axis range
+  #           range:
+  #             - 0.5
+  #             - 1
+  #         # Optional: X axis info
+  #         xaxis:
+  #           # Optional: X axis label
+  #           title: "Label for the x-axis"
+
+  # Optional: If true, a "Show Compact Table" button will appear below the
+  # table of public submissions. This shows a modal with the metric results in
+  # a compact way, which is especially useful as an at-a-glance view for
+  # leaderboards that have many metric/columns to show. Defaults to false.
+show_compact_table_button: false
