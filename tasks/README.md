@@ -766,7 +766,7 @@ Name | Summary | Category | Domain | Input Language | Output Language
 `task758_msr_sqa_question_answer_generation`	| Given a table from msr_sqa dataset and a question based on that table, generate a correct answer based on the table	| Question Answering	| Sports, Statistics, News	| English	| English
 `task759_msr_sqa_incorrect_answer_generation`	| Given a table from msr_sqa dataset and a question based on that table, generate an incorrect correct answer based on the table	| Wrong Candidate Generation	| Sports, Statistics, News	| English	| English
 `task760_msr_sqa_long_text_generation`	| Given a table from msr_sqa dataset, generate a long text passage based on the information in the tabular data	| Data to Text	| Sports, Statistics, News	| English	| English
-`task761_app_review_classification`	| Given a app review,classify whether it's Poitive or Negative	| Sentiment Analysis	| Reviews	| English	| English
+`task761_app_review_classification`	| Given an app review, classify whether it's Positive or Negative	| Sentiment Analysis	| Reviews	| English	| English
 `task762_emea_fr_sk_translation`	| Translate French sentences to Slovak while preserving named entities in the original language	| Translation	| Miscellaneous	| French	| Slovak
 `task763_emea_es_lt_translation`	| Translate Spanish sentences to Lithuanian while preserving named entities in the original language	| Translation	| Miscellaneous	| Spanish	| Lithuanian
 `task764_emea_bg_el_classification`	| Identify whether translated sentence is Greek or not.	| Text Matching	| Miscellaneous	| Bulgarian	| English
