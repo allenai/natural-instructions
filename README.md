@@ -99,17 +99,29 @@ As is introduced in our [paper](https://arxiv.org/abs/2204.07705), this dataset 
 
 We also released our [experiment code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-) for reproducibility and future research.
 
+## License 
+All the data here (except the instances of each task) are released under Apache-2.0 license. 
+The instances of each tasks are subject to the license under which the original dataset was released. 
+These license information are available unders "InstanceLicense" field within each task file. 
+
+
 ## Misc.
 
 If you want to use Natural Instructions v1, here's the code: [link](https://github.com/allenai/natural-instructions-v1)
 
-Feel free to cite us
+Feel free to cite us. 
 
 ```bibtex
-@article{wangmishra2022benchmarkinggeneralization,
-  title={Benchmarking Generalization via In-Context Instructions on 1,600+ Language Tasks},
-  author={Wang, Yizhong and Mishra, Swaroop and Alipoormolabashi, Pegah and Kordi, Yeganeh and others},
-  journal={arXiv},
+@inproceedings{naturalinstructions,
+  title={Cross-task generalization via natural language crowdsourcing instructions},
+  author={Mishra, Swaroop and Khashabi, Daniel and Baral, Chitta and Hajishirzi, Hannaneh},
+  booktitle={ACL},
+  year={2022}
+}
+@inproceedings{supernaturalinstructions,
+  title={Super-NaturalInstructions:Generalization via Declarative Instructions on 1600+ Tasks},
+  author={Wang, Yizhong and Mishra, Swaroop and Alipoormolabashi, Pegah and Kordi, Yeganeh and Mirzaei, Amirreza and Arunkumar, Anjana and Ashok, Arjun and Dhanasekaran, Arut Selvan and Naik, Atharva and Stap, David and others},
+  booktitle={EMNLP},
   year={2022}
 }
 ```
