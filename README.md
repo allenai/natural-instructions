@@ -102,7 +102,7 @@ We also released our [experiment code](https://github.com/yizhongw/Tk-Instruct) 
 ## License 
 All the data here (except the instances of each task) are released under Apache-2.0 license. 
 The instances of each tasks are subject to the license under which the original dataset was released. 
-These license information are available unders "InstanceLicense" field within each task file. 
+These license information are available unders "Instance License" field within each task file. 
 
 
 ## Misc.
