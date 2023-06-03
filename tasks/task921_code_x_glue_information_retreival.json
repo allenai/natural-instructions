@@ -120,7 +120,7 @@
         },
         {
             "id": "task921-7b347f1386a24470865dadcf34638a92",
-            "input": "/*\n *?????\n *???2010 - 12 - 07\n *?????????  ????\n */\nint num(int,int,int);\nint qufen(int);\nint power(int,int);\nint main()\n{\n\tint t;\n\tcin >> t;\n\twhile(t >= 1)\n\t{\n\t\tint n,i,x,sum = 1;\n\t\tcin >> n;\n\t\tx = qufen(n);                  //qufen????????????????????\n\t\tfor(i = 2; i <= x; i++)\n\t\t\tsum = sum + num(n,i,2);      //num?????????????i????????\n\t\tcout << sum << endl;\n\t\tt--;\n\t}\n\treturn 0;\n}\nint qufen(int n)\n{\n\tint j;\n\tfor(j = 1; ; j++)\n\t{\n\t\tif(power(2,j) > n)\n\t\t{\n\t\t\treturn j - 1;\n\t\t\tbreak;\n\t\t}\n\t}\n}\nint power(int a,int b)\n{\n\tint sum = 1,k;\n\tfor(k = 1; k <= b; k++)             //?????????\n\t\tsum = sum * a;\n\treturn sum;\n}\nint num(int n,int g,int h)\n{\n\tif((g == 1)&&(n >= h))          //???????\n\t\treturn 1;\n\tint i,j = 0,count = 0,a[20000];  \n\tfor(i = h; i < n; i++)                 //???????????? n ?? i ?? g ??????n / i????? g - 1?\n\t{                                      //?n = i * ?g?? ???? n / i = h * (g - 1 ???h??????i???\n\t\tif(n % i == 0)\n\t\t{\n\t\t\ta[j] = i;\n\t\t\tj++;\n\t\t}\n\t}\n\tif(j == 0)                     //j == 0?????????????????\n\t\treturn 0;\n\telse\n\t{\n\t\tfor(i = 0; i < j; i++)\n\t\t\tcount = count + num(n / a[i],g - 1,a[i]);\n\t\treturn count;\n\t}\n}",
+            "input": "/*\n *?????\n *???2010 - 12 - 07\n *?????????  ????\n */\nint num(int,int,int);\nint qufen(int);\nint power(int,int);\nint main()\n{\n\tint t;\n\tcin >> t;\n\twhile(t >= 1)\n\t{\n\t\tint n,i,x,sum = 1;\n\t\tcin >> n;\n\t\tx = qufen(n);                  //qufen????????????????????\n\t\tfor(i = 2; i <= x; i++)\n\t\t\tsum = sum + num(n,i,2);      //num?????????????i????????\n\t\tcout << sum << endl;\n\t\tt--;\n\t}\n\treturn 0;\n}\nint qufen(int n)\n{\n\tint j;\n\tfor(j = 1; ; j++)\n\t{\n\t\tif(power(2,j) > n)\n\t\t{\n\t\t\treturn j - 1;\n\t\t\tbreak;\n\t\t}\n\t}\n}\nint power(int a,int b)\n{\n\tint sum = 1,k;\n\tfor(k = 1; k <= b; k++)             //?????????\n\t\tsum = sum * a;\n\treturn sum;\n}\nint num(int n,int g,int h)\n{\n\tif((g == 1)&&(n >= h))          //???????\n\t\treturn 1;\n\tint i,j = 0,count = 0,a[20000];  \n\tfor(i = h; i < n; i++)                 //???????????? n ?? i ?? g ??????n / i????? g - 1?\n\t{                                      //?n = i * \u0085\u0085?g?? ???? n / i = h * \u0085\u0085(g - 1 ???h??????i???\n\t\tif(n % i == 0)\n\t\t{\n\t\t\ta[j] = i;\n\t\t\tj++;\n\t\t}\n\t}\n\tif(j == 0)                     //j == 0?????????????????\n\t\treturn 0;\n\telse\n\t{\n\t\tfor(i = 0; i < j; i++)\n\t\t\tcount = count + num(n / a[i],g - 1,a[i]);\n\t\treturn count;\n\t}\n}",
             "output": [
                 "5"
             ]
@@ -1667,7 +1667,7 @@
         },
         {
             "id": "task921-9ebfa3b8608f4eedade8cbc9f6de3da8",
-            "input": "int num;//num???????? \nint main()\n{\n    int f(int,int);  //??f?? \n    int i,n,a[100],result[100];\n    cin>>n;\n \n    for(i=1;i<=n;i++)\n    {\n                     num=1; //?????????????????1 \n                     cin>>a[i];\n                     result[i]=f(1,a[i]);\n    }\n    for(i=1;i<=n;i++)\n    {\n                     cout<<result[i]<<endl;\n    }\n}\nint f(int x,int y)//f?? ???y???x×???y ?y>x \n{\n    int i;\n    for(i=2;i<=sqrt(y);i++) //?2???y?? ??????????????????? \n    {\n                           if(y%i==0&&i>=x)//??y??i?? ??i>=x(????x,i,i????? ????????????) ??y?????i????? \n                           {\n                                     num++;//????+1 \n                                     f(i,y/i); //???? ??y??? \n                           }\n    }\n    return num;  \n} \n",
+            "input": "int num;//num???????? \nint main()\n{\n    int f(int,int);  //??f?? \n    int i,n,a[100],result[100];\n    cin>>n;\n \n    for(i=1;i<=n;i++)\n    {\n                     num=1; //?????????????????1 \n                     cin>>a[i];\n                     result[i]=f(1,a[i]);\n    }\n    for(i=1;i<=n;i++)\n    {\n                     cout<<result[i]<<endl;\n    }\n}\nint f(int x,int y)//f?? ???y???x\u00d7???y ?y>x \n{\n    int i;\n    for(i=2;i<=sqrt(y);i++) //?2???y?? ??????????????????? \n    {\n                           if(y%i==0&&i>=x)//??y??i?? ??i>=x(????x,i,i????? ????????????) ??y?????i????? \n                           {\n                                     num++;//????+1 \n                                     f(i,y/i); //???? ??y??? \n                           }\n    }\n    return num;  \n} \n",
             "output": [
                 "3"
             ]
@@ -1975,7 +1975,7 @@
         },
         {
             "id": "task921-512814a931504adfa89e422881e41f2a",
-            "input": "//**************************************\n//**???12.1??????       ***\n//**?????   ???1000012888    ***\n//**************************************\nint f(int, int);//??f??????????\nint main()\n{\n\tint n, a, i;\n\tcin >> n;\n\tfor (i = 1; i <= n; i++)\n\t{\n\t\tcin >> a;\n\t\tcout << f(a, 2) << endl;\n\t}\n\treturn 0;\n}\nint f(int x, int b)//f(a,b)?a?????b?????????\n{\n\tint j, re = 1;//??a=a???????re???0\n\tif(x < b)\n\t\treturn 0;\n\tfor (j = b; j < x; j++)\n\t{\n\t\tif(x % j == 0)\n\t\t\tre = re + f(x / j, j);//????????????????\n\t}\n\treturn re;//??re\n}",
+            "input": "//**************************************\n//**???12.1??\u0097\u0097????       ***\n//**?????   ???1000012888    ***\n//**************************************\nint f(int, int);//??f??????????\nint main()\n{\n\tint n, a, i;\n\tcin >> n;\n\tfor (i = 1; i <= n; i++)\n\t{\n\t\tcin >> a;\n\t\tcout << f(a, 2) << endl;\n\t}\n\treturn 0;\n}\nint f(int x, int b)//f(a,b)?a?????b?????????\n{\n\tint j, re = 1;//??a=a???????re???0\n\tif(x < b)\n\t\treturn 0;\n\tfor (j = b; j < x; j++)\n\t{\n\t\tif(x % j == 0)\n\t\t\tre = re + f(x / j, j);//????????????????\n\t}\n\treturn re;//??re\n}",
             "output": [
                 "2"
             ]
@@ -2206,7 +2206,7 @@
         },
         {
             "id": "task921-e59e29d170b1449c8e0c0addb92863b2",
-            "input": "\nint t=0;\nint mini(int k,int i)//a?&#710;&#160;&#733;o?÷÷?÷?&#174;?¨?&#8250;?è&#8482;&#171;&#219;k?&#219;&#8260;i\n{\n\tif(k==1)t=t+1;\n\tfor(;i<=k;i++)\n\t{\n\t\tif(k%i==0)mini(k/i,i);\n\t}\n\treturn 0;\n}\n\t\nint main()\n{\n\tint N,n;\n\tscanf(\"%d\",&N);\n\tfor(n=0;n<=N-1;n++)\n\t{\n\t\tint M;\n\t\tscanf(\"%d\",&M);\n\t\tmini(M,2);\n\t\tprintf(\"%d\\n\",t);\n\t\tt=0;\n\t}\n}\n",
+            "input": "\nint t=0;\nint mini(int k,int i)//\u0093a?&#710;&#160;&#733;\u0094\u0096o?\u00f7\u00f7?\u00f7?&#174;?\u00a8?&#8250;?\u00e8\u0093&#8482;&#171;&#219;k?&#219;\u0094&#8260;i\n{\n\tif(k==1)t=t+1;\n\tfor(;i<=k;i++)\n\t{\n\t\tif(k%i==0)mini(k/i,i);\n\t}\n\treturn 0;\n}\n\t\nint main()\n{\n\tint N,n;\n\tscanf(\"%d\",&N);\n\tfor(n=0;n<=N-1;n++)\n\t{\n\t\tint M;\n\t\tscanf(\"%d\",&M);\n\t\tmini(M,2);\n\t\tprintf(\"%d\\n\",t);\n\t\tt=0;\n\t}\n}\n",
             "output": [
                 "2"
             ]
