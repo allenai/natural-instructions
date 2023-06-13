@@ -39,6 +39,11 @@ for datapoint in dataset:
     print(gt_outputs)
 ```
 
+Note: For the paper, we use [code_isntruct/inference.py](code_isntruct/inference.py) which runs inference on the task examples given in [ids/sample_ids-1000.txt](ids/sample_ids-1000.txt). You can launch this using the following command:
+```bash
+make inference model_name=bigscience/bloom-3b model_class=AutoModelForCausalLM example_type=code_instructions num_shots=2 output_file=output.jsonl sample_ids_file=ids/sample_ids-1000.txt
+```
+
 ## Contributing
 
 To contribute tasks to this dataset, please read the following guidelines:
