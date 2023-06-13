@@ -9,7 +9,7 @@ Authors:
 - Danish Contractor
 - Srikanth Tamilselvam
 
-The dataset consists of human-created instructions in pseudo-code for various tasks provided in the original [Super-Natural Instructions](https://github.com/allenai/natural-instructions) dataset.
+The dataset consists of human-created instructions in pseudo-code for various tasks provided in the original [Super-Natural Instructions](https://github.com/allenai/natural-instructions) dataset. Our instructions are present in [instructions/](instructions/) folder.
 
 ## Usage
 ```python
