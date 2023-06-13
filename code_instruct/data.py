@@ -201,7 +201,7 @@ class Datapoint:
         return result
 
 
-class NaturalInstructionsDataset(torch.utils.data.Dataset):
+class CodeInstructionsDataset(torch.utils.data.Dataset):
     def __init__(
         self,
         split: str = "all",

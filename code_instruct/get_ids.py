@@ -1,7 +1,7 @@
 from argparse import ArgumentParser, Namespace
 from typing import List
 
-from code_instruct.data import Datapoint, ExampleType, NaturalInstructionsDataset
+from code_instruct.data import Datapoint, ExampleType, CodeInstructionsDataset
 from code_instruct.model import load_tokenizer
 from tqdm import tqdm
 
@@ -37,7 +37,7 @@ def main() -> None:
     for model_name in ["bigscience/bloom-3b", "salesforce/codegen-2b-mono"]:
         tokenizers[model_name] = load_tokenizer(model_name)
 
-    dataset = NaturalInstructionsDataset("all", 2, multilingual=False)
+    dataset = CodeInstructionsDataset("all", 2, multilingual=False)
     file = open(args.output_file, "w")
 
     for i in tqdm(range(len(dataset))):

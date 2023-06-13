@@ -5,7 +5,7 @@ from typing import List
 
 import torch
 import transformers
-from code_instruct.data import Datapoint, ExampleType, NaturalInstructionsDataset
+from code_instruct.data import Datapoint, ExampleType, CodeInstructionsDataset
 from code_instruct.model import Model
 from tqdm import tqdm
 
@@ -50,7 +50,7 @@ def main() -> None:
     args = get_args()
 
     model = Model(args)
-    dataset = NaturalInstructionsDataset(
+    dataset = CodeInstructionsDataset(
         "all", args.num_shots, multilingual=False, allowed_list_file=args.sample_ids_file
     )
     progress_bar = tqdm(dataset)

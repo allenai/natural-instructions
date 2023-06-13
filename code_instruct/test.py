@@ -7,7 +7,7 @@ from typing import Callable, List, Tuple
 
 import colorlog
 import json5
-from code_instruct.data import NaturalInstructionsDataset
+from code_instruct.data import CodeInstructionsDataset
 
 
 class Logger:
@@ -266,7 +266,7 @@ def main() -> None:
     fnames = os.listdir("instructions")
     os.makedirs("tmp", exist_ok=True)
 
-    dataset_mapping = NaturalInstructionsDataset.get_dataset_map()
+    dataset_mapping = CodeInstructionsDataset.get_dataset_map()
 
     open(os.path.join("tmp", "__init__.py"), "w", encoding="UTF-8")
 

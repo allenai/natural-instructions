@@ -2,7 +2,7 @@ import json
 import os
 
 import numpy as np
-from code_instruct.data import NaturalInstructionsDataset
+from code_instruct.data import CodeInstructionsDataset
 from tqdm import tqdm
 from transformers import AutoTokenizer
 
@@ -34,7 +34,7 @@ def main() -> None:
     os.makedirs("stats", exist_ok=True)
 
     for num_shots in num_shots_list:
-        dataset = NaturalInstructionsDataset(tokenizer, num_shots, multilingual=False)
+        dataset = CodeInstructionsDataset(tokenizer, num_shots, multilingual=False)
 
         for example_type_ in example_type:
             input_stats = Stats()

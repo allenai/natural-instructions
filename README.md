@@ -1,103 +1,108 @@
-# A Repository of Language Instructions for NLP Tasks
+# Pseudo-Code Instructions
+This repository contains the code and dataset for the paper [Prompting with Pseudo-Code Instructions](https://arxiv.org/abs/2305.11790).
 
-**TLDR;** this repository maintains a community effort to create a large collection of tasks and their natural language definitions/instructions. 
-Check the [releases](https://github.com/allenai/natural-instructions-expansion/releases) for the summary of the latest changes and additions to the tasks.  
-If you have any suggestions to improve the data, let us know. We're looking for more contributions to make this data better and bigger! 🙌  
+Authors:
+- Mayank Mishra
+- Prince Kumar
+- Riyaz Bhat
+- Rudra Murthy V
+- Danish Contractor
+- Srikanth Tamilselvam
 
-### News Bulletin
+The dataset consists of human-created instructions in pseudo-code for various tasks provided in the original [Super-Natural Instructions](https://github.com/allenai/natural-instructions) dataset.
 
-- *May 2022:* We released the several models trained on our data. Check out the [code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-).
-- *April 2022:* A [paper]( https://arxiv.org/abs/2204.07705) on our data is out!
-- *October 15, 2021:* the goal date for the our v2 dataset.
-  - The community have contributed over 1500 tasks!! 🎉
-  - We are working on cleaning up the new tasks and publishing a paper summarizing our new findings!
-  - You can still submit new tasks! The new tasks will be part of the future data releases.
-- *Sept 2021*: general [call for contributions](https://medium.com/ai2-blog/call-for-contributions-a-community-driven-repository-of-natural-language-instructions-9d3f24d5a9db) is out!
-- *June 2021:* we initiated this repository with 61 tasks!
+## Usage
+```python
+from code_instruct import CodeInstructionsDataset, ExampleType
+from transformers import AutoTokenizer
 
-## Background 
-### Why define tasks in natural language?
-While the current dominant paradigm (supervised learning with task-specific labeled examples) has been successful in building task-specific models, such models can't generalize to unseen tasks; for example, a model that is supervised to solve questions cannot solve a classification task. 
-We hypothesize that a model equipped with understanding and reasoning with natural language instructions should be able to generalize to any task that can be defined in terms of natural language.
+tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-3b")
 
-### Any empirical evidence that this might be true?
-In our [earlier effort](https://arxiv.org/abs/2104.08773), we built a smaller data (61 tasks) and 
-observed that language models benefit from language instructions, i.e., their generalization to unseen tasks when they were provided with more instructions.  
-Also, generalization to unseen tasks improves as the model is trained on more tasks.
+# load dataset
+dataset = CodeInstructionsDataset("all", num_shots=2, multilingual=False)
 
-### Why build this dataset?  
-We believe that [our earlier work](https://arxiv.org/abs/2104.08773) is just scratching the surface and there is probably so much that be studied in this setup.
-We hope to put together a much larger dataset that covers a wider range of reasoning abilities. 
-We believe that this expanded dataset will serve as a useful playground for the community to study and build the next generation of AI/NLP models.
-See [this blog post](https://medium.com/ai2-blog/call-for-contributions-a-community-driven-repository-of-natural-language-instructions-9d3f24d5a9db) for a summary of the motivation behind this work.
+# datapoint is a class which can be converted into any of the supported ExampleType defined in code_instruct/data.py
+# Supported ExampleType (s) are:
+# CODE_INSTRUCTIONS
+# CODE_INSTRUCTIONS_WITHOUT_DOCSTRING
+# FUNCTION_DEFINITION
+# NATURAL_INSTRUCTIONS
+# NATURAL_INSTRUCTIONS_WITH_DOCSTRING
+# NO_INSTRUCTION_CODE_EXAMPLES
+# NO_INSTRUCTION_NATURAL_EXAMPLES
+# NO_INSTRUCTION_GENERIC_FUNCTION_CALL
+for datapoint in dataset:
+    example = datapoint.get_example(ExampleType.CODE_INSTRUCTIONS, eos_token=tokenizer.eos_token)
+    input, gt_outputs = example
 
-
-## Task schema  
-Each consists of input/output. For example, think of the task of sentiment classification:  
- - **Input:** `I thought the Spiderman animation was good, but the movie disappointed me.`
- - **Output:** `Mixed` 
-
-Here is another example from the same task: 
- - **Input:** `The pumpkin was one of the worst that I've had in my life.` 
- - **Output:**  `Negative`  
-
-Additionally, each ask contains a task *definition*: 
+    print(input)
+    print(gt_outputs)
 ```
-Given a tweet, classify it into one of 4 categories: Positive, Negative, Neutral, or Mixed.
-``` 
 
-Overall, each tasks follows this schema:
- 
-![](doc/schema-simplified.svg ) 
+## Contributing
 
-Or if you're comfortable with json files, here is how it would look like: 
-```json 
+To contribute tasks to this dataset, please read the following guidelines:
+
+```python
+def count_noun_verbs(sentence: str, pos_tag: str) -> int:
+    """
+    Count the number of nouns/verbs in the given sentence
+    If the instruction is to count the number of nouns then return the number of nouns in the sentence
+    If the instruction is to count the number of verbs then return the number of verbs in the sentence
+    Ignore the instruction part while counting for frequency
+
+    Parameters:
+        sentence (str): An English Sentence
+        pos_tag (str): the target POS category, either nouns or verbs
+
+    Returns:
+        int: Count of nouns or verbs
+    """
+
+    return count_of_pos_tags(sentence, pos_tag)
+
+
+# program
 {
-  "Contributors": [""],
-  "Source": [""],
-  "URL": [""],
-  "Categories": [""],
-  "Reasoning": [""],
-  "Definition": [""],
-  "Input_language": [""], 
-  "Output_language": [""],
-  "Instruction_language": [""],  
-  "Domains": [""],    
-  "Positive Examples": [ { "input": "", "output": "",  "explanation": ""} ], 
-  "Negative Examples": [ { "input": "", "output": "",  "explanation": ""} ],
-  "Instances": [ { "id": "", "input": "", "output": [""]} ],
+    "method": "count_noun_verbs",
+    "arguments": {"sentence": "str", "pos_tag": "str"},
+    "return": "int",
+    "execute": "count_noun_verbs(sentence, pos_tag)",
 }
+
+# preprocessor
+def preprocess(input: str):
+    sentence = input.split("Sentence: '")[1].split("'. Count")[0]
+    pos_tag = input.split("Count the number of ")[1].split(" in this sentence.")[0]
+    return sentence, pos_tag
+
 ```
 
-## How to contribute 
-We would appreciate any external contributions! 🙏 You can contribute in a variety of ways. 
- - If you think an important task is missing, you can contribute it via Pull-Request.  You can also get inspirations from the task suggestions in [the Github issues](https://github.com/allenai/natural-instructions-expansion/issues?q=is%3Aissue+is%3Aopen+label%3Atask-suggestion) which you can sign up to work on. 
- - If you have any other suggested tasks but you're not sure if they're good fit, bring them up in the [issues](https://github.com/allenai/natural-instructions-expansion/issues).  
- - If you have any questions or suggestions, please use [the issues](https://github.com/allenai/natural-instructions-expansion/issues) feature.  
- - If you're addimg a new task, make sure to review the following guidelines: 
-    * Each task must contain contain a `.json` file that contains the task content. You can look inside the [`tasks/`](tasks) directory for several examples.  
-       * Make sure that your json is human readable (use proper indentation; e.g., in Python: `json.dumps(your_json_string, indent=4, ensure_ascii=False)`)   
-       * Make sure that you json file is not bigger than 50MB. 
-       * Make sure your task has no more 6.5k instances (input/output pairs).
-       * Each instance must have a unique id, which should be the task number plus a string generated by `uuid.uuid4().hex`. E.g., `task1356-bb5ff013dc5d49d7a962e85ed1de526b`.
-       * Make sure to include task category and domains, based on [this list](doc/task-hierarchy.md). 
-       * Make sure to number your task json correctly 
-          * Look at the task number in the latest pull request, task number in your submission should be the next number. 
-          * Make sure to include the source dataset name and the task type when naming your task json file. 
-             * You can use this format: `taskabc_<source_dataset>_<task_type>.json` E.g. in `task001_quoref_question_generation.json`, the source dataset is `quoref` and the task is `question generation`. 
-       * Note that, source need not necessarily be a dataset and can be a website e.g. leetcode. 
-          * If you have created the json without any reference, use `synthetic` in place of source.
-       * You should have one pull request per dataset. Name your pull request as `Task Name <start_task_number>-<end_task_number>`.
-       * If you're building your tasks based existing datasets and their crowdsourcing templates, see these [guidelines](doc/crowdsourcing.md). 
-    * Add your task to [our list of tasks](tasks/README.md).
-    * To make sure that your addition is formatted correctly, run the tests: `> python src/test_all.py`
-       * To only test the formatting of a range of tasks, run `> python src/test_all.py --task <begin_task_number> <end_task_number>`. For example, running `> python src/test_all.py --task 5 10` will run the test from task005 to task010.
 
-## Benchmarking cross-task generalization
-
-As is introduced in our [paper](https://arxiv.org/abs/2204.07705), this dataset can be used for systematic study of cross-task generalization, i.e., training on a subset of tasks and evaluating on the remaining unseen ones. To make the comparison among different methods easier, we create an official split [here](splits/), as is described in the paper. You can follow the instructions to set up your experiments.
-
-We also released our [experiment code](https://github.com/yizhongw/Tk-Instruct) and [checkpoints](https://huggingface.co/models?search=tk-instruct-) for reproducibility and future research.
+1. The pseudocode should look mostly like python.
+2. The functions should be strongly typed. If the function doesn't return anything, type = `None`. If the return type can be anything depending on what happens inside, type = `Any`. Please be careful with lowercase/uppercase.
+3. Try to keep a blank line between functions.
+4. Avoid declaring global variables whenever possible and pass them as arguments to a method.
+5. Avoid using classes, enums etc if possible. Keep the instructions as functions as much as possible. For some tasks, this might not be possible and in such cases you can uses classes/enums sparingly.
+6. Create a python file for the task with task number as the file-name
+7. Please specify the comment `program` on how to execute the method. This template will be used to create 0-shot or potentially few-shot examples. There should be a singular point of entry (function) for the pseudo-code program.
+8. Note, not all functions require definition. If the task is `non-atomic`, you can assume availability of basic functions and don't need to define stuff like `concat_str`, `search` etc and can simply call these funcations.
+9. All function names should be descriptive. For example, in the following we prefer the first function name as opposed to the second. But keep in mind that the functions name are not too long.
+```python
+generate_event_duration_question_from_sentence(event, sentence)
+generate_question(event, sentence)
+```
+10. All variables should be descriptive. For example, the first one is a better variable name in the following:
+```python
+duration_question = generate_event_duration_question_from_sentence(event, sentence)
+question = generate_event_duration_question_from_sentence(event, sentence)
+```
+11. Each line of code (that is not starightforward) should have an associated comment explaining why the next line of code has been written. 
+12. Programming shorthand/python tricks should not be used and each step should be as atomic as possible. For example, the use of yield/generator functionality in python, relying on intristic behavior of global/local variables, extracting multiple different lists, tuples all at once.
+13. Each function should be accompanied by a descriptive docstring that explains the goal of the function as well as defines the `Parameters` and the value returned preferably with type information.
+14. Secondary sub-task function should only be defined if the descriptive function name may require some additional details to be specified.
+15. A preprocessor to parse the input is needed. This should be python code that works and not pseudocode. This should be a function with the name `preprocess` that takes a single input string. This function will be called on each example in the dataset for that task.
+16. Once you are done and satisfied with your annotations, open a PR against this repo.
 
 ## License 
 All the data here (except the instances of each task) are released under Apache-2.0 license. 
@@ -105,23 +110,13 @@ The instances of each tasks are subject to the license under which the original 
 These license information are available unders "Instance License" field within each task file. 
 
 
-## Misc.
-
-If you want to use Natural Instructions v1, here's the code: [link](https://github.com/allenai/natural-instructions-v1)
-
-Feel free to cite us. 
+## Citation
 
 ```bibtex
-@inproceedings{naturalinstructions,
-  title={Cross-task generalization via natural language crowdsourcing instructions},
-  author={Mishra, Swaroop and Khashabi, Daniel and Baral, Chitta and Hajishirzi, Hannaneh},
-  booktitle={ACL},
-  year={2022}
-}
-@inproceedings{supernaturalinstructions,
-  title={Super-NaturalInstructions:Generalization via Declarative Instructions on 1600+ Tasks},
-  author={Wang, Yizhong and Mishra, Swaroop and Alipoormolabashi, Pegah and Kordi, Yeganeh and Mirzaei, Amirreza and Arunkumar, Anjana and Ashok, Arjun and Dhanasekaran, Arut Selvan and Naik, Atharva and Stap, David and others},
-  booktitle={EMNLP},
-  year={2022}
+@article{mishra2023prompting,
+  title={Prompting with Pseudo-Code Instructions},
+  author={Mishra, Mayank and Kumar, Prince and Bhat, Riyaz and Murthy V, Rudra and Contractor, Danish and Tamilselvam, Srikanth},
+  journal={arXiv preprint arXiv:2305.11790},
+  year={2023}
 }
 ```
