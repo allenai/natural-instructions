@@ -44,6 +44,7 @@ def dump(tasks_by_category, tasks_by_source, task_languages, train_tasks, test_t
     json.dump(tasks_by_category, open("tasks_by_category.json", "w"), indent=4)
     json.dump(tasks_by_source, open("tasks_by_source.json", "w"), indent=4)
 
+
 # from original repo
 # test_categories = [
 #     "Textual Entailment",

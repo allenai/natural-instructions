@@ -114,7 +114,12 @@ class Datapoint:
 
     def get_example(self, type: ExampleType, eos_token: str) -> Tuple[str]:
         def _get_example(
-            num_shots: int, few_shots_list: List[dict], prepare_shot: Callable, original_input: str, instruction: str
+            num_shots: int,
+            few_shots_list: List[dict],
+            prepare_shot: Callable,
+            original_input: str,
+            instruction: str,
+            add_extra_newline: bool,
         ):
             few_shots = ""
             if num_shots > 0:
@@ -127,39 +132,52 @@ class Datapoint:
             query = prepare_shot(input=original_input)
             if instruction == "":
                 few_shots = few_shots.lstrip()
-            example = f"{instruction}{few_shots}{query}\n"
+            example = f"{instruction}{few_shots}{query}"
+
+            if add_extra_newline:
+                example += "\n"
 
             return example
 
         if type == ExampleType.NATURAL_INSTRUCTIONS:
             prepare_shot = partial(self.prepare_natural_instructions_shot, eos_token=eos_token)
             instruction = self.original_instruction
+            add_extra_newline = False
         elif type == ExampleType.CODE_INSTRUCTIONS:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = self.code_instruction
+            add_extra_newline = True
         elif type == ExampleType.FUNCTION_DEFINITION:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = self.function_instruction
+            add_extra_newline = True
         elif type == ExampleType.NATURAL_INSTRUCTIONS_WITH_DOCSTRING:
             prepare_shot = partial(self.prepare_natural_instructions_shot, eos_token=eos_token)
             instruction = f"{self.original_instruction}\n{self.doc_instruction}"
+            add_extra_newline = False
         elif type == ExampleType.CODE_INSTRUCTIONS_WITHOUT_DOCSTRING:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = self.code_instruction_without_doc
+            add_extra_newline = True
         elif type == ExampleType.NO_INSTRUCTION_CODE_EXAMPLES:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = ""
+            add_extra_newline = True
         elif type == ExampleType.NO_INSTRUCTION_NATURAL_EXAMPLES:
             prepare_shot = partial(self.prepare_natural_instructions_shot, eos_token=eos_token)
             instruction = ""
+            add_extra_newline = False
         elif type == ExampleType.NO_INSTRUCTION_GENERIC_FUNCTION_CALL:
             prepare_shot = partial(self.prepare_code_shot, generic_function_call=True, eos_token=eos_token)
             instruction = ""
+            add_extra_newline = True
         else:
             raise Exception(f"unknown type '{type}'")
 
         return (
-            _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
+            _get_example(
+                self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction, add_extra_newline
+            ),
             self.outputs,
         )
 
