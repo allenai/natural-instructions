@@ -134,34 +134,61 @@ class Datapoint:
         if type == ExampleType.NATURAL_INSTRUCTIONS:
             prepare_shot = partial(self.prepare_natural_instructions_shot, eos_token=eos_token)
             instruction = self.original_instruction
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction).strip(),
+                self.outputs,
+            )
         elif type == ExampleType.CODE_INSTRUCTIONS:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = self.code_instruction
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
+                self.outputs,
+            )
         elif type == ExampleType.FUNCTION_DEFINITION:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = self.function_instruction
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
+                self.outputs,
+            )
         elif type == ExampleType.NATURAL_INSTRUCTIONS_WITH_DOCSTRING:
             prepare_shot = partial(self.prepare_natural_instructions_shot, eos_token=eos_token)
             instruction = f"{self.original_instruction}\n{self.doc_instruction}"
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction).strip(),
+                self.outputs,
+            )
         elif type == ExampleType.CODE_INSTRUCTIONS_WITHOUT_DOCSTRING:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = self.code_instruction_without_doc
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
+                self.outputs,
+            )
         elif type == ExampleType.NO_INSTRUCTION_CODE_EXAMPLES:
             prepare_shot = partial(self.prepare_code_shot, eos_token=eos_token)
             instruction = ""
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
+                self.outputs,
+            )
         elif type == ExampleType.NO_INSTRUCTION_NATURAL_EXAMPLES:
             prepare_shot = partial(self.prepare_natural_instructions_shot, eos_token=eos_token)
             instruction = ""
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction).strip(),
+                self.outputs,
+            )
         elif type == ExampleType.NO_INSTRUCTION_GENERIC_FUNCTION_CALL:
             prepare_shot = partial(self.prepare_code_shot, generic_function_call=True, eos_token=eos_token)
             instruction = ""
+            return (
+                _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
+                self.outputs,
+            )
         else:
             raise Exception(f"unknown type '{type}'")
-
-        return (
-            _get_example(self.num_shots, self.few_shots, prepare_shot, self.original_input, instruction),
-            self.outputs,
-        )
 
     def prepare_natural_instructions_shot(self, input: str, eos_token: str, output: str = None) -> str:
         result = f"input: {input}\noutput:"
