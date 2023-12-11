@@ -29,5 +29,5 @@ def is_the_comment_obscene(comment: str) -> str:
 
 # preprocessor
 def preprocess(input: str):
-    comment = input.split("Comment: ")[0]
+    comment = input.split("Comment: ")[1]
     return comment
